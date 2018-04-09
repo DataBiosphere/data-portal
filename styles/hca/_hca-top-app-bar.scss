@@ -4,7 +4,6 @@
  *
  * Material Components top app bar as well as custom, HCA-specific overrides.
  */
-
 // Top App Bar - https://material.io/components/web/catalog/top-app-bar/
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "hca-vars";
@@ -13,6 +12,48 @@
 .mdc-top-app-bar {
     @include mdc-top-app-bar-fill-color($mdc-theme-background); /* background-color */
     @include mdc-top-app-bar-ink-color(black); /* color */
+
+    border-bottom: 1px solid #cccccc;
+
+    .mdc-top-app-bar__row {
+        justify-content: space-between; /* Forces spacing between logo and navigation, and username and navigation */
+
+        .mdc-top-app-bar__section {
+            flex: none; /* Overrides flex 1 1 auto on section to ensure each section's width is minimum */
+
+            /* Navigation links */
+            a {
+                color: $hca-color-top-app-bar-text;
+                font-size: 0.8125rem;
+                margin: 0 16px;
+                text-decoration: none;
+
+                &.active {
+                    color: $md-black-100;
+                }
+            }
+
+            /* User menu */
+            &.mdc-top-app-bar__section--align-end {
+
+                /* User name */
+                a {
+                    display: inline-flex; /* Required to position drop down centered to user name */
+                    line-height: 24px; /* Centers text with icon */
+                    margin: 0;
+
+                    /* Drop down icon */
+                    &:after {
+                        color: $hca-color-user-icon;
+                        content: "\E5C5";
+                        font-family: "Material Icons";
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+
     img {
         margin-top: 12px; /** Forces toolbar height to be 79px */
     }

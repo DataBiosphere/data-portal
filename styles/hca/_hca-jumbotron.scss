@@ -1,4 +1,4 @@
-/*!
+/*
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
@@ -9,12 +9,30 @@
 //@import "@material/typography/mdc-typography";
 
 .jumbotron {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 72px;
-    margin-top: 35px; // 15px inside toolbar + 35px above text = 50px as per spec
-    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    height: 300px;
+    background-color: blue;
+    background: url('../../site/images/jumbotron/jumbotron-cell.png');
+    //width: 100%;
+    //height: 300px;
+    //align-items: center;
+    //display: flex;
+    //flex-direction: column;
+    //position: relative;
+    //margin-bottom: 72px;
+    //margin-top: 35px; // 15px inside toolbar + 35px above text = 50px as per spec
+    //text-align: center;
+
+    h1 {
+        //left: 50%;
+        //position: absolute;
+        //top: 66px;
+        //transform: translateX(-50%);
+        white-space: nowrap;
+    }
     p {
         font-size: 1.125rem;
         line-height: 1.375rem;
