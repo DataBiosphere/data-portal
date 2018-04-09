@@ -51,11 +51,11 @@
         <div class="mdc-layout-grid__inner">
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
                 <section class="jumbotron">
-                    <!--<img src="images/jumbotron/cell-jumbotron.png"-->
-                         <!--srcset="images/jumbotron/cell-jumbotron@2x.png 2x, images/jumbotron/cell-jumbotron@3x.png 3x">-->
                     <h1>Single-cell data open and accessible for all</h1>
-                    <!--<h1>Human Cell Atlas Preview Datasets</h1>-->
-                    <!--<p>The first single-cell sequencing datasets from the Human Cell Atlas are now available to the research community.</p>-->
+                    <div class="jumbotron-search">
+                        <span>Search for data now by organs, publications, etc</span>
+                        <a href="" class="button">SEARCH</a>
+                    </div>
                 </section>
                 <section class="stats-bar">
                     <span>20</span>
@@ -64,206 +64,68 @@
                     <span>20</span>
                     <span>20</span>
                 </section>
-                <section class="preview-datasets">
-                    <div class="previews">
-                        <div class="preview">
-                            <div>
-                                <h3>Census of Immune Cells<sup>1</sup></h3>
-                                <p>
-                                    Profiling of immunocytes by single cell RNA-seq for understanding human health and
-                                    disease.
-                                </p>
-                            </div>
-                            <div>
-                                <div class="preview-meta">
-                                    <div>
-                                        <div>Species</div>
-                                        <div>Homo sapiens</div>
-                                    </div>
-                                    <div>
-                                        <div>Organ</div>
-                                        <div>Umbilical cord blood and bone marrow</div>
-                                    </div>
-                                    <div>
-                                        <div>Method</div>
-                                        <div>10x</div>
-                                    </div>
-                                    <div>
-                                        <div>Cell count</div>
-                                        <div>~530,000 cells</div>
-                                    </div>
-                                    <div>
-                                        <div>File size</div>
-                                        <div>1.3 TB</div>
-                                    </div>
-                                </div>
-                                <a href="datasets/census/hca-download-census"
-                                   class="button">DOWNLOAD DATASET<span>with script</span></a>
-                                <p class="caption">Additional instructions below</p>
-                                <p class="metadata"><a href="datasets/census/hca-metadata-census.xlsx">Download metadata
-                                    only</a></p>
-                            </div>
-                        </div>
-                        <div class="preview">
-                            <div>
-                                <h3>Ischaemic Sensitivity of Human Tissue<sup>2</sup></h3>
-                                <p>
-                                    Assessment of ischaemic sensitivity of human spleen tissue by single cell RNA-seq.
-                                </p>
-                            </div>
-                            <div>
-                                <div class="preview-meta">
-                                    <div>
-                                        <div>Species</div>
-                                        <div>Homo sapiens</div>
-                                    </div>
-                                    <div>
-                                        <div>Organ</div>
-                                        <div>Spleen</div>
-                                    </div>
-                                    <div>
-                                        <div>Method</div>
-                                        <div>10x</div>
-                                    </div>
-                                    <div>
-                                        <div>Cell count</div>
-                                        <div>~2,000 cells</div>
-                                    </div>
-                                    <div>
-                                        <div>File size</div>
-                                        <div>14 GB</div>
-                                    </div>
-                                </div>
-                                <a href="datasets/ischaemic-sensitivity/hca-download-ischaemic-sensitivity"
-                                   class="button">DOWNLOAD DATASET<span>with script</span></a>
-                                <p class="caption">Additional instructions below</p>
-                                <p class="metadata"><a
-                                        href="datasets/ischaemic-sensitivity/hca-metadata-ischaemic-sensitivity.xlsx">Download
-                                    metadata only</a></p>
-                            </div>
-                        </div>
-                        <div class="preview">
-                            <div>
-                                <h3>Melanoma Infiltration of Stromal and Immune Cells<sup>3</sup></h3>
-                                <p>
-                                    Single cell RNA-seq of CD45+ and CD45- cells isolated from tumour and lymph nodes of
-                                    a mouse model of melanoma.
-                                </p>
-                            </div>
-                            <div>
-                                <div class="preview-meta">
-                                    <div>
-                                        <div>Species</div>
-                                        <div>Mus musculus</div>
-                                    </div>
-                                    <div>
-                                        <div>Organ</div>
-                                        <div>Lymph node</div>
-                                    </div>
-                                    <div>
-                                        <div>Method</div>
-                                        <div>Smart-seq2</div>
-                                    </div>
-                                    <div>
-                                        <div>Cell count</div>
-                                        <div>6,639 cells</div>
-                                    </div>
-                                    <div>
-                                        <div>File size</div>
-                                        <div>380 GB</div>
-                                    </div>
-                                </div>
-                                <a href="datasets/melanoma/hca-download-melanoma"
-                                   class="button">DOWNLOAD DATASET<span>with script</span></a>
-                                <p class="caption">Additional instructions below</p>
-                                <p class="metadata"><a href="datasets/melanoma/hca-metadata-melanoma.xlsx">Download
-                                    metadata only</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="caption">These include primary datasets (fastq and metadata). Additional analysis
-                        (alignment and quantification) produced from a standardized analysis pipeline will be made
-                        available this summer.
+                <section class="explore">
+                    <h2>Start Exploring</h2>
+                    <div>
+                        <img src="images/explore/person-without-organs.png"
+                             srcset="images/explore/person-without-organs@2x.png 2x, images/explore/person-without-organs@3x.png 3x">
+                        <img src="images/explore/person-with-organs.png"
+                             srcset="images/explore/person-with-organs@2x.png 2x, images/explore/person-with-organs@3x.png 3x">
+                        <img src="images/explore/explore-chart.png.png"
+                             srcset="images/explore/explore-chart.png 2x, images/explore/explore-chart.png 3x">
                     </div>
                 </section>
-                <section class="download-instructions">
-                    <h2>Download instructions</h2>
-                    <p>To download the datasets, use the shell scripts provided above. There is one script for each
-                        dataset. The shell script will install the HCA command line client using the <span
-                                class="code-inline">pip</span> installer, then call the client to download the dataset
-                        to your local machine.</p>
-                    <p>You will need a Unix environment (Linux, OS X, Windows WSL, or Windows Cygwin), as well as a
-                        Python installation (version 2.7+) with a functional <span class="code-inline">pip</span>
-                        installer.</p>
-                    <p>Since downloads can take an hour or more for the larger datasets, we recommend you use a tool
-                        like <a href="https://linux.101hacks.com/unix/nohup-command/" target="_blank">nohup</a> or <a
-                                href="https://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/" target="_blank">screen</a>
-                        to ensure your download is not interrupted. Additionally, we advise downloading these datasets
-                        one at a time. Some people have reported issues when downloading multiple in parallel.</p>
-                    <h4>1. Download the shell script for the dataset you are interested in</h4>
-                    <p>Click on the download dataset button to save a shell script that will download data.</p>
-                    <h4>2. Run the script in the terminal</h4>
-                    <p>After saving the script, run it in your terminal as follows:</p>
-                    <div class="code">chmod +x ~/Downloads/FILENAME</div>
-                    <p>Next, run:</p>
-                    <div class="code">~/Downloads/FILENAME</div>
-                    <p>Replace <span class="code-inline">FILENAME</span> with the name of the shell script for the
-                        dataset you’d like to download.</p>
-                    <div class="dataset-breakdowns">
-                        <div>
-                            <div>Dataset</div>
-                            <div>Shell script file</div>
-                        </div>
-                        <div>
-                            <div>Census of Immune Cells</div>
-                            <div><a href="datasets/census/hca-download-census">hca-download-census</a></div>
-                        </div>
-                        <div>
-                            <div>Ischaemic Sensitivity of Human Tissue</div>
-                            <div><a href="datasets/ischaemic-sensitivity/hca-download-ischaemic-sensitivity">hca-download-ischaemic-sensitivity</a>
-                            </div>
-                        </div>
-                        <div>
-                            <div>Melanoma Infiltration of Stromal and Immune Cells</div>
-                            <div><a href="datasets/melanoma/hca-download-melanoma">hca-download-melanoma</a></div>
-                        </div>
+                <section class="data-portal">
+                    <p>What is the HCA Data Portal?</p>
+                    <h1>The Data Portal is the place where you can find data, contribute data, find tertiary analysis
+                        portals. Find healthy cellular data from labs around the world.</h1>
+                    <div>
+                        <img src="images/data-portal/contribute.png"
+                             srcset="images/data-portal/contribute@2x.png 2x, images/data-portal/contribute@3x.png 3x">
+                        <img src="images/data-portal/arrow-right.png"
+                             srcset="images/data-portal/arrow-right@2x.png 2x, images/data-portal/arrow-right@3x.png 3x">
+                        <img src="images/data-portal/process-data.png"
+                             srcset="images/data-portal/process-data@2x.png 2x, images/data-portal/process-data@3x.png 3x">
+                        <img src="images/data-portal/arrow-right.png"
+                             srcset="images/data-portal/arrow-right@2x.png 2x, images/data-portal/arrow-right@3x.png 3x">
+                        <img src="images/data-portal/find-data.png"
+                             srcset="images/data-portal/find-data@2x.png 2x, images/data-portal/find-data@3x.png 3x">
+                        <img src="images/data-portal/arrow-right.png"
+                             srcset="images/data-portal/arrow-right@2x.png 2x, images/data-portal/arrow-right@3x.png 3x">
+                        <img src="images/data-portal/analysis-portal.png"
+                             srcset="images/data-portal/analysis-portal@2x.png 2x, images/data-portal/analysis-portal@3x.png 3x">
                     </div>
-                    <h4>3. View the files</h4>
-                    <p>The script will download the dataset to your environment. For some of the datasets there will be
-                        multiple directories of data corresponding the number of samples in the dataset. Inside you will
-                        find both metadata files as well as fastq files.</p>
-                    <p class="help">If you have questions or issues to report please email <a
-                            href="mailto:data-help@humancellatlas.org">data-help@humancellatlas.org</a>.</p>
+                    <div>
+                        <p>Investigators and Labs Contribute Data<a>Learn More ></a></p>
+                        <p>We process and quality-check the data with our HCA Pipelines<a>Learn about Pipelines ></a>
+                        </p>
+                        <p>You can find data to download or use in analysis portals<a>Start Searching ></a></p>
+                        <p>Find teritary analysis portals built by the community<a>See list of Portals ></a></p>
+                    </div>
                 </section>
-                <section class="attribution">
-                    <ul>
-                        <li>Census of Immune Cells - Contributors: Bo Li, Monika S Kowalczyk, Danielle Dionne, Orr
-                            Ashenberg, Marcin Tabaka, Timothy Tickle, Jane Lee, Karthik Shekhar, Michal Slyper, Julia
-                            Waldman, Orit Rozenblatt-Rosen, Aviv Regev. Collaborating organisations: Broad Institute,
-                            Massachusetts Institute of Technology, Howard Hughes Medical Institute.
-                        </li>
-                        <li>Ischaemic Sensitivity of Human Tissue - Contributors: Phillipa Harding, Anna Wilbrey-Clark,
-                            Krzysztof Polanski, Kevin Loudon, John R Ferdinand, Krishnaa Mahbubani, Nikitas
-                            Georgakopoulos, Kourosh Saeb-Parsy, Kerstin Meyer, Mike Stubbington. Collaborating
-                            organisations: Wellcome Trust Sanger Institute, University of Cambridge.
-                        </li>
-                        <li>Melanoma Infiltration of Stromal and Immune Cells - Contributors: Mirjana Efremova, Sarah
-                            Davidson, Bidesh Mahata, Angela Riedel, Roser Vento-Tormo, Jhuma Pramanik, Gozde Kar, Jani
-                            Huuhtanen, Jacqueline D Shields, Sarah A Teichmann. Collaborating organisations: Wellcome
-                            Trust Sanger Institute, University of Cambridge, DKFZ German Cancer Research Center,
-                            EMBL-EBI, University of Helsinki.
-                        </li>
-                    </ul>
+                <section class="contact">
+                    <h2>Stay up to date with the HCA Data Portal</h2>
+                    <div class="contact-form">
+                        <div>
+                            <span>Full Name</span>
+                        </div>
+                        <div>
+                            <span>Email Address</span>
+                        </div>
+                        <a class="button">SUBMIT</a>
+                    </div>
                 </section>
                 <section class="footer">
-                    <div>
-                        <img src="images/icon/icon-cc-by@1x.png"
-                             srcset="images/icon/icon-cc-by@2x.png 2x, images/icon/icon-cc-by@3x.png 3x">
+                        <!--<img src="images/logo/hca-data-portal/logo-hca-data-portal@1x.png"-->
+                             <!--srcset="images/logo/hca-data-portal/logo-hca-data-portal@2x.png 2x, images/logo/hca-data-portal/logo-hca-data-portal@3x.png 3x">-->
+                    <div class="footer-links">
+                        <a href="#" class="active">Docs</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Help</a>
+                        <a href="#">Blog</a>
+                        <a href="#">About</a>
+                        <a href="#">Forum</a>
                     </div>
-                    <p>Each dataset in this Preview Data Release is licensed under a <a
-                            href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons
-                        Attribution 4.0 International License</a>. This is the license for these preview datasets and
-                        the license for other HCA data in the future may differ.</p>
                 </section>
             </div>
         </div>

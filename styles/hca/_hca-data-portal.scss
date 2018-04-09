@@ -1,0 +1,69 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Styles for data-portal area on home page.
+ */
+// Dependencies
+@import "hca-vars";
+//@import "@material/typography/mdc-typography";
+
+.data-portal {
+    align-items: center;
+    background-color: #F5F7F9;
+    display: flex;
+    flex-direction: column;
+    padding: 77px 0 95px;
+
+    /* What is the DP header */
+    > p {
+        color: $md-black-100;
+        font-size: 1rem;
+        text-transform: uppercase;
+        //text-align: center;
+    }
+
+    /* DP description */
+    h1 {
+        margin-top: 16px;
+        max-width: 80%; /* Forces L and R spacing around paragraph */
+        text-align: center;
+    }
+
+    /* DP Imagery and associated text */
+    > div {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 70px;
+
+        /* Arrow icons */
+        img:nth-of-type(even) {
+            padding: 0 40px;
+        }
+
+        /* Icons */
+        img:nth-of-type(odd) {
+            width: 80px;
+        }
+
+        /* Imagery text only */
+        &:nth-of-type(2) {
+            align-items: flex-start;
+            margin-top: 6px;
+
+            /* Text descrption */
+            p {
+                padding: 0 8px;
+                max-width: 168px;
+                text-align: center;
+
+                /* Link */
+                a {
+                    display: block;
+                }
+            }
+        }
+
+    }
+}

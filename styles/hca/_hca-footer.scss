@@ -4,32 +4,30 @@
  *
  * Styles for footer.
  */
-
 // Dependencies
 @import "hca-vars";
 
 .footer {
+    align-items: center;
+    background-color: $md-black-100;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 100px;
-    padding-top: 10px;
-    p {
-        font-size: 0.8125rem;
-        line-height: 1.188rem;
-        margin: 10px 0 0 0;
-    } 
+    height: 96px;
+    justify-content: center;
+
+    .footer-links a {
+        color: #ffffff;
+        font-size: 1rem;
+        margin: 0 16px;
+        text-decoration: none;
+    }
 }
 
 /**
  * Small +
  */
 @media (min-width: $md-sm-min) {
-    
+
     .footer {
         align-items: center;
-        flex-direction: row;
-        p {
-            margin: 0 0 0 20px;
-        }  
     }
 }

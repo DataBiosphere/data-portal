@@ -35,11 +35,12 @@
 
             /* User menu */
             &.mdc-top-app-bar__section--align-end {
+                padding: 8px 24px;
 
                 /* User name */
                 a {
                     display: inline-flex; /* Required to position drop down centered to user name */
-                    line-height: 24px; /* Centers text with icon */
+                    line-height: 1.5rem; /* Centers text with icon */
                     margin: 0;
 
                     /* Drop down icon */
@@ -47,7 +48,7 @@
                         color: $hca-color-user-icon;
                         content: "\E5C5";
                         font-family: "Material Icons";
-                        font-size: 24px;
+                        font-size: 1.5rem;
                     }
                 }
             }
