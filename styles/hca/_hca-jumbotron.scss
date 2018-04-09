@@ -1,0 +1,24 @@
+/*!
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Styles for jumbotron area on home page.
+ */
+
+// Dependencies
+//@import "@material/typography/mdc-typography";
+
+.jumbotron {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 72px;
+    margin-top: 35px; // 15px inside toolbar + 35px above text = 50px as per spec
+    text-align: center;
+    p {
+        font-size: 1.125rem;
+        line-height: 1.375rem;
+        margin: 0;
+        max-width: 600px;
+    }
+}

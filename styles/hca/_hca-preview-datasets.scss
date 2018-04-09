@@ -1,0 +1,128 @@
+/*!
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Styles for preview detasets area on home page.
+ */
+
+// Dependencies
+@import "hca-vars";
+
+.preview-datasets {
+    margin-bottom: 60px;
+    .previews {
+        display: flex;
+        flex-direction: column;
+        .preview {
+            justify-content: space-between;
+            border: 1px solid #cccccc;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+            padding: 16px;
+            sup {
+                font-size: 0.625rem;
+                font-weight: 400;
+                margin-left: 3px;
+                top: -0.5rem;
+            }
+            .preview-meta {
+                font-size: 0.875rem;
+                margin-top: 20px;
+                /* Meta row */
+                > div {
+                    display: flex;
+                    &:not(:last-child) {
+                        margin-bottom: 20px;
+                    }
+                    &:last-child {
+                        margin-bottom: 35px;
+                    }
+                    /* Meta cell */
+                    > div {
+                        &:first-child {
+                            color: #000000;
+                            font-weight: 600;
+                            min-width: 84px;
+                        }
+                    }
+                }
+            }
+            .button {
+                background-color: #1288e4;
+                border-radius: 2px;
+                color: #ffffff;
+                display: flex;
+                flex-direction: column;
+                font-size: 0.8125rem;
+                letter-spacing: 0.21px;
+                height: 50px;
+                justify-content: center;
+                margin: 0 auto;
+                text-align: center;
+                width: 200px;
+                span {
+                    display: block;
+                    letter-spacing: 0;
+                    margin-top: 2px;
+                }
+            }
+            .caption {
+                font-size: 0.75rem;
+                line-height: 1.188rem;
+                margin-top: 5px;
+                text-align: center;
+            }
+            .metadata {
+                font-size: 0.8125rem;
+                font-weight: 600;
+                line-height: 0.8125rem;
+                margin-top: 16px;
+                text-align: center;
+            }
+        }
+    }
+    .caption {
+        font-size: 0.8125rem;
+        line-height:  1.188rem;
+        margin-top: 12px;
+    }
+}
+
+/**
+ * Large tablet, medium +
+ */
+@media (min-width: $md-tablet-portrait-lg-min) {
+
+    .preview-datasets {
+        .previews {
+            align-items: stretch;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .preview {
+            margin-bottom: 0;
+            max-width: 227px;
+            .preview-meta { 
+                min-height: 192px;
+            }
+            /* Dataset breakdown */
+            > div:last-child {
+                border-top: 1px solid #eaeaea;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+/**
+ * IE10+
+ */
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) and (min-width: $md-tablet-portrait-lg-min) {
+
+    .preview-datasets {
+        .preview {
+            width: 227px;
+        }
+    }
+}

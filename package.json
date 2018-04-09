@@ -1,0 +1,25 @@
+{
+  "name": "hca-data-preview",
+  "version": "1.0.0",
+  "description": "Initial static web page giving instructions on how to preview selected HCA projects.",
+  "devDependencies": {
+    "css-loader": "0.28.11",
+    "extract-loader": "2.0.1",
+    "file-loader": "1.1.11",
+    "node-sass": "4.7.2",
+    "sass-loader": "6.0.7",
+    "webpack": "3.11.0",
+    "webpack-dev-server": "2.11.2"
+  },
+  "dependencies": {
+    "@material/elevation": "0.28.0",
+    "@material/layout-grid": "0.24.0",
+    "@material/theme": "0.33.0",
+    "@material/top-app-bar": "0.34.1",
+    "normalize.scss": "0.1.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack -p "
+  }
+}

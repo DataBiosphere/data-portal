@@ -1,0 +1,18 @@
+# Local
+node_modules
+.tmp
+
+# IDEs and editors
+.idea
+
+# Misc
+.sass-cache
+npm-debug.log
+
+#System Files
+.DS_Store
+Thumbs.db
+
+# Files built using webpack
+site/bundle.css
+site/style-bundle.js

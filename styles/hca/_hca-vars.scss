@@ -1,0 +1,35 @@
+/*!
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Global variables.
+ */
+
+/**
+ * Material Design black hues.
+ **/
+$md-black-12: rgba(0, 0, 0, 0.12);
+$md-black-38: rgba(0, 0, 0, 0.38);
+$md-black-57: rgba(0, 0, 0, 0.57);
+$md-black-100: #000000;
+
+/**
+ * Material Design media break points
+ **/
+$md-xl-min: 1920px;
+$md-lg-min: 1280px;
+$md-lg-max: $md-xl-min - 1px;
+$md-md-min: 960px;
+$md-md-max: $md-lg-min - 1px;
+$md-tablet-portrait-lg-min: 840px;
+$md-tablet-portrait-md-max: $md-tablet-portrait-lg-min - 1px;
+$md-tablet-landscape-sm-min: 480px;
+$md-tablet-landscape-xs-max: $md-tablet-landscape-sm-min - 1px;
+$md-sm-min: 600px;
+$md-sm-max: $md-md-min - 1;
+$md-xs-max: $md-sm-min - 1;
+
+/**
+ * HCA colors.
+ */
+$hca-color-text: #4a4a4a;

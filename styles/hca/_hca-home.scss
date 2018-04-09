@@ -1,0 +1,15 @@
+/*!
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Global styles used across components.
+ */
+
+// Dependencies
+@import "hca-vars";
+
+// Snap home page to max width of 868px
+.snapper {
+    margin: 0 auto;
+    max-width: 868px;
+}

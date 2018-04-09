@@ -1,0 +1,35 @@
+/*!
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Styles for footer.
+ */
+
+// Dependencies
+@import "hca-vars";
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    padding-top: 10px;
+    p {
+        font-size: 0.8125rem;
+        line-height: 1.188rem;
+        margin: 10px 0 0 0;
+    } 
+}
+
+/**
+ * Small +
+ */
+@media (min-width: $md-sm-min) {
+    
+    .footer {
+        align-items: center;
+        flex-direction: row;
+        p {
+            margin: 0 0 0 20px;
+        }  
+    }
+}

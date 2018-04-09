@@ -1,0 +1,12 @@
+/*!
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Material Components theme as well as custom, HCA-specific overrides.
+ */
+
+// Override theme-related variables before importing theme - see https://material.io/components/web/catalog/theme/
+$mdc-theme-primary: #1c7cc7; // Medium blue
+$mdc-theme-secondary: #24d1f2; // Light blue accent
+$mdc-theme-background: #ffffff; // White
+@import "@material/theme/mdc-theme";
