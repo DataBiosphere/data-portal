@@ -37,11 +37,15 @@
         //top: 0; /* For cropped image */
         top: 50%; /* Full sized image */
         transform: translateY(-50%);
-        width: 100%;
+        //width: 100%;
         z-index: -1;
+
+        &.large-img {
+            display: none;
+        }
     }
 
-        /* Jumbotron title */
+    /* Jumbotron title */
     h1 {
         max-width: 80%;
         text-align: center;
@@ -82,6 +86,27 @@
             padding: 0 16px;
         }
     }
+}
+
+/**
+ * Small +
+ */
+@media (min-width: $md-sm-min) {
+
+    .jumbotron {
+
+        img {
+
+            &.small-img {
+                display: none;
+            }
+
+            &.large-img {
+                display: block;
+            }
+        }
+    }
+
 }
 
 /**
