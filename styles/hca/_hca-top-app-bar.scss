@@ -16,42 +16,9 @@
     border-bottom: 1px solid #cccccc;
 
     .mdc-top-app-bar__row {
-        justify-content: space-between; /* Forces spacing between logo and navigation, and username and navigation */
 
-        .mdc-top-app-bar__section {
-            flex: none; /* Overrides flex 1 1 auto on section to ensure each section's width is minimum */
-
-            /* Navigation links */
-            a {
-                color: $hca-color-top-app-bar-text;
-                font-size: 0.8125rem;
-                margin: 0 16px;
-                text-decoration: none;
-
-                &.active {
-                    color: $md-black-100;
-                }
-            }
-
-            /* User menu */
-            &.mdc-top-app-bar__section--align-end {
-                padding: 8px 24px;
-
-                /* User name */
-                a {
-                    display: inline-flex; /* Required to position drop down centered to user name */
-                    line-height: 1.5rem; /* Centers text with icon */
-                    margin: 0;
-
-                    /* Drop down icon */
-                    &:after {
-                        color: $hca-color-user-icon;
-                        content: "\E5C5";
-                        font-family: "Material Icons";
-                        font-size: 1.5rem;
-                    }
-                }
-            }
+        .mdc-top-app-bar__section:not(.mdc-top-app-bar__section--align-start) {
+            display: none; /* Hides navigation and user menu */
         }
     }
 
@@ -89,9 +56,52 @@
  */
 @media (min-width: $md-tablet-portrait-lg-min) {
     .mdc-top-app-bar {
-        .mdc-top-app-bar__section--align-start {
-            padding-left: var(--mdc-layout-grid-margin-desktop, 24px);
-            padding-right: var(--mdc-layout-grid-margin-desktop, 24px);
+
+        .mdc-top-app-bar__row {
+            justify-content: space-between; /* Forces spacing between logo and navigation, and username and navigation */
+
+            .mdc-top-app-bar__section {
+                display: inline-flex !important; /* Overrides responsive small display: none */
+                flex: none; /* Overrides flex 1 1 auto on section to ensure each section's width is minimum */
+
+                /* Navigation links */
+                a {
+                    color: $hca-color-top-app-bar-text;
+                    font-size: 0.8125rem;
+                    margin: 0 16px;
+                    text-decoration: none;
+
+                    &.active {
+                        color: $md-black-100;
+                    }
+                }
+
+                /* Logo */
+                .mdc-top-app-bar__section--align-start {
+                    padding-left: var(--mdc-layout-grid-margin-desktop, 24px);
+                    padding-right: var(--mdc-layout-grid-margin-desktop, 24px);
+                }
+
+                /* User menu */
+                &.mdc-top-app-bar__section--align-end {
+                    padding: 8px 24px;
+
+                    /* User name */
+                    a {
+                        display: inline-flex; /* Required to position drop down centered to user name */
+                        line-height: 1.5rem; /* Centers text with icon */
+                        margin: 0;
+
+                        /* Drop down icon */
+                        &:after {
+                            color: $hca-color-user-icon;
+                            content: "\E5C5";
+                            font-family: "Material Icons";
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
         }
     }
 }

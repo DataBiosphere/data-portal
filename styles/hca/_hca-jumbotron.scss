@@ -41,13 +41,15 @@
         border: 1px solid #cccccc;
         border-radius: 3px;
         height: 50px;
-        padding-left: 16px;
         width: 50%;
 
         /* Search text */
         span {
             color: #9B9B9B;
             font-size: 1rem;
+            overflow: hidden;
+            padding: 0 16px;
+            white-space: nowrap;
         }
 
         /* Search button */
