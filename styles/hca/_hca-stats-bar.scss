@@ -8,20 +8,36 @@
 @import "hca-vars";
 
 .stats-bar {
-    align-items: flex-end;
     background: linear-gradient(-270deg, #3867FA, #5ABCEF);
     display: flex;
     height: 74px;
     justify-content: center;
-    padding-bottom: 16px;
 
-    span {
-        color: #ffffff;
-        font-size: 2.25rem;
-        font-weight: 500;
-        padding: 0 24px;
-        text-align: center;
-        width: 100px;
+    /* Status */
+    > div {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
+        /* Status name */
+        p {
+            color: #ffffff;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            letter-spacing: 3.25px;
+            line-height: 0.9375rem;
+            margin: 0 0 -4px;
+        }
+
+        /* Status number */
+        span {
+            color: #ffffff;
+            font-size: 2.25rem;
+            font-weight: 500;
+            padding: 0 24px;
+            text-align: center;
+            width: 100px;
+        }
     }
 }

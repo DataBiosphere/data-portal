@@ -13,14 +13,15 @@
     background-color: #F5F7F9;
     display: flex;
     flex-direction: column;
-    padding: 77px 0 95px;
+    padding: 80px 0 95px;
 
     /* What is the DP header */
     > p {
         color: $md-black-100;
         font-size: 1rem;
+        letter-spacing: 2px;
+        line-height: 1rem;
         text-transform: uppercase;
-        //text-align: center;
     }
 
     /* DP description */
@@ -31,28 +32,33 @@
     }
 
     /* DP Imagery and associated text */
-    > div {
-        align-items: center;
+    .portal-description {
+        align-items: flex-start;
         display: flex;
         justify-content: center;
         margin-top: 70px;
 
-        /* Arrow icons */
-        img:nth-of-type(even) {
-            padding: 0 40px;
-        }
+        /* Each DP has its own box */
+        > div {
+            align-items: center;
+            display: flex;
+            flex: 1; /* Each box is equal in width */
+            flex-direction: column;
 
-        /* Icons */
-        img:nth-of-type(odd) {
-            width: 80px;
-        }
+            &.dp-arrow {
+                flex: 0; /* Overrides flex: 1 attribute from its own box */
+                height: 95px; /* Forces arrow container to be same height as DP images */
+                justify-content: center;
+            }
 
-        /* Imagery text only */
-        &:nth-of-type(2) {
-            align-items: flex-start;
-            margin-top: 6px;
+            /* Top row of each box - image */
+            > div {
+                align-items: center;
+                display: flex;
+                height: 95px;
+            }
 
-            /* Text descrption */
+            /* Second row of each box - text description */
             p {
                 padding: 0 8px;
                 max-width: 168px;
@@ -64,6 +70,5 @@
                 }
             }
         }
-
     }
 }
