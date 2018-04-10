@@ -10,8 +10,8 @@ addons:
     - npm
 before_install:
 - pip install awscli --upgrade
-install: echo npm install
-script: echo make build
+install: npm install
+script: make build
 deploy:
   provider: script
   script: make deploy-staging-travis
