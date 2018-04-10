@@ -32,9 +32,12 @@
 
     /* Jumbotron image */
     img {
-        height: 100%;
+        //height: 100%;
         position: absolute;
-        top: 0;
+        //top: 0; /* For cropped image */
+        top: 50%; /* Full sized image */
+        transform: translateY(-50%);
+        width: 100%;
         z-index: -1;
     }
 
@@ -87,6 +90,17 @@
 @media (min-width: $md-tablet-portrait-lg-min) {
 
     .jumbotron {
+
+        /* Jumbotron image */
+        img {
+            //height: 100%;
+            position: absolute;
+            //top: 0; /* For cropped image */
+            top: 50%; /* Full sized image */
+            transform: translateY(-50%);
+            width: 100%;
+            z-index: -1;
+        }
 
         /* Search bar */
         .jumbotron-search {
