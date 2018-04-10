@@ -43,7 +43,7 @@
         border: 1px solid #cccccc;
         border-radius: 3px;
         height: 50px;
-        width: 50%;
+        width: 80%;
 
         /* Search text */
         span {
@@ -75,4 +75,12 @@
  * Large
  */
 @media (min-width: $md-tablet-portrait-lg-min) {
+
+    .jumbotron {
+
+        /* Search bar */
+        .jumbotron-search {
+            width: 50%;
+        }
+    }
 }

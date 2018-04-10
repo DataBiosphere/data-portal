@@ -21,6 +21,8 @@
         font-size: 1rem;
         letter-spacing: 2px;
         line-height: 1rem;
+        max-width: 80%; /* Forces L and R spacing around paragraph */
+        text-align: center;
         text-transform: uppercase;
     }
 
