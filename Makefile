@@ -1,7 +1,7 @@
 STAGING_BUCKET := s3://staging.data.humancellatlas.org/
 
 build:
-	node_modules/.bin/webpackf
+	node_modules/.bin/webpack
 
 deploy-staging:
 	aws s3 sync --acl public-read site/ $(STAGING_BUCKET) --profile hca
