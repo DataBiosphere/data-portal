@@ -12,8 +12,10 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* For jumbotron image */
     //background-color: #cccccc;
     padding: 73px 0 68px;
+    position: relative;
     //background: url('../../site/images/jumbotron/jumbotron-cell.png');
     //background-size: cover;
     //background-repeat: no-repeat;
@@ -28,7 +30,15 @@
     //margin-top: 35px; // 15px inside toolbar + 35px above text = 50px as per spec
     //text-align: center;
 
-    /* Jumbotron title */
+    /* Jumbotron image */
+    img {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+    }
+
+        /* Jumbotron title */
     h1 {
         max-width: 80%;
         text-align: center;
