@@ -15,7 +15,7 @@
     flex-direction: column;
     padding: 80px 0 95px;
 
-    /* What is the DP header */
+    /* Data Portal question - "What is it?" */
     > p {
         color: $md-black-100;
         font-size: 1rem;
@@ -24,7 +24,7 @@
         text-transform: uppercase;
     }
 
-    /* DP description */
+    /* Data Portal description */
     h1 {
         margin-top: 16px;
         max-width: 80%; /* Forces L and R spacing around paragraph */
@@ -33,8 +33,9 @@
 
     /* DP Imagery and associated text */
     .portal-description {
-        align-items: flex-start;
+        align-items: center;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         margin-top: 70px;
 
@@ -45,10 +46,12 @@
             flex: 1; /* Each box is equal in width */
             flex-direction: column;
 
+            /* Arrow */
             &.dp-arrow {
                 flex: 0; /* Overrides flex: 1 attribute from its own box */
                 height: 95px; /* Forces arrow container to be same height as DP images */
                 justify-content: center;
+                transform: rotate(90deg);
             }
 
             /* Top row of each box - image */
@@ -66,6 +69,29 @@
                 /* Link */
                 a {
                     display: block;
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Large
+ */
+@media (min-width: $md-tablet-portrait-lg-min) {
+    .data-portal {
+
+        /* DP Imagery and associated text */
+        .portal-description {
+            align-items: flex-start;
+            flex-direction: row;
+
+            /* Each DP has its own box */
+            > div {
+
+                /* Arrow */
+                &.dp-arrow {
+                    transform: rotate(0deg);
                 }
             }
         }

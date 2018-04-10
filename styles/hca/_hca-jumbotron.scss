@@ -9,7 +9,9 @@
 //@import "@material/typography/mdc-typography";
 
 .jumbotron {
-    display: block;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     //background-color: #cccccc;
     padding: 73px 0 68px;
     //background: url('../../site/images/jumbotron/jumbotron-cell.png');
@@ -28,8 +30,8 @@
 
     /* Jumbotron title */
     h1 {
+        max-width: 80%;
         text-align: center;
-        white-space: nowrap;
     }
 
     /* Search bar */
@@ -67,4 +69,10 @@
             padding: 0 16px;
         }
     }
+}
+
+/**
+ * Large
+ */
+@media (min-width: $md-tablet-portrait-lg-min) {
 }
