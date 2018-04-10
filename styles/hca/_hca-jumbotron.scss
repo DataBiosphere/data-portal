@@ -30,14 +30,11 @@
     //margin-top: 35px; // 15px inside toolbar + 35px above text = 50px as per spec
     //text-align: center;
 
-    /* Jumbotron image */
+    /* Jumbotron image - cropped image for small screens */
     img {
-        //height: 100%;
         position: absolute;
-        //top: 0; /* For cropped image */
-        top: 50%; /* Full sized image */
+        top: 50%;
         transform: translateY(-50%);
-        //width: 100%;
         z-index: -1;
 
         &.large-img {
@@ -97,10 +94,12 @@
 
         img {
 
+            /* Hide smaller cropped image */
             &.small-img {
                 display: none;
             }
 
+            /* Show full image */
             &.large-img {
                 display: block;
             }
@@ -118,10 +117,8 @@
 
         /* Jumbotron image */
         img {
-            //height: 100%;
             position: absolute;
-            //top: 0; /* For cropped image */
-            top: 50%; /* Full sized image */
+            top: 50%;
             transform: translateY(-50%);
             width: 100%;
             z-index: -1;
