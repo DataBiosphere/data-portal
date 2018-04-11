@@ -17,13 +17,13 @@
 
     .mdc-top-app-bar__row {
 
+        .mdc-top-app-bar__section--align-start {
+            padding: 0 12px;
+        }
+
         .mdc-top-app-bar__section:not(.mdc-top-app-bar__section--align-start) {
             display: none; /* Hides navigation and user menu */
         }
-    }
-
-    img {
-        margin-top: 12px; /** Forces toolbar height to be 79px */
     }
 }
 
@@ -63,6 +63,7 @@
             .mdc-top-app-bar__section {
                 display: inline-flex !important; /* Overrides responsive small display: none */
                 flex: none; /* Overrides flex 1 1 auto on section to ensure each section's width is minimum */
+                padding: 0 24px;
 
                 /* Navigation links */
                 a {
