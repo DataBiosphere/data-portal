@@ -71,7 +71,7 @@
                     margin: 0 16px;
                     text-decoration: none;
 
-                    &.active {
+                    &:hover {
                         color: $md-black-100;
                     }
                 }
