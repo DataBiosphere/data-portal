@@ -15,27 +15,38 @@
     justify-content: center;
     padding: 12px 0;
 
-    /* Logo */
-    > div {
+    /* HCA logo and back arrow */
+    > div:not(.footer-links) {
+        position: relative;
 
-        img {
+        /* Back arrow */
+        > img {
+            left: -24px;
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Logo */
+        > div img {
             padding: 12px 0;
         }
     }
-}
 
-/* Footer links */
-.footer-links {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding: 8px 0;
+    /* Footer links */
+    .footer-links {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 8px 0;
 
-    a {
-        color: #ffffff;
-        font-size: 1rem;
-        text-decoration: none;
-        padding: 4px 0;
+        a {
+            color: #ffffff;
+            font-size: 1rem;
+            padding: 4px 0;
+            text-decoration: none;
+        }
     }
 }
 
@@ -47,15 +58,18 @@
     .footer {
         height: 96px;
         flex-direction: row;
-        position: relative;
+        position: relative; /* Positions HCA logo */
 
-        /* Logo */
-        > div {
+        /* HCA logo and back arrow */
+        > div:not(.footer-links) {
             left: 24px;
             position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
 
-            img {
-                padding: 12px 0;
+            /* Back arrow */
+            > img {
+                left: -16px;
             }
         }
 
@@ -63,7 +77,6 @@
         .footer-links {
             flex-direction: row;
             padding: 0;
-            position: relative;
 
             a {
                 margin: 0 16px;

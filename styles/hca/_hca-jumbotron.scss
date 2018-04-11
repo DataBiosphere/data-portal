@@ -13,22 +13,8 @@
     display: flex;
     flex-direction: column;
     overflow: hidden; /* For jumbotron image */
-    //background-color: #cccccc;
     padding: 73px 0 68px;
     position: relative;
-    //background: url('../../site/images/jumbotron/jumbotron-cell.png');
-    //background-size: cover;
-    //background-repeat: no-repeat;
-    //background-size: 100% 100%;
-    //width: 100%;
-    //height: 300px;
-    //align-items: center;
-    //display: flex;
-    //flex-direction: column;
-    //position: relative;
-    //margin-bottom: 72px;
-    //margin-top: 35px; // 15px inside toolbar + 35px above text = 50px as per spec
-    //text-align: center;
 
     /* Jumbotron image - cropped image for small screens */
     img {
@@ -66,6 +52,11 @@
             overflow: hidden;
             padding: 0 16px;
             white-space: nowrap;
+
+            /* Hide longer search text */
+            &.long-search-text {
+                display: none;
+            }
         }
 
         /* Search button */
@@ -127,6 +118,19 @@
         /* Search bar */
         .jumbotron-search {
             width: 50%;
+
+            span {
+
+                /* Hide short search text */
+                &.short-search-text {
+                    display: none;
+                }
+
+                /* Show longer search text */
+                &.long-search-text {
+                    display: block;
+                }
+            }
         }
     }
 }
