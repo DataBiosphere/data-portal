@@ -13,17 +13,16 @@ before_install:
 install: npm install
 script: make build
 deploy:
-  provider: script
-  script: make deploy-staging-travis
-  skip_cleanup: true
-  on:
-    branch: staging
-deploy:
-  provider: script
-  script: make deploy-dev-travis
-  skip_cleanup: true
-  on:
-    branch: develop
+  - provider: script
+    script: make deploy-staging-travis
+    skip_cleanup: true
+    on:
+      branch: staging
+  - provider: script
+    script: make deploy-dev-travis
+    skip_cleanup: true
+    on:
+      branch: develop
 env:
   global:
     - secure: sU3B8oaXlnbVKyET2Sy2qJIriahBfGq7uJlm0VKb6zAkG4xUyeFEUfXmG9w3oddHbXBPu8gX9OfTNlRqzB+XYhW7gsW0mu+8JJY30ioin8ESze0dvSsuaTEari8dIjc/KFi2LVJmH5zfmIl4yV7Cn0NGz93loCwr0pWxH0hAX7wbmVQalullKloszv4MGyYKAOGlVOHOZyGrAP4/j02sIyh2CYt5RVbRSxD+VP55cJJWXSYjCZ3ljI5Dj6cYfFHX44QAQ2dxAu0WhbwYXdMUGJEc4/1t9Foiod10g5U+aAL+GFBmeeViu9GmDWmdzuv/E+Hi49fD25QgWFFb8DeF60vGdRzzCEHb7Q24OeC98/KtJPpjePAPRam3eX01Qg6trIloA3dHjf4cNvMTFCo3qH+YxovP0PCxTy5146J1FNfkCfhJPOGdWYcI/HndKKjfSAry99TDLJ4R0uKXrHY+qKcrbUrJrv2pbcnYpyV064wejmEDZvNLi5tAnzcpaLjnXRF1HDNuvt1Sl3W9O6NAB9EZkDFNipbqc9KrIlDV+ewBovrzUxXvdPLXy1/vWWwKjNySDwy4XqEHb7cRg+vVUG+9sX5UWY9nqLoACeR8RTd/OYLpu9fZaJ29VJ7tg/UYOyjFnAdV5Z4Mmq5u6pUGtZtOpFnogVG8qGTB4FsDpDA=
