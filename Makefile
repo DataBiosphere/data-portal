@@ -1,4 +1,5 @@
 STAGING_BUCKET := s3://staging.data.humancellatlas.org/
+DEV_BUCKET := s3://dev.data.humancellatlas.org/
 
 build:
 	node_modules/.bin/webpack
@@ -8,4 +9,8 @@ deploy-staging:
 
 deploy-staging-travis:
 	aws s3 sync --acl public-read site/ $(STAGING_BUCKET)
-	aws cloudfront create-invalidation --distribution-id ${DIST_ID} --paths "/*"
+	aws cloudfront create-invalidation --distribution-id ${STAGING_DIST_ID} --paths "/*"
+
+deploy-dev-travis:
+	aws s3 sync --acl public-read site/ $(DEV_BUCKET)
+	aws cloudfront create-invalidation --distribution-id ${DEV_DIST_ID} --paths "/*"
