@@ -4,3 +4,7 @@
  *
  * Style definitions specific to the HCA Data Portal root component.
  */
+
+.site { /* TODO CSS module demo use only, delete */
+    background-color: #ffffff;  
+}

@@ -36,15 +36,15 @@ Run the following command from the root directory:
 
 `npm develop`
 
+The development server can be viewed at:
+
+`localhost:8000`
+
 ### Deployment
 
 Run the following command to build the application:
 
 `gatsby build`
-
-The built version can be viewed at:
-
-`localhost:8000`
 
 #### Local Production Version
 

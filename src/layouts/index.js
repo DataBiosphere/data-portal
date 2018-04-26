@@ -6,17 +6,17 @@
  */
 
 // Core dependencies
-import normalize from 'normalize.css'
-import PropTypes from 'prop-types'
-import React from 'react'
-import Helmet from 'react-helmet'
+import normalize from 'normalize.css';
+import PropTypes from 'prop-types';
+import React from 'react';
+import Helmet from 'react-helmet';
 
 // App dependencies
-import Header from '../components/header'
-import './index.css'
+import Header from '../components/header';
+import compStyles from './index.module.css';
 
 const Layout = ({children, data}) => (
-    <div>
+    <div className={compStyles.site}>
         <Helmet
             title={data.site.siteMetadata.title}
             meta={[
@@ -36,13 +36,13 @@ const Layout = ({children, data}) => (
             {children()}
         </div>
     </div>
-)
+);
 
 Layout.propTypes = {
     children: PropTypes.func,
-}
+};
 
-export default Layout
+export default Layout;
 
 export const query = graphql`
 	query SiteTitleQuery {
@@ -52,4 +52,4 @@ export const query = graphql`
 			}
 		}
 	}
-`
+`;
