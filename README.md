@@ -1,33 +1,26 @@
-# HCA Data Preview
+# gatsby-starter-default
+The default Gatsby starter.
 
-## Developer Workspace
+For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
 
-### Requirements
+## Install
 
-`npm` is required ([https://www.npmjs.com/](https://www.npmjs.com/)) to manage dependencies. Installation instructions can be found at [http://blog.npmjs.org/post/85484771375/how-to-install-npm](http://blog.npmjs.org/post/85484771375/how-to-install-npm).
+Make sure that you have the Gatsby CLI program installed:
+```sh
+npm install --global gatsby-cli
+```
 
-### Setup
+And run from your CLI:
+```sh
+gatsby new gatsby-example-site
+```
 
-#### Clone Repo
+Then you can run it by:
+```sh
+cd gatsby-example-site
+npm run develop
+```
 
-Clone the `dcp-preview` repo:
+## Deploy
 
-	git@github.com:HumanCellAtlas/dcp-preview.git
-
-#### Install Packages
-
-Run the following command from the project's root directory to install the required packages: 
-
-	npm install
-
-#### Material Components
-
-HCA Data Preview uses Material Components ([https://material.io/components/web/](https://material.io/components/web/)) for its Material Design library.
-
-#### Dev Server
-
-HCA Data Preview uses webpack to bundle the SASS. To view the HCA Data Preview, run the following command from the project's root directory:
-
-	npm start
-
-The site can be viewed at `http://localhost:8080`.
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
