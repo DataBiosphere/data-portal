@@ -7,23 +7,25 @@
 
 module.exports = {
     siteMetadata: {
-        title: 'HCA Data Portal',
+        title: 'HCA Data Portal'
     },
     plugins: [
         {
-            resolve: `gatsby-plugin-react-css-modules`,
+            resolve: 'gatsby-plugin-react-css-modules',
             options: {
-                // *.css files are included by default.
-                // To support another syntax (e.g. SCSS),
-                // add `postcss-scss` to your project's devDependencies
-                // and add the following option here:
                 filetypes: {
-                    ".scss": { syntax: `postcss-scss` },
+                    '.scss': {syntax: 'postcss-scss'},
                 },
-                // Exclude global styles from the plugin using a RegExp:
-                exclude: `\/global\/`
+                // Exclude global styles from the plugin
+                exclude: '\/global\/'
             }
         },
-        'gatsby-plugin-react-helmet'
-    ],
+        'gatsby-plugin-react-helmet',
+        {
+            resolve: 'gatsby-plugin-typography',
+            options: {
+                pathToConfigModule: 'src/utils/typography.js',
+            }
+        }
+    ]
 };

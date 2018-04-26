@@ -8,6 +8,7 @@
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-css-modules": "1.0.15",
     "gatsby-plugin-react-helmet": "^2.0.10",
+    "gatsby-plugin-typography": "1.7.18",
     "normalize.css": "8.0.0",
     "react-helmet": "^5.2.0"
   },

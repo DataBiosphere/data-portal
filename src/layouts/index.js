@@ -17,13 +17,10 @@ import compStyles from './index.module.css';
 
 const Layout = ({children, data}) => (
     <div className={compStyles.site}>
-        <Helmet
-            title={data.site.siteMetadata.title}
-            meta={[
-                {name: 'description', content: 'Sample'},
-                {name: 'keywords', content: 'sample, something'},
-            ]}
-        />
+        <Helmet>
+            <title>{data.site.siteMetadata.title}</title>
+            <link rel="stylesheet" href="https://use.typekit.net/qhb0geh.css"/>
+        </Helmet>
         <Header siteTitle={data.site.siteMetadata.title}/>
         <div
             style={{
