@@ -1,4 +1,4 @@
-# HCA Data Preview
+# HCA Data Portal
 
 ## Developer Workspace
 
@@ -34,7 +34,7 @@ Run the following command from the project's root directory to install the requi
 
 Run the following command from the root directory:
 
-`npm develop`
+`gatsby develop`
 
 The development server can be viewed at:
 
