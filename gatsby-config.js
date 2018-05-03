@@ -11,6 +11,13 @@ module.exports = {
     },
     plugins: [
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/markdown`,
+                name: "markdown-pages",
+            }
+        },
+        {
             resolve: 'gatsby-plugin-react-css-modules',
             options: {
                 filetypes: {
@@ -20,6 +27,7 @@ module.exports = {
                 exclude: '\/global\/'
             }
         },
+        `gatsby-transformer-remark`,
         'gatsby-plugin-react-helmet',
         {
             resolve: 'gatsby-plugin-typography',
