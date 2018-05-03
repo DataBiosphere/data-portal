@@ -12,7 +12,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 // App dependencies
-import Header from '../components/header';
+import Header from '../components/header/header';
 import compStyles from './index.module.css';
 
 const Layout = ({children, data}) => (

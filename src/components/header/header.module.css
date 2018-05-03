@@ -1,0 +1,12 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal header component.
+ */
+
+.navBar {
+    background: linear-gradient(140deg, #03071A 0%, #0B1339 41%, #0E1948 60%, #131F5A 84%, #13205D 87%, #142263 87%, #091962 100%);
+    height: 70px;
+    margin-bottom: 1.45rem;
+}

@@ -2,20 +2,16 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * HCA Data Portal root component.
+ * HCA Data Portal header component.
  */
 
 // Core dependencies
 import Link from 'gatsby-link';
 import React from 'react';
+import compStyles from './header.module.css';
 
 const Header = ({siteTitle}) => (
-    <div
-        style={{
-            background: 'rebeccapurple',
-            marginBottom: '1.45rem',
-        }}
-    >
+    <div className={compStyles.navBar}>
         <div
             style={{
                 margin: '0 auto',
