@@ -20,6 +20,7 @@ const Layout = ({children, data}) => (
         <Helmet>
             <title>{data.site.siteMetadata.title}</title>
             <link rel="stylesheet" href="https://use.typekit.net/qhb0geh.css"/>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title}/>
         <div
