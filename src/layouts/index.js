@@ -15,6 +15,9 @@ import Helmet from 'react-helmet';
 import Header from '../components/header/header';
 import compStyles from './index.module.css';
 
+require(`prismjs/themes/prism-solarizedlight.css`)
+require(`katex/dist/katex.min.css`)
+
 const Layout = ({children, data}) => (
     <div className={compStyles.site}>
         <Helmet>

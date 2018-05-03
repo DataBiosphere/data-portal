@@ -22,8 +22,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
     const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
 
-    console.log(blogPostTemplate);
-
     return graphql(`
     {
       allMarkdownRemark(
@@ -41,7 +39,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     }
   `).then(result => {
         if (result.errors) {
-            console.log(result.errors);
             return Promise.reject(result.errors);
         }
 

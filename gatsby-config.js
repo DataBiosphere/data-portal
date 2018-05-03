@@ -27,7 +27,25 @@ module.exports = {
                 exclude: '\/global\/'
             }
         },
-        `gatsby-transformer-remark`,
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                excerpt_separator: `<!-- end -->`,
+                plugins: [
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 740,
+                        },
+                    },
+                    `gatsby-remark-prismjs`,
+                    `gatsby-remark-katex`,
+                    `gatsby-remark-autolink-headers`,
+                    `gatsby-remark-copy-linked-files`
+                ],
+            },
+        },
+        `gatsby-plugin-catch-links`,
         'gatsby-plugin-react-helmet',
         {
             resolve: 'gatsby-plugin-typography',
