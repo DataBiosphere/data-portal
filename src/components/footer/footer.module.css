@@ -18,7 +18,7 @@
     height: inherit;
     justify-content: space-between;
     margin: auto;
-    max-width: 960px;
+    max-width: 960px; /* Page snapper */
     padding: 0 24px;
 }
 
@@ -32,8 +32,9 @@
 /* Left arrow */
 .logo i {
     color: #ffffff;
+    cursor: pointer;
     font-size: 24px;
-    margin: 0 8px 0 -12px;
+    margin: 0 8px 0 -8px;
 }
 
 /* Footer links container */
