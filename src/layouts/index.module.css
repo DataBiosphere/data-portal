@@ -11,7 +11,7 @@
 
 .content {
     margin: 0 auto;
-    max-width: 960px; /* Page snapper */
+    max-width: 944px; /* Page snapper */
     padding: 0 24px 24px;
     width: 100%;
 }
