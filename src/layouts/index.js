@@ -12,6 +12,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 // App dependencies
+import Footer from '../components/footer/footer';
 import Header from '../components/header/header';
 import compStyles from './index.module.css';
 
@@ -26,16 +27,10 @@ const Layout = ({children, data}) => (
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title}/>
-        <div
-            style={{
-                margin: '0 auto',
-                maxWidth: 960,
-                padding: '0px 1.0875rem 1.45rem',
-                paddingTop: 0,
-            }}
-        >
+        <div className={compStyles.content}>
             {children()}
         </div>
+        <Footer/>
     </div>
 );
 
