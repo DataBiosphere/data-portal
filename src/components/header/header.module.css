@@ -9,6 +9,7 @@
 .navBar {
     align-items: center;
     background: linear-gradient(140deg, #03071A 0%, #0B1339 41%, #0E1948 60%, #131F5A 84%, #13205D 87%, #142263 87%, #091962 100%);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
     display: flex;
     height: 70px;
     justify-content: space-between;
