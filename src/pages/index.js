@@ -10,8 +10,15 @@ import compStyles from './index.module.css'
 import Link from 'gatsby-link';
 import React from 'react';
 
+import smallCellJumbotron from "../../images/jumbotron/small-cell-jumbotron.png";
+import smallCellJumbotron2x from "../../images/jumbotron/small-cell-jumbotron@2x.png"
+
+console.log(smallCellJumbotron,smallCellJumbotron2x);
+
 const IndexPage = () => (
     <div>
+
+
         <div className={compStyles.jumbotron}>
             <h1>Single-cell data open and accessible for all</h1>
             <div className={compStyles.jumbotronSearch}>
@@ -19,8 +26,8 @@ const IndexPage = () => (
                 <span className={compStyles.shortSearchText}>Search</span>
                 <a href="" className={compStyles.button}>SEARCH</a>
             </div>
-            <img className={compStyles.smallImg} src="../../site/images/jumbotron/small-cell-jumbotron.png"
-                 srcset="../../site/images/jumbotron/small-cell-jumbotron@2x.png 2x, ../../site/images/jumbotron/small-cell-jumbotron@3x.png 3x"/>
+            <img className={compStyles.smallImg} src={smallCellJumbotron}
+                 srcset="{smallCellJumbotron2x} 2x, ../../site/images/jumbotron/small-cell-jumbotron@3x.png 3x"/>
                 <img className={compStyles.largeImg} src="../../site/images/jumbotron/full-size-cell-jumbotron.png"
                      srcset="../../site/images/jumbotron/full-size-cell-jumbotron@2x.png 2x, ../../site/images/jumbotron/full-size-cell-jumbotron@3x.png 3x"/>
         </div>
