@@ -1,0 +1,61 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal footer component.
+ */
+
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 1);
+    height: 96px;
+}
+
+/* Snapper for footer - to mimic content widths */
+.footer > div {
+    align-items: center;
+    display: flex;
+    height: inherit;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 944px; /* Page snapper */
+    padding: 0 24px;
+}
+
+/* Logo */
+.logo {
+    align-items: center;
+    color: #ffffff;
+    display: flex;
+}
+
+/* Left arrow */
+.logo i {
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 0 8px 0 -8px;
+}
+
+/* Footer links container */
+.links {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse; /* Positions flex within bounds of footer container */
+    height: inherit; /* Required for wrap */
+    margin: 0 -16px; /* Right aligns links */
+    padding: 8px 0;
+}
+
+/* Footer links */
+.links a {
+    align-self: start; /* Left aligns text */
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 16px;
+    padding: 2px 0;
+    text-decoration: none;
+    text-transform: capitalize;
+}

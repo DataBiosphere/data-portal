@@ -16,3 +16,5 @@ Thumbs.db
 # Files built using webpack
 site/bundle.css
 site/style-bundle.js
+/.cache/
+/public/
