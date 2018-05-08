@@ -10,11 +10,16 @@ import compStyles from './index.module.css'
 import Link from 'gatsby-link';
 import React from 'react';
 
+// Images
 // import smallCellJumbotron from "../../images/jumbotron/small-cell-jumbotron.png";
 // import smallCellJumbotron2x from "../../images/jumbotron/small-cell-jumbotron@2x.png"
 // import fullSizeCellJumbotron from "../../images/jumbotron/full-size-cell-jumbotron.png";
+import analysisPortal from "../../site/images/data-portal/analysis-portal.png";
+import arrowRight from "../../site/images/data-portal/arrow-right.png";
+import contribute from "../../site/images/data-portal/contribute.png";
 import explore from "../../site/images/explore/explore.png";
-// import  personWithOrgans from "../../site/images/explore/person-with-organs.png";
+import findData from "../../site/images/data-portal/find-data.png";
+import processData from "../../site/images/data-portal/process-data.png";
 
 const IndexPage = () => (
     <div>
@@ -37,59 +42,49 @@ const IndexPage = () => (
         </div>
         <div className={compStyles.explore}>
             <h2>Start Exploring</h2>
-            {/*<p>Hover over or click on an organ to view data from that organ</p>*/}
+            <p>Hover over or click on an organ to view data from that organ</p>
             <div>
-                {/*<img src={personWithoutOrgans}/>*/}
-                {/*<img src={personWithOrgans}/>*/}
                 <img src={explore}/>
             </div>
         </div>
         <div className={compStyles.dataPortal}>
             <p>What is the HCA Data Portal?</p>
-            <h1>The Data Portal is the place where you can find data, contribute data, find tertiary analysis
-                portals. Find healthy cellular data from labs around the world.</h1>
+            <h1>The HCA Data Portal stores and provides single-cell data contributed by labs around the world. Anyone
+                can contribute data, find data, or access community tools and applications.</h1>
             <div className={compStyles.portalDescription}>
                 <div>
                     <div>
-                        <img src="../../site/images/data-portal/contribute.png"
-                             srcset="../../site/images/data-portal/contribute@2x.png 2x, ../../site/images/data-portal/contribute@3x.png 3x"/>
+                        <img src={contribute}/>
                     </div>
-                    <p>Investigators and Labs Contribute Data<a>Learn More ></a></p>
+                    <p>Labs contribute single-cell data<a>Learn about contributing ></a></p>
                 </div>
                 <div className={compStyles.dpArrow}>
-                    <img src="../../site/images/data-portal/arrow-right.png"
-                         srcset="../../site/images/data-portal/arrow-right@2x.png 2x, ../../site/images/data-portal/arrow-right@3x.png 3x"/>
+                    <img src={arrowRight}/>
                 </div>
                 <div>
                     <div>
-                        <img src="../../site/images/data-portal/process-data.png"
-                             srcset="../../site/images/data-portal/process-data@2x.png 2x, ../../site/images/data-portal/process-data@3x.png 3x"/>
+                        <img src={processData}/>
                     </div>
-                    <p>We process and quality-check the data with our HCA Pipelines<a>Learn about Pipelines
-                        ></a>
+                    <p>We process and quality-check the data with our pipelines<a>Learn about Pipelines ></a>
                     </p>
                 </div>
                 <div className={compStyles.dpArrow}>
-                    <img src="../../site/images/data-portal/arrow-right.png"
-                         srcset="../../site/images/data-portal/arrow-right@2x.png 2x, ../../site/images/data-portal/arrow-right@3x.png 3x"/>
+                    <img src={arrowRight}/>
                 </div>
                 <div>
                     <div>
-                        <img src="../../site/images/data-portal/find-data.png"
-                             srcset="../../site/images/data-portal/find-data@2x.png 2x, ../../site/images/data-portal/find-data@3x.png 3x"/>
+                        <img src={findData}/>
                     </div>
-                    <p>You can find data to download or use in analysis portals<a>Start Searching ></a></p>
+                    <p>Anyone can find data to download or use for analysis<a>Start Searching ></a></p>
                 </div>
                 <div className={compStyles.dpArrow}>
-                    <img src="../../site/images/data-portal/arrow-right.png"
-                         srcset="../../site/images/data-portal/arrow-right@2x.png 2x, ../../site/images/data-portal/arrow-right@3x.png 3x"/>
+                    <img src={arrowRight}/>
                 </div>
                 <div>
                     <div>
-                        <img src="../../site/images/data-portal/analysis-portal.png"
-                             srcset="../../site/images/data-portal/analysis-portal@2x.png 2x, ../../site/images/data-portal/analysis-portal@3x.png 3x"/>
+                        <img src={analysisPortal}/>
                     </div>
-                    <p>Find tertiary analysis portals built by the community<a>See list of Portals ></a></p>
+                    <p>Find community analysis tools and applications <a>Explore applications ></a></p>
                 </div>
             </div>
         </div>

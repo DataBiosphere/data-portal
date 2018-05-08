@@ -6,9 +6,9 @@
  */
 
 .jumbotron {
+    align-items: center;
     background-image: url(../../images/jumbotron/full-size-cell-jumbotron.png);
     background-position: center;
-    align-items: center;
     display: flex;
     flex-direction: column;
     overflow: hidden; /* For jumbotron image */
@@ -18,36 +18,32 @@
 
 /* Jumbotron image - cropped image for small screens */
 .jumbotron img {
-    margin-bottom: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 0;
+//margin-bottom: 0; //position: absolute; //top: 50%; //transform: translateY(-50%); //z-index: 0;
 }
 
 .jumbotron .largeImg {
-    display: none;
+//display: none;
 }
 
 /* Jumbotron title */
 h1 {
     font-size: 36px; /* TODO remove when typography */
     text-align: center;
-    z-index: 1; /* Positions in front of jumbotron image */
+//z-index: 1; /* Positions in front of jumbotron image */
 }
 
 /* Jumbotron search bar */
 .jumbotronSearch {
     align-items: center;
     background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    margin: 50px auto 0;
     border: 1px solid #cccccc;
     border-radius: 3px;
+    display: flex;
     height: 50px;
+    justify-content: space-between;
+    margin: 50px auto 0;
     width: 60%; /* TODO review */
-    z-index: 1; /* Positions in front of jumbtron image */
+//z-index: 1; /* Positions in front of jumbtron image */
 }
 
 /* Jumbotron search text */
@@ -123,10 +119,16 @@ h1 {
 
 /* Explore */
 .explore {
-    padding: 50px 0;
+    padding: 50px 0 0;
 }
 
-/* Person Imagery */
+/* Explore sub-text */
+.explore p {
+    font-size: 14px;
+    max-width: 170px;
+}
+
+/* Explore Imagery */
 .explore > div {
     align-items: baseline;
     display: flex;
@@ -134,13 +136,8 @@ h1 {
 }
 
 .explore > div img {
-    padding: 0 8px;
-}
-
-.explore > div img:nth-of-type(3) {
-    align-self: flex-start;
-    height: 260px;
-    margin: 30px 0 0 34px;
+    margin-bottom: 0;
+    width: 80%;
 }
 
 /* Data Portal */
@@ -164,7 +161,8 @@ h1 {
 /* Data Portal description */
 .dataPortal h1 {
     margin-top: 16px;
-//max-width: 80%; /* Forces L and R spacing around paragraph */ text-align: center;
+    max-width: 80%; /* Forces L and R spacing around paragraph */
+    text-align: center;
 }
 
 /* DP Imagery and associated text */
@@ -186,28 +184,41 @@ h1 {
 
 /* Arrow */
 .portalDescription .dpArrow {
-    flex: 0; /* Overrides flex: 1 attribute from its own box */
+    flex: none; /* Overrides flex: 1 attribute from its own box */
     height: 95px; /* Forces arrow container to be same height as DP images */
     justify-content: center;
     transform: rotate(90deg);
 }
 
-/* Top row of each box - image */
+/* Top row of each box - image container */
 .portalDescription > div > div {
     align-items: center;
     display: flex;
     height: 95px;
 }
 
+/* Top row of each box - image */
+.portalDescription > div > div img, .portalDescription .dpArrow img {
+    margin-bottom: 0;
+}
+
 /* Second row of each box - text description */
 .portalDescription > div p {
-    max-width: 170px;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 12px 0 0;
+    max-width: 225px;
     text-align: center;
 }
 
 /* Link */
 .portalDescription > div p a {
+    color: #468EE5;
+    cursor: pointer;
     display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 12px;
 }
 
 /* Contact */
@@ -276,12 +287,12 @@ h1 {
 
     /* Hide smaller cropped image */
     .jumbotron .smallImg {
-        //display: none;
+    //display: none;
     }
 
     /* Show full image */
     .jumbotron .largeImg {
-        //display: block;
+    //display: block;
     }
 }
 
@@ -292,11 +303,11 @@ h1 {
 @media screen and (min-width: 840px) {
 
     .jumbotron .largeImg {
-        display: block;
+    //display: block;
     }
 
     .jumbotron .smallImg {
-        display: none;
+    //display: none;
     }
 
     /* Search bar */
@@ -306,12 +317,12 @@ h1 {
 
     /* Hide short search text */
     .jumbotronSearch .shortSearchText {
-    display: none;
+        display: none;
     }
 
     /* Show longer search text */
     .jumbotronSearch .longSearchText {
-    display: block;
+        display: block;
     }
 
     /* Stats bar */
@@ -346,6 +357,11 @@ h1 {
     .portalDescription {
         align-items: flex-start;
         flex-direction: row;
+    }
+
+    /* Second row of each box - text description */
+    .portalDescription > div p {
+        max-width: 170px;
     }
 
     /* Arrow */
