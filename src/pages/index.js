@@ -10,26 +10,23 @@ import compStyles from './index.module.css'
 import Link from 'gatsby-link';
 import React from 'react';
 
-import smallCellJumbotron from "../../images/jumbotron/small-cell-jumbotron.png";
-import smallCellJumbotron2x from "../../images/jumbotron/small-cell-jumbotron@2x.png"
-
-console.log(smallCellJumbotron,smallCellJumbotron2x);
+// import smallCellJumbotron from "../../images/jumbotron/small-cell-jumbotron.png";
+// import smallCellJumbotron2x from "../../images/jumbotron/small-cell-jumbotron@2x.png"
+// import fullSizeCellJumbotron from "../../images/jumbotron/full-size-cell-jumbotron.png";
+import personWithoutOrgans from "../../site/images/explore/person-without-organs.png";
+import  personWithOrgans from "../../site/images/explore/person-with-organs.png";
 
 const IndexPage = () => (
     <div>
-
-
         <div className={compStyles.jumbotron}>
-            <h1>Single-cell data open and accessible for all</h1>
+            <h1>Single-cell data building a foundation for human health</h1>
             <div className={compStyles.jumbotronSearch}>
                 <span className={compStyles.longSearchText}>Search for data now by organs, publications, etc</span>
                 <span className={compStyles.shortSearchText}>Search</span>
                 <a href="" className={compStyles.button}>SEARCH</a>
             </div>
-            <img className={compStyles.smallImg} src={smallCellJumbotron}
-                 srcset="{smallCellJumbotron2x} 2x, ../../site/images/jumbotron/small-cell-jumbotron@3x.png 3x"/>
-                <img className={compStyles.largeImg} src="../../site/images/jumbotron/full-size-cell-jumbotron.png"
-                     srcset="../../site/images/jumbotron/full-size-cell-jumbotron@2x.png 2x, ../../site/images/jumbotron/full-size-cell-jumbotron@3x.png 3x"/>
+            {/*<img className={compStyles.smallImg} src={smallCellJumbotron}/>*/}
+            {/*<img className={compStyles.largeImg} src={fullSizeCellJumbotron}/>*/}
         </div>
         <div className={compStyles.statsBar}>
             <div><p>CELLS</p><span>20M</span></div>
@@ -42,12 +39,13 @@ const IndexPage = () => (
             <h2>Start Exploring</h2>
             {/*<p>Hover over or click on an organ to view data from that organ</p>*/}
             <div>
-                <img src="../../site/images/explore/person-without-organs.png"
-                     srcset="../../site/images/explore/person-without-organs@2x.png 2x, ../../site/images/explore/person-without-organs@3x.png 3x"/>
-                    <img src="../../site/images/explore/person-with-organs.png"
-                         srcset="../../site/images/explore/person-with-organs@2x.png 2x, ../../site/images/explore/person-with-organs@3x.png 3x"/>
-                        <img src="../../site/images/explore/explore-chart.png"
-                             srcset="../../site/images/explore/explore-chart.png 2x, ../../site/images/explore/explore-chart.png 3x"/>
+                <img src={personWithoutOrgans}/>
+                <img src={personWithOrgans}/>
+                <img src={exploreChart}
+                {/*<img src="../../site/images/explore/person-with-organs.png"*/}
+                     srcSet="../../site/images/explore/person-with-organs@2x.png 2x, ../../site/images/explore/person-with-organs@3x.png 3x"/>
+                <img src="../../site/images/explore/explore-chart.png"
+                     srcSet="../../site/images/explore/explore-chart.png 2x, ../../site/images/explore/explore-chart.png 3x"/>
             </div>
         </div>
         <div className={compStyles.dataPortal}>
