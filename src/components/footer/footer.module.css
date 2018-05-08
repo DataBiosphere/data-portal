@@ -25,7 +25,6 @@
 /* Logo */
 .logo {
     align-items: center;
-    color: #ffffff;
     display: flex;
 }
 
@@ -35,6 +34,12 @@
     cursor: pointer;
     font-size: 24px;
     margin: 0 8px 0 -8px;
+}
+
+/* Logo image */
+.logo img {
+    cursor: pointer;
+    margin-bottom: 0;
 }
 
 /* Footer links container */

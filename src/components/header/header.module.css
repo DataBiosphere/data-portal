@@ -18,9 +18,10 @@
 }
 
 /* Logo */
-.logo {
+.logo img {
     align-self: center;
-    color: #ffffff;
+    cursor: pointer;
+    margin-bottom: 0;
 }
 
 /* Nav links */
