@@ -13,8 +13,8 @@ import React from 'react';
 // import smallCellJumbotron from "../../images/jumbotron/small-cell-jumbotron.png";
 // import smallCellJumbotron2x from "../../images/jumbotron/small-cell-jumbotron@2x.png"
 // import fullSizeCellJumbotron from "../../images/jumbotron/full-size-cell-jumbotron.png";
-import personWithoutOrgans from "../../site/images/explore/person-without-organs.png";
-import  personWithOrgans from "../../site/images/explore/person-with-organs.png";
+import explore from "../../site/images/explore/explore.png";
+// import  personWithOrgans from "../../site/images/explore/person-with-organs.png";
 
 const IndexPage = () => (
     <div>
@@ -39,13 +39,9 @@ const IndexPage = () => (
             <h2>Start Exploring</h2>
             {/*<p>Hover over or click on an organ to view data from that organ</p>*/}
             <div>
-                <img src={personWithoutOrgans}/>
-                <img src={personWithOrgans}/>
-                <img src={exploreChart}
-                {/*<img src="../../site/images/explore/person-with-organs.png"*/}
-                     srcSet="../../site/images/explore/person-with-organs@2x.png 2x, ../../site/images/explore/person-with-organs@3x.png 3x"/>
-                <img src="../../site/images/explore/explore-chart.png"
-                     srcSet="../../site/images/explore/explore-chart.png 2x, ../../site/images/explore/explore-chart.png 3x"/>
+                {/*<img src={personWithoutOrgans}/>*/}
+                {/*<img src={personWithOrgans}/>*/}
+                <img src={explore}/>
             </div>
         </div>
         <div className={compStyles.dataPortal}>
