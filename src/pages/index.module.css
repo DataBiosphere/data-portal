@@ -5,31 +5,30 @@
  * Style definitions specific to the HCA Data Portal home component.
  */
 
-.jumbotron {
+/* Wrapper */
+.wrapper {
     align-items: center;
-    background-image: url(../../images/jumbotron/full-size-cell-jumbotron.png);
-    background-position: center;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* For jumbotron image */
-    padding: 73px 0 68px;
-    position: relative;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1024px;
+    padding: 60px 24px;
 }
 
-/* Jumbotron image - cropped image for small screens */
-.jumbotron img {
-//margin-bottom: 0; //position: absolute; //top: 50%; //transform: translateY(-50%); //z-index: 0;
-}
-
-.jumbotron .largeImg {
-//display: none;
+/* Jumbotron */
+.jumbotron {
+    background-image: url(../../images/jumbotron/small-cell-jumbotron.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 70px; /* For fixed header */
 }
 
 /* Jumbotron title */
 h1 {
     font-size: 36px; /* TODO remove when typography */
     text-align: center;
-//z-index: 1; /* Positions in front of jumbotron image */
 }
 
 /* Jumbotron search bar */
@@ -41,9 +40,8 @@ h1 {
     display: flex;
     height: 50px;
     justify-content: space-between;
-    margin: 50px auto 0;
+    margin: 50px auto 0; /* TODO review */
     width: 60%; /* TODO review */
-//z-index: 1; /* Positions in front of jumbtron image */
 }
 
 /* Jumbotron search text */
@@ -80,14 +78,10 @@ h1 {
 /* Stats bar */
 .statsBar {
     background: linear-gradient(0deg, #5ABCEF, #3867FA);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 8px 0;
 }
 
 /* Status */
-.statsBar > div {
+.statsBar > div > div {
     align-items: baseline;
     display: flex;
     flex-direction: row;
@@ -96,7 +90,7 @@ h1 {
 }
 
 /* Status name - TODO review typography */
-.statsBar > div p {
+.statsBar > div > div p {
     color: #ffffff;
     flex: 50%; /* Takes up 50% of container */
     font-size: 0.8125rem;
@@ -108,7 +102,7 @@ h1 {
 }
 
 /* Status number */
-.statsBar > div span {
+.statsBar > div > div span {
     color: #ffffff;
     flex: 50%; /* Takes up 50% of container */
     font-size: 2.25rem;
@@ -117,51 +111,46 @@ h1 {
     text-align: left;
 }
 
-/* Explore */
-.explore {
-    padding: 50px 0 0;
+/* Explore heading */
+.explore h2 {
+    align-self: flex-start;
 }
 
 /* Explore sub-text */
-.explore p {
+.explore > div p {
+    align-self: flex-start;
     font-size: 14px;
-    max-width: 170px;
+    max-width: 260px;
 }
 
 /* Explore Imagery */
-.explore > div {
+.explore > div > div {
     align-items: baseline;
     display: flex;
     justify-content: center;
+    margin-bottom: -60px;
 }
 
-.explore > div img {
-    margin-bottom: 0;
+.explore > div > div img {
+    margin-bottom: 0px;
     width: 80%;
 }
 
 /* Data Portal */
 .dataPortal {
-    align-items: center;
     background-color: #F5F7F9;
-    display: flex;
-    flex-direction: column;
-    padding: 80px 0 95px;
 }
 
 /* Data Portal question - "What is it?" */
 .dataPortal > p {
-    color: rgba(0, 0, 0, 1); /* Confirm */
+    color: rgba(0, 0, 0, 1); /* TODO Confirm */
     font-size: 1rem;
     letter-spacing: 2px;
     line-height: 1rem;
-//max-width: 80%; /* Forces L and R spacing around paragraph */ text-align: center; text-transform: uppercase;
 }
 
 /* Data Portal description */
 .dataPortal h1 {
-    margin-top: 16px;
-    max-width: 80%; /* Forces L and R spacing around paragraph */
     text-align: center;
 }
 
@@ -171,7 +160,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 56px;
 }
 
 /* Each DP has its own box */
@@ -207,7 +196,7 @@ h1 {
     font-size: 14px;
     font-weight: 500;
     margin: 12px 0 0;
-    max-width: 225px;
+    max-width: 224px;
     text-align: center;
 }
 
@@ -221,17 +210,9 @@ h1 {
     margin-top: 12px;
 }
 
-/* Contact */
-.contact {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding: 45px 0 54px;
-}
-
+/* Contact heading */
 .contact h2 {
     color: #4a4a4a; /* hca-color-text */
-    max-width: 80%;
     text-align: center;
 }
 
@@ -251,7 +232,7 @@ h1 {
     border-radius: 3px;
     height: 50px;
     margin: 4px 0;
-    width: 80%;
+    width: 60%; /* TODO review */
 }
 
 /* Input text */
@@ -276,24 +257,7 @@ h1 {
     letter-spacing: 0.74px;
     margin: 4px 0;
     padding: 0 16px;
-//width: calc(80% - 32px); /* Mimics width of input fields */ width: 80%;
-}
-
-/**
- * Small +
- */
-/* $md-sm-min: 600px; */
-@media (min-width: 600px) {
-
-    /* Hide smaller cropped image */
-    .jumbotron .smallImg {
-    //display: none;
-    }
-
-    /* Show full image */
-    .jumbotron .largeImg {
-    //display: block;
-    }
+    width: 60%; /* TODO review */
 }
 
 /**
@@ -302,12 +266,14 @@ h1 {
 /* $md-tablet-portrait-lg-min: 840px; */
 @media screen and (min-width: 840px) {
 
-    .jumbotron .largeImg {
-    //display: block;
+    /* Wrapper */
+    .wrapper {
+        padding: 100px 24px;
     }
 
-    .jumbotron .smallImg {
-    //display: none;
+    /* Jumbotron */
+    .jumbotron {
+        background-image: url(../../images/jumbotron/full-size-cell-jumbotron.png);
     }
 
     /* Search bar */
@@ -328,29 +294,43 @@ h1 {
     /* Stats bar */
     .statsBar {
         background: linear-gradient(90deg, #3867FA, #5ABCEF);
+    }
+
+    /* Stats bar - wrapper */
+    .statsBar > div {
         flex-direction: row;
-        height: 74px;
+        height: 90px;
         padding: 0 0;
     }
 
     /* Status */
-    .statsBar > div {
+    .statsBar > div > div {
         align-items: center;
         flex-direction: column;
         padding: 0 0;
     }
 
     /* Status name */
-    .statsBar > div p {
+    .statsBar > div > div p {
         flex: 0;
         text-align: center;
     }
 
     /* Status number */
-    .statsBar > div span {
+    .statsBar > div > div span {
         flex: 0;
         text-align: center;
-        width: 124px;
+        width: 164px;
+    }
+
+    /* Explore heading and text */
+    .explore h2, .explore > div p {
+        padding-left: 60px;
+    }
+
+    /* Explore Imagery */
+    .explore > div > div {
+        margin-bottom: -100px;
     }
 
     /* DP Imagery and associated text */
@@ -361,7 +341,7 @@ h1 {
 
     /* Second row of each box - text description */
     .portalDescription > div p {
-        max-width: 170px;
+        max-width: 172px;
     }
 
     /* Arrow */
@@ -378,13 +358,13 @@ h1 {
     /* Input fields */
     .contactForm > div {
         margin: 0 4px;
-        width: 30%;
+        width: 35%; /* TODO review */
     }
 
     /* Submit button */
     .contactForm .button {
         margin: 0 4px;
-        min-width: 118px; /* Total min width 150px including padding */
+        min-width: 152px;
         width: 0;
     }
 }
