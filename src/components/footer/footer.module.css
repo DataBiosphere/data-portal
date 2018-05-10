@@ -8,54 +8,113 @@
 /* Footer */
 .footer {
     background-color: rgba(0, 0, 0, 1);
-    height: 96px;
 }
 
-/* Snapper for footer - to mimic content widths */
-.footer > div {
+/* Wrapper */
+.wrapper {
     align-items: center;
     display: flex;
-    height: inherit;
-    justify-content: space-between;
-    margin: auto;
-    max-width: 944px; /* Page snapper */
-    padding: 0 24px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 0;
 }
 
-/* Logo */
+/* Logo and back arrow */
 .logo {
-    align-items: center;
-    color: #ffffff;
-    display: flex;
+    position: relative;
 }
 
-/* Left arrow */
+/* Back arrow */
 .logo i {
     color: #ffffff;
     cursor: pointer;
     font-size: 24px;
-    margin: 0 8px 0 -8px;
+    left: -24px;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Logo image */
+.logo img {
+    cursor: pointer;
+    margin-bottom: 0;
+    padding: 12px 0;
 }
 
 /* Footer links container */
 .links {
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap-reverse; /* Positions flex within bounds of footer container */
-    height: inherit; /* Required for wrap */
-    margin: 0 -16px; /* Right aligns links */
     padding: 8px 0;
 }
 
 /* Footer links */
 .links a {
-    align-self: start; /* Left aligns text */
     color: #ffffff;
     font-size: 14px;
     font-weight: 500;
-    margin: 0 16px;
-    padding: 2px 0;
+    padding: 4px 0;
     text-decoration: none;
     text-transform: capitalize;
+}
+
+/**
+ * Large
+ */
+/* $md-tablet-portrait-lg-min: 840px; */
+@media screen and (min-width: 840px) {
+
+    /* Footer */
+    .footer {
+        height: 96px;
+    }
+
+    /* Wrapper */
+    .wrapper {
+        flex-direction: row;
+        height: inherit;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1024px;
+        padding: 0 24px;
+    }
+
+    /* Logo */
+    .logo {
+        align-items: center;
+        display: flex;
+    }
+
+    /* Left arrow */
+    .logo i {
+        left: unset;
+        margin: 0 8px 0 -8px;
+        position: relative;
+        top: unset;
+        transform: none;
+    }
+
+    /* Logo image */
+    .logo img {
+        cursor: pointer;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .links {
+        align-items: flex-start;
+        flex-wrap: wrap-reverse; /* Positions flex within bounds of footer container */
+        height: inherit; /* Required for wrap */
+        margin: 0 -16px; /* Right aligns links */
+    }
+
+    /* Footer links */
+    .links a {
+        align-self: start; /* Left aligns text */
+        margin: 0 16px;
+        padding: 2px 0;
+    }
 }
