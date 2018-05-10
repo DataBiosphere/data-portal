@@ -15,7 +15,7 @@ import footerLogo from "../../../site/images/logo/hca-data-portal/logo-hca-white
 
 const Footer = () => (
     <div className={compStyles.footer}>
-        <div>
+        <div className={compStyles.wrapper}>
             <div className={compStyles.logo}><i className='material-icons'>chevron_left</i><img src={footerLogo}/></div>
             /* Footer links will need to be iterated backwards */
             <div className={compStyles.links}>
