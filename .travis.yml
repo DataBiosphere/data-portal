@@ -10,7 +10,7 @@ addons:
     - npm
 before_install:
 - pip install awscli --upgrade
-install: npm install
+install: npm install --global
 script: make build
 deploy:
   - provider: script
