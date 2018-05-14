@@ -1,0 +1,30 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal page 2 component.
+ */
+
+/* Wrapper */
+.wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1024px;
+    padding: 60px 24px;
+}
+
+/**
+ * Large
+ */
+/* $md-tablet-portrait-lg-min: 840px; */
+@media screen and (min-width: 840px) {
+
+    /* Wrapper */
+    .wrapper {
+        padding: 100px 24px;
+    }
+}
+
