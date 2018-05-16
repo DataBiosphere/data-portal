@@ -32,7 +32,7 @@ In keeping with our goal of enabling the community to analyze single cell data u
 When data is submitted to the Ingestion Service, it is validated for technical requirements (eg. data formats, data corruption) and then moved to the Data Storage Service, which triggers a notification to the Secondary Analysis Service announcing data to process. Depending on the experimental method used to generate the data (found in the metadata of the submission), the appropriate analysis pipeline is selected for data processing and the outputs are created. At this point the Secondary Analysis Service sends a request to the Ingestion Service for a staging location for the results, which are then sent accompanied by an analysis_process.json file (which records processing provenance). When all files have been staged, the Storage Service creates an output bundle that contains all the secondary analysis files as well as metadata information accompanied by the analysis_process.json. (See the documentation about metadata and the the Data Storage Service for more information.)  
 
 
-#Access to pipeline outputs
+##Access to pipeline outputs
 Data bundles containing outputs are publicly available and can be accessed programmatically or through the HCA Data Browser. For information about programmatic access, view the documentation for the CLI here.  To browse the data, use the data portal. Additional analysis options are accessible from the Community Tools and Applications links in the Learn section of this website.
 
 
