@@ -1,7 +1,7 @@
 ---
-path: "/blog/my-first-post"
+path: "/blog/example-page"
 date: "2018-05-03"
-title: "My first blog post"
+title: "Example Blog Post"
 ---
 
 Lets see now. We want to be able to:
