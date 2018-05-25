@@ -8,9 +8,10 @@
 /**
  * Anchors
  */
+@import "hca-vars";
 
 a {
-    color: #4a90e2;
+    color: $hca-primary;
     text-decoration: none;
 }
 

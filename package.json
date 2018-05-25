@@ -3,6 +3,7 @@
   "description": "Informational website detailing how to contribute to the Human Cell Atlas and consume data.",
   "version": "1.0.0",
   "dependencies": {
+    "classnames": "^2.2.5",
     "gatsby": "^1.9.260",
     "gatsby-cli": "^1.1.52",
     "gatsby-link": "^1.6.40",

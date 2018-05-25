@@ -11,7 +11,7 @@ import React from 'react';
 import compStyles from './header.module.css';
 
 // Images
-import headerLogo from "../../../site/images/logo/hca-data-portal/logo-hca-white-long.png"
+import headerLogo from "../../../site/images/logo/hca-data-portal/logo-hca.png"
 
 const Header = ({siteTitle}) => (
     <div className={compStyles.navBar}>

@@ -6,9 +6,9 @@
  */
 
 .site {
-    background-color: #ffffff;
+    background-color: #ffffff; /* TODO colour */
 }
 
 .content {
-    margin-top: 70px; /* For fixed header */
+    margin-top: 60px; /* For fixed header */
 }

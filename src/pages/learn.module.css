@@ -1,0 +1,151 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal learn template component.
+ */
+
+/* Wrapper */
+.wrapper {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px; /* Snap to 1200px, gutter 18px */
+    padding: 0 18px;
+}
+
+/* Heading */
+.hcaHeading {
+    align-items: center;
+    display: flex;
+    font-family: "DIN Alternate";
+    font-size: 34px;
+    font-weight: 600;
+    height: 78px;
+    letter-spacing: 0.54px;
+    width: 100%;
+}
+
+/* Tabs */
+.hcaTabs {
+    border-bottom: 1px solid #EAEAEA; /* Tab line */ /* TODO colour hca-gray-lightest confirm */
+    margin-top: -24px; /* To position closer to heading */
+}
+
+/* Tab list */
+.hcaTabList {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: 24px -16px 0;
+    overflow-x: auto; /* Horizontal scroll */
+}
+
+.hcaTabList::-webkit-scrollbar {
+    display: none;
+}
+
+/* Tab */
+.hcaTab {
+    box-sizing: border-box;
+    color: #999999; /* TODO typography hca-gray-medium */
+    cursor: pointer;
+    font-family: "Gotham"; /* TODO typography */
+    font-size: 15px; /* TODO typography - confirm size */
+    font-weight: 500; /* TODO typography */
+    height: 30px;
+    line-height: 30px;
+    margin: 0 16px;
+    position: relative; /* Horizontal scroll - last tab - RHS gutter */
+    white-space: nowrap; /* Horizontal scroll */
+}
+
+/* Active tab */
+.hcaTab.active {
+    border-bottom: 3px solid #32C1EE; /* TODO colour hca-blue-light */
+    color: #000000; /* TODO colour hca-black */
+}
+
+/* Disabled tab */
+.hcaTab.disabled {
+    cursor: auto;
+    color: #EAEAEA; /* TODO colour hca-gray-lightest */
+}
+
+/* Last tab - on horizontal scroll - mimics gutter for RHS */
+.hcaTab:last-of-type:after {
+    bottom: -3px;
+//color: #ffffff; /* TODO colour hca-white */ content: "";
+//display: inline-flex; height: 3px;
+    position: absolute;
+    width: 18px; /* 18px gutter */
+}
+
+/* Content */
+.hcaContent {
+    display: flex;
+    padding: 36px 0;
+}
+
+/* Navigation lists */
+ul {
+    margin: 0 !important; /* No margin on ul */
+}
+
+/* TODO review */
+ul ul {
+//margin: 0;
+}
+
+.hcaContentNav {
+    max-width: 170px; /* Review */
+}
+
+/* Primary navigation */
+.hcaContentNav li {
+    color: #999999; /* TODO color hca-gray-medium */
+    cursor: pointer;
+    font-family: "Gotham"; /* TODO typography */
+    font-size: 14px; /* TODO typography */
+    font-weight: 500; /* TODO typography */
+    list-style: none;
+    margin-bottom: 16px;
+    position: relative; /* Positions nav bar */
+}
+
+/* Secondary navigation */
+.hcaContentNav > li > ul > li {
+    font-size: 13px; /* TODO typography - confirm size */
+    margin: 0;
+    padding: 12px 0 0 16px; /* TODO review */
+}
+
+/* Primary navigation - expanded */
+.hcaContentNav > li.expanded {
+    color: #000000; /* TODO colour hca-black */
+}
+
+/* Selected navigation - primary & secondary */
+.hcaContentNav > list.selected .hcaContentNav > li > ul > li.selected {
+    color: #1288E4; /* TODO color hca-primary */
+}
+
+/* Navigation bar */
+.hcaContentNav > li.expanded:before, .hcaContentNav > li > ul > li:before {
+    background-color: #EAEAEA; /* TODO colour hca-gray-lightest */
+    content: "";
+    height: 100%;
+    left: -8px; /* 6px between nav bar and nav text, includes 2px border */
+    position: absolute;
+    top: 0;
+    width: 2px;
+}
+
+/* Navigation bar - selected list */
+.hcaContentNav > li > ul > li.selected:before {
+    background-color: #1288E4; /* TODO colour hca-primary */
+}
+
+
+
