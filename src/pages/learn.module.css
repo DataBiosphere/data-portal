@@ -21,14 +21,14 @@
     font-family: "DIN Alternate";
     font-size: 34px;
     font-weight: 600;
-    height: 78px;
+    height: 76px;
     letter-spacing: 0.54px;
     width: 100%;
 }
 
 /* Tabs */
 .hcaTabs {
-    border-bottom: 1px solid #EAEAEA; /* Tab line */ /* TODO colour hca-gray-lightest confirm */
+    border-bottom: 1px solid #CCCCCC; /* Tab line */ /* TODO colour hca-gray-light */
     margin-top: -24px; /* To position closer to heading */
 }
 
@@ -76,10 +76,10 @@
 /* Last tab - on horizontal scroll - mimics gutter for RHS */
 .hcaTab:last-of-type:after {
     bottom: -3px;
-//color: #ffffff; /* TODO colour hca-white */ content: "";
-//display: inline-flex; height: 3px;
+    height: 3px;
+    content: "";
     position: absolute;
-    width: 18px; /* 18px gutter */
+    width: 16px; /* 16px tab padding */
 }
 
 /* Content */

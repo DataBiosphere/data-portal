@@ -30,7 +30,8 @@ const LearnPage = () => (
                     <div className={compStyles.hcaTabList}>
                         <div className={getTabClassName()}>How it works</div>
                         <div className={classNames(compStyles.hcaTab, compStyles.active)}>Userguides</div>
-                        <div className={getTabClassName()}>Metadata Dictionary</div>
+                        {/*<div className={getTabClassName()}>Metadata Dictionary</div>*/}
+                        <div className={classNames(compStyles.hcaTab, compStyles.active)}>Userguides</div>
                     </div>
                 </div>
             </div>
