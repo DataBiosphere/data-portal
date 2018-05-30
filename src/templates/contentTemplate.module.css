@@ -2,7 +2,7 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * Style definitions specific to the HCA Data Portal learn template component.
+ * Style definitions specific to the HCA Data Portal content template component.
  */
 
 /* Wrapper */
@@ -88,37 +88,51 @@
     padding: 36px 0;
 }
 
-/* Navigation lists */
+/* Navigation lists - no list style */
 ul {
-    margin: 0 !important; /* No margin on ul */
+    list-style: none;
 }
 
-/* TODO review */
-ul ul {
-//margin: 0;
+/* Navigation lists - no margin */
+ul li {
+    cursor: pointer;
+    margin: 0;
+}
+
+/* Navigation - secondary ul */
+ul > ul {
+    margin-left: 16px !important;
 }
 
 .hcaContentNav {
-    max-width: 170px; /* Review */
+    max-width: 170px; /* TODO Review */
+    min-width: 170px; /* TODO review */
+    margin-right: 32px !important; /* TODO confirm - Jenn */
 }
 
 /* Primary navigation */
-.hcaContentNav li {
+.hcaContentNav > li {
     color: #999999; /* TODO color hca-gray-medium */
-    cursor: pointer;
     font-family: "Gotham", "Montserrat"; /* TODO typography */
     font-size: 14px; /* TODO typography */
     font-weight: 500; /* TODO typography */
-    list-style: none;
-    margin-bottom: 16px;
+    padding: 6px 0;
     position: relative; /* Positions nav bar */
 }
 
 /* Secondary navigation */
-.hcaContentNav > li > ul > li {
+.hcaContentNav > ul > li {
+    color: #999999; /* TODO color hca-gray-medium */
+    font-family: "Gotham", "Montserrat"; /* TODO typography */
     font-size: 13px; /* TODO typography - confirm size */
-    margin: 0;
-    padding: 12px 0 0 16px; /* TODO review */
+    font-weight: 500; /* TODO typography */
+    padding: 6px 0; /* TODO review */
+    position: relative; /* Positions nav bar */
+}
+
+/* Navigation - hover */
+.hcaContentNav > li:hover, .hcaContentNav > ul > li:hover {
+    color: #333333; /* TODO color hca-gray-darkest */
 }
 
 /* Primary navigation - expanded */
@@ -127,12 +141,12 @@ ul ul {
 }
 
 /* Selected navigation - primary & secondary */
-.hcaContentNav > list.selected .hcaContentNav > li > ul > li.selected {
+.hcaContentNav > li.selected, .hcaContentNav > ul > li.selected {
     color: #1288E4; /* TODO color hca-primary */
 }
 
 /* Navigation bar */
-.hcaContentNav > li.expanded:before, .hcaContentNav > li > ul > li:before {
+.hcaContentNav > li.expanded:before, .hcaContentNav > li.selected:before, .hcaContentNav > ul > li:before {
     background-color: #EAEAEA; /* TODO colour hca-gray-lightest */
     content: "";
     height: 100%;
@@ -142,10 +156,55 @@ ul ul {
     width: 2px;
 }
 
+/* Navigation bar - secondary list */
+.hcaContentNav > ul > li:before {
+    left: -24px; /* 6px between nav bar and nav text, includes 2px border */
+}
+
 /* Navigation bar - selected list */
-.hcaContentNav > li > ul > li.selected:before {
+.hcaContentNav li.selected:before {
     background-color: #1288E4; /* TODO colour hca-primary */
 }
 
+/* Navigation bar - selected list */
+.hcaContentNav > li:not(.expanded).selected:before {
+    display: none;
+}
 
+pre[class*="language-block-highlight"] {
+    background-color: #F8F8F8; /* TODO colour hca-off-white */
+    border-radius: 3px;
+    margin-bottom: 24px; /* TODO confirm when typography completed */
+    padding: 12px 24px;
+}
+
+dl {
+    background-color: #F4F7F9; /* TODO colour hca-blue-background */
+    border-radius: 3px;
+    margin-bottom: 24px; /* TODO confirm when typography completed */
+    padding: 24px;
+}
+
+dt {
+    font-family: "DIN Alternate", "Montserrat"; /* TODO typography */
+    font-size: 16px; /* TODO typography */
+    font-weight: 600; /* TODO typography */
+}
+
+dd {
+    color: #666666; /* TODO colour - TBC by Jenn - hca-gray-dark */
+    font-family: "Gotham Book", "Montserrat"; /* TODO typography */
+    margin: 8px 0 0;
+}
+
+code[class*="language-block-highlight"] {
+    color: #000000; /* TODO colour - typography */
+    font-family: "PT Mono", "Montserrat"; /* TODO typography */
+    font-size: 14px; /* TODO typography */
+}
+
+code {
+    white-space: pre-wrap !important; /* Allow line to wrap - responsive */
+    word-break: break-all !important; /* Allow line to wrap - responsive */
+}
 

@@ -20,7 +20,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
 
 
-    const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
+    const contentTemplate = path.resolve(`src/templates/contentTemplate.js`);
 
     return graphql(`
     {
@@ -45,7 +45,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
             createPage({
                 path: node.frontmatter.path,
-                component: blogPostTemplate,
+                component: contentTemplate,
                 context: {}, // additional data can be passed via context
             });
         });

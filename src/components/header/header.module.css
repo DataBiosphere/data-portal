@@ -47,7 +47,7 @@
     align-items: center;
     color: #666666; /* TODO colour */
     cursor: pointer;
-    font-family: "Gotham Book"; /* TODO typography */
+    font-family: "Gotham Book", "Montserrat"; /* TODO typography */
     font-size: 14px; /* TODO typography */
     display: flex;
 }
@@ -74,7 +74,7 @@
     /* Nav links */
     .links a {
         color: #999999; /* TODO colour */
-        font-family: "Gotham";
+        font-family: "Gotham", "Montserrat"; /* TODO typography */
         font-size: 13px; /* TODO review with typography */
         font-weight: 500; /* TODO review with typography */
         letter-spacing: 1.2px; /* TODO typography */
