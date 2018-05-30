@@ -53,7 +53,8 @@ export default function Template({
                 <div className={compStyles.hcaContent}>
                     <ul className={compStyles.hcaContentNav}>
                         <li>Accessing Data</li>
-                        <li className={getListClassName()} onClick={this.onShowList}>Contributing Data</li>
+                        {/*<li className={getListClassName()} onClick={this.onShowList}>Contributing Data</li>*/}
+                        <li className={getListClassName()}>Contributing Data</li>
                         <ul>
                             <li>About</li>
                             <li className={compStyles.selected}>How to upload data</li>
