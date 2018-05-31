@@ -10,8 +10,8 @@
     align-items: center;
     display: flex;
     margin: 0 auto;
-    max-width: 1200px; /* Snap to 1200px, gutter 18px */
-    padding: 0 18px;
+    max-width: 1200px; /* Snap to 1200px, gutter 30px */
+    padding: 0 30px;
 }
 
 /* Heading */
@@ -85,6 +85,7 @@
 /* Content */
 .hcaContent {
     display: flex;
+    flex: 1;
     padding: 36px 0;
 }
 
@@ -105,9 +106,9 @@ ul > ul {
 }
 
 .hcaContentNav {
-    max-width: 170px; /* TODO Review */
-    min-width: 170px; /* TODO review */
-    margin-right: 32px !important; /* TODO confirm - Jenn */
+    max-width: 200px;
+    min-width: 200px;
+    margin-right: 90px !important;
 }
 
 /* Primary navigation */
@@ -171,6 +172,23 @@ ul > ul {
     display: none;
 }
 
+/* Content */
+.hcaContent > div {
+    max-width: 740px;
+}
+
+/* Embedded video wrapper */
+div[class*="gatsby-resp-iframe-wrapper"] {
+    padding-bottom: 316px !important; /* Padding equal to iframe max-height */
+}
+
+/* Embedded video */
+iframe {
+    margin-bottom: 24px;
+    max-height: 316px !important;
+    max-width: 560px !important;
+}
+
 pre[class*="language-block-highlight"] {
     background-color: #F8F8F8; /* TODO colour hca-off-white */
     border-radius: 3px;
@@ -206,5 +224,9 @@ code[class*="language-block-highlight"] {
 code {
     white-space: pre-wrap !important; /* Allow line to wrap - responsive */
     word-break: break-all !important; /* Allow line to wrap - responsive */
+}
+
+p {
+    margin-bottom: 24px;
 }
 

@@ -78,8 +78,8 @@
         height: inherit;
         justify-content: space-between;
         margin: 0 auto;
-        max-width: 1200px; /* Snap to 1200px, gutter 18px */
-        padding: 0 18px;
+        max-width: 1200px; /* Snap to 1200px, gutter 30px */
+        padding: 0 30px;
     }
 
     /* Logo */

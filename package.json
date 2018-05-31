@@ -17,6 +17,7 @@
     "gatsby-remark-images": "^1.5.63",
     "gatsby-remark-katex": "^1.0.14",
     "gatsby-remark-prismjs": "^2.0.2",
+    "gatsby-remark-responsive-iframe": "^1.4.19",
     "gatsby-source-filesystem": "^1.5.35",
     "gatsby-transformer-remark": "^1.7.40",
     "normalize.css": "8.0.0",
