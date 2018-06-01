@@ -4,19 +4,19 @@ date: "2018-05-30"
 title: "How to upload data?"
 ---
 
-##How to upload your data?
+## How to upload your data?
 
 Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna.
 
 `youtube: https://www.youtube.com/watch?v=h1_DdQ0XHZI`
 
-###Install the HCA CLI tool in the terminal
+### Install the HCA CLI tool in the terminal
 
 ```block-highlight
 $ pip install hca
 ```
 
-###Get some data to upload
+### Get some data to upload
 
 ```block-highlight
 $ git clone https://github.com/HumanCellAtlas/demo-data.git
