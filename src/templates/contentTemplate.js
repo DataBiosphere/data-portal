@@ -51,7 +51,7 @@ export default function Template({
             </div>
             <div className={compStyles.wrapper}>
                 <div className={compStyles.hcaContent}>
-                    <ul className={compStyles.hcaContentNav}>
+                    <ul className={compStyles.hcaContentSideNav}>
                         <li>Accessing Data</li>
                         <li className={getListClassName()}>Contributing Data</li>
                         <ul>

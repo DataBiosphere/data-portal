@@ -98,12 +98,12 @@ ul ul {
 //margin: 0;
 }
 
-.hcaContentNav {
+.hcaContentSideNav {
     max-width: 170px; /* Review */
 }
 
 /* Primary navigation */
-.hcaContentNav li {
+.hcaContentSideNav li {
     color: #999999; /* TODO color hca-gray-medium */
     cursor: pointer;
     font-family: "Gotham", "Montserrat"; /* TODO typography */
@@ -115,24 +115,24 @@ ul ul {
 }
 
 /* Secondary navigation */
-.hcaContentNav > li > ul > li {
+.hcaContentSideNav > li > ul > li {
     font-size: 13px; /* TODO typography - confirm size */
     margin: 0;
     padding: 12px 0 0 16px; /* TODO review */
 }
 
 /* Primary navigation - expanded */
-.hcaContentNav > li.expanded {
+.hcaContentSideNav > li.expanded {
     color: #000000; /* TODO colour hca-black */
 }
 
 /* Selected navigation - primary & secondary */
-.hcaContentNav > list.selected .hcaContentNav > li > ul > li.selected {
+.hcaContentSideNav > list.selected .hcaContentSideNav > li > ul > li.selected {
     color: #1288E4; /* TODO color hca-primary */
 }
 
 /* Navigation bar */
-.hcaContentNav > li.expanded:before, .hcaContentNav > li > ul > li:before {
+.hcaContentSideNav > li.expanded:before, .hcaContentSideNav > li > ul > li:before {
     background-color: #EAEAEA; /* TODO colour hca-gray-lightest */
     content: "";
     height: 100%;
@@ -143,7 +143,7 @@ ul ul {
 }
 
 /* Navigation bar - selected list */
-.hcaContentNav > li > ul > li.selected:before {
+.hcaContentSideNav > li > ul > li.selected:before {
     background-color: #1288E4; /* TODO colour hca-primary */
 }
 

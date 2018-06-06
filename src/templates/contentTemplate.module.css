@@ -103,71 +103,8 @@ ul > ul {
     margin-left: 16px !important;
 }
 
-/* Navigation container */
-.hcaContentNav {
-    max-width: 200px;
-    min-width: 200px;
-    margin-right: 90px !important;
-}
-
-/* Primary navigation */
-.hcaContentNav > li {
-    color: #999999; /* TODO color hca-gray-medium */
-    font-family: "Gotham", "Montserrat"; /* TODO typography */
-    font-size: 14px; /* TODO typography */
-    font-weight: 500; /* TODO typography */
-    padding: 6px 0;
-    position: relative; /* Positions nav bar */
-}
-
-/* Secondary navigation */
-.hcaContentNav > ul > li {
-    color: #999999; /* TODO color hca-gray-medium */
-    font-family: "Gotham", "Montserrat"; /* TODO typography */
-    font-size: 13px; /* TODO typography - confirm size */
-    font-weight: 500; /* TODO typography */
-    padding: 6px 0; /* TODO review */
-    position: relative; /* Positions nav bar */
-}
-
-/* Navigation - hover */
-.hcaContentNav > li:hover, .hcaContentNav > ul > li:hover {
-    color: #333333; /* TODO color hca-gray-darkest */
-}
-
-/* Primary navigation - expanded */
-.hcaContentNav > li.expanded {
-    color: #000000; /* TODO colour hca-black */
-}
-
-/* Selected navigation - primary & secondary */
-.hcaContentNav > li.selected, .hcaContentNav > ul > li.selected {
-    color: #1288E4; /* TODO color hca-primary */
-}
-
-/* Navigation bar */
-.hcaContentNav > li.expanded:before, .hcaContentNav > li.selected:before, .hcaContentNav > ul > li:before {
-    background-color: #EAEAEA; /* TODO colour hca-gray-lightest */
-    content: "";
-    height: 100%;
-    left: -8px; /* 6px between nav bar and nav text, includes 2px border */
-    position: absolute;
-    top: 0;
-    width: 2px;
-}
-
-/* Navigation bar - secondary list */
-.hcaContentNav > ul > li:before {
-    left: -24px; /* 6px between nav bar and nav text, includes 2px border */
-}
-
-/* Navigation bar - selected list */
-.hcaContentNav li.selected:before {
-    background-color: #1288E4; /* TODO colour hca-primary */
-}
-
-/* Navigation bar - selected list */
-.hcaContentNav > li:not(.expanded).selected:before {
+/* Side navigation container */
+.hcaContentSideNav {
     display: none;
 }
 
@@ -236,25 +173,83 @@ p {
 /* $md-tablet-portrait-lg-min: 840px; */
 @media screen and (min-width: 768px) {
 
-    /* Wrapper */
-    .wrapper {
-        padding: 0 16px;
-    }
-
     .hcaContent > div {
         max-width: 546px;
     }
 
     /* Navigation container */
-    .hcaContentNav {
-        max-width: 156px;
-        min-width: 156px;
+    .hcaContentSideNav {
+        display: block;
+        max-width: 148px; /* Total allowable width 156px */
+        min-width: 148px;
+        margin-left: 8px !important;
         margin-right: 20px !important;
+    }
+
+    /* Primary navigation */
+    .hcaContentSideNav > li {
+        color: #999999; /* TODO color hca-gray-medium */
+        font-family: "Gotham", "Montserrat"; /* TODO typography */
+        font-size: 14px; /* TODO typography */
+        font-weight: 500; /* TODO typography */
+        padding: 6px 0;
+        position: relative; /* Positions nav bar */
+    }
+
+    /* Secondary navigation */
+    .hcaContentSideNav > ul > li {
+        color: #999999; /* TODO color hca-gray-medium */
+        font-family: "Gotham", "Montserrat"; /* TODO typography */
+        font-size: 13px; /* TODO typography - confirm size */
+        font-weight: 500; /* TODO typography */
+        padding: 6px 0; /* TODO review */
+        position: relative; /* Positions nav bar */
+    }
+
+    /* Navigation - hover */
+    .hcaContentSideNav > li:hover, .hcaContentSideNav > ul > li:hover {
+        color: #333333; /* TODO color hca-gray-darkest */
+    }
+
+    /* Primary navigation - expanded */
+    .hcaContentSideNav > li.expanded {
+        color: #000000; /* TODO colour hca-black */
+    }
+
+    /* Selected navigation - primary & secondary */
+    .hcaContentSideNav > li.selected, .hcaContentSideNav > ul > li.selected {
+        color: #1288E4; /* TODO color hca-primary */
+    }
+
+    /* Navigation bar */
+    .hcaContentSideNav > li.expanded:before, .hcaContentSideNav > li.selected:before, .hcaContentSideNav > ul > li:before {
+        background-color: #EAEAEA; /* TODO colour hca-gray-lightest */
+        content: "";
+        height: 100%;
+        left: -8px; /* 6px between nav bar and nav text, includes 2px border */
+        position: absolute;
+        top: 0;
+        width: 2px;
+    }
+
+    /* Navigation bar - secondary list */
+    .hcaContentSideNav > ul > li:before {
+        left: -24px; /* 6px between nav bar and nav text, includes 2px border */
+    }
+
+    /* Navigation bar - selected list */
+    .hcaContentSideNav li.selected:before {
+        background-color: #1288E4; /* TODO colour hca-primary */
+    }
+
+    /* Navigation bar - selected list */
+    .hcaContentSideNav > li:not(.expanded).selected:before {
+        display: none;
     }
 }
 
 /**
- * Large
+ * Large +
  */
 /* $md-tablet-portrait-lg-min: 840px; */
 @media screen and (min-width: 1200px) {
@@ -272,9 +267,9 @@ p {
     }
 
     /* Navigation container */
-    .hcaContentNav {
-        max-width: 200px;
-        min-width: 200px;
+    .hcaContentSideNav {
+        max-width: 192px;
+        min-width: 192px;
         margin-right: 90px !important;
     }
 }
