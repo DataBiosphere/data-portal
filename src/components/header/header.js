@@ -21,10 +21,10 @@ const Header = ({siteTitle}) => (
                 <a  href="https://explore.dev.data.humancellatlas.org">Explore</a>
                 <Link to="/">Analyze</Link>
                 <Link to="/">Contribute</Link>
-                <Link to="/">Learn</Link>
+                <Link to="/learn/how-it-works/data-lifecycle">Learn</Link>
                 <Link to="/">Build</Link>
             </div>
-            <div className={compStyles.menuDropDown}>Alex S.</div>
+            {/*<div className={compStyles.menuDropDown}>Alex S.</div>*/}
         </div>
     </div>
 );

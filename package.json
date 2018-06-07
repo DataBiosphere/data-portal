@@ -20,6 +20,7 @@
     "gatsby-remark-responsive-iframe": "^1.4.19",
     "gatsby-source-filesystem": "^1.5.35",
     "gatsby-transformer-remark": "^1.7.40",
+    "data-portal-content": "HumanCellAtlas/data-portal-content",
     "normalize.css": "8.0.0",
     "npm": "^6.0.1",
     "prism": "^4.1.2",
