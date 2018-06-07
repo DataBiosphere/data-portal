@@ -18,7 +18,7 @@ const Header = ({siteTitle}) => (
         <div className={compStyles.wrapper}>
             <div className={compStyles.logo}><img src={headerLogo}/></div>
             <div className={compStyles.links}>
-                <Link  to="https://explore.dev.data.humancellatlas.org">Explore</Link>
+                <a  href="https://explore.dev.data.humancellatlas.org">Explore</a>
                 <Link to="/">Analyze</Link>
                 <Link to="/">Contribute</Link>
                 <Link to="/">Learn</Link>
