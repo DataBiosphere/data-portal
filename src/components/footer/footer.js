@@ -17,14 +17,13 @@ const Footer = () => (
     <div className={compStyles.footer}>
         <div className={compStyles.wrapper}>
             <div className={compStyles.logo}><i className='material-icons'>chevron_left</i><img src={footerLogo}/></div>
-            /* Footer links will need to be iterated backwards */
             <div className={compStyles.links}>
-                <Link to="/">Events/Webinar</Link>
-                <Link to="/">Announcements</Link>
-                <Link to="/">Blog</Link>
-                <Link to="/">Forum</Link>
+                {/*<Link to="/">Events/Webinar</Link>*/}
+                {/*<Link to="/">Announcements</Link>*/}
+                {/*<Link to="/">Blog</Link>*/}
+                {/*<Link to="/">Forum</Link>*/}
                 <Link to="/">About</Link>
-                <Link to="/">Feature Requests</Link>
+                {/*<Link to="/">Feature Requests</Link>*/}
                 <Link to="/">Help</Link>
                 <Link to="/">Contact</Link>
             </div>

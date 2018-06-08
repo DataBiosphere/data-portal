@@ -148,7 +148,7 @@ dt {
 
 dd {
     color: #666666; /* TODO colour - TBC by Jenn - hca-gray-dark */
-    font-family: "Gotham Book", "Montserrat"; /* TODO typography */
+    font-family: "Montserrat", sans-serif; /* TODO typography */
     margin: 8px 0 0;
 }
 

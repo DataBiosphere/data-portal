@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 12px 0;
+    padding: 16px 0;
 }
 
 /* Logo and back arrow */
@@ -47,25 +47,25 @@
 .links {
     align-items: center;
     display: flex;
-    flex-direction: column;
-    padding: 8px 0;
+//flex-direction: column; padding: 8px 0;
 }
 
 /* Footer links */
 .links a {
     color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
+    font-family: "Montserrat", sans-serif; /* TODO typography */
+    font-size: 16px; /* TODO typography */
+    font-weight: 500; /* TODO typography */
+    margin: 0 16px;
     padding: 4px 0;
     text-decoration: none;
     text-transform: capitalize;
 }
 
 /**
- * Large
+ * Medium +
  */
-/* $md-tablet-portrait-lg-min: 840px; */
-@media screen and (min-width: 840px) {
+@media screen and (min-width: 768px) {
 
     /* Footer */
     .footer {
@@ -78,8 +78,7 @@
         height: inherit;
         justify-content: space-between;
         margin: 0 auto;
-        max-width: 1200px; /* Snap to 1200px, gutter 30px */
-        padding: 0 30px;
+        //max-width: 1200px; /* Snap to 1200px, gutter 30px */ padding: 0 16px; /* Gutter 16px */
     }
 
     /* Logo */
@@ -105,16 +104,27 @@
     }
 
     .links {
-        align-items: flex-start;
-        flex-wrap: wrap-reverse; /* Positions flex within bounds of footer container */
-        height: inherit; /* Required for wrap */
-        margin: 0 -16px; /* Right aligns links */
+    //align-items: flex-start;
+    //flex-wrap: wrap-reverse; /* Positions flex within bounds of footer container */
+    //height: inherit; /* Required for wrap */
+    //margin: 0 -16px; /* Right aligns links */
     }
 
     /* Footer links */
     .links a {
-        align-self: start; /* Left aligns text */
-        margin: 0 16px;
-        padding: 2px 0;
+    //align-self: start; /* Left aligns text */ margin: 0 16px; padding: 2px 0;
+    }
+}
+
+/**
+ * Large +
+ */
+@media screen and (min-width: 1200px) {
+
+    /* Wrapper */
+    .wrapper {
+        margin: 0 auto;
+        max-width: 1200px; /* Snap to 1200px, gutter 30px */
+        padding: 0 30px;
     }
 }
