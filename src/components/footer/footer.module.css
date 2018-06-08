@@ -7,7 +7,7 @@
 
 /* Footer */
 .footer {
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 1); /* TODO colour */
 }
 
 /* Wrapper */
@@ -26,7 +26,7 @@
 
 /* Back arrow */
 .logo i {
-    color: #ffffff;
+    color: #ffffff; /* TODO colour */
     cursor: pointer;
     font-size: 24px;
     left: -24px;
@@ -47,12 +47,11 @@
 .links {
     align-items: center;
     display: flex;
-//flex-direction: column; padding: 8px 0;
 }
 
 /* Footer links */
 .links a {
-    color: #ffffff;
+    color: #ffffff; /* TODO color */
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 16px; /* TODO typography */
     font-weight: 500; /* TODO typography */
@@ -78,7 +77,7 @@
         height: inherit;
         justify-content: space-between;
         margin: 0 auto;
-        //max-width: 1200px; /* Snap to 1200px, gutter 30px */ padding: 0 16px; /* Gutter 16px */
+        padding: 0 16px;
     }
 
     /* Logo */
@@ -104,15 +103,7 @@
     }
 
     .links {
-    //align-items: flex-start;
-    //flex-wrap: wrap-reverse; /* Positions flex within bounds of footer container */
-    //height: inherit; /* Required for wrap */
-    //margin: 0 -16px; /* Right aligns links */
-    }
-
-    /* Footer links */
-    .links a {
-    //align-self: start; /* Left aligns text */ margin: 0 16px; padding: 2px 0;
+        margin: 0 -16px; /* Right aligns links */
     }
 }
 
