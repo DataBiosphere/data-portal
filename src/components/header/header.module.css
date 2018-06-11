@@ -26,8 +26,7 @@
     height: inherit;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1200px; /* Snap to 1200px, gutter 30px */
-    padding: 0 30px;
+    padding: 0 16px; /* Gutter 16px */
 }
 
 /* Logo */
@@ -42,50 +41,146 @@
     display: none;
 }
 
-/* User menu */
-.menuDropDown {
+/* Show nav links for small view */
+.links.showLinks {
+    align-items: flex-start;
+    background-color: #ffffff;
+    border-bottom: 1px solid #CCCCCC; /* TODO hca-gray-light */;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    left: 0;
+    padding-bottom: 12px;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Nav links */
+.links a, links.showLinks a {
+    align-items: flex-start;
+    color: #000000; /* TODO colour */
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif; /* TODO typography */
+    font-size: 13px; /* TODO review with typography */
+    font-weight: 600; /* TODO review with typography */
+    letter-spacing: 1.2px; /* TODO typography */
+    line-height: 32px; /* TODO typography */
+    padding: 12px 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+/* Nav links - subtitle */
+.links a span:nth-of-type(2) {
+        color: #000000; /* TODO colour */
+        font-size: 12px; /* TODO review with typography */
+        font-weight: 400; /* TODO review with typography */
+        letter-spacing: 1.2px;
+        line-height: 24px; /* TODO typography */
+        margin-top: -8px;
+        text-transform: none;
+}
+
+/* Nav links - active */
+.links .active {
+    color: #000000; /* TODO colour */
+}
+
+/* Nav links - hover */
+.links a:hover {
+    color: #000000; /* TODO colour */
+}
+
+.hcaNavOverlay {
+    background-color: rgba(255, 255, 255, 0.9); /* TODO colour */
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 60px;
+    z-index: 99; /* Positioned below showLinks */
+}
+
+/* User menu, Menu */
+.userDropDown, .menuDropDown {
     align-items: center;
-    color: #666666; /* TODO colour */
+    color: #ffffff; /* TODO colour - change to 666666 $hca-gray-dark when implement */
     cursor: pointer;
-    font-family: "Gotham Book", "Montserrat"; /* TODO typography */
+    font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 14px; /* TODO typography */
+    font-weight: 500; /* TODO typography - confirm - variations */
     display: flex;
 }
 
-/* Drop down icon */
-.menuDropDown::after {
-    color: #666666; /* TODO colour */
+/* Drop down menu icon */
+.userDropDown::after, .menuDropDown::before {
+    color: #ffffff; /* TODO colour - change to 666666 $hca-gray-dark when implement */
     content: "\E313";
     font-family: "Material Icons";
-    font-size: 11px;
+    font-size: 18px; // HCA specific
+    font-weight: 400;
+    margin: 0 4px;
+
 }
 
+/* Hide user menu */
+.userDropDown, .userDropDown::after {
+    display: none;
+}
+
+.menuDropDown, .menuDropDown::before {
+    color: #000000; /* TODO typography */
+}
+
+.menuDropDown::before {
+    color: #666666; /* TODO typography hca-gray-dark */
+}
 
 /**
  * Large
  */
-/* $md-tablet-portrait-lg-min: 840px; */
-@media screen and (min-width: 840px) {
+@media screen and (min-width: 1200px) {
+
+    /* Wrapper */
+    .wrapper {
+        margin: 0 auto;
+        max-width: 1200px; /* Snap to 1200px, gutter 30px */
+        padding: 0 30px; /* Gutter 30px */
+    }
 
     .links {
-        display: block;
+        display: flex;
     }
 
     /* Nav links */
     .links a {
-        color: #999999; /* TODO colour */
-        font-family: "Gotham", "Montserrat"; /* TODO typography */
-        font-size: 13px; /* TODO review with typography */
-        font-weight: 500; /* TODO review with typography */
-        letter-spacing: 1.2px; /* TODO typography */
-        margin: 0 16px;
-        text-decoration: none;
-        text-transform: uppercase;
+        color: #666666; /* TODO colour */
+        padding: 0 12px;
     }
 
-    .links .active {
-        color: #000000; /* TODO colour */
+    .links a span:nth-of-type(2) {
+        display: none;
+    }
+        /* Hide menu */
+    .menuDropDown, .menuDropDown::before {
+        display: none;
+    }
+
+    /* Show user menu */
+    .userDropDown {
+        display: flex;
+    }
+
+    .userDropDown::after {
+        display: block;
     }
 }
+
 
 
