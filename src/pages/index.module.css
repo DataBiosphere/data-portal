@@ -31,10 +31,6 @@ h2 {
     margin: 34px 0 36px;
 }
 
-h2:first-of-type {
-    margin-top: 0;
-}
-
 h3 {
     font-size: 18px;
     line-height: 24px;
@@ -124,36 +120,57 @@ p[class^="xxs"] {
 /* Jumbotron search bar */
 .jumbotronSearch {
     align-items: center;
-    background-color: #ffffff; /* TODO colour */
-    border: 1px solid #cccccc; /* TODO colour */
-    border-radius: 3px;
-    display: flex;
-    height: 50px;
-    justify-content: space-between;
     max-width: 343px; /* Width on mobile 375px */
+    position: relative; /* Positions search button */
     width: 100%;
 }
 
-/* Jumbotron search text */
-.jumbotronSearch .shortSearchText, .jumbotron .longSearchText {
-    color: #999999; /* TODO colour */
-    margin: 0;
+/* Input - class homepage */
+input.homepage {
+    border: 1px solid #CCCCCC; /* TODO colour */
+    border-radius: 3px;
+    box-sizing: border-box;
+    height: 50px;
     overflow: hidden;
     padding: 0 16px;
     white-space: nowrap;
 }
 
+input.homepage {
+    outline: none;
+}
+
+/* Input placeholder */
+input::placeholder {
+    color: #999999; /* TODO colour */
+    opacity: 1; /* Firefox */
+}
+
+input:-ms-input-placeholder {
+    color: #999999; /* TODO colour */
+}
+
+input:-ms-input-placeholder {
+    color: #999999; /* TODO colour */
+}
+
+/* Jumbotron input */
+.jumbotronSearch input.homepage {
+    width: 100%;
+}
+
 /* Jumbotron - hide longer search text */
-.jumbotronSearch .longSearchText {
+.jumbotronSearch input.homepage.large {
     display: none;
 }
 
-/* Jumbotron search button */
+/* Button - class homepage */
 button.homepage {
     align-items: center;
     background-color: #f5a623 /* TODO colour */;
     border: none;
     border-radius: 3px;
+    box-sizing: border-box;
     color: #ffffff; /* TODO colour */
     cursor: pointer;
     display: flex;
@@ -161,10 +178,9 @@ button.homepage {
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 14px;
     font-weight: 500; /* TODO typography - confirm - was 600 */
-    height: calc(100% + 2px); /* 2px to hide search box border of 1px top and bottom */
+    height: 50px;
     justify-content: center;
     letter-spacing: 0.74px; /* TODO typography spec is 0.21px */
-    margin-right: -1px; /* Moves button over RHS of search bar border */
     min-width: 84px;
     padding: 0 9px; /* Was 16px - followed spec */
     text-decoration: none;
@@ -176,6 +192,13 @@ button.homepage:hover {
 
 button.homepage:focus {
     outline: none;
+}
+
+/* Jumbotron search button */
+.jumbotronSearch button.homepage {
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 /* Stats bar */
@@ -217,6 +240,7 @@ button.homepage:focus {
 .explore h2 {
     align-self: flex-start;
     margin-bottom: 14px;
+    margin-top: 0;
 }
 
 /* Explore sub-text */
@@ -256,6 +280,7 @@ button.homepage:focus {
     font-size: 28px;
     line-height: 32px;
     margin: 10px 0; /* TODO review */
+    max-width: 650px;
     text-align: center;
 }
 
@@ -329,6 +354,7 @@ button.homepage:focus {
 .contact h2 {
     color: #333333; /* TODO colour */
     margin-bottom: 24px;
+    margin-top: 0;
     text-align: center;
 }
 
@@ -343,27 +369,24 @@ button.homepage:focus {
 }
 
 /* Input fields */
-.contactForm > div {
+.contactForm input.homepage {
+    color: #999999; /* TODO colour */
     border: 1px solid #cccccc;
     border-radius: 3px;
     height: 50px;
     margin: 4px 0;
     max-width: 450px;
+    padding-left: 16px;
     width: 100%; /* TODO review */
 }
 
-/* Input text */
-.contactForm span {
-    color: #9B9B9B;
-    font-size: 1rem;
-    line-height: 46px; /* Centers input text */
-    padding-left: 16px;
+.contactForm input.homepage:focus {
+    outline: none;
 }
 
 /* Submit button */
 .contactForm button.homepage {
     background-color: #32C1EE;
-    font-size: 1rem;
     height: 50px;
     margin: 4px 0;
     max-width: 450px;
@@ -401,13 +424,13 @@ button.homepage:focus {
         width: 540px; /* TODO review */
     }
 
-    /* Hide short search text */
-    .jumbotronSearch .shortSearchText {
+    /* Hide jumbotron short search text */
+    .jumbotronSearch input.homepage.small {
         display: none;
     }
 
     /* Show longer search text */
-    .jumbotronSearch .longSearchText {
+    .jumbotron input.homepage.large {
         display: block;
     }
 
@@ -506,16 +529,15 @@ button.homepage:focus {
     }
 
     /* Input fields */
-    .contactForm > div {
+    .contactForm input.homepage {
         margin: 0 4px;
-        width: 35%; /* TODO review */
+        width: 308px; /* TODO review */
     }
 
     /* Submit button */
-    .contactForm .button {
+    .contactForm button.homepage {
         margin: 0 4px;
-        min-width: 152px;
-        width: 0;
+        width: 152px;
     }
 }
 

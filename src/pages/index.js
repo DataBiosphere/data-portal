@@ -27,8 +27,10 @@ const IndexPage = () => (
                 <h1>Single-cell data building a foundation for human health</h1>
                 <a href=""><p className={compStyles.xs}>Learn More ></p></a>
                 <div className={compStyles.jumbotronSearch}>
-                    <span className={compStyles.longSearchText}>Search for data now by organs, publications, etc</span>
-                    <p className={classNames(compStyles.m, compStyles.shortSearchText)}>Search for data by organs</p>
+                    <input className={classNames(compStyles.homepage, compStyles.large)}
+                           placeholder="Search for data now by organs, publications, etc"/>
+                    <input className={classNames(compStyles.homepage, compStyles.small)}
+                           placeholder="Search for data by organs"/>
                     <button className={compStyles.homepage}>SEARCH</button>
                 </div>
             </div>
@@ -74,7 +76,8 @@ const IndexPage = () => (
                         <div>
                             <img src={processData}/>
                         </div>
-                        <div><p className={compStyles.s}>We process and quality-check the data with our pipelines</p><a className={compStyles.s}>Learn about Pipelines</a>
+                        <div><p className={compStyles.s}>We process and quality-check the data with our pipelines</p><a
+                            className={compStyles.s}>Learn about Pipelines</a>
                         </div>
                     </div>
                     <div className={compStyles.dpArrow}>
@@ -84,7 +87,8 @@ const IndexPage = () => (
                         <div>
                             <img src={findData}/>
                         </div>
-                        <div><p className={compStyles.s}>Anyone can find data to download or use for analysis</p><a className={compStyles.s}>Start Searching</a></div>
+                        <div><p className={compStyles.s}>Anyone can find data to download or use for analysis</p><a
+                            className={compStyles.s}>Start Searching</a></div>
                     </div>
                     <div className={compStyles.dpArrow}>
                         <img src={arrowRight}/>
@@ -93,7 +97,8 @@ const IndexPage = () => (
                         <div>
                             <img src={analysisPortal}/>
                         </div>
-                        <div><p className={compStyles.s}>Find community analysis tools and applications</p><a className={compStyles.s}>Explore applications</a></div>
+                        <div><p className={compStyles.s}>Find community analysis tools and applications</p><a
+                            className={compStyles.s}>Explore applications</a></div>
                     </div>
                 </div>
             </div>
@@ -102,12 +107,8 @@ const IndexPage = () => (
             <div className={compStyles.wrapper}>
                 <h2>Stay up to date with the HCA Data Portal</h2>
                 <div className={compStyles.contactForm}>
-                    <div>
-                        <span>Full Name</span>
-                    </div>
-                    <div>
-                        <span>Email Address</span>
-                    </div>
+                    <input className={compStyles.homepage} placeholder="Full Name"/>
+                    <input className={compStyles.homepage} placeholder="Email Address"/>
                     <button className={compStyles.homepage}>SUBMIT</button>
                 </div>
             </div>
