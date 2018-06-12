@@ -25,6 +25,7 @@ const Layout = ({children, data}) => (
             <title>{data.site.siteMetadata.title}</title>
             <link rel="stylesheet" href="https://use.typekit.net/qhb0geh.css"/>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700"/>
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title}/>
         <div className={compStyles.content}>

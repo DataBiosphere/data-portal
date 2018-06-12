@@ -63,7 +63,7 @@ export default function Template({
                         </ul>
                         <li>Learning about analysis pipelines</li>
                     </ul>
-                    <div>
+                    <div class={compStyles.hcaMarkdown}>
                         <div
                             className="learn-template"
                             dangerouslySetInnerHTML={{__html: html}}

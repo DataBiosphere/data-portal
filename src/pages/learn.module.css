@@ -51,7 +51,7 @@
     box-sizing: border-box;
     color: #999999; /* TODO typography hca-gray-medium */
     cursor: pointer;
-    font-family: "Gotham", "Montserrat"; /* TODO typography */
+    font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 15px; /* TODO typography - confirm size */
     font-weight: 500; /* TODO typography */
     height: 30px;
