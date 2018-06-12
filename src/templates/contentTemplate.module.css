@@ -5,6 +5,78 @@
  * Style definitions specific to the HCA Data Portal content template component.
  */
 
+/* Typography */
+/* TODO typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "DIN Alternate", "Montserrat";
+    font-weight: 600;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 18px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 38px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 34px 0 36px;
+}
+
+h2:first-of-type {
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 16px 0 18px;
+}
+
+h4 {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 14px 0 16px;
+}
+
+/* P - class "m" */
+p[class^="m"] {
+    font-size: 16px;
+    line-height: 26px;
+    margin: 0 0 26px;
+}
+
+/* P - class "s" */
+p[class^="s"] {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 18px;
+}
+
+/* P - class "xs" */
+p[class*="xs"] {
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0 0 16px;
+}
+
+/* P - class "xxs" */
+p[class^="xxs"] {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 14px;
+}
+
 /* Wrapper */
 .wrapper {
     align-items: center;
@@ -114,6 +186,7 @@ ul > ul {
     max-width: 740px;
 }
 
+/* Markdown styles */
 /* Embedded video wrapper */
 div[class*="gatsby-resp-iframe-wrapper"] {
     padding-bottom: 316px !important; /* Padding equal to iframe max-height */
@@ -126,6 +199,7 @@ iframe {
     max-width: 560px !important;
 }
 
+/* Code - class block-highlight */
 pre[class*="language-block-highlight"] {
     background-color: #F8F8F8; /* TODO colour hca-off-white */
     border-radius: 3px;
@@ -133,6 +207,7 @@ pre[class*="language-block-highlight"] {
     padding: 12px 24px;
 }
 
+/* HTML - definition list */
 dl {
     background-color: #F4F7F9; /* TODO colour hca-blue-background */
     border-radius: 3px;
@@ -140,18 +215,25 @@ dl {
     padding: 24px;
 }
 
+/* HTML - dt - matches H4 spec */
 dt {
     font-family: "DIN Alternate", "Montserrat"; /* TODO typography */
     font-size: 16px; /* TODO typography */
     font-weight: 600; /* TODO typography */
+    line-height: 22px;
 }
 
+/* HTML - dd - matches p spec */
 dd {
     color: #666666; /* TODO colour - TBC by Jenn - hca-gray-dark */
-    font-family: "Montserrat", sans-serif; /* TODO typography */
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
     margin: 8px 0 0;
 }
 
+/* Blockquote */
 blockquote {
     background-color: #F4F7F9; /* TODO colour hca-blue-background */
     border-radius: 3px;
@@ -159,25 +241,28 @@ blockquote {
     padding: 24px;
 }
 
+/* Blockquote heading */
+blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote h5, blockquote h6 {
+    margin: 0;
+}
+
+/* Blockquote paragraph */
 blockquote p {
     color: #666666; /* TODO colour - TBC by Jenn - hca-gray-dark */
-    font-family: "Montserrat", sans-serif; /* TODO typography */
     margin: 8px 0 0;
 }
 
+/* Code - language block-highlight */
 code[class*="language-block-highlight"] {
     color: #000000; /* TODO colour - typography */
     font-family: "PT Mono", "Montserrat"; /* TODO typography */
     font-size: 14px; /* TODO typography */
 }
 
+/* Code */
 code {
     white-space: pre-wrap !important; /* Allow line to wrap - responsive */
     word-break: break-all !important; /* Allow line to wrap - responsive */
-}
-
-p {
-    margin-bottom: 24px;
 }
 
 /**

@@ -63,7 +63,7 @@ export default function Template({
                         </ul>
                         <li>Learning about analysis pipelines</li>
                     </ul>
-                    <div class={compStyles.hcaMarkdown}>
+                    <div className={compStyles.hcaMarkdown}>
                         <div
                             className="content-template"
                             dangerouslySetInnerHTML={{__html: html}}

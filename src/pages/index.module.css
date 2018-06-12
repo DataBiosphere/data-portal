@@ -5,6 +5,85 @@
  * Style definitions specific to the HCA Data Portal home component.
  */
 
+/* Typography */
+/* TODO typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "DIN Alternate", "Montserrat";
+    font-weight: 600;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 18px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 38px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 34px 0 36px;
+}
+
+h2:first-of-type {
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 16px 0 18px;
+}
+
+h4 {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 14px 0 16px;
+}
+
+/* P - class "l" */
+p[class^="l"] {
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0 0 30px;
+}
+
+/* P - class "m" */
+p[class^="m"] {
+    font-size: 16px;
+    line-height: 26px;
+    margin: 0 0 26px;
+}
+
+/* P and link - class "s" */
+p[class^="s"], a[class^="s"] {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 18px;
+}
+
+/* P - class "xs" */
+p[class*="xs"] {
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0 0 16px;
+}
+
+/* P - class "xxs" */
+p[class^="xxs"] {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 14px;
+}
+
 /* Wrapper */
 .wrapper {
     align-items: center;
@@ -12,8 +91,8 @@
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    max-width: 1200px; /* Snap to 1200px, gutter 30px */
-    padding: 60px 30px;
+    max-width: 1200px; /* Snap to 1200px, gutter 16px */
+    padding: 30px 16px;
 }
 
 /* Jumbotron */
@@ -25,29 +104,40 @@
 }
 
 /* Jumbotron title */
-h1 {
-    font-size: 36px; /* TODO remove when typography */
+.jumbotron h1 {
+    margin: 0;
     text-align: center;
+}
+
+/* Learn more link */
+.jumbotron .wrapper > a {
+    color: #000000; /* TODO colour */
+    margin: 10px 0 24px;
+    text-decoration: none;
+}
+
+.jumbotron .wrapper > a .xs {
+    margin: 0;
+    text-transform: uppercase;
 }
 
 /* Jumbotron search bar */
 .jumbotronSearch {
     align-items: center;
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
+    background-color: #ffffff; /* TODO colour */
+    border: 1px solid #cccccc; /* TODO colour */
     border-radius: 3px;
     display: flex;
     height: 50px;
     justify-content: space-between;
-    margin: 50px auto 0; /* TODO review */
-    width: 60%; /* TODO review */
+    max-width: 343px; /* Width on mobile 375px */
+    width: 100%;
 }
 
 /* Jumbotron search text */
-.jumbotronSearch span {
-    color: #9B9B9B;
-    font-size: 1rem;
-    line-height: 1rem;
+.jumbotronSearch .shortSearchText, .jumbotron .longSearchText {
+    color: #999999; /* TODO colour */
+    margin: 0;
     overflow: hidden;
     padding: 0 16px;
     white-space: nowrap;
@@ -59,19 +149,33 @@ h1 {
 }
 
 /* Jumbotron search button */
-.jumbotronSearch .button {
+button.homepage {
     align-items: center;
-    background-color: #f5a623;
+    background-color: #f5a623 /* TODO colour */;
+    border: none;
     border-radius: 3px;
-    color: #ffffff;
+    color: #ffffff; /* TODO colour */
     cursor: pointer;
     display: flex;
-    font-size: 1rem;
+    flex-shrink: 0;
+    font-family: "Montserrat", sans-serif; /* TODO typography */
+    font-size: 14px;
+    font-weight: 500; /* TODO typography - confirm - was 600 */
     height: calc(100% + 2px); /* 2px to hide search box border of 1px top and bottom */
-    letter-spacing: 0.74px;
+    justify-content: center;
+    letter-spacing: 0.74px; /* TODO typography spec is 0.21px */
     margin-right: -1px; /* Moves button over RHS of search bar border */
-    padding: 0 16px;
+    min-width: 84px;
+    padding: 0 9px; /* Was 16px - followed spec */
     text-decoration: none;
+}
+
+button.homepage:hover {
+    background-color: #f5a623; /* TODO review colour */
+}
+
+button.homepage:focus {
+    outline: none;
 }
 
 /* Stats bar */
@@ -86,26 +190,25 @@ h1 {
     flex-direction: row;
     justify-content: center;
     padding: 8px 0;
+    width: 100%;
 }
 
 /* Status name - TODO review typography */
-.statsBar > div > div p {
-    color: #ffffff;
+.statsBar > div > div p.xs {
+    color: #ffffff; /* TODO colour */
     flex: 50%; /* Takes up 50% of container */
-    font-size: 0.8125rem;
-    font-weight: 600;
     letter-spacing: 3.25px;
-    line-height: 0.9375rem;
     margin: 0 0 -4px;
     text-align: right;
 }
 
 /* Status number */
-.statsBar > div > div span {
-    color: #ffffff;
+.statsBar > div > div h1 {
+    color: #ffffff; /* TODO colour */
     flex: 50%; /* Takes up 50% of container */
-    font-size: 2.25rem;
-    font-weight: 500;
+    font-size: 36px;
+    line-height: 42px;
+    margin: 0;
     padding: 0 12px;
     text-align: left;
 }
@@ -113,12 +216,14 @@ h1 {
 /* Explore heading */
 .explore h2 {
     align-self: flex-start;
+    margin-bottom: 14px;
 }
 
 /* Explore sub-text */
-.explore > div p {
+.explore > div p.s {
     align-self: flex-start;
-    font-size: 14px;
+    color: #666666; /* TODO colour */
+    line-height: 18px;
     max-width: 260px;
 }
 
@@ -127,7 +232,7 @@ h1 {
     align-items: baseline;
     display: flex;
     justify-content: center;
-    margin-bottom: -60px;
+    margin-bottom: -30px; /* Equal to wrapper padding */
 }
 
 .explore > div > div img {
@@ -137,19 +242,20 @@ h1 {
 
 /* Data Portal */
 .dataPortal {
-    background-color: #F5F7F9;
+    background-color: #F4F7F9;
 }
 
 /* Data Portal question - "What is it?" */
-.dataPortal > p {
-    color: rgba(0, 0, 0, 1); /* TODO Confirm */
-    font-size: 1rem;
+.dataPortal h4 {
     letter-spacing: 2px;
-    line-height: 1rem;
+    text-transform: uppercase;
 }
 
 /* Data Portal description */
 .dataPortal h1 {
+    font-size: 28px;
+    line-height: 32px;
+    margin: 10px 0; /* TODO review */
     text-align: center;
 }
 
@@ -165,9 +271,9 @@ h1 {
 /* Each DP has its own box */
 .portalDescription > div {
     align-items: center;
+    flex-direction: row;
     display: flex;
-    flex: 1; /* Each box is equal in width */
-    flex-direction: column;
+    width: 100%;
 }
 
 /* Arrow */
@@ -179,39 +285,50 @@ h1 {
 }
 
 /* Top row of each box - image container */
-.portalDescription > div > div {
+.portalDescription > div > div:first-of-type {
     align-items: center;
     display: flex;
-    height: 95px;
+    padding: 0 16px;
+    width: 95px;
 }
 
 /* Top row of each box - image */
-.portalDescription > div > div img, .portalDescription .dpArrow img {
+.portalDescription > div > div:first-of-type img, .portalDescription .dpArrow img {
     margin-bottom: 0;
 }
 
+/* Second row of each box */
+.portalDescription > div > div:nth-of-type(2) {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 16px;
+    width: 205px;
+}
+
 /* Second row of each box - text description */
-.portalDescription > div p {
-    font-size: 14px;
+.portalDescription > div > div:nth-of-type(2) p.s {
+    color: #666666; /* TODO hca-gray-dark review */
     font-weight: 500;
-    margin: 12px 0 0;
-    max-width: 224px;
-    text-align: center;
+    line-height: 18px;
+    margin: 0;
+    text-align: left;
 }
 
 /* Link */
-.portalDescription > div p a {
-    color: #468EE5;
+.portalDescription > div > div:nth-of-type(2) a.s {
+    color: #1288E4; /* TODO colour */
     cursor: pointer;
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    margin-top: 12px;
+    line-height: 18px;
+    margin: 0;
+    text-align: left;
 }
 
 /* Contact heading */
 .contact h2 {
-    color: #4a4a4a; /* hca-color-text */
+    color: #333333; /* TODO colour */
+    margin-bottom: 24px;
     text-align: center;
 }
 
@@ -231,7 +348,8 @@ h1 {
     border-radius: 3px;
     height: 50px;
     margin: 4px 0;
-    width: 60%; /* TODO review */
+    max-width: 450px;
+    width: 100%; /* TODO review */
 }
 
 /* Input text */
@@ -243,31 +361,27 @@ h1 {
 }
 
 /* Submit button */
-.contactForm .button {
-    align-items: center;
+.contactForm button.homepage {
     background-color: #32C1EE;
-    border-radius: 3px;
-    color: #ffffff;
-    cursor: pointer;
-    display: flex;
     font-size: 1rem;
-    height: 52px; /* Required to match height of input boxes - includes top and bottom border */
-    justify-content: center;
-    letter-spacing: 0.74px;
+    height: 50px;
     margin: 4px 0;
-    padding: 0 16px;
-    width: 60%; /* TODO review */
+    max-width: 450px;
+    width: 100%; /* TODO review */
+}
+
+.contactForm button.homepage:hover {
+    background-color: #2DAFD7;
 }
 
 /**
- * Large
+ * Medium +
  */
-/* $md-tablet-portrait-lg-min: 840px; */
-@media screen and (min-width: 840px) {
+@media screen and (min-width: 1024px) {
 
     /* Wrapper */
     .wrapper {
-        padding: 100px 30px;
+        padding: 70px 16px;
     }
 
     /* Jumbotron */
@@ -275,9 +389,16 @@ h1 {
         background-image: url(../../images/jumbotron/full-size-cell-jumbotron.png);
     }
 
+    /* Jumbotron title */
+    .jumbotron h1 {
+        font-size: 36px; /* TODO remove when typography */
+        line-height: 42px;
+    }
+
     /* Search bar */
     .jumbotronSearch {
-        width: 60%;
+        max-width: unset;
+        width: 540px; /* TODO review */
     }
 
     /* Hide short search text */
@@ -307,16 +428,17 @@ h1 {
         align-items: center;
         flex-direction: column;
         padding: 0 0;
+        width: unset;
     }
 
     /* Status name */
-    .statsBar > div > div p {
+    .statsBar > div > div p.xs {
         flex: 0;
         text-align: center;
     }
 
     /* Status number */
-    .statsBar > div > div span {
+    .statsBar > div > div h1 {
         flex: 0;
         text-align: center;
         width: 164px;
@@ -329,7 +451,14 @@ h1 {
 
     /* Explore Imagery */
     .explore > div > div {
-        margin-bottom: -100px;
+        margin-bottom: -70px; /* Equal to wrapper padding */
+    }
+
+    /* Data Portal description */
+    .dataPortal h1 {
+        font-size: 36px;
+        line-height: 42px;
+        max-width: 800px;
     }
 
     /* DP Imagery and associated text */
@@ -338,9 +467,31 @@ h1 {
         flex-direction: row;
     }
 
-    /* Second row of each box - text description */
-    .portalDescription > div p {
+    /* Portal Description */
+    .portalDescription > div {
+        flex: 1;
+        flex-direction: column;
+        width: unset;
+    }
+
+    /* Top row of each box - image container */
+    .portalDescription > div > div:first-of-type {
+        height: 95px;
+        padding: 0;
+        width: unset;
+    }
+
+    /* Second row of each box */
+    .portalDescription > div > div:nth-of-type(2) {
         max-width: 172px;
+        padding: 0;
+    }
+
+    /* Second row of each box - text description & link */
+    .portalDescription > div > div:nth-of-type(2) p.s, .portalDescription > div > div:nth-of-type(2) a.s {
+        margin: 12px 0 0;
+        text-align: center;
+        width: 100%;
     }
 
     /* Arrow */
@@ -365,6 +516,17 @@ h1 {
         margin: 0 4px;
         min-width: 152px;
         width: 0;
+    }
+}
+
+/**
+ * Large +
+ */
+@media screen and (min-width: 1200px) {
+
+    /* Wrapper */
+    .wrapper {
+        padding: 70px 30px;
     }
 }
 

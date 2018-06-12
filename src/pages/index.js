@@ -10,6 +10,8 @@ import compStyles from './index.module.css'
 import Link from 'gatsby-link';
 import React from 'react';
 
+var classNames = require('classnames');
+
 // Images
 import analysisPortal from "../../site/images/data-portal/analysis-portal.png";
 import arrowRight from "../../site/images/data-portal/arrow-right.png";
@@ -23,26 +25,27 @@ const IndexPage = () => (
         <div className={compStyles.jumbotron}>
             <div className={compStyles.wrapper}>
                 <h1>Single-cell data building a foundation for human health</h1>
+                <a href=""><p className={compStyles.xs}>Learn More ></p></a>
                 <div className={compStyles.jumbotronSearch}>
                     <span className={compStyles.longSearchText}>Search for data now by organs, publications, etc</span>
-                    <span className={compStyles.shortSearchText}>Search</span>
-                    <a href="" className={compStyles.button}>SEARCH</a>
+                    <p className={classNames(compStyles.m, compStyles.shortSearchText)}>Search for data by organs</p>
+                    <button className={compStyles.homepage}>SEARCH</button>
                 </div>
             </div>
         </div>
         <div className={compStyles.statsBar}>
             <div className={compStyles.wrapper}>
-                <div><p>CELLS</p><span>20M</span></div>
-                <div><p>ORGANS</p><span>9</span></div>
-                <div><p>DONORS</p><span>556</span></div>
-                <div><p>PROJECTS</p><span>67</span></div>
-                <div><p>LABS</p><span>20</span></div>
+                <div><p className={compStyles.xs}>CELLS</p><h1>20M</h1></div>
+                <div><p className={compStyles.xs}>ORGANS</p><h1>9</h1></div>
+                <div><p className={compStyles.xs}>DONORS</p><h1>556</h1></div>
+                <div><p className={compStyles.xs}>PROJECTS</p><h1>67</h1></div>
+                <div><p className={compStyles.xs}>LABS</p><h1>20</h1></div>
             </div>
         </div>
         <div className={compStyles.explore}>
             <div className={compStyles.wrapper}>
                 <h2>Start Exploring</h2>
-                <p>Hover over or click on an organ to view data from that organ</p>
+                <p className={compStyles.s}>Hover over or click on an organ to view data from that organ</p>
                 <div>
                     <img src={explore}/>
                 </div>
@@ -50,7 +53,7 @@ const IndexPage = () => (
         </div>
         <div className={compStyles.dataPortal}>
             <div className={compStyles.wrapper}>
-                <p>What is the HCA Data Portal?</p>
+                <h4>What is the HCA Data Portal?</h4>
                 <h1>The HCA Data Portal stores and provides single-cell data contributed by labs around the world.
                     Anyone
                     can contribute data, find data, or access community tools and applications.</h1>
@@ -59,7 +62,10 @@ const IndexPage = () => (
                         <div>
                             <img src={contribute}/>
                         </div>
-                        <p>Labs contribute single-cell data<a>Learn about contributing ></a></p>
+                        <div>
+                            <p className={compStyles.s}>Labs contribute single-cell data</p>
+                            <a className={compStyles.s}>Learn about contributing</a>
+                        </div>
                     </div>
                     <div className={compStyles.dpArrow}>
                         <img src={arrowRight}/>
@@ -68,8 +74,8 @@ const IndexPage = () => (
                         <div>
                             <img src={processData}/>
                         </div>
-                        <p>We process and quality-check the data with our pipelines<a>Learn about Pipelines ></a>
-                        </p>
+                        <div><p className={compStyles.s}>We process and quality-check the data with our pipelines</p><a className={compStyles.s}>Learn about Pipelines</a>
+                        </div>
                     </div>
                     <div className={compStyles.dpArrow}>
                         <img src={arrowRight}/>
@@ -78,7 +84,7 @@ const IndexPage = () => (
                         <div>
                             <img src={findData}/>
                         </div>
-                        <p>Anyone can find data to download or use for analysis<a>Start Searching ></a></p>
+                        <div><p className={compStyles.s}>Anyone can find data to download or use for analysis</p><a className={compStyles.s}>Start Searching</a></div>
                     </div>
                     <div className={compStyles.dpArrow}>
                         <img src={arrowRight}/>
@@ -87,7 +93,7 @@ const IndexPage = () => (
                         <div>
                             <img src={analysisPortal}/>
                         </div>
-                        <p>Find community analysis tools and applications <a>Explore applications ></a></p>
+                        <div><p className={compStyles.s}>Find community analysis tools and applications</p><a className={compStyles.s}>Explore applications</a></div>
                     </div>
                 </div>
             </div>
@@ -102,7 +108,7 @@ const IndexPage = () => (
                     <div>
                         <span>Email Address</span>
                     </div>
-                    <a className={compStyles.button}>SUBMIT</a>
+                    <button className={compStyles.homepage}>SUBMIT</button>
                 </div>
             </div>
         </div>
