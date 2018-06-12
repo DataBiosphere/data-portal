@@ -152,6 +152,19 @@ dd {
     margin: 8px 0 0;
 }
 
+blockquote {
+    background-color: #F4F7F9; /* TODO colour hca-blue-background */
+    border-radius: 3px;
+    margin: 0 0 24px; /* TODO confirm when typography completed */
+    padding: 24px;
+}
+
+blockquote p {
+    color: #666666; /* TODO colour - TBC by Jenn - hca-gray-dark */
+    font-family: "Montserrat", sans-serif; /* TODO typography */
+    margin: 8px 0 0;
+}
+
 code[class*="language-block-highlight"] {
     color: #000000; /* TODO colour - typography */
     font-family: "PT Mono", "Montserrat"; /* TODO typography */

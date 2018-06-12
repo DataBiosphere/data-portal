@@ -65,7 +65,7 @@ export default function Template({
                     </ul>
                     <div class={compStyles.hcaMarkdown}>
                         <div
-                            className="learn-template"
+                            className="content-template"
                             dangerouslySetInnerHTML={{__html: html}}
                         />
                     </div>
@@ -76,7 +76,7 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query LearnPostByPath($path: String!) {
+  query ContentPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {

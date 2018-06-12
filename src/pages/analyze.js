@@ -54,10 +54,23 @@ const AnalyzePage = () => (
                     </ul>
                     <div className={compStyles.hcaSideNavExtra}>Are you an application developer?</div>
                 </div>
-                <div className={compStyles.hcaMarkdown}>I am content</div>
+                <div className={compStyles.hcaMarkdown}>THIS IS MY LOOP</div>
                 </div>
         </div>
     </div>
 );
+
+export const pageQuery = graphql`
+  query AnalysisPortalsPostByPath($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        path
+        title
+      }
+    }
+  }
+`;
 
 export default AnalyzePage;
