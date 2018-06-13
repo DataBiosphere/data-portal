@@ -46,10 +46,12 @@ const IndexPage = () => (
         </div>
         <div className={compStyles.explore}>
             <div className={compStyles.wrapper}>
-                <h2>Start Exploring</h2>
-                <p className={compStyles.s}>Hover over or click on an organ to view data from that organ</p>
                 <div>
-                    <img src={explore}/>
+                    <h2>Start Exploring</h2>
+                    <p className={compStyles.s}>Hover over or click on an organ to view data from that organ</p>
+                </div>
+                <div>
+                <img src={explore}/>
                 </div>
             </div>
         </div>

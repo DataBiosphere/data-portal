@@ -236,23 +236,28 @@ button.homepage:focus {
     text-align: left;
 }
 
+/* Explore */
+.explore > div > div:first-of-type {
+    align-self: center;
+    max-width: 650px;
+    width: 100%;
+}
+
 /* Explore heading */
 .explore h2 {
-    align-self: flex-start;
     margin-bottom: 14px;
     margin-top: 0;
 }
 
 /* Explore sub-text */
-.explore > div p.s {
-    align-self: flex-start;
+.explore p.s {
     color: #666666; /* TODO colour */
     line-height: 18px;
-    max-width: 260px;
+    max-width: 336px;
 }
 
 /* Explore Imagery */
-.explore > div > div {
+.explore > div > div:nth-of-type(2) {
     align-items: baseline;
     display: flex;
     justify-content: center;
@@ -467,13 +472,13 @@ button.homepage:focus {
         width: 164px;
     }
 
-    /* Explore heading and text */
-    .explore h2, .explore > div p {
-        padding-left: 60px;
+    /* Explore */
+    .explore > div > div:first-of-type {
+        max-width: 800px;
     }
 
     /* Explore Imagery */
-    .explore > div > div {
+    .explore > div > div:nth-of-type(2) {
         margin-bottom: -70px; /* Equal to wrapper padding */
     }
 
