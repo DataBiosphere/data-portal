@@ -5,6 +5,8 @@
  * HCA Data Portal site map component.
  */
 
+// TODO move to yml and put in the content directory
+
 const siteMap =
     [
         {
@@ -32,11 +34,6 @@ const siteMap =
 
                                 name: "Data use agreement",
                                 key:"/learn/how-it-works/data-use-agreement"
-                            },
-                            {
-
-                                name: "Peanut",
-                                key:"/learn/how-it-works/data-use-butter"
                             }
                         ]
                     },
@@ -52,22 +49,22 @@ const siteMap =
                                     {
 
                                         name: "Using the Data Browser to access data",
-                                        path: ""
+                                        path: "/learn/userguides/accessing-data/using-the-data-browser-to-access-data"
 
                                     },
                                     {
 
                                         name: "Using the CLI to access data",
-                                        path: ""
+                                        path: "/learn/userguides/accessing-data/using-the-cli-to-access-data"
                                     },
                                     {
 
                                         name: "How to go from query to annotated clusters",
-                                        path: ""
+                                        path: "/learn/userguides/accessing-data/how-to-go-from-query-to-annotated-clusters"
                                     },
                                     {
                                         name: "FAQ",
-                                        path:""
+                                        path:"/learn/userguides/accessing-data/faq"
                                     }
                                 ]
 
