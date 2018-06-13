@@ -19,10 +19,10 @@ const Header = ({siteTitle}) => (
             <div className={compStyles.logo}><img src={headerLogo}/></div>
             <div className={compStyles.links}>
                 <a  href="https://explore.dev.data.humancellatlas.org">Explore</a>
-                <Link to="/">Analyze</Link>
+                <Link to="/analyze">Analyze</Link>
                 <Link to="/">Contribute</Link>
                 <Link to="/learn/how-it-works/data-lifecycle">Learn</Link>
-                <Link to="/">Build</Link>
+                <Link to="/build/development-guides/pipeline-development-guide">Build</Link>
             </div>
             {/*<div className={compStyles.menuDropDown}>Alex S.</div>*/}
         </div>
