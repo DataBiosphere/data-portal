@@ -24,15 +24,6 @@ var showLinks = false;
 // Images
 import headerLogo from "../../../site/images/logo/hca-data-portal/logo-hca.png"
 
-// class Header extends Component {
-//     toggleMenu = () => {
-//         console.log("hi");
-//         this.props.onClick();
-//     };
-
-    // render() {
-    //     const {showLinks} = this.props;
-    //     return (
         const Header = ({siteTitle}) => (
             <div className={compStyles.navBar}>
                 <div className={compStyles.wrapper}>
@@ -65,7 +56,5 @@ import headerLogo from "../../../site/images/logo/hca-data-portal/logo-hca.png"
                 </div>
             </div>
         );
-    // }
-// }
 
 export default Header;

@@ -1,12 +1,3 @@
-/*
- * Human Cell Atlas
- * https://www.humancellatlas.org/
- *
- * HCA Data Portal learn template component.
- */
-
-// Core dependencies
-import React from "react";
 
 var classNames = require('classnames');
 
