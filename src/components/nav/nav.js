@@ -20,7 +20,6 @@ const getNavClassName = (docPath, nav) => {
     const   key = docPath.split("/")[3];
     console.log(key);
 
-    console.log(nav.key, docPath);
     active = nav.key === docPath;
     expanded = (key === nav.key.split("/")[3] && nav.children);
 

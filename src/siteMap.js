@@ -21,16 +21,6 @@ const siteMap =
                             {
                                 name: "Data lifecycle",
                                 key: "/learn/how-it-works/data-lifecycle",
-                                // children: [
-                                //     {
-                                //         name: "Hi this is fran",
-                                //         key: "this-is-fran"
-                                //     },
-                                //     {
-                                //         name: "Hi Mim!",
-                                //         key: "hi-mim"
-                                //     },
-                                // ]
                             },
                             {
                                 name: "Data use agreement",
@@ -44,7 +34,7 @@ const siteMap =
                         children: [
                             {
                                 name: "Accessing Data",
-                                key: "/learn/userguides/accessing-data",
+                                key: "accessing-data",
                                 children: [
                                     {
 
@@ -65,21 +55,29 @@ const siteMap =
                                         key: "/learn/userguides/accessing-data/faq"
                                     }
                                 ]
-                            },
-                            {
+
+                            }, {
+
                                 name: "Contributing Data",
                                 key: "/learn/userguides/contributing-data",
                                 children: [
                                     {
-                                        name: "Resgistering a project",
+                                        name: "Registering a Project",
                                         key: "/learn/userguides/contributing-data/registering-a-project"
+
                                     },
                                     {
-                                        name: "Submitting project data",
+                                        name: "Submitting Project Data",
                                         key: "/learn/userguides/contributing-data/submitting-project-data"
                                     },
+                                    {
+                                        name: "Updating Project Data",
+                                        key: "/learn/userguides/contributing-data/updating-project-data"
+                                    }
+
                                 ]
                             }
+
                         ]
                     },
                     {
