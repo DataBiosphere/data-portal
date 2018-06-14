@@ -59,7 +59,7 @@
 }
 
 /* Nav links */
-.links a, links.showLinks a {
+.links a, .links.showLinks a {
     align-items: flex-start;
     color: #000000; /* TODO colour */
     display: flex;
