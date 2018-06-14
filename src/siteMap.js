@@ -172,6 +172,14 @@ export function getSection(path) {
     const section = siteMap.find((s) => {
         return s.key === key;
     });
+
+    if(!section){
+        console.log(path)+ "sectionnot found!!!";
+        return {
+
+            ket:"test"
+        }
+    }
     return section;
 }
 
