@@ -154,13 +154,13 @@ blockquote {
 
 /* Blockquote heading */
 blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote h5, blockquote h6 {
-    margin: 0;
+    margin: 0 0 8px;
 }
 
 /* Blockquote paragraph */
 blockquote p {
     color: #666666; /* TODO colour - TBC by Jenn - hca-gray-dark */
-    margin: 8px 0 0;
+    margin: 0;
 }
 
 /* Code - language block-highlight */
