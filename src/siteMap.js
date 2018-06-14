@@ -44,12 +44,8 @@ const siteMap =
                         children: [
                             {
                                 name: "Accessing Data",
-                                key: "/learn/userguides/accessing-data/using-the-data-browser-to-access-data",
+                                key: "/learn/userguides/accessing-data",
                                 children: [
-                                    {
-                                        name: "About",
-                                        key: "/learn/userguides/accessing-data/about"
-                                    },
                                     {
 
                                         name: "Using the Data Browser to access data",
@@ -68,6 +64,20 @@ const siteMap =
                                         name: "FAQ",
                                         key: "/learn/userguides/accessing-data/faq"
                                     }
+                                ]
+                            },
+                            {
+                                name: "Contributing Data",
+                                key: "/learn/userguides/contributing-data",
+                                children: [
+                                    {
+                                        name: "Resgistering a project",
+                                        key: "/learn/userguides/contributing-data/registering-a-project"
+                                    },
+                                    {
+                                        name: "Submitting project data",
+                                        key: "/learn/userguides/contributing-data/submitting-project-data"
+                                    },
                                 ]
                             }
                         ]
