@@ -10,7 +10,6 @@
 const siteMap =
     [
         {
-
             name: "Learn",
             key: "learn",
             children:
@@ -20,20 +19,22 @@ const siteMap =
                         key: "how-it-works",
                         children: [
                             {
-
                                 name: "Data lifecycle",
                                 key: "/learn/how-it-works/data-lifecycle",
-                                children: [
-                                    {
-                                        name: "Hi this is fran",
-                                        key: "this-is-fran"
-                                    }
-                                ]
+                                // children: [
+                                //     {
+                                //         name: "Hi this is fran",
+                                //         key: "this-is-fran"
+                                //     },
+                                //     {
+                                //         name: "Hi Mim!",
+                                //         key: "hi-mim"
+                                //     },
+                                // ]
                             },
                             {
-
                                 name: "Data use agreement",
-                                key:"/learn/how-it-works/data-use-agreement"
+                                key: "/learn/how-it-works/data-use-agreement",
                             }
                         ]
                     },
@@ -42,46 +43,46 @@ const siteMap =
                         key: "userguides",
                         children: [
                             {
-
                                 name: "Accessing Data",
-                                key: "/learn/userguides/accessing-data",
+                                key: "/learn/userguides/accessing-data/using-the-data-browser-to-access-data",
                                 children: [
+                                    {
+                                        name: "About",
+                                        key: "/learn/userguides/accessing-data/about"
+                                    },
                                     {
 
                                         name: "Using the Data Browser to access data",
-                                        path: "/learn/userguides/accessing-data/using-the-data-browser-to-access-data"
+                                        key: "/learn/userguides/accessing-data/using-the-data-browser-to-access-data"
 
                                     },
                                     {
-
                                         name: "Using the CLI to access data",
-                                        path: "/learn/userguides/accessing-data/using-the-cli-to-access-data"
+                                        key: "/learn/userguides/accessing-data/using-the-cli-to-access-data"
                                     },
                                     {
-
                                         name: "How to go from query to annotated clusters",
-                                        path: "/learn/userguides/accessing-data/how-to-go-from-query-to-annotated-clusters"
+                                        key: "/learn/userguides/accessing-data/how-to-go-from-query-to-annotated-clusters"
                                     },
                                     {
                                         name: "FAQ",
-                                        path:"/learn/userguides/accessing-data/faq"
+                                        key: "/learn/userguides/accessing-data/faq"
                                     }
                                 ]
-
                             }
                         ]
                     },
                     {
                         name: "Metadata Dictionary",
                         key: "metadata-dictionary",
-                        nav: [
+                        children: [
                             {
-                                type: "document",
-                                path: "/sam"
+                                name: "document",
+                                key: "/learn/metadata-dictionary/sam"
                             },
                             {
-                                type: "document",
-                                path: "/joe"
+                                name: "document",
+                                key: "/learn/metadata-dictionary/joe"
                             }
                         ]
                     }
@@ -91,8 +92,6 @@ const siteMap =
             name: "Build",
             key: "build",
             children: [
-
-
                 {
                     name: "Development Guides",
                     key: "development-guides",
@@ -105,12 +104,12 @@ const siteMap =
                         {
 
                             name: "Tertiary portal development guidt",
-                            key:"//build/development-guide/tertiary-portal-development-guide"
+                            key: "//build/development-guide/tertiary-portal-development-guide"
                         },
                         {
 
                             name: "Ingest data brokers development guide",
-                            key:"/learn/how-it-works/data-use-butter"
+                            key: "/learn/how-it-works/data-use-butter"
                         }
                     ]
                 },
@@ -122,7 +121,6 @@ const siteMap =
                     name: "Reusing DCP Infrastructure",
                     key: "reusing-dcp-infrastructure",
                 }
-
             ]
         }
     ];
@@ -130,7 +128,7 @@ const siteMap =
 export function getSection(path) {
 
     const key = path.split("/")[1];
-    const section =  siteMap.find((s) => {
+    const section = siteMap.find((s) => {
         return s.key === key;
     });
     return section;
@@ -144,14 +142,14 @@ export function getTabs(path) {
 export function getTab(path) {
     const tabs = getTabs(path);
     const key = path.split("/")[2];
-    const tab =  tabs.find((s) => {
+    const tab = tabs.find((s) => {
         return s.key === key;
     });
     return tab;
 }
 
-export function getNav(path){
-    const tab =  getTab(path);
+export function getNav(path) {
+    const tab = getTab(path);
     return tab.children;
 }
 
