@@ -16,9 +16,6 @@ import TabNav from "../components/tabNav/tabNav";
 
 var classNames = require('classnames');
 
-// let showList = false;
-
-
 export default function Template({
                                      data, // this prop will be injected by the GraphQL query below.
                                  }) {
@@ -31,13 +28,13 @@ export default function Template({
             <Section docPath={docPath}/>
             <TabNav docPath={docPath}/>
             <div className={compStyles.wrapper}>
-                <div className={compStyles.hcaContent}>
-                    <Nav docPath={docPath}/>
-                    <div
+            <div className={compStyles.hcaContent}>
+                <Nav docPath={docPath}/>
+                <div
                         className={classNames(compStyles.markdownContent, "learn-template")}
                         dangerouslySetInnerHTML={{__html: html}}
-                    />
-                </div>
+                />
+            </div>
             </div>
         </div>
     );
