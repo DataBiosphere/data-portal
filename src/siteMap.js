@@ -34,7 +34,7 @@ const siteMap =
                         children: [
                             {
                                 name: "Accessing Data",
-                                key: "accessing-data",
+                                key: "/learn/userguides/accessing-data",
                                 children: [
                                     {
 
@@ -76,6 +76,43 @@ const siteMap =
                                     }
 
                                 ]
+                            },
+                            {
+
+                                name: "Secondary Analysis",
+                                key: "/learn/userguides/secondary-analysis",
+                                children: [
+                                    {
+                                        name: "What is the Seondary Analysis Service?",
+                                        key: "/learn/userguides/secondary-analysis/what-is-the-secondary-analysis-service"
+                                    },
+                                    {
+                                        name: "Optimus Prime Workflow in Detail",
+                                        key: "/learn/userguides/secondary-analysis/optimus-prime-workflow-in-detail"
+
+                                    },
+                                    {
+                                        name: "File Formats",
+                                        key: "/learn/userguides/secondary-analysis/file-formats"
+                                    },
+                                    {
+                                        name: "QC Metrics",
+                                        key: "/learn/userguides/secondary-analysis/qc-mertics"
+                                    },
+                                    {
+                                        name: "Service Portability",
+                                        key: "/learn/userguides/secondary-analysis/service-portability"
+                                    },
+                                    {
+                                        name: "Smart-seq2 Workflow in Detail",
+                                        key: "/learn/userguides/secondary-analysis/smart-seq2-workflow-in-detail"
+                                    },
+                                    {
+                                        name: "Workflow Best Practices",
+                                        key: "/learn/userguides/secondary-analysis/secondary-analsis-workflow-best-practices"
+                                    }
+
+                                ]
                             }
 
                         ]
@@ -85,12 +122,8 @@ const siteMap =
                         key: "metadata-dictionary",
                         children: [
                             {
-                                name: "document",
-                                key: "/learn/metadata-dictionary/sam"
-                            },
-                            {
-                                name: "document",
-                                key: "/learn/metadata-dictionary/joe"
+                                name: "Metadata Dictionary Overview",
+                                key: "/learn/metadata-dictionary"
                             }
                         ]
                     }
