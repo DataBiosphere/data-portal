@@ -5,6 +5,14 @@
  * Style definitions specific to the HCA Data Portal section component.
  */
 
+/* Section - sticky */
+.section {
+    background-color: white;
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+}
+
 /* Wrapper */
 .wrapper {
     align-items: center;

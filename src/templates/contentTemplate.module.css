@@ -88,7 +88,7 @@ p[class^="xxs"] {
 .hcaContent {
     display: flex;
     flex: 1;
-    padding: 36px 0;
+    margin: 36px 0;
 }
 
 /* Content */
@@ -174,18 +174,6 @@ code[class*="language-block-highlight"] {
 code {
     white-space: pre-wrap !important; /* Allow line to wrap - responsive */
     word-break: break-all !important; /* Allow line to wrap - responsive */
-}
-
-/**
- * Medium
- */
-/* $md-tablet-portrait-lg-min: 840px; */
-@media screen and (min-width: 768px) {
-
-    /* Content */
-    .hcaContent .markdownContent {
-        max-width: 546px;
-    }
 }
 
 /**

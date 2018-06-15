@@ -5,17 +5,21 @@
  * Style definitions specific to the HCA Data Portal tab nav component.
  */
 
+/* Tabs */
+.hcaTabs {
+    background-color: #ffffff; /* TODO colour */
+    border-bottom: 1px solid #CCCCCC; /* Tab line */ /* TODO colour hca-gray-light */
+    margin-top: -24px; /* To position closer to section */
+    position: sticky;
+    top: 112px; /* Header 60x, section 76px, minus 24px to position closer to section */
+    z-index: 10;
+}
+
 /* Wrapper */
 .wrapper {
     align-items: center;
     display: flex;
     padding: 0 16px;
-}
-
-/* Tabs */
-.hcaTabs {
-    border-bottom: 1px solid #CCCCCC; /* Tab line */ /* TODO colour hca-gray-light */
-    margin-top: -24px; /* To position closer to heading */
 }
 
 /* Tab list */

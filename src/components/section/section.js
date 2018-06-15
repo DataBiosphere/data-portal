@@ -12,7 +12,7 @@ import * as siteMap from '../../siteMap';
 
 const Section = ({docPath}) => (
 
-    <div>
+    <div className={compStyles.section}>
         <div className={compStyles.wrapper}>
             <div className={compStyles.hcaSectionHeading}>{siteMap.getSection(docPath).name}</div>
         </div>
