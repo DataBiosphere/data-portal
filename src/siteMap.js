@@ -168,17 +168,6 @@ const siteMap =
                         }
                     ]
                 }
-                // {
-                //     name: "Reuse DCP Components",
-                //     key: "reusing-dcp-infrastructure",
-                //     children: [
-                //         {
-                //
-                //             name: "Butter and Toast",
-                //             key: "/build/development-guides/butter-and-toast",
-                //         }
-                //     ]
-                // }
             ]
         },
         {
@@ -192,22 +181,6 @@ const siteMap =
                         {
                             name: "Visualization Portals",
                             key: "/analyze/portals/visualization-portals"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            name: "Analyze",
-            key: "analyze",
-            children: [
-                {
-                    name: "Peanuts",
-                    key: "peanuts",
-                    children: [
-                        {
-                            name: "Pipeline development guide",
-                            key: "/analyze/peanuts/data-lifecycle",
                         }
                     ]
                 }
