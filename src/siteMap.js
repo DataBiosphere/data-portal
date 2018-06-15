@@ -163,6 +163,22 @@ const siteMap =
                     key: "reusing-dcp-infrastructure",
                 }
             ]
+        },
+        {
+            name: "Analyze",
+            key: "analyze",
+            children: [
+                {
+                    name: "Peanuts",
+                    key: "peanuts",
+                    children: [
+                        {
+                            name: "Pipeline development guide",
+                            key: "/analyze/peanuts/data-lifecycle",
+                        }
+                    ]
+                }
+            ]
         }
     ];
 
@@ -174,17 +190,29 @@ export function getSection(path) {
     });
 
     if(!section){
-        console.log(path)+ "sectionnot found!!!";
-        return {
-
-            ket:"test"
-        }
+        throw new Error("section with key: '" +key + "' is not foundango!");
+        // return {
+        //
+        //     key:"test"
+        // }
     }
     return section;
 }
 
 export function getTabs(path) {
+
     const section = getSection(path);
+
+    if(!section.children){
+        throw new Error("No children for section: '" + section.key+ "'");
+    }
+
+    section.children.forEach((tab) =>{
+        if(!tab.children || tab.children.length == 0){
+            throw new Error("Tab  '" + tab.name + "' has no children and therefore no landing page.");
+        }
+    });
+
     return section.children;
 }
 
@@ -194,11 +222,18 @@ export function getTab(path) {
     const tab = tabs.find((s) => {
         return s.key === key;
     });
+
+    if(!tab){
+        throw new Error("No tab for key: '" + key+ "'");
+    }
     return tab;
 }
 
 export function getNav(path) {
     const tab = getTab(path);
+    if(!tab){
+        return [];
+    }
     return tab.children;
 }
 
