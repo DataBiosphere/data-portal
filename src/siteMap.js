@@ -138,29 +138,62 @@ const siteMap =
                     key: "development-guides",
                     children: [
                         {
-
                             name: "Pipeline development guide",
-                            key: "/learn/how-it-works/data-lifecycle",
+                            key: "/build/development-guides/pipeline-development-guide"
+                        },
+                        {
+
+                            name: "Contributing a pipeline to the hca dcp",
+                            key: "/build/development-guides/contributing-a-pipeline-to-the-hca-dcp",
                         },
                         {
 
                             name: "Tertiary portal development guidt",
-                            key: "//build/development-guide/tertiary-portal-development-guide"
+                            key: "/build/development-guides/tertiary-portal-development-guide"
                         },
                         {
 
                             name: "Ingest data brokers development guide",
-                            key: "/learn/how-it-works/data-use-butter"
+                            key: "/build/development-guides/ingest-broker-development-guide"
                         }
                     ]
                 },
                 {
                     name: "API Documentation",
                     key: "api-documentation",
-                },
+                    children: [
+                        {
+                            name: "Data Store Consumer API",
+                            key: "/build/api-documentation/data-store-consumer-api"
+                        }
+                    ]
+                }
+                // {
+                //     name: "Reuse DCP Components",
+                //     key: "reusing-dcp-infrastructure",
+                //     children: [
+                //         {
+                //
+                //             name: "Butter and Toast",
+                //             key: "/build/development-guides/butter-and-toast",
+                //         }
+                //     ]
+                // }
+            ]
+        },
+        {
+            name: "Analyze",
+            key: "analyze",
+            children: [
                 {
-                    name: "Reusing DCP Infrastructure",
-                    key: "reusing-dcp-infrastructure",
+                    name: "Portals",
+                    key: "portals",
+                    children: [
+                        {
+                            name: "Visualization Portals",
+                            key: "/analyze/portals/visualization-portals"
+                        }
+                    ]
                 }
             ]
         },
