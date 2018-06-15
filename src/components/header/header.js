@@ -20,10 +20,10 @@ class Header extends React.Component {
     constructor() {
         super();
         this.state = { showNav: false };
-        this.toggleNav = this.toggleNav.bind(this);
+        this.toggleMenu = this.toggleMenu.bind(this);
     }
 
-    toggleNav = () => {
+    toggleMenu = () => {
         this.setState({showNav: !this.state.showNav })
     };
 
@@ -34,23 +34,23 @@ class Header extends React.Component {
                     <div className={compStyles.logo}><img src={headerLogo}/></div>
                     {this.state.showNav ?
                         <div className={classNames(compStyles.links, compStyles.small)}>
-                            <a href="https://explore.dev.data.humancellatlas.org" onClick={this.toggleNav}>
+                            <a href="https://explore.dev.data.humancellatlas.org" onClick={this.toggleMenu}>
                                 <span>Explore</span>
                                 <span>Search for data in the HCA</span>
                             </a>
-                            <Link to="/analyze/portals/visualization-portals" onClick={this.toggleNav}>
+                            <Link to="/analyze/portals/visualization-portals" onClick={this.toggleMenu}>
                                 <span>Analyze</span>
                                 <span>Find a list of Apps</span>
                             </Link>
-                            <Link to="/" onClick={this.toggleNav}>
+                            <Link to="/" onClick={this.toggleMenu}>
                                 <span>Contribute</span>
                                 <span>Submit your data to the HCA</span>
                             </Link>
-                            <Link to="/learn/how-it-works/data-lifecycle" onClick={this.toggleNav}>
+                            <Link to="/learn/how-it-works/data-lifecycle" onClick={this.toggleMenu}>
                                 <span>Learn</span>
                                 <span>Find user guides and how-to’s here</span>
                             </Link>
-                            <Link to="/build/development-guides/pipeline-development-guide" onClick={this.toggleNav}>
+                            <Link to="/build/development-guides/pipeline-development-guide" onClick={this.toggleMenu}>
                                 <span>Build</span>
                                 <span>Find developer guides and API docs</span>
                             </Link>
@@ -73,8 +73,8 @@ class Header extends React.Component {
                         </Link>
                     </div>
                     <div className={compStyles.userDropDown}>Alex S.</div>
-                    <div className={compStyles.menuDropDown} onClick={this.toggleNav}>Menu</div>
-                    {this.state.showNav ? <div className={compStyles.hcaNavOverlay} onClick={this.toggleNav}/> : null}
+                    <div className={compStyles.menuDropDown} onClick={this.toggleMenu}>Menu</div>
+                    {this.state.showNav ? <div className={compStyles.hcaNavOverlay} onClick={this.toggleMenu}/> : null}
                 </div>
             </div>
         );

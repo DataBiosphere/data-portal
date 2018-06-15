@@ -48,17 +48,18 @@ h4 {
 }
 
 /* P - class "m" */
-p[class^="m"] {
+p[class^="m"], h5 {
     font-size: 16px;
+    font-weight: 400 !important;
     line-height: 26px;
     margin: 0 0 26px;
 }
 
 /* P - class "s" */
-p[class^="s"] {
+p[class^="s"], h6 {
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 400 !important;
     line-height: 24px;
     margin: 0 0 18px;
 }
@@ -88,13 +89,13 @@ p[class^="xxs"] {
 .hcaContent {
     display: flex;
     flex: 1;
+    flex-direction: column;
     margin: 36px 0;
 }
 
 /* Content */
 .hcaContent .markdownContent {
-    margin-right: 14px;
-    max-width: 740px;
+    margin-right: 0;
 }
 
 /* Markdown styles */
@@ -176,10 +177,26 @@ code {
     word-break: break-all !important; /* Allow line to wrap - responsive */
 }
 
+
+/**
+ * Medium
+ */
+@media screen and (min-width: 768px) {
+
+    /* Content */
+    .hcaContent {
+        flex-direction: row;
+    }
+
+    /* Content */
+    .hcaContent .markdownContent {
+        margin-right: 14px;
+    }
+}
+
 /**
  * Large +
  */
-/* $md-tablet-portrait-lg-min: 840px; */
 @media screen and (min-width: 1200px) {
 
     /* Wrapper */
