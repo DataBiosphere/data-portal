@@ -22,13 +22,16 @@ ul > div > ul {
     margin-left: 16px !important;
 }
 
+.hcaSideNav:first-of-type {
+    display: none;
+}
+
 /* Top navigation container */
 .hcaSideNav {
     background-color: #F8F8F8; /* TODO colour */
     border-radius: 3px;
     box-sizing: border-box;
     margin: 0 0 24px;
-    //padding-bottom: 24px;
 }
 
 /* Please select */
@@ -146,6 +149,14 @@ ul > div > ul {
         height: 100%;
         position: sticky;
         top: 203px; /* 60px header, 76px section, 55px tabs (-24px margin), 36px content margin */
+    }
+
+    .hcaSideNav:nth-of-type(2) {
+        display: none;
+    }
+
+    .hcaSideNav:first-of-type {
+        display: block;
     }
 
     /* Select box - hide */
