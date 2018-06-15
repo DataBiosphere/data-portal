@@ -17,8 +17,6 @@ let expanded;
 let initialShowNav = false;
 
 const getNavClassName = (docPath, nav) => {
-    const isMobile = window.innerWidth;
-    console.log(isMobile);
 
     const key = docPath.split("/")[3];
     active = nav.key === docPath;
@@ -34,19 +32,24 @@ class Nav extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {showNav: initialShowNav};
+        this.state = {showNav: initialShowNav, tab: this.props.docPath.split("/")[2]};
         this.toggleNav = this.toggleNav.bind(this);
-        console.log(this.state.showNav);
+        console.log(this.state.tab);
     }
 
     toggleNav = () => {
+
+        // TODO when new tab, navigation is closed
+        // TODO window resize event handler
+        // Toggle the navigation open/closed
+        this.setState({showNav: !this.state.showNav});
+
         if (this.state.showNav) {
             initialShowNav = false;
         }
         else {
             initialShowNav = true;
         }
-        this.setState({showNav: !this.state.showNav})
     };
 
     render() {
@@ -56,16 +59,18 @@ class Nav extends React.Component {
                     <li className={compStyles.select} onClick={this.toggleNav}>
                         <span>Please select</span><i className='material-icons'>keyboard_arrow_down</i>
                     </li>
-                    { this.state.showNav ?
-                    siteMap.getNav(this.props.docPath).map((p, i) =>
-                        <div key={i}>
-                            <li className={getNavClassName(this.props.docPath, p)} key={i}><Link to={p.key}>{p.name}</Link></li>
-                            {p.children && expanded ?
-                                <ul>
-                                    {p.children.map((c, j) => <li className={getNavClassName(this.props.docPath, c)} key={j}><Link
-                                        to={c.key}>{c.name}</Link></li>)}
-                                </ul> : null}
-                        </div>) : null }
+                    {this.state.showNav ?
+                        siteMap.getNav(this.props.docPath).map((p, i) =>
+                            <div key={i}>
+                                <li className={getNavClassName(this.props.docPath, p)} key={i}><Link
+                                    to={p.key}>{p.name}</Link></li>
+                                {p.children && expanded ?
+                                    <ul>
+                                        {p.children.map((c, j) => <li className={getNavClassName(this.props.docPath, c)}
+                                                                      key={j}><Link
+                                            to={c.key}>{c.name}</Link></li>)}
+                                    </ul> : null}
+                            </div>) : null}
                 </ul>
             </div>
         );
