@@ -177,6 +177,25 @@ code {
     word-break: break-all !important; /* Allow line to wrap - responsive */
 }
 
+/* Table */
+thead tr, tbody tr {
+    border-bottom: 1px solid #CCCCCC; /* TODO colour */
+}
+
+thead tr th, tbody tr td {
+    border-bottom: none;
+}
+
+thead th, tbody tr {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600 !important;
+    line-height: 1;
+}
+
+tbody tr {
+    font-weight: 400 !important;
+}
 
 /**
  * Medium
