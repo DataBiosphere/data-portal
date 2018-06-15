@@ -8,68 +8,33 @@
 // Core dependencies
 import React from "react";
 
-var classNames = require('classnames');
-
 // App dependencies
 import compStyles from './contentTemplate.module.css';
+import Nav from '../components/nav/nav';
+import Section from '../components/section/section';
+import TabNav from "../components/tabNav/tabNav";
 
-// let showList = false;
-
-let getTabClassName = () => {
-    return classNames({
-        [compStyles.hcaTab]: true,
-        [compStyles.active]: false
-    });
-};
-
-let getListClassName = () => {
-    return classNames({
-        [compStyles.expanded]: true,
-        [compStyles.selected]: false
-    })
-};
+var classNames = require('classnames');
 
 export default function Template({
                                      data, // this prop will be injected by the GraphQL query below.
                                  }) {
     const {markdownRemark} = data; // data.markdownRemark holds our post data
     const {frontmatter, html} = markdownRemark;
+    const docPath = frontmatter.path;
 
     return (
         <div>
+            <Section docPath={docPath}/>
+            <TabNav docPath={docPath}/>
             <div className={compStyles.wrapper}>
-                <div className={compStyles.hcaHeading}>Learn</div>
+            <div className={compStyles.hcaContent}>
+                <Nav docPath={docPath}/>
+                <div
+                        className={classNames(compStyles.markdownContent, "learn-template")}
+                        dangerouslySetInnerHTML={{__html: html}}
+                />
             </div>
-            <div className={compStyles.hcaTabs}>
-                <div className={compStyles.wrapper}>
-                    <div className={compStyles.hcaTabList}>
-                        <div className={getTabClassName()}>How it works</div>
-                        <div className={classNames(compStyles.hcaTab, compStyles.active)}>Userguides</div>
-                        <div className={getTabClassName()}>Metadata Dictionary</div>
-                    </div>
-                </div>
-            </div>
-            <div className={compStyles.wrapper}>
-                <div className={compStyles.hcaContent}>
-                    <ul className={compStyles.hcaContentSideNav}>
-                        <li>Accessing Data</li>
-                        <li className={getListClassName()}>Contributing Data</li>
-                        <ul>
-                            <li>About</li>
-                            <li className={compStyles.selected}>How to upload data</li>
-                            <li>Prepping your metadata CSV</li>
-                            <li>Submission</li>
-                            <li>FAQs</li>
-                        </ul>
-                        <li>Learning about analysis pipelines</li>
-                    </ul>
-                    <div className={compStyles.hcaMarkdown}>
-                        <div
-                            className="content-template"
-                            dangerouslySetInnerHTML={{__html: html}}
-                        />
-                    </div>
-                </div>
             </div>
         </div>
     );

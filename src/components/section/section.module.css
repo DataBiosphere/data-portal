@@ -1,0 +1,47 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal section component.
+ */
+
+/* Section - sticky */
+.section {
+    background-color: white;
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+}
+
+/* Wrapper */
+.wrapper {
+    align-items: center;
+    display: flex;
+    padding: 0 16px;
+}
+
+/* Section heading */
+.hcaSectionHeading {
+    align-items: center;
+    display: flex;
+    font-family: "DIN Alternate", "Montserrat";
+    font-size: 34px;
+    font-weight: 600;
+    height: 76px;
+    letter-spacing: 0.54px;
+    width: 100%;
+}
+
+/**
+ * Large +
+ */
+@media screen and (min-width: 1200px) {
+
+    /* Wrapper */
+    .wrapper {
+        margin: 0 auto;
+        max-width: 1200px; /* Snap to 1200px, gutter 30px */
+        padding: 0 30px;
+    }
+}
+

@@ -1,0 +1,132 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal nav component.
+ */
+
+/* Navigation lists - no list style */
+ul {
+    list-style: none;
+}
+
+/* Navigation lists - no margin */
+ul li {
+    cursor: pointer;
+    margin: 0;
+}
+
+/* Navigation - secondary ul */
+ul > div > ul {
+    margin-left: 16px !important;
+}
+
+/* Side navigation container */
+.hcaSideNav {
+    display: none;
+}
+
+/**
+ * Medium
+ */
+@media screen and (min-width: 768px) {
+
+    /* Navigation container */
+    .hcaSideNav {
+        display: block;
+        height: 100%;
+        max-width: 148px; /* Total allowable width 156px */
+        min-width: 148px;
+        margin-left: 8px !important;
+        margin-right: 20px !important;
+        position: sticky;
+        top: 203px; /* 60px header, 76px section, 55px tabs (-24px margin), 36px content margin */
+    }
+
+    /* Primary navigation */
+    .hcaSideNav > div > li {
+        padding: 6px 0;
+        position: relative; /* Positions nav bar */
+    }
+
+    /* Primary navigation - link */
+    .hcaSideNav > div > li a {
+        color: #999999; /* TODO color hca-gray-medium */
+        font-family: "Montserrat", sans-serif; /* TODO typography */
+        font-size: 14px; /* TODO typography */
+        font-weight: 500; /* TODO typography */
+        text-decoration: none;
+    }
+
+    /* Secondary navigation */
+    .hcaSideNav > div ul li {
+        padding: 6px 0; /* TODO review */
+        position: relative; /* Positions nav bar */
+    }
+
+    /* Secondary navigation - link */
+    .hcaSideNav > div ul li a {
+        color: #999999; /* TODO color hca-gray-medium */
+        font-family: "Montserrat", sans-serif; /* TODO typography */
+        font-size: 13px; /* TODO typography - confirm size */
+        font-weight: 500; /* TODO typography */
+        text-decoration: none;
+    }
+
+    /* Navigation - hover */
+    .hcaSideNav > div > li:hover a, .hcaSideNav > div ul li:hover a {
+        color: #333333; /* TODO color hca-gray-darkest */
+    }
+
+    /* Primary navigation - expanded */
+    .hcaSideNav > div > li.expanded a {
+        color: #000000; /* TODO colour hca-black */
+    }
+
+    /* Selected navigation - primary & secondary */
+    .hcaSideNav > div > li.selected a, .hcaSideNav > div ul li.selected a {
+        color: #1288E4; /* TODO color hca-primary */
+    }
+
+    /* Navigation bar */
+    .hcaSideNav > div > li.expanded:before, .hcaSideNav > div > li.selected:before, .hcaSideNav > div ul li:before {
+        background-color: #EAEAEA; /* TODO colour hca-gray-lightest */
+        content: "";
+        height: 100%;
+        left: -8px; /* 6px between nav bar and nav text, includes 2px border */
+        position: absolute;
+        top: 0;
+        width: 2px;
+    }
+
+    /* Navigation bar - secondary list */
+    .hcaSideNav > div ul li:before {
+        left: -24px; /* 6px between nav bar and nav text, includes 2px border */
+    }
+
+    /* Navigation bar - selected list */
+    .hcaSideNav > div li.selected:before {
+        background-color: #1288E4; /* TODO colour hca-primary */
+    }
+
+    /* Navigation bar - selected list */
+    .hcaSideNav > div > li:not(.expanded).selected:before {
+        display: none;
+    }
+}
+
+/**
+ * Large +
+ */
+/* $md-tablet-portrait-lg-min: 840px; */
+@media screen and (min-width: 1200px) {
+
+    /* Navigation container */
+    .hcaSideNav {
+        max-width: 192px;
+        min-width: 192px;
+        margin-right: 90px !important;
+    }
+}
+
+
