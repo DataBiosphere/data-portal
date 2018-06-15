@@ -154,7 +154,7 @@
         padding: 0 30px; /* Gutter 30px */
     }
 
-    .links.small {
+    .links.small, .hcaNavOverlay {
         display: none;
     }
 
