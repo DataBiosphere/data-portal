@@ -123,7 +123,7 @@ const siteMap =
                         children: [
                             {
                                 name: "Metadata Dictionary Overview",
-                                key: "/learn/metadata-dictionary"
+                                key: "/learn/metadata-dictionary/metadata-dictionary-landing"
                             }
                         ]
                     }
@@ -181,6 +181,16 @@ const siteMap =
                         {
                             name: "Visualization Portals",
                             key: "/analyze/portals/visualization-portals"
+                        }
+                    ]
+                },
+                {
+                    name: "Visualization Components",
+                    key: "visualization-components",
+                    children: [
+                        {
+                            name: "Visualization Components",
+                            key: "/analyze/visualization-components/visualization-components-landing"
                         }
                     ]
                 }
