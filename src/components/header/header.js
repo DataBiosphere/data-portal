@@ -31,7 +31,7 @@ const getLinkClassName = () => {
                             <span>Explore</span>
                             <span>Search for data in the HCA</span>
                         </a>
-                        <Link to="/">
+                        <Link to="/analyze/peanuts">
                             <span>Analyze</span>
                             <span>Find a list of Apps</span>
                         </Link>
