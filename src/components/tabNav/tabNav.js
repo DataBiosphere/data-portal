@@ -25,11 +25,22 @@ const getTabClassName = (tab, docPath) => {
     });
 };
 
+const getLinkForTab = (tab) => {
+
+    if (tab.children[0]) {
+        return tab.children[0].key;
+    }
+    else {
+        return "/";
+    }
+};
+
+
 const TabNav = ({docPath}) => (
         <div className={compStyles.hcaTabs}>
             <div className={compStyles.wrapper}>
                 <div className={compStyles.hcaTabList}>
-                    {siteMap.getTabs(docPath).map((tab, i) => <div key={i} className={getTabClassName(tab, docPath)}><Link to={tab.children[0].key}>{tab.name}</Link></div>)}
+                    {siteMap.getTabs(docPath).map((tab, i) => <div key={i} className={getTabClassName(tab, docPath)}><Link to={getLinkForTab(tab)}>{tab.name}</Link></div>)}
                 </div>
             </div>
         </div>
