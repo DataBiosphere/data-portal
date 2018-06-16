@@ -7,11 +7,12 @@
 
 // Core dependencies
 import compStyles from './index.module.css'
-import Link from 'gatsby-link';
 import React from 'react';
 
 let classNames = require('classnames');
-let exploreCounts = ["12.3 Million", "0.2 Million", "2.5 Thousand", "1.02 Million", "11 Million", "5 Hundred", "2.3 Million", "2 Hundred", "5 Thousand"];
+let exploreCounts = ["12.3 Million", "0.2 Million", "2 Hundred", "1.02 Million", "11 Million", "5 Hundred", "2.3 Million", "2 Hundred", "5 Million"];
+let exploreLinks = ["blood", "marrow", "brain", "esophagus", "heart", "immune", "kidney", "liver", "spleen"];
+let exploreHref = ["https://explore.dev.data.humancellatlas.org/"];
 
 // Images
 import analysisPortal from "../../images/data-portal/analysis-portal.png";
@@ -49,11 +50,12 @@ const IndexPage = () => (
         <div className={compStyles.explore}>
             <div className={compStyles.wrapper}>
                 <div>
-                    <h2>Start Exploring</h2>
-                    <p className={compStyles.s}>Hover over or click on an organ to view data from that organ</p>
-                </div>
-                <div>
-                    <Explore exploreCounts={exploreCounts}/>
+                    <div className={compStyles.exploreText}>
+                        <h2>Start Exploring</h2>
+                        <p className={compStyles.s}>Hover over or click on an organ to view data from that organ</p>
+                    </div>
+                    <Explore exploreCounts={exploreCounts} exploreLinks={exploreLinks} exploreHref={exploreHref}/>
+                    <ExploreTable exploreCounts={exploreCounts} exploreLinks={exploreLinks} exploreHref={exploreHref}/>
                 </div>
             </div>
         </div>

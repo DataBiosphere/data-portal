@@ -237,14 +237,12 @@ button.homepage:focus {
 }
 
 /* Explore */
-.explore .wrapper {
-    flex-direction: row;
+.explore .wrapper > div {
+    position: relative;
 }
 
-.explore > div > div:first-of-type {
-    align-self: flex-start;
-    display: flex;
-    flex-direction: column;
+.explore .exploreText {
+    margin-bottom: 32px;
 }
 
 /* Explore heading */
@@ -257,21 +255,8 @@ button.homepage:focus {
 .explore p.s {
     color: #666666; /* TODO colour */
     line-height: 18px;
-    margin-bottom: 48px;
+    margin-bottom: 0;
     max-width: 336px;
-}
-
-/* Explore Imagery */
-.explore > div > div:nth-of-type(2) {
-    align-items: baseline;
-    display: flex;
-    justify-content: center;
-    margin-bottom: -30px; /* Equal to wrapper padding */
-}
-
-[id=Blood]:hover, [id=Marrow]:hover, [id=Brain]:hover, [id=Esophagus]:hover, [id=Heart]:hover, [id=Immune]:hover, [id=Kidney]:hover, [id=Liver]:hover, [id=Spleen]:hover {
-    //cursor: pointer;
-    fill: #1288E4;
 }
 
 /* Data Portal */
@@ -408,6 +393,36 @@ button.homepage:focus {
 }
 
 /**
+ * Tablet +
+ */
+@media screen and (min-width: 768px) {
+
+    /* Explore text */
+    .explore .exploreText {
+        margin-bottom: 0;
+        position: absolute;
+        top: 0;
+    }
+
+    /* Explore Imagery */
+    .explore > div > div:first-of-type {
+        margin-bottom: -83px; /* Equal to wrapper padding and 4px container around svg */
+        max-width: 650px;
+    }
+
+    /* Explore Imagery */
+    .explore > div > div:first-of-type {
+        margin-bottom: -83px; /* Equal to wrapper padding and 4px container around svg */
+        max-width: 650px;
+    }
+
+    /* Svg */
+    .explore svg {
+        width: 650px;
+    }
+}
+
+/**
  * Medium +
  */
 @media screen and (min-width: 1024px) {
@@ -477,15 +492,15 @@ button.homepage:focus {
         width: 164px;
     }
 
-    /* Explore */
-    .explore > div > div {
-        display: flex;
-        //max-width: 800px;
+    /* Explore Imagery */
+    .explore > div > div:first-of-type {
+        margin-bottom: -70px; /* Equal to wrapper padding and 4px container around svg */
+        max-width: 800px;
     }
 
-    /* Explore Imagery */
-    .explore > div > div:nth-of-type(2) {
-        margin-bottom: -70px; /* Equal to wrapper padding */
+    /* Svg */
+    .explore svg {
+        width: unset;
     }
 
     /* Data Portal description */
