@@ -11,7 +11,7 @@ import React from 'react';
 import compStyles from './header.module.css';
 
 // Images
-import headerLogo from "../../../site/images/logo/hca-data-portal/logo-hca.png"
+import headerLogo from "../../../images/logo/hca-data-portal/logo-hca.png";
 
 const classNames = require('classnames');
 

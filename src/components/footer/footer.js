@@ -11,7 +11,7 @@ import Link from 'gatsby-link';
 import React from 'react';
 
 // Images
-import footerLogo from "../../../site/images/logo/hca-data-portal/logo-hca-white.png"
+import footerLogo from "../../../images/logo/hca-data-portal/hca-logo-white.png"
 
 const Footer = () => (
     <div className={compStyles.footer}>
