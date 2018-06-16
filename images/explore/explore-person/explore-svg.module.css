@@ -1,0 +1,30 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal explore svg component.
+ */
+
+[id=explore-table] rect[id=Blood] {
+    display: none;
+}
+
+[id=Blood]:hover, [id=Marrow]:hover, [id=Brain]:hover,
+[id=Esophagus]:hover, [id=Heart]:hover, [id=Immune]:hover,
+[id=Kidney]:hover, [id=Liver] [id=Liver]:hover ~ [id=Liver],
+[id=Spleen]:hover, [id=Spleen]:hover, [id=Spleen]:hover ~ [id=Spleen] {
+//cursor: pointer;
+//    fill: #1288E4;
+}
+
+text[id=Blood], text[id=Marrow], text[id=Brain],
+text[id=Esophagus], text[id=Heart], text[id=Immune],
+text[id=Kidney], text[id=Liver], text[id=Spleen] {
+    display: none;
+}
+
+[id=Blood]:hover text, [id=Marrow]:hover text, [id=Brain]:hover text,
+[id=Esophagus]:hover text, [id=Heart]:hover text, [id=Immune]:hover text,
+[id=Kidney]:hover text, [id=Liver]:hover text, [id=Spleen]:hover text {
+    display: block;
+}
