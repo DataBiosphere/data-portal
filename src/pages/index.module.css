@@ -269,7 +269,7 @@ button.homepage:focus {
     margin-bottom: -30px; /* Equal to wrapper padding */
 }
 
-.explore svg [id=Blood]:hover, [id=Marrow]:hover, [id=Brain]:hover, [id=Esophagus]:hover, [id=Heart]:hover, [id=Immune]:hover, [id=Kidney]:hover, [id=Liver]:hover, [id=Spleen]:hover {
+[id=Blood]:hover, [id=Marrow]:hover, [id=Brain]:hover, [id=Esophagus]:hover, [id=Heart]:hover, [id=Immune]:hover, [id=Kidney]:hover, [id=Liver]:hover, [id=Spleen]:hover {
     //cursor: pointer;
     fill: #1288E4;
 }
