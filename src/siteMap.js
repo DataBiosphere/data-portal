@@ -19,11 +19,11 @@ const siteMap =
                         key: "how-it-works",
                         children: [
                             {
-                                name: "Data lifecycle",
+                                name: "Data Lifecycle",
                                 key: "/learn/how-it-works/data-lifecycle",
                             },
                             {
-                                name: "Data use agreement",
+                                name: "Data Use Agreement",
                                 key: "/learn/how-it-works/data-use-agreement",
                             }
                         ]
@@ -38,16 +38,16 @@ const siteMap =
                                 children: [
                                     {
 
-                                        name: "Using the Data Browser to access data",
+                                        name: "Using the Data Browser to Access Data",
                                         key: "/learn/userguides/accessing-data/using-the-data-browser-to-access-data"
 
                                     },
                                     {
-                                        name: "Using the CLI to access data",
+                                        name: "Using the CLI to Access Data",
                                         key: "/learn/userguides/accessing-data/using-the-cli-to-access-data"
                                     },
                                     {
-                                        name: "How to go from query to annotated clusters",
+                                        name: "How to go from Query to Annotated Clusters",
                                         key: "/learn/userguides/accessing-data/how-to-go-from-query-to-annotated-clusters"
                                     },
                                     {
@@ -138,22 +138,22 @@ const siteMap =
                     key: "development-guides",
                     children: [
                         {
-                            name: "Pipeline development guide",
+                            name: "Pipeline Development Guide",
                             key: "/build/development-guides/pipeline-development-guide"
                         },
                         {
 
-                            name: "Contributing a pipeline to the hca dcp",
+                            name: "Contributing a Pipeline to the HCA DCP",
                             key: "/build/development-guides/contributing-a-pipeline-to-the-hca-dcp",
                         },
                         {
 
-                            name: "Tertiary portal development guide",
+                            name: "Tertiary Portal Development Guide",
                             key: "/build/development-guides/tertiary-portal-development-guide"
                         },
                         {
 
-                            name: "Ingest data brokers development guide",
+                            name: "Ingest Data Brokers Development Guide",
                             key: "/build/development-guides/ingest-broker-development-guide"
                         },
                         {
@@ -220,11 +220,7 @@ export function getSection(path) {
     });
 
     if(!section){
-        throw new Error("section with key: '" +key + "' is not foundango!");
-        // return {
-        //
-        //     key:"test"
-        // }
+        throw new Error("section with key: '" +key + "' is not found!");
     }
     return section;
 }
