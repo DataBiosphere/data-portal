@@ -13,12 +13,13 @@ import React from 'react';
 var classNames = require('classnames');
 
 // Images
-import analysisPortal from "../../site/images/data-portal/analysis-portal.png";
-import arrowRight from "../../site/images/data-portal/arrow-right.png";
-import contribute from "../../site/images/data-portal/contribute.png";
-import explore from "../../site/images/explore/explore.png";
-import findData from "../../site/images/data-portal/find-data.png";
-import processData from "../../site/images/data-portal/process-data.png";
+import analysisPortal from "../../images/data-portal/analysis-portal.png";
+import arrowRight from "../../images/data-portal/arrow-right.png";
+import contribute from "../../images/data-portal/contribute.png";
+import findData from "../../images/data-portal/find-data.png";
+import processData from "../../images/data-portal/process-data.png";
+import ExplorePerson from "../../images/explore/explore-person/explore-person-svg";
+import ExploreTable from "../../images/explore/explore-table/explore-table-svg";
 
 const IndexPage = () => (
     <div>
@@ -49,9 +50,10 @@ const IndexPage = () => (
                 <div>
                     <h2>Start Exploring</h2>
                     <p className={compStyles.s}>Hover over or click on an organ to view data from that organ</p>
+                    <ExploreTable name="label" value="stop"/>
                 </div>
                 <div>
-                <img src={explore}/>
+                    <ExplorePerson/>
                 </div>
             </div>
         </div>

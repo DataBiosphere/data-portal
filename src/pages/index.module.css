@@ -237,10 +237,14 @@ button.homepage:focus {
 }
 
 /* Explore */
+.explore .wrapper {
+    flex-direction: row;
+}
+
 .explore > div > div:first-of-type {
-    align-self: center;
-    max-width: 650px;
-    width: 100%;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Explore heading */
@@ -253,6 +257,7 @@ button.homepage:focus {
 .explore p.s {
     color: #666666; /* TODO colour */
     line-height: 18px;
+    margin-bottom: 48px;
     max-width: 336px;
 }
 
@@ -264,9 +269,9 @@ button.homepage:focus {
     margin-bottom: -30px; /* Equal to wrapper padding */
 }
 
-.explore > div > div img {
-    margin-bottom: 0px;
-    width: 80%;
+.explore svg [id=Blood]:hover, [id=Marrow]:hover, [id=Brain]:hover, [id=Esophagus]:hover, [id=Heart]:hover, [id=Immune]:hover, [id=Kidney]:hover, [id=Liver]:hover, [id=Spleen]:hover {
+    //cursor: pointer;
+    fill: #1288E4;
 }
 
 /* Data Portal */
@@ -473,8 +478,9 @@ button.homepage:focus {
     }
 
     /* Explore */
-    .explore > div > div:first-of-type {
-        max-width: 800px;
+    .explore > div > div {
+        display: flex;
+        //max-width: 800px;
     }
 
     /* Explore Imagery */
