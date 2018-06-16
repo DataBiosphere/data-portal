@@ -38,7 +38,7 @@ class Header extends React.Component {
                                 <span>Explore</span>
                                 <span>Search for data in the HCA</span>
                             </a>
-                            <Link to="/analyze/portals/visualization-portals" onClick={this.toggleMenu}>
+                            <Link to="/analyze/portals/overview" onClick={this.toggleMenu}>
                                 <span>Analyze</span>
                                 <span>Find a list of Apps</span>
                             </Link>
@@ -59,7 +59,7 @@ class Header extends React.Component {
                         <a href="https://explore.dev.data.humancellatlas.org">
                             <span>Explore</span>
                         </a>
-                        <Link to="/analyze/portals/visualization-portals">
+                        <Link to="/analyze/portals/overview">
                             <span>Analyze</span>
                         </Link>
                         <Link to="/">

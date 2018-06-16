@@ -148,13 +148,17 @@ const siteMap =
                         },
                         {
 
-                            name: "Tertiary portal development guidt",
+                            name: "Tertiary portal development guide",
                             key: "/build/development-guides/tertiary-portal-development-guide"
                         },
                         {
 
                             name: "Ingest data brokers development guide",
                             key: "/build/development-guides/ingest-broker-development-guide"
+                        },
+                        {
+                            name: "Pipeline Testing Guide",
+                            key: "/build/development-guides/testing-pipelines"
                         }
                     ]
                 },
