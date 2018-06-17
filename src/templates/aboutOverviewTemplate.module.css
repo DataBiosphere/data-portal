@@ -1,0 +1,299 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal about overview template component.
+ */
+
+/* Typography */
+/* TODO typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "din-2014", sans-serif;
+    font-weight: 500;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 18px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 38px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 34px 0 36px;
+}
+
+h2:first-of-type {
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 16px 0 18px;
+}
+
+h4 {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 14px 0 16px;
+}
+
+/* P - class "m" */
+p[class^="m"], h5 {
+    font-size: 16px;
+    font-weight: 400 !important;
+    line-height: 26px;
+    margin: 0 0 26px;
+}
+
+/* P - class "s" */
+p[class^="s"], h6 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400 !important;
+    line-height: 24px;
+    margin: 0 0 18px;
+}
+
+/* P - class "xs" */
+p[class*="xs"] {
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0 0 16px;
+}
+
+/* P - class "xxs" */
+p[class^="xxs"] {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 14px;
+}
+
+/* Link */
+a {
+    color: #1288E4; /* TODO colour */
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 18px;
+    text-decoration: none;
+}
+
+/* Wrapper */
+.wrapper {
+    align-items: center;
+    display: flex;
+    padding: 0 16px; /* Gutter 16px */
+}
+
+/* Content */
+.hcaContent {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    margin: 36px 0;
+}
+
+/* Data Portal description */
+.dataPortal h1 {
+    margin: 24px 0; /* TODO review */
+    text-align: center;
+}
+
+/* DP Imagery and associated text */
+.portalDescription {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+/* Each DP has its own box */
+.portalDescription > div {
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+
+/* Arrow */
+.portalDescription .dpArrow {
+    flex: none; /* Overrides flex: 1 attribute from its own box */
+    height: 95px; /* Forces arrow container to be same height as DP images */
+    justify-content: center;
+    transform: rotate(90deg);
+}
+
+/* Top row of each box - image container */
+.portalDescription > div > div:first-of-type {
+    align-items: center;
+    display: flex;
+    padding: 0 16px;
+    width: 95px;
+}
+
+/* Top row of each box - image */
+.portalDescription > div > div:first-of-type img, .portalDescription .dpArrow img {
+    margin-bottom: 0;
+}
+
+/* Second row of each box */
+.portalDescription > div > div:nth-of-type(2) {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 16px;
+    width: 205px;
+}
+
+/* Second row of each box - text description */
+.portalDescription > div > div:nth-of-type(2) p.s {
+    color: #666666; /* TODO hca-gray-dark review */
+    font-weight: 500;
+    line-height: 18px;
+    margin: 0;
+    text-align: left;
+}
+
+/* Link */
+.portalDescription > div > div:nth-of-type(2) a.s {
+    color: #1288E4; /* TODO colour */
+    cursor: pointer;
+    line-height: 18px;
+    margin: 0;
+    text-align: left;
+}
+
+/* What we provide */
+.whatWeProvide {
+    margin-top: 58px;
+}
+
+.whatWeProvide h4 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Flex box - content container */
+.contentFlex {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Flex box - each box */
+.contentFlex > div {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0;
+    width: 224px;
+}
+
+/* Flex image */
+.contentFlex .flexImg {
+    background-color: #CCCCCC; /* TODO review */
+    height: 156px;
+    width: 224px;
+}
+
+/* Flex text */
+.contentFlex a, .contentFlex p {
+    margin-bottom: 10px !important;
+}
+
+/* Flex link */
+.contentFlex > div a {
+    font-weight: 500 !important;
+}
+
+/**
+ * Tablet
+ */
+@media screen and (min-width: 768px) {
+
+    /* Wrapper */
+    .wrapper {
+        margin: 0 auto;
+        max-width: 682px; /* Snap to 650px, gutter 16px */
+    }
+}
+
+/**
+ * Medium
+ */
+@media screen and (min-width: 1024px) {
+
+    /* Wrapper */
+    .wrapper {
+        max-width: 860px; /* Snap to 800px, gutter 30px */
+        padding: 0 30px;
+    }
+
+    /* DP Imagery and associated text */
+    .portalDescription {
+        align-items: flex-start;
+        flex-direction: row;
+    }
+
+    /* Portal Description */
+    .portalDescription > div {
+        flex: 1;
+        flex-direction: column;
+        width: unset;
+    }
+
+    /* Top row of each box - image container */
+    .portalDescription > div > div:first-of-type {
+        height: 95px;
+        padding: 0;
+        width: unset;
+    }
+
+    /* Second row of each box */
+    .portalDescription > div > div:nth-of-type(2) {
+        max-width: 172px;
+        padding: 0;
+    }
+
+    /* Second row of each box - text description & link */
+    .portalDescription > div > div:nth-of-type(2) p.s, .portalDescription > div > div:nth-of-type(2) a.s {
+        margin: 12px 0 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Arrow */
+    .portalDescription .dpArrow {
+        transform: rotate(0deg);
+    }
+
+    /* Flex box - content container */
+    .contentFlex {
+        align-items: flex-start;
+        flex-direction: row;
+    }
+}
+
+/**
+ * Large +
+ */
+@media screen and (min-width: 1200px) {
+
+}
+
+

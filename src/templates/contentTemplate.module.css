@@ -8,8 +8,8 @@
 /* Typography */
 /* TODO typography */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "DIN Alternate", "Montserrat";
-    font-weight: 600;
+    font-family: "din-2014", "Montserrat";
+    font-weight: 500;
 }
 
 p {
@@ -78,6 +78,18 @@ p[class^="xxs"] {
     margin: 0 0 14px;
 }
 
+/* Link */
+a {
+    color: #1288E4; /* TODO colour */
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 18px;
+    text-decoration: none;
+}
+
 /* Wrapper */
 .wrapper {
     align-items: center;
@@ -129,9 +141,9 @@ dl {
 
 /* HTML - dt - matches H4 spec */
 dt {
-    font-family: "DIN Alternate", "Montserrat"; /* TODO typography */
+    font-family: "din-2014", "Montserrat"; /* TODO typography */
     font-size: 16px; /* TODO typography */
-    font-weight: 600; /* TODO typography */
+    font-weight: 500; /* TODO typography */
     line-height: 22px;
 }
 

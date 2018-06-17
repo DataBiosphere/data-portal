@@ -27,8 +27,9 @@ const Layout = ({children, data}) => (
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700"/>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono"/>
+            <link rel="stylesheet" href="https://use.typekit.net/qhb0geh.css"/>
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title}/>
+        <Header/>
         <div className={compStyles.content}>
             {children()}
         </div>

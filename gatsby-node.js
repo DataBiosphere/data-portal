@@ -6,21 +6,21 @@
 
  // You can delete this file if you're not using it
 
-
 const path = require("path");
-
-
-
-exports.onCreateNode = ({ node }) => {
-    console.log(node.internal.type);
-};
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
     const { createPage } = boundActionCreators;
 
-
-
     const contentTemplate = path.resolve(`src/templates/contentTemplate.js`);
+    const aboutOverviewTemplate = path.resolve(`src/templates/aboutOverviewTemplate.js`);
+
+    function getTemplate(templateName)
+    {
+        if (templateName) {
+            return aboutOverviewTemplate;
+        }
+        return contentTemplate;
+    }
 
     return graphql(`
     {
@@ -32,6 +32,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           node {
             frontmatter {
               path
+              template
             }
           }
         }
@@ -43,10 +44,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
 
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-            console.log(node.frontmatter.path);
             createPage({
                 path: node.frontmatter.path,
-                component: contentTemplate,
+                component: getTemplate(node.frontmatter.template),
                 context: {}, // additional data can be passed via context
             });
         });

@@ -8,8 +8,8 @@
 /* Typography */
 /* TODO typography */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "DIN Alternate", "Montserrat";
-    font-weight: 600;
+    font-family: "din-2014", "Montserrat";
+    font-weight: 500;
 }
 
 p {
@@ -57,8 +57,8 @@ p[class^="m"] {
     margin: 0 0 26px;
 }
 
-/* P and link - class "s" */
-p[class^="s"], a[class^="s"] {
+/* P - class "s" */
+p[class^="s"] {
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -78,6 +78,18 @@ p[class^="xxs"] {
     font-size: 12px;
     line-height: 18px;
     margin: 0 0 14px;
+}
+
+/* Link */
+a {
+    color: #1288E4; /* TODO colour */
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 18px;
+    text-decoration: none;
 }
 
 /* Wrapper */
@@ -338,8 +350,6 @@ button.homepage:focus {
 
 /* Link */
 .portalDescription > div > div:nth-of-type(2) a.s {
-    color: #1288E4; /* TODO colour */
-    cursor: pointer;
     line-height: 18px;
     margin: 0;
     text-align: left;

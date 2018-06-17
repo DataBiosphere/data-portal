@@ -209,6 +209,32 @@ const siteMap =
                     ]
                 }
             ]
+        },
+        {
+            name: "About",
+            key: "about",
+            children: [
+                {
+                    name: "Overview",
+                    key: "overview",
+                    children: [
+                        {
+                            name: "Overview",
+                            key: "/about/overview/overview"
+                        }
+                    ]
+                },
+                {
+                    name: "What is the DCP",
+                    key: "what-is-the-dcp",
+                    children: [
+                        {
+                            name: "What is the DCP",
+                            key: "/about/what-is-the-dcp/what-is-the-dcp"
+                        }
+                    ]
+                }
+            ]
         }
     ];
 
@@ -219,8 +245,8 @@ export function getSection(path) {
         return s.key === key;
     });
 
-    if(!section){
-        throw new Error("section with key: '" +key + "' is not found!");
+    if (!section) {
+        throw new Error("section with key: '" + key + "' is not found!");
     }
     return section;
 }
@@ -229,12 +255,12 @@ export function getTabs(path) {
 
     const section = getSection(path);
 
-    if(!section.children){
-        throw new Error("No children for section: '" + section.key+ "'");
+    if (!section.children) {
+        throw new Error("No children for section: '" + section.key + "'");
     }
 
-    section.children.forEach((tab) =>{
-        if(!tab.children || tab.children.length == 0){
+    section.children.forEach((tab) => {
+        if (!tab.children || tab.children.length == 0) {
             throw new Error("Tab  '" + tab.name + "' has no children and therefore no landing page.");
         }
     });
@@ -249,15 +275,15 @@ export function getTab(path) {
         return s.key === key;
     });
 
-    if(!tab){
-        throw new Error("No tab for key: '" + key+ "'");
+    if (!tab) {
+        throw new Error("No tab for key: '" + key + "'");
     }
     return tab;
 }
 
 export function getNav(path) {
     const tab = getTab(path);
-    if(!tab){
+    if (!tab) {
         return [];
     }
     return tab.children;

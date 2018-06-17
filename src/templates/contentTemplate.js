@@ -2,7 +2,7 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * HCA Data Portal learn template component.
+ * HCA Data Portal content template component.
  */
 
 // Core dependencies

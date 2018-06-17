@@ -24,9 +24,9 @@
 .hcaSectionHeading {
     align-items: center;
     display: flex;
-    font-family: "DIN Alternate", "Montserrat";
+    font-family: "din-2014", "Montserrat";
     font-size: 34px;
-    font-weight: 600;
+    font-weight: 500;
     height: 76px;
     letter-spacing: 0.54px;
     width: 100%;
