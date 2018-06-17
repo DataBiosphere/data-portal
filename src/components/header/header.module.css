@@ -30,10 +30,11 @@
 }
 
 /* Logo */
-.logo img {
+a.logo, a.logo img {
     align-self: center;
     cursor: pointer;
-    margin-bottom: 0; /* TODO review global */
+    line-height: 0 !important;
+    margin-bottom: 0 !important; /* TODO review global */
 }
 
 /* Nav links */

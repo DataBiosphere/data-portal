@@ -31,7 +31,7 @@ class Header extends React.Component {
         return (
             <div className={compStyles.navBar}>
                 <div className={compStyles.wrapper}>
-                    <div className={compStyles.logo}><img src={headerLogo}/></div>
+                    <Link to="/" className={compStyles.logo}><img src={headerLogo}/></Link>
                     {this.state.showNav ?
                         <div className={classNames(compStyles.links, compStyles.small)}>
                             <a href="https://explore.dev.data.humancellatlas.org" onClick={this.toggleMenu}>
