@@ -2,7 +2,7 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * Style definitions specific to the HCA Data Portal about overview template component.
+ * Style definitions specific to the HCA Contribute contribute overview template component.
  */
 
 /* Typography */
@@ -100,89 +100,81 @@ a {
 /* Content */
 .hcaContent {
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: center;
     margin: 36px 0;
+    max-width: 800px;
 }
 
-/* Data Portal description */
-.dataPortal h1 {
+/* Contribute description */
+.contribute h1 {
     margin: 24px 0; /* TODO review */
     text-align: center;
 }
 
-/* DP Imagery and associated text */
-.portalDescription {
+/* Contribute - code + contact us */
+.contribute > div {
     align-items: center;
+    background-color: #F8F8F8;
+    border-radius: 3px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 56px;
+    padding: 24px;
 }
 
-/* Each DP has its own box */
-.portalDescription > div {
+/* Code */
+.contribute > div > div {
+    margin-right: 16px;
+}
+
+.contribute code {
+    word-break: normal !important;
+}
+
+.contribute code:not(:last-of-type) {
+    margin-bottom: 16px;
+}
+
+.contribute code li {
+    margin: 8px 0;
+}
+
+/* Button - contact us */
+.contactUs {
     align-items: center;
-    flex-direction: row;
-    display: flex;
-}
-
-/* Arrow */
-.portalDescription .dpArrow {
-    flex: none; /* Overrides flex: 1 attribute from its own box */
-    height: 95px; /* Forces arrow container to be same height as DP images */
-    justify-content: center;
-    transform: rotate(90deg);
-}
-
-/* Top row of each box - image container */
-.portalDescription > div > div:first-of-type {
-    align-items: center;
-    display: flex;
-    padding: 0 16px;
-    width: 95px;
-}
-
-/* Top row of each box - image */
-.portalDescription > div > div:first-of-type img, .portalDescription .dpArrow img {
-    margin-bottom: 0;
-}
-
-/* Second row of each box */
-.portalDescription > div > div:nth-of-type(2) {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 16px;
-    width: 205px;
-}
-
-/* Second row of each box - text description */
-.portalDescription > div > div:nth-of-type(2) p.s {
-    color: #666666; /* TODO hca-gray-dark review */
-    font-weight: 500;
-    line-height: 18px;
-    margin: 0;
-    text-align: left;
-}
-
-/* Link */
-.portalDescription > div > div:nth-of-type(2) a.s {
-    color: #1288E4; /* TODO colour */
+    background-color: #1288E4 /* TODO colour */;
+    border: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #ffffff; /* TODO colour */
     cursor: pointer;
-    line-height: 18px;
+    display: flex;
+    flex-shrink: 0;
+    font-family: "Montserrat", sans-serif; /* TODO typography */
+    font-size: 14px;
+    font-weight: 500; /* TODO typography - confirm - was 600 */
+    height: 50px;
+    justify-content: center;
+    letter-spacing: 0.74px; /* TODO typography spec is 0.21px */
     margin: 0;
-    text-align: left;
+    min-width: 84px;
+    padding: 0 9px; /* Was 16px - followed spec */
+    text-decoration: none;
 }
 
-/* What we provide */
-.whatWeProvide {
+.contactUs:hover {
+    background-color: #2DAFD7; /* TODO colour */
+}
+
+.contactUs:focus {
+    outline: none;
+}
+
+/* How to participate */
+.subSection {
     margin-top: 58px;
 }
 
-.whatWeProvide > h4 {
+.subSection > h4 {
     text-align: center;
     text-transform: uppercase;
 }
@@ -191,34 +183,68 @@ a {
 .contentFlex {
     align-items: center;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 /* Flex box - each box */
 .contentFlex > div {
-    align-items: flex-start;
+    align-items: center;
     display: flex;
+    flex: 50%;
     flex-direction: column;
     margin: 16px 0;
-    width: 224px;
+    width: 180px;
 }
 
 /* Flex image */
 .contentFlex .flexImg {
     background-color: #CCCCCC; /* TODO review */
     height: 156px;
-    width: 224px;
+    width: 180px;
+}
+
+.contentFlex:not(.blockFlex) h4, .contentFlex p, .contentFlex a {
+    text-align: left;
+    margin-bottom: 0;
+    width: 180px;
 }
 
 /* Flex text */
-.contentFlex a, .contentFlex p {
-    margin-bottom: 10px !important;
+.contentFlex p {
+    margin: 8px 0;
 }
 
 /* Flex link */
 .contentFlex > div a {
     font-weight: 500 !important;
+    margin: 0;
+}
+
+/* Blockquote flex */
+.blockFlex {
+    justify-content: center;
+}
+
+.blockFlex > div {
+    align-items: flex-start;
+    background-color: #F4F7F9; /* TODO colour */
+    flex: none;
+    padding: 24px;
+    width: 100%;
+}
+
+.blockFlex h4 {
+    margin-top: 0;
+}
+
+/* List element of blockFlex */
+.blockFlex li {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400 !important;
+    line-height: 24px;
+    margin: 4px 0;
 }
 
 /**
@@ -231,6 +257,12 @@ a {
         margin: 0 auto;
         max-width: 682px; /* Snap to 650px, gutter 16px */
     }
+
+    /* BlockFlex */
+    .blockFlex > div {
+        width: 376px;
+    }
+
 }
 
 /**
@@ -244,48 +276,19 @@ a {
         padding: 0 30px;
     }
 
-    /* DP Imagery and associated text */
-    .portalDescription {
-        align-items: flex-start;
-        flex-direction: row;
-    }
-
-    /* Portal Description */
-    .portalDescription > div {
-        flex: 1;
-        flex-direction: column;
-        width: unset;
-    }
-
-    /* Top row of each box - image container */
-    .portalDescription > div > div:first-of-type {
-        height: 95px;
-        padding: 0;
-        width: unset;
-    }
-
-    /* Second row of each box */
-    .portalDescription > div > div:nth-of-type(2) {
-        max-width: 172px;
-        padding: 0;
-    }
-
-    /* Second row of each box - text description & link */
-    .portalDescription > div > div:nth-of-type(2) p.s, .portalDescription > div > div:nth-of-type(2) a.s {
-        margin: 12px 0 0;
-        text-align: center;
-        width: 100%;
-    }
-
-    /* Arrow */
-    .portalDescription .dpArrow {
-        transform: rotate(0deg);
-    }
-
     /* Flex box - content container */
     .contentFlex {
         align-items: flex-start;
         flex-direction: row;
+    }
+
+    .contentFlex > div {
+        align-items: flex-start;
+        flex-basis: auto;
+    }
+
+    .blockFlex {
+        justify-content: space-between;
     }
 }
 

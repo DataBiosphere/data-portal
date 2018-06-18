@@ -86,7 +86,7 @@ export default function Template({
                         <h4>What we provide</h4>
                         <div className={compStyles.contentFlex}>
                             <div>
-                                <div className={compStyles.flexImg}></div>
+                                <div className={compStyles.flexImg}/>
                                 <h4>Services</h4>
                                 <p>Services for uploading, analyzing, and accessing data</p>
                                 <Link to="/">Ingest Service</Link>
@@ -95,7 +95,7 @@ export default function Template({
                                 <Link to="/">Secondary Analysis</Link>
                             </div>
                             <div>
-                                <div className={compStyles.flexImg}></div>
+                                <div className={compStyles.flexImg}/>
                                 <h4>Software</h4>
                                 <p>Software for building your own pipelines and analysis platforms</p>
                                 <Link to="/">Fringilla</Link>
@@ -105,7 +105,7 @@ export default function Template({
                                 <Link to="/">Fermentum</Link>
                             </div>
                             <div>
-                                <div className={compStyles.flexImg}></div>
+                                <div className={compStyles.flexImg}/>
                                 <h4>Standards</h4>
                                 <p>Standards for addressing data quality to enable comparisons between datasets from labs around the world</p>
                                 <Link to="/">Metadata</Link>

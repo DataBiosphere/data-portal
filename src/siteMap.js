@@ -243,6 +243,32 @@ const siteMap =
                     ]
                 }
             ]
+        },
+        {
+            name: "Contribute",
+            key: "contribute",
+            children: [
+                {
+                    name: "Overview",
+                    key: "overview",
+                    children: [
+                        {
+                            name: "Overview",
+                            key: "/contribute/overview/overview"
+                        }
+                    ]
+                },
+                {
+                    name: "Instructions",
+                    key: "instructions",
+                    children: [
+                        {
+                            name: "Instructions",
+                            key: "/contribute/instructions/instructions"
+                        }
+                    ]
+                }
+            ]
         }
     ];
 

@@ -42,7 +42,7 @@ class Header extends React.Component {
                                 <span>Analyze</span>
                                 <span>Find a list of Apps</span>
                             </Link>
-                            <Link to="/" onClick={this.toggleMenu}>
+                            <Link to="/contribute/overview/overview" onClick={this.toggleMenu}>
                                 <span>Contribute</span>
                                 <span>Submit your data to the HCA</span>
                             </Link>
@@ -62,7 +62,7 @@ class Header extends React.Component {
                         <Link to="/analyze/portals/overview">
                             <span>Analyze</span>
                         </Link>
-                        <Link to="/">
+                        <Link to="/contribute/overview/overview">
                             <span>Contribute</span>
                         </Link>
                         <Link to="/learn/how-it-works/data-lifecycle">

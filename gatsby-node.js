@@ -11,15 +11,18 @@ const path = require("path");
 exports.createPages = ({ boundActionCreators, graphql }) => {
     const { createPage } = boundActionCreators;
 
-    const contentTemplate = path.resolve(`src/templates/contentTemplate.js`);
     const aboutOverviewTemplate = path.resolve(`src/templates/aboutOverviewTemplate.js`);
+    const contentTemplate = path.resolve(`src/templates/contentTemplate.js`);
+    const contributeOverviewTemplate = path.resolve(`src/templates/contributeOverviewTemplate.js`);
 
     function getTemplate(templateName)
     {
-        if (templateName) {
+        if (templateName === "aboutOverviewTemplate") {
             return aboutOverviewTemplate;
         }
-        console.log("normal tmeplate");
+        if (templateName === "contributeOverviewTemplate") {
+            return contributeOverviewTemplate;
+        }
         return contentTemplate;
     }
 
