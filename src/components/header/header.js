@@ -50,7 +50,7 @@ class Header extends React.Component {
                                 <span>Learn</span>
                                 <span>Find user guides and how-to’s here</span>
                             </Link>
-                            <Link to="/build/development-guides/pipeline-development-guide" onClick={this.toggleMenu}>
+                            <Link to="/build/development-guides/development-guides-overview" onClick={this.toggleMenu}>
                                 <span>Build</span>
                                 <span>Find developer guides and API docs</span>
                             </Link>
@@ -68,7 +68,7 @@ class Header extends React.Component {
                         <Link to="/learn/how-it-works/data-lifecycle">
                             <span>Learn</span>
                         </Link>
-                        <Link to="/build/development-guides/pipeline-development-guide">
+                        <Link to="/build/development-guides/development-guides-overview">
                             <span>Build</span>
                         </Link>
                     </div>

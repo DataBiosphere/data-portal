@@ -1,0 +1,72 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal nav boxes component.
+ */
+
+/* Nav box container */
+.hcaNavBoxes {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+/* Nav box */
+.hcaNavBox {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0;
+    width: 100%;
+}
+
+/* Heading & Link */
+.hcaNavBox h3, .hcaNavBox a {
+    margin: 0;
+}
+
+/* Paragraph */
+.hcaNavBox p {
+    margin: 8px 0;
+}
+
+/**
+ * Tablet
+ */
+@media screen and (min-width: 768px) {
+
+    /* Nav box */
+    .hcaNavBox {
+        flex-basis: calc((100% - 32px) / 2);
+    }
+
+    /* Left box - right margin */
+    .hcaNavBox:nth-child(odd) {
+        margin-right: 32px;
+    }
+}
+
+/**
+ * Medium
+ */
+@media screen and (min-width: 1024px) {
+
+    /* Nav box */
+    .hcaNavBox {
+        flex-basis: calc((100% - 60px) / 3);
+    }
+
+    /* All boxes */
+    .hcaNavBox {
+        margin: 16px 0 !important;
+    }
+
+    /* Middle box - left and right margin */
+    .hcaNavBox:nth-child(3n+2) {
+        margin: 16px 30px !important;
+    }
+}
+
+

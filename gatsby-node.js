@@ -19,6 +19,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         if (templateName) {
             return aboutOverviewTemplate;
         }
+        console.log("normal tmeplate");
         return contentTemplate;
     }
 
@@ -33,12 +34,20 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             frontmatter {
               path
               template
+              linked {
+               childMarkdownRemark{
+                frontmatter{
+                    title
+                    subTitle
+                }
+               }
+              }
             }
           }
         }
       }
     }
-  `).then(result => {
+      `).then(result => {
         if (result.errors) {
             return Promise.reject(result.errors);
         }

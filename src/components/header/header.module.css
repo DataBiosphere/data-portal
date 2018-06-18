@@ -70,6 +70,7 @@ a.logo, a.logo img {
     font-weight: 600; /* TODO review with typography */
     letter-spacing: 1.2px; /* TODO typography */
     line-height: 32px; /* TODO typography */
+    margin: 0;
     padding: 12px 24px;
     text-decoration: none;
     text-transform: uppercase;

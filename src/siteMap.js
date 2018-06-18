@@ -138,6 +138,10 @@ const siteMap =
                     key: "development-guides",
                     children: [
                         {
+                            name: "Overview",
+                            key: "/build/development-guides/development-guides-overview"
+                        },
+                        {
                             name: "Pipeline Development Guide",
                             key: "/build/development-guides/pipeline-development-guide"
                         },

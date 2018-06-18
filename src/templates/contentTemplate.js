@@ -11,6 +11,7 @@ import React from "react";
 // App dependencies
 import compStyles from './contentTemplate.module.css';
 import Nav from '../components/nav/nav';
+import NavBoxes from '../components/navBoxes/navBoxes';
 import Section from '../components/section/section';
 import TabNav from "../components/tabNav/tabNav";
 
@@ -22,19 +23,23 @@ export default function Template({
     const {markdownRemark} = data; // data.markdownRemark holds our post data
     const {frontmatter, html} = markdownRemark;
     const docPath = frontmatter.path;
+    const linked = frontmatter.linked;
 
     return (
         <div>
             <Section docPath={docPath}/>
             <TabNav docPath={docPath}/>
             <div className={compStyles.wrapper}>
-            <div className={compStyles.hcaContent}>
-                <Nav docPath={docPath}/>
-                <div
-                        className={classNames(compStyles.markdownContent, "learn-template")}
-                        dangerouslySetInnerHTML={{__html: html}}
-                />
-            </div>
+                <div className={compStyles.hcaContent}>
+                    <Nav docPath={docPath}/>
+                    <div className={classNames(compStyles.markdownContent)}>
+                        <div
+                            className="content-template"
+                            dangerouslySetInnerHTML={{__html: html}}
+                        />
+                        {linked ? <NavBoxes linked={linked}/> : null }
+                    </div>
+                </div>
             </div>
         </div>
     );
@@ -48,6 +53,15 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        linked {
+               childMarkdownRemark{
+                frontmatter{
+                    path
+                    title
+                    subTitle
+                }
+               }
+              }
       }
     }
   }
