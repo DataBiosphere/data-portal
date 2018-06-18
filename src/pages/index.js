@@ -11,7 +11,9 @@ import React from 'react';
 
 let classNames = require('classnames');
 let exploreCounts = ["12.3 Million", "0.2 Million", "2 Hundred", "1.02 Million", "11 Million", "5 Hundred", "2.3 Million", "2 Hundred", "5 Million"];
-let exploreLinks = ["", "", "", "", "", "", "", "", ""];
+
+let exploreLinks = ["blood", "marrow", "brain", "esophagus", "heart", "immune", "kidney", "liver", "spleen"].map(organ => "?filter="+JSON.stringify({organ:organ}));
+
 let exploreHref = ["https://explore.dev.data.humancellatlas.org/"];
 
 // Images
