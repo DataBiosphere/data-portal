@@ -24,6 +24,7 @@ export default function Template({
     const {frontmatter, html} = markdownRemark;
     const docPath = frontmatter.path;
     const linked = frontmatter.linked;
+    const componentName = frontmatter.componentName;
 
     return (
         <div>
@@ -53,12 +54,14 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        componentName
         linked {
                childMarkdownRemark{
                 frontmatter{
                     path
                     title
                     subTitle
+                    githubUrl
                 }
                }
               }
