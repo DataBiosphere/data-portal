@@ -1,0 +1,73 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal analyze component.
+ */
+
+/* Analyze component container */
+.hcaAnalyze {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Analyze list */
+.hcaAnalyzeList {
+    border-bottom: 1px solid #EAEAEA; /* TODO colour */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    position: relative; /* Positions button */
+    width: 100%;
+}
+
+.hcaAnalyzeList > div {
+    margin-right: 16px;
+}
+
+.hcaAnalyzeList:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Heading */
+.hcaAnalyzeList h3 {
+    color: #666666; /* TODO colour */
+    margin: 0;
+}
+
+/* Text */
+.hcaAnalyzeList p {
+    color: #666666; /* TODO colour */
+    margin: 4px 0 16px;
+}
+
+/* P - class "xs" */
+.hcaAnalyzeList p.xs {
+    color: #333333; /* TODO colour */
+    font-weight: 500 !important;
+}
+
+/* Button - class analyze */
+.analyze {
+    align-items: center;
+    background-color: #ffffff /* TODO colour */;
+    border: 1px solid #1288E4; /* TODO colour */
+    border-radius: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-shrink: 0;
+    font-weight: 500; /* TODO typography - confirm - was 600 */
+    height: 38px;
+    justify-content: center;
+    letter-spacing: 0.74px; /* TODO typography spec is 0.21px */
+    margin: 0;
+    min-width: 84px;
+    padding: 0 9px; /* Was 16px - followed spec */
+}
+
+.analyze:hover {
+}
+
+.analyze:focus {
+    outline: none;
+}

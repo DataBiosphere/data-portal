@@ -10,12 +10,13 @@ import React from "react";
 
 // App dependencies
 import compStyles from './contentTemplate.module.css';
+import Analyze from "../components/analyze/analyze";
 import Nav from '../components/nav/nav';
-import NavBoxes from '../components/navBoxes/navBoxes';
+import NavOverview from "../components/navOverview/navOverview";
 import Section from '../components/section/section';
 import TabNav from "../components/tabNav/tabNav";
 
-var classNames = require('classnames');
+let classNames = require('classnames');
 
 export default function Template({
                                      data, // this prop will be injected by the GraphQL query below.
@@ -38,7 +39,8 @@ export default function Template({
                             className="content-template"
                             dangerouslySetInnerHTML={{__html: html}}
                         />
-                        {linked ? <NavBoxes linked={linked}/> : null }
+                        {linked && !componentName ? <NavOverview linked={linked}/> : null }
+                        {linked && (componentName === "analyze") ? <Analyze linked={linked}/> : null }
                     </div>
                 </div>
             </div>

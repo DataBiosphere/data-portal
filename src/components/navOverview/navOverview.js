@@ -2,18 +2,15 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * HCA Data Portal nav boxes component.
+ * HCA Data Portal nav overview component.
  */
 
 // Core dependencies
-import compStyles from './navBoxes.module.css'
+import compStyles from './navOverview.module.css'
 import Link from 'gatsby-link';
 import React from 'react';
-import * as siteMap from '../../siteMap';
 
-const classNames = require('classnames');
-
-class NavBoxes extends React.Component {
+class NavOverview extends React.Component {
 
     constructor(props) {
         super(props);
@@ -21,8 +18,8 @@ class NavBoxes extends React.Component {
 
     render() {
         return (
-            <div className={compStyles.hcaNavBoxes}>
-                {this.props.linked.map((link, i) => <div className={compStyles.hcaNavBox} key={i}>
+            <div className={compStyles.hcaNavOverview}>
+                {this.props.linked.map((link, i) => <div className={compStyles.hcaNavInfo} key={i}>
                     <h3>{link.childMarkdownRemark.frontmatter.title}</h3>
                     <p>{link.childMarkdownRemark.frontmatter.subTitle}</p>
                     <Link to={link.childMarkdownRemark.frontmatter.path}>Learn more</Link>
@@ -33,4 +30,4 @@ class NavBoxes extends React.Component {
     }
 }
 
-export default NavBoxes;
+export default NavOverview;
