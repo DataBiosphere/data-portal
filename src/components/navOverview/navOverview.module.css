@@ -2,11 +2,11 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * Style definitions specific to the HCA Data Portal nav boxes component.
+ * Style definitions specific to the HCA Data Portal nav overview component.
  */
 
-/* Nav box container */
-.hcaNavBoxes {
+/* Nav overview container */
+.hcaNavOverview {
     align-items: flex-start;
     display: flex;
     flex-direction: row;
@@ -14,21 +14,21 @@
     justify-content: flex-start;
 }
 
-/* Nav box */
-.hcaNavBox {
+/* Nav information */
+.hcaNavInfo {
     display: flex;
     flex-direction: column;
     margin: 16px 0;
     width: 100%;
 }
 
-/* Heading & Link */
-.hcaNavBox h3, .hcaNavBox a {
+/* Heading & link */
+.hcaNavInfo h3, .hcaNavInfo a {
     margin: 0;
 }
 
 /* Paragraph */
-.hcaNavBox p {
+.hcaNavInfo p {
     margin: 8px 0;
 }
 
@@ -37,13 +37,13 @@
  */
 @media screen and (min-width: 768px) {
 
-    /* Nav box */
-    .hcaNavBox {
+    /* Nav information */
+    .hcaNavInfo {
         flex-basis: calc((100% - 32px) / 2);
     }
 
-    /* Left box - right margin */
-    .hcaNavBox:nth-child(odd) {
+    /* Left flex - right margin */
+    .hcaNavInfo:nth-child(odd) {
         margin-right: 32px;
     }
 }
@@ -53,18 +53,14 @@
  */
 @media screen and (min-width: 1024px) {
 
-    /* Nav box */
-    .hcaNavBox {
+    /* Nav information */
+    .hcaNavInfo {
         flex-basis: calc((100% - 60px) / 3);
-    }
-
-    /* All boxes */
-    .hcaNavBox {
         margin: 16px 0 !important;
     }
 
-    /* Middle box - left and right margin */
-    .hcaNavBox:nth-child(3n+2) {
+    /* Middle flex - left and right margin */
+    .hcaNavInfo:nth-child(3n+2) {
         margin: 16px 30px !important;
     }
 }

@@ -189,6 +189,10 @@ const siteMap =
                         {
                             name: "Portals Overview",
                             key: "/analyze/portals/overview"
+                        },
+                        {
+                            name: "Visualization Portals",
+                            key: "/analyze/portals/visualization-portals"
                         }
                     ]
                 },
