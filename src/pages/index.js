@@ -30,7 +30,7 @@ const IndexPage = () => (
         <div className={compStyles.jumbotron}>
             <div className={compStyles.wrapper}>
                 <h1>Single-cell data building a foundation for human health</h1>
-                <a href=""><p className={compStyles.xs}>Learn More ></p></a>
+                <a href=""><p className={compStyles.xs}>Learn More</p></a>
                 <div className={compStyles.jumbotronSearch}>
                     <input className={classNames(compStyles.homepage, compStyles.large)}
                            placeholder="Search for data now by organs, publications, etc"/>
@@ -113,11 +113,9 @@ const IndexPage = () => (
         </div>
         <div className={compStyles.contact}>
             <div className={compStyles.wrapper}>
-                <h2>Stay up to date with the HCA Data Portal</h2>
+                <h2>Stay up-to-date with the Human Cell Atlas</h2>
                 <div className={compStyles.contactForm}>
-                    <input className={compStyles.homepage} placeholder="Full Name"/>
-                    <input className={compStyles.homepage} placeholder="Email Address"/>
-                    <button className={compStyles.homepage}>SUBMIT</button>
+                    <a href="https://www.humancellatlas.org/joinHCA" className={compStyles.homepage}>Register For HCA</a>
                 </div>
             </div>
         </div>

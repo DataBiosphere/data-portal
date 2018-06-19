@@ -33,6 +33,7 @@
 a.logo, a.logo img {
     align-self: center;
     cursor: pointer;
+    height: 48px;
     line-height: 0 !important;
     margin-bottom: 0 !important; /* TODO review global */
 }
@@ -166,8 +167,10 @@ a.logo, a.logo img {
 
     /* Nav links */
     .links a {
-        color: #666666; /* TODO colour */
+        font-size: 14px;
+        font-weight: 700;
         padding: 0 12px;
+        text-transform: capitalize;
     }
 
     /* Hide menu */
