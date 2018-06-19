@@ -282,7 +282,6 @@ a {
 
     /* Flex box - content container */
     .contentFlex {
-        //align-items: flex-start;
         flex-direction: row;
     }
 

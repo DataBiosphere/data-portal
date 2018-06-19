@@ -42,7 +42,7 @@ export default function Template({
                                     <li>smartSeq or 10x technology</li>
                                 </code>
                             </div>
-                            <a href="/" className={compStyles.contactUs}>Contact Us</a>
+                            <a href="mailto:data-help@humancellatlas.org" className={compStyles.contactUs}>Contact Us</a>
                         </div>
                     </div>
                     <div className={compStyles.subSection}>

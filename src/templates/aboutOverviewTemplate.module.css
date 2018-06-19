@@ -189,36 +189,47 @@ a {
 
 /* Flex box - content container */
 .contentFlex {
-    align-items: center;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 /* Flex box - each box */
 .contentFlex > div {
-    align-items: flex-start;
+    align-items: center;
     display: flex;
+    flex: 100%;
     flex-direction: column;
     margin: 16px 0;
-    width: 224px;
 }
 
-/* Flex image */
-.contentFlex .flexImg {
-    background-color: #CCCCCC; /* TODO review */
-    height: 156px;
-    width: 224px;
+/* Image and paragraphy text */
+.contentFlex > div > p {
+    text-align: center;
+    padding: 0 4px;
+    width: 50%;
 }
 
-/* Flex text */
-.contentFlex a, .contentFlex p {
-    margin-bottom: 10px !important;
+/* Standard height for all images */
+.contentFlex > div > p:first-of-type {
+    //height: 80px; // image
+    margin: 0;
+}
+
+/* Removes nested a within h4 */
+.contentFlex > div h4 a {
+    display: none;
+}
+
+/* Padding around paragraph text */
+.contentFlex > div > p:nth-of-type(2) {
+    padding: 0 4px;
 }
 
 /* Flex link */
 .contentFlex > div a {
     font-weight: 500 !important;
+    margin: 0;
 }
 
 /**
@@ -231,7 +242,16 @@ a {
         margin: 0 auto;
         max-width: 682px; /* Snap to 650px, gutter 16px */
     }
-}
+
+    .contentFlex > div {
+        flex: 30%;
+    }
+
+    /* Image and paragraphy text */
+    .contentFlex > div > p {
+        width: unset;
+    }
+    }
 
 /**
  * Medium
@@ -284,8 +304,12 @@ a {
 
     /* Flex box - content container */
     .contentFlex {
-        align-items: flex-start;
         flex-direction: row;
+    }
+
+    /* Flex content - each box */
+    .contentFlex > div {
+        flex: 25%;
     }
 }
 
