@@ -48,22 +48,13 @@ export default function Template({
                     <div className={compStyles.subSection}>
                         <h4>How to Participate</h4>
                         <div className={compStyles.contentFlex}>
-                            {linked.slice(0, 4).map((link, i) => <div key={i}>
-                                <div className={compStyles.flexImg}/>
-                                <h4>{link.childMarkdownRemark.frontmatter.title}</h4>
-                                <p>{link.childMarkdownRemark.frontmatter.subTitle}</p>
-                                <Link to="/">Link</Link>
-                            </div>)}
+                            {linked.slice(0, 4).map((link, i) => <div key={i} dangerouslySetInnerHTML={{__html: link.childMarkdownRemark.html}}/>)}
                         </div>
                     </div>
                     <div className={compStyles.subSection}>
                         <h4>Data Checklist</h4>
-                        <div className={classNames(compStyles.contentFlex, compStyles.blockFlex)}>
-                            {linked.slice(4, 6).map((link, i) => <div key={i}>
-                                <h4>{link.childMarkdownRemark.frontmatter.title}</h4>
-                                <li>{link.childMarkdownRemark.frontmatter.subTitle}</li>
-                                <Link to="/">Link</Link>
-                            </div>)}
+                        <div className={compStyles.contentFlex}>
+                            {linked.slice(4, 6).map((link, i) => <div className={compStyles.blockFlex} key={i} dangerouslySetInnerHTML={{__html: link.childMarkdownRemark.html}}/>)}
                         </div>
                     </div>
                 </div>
@@ -83,6 +74,7 @@ export const pageQuery = graphql`
         componentName
         linked {
                childMarkdownRemark{
+               html
                 frontmatter{
                     path
                     title
