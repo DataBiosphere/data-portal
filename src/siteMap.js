@@ -187,12 +187,12 @@ const siteMap =
                     key: "portals",
                     children: [
                         {
-                            name: "Portals Overview",
-                            key: "/analyze/portals/overview"
-                        },
-                        {
                             name: "Visualization Portals",
                             key: "/analyze/portals/visualization-portals"
+                        },
+                        {
+                            name: "Portals Overview",
+                            key: "/analyze/portals/overview"
                         }
                     ]
                 },
@@ -207,7 +207,7 @@ const siteMap =
                     ]
                 },
                 {
-                    name: "Visualization Components Overview",
+                    name: "Visualization Components",
                     key: "visualization-components",
                     children: [
                         {

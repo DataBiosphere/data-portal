@@ -78,18 +78,6 @@ p[class^="xxs"] {
     margin: 0 0 14px;
 }
 
-/* Link */
-a {
-    color: #1288E4; /* TODO colour */
-    cursor: pointer;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    margin: 0 0 18px;
-    text-decoration: none;
-}
-
 /* Wrapper */
 .wrapper {
     align-items: center;
@@ -121,14 +109,6 @@ iframe {
     margin-bottom: 24px;
     max-height: 316px !important;
     max-width: 560px !important;
-}
-
-/* Code - class block-highlight */
-pre[class*="language-block-highlight"] {
-    background-color: #F8F8F8; /* TODO colour hca-off-white */
-    border-radius: 3px;
-    margin-bottom: 24px; /* TODO confirm when typography completed */
-    padding: 12px 24px;
 }
 
 /* HTML - definition list */
@@ -176,11 +156,28 @@ blockquote p {
     margin: 0;
 }
 
+/* Code */
+pre, :not(pre) > code[class*="language-"], pre[class*="language-"], pre[class*="language-block-highlight"] {
+    background-color: #F8F8F8; /* TODO colour hca-off-white */
+    border-radius: 3px;
+    padding: 2px;
+}
+
+/* Code - class block-highlight */
+pre[class*="language-block-highlight"] {
+    margin-bottom: 24px; /* TODO confirm when typography completed */
+    padding: 12px 24px;
+}
+
 /* Code - language block-highlight */
-code[class*="language-block-highlight"] {
+code[class*="language-block-highlight"], :not(pre) > code[class*="language-"] {
     color: #000000; /* TODO colour - typography */
     font-family: "PT Mono", "Montserrat"; /* TODO typography */
     font-size: 14px; /* TODO typography */
+}
+
+td > code {
+    background-color: #DCE8F5 !important;
 }
 
 /* Code */
@@ -207,6 +204,32 @@ thead th, tbody tr {
 
 tbody tr {
     font-weight: 400 !important;
+}
+
+/* Link */
+a {
+    color: #1288E4; /* TODO colour */
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 18px;
+    text-decoration: none;
+}
+
+/* List */
+ol, ul {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    list-style-position: inside;
+    margin: 0 0 18px 24px;
+}
+
+li {
+    margin-bottom: 12px;
 }
 
 /**

@@ -125,6 +125,7 @@ a {
 }
 
 .jumbotron .wrapper > a .xs {
+    font-weight: 500 !important;
     margin: 0;
     text-transform: uppercase;
 }
@@ -199,7 +200,7 @@ button.homepage {
 }
 
 button.homepage:hover {
-    background-color: #f5a623; /* TODO review colour */
+    background-color: #DC8D0A; /* TODO review colour */
 }
 
 button.homepage:focus {
@@ -389,17 +390,36 @@ button.homepage:focus {
     outline: none;
 }
 
-/* Submit button */
-.contactForm button.homepage {
-    background-color: #32C1EE;
+/* Contact form button - class homepage */
+.contactForm a.homepage {
+    align-items: center;
+    background-color: #32C1EE; /* TODO colour */
+    border: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #ffffff; /* TODO colour */
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    font-family: "Montserrat", sans-serif; /* TODO typography */
+    font-size: 14px;
+    font-weight: 500; /* TODO typography - confirm - was 600 */
     height: 50px;
+    justify-content: center;
+    letter-spacing: 0.74px; /* TODO typography spec is 0.21px */
     margin: 4px 0;
-    max-width: 450px;
-    width: 100%; /* TODO review */
+    min-width: 84px;
+    padding: 0 9px; /* Was 16px - followed spec */
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-.contactForm button.homepage:hover {
+.contactForm a.homepage:hover {
     background-color: #2DAFD7;
+}
+
+.contactForm a.homepage:focus {
+    outline: none;
 }
 
 /**
@@ -573,7 +593,6 @@ button.homepage:focus {
     /* Submit button */
     .contactForm button.homepage {
         margin: 0 4px;
-        width: 152px;
     }
 }
 

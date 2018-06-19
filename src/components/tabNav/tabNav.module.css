@@ -74,6 +74,11 @@
     color: #EAEAEA; /* TODO colour hca-gray-lightest */
 }
 
+/* Hover tab */
+.hcaTab:hover > a {
+    color: #000000; /* TODO colour */
+}
+
 /* Last tab - on horizontal scroll - mimics gutter for RHS */
 .hcaTab:last-of-type:after {
     bottom: -3px;

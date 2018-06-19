@@ -21,6 +21,7 @@
 
 /* Logo and back arrow */
 .logo {
+    margin: 0;
     position: relative;
 }
 
