@@ -257,18 +257,20 @@ const siteMap =
                             key: "/contribute/overview/overview"
                         }
                     ]
-                },
-
-                {
-                    name: "Instructions",
-                    key: "instructions",
-                    children: [
-                        {
-                            name: "Instructions",
-                            key: "/contribute/instructions/instructions"
-                        }
-                    ]
                 }
+
+                // ,
+                //
+                // {
+                //     name: "Instructions",
+                //     key: "instructions",
+                //     children: [
+                //         {
+                //             name: "Instructions",
+                //             key: "/contribute/instructions/instructions"
+                //         }
+                //     ]
+                // }
             ]
         }
     ];
