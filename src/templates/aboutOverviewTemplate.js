@@ -7,7 +7,6 @@
 
 // Core dependencies
 import React from "react";
-import Link from 'gatsby-link';
 
 // App dependencies
 import compStyles from './aboutOverviewTemplate.module.css';
@@ -86,7 +85,8 @@ export default function Template({
                     <div className={compStyles.whatWeProvide}>
                         <h4>What we provide</h4>
                         <div className={compStyles.contentFlex}>
-                            {linked.map((link, i) => <div key={i} dangerouslySetInnerHTML={{__html: link.childMarkdownRemark.html}}/>)}
+                            {/*{linked.map((link, i) => <div key={i} dangerouslySetInnerHTML={{__html: link.childMarkdownRemark.html}}/>)}*/}
+                            {linked.map((link, i) => <div key={i}>{link.childMarkdownRemark.frontmatter.title}</div>)}
                         </div>
                     </div>
                 </div>

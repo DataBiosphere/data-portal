@@ -31,19 +31,16 @@
 
 /* Heading */
 .hcaAnalyzeList h3 {
-    color: #666666; /* TODO colour */
     margin: 0;
 }
 
 /* Text */
 .hcaAnalyzeList p {
-    color: #666666; /* TODO colour */
     margin: 4px 0 16px;
 }
 
 /* P - class "xs" */
 .hcaAnalyzeList p.xs {
-    color: #333333; /* TODO colour */
     font-weight: 500 !important;
 }
 

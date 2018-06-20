@@ -40,6 +40,7 @@
 /* Logo image */
 .logo img {
     cursor: pointer;
+    height: 96px;
     margin-bottom: 0;
     padding: 12px 0;
 }
@@ -90,7 +91,7 @@
     /* Left arrow */
     .logo i {
         left: unset;
-        margin: 0 8px 0 -8px;
+        margin: 0 -8px;
         position: relative;
         top: unset;
         transform: none;
