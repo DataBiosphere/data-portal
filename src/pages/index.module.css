@@ -436,16 +436,9 @@ button.homepage:focus {
 
     /* Explore Imagery */
     .explore > div > div:first-of-type {
-        margin-bottom: -83px; /* Equal to wrapper padding and 4px container around svg */
+        margin-bottom: -86px; /* Equal to wrapper padding and svg re-sized to 650px */
         max-width: 650px;
     }
-
-    /* Explore Imagery */
-    .explore > div > div:first-of-type {
-        margin-bottom: -83px; /* Equal to wrapper padding and 4px container around svg */
-        max-width: 650px;
-    }
-
     /* Svg */
     .explore svg {
         width: 650px;
@@ -524,7 +517,7 @@ button.homepage:focus {
 
     /* Explore Imagery */
     .explore > div > div:first-of-type {
-        margin-bottom: -70px; /* Equal to wrapper padding and 4px container around svg */
+        margin-bottom: -74px; /* Equal to wrapper padding and 4px container around svg */
         max-width: 800px;
     }
 

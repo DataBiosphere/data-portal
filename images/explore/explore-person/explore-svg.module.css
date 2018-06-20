@@ -18,38 +18,4 @@ svg.explorePerson {
         display: block;
     }
 
-    a {
-        fill: inherit;
-    }
-
-    [id=Blood]:hover, [id=Blood]:hover ~ [id=Blood] rect,
-    [id=Marrow]:hover, [id=Marrow]:hover ~ [id=Marrow] rect,
-    [id=Brain]:hover, [id=Brain]:hover ~ [id=Brain] rect,
-    [id=Esophagus]:hover, [id=Esophagus]:hover ~ [id=Esophagus] rect,
-    [id=Heart]:hover, [id=Heart]:hover ~ [id=Heart] rect,
-    [id=Immune]:hover, [id=Immune]:hover ~ [id=Immune] rect,
-    [id=Kidney]:hover, [id=Kidney]:hover ~ [id=Kidney] rect,
-    [id=Liver]:hover, [id=Liver]:hover ~ [id=Liver] rect,
-    [id=Spleen]:hover, [id=Spleen]:hover ~ [id=Spleen] rect {
-        cursor: pointer;
-        fill: #1288E4;
-    }
-
-    text[id=Blood], text[id=Marrow], text[id=Brain],
-    text[id=Esophagus], text[id=Heart], text[id=Immune],
-    text[id=Kidney], text[id=Liver], text[id=Spleen] {
-        display: none;
-    }
-
-    [id=Blood]:hover text, [id=Blood]:hover ~ [id=Blood] a > g text,
-    [id=Marrow]:hover text, [id=Marrow]:hover ~ [id=Marrow] a > g > text,
-    [id=Brain]:hover text, [id=Brain]:hover ~ [id=Brain] a > g > text,
-    [id=Esophagus]:hover text, [id=Esophagus]:hover ~ [id=Esophagus] a > g > text,
-    [id=Heart]:hover text, [id=Heart]:hover ~ [id=Heart] a > g > text,
-    [id=Immune]:hover text, [id=Immune]:hover ~ [id=Immune] a > g > text,
-    [id=Kidney]:hover text, [id=Kidney]:hover ~ [id=Kidney] a > g > text,
-    [id=Liver]:hover text, [id=Liver]:hover ~ [id=Liver] a > g > text,
-    [id=Spleen]:hover text, [id=Spleen]:hover ~ [id=Spleen] a > g > text {
-        display: block;
-    }
 }

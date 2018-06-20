@@ -12,162 +12,106 @@ class ExploreTable extends React.Component {
         let {exploreCounts, exploreLinks, exploreHref} = this.props;
 
         return (
-            <svg className={compStyles.exploreTable} width="291px" height="205px" viewBox="0 0 291 205">
-                <defs/>
-                <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                    <g transform="translate(-95.000000, -648.000000)">
-                        <g id="explore" transform="translate(83.000000, 483.000000)">
-                            <g id="exploreTable" transform="translate(12.000000, 164.000000)">
-                                <g id="Spleen" transform="translate(0.000000, 192.000000)">
-                                    <a href={exploreHref + exploreLinks[8]}>
-                                        <text fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal" fill="#4A4A4A">
-                                            <tspan x="225" y="14">{exploreCounts[8]}</tspan>
-                                        </text>
-                                        <rect fill="#EAEAEA"
-                                              transform="translate(158.000000, 8.000000) scale(-1, -1) rotate(-90.000000) translate(-158.000000, -8.000000) "
-                                              x="154" y="-47" width="8" height="110"/>
-                                        <text id="SpleenText" fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal" fill="#000000">
-                                            <tspan x="0" y="14">Spleen</tspan>
-                                        </text>
-                                    </a>
-                                </g>
-                                <g id="Liver" transform="translate(0.000000, 168.000000)">
-                                    <a href={exploreHref + exploreLinks[7]}>
-                                        <text fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal"
-                                              fill="#4A4A4A">
-                                            <tspan x="185" y="14">{exploreCounts[7]}</tspan>
-                                        </text>
-                                        <rect fill="#EAEAEA"
-                                              transform="translate(138.000000, 8.000000) scale(-1, -1) rotate(-90.000000) translate(-138.000000, -8.000000) "
-                                              x="134" y="-27" width="8" height="70"/>
-                                        <text id="LiverText" fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal" fill="#000000">
-                                            <tspan x="0" y="14">Liver</tspan>
-                                        </text>
-                                    </a>
-                                </g>
-                                <g id="Kidney" transform="translate(0.000000, 144.000000)">
-                                    <a href={exploreHref + exploreLinks[6]}>
-                                        <text fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal"
-                                              fill="#4A4A4A">
-                                            <tspan x="205" y="14">{exploreCounts[6]}</tspan>
-                                        </text>
-                                        <rect fill="#EAEAEA"
-                                              transform="translate(148.000000, 8.000000) scale(-1, -1) rotate(-90.000000) translate(-148.000000, -8.000000) "
-                                              x="144" y="-37" width="8" height="90"/>
-                                        <text id="KidneyText" fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal" fill="#000000">
-                                            <tspan x="0" y="14">Kidney</tspan>
-                                        </text>
-                                    </a>
-                                </g>
-                                <g id="Immune" transform="translate(0.000000, 120.000000)">
-                                    <a href={exploreHref + exploreLinks[5]}>
-                                        <text fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal"
-                                              fill="#4A4A4A">
-                                            <tspan x="185" y="14">{exploreCounts[5]}</tspan>
-                                        </text>
-                                        <rect fill="#EAEAEA"
-                                              transform="translate(138.000000, 8.000000) scale(-1, -1) rotate(-90.000000) translate(-138.000000, -8.000000) "
-                                              x="134" y="-27" width="8" height="70"/>
-                                        <text id="ImmuneText" fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal" fill="#000000">
-                                            <tspan x="0" y="14">Immune</tspan>
-                                        </text>
-                                    </a>
-                                </g>
-                                <g id="Heart" transform="translate(0.000000, 96.000000)">
-                                    <a href={exploreHref + exploreLinks[4]}>
-                                        <text fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal"
-                                              fill="#4A4A4A">
-                                            <tspan x="175.5" y="14">{exploreCounts[4]}</tspan>
-                                        </text>
-                                        <rect fill="#EAEAEA"
-                                              transform="translate(133.000000, 8.000000) scale(-1, -1) rotate(-90.000000) translate(-133.000000, -8.000000) "
-                                              x="129" y="-22" width="8" height="60"/>
-                                        <text id="HeartText" fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal" fill="#000000">
-                                            <tspan x="0" y="14">Heart</tspan>
-                                        </text>
-                                    </a>
-                                </g>
-                                <g id="Esophagus" transform="translate(0.000000, 72.000000)">
-                                    <a href={exploreHref + exploreLinks[3]}>
-                                        <text fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal"
-                                              fill="#4A4A4A">
-                                            <tspan x="215.5" y="14">{exploreCounts[3]}</tspan>
-                                        </text>
-                                        <rect fill="#EAEAEA"
-                                              transform="translate(153.000000, 8.000000) scale(-1, -1) rotate(-90.000000) translate(-153.000000, -8.000000) "
-                                              x="149" y="-42" width="8" height="100"/>
-                                        <text id="EsophagusText" fontFamily="Montserrat-Regular, Montserrat"
-                                              fontSize="12"
-                                              fontWeight="normal" fill="#000000">
-                                            <tspan x="0" y="14">Esophagus</tspan>
-                                        </text>
-                                    </a>
-                                </g>
-                                <g id="Brain" transform="translate(0.000000, 48.000000)">
-                                    <a href={exploreHref + exploreLinks[2]}>
-                                        <text fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal"
-                                              fill="#4A4A4A">
-                                            <tspan x="225.5" y="14">{exploreCounts[2]} hi i am long</tspan>
-                                        </text>
-                                        <rect fill="#EAEAEA"
-                                              transform="translate(158.000000, 8.000000) scale(-1, -1) rotate(-90.000000) translate(-158.000000, -8.000000) "
-                                              x="154" y="-47" width="8" height="110"/>
-                                        <text id="BrainText" fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal" fill="#000000">
-                                            <tspan x="0" y="14">Brain</tspan>
-                                        </text>
-                                    </a>
-                                </g>
-                                <g id="Marrow" transform="translate(0.000000, 24.000000)">
-                                    <a href={exploreHref + exploreLinks[1]}>
-                                        <text fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal"
-                                              fill="#4A4A4A">
-                                            <tspan x="185.5" y="14">{exploreCounts[1]}</tspan>
-                                        </text>
-                                        <rect fill="#EAEAEA"
-                                              transform="translate(138.000000, 8.000000) scale(-1, -1) rotate(-90.000000) translate(-138.000000, -8.000000) "
-                                              x="134" y="-27" width="8" height="70"/>
-                                        <text id="MarrowText" fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal" fill="#000000">
-                                            <tspan x="0" y="14">Bone Marrow</tspan>
-                                        </text>
-                                    </a>
-                                </g>
-                                <g id="Blood">
-                                    <a href={exploreHref + exploreLinks[0]}>
-                                        <text fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal"
-                                              fill="#4A4A4A">
-                                            <tspan x="185" y="14">{exploreCounts[0]}</tspan>
-                                        </text>
-                                        <rect fill="#EAEAEA"
-                                              transform="translate(138.000000, 8.000000) scale(-1, -1) rotate(-90.000000) translate(-138.000000, -8.000000) "
-                                              x="134" y="-27" width="8" height="70"/>
-                                        <text id="BloodText" fontFamily="Montserrat-Regular, Montserrat" fontSize="12"
-                                              fontWeight="normal" fill="#000000">
-                                            <tspan x="0" y="14">Blood</tspan>
-                                        </text>
-                                    </a>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
+<svg className={compStyles.exploreTable} width="339px" height="229px" viewBox="0 0 339 229">
+    <defs/>
+    <g id="explorePerson" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <g id="explore" transform="translate(0.000000, -170.000000)">
+            <g id="stats" transform="translate(0.000000, 169.000000)">
+                <g id="statsSpleen" transform="translate(0.000000, 216.000000)">
+                    <text id="countSpleen" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#4A4A4A">
+                        <tspan x="117" y="14">13,000</tspan>
+                    </text>
+                    <polygon id="barSpleen" fill="#EAEAEA" points="103 12 105 12 105 4 103 4"/>
+                    <text id="labelSpleen" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#000000">
+                        <tspan x="0" y="14">Spleen</tspan>
+                    </text>
                 </g>
-            </svg>
-        );
+                <g id="statsPancreas" transform="translate(0.000000, 192.000000)">
+                    <text id="countPancreas" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#4A4A4A">
+                        <tspan x="116" y="14">2,544</tspan>
+                    </text>
+                    <polygon id="barPancreas" fill="#EAEAEA" points="103 12 103.532 12 103.532 4 103 4"/>
+                    <text id="labelPancreas" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#000000">
+                        <tspan x="0" y="14">Pancreas</tspan>
+                    </text>
+                </g>
+                <g id="statsLiver" transform="translate(0.000000, 168.000000)">
+                    <text id="countLiver" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#4A4A4A">
+                        <tspan x="116" y="14">0</tspan>
+                    </text>
+                    <polygon id="barLiver" fill="#EAEAEA" points="103 12 104 12 104 4 103 4"/>
+                    <text id="labelLiver" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#000000">
+                        <tspan x="0" y="14">Liver</tspan>
+                    </text>
+                </g>
+                <g id="statsKidney" transform="translate(0.000000, 144.000000)">
+                    <text id="countKidney" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#4A4A4A">
+                        <tspan x="147" y="14">5,000</tspan>
+                    </text>
+                    <polygon id="barKidney" fill="#EAEAEA" points="103 12 135 12 135 4 103 4"/>
+                    <text id="labelKidney" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#000000">
+                        <tspan x="0" y="14">Kidney</tspan>
+                    </text>
+                </g>
+                <g id="statsImmune" transform="translate(0.000000, 120.000000)">
+                    <text id="countImmune" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#4A4A4A">
+                        <tspan x="121" y="14">250,000</tspan>
+                    </text>
+                    <polygon id="barImmune" fill="#EAEAEA" points="103 12 109 12 109 4 103 4"/>
+                    <text id="labelImmune" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#000000">
+                        <tspan x="0" y="14">Immune</tspan>
+                    </text>
+                </g>
+                <g id="statsHeart" transform="translate(0.000000, 96.000000)">
+                    <text id="countHeart" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#4A4A4A">
+                        <tspan x="175.5" y="14">50,000</tspan>
+                    </text>
+                    <rect id="barHeart" fill="#EAEAEA" x="103" y="4" width="60" height="8"/>
+                    <text id="labelHeart" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#000000">
+                        <tspan x="0" y="14">Heart</tspan>
+                    </text>
+                </g>
+                <g id="statsEsophagus" transform="translate(0.000000, 72.000000)">
+                    <text id="countEsophagus" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#4A4A4A">
+                        <tspan x="116" y="14">9,800</tspan>
+                    </text>
+                    <polygon id="barEsophagus" fill="#EAEAEA" points="103 12 104 12 104 4 103 4"/>
+                    <text id="labelEsophagus" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#000000">
+                        <tspan x="0" y="14">Esophagus</tspan>
+                    </text>
+                </g>
+                <g id="statsBrain" transform="translate(0.000000, 48.000000)">
+                    <text id="countBrain" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#4A4A4A">
+                        <tspan x="283.5" y="14">1,321,732</tspan>
+                    </text>
+                    <polygon id="barBrain" fill="#EAEAEA" points="103 12 271 12 271 4 103 4"/>
+                    <text id="labelBrain" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#000000">
+                        <tspan x="0" y="14">Brain</tspan>
+                    </text>
+                </g>
+                <g id="statsMarrow" transform="translate(0.000000, 24.000000)">
+                    <text id="countMarrow" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#4A4A4A">
+                        <tspan x="166.5" y="14">399,000</tspan>
+                    </text>
+                    <polygon id="barMarrow" fill="#EAEAEA" points="103 12 154 12 154 4 103 4"/>
+                    <text id="labelMarrow" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#000000">
+                        <tspan x="0" y="14">Bone Marrow</tspan>
+                    </text>
+                </g>
+                <g id="statsBlood">
+                    <text id="countBlood" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#4A4A4A">
+                        <tspan x="148" y="14">263,000</tspan>
+                    </text>
+                    <polygon id="barBlood" fill="#EAEAEA" points="103 12 136 12 136 4 103 4"/>
+                    <text id="labelBlood" fontFamily="Montserrat-Regular, Montserrat" fontSize="14" fontWeight="normal" fill="#000000">
+                        <tspan x="0" y="14">Blood</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+    );
     }
 }
 

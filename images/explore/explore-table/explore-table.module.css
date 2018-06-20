@@ -9,39 +9,6 @@ svg.exploreTable {
     height: 220px;
 }
 
-a {
-    fill: inherit;
-}
-
-[id=Blood]:hover rect,
-[id=Marrow]:hover rect,
-[id=Brain]:hover rect,
-[id=Esophagus]:hover rect,
-[id=Heart]:hover rect,
-[id=Immune]:hover rect,
-[id=Kidney]:hover rect,
-[id=Liver]:hover rect,
-[id=Spleen]:hover rect {
-    cursor: pointer;
-    fill: #1288E4;
-}
-
-g text:first-of-type {
-    display: none;
-}
-
-[id=Blood]:hover text:first-of-type,
-[id=Marrow]:hover text:first-of-type,
-[id=Brain]:hover text:first-of-type,
-[id=Esophagus]:hover text:first-of-type,
-[id=Heart]:hover text:first-of-type,
-[id=Immune]:hover text:first-of-type,
-[id=Kidney]:hover text:first-of-type,
-[id=Liver]:hover text:first-of-type,
-[id=Spleen]:hover text:first-of-type {
-    display: block;
-}
-
 /**
  * Medium +
  */
