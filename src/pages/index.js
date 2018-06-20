@@ -6,7 +6,8 @@
  */
 
 // Core dependencies
-import compStyles from './index.module.css'
+import compStyles from './index.module.css';
+import Link from 'gatsby-link';
 import React from 'react';
 
 let classNames = require('classnames');
@@ -30,7 +31,7 @@ const IndexPage = () => (
         <div className={compStyles.jumbotron}>
             <div className={compStyles.wrapper}>
                 <h1>Single-cell data building a foundation for human health</h1>
-                <a href=""><p className={compStyles.xs}>Learn More</p></a>
+                <Link to="/about/overview/overview"><p className={compStyles.xs}>Learn More</p></Link>
                 <div className={compStyles.jumbotronSearch}>
                     <input className={classNames(compStyles.homepage, compStyles.large)}
                            placeholder="Search for data now by organs, publications, etc"/>
@@ -42,11 +43,11 @@ const IndexPage = () => (
         </div>
         <div className={compStyles.statsBar}>
             <div className={compStyles.wrapper}>
-                <div><p className={compStyles.xs}>CELLS</p><h1>20M</h1></div>
-                <div><p className={compStyles.xs}>ORGANS</p><h1>9</h1></div>
+                <div><p className={compStyles.xs}>CELLS</p><h1>3.4M</h1></div>
+                <div><p className={compStyles.xs}>ORGANS</p><h1>22</h1></div>
                 <div><p className={compStyles.xs}>DONORS</p><h1>556</h1></div>
-                <div><p className={compStyles.xs}>PROJECTS</p><h1>67</h1></div>
-                <div><p className={compStyles.xs}>LABS</p><h1>20</h1></div>
+                <div><p className={compStyles.xs}>PROJECTS</p><h1>14</h1></div>
+                <div><p className={compStyles.xs}>LABS</p><h1>14</h1></div>
             </div>
         </div>
         <div className={compStyles.explore}>
