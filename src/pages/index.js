@@ -34,7 +34,7 @@ const IndexPage = () => (
                 <Link to="/about/overview/overview"><p className={compStyles.xs}>Learn More</p></Link>
                 <div className={compStyles.jumbotronSearch}>
                     <input className={classNames(compStyles.homepage, compStyles.large)}
-                           placeholder="Search for data now by organs, publications, etc"/>
+                           placeholder="Search for data now by organs, projects, etc"/>
                     <input className={classNames(compStyles.homepage, compStyles.small)}
                            placeholder="Search for data by organs"/>
                     <button className={compStyles.homepage}>SEARCH</button>
@@ -45,7 +45,7 @@ const IndexPage = () => (
             <div className={compStyles.wrapper}>
                 <div><p className={compStyles.xs}>CELLS</p><h1>3.4M</h1></div>
                 <div><p className={compStyles.xs}>ORGANS</p><h1>22</h1></div>
-                <div><p className={compStyles.xs}>DONORS</p><h1>556</h1></div>
+                <div><p className={compStyles.xs}>DONORS</p><h1>64</h1></div>
                 <div><p className={compStyles.xs}>PROJECTS</p><h1>14</h1></div>
                 <div><p className={compStyles.xs}>LABS</p><h1>14</h1></div>
             </div>
