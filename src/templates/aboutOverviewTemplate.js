@@ -85,8 +85,7 @@ export default function Template({
                     <div className={compStyles.whatWeProvide}>
                         <h4>What we provide</h4>
                         <div className={compStyles.contentFlex}>
-                            {/*{linked.map((link, i) => <div key={i} dangerouslySetInnerHTML={{__html: link.childMarkdownRemark.html}}/>)}*/}
-                            {linked.map((link, i) => <div key={i}>{link.childMarkdownRemark.frontmatter.title}</div>)}
+                            {linked.map((link, i) => <div key={i} dangerouslySetInnerHTML={{__html: link.childMarkdownRemark.html}}/>)}
                         </div>
                     </div>
                 </div>

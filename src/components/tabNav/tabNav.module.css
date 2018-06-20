@@ -7,7 +7,7 @@
 
 /* Tabs */
 .hcaTabs {
-    background-color: #ffffff; /* TODO colour */
+    background-color: transparent; /* Required to allow section full visibility */
     border-bottom: 1px solid #CCCCCC; /* Tab line */ /* TODO colour hca-gray-light */
     margin-top: -24px; /* To position closer to section */
     position: sticky;
@@ -25,11 +25,13 @@
 /* Tab list */
 .hcaTabList {
     align-items: flex-end;
+    background-color: #ffffff; /* Required for content scroll */
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
     margin: 24px -16px 0;
     overflow-x: auto; /* Horizontal scroll */
+    width: 100%;
 }
 
 .hcaTabList::-webkit-scrollbar {

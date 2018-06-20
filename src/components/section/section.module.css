@@ -24,11 +24,14 @@
 .hcaSectionHeading {
     align-items: center;
     display: flex;
+    flex: 1;
     font-family: "din-2014", "Montserrat";
     font-size: 34px;
     font-weight: 500;
-    height: 76px;
+    //height: 76px;
     letter-spacing: 0.54px;
+    line-height: 44px;
+    padding: 16px 0;
     width: 100%;
 }
 
