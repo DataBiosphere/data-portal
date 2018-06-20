@@ -9,6 +9,25 @@ svg.explorePerson {
     display: none;
 }
 
+.active {
+    fill: #1288e4;
+    transition: all 0.75s ease 0s;
+}
+
+.active polygon, .active rect {
+    fill: #1288e4;
+    transition: all 0.75s ease 0s;
+}
+
+.active text {
+    opacity: 1;
+    transition: all 0.75s ease 0s;
+}
+
+[id^="count"] {
+    opacity: 0;
+}
+
 /**
  * Medium +
  */
@@ -17,5 +36,4 @@ svg.explorePerson {
     svg.explorePerson {
         display: block;
     }
-
 }
