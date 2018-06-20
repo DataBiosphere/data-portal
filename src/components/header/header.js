@@ -23,15 +23,16 @@ class Header extends React.Component {
         this.toggleMenu = this.toggleMenu.bind(this);
     }
 
-    toggleMenu = (isHomePage) => {
+    toggleMenu = () => {
         this.setState({showNav: !this.state.showNav })
     };
 
     getHeaderClassName = () => {
 
-        let isHomePage = window.location.href.split("/")[3];
+        const browser = typeof window !== "undefined";
+        let homePage = browser && window.location.href.split("/")[3];
 
-        if (isHomePage) {
+        if (homePage) {
             return classNames({
                 [compStyles.navBar]: true
             });
