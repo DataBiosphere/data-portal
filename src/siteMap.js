@@ -6,7 +6,7 @@
  */
 
 // TODO move to yml and put in the content directory
-
+ 
 const siteMap =
     [
         {
