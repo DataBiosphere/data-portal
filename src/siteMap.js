@@ -191,8 +191,8 @@ const siteMap =
                             key: "/analyze/portals/visualization-portals"
                         },
                         {
-                            name: "Portals Overview",
-                            key: "/analyze/portals/overview"
+                            name: "About Visualization Portals",
+                            key: "/analyze/portals/about"
                         }
                     ]
                 },
@@ -201,8 +201,12 @@ const siteMap =
                     key: "methods",
                     children: [
                         {
-                            name: "Methods Overview",
-                            key: "/analyze/methods/overview"
+                            name: "Methods",
+                            key: "/analyze/methods/methods"
+                        },
+                        {
+                            name: "About Methods",
+                            key: "/analyze/methods/about"
                         }
                     ]
                 },
@@ -212,7 +216,11 @@ const siteMap =
                     children: [
                         {
                             name: "Visualization Components",
-                            key: "/analyze/visualization-components/overview"
+                            key: "/analyze/visualization-components/visualization-components"
+                        },
+                        {
+                            name: "About Visualization Components",
+                            key: "/analyze/visualization-components/about"
                         }
                     ]
                 }
