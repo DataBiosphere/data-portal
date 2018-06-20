@@ -15,16 +15,20 @@ const siteMap =
             children:
                 [
                     {
-                        name: "How it works",
-                        key: "how-it-works",
+                        name: "Overview",
+                        key: "overview",
                         children: [
                             {
+                                name: "Overview",
+                                key: "/learn/overview/overview",
+                            },
+                            {
                                 name: "Data Lifecycle",
-                                key: "/learn/how-it-works/data-lifecycle",
+                                key: "/learn/overview/data-lifecycle",
                             },
                             {
                                 name: "Data Use Agreement",
-                                key: "/learn/how-it-works/data-use-agreement",
+                                key: "/learn/overview/data-use-agreement",
                             }
                         ]
                     },

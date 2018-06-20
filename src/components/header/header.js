@@ -61,7 +61,7 @@ class Header extends React.Component {
                                 <span>Contribute</span>
                                 <span>Submit your data to the HCA</span>
                             </Link>
-                            <Link activeClassName={compStyles.active} to="/learn/how-it-works/data-lifecycle" onClick={this.toggleMenu}>
+                            <Link activeClassName={compStyles.active} to="/learn/overview/overview" onClick={this.toggleMenu}>
                                 <span>Learn</span>
                                 <span>Find user guides and how-to’s here</span>
                             </Link>
@@ -80,7 +80,7 @@ class Header extends React.Component {
                         <Link activeClassName={compStyles.active} to="/contribute/overview/overview">
                             <span>Contribute</span>
                         </Link>
-                        <Link activeClassName={compStyles.active} to="/learn/how-it-works/data-lifecycle">
+                        <Link activeClassName={compStyles.active} to="/learn/overview/overview">
                             <span>Learn</span>
                         </Link>
                         <Link activeClassName={compStyles.active} to="/build/development-guides/development-guides-overview">
