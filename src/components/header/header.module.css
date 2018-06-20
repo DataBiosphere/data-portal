@@ -6,10 +6,8 @@
  */
 
 /* Nav bar container */
-.navBar {
+.navBar, .hcaHeader {
     background-color: #ffffff; /* TODO colour */
-    //background: linear-gradient(140deg, #03071A 0%, #0B1339 41%, #0E1948 60%, #131F5A 84%, #13205D 87%, #142263 87%, #091962 100%);
-    //box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
     border-bottom: 1px solid #CCCCCC; /* TODO colour */
     height: 60px;
     left: 0;
@@ -17,6 +15,12 @@
     right: 0;
     top: 0;
     z-index: 100;
+}
+
+/* Header for all pages but the home page */
+.navBar:not(.hcaHeader) {
+    border-bottom: none;
+    background-color: #F8F8F8; /* TODO colour */
 }
 
 /* Wrapper */
@@ -69,7 +73,6 @@ a.logo, a.logo img {
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 13px; /* TODO review with typography */
     font-weight: 600; /* TODO review with typography */
-    letter-spacing: 1.2px; /* TODO typography */
     line-height: 32px; /* TODO typography */
     margin: 0;
     padding: 12px 24px;
@@ -89,13 +92,13 @@ a.logo, a.logo img {
         text-transform: none;
 }
 
-/* Nav links - active */
-.links .active {
+/* Nav links - hover */
+.links a:hover {
     color: #000000; /* TODO colour */
 }
 
-/* Nav links - hover */
-.links a:hover {
+/* Nav links - active */
+.links .active {
     color: #000000; /* TODO colour */
 }
 
@@ -167,8 +170,9 @@ a.logo, a.logo img {
 
     /* Nav links */
     .links a {
-        font-size: 14px;
-        font-weight: 700;
+        color: #666666; /* TODO colour */
+        font-size: 15px;
+        font-weight: 600;
         padding: 0 12px;
         text-transform: capitalize;
     }

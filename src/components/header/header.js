@@ -23,13 +23,28 @@ class Header extends React.Component {
         this.toggleMenu = this.toggleMenu.bind(this);
     }
 
-    toggleMenu = () => {
+    toggleMenu = (isHomePage) => {
         this.setState({showNav: !this.state.showNav })
+    };
+
+    getHeaderClassName = () => {
+
+        let isHomePage = window.location.href.split("/")[3];
+
+        if (isHomePage) {
+            return classNames({
+                [compStyles.navBar]: true
+            });
+        }
+        return classNames({
+            [compStyles.hcaHeader]: true,
+            [compStyles.navBar]: true
+        });
     };
 
     render() {
         return (
-            <div className={compStyles.navBar}>
+            <div className={this.getHeaderClassName(2)}>
                 <div className={compStyles.wrapper}>
                     <Link to="/" className={compStyles.logo}><img src={headerLogo}/></Link>
                     {this.state.showNav ?
@@ -38,19 +53,19 @@ class Header extends React.Component {
                                 <span>Explore</span>
                                 <span>Search for data in the HCA</span>
                             </a>
-                            <Link to="/analyze/portals/visualization-portals" onClick={this.toggleMenu}>
+                            <Link activeClassName={compStyles.active} to="/analyze/portals/visualization-portals" onClick={this.toggleMenu}>
                                 <span>Analyze</span>
                                 <span>Find a list of Apps</span>
                             </Link>
-                            <Link to="/contribute/overview/overview" onClick={this.toggleMenu}>
+                            <Link activeClassName={compStyles.active} to="/contribute/overview/overview" onClick={this.toggleMenu}>
                                 <span>Contribute</span>
                                 <span>Submit your data to the HCA</span>
                             </Link>
-                            <Link to="/learn/how-it-works/data-lifecycle" onClick={this.toggleMenu}>
+                            <Link activeClassName={compStyles.active} to="/learn/how-it-works/data-lifecycle" onClick={this.toggleMenu}>
                                 <span>Learn</span>
                                 <span>Find user guides and how-to’s here</span>
                             </Link>
-                            <Link to="/build/development-guides/development-guides-overview" onClick={this.toggleMenu}>
+                            <Link activeClassName={compStyles.active} to="/build/development-guides/development-guides-overview" onClick={this.toggleMenu}>
                                 <span>Build</span>
                                 <span>Find developer guides and API docs</span>
                             </Link>
@@ -59,16 +74,16 @@ class Header extends React.Component {
                         <a href="https://explore.dev.data.humancellatlas.org">
                             <span>Explore</span>
                         </a>
-                        <Link to="/analyze/portals/visualization-portals">
+                        <Link activeClassName={compStyles.active} to="/analyze/portals/visualization-portals">
                             <span>Analyze</span>
                         </Link>
-                        <Link to="/contribute/overview/overview">
+                        <Link activeClassName={compStyles.active} to="/contribute/overview/overview">
                             <span>Contribute</span>
                         </Link>
-                        <Link to="/learn/how-it-works/data-lifecycle">
+                        <Link activeClassName={compStyles.active} to="/learn/how-it-works/data-lifecycle">
                             <span>Learn</span>
                         </Link>
-                        <Link to="/build/development-guides/development-guides-overview">
+                        <Link activeClassName={compStyles.active} to="/build/development-guides/development-guides-overview">
                             <span>Build</span>
                         </Link>
                     </div>
