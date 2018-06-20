@@ -122,9 +122,14 @@ const siteMap =
                         key: "metadata-dictionary",
                         children: [
                             {
-                                name: "Metadata Dictionary Overview",
-                                key: "/learn/metadata-dictionary/metadata-dictionary-landing"
+                                name: "Metadata Dictionary",
+                                key: "/learn/metadata-dictionary/metadata-dictionary"
+                            },
+                            {
+                                name: "About Metadata Dictionary",
+                                key: "/learn/metadata-dictionary/about-metadata-dictionary"
                             }
+
                         ]
                     }
                 ]

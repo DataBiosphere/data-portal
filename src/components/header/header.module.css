@@ -33,7 +33,7 @@
 a.logo, a.logo img {
     align-self: center;
     cursor: pointer;
-    height: 48px;
+    height: 40px;
     line-height: 0 !important;
     margin-bottom: 0 !important; /* TODO review global */
 }
