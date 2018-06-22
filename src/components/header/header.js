@@ -24,7 +24,7 @@ class Header extends React.Component {
     }
 
     toggleMenu = () => {
-        this.setState({showNav: !this.state.showNav })
+        this.setState({showNav: !this.state.showNav})
     };
 
     getHeaderClassName = () => {
@@ -45,28 +45,28 @@ class Header extends React.Component {
 
     render() {
         return (
-            <div className={this.getHeaderClassName(2)}>
+            <div className={this.getHeaderClassName()}>
                 <div className={compStyles.wrapper}>
                     <Link to="/" className={compStyles.logo}><img src={headerLogo}/></Link>
                     {this.state.showNav ?
                         <div className={classNames(compStyles.links, compStyles.small)}>
-                            <a href="https://explore.dev.data.humancellatlas.org" onClick={this.toggleMenu}>
+                            <a href="https://explore.dev.data.humancellatlas.org" onClick={this.toggleSelect}>
                                 <span>Explore</span>
                                 <span>Search for data in the HCA</span>
                             </a>
-                            <Link activeClassName={compStyles.active} to="/analyze/portals/visualization-portals" onClick={this.toggleMenu}>
+                            <Link activeClassName={compStyles.active} to="/analyze/portals/visualization-portals" onClick={this.toggleSelect}>
                                 <span>Analyze</span>
                                 <span>Find a list of Apps</span>
                             </Link>
-                            <Link activeClassName={compStyles.active} to="/contribute/overview/overview" onClick={this.toggleMenu}>
+                            <Link activeClassName={compStyles.active} to="/contribute/overview/overview" onClick={this.toggleSelect}>
                                 <span>Contribute</span>
                                 <span>Submit your data to the HCA</span>
                             </Link>
-                            <Link activeClassName={compStyles.active} to="/learn/overview/overview" onClick={this.toggleMenu}>
+                            <Link activeClassName={compStyles.active} to="/learn/overview/overview" onClick={this.toggleSelect}>
                                 <span>Learn</span>
                                 <span>Find user guides and how-to’s here</span>
                             </Link>
-                            <Link activeClassName={compStyles.active} to="/build/development-guides/development-guides-overview" onClick={this.toggleMenu}>
+                            <Link activeClassName={compStyles.active} to="/build/development-guides/development-guides-overview" onClick={this.toggleSelect}>
                                 <span>Build</span>
                                 <span>Find developer guides and API docs</span>
                             </Link>
@@ -89,8 +89,8 @@ class Header extends React.Component {
                         </Link>
                     </div>
                     <div className={compStyles.userDropDown}>Alex S.</div>
-                    <div className={compStyles.menuDropDown} onClick={this.toggleMenu}>Menu</div>
-                    {this.state.showNav ? <div className={compStyles.hcaNavOverlay} onClick={this.toggleMenu}/> : null}
+                    <div className={compStyles.menuDropDown} onClick={this.toggleSelect}>Menu</div>
+                    {this.state.showNav ? <div className={compStyles.hcaNavOverlay} onClick={this.toggleSelect}/> : null}
                 </div>
             </div>
         );

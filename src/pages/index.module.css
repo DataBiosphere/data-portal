@@ -134,51 +134,36 @@ a {
 .jumbotronSearch {
     align-items: center;
     max-width: 343px; /* Width on mobile 375px */
-    position: relative; /* Positions search button */
+    position: relative; /* Positions search button and hcaOptions */
     width: 100%;
 }
 
-/* Input - class homepage */
-input.homepage {
+/* Select - class homepage */
+.homepage {
+    background-color: #ffffff; /* TODO colour */
     border: 1px solid #CCCCCC; /* TODO colour */
     border-radius: 3px;
     box-sizing: border-box;
+    color: #999999;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     height: 50px;
+    line-height: 50px;
+    outline: none;
     overflow: hidden;
     padding: 0 16px;
     white-space: nowrap;
 }
 
-input.homepage {
-    outline: none;
-}
-
-/* Input placeholder */
-input::placeholder {
-    color: #999999; /* TODO colour */
-    opacity: 1; /* Firefox */
-}
-
-input:-ms-input-placeholder {
-    color: #999999; /* TODO colour */
-}
-
-input:-ms-input-placeholder {
-    color: #999999; /* TODO colour */
-}
-
-/* Jumbotron input */
-.jumbotronSearch input.homepage {
-    width: 100%;
-}
-
 /* Jumbotron - hide longer search text */
-.jumbotronSearch input.homepage.large {
+.jumbotronSearch .homepage.large {
     display: none;
 }
 
 /* Button - class homepage */
-button.homepage {
+.jumbotronSearch a.homepage {
     align-items: center;
     background-color: #f5a623 /* TODO colour */;
     border: none;
@@ -199,16 +184,16 @@ button.homepage {
     text-decoration: none;
 }
 
-button.homepage:hover {
+.jumbotronSearch a.homepage:hover {
     background-color: #DC8D0A; /* TODO review colour */
 }
 
-button.homepage:focus {
+.jumbotronSearch a.homepage:focus {
     outline: none;
 }
 
 /* Jumbotron search button */
-.jumbotronSearch button.homepage {
+.jumbotronSearch a.homepage {
     position: absolute;
     right: 0;
     top: 0;
@@ -439,6 +424,7 @@ button.homepage:focus {
         margin-bottom: -86px; /* Equal to wrapper padding and svg re-sized to 650px */
         max-width: 650px;
     }
+
     /* Svg */
     .explore svg {
         width: 650px;
@@ -473,12 +459,12 @@ button.homepage:focus {
     }
 
     /* Hide jumbotron short search text */
-    .jumbotronSearch input.homepage.small {
+    .jumbotronSearch .homepage.small {
         display: none;
     }
 
     /* Show longer search text */
-    .jumbotron input.homepage.large {
+    .jumbotron .homepage.large {
         display: block;
     }
 

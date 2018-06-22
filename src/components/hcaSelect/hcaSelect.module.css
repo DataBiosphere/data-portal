@@ -1,0 +1,74 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA select component.
+ */
+
+/* Select options */
+.hcaOptions {
+    background-color: #ffffff; /* TODO colour */
+    border: 1px solid #CCCCCC; /* TODO hca-gray-light */
+    border-radius: 1px;
+    box-shadow: 0 2px 4px 0 #CCCCCC; /* TODO colour */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: 256px;
+    overflow: scroll;
+    padding: 8px 16px 12px;
+    position: absolute;
+    top: 56px; /* 50px for select field + 6px below select field */
+    width: calc(100% - 84px); /* Full width - button width 84px */
+    z-index: 11;
+}
+
+/* Options group label */
+.hcaOptions .hcaOptionGroup {
+    color: #CCCCCC; /* TODO colour */
+    font-family: "Montserrat", sans-serif; /* TODO typography */
+    font-size: 10px; /* TODO typography */
+    font-weight: 500; /* TODO typography */
+    height: unset; /* Override MD spec */
+    letter-spacing: 0.83px; /* TODO typography */
+    line-height: 20px; /* Override MD spec */
+    padding: 4px 0; /* Override MD spec */
+}
+
+/* Options */
+.hcaOptions .hcaOption {
+    align-items: flex-start;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif; /* TODO typography */
+    font-size: 14px; /* TODO typography */
+    display: flex;
+    height: unset; /* Override MD spec */
+    justify-content: space-between;
+    letter-spacing: 0.43px; /* TODO typography */
+    line-height: 18px;
+    min-height: 26px;
+    padding: 4px 0;
+}
+
+.hcaOptions .hcaOption:hover {
+    background-color: rgba(0, 0, 0, 0.03); /* TODO colour */
+}
+
+/* Ellipsis of term name if required */
+.hcaOptions .hcaOption > span:first-of-type {
+    overflow: hidden;
+    padding-right: 4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Select overlay */
+.hcaSelectOverlay {
+    background-color: transparent;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+}
