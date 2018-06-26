@@ -10,7 +10,7 @@
     background-color: #ffffff; /* TODO colour */
     border: 1px solid #CCCCCC; /* TODO hca-gray-light */
     border-radius: 1px;
-    box-shadow: 0 2px 4px 0 #CCCCCC; /* TODO colour */
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06); /* TODO colour */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;

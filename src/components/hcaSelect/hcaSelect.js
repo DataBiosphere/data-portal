@@ -11,7 +11,8 @@ import compStyles from './hcaSelect.module.css';
 
 let exploreData = [
     {
-        facetName: "Project",
+        facetName: "project",
+        facetDisplayName: "Project",
         terms: [
             {
                 termName: "1M Immune Cells",
@@ -28,7 +29,8 @@ let exploreData = [
         ]
     },
     {
-        facetName: "Genus Species",
+        facetName: "genusSpecies",
+        facetDisplayName: "Genus Species",
         terms: [
             {
                 termName: "Homo sapiens",
@@ -41,7 +43,8 @@ let exploreData = [
         ]
     },
     {
-        facetName: "Biological Sex",
+        facetName: "biologicalSex",
+        facetDisplayName: "Biological Sex",
         terms: [
             {
                 termName: "female",
@@ -58,7 +61,8 @@ let exploreData = [
         ]
     },
     {
-        facetName: "Organ",
+        facetName: "organ",
+        facetDisplayName: "Organ",
         terms: [
             {
                 termName: "hematopoietic system",
@@ -87,7 +91,8 @@ let exploreData = [
         ]
     },
     {
-        facetName: "Organ Part",
+        facetName: "organPart",
+        facetDisplayName: "Organ Part",
         terms: [
             {
                 termName: "umbilical cord blood",
@@ -112,7 +117,8 @@ let exploreData = [
         ]
     },
     {
-        facetName: "Organism Age",
+        facetName: "organismAge",
+        facetDisplayName: "Organism Age",
         terms: [
             {
                 termName: "0",
@@ -157,7 +163,8 @@ let exploreData = [
         ]
     },
     {
-        facetName: "Organism Age Unit",
+        facetName: "organismAgeUnit",
+        facetDisplayName: "Organism Age Unit",
         terms: [
             {
                 termName: "years",
@@ -174,7 +181,8 @@ let exploreData = [
         ]
     },
     {
-        facetName: "Disease",
+        facetName: "disease",
+        facetDisplayName: "Disease",
         terms: [
             {
                 termName: "subcutaneous melanoma",
@@ -191,7 +199,8 @@ let exploreData = [
         ]
     },
     {
-        facetName: "Laboratory",
+        facetName: "laboratory",
+        facetDisplayName: "Laboratory",
         terms: [
             {
                 termName: "Regev Lab",
@@ -220,7 +229,8 @@ let exploreData = [
         ]
     },
     {
-        facetName: "Instrument Manufacturer Model",
+        facetName: "instrumentManufacturerModel",
+        facetDisplayName: "Instrument Manufacturer Model",
         terms: [
             {
                 termName: "Illumina Hiseq X 10",
@@ -237,7 +247,8 @@ let exploreData = [
         ]
     },
     {
-        facetName: "Library Construction Approach",
+        facetName: "libraryConstructionApproach",
+        facetDisplayName: "Library Construction Approach",
         terms: [
             {
                 termName: "10x_v2",
@@ -250,7 +261,8 @@ let exploreData = [
         ]
     },
     {
-        facetName: "Protocol",
+        facetName: "protocol",
+        facetDisplayName: "Protocol",
         terms: [
             {
                 termName: "10x_v2_sequencing_protocol_1",
@@ -299,7 +311,8 @@ let exploreData = [
         ]
     },
     {
-        facetName: "File Format",
+        facetName: "fileFormat",
+        facetDisplayName: "File Format",
         terms: [
             {
                 termName: "fastq.gz",
@@ -314,8 +327,8 @@ class HCASelect extends React.Component {
         super(props);
     }
 
-    selectedOption = (e, facet, term) => {
-        this.props.selectedOption(facet, term);
+    selectedOption = (e, facetName, facet, term) => {
+        this.props.selectedOption(facetName, facet, term);
         this.props.toggleSelect();
     };
 
@@ -324,8 +337,8 @@ class HCASelect extends React.Component {
             <div>
                 <div className={compStyles.hcaOptions}>
                     {exploreData.map((data, i) => <div key={i}>
-                        <div className={compStyles.hcaOptionGroup}>{data.facetName}</div>
-                        {data.terms.map((term, i) => <div key={i} className={compStyles.hcaOption} onClick={(e) => this.selectedOption(e, data.facetName, term.termName)}>
+                        <div className={compStyles.hcaOptionGroup}>{data.facetDisplayName}</div>
+                        {data.terms.map((term, i) => <div key={i} className={compStyles.hcaOption} onClick={(e) => this.selectedOption(e, data.facetDisplayName, data.facetName, term.termName)}>
                             <span>{term.termName}</span>
                             <span>{term.termCount}</span>
                         </div>)}

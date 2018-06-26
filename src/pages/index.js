@@ -29,17 +29,27 @@ class IndexPage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {showOptions: false, selectedFacet: "", selectedTerm: ""};
+        this.state = {showOptions: false, facetName: "", selectedFacet: "", selectedTerm: ""};
         this.selectedOption = this.selectedOption.bind(this);
         this.toggleSelect = this.toggleSelect.bind(this);
     }
 
+    selectedOption = (facetName, facet, term) => {
+
+        this.setState({facetName: facetName, selectedFacet: facet, selectedTerm: term});
+    };
+
     toggleSelect = () => {
+
         this.setState({showOptions: !this.state.showOptions})
     };
 
-    selectedOption = (facet, term) => {
-        this.setState({selectedFacet: facet, selectedTerm: term});
+    visitExploreLink = () => {
+
+        if (this.state.selectedTerm) {
+            const facetFilter = JSON.stringify({"facetName": this.state.selectedFacet, "termName": this.state.selectedTerm});
+            window.location.href = `https://explore.dev.data.humancellatlas.org/?filter=${facetFilter}`;
+        }
     };
 
     render() {
@@ -51,13 +61,13 @@ class IndexPage extends React.Component {
                         <Link to="/about/overview/overview"><p className={compStyles.xs}>Learn More</p></Link>
                         <div className={compStyles.jumbotronSearch}>
                             <div className={classNames(compStyles.homepage, compStyles.large)}
-                                 onClick={this.toggleSelect}>{this.state.selectedTerm ? <span>{this.state.selectedFacet}: {this.state.selectedTerm}</span> : <span>Search for data now by organs, projects, etc</span>}
+                                 onClick={this.toggleSelect}>{this.state.selectedTerm ? <span>{this.state.facetName}: {this.state.selectedTerm}</span> : <span>Search for data now by organs, projects, etc</span>}
                             </div>
                             <div className={classNames(compStyles.homepage, compStyles.small)}
                                  onClick={this.toggleSelect}>{this.state.selectedTerm ? <span>{this.state.selectedTerm}</span> : <span>Search for data by organs</span>}
                             </div>
                             {this.state.showOptions ? <HCASelect showOptions={this.state.showOptions} toggleSelect={this.toggleSelect} selectedOption={this.selectedOption.bind(this)}/> : null}
-                            <a href={exploreHref + "?filter=" + JSON.stringify({[this.state.selectedFacet.toLowerCase()]: this.state.selectedTerm.toLowerCase()})} className={compStyles.homepage}>SEARCH</a>
+                            <a onClick={this.visitExploreLink} className={compStyles.homepage}>SEARCH</a>
                         </div>
                     </div>
                 </div>
