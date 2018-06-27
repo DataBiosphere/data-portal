@@ -19,7 +19,7 @@ class Header extends React.Component {
 
     constructor() {
         super();
-        this.state = { showNav: false };
+        this.state = {showNav: false, showTabs: false};
         this.toggleMenu = this.toggleMenu.bind(this);
     }
 
@@ -54,43 +54,52 @@ class Header extends React.Component {
                                 <span>Explore</span>
                                 <span>Search for data in the HCA</span>
                             </a>
-                            <Link activeClassName={compStyles.active} to="/analyze/portals/visualization-portals" onClick={this.toggleSelect}>
+                            <Link activeClassName={compStyles.active} to="/analyze/portals/visualization-portals"
+                                  onClick={this.toggleMenu}>
                                 <span>Analyze</span>
                                 <span>Find a list of Apps</span>
                             </Link>
-                            <Link activeClassName={compStyles.active} to="/contribute/overview/overview" onClick={this.toggleSelect}>
+                            <Link activeClassName={compStyles.active} to="/contribute/overview/overview"
+                                  onClick={this.toggleMenu}>
                                 <span>Contribute</span>
                                 <span>Submit your data to the HCA</span>
                             </Link>
-                            <Link activeClassName={compStyles.active} to="/learn/overview/overview" onClick={this.toggleSelect}>
+                            <Link activeClassName={compStyles.active} to="/learn/overview/overview"
+                                  onClick={this.toggleMenu}>
                                 <span>Learn</span>
                                 <span>Find user guides and how-to’s here</span>
                             </Link>
-                            <Link activeClassName={compStyles.active} to="/build/development-guides/development-guides-overview" onClick={this.toggleSelect}>
+                            <Link activeClassName={compStyles.active}
+                                  to="/build/development-guides/development-guides-overview" onClick={this.toggleMenu}>
                                 <span>Build</span>
                                 <span>Find developer guides and API docs</span>
                             </Link>
+                            <Link to="/about/overview/overview" activeClassName={compStyles.active}
+                                  className={compStyles.about} onClick={this.toggleMenu}>About</Link>
                         </div> : null}
-                    <div className={classNames(compStyles.links)}>
+                    <div className={classNames(compStyles.links)} ref={(div) => this.links = div}>
                         <a href="https://explore.dev.data.humancellatlas.org">
                             <span>Explore</span>
                         </a>
-                        <Link activeClassName={compStyles.active} to="/analyze/portals/visualization-portals">
+                        <Link id="linkAnalyze" activeClassName={compStyles.active} to="/analyze/portals/visualization-portals">
                             <span>Analyze</span>
+                            {this.showTabs ? <div>I am submenu</div> : null}
                         </Link>
-                        <Link activeClassName={compStyles.active} to="/contribute/overview/overview">
+                        <Link id="linkContribute" activeClassName={compStyles.active} to="/contribute/overview/overview">
                             <span>Contribute</span>
                         </Link>
-                        <Link activeClassName={compStyles.active} to="/learn/overview/overview">
+                        <Link id="linkLearn" activeClassName={compStyles.active} to="/learn/overview/overview">
                             <span>Learn</span>
                         </Link>
-                        <Link activeClassName={compStyles.active} to="/build/development-guides/development-guides-overview">
+                        <Link id="linkBuild" activeClassName={compStyles.active}
+                              to="/build/development-guides/development-guides-overview">
                             <span>Build</span>
                         </Link>
                     </div>
-                    <div className={compStyles.userDropDown}>Alex S.</div>
-                    <div className={compStyles.menuDropDown} onClick={this.toggleSelect}>Menu</div>
-                    {this.state.showNav ? <div className={compStyles.hcaNavOverlay} onClick={this.toggleSelect}/> : null}
+                    <Link to="/about/overview/overview" activeClassName={compStyles.active}
+                          className={compStyles.about}>About</Link>
+                    <div className={compStyles.menuDropDown} onClick={this.toggleMenu}>Menu</div>
+                    {this.state.showNav ? <div className={compStyles.hcaNavOverlay} onClick={this.toggleMenu}/> : null}
                 </div>
             </div>
         );

@@ -20,7 +20,7 @@ class Explore extends React.Component {
         const statsEl = this.svg.getElementById("stats");
         const organStatsEls = statsEl.querySelectorAll("*[id^='stats']");
         organStatsEls.forEach((organStatsEl) => {
-            
+
             const organName = this.parseOrganNameFromElement(organStatsEl);
             const organImageEl = this.svg.getElementById(`organ${organName}`);
 
@@ -28,6 +28,7 @@ class Explore extends React.Component {
             organStatsEl.addEventListener("mouseenter", this.setActiveOrgan(organGroup));
             organImageEl.addEventListener("mouseenter", this.setActiveOrgan(organGroup));
             organImageEl.addEventListener("click", this.visitExploreLink);
+            organStatsEl.addEventListener("click", this.visitExploreLink);
             organStatsEl.addEventListener("mouseleave", this.clearActiveOrgan(organGroup));
             organImageEl.addEventListener("mouseleave", this.clearActiveOrgan(organGroup));
         });
@@ -59,13 +60,11 @@ class Explore extends React.Component {
     visitExploreLink = (event) => {
         
         const organName = this.parseOrganNameFromElement(event.currentTarget).toLowerCase();
-        const organFilter = JSON.stringify({organ:organName});
+        const organFilter = JSON.stringify({"facetName":"organ", "termName":organName});
         window.location.href = `https://explore.dev.data.humancellatlas.org/?filter=${organFilter}`;            
     };
 
     render() {
-        let {exploreCounts, exploreLinks, exploreHref} = this.props;
-
         return (
 <svg className={compStyles.explorePerson} width="841px" height="463px" viewBox="0 0 841 463" ref={(svg) => this.svg = svg}>
     <defs>

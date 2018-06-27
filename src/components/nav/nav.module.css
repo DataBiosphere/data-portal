@@ -95,6 +95,7 @@ ul > div > ul {
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 13px; /* TODO typography - confirm size */
     font-weight: 500; /* TODO typography */
+    line-height: 20px;
     text-decoration: none;
 }
 

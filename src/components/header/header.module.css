@@ -77,8 +77,13 @@ a.logo, a.logo img {
     margin: 0;
     padding: 12px 24px;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: capitalize;
     width: 100%;
+}
+
+.links.small a.about {
+    color: #666666; /* TODO colour */
+    font-weight: 400;
 }
 
 /* Nav links - subtitle */
@@ -98,8 +103,20 @@ a.logo, a.logo img {
 }
 
 /* Nav links - active */
-.links .active {
+.links .active, .navBar .active {
     color: #000000; /* TODO colour */
+}
+
+.links .showSection::after {
+    content: '';
+    border: 1px solid #CCCCCC; /* TODO colour */
+    display: block;
+    position: absolute;
+    top: 46px;
+    left: 0;
+    width: 200px;
+    height: 400px;
+    background-color: #ffffff; /* TODO colour */
 }
 
 .hcaNavOverlay {
@@ -113,10 +130,10 @@ a.logo, a.logo img {
     z-index: 99; /* Positioned below showLinks */
 }
 
-/* User menu, Menu */
-.userDropDown, .menuDropDown {
+/* About link, Menu */
+.about, .menuDropDown {
     align-items: center;
-    color: #ffffff; /* TODO colour - change to 666666 $hca-gray-dark when implement */
+    color: #666666; /* TODO colour */
     cursor: pointer;
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 14px; /* TODO typography */
@@ -124,34 +141,37 @@ a.logo, a.logo img {
     display: flex;
 }
 
+/* About link */
+.about {
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.menuDropDown {
+    color: #000000; /* TODO typography */
+}
+
 /* Drop down menu icon */
-.userDropDown::after, .menuDropDown::before {
-    color: #ffffff; /* TODO colour - change to 666666 $hca-gray-dark when implement */
+.menuDropDown::before {
+    color: #666666; /* TODO colour */
     content: "\E313";
     font-family: "Material Icons";
-    font-size: 18px; // HCA specific
+    font-size: 18px;
     font-weight: 400;
     margin: 0 4px;
 
 }
 
-/* Hide user menu */
-.userDropDown, .userDropDown::after {
+/* Hide about link */
+.about {
     display: none;
-}
-
-.menuDropDown, .menuDropDown::before {
-    color: #000000; /* TODO typography */
-}
-
-.menuDropDown::before {
-    color: #666666; /* TODO typography hca-gray-dark */
 }
 
 /**
  * Large
  */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
 
     /* Wrapper */
     .wrapper {
@@ -174,6 +194,7 @@ a.logo, a.logo img {
         font-size: 15px;
         font-weight: 600;
         padding: 0 12px;
+        position: relative; /* Positions tab navigation container */
         text-transform: capitalize;
     }
 
@@ -182,13 +203,9 @@ a.logo, a.logo img {
         display: none;
     }
 
-    /* Show user menu */
-    .userDropDown {
+    /* Show about link */
+    .about {
         display: flex;
-    }
-
-    .userDropDown::after {
-        display: block;
     }
 }
 
