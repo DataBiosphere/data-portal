@@ -107,18 +107,6 @@ a.logo, a.logo img {
     color: #000000; /* TODO colour */
 }
 
-.links .showSection::after {
-    content: '';
-    border: 1px solid #CCCCCC; /* TODO colour */
-    display: block;
-    position: absolute;
-    top: 46px;
-    left: 0;
-    width: 200px;
-    height: 400px;
-    background-color: #ffffff; /* TODO colour */
-}
-
 .hcaNavOverlay {
     background-color: rgba(255, 255, 255, 0.9); /* TODO colour */
     bottom: 0;

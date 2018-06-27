@@ -19,13 +19,9 @@ class Header extends React.Component {
 
     constructor() {
         super();
-        this.state = {showNav: false, showTabs: false};
+        this.state = {showNav: false};
         this.toggleMenu = this.toggleMenu.bind(this);
     }
-
-    toggleMenu = () => {
-        this.setState({showNav: !this.state.showNav})
-    };
 
     getHeaderClassName = () => {
 
@@ -41,6 +37,10 @@ class Header extends React.Component {
             [compStyles.hcaHeader]: true,
             [compStyles.navBar]: true
         });
+    };
+
+    toggleMenu = () => {
+        this.setState({showNav: !this.state.showNav})
     };
 
     render() {
@@ -77,13 +77,12 @@ class Header extends React.Component {
                             <Link to="/about/overview/overview" activeClassName={compStyles.active}
                                   className={compStyles.about} onClick={this.toggleMenu}>About</Link>
                         </div> : null}
-                    <div className={classNames(compStyles.links)} ref={(div) => this.links = div}>
+                    <div className={classNames(compStyles.links)}>
                         <a href="https://explore.dev.data.humancellatlas.org">
                             <span>Explore</span>
                         </a>
                         <Link id="linkAnalyze" activeClassName={compStyles.active} to="/analyze/portals/visualization-portals">
                             <span>Analyze</span>
-                            {this.showTabs ? <div>I am submenu</div> : null}
                         </Link>
                         <Link id="linkContribute" activeClassName={compStyles.active} to="/contribute/overview/overview">
                             <span>Contribute</span>
