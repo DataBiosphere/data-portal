@@ -54,12 +54,10 @@
     background-color: rgba(0, 0, 0, 0.03); /* TODO colour */
 }
 
-/* Ellipsis of term name if required */
+/* Wrap of term name if required */
 .hcaOptions .hcaOption > span:first-of-type {
-    overflow: hidden;
     padding-right: 4px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    max-width: 85%;
 }
 
 /* Select overlay */
