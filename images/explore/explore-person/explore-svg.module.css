@@ -10,6 +10,7 @@ svg.explorePerson {
 }
 
 .active {
+    cursor: pointer;
     fill: #1288e4;
     transition: all 0.75s ease 0s;
 }
