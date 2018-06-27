@@ -28,6 +28,7 @@ class Explore extends React.Component {
             organStatsEl.addEventListener("mouseenter", this.setActiveOrgan(organGroup));
             organImageEl.addEventListener("mouseenter", this.setActiveOrgan(organGroup));
             organImageEl.addEventListener("click", this.visitExploreLink);
+            organStatsEl.addEventListener("click", this.visitExploreLink);
             organStatsEl.addEventListener("mouseleave", this.clearActiveOrgan(organGroup));
             organImageEl.addEventListener("mouseleave", this.clearActiveOrgan(organGroup));
         });
@@ -59,7 +60,7 @@ class Explore extends React.Component {
     visitExploreLink = (event) => {
         
         const organName = this.parseOrganNameFromElement(event.currentTarget).toLowerCase();
-        const organFilter = JSON.stringify({organ:organName});
+        const organFilter = JSON.stringify({"facetName":"organ", "termName":organName});
         window.location.href = `https://explore.dev.data.humancellatlas.org/?filter=${organFilter}`;            
     };
 
