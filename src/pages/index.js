@@ -85,10 +85,8 @@ class IndexPage extends React.Component {
                                 <p className={compStyles.s}>Hover over or click on an organ to view data from that
                                     organ</p>
                             </div>
-                            <Explore exploreCounts={exploreCounts} exploreLinks={exploreLinks}
-                                     exploreHref={exploreHref}/>
-                            <ExploreTable exploreCounts={exploreCounts} exploreLinks={exploreLinks}
-                                          exploreHref={exploreHref}/>
+                            <Explore/>
+                            <ExploreTable/>
                         </div>
                     </div>
                 </div>

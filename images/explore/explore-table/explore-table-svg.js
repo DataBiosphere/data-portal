@@ -9,8 +9,6 @@ class ExploreTable extends React.Component {
     }
 
     render() {
-        let {exploreCounts, exploreLinks, exploreHref} = this.props;
-
         return (
 <svg className={compStyles.exploreTable} width="339px" height="229px" viewBox="0 0 339 229">
     <defs/>
