@@ -104,7 +104,7 @@ class IndexPage extends React.Component {
                                 </div>
                                 <div>
                                     <p className={compStyles.s}>Labs contribute single-cell data</p>
-                                    <a className={compStyles.s}>Learn about contributing</a>
+                                    <Link to="/contribute/overview/overview" className={compStyles.s}>Learn about contributing</Link>
                                 </div>
                             </div>
                             <div className={compStyles.dpArrow}>
@@ -115,8 +115,8 @@ class IndexPage extends React.Component {
                                     <img src={processData}/>
                                 </div>
                                 <div><p className={compStyles.s}>We process and quality-check the data with our
-                                    pipelines</p><a
-                                    className={compStyles.s}>Learn about Pipelines</a>
+                                    pipelines</p><Link to="/learn/userguides/secondary-analysis"
+                                    className={compStyles.s}>Learn about Pipelines</Link>
                                 </div>
                             </div>
                             <div className={compStyles.dpArrow}>
@@ -127,7 +127,7 @@ class IndexPage extends React.Component {
                                     <img src={findData}/>
                                 </div>
                                 <div><p className={compStyles.s}>Anyone can find data to download or use for
-                                    analysis</p><a
+                                    analysis</p><a href="https://explore.dev.data.humancellatlas.org"
                                     className={compStyles.s}>Start Searching</a></div>
                             </div>
                             <div className={compStyles.dpArrow}>
@@ -137,8 +137,8 @@ class IndexPage extends React.Component {
                                 <div>
                                     <img src={analysisPortal}/>
                                 </div>
-                                <div><p className={compStyles.s}>Find community analysis tools and applications</p><a
-                                    className={compStyles.s}>Explore applications</a></div>
+                                <div><p className={compStyles.s}>Find community analysis tools and applications</p><Link to="/analyze/portals/visualization-portals"
+                                    className={compStyles.s}>Explore applications</Link></div>
                             </div>
                         </div>
                     </div>

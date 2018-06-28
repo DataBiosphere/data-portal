@@ -50,7 +50,7 @@ class Header extends React.Component {
                     <Link to="/" className={compStyles.logo}><img src={headerLogo}/></Link>
                     {this.state.showNav ?
                         <div className={classNames(compStyles.links, compStyles.small)}>
-                            <a href="https://explore.dev.data.humancellatlas.org" onClick={this.toggleSelect}>
+                            <a href="https://explore.dev.data.humancellatlas.org" onClick={this.toggleMenu}>
                                 <span>Explore</span>
                                 <span>Search for data in the HCA</span>
                             </a>
