@@ -18,6 +18,8 @@ import arrowRight from "../../images/data-portal/arrow-right.png";
 import contribute from "../../images/data-portal/contribute.png";
 import findData from "../../images/data-portal/find-data.png";
 import processData from "../../images/data-portal/process-data.png";
+
+// App dependencies
 import Explore from "../../images/explore/explore-person/explore-svg";
 import ExploreTable from "../../images/explore/explore-table/explore-table-svg";
 import HCASelect from "../components/hcaSelect/hcaSelect";

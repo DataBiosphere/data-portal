@@ -10,6 +10,9 @@ import Link from 'gatsby-link';
 import React from 'react';
 import compStyles from './header.module.css';
 
+// App dependencies
+import HeaderTabNav from "../headerTabNav/headerTabNav";
+
 // Images
 import headerLogo from "../../../images/logo/logo-hca.png";
 
@@ -19,9 +22,15 @@ class Header extends React.Component {
 
     constructor() {
         super();
-        this.state = {showNav: false};
+        this.state = {showNav: false, tabId: null};
+        this.clearActiveLink = this.clearActiveLink.bind(this);
+        this.setActiveLink = this.setActiveLink.bind(this);
         this.toggleMenu = this.toggleMenu.bind(this);
     }
+
+    clearActiveLink = () => {
+        this.setState({tabId: null})
+    };
 
     getHeaderClassName = () => {
 
@@ -37,6 +46,10 @@ class Header extends React.Component {
             [compStyles.hcaHeader]: true,
             [compStyles.navBar]: true
         });
+    };
+
+    setActiveLink = (activeLink) => {
+        this.setState({tabId: activeLink})
     };
 
     toggleMenu = () => {
@@ -77,23 +90,37 @@ class Header extends React.Component {
                             <Link to="/about/overview/overview" activeClassName={compStyles.active}
                                   className={compStyles.about} onClick={this.toggleMenu}>About</Link>
                         </div> : null}
-                    <div className={classNames(compStyles.links)}>
+                    <div className={classNames(compStyles.links)} ref={(div) => this.links = div}>
                         <a href="https://explore.dev.data.humancellatlas.org">
                             <span>Explore</span>
                         </a>
-                        <Link id="linkAnalyze" activeClassName={compStyles.active} to="/analyze/portals/visualization-portals">
-                            <span>Analyze</span>
-                        </Link>
-                        <Link id="linkContribute" activeClassName={compStyles.active} to="/contribute/overview/overview">
-                            <span>Contribute</span>
-                        </Link>
-                        <Link id="linkLearn" activeClassName={compStyles.active} to="/learn/overview/overview">
-                            <span>Learn</span>
-                        </Link>
-                        <Link id="linkBuild" activeClassName={compStyles.active}
-                              to="/build/development-guides/development-guides-overview">
-                            <span>Build</span>
-                        </Link>
+                        <div id="linkAnalyze" onMouseEnter={(e) => this.setActiveLink(0)} onMouseLeave={this.clearActiveLink}>
+                            <Link activeClassName={compStyles.active}
+                                  to="/analyze/portals/visualization-portals">
+                                <span>Analyze</span>
+                            </Link>
+                            {this.state.tabId === 0 ? <HeaderTabNav section={"/analyze"} clearActiveLink={this.clearActiveLink.bind(this)}/> : null }
+                        </div>
+                        <div id="linkContribute" onMouseEnter={(e) => this.setActiveLink(1)} onMouseLeave={this.clearActiveLink}>
+                            <Link activeClassName={compStyles.active}
+                                  to="/contribute/overview/overview">
+                                <span>Contribute</span>
+                            </Link>
+                            {this.state.tabId === 1 ? <HeaderTabNav section={"/contribute"} clearActiveLink={this.clearActiveLink.bind(this)}/> : null }
+                        </div>
+                        <div id="linkLearn" onMouseEnter={(e) => this.setActiveLink(2)} onMouseLeave={this.clearActiveLink}>
+                            <Link activeClassName={compStyles.active} to="/learn/overview/overview">
+                                <span>Learn</span>
+                            </Link>
+                            {this.state.tabId === 2 ? <HeaderTabNav section={"/learn"} rightAlign={true} clearActiveLink={this.clearActiveLink.bind(this)}/> : null }
+                        </div>
+                        <div id="linkBuild" onMouseEnter={(e) => this.setActiveLink(3)} onMouseLeave={this.clearActiveLink}>
+                            <Link activeClassName={compStyles.active}
+                                  to="/build/development-guides/development-guides-overview">
+                                <span>Build</span>
+                            </Link>
+                            {this.state.tabId === 3 ? <HeaderTabNav section={"/build"} rightAlign={true} clearActiveLink={this.clearActiveLink.bind(this)}/> : null }
+                        </div>
                     </div>
                     <Link to="/about/overview/overview" activeClassName={compStyles.active}
                           className={compStyles.about}>About</Link>

@@ -96,6 +96,7 @@ p[class^="xxs"] {
 /* Content */
 .hcaContent .markdownContent {
     margin-right: 0;
+    width: 100%;
 }
 
 /* Markdown styles */
