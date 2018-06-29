@@ -116,70 +116,70 @@ let exploreData = [
             }
         ]
     },
-    {
-        facetName: "organismAge",
-        facetDisplayName: "Organism Age",
-        terms: [
-            {
-                termName: "0",
-                termCount: "64"
-            },
-            {
-                termName: "6-12",
-                termCount: "54"
-            },
-            {
-                termName: "29",
-                termCount: "16"
-            },
-            {
-                termName: "32",
-                termCount: "8"
-            },
-            {
-                termName: "36",
-                termCount: "8"
-            },
-            {
-                termName: "39",
-                termCount: "8"
-            },
-            {
-                termName: "50",
-                termCount: "8"
-            },
-            {
-                termName: "52",
-                termCount: "8"
-            },
-            {
-                termName: "26",
-                termCount: "7"
-            },
-            {
-                termName: "55-60",
-                termCount: "1"
-            }
-        ]
-    },
-    {
-        facetName: "organismAgeUnit",
-        facetDisplayName: "Organism Age Unit",
-        terms: [
-            {
-                termName: "years",
-                termCount: "127"
-            },
-            {
-                termName: "week",
-                termCount: "54"
-            },
-            {
-                termName: "year",
-                termCount: "1"
-            }
-        ]
-    },
+    // {
+    //     facetName: "organismAge",
+    //     facetDisplayName: "Organism Age",
+    //     terms: [
+    //         {
+    //             termName: "0",
+    //             termCount: "64"
+    //         },
+    //         {
+    //             termName: "6-12",
+    //             termCount: "54"
+    //         },
+    //         {
+    //             termName: "29",
+    //             termCount: "16"
+    //         },
+    //         {
+    //             termName: "32",
+    //             termCount: "8"
+    //         },
+    //         {
+    //             termName: "36",
+    //             termCount: "8"
+    //         },
+    //         {
+    //             termName: "39",
+    //             termCount: "8"
+    //         },
+    //         {
+    //             termName: "50",
+    //             termCount: "8"
+    //         },
+    //         {
+    //             termName: "52",
+    //             termCount: "8"
+    //         },
+    //         {
+    //             termName: "26",
+    //             termCount: "7"
+    //         },
+    //         {
+    //             termName: "55-60",
+    //             termCount: "1"
+    //         }
+    //     ]
+    // },
+    // {
+    //     facetName: "organismAgeUnit",
+    //     facetDisplayName: "Organism Age Unit",
+    //     terms: [
+    //         {
+    //             termName: "years",
+    //             termCount: "127"
+    //         },
+    //         {
+    //             termName: "week",
+    //             termCount: "54"
+    //         },
+    //         {
+    //             termName: "year",
+    //             termCount: "1"
+    //         }
+    //     ]
+    // },
     {
         facetName: "disease",
         facetDisplayName: "Disease",

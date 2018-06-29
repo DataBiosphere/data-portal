@@ -9,6 +9,26 @@ svg.exploreTable {
     height: 220px;
 }
 
+.active {
+    cursor: pointer;
+    fill: #1288e4;
+    transition: all 0.75s ease 0s;
+}
+
+.active polygon, .active rect {
+    fill: #1288e4;
+    transition: all 0.75s ease 0s;
+}
+
+.active text {
+    opacity: 1;
+    transition: all 0.75s ease 0s;
+}
+
+[id^="count"] {
+    opacity: 0;
+}
+
 /**
  * Medium +
  */
