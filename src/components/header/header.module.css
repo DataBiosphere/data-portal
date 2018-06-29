@@ -157,7 +157,7 @@ a.logo, a.logo img {
 }
 
 /**
- * Large
+ * Medium
  */
 @media screen and (min-width: 768px) {
 
@@ -176,13 +176,17 @@ a.logo, a.logo img {
         display: flex;
     }
 
+    [id*=link] {
+        position: relative;
+    }
+
     /* Nav links */
     .links a {
         color: #666666; /* TODO colour */
         font-size: 15px;
         font-weight: 600;
+        line-height: 60px;
         padding: 0 12px;
-        position: relative; /* Positions tab navigation container */
         text-transform: capitalize;
     }
 

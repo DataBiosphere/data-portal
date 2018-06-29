@@ -1,0 +1,55 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal header tab nav component.
+ */
+
+.headerTabs {
+    display: none;
+}
+
+/**
+ * Medium +
+ */
+@media screen and (min-width: 768px) {
+
+    /* Header tab navigation container */
+    .headerTabs {
+        background-color: #ffffff;
+        border: 1px solid #CCCCCC; /* TODO colour */
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        left: -12px;
+        min-width: calc(100% + 24px);
+        padding: 16px 24px;
+        position: absolute;
+        top: 59px; /* Matches border position of homepage header */
+    }
+
+    .headerTabs.rightAlign {
+        left: unset;
+        right: -12px;
+    }
+
+    /* Links */
+    .headerTabs > div > p.s {
+        color: #666666; /* TODO colour */
+        cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+    }
+
+    /* Hover */
+    .headerTabs > div > p.s:hover {
+        color: #000000; /* TODO colour */
+    }
+}
+
+
