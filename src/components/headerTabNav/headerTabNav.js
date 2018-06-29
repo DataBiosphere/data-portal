@@ -33,11 +33,9 @@ class HeaderTabNav extends React.Component {
     getTabLink = (tab) => {
 
         if (tab.children[0]) {
-            this.props.clearActiveLink();
             return tab.children[0].key;
         }
         else {
-            this.props.clearActiveLink();
             return "/";
         }
     };

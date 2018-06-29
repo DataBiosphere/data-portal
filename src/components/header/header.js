@@ -94,32 +94,32 @@ class Header extends React.Component {
                         <a href="https://explore.dev.data.humancellatlas.org">
                             <span>Explore</span>
                         </a>
-                        <div id="linkAnalyze" onMouseEnter={(e) => this.setActiveLink(0)} onMouseLeave={this.clearActiveLink}>
+                        <div id="linkAnalyze" onMouseEnter={(e) => this.setActiveLink(0)} onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active}
                                   to="/analyze/portals/visualization-portals">
                                 <span>Analyze</span>
                             </Link>
-                            {this.state.tabId === 0 ? <HeaderTabNav section={"/analyze"} clearActiveLink={this.clearActiveLink.bind(this)}/> : null }
+                            {this.state.tabId === 0 ? <HeaderTabNav section={"/analyze"}/> : null }
                         </div>
-                        <div id="linkContribute" onMouseEnter={(e) => this.setActiveLink(1)} onMouseLeave={this.clearActiveLink}>
+                        <div id="linkContribute" onMouseEnter={(e) => this.setActiveLink(1)} onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active}
                                   to="/contribute/overview/overview">
                                 <span>Contribute</span>
                             </Link>
-                            {this.state.tabId === 1 ? <HeaderTabNav section={"/contribute"} clearActiveLink={this.clearActiveLink.bind(this)}/> : null }
+                            {this.state.tabId === 1 ? <HeaderTabNav section={"/contribute"}/> : null }
                         </div>
-                        <div id="linkLearn" onMouseEnter={(e) => this.setActiveLink(2)} onMouseLeave={this.clearActiveLink}>
+                        <div id="linkLearn" onMouseEnter={(e) => this.setActiveLink(2)} onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active} to="/learn/overview/overview">
                                 <span>Learn</span>
                             </Link>
-                            {this.state.tabId === 2 ? <HeaderTabNav section={"/learn"} rightAlign={true} clearActiveLink={this.clearActiveLink.bind(this)}/> : null }
+                            {this.state.tabId === 2 ? <HeaderTabNav section={"/learn"} rightAlign={true}/> : null }
                         </div>
-                        <div id="linkBuild" onMouseEnter={(e) => this.setActiveLink(3)} onMouseLeave={this.clearActiveLink}>
+                        <div id="linkBuild" onMouseEnter={(e) => this.setActiveLink(3)} onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active}
                                   to="/build/development-guides/development-guides-overview">
                                 <span>Build</span>
                             </Link>
-                            {this.state.tabId === 3 ? <HeaderTabNav section={"/build"} rightAlign={true} clearActiveLink={this.clearActiveLink.bind(this)}/> : null }
+                            {this.state.tabId === 3 ? <HeaderTabNav section={"/build"} rightAlign={true}/> : null }
                         </div>
                     </div>
                     <Link to="/about/overview/overview" activeClassName={compStyles.active}
