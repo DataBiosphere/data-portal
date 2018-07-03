@@ -7,7 +7,7 @@
 
 /* Tabs */
 .hcaTabs {
-    background-color: transparent; /* Required to allow section full visibility */
+    background-color: #ffffff;  /* Required for content scroll */
     border-bottom: 1px solid #CCCCCC; /* Tab line */ /* TODO colour hca-gray-light */
     margin-top: -24px; /* To position closer to section */
     position: sticky;
@@ -20,18 +20,40 @@
     align-items: center;
     display: flex;
     padding: 0 16px;
+    position: relative; /* Positions fade on horizontal scroll */
+}
+
+/* Fade on horizontal scroll */
+.wrapper::after, .wrapper::before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 16px;
+    z-index: 10;
+}
+
+/* Fade on horizontal scroll RHS */
+.wrapper::after {
+    background: linear-gradient(90deg, transparent, #ffffff, #ffffff); /* TODO confirm */
+    right: 0;
+}
+
+/* Fade on horizontal scroll LHS */
+.wrapper::before {
+    background: linear-gradient(90deg, #ffffff, #ffffff, transparent); /* TODO confirm */
+    left: 0;
 }
 
 /* Tab list */
 .hcaTabList {
     align-items: flex-end;
-    background-color: #ffffff; /* Required for content scroll */
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
     margin: 24px -16px 0;
     overflow-x: auto; /* Horizontal scroll */
-    width: 100%;
+    width: calc(100% + 32px);
 }
 
 .hcaTabList::-webkit-scrollbar {

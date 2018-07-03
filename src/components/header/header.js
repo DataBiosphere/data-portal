@@ -50,6 +50,7 @@ class Header extends React.Component {
 
     setActiveLink = (activeLink) => {
         this.setState({tabId: activeLink})
+        console.log(activeLink);
     };
 
     toggleMenu = () => {
@@ -94,32 +95,32 @@ class Header extends React.Component {
                         <a href="https://explore.dev.data.humancellatlas.org">
                             <span>Explore</span>
                         </a>
-                        <div id="linkAnalyze" onMouseEnter={(e) => this.setActiveLink(0)} onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
+                        <div id="linkAnalyze" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active}
-                                  to="/analyze/portals/visualization-portals">
+                                  to="/analyze/portals/visualization-portals" onMouseEnter={(e) => this.setActiveLink(0)}>
                                 <span>Analyze</span>
                             </Link>
-                            {this.state.tabId === 0 ? <HeaderTabNav section={"/analyze"}/> : null }
+                            <HeaderTabNav isOpen={this.state.tabId === 0} section={"/analyze"}/>
                         </div>
-                        <div id="linkContribute" onMouseEnter={(e) => this.setActiveLink(1)} onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
+                        <div id="linkContribute" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active}
-                                  to="/contribute/overview/overview">
+                                  to="/contribute/overview/overview" onMouseEnter={(e) => this.setActiveLink(1)}>
                                 <span>Contribute</span>
                             </Link>
-                            {this.state.tabId === 1 ? <HeaderTabNav section={"/contribute"}/> : null }
+                            <HeaderTabNav isOpen={this.state.tabId === 1} section={"/contribute"}/>
                         </div>
-                        <div id="linkLearn" onMouseEnter={(e) => this.setActiveLink(2)} onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
-                            <Link activeClassName={compStyles.active} to="/learn/overview/overview">
+                        <div id="linkLearn" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
+                            <Link activeClassName={compStyles.active} to="/learn/overview/overview" onMouseEnter={(e) => this.setActiveLink(2)} >
                                 <span>Learn</span>
                             </Link>
-                            {this.state.tabId === 2 ? <HeaderTabNav section={"/learn"} rightAlign={true}/> : null }
+                            <HeaderTabNav isOpen={this.state.tabId === 2} section={"/learn"} rightAlign={true}/>
                         </div>
-                        <div id="linkBuild" onMouseEnter={(e) => this.setActiveLink(3)} onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
+                        <div id="linkBuild" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active}
-                                  to="/build/development-guides/development-guides-overview">
+                                  to="/build/development-guides/development-guides-overview" onMouseEnter={(e) => this.setActiveLink(3)}>
                                 <span>Build</span>
                             </Link>
-                            {this.state.tabId === 3 ? <HeaderTabNav section={"/build"} rightAlign={true}/> : null }
+                            <HeaderTabNav isOpen={this.state.tabId === 3} section={"/build"} rightAlign={true}/>
                         </div>
                     </div>
                     <Link to="/about/overview/overview" activeClassName={compStyles.active}

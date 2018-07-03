@@ -21,13 +21,12 @@ class HeaderTabNav extends React.Component {
         super(props);
     }
 
-    getHeaderTabClassName = (right) => {
-        {
+    getHeaderTabClassName = (right, isOpen) => {
             return classNames({
                 [compStyles.headerTabs]: true,
-                [compStyles.rightAlign]: right
+                [compStyles.rightAlign]: right,
+                [compStyles.isOpen]: isOpen
             });
-        }
     };
 
     getTabLink = (tab) => {
@@ -42,7 +41,7 @@ class HeaderTabNav extends React.Component {
 
     render() {
         return (
-            <div className={this.getHeaderTabClassName(this.props.rightAlign)}>
+            <div className={this.getHeaderTabClassName(this.props.rightAlign, this.props.isOpen)}>
                 {siteMap.getTabs(this.props.section).map((tab, i) => <div key={i}><p onClick={() => navigateTo(this.getTabLink(tab))}
                                                                           className={compStyles.s}>{tab.name}</p>
                 </div>)}

@@ -10,7 +10,7 @@
     background-color: white;
     position: sticky;
     top: 60px;
-    z-index: 10;
+    z-index: 12;
 }
 
 /* Wrapper */
@@ -28,7 +28,6 @@
     font-family: "din-2014", "Montserrat";
     font-size: 34px;
     font-weight: 500;
-    //height: 76px;
     letter-spacing: 0.54px;
     line-height: 44px;
     padding: 16px 0;
