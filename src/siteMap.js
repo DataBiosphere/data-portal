@@ -33,7 +33,7 @@ const siteMap =
                         ]
                     },
                     {
-                        name: "Userguides",
+                        name: "User Guides",
                         key: "userguides",
                         children: [
                             {
