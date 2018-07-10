@@ -84,12 +84,8 @@ const siteMap =
                             {
 
                                 name: "Secondary Analysis",
-                                key: "/learn/userguides/secondary-analysis",
+                                key: "/learn/userguides/secondary-analysis/what-is-the-secondary-analysis-service",
                                 children: [
-                                    {
-                                        name: "What is the Seondary Analysis Service?",
-                                        key: "/learn/userguides/secondary-analysis/what-is-the-secondary-analysis-service"
-                                    },
                                     {
                                         name: "Optimus Prime Workflow in Detail",
                                         key: "/learn/userguides/secondary-analysis/optimus-prime-workflow-in-detail"
