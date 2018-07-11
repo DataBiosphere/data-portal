@@ -271,19 +271,22 @@ const siteMap =
                         }
                     ]
                 }
-
-                // ,
-                //
-                // {
-                //     name: "Instructions",
-                //     key: "instructions",
-                //     children: [
-                //         {
-                //             name: "Instructions",
-                //             key: "/contribute/instructions/instructions"
-                //         }
-                //     ]
-                // }
+            ]
+        },
+        {
+            name: "Content Guide",
+            key: "document",
+            children: [
+                {
+                    name: "Creating Content",
+                    key: "creating-content",
+                    children: [
+                        {
+                            name: "Example Page",
+                            key: "/document/creating-content/example-page"
+                        }
+                    ]
+                }
             ]
         }
     ];
