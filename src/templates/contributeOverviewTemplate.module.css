@@ -21,8 +21,9 @@ p {
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 34px;
     line-height: 38px;
+    margin: 28px 0 6px;
 }
 
 h2 {

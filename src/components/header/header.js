@@ -50,7 +50,6 @@ class Header extends React.Component {
 
     setActiveLink = (activeLink) => {
         this.setState({tabId: activeLink})
-        console.log(activeLink);
     };
 
     toggleMenu = () => {

@@ -24,8 +24,8 @@ const Footer = () => (
                 {/*<Link to="/">Forum</Link>*/}
                 <Link to="/about/overview/overview">About</Link>
                 {/*<Link to="/">Feature Requests</Link>*/}
-                <a href="mailto:data-help@humancellatlas.org">Help</a>
-                <Link to="/">Contact</Link>
+                <Link to="/help/help/help-and-faq">Help</Link>
+                <Link to="/contact/contact/contact-us">Contact</Link>
             </div>
         </div>
     </div>
