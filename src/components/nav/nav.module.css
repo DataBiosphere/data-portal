@@ -6,18 +6,18 @@
  */
 
 /* Navigation lists - no list style */
-ul {
+.hcaNav ul {
     list-style: none;
 }
 
 /* Navigation lists - no margin */
-ul li {
+.hcaNav ul li {
     cursor: pointer;
     margin: 0;
 }
 
 /* Navigation - secondary ul */
-ul > div > ul {
+.hcaNav ul > div > ul {
     margin: 0;
     margin-left: 16px !important;
 }
