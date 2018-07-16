@@ -22,34 +22,13 @@ import processData from "../../images/data-portal/process-data.png";
 // App dependencies
 import Explore from "../../images/explore/explore-person/explore-svg";
 import ExploreTable from "../../images/explore/explore-table/explore-table-svg";
-import HCASelect from "../components/hcaSelect/hcaSelect";
+import HomepageAutosuggest from "../components/homepageAutosuggest/homepageAutosuggest";
 
 class IndexPage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {showOptions: false, facetName: "", selectedFacet: "", selectedTerm: ""};
-        this.selectedOption = this.selectedOption.bind(this);
-        this.toggleSelect = this.toggleSelect.bind(this);
     }
-
-    selectedOption = (facetName, facet, term) => {
-
-        this.setState({facetName: facetName, selectedFacet: facet, selectedTerm: term});
-    };
-
-    toggleSelect = () => {
-
-        this.setState({showOptions: !this.state.showOptions})
-    };
-
-    visitExploreLink = () => {
-
-        if (this.state.selectedTerm) {
-            const facetFilter = JSON.stringify({"facetName": this.state.selectedFacet, "termName": this.state.selectedTerm});
-            window.location.href = `https://explore.dev.data.humancellatlas.org/?filter=${facetFilter}`;
-        }
-    };
 
     render() {
         return (
@@ -58,16 +37,7 @@ class IndexPage extends React.Component {
                     <div className={compStyles.wrapper}>
                         <h1>Single-cell data building a foundation for human health</h1>
                         <Link to="/about/overview/overview"><p className={compStyles.xs}>Learn More</p></Link>
-                        <div className={compStyles.jumbotronSearch}>
-                            <div className={classNames(compStyles.homepage, compStyles.large)}
-                                 onClick={this.toggleSelect}>{this.state.selectedTerm ? <span>{this.state.facetName}: {this.state.selectedTerm}</span> : <span>Search for data now by organs, projects, etc</span>}
-                            </div>
-                            <div className={classNames(compStyles.homepage, compStyles.small)}
-                                 onClick={this.toggleSelect}>{this.state.selectedTerm ? <span>{this.state.selectedTerm}</span> : <span>Search for data by organs</span>}
-                            </div>
-                            {this.state.showOptions ? <HCASelect showOptions={this.state.showOptions} toggleSelect={this.toggleSelect} selectedOption={this.selectedOption.bind(this)}/> : null}
-                            <a onClick={this.visitExploreLink} className={compStyles.homepage}>SEARCH</a>
-                        </div>
+                        <HomepageAutosuggest/>
                     </div>
                 </div>
                 <div className={compStyles.statsBar}>
@@ -106,7 +76,8 @@ class IndexPage extends React.Component {
                                 </div>
                                 <div>
                                     <p className={compStyles.s}>Labs contribute single-cell data</p>
-                                    <Link to="/contribute/overview/overview" className={compStyles.s}>Learn about contributing</Link>
+                                    <Link to="/contribute/overview/overview" className={compStyles.s}>Learn about
+                                        contributing</Link>
                                 </div>
                             </div>
                             <div className={compStyles.dpArrow}>
@@ -118,7 +89,7 @@ class IndexPage extends React.Component {
                                 </div>
                                 <div><p className={compStyles.s}>We process and quality-check the data with our
                                     pipelines</p><Link to="/learn/userguides/secondary-analysis"
-                                    className={compStyles.s}>Learn about Pipelines</Link>
+                                                       className={compStyles.s}>Learn about Pipelines</Link>
                                 </div>
                             </div>
                             <div className={compStyles.dpArrow}>
@@ -130,7 +101,7 @@ class IndexPage extends React.Component {
                                 </div>
                                 <div><p className={compStyles.s}>Anyone can find data to download or use for
                                     analysis</p><a href="https://explore.dev.data.humancellatlas.org"
-                                    className={compStyles.s}>Start Searching</a></div>
+                                                   className={compStyles.s}>Start Searching</a></div>
                             </div>
                             <div className={compStyles.dpArrow}>
                                 <img src={arrowRight}/>
@@ -139,7 +110,8 @@ class IndexPage extends React.Component {
                                 <div>
                                     <img src={analysisPortal}/>
                                 </div>
-                                <div><p className={compStyles.s}>Find community analysis tools and applications</p><Link to="/analyze/portals/visualization-portals"
+                                <div><p className={compStyles.s}>Find community analysis tools and applications</p><Link
+                                    to="/analyze/portals/visualization-portals"
                                     className={compStyles.s}>Explore applications</Link></div>
                             </div>
                         </div>

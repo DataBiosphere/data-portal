@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "dependencies": {
     "classnames": "^2.2.5",
+    "data-portal-content": "HumanCellAtlas/data-portal-content",
     "gatsby": "^1.9.260",
     "gatsby-cli": "^1.1.52",
     "gatsby-link": "^1.6.40",
@@ -20,11 +21,11 @@
     "gatsby-remark-responsive-iframe": "^1.4.19",
     "gatsby-source-filesystem": "^1.5.35",
     "gatsby-transformer-remark": "^1.7.40",
-    "data-portal-content": "HumanCellAtlas/data-portal-content",
     "normalize.css": "8.0.0",
     "npm": "^6.0.1",
     "prism": "^4.1.2",
     "prismjs": "^1.14.0",
+    "react-autosuggest": "^9.3.4",
     "react-helmet": "^5.2.0"
   },
   "keywords": [

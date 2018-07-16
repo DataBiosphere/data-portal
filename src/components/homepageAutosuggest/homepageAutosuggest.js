@@ -2,12 +2,17 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * HCA Data Portal select component.
+ * HCA Data Portal homepage autosuggest component.
  */
 
 // Core dependencies
 import React from 'react';
-import compStyles from './hcaSelect.module.css';
+
+// App dependencies
+import HCAAutosuggest from "../hcaAutosuggest/hcaAutosuggest";
+
+// Styles
+import compStyles from './homepageAutosuggest.module.css';
 
 let exploreData = [
     {
@@ -321,35 +326,55 @@ let exploreData = [
         ]
     }];
 
-class HCASelect extends React.Component {
+class HomepageAutosuggest extends React.Component {
 
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
+        this.state = {selectedFacet: "", selectedTerm: ""};
+        this.onSelected = this.onSelected.bind(this);
     }
 
-    selectedOption = (e, facetName, facet, term) => {
-        this.props.selectedOption(facetName, facet, term);
-        this.props.toggleSelect();
+    onSelected = (term) => {
+
+        if (term) {
+
+            let facetName = exploreData.filter(t => t.terms.find(f => f.termName === term));
+            this.setState({selectedFacet: facetName[0].facetName, selectedTerm: term});
+        }
+        else {
+
+            this.setState({selectedFacet: "", selectedTerm: ""});
+        }
+    };
+
+    visitExploreLink = () => {
+
+        if (this.state.selectedTerm) {
+            const facetFilter = JSON.stringify({
+                "facetName": this.state.selectedFacet,
+                "termName": this.state.selectedTerm
+            });
+            window.location.href = `https://explore.dev.data.humancellatlas.org/?filter=${facetFilter}`;
+        }
+    };
+
+    getPlaceholder = () => {
+
+        if (window.innerWidth < 1024) {
+            return "Search for data by organs";
+        }
+        return "Search for data now by organs, projects, etc";
     };
 
     render() {
         return (
-            <div>
-                <div className={compStyles.hcaOptions}>
-                    {exploreData.map((data, i) => <div key={i}>
-                        <div className={compStyles.hcaOptionGroup}>{data.facetDisplayName}</div>
-                        {data.terms.map((term, i) => <div key={i} className={compStyles.hcaOption} onClick={(e) => this.selectedOption(e, data.facetDisplayName, data.facetName, term.termName)}>
-                            <span>{term.termName}</span>
-                            <span>{term.termCount}</span>
-                        </div>)}
-                    </div>)}
-                </div>
-                {this.props.showOptions ?
-                    <div className={compStyles.hcaSelectOverlay} onClick={this.props.toggleSelect}/> : null}
+            <div className={compStyles.hompageAutosuggest}>
+                <HCAAutosuggest autosuggestData={exploreData} placeholder={this.getPlaceholder()} homepage={true}
+                                onSelected={this.onSelected.bind(this)}/>
+                <a onClick={this.visitExploreLink} className={compStyles.homepage}>Search</a>
             </div>
-
         );
     }
 }
 
-export default HCASelect;
+export default HomepageAutosuggest;

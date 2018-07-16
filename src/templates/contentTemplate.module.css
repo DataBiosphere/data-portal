@@ -8,7 +8,7 @@
 /* Typography */
 /* TODO typography */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "din-2014", "Montserrat";
+    font-family: "din-2014", sans-serif;
     font-weight: 500;
 }
 
@@ -123,7 +123,7 @@ dl {
 
 /* HTML - dt - matches H4 spec */
 dt {
-    font-family: "din-2014", "Montserrat"; /* TODO typography */
+    font-family: "din-2014", sans-serif; /* TODO typography */
     font-size: 16px; /* TODO typography */
     font-weight: 500; /* TODO typography */
     line-height: 22px;
