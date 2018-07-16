@@ -1,0 +1,57 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the homepage autosuggest component.
+ */
+
+.hompageAutosuggest {
+    max-width: 348px; /* Width on mobile 375px */
+    position: relative; /* Positions search button and hcaOptions */
+    width: 100%;
+}
+
+/* Button - class homepage */
+.hompageAutosuggest a.homepage {
+    align-items: center;
+    background-color: #f5a623 /* TODO colour */;
+    border: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #ffffff; /* TODO colour */
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    font-family: "Montserrat", sans-serif; /* TODO typography */
+    font-size: 14px;
+    font-weight: 500; /* TODO typography - confirm - was 600 */
+    height: 50px;
+    justify-content: center;
+    letter-spacing: 0.74px; /* TODO typography spec is 0.21px */
+    margin: 0;
+    min-width: 84px;
+    padding: 0 9px; /* Was 16px - followed spec */
+    text-decoration: none;
+}
+
+.hompageAutosuggest a.homepage:hover {
+    background-color: #DC8D0A; /* TODO review colour */
+}
+
+/* Jumbotron search button */
+.hompageAutosuggest a.homepage {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/**
+ * Medium +
+ */
+@media screen and (min-width: 1024px) {
+
+    .hompageAutosuggest {
+        max-width: unset;
+        width: 540px; /* TODO review */
+    }
+}

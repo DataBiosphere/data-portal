@@ -1,0 +1,29 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA autosuggest component.
+ */
+
+/* Option (flex between option and its count) */
+.hcaOption {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Wrap of option if required */
+.hcaOption > span:first-of-type {
+    max-width: 85%;
+    padding-right: 4px;
+}
+
+/* Homepage autosuggest width */
+.homepage > div > div {
+    width: calc(100% - 84px) !important;
+}
+
+/* Homepage input field */
+.homepage input {
+    padding-right: 100px; /* Padding to accommodate search button */
+}
