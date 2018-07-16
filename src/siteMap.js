@@ -84,8 +84,8 @@ const siteMap =
 			]
 		},
 		{
-            name: "Build",
-            key: "build",
+            name: "Develop",
+            key: "develop",
             children: [
                 {
                     name: "Development Guides",
@@ -93,30 +93,30 @@ const siteMap =
                     children: [
                         {
                             name: "Overview",
-                            key: "/build/development-guides/development-guides-overview"
+                            key: "/develop/development-guides/development-guides-overview"
                         },
                         {
                             name: "Pipeline Development Guide",
-                            key: "/build/development-guides/pipeline-development-guide"
+                            key: "/develop/development-guides/pipeline-development-guide"
                         },
                         {
 
                             name: "Contributing a Pipeline to the HCA DCP",
-                            key: "/build/development-guides/contributing-a-pipeline-to-the-hca-dcp",
+                            key: "/develop/development-guides/contributing-a-pipeline-to-the-hca-dcp",
                         },
                         {
 
                             name: "Tertiary Portal Development Guide",
-                            key: "/build/development-guides/tertiary-portal-development-guide"
+                            key: "/develop/development-guides/tertiary-portal-development-guide"
                         },
                         {
 
                             name: "Ingest Data Brokers Development Guide",
-                            key: "/build/development-guides/ingest-broker-development-guide"
+                            key: "/develop/development-guides/ingest-broker-development-guide"
                         },
                         {
                             name: "Pipeline Testing Guide",
-                            key: "/build/development-guides/testing-pipelines"
+                            key: "/develop/development-guides/testing-pipelines"
                         }
                     ]
                 },
@@ -126,7 +126,7 @@ const siteMap =
                     children: [
                         {
                             name: "Data Store Consumer API",
-                            key: "/build/api-documentation/data-store-consumer-api"
+                            key: "/develop/api-documentation/data-store-consumer-api"
                         }
                     ]
                 }

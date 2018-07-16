@@ -83,8 +83,8 @@ class Header extends React.Component {
                                 <span>Find user guides and how-to’s here</span>
                             </Link>
                             <Link activeClassName={compStyles.active}
-                                  to="/build/development-guides/development-guides-overview" onClick={this.toggleMenu}>
-                                <span>Build</span>
+                                  to="/develop/development-guides/development-guides-overview" onClick={this.toggleMenu}>
+                                <span>Develop</span>
                                 <span>Find developer guides and API docs</span>
                             </Link>
                             <Link to="/about/overview/overview" activeClassName={compStyles.active}
@@ -116,10 +116,10 @@ class Header extends React.Component {
                         </div>
                         <div id="linkBuild" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active}
-                                  to="/build/development-guides/development-guides-overview" onMouseEnter={(e) => this.setActiveLink(3)}>
-                                <span>Build</span>
+                                  to="/develop/development-guides/development-guides-overview" onMouseEnter={(e) => this.setActiveLink(3)}>
+                                <span>Develop</span>
                             </Link>
-                            <HeaderTabNav isOpen={this.state.tabId === 3} section={"/build"} rightAlign={true}/>
+                            <HeaderTabNav isOpen={this.state.tabId === 3} section={"/develop"} rightAlign={true}/>
                         </div>
                     </div>
                     <Link to="/about/overview/overview" activeClassName={compStyles.active}
