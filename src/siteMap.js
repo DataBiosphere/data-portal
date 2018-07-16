@@ -189,17 +189,8 @@ const siteMap =
 								key: "/learn/userguides/contributing-data",
 								children: [
 									{
-										name: "Registering a Project",
-										key: "/learn/userguides/contributing-data/registering-a-project"
-
-									},
-									{
 										name: "Submitting Project Data",
 										key: "/learn/userguides/contributing-data/submitting-project-data"
-									},
-									{
-										name: "Updating Project Data",
-										key: "/learn/userguides/contributing-data/updating-project-data"
 									}
 
 								]
