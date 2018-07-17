@@ -16,6 +16,12 @@ import compStyles from './homepageAutosuggest.module.css';
 
 let exploreData = [
     {
+        facetName: "error",
+        facetDisplayName: "Oops! We don’t have an exact match, it may be called by a different name. Scroll through the list to see what data we currently have available.",
+        terms: [
+        ]
+    },
+    {
         facetName: "project",
         facetDisplayName: "Project",
         terms: [
@@ -360,7 +366,10 @@ class HomepageAutosuggest extends React.Component {
 
     getPlaceholder = () => {
 
-        if (window.innerWidth < 1024) {
+        const browser = typeof window !== "undefined";
+        let windowWidth = browser && window.innerWidth;
+
+        if (windowWidth < 1024) {
             return "Search for data by organs";
         }
         return "Search for data now by organs, projects, etc";
