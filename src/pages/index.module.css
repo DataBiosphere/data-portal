@@ -8,7 +8,7 @@
 /* Typography */
 /* TODO typography */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "din-2014", "Montserrat";
+    font-family: "din-2014", sans-serif;
     font-weight: 500;
 }
 
@@ -135,76 +135,6 @@ a {
     font-weight: 500 !important;
     margin: 0;
     text-transform: uppercase;
-}
-
-/* Jumbotron search bar */
-.jumbotronSearch {
-    align-items: center;
-    max-width: 343px; /* Width on mobile 375px */
-    position: relative; /* Positions search button and hcaOptions */
-    width: 100%;
-}
-
-/* Select - class homepage */
-.homepage {
-    background-color: #ffffff; /* TODO colour */
-    border: 1px solid #CCCCCC; /* TODO colour */
-    border-radius: 3px;
-    box-sizing: border-box;
-    color: #999999;
-    cursor: pointer;
-    font-family: "Montserrat", sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    height: 50px;
-    line-height: 50px;
-    outline: none;
-    overflow: hidden;
-    padding: 0 16px;
-    white-space: nowrap;
-}
-
-/* Jumbotron - hide longer search text */
-.jumbotronSearch .homepage.large {
-    display: none;
-}
-
-/* Button - class homepage */
-.jumbotronSearch a.homepage {
-    align-items: center;
-    background-color: #f5a623 /* TODO colour */;
-    border: none;
-    border-radius: 3px;
-    box-sizing: border-box;
-    color: #ffffff; /* TODO colour */
-    cursor: pointer;
-    display: flex;
-    flex-shrink: 0;
-    font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 14px;
-    font-weight: 500; /* TODO typography - confirm - was 600 */
-    height: 50px;
-    justify-content: center;
-    letter-spacing: 0.74px; /* TODO typography spec is 0.21px */
-    margin: 0;
-    min-width: 84px;
-    padding: 0 9px; /* Was 16px - followed spec */
-    text-decoration: none;
-}
-
-.jumbotronSearch a.homepage:hover {
-    background-color: #DC8D0A; /* TODO review colour */
-}
-
-.jumbotronSearch a.homepage:focus {
-    outline: none;
-}
-
-/* Jumbotron search button */
-.jumbotronSearch a.homepage {
-    position: absolute;
-    right: 0;
-    top: 0;
 }
 
 /* Stats bar */
@@ -367,22 +297,6 @@ a {
     width: 100%;
 }
 
-/* Input fields */
-.contactForm input.homepage {
-    color: #999999; /* TODO colour */
-    border: 1px solid #cccccc;
-    border-radius: 3px;
-    height: 50px;
-    margin: 4px 0;
-    max-width: 450px;
-    padding-left: 16px;
-    width: 100%; /* TODO review */
-}
-
-.contactForm input.homepage:focus {
-    outline: none;
-}
-
 /* Contact form button - class homepage */
 .contactForm a.homepage {
     align-items: center;
@@ -480,22 +394,6 @@ a {
         max-width: unset;
     }
 
-    /* Search bar */
-    .jumbotronSearch {
-        max-width: unset;
-        width: 540px; /* TODO review */
-    }
-
-    /* Hide jumbotron short search text */
-    .jumbotronSearch .homepage.small {
-        display: none;
-    }
-
-    /* Show longer search text */
-    .jumbotron .homepage.large {
-        display: block;
-    }
-
     /* Stats bar */
     .statsBar {
         background: linear-gradient(90deg, #3867FA, #5ABCEF);
@@ -589,17 +487,6 @@ a {
     .contactForm {
         flex-direction: row;
         margin: 6px 0;
-    }
-
-    /* Input fields */
-    .contactForm input.homepage {
-        margin: 0 4px;
-        width: 308px; /* TODO review */
-    }
-
-    /* Submit button */
-    .contactForm button.homepage {
-        margin: 0 4px;
     }
 }
 
