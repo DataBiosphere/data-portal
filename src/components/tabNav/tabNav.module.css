@@ -82,7 +82,7 @@
 
 /* Active tab */
 .hcaTab.active {
-    border-bottom: 3px solid #32C1EE; /* TODO colour hca-blue-light */
+    border-bottom: 3px solid #00D0F4; /* TODO colour hca-blue-light */
 }
 
 .hcaTab.active a {

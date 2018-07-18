@@ -111,7 +111,7 @@
 
 /* Selected navigation - primary & secondary */
 .hcaSideNav > div > li.selected a, .hcaSideNav > div ul li.selected a {
-    color: #1288E4; /* TODO color hca-primary */
+    color: #1c7cc7; /* TODO color hca-primary */
 }
 
 /* Navigation bar */
@@ -132,7 +132,7 @@
 
 /* Navigation bar - selected list */
 .hcaSideNav > div li.selected:before {
-    background-color: #1288E4; /* TODO colour hca-primary */
+    background-color: #1c7cc7; /* TODO colour hca-primary */
 }
 
 /* Navigation bar - selected list */

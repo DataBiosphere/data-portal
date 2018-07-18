@@ -44,7 +44,7 @@
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06); /* TODO colour */
     box-sizing: border-box;
     max-height: 256px;
-    overflow: scroll;
+    overflow-y: scroll;
     padding: 8px 16px 12px;
     position: absolute;
     top: 56px; /* 50px for select field + 6px below select field */
@@ -60,7 +60,7 @@
 
 /* Section title */
 .sectionTitle {
-    color: #CCCCCC; /* TODO colour */
+    color: #999999; /* TODO colour */
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 10px; /* TODO typography */
     font-weight: 500; /* TODO typography */
