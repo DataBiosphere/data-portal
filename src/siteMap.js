@@ -106,6 +106,11 @@ const siteMap =
                         },
                         {
 
+                            name: "Adding an Environment to the Portability Service",
+                            key: "/develop/development-guides/adding-an-environment-to-the-portability-service",
+                        },
+                        {
+
                             name: "Tertiary Portal Development Guide",
                             key: "/develop/development-guides/tertiary-portal-development-guide"
                         },
@@ -214,8 +219,8 @@ const siteMap =
 										key: "/learn/userguides/secondary-analysis/qc-mertics"
 									},
 									{
-										name: "Service Portability",
-										key: "/learn/userguides/secondary-analysis/service-portability"
+										name: "Pipeline Portability",
+										key: "/learn/userguides/secondary-analysis/pipeline-portability"
 									},
 									{
 										name: "Smart-seq2 Workflow in Detail",
