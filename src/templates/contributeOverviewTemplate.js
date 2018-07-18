@@ -31,18 +31,17 @@ export default function Template({
             <div className={compStyles.wrapper}>
                 <div className={compStyles.hcaContent}>
                     <div className={compStyles.contribute}>
-                        <h1>It is the community which makes the Atlas</h1>
+                        <h1>The Atlas is built by the Community</h1>
                         <div>
                             <div>
-                                <code>We are interested in all data at single-cell resolution level. For our autumn
-                                    release,
-                                    we are specifically interested in:</code>
+                                <code>We plan to incorporate all types of single cell data. <br/> </code>
                                 <code>
-                                    <li>openly-released data from human subjects</li>
-                                    <li>smartSeq or 10x technology</li>
+                                    <li>We are interested in openly consented data from human subjects.</li>
+                                    <li>Our pipelines can proccess data derived from Smart-seq2 and 10x v2 scRNA-seq assays.</li>
+                                    <li>All single cell genomics assays are welcome.</li>
                                 </code>
                             </div>
-                            <a href="mailto:data-help@humancellatlas.org" className={compStyles.contactUs}>Contact Us</a>
+                            <a href="mailto:data-help@humancellatlas.org" className={compStyles.contactUs}>Contribute</a>
                         </div>
                     </div>
                     <div className={compStyles.subSection}>
