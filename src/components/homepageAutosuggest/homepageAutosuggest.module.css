@@ -14,7 +14,7 @@
 /* Button - class homepage */
 .hompageAutosuggest a.homepage {
     align-items: center;
-    background-color: #f5a623 /* TODO colour */;
+    background-color: #E8AA45 /* TODO colour */;
     border: none;
     border-radius: 3px;
     box-sizing: border-box;
@@ -35,7 +35,7 @@
 }
 
 .hompageAutosuggest a.homepage:hover {
-    background-color: #DC8D0A; /* TODO review colour */
+    background-color: #CF912C; /* TODO review colour */
 }
 
 /* Jumbotron search button */

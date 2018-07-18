@@ -83,7 +83,7 @@ p[class^="xxs"] {
 
 /* Link */
 a {
-    color: #1288E4; /* TODO colour */
+    color: #1c7cc7; /* TODO colour */
     cursor: pointer;
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
@@ -300,7 +300,7 @@ a {
 /* Contact form button - class homepage */
 .contactForm a.homepage {
     align-items: center;
-    background-color: #32C1EE; /* TODO colour */
+    background-color: #00D0F4; /* TODO colour */
     border: none;
     border-radius: 3px;
     box-sizing: border-box;
@@ -322,7 +322,7 @@ a {
 }
 
 .contactForm a.homepage:hover {
-    background-color: #2DAFD7;
+    background-color: #00B7DB;
 }
 
 .contactForm a.homepage:focus {

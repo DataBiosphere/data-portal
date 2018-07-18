@@ -11,12 +11,12 @@ svg.exploreTable {
 
 .active {
     cursor: pointer;
-    fill: #1288e4;
+    fill: #1c7cc7;
     transition: all 0.75s ease 0s;
 }
 
 .active polygon, .active rect {
-    fill: #1288e4;
+    fill: #1c7cc7;
     transition: all 0.75s ease 0s;
 }
 

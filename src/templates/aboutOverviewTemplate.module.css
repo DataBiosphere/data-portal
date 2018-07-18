@@ -81,7 +81,7 @@ p[class^="xxs"] {
 
 /* Link */
 a {
-    color: #1288E4; /* TODO colour */
+    color: #1c7cc7; /* TODO colour */
     cursor: pointer;
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
@@ -171,7 +171,7 @@ a {
 
 /* Link */
 .portalDescription > div > div:nth-of-type(2) a.s {
-    color: #1288E4; /* TODO colour */
+    color: #1c7cc7; /* TODO colour */
     cursor: pointer;
     line-height: 18px;
     margin: 0;
