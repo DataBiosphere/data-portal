@@ -1,0 +1,73 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal about component.
+ */
+
+/* About component container */
+.hcaAbout {
+    display: flex;
+    flex-direction: column;
+}
+
+/* About component sub title */
+.hcaAbout > h4 {
+    margin-top: 24px;
+    text-transform: uppercase;
+}
+
+/* Flex box - content container */
+.contentFlex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Flex box - each box */
+.contentFlex > div {
+    align-items: flex-start;
+    display: flex;
+    flex: 100%;
+    flex-direction: column;
+    margin: 0 0 16px;
+}
+
+/* Paragraphy text */
+.contentFlex > div > p {
+    margin: -10px 0 8px;
+    width: 50%;
+}
+
+/* Removes nested a within h4 */
+.contentFlex > div h4 a {
+    display: none;
+}
+
+/* Links */
+.contentFlex > div a, .contentFlex > div p:not(:first-of-type) {
+    font-weight: 500 !important;
+    margin: 0;
+}
+
+/**
+ * Tablet
+ */
+@media screen and (min-width: 768px) {
+
+    /* About component sub title */
+    .hcaAbout > h4 {
+        text-align: center;
+    }
+
+    /* Flex content - each box */
+    .contentFlex > div {
+        flex: 30%;
+        padding: 0 8px;
+    }
+
+    /* Paragraphy text */
+    .contentFlex > div > p {
+        width: unset;
+    }
+}

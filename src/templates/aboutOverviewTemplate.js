@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import Link from 'gatsby-link';
 import React from "react";
 
 // App dependencies
@@ -23,75 +24,74 @@ import findData from "../../images/data-portal/find-data.png";
 import processData from "../../images/data-portal/process-data.png";
 
 export default function Template({
-                                     data, // this prop will be injected by the GraphQL query below.
-                                 }) {
-    const {markdownRemark} = data; // data.markdownRemark holds our post data
-    const {frontmatter, html} = markdownRemark;
-    const docPath = frontmatter.path;
-    const linked = frontmatter.linked;
+									 data, // this prop will be injected by the GraphQL query below.
+								 }) {
+	const {markdownRemark} = data; // data.markdownRemark holds our post data
+	const {frontmatter, html} = markdownRemark;
+	const docPath = frontmatter.path;
+	const linked = frontmatter.linked;
 
-    return (
-        <div>
-            <Section docPath={docPath}/>
-            <TabNav docPath={docPath}/>
-            <div className={compStyles.wrapper}>
-                <div className={compStyles.hcaContent}>
-                    <div className={compStyles.dataPortal}>
-                        <h1>The HCA Data Portal stores and provides single-cell data contributed by labs around the world.
-                            Anyone can contribute data, find data, or access community tools and applications.</h1>
-                            <div className={compStyles.portalDescription}>
-                                <div>
-                                    <div>
-                                        <img src={contribute}/>
-                                    </div>
-                                    <div>
-                                        <p className={compStyles.s}>Labs contribute single-cell data</p>
-                                        <a className={compStyles.s}>Learn about contributing</a>
-                                    </div>
-                                </div>
-                                <div className={compStyles.dpArrow}>
-                                    <img src={arrowRight}/>
-                                </div>
-                                <div>
-                                    <div>
-                                        <img src={processData}/>
-                                    </div>
-                                    <div><p className={compStyles.s}>We process and quality-check the data with our pipelines</p><a
-                                        className={compStyles.s}>Learn about Pipelines</a>
-                                    </div>
-                                </div>
-                                <div className={compStyles.dpArrow}>
-                                    <img src={arrowRight}/>
-                                </div>
-                                <div>
-                                    <div>
-                                        <img src={findData}/>
-                                    </div>
-                                    <div><p className={compStyles.s}>Anyone can find data to download or use for analysis</p><a
-                                        className={compStyles.s}>Start Searching</a></div>
-                                </div>
-                                <div className={compStyles.dpArrow}>
-                                    <img src={arrowRight}/>
-                                </div>
-                                <div>
-                                    <div>
-                                        <img src={analysisPortal}/>
-                                    </div>
-                                    <div><p className={compStyles.s}>Find community analysis tools and applications</p><a
-                                        className={compStyles.s}>Explore applications</a></div>
-                                </div>
-                            </div>
-                    </div>
-                    <div className={compStyles.whatWeProvide}>
-                        <h4>What we provide</h4>
-                        <div className={compStyles.contentFlex}>
-                            {linked.map((link, i) => <div key={i} dangerouslySetInnerHTML={{__html: link.childMarkdownRemark.html}}/>)}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+	return (
+		<div>
+			<Section docPath={docPath}/>
+			<TabNav docPath={docPath}/>
+			<div className={compStyles.wrapper}>
+				<div className={compStyles.hcaContent}>
+					<div className={compStyles.dataPortal}>
+						<h1>The <a target="_blank" href="https://www.humancellatlas.org/">Human Cell Atlas</a>’ missions is to create comprehensive reference maps of all human
+							cells—the fundamental units of life—as a basis for both understanding human health and
+							diagnosing, monitoring, and treating disease.</h1>
+						<a target="_blank" href="https://www.humancellatlas.org/">View the Human Cell Atlas website</a>
+						<h2>The Human Cell Atlas Data Portal makes it possible. It stores and provides single-cell data contributed by labs around the world. Anyone can contribute data, find data, or access community tools and applications.</h2>
+						<div className={compStyles.portalDescription}>
+							<div>
+								<div>
+									<img src={contribute}/>
+								</div>
+								<div>
+									<p className={compStyles.s}>Labs contribute single-cell data</p>
+									<Link to="../../contribute/overview/overview" className={compStyles.s}>Learn about contributing</Link>
+								</div>
+							</div>
+							<div className={compStyles.dpArrow}>
+								<img src={arrowRight}/>
+							</div>
+							<div>
+								<div>
+									<img src={processData}/>
+								</div>
+								<div><p className={compStyles.s}>We process and quality-check the data with our
+									pipelines</p><Link to="../../learn/userguides/secondary-analysis/what-is-the-secondary-analysis-service"
+									className={compStyles.s}>Learn about Pipelines</Link>
+								</div>
+							</div>
+							<div className={compStyles.dpArrow}>
+								<img src={arrowRight}/>
+							</div>
+							<div>
+								<div>
+									<img src={findData}/>
+								</div>
+								<div><p className={compStyles.s}>Anyone can find data to download or use for
+									analysis</p><a href="https://explore.dev.data.humancellatlas.org/"
+									className={compStyles.s}>Start Searching</a></div>
+							</div>
+							<div className={compStyles.dpArrow}>
+								<img src={arrowRight}/>
+							</div>
+							<div>
+								<div>
+									<img src={analysisPortal}/>
+								</div>
+								<div><p className={compStyles.s}>Find community analysis tools and applications</p><Link to="../../analyze/portals/visualization-portals"
+									className={compStyles.s}>Explore applications</Link></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export const pageQuery = graphql`

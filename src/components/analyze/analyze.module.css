@@ -6,7 +6,7 @@
  */
 
 /* Analyze component container */
-.hcaAnalyze {
+.hcaAbout {
     display: flex;
     flex-direction: column;
 }

@@ -123,19 +123,26 @@ a {
 }
 
 /* Code */
-.contribute > div > div {
+.contribute .codeStyle {
     margin-right: 16px;
 }
 
-.contribute code {
-    word-break: normal !important;
-}
-
-.contribute code:not(:last-of-type) {
+.contribute .codeStyle > div {
+    color: #000000; /* TODO colour - typography */
+    font-family: "PT Mono", sans-serif; /* TODO typography */
+    font-size: 14px; /* TODO typography */
     margin-bottom: 16px;
 }
 
-.contribute code li {
+.contribute .codeStyle ul {
+    margin-bottom: 0;
+}
+
+.contribute .codeStyle li {
+    color: #000000; /* TODO colour - typography */
+    font-family: "PT Mono", sans-serif; /* TODO typography */
+    font-size: 14px; /* TODO typography */
+    list-style-position: outside;
     margin: 8px 0;
 }
 

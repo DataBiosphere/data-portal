@@ -88,7 +88,7 @@ class IndexPage extends React.Component {
                                     <img src={processData}/>
                                 </div>
                                 <div><p className={compStyles.s}>We process and quality-check the data with our
-                                    pipelines</p><Link to="/learn/userguides/secondary-analysis"
+                                    pipelines</p><Link to="/learn/userguides/secondary-analysis/what-is-the-secondary-analysis-service"
                                                        className={compStyles.s}>Learn about Pipelines</Link>
                                 </div>
                             </div>
