@@ -38,7 +38,7 @@ export default function Template({
 			<div className={compStyles.wrapper}>
 				<div className={compStyles.hcaContent}>
 					<div className={compStyles.dataPortal}>
-						<h1>The <a target="_blank" href="https://www.humancellatlas.org/">Human Cell Atlas</a>’ missions is to create comprehensive reference maps of all human
+						<h1>The <a target="_blank" href="https://www.humancellatlas.org/">Human Cell Atlas</a>’ mission is to create comprehensive reference maps of all human
 							cells—the fundamental units of life—as a basis for both understanding human health and
 							diagnosing, monitoring, and treating disease.</h1>
 						<a target="_blank" href="https://www.humancellatlas.org/">View the Human Cell Atlas website</a>
