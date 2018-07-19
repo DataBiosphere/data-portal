@@ -6,84 +6,110 @@
  */
 
 // TODO move to yml and put in the content directory
- 
+
 const siteMap =
     [
-		{
-			name: "About",
-			key: "about",
-			children: [
-				{
-					name: "Overview",
-					key: "overview",
-					children: [
-						{
-							name: "Overview",
-							key: "/about/overview/overview"
-						}
-					]
-				},
-				{
-					name: "What is the DCP",
-					key: "what-is-the-dcp",
-					children: [
-						{
-							name: "What is the DCP",
-							key: "/about/what-is-the-dcp/what-is-the-dcp"
-						}
-					]
-				}
-			]
-		},
-		{
-			name: "Analyze",
-			key: "analyze",
-			children: [
-				{
-					name: "Portals",
-					key: "portals",
-					children: [
-						{
-							name: "Visualization Portals",
-							key: "/analyze/portals/visualization-portals"
-						},
-						{
-							name: "About Visualization Portals",
-							key: "/analyze/portals/about"
-						}
-					]
-				},
-				{
-					name: "Methods",
-					key: "methods",
-					children: [
-						{
-							name: "Methods",
-							key: "/analyze/methods/methods"
-						},
-						{
-							name: "About Methods",
-							key: "/analyze/methods/about"
-						}
-					]
-				},
-				{
-					name: "Visualization Components",
-					key: "visualization-components",
-					children: [
-						{
-							name: "Visualization Components",
-							key: "/analyze/visualization-components/visualization-components"
-						},
-						{
-							name: "About Visualization Components",
-							key: "/analyze/visualization-components/about"
-						}
-					]
-				}
-			]
-		},
-		{
+        {
+            name: "About",
+            key: "about",
+            children: [
+                {
+                    name: "Overview",
+                    key: "overview",
+                    children: [
+                        {
+                            name: "Overview",
+                            key: "/about/overview/overview"
+                        }
+                    ]
+                },
+                {
+                    name: "What is the Platform",
+                    key: "what-is-the-platform",
+                    children: [
+                        {
+                            name: "What is the Platform",
+                            key: "/about/what-is-the-platform/what-is-the-platform"
+                        },
+                        {
+                            name: "Ingest Service",
+                            key: "/about/what-is-the-platform/ingest-service"
+                        },
+                        {
+                            name: "Data Store",
+                            key: "/about/what-is-the-platform/data-store"
+                        },
+                        {
+                            name: "Data Browser",
+                            key: "/about/what-is-the-platform/data-browser"
+                        },
+                        {
+                            name: "Secondary Analysis",
+                            key: "/about/what-is-the-platform/secondary-analysis"
+                        }
+                    ]
+                },
+                {
+                    name: "Roadmap",
+                    key: "roadmap",
+                    children: [
+                        {
+                            name: "Roadmap",
+                            key: "/about/roadmap/roadmap-overview"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Analyze",
+            key: "analyze",
+            children: [
+                {
+                    name: "Portals",
+                    key: "portals",
+                    children: [
+                        {
+                            name: "Visualization Portals",
+                            key: "/analyze/portals/visualization-portals"
+                        },
+                        {
+                            name: "About Visualization Portals",
+                            key: "/analyze/portals/about"
+                        }
+                    ]
+                },
+                {
+                    name: "Methods",
+                    key: "methods",
+                    children: [
+                        {
+                            name: "Methods",
+                            key: "/analyze/methods/methods"
+                        },
+                        {
+                            name: "About Methods",
+                            key: "/analyze/methods/about"
+                        }
+                    ]
+                },
+                {
+                    name: "Visualization Components",
+                    key: "visualization-components",
+                    children: [
+                        {
+                            name: "Visualization Components",
+                            key: "/analyze/visualization-components/visualization-components"
+                        },
+                        {
+                            name: "About Visualization Components",
+                            key: "/analyze/visualization-components/about"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             name: "Develop",
             key: "develop",
             children: [
@@ -137,159 +163,159 @@ const siteMap =
                 }
             ]
         },
-		{
-			name: "Learn",
-			key: "learn",
-			children:
-				[
-					{
-						name: "Overview",
-						key: "overview",
-						children: [
-							{
-								name: "Overview",
-								key: "/learn/overview/overview",
-							},
-							{
-								name: "Data Lifecycle",
-								key: "/learn/overview/data-lifecycle",
-							},
-							{
-								name: "Data Use Agreement",
-								key: "/learn/overview/data-use-agreement",
-							}
-						]
-					},
-					{
-						name: "User Guides",
-						key: "userguides",
-						children: [
-							{
-								name: "Accessing Data",
-								key: "/learn/userguides/accessing-data",
-								children: [
-									{
+        {
+            name: "Learn",
+            key: "learn",
+            children:
+                [
+                    {
+                        name: "Overview",
+                        key: "overview",
+                        children: [
+                            {
+                                name: "Overview",
+                                key: "/learn/overview/overview",
+                            },
+                            {
+                                name: "Data Lifecycle",
+                                key: "/learn/overview/data-lifecycle",
+                            },
+                            {
+                                name: "Data Use Agreement",
+                                key: "/learn/overview/data-use-agreement",
+                            }
+                        ]
+                    },
+                    {
+                        name: "User Guides",
+                        key: "userguides",
+                        children: [
+                            {
+                                name: "Accessing Data",
+                                key: "/learn/userguides/accessing-data",
+                                children: [
+                                    {
 
-										name: "Using the Data Browser to Access Data",
-										key: "/learn/userguides/accessing-data/using-the-data-browser-to-access-data"
+                                        name: "Using the Data Browser to Access Data",
+                                        key: "/learn/userguides/accessing-data/using-the-data-browser-to-access-data"
 
-									},
-									{
-										name: "Using the CLI to Access Data",
-										key: "/learn/userguides/accessing-data/using-the-cli-to-access-data"
-									},
-									{
-										name: "How to go from Query to Annotated Clusters",
-										key: "/learn/userguides/accessing-data/how-to-go-from-query-to-annotated-clusters"
-									},
-									{
-										name: "FAQ",
-										key: "/learn/userguides/accessing-data/faq"
-									}
-								]
+                                    },
+                                    {
+                                        name: "Using the CLI to Access Data",
+                                        key: "/learn/userguides/accessing-data/using-the-cli-to-access-data"
+                                    },
+                                    {
+                                        name: "How to go from Query to Annotated Clusters",
+                                        key: "/learn/userguides/accessing-data/how-to-go-from-query-to-annotated-clusters"
+                                    },
+                                    {
+                                        name: "FAQ",
+                                        key: "/learn/userguides/accessing-data/faq"
+                                    }
+                                ]
 
-							}, {
+                            }, {
 
-								name: "Contributing Data",
-								key: "/learn/userguides/contributing-data",
-								children: [
-									{
-										name: "Submitting Project Data",
-										key: "/learn/userguides/contributing-data/submitting-project-data"
-									}
+                                name: "Contributing Data",
+                                key: "/learn/userguides/contributing-data",
+                                children: [
+                                    {
+                                        name: "Submitting Project Data",
+                                        key: "/learn/userguides/contributing-data/submitting-project-data"
+                                    }
 
-								]
-							},
-							{
+                                ]
+                            },
+                            {
 
-								name: "Secondary Analysis",
-								key: "/learn/userguides/secondary-analysis/what-is-the-secondary-analysis-service",
-								children: [
-									{
-										name: "Optimus Prime Workflow in Detail",
-										key: "/learn/userguides/secondary-analysis/optimus-prime-workflow-in-detail"
+                                name: "Secondary Analysis",
+                                key: "/learn/userguides/secondary-analysis/what-is-the-secondary-analysis-service",
+                                children: [
+                                    {
+                                        name: "Optimus Prime Workflow in Detail",
+                                        key: "/learn/userguides/secondary-analysis/optimus-prime-workflow-in-detail"
 
-									},
-									{
-										name: "File Formats",
-										key: "/learn/userguides/secondary-analysis/file-formats"
-									},
-									{
-										name: "QC Metrics",
-										key: "/learn/userguides/secondary-analysis/qc-mertics"
-									},
-									{
-										name: "Pipeline Portability",
-										key: "/learn/userguides/secondary-analysis/pipeline-portability"
-									},
-									{
-										name: "Smart-seq2 Workflow in Detail",
-										key: "/learn/userguides/secondary-analysis/smart-seq2-workflow-in-detail"
-									},
-									{
-										name: "Workflow Best Practices",
-										key: "/learn/userguides/secondary-analysis/secondary-analsis-workflow-best-practices"
-									}
+                                    },
+                                    {
+                                        name: "File Formats",
+                                        key: "/learn/userguides/secondary-analysis/file-formats"
+                                    },
+                                    {
+                                        name: "QC Metrics",
+                                        key: "/learn/userguides/secondary-analysis/qc-mertics"
+                                    },
+                                    {
+                                        name: "Pipeline Portability",
+                                        key: "/learn/userguides/secondary-analysis/pipeline-portability"
+                                    },
+                                    {
+                                        name: "Smart-seq2 Workflow in Detail",
+                                        key: "/learn/userguides/secondary-analysis/smart-seq2-workflow-in-detail"
+                                    },
+                                    {
+                                        name: "Workflow Best Practices",
+                                        key: "/learn/userguides/secondary-analysis/secondary-analsis-workflow-best-practices"
+                                    }
 
-								]
-							}
+                                ]
+                            }
 
-						]
-					},
-					{
-						name: "Metadata Dictionary",
-						key: "metadata-dictionary",
-						children: [
-							{
-								name: "Metadata Dictionary",
-								key: "/learn/metadata-dictionary/metadata-dictionary"
-							},
-							{
-								name: "About Metadata Dictionary",
-								key: "/learn/metadata-dictionary/about-metadata-dictionary"
-							}
+                        ]
+                    },
+                    {
+                        name: "Metadata Dictionary",
+                        key: "metadata-dictionary",
+                        children: [
+                            {
+                                name: "Metadata Dictionary",
+                                key: "/learn/metadata-dictionary/metadata-dictionary"
+                            },
+                            {
+                                name: "About Metadata Dictionary",
+                                key: "/learn/metadata-dictionary/about-metadata-dictionary"
+                            }
 
-						]
-					}
-				]
-		},
-		{
-			name: "Contact",
-			key: "contact",
-			children: [
-				{
-					name: "",
-					key: "contact",
-					children: [
-						{
-							name: "Contact Us",
-							key: "/contact/contact/contact-us"
-						},
-						{
-							name: "Join the Discussion",
-							key: "/contact/contact/join-the-discussion"
-						}
-					]
-				}
-			]
-		},
-		{
-			name: "Content Guide",
-			key: "document",
-			children: [
-				{
-					name: "Creating Content",
-					key: "creating-content",
-					children: [
-						{
-							name: "Example Page",
-							key: "/document/creating-content/example-page"
-						}
-					]
-				}
-			]
-		},
-		{
+                        ]
+                    }
+                ]
+        },
+        {
+            name: "Contact",
+            key: "contact",
+            children: [
+                {
+                    name: "",
+                    key: "contact",
+                    children: [
+                        {
+                            name: "Contact Us",
+                            key: "/contact/contact/contact-us"
+                        },
+                        {
+                            name: "Join the Discussion",
+                            key: "/contact/contact/join-the-discussion"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Content Guide",
+            key: "document",
+            children: [
+                {
+                    name: "Creating Content",
+                    key: "creating-content",
+                    children: [
+                        {
+                            name: "Example Page",
+                            key: "/document/creating-content/example-page"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             name: "Contribute",
             key: "contribute",
             children: [
@@ -305,23 +331,23 @@ const siteMap =
                 }
             ]
         },
-		{
-			name: "Help",
-			key: "help",
-			children: [
-				{
-					name: "",
-					key: "help",
-					children: [
-						{
-							name: "Help & FAQ",
-							key: "/help/help/help-and-faq"
-						}
-					]
-				}
-			]
-		}
-	];
+        {
+            name: "Help",
+            key: "help",
+            children: [
+                {
+                    name: "",
+                    key: "help",
+                    children: [
+                        {
+                            name: "Help & FAQ",
+                            key: "/help/help/help-and-faq"
+                        }
+                    ]
+                }
+            ]
+        }
+    ];
 
 export function getSection(path) {
 

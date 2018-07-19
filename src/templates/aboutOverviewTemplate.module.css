@@ -107,9 +107,29 @@ a {
     margin: 36px 0;
 }
 
+.dataPortal {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 36px;
+}
+
 /* Data Portal description */
 .dataPortal h1 {
     margin: 24px 0; /* TODO review */
+    text-align: center;
+}
+
+.dataPortal h1 a {
+    font: inherit;
+}
+
+.dataPortal h1 + a {
+    font-weight: 500;
+}
+
+.dataPortal h2:first-of-type {
+    margin: 66px 0 0;
     text-align: center;
 }
 
@@ -176,61 +196,6 @@ a {
     line-height: 18px;
     margin: 0;
     text-align: left;
-}
-
-/* What we provide */
-.whatWeProvide {
-    margin-top: 58px;
-}
-
-.whatWeProvide > h4 {
-    text-align: center;
-    text-transform: uppercase;
-}
-
-/* Flex box - content container */
-.contentFlex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-/* Flex box - each box */
-.contentFlex > div {
-    align-items: center;
-    display: flex;
-    flex: 100%;
-    flex-direction: column;
-    margin: 16px 0;
-}
-
-/* Image and paragraphy text */
-.contentFlex > div > p {
-    text-align: center;
-    padding: 0 4px;
-    width: 50%;
-}
-
-/* Standard height for all images */
-.contentFlex > div > p:first-of-type {
-    //height: 80px; // image
-    margin: 0;
-}
-
-/* Removes nested a within h4 */
-.contentFlex > div h4 a {
-    display: none;
-}
-
-/* Padding around paragraph text */
-.contentFlex > div > p:nth-of-type(2) {
-    padding: 0 4px;
-}
-
-/* Flex link */
-.contentFlex > div a {
-    font-weight: 500 !important;
-    margin: 0;
 }
 
 /**
