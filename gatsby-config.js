@@ -5,6 +5,9 @@
  * Gatsby configuration file.
  */
 
+
+// gatsby-config.js
+
 module.exports = {
     siteMetadata: {
         title: 'HCA Data Portal'
@@ -63,6 +66,7 @@ module.exports = {
             resolve: 'gatsby-plugin-typography',
             options: {
                 pathToConfigModule: 'src/utils/typography.js',
+                EXPLORE_URL: `${process.env.EXPLORE_URL}`
             }
         }
     ]

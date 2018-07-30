@@ -2,8 +2,10 @@ STAGING_BUCKET := s3://staging.data.humancellatlas.org/
 INTEGRATION_BUCKET := s3://integration.data.humancellatlas.org/
 DEV_BUCKET := s3://dev.data.humancellatlas.org/
 
+.EXPORT_ALL_VARIABLES:
+
 build:
-	gatsby build
+	./build.sh
 
 deploy-staging:
 	aws s3 sync --acl public-read site/ $(STAGING_BUCKET) --profile hca
