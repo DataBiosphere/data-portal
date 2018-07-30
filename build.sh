@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 if [ "$TRAVIS_BRANCH" = "develop" ]; then
     GATSBY_EXPLORE_URL=https://explore.dev.data.humancellatlas.org/
-elif [ "$TRAVIS_BRANCH" = "integraton" ]; then
+elif [ "$TRAVIS_BRANCH" = "integration" ]; then
     GATSBY_EXPLORE_URL=https://explore.integration.data.humancellatlas.org/
 elif [ "$TRAVIS_BRANCH" = "staging" ]; then
     GATSBY_EXPLORE_URL=https://explore.staging.data.humancellatlas.org/
