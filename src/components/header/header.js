@@ -63,7 +63,7 @@ class Header extends React.Component {
                     <Link to="/" className={compStyles.logo}><img src={headerLogo}/></Link>
                     {this.state.showNav ?
                         <div className={classNames(compStyles.links, compStyles.small)}>
-                            <a href="https://explore.dev.data.humancellatlas.org/" onClick={this.toggleMenu}>
+                            <a href={process.env.GATSBY_EXPLORE_URL} onClick={this.toggleMenu}>
                                 <span>Explore</span>
                                 <span>Search for data in the HCA</span>
                             </a>
@@ -91,7 +91,7 @@ class Header extends React.Component {
                                   className={compStyles.about} onClick={this.toggleMenu}>About</Link>
                         </div> : null}
                     <div className={classNames(compStyles.links)} ref={(div) => this.links = div}>
-                        <a href="https://explore.dev.data.humancellatlas.org/">
+                        <a href={process.env.GATSBY_EXPLORE_URL}>
                             <span>Explore</span>
                         </a>
                         <div id="linkAnalyze" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
