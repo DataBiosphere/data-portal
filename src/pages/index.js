@@ -100,7 +100,7 @@ class IndexPage extends React.Component {
                                     <img src={findData}/>
                                 </div>
                                 <div><p className={compStyles.s}>Anyone can find data to download or use for
-                                    analysis</p><a href="https://explore.dev.data.humancellatlas.org"
+                                    analysis</p><a href={process.env.GATSBY_EXPLORE_URL}
                                                    className={compStyles.s}>Start Searching</a></div>
                             </div>
                             <div className={compStyles.dpArrow}>
