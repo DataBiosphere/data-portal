@@ -360,7 +360,7 @@ class HomepageAutosuggest extends React.Component {
                 "facetName": this.state.selectedFacet,
                 "termName": this.state.selectedTerm
             });
-            window.location.href = `https://explore.dev.data.humancellatlas.org/?filter=${facetFilter}`;
+            window.location.href = `${process.env.GATSBY_EXPLORE_URL}?filter=${facetFilter}`;
         }
     };
 
