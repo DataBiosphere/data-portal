@@ -18,8 +18,7 @@ module.exports = {
             options: {
                 path: `${__dirname}/node_modules/data-portal-content/content`,
                 //path: `/Users/dave/projects/data-portal-content/content`,
-
-        name: "markdown-pages",
+                name: "markdown-pages",
             }
         },
         {
@@ -65,8 +64,7 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-typography',
             options: {
-                pathToConfigModule: 'src/utils/typography.js',
-                EXPLORE_URL: `${process.env.EXPLORE_URL}`
+                pathToConfigModule: 'src/utils/typography.js'
             }
         }
     ]
