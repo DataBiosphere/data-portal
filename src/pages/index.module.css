@@ -139,37 +139,45 @@ a {
 
 /* Stats bar */
 .statsBar {
-    background: linear-gradient(0deg, #5ABCEF, #3867FA);
+    background: linear-gradient(90deg, #3867FA, #5ABCEF);
 }
 
-/* Status */
-.statsBar > div > div {
-    align-items: baseline;
-    display: flex;
+/* Stats bar - wrapper */
+.statsBar > div {
     flex-direction: row;
+    height: 90px;
+    padding: 0 16px; /* Equivalent to wrapper - gutter 16px */
+}
+
+/* Status - show Cells, Organs, Donors only */
+.statsBar > div > div {
+    align-items: center;
+    display: flex;
+    flex-basis: calc(100% / 3);
+    flex-direction: column;
     justify-content: center;
-    padding: 8px 0;
-    width: 100%;
+}
+
+/* Status - hide Projects, Labs */
+.statsBar > div > div:nth-of-type(n + 4) {
+    display: none;
 }
 
 /* Status name - TODO review typography */
 .statsBar > div > div p.xs {
     color: #ffffff; /* TODO colour */
-    flex: 50%; /* Takes up 50% of container */
     letter-spacing: 3.25px;
     margin: 0 0 -4px;
-    text-align: right;
 }
 
 /* Status number */
 .statsBar > div > div h1 {
     color: #ffffff; /* TODO colour */
-    flex: 50%; /* Takes up 50% of container */
     font-size: 36px; /* TODO confirm */
     line-height: 42px; /* TODO confirm */
     margin: 0;
     padding: 0 12px;
-    text-align: left;
+    text-align: center;
 }
 
 /* Explore */
@@ -343,6 +351,22 @@ a {
     .jumbotron .wrapper {
         padding: 70px 16px;
     }
+
+    /* Status */
+    .statsBar > div > div {
+        flex-basis: unset;
+    }
+
+    /* Status - show Projects, Labs */
+    .statsBar > div > div:nth-of-type(n + 4) {
+        display: flex;
+    }
+
+    /* Status number */
+    .statsBar > div > div h1 {
+        width: 110px;
+    }
+
 }
 
 /**
@@ -394,36 +418,8 @@ a {
         max-width: unset;
     }
 
-    /* Stats bar */
-    .statsBar {
-        background: linear-gradient(90deg, #3867FA, #5ABCEF);
-    }
-
-    /* Stats bar - wrapper */
-    .statsBar > div {
-        flex-direction: row;
-        height: 90px;
-        padding: 0 30px; /* Equivalent to wrapper - gutter 30px */
-    }
-
-    /* Status */
-    .statsBar > div > div {
-        align-items: center;
-        flex-direction: column;
-        padding: 0 0;
-        width: unset;
-    }
-
-    /* Status name */
-    .statsBar > div > div p.xs {
-        flex: 0;
-        text-align: center;
-    }
-
     /* Status number */
     .statsBar > div > div h1 {
-        flex: 0;
-        text-align: center;
         width: 164px;
     }
 
@@ -498,6 +494,11 @@ a {
     /* Wrapper */
     .wrapper {
         padding: 70px 30px;
+    }
+
+    /* Stats bar - wrapper */
+    .statsBar > div {
+        padding: 0 30px; /* Equivalent to wrapper - gutter 30px */
     }
 }
 

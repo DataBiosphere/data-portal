@@ -68,6 +68,7 @@
 
 /* Primary navigation */
 .hcaSideNav > div > li {
+    display: flex;
     margin: 0 20px;
     padding: 6px 0;
     position: relative; /* Positions nav bar */
@@ -78,12 +79,15 @@
     color: #999999; /* TODO color hca-gray-medium */
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 14px; /* TODO typography */
+    line-height: 20px;
     font-weight: 500; /* TODO typography */
     text-decoration: none;
+    width: 100%; /* Improves click-able area on link */
 }
 
 /* Secondary navigation */
 .hcaSideNav > div ul li {
+    display: flex;
     margin: 0 20px;
     padding: 6px 0; /* TODO review */
     position: relative; /* Positions nav bar */
@@ -95,8 +99,9 @@
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 13px; /* TODO typography - confirm size */
     font-weight: 500; /* TODO typography */
-    line-height: 20px;
+    line-height: 16px;
     text-decoration: none;
+    width: 100%;  /* Improves click-able area on link */
 }
 
 /* Navigation - hover */
