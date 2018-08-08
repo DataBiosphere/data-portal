@@ -22,6 +22,21 @@ module.exports = {
             }
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+               path: `/Users/dave/projects/hca-metadata-schema/docs`,
+                name: "metadata-markdown-pages",
+            }
+        },
+        `gatsby-transformer-json`,
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `/Users/dave/projects/hca-metadata-schema/json_schema`,
+                name: "metadata-json_schema",
+            },
+        },
+        {
             resolve: 'gatsby-plugin-react-css-modules',
             options: {
                 filetypes: {
@@ -37,7 +52,13 @@ module.exports = {
                 excerpt_separator: `<!-- end -->`,
                 plugins: [
                     `gatsby-remark-autolink-headers`,
-                    `gatsby-remark-copy-linked-files`,
+                    {
+                        resolve: "gatsby-remark-copy-linked-files",
+                        options: {
+                            // dont copy linked markdown files but do the normal skipping of images so they can be handled by gatsby-remark-images
+                            ignoreFileExtensions: ['png', 'jpg', 'jpeg', 'bmp', 'tiff', 'md'],
+                        }
+                    },
                     {
                         resolve: `gatsby-remark-embed-video`,
                         options: {
@@ -55,7 +76,8 @@ module.exports = {
                     },
                     `gatsby-remark-katex`,
                     `gatsby-remark-prismjs`,
-                    `gatsby-remark-responsive-iframe`
+                    `gatsby-remark-responsive-iframe`,
+                    'gatsby-remark-relative-linker'
                 ],
             },
         },

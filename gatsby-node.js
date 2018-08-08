@@ -4,15 +4,13 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
- // You can delete this file if you're not using it
-
 const path = require("path");
+
 
 // find our template files
 const aboutOverviewTemplate = path.resolve(`src/templates/aboutOverviewTemplate.js`);
 const contentTemplate = path.resolve(`src/templates/contentTemplate.js`);
 const contributeOverviewTemplate = path.resolve(`src/templates/contributeOverviewTemplate.js`);
-
 
 
 function getTemplate(templateName) {
@@ -30,12 +28,8 @@ function getTemplate(templateName) {
 }
 
 
-
-
-
-
-exports.createPages = ({ boundActionCreators, graphql }) => {
-    const { createPage } = boundActionCreators;
+exports.createPages = ({boundActionCreators, graphql}) => {
+    const {createPage} = boundActionCreators;
 
 
     // create the markdown pages
@@ -47,6 +41,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       ) {
         edges {
           node {
+            id
             frontmatter {
               path
               template
@@ -71,19 +66,69 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
 
         // for each mardown page
-        result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-            console.log(node.frontmatter.path);
+        result.data.allMarkdownRemark.edges.forEach(({node}) => {
 
             // create the page
-            createPage({
-                path: node.frontmatter.path,
-                component: getTemplate(node.frontmatter.template),  // extract template name from front matter and use it to retrieve the template.
-                context: {}, // additional data can be passed via context
-            });
+
+            let path;
+            if (!node.frontmatter.path) {
+                path = getPath(node.id);
+            } else {
+                path = node.frontmatter.path
+            }
+
+            if (path) {
+                createPage({
+                    path: path,
+                    component: getTemplate(node.frontmatter.template),  // extract template name from front matter and use it to retrieve the template.
+                    context: {id:node.id} // additional data can be passed via context
+                });
+            }
         });
     });
 
-
 };
+
+
+// Create slugs for files.
+exports.onCreateNode = ({ node, boundActionCreators }) => {
+    const { createNodeField } = boundActionCreators
+    if (node.internal.type === 'MarkdownRemark') {
+
+
+        // path can come from frontmatter or... from associating a title to path
+        let path;
+        if (!node.frontmatter.path) {
+            path = getPath(node.id);
+        } else {
+            path = node.frontmatter.path
+        }
+
+
+        //this adds the path under "fields"
+        createNodeField({
+            node,
+            name: 'path',
+            value: path
+        })
+    }
+}
+
+
+function getPath(markdownId) {
+
+
+    if (markdownId.includes("docs/structure.md")) {
+        return "/learn/metadata-dictionary/structure";
+    } else if  (markdownId.includes("docs/rationale.md")) {
+        return "/learn/metadata-dictionary/rationale";
+    }
+
+    else {
+        return null;
+    }
+
+}
+
 
 

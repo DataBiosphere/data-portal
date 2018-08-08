@@ -19,15 +19,20 @@ import TabNav from "../components/tabNav/tabNav";
 
 let classNames = require('classnames');
 
-export default function Template({
-                                     data, // this prop will be injected by the GraphQL query below.
-                                 }) {
+// the data prop will be injected by the GraphQL query below.
+export default function Template({data}) {
+
     const {markdownRemark} = data; // data.markdownRemark holds our post data
     const {frontmatter, html} = markdownRemark;
-    const docPath = frontmatter.path;
-    const linked = frontmatter.linked;
-    const componentName = frontmatter.componentName;
-    const subTitle = frontmatter.subTitle;
+
+    let docPath,linked, componentName, subTitle;
+    docPath = markdownRemark.fields.path;
+
+    if(frontmatter){
+        linked = frontmatter.linked;
+        componentName = frontmatter.componentName;
+        subTitle = frontmatter.subTitle;
+    }
 
     return (
         <div>
@@ -50,11 +55,14 @@ export default function Template({
         </div>
     );
 }
-
+// modified to find the page by id which is passed in as context
 export const pageQuery = graphql`
-  query ContentPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query ContentPostByPath($id: String!) {
+    markdownRemark(id: { eq: $id  }) {
       html
+      fields{
+            path
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

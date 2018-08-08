@@ -271,11 +271,17 @@ const siteMap =
                             {
                                 name: "Metadata Dictionary",
                                 key: "/learn/metadata-dictionary/metadata-dictionary"
+                            }
+                            ,
+                            {
+                                name: "Overview of Metadata Structure",
+                                key: "/learn/metadata-dictionary/structure"
                             },
                             {
-                                name: "About Metadata Dictionary",
-                                key: "/learn/metadata-dictionary/about-metadata-dictionary"
+                                name: "Metadata Design and Implementation Choices",
+                                key: "/learn/metadata-dictionary/rationale"
                             }
+
 
                         ]
                     }
@@ -425,5 +431,4 @@ export function getNav(path) {
     }
     return tab.children;
 }
-
 
