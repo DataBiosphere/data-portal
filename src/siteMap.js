@@ -256,10 +256,13 @@ const siteMap =
                                         name: "Workflow Best Practices",
                                         key: "/learn/userguides/secondary-analysis/secondary-analsis-workflow-best-practices"
                                     }
-
                                 ]
-                            }
+                            },
+                            {
 
+                                name: "Tertiary Analysis",
+                                key: "/learn/userguides/tertiary-analysis"
+                            }
                         ]
                     },
                     {
