@@ -164,8 +164,7 @@ a.logo, a.logo img {
     /* Wrapper */
     .wrapper {
         margin: 0 auto;
-        max-width: 1200px; /* Snap to 1200px, gutter 30px */
-        padding: 0 30px; /* Gutter 30px */
+        max-width: 1200px; /* Snap to 1200px */
     }
 
     .links.small, .hcaNavOverlay {
@@ -201,5 +200,15 @@ a.logo, a.logo img {
     }
 }
 
+/**
+ * Large +
+ */
+@media screen and (min-width: 1200px) {
+
+    /* Wrapper */
+    .wrapper {
+        padding: 0 30px; /* Gutter 30px */
+    }
+}
 
 
