@@ -327,11 +327,11 @@ const siteMap =
                             children: [
                                 {
                                     name: "What to Prepare",
-                                    key: "/contribute/what-to-prepare"
+                                    key: "/contribute/overview/what-to-prepare"
                                 },
                                 {
                                     name: "Terms and Conditions",
-                                    key: "/contribute/terms-and-conditions"
+                                    key: "/contribute/overview/terms-and-conditions"
                                 }
                             ]
                         }
