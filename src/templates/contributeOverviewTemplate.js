@@ -54,13 +54,6 @@ export default function Template({
                                                                       dangerouslySetInnerHTML={{__html: link.childMarkdownRemark.html}}/>)}
                         </div>
                     </div>
-                    <div className={compStyles.subSection}>
-                        <h4>Data Checklist</h4>
-                        <div className={compStyles.contentFlex}>
-                            {linked.slice(4, 6).map((link, i) => <div className={compStyles.blockFlex} key={i}
-                                                                      dangerouslySetInnerHTML={{__html: link.childMarkdownRemark.html}}/>)}
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

@@ -219,11 +219,6 @@ const siteMap =
                                 name: "Contributing Data",
                                 key: "/learn/userguides/contributing-data",
                                 children: [
-                                    {
-                                        name: "Submitting Project Data",
-                                        key: "/learn/userguides/contributing-data/submitting-project-data"
-                                    }
-
                                 ]
                             },
                             {
@@ -328,7 +323,17 @@ const siteMap =
                     children: [
                         {
                             name: "Overview",
-                            key: "/contribute/overview/overview"
+                            key: "/contribute/overview/overview",
+                            children: [
+                                {
+                                    name: "What to Prepare",
+                                    key: "/contribute/what-to-prepare"
+                                },
+                                {
+                                    name: "Terms and Conditions",
+                                    key: "/contribute/terms-and-conditions"
+                                }
+                            ]
                         }
                     ]
                 }
