@@ -323,17 +323,15 @@ const siteMap =
                     children: [
                         {
                             name: "Overview",
-                            key: "/contribute/overview/overview",
-                            children: [
-                                {
-                                    name: "What to Prepare",
-                                    key: "/contribute/overview/what-to-prepare"
-                                },
-                                {
-                                    name: "Terms and Conditions",
-                                    key: "/contribute/overview/terms-and-conditions"
-                                }
-                            ]
+                            key: "/contribute/overview/overview"
+                        },
+                        {
+                            name: "What to Prepare",
+                            key: "/contribute/overview/what-to-prepare"
+                        },
+                        {
+                            name: "Terms and Conditions",
+                            key: "/contribute/overview/terms-and-conditions"
                         }
                     ]
                 }

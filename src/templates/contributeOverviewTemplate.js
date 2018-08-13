@@ -11,6 +11,7 @@ import Link from 'gatsby-link';
 
 // App dependencies
 import compStyles from './contributeOverviewTemplate.module.css';
+import Nav from '../components/nav/nav';
 import Section from '../components/section/section';
 import TabNav from "../components/tabNav/tabNav";
 
@@ -30,6 +31,7 @@ export default function Template({
             <TabNav docPath={docPath}/>
             <div className={compStyles.wrapper}>
                 <div className={compStyles.hcaContent}>
+                    <Nav docPath={docPath}/>
                     <div className={compStyles.contribute}>
                         <h1>The Atlas is built by the Community</h1>
                         <div>
@@ -46,12 +48,12 @@ export default function Template({
                             <a href="mailto:data-help@humancellatlas.org"
                                className={compStyles.contactUs}>Contribute</a>
                         </div>
-                    </div>
-                    <div className={compStyles.subSection}>
-                        <h4>How to Participate</h4>
-                        <div className={compStyles.contentFlex}>
-                            {linked.slice(0, 4).map((link, i) => <div key={i}
-                                                                      dangerouslySetInnerHTML={{__html: link.childMarkdownRemark.html}}/>)}
+                        <div className={compStyles.subSection}>
+                            <h4>How to Participate</h4>
+                            <div className={compStyles.contentFlex}>
+                                {linked.slice(0, 4).map((link, i) => <div key={i}
+                                                                          dangerouslySetInnerHTML={{__html: link.childMarkdownRemark.html}}/>)}
+                            </div>
                         </div>
                     </div>
                 </div>
