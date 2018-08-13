@@ -5,92 +5,6 @@
  * Style definitions specific to the HCA Contribute contribute overview template component.
  */
 
-/* Typography */
-/* TODO typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: "din-2014", sans-serif;
-    font-weight: 500;
-}
-
-p {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    margin: 0 0 18px;
-}
-
-h1 {
-    font-size: 34px;
-    line-height: 38px;
-    margin: 28px 0 6px;
-}
-
-h2 {
-    font-size: 24px;
-    line-height: 30px;
-    margin: 34px 0 36px;
-}
-
-h2:first-of-type {
-    margin-top: 0;
-}
-
-h3 {
-    font-size: 18px;
-    line-height: 24px;
-    margin: 16px 0 18px;
-}
-
-h4 {
-    font-size: 16px;
-    line-height: 22px;
-    margin: 14px 0 16px;
-}
-
-/* P - class "m" */
-p[class^="m"], h5 {
-    font-size: 16px;
-    font-weight: 400 !important;
-    line-height: 26px;
-    margin: 0 0 26px;
-}
-
-/* P - class "s" */
-p[class^="s"], h6 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400 !important;
-    line-height: 24px;
-    margin: 0 0 18px;
-}
-
-/* P - class "xs" */
-p[class*="xs"] {
-    font-size: 13px;
-    line-height: 20px;
-    margin: 0 0 16px;
-}
-
-/* P - class "xxs" */
-p[class^="xxs"] {
-    font-size: 12px;
-    line-height: 18px;
-    margin: 0 0 14px;
-}
-
-/* Link */
-a {
-    color: #1c7cc7; /* TODO colour */
-    cursor: pointer;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    margin: 0 0 18px;
-    text-decoration: none;
-}
-
 /* Wrapper */
 .wrapper {
     align-items: center;
@@ -101,20 +15,57 @@ a {
 /* Content */
 .hcaContent {
     display: flex;
+    flex: 1;
     flex-direction: column;
-    justify-content: center;
     margin: 36px 0;
-    max-width: 800px;
+}
+
+/* Content */
+.hcaContent .contribute {
+    margin-right: 0;
+    width: 100%;
 }
 
 /* Contribute description */
 .contribute h1 {
+    font-family: "din-2014", sans-serif;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 38px;
     margin: 24px 0; /* TODO review */
     text-align: center;
 }
 
+.contribute p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 18px;
+}
+
+.contribute h4 {
+    font-family: "din-2014", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    margin: 14px 0 16px;
+}
+
+/* Link */
+.contribute a {
+    color: #1c7cc7; /* TODO colour */
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 18px;
+    text-decoration: none;
+}
+
 /* Contribute - code + contact us */
-.contribute > div {
+.contribute > div:first-of-type {
     align-items: center;
     background-color: #F8F8F8;
     border-radius: 3px;
@@ -147,7 +98,7 @@ a {
 }
 
 /* Button - contact us */
-.contactUs {
+.contribute .contactUs {
     align-items: center;
     background-color: #1c7cc7 /* TODO colour */;
     border: none;
@@ -169,23 +120,23 @@ a {
     text-decoration: none;
 }
 
-.contactUs:hover {
+.contribute .contactUs:hover {
     background-color: #0363AE; /* TODO colour */
 }
 
-.contactUs:focus {
+.contribute .contactUs:focus {
     outline: none;
 }
 
 /* Flex box - content container */
-.contentFlex {
+.contribute .contentFlex {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 /* Flex box - each box */
-.contentFlex > div {
+.contribute .contentFlex > div {
     align-items: center;
     display: flex;
     flex: 100%;
@@ -194,71 +145,41 @@ a {
 }
 
 /* Image and paragraphy text */
-.contentFlex > div > p {
+.contribute .contentFlex > div > p {
     text-align: center;
     width: 100%;
 }
 
 /* Standard height for all images */
-.contentFlex > div > p:first-of-type {
+.contribute .contentFlex > div > p:first-of-type {
     height: 80px;
     margin: 0;
 }
 
 /* Removes nested a within h4 */
-.contentFlex > div h4 a {
+.contribute .contentFlex > div h4 a {
     display: none;
 }
 
 /* Padding around paragraph text */
-.contentFlex > div > p:nth-of-type(2) {
+.contribute .contentFlex > div > p:nth-of-type(2) {
     padding: 0 4px;
 }
 
 /* Flex link */
-.contentFlex > div a {
+.contribute .contentFlex > div a {
     font-weight: 500 !important;
     margin: 0;
 }
 
 /* How to participate */
-.subSection {
+.contribute .subSection {
     margin-top: 58px;
 }
 
-.subSection > h4 {
+.contribute .subSection > h4 {
     text-align: center;
     text-transform: uppercase;
-}
-
-/* Blockquote flex */
-.blockFlex {
-    background-color: #F4F7F9; /* TODO colour */
-    flex: 1;
-    margin: 16px !important;
-}
-
-.blockFlex blockquote {
-    margin: 0;
-    width: 100%;
-}
-
-.blockFlex h4 {
-    margin-top: 0;
-}
-
-.blockFlex ul {
-    list-style-type: disc;
-    margin-left: 16px;
-}
-
-/* List element of blockFlex */
-.blockFlex li {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400 !important;
-    line-height: 24px;
-    margin: 4px 0;
 }
 
 /**
@@ -266,13 +187,17 @@ a {
  */
 @media screen and (min-width: 768px) {
 
-    /* Wrapper */
-    .wrapper {
-        margin: 0 auto;
-        max-width: 682px; /* Snap to 650px, gutter 16px */
+    /* Content */
+    .hcaContent {
+        flex-direction: row;
     }
 
-    .contentFlex > div {
+    /* Content */
+    .hcaContent .contribute {
+        margin-right: 14px;
+    }
+
+    .contribute .contentFlex > div {
         flex: 50%;
     }
 }
@@ -282,19 +207,13 @@ a {
  */
 @media screen and (min-width: 1024px) {
 
-    /* Wrapper */
-    .wrapper {
-        max-width: 860px; /* Snap to 800px, gutter 30px */
-        padding: 0 30px;
-    }
-
     /* Flex box - content container */
-    .contentFlex {
+    .contribute .contentFlex {
         flex-direction: row;
     }
 
     /* Flex content - each box */
-    .contentFlex > div {
+    .contribute .contentFlex > div {
         flex: 25%;
     }
 }
@@ -304,6 +223,17 @@ a {
  */
 @media screen and (min-width: 1200px) {
 
+    /* Wrapper */
+    .wrapper {
+        margin: 0 auto;
+        max-width: 1200px; /* Snap to 1200px, gutter 30px */
+        padding: 0 30px;
+    }
+
+    /* Content */
+    .hcaContent .contribute {
+        max-width: 740px;
+    }
 }
 
 
