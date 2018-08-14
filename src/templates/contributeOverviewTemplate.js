@@ -32,29 +32,35 @@ export default function Template({
             <div className={compStyles.wrapper}>
                 <div className={compStyles.hcaContent}>
                     <Nav docPath={docPath}/>
-                    <div className={compStyles.contribute}>
-                        <h1>The Atlas is built by the Community</h1>
-                        <div>
-                            <div className={compStyles.codeStyle}>
-                                <div>We plan to incorporate all types of single cell data.</div>
-                                <ul>
-                                    <li>We are interested in openly consented data from human subjects.</li>
-                                    <li>Our pipelines can proccess data derived from Smart-seq2 and 10x v2 scRNA-seq
-                                        assays.
-                                    </li>
-                                    <li>All single cell genomics assays are welcome.</li>
-                                </ul>
+                    <div className={compStyles.markdownContent}>
+                        <div className={compStyles.contribute}>
+                            <h1>The Atlas is built by the Community</h1>
+                            <div>
+                                <div className={compStyles.codeStyle}>
+                                    <div>We plan to incorporate all types of single cell data.</div>
+                                    <ul>
+                                        <li>We are interested in openly consented data from human subjects.</li>
+                                        <li>Our pipelines can proccess data derived from Smart-seq2 and 10x v2 scRNA-seq
+                                            assays.
+                                        </li>
+                                        <li>All single cell genomics assays are welcome.</li>
+                                    </ul>
+                                </div>
+                                <a href="mailto:data-help@humancellatlas.org"
+                                   className={compStyles.contactUs}>Contribute</a>
                             </div>
-                            <a href="mailto:data-help@humancellatlas.org"
-                               className={compStyles.contactUs}>Contribute</a>
-                        </div>
-                        <div className={compStyles.subSection}>
-                            <h4>How to Participate</h4>
-                            <div className={compStyles.contentFlex}>
-                                {linked.slice(0, 4).map((link, i) => <div key={i}
-                                                                          dangerouslySetInnerHTML={{__html: link.childMarkdownRemark.html}}/>)}
+                            <div className={compStyles.subSection}>
+                                <h4>How to Participate</h4>
+                                <div className={compStyles.contentFlex}>
+                                    {linked.slice(0, 4).map((link, i) => <div key={i}
+                                                                              dangerouslySetInnerHTML={{__html: link.childMarkdownRemark.html}}/>)}
+                                </div>
                             </div>
                         </div>
+                        <div
+                            className="content-template"
+                            dangerouslySetInnerHTML={{__html: html}}
+                        />
                     </div>
                 </div>
             </div>
