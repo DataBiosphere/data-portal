@@ -223,7 +223,7 @@ const siteMap =
                             },
                             {
 
-                                name: "Secondary Analysis",
+                                name: "Data Processing Pipelines",
                                 key: "/learn/userguides/secondary-analysis/what-is-the-secondary-analysis-service",
                                 children: [
                                     {
@@ -255,7 +255,7 @@ const siteMap =
                             },
                             {
 
-                                name: "Tertiary Analysis",
+                                name: "Analysis Applications",
                                 key: "/learn/userguides/tertiary-analysis"
                             }
                         ]
