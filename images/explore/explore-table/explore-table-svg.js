@@ -108,7 +108,7 @@ class ExploreTable extends React.Component {
 
         const organName = this.parseOrganNameFromElement(event.currentTarget).toLowerCase();
         let organFilter = this.getOrganFilter(organName);
-        window.location.href = `https://explore.dev.data.humancellatlas.org/?filter=${organFilter}`;
+        window.location.href = `${process.env.GATSBY_EXPLORE_URL}?filter=${organFilter}`;
     };
 
     render() {
