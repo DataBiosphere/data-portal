@@ -312,6 +312,10 @@ const siteMap =
                         {
                             name: "Creating Links",
                             key: "/document/creating-content/creating-links"
+                        },
+                        {
+                            name: "Using Images",
+                            key: "/document/creating-content/using-images"
                         }
                     ]
                 }
