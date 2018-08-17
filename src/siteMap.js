@@ -150,7 +150,7 @@ const siteMap =
                             key: "/develop/development-guides/testing-pipelines"
                         },
                         {
-                            name: "Consumer Vignettes",
+                            name: "Data Consumer Vignettes",
                             key: "/develop/development-guides/consumer-vignettes"
                         }
                     ]
