@@ -43,7 +43,7 @@ export default function Template({
                                         <li>Our pipelines can proccess data derived from Smart-seq2 and 10x v2 scRNA-seq
                                             assays.
                                         </li>
-                                        <li>All single cell genomics assays are welcome.</li>
+                                        <li>Please contact us to discuss submitting your cellular resolution data.</li>
                                     </ul>
                                 </div>
                                 <a href="mailto:data-help@humancellatlas.org"
