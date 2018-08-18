@@ -310,6 +310,10 @@ const siteMap =
                     key: "creating-content",
                     children: [
                         {
+                            name: "Overview",
+                            key: "/document/creating-content/overview"
+                        },
+                        {
                             name: "Editing an Existing Page",
                             key: "/document/creating-content/editing-an-existing-page"
                         },
@@ -320,6 +324,10 @@ const siteMap =
                         {
                             name: "Using Images",
                             key: "/document/creating-content/using-images"
+                        },
+                        {
+                            name: "Creating a New Page",
+                            key: "/document/creating-content/creating-a-new-page"
                         }
                     ]
                 }
