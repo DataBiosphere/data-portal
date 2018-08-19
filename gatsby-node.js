@@ -119,9 +119,9 @@ function getPath(markdownId) {
 
 
     if (markdownId.includes("docs/structure.md")) {
-        return "/learn/metadata-dictionary/structure";
+        return "/learn/metadata-schema/structure";
     } else if  (markdownId.includes("docs/rationale.md")) {
-        return "/learn/metadata-dictionary/rationale";
+        return "/learn/metadata-schema/rationale";
     }
 
     else {
