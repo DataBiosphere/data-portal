@@ -11,4 +11,7 @@ fi
 
 export GATSBY_EXPLORE_URL
 echo $GATSBY_EXPLORE_URL
+
+git clone git@github.com:HumanCellAtlas/metadata-schema.git _metadata-schema
+
 gatsby build
