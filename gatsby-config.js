@@ -29,14 +29,14 @@ module.exports = {
                 name: "metadata-markdown-pages",
             }
         },
-        `gatsby-transformer-json`,
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: `/Users/dave/projects/hca-metadata-schema/json_schema`,
-                name: "metadata-json_schema",
-            },
-        },
+        // `gatsby-transformer-json`,
+        // {
+        //     resolve: `gatsby-source-filesystem`,
+        //     options: {
+        //         path: `/Users/dave/projects/hca-metadata-schema/json_schema`,
+        //         name: "metadata-json_schema",
+        //     },
+        // },
         {
             resolve: 'gatsby-plugin-react-css-modules',
             options: {
