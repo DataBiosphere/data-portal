@@ -10,8 +10,8 @@ import React from 'react';
 
 let metadataTable = [
     {
-        title: "Donor Organism",
-        elements: [
+        entity: "Donor Organism",
+        properties: [
             {
                 name: "Biomaterial ID",
                 description: "A unique ID for this biomaterial"
@@ -36,10 +36,10 @@ class Metadata extends React.Component {
     render() {
         return (
             <div>
-                <h3>{metadataTable[0].title}</h3>
+                <h3>{metadataTable[0].entity}</h3>
                 <table>
                     <tbody>
-                    {metadataTable[0].elements.map((element, i) => <tr key={i}>
+                    {metadataTable[0].properties.map((element, i) => <tr key={i}>
                         <td><strong>{element.name}</strong></td>
                         <td>{element.description}</td>
                     </tr>)}
