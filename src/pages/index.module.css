@@ -5,61 +5,32 @@
  * Style definitions specific to the HCA Data Portal home component.
  */
 
-/* Typography */
-/* TODO typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: "din-2014", sans-serif;
-    font-weight: 500;
-}
-
-p {
-    font-family: "Montserrat", sans-serif;
+.homepage p {
     font-size: 14px;
-    font-weight: 400;
     line-height: 24px;
     margin: 0 0 18px;
 }
 
-h1 {
+.homepage h1 {
     font-size: 34px;
     line-height: 38px;
     margin: 28px 0 6px;
 }
 
-h2 {
+.homepage h2 {
     font-size: 24px;
     line-height: 30px;
     margin: 34px 0 36px;
 }
 
-h3 {
-    font-size: 18px;
-    line-height: 24px;
-    margin: 16px 0 18px;
-}
-
-h4 {
+.homepage h4 {
     font-size: 16px;
     line-height: 22px;
     margin: 14px 0 16px;
 }
 
-/* P - class "l" */
-p[class^="l"] {
-    font-size: 18px;
-    line-height: 28px;
-    margin: 0 0 30px;
-}
-
-/* P - class "m" */
-p[class^="m"] {
-    font-size: 16px;
-    line-height: 26px;
-    margin: 0 0 26px;
-}
-
 /* P - class "s" */
-p[class^="s"] {
+.homepage p.s {
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -68,21 +39,14 @@ p[class^="s"] {
 }
 
 /* P - class "xs" */
-p[class*="xs"] {
+.homepage p.xs {
     font-size: 13px;
     line-height: 20px;
     margin: 0 0 16px;
 }
 
-/* P - class "xxs" */
-p[class^="xxs"] {
-    font-size: 12px;
-    line-height: 18px;
-    margin: 0 0 14px;
-}
-
 /* Link */
-a {
+.homepage a {
     color: #1c7cc7; /* TODO colour */
     cursor: pointer;
     font-family: "Montserrat", sans-serif;

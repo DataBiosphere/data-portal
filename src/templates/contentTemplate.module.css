@@ -20,19 +20,13 @@ p {
     margin: 0 0 18px;
 }
 
-h1 {
-    font-size: 34px;
-    line-height: 38px;
-    margin: 28px 0 6px;
-}
-
-h2 {
+h2, .markdownContent h1 {
     font-size: 24px;
     line-height: 30px;
     margin: 34px 0 36px;
 }
 
-h2:first-of-type {
+h2:first-of-type, .markdownContent h1:first-of-type {
     margin-top: 0;
 }
 

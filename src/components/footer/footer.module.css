@@ -23,6 +23,7 @@
 .logo {
     margin: 0;
     position: relative;
+    text-decoration: none;
 }
 
 /* Back arrow */

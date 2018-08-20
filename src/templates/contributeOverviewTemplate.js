@@ -57,10 +57,12 @@ export default function Template({
                                 </div>
                             </div>
                         </div>
-                        <div
-                            className="content-template"
-                            dangerouslySetInnerHTML={{__html: html}}
-                        />
+                        <div className={classNames(compStyles.markdownContent)}>
+                            <div
+                                className="content-template"
+                                dangerouslySetInnerHTML={{__html: html}}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

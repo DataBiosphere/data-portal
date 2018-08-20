@@ -32,7 +32,7 @@ class IndexPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={compStyles.homepage}>
                 <div className={compStyles.jumbotron}>
                     <div className={compStyles.wrapper}>
                         <h1>Single-cell data building a foundation for human health</h1>

@@ -84,6 +84,7 @@ a.logo, a.logo img {
 .links.small a.about {
     color: #666666; /* TODO colour */
     font-weight: 400;
+    text-decoration: none;
 }
 
 /* Nav links - subtitle */
@@ -134,6 +135,7 @@ a.logo, a.logo img {
     font-size: 13px;
     font-weight: 400;
     margin: 0;
+    text-decoration: none;
 }
 
 .menuDropDown {

@@ -5,59 +5,36 @@
  * Style definitions specific to the HCA Data Portal about overview template component.
  */
 
-/* Typography */
-/* TODO typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: "din-2014", sans-serif;
+.dataPortal p {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0 0 18px;
+}
+
+.dataPortal h1 {
+    font-size: 34px;
+    line-height: 38px;
+    margin: 24px 0;
+    text-align: center;
+}
+
+.dataPortal h1 a {
+    font: inherit;
+}
+
+.dataPortal h1 + a {
     font-weight: 500;
 }
 
-p {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    margin: 0 0 18px;
-}
-
-h1 {
-    font-size: 34px;
-    line-height: 38px;
-    margin: 28px 0 6px;
-}
-
-h2 {
+.dataPortal h2 {
     font-size: 24px;
     line-height: 30px;
-    margin: 34px 0 36px;
-}
-
-h2:first-of-type {
-    margin-top: 0;
-}
-
-h3 {
-    font-size: 18px;
-    line-height: 24px;
-    margin: 16px 0 18px;
-}
-
-h4 {
-    font-size: 16px;
-    line-height: 22px;
-    margin: 14px 0 16px;
-}
-
-/* P - class "m" */
-p[class^="m"], h5 {
-    font-size: 16px;
-    font-weight: 400 !important;
-    line-height: 26px;
-    margin: 0 0 26px;
+    margin: 66px 0 0;
+    text-align: center;
 }
 
 /* P - class "s" */
-p[class^="s"], h6 {
+.dataPortal p[class^="s"] {
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     font-weight: 400 !important;
@@ -65,22 +42,8 @@ p[class^="s"], h6 {
     margin: 0 0 18px;
 }
 
-/* P - class "xs" */
-p[class*="xs"] {
-    font-size: 13px;
-    line-height: 20px;
-    margin: 0 0 16px;
-}
-
-/* P - class "xxs" */
-p[class^="xxs"] {
-    font-size: 12px;
-    line-height: 18px;
-    margin: 0 0 14px;
-}
-
 /* Link */
-a {
+.dataPortal a {
     color: #1c7cc7; /* TODO colour */
     cursor: pointer;
     font-family: "Montserrat", sans-serif;
@@ -112,25 +75,6 @@ a {
     display: flex;
     flex-direction: column;
     margin-bottom: 36px;
-}
-
-/* Data Portal description */
-.dataPortal h1 {
-    margin: 24px 0; /* TODO review */
-    text-align: center;
-}
-
-.dataPortal h1 a {
-    font: inherit;
-}
-
-.dataPortal h1 + a {
-    font-weight: 500;
-}
-
-.dataPortal h2:first-of-type {
-    margin: 66px 0 0;
-    text-align: center;
 }
 
 /* DP Imagery and associated text */
@@ -277,13 +221,6 @@ a {
     .contentFlex > div {
         flex: 25%;
     }
-}
-
-/**
- * Large +
- */
-@media screen and (min-width: 1200px) {
-
 }
 
 

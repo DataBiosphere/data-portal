@@ -38,9 +38,7 @@
 }
 
 .contribute p {
-    font-family: "Montserrat", sans-serif;
     font-size: 14px;
-    font-weight: 400;
     line-height: 24px;
     margin: 0 0 18px;
 }
@@ -181,6 +179,10 @@
 .contribute .subSection > h4 {
     text-align: center;
     text-transform: uppercase;
+}
+
+.markdownContent h2 {
+
 }
 
 /**

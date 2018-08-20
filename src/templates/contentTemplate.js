@@ -12,6 +12,7 @@ import React from "react";
 import compStyles from './contentTemplate.module.css';
 import About from "../components/about/about";
 import Analyze from "../components/analyze/analyze";
+import Metadata from "../components/metadata/metadata";
 import Nav from '../components/nav/nav';
 import NavOverview from "../components/navOverview/navOverview";
 import Section from '../components/section/section';
@@ -49,6 +50,7 @@ export default function Template({data}) {
                         {linked && !componentName ? <NavOverview linked={linked}/> : null}
                         {linked && (componentName === "analyze") ? <Analyze linked={linked}/> : null}
                         {linked && (componentName === "about") ? <About subTitle={subTitle} linked={linked}/> : null}
+                        {(componentName === "metadata") ? <Metadata/> : null}
                     </div>
                 </div>
             </div>
