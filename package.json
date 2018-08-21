@@ -9,6 +9,7 @@
     "gatsby-cli": "^1.1.52",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-catch-links": "^1.0.19",
+    "gatsby-plugin-favicon": "^2.1.1",
     "gatsby-plugin-react-css-modules": "1.0.15",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-typography": "1.7.18",

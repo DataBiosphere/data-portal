@@ -24,8 +24,9 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-               // path: `/Users/dave/projects/hca-metadata-schema/docs`,
-                path: `${__dirname}/_metadata-schema/docs`,
+                path: `/Users/franmcdade/sandbox/hca-metadata-schema/docs`,
+                // path: `/Users/dave/projects/hca-metadata-schema/docs`,
+                //  path: `${__dirname}/_metadata-schema/docs`,
                 name: "metadata-markdown-pages",
             }
         },
@@ -37,6 +38,39 @@ module.exports = {
         //         name: "metadata-json_schema",
         //     },
         // },
+        {
+            resolve: `gatsby-plugin-favicon`,
+            options: {
+                logo: "./images/favicon/favicon.png",
+
+                // WebApp Manifest Configuration
+                appName: 'Gatsby site',
+                appDescription: null,
+                developerName: null,
+                developerURL: null,
+                dir: 'auto',
+                lang: 'en-US',
+                background: '#fff',
+                theme_color: '#fff',
+                display: 'standalone',
+                orientation: 'any',
+                start_url: '/?homescreen=1',
+                version: '1.0',
+
+                icons: {
+                    android: true,
+                    appleIcon: true,
+                    appleStartup: true,
+                    coast: false,
+                    favicons: true,
+                    firefox: true,
+                    opengraph: false,
+                    twitter: false,
+                    yandex: false,
+                    windows: false
+                }
+            }
+        },
         {
             resolve: 'gatsby-plugin-react-css-modules',
             options: {

@@ -1,0 +1,72 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal 404 error component.
+ */
+
+/* Error background image */
+.error {
+    background: url(../../images/data-portal/cell.png) top no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Wrapper */
+.wrapper {
+    align-items: center;
+    display: flex;
+    padding: 0 16px;
+}
+
+/* Content */
+.hcaContent {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 36px 0;
+}
+
+/* Error h2 */
+.error h2 {
+    margin-bottom: 16px;
+}
+
+/* Error p class m */
+.error p.m {
+        font-size: 16px;
+        font-weight: 400 !important;
+        line-height: 26px;
+        margin: 0 0 16px;
+}
+
+/* Error link */
+.error a {
+    margin-bottom: 0;
+}
+
+/**
+ * Medium +
+ */
+@media screen and (min-width: 768px) {
+
+    /* Error background image */
+    .error {
+        background-position: left;
+    }
+}
+
+/**
+ * Large +
+ */
+@media screen and (min-width: 1200px) {
+
+    /* Wrapper */
+    .wrapper {
+        margin: 0 auto;
+        max-width: 1200px; /* Snap to 1200px, gutter 30px */
+        padding: 0 30px;
+    }
+}
+
+

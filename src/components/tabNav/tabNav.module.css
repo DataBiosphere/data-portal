@@ -61,7 +61,7 @@
 }
 
 /* Tab */
-.hcaTab {
+.hcaTab, .hcaBackTab {
     box-sizing: border-box;
     cursor: pointer;
     height: 30px;
@@ -70,7 +70,7 @@
 }
 
 /* Tab - link */
-.hcaTab a {
+.hcaTab a, .hcaBackTab a {
     color: #999999; /* TODO typography hca-gray-medium */
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 15px; /* TODO typography - confirm size */
@@ -78,6 +78,16 @@
     line-height: 30px;
     text-decoration: none;
     white-space: nowrap; /* Horizontal scroll */
+}
+
+.hcaBackTab a {
+    align-items: center;
+    display: flex;
+}
+
+.hcaBackTab i {
+    font-size: 16px;
+    margin: 0 0 0 -4px;
 }
 
 /* Active tab */

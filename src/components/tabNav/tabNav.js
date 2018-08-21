@@ -36,11 +36,11 @@ const getLinkForTab = (tab) => {
 };
 
 
-const TabNav = ({docPath}) => (
+const TabNav = ({docPath, homeTab}) => (
         <div className={compStyles.hcaTabs}>
             <div className={compStyles.wrapper}>
                 <div className={compStyles.hcaTabList}>
-                    {siteMap.getTabs(docPath).map((tab, i) => <div key={i} className={getTabClassName(tab, docPath)}><Link to={getLinkForTab(tab)}>{tab.name}</Link></div>)}
+                    {homeTab ? <div className={compStyles.hcaBackTab}><Link to="/"><i className='material-icons'>keyboard_arrow_left</i><span>Home</span></Link></div> : siteMap.getTabs(docPath).map((tab, i) => <div key={i} className={getTabClassName(tab, docPath)}><Link to={getLinkForTab(tab)}>{tab.name}</Link></div>)}
                 </div>
             </div>
         </div>
