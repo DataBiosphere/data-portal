@@ -42,7 +42,7 @@ export default function Template({
 							cells—the fundamental units of life—as a basis for both understanding human health and
 							diagnosing, monitoring, and treating disease.</h1>
 						<a target="_blank" href="https://www.humancellatlas.org/">View the Human Cell Atlas website</a>
-						<h2>The Human Cell Atlas Data Portal makes it possible. It stores and provides single-cell data contributed by labs around the world. Anyone can contribute data, find data, or access community tools and applications.</h2>
+						<h2>The Human Cell Atlas Data Portal stores and provides single-cell data contributed by labs around the world. Anyone can contribute data, find data, or access community tools and applications.</h2>
 						<div className={compStyles.portalDescription}>
 							<div>
 								<div>
