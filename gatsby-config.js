@@ -16,28 +16,30 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/node_modules/data-portal-content/content`,
-                //path: `/Users/dave/projects/data-portal-content/content`,
+                //path: `${__dirname}/node_modules/data-portal-content/content`,
+                path: `/Users/dave/projects/data-portal-content/content`,
                 name: "markdown-pages",
             }
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                // path: `/Users/franmcdade/sandbox/hca-metadata-schema/docs`,
                 // path: `/Users/dave/projects/hca-metadata-schema/docs`,
-                path: `${__dirname}/_metadata-schema/docs`,
+                //path: `${__dirname}/_metadata-schema/docs`,
+                path: `/Users/dave/projects/hca-metadata-schema/docs`,
+                //path: `${__dirname}/_metadata-schema/docs`,
+
                 name: "metadata-markdown-pages",
             }
         },
-        // `gatsby-transformer-json`,
-        // {
-        //     resolve: `gatsby-source-filesystem`,
-        //     options: {
-        //         path: `/Users/dave/projects/hca-metadata-schema/json_schema`,
-        //         name: "metadata-json_schema",
-        //     },
-        // },
+        `gatsby-transform-json-schema`,
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `/Users/dave/projects/hca-metadata-schema/json_schema/type/biomaterial`,
+                name: "metadata-json_schema",
+            },
+        },
         {
             resolve: `gatsby-plugin-favicon`,
             options: {
