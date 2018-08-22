@@ -7,9 +7,9 @@
 
 /* Error background image */
 .error {
-    background: url(../../images/data-portal/cell.png) top no-repeat;
+    background: url(../../images/data-portal/cell.png) center no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: calc(100vh - 262px);
 }
 
 /* Wrapper */
@@ -52,7 +52,8 @@
 
     /* Error background image */
     .error {
-        background-position: left;
+        background: url(../../images/data-portal/cell.png) top no-repeat;
+        background-size: cover;
     }
 }
 

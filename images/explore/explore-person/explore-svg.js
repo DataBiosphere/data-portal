@@ -134,7 +134,7 @@ class Explore extends React.Component {
                 <g id="explorePerson" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                     <g id="explore">
                         <mask id="mask-2" fill="white">
-                            <use href="#path-1"/>
+                            <rect id="path-1" x="0" y="0" width="841" height="463"/>
                         </mask>
                         <g id="Mask"/>
                         <g mask="url(#mask-2)">

@@ -35,13 +35,13 @@
 
 /* Fade on horizontal scroll RHS */
 .wrapper::after {
-    background: linear-gradient(90deg, transparent, #ffffff, #ffffff); /* TODO confirm */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), #ffffff, #ffffff);
     right: 0;
 }
 
 /* Fade on horizontal scroll LHS */
 .wrapper::before {
-    background: linear-gradient(90deg, #ffffff, #ffffff, transparent); /* TODO confirm */
+    background: linear-gradient(90deg, #ffffff, #ffffff, rgba(255, 255, 255, 0));
     left: 0;
 }
 
@@ -53,6 +53,7 @@
     justify-content: flex-start;
     margin: 24px -16px 0;
     overflow-x: auto; /* Horizontal scroll */
+    overflow-y: hidden;
     width: calc(100% + 32px);
 }
 
