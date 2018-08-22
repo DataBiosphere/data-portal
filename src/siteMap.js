@@ -199,6 +199,10 @@ const siteMap =
                                 key: "/learn/userguides/accessing-data",
                                 children: [
                                     {
+                                        name: "Quick Start Guide",
+                                        key: "/learn/userguides/accessing-data/quick-start-guide"
+                                    },
+                                    {
 
                                         name: "Using the Data Browser to Access Data",
                                         key: "/learn/userguides/accessing-data/using-the-data-browser-to-access-data"
@@ -207,10 +211,6 @@ const siteMap =
                                     {
                                         name: "Using the CLI to Access Data",
                                         key: "/learn/userguides/accessing-data/using-the-cli-to-access-data"
-                                    },
-                                    {
-                                        name: "How to go from Query to Annotated Clusters",
-                                        key: "/learn/userguides/accessing-data/how-to-go-from-query-to-annotated-clusters"
                                     },
                                     {
                                         name: "FAQ",
