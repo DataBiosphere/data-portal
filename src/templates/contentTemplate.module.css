@@ -214,6 +214,14 @@ a {
     text-decoration: none;
 }
 
+.markdownContent .editContent {
+    margin: 14px 0;
+}
+
+.markdownContent .editContent a {
+    font-size: 12px;
+}
+
 /* List */
 ol, ul {
     font-family: "Montserrat", sans-serif;

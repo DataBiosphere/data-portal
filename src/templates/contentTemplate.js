@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import Link from 'gatsby-link';
 import React from "react";
 
 // App dependencies
@@ -29,6 +30,8 @@ export default function Template({data}) {
     let docPath,linked, componentName, subTitle;
     docPath = markdownRemark.fields.path;
 
+    const editPath = "https://github.com/HumanCellAtlas/data-portal-content/tree/master/content" + (markdownRemark.fields.path) + ".md";
+
     if(frontmatter){
         linked = frontmatter.linked;
         componentName = frontmatter.componentName;
@@ -51,6 +54,7 @@ export default function Template({data}) {
                         {linked && (componentName === "analyze") ? <Analyze linked={linked}/> : null}
                         {linked && (componentName === "about") ? <About subTitle={subTitle} linked={linked}/> : null}
                         {(componentName === "metadata") ? <Metadata/> : null}
+                        <div className={compStyles.editContent}><a href={editPath} target="_blank">Edit me on GitHub</a></div>
                     </div>
                 </div>
             </div>
