@@ -49,11 +49,11 @@ async function onCreateNode({ node, actions, loadNodeContent, createNodeId }) {
 
     if (_.isArray(properties)) {
         properties.forEach((obj, i) => {
-            console.log(obj);
+            console.log(_.camelCase(`${node.name} Json`));
             transformObject(
                 obj,
                 obj.id ? obj.id : createNodeId(`${node.id} [${i}] >>> JSON`),
-                _.upperFirst(_.camelCase(`${node.name} Json`))
+                _.upperFirst("JSONSchemaProperty")
             )
         });
     }else{
