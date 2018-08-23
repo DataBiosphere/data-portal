@@ -226,41 +226,40 @@ const siteMap =
                                 ]
                             },
                             {
-
                                 name: "Data Processing Pipelines",
-                                key: "/learn/userguides/secondary-analysis/what-is-the-secondary-analysis-service",
+                                key: "/learn/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides",
                                 children: [
                                     {
                                         name: "Optimus Prime Workflow in Detail",
-                                        key: "/learn/userguides/secondary-analysis/optimus-prime-workflow-in-detail"
+                                        key: "/learn/userguides/data-processing-pipelines/optimus-prime-workflow-in-detail"
 
                                     },
                                     {
                                         name: "File Formats",
-                                        key: "/learn/userguides/secondary-analysis/file-formats"
+                                        key: "/learn/userguides/data-processing-pipelines/file-formats"
                                     },
                                     {
                                         name: "QC Metrics",
-                                        key: "/learn/userguides/secondary-analysis/qc-mertics"
+                                        key: "/learn/userguides/data-processing-pipelines/qc-mertics"
                                     },
                                     {
                                         name: "Pipeline Portability",
-                                        key: "/learn/userguides/secondary-analysis/pipeline-portability"
+                                        key: "/learn/userguides/data-processing-pipelines/pipeline-portability"
                                     },
                                     {
                                         name: "Smart-seq2 Workflow in Detail",
-                                        key: "/learn/userguides/secondary-analysis/smart-seq2-workflow-in-detail"
+                                        key: "/learn/userguides/data-processing-pipelines/smart-seq2-workflow-in-detail"
                                     },
                                     {
                                         name: "Workflow Best Practices",
-                                        key: "/learn/userguides/secondary-analysis/secondary-analsis-workflow-best-practices"
+                                        key: "/learn/userguides/data-processing-pipelines/secondary-analsis-workflow-best-practices"
                                     }
                                 ]
                             },
                             {
 
                                 name: "Analysis Applications",
-                                key: "/learn/userguides/tertiary-analysis"
+                                key: "/learn/userguides/analysis-applications"
                             }
                         ]
                     },
@@ -334,6 +333,10 @@ const siteMap =
                         {
                             name: "Creating a New Page",
                             key: "/document/creating-content/creating-a-new-page"
+                        },
+                        {
+                            name: "Style Guide",
+                            key: "/document/creating-content/content-style-guide"
                         }
                     ]
                 }
