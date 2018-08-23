@@ -32,12 +32,12 @@ module.exports = {
                 name: "metadata-markdown-pages",
             }
         },
-        `gatsby-transform-json-schema`,
+        `gatsby-transformer-json-schema`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 path: `/Users/dave/projects/hca-metadata-schema/json_schema/type/biomaterial`,
-                name: "metadata-json_schema",
+                name: "json-schema",
             },
         },
         {
