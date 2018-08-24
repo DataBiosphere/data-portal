@@ -27,12 +27,13 @@ export default function Template({data}) {
     const {markdownRemark} = data; // data.markdownRemark holds our post data
     const {frontmatter, html} = markdownRemark;
 
-    let docPath,linked, componentName, subTitle;
+    let docPath, linked, componentName, subTitle, gitHubPath;
     docPath = markdownRemark.fields.path;
+    gitHubPath = markdownRemark.fields.gitHubPath.substring(0, markdownRemark.fields.gitHubPath.lastIndexOf("/"));
 
-    const editPath = "https://github.com/HumanCellAtlas/data-portal-content/tree/master/content" + (markdownRemark.fields.path) + ".md";
+    const editPath = "https://github.com/HumanCellAtlas/data-portal-content/tree/master/content" + gitHubPath + ".md";
 
-    if(frontmatter){
+    if (frontmatter) {
         linked = frontmatter.linked;
         componentName = frontmatter.componentName;
         subTitle = frontmatter.subTitle;
@@ -54,7 +55,8 @@ export default function Template({data}) {
                         {linked && (componentName === "analyze") ? <Analyze linked={linked}/> : null}
                         {linked && (componentName === "about") ? <About subTitle={subTitle} linked={linked}/> : null}
                         {(componentName === "metadata") ? <Metadata/> : null}
-                        <div className={compStyles.editContent}><a href={editPath} target="_blank">Edit me on GitHub</a></div>
+                        <div className={compStyles.editContent}><a href={editPath} target="_blank">Edit me on GitHub</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -68,6 +70,7 @@ export const pageQuery = graphql`
       html
       fields{
             path
+            gitHubPath
       }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")

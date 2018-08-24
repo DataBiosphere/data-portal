@@ -4,7 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+// Imports
 const path = require("path");
+const {createFilePath} = require(`gatsby-source-filesystem`);
 
 
 // find our template files
@@ -81,7 +83,7 @@ exports.createPages = ({boundActionCreators, graphql}) => {
                 createPage({
                     path: path,
                     component: getTemplate(node.frontmatter.template),  // extract template name from front matter and use it to retrieve the template.
-                    context: {id:node.id} // additional data can be passed via context
+                    context: {id: node.id} // additional data can be passed via context
                 });
             }
         });
@@ -91,10 +93,11 @@ exports.createPages = ({boundActionCreators, graphql}) => {
 
 
 // Create slugs for files.
-exports.onCreateNode = ({ node, boundActionCreators }) => {
-    const { createNodeField } = boundActionCreators
-    if (node.internal.type === 'MarkdownRemark') {
+exports.onCreateNode = ({node, getNode, boundActionCreators}) => {
 
+    const {createNodeField} = boundActionCreators;
+
+    if (node.internal.type === 'MarkdownRemark') {
 
         // path can come from frontmatter or... from associating a title to path
         let path;
@@ -104,19 +107,29 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
             path = node.frontmatter.path
         }
 
+        const relativeFilePath = createFilePath({
+            node,
+            getNode,
+            basePath: ""
+        });
 
         //this adds the path under "fields"
         createNodeField({
             node,
             name: 'path',
             value: path
-        })
-    }
-}
+        });
 
+        //this adds the gitHubPath under "fields"
+        createNodeField({
+            node,
+            name: 'gitHubPath',
+            value: relativeFilePath
+        });
+    }
+};
 
 function getPath(markdownId) {
-
 
     if (markdownId.includes("docs/structure.md")) {
         return "/learn/metadata-schema/structure";
@@ -127,7 +140,6 @@ function getPath(markdownId) {
     else {
         return null;
     }
-
 }
 
 
