@@ -264,21 +264,21 @@ const siteMap =
                         ]
                     },
                     {
-                        name: "Metadata Schema",
-                        key: "metadata-schema",
+                        name: "Metadata Standards",
+                        key: "metadata-standards",
                         children: [
                             {
                                 name: "Metadata Dictionary",
-                                key: "/learn/metadata-schema/metadata-dictionary"
+                                key: "/learn/metadata-standards/metadata-dictionary"
                             }
                             ,
                             {
                                 name: "Overview of Metadata Structure",
-                                key: "/learn/metadata-schema/structure"
+                                key: "/learn/metadata-standards/structure"
                             },
                             {
                                 name: "Metadata Design and Implementation Choices",
-                                key: "/learn/metadata-schema/rationale"
+                                key: "/learn/metadata-standards/rationale"
                             }
 
 

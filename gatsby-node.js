@@ -132,9 +132,9 @@ exports.onCreateNode = ({node, getNode, boundActionCreators}) => {
 function getPath(markdownId) {
 
     if (markdownId.includes("docs/structure.md")) {
-        return "/learn/metadata-schema/structure";
+        return "/learn/metadata-standards/structure";
     } else if  (markdownId.includes("docs/rationale.md")) {
-        return "/learn/metadata-schema/rationale";
+        return "/learn/metadata-standards/rationale";
     }
 
     else {
