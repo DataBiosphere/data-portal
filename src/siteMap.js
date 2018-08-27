@@ -274,6 +274,22 @@ const siteMap =
                                     {
                                         name: "Biomaterial",
                                         key: "/learn/metadata-standards/metadata-dictionary/biomaterial"
+                                    },
+                                    {
+                                        name: "Process",
+                                        key: "/learn/metadata-standards/metadata-dictionary/process"
+                                    },
+                                    {
+                                        name: "Protocol",
+                                        key: "/learn/metadata-standards/metadata-dictionary/protocol"
+                                    },
+                                    {
+                                        name: "Project",
+                                        key: "/learn/metadata-standards/metadata-dictionary/project"
+                                    },
+                                    {
+                                        name: "File",
+                                        key: "/learn/metadata-standards/metadata-dictionary/file"
                                     }
                                 ]
                             }

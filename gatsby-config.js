@@ -16,8 +16,8 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/node_modules/data-portal-content/content`,
-                // path: `/Users/dave/projects/data-portal-content/content`,
+                // path: `${__dirname}/node_modules/data-portal-content/content`,
+                path: `/Users/franmcdade/sandbox/data-portal-content/content`,
                 name: "markdown-pages",
             }
         },

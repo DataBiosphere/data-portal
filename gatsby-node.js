@@ -13,6 +13,7 @@ const {createFilePath} = require(`gatsby-source-filesystem`);
 const aboutOverviewTemplate = path.resolve(`src/templates/aboutOverviewTemplate.js`);
 const contentTemplate = path.resolve(`src/templates/contentTemplate.js`);
 const contributeOverviewTemplate = path.resolve(`src/templates/contributeOverviewTemplate.js`);
+const metadataTemplate = path.resolve(`src/templates/metadataTemplate.js`);
 
 
 function getTemplate(templateName) {
@@ -23,6 +24,9 @@ function getTemplate(templateName) {
     }
     if (templateName === "contributeOverviewTemplate") {
         return contributeOverviewTemplate;
+    }
+    if (templateName === "metadataTemplate") {
+        return metadataTemplate;
     }
 
     // if not return the default content template.
@@ -47,6 +51,7 @@ exports.createPages = ({boundActionCreators, graphql}) => {
             frontmatter {
               path
               template
+              metadataCoreName
               linked {
                childMarkdownRemark{
                 frontmatter{
@@ -83,7 +88,7 @@ exports.createPages = ({boundActionCreators, graphql}) => {
                 createPage({
                     path: path,
                     component: getTemplate(node.frontmatter.template),  // extract template name from front matter and use it to retrieve the template.
-                    context: {id: node.id} // additional data can be passed via context
+                    context: {id: node.id, metadataCoreName: node.frontmatter.metadataCoreName} // additional data can be passed via context
                 });
             }
         });
