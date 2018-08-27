@@ -12,17 +12,18 @@ class Metadata extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props);
     }
 
     render() {
         return (
             <div>
-                <h3>{this.props.entity.entity}</h3>
+                <h3>{this.props.entity.title}</h3>
                 <table>
                     <tbody>
-                    {this.props.entity.properties.map((element, i) => <tr key={i}>
-                        <td><strong>{element.name}</strong></td>
+                    {this.props.entity.properties.filter((element) => {
+                        return element.name !=="describedBy" && element.name !=="schema_version" && element.name !== "schema_type";
+                    }).map((element, i) => <tr key={i}>
+                        <td><strong>{element.userFriendly ? element.userFriendly : element.name}</strong></td>
                         <td>{element.description}</td>
                     </tr>)}
                     </tbody>

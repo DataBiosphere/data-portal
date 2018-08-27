@@ -55,7 +55,8 @@ async function onCreateNode({ node, getNode, boundActionCreators, loadNodeConten
     const properties = propertyNames.map((name) =>{
         return {
             name: name,
-            description: parsedContent.properties[name].description
+            description: parsedContent.properties[name].description,
+            userFriendly: parsedContent.properties[name].user_friendly
         }
     });
     
