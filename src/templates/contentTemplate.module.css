@@ -215,11 +215,18 @@ a {
 }
 
 .markdownContent .editContent {
+    border-top: 1px solid #EAEAEA;
+    float: right;
     margin: 14px 0;
+    padding: 8px 0;
+    width: 100%;
 }
 
 .markdownContent .editContent a {
+    color: rgba(28, 124, 199, 0.8);
     font-size: 12px;
+    font-style: italic;
+
 }
 
 /* List */
