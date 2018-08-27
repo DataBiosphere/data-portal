@@ -34,7 +34,7 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/_metadata-schema/json-schema`,
+                path: `${__dirname}/_metadata-schema/json_schema`,
                // path: `/Users/franmcdade/sandbox/hca-metadata-schema/json_schema`,
                 // path: `/Users/dave/projects/hca-metadata-schema/json_schema`,
                 name: "json-schema",
