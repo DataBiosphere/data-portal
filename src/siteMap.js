@@ -269,7 +269,13 @@ const siteMap =
                         children: [
                             {
                                 name: "Metadata Dictionary",
-                                key: "/learn/metadata-standards/metadata-dictionary"
+                                key: "/learn/metadata-standards/metadata-dictionary",
+                                children: [
+                                    {
+                                        name: "Biomaterial",
+                                        key: "/learn/metadata-standards/metadata-dictionary/biomaterial"
+                                    }
+                                ]
                             }
                             ,
                             {
