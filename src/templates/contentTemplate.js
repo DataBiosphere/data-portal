@@ -41,6 +41,7 @@ export default function Template({data}) {
 
     return (
         <div>
+            <h1>{markdownRemark.id}</h1>
             <Section docPath={docPath}/>
             <TabNav docPath={docPath}/>
             <div className={compStyles.wrapper}>
@@ -63,10 +64,12 @@ export default function Template({data}) {
         </div>
     );
 }
+
 // modified to find the page by id which is passed in as context
 export const pageQuery = graphql`
   query ContentPostByPath($id: String!) {
     markdownRemark(id: { eq: $id  }) {
+      id
       html
       fields{
             path
@@ -80,15 +83,14 @@ export const pageQuery = graphql`
         componentName
         linked {
                childMarkdownRemark{
-               html
-               frontmatter{
-                    path
-                    title
-                    subTitle
-                    githubUrl
-                }
+                   html
+                   frontmatter{
+                        path
+                        title
+                        subTitle
+                    }
                }
-              }
+        }
       }
     }
   }

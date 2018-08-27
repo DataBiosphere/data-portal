@@ -1,8 +1,10 @@
-const _ = require(`lodash`)
-const crypto = require(`crypto`)
-const path = require(`path`)
+const _ = require(`lodash`);
+const crypto = require(`crypto`);
+const path = require(`path`);
+const {createFilePath} = require(`gatsby-source-filesystem`);
 
-async function onCreateNode({ node, boundActionCreators, loadNodeContent }) {
+
+async function onCreateNode({ node, getNode, boundActionCreators, loadNodeContent }) {
 
 
     const { createNode, createParentChildLink } = boundActionCreators;
@@ -36,8 +38,17 @@ async function onCreateNode({ node, boundActionCreators, loadNodeContent }) {
 
     console.log(node.sourceInstanceName);
 
-    const content = await loadNodeContent(node)
-    const parsedContent = JSON.parse(content)
+    const content = await loadNodeContent(node);
+    const parsedContent = JSON.parse(content);
+
+
+    const relativeFilePath = createFilePath({
+        node,
+        getNode,
+        basePath: ""
+    });
+
+    const sections = relativeFilePath.split("/");
 
     const propertyNames = _.keys(parsedContent.properties);
 
@@ -52,8 +63,12 @@ async function onCreateNode({ node, boundActionCreators, loadNodeContent }) {
     const entity = {
         title: parsedContent.title,
         description:parsedContent.description,
-        properties: properties
-    }
+        properties: properties,
+        relativeFilePath: relativeFilePath,
+        schemaType: sections[1], // core, type or module
+        coreEntity: sections[2], // core type biomaterial, project,
+        category: sections[4] ? sections[3] : ""
+    };
 
     console.log(entity);
 
