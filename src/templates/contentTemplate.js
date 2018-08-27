@@ -54,7 +54,7 @@ export default function Template({data}) {
                         {linked && (componentName === "analyze") ? <Analyze linked={linked}/> : null}
                         {linked && (componentName === "about") ? <About subTitle={subTitle} linked={linked}/> : null}
                         {(componentName === "metadata") ? <Metadata/> : null}
-                        <div className={compStyles.editContent}><a href={editPath} target="_blank">Edit Me</a></div>
+                        <a className={compStyles.editContent} href={editPath} target="_blank">Edit Me</a>
                     </div>
                 </div>
             </div>

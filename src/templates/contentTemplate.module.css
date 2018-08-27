@@ -73,27 +73,6 @@ p[class^="xxs"] {
     margin: 0 0 14px;
 }
 
-/* Wrapper */
-.wrapper {
-    align-items: center;
-    display: flex;
-    padding: 0 16px;
-}
-
-/* Content */
-.hcaContent {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    margin: 36px 0;
-}
-
-/* Content */
-.hcaContent .markdownContent {
-    margin-right: 0;
-    width: 100%;
-}
-
 /* Markdown styles */
 /* Embedded video wrapper */
 div[class*="gatsby-resp-iframe-wrapper"] {
@@ -214,19 +193,35 @@ a {
     text-decoration: none;
 }
 
-.markdownContent .editContent {
-    border-top: 1px solid #EAEAEA;
-    float: right;
-    margin: 14px 0;
-    padding: 8px 0;
+/* Wrapper */
+.wrapper {
+    align-items: center;
+    display: flex;
+    padding: 0 16px;
+}
+
+/* Content */
+.hcaContent {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 36px 0;
+}
+
+/* Content */
+.hcaContent .markdownContent {
+    margin-right: 0;
     width: 100%;
 }
 
-.markdownContent .editContent a {
-    color: rgba(28, 124, 199, 0.8);
+/* Edit me */
+.markdownContent .editContent {
+    color: rgba(28, 124, 199, 0.6);
+    float: right;
     font-size: 12px;
-    font-style: italic;
-
+    margin: 14px 0 0;
+    text-align: right;
+    width: 100%;
 }
 
 /* List */
