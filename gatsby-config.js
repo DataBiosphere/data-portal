@@ -24,9 +24,10 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
+                path: `/Users/franmcdade/sandbox/hca-metadata-schema/docs`,
                 // path: `/Users/dave/projects/hca-metadata-schema/docs`,
                 //path: `${__dirname}/_metadata-schema/docs`,
-                path: `/Users/dave/projects/hca-metadata-schema/docs`,
+                // path: `/Users/dave/projects/hca-metadata-schema/docs`,
                 //path: `${__dirname}/_metadata-schema/docs`,
 
                 name: "metadata-markdown-pages",
