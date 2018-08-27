@@ -27,6 +27,36 @@ let metadataTable = [
         ]
     }];
 
+
+let metadataTable2 = [
+    {
+        entity: "Some Entity",
+        properties: [
+            {
+                name: "Biomaterial ID",
+                description: "A unique ID for this biomaterial"
+            },
+            {
+                name: "Biomaterial Name",
+                description: "A short, descriptive name for the biomaterial that need not be unique"
+            },
+            {
+                name: "Biomaterial Description",
+                description: "A general description of the biomaterial"
+            }
+        ]
+    }];
+
+let coreEntity = "biomaterial";
+
+let entity = {
+
+    core: metadataTable,
+    types: [metadataTable2,metadataTable,metadataTable],
+    modules:[metadataTable,metadataTable,metadataTable,metadataTable]
+
+}
+
 class Metadata extends React.Component {
 
     constructor() {
