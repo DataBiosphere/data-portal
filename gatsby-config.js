@@ -16,8 +16,8 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                //path: `${__dirname}/node_modules/data-portal-content/content`,
-                path: `/Users/dave/projects/data-portal-content/content`,
+                path: `${__dirname}/node_modules/data-portal-content/content`,
+                // path: `/Users/dave/projects/data-portal-content/content`,
                 name: "markdown-pages",
             }
         },
@@ -29,7 +29,6 @@ module.exports = {
                 //path: `${__dirname}/_metadata-schema/docs`,
                 // path: `/Users/dave/projects/hca-metadata-schema/docs`,
                 //path: `${__dirname}/_metadata-schema/docs`,
-
                 name: "metadata-markdown-pages",
             }
         },
@@ -37,7 +36,8 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `/Users/dave/projects/hca-metadata-schema/json_schema/type/biomaterial`,
+                path: `/Users/franmcdade/sandbox/hca-metadata-schema/json_schema/type/biomaterial`,
+                // path: `/Users/dave/projects/hca-metadata-schema/json_schema/type/biomaterial`,
                 name: "json-schema",
             },
         },

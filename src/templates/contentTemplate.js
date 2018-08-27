@@ -41,7 +41,6 @@ export default function Template({data}) {
 
     return (
         <div>
-            <h1>{markdownRemark.id}</h1>
             <Section docPath={docPath}/>
             <TabNav docPath={docPath}/>
             <div className={compStyles.wrapper}>
