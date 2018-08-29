@@ -252,7 +252,7 @@ const siteMap =
                                     },
                                     {
                                         name: "Workflow Best Practices",
-                                        key: "/learn/userguides/data-processing-pipelines/secondary-analsis-workflow-best-practices"
+                                        key: "/learn/userguides/data-processing-pipelines/workflow-best-practices"
                                     }
                                 ]
                             },
