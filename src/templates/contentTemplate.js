@@ -53,7 +53,6 @@ export default function Template({data}) {
                         {linked && !componentName ? <NavOverview linked={linked}/> : null}
                         {linked && (componentName === "analyze") ? <Analyze linked={linked}/> : null}
                         {linked && (componentName === "about") ? <About subTitle={subTitle} linked={linked}/> : null}
-                        {(componentName === "metadata") ? <Metadata/> : null}
                         <a className={compStyles.editContent} href={editPath} target="_blank">Edit Me</a>
                     </div>
                 </div>
