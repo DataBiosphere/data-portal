@@ -14,6 +14,7 @@ class Analyze extends React.Component {
 
     constructor(props) {
         super(props);
+        console.log(this.props.linked);
     }
 
     render() {
@@ -25,7 +26,7 @@ class Analyze extends React.Component {
                         <p>{link.childMarkdownRemark.frontmatter.subTitle}</p>
                         {/*<p className={compStyles.xs}>Last update to GitHub: 2 days ago</p>*/}
                     </div>
-                    <a href={link.childMarkdownRemark.frontmatter.githubUrl} className={compStyles.analyze}>View</a>
+                    <a href={link.childMarkdownRemark.frontmatter.githubUrl} target="_blank" className={compStyles.analyze}>View</a>
                 </div>)}
             </div>
         );

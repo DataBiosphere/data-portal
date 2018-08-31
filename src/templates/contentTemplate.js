@@ -84,6 +84,7 @@ export const pageQuery = graphql`
                         path
                         title
                         subTitle
+                        githubUrl
                     }
                }
         }
