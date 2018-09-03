@@ -6,7 +6,7 @@
  */
 
 h3 {
-    margin-top: 32px;
+    margin-top: 48px;
 }
 
 /* Row */
@@ -26,7 +26,6 @@ h3 {
 
 /* Label */
 .metadataRow span:first-of-type {
-    font-weight: 500;
     padding-right: 8px;
     width: 25%;
 }
