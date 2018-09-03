@@ -7,6 +7,7 @@
 
 // Core dependencies
 import React from 'react';
+import compStyles from './metadata.module.css'
 
 class Metadata extends React.Component {
 
@@ -18,16 +19,14 @@ class Metadata extends React.Component {
         return (
             <div>
                 <h3>{this.props.entity.title}</h3>
-                <table>
-                    <tbody>
+                <div>
                     {this.props.entity.properties.filter((element) => {
-                        return element.name !=="describedBy" && element.name !=="schema_version" && element.name !== "schema_type";
-                    }).map((element, i) => <tr key={i}>
-                        <td><strong>{element.userFriendly ? element.userFriendly : element.name}</strong></td>
-                        <td>{element.description}</td>
-                    </tr>)}
-                    </tbody>
-                </table>
+                        return element.name !== "describedBy" && element.name !== "schema_version" && element.name !== "schema_type";
+                    }).map((element, i) => <div key={i} className={compStyles.metadataRow}>
+                        <span>{element.userFriendly ? element.userFriendly : element.name}</span>
+                        <span>{element.description}</span>
+                    </div>)}
+                </div>
             </div>
         );
     }
