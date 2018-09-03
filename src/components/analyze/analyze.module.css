@@ -5,12 +5,6 @@
  * Style definitions specific to the HCA Data Portal analyze component.
  */
 
-/* Analyze component container */
-.hcaAbout {
-    display: flex;
-    flex-direction: column;
-}
-
 /* Analyze list */
 .hcaAnalyzeList {
     border-bottom: 1px solid #EAEAEA; /* TODO colour */
@@ -39,11 +33,6 @@
     margin: 4px 0 16px;
 }
 
-/* P - class "xs" */
-.hcaAnalyzeList p.xs {
-    font-weight: 500 !important;
-}
-
 /* Button - class analyze */
 .analyze {
     align-items: center;
@@ -63,6 +52,8 @@
 }
 
 .analyze:hover {
+    border: 1px solid #0363AE; /* TODO colour */
+    color: #0363AE;
 }
 
 .analyze:focus {
