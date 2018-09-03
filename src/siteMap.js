@@ -211,10 +211,6 @@ const siteMap =
                                     {
                                         name: "Using the CLI to Access Data",
                                         key: "/learn/userguides/accessing-data/using-the-cli-to-access-data"
-                                    },
-                                    {
-                                        name: "FAQ",
-                                        key: "/learn/userguides/accessing-data/faq"
                                     }
                                 ]
 
