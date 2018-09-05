@@ -5,75 +5,6 @@
  * Style definitions specific to the HCA Data Portal metadata template component.
  */
 
-/* Typography */
-/* TODO typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: "din-2014", sans-serif;
-    font-weight: 500;
-}
-
-p {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    margin: 0 0 18px;
-}
-
-h2, .markdownContent h1 {
-    font-size: 24px;
-    line-height: 30px;
-    margin: 34px 0 36px;
-    text-transform: capitalize;
-}
-
-h2:first-of-type, .markdownContent h1:first-of-type {
-    margin-top: 0;
-}
-
-h3 {
-    font-size: 18px;
-    line-height: 24px;
-    margin: 16px 0 18px;
-}
-
-h4 {
-    font-size: 16px;
-    line-height: 22px;
-    margin: 14px 0 16px;
-}
-
-/* P - class "m" */
-p[class^="m"], h5 {
-    font-size: 16px;
-    font-weight: 400 !important;
-    line-height: 26px;
-    margin: 0 0 26px;
-}
-
-/* P - class "s" */
-p[class^="s"], h6 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400 !important;
-    line-height: 24px;
-    margin: 0 0 18px;
-}
-
-/* P - class "xs" */
-p[class*="xs"] {
-    font-size: 13px;
-    line-height: 20px;
-    margin: 0 0 16px;
-}
-
-/* P - class "xxs" */
-p[class^="xxs"] {
-    font-size: 12px;
-    line-height: 18px;
-    margin: 0 0 14px;
-}
-
 /* Wrapper */
 .wrapper {
     align-items: center;
@@ -95,130 +26,6 @@ p[class^="xxs"] {
     width: 100%;
 }
 
-/* Markdown styles */
-/* Embedded video wrapper */
-div[class*="gatsby-resp-iframe-wrapper"] {
-    padding-bottom: 316px !important; /* Padding equal to iframe max-height */
-}
-
-/* Embedded video */
-iframe {
-    margin-bottom: 24px;
-    max-height: 316px !important;
-    max-width: 560px !important;
-}
-
-/* HTML - definition list */
-dl {
-    background-color: #F4F7F9; /* TODO colour hca-blue-background */
-    border-radius: 3px;
-    margin-bottom: 24px; /* TODO confirm when typography completed */
-    padding: 24px;
-}
-
-/* HTML - dt - matches H4 spec */
-dt {
-    font-family: "din-2014", sans-serif; /* TODO typography */
-    font-size: 16px; /* TODO typography */
-    font-weight: 500; /* TODO typography */
-    line-height: 22px;
-}
-
-/* HTML - dd - matches p spec */
-dd {
-    color: #666666; /* TODO colour - TBC by Jenn - hca-gray-dark */
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    margin: 8px 0 0;
-}
-
-/* Blockquote */
-blockquote {
-    background-color: #F4F7F9; /* TODO colour hca-blue-background */
-    border-radius: 3px;
-    margin: 0 0 24px; /* TODO confirm when typography completed */
-    padding: 24px;
-}
-
-/* Blockquote heading */
-blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote h5, blockquote h6 {
-    margin: 0 0 8px;
-}
-
-/* Blockquote paragraph */
-blockquote p {
-    color: #666666; /* TODO colour - TBC by Jenn - hca-gray-dark */
-    margin: 0;
-}
-
-/* Code */
-pre, :not(pre) > code[class*="language-"], pre[class*="language-"], pre[class*="language-block-highlight"] {
-    background-color: #F8F8F8; /* TODO colour hca-off-white */
-    border-radius: 3px;
-    padding: 2px;
-}
-
-/* Code - class block-highlight */
-pre[class*="language-block-highlight"] {
-    margin-bottom: 24px; /* TODO confirm when typography completed */
-    padding: 12px 24px;
-}
-
-/* Code - language block-highlight */
-code[class*="language-block-highlight"], :not(pre) > code[class*="language-"] {
-    color: #000000; /* TODO colour - typography */
-    font-family: "PT Mono", "Montserrat"; /* TODO typography */
-    font-size: 14px; /* TODO typography */
-}
-
-td > code {
-    background-color: #DCE8F5 !important;
-}
-
-td > strong {
-    font-weight: 500;
-}
-
-/* Code */
-code {
-    white-space: pre-wrap !important; /* Allow line to wrap - responsive */
-    word-break: break-all !important; /* Allow line to wrap - responsive */
-}
-
-/* Table */
-thead tr, tbody tr {
-    border-bottom: 1px solid #CCCCCC; /* TODO colour */
-}
-
-thead tr th, tbody tr td {
-    border-bottom: none;
-}
-
-thead th, tbody tr {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 600 !important;
-    line-height: 1;
-}
-
-tbody tr {
-    font-weight: 400 !important;
-}
-
-/* Link */
-a {
-    color: #1c7cc7; /* TODO colour */
-    cursor: pointer;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    margin: 0 0 18px;
-    text-decoration: none;
-}
-
 /* Edit me */
 .markdownContent .editContent {
     color: rgba(28, 124, 199, 0.6);
@@ -227,20 +34,6 @@ a {
     margin: 14px 0 0;
     text-align: right;
     width: 100%;
-}
-
-/* List */
-ol, ul {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    list-style-position: outside;
-    margin: 0 0 18px 24px;
-}
-
-li {
-    margin-bottom: 12px;
 }
 
 /**
@@ -256,7 +49,7 @@ li {
     /* Content */
     .hcaContent .markdownContent {
         margin-right: 14px;
-        max-width: 740px;
+        max-width: 600px;
     }
 }
 

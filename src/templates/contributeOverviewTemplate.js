@@ -32,7 +32,7 @@ export default function Template({
             <div className={compStyles.wrapper}>
                 <div className={compStyles.hcaContent}>
                     <Nav docPath={docPath}/>
-                    <div className={compStyles.markdownContent}>
+                    <div>
                         <div className={compStyles.contribute}>
                             <h1>The Atlas is built by the Community</h1>
                             <div>

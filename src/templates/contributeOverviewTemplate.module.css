@@ -181,8 +181,8 @@
     text-transform: uppercase;
 }
 
-.markdownContent h2 {
-
+.markdownContent:last-of-type {
+    max-width: 600px;
 }
 
 /**
