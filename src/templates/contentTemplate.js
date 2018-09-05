@@ -38,6 +38,14 @@ export default function Template({data}) {
         subTitle = frontmatter.subTitle;
     }
 
+    const getMarkdownClassName = (component) => {
+
+        return classNames({
+            [compStyles.markdownContent]: true,
+            [compStyles.analyze]: (componentName === "analyze")
+        });
+    };
+
     return (
         <div>
             <Section docPath={docPath}/>
@@ -45,7 +53,7 @@ export default function Template({data}) {
             <div className={compStyles.wrapper}>
                 <div className={compStyles.hcaContent}>
                     <Nav docPath={docPath}/>
-                    <div className={classNames(compStyles.markdownContent)}>
+                    <div className={getMarkdownClassName(componentName)}>
                         <div
                             className="content-template"
                             dangerouslySetInnerHTML={{__html: html}}

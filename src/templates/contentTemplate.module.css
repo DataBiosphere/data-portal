@@ -253,6 +253,11 @@ li {
         margin-right: 14px;
         max-width: 600px;
     }
+
+    /* Analyze component */
+    .hcaContent .analyze {
+        max-width: 700px;
+    }
 }
 
 /**

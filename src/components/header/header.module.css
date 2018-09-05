@@ -37,7 +37,7 @@
 a.logo, a.logo img {
     align-self: center;
     cursor: pointer;
-    height: 40px;
+    height: 30px;
     line-height: 0 !important;
     margin-bottom: 0 !important; /* TODO review global */
 }
@@ -175,6 +175,8 @@ a.logo, a.logo img {
 
     .links:not(.small) {
         display: flex;
+        left: 180px;
+        position: absolute;
     }
 
     [id*=link] {
@@ -210,6 +212,17 @@ a.logo, a.logo img {
     /* Wrapper */
     .wrapper {
         padding: 0 30px; /* Gutter 30px */
+    }
+
+    /* Logo */
+    a.logo, a.logo img {
+        height: 40px;
+    }
+
+    /* Links */
+    .links:not(.small) {
+        margin-left: -140px;
+        position: unset;
     }
 }
 
