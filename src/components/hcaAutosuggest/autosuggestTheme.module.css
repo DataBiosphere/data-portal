@@ -44,7 +44,8 @@
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06); /* TODO colour */
     box-sizing: border-box;
     max-height: 256px;
-    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar in IE unless actively scrolling. */
+    overflow-y: auto; /* Hide webkit scrollbar unless actively scrolling. */
     padding: 8px 16px 12px;
     position: absolute;
     top: 56px; /* 50px for select field + 6px below select field */
