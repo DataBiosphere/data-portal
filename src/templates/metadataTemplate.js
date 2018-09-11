@@ -71,7 +71,7 @@ export default function Template({data}) {
     const markdownRemark = data.markdown; // data.markdownRemark holds our post data
     const {frontmatter, html} = markdownRemark;
 
-    let docPath, metadataCoreName, gitHubPath;
+    let docPath, metadataCoreName, gitHubPath, title;
     docPath = markdownRemark.fields.path;
     gitHubPath = markdownRemark.fields.gitHubPath.substring(0, markdownRemark.fields.gitHubPath.lastIndexOf("/"));
 
@@ -79,6 +79,7 @@ export default function Template({data}) {
 
     if (frontmatter) {
         metadataCoreName = frontmatter.metadataCoreName;
+        title = frontmatter.title;
     }
 
     const core = data.metadata.edges.find((x) => {
@@ -107,11 +108,11 @@ export default function Template({data}) {
                             className="content-template"
                             dangerouslySetInnerHTML={{__html: html}}
                         />
-                        <h2>{metadataCoreName} Core</h2>
+                        <h2>{title} Core</h2>
                         <Metadata entity={core}/>
-                        <h2>{metadataCoreName} Types</h2>
+                        <h2>{title} Types</h2>
                         {types.map((e, i) => <Metadata entity={e} key={i}/>)}
-                        <h2>{metadataCoreName} Modules</h2>
+                        <h2>{title} Modules</h2>
                         {modules.map((e, i) => <Metadata entity={e} key={i}/>)}
                         <a className={compStyles.editContent} href={editPath} target="_blank">Edit Me</a>
                     </div>
