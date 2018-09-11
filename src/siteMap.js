@@ -203,12 +203,6 @@ const siteMap =
                                         key: "/learn/userguides/accessing-data/quick-start-guide"
                                     },
                                     {
-
-                                        name: "Using the Data Browser to Access Data",
-                                        key: "/learn/userguides/accessing-data/using-the-data-browser-to-access-data"
-
-                                    },
-                                    {
                                         name: "Using the CLI to Access Data",
                                         key: "/learn/userguides/accessing-data/using-the-cli-to-access-data"
                                     }
