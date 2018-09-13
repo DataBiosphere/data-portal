@@ -122,23 +122,30 @@ const siteMap =
                             key: "/develop/development-guides/development-guides-overview"
                         },
                         {
-                            name: "Pipeline Development Guide",
-                            key: "/develop/development-guides/pipeline-development-guide"
-                        },
-                        {
-
-                            name: "Contributing a Pipeline to the HCA DCP",
-                            key: "/develop/development-guides/contributing-a-pipeline-to-the-hca-dcp",
-                        },
-                        {
-
-                            name: "Adding an Environment to the Portability Service",
-                            key: "/develop/development-guides/adding-an-environment-to-the-portability-service",
-                        },
-                        {
-
-                            name: "Tertiary Portal Development Guide",
-                            key: "/develop/development-guides/tertiary-portal-development-guide"
+                            name: "Pipeline Processing Development Guides",
+                            key: "/develop/development-guides/pipeline-processing-development-guides/overview-pipeline-processing-development-guides",
+                            children: [
+                                {
+                                    name: "Best Practices for Building Data Processing Pipelines",
+                                    key: "/develop/development-guides/pipeline-processing-development-guides/workflow-best-practices"
+                                },
+                                {
+                                    name: "Quick Start for Building Pipelines",
+                                    key: "/develop/development-guides/pipeline-processing-development-guides/pipeline-development-guide"
+                                },
+                                {
+                                    name: "Pipeline Testing Guide",
+                                    key: "/develop/development-guides/pipeline-processing-development-guides/testing-pipelines"
+                                },
+                                {
+                                    name: "Contributing a Pipeline to the HCA DCP",
+                                    key: "/develop/development-guides/pipeline-processing-development-guides/contributing-a-pipeline-to-the-hca-dcp"
+                                },
+                                {
+                                    name: "Adding an Environment to the Portability Service",
+                                    key: "/develop/development-guides/pipeline-processing-development-guides/adding-an-environment-to-the-portability-service"
+                                }
+                            ]
                         },
                         {
 
@@ -146,8 +153,9 @@ const siteMap =
                             key: "/develop/development-guides/ingest-broker-development-guide"
                         },
                         {
-                            name: "Pipeline Testing Guide",
-                            key: "/develop/development-guides/testing-pipelines"
+
+                            name: "Tertiary Portal Development Guide",
+                            key: "/develop/development-guides/tertiary-portal-development-guide"
                         },
                         {
                             name: "Data Consumer Vignettes",
@@ -239,10 +247,6 @@ const siteMap =
                                     {
                                         name: "Smart-seq2 Workflow in Detail",
                                         key: "/learn/userguides/data-processing-pipelines/smart-seq2-workflow-in-detail"
-                                    },
-                                    {
-                                        name: "Workflow Best Practices",
-                                        key: "/learn/userguides/data-processing-pipelines/workflow-best-practices"
                                     }
                                 ]
                             },
