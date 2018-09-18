@@ -44,8 +44,8 @@ const siteMap =
                             key: "/about/what-is-the-platform/data-browser"
                         },
                         {
-                            name: "Secondary Analysis",
-                            key: "/about/what-is-the-platform/secondary-analysis"
+                            name: "Data Processing Pipelines",
+                            key: "/about/what-is-the-platform/data-processing-pipelines"
                         }
                     ]
                 },
@@ -122,6 +122,11 @@ const siteMap =
                             key: "/develop/development-guides/development-guides-overview"
                         },
                         {
+
+                            name: "Ingest Data Brokers Development Guide",
+                            key: "/develop/development-guides/ingest-broker-development-guide"
+                        },
+                        {
                             name: "Pipeline Processing Development Guides",
                             key: "/develop/development-guides/pipeline-processing-development-guides/overview-pipeline-processing-development-guides",
                             children: [
@@ -148,14 +153,8 @@ const siteMap =
                             ]
                         },
                         {
-
-                            name: "Ingest Data Brokers Development Guide",
-                            key: "/develop/development-guides/ingest-broker-development-guide"
-                        },
-                        {
-
-                            name: "Tertiary Portal Development Guide",
-                            key: "/develop/development-guides/tertiary-portal-development-guide"
+                            name: "Analysis Applications",
+                            key: "/develop/development-guides/analysis-applications"
                         },
                         {
                             name: "Data Consumer Vignettes",
@@ -373,10 +372,6 @@ const siteMap =
                         {
                             name: "What to Prepare",
                             key: "/contribute/overview/what-to-prepare"
-                        },
-                        {
-                            name: "Terms and Conditions",
-                            key: "/contribute/overview/terms-and-conditions"
                         }
                     ]
                 }
