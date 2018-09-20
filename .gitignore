@@ -18,3 +18,4 @@ site/bundle.css
 site/style-bundle.js
 /.cache/
 /public/
+/node_modules_bak/
