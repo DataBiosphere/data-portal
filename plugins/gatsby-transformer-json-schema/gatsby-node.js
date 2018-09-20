@@ -36,7 +36,6 @@ async function onCreateNode({ node, getNode, boundActionCreators, loadNodeConten
         return
     }
 
-    console.log(node.sourceInstanceName);
 
     const content = await loadNodeContent(node);
     const parsedContent = JSON.parse(content);
@@ -70,8 +69,6 @@ async function onCreateNode({ node, getNode, boundActionCreators, loadNodeConten
         coreEntity: sections[2], // core type biomaterial, project,
         category: sections[4] ? sections[3] : ""
     };
-
-    console.log(entity);
 
     transformObject(
         entity,
