@@ -10,7 +10,7 @@ addons:
     - npm
 before_install:
 - pip install awscli --upgrade
-- npm install gatsby-cli --global
+- npm install gatsby-cli@1.1.51 --global
 install: npm install
 script: make build
 deploy:
