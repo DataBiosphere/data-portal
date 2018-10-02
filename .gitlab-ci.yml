@@ -1,12 +1,9 @@
 image: node:10.0.0
-
 stages:
   - build
-
 cache:
   paths:
     - node_modules/
-
 before_script:
   - npm install gatsby-cli@1.1.51 --global
   - npm install
