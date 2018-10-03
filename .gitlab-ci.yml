@@ -9,6 +9,7 @@ cache:
     - node_modules/
 
 before_script:
+  - pip install awscli
   - export STAGING_BUCKET=s3://staging.data.humancellatlas.org/
   - export INTEGRATION_BUCKET=s3://integration.data.humancellatlas.org/
   - export DEV_BUCKET=s3://dev.data.humancellatlas.org/
