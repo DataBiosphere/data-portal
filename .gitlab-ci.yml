@@ -73,8 +73,7 @@ develop_deploy:
   script:
     - export BUCKET=s3://dev.data.humancellatlas.org/
     - aws s3 sync --acl public-read public/ $BUCKET --delete
-    - echo $DEV_CLOUDFRONT_DIST_ID
-    - aws cloudfront create-invalidation --distribution-id $DEV_CLOUDFRONT_DIST_ID --paths "/*"
+    - aws cloudfront create-invalidation --distribution-id EDQUW4UP25O4L --paths "/*"
   only:
     - develop
 # Integration Deploy
@@ -85,8 +84,7 @@ integration_deploy:
   script:
     - export BUCKET=s3://integration.data.humancellatlas.org/
     - aws s3 sync --acl public-read public/ $BUCKET --delete
-    - echo $INT_CLOUDFRONT_DIST_ID
-    - aws cloudfront create-invalidation --distribution-id $INT_CLOUDFRONT_DIST_ID --paths "/*"
+    - aws cloudfront create-invalidation --distribution-id E2MB44J9QEJOYP --paths "/*"
   only:
     - integration
 
@@ -98,7 +96,6 @@ staging_deploy:
   script:
     - export BUCKET=s3://staging.data.humancellatlas.org/
     - aws s3 sync --acl public-read public/ $BUCKET --delete
-    - echo $STAGING_CLOUDFRONT_DIST_ID
-    - aws cloudfront create-invalidation --distribution-id $STAGING_CLOUDFRONT_DIST_ID --paths "/*"
+    - aws cloudfront create-invalidation --distribution-id E38D6Y96QKYO6 --paths "/*"
   only:
     - staging
