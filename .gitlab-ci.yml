@@ -6,94 +6,89 @@ stages:
 
 cache:
   paths:
-    - node_modules/
+  - node_modules/
 
-  - npm install gatsby-cli@1.1.51 --global
-# commands after npm install did not run so making npm install last.
-  - npm install
-
-buildGatsby_develop:
+# Build Jobs
+# Build Job Template
+.build_template:
   stage: build
+  before_script:
+    - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
+    - npm install gatsby-cli@1.1.51 --global
+    - npm install
+  artifacts:
+      paths:
+        - public
+
+# Develop Build
+build_develop:
+  extends: .build_template
   environment:
     name: develop
   script:
-    - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
-    - npm install gatsby-cli@1.1.51 --global
     - export GATSBY_EXPLORE_URL=https://dev.explore.data.humancellatlas.org/
     - gatsby build
-     - npm install gatsby-cli@1.1.51 --global
-    # commands after npm install did not run so making npm install last.
-      - npm install
-  artifacts:
-    paths:
-    - public
   only:
     - develop
 
-buildGatsby_integration:
-  stage: build
+# Integration Build
+build_integration:
+  extends: .build_template
   environment:
     name: integration
   script:
-    - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
-    - npm install gatsby-cli@1.1.51 --global
     - export GATSBY_EXPLORE_URL=https://integration.explore.data.humancellatlas.org/
     - gatsby build
-  artifacts:
-    paths:
-    - public
   only:
     - integration
 
-buildGatsby_staging:
-  stage: build
+# Staging Build
+build_staging:
+  extends: .build_template
   environment:
     name: staging
   script:
-    - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
-    - npm install gatsby-cli@1.1.51 --global
     - export GATSBY_EXPLORE_URL=https://staging.explore.data.humancellatlas.org/
     - gatsby build
-  artifacts:
-    paths:
-    - public
   only:
     - staging
 
-develop_deploy:
+# Deploy Jobs
+# Deploy Job Template
+.deploy_template:
   stage: deploy
   image: python:3.5
+  before_script:
+    - pip install awscli --upgrade --user
+
+develop_deploy:
+  extends: .deploy_template
   environment:
     name: develop
   script:
     - export BUCKET=s3://dev.data.humancellatlas.org/
-    - pip install awscli --upgrade --user
     - aws s3 sync --acl public-read public/ $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID --paths "/*"
   only:
     - develop
 
 integration_deploy:
-  stage: deploy
-  image: python:3.5
+  extends: .deploy_template
   environment:
     name: integration
   script:
     - export BUCKET=s3://integration.data.humancellatlas.org/
-    - pip install awscli --upgrade --user
     - aws s3 sync --acl public-read public/ $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID --paths "/*"
   only:
     - integration
 
 staging_deploy:
-  stage: deploy
-  image: python:3.5
+  extends: .deploy_template
   environment:
     name: staging
   script:
     - export BUCKET=s3://staging.data.humancellatlas.org/
-    - pip install awscli --upgrade --user
     - aws s3 sync --acl public-read public/ $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID --paths "/*"
   only:
