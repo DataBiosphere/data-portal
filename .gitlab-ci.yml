@@ -60,11 +60,11 @@ buildGatsby_staging:
 
 develop_deploy:
   stage: deploy
+  environment:
+    name: develop
   script:
     - aws s3 sync --acl public-read public/ $DEV_BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID --paths "/*"
-  environment:
-    name: develop
   only:
     - develop
 
