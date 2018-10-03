@@ -53,7 +53,7 @@ class IndexPage extends React.Component {
                     <div className={compStyles.wrapper}>
                         <div>
                             <div className={compStyles.exploreText}>
-                                <h2>Start Exploring</h2>
+                                <h2>GitlabTest - Start Exploring</h2>
                                 <p className={compStyles.s}>Hover over or click on an organ to view data from that
                                     organ</p>
                             </div>

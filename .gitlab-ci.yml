@@ -2,12 +2,16 @@ image: node:10.0.0
 
 stages:
   - build
+  - deploy
 
 cache:
   paths:
     - node_modules/
 
 before_script:
+  - export STAGING_BUCKET=s3://staging.data.humancellatlas.org/
+  - export INTEGRATION_BUCKET=s3://integration.data.humancellatlas.org/
+  - export DEV_BUCKET=s3://dev.data.humancellatlas.org/
   - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
   - npm install gatsby-cli@1.1.51 --global
 # commands after npm install did not run so making npm install last.
@@ -44,7 +48,7 @@ buildGatsby_integration:
 buildGatsby_staging:
   stage: build
   environment:
-    name: integration
+    name: staging
   script:
     - export GATSBY_EXPLORE_URL=https://staging.explore.data.humancellatlas.org/
     - gatsby build
@@ -53,3 +57,14 @@ buildGatsby_staging:
     - public
   only:
     - staging
+
+develop_deploy:
+  stage: deploy
+  script:
+    - aws s3 sync --acl public-read public/ $DEV_BUCKET --delete
+   	- aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID --paths "/*"
+  environment:
+    name: develop
+  only:
+    - develop
+
