@@ -62,7 +62,7 @@ develop_deploy:
   stage: deploy
   script:
     - aws s3 sync --acl public-read public/ $DEV_BUCKET --delete
-   	- aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID --paths "/*"
+    - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID --paths "/*"
   environment:
     name: develop
   only:
