@@ -14,7 +14,7 @@ before_script:
   - npm install
 
 
-buildGatsby:
+buildGatsby_develop:
   stage: build
   environment:
     name: develop
@@ -26,3 +26,30 @@ buildGatsby:
     - public
   only:
     - develop
+
+
+buildGatsby_integration:
+  stage: build
+  environment:
+    name: integration
+  script:
+    - export GATSBY_EXPLORE_URL=https://integration.explore.data.humancellatlas.org/
+    - gatsby build
+  artifacts:
+    paths:
+    - public
+  only:
+    - integration
+
+buildGatsby_staging:
+  stage: build
+  environment:
+    name: integration
+  script:
+    - export GATSBY_EXPLORE_URL=https://staging.explore.data.humancellatlas.org/
+    - gatsby build
+  artifacts:
+    paths:
+    - public
+  only:
+    - staging
