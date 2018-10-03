@@ -64,8 +64,8 @@ build_staging:
   stage: deploy
   image: python:3.5
   before_script:
-    - pip install awscli --upgrade
-    
+    - pip install awscli
+
 # Dev Deploy
 develop_deploy:
   <<: *deploy_template
