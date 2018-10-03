@@ -60,11 +60,9 @@ buildGatsby_staging:
 
 develop_deploy:
   stage: deploy
-  environment:
-    name: develop
   image: python:3.5
-  dependencies:
-    - build
+   environment:
+      name: develop
   script:
     - pip install awscli --upgrade --user
     - aws s3 sync --acl public-read public/ $DEV_BUCKET --delete
