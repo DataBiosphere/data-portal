@@ -10,13 +10,16 @@ cache:
 before_script:
   - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
   - npm install gatsby-cli@1.1.51 --global
+# commands after npm install did not run so making npm install last.
   - npm install
 
 
 buildGatsby:
   stage: build
-  environment: develop
+  environment:
+    name: develop
   script:
+    - export GATSBY_EXPLORE_URL=https://dev.explore.data.humancellatlas.org/
     - gatsby build
   artifacts:
     paths:
