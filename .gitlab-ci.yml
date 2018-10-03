@@ -9,7 +9,6 @@ cache:
     - node_modules/
 
 before_script:
-  - pip install awscli
   - export STAGING_BUCKET=s3://staging.data.humancellatlas.org/
   - export INTEGRATION_BUCKET=s3://integration.data.humancellatlas.org/
   - export DEV_BUCKET=s3://dev.data.humancellatlas.org/
@@ -63,7 +62,11 @@ develop_deploy:
   stage: deploy
   environment:
     name: develop
+  image: python:3.5
+  dependencies:
+    - build
   script:
+    - pip install awscli --upgrade --user
     - aws s3 sync --acl public-read public/ $DEV_BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID --paths "/*"
   only:
