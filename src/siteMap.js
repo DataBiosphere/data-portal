@@ -48,16 +48,6 @@ const siteMap =
                             key: "/about/what-is-the-platform/data-processing-pipelines"
                         }
                     ]
-                },
-                {
-                    name: "Roadmap",
-                    key: "roadmap",
-                    children: [
-                        {
-                            name: "Roadmap",
-                            key: "/about/roadmap/roadmap-overview"
-                        }
-                    ]
                 }
             ]
         },
