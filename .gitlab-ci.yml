@@ -66,7 +66,7 @@ build_staging:
     - pip install awscli
 
 # Dev Deploy
-develop_deploy:
+deploy_develop:
   <<: *deploy_template
   environment:
     name: develop
@@ -77,7 +77,7 @@ develop_deploy:
   only:
     - develop
 # Integration Deploy
-integration_deploy:
+deploy_integration:
   <<: *deploy_template
   environment:
     name: integration
@@ -89,7 +89,7 @@ integration_deploy:
     - integration
 
 # Staging Deploy
-staging_deploy:
+deploy_staging:
   <<: *deploy_template
   environment:
     name: staging
