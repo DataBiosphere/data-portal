@@ -26,7 +26,7 @@ build_develop:
   environment:
     name: develop
   script:
-    - export GATSBY_EXPLORE_URL=https://dev.explore.data.humancellatlas.org/
+    - export GATSBY_EXPLORE_URL=https://dev.data.humancellatlas.org/explore/
     - gatsby build
   only:
     - develop
