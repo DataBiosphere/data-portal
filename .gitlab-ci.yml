@@ -48,7 +48,7 @@ build_staging:
   environment:
     name: staging
   script:
-    - export GATSBY_EXPLORE_URL=https://staging.explore.data.humancellatlas.org/
+    - export GATSBY_EXPLORE_URL=https://staging.data.humancellatlas.org/explore/
     - gatsby build
   only:
     - staging
