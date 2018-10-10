@@ -37,7 +37,7 @@ build_integration:
   environment:
     name: integration
   script:
-    - export GATSBY_EXPLORE_URL=https://integration.explore.data.humancellatlas.org/
+    - export GATSBY_EXPLORE_URL=https://integration.data.humancellatlas.org/explore/
     - gatsby build
   only:
     - integration
