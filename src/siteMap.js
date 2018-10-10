@@ -382,6 +382,22 @@ const siteMap =
                     ]
                 }
             ]
+        },
+        {
+            name: "Privacy",
+            key: "privacy",
+            children: [
+                {
+                    name: "",
+                    key: "privacy",
+                    children: [
+                        {
+                            name: "",
+                            key: "/privacy/privacy/privacy"
+                        }
+                    ]
+                }
+            ]
         }
     ];
 

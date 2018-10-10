@@ -26,6 +26,7 @@ const Footer = () => (
                 {/*<Link to="/">Feature Requests</Link>*/}
                 <Link to="/help/help/help-and-faq">Help</Link>
                 <Link to="/attributions">Attributions</Link>
+                <Link to="/privacy/privacy/privacy">Privacy</Link>
                 <Link to="/contact/contact/contact-us">Contact</Link>
             </div>
         </div>

@@ -26,7 +26,7 @@ export default function Template({data}) {
     const {markdownRemark} = data; // data.markdownRemark holds our post data
     const {frontmatter, html} = markdownRemark;
 
-    let docPath, linked, componentName, subTitle, gitHubPath;
+    let componentName, docPath, gitHubPath, linked, noNav, subTitle;
     docPath = markdownRemark.fields.path;
     gitHubPath = markdownRemark.fields.gitHubPath.substring(0, markdownRemark.fields.gitHubPath.lastIndexOf("/"));
 
@@ -36,6 +36,7 @@ export default function Template({data}) {
         linked = frontmatter.linked;
         componentName = frontmatter.componentName;
         subTitle = frontmatter.subTitle;
+        noNav = frontmatter.noNav;
     }
 
     const getMarkdownClassName = (component) => {
@@ -52,7 +53,7 @@ export default function Template({data}) {
             <TabNav docPath={docPath}/>
             <div className={compStyles.wrapper}>
                 <div className={compStyles.hcaContent}>
-                    <Nav docPath={docPath}/>
+                    {noNav ? null : <Nav docPath={docPath}/>}
                     <div className={getMarkdownClassName(componentName)}>
                         <div
                             className="content-template"
@@ -85,6 +86,7 @@ export const pageQuery = graphql`
         title
         subTitle
         componentName
+        noNav
         linked {
                childMarkdownRemark{
                    html

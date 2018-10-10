@@ -21,6 +21,7 @@
 
 /* Logo and back arrow */
 .logo {
+    line-height: 0;
     margin: 0;
     position: relative;
     text-decoration: none;
@@ -41,25 +42,26 @@
 /* Logo image */
 .logo img {
     cursor: pointer;
-    height: 96px;
+    height: 72px;
     margin-bottom: 0;
-    padding: 12px 0;
+    padding: 0;
 }
 
 /* Footer links container */
 .links {
     align-items: center;
     display: flex;
+    flex-direction: column;
 }
 
 /* Footer links */
 .links a {
     color: #ffffff; /* TODO color */
     font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 16px; /* TODO typography */
+    font-size: 14px; /* TODO typography */
     font-weight: 500; /* TODO typography */
     margin: 0 16px;
-    padding: 4px 0;
+    padding: 2px 0;
     text-decoration: none;
     text-transform: capitalize;
 }
@@ -101,12 +103,20 @@
     /* Logo image */
     .logo img {
         cursor: pointer;
+        height: 96px;
         margin-bottom: 0;
         padding: 0;
     }
 
     .links {
+        flex-direction: row;
         margin: 0 -16px; /* Right aligns links */
+    }
+
+    /* Footer links */
+    .links a {
+        font-size: 14px;
+        padding: 4px 0;
     }
 }
 
