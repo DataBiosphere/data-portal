@@ -46,7 +46,7 @@
     max-height: 256px;
     -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar in IE unless actively scrolling. */
     overflow-y: auto; /* Hide webkit scrollbar unless actively scrolling. */
-    padding: 8px 16px 12px;
+    padding: 8px 24px 12px 16px;
     position: absolute;
     top: 56px; /* 50px for select field + 6px below select field */
     width: 100%;
