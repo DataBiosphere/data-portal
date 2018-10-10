@@ -23,6 +23,7 @@
     "gatsby-source-filesystem": "^1.5.35",
     "gatsby-transformer-json": "^1.0.20",
     "gatsby-transformer-remark": "^1.7.40",
+    "js-cookie": "^2.2.0",
     "normalize.css": "8.0.0",
     "npm": "^6.0.1",
     "prism": "^4.1.2",

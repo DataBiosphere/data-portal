@@ -7,7 +7,7 @@
 // Dependencies
 @import "hca-vars";
 
-.footer {
+.privacy {
     align-items: center;
     background-color: $md-black-100;
     display: flex;
@@ -55,7 +55,7 @@
  */
 @media (min-width: $md-tablet-portrait-lg-min) {
 
-    .footer {
+    .privacy {
         height: 96px;
         flex-direction: row;
         position: relative; /* Positions HCA logo */

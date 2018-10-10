@@ -117,7 +117,7 @@ blockquote {
     background-color: #F4F7F9; /* TODO colour hca-blue-background */
     border-radius: 3px;
     margin: 0 0 24px; /* TODO confirm when typography completed */
-    padding: 24px;
+    padding: 16px;
 }
 
 /* Blockquote heading */
@@ -235,7 +235,7 @@ ol, ul {
 }
 
 li {
-    margin-bottom: 12px;
+    margin-bottom: 4px;
 }
 
 /**
