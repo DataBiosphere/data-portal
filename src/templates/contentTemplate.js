@@ -39,11 +39,21 @@ export default function Template({data}) {
         noNav = frontmatter.noNav;
     }
 
-    const getMarkdownClassName = (component) => {
+    const getContentClassName = () => {
 
         return classNames({
+            [compStyles.hcaContent]: true,
+            [compStyles.noNav]: noNav
+        });
+    };
+
+    const getMarkdownClassName = (component) => {
+
+        console.log(noNav);
+        return classNames({
             [compStyles.markdownContent]: true,
-            [compStyles.analyze]: (componentName === "analyze")
+            [compStyles.analyze]: (componentName === "analyze"),
+            [compStyles.noNav]: noNav
         });
     };
 
@@ -52,7 +62,7 @@ export default function Template({data}) {
             <Section docPath={docPath}/>
             <TabNav docPath={docPath}/>
             <div className={compStyles.wrapper}>
-                <div className={compStyles.hcaContent}>
+                <div className={getContentClassName()}>
                     {noNav ? null : <Nav docPath={docPath}/>}
                     <div className={getMarkdownClassName(componentName)}>
                         <div

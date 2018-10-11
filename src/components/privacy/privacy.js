@@ -54,7 +54,7 @@ class Privacy extends React.Component {
                             personal
                             data in order to function.</p>
                         <p className={compStyles.xxs}><span>By using the site you are agreeing to this as outlined in our </span>
-                            <Link to="/privacy/privacy/privacy">Privacy Notice</Link><span> and Terms of Use.</span></p>
+                            <Link to="/privacy/privacy/privacy">Privacy Notice</Link><span>.</span></p>
                     </div>
                     <a className={compStyles.dismiss} onClick={() => {
                         this.accept()

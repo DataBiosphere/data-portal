@@ -248,6 +248,11 @@ li {
         flex-direction: row;
     }
 
+    /* Content - when there is no navigation */
+    .noNav .markdownContent {
+        margin-left: 176px;
+    }
+
     /* Content */
     .hcaContent .markdownContent {
         margin-right: 14px;
@@ -270,6 +275,11 @@ li {
         margin: 0 auto;
         max-width: 1200px; /* Snap to 1200px, gutter 30px */
         padding: 0 30px;
+    }
+
+    /* Content - when there is no navigation */
+    .noNav .markdownContent {
+        margin-left: 290px;
     }
 }
 
