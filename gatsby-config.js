@@ -17,14 +17,14 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                  path: `${__dirname}/node_modules/data-portal-content/content`,
-                //path: `/Users/franmcdade/sandbox/data-portal-content/content`,
+                // path: `/Users/franmcdade/sandbox/data-portal-content/content`,
                 name: "markdown-pages",
             }
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                ///path: `/Users/franmcdade/sandbox/hca-metadata-schema/docs`,
+                // path: `/Users/franmcdade/sandbox/hca-metadata-schema/docs`,
                  //path: `/Users/dave/projects/hca-metadata-schema/docs`,
                  path: `${__dirname}/_metadata-schema/docs`,
                 name: "metadata-markdown-pages",
@@ -35,7 +35,7 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                  path: `${__dirname}/_metadata-schema/json_schema`,
-               //path: `/Users/franmcdade/sandbox/hca-metadata-schema/json_schema`,
+               // path: `/Users/franmcdade/sandbox/hca-metadata-schema/json_schema`,
                 //path: `/Users/dave/projects/hca-metadata-schema/json_schema`,
                 name: "json-schema",
             },

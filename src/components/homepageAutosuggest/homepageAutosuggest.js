@@ -356,11 +356,11 @@ class HomepageAutosuggest extends React.Component {
     visitExploreLink = () => {
 
         if (this.state.selectedTerm) {
-            const facetFilter = JSON.stringify({
+            const facetFilter = JSON.stringify([{
                 "facetName": this.state.selectedFacet,
-                "termName": this.state.selectedTerm
-            });
-            window.location.href = `${process.env.GATSBY_EXPLORE_URL}?filter=${facetFilter}`;
+                "terms": [this.state.selectedTerm]
+            }]);
+            window.location.href = `${process.env.GATSBY_EXPLORE_URL}specimens?filter=${facetFilter}`;
         }
     };
 

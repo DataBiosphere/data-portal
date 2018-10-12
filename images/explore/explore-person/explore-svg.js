@@ -100,7 +100,7 @@ class Explore extends React.Component {
     getOrganFilter = (organName) => {
 
         let organToFilter = exploreDataMap.find(o => o.organRef === organName);
-        return JSON.stringify({"facetName": organToFilter.facetName, "termName": organToFilter.termName});
+        return JSON.stringify([{"facetName": organToFilter.facetName, "terms": [organToFilter.termName]}]);
     };
 
     parseOrganNameFromElement(el) {
@@ -121,7 +121,7 @@ class Explore extends React.Component {
 
         const organName = this.parseOrganNameFromElement(event.currentTarget).toLowerCase();
         let organFilter = this.getOrganFilter(organName);
-        window.location.href = `${process.env.GATSBY_EXPLORE_URL}?filter=${organFilter}`;
+        window.location.href = `${process.env.GATSBY_EXPLORE_URL}specimens?filter=${organFilter}`;
     };
 
     render() {
