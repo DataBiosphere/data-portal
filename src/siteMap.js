@@ -247,43 +247,43 @@ const siteMap =
                         ]
                     },
                     {
-                        name: "Metadata Standards",
-                        key: "metadata-standards",
+                        name: "Metadata",
+                        key: "metadata",
                         children: [
                             {
                                 name: "Metadata Dictionary",
-                                key: "/learn/metadata-standards/metadata-dictionary",
+                                key: "/learn/metadata/metadata-dictionary",
                                 children: [
                                     {
                                         name: "Biomaterial",
-                                        key: "/learn/metadata-standards/metadata-dictionary/biomaterial"
+                                        key: "/learn/metadata/metadata-dictionary/biomaterial"
                                     },
                                     {
                                         name: "Process",
-                                        key: "/learn/metadata-standards/metadata-dictionary/process"
+                                        key: "/learn/metadata/metadata-dictionary/process"
                                     },
                                     {
                                         name: "Protocol",
-                                        key: "/learn/metadata-standards/metadata-dictionary/protocol"
+                                        key: "/learn/metadata/metadata-dictionary/protocol"
                                     },
                                     {
                                         name: "Project",
-                                        key: "/learn/metadata-standards/metadata-dictionary/project"
+                                        key: "/learn/metadata/metadata-dictionary/project"
                                     },
                                     {
                                         name: "File",
-                                        key: "/learn/metadata-standards/metadata-dictionary/file"
+                                        key: "/learn/metadata/metadata-dictionary/file"
                                     }
                                 ]
                             }
                             ,
                             {
                                 name: "Overview of Metadata Structure",
-                                key: "/learn/metadata-standards/structure"
+                                key: "/learn/metadata/structure"
                             },
                             {
                                 name: "Metadata Design and Implementation Choices",
-                                key: "/learn/metadata-standards/rationale"
+                                key: "/learn/metadata/rationale"
                             }
 
 

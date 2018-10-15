@@ -61,7 +61,7 @@ export default function Template({
 									<img src={processData}/>
 								</div>
 								<div><p className={compStyles.s}>We process and quality-check the data with our
-									pipelines</p><Link to="../../learn/userguides/secondary-analysis/what-is-the-secondary-analysis-service"
+									pipelines</p><Link to="../../learn/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides"
 									className={compStyles.s}>Learn about Pipelines</Link>
 								</div>
 							</div>

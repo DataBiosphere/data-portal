@@ -151,8 +151,11 @@ code[class*="language-block-highlight"], :not(pre) > code[class*="language-"] {
     font-size: 14px; /* TODO typography */
 }
 
+/* Code within table - allows use of underscore */
 td > code {
-    background-color: #DCE8F5 !important;
+    color: inherit !important;
+    background-color: transparent !important;
+    padding: 0 !important;
 }
 
 /* Code */
