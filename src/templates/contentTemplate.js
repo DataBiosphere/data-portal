@@ -49,7 +49,6 @@ export default function Template({data}) {
 
     const getMarkdownClassName = (component) => {
 
-        console.log(noNav);
         return classNames({
             [compStyles.markdownContent]: true,
             [compStyles.analyze]: (componentName === "analyze"),

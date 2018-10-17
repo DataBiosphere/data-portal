@@ -29,7 +29,8 @@
     "prism": "^4.1.2",
     "prismjs": "^1.14.0",
     "react-autosuggest": "^9.3.4",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-linkify": "^0.2.2"
   },
   "keywords": [
     "gatsby"

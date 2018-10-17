@@ -50,7 +50,7 @@ export default function Template({
 								</div>
 								<div>
 									<p className={compStyles.s}>Labs contribute single-cell data</p>
-									<Link to="../../contribute/overview/overview" className={compStyles.s}>Learn about contributing</Link>
+									<Link to="/contribute/overview/overview" className={compStyles.s}>Learn about contributing</Link>
 								</div>
 							</div>
 							<div className={compStyles.dpArrow}>
@@ -61,7 +61,7 @@ export default function Template({
 									<img src={processData}/>
 								</div>
 								<div><p className={compStyles.s}>We process and quality-check the data with our
-									pipelines</p><Link to="../../learn/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides"
+									pipelines</p><Link to="/learn/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides"
 									className={compStyles.s}>Learn about Pipelines</Link>
 								</div>
 							</div>
@@ -83,7 +83,7 @@ export default function Template({
 								<div>
 									<img src={analysisPortal}/>
 								</div>
-								<div><p className={compStyles.s}>Find community analysis tools and applications</p><Link to="../../analyze/portals/visualization-portals"
+								<div><p className={compStyles.s}>Find community analysis tools and applications</p><Link to="/analyze/portals/visualization-portals"
 									className={compStyles.s}>Explore applications</Link></div>
 							</div>
 						</div>

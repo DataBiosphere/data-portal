@@ -27,10 +27,15 @@ h3 {
 /* Label */
 .metadataRow span:first-of-type {
     padding-right: 8px;
-    width: 25%;
+    width: 30%;
 }
 
 /* Description */
 .metadataRow span:last-of-type {
-    width: 75%;
+    width: 70%;
+}
+
+/* Description links */
+.metadataRow span:last-of-type a {
+    font: inherit;
 }

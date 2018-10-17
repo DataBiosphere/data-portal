@@ -217,8 +217,12 @@ const siteMap =
                                 key: "/learn/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides",
                                 children: [
                                     {
-                                        name: "Optimus Prime Workflow in Detail",
-                                        key: "/learn/userguides/data-processing-pipelines/optimus-prime-workflow-in-detail"
+                                        name: "Smart-seq2 Workflow",
+                                        key: "/learn/userguides/data-processing-pipelines/smart-seq2-workflow"
+                                    },
+                                    {
+                                        name: "Optimus Prime Workflow",
+                                        key: "/learn/userguides/data-processing-pipelines/optimus-prime-workflow"
 
                                     },
                                     {
@@ -234,8 +238,8 @@ const siteMap =
                                         key: "/learn/userguides/data-processing-pipelines/pipeline-portability"
                                     },
                                     {
-                                        name: "Smart-seq2 Workflow in Detail",
-                                        key: "/learn/userguides/data-processing-pipelines/smart-seq2-workflow-in-detail"
+                                        name: "Community Pipeline: 3' scRNA-seq",
+                                        key: "/learn/userguides/data-processing-pipelines/community-pipeline-3-prime-scrna-seq"
                                     }
                                 ]
                             },

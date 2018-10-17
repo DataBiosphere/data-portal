@@ -8,6 +8,7 @@
 // Core dependencies
 import React from 'react';
 import compStyles from './metadata.module.css'
+import Linkify from 'react-linkify';
 
 class Metadata extends React.Component {
 
@@ -24,7 +25,7 @@ class Metadata extends React.Component {
                         return element.name !== "describedBy" && element.name !== "schema_version" && element.name !== "schema_type";
                     }).map((element, i) => <div key={i} className={compStyles.metadataRow}>
                         <span>{element.userFriendly ? element.userFriendly : element.name}</span>
-                        <span>{element.description}</span>
+                        <Linkify>{element.description}</Linkify>
                     </div>)}
                 </div>
             </div>
