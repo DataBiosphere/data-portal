@@ -114,7 +114,6 @@ export default function Template({data}) {
                         {types.map((e, i) => <Metadata entity={e} key={i}/>)}
                         <h2>{title} Modules</h2>
                         {modules.map((e, i) => <Metadata entity={e} key={i}/>)}
-                        <a className={compStyles.editContent} href={editPath} target="_blank">Edit Me</a>
                     </div>
                 </div>
             </div>
