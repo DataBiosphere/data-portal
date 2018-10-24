@@ -73,6 +73,7 @@ deploy_develop:
   script:
     - export BUCKET=s3://dev.data.humancellatlas.org/
     - aws s3 sync --acl public-read public/ $BUCKET --delete
+    - aws s3 cp $BUCKET/index.html $BUCKET/index.html --metadata-directive REPLACE --cache-control max-age=0
     - aws cloudfront create-invalidation --distribution-id EDQUW4UP25O4L --paths "/*"
   only:
     - develop
