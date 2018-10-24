@@ -139,9 +139,15 @@ class Explore extends React.Component {
                 return organSummary.displayKey.toLowerCase() === organName.toLowerCase();
             });
             
-            // Hide the stats if there isn't correponding data for it
+            // Grab the corresponding organ image element, if any
+            const organImageEl = this.svg.getElementById(`organ${organName}`);
+            
+            // Hide the stats and organ image if there isn't corresponding data for it
             if ( !summary ) {
                 organStatsEl.setAttribute("class", compStyles.hidden);
+                if ( organImageEl ) {
+                    organImageEl.setAttribute("class", compStyles.hidden);
+                }
                 return;
             }
 
@@ -179,7 +185,6 @@ class Explore extends React.Component {
             }
 
             // Add interactivity between stats and wo/man images, as well as click actions
-            const organImageEl = this.svg.getElementById(`organ${organName}`);
             const organGroup = [organStatsEl];
             if ( organImageEl ) {
                 organGroup.push(organImageEl);
