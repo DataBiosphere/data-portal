@@ -6,7 +6,14 @@
  */
 
 // Local vars
-const FILES_API_URL = 'https://service.staging.explore.data.humancellatlas.org/repository/summary';
+const FILES_API_URL = process.env.GATSBY_EXPLORE_URL
+    .replace('https://','https://service.')
+    .replace('explore/','repository/summary')
+    .replace('data','explore.data');
+//'https://service.staging.explore.data.humancellatlas.org/repository/summary';
+// export GATSBY_EXPLORE_URL=https://staging.data.humancellatlas.org/explore/
+
+
 
 /**
  * Execute request for counts and summaries.
