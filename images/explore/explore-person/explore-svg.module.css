@@ -25,6 +25,10 @@ svg.explorePerson {
     transition: all 0.75s ease 0s;
 }
 
+.hidden {
+    display: none;
+}
+
 [id^="count"] {
     opacity: 0;
 }

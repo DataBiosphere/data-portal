@@ -8,60 +8,8 @@
 // Core dependencies
 import React from 'react';
 import compStyles from './explore-svg.module.css'
-
-// Variables
-let exploreDataMap = [
-    {
-        organRef: "blood",
-        facetName: "organ",
-        termName: "blood"
-    },
-    {
-        organRef: "bonemarrow",
-        facetName: "organPart",
-        termName: "bone marrow"
-    },
-    {
-        organRef: "brain",
-        facetName: "organ",
-        termName: "brain"
-    },
-    {
-        organRef: "esophagus",
-        facetName: "organ",
-        termName: "esophagus"
-    },
-    {
-        organRef: "heart",
-        facetName: "organ",
-        termName: "heart"
-    },
-    {
-        organRef: "immune",
-        facetName: "organ",
-        termName: "heart"
-    },
-    {
-        organRef: "kidney",
-        facetName: "organ",
-        termName: "kidney"
-    },
-    {
-        organRef: "liver",
-        facetName: "organ",
-        termName: "liver"
-    },
-    {
-        organRef: "pancreas",
-        facetName: "organ",
-        termName: "pancreas"
-    },
-    {
-        organRef: "spleen",
-        facetName: "organ",
-        termName: "spleen"
-    },
-];
+import * as numberFormatter from "../../../src/utils/number-format.service";
+import * as stringFormatter from "../../../src/utils/string-format.service";
 
 class Explore extends React.Component {
 
@@ -71,21 +19,20 @@ class Explore extends React.Component {
 
     componentDidMount() {
 
+        const {organSummary, totalCellCount} = this.props;
+        
+        // Create view-friendly model of organ summary
+        const statsSummary = this.translateOrganSummaryToViewModel(organSummary);
+        
+        // Grab the stats elements
         const statsEl = this.svg.getElementById("stats");
-        const organStatsEls = statsEl.querySelectorAll("*[id^='stats']");
-        organStatsEls.forEach((organStatsEl) => {
+        const existingOrganStatsEls = statsEl.querySelectorAll("*[id^='stats']");
+        
+        // Add any stats elements for organ summaries that don't have an existing stats element
+        const organStatsEls = this.createMissingStatElements(statsSummary, statsEl, existingOrganStatsEls);
 
-            const organName = this.parseOrganNameFromElement(organStatsEl);
-            const organImageEl = this.svg.getElementById(`organ${organName}`);
-
-            const organGroup = [organStatsEl, organImageEl];
-            organStatsEl.addEventListener("mouseenter", this.setActiveOrgan(organGroup));
-            organImageEl.addEventListener("mouseenter", this.setActiveOrgan(organGroup));
-            organImageEl.addEventListener("click", this.visitExploreLink);
-            organStatsEl.addEventListener("click", this.visitExploreLink);
-            organStatsEl.addEventListener("mouseleave", this.clearActiveOrgan(organGroup));
-            organImageEl.addEventListener("mouseleave", this.clearActiveOrgan(organGroup));
-        });
+        // Update stats els from dynamic input
+        this.updateStatsElsPositionAndContent(statsSummary, organStatsEls, totalCellCount);
     }
 
     clearActiveOrgan = (organGroup) => {
@@ -97,17 +44,156 @@ class Explore extends React.Component {
         }
     };
 
-    getOrganFilter = (organName) => {
+    createMissingStatElements = (statsSummary, statsEl, existingOrganStatsEls) => {
 
-        let organToFilter = exploreDataMap.find(o => o.organRef === organName);
-        return JSON.stringify([{"facetName": organToFilter.facetName, "terms": [organToFilter.termName]}]);
+        // Find the stats summaries where there is no corresponding stats element
+        const statsSummariesWithNoStatsEls = this.listStatsSummariesWithNoStatsEls(statsSummary, existingOrganStatsEls);
+        
+        const organStatsEls = Array.from(existingOrganStatsEls);
+
+        // Add stats elements for the stats summaries where an element does not already exist
+        statsSummariesWithNoStatsEls.forEach((summary) => {
+
+            const idStem = summary.label.replace(/\s/g, "");
+            const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+            g.setAttribute("id", `stats${idStem}`);
+
+            const textCount = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            textCount.setAttribute("id", `count${idStem}`);
+            textCount.setAttribute("font-family", "Montserrat-Regular, Montserrat");
+            textCount.setAttribute("font-size", "14");
+            textCount.setAttribute("font-weight", "400");
+            textCount.setAttribute("fill", "#4A4A4A");
+
+            const tspanCount = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+            tspanCount.textContent = `${summary.count} cells`;
+            textCount.appendChild(tspanCount);
+            g.appendChild(textCount);
+
+            const polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+            polygon.setAttribute("id", `bar${idStem}`);
+            polygon.setAttribute("fill", "#EAEAEA");
+            g.appendChild(polygon);
+
+            const textLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            textLabel.setAttribute("id", `label${idStem}`);
+            textLabel.setAttribute("font-family", "Montserrat-Regular, Montserrat");
+            textLabel.setAttribute("font-size", "14");
+            textLabel.setAttribute("font-weight", "400");
+            textLabel.setAttribute("fill", "#4A4A4A");
+
+            const tspanLabel = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+            tspanLabel.textContent = summary.label;
+            textLabel.appendChild(tspanLabel);
+            g.appendChild(textLabel);
+
+            statsEl.appendChild(g);
+
+            organStatsEls.push(g);
+        });
+        
+        return organStatsEls;
     };
 
-    parseOrganNameFromElement(el) {
+    formatCount = (count) => {
+
+        return numberFormatter.format(count, 1);
+    };
+
+    getOrganFilter = (facetName, termName) => {
+
+        return JSON.stringify({"facetName": facetName, "termName": termName});
+    };
+    
+    listStatsSummariesWithNoStatsEls = (statsSummary, organStatsEls) => {
+
+        // List the names of organs that already have a stats el
+        const statsElsOrganNames = Array.from(organStatsEls).map(organStatsEl => {
+            return this.parseOrganNameFromElement(organStatsEl).toLowerCase();
+        });
+
+        // Return the stats summary of organs that do not have a corresponding stats el
+        return statsSummary.reduce((accum, summary) => {
+
+            if ( statsElsOrganNames.indexOf(summary.displayKey.toLowerCase()) === -1 ) {
+                accum.push(summary);
+            }
+
+            return accum;
+        }, []);
+    };
+
+    parseOrganNameFromElement = (el) => {
 
         return el.id.substring(5);
     };
 
+    updateStatsElsPositionAndContent = (statsSummary, organStatsEls, totalCellCount) => {
+        
+        const maxBarLength = 168;
+        let displayIndex = 0;
+        organStatsEls.forEach((organStatsEl) => {
+
+            const organName = this.parseOrganNameFromElement(organStatsEl);
+            const summary = statsSummary.find(organSummary => {
+                return organSummary.displayKey.toLowerCase() === organName.toLowerCase();
+            });
+            
+            // Hide the stats if there isn't correponding data for it
+            if ( !summary ) {
+                organStatsEl.setAttribute("class", compStyles.hidden);
+                return;
+            }
+
+            // Reposition organ stats now that some stats could be hidden 
+            organStatsEl.setAttribute("transform", `translate(0, ${displayIndex * 24})`);
+            displayIndex++;
+
+            // Determine length of bar chart
+            let maxLength = 103 + (summary.count / totalCellCount) * maxBarLength;
+            if ( maxLength < 104 ) {
+                maxLength = 104;
+            }
+
+            // Update stats label - we really only need to explicitly position the label of stats els that were added
+            // dynamically (ie organ data came down pipe but corresponding stats el did not exist, so we created it
+            // on the fly)
+            const labelEl = organStatsEl.querySelectorAll("[id^='label'] tspan")[0];
+            if ( labelEl ) {
+                labelEl.setAttribute("x", 0);
+                labelEl.setAttribute("y", 14);
+            }
+
+            // Update stats count from data
+            const countEl = organStatsEl.querySelectorAll("[id^='count'] tspan")[0];
+            if ( countEl ) {
+                countEl.textContent = `${this.formatCount(summary.count)} cells`;
+                countEl.setAttribute("x", maxLength + 12);
+                countEl.setAttribute("y", 14);
+            }
+
+            // Update stats bar length based on data
+            const barEl = organStatsEl.querySelectorAll("polygon")[0];
+            if ( barEl ) {
+                barEl.setAttribute("points", `103 12 ${maxLength} 12 ${maxLength} 4 103 4`);
+            }
+
+            // Add interactivity between stats and wo/man images, as well as click actions
+            const organImageEl = this.svg.getElementById(`organ${organName}`);
+            const organGroup = [organStatsEl];
+            if ( organImageEl ) {
+                organGroup.push(organImageEl);
+                organImageEl.addEventListener("mouseenter", this.setActiveOrgan(organGroup));
+                organImageEl.addEventListener("click", this.visitExploreLink.bind(this, summary.facetName, summary.termName));
+                organImageEl.addEventListener("mouseleave", this.clearActiveOrgan(organGroup));
+            }
+
+            organStatsEl.addEventListener("mouseenter", this.setActiveOrgan(organGroup));
+            organStatsEl.addEventListener("click", this.visitExploreLink.bind(this, summary.facetName, summary.termName));
+            organStatsEl.addEventListener("mouseleave", this.clearActiveOrgan(organGroup));
+        });
+    };
+    
     setActiveOrgan = (organGroup) => {
 
         return (event) => {
@@ -116,12 +202,42 @@ class Explore extends React.Component {
             })
         }
     };
+    
+    translateOrganSummaryToViewModel = (organSummary) => {
 
-    visitExploreLink = (event) => {
+        return organSummary.reduce((accum, summary) => {
 
-        const organName = this.parseOrganNameFromElement(event.currentTarget).toLowerCase();
-        let organFilter = this.getOrganFilter(organName);
-        window.location.href = `${process.env.GATSBY_EXPLORE_URL}specimens?filter=${organFilter}`;
+            accum.push({
+                displayKey: this.translateOrganNameToDisplayKey(summary.label),
+                label: stringFormatter.toTitleCase(summary.label),
+                count: summary.cellCount,
+                facetName: "organ",
+                termName: summary.label
+            });
+            return accum;
+        }, []);
+    };
+
+    translateOrganNameToDisplayKey = (organName) => {
+
+        switch ( organName ) {
+            case "bone":
+                return "bonemarrow";
+            case "lymph node": 
+                return "immune";
+            case "oesophagus": 
+                return "esophagus";
+            case "skin of body":
+                return "skinofbody";
+            default: 
+                return organName;
+        }
+    };
+    
+    visitExploreLink = (facetName, termName) => {
+
+        const organFilter = this.getOrganFilter(facetName, termName);
+        window.location.href = `${process.env.GATSBY_EXPLORE_URL}?filter=${organFilter}`;
     };
 
     render() {

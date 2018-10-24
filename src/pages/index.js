@@ -16,18 +16,52 @@ let classNames = require('classnames');
 import analysisPortal from "../../images/data-portal/analysis-portal.png";
 import arrowRight from "../../images/data-portal/arrow-right.png";
 import contribute from "../../images/data-portal/contribute.png";
+import explorePlaceholder from "../../images/data-portal/expore-placeholder.png";
 import findData from "../../images/data-portal/find-data.png";
 import processData from "../../images/data-portal/process-data.png";
 
 // App dependencies
-import Explore from "../../images/explore/explore-person/explore-svg";
-import ExploreTable from "../../images/explore/explore-table/explore-table-svg";
 import HomepageAutosuggest from "../components/homepageAutosuggest/homepageAutosuggest";
+import Explore from "../../images/explore/explore-person/explore-svg";
+import ExploreStats from "../../images/explore/explore-stats/explore-stats-svg";
+import * as FileSummaryService from "../utils/fileSummary.service";
+import * as numberFormatter from "../utils/number-format.service";
 
 class IndexPage extends React.Component {
 
+    state = {
+        donorCount: 0,
+        fileCount: 0,
+        fileFormatSummary: null,
+        labCount: 0,
+        loaded: false,
+        organCount: 0,
+        organSummary: null,
+        projectCount: 0,
+        totalCellCount: 0
+    };
+
+    /**
+     * Load up counts and summaries on mount of component.
+     */
+    componentDidMount() {
+
+        FileSummaryService.fetchFileSummary().then(fileSummary => {
+            
+            this.setState({
+                ...fileSummary
+            });
+        });
+    }
+
     constructor(props) {
+
         super(props);
+    }
+    
+    formatCount(count) {
+
+        return numberFormatter.format(count, 1);
     }
 
     render() {
@@ -37,16 +71,16 @@ class IndexPage extends React.Component {
                     <div className={compStyles.wrapper}>
                         <h1>Single-cell data building a foundation for human health</h1>
                         <Link to="/about/overview/overview"><p className={compStyles.xs}>Learn More</p></Link>
-                        <HomepageAutosuggest/>
+                        <HomepageAutosuggest fileFormatSummary={this.state.fileFormatSummary} organSummary={this.state.organSummary}/>
                     </div>
                 </div>
-                <div className={compStyles.statsBar}>
+                <div className={classNames({[compStyles.statsBar]: true, [compStyles.loaded]: this.state.loaded})}>
                     <div className={compStyles.wrapper}>
-                        <div><p className={compStyles.xs}>CELLS</p><h1>3.4M</h1></div>
-                        <div><p className={compStyles.xs}>ORGANS</p><h1>22</h1></div>
-                        <div><p className={compStyles.xs}>DONORS</p><h1>64</h1></div>
-                        <div><p className={compStyles.xs}>PROJECTS</p><h1>14</h1></div>
-                        <div><p className={compStyles.xs}>LABS</p><h1>14</h1></div>
+                        <div><p className={compStyles.xs}>CELLS</p><h1>{this.state.fileCount ? this.formatCount(this.state.fileCount) : ""}</h1></div>
+                        <div><p className={compStyles.xs}>ORGANS</p><h1>{this.state.fileCount ? this.formatCount(this.state.organCount) : ""}</h1></div>
+                        <div><p className={compStyles.xs}>DONORS</p><h1>{this.state.fileCount ? this.formatCount(this.state.donorCount) : ""}</h1></div>
+                        <div><p className={compStyles.xs}>PROJECTS</p><h1>{this.state.fileCount ? this.formatCount(this.state.projectCount) : ""}</h1></div>
+                        <div><p className={compStyles.xs}>LABS</p><h1>{this.state.fileCount ? this.formatCount(this.state.labCount) : ""}</h1></div>
                     </div>
                 </div>
                 <div className={compStyles.explore}>
@@ -57,8 +91,10 @@ class IndexPage extends React.Component {
                                 <p className={compStyles.s}>Hover over or click on an organ to view data from that
                                     organ</p>
                             </div>
-                            <Explore/>
-                            <ExploreTable/>
+                            {this.state.organSummary ? 
+                                <Explore organSummary={this.state.organSummary} totalCellCount={this.state.totalCellCount}/> : 
+                                <img className={compStyles.explorePlaceholder} src={explorePlaceholder}/>}
+                            {this.state.organCount ? <ExploreStats organSummary={this.state.organSummary}/> : null}
                         </div>
                     </div>
                 </div>
