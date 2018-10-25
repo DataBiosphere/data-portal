@@ -1,0 +1,57 @@
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+  - node_modules/
+
+# Build Jobs
+# Build Job Template
+.build_template: &build_template
+  image: node:10.0.0
+  stage: build
+  before_script:
+    - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
+    - npm install gatsby-cli@1.1.51 --global
+    - npm install
+  artifacts:
+      paths:
+        - public
+
+# Develop Build
+build_master:
+  <<: *build_template
+  environment:
+    name: prod
+  script:
+    - export GATSBY_EXPLORE_URL=https://pre-prod.data.humancellatlas.org/explore/
+    - gatsby build
+  only:
+    - master
+
+########################################
+# Deploy Jobs
+########################################
+
+
+# Deploy Job Template
+.deploy_template: &deploy_template
+  stage: deploy
+  image: python:3.5
+  before_script:
+    - pip install awscli
+
+# Prod Deploy
+deploy_master:
+  <<: *deploy_template
+  environment:
+    name: prod
+  script:
+    - export BUCKET=s3://org-humancellatlas-data-portal-prod/
+    - aws s3 sync --acl public-read public/ $BUCKET --delete
+    - aws cloudfront create-invalidation --distribution-id E3QDNPF7XH7O7G --paths "/*"
+  only:
+    - master
+
