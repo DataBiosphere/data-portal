@@ -356,16 +356,12 @@ const siteMap =
             key: "contribute",
             children: [
                 {
-                    name: "Overview",
+                    name: "",
                     key: "overview",
                     children: [
                         {
                             name: "Overview",
                             key: "/contribute/overview/overview"
-                        },
-                        {
-                            name: "What to Prepare",
-                            key: "/contribute/overview/what-to-prepare"
                         }
                     ]
                 }
