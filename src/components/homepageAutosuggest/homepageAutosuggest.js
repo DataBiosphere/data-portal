@@ -11,9 +11,23 @@ import React from 'react';
 // App dependencies
 import HCAAutosuggest from "../hcaAutosuggest/hcaAutosuggest";
 import * as numberFormatter from "../../utils/number-format.service";
+import * as stringFormatter from "../../../src/utils/string-format.service";
 
 // Styles
 import compStyles from './homepageAutosuggest.module.css';
+
+// Vars
+const SELECTABLE_TERM_FACET_NAMES = [
+    "biologicalSex",
+    "disease",
+    "genusSpecies",
+    "institution",
+    "instrumentManufacturerModel",
+    "laboratory",
+    "organ",
+    "organPart",
+    "project"
+];
 
 class HomepageAutosuggest extends React.Component {
 
@@ -23,17 +37,21 @@ class HomepageAutosuggest extends React.Component {
         this.onSelected = this.onSelected.bind(this);
     }
 
-    buildExploreDataCategory = (facetName, facetDisplayName, categorySummary) => {
+    buildExploreDataCategory = (facetName, terms) => {
+
+        const selectableTerms = terms
+            .filter(term => !!term.term)
+            .map((term) => {
+                return {
+                    termName: term.term,
+                    termCount: numberFormatter.format(term.count, 1)
+                }
+            });
 
         return {
             facetName: facetName,
-            facetDisplayName: facetDisplayName,
-            terms: categorySummary.map((summary) => {
-                return {
-                    termName: summary.label,
-                    termCount: numberFormatter.format(summary.count, 1)
-                }
-            })
+            facetDisplayName: stringFormatter.convertCamelCasetoTitleCase(facetName),
+            terms: selectableTerms
         };
     };
 
@@ -48,8 +66,10 @@ class HomepageAutosuggest extends React.Component {
                 terms: []
             });
 
-            data.push(this.buildExploreDataCategory("organ", "Organ", this.props.organSummary));
-            data.push(this.buildExploreDataCategory("fileFormat", "File Format", this.props.fileFormatSummary));
+            const termFacets = this.listSelectableTermFacets(this.props.termFacets);
+            termFacets.forEach((termFacet) => {
+                data.push(this.buildExploreDataCategory(termFacet.facetName, termFacet.terms));
+            });
         }
 
         return data;
@@ -68,7 +88,15 @@ class HomepageAutosuggest extends React.Component {
 
     isDataInitialized = () => {
 
-        return this.props.organSummary && this.props.fileFormatSummary;
+        return this.props.termFacets;
+    };
+
+    listSelectableTermFacets = (termFacets) => {
+
+        return termFacets.filter(termFacet => {
+
+            return SELECTABLE_TERM_FACET_NAMES.indexOf(termFacet.facetName) >= 0;
+        });
     };
 
     onSelected = (term) => {
@@ -98,7 +126,10 @@ class HomepageAutosuggest extends React.Component {
     render() {
         return (
             <div className={compStyles.hompageAutosuggest}>
-                <HCAAutosuggest autosuggestData={this.getExploreData()} placeholder={this.getPlaceholder()} homepage={true}
+                <HCAAutosuggest autosuggestData={this.getExploreData()} 
+                                placeholder={this.getPlaceholder()} 
+                                homepage={true}
+                                showCount={false}
                                 onSelected={this.onSelected.bind(this)}/>
                 <a onClick={this.visitExploreLink} className={compStyles.homepage}>Search</a>
             </div>

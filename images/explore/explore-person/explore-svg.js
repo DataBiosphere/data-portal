@@ -102,7 +102,7 @@ class Explore extends React.Component {
 
     getOrganFilter = (facetName, termName) => {
 
-        return JSON.stringify({"facetName": facetName, "termName": termName});
+        return JSON.stringify([{"facetName": facetName, "terms": [termName]}]);
     };
     
     listStatsSummariesWithNoStatsEls = (statsSummary, organStatsEls) => {
@@ -214,7 +214,7 @@ class Explore extends React.Component {
 
             accum.push({
                 displayKey: this.translateOrganNameToDisplayKey(summary.label),
-                label: stringFormatter.toTitleCase(summary.label),
+                label: stringFormatter.convertSentenceCasetoTitleCase(summary.label),
                 count: summary.cellCount,
                 facetName: "organ",
                 termName: summary.label
@@ -242,7 +242,8 @@ class Explore extends React.Component {
     visitExploreLink = (facetName, termName) => {
 
         const organFilter = this.getOrganFilter(facetName, termName);
-        window.location.href = `${process.env.GATSBY_EXPLORE_URL}?filter=${organFilter}`;
+        console.log(`${process.env.GATSBY_EXPLORE_URL}projects?filter=${organFilter}`)
+        window.location.href = `${process.env.GATSBY_EXPLORE_URL}projects?filter=${organFilter}`;
     };
 
     render() {

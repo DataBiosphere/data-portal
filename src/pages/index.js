@@ -38,6 +38,7 @@ class IndexPage extends React.Component {
         organCount: 0,
         organSummary: null,
         projectCount: 0,
+        termFacets: null,
         totalCellCount: 0
     };
 
@@ -50,6 +51,13 @@ class IndexPage extends React.Component {
             
             this.setState({
                 ...fileSummary
+            });
+        });
+
+        FileSummaryService.fetchTermFacets().then(termFacets => {
+
+            this.setState({
+                termFacets
             });
         });
     }
@@ -71,7 +79,7 @@ class IndexPage extends React.Component {
                     <div className={compStyles.wrapper}>
                         <h1>Single-cell data building a foundation for human health</h1>
                         <Link to="/about/overview/overview"><p className={compStyles.xs}>Learn More</p></Link>
-                        <HomepageAutosuggest fileFormatSummary={this.state.fileFormatSummary} organSummary={this.state.organSummary}/>
+                        <HomepageAutosuggest termFacets={this.state.termFacets}/>
                     </div>
                 </div>
                 <div className={classNames({[compStyles.statsBar]: true, [compStyles.loaded]: this.state.loaded})}>

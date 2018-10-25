@@ -6,9 +6,18 @@
  */
 
 /**
- * Execute request for counts and summaries. Based off https://stackoverflow.com/a/196991.
+ * Convert camel case to title case. Based off https://stackoverflow.com/a/7225450.
  */
-export function toTitleCase(title) {
+export function convertCamelCasetoTitleCase(title) {
+
+    const sentenceCase = title.replace(/([A-Z])/g, " $1");
+    return convertSentenceCasetoTitleCase(sentenceCase);
+}
+
+/**
+ * Convert sentence case to title case. Based off https://stackoverflow.com/a/196991.
+ */
+export function convertSentenceCasetoTitleCase(title) {
 
     return title.replace(
         /\w\S*/g,

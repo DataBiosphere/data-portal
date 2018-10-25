@@ -2,27 +2,41 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * Service coordinating hitting file summary API end points and formatting the corresponding responses.
+ * Service coordinating hitting file summary API end points and formatting the corresponding responses. 
+ * 
+ * Run the following command locally to set your GATSBY_EXPLORE_URL:
+ * export GATSBY_EXPLORE_URL=https://staging.data.humancellatlas.org/explore/ 
  */
 
 // Local vars
-const FILES_API_URL = process.env.GATSBY_EXPLORE_URL
+const FILE_SUMMARY_API_URL = process.env.GATSBY_EXPLORE_URL
     .replace('https://','https://service.')
     .replace('explore/','repository/summary')
     .replace('data','explore.data');
-//'https://service.staging.explore.data.humancellatlas.org/repository/summary';
-// export GATSBY_EXPLORE_URL=https://staging.data.humancellatlas.org/explore/
 
-
+const TERM_FACETS_API_URL = process.env.GATSBY_EXPLORE_URL
+    .replace('https://','https://service.')
+    .replace('explore/','repository/projects')
+    .replace('data','explore.data');
 
 /**
  * Execute request for counts and summaries.
  */
 export function fetchFileSummary() {
 
-    return fetch(FILES_API_URL)
+    return fetch(FILE_SUMMARY_API_URL)
         .then(resp => resp.json())
         .then(bindFileSummaryResponse);
+}
+
+/**
+ * Execute request for term facets.
+ */
+export function fetchTermFacets() {
+
+    return fetch(TERM_FACETS_API_URL)
+        .then(resp => resp.json())
+        .then(bindTermFacetsResponse);
 }
 
 /**
@@ -53,4 +67,20 @@ function bindFileSummaryResponse(fileSummaryResponse) {
         totalCellCount: fileSummaryResponse.totalCellCount
     }
 }
-    
+
+/**
+ * Format term facets into FE-friendly format.
+ */
+function bindTermFacetsResponse(termFacetsResponse) {
+
+    return Object.keys(termFacetsResponse.termFacets).reduce(function (accum, key) {
+
+        const facet = termFacetsResponse.termFacets[key];
+        accum.push({
+            facetName: key,
+            terms: facet.terms
+        });
+        
+        return accum;
+    }, []);
+}

@@ -104,9 +104,10 @@ class HCAAutosuggest extends React.Component {
 
     renderSuggestion = suggestion => {
 
+        const {showCounts} = this.props;
         return (
             <div className={compStyles.hcaOption}>
-                <span>{suggestion.termName}</span><span>{suggestion.termCount}</span>
+                <span>{suggestion.termName}</span>{showCounts ? <span>{suggestion.termCount}</span> : null}
             </div>
         );
     };

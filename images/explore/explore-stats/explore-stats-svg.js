@@ -28,7 +28,7 @@ class ExploreStats extends React.Component {
         const statsSummary = organSummary.reduce((accum, summary) => {
 
             accum.push({
-                label: stringFormatter.toTitleCase(summary.label),
+                label: stringFormatter.convertSentenceCasetoTitleCase(summary.label),
                 count: summary.cellCount,
                 facetName: "organ",
                 termName: summary.label
@@ -48,13 +48,13 @@ class ExploreStats extends React.Component {
 
     getOrganFilter = (facetName, termName) => {
 
-        return JSON.stringify({"facetName": facetName, "termName": termName});
+        return JSON.stringify([{"facetName": facetName, "terms": [termName]}]);
     };
 
     visitExploreLink = (facetName, termName) => {
 
         const organFilter = this.getOrganFilter(facetName, termName);
-        window.location.href = `${process.env.GATSBY_EXPLORE_URL}?filter=${organFilter}`;
+        window.location.href = `${process.env.GATSBY_EXPLORE_URL}projects?filter=${organFilter}`;
     };
 
     render() {
