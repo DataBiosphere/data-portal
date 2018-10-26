@@ -113,31 +113,31 @@ const siteMap =
                         },
                         {
 
-                            name: "Ingest Data Brokers Development Guide",
+                            name: "Ingest Data Brokers",
                             key: "/develop/development-guides/ingest-broker-development-guide"
                         },
                         {
-                            name: "Pipeline Processing Development Guides",
+                            name: "Processing Pipelines",
                             key: "/develop/development-guides/pipeline-processing-development-guides/overview-pipeline-processing-development-guides",
                             children: [
                                 {
-                                    name: "Best Practices for Building Data Processing Pipelines",
+                                    name: "Pipeline Best Practices",
                                     key: "/develop/development-guides/pipeline-processing-development-guides/workflow-best-practices"
                                 },
                                 {
-                                    name: "Quick Start for Building Pipelines",
+                                    name: "Building Pipelines",
                                     key: "/develop/development-guides/pipeline-processing-development-guides/pipeline-development-guide"
                                 },
                                 {
-                                    name: "Pipeline Testing Guide",
+                                    name: "Testing Pipelines",
                                     key: "/develop/development-guides/pipeline-processing-development-guides/testing-pipelines"
                                 },
                                 {
-                                    name: "Contributing a Pipeline to the HCA DCP",
+                                    name: "Contributing Pipelines",
                                     key: "/develop/development-guides/pipeline-processing-development-guides/contributing-a-pipeline-to-the-hca-dcp"
                                 },
                                 {
-                                    name: "Adding an Environment to the Portability Service",
+                                    name: "Portability Service Environments",
                                     key: "/develop/development-guides/pipeline-processing-development-guides/adding-an-environment-to-the-portability-service"
                                 }
                             ]
@@ -157,7 +157,7 @@ const siteMap =
                     key: "api-documentation",
                     children: [
                         {
-                            name: "Data Store Consumer API",
+                            name: "Data Store API",
                             key: "/develop/api-documentation/data-store-consumer-api"
                         }
                     ]
@@ -200,7 +200,7 @@ const siteMap =
                                         key: "/learn/userguides/accessing-data/quick-start-guide"
                                     },
                                     {
-                                        name: "Using the CLI to Access Data",
+                                        name: "CLI Data Access",
                                         key: "/learn/userguides/accessing-data/using-the-cli-to-access-data"
                                     }
                                 ]
@@ -282,11 +282,11 @@ const siteMap =
                             }
                             ,
                             {
-                                name: "Overview of Metadata Structure",
+                                name: "Metadata Structure",
                                 key: "/learn/metadata/structure"
                             },
                             {
-                                name: "Metadata Design and Implementation Choices",
+                                name: "Metadata Design Choices",
                                 key: "/learn/metadata/rationale"
                             }
 
