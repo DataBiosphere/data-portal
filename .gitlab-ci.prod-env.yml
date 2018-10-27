@@ -27,6 +27,8 @@ build_master:
     name: prod
   script:
     - export GATSBY_EXPLORE_URL=https://pre-prod.data.humancellatlas.org/explore/
+    - export GATSBY_FILE_SUMMARY_API_URL=https://service.staging.explore.data.humancellatlas.org/repository/summary
+    - export GATSBY_TERM_FACETS_API_URL=https://service.staging.explore.data.humancellatlas.org/repository/projects
     - gatsby build
   only:
     - master
