@@ -16,6 +16,8 @@ import * as stringFormatter from "../../../src/utils/string-format.service";
 // Styles
 import compStyles from './homepageAutosuggest.module.css';
 
+const classNames = require('classnames');
+
 // Vars
 const SELECTABLE_TERM_FACET_NAMES = [
     "biologicalSex",
@@ -80,10 +82,30 @@ class HomepageAutosuggest extends React.Component {
         const browser = typeof window !== "undefined";
         let windowWidth = browser && window.innerWidth;
 
-        if (windowWidth < 1024) {
-            return "Search for data by organs";
+        if (this.isDataInitialized()) {
+
+            if (windowWidth < 1024) {
+                return "Search for data by organs";
+            }
+            return "Search for data now by organs, projects, etc";
         }
-        return "Search for data now by organs, projects, etc";
+
+        return "Loading data..."
+    };
+
+    getSearchButtonClass = () => {
+
+        if (this.isDataInitialized()) {
+
+            return classNames({
+                [compStyles.homepage]: true
+            });
+        }
+
+        return classNames({
+            [compStyles.homepage]: true,
+            [compStyles.disabled]: true
+        });
     };
 
     isDataInitialized = () => {
@@ -135,12 +157,13 @@ class HomepageAutosuggest extends React.Component {
         return (
             <div className={compStyles.hompageAutosuggest}>
                 <HCAAutosuggest autosuggestData={this.getExploreData()}
+                                disabled={!this.isDataInitialized()}
                                 placeholder={this.getPlaceholder()}
                                 homepage={true}
                                 showCount={false}
                                 onEnter={this.onEnter.bind(this)}
                                 onSelected={this.onSelected.bind(this)}/>
-                <a onClick={this.visitExploreLink} className={compStyles.homepage}>Search</a>
+                <a onClick={this.visitExploreLink} className={this.getSearchButtonClass()}>Search</a>
             </div>
         );
     }
