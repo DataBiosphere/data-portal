@@ -4,24 +4,14 @@
  *
  * Service coordinating hitting file summary API end points and formatting the corresponding responses. 
  * 
- * Run the following command locally to set your GATSBY_EXPLORE_URL:
- * export GATSBY_EXPLORE_URL=https://staging.data.humancellatlas.org/explore/ 
+ * Run the following command locally to set your GATSBY urls
+ * npm start
  */
 
 // Local vars
-const FILE_SUMMARY_API_URL = process.env.GATSBY_EXPLORE_URL
-    .replace('https://','https://service.')
-    .replace('explore/','repository/summary')
-    .replace('data','explore.data');
-//
-const TERM_FACETS_API_URL = process.env.GATSBY_EXPLORE_URL
-    .replace('https://','https://service.')
-    .replace('explore/','repository/projects')
-    .replace('data','explore.data');
-
-
-// const FILE_SUMMARY_API_URL = process.env.GATSBY_FILE_SUMMARY_API_URL;
-// const TERM_FACETS_API_URL = process.env.GATSBY_TERM_FACETS_API_URL;
+const FILE_SUMMARY_API_URL = process.env.GATSBY_EXPLORE_URL;
+const FILE_SUMMARY_API_URL = process.env.GATSBY_FILE_SUMMARY_API_URL;
+const TERM_FACETS_API_URL = process.env.GATSBY_TERM_FACETS_API_URL;
 
 
 
