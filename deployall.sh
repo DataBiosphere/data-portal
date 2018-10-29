@@ -11,5 +11,9 @@ git checkout staging
 git pull origin integration
 git push origin staging
 
+git checkout master
+git pull origin staging
+git push origin master
+
 git checkout develop
 
