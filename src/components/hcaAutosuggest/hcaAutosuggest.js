@@ -115,6 +115,7 @@ class HCAAutosuggest extends React.Component {
     onSuggestionSelected = (event, value) => {
 
         this.props.onSelected(value.suggestionValue);
+        this.props.onEnter();
     };
 
     renderSectionTitle = (section) => section.facetDisplayName;
@@ -137,9 +138,10 @@ class HCAAutosuggest extends React.Component {
     render() {
         const {value, suggestions, noSuggestions} = this.state;
         const inputProps = {
+            disabled: this.props.disabled,
+            onChange: this.onChange,
             placeholder: this.props.placeholder,
-            value,
-            onChange: this.onChange
+            value
         };
 
         return (

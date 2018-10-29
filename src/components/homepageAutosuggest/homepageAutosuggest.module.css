@@ -38,6 +38,10 @@
     background-color: #CF912C; /* TODO review colour */
 }
 
+.hompageAutosuggest a.homepage.disabled {
+    background-color: #CCCCCC;
+}
+
 /* Jumbotron search button */
 .hompageAutosuggest a.homepage {
     position: absolute;
