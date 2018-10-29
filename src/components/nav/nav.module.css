@@ -76,9 +76,9 @@
 
 /* Primary navigation - link */
 .hcaSideNav > div > li a {
-    color: #999999; /* TODO color hca-gray-medium */
+    color: #666666; /* TODO color hca-gray-dark */
     font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 14px; /* TODO typography */
+    font-size: 15px; /* TODO typography */
     line-height: 20px;
     font-weight: 400; /* TODO typography */
     text-decoration: none;
@@ -95,9 +95,9 @@
 
 /* Secondary navigation - link */
 .hcaSideNav > div ul li a {
-    color: #999999; /* TODO color hca-gray-medium */
+    color: #666666; /* TODO color hca-gray-dark */
     font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 13px; /* TODO typography - confirm size */
+    font-size: 14px; /* TODO typography - confirm size */
     font-weight: 400; /* TODO typography */
     line-height: 16px;
     text-decoration: none;
@@ -150,9 +150,11 @@
  */
 @media screen and (min-width: 768px) {
 
-    /* Navigation */
+    /* Navigation - sticky */
     .hcaNav {
         height: 100%;
+        position: sticky;
+        top: 8px;
     }
 
     .hcaSideNav:nth-of-type(2) {
