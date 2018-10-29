@@ -70,7 +70,7 @@
 
 /* Tab - link */
 .hcaTab a, .hcaBackTab a {
-    color: #999999; /* TODO typography hca-gray-medium */
+    color: #666666; /* TODO color hca-gray-dark */
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 15px; /* TODO typography - confirm size */
     font-weight: 400; /* TODO typography */
