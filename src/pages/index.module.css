@@ -174,11 +174,9 @@
     max-width: 336px;
 }
 
+/* Explore svg placeholder */
 .explore .explorePlaceholder {
     display: none;
-    margin-bottom: 0;
-    max-width: 841px;
-    width: 841px;
 }
 
 /* Data Portal */
@@ -379,6 +377,15 @@
     .explore svg {
         width: 650px;
     }
+
+    /* Svg placeholder */
+    .explore .explorePlaceholder {
+        display: block;
+        height: unset;
+        margin-bottom: 54px;
+        margin-top: 52px; /* svg is 463px high, but 54px positioned below content, leaving 52px of height at top unaccounted for in img */
+        width: 650px;
+    }
 }
 
 /**
@@ -411,9 +418,12 @@
     .explore svg {
         width: unset;
     }
-    
+
+    /* Svg placeholder */
     .explore .explorePlaceholder {
-        display: block;
+        margin: 0;
+        max-width: 841px;
+        width: unset;
     }
 
     /* Data Portal description */

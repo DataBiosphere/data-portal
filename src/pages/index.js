@@ -48,7 +48,7 @@ class IndexPage extends React.Component {
     componentDidMount() {
 
         FileSummaryService.fetchFileSummary().then(fileSummary => {
-            
+
             this.setState({
                 ...fileSummary
             });
@@ -66,7 +66,7 @@ class IndexPage extends React.Component {
 
         super(props);
     }
-    
+
     formatCount(count) {
 
         return numberFormatter.format(count, 1);
@@ -84,11 +84,16 @@ class IndexPage extends React.Component {
                 </div>
                 <div className={classNames({[compStyles.statsBar]: true, [compStyles.loaded]: this.state.loaded})}>
                     <div className={compStyles.wrapper}>
-                        <div><p className={compStyles.xs}>CELLS</p><h1>{this.state.fileCount ? this.formatCount(this.state.fileCount) : ""}</h1></div>
-                        <div><p className={compStyles.xs}>ORGANS</p><h1>{this.state.fileCount ? this.formatCount(this.state.organCount) : ""}</h1></div>
-                        <div><p className={compStyles.xs}>DONORS</p><h1>{this.state.fileCount ? this.formatCount(this.state.donorCount) : ""}</h1></div>
-                        <div><p className={compStyles.xs}>PROJECTS</p><h1>{this.state.fileCount ? this.formatCount(this.state.projectCount) : ""}</h1></div>
-                        <div><p className={compStyles.xs}>LABS</p><h1>{this.state.fileCount ? this.formatCount(this.state.labCount) : ""}</h1></div>
+                        <div><p className={compStyles.xs}>CELLS</p>
+                            <h1>{this.state.fileCount ? this.formatCount(this.state.fileCount) : ""}</h1></div>
+                        <div><p className={compStyles.xs}>ORGANS</p>
+                            <h1>{this.state.fileCount ? this.formatCount(this.state.organCount) : ""}</h1></div>
+                        <div><p className={compStyles.xs}>DONORS</p>
+                            <h1>{this.state.fileCount ? this.formatCount(this.state.donorCount) : ""}</h1></div>
+                        <div><p className={compStyles.xs}>PROJECTS</p>
+                            <h1>{this.state.fileCount ? this.formatCount(this.state.projectCount) : ""}</h1></div>
+                        <div><p className={compStyles.xs}>LABS</p>
+                            <h1>{this.state.fileCount ? this.formatCount(this.state.labCount) : ""}</h1></div>
                     </div>
                 </div>
                 <div className={compStyles.explore}>
@@ -132,8 +137,9 @@ class IndexPage extends React.Component {
                                     <img src={processData}/>
                                 </div>
                                 <div><p className={compStyles.s}>We process and quality-check the data with our
-                                    pipelines</p><Link to="/learn/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides"
-                                                       className={compStyles.s}>Learn about Pipelines</Link>
+                                    pipelines</p><Link
+                                    to="/learn/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides"
+                                    className={compStyles.s}>Learn about Pipelines</Link>
                                 </div>
                             </div>
                             <div className={compStyles.dpArrow}>
