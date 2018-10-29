@@ -38,4 +38,5 @@ h3 {
 /* Description links */
 .metadataRow span:last-of-type a {
     font: inherit;
+    word-break: break-all;
 }

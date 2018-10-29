@@ -29,8 +29,9 @@ class HCAAutosuggest extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: '',
+            highlightedSuggestion: '',
             suggestions: [],
+            value: '',
             noSuggestions: false
         };
     }
@@ -70,12 +71,16 @@ class HCAAutosuggest extends React.Component {
 
     getSuggestionValue = suggestion => suggestion.termName;
 
-    onChange = (event, {newValue}) => {
+    onChange = (event, {newValue, method}) => {
 
         this.props.onSelected();
-        this.setState({
-            value: newValue
-        });
+        this.setState({value: newValue});
+
+        if (method === 'enter') {
+
+            this.props.onSelected(this.state.highlightedSuggestion.termName);
+            this.props.onEnter();
+        }
     };
 
     onSuggestionsClearRequested = () => {
@@ -93,6 +98,18 @@ class HCAAutosuggest extends React.Component {
         this.setState({
             suggestions: suggestions
         });
+    };
+
+    /* Always returns valid value - i.e. first value on list highlighted */
+    /* Removes need to select from the list */
+    onSuggestionHighlighted = ({suggestion}) => {
+
+        this.setState({highlightedSuggestion: suggestion});
+
+        if (suggestion) {
+
+            this.props.onSelected(suggestion.termName);
+        }
     };
 
     onSuggestionSelected = (event, value) => {
@@ -130,8 +147,10 @@ class HCAAutosuggest extends React.Component {
                 <Autosuggest
                     getSectionSuggestions={this.getSectionSuggestions}
                     getSuggestionValue={this.getSuggestionValue}
+                    highlightFirstSuggestion={true}
                     inputProps={inputProps}
                     onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+                    onSuggestionHighlighted={this.onSuggestionHighlighted}
                     onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
                     onSuggestionSelected={this.onSuggestionSelected}
                     multiSection={true}
@@ -141,7 +160,6 @@ class HCAAutosuggest extends React.Component {
                     suggestions={suggestions}
                     theme={autosuggestTheme}/>
             </div>
-
         );
     }
 }

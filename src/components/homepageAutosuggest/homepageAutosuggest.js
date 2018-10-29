@@ -56,10 +56,10 @@ class HomepageAutosuggest extends React.Component {
     };
 
     getExploreData = () => {
-        
+
         let data = [];
-        if ( this.isDataInitialized() ) {
-            
+        if (this.isDataInitialized()) {
+
             data.push({
                 facetName: "error",
                 facetDisplayName: "Oops! We don’t have an exact match, it may be called by a different name. Scroll through the list to see what data we currently have available.",
@@ -99,6 +99,11 @@ class HomepageAutosuggest extends React.Component {
         });
     };
 
+    onEnter = () => {
+
+        this.visitExploreLink();
+    };
+
     onSelected = (term) => {
 
         if (term) {
@@ -121,15 +126,19 @@ class HomepageAutosuggest extends React.Component {
             }]);
             window.location.href = `${process.env.GATSBY_EXPLORE_URL}specimens?filter=${facetFilter}`;
         }
+        if (!this.state.selectedTerm) {
+            console.log("error");
+        }
     };
 
     render() {
         return (
             <div className={compStyles.hompageAutosuggest}>
-                <HCAAutosuggest autosuggestData={this.getExploreData()} 
-                                placeholder={this.getPlaceholder()} 
+                <HCAAutosuggest autosuggestData={this.getExploreData()}
+                                placeholder={this.getPlaceholder()}
                                 homepage={true}
                                 showCount={false}
+                                onEnter={this.onEnter.bind(this)}
                                 onSelected={this.onSelected.bind(this)}/>
                 <a onClick={this.visitExploreLink} className={compStyles.homepage}>Search</a>
             </div>

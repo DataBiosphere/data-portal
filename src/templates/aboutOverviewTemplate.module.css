@@ -6,8 +6,8 @@
  */
 
 .dataPortal p {
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 15px;
+    line-height: 25px;
     margin: 0 0 18px;
 }
 
@@ -36,9 +36,9 @@
 /* P - class "s" */
 .dataPortal p[class^="s"] {
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400 !important;
-    line-height: 24px;
+    line-height: 25px;
     margin: 0 0 18px;
 }
 

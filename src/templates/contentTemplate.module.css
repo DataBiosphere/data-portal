@@ -14,9 +14,9 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 25px;
     margin: 0 0 18px;
 }
 
@@ -53,9 +53,9 @@ p[class^="m"], h5 {
 /* P - class "s" */
 p[class^="s"], h6 {
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400 !important;
-    line-height: 24px;
+    line-height: 25px;
     margin: 0 0 18px;
 }
 
@@ -106,9 +106,9 @@ dt {
 dd {
     color: #666666; /* TODO colour - TBC by Jenn - hca-gray-dark */
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 25px;
     margin: 8px 0 0;
 }
 
@@ -127,28 +127,34 @@ blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote h5, block
 
 /* Blockquote paragraph */
 blockquote p {
-    color: #666666; /* TODO colour - TBC by Jenn - hca-gray-dark */
+    color: #666666;
     margin: 0;
 }
 
-/* Code */
-pre, :not(pre) > code[class*="language-"], pre[class*="language-"], pre[class*="language-block-highlight"] {
+/* Code - inline and block */
+code[class*="language-"], pre[class*="language-"] {
+    color: #000000; /* TODO colour - typography */
+    font-family: "PT Mono", "Montserrat", sans-serif; /* TODO typography */
+    font-size: 15px; /* TODO typography */
+    white-space: pre-wrap !important; /* Allow line to wrap - responsive */
+    word-break: break-all !important; /* Allow line to wrap - responsive */
+}
+
+/* Code - inline and block - background */
+pre[class*="language-"], :not(pre) > code[class*="language-"] {
     background-color: #F8F8F8; /* TODO colour hca-off-white */
     border-radius: 3px;
+}
+
+/* Code - inline */
+:not(pre) > code[class*="language-"] {
     padding: 2px;
 }
 
-/* Code - class block-highlight */
-pre[class*="language-block-highlight"] {
-    margin-bottom: 24px; /* TODO confirm when typography completed */
-    padding: 12px 24px;
-}
-
-/* Code - language block-highlight */
-code[class*="language-block-highlight"], :not(pre) > code[class*="language-"] {
-    color: #000000; /* TODO colour - typography */
-    font-family: "PT Mono", "Montserrat"; /* TODO typography */
-    font-size: 14px; /* TODO typography */
+/* Code - block */
+pre[class*="language-"] {
+    margin: 0 0 18px;
+    padding: 16px;
 }
 
 /* Code within table - allows use of underscore */
@@ -156,12 +162,6 @@ td > code {
     color: inherit !important;
     background-color: transparent !important;
     padding: 0 !important;
-}
-
-/* Code */
-code {
-    white-space: pre-wrap !important; /* Allow line to wrap - responsive */
-    word-break: break-all !important; /* Allow line to wrap - responsive */
 }
 
 /* Table */
@@ -175,7 +175,7 @@ thead tr th, tbody tr td {
 
 thead th, tbody tr {
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600 !important;
     line-height: 1;
 }
@@ -188,10 +188,7 @@ tbody tr {
 a {
     color: #1c7cc7; /* TODO colour */
     cursor: pointer;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
+    font: inherit;
     margin: 0 0 18px;
     text-decoration: none;
 }
@@ -230,9 +227,9 @@ a {
 /* List */
 ol, ul {
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 25px;
     list-style-position: outside;
     margin: 0 0 18px 24px;
 }

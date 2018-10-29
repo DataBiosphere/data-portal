@@ -10,9 +10,6 @@
     background-color: #ffffff;  /* Required for content scroll */
     border-bottom: 1px solid #CCCCCC; /* Tab line */ /* TODO colour hca-gray-light */
     margin-top: -24px; /* To position closer to section */
-    position: sticky;
-    top: 112px; /* Header 60x, section 76px, minus 24px to position closer to section */
-    z-index: 10;
 }
 
 /* Wrapper */
@@ -76,7 +73,7 @@
     color: #999999; /* TODO typography hca-gray-medium */
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 15px; /* TODO typography - confirm size */
-    font-weight: 500; /* TODO typography */
+    font-weight: 400; /* TODO typography */
     line-height: 30px;
     text-decoration: none;
     white-space: nowrap; /* Horizontal scroll */

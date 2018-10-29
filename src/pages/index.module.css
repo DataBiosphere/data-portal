@@ -6,8 +6,8 @@
  */
 
 .homepage p {
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 15px;
+    line-height: 25px;
     margin: 0 0 18px;
 }
 
@@ -32,9 +32,9 @@
 /* P - class "s" */
 .homepage p.s {
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 25px;
     margin: 0 0 18px;
 }
 
@@ -50,9 +50,9 @@
     color: #1c7cc7; /* TODO colour */
     cursor: pointer;
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 25px;
     margin: 0 0 18px;
     text-decoration: none;
 }

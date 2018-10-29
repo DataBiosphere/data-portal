@@ -48,9 +48,9 @@
 /* Please select - text */
 .hcaSideNav .select span {
     font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400 !important;
-    line-height: 24px;
+    line-height: 25px;
 }
 
 /* Please select icon */
@@ -80,7 +80,7 @@
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 14px; /* TODO typography */
     line-height: 20px;
-    font-weight: 500; /* TODO typography */
+    font-weight: 400; /* TODO typography */
     text-decoration: none;
     width: 100%; /* Improves click-able area on link */
 }
@@ -98,7 +98,7 @@
     color: #999999; /* TODO color hca-gray-medium */
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 13px; /* TODO typography - confirm size */
-    font-weight: 500; /* TODO typography */
+    font-weight: 400; /* TODO typography */
     line-height: 16px;
     text-decoration: none;
     width: 100%;  /* Improves click-able area on link */
@@ -150,11 +150,9 @@
  */
 @media screen and (min-width: 768px) {
 
-    /* Sticky navigation */
+    /* Navigation */
     .hcaNav {
         height: 100%;
-        position: sticky;
-        top: 203px; /* 60px header, 76px section, 55px tabs (-24px margin), 36px content margin */
     }
 
     .hcaSideNav:nth-of-type(2) {

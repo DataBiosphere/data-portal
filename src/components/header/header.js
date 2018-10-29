@@ -10,9 +10,6 @@ import Link from 'gatsby-link';
 import React from 'react';
 import compStyles from './header.module.css';
 
-// App dependencies
-import HeaderTabNav from "../headerTabNav/headerTabNav";
-
 // Images
 import headerLogo from "../../../images/logo/logo-hca.png";
 
@@ -99,27 +96,23 @@ class Header extends React.Component {
                                   to="/analyze/portals/visualization-portals" onMouseEnter={(e) => this.setActiveLink(0)}>
                                 <span>Analyze</span>
                             </Link>
-                            {/*<HeaderTabNav isOpen={this.state.tabId === 0} section={"/analyze"}/>*/}
                         </div>
                         <div id="linkContribute" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active}
                                   to="/contribute/overview/overview" onMouseEnter={(e) => this.setActiveLink(1)}>
                                 <span>Contribute</span>
                             </Link>
-                            {/*<HeaderTabNav isOpen={this.state.tabId === 1} section={"/contribute"}/>*/}
                         </div>
                         <div id="linkLearn" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active} to="/learn/overview/overview" onMouseEnter={(e) => this.setActiveLink(2)} >
                                 <span>Learn</span>
                             </Link>
-                            {/*<HeaderTabNav isOpen={this.state.tabId === 2} section={"/learn"} rightAlign={true}/>*/}
                         </div>
                         <div id="linkBuild" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active}
                                   to="/develop/development-guides/development-guides-overview" onMouseEnter={(e) => this.setActiveLink(3)}>
                                 <span>Develop</span>
                             </Link>
-                            {/*<HeaderTabNav isOpen={this.state.tabId === 3} section={"/develop"} rightAlign={true}/>*/}
                         </div>
                     </div>
                     <Link to="/about/overview/overview" activeClassName={compStyles.active}
