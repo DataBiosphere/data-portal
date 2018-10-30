@@ -9,20 +9,9 @@
 import Autosuggest from 'react-autosuggest';
 import React from 'react';
 
-// App dependencies
-const classNames = require('classnames');
-
 // Styles
 import compStyles from './hcaAutosuggest.module.css';
 import autosuggestTheme from './autosuggestTheme.module.css';
-
-const getHomePageClassName = (homepage, noSuggestions) => {
-
-    return classNames({
-        [compStyles.homepage]: homepage,
-        [compStyles.error]: noSuggestions
-    });
-};
 
 class HCAAutosuggest extends React.Component {
 
@@ -136,7 +125,7 @@ class HCAAutosuggest extends React.Component {
     };
 
     render() {
-        const {value, suggestions, noSuggestions} = this.state;
+        const {value, suggestions} = this.state;
         const inputProps = {
             disabled: this.props.disabled,
             onChange: this.onChange,
@@ -145,7 +134,7 @@ class HCAAutosuggest extends React.Component {
         };
 
         return (
-            <div className={getHomePageClassName(this.props.homepage, noSuggestions)}>
+            <div className={compStyles.homepage}>
                 <Autosuggest
                     getSectionSuggestions={this.getSectionSuggestions}
                     getSuggestionValue={this.getSuggestionValue}

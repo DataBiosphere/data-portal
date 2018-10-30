@@ -62,12 +62,6 @@ class HomepageAutosuggest extends React.Component {
         let data = [];
         if (this.isDataInitialized()) {
 
-            data.push({
-                facetName: "error",
-                facetDisplayName: "Oops! We don’t have an exact match, it may be called by a different name. Scroll through the list to see what data we currently have available.",
-                terms: []
-            });
-
             const termFacets = this.listSelectableTermFacets(this.props.termFacets);
             termFacets.forEach((termFacet) => {
                 data.push(this.buildExploreDataCategory(termFacet.facetName, termFacet.terms));
