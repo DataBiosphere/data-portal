@@ -101,7 +101,7 @@
     font-weight: 400; /* TODO typography */
     line-height: 16px;
     text-decoration: none;
-    width: 100%;  /* Improves click-able area on link */
+    width: 100%; /* Improves click-able area on link */
 }
 
 /* Navigation - hover */
@@ -150,11 +150,9 @@
  */
 @media screen and (min-width: 768px) {
 
-    /* Navigation - sticky */
+    /* Navigation */
     .hcaNav {
         height: 100%;
-        position: sticky;
-        top: 8px;
     }
 
     .hcaSideNav:nth-of-type(2) {

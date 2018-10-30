@@ -157,6 +157,11 @@ pre[class*="language-"] {
     padding: 16px;
 }
 
+/* Strong */
+strong {
+    font-weight: 500;
+}
+
 /* Code within table - allows use of underscore */
 td > code {
     color: inherit !important;
