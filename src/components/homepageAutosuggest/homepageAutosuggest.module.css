@@ -40,6 +40,7 @@
 
 .hompageAutosuggest a.homepage.disabled {
     background-color: #CCCCCC;
+    cursor: default;
 }
 
 /* Jumbotron search button */
