@@ -30,6 +30,7 @@ import * as numberFormatter from "../utils/number-format.service";
 class IndexPage extends React.Component {
 
     state = {
+        cellCount: 0,
         donorCount: 0,
         fileCount: 0,
         fileFormatSummary: null,
@@ -85,7 +86,7 @@ class IndexPage extends React.Component {
                 <div className={classNames({[compStyles.statsBar]: true, [compStyles.loaded]: this.state.loaded})}>
                     <div className={compStyles.wrapper}>
                         <div><p className={compStyles.xs}>CELLS</p>
-                            <h1>{this.state.fileCount ? this.formatCount(this.state.fileCount) : ""}</h1></div>
+                            <h1>{this.state.cellCount ? this.formatCount(this.state.cellCount) : ""}</h1></div>
                         <div><p className={compStyles.xs}>ORGANS</p>
                             <h1>{this.state.fileCount ? this.formatCount(this.state.organCount) : ""}</h1></div>
                         <div><p className={compStyles.xs}>DONORS</p>

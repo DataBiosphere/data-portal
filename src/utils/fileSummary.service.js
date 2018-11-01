@@ -40,6 +40,7 @@ export function fetchTermFacets() {
 function bindFileSummaryResponse(fileSummaryResponse) {
 
     return {
+        cellCount: fileSummaryResponse.totalCellCount,
         donorCount: fileSummaryResponse.donorCount,
         fileCount: fileSummaryResponse.fileCount,
         fileFormatSummary: fileSummaryResponse.fileTypeSummaries.map((summary) => {
