@@ -38,7 +38,7 @@ class HCAAutosuggest extends React.Component {
     getSuggestions = value => {
 
         const escapedValue = this.escapeRegexCharacters(value.trim());
-        const regex = new RegExp('^' + escapedValue, 'i');
+        const regex = new RegExp(escapedValue, 'i');
 
         const suggestion = this.props.autosuggestData.map((section, i) => {
             return {
