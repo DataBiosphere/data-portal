@@ -220,11 +220,11 @@ const siteMap =
                                         name: "Smart-seq2 Workflow",
                                         key: "/learn/userguides/data-processing-pipelines/smart-seq2-workflow"
                                     },
-                                    {
-                                        name: "Optimus Prime Workflow",
-                                        key: "/learn/userguides/data-processing-pipelines/optimus-prime-workflow"
-
-                                    },
+                                    // {
+                                    //     name: "Optimus Prime Workflow",
+                                    //     key: "/learn/userguides/data-processing-pipelines/optimus-prime-workflow"
+                                    //
+                                    // },
                                     {
                                         name: "File Formats",
                                         key: "/learn/userguides/data-processing-pipelines/file-formats"
