@@ -12,9 +12,9 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 // App dependencies
+import Banner from '../components/banner/banner';
 import Footer from '../components/footer/footer';
 import Header from '../components/header/header';
-import Privacy from '../components/privacy/privacy';
 import compStyles from './index.module.css';
 
 require(`prismjs/themes/prism-solarizedlight.css`);
@@ -34,7 +34,7 @@ const Layout = ({children, data}) => (
         <div className={compStyles.content}>
             {children()}
         </div>
-        <Privacy cookieName="privacyAccepted"/>
+        <Banner/>
         <Footer/>
     </div>
 );

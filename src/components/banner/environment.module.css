@@ -1,0 +1,91 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal production environment component.
+ */
+
+/* Environment */
+.environment {
+    background-color: #666666;
+}
+
+/* Wrapper */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 64px;
+    padding: 14px 16px;
+}
+
+/* Environment text */
+.environment .xxs {
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+}
+
+/* Button - class dismiss */
+a.dismiss {
+    align-items: center;
+    color: #ffffff;
+    border: 1px solid #ffffff; /* TODO colour */
+    border-radius: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 0;
+    font-size: 12px;
+    justify-content: center;
+    margin: 8px 0 0;
+    min-width: 84px;
+    padding: 2px 12px;
+    width: max-content;
+}
+
+a.dismiss:hover {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+a.dismiss:focus {
+    outline: none;
+}
+
+
+/**
+ * Small Tablet +
+ */
+@media screen and (min-width: 960px) {
+
+    /* Wrapper */
+    .wrapper {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    /* Button - class dismiss */
+    a.dismiss {
+        height: 38px;
+        margin: 0;
+        padding: 10px 12px;
+    }
+}
+
+/**
+ * Large +
+ */
+@media screen and (min-width: 1200px) {
+
+    /* Wrapper */
+    .wrapper {
+        margin: 0 auto;
+        max-width: 1200px; /* Snap to 1200px, gutter 30px */
+        padding: 0 30px;
+    }
+}
+
