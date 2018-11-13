@@ -31,10 +31,11 @@ const Layout = ({children, data}) => (
             <link rel="stylesheet" href="https://use.typekit.net/qhb0geh.css"/>
         </Helmet>
         <Header/>
+        <Banner type={"environment"}/>
         <div className={compStyles.content}>
             {children()}
         </div>
-        <Banner/>
+        <Banner type={"privacy"}/>
         <Footer/>
     </div>
 );

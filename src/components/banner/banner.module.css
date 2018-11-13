@@ -7,6 +7,13 @@
 
 /* Banner */
 .banner {
-    bottom: 0;
     position: sticky;
+    bottom: 0;
+    z-index: 50;
+}
+
+/* Environment banner */
+.banner.environment {
+    bottom: unset;
+    top: 0;
 }

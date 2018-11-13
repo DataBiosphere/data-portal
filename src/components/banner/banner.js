@@ -7,11 +7,28 @@
 
 // Core dependencies
 import Environment from './environment'
-import Privacy from './privacy';
+import Privacy from './privacy'
 import React from 'react';
 import compStyles from './banner.module.css'
 
+const classNames = require('classnames');
+
 class Banner extends React.Component {
+
+    getBannerClassName = (bannerType) => {
+
+        if (bannerType === "environment") {
+
+            return classNames({
+                [compStyles.banner]: true,
+                [compStyles.environment]: true
+            });
+        }
+
+        return classNames({
+            [compStyles.banner]: true
+        });
+    };
 
     isTestEnvironment = () => {
 
@@ -19,11 +36,12 @@ class Banner extends React.Component {
         return ((environment === "dev") || (environment === "integration") || (environment === "staging"));
     };
 
-    render() {
+    render(props) {
         return (
-            <div className={compStyles.banner}>
-                <Privacy cookieName="privacyAccepted"/>
-                {this.isTestEnvironment() ? <Environment cookieName="environmentAccepted"/> : null}
+            <div className={this.getBannerClassName(this.props.type)}>
+                {this.isTestEnvironment() && this.props.type === "environment" ?
+                    <Environment cookieName="environmentAccepted"/> : null}
+                {this.props.type === "privacy" ? <Privacy cookieName="privacyAccepted"/> : null}
             </div>
         );
     }
