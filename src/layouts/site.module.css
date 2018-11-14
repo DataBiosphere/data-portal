@@ -1,0 +1,22 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal site component.
+ */
+
+.site {
+    background-color: #ffffff; /* TODO colour */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Menu open - no scroll */
+.site.noScroll {
+    position: fixed;
+}
+
+.content {
+    flex: 1;
+}

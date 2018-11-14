@@ -17,8 +17,8 @@ const classNames = require('classnames');
 
 class Header extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {showNav: false, tabId: null};
         this.clearActiveLink = this.clearActiveLink.bind(this);
         this.setActiveLink = this.setActiveLink.bind(this);
@@ -50,7 +50,8 @@ class Header extends React.Component {
     };
 
     toggleMenu = () => {
-        this.setState({showNav: !this.state.showNav})
+        this.setState({showNav: !this.state.showNav});
+        this.props.onMenuOpen(this.state.showNav);
     };
 
     render() {
