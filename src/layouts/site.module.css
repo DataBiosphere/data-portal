@@ -14,7 +14,9 @@
 
 /* Menu open - no scroll */
 .site.noScroll {
+    left: 0;
     position: fixed;
+    right: 0;
 }
 
 .content {
