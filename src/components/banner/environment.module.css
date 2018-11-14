@@ -7,22 +7,23 @@
 
 /* Environment */
 .environment {
-    background-color: #666666;
+    background-color: #000000;
 }
 
 /* Wrapper */
 .wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 64px;
+    min-height: 84px;
     padding: 14px 16px;
 }
 
 /* Environment text */
-.environment .xxs {
+.environment .s {
     color: #ffffff;
-    font-size: 12px;
-    line-height: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    line-height: 30px;
     margin: 0;
 }
 
