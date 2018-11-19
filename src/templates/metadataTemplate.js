@@ -58,7 +58,7 @@ export default function Template({data}) {
                             className="content-template"
                             dangerouslySetInnerHTML={{__html: html}}
                         />
-                        <p className={compStyles.xxs}>*Required Fields</p>
+                        <p className={compStyles.xxs}>* Indicates a required field</p>
                         <h2>{title} Core</h2>
                         <Metadata entity={core}/>
                         <h2>{title} Types</h2>
