@@ -15,58 +15,8 @@ import TabNav from "../components/tabNav/tabNav";
 
 let classNames = require('classnames');
 
-// let metadataTable =
-//     {
-//         entity: "Donor Fran Organism",
-//         properties: [
-//             {
-//                 name: "Biomaterial ID IS COOL",
-//                 description: "A unique ID for this biomaterial"
-//             },
-//             {
-//                 name: "Biomaterial Name",
-//                 description: "A short, descriptive name for the biomaterial that need not be unique"
-//             },
-//             {
-//                 name: "Biomaterial Description",
-//                 description: "A general description of the biomaterial"
-//             }
-//         ]
-//     };
-//
-// let metadataTable2 =
-//     {
-//         entity: "Some Entity",
-//         properties: [
-//             {
-//                 name: "Biomaterial ID",
-//                 description: "A unique ID for this biomaterial"
-//             },
-//             {
-//                 name: "Biomaterial Name",
-//                 description: "A short, descriptive name for the biomaterial that need not be unique"
-//             },
-//             {
-//                 name: "Biomaterial Description",
-//                 description: "A general description of the biomaterial"
-//             }
-//         ]
-//     };
-//
-// let coreEntity = "biomaterial";
-//
-// let entity = {
-//
-//     core: metadataTable,
-//     types: [metadataTable2, metadataTable, metadataTable],
-//     modules: [metadataTable, metadataTable, metadataTable, metadataTable]
-//
-// };
-
 // the data prop will be injected by the GraphQL query below.
 export default function Template({data}) {
-
-    console.log(data)
 
     const markdownRemark = data.markdown; // data.markdownRemark holds our post data
     const {frontmatter, html} = markdownRemark;
@@ -93,7 +43,7 @@ export default function Template({data}) {
 
     const modules = data.metadata.edges.filter((x) =>{
         return x.node.schemaType==="module";
-    }).map(n => n.node);;
+    }).map(n => n.node);
 
 
     return (
@@ -108,6 +58,7 @@ export default function Template({data}) {
                             className="content-template"
                             dangerouslySetInnerHTML={{__html: html}}
                         />
+                        <p className={compStyles.xxs}>*Required Fields</p>
                         <h2>{title} Core</h2>
                         <Metadata entity={core}/>
                         <h2>{title} Types</h2>
@@ -162,6 +113,7 @@ export const pageQuery = graphql`
         properties{
           name
           description
+          required
           userFriendly
         }
       }

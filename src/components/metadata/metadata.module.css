@@ -14,7 +14,7 @@ h3 {
     align-items: flex-start;
     border-bottom: 1px solid #CCCCCC; /* TODO colour */
     display: flex;
-    padding: 8px 0;
+    padding: 12px 0;
 }
 
 .metadataRow span {
@@ -25,18 +25,37 @@ h3 {
 }
 
 /* Label */
-.metadataRow span:first-of-type {
+.metadataName {
+    align-items: flex-start;
+    display: flex;
+    min-width: 160px;
     padding-right: 8px;
+    position: relative; /* To position required field tooltip */
     width: 30%;
 }
 
+/* Required field '*' */
+.metadataName > span >span {
+    padding-left: 1px;
+}
+
+/* Required field tooltip */
+.showTooltip:hover::after {
+    bottom: -8px;
+    content: 'Required field';
+    font-family: Montserrat, sans-serif;
+    font-size: 8px;
+    position: absolute;
+    z-index: 100;
+}
+
 /* Description */
-.metadataRow span:last-of-type {
+.metadataRow > span {
     width: 70%;
 }
 
 /* Description links */
-.metadataRow span:last-of-type a {
+.metadataRow > span a {
     font: inherit;
     word-break: break-all;
 }

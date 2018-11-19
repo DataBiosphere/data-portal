@@ -26,6 +26,11 @@
     width: 100%;
 }
 
+/* Required fields - class fontsize-xxs */
+.hcaContent .markdownContent p.xxs {
+    margin: -32px 0 32px;
+}
+
 /* Edit me */
 .markdownContent .editContent {
     color: rgba(28, 124, 199, 0.6);

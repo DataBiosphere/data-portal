@@ -50,11 +50,13 @@ async function onCreateNode({ node, getNode, boundActionCreators, loadNodeConten
     const sections = relativeFilePath.split("/");
 
     const propertyNames = _.keys(parsedContent.properties);
+    const requiredProperties = parsedContent.required || [];
 
     const properties = propertyNames.map((name) =>{
         return {
             name: name,
             description: parsedContent.properties[name].description,
+            required: requiredProperties.includes(name),
             userFriendly: parsedContent.properties[name].user_friendly
         }
     });

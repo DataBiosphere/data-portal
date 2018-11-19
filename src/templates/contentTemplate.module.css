@@ -51,7 +51,7 @@ p[class^="m"], h5 {
 }
 
 /* P - class "s" */
-p[class^="s"], h6 {
+p[class*="s"], h6 {
     font-family: "Montserrat", sans-serif;
     font-size: 15px;
     font-weight: 400 !important;
@@ -67,7 +67,7 @@ p[class*="xs"] {
 }
 
 /* P - class "xxs" */
-p[class^="xxs"] {
+p[class*="xxs"] {
     font-size: 12px;
     line-height: 18px;
     margin: 0 0 14px;
