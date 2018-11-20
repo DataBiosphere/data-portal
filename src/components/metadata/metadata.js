@@ -12,21 +12,11 @@ import compStyles from './metadata.module.css'
 // App dependencies
 import Linkify from 'react-linkify';
 
-let classNames = require('classnames');
-
 class Metadata extends React.Component {
 
     constructor(props) {
         super(props);
     }
-
-    getRequiredClassName = (isFieldRequired) => {
-
-        return classNames({
-            [compStyles.metadataName]: true,
-            [compStyles.showTooltip]: isFieldRequired
-        });
-    };
 
     render() {
         return (
@@ -36,7 +26,7 @@ class Metadata extends React.Component {
                     {this.props.entity.properties.filter((element) => {
                         return element.name !== "describedBy" && element.name !== "schema_version" && element.name !== "schema_type";
                     }).map((element, i) => <div key={i} className={compStyles.metadataRow}>
-                        <div className={this.getRequiredClassName(element.required)}>
+                        <div className={compStyles.metadataName}>
                             <span>{element.userFriendly ? element.userFriendly : element.name}<span>{element.required ? '*' : null}</span></span>
                         </div>
                         <Linkify>{element.description}</Linkify>

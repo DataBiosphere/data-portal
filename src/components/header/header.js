@@ -75,17 +75,12 @@ class Header extends React.Component {
                                 <span>Contribute</span>
                                 <span>Submit your data to the HCA</span>
                             </Link>
-                            <Link activeClassName={compStyles.active} to="/learn/overview/overview"
+                            <Link activeClassName={compStyles.active} to="/learn/userguides/accessing-data"
                                   onClick={this.toggleMenu}>
                                 <span>Learn</span>
                                 <span>Find user guides and how-to’s here</span>
                             </Link>
-                            <Link activeClassName={compStyles.active}
-                                  to="/develop/development-guides/development-guides-overview" onClick={this.toggleMenu}>
-                                <span>Develop</span>
-                                <span>Find developer guides and API docs</span>
-                            </Link>
-                            <Link to="/about/overview/overview" activeClassName={compStyles.active}
+                            <Link to="/about/platform/dcp" activeClassName={compStyles.active}
                                   className={compStyles.about} onClick={this.toggleMenu}>About</Link>
                         </div> : null}
                     <div className={classNames(compStyles.links)} ref={(div) => this.links = div}>
@@ -105,18 +100,12 @@ class Header extends React.Component {
                             </Link>
                         </div>
                         <div id="linkLearn" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
-                            <Link activeClassName={compStyles.active} to="/learn/overview/overview" onMouseEnter={(e) => this.setActiveLink(2)} >
+                            <Link activeClassName={compStyles.active} to="/learn/userguides/accessing-data" onMouseEnter={(e) => this.setActiveLink(2)} >
                                 <span>Learn</span>
                             </Link>
                         </div>
-                        <div id="linkBuild" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
-                            <Link activeClassName={compStyles.active}
-                                  to="/develop/development-guides/development-guides-overview" onMouseEnter={(e) => this.setActiveLink(3)}>
-                                <span>Develop</span>
-                            </Link>
-                        </div>
                     </div>
-                    <Link to="/about/overview/overview" activeClassName={compStyles.active}
+                    <Link to="/about/platform/dcp" activeClassName={compStyles.active}
                           className={compStyles.about}>About</Link>
                     <div className={compStyles.menuDropDown} onClick={this.toggleMenu}>Menu</div>
                     {this.state.showNav ? <div className={compStyles.hcaNavOverlay} onClick={this.toggleMenu}/> : null}

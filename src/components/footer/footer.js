@@ -18,12 +18,7 @@ const Footer = () => (
         <div className={compStyles.wrapper}>
             <a href="https://www.humancellatlas.org/" className={compStyles.logo}><i className='material-icons'>chevron_left</i><img src={footerLogo}/></a>
             <div className={compStyles.links}>
-                {/*<Link to="/">Events/Webinar</Link>*/}
-                {/*<Link to="/">Announcements</Link>*/}
-                {/*<Link to="/">Blog</Link>*/}
-                {/*<Link to="/">Forum</Link>*/}
-                <Link to="/about/overview/overview">About</Link>
-                {/*<Link to="/">Feature Requests</Link>*/}
+                <Link to="/about/platform/dcp">About</Link>
                 <Link to="/help/help/help-and-faq">Help</Link>
                 <Link to="/attributions">Attributions</Link>
                 <Link to="/privacy/privacy/privacy">Privacy</Link>

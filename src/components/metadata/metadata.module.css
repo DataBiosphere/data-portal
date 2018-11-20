@@ -14,7 +14,7 @@ h3 {
     align-items: flex-start;
     border-bottom: 1px solid #CCCCCC; /* TODO colour */
     display: flex;
-    padding: 12px 0;
+    padding: 8px 0;
 }
 
 .metadataRow span {
@@ -37,16 +37,6 @@ h3 {
 /* Required field '*' */
 .metadataName > span >span {
     padding-left: 1px;
-}
-
-/* Required field tooltip */
-.showTooltip:hover::after {
-    bottom: -8px;
-    content: 'Required field';
-    font-family: Montserrat, sans-serif;
-    font-size: 8px;
-    position: absolute;
-    z-index: 100;
 }
 
 /* Description */

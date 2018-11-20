@@ -14,38 +14,38 @@ const siteMap =
             key: "about",
             children: [
                 {
-                    name: "Overview",
-                    key: "overview",
-                    children: [
-                        {
-                            name: "Overview",
-                            key: "/about/overview/overview"
-                        }
-                    ]
-                },
-                {
                     name: "What is the Platform",
-                    key: "what-is-the-platform",
+                    key: "platform",
                     children: [
                         {
                             name: "What is the Platform",
-                            key: "/about/what-is-the-platform/what-is-the-platform"
+                            key: "/about/platform/dcp",
+                            children: [
+                                {
+                                    name: "Ingest Service",
+                                    key: "/about/platform/dcp/ingest-service"
+                                },
+                                {
+                                    name: "Data Store",
+                                    key: "/about/platform/dcp/data-store"
+                                },
+                                {
+                                    name: "Data Browser",
+                                    key: "/about/platform/dcp/data-browser"
+                                },
+                                {
+                                    name: "Data Processing Pipelines",
+                                    key: "/about/platform/dcp/data-processing-pipelines"
+                                }
+                            ]
                         },
                         {
-                            name: "Ingest Service",
-                            key: "/about/what-is-the-platform/ingest-service"
+                            name: "Data Lifecycle",
+                            key: "/about/platform/data-lifecycle",
                         },
                         {
-                            name: "Data Store",
-                            key: "/about/what-is-the-platform/data-store"
-                        },
-                        {
-                            name: "Data Browser",
-                            key: "/about/what-is-the-platform/data-browser"
-                        },
-                        {
-                            name: "Data Processing Pipelines",
-                            key: "/about/what-is-the-platform/data-processing-pipelines"
+                            name: "Data Use Agreement",
+                            key: "/about/platform/data-use-agreement",
                         }
                     ]
                 }
@@ -100,93 +100,10 @@ const siteMap =
             ]
         },
         {
-            name: "Develop",
-            key: "develop",
-            children: [
-                {
-                    name: "Development Guides",
-                    key: "development-guides",
-                    children: [
-                        {
-                            name: "Overview",
-                            key: "/develop/development-guides/development-guides-overview"
-                        },
-                        {
-
-                            name: "Ingest Data Brokers",
-                            key: "/develop/development-guides/ingest-broker-development-guide"
-                        },
-                        {
-                            name: "Processing Pipelines",
-                            key: "/develop/development-guides/pipeline-processing-development-guides/overview-pipeline-processing-development-guides",
-                            children: [
-                                {
-                                    name: "Pipeline Best Practices",
-                                    key: "/develop/development-guides/pipeline-processing-development-guides/workflow-best-practices"
-                                },
-                                {
-                                    name: "Building Pipelines",
-                                    key: "/develop/development-guides/pipeline-processing-development-guides/pipeline-development-guide"
-                                },
-                                {
-                                    name: "Testing Pipelines",
-                                    key: "/develop/development-guides/pipeline-processing-development-guides/testing-pipelines"
-                                },
-                                {
-                                    name: "Contributing Pipelines",
-                                    key: "/develop/development-guides/pipeline-processing-development-guides/contributing-a-pipeline-to-the-hca-dcp"
-                                },
-                                {
-                                    name: "Portability Service Environments",
-                                    key: "/develop/development-guides/pipeline-processing-development-guides/adding-an-environment-to-the-portability-service"
-                                }
-                            ]
-                        },
-                        {
-                            name: "Analysis Applications",
-                            key: "/develop/development-guides/analysis-applications"
-                        },
-                        {
-                            name: "Data Consumer Vignettes",
-                            key: "/develop/development-guides/consumer-vignettes"
-                        }
-                    ]
-                },
-                {
-                    name: "API Documentation",
-                    key: "api-documentation",
-                    children: [
-                        {
-                            name: "Data Store API",
-                            key: "/develop/api-documentation/data-store-consumer-api"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             name: "Learn",
             key: "learn",
             children:
                 [
-                    {
-                        name: "Overview",
-                        key: "overview",
-                        children: [
-                            {
-                                name: "Overview",
-                                key: "/learn/overview/overview",
-                            },
-                            {
-                                name: "Data Lifecycle",
-                                key: "/learn/overview/data-lifecycle",
-                            },
-                            {
-                                name: "Data Use Agreement",
-                                key: "/learn/overview/data-use-agreement",
-                            }
-                        ]
-                    },
                     {
                         name: "User Guides",
                         key: "userguides",
@@ -291,6 +208,60 @@ const siteMap =
                             }
 
 
+                        ]
+                    },
+                    {
+                        name: "Development Guides",
+                        key: "development-guides",
+                        children: [
+                            {
+                                name: "Ingest Data Brokers",
+                                key: "/learn/development-guides/ingest-broker-development-guide"
+                            },
+                            {
+                                name: "Processing Pipelines",
+                                key: "/learn/development-guides/pipeline-processing-development-guides/overview-pipeline-processing-development-guides",
+                                children: [
+                                    {
+                                        name: "Pipeline Best Practices",
+                                        key: "/learn/development-guides/pipeline-processing-development-guides/workflow-best-practices"
+                                    },
+                                    {
+                                        name: "Building Pipelines",
+                                        key: "/learn/development-guides/pipeline-processing-development-guides/pipeline-development-guide"
+                                    },
+                                    {
+                                        name: "Testing Pipelines",
+                                        key: "/learn/development-guides/pipeline-processing-development-guides/testing-pipelines"
+                                    },
+                                    {
+                                        name: "Contributing Pipelines",
+                                        key: "/learn/development-guides/pipeline-processing-development-guides/contributing-a-pipeline-to-the-hca-dcp"
+                                    },
+                                    {
+                                        name: "Portability Service Environments",
+                                        key: "/learn/development-guides/pipeline-processing-development-guides/adding-an-environment-to-the-portability-service"
+                                    }
+                                ]
+                            },
+                            {
+                                name: "Analysis Applications",
+                                key: "/learn/development-guides/analysis-applications"
+                            },
+                            {
+                                name: "Data Consumer Vignettes",
+                                key: "/learn/development-guides/consumer-vignettes"
+                            }
+                        ]
+                    },
+                    {
+                        name: "API Documentation",
+                        key: "api-documentation",
+                        children: [
+                            {
+                                name: "Data Store API",
+                                key: "/learn/api-documentation/data-store-consumer-api"
+                            }
                         ]
                     }
                 ]
