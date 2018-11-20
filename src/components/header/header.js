@@ -65,15 +65,15 @@ class Header extends React.Component {
                                 <span>Explore</span>
                                 <span>Search for data in the HCA</span>
                             </a>
-                            <Link activeClassName={compStyles.active} to="/analyze/portals/visualization-portals"
-                                  onClick={this.toggleMenu}>
-                                <span>Analyze</span>
-                                <span>Find a list of Apps</span>
-                            </Link>
                             <Link activeClassName={compStyles.active} to="/contribute/overview/overview"
                                   onClick={this.toggleMenu}>
                                 <span>Contribute</span>
                                 <span>Submit your data to the HCA</span>
+                            </Link>
+                            <Link activeClassName={compStyles.active} to="/analyze/portals/visualization-portals"
+                                  onClick={this.toggleMenu}>
+                                <span>Analyze</span>
+                                <span>Find a list of Apps</span>
                             </Link>
                             <Link activeClassName={compStyles.active} to="/learn/userguides/accessing-data"
                                   onClick={this.toggleMenu}>
@@ -87,16 +87,16 @@ class Header extends React.Component {
                         <a href={process.env.GATSBY_EXPLORE_URL}>
                             <span>Explore</span>
                         </a>
-                        <div id="linkAnalyze" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
-                            <Link activeClassName={compStyles.active}
-                                  to="/analyze/portals/visualization-portals" onMouseEnter={(e) => this.setActiveLink(0)}>
-                                <span>Analyze</span>
-                            </Link>
-                        </div>
                         <div id="linkContribute" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active}
                                   to="/contribute/overview/overview" onMouseEnter={(e) => this.setActiveLink(1)}>
                                 <span>Contribute</span>
+                            </Link>
+                        </div>
+                        <div id="linkAnalyze" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
+                            <Link activeClassName={compStyles.active}
+                                  to="/analyze/portals/visualization-portals" onMouseEnter={(e) => this.setActiveLink(0)}>
+                                <span>Analyze</span>
                             </Link>
                         </div>
                         <div id="linkLearn" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
