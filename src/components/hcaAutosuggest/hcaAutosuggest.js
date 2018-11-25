@@ -6,12 +6,22 @@
  */
 
 // Core dependencies
-import Autosuggest from 'react-autosuggest';
+import Autosuggest from '../reactAutosuggest/Autosuggest';
 import React from 'react';
+
+// App dependencies
+const classNames = require('classnames');
 
 // Styles
 import compStyles from './hcaAutosuggest.module.css';
 import autosuggestTheme from './autosuggestTheme.module.css';
+
+const getHomePageClassName = (homepage, suggestionsFound) => {
+    return classNames({
+        [compStyles.homepage]: homepage,
+        [compStyles.error]: !suggestionsFound
+    });
+};
 
 class HCAAutosuggest extends React.Component {
 
@@ -20,8 +30,9 @@ class HCAAutosuggest extends React.Component {
         this.state = {
             highlightedSuggestion: '',
             suggestions: [],
-            value: '',
-            noSuggestions: false
+            suggestionsFound: false,
+            touched: false,
+            value: ''
         };
     }
 
@@ -35,27 +46,20 @@ class HCAAutosuggest extends React.Component {
         return section.terms;
     };
 
-    getSuggestions = value => {
+    findMatchingSuggestions = value => {
 
         const escapedValue = this.escapeRegexCharacters(value.trim());
         const regex = new RegExp(escapedValue, 'i');
 
-        const suggestion = this.props.autosuggestData.map((section, i) => {
-            return {
-                facetName: section.facetName,
-                facetDisplayName: section.facetDisplayName,
-                terms: section.terms.filter(term => regex.test(term.termName))
-            };
-        }).filter(section => section.terms.length > 0);
-
-        if (suggestion.length) {
-            this.setState({noSuggestions: false});
-            return suggestion;
-        }
-        else {
-            this.setState({noSuggestions: true});
-            return this.props.autosuggestData;
-        }
+        return this.props.autosuggestData
+            .map((section, i) => {
+                return {
+                    facetName: section.facetName,
+                    facetDisplayName: section.facetDisplayName,
+                    terms: section.terms.filter(term => regex.test(term.termName))
+                };
+            })
+            .filter(section => section.terms.length > 0);
     };
 
     getSuggestionValue = suggestion => suggestion.termName;
@@ -65,7 +69,7 @@ class HCAAutosuggest extends React.Component {
         this.props.onSelected();
         this.setState({value: newValue});
 
-        if (method === 'enter') {
+        if ( method === 'enter' ) {
 
             this.props.onSelected(this.state.highlightedSuggestion.termName);
             this.props.onEnter();
@@ -80,13 +84,22 @@ class HCAAutosuggest extends React.Component {
     };
 
     onSuggestionsFetchRequested = ({value}) => {
+        
+        // Determine if user has entered input - we know this if component state was previous touched, or was previously 
+        // not touched and we now have a value
+        const touched = this.state.touched || (!this.state.touched && !!value);
 
-        const suggestions = this.getSuggestions(value);
-        const isInputBlank = value.trim() === '';
-
+        let suggestions = this.findMatchingSuggestions(value);
+        const suggestionsFound = !!suggestions.length;
         this.setState({
-            suggestions: suggestions
+            suggestionsFound: suggestionsFound,
+            suggestions: suggestions.length ? suggestions : this.props.autosuggestData,
+            touched: true
         });
+
+        if ( touched ) {
+            this.props.onSuggestionsFound(suggestionsFound);
+        }
     };
 
     /* Always returns valid value - i.e. first value on list highlighted */
@@ -95,7 +108,7 @@ class HCAAutosuggest extends React.Component {
 
         this.setState({highlightedSuggestion: suggestion});
 
-        if (suggestion) {
+        if ( suggestion ) {
 
             this.props.onSelected(suggestion.termName);
         }
@@ -125,7 +138,7 @@ class HCAAutosuggest extends React.Component {
     };
 
     render() {
-        const {value, suggestions} = this.state;
+        const {value, suggestions, suggestionsFound} = this.state;
         const inputProps = {
             disabled: this.props.disabled,
             onChange: this.onChange,
@@ -134,8 +147,9 @@ class HCAAutosuggest extends React.Component {
         };
 
         return (
-            <div className={compStyles.homepage}>
+            <div className={getHomePageClassName(this.props.homepage, suggestionsFound)}>
                 <Autosuggest
+                    alwaysRenderSuggestions={true}
                     getSectionSuggestions={this.getSectionSuggestions}
                     getSuggestionValue={this.getSuggestionValue}
                     highlightFirstSuggestion={true}
@@ -149,6 +163,7 @@ class HCAAutosuggest extends React.Component {
                     renderSectionTitle={this.renderSectionTitle}
                     shouldRenderSuggestions={this.shouldRenderSuggestions}
                     suggestions={suggestions}
+                    suggestionsFound={suggestionsFound}
                     theme={autosuggestTheme}/>
             </div>
         );

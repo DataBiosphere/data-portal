@@ -28,9 +28,11 @@
     "npm": "^6.0.1",
     "prism": "^4.1.2",
     "prismjs": "^1.14.0",
-    "react-autosuggest": "^9.3.4",
+    "prop-types": "15.6.2",
+    "react-autowhatever": "10.2.0",
     "react-helmet": "^5.2.0",
-    "react-linkify": "^0.2.2"
+    "react-linkify": "^0.2.2",
+    "shallow-equal": "1.0.0"
   },
   "keywords": [
     "gatsby"

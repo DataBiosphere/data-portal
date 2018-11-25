@@ -35,7 +35,11 @@ class HomepageAutosuggest extends React.Component {
 
     constructor() {
         super();
-        this.state = {selectedFacet: "", selectedTerm: ""};
+        this.state = {
+            disabled: false, // False if user has entered suggestion text that results in no hits,
+            selectedFacet: "",
+            selectedTerm: ""
+        };
         this.onSelected = this.onSelected.bind(this);
     }
 
@@ -61,6 +65,12 @@ class HomepageAutosuggest extends React.Component {
 
         let data = [];
         if (this.isDataInitialized()) {
+
+            data.push({
+                facetName: "error",
+                facetDisplayName: "Oops! We don’t have an exact match, it may be called by a different name. Scroll through the list to see what data we currently have available.",
+                terms: []
+            });
 
             const termFacets = this.listSelectableTermFacets(this.props.termFacets);
             termFacets.forEach((termFacet) => {
@@ -124,13 +134,18 @@ class HomepageAutosuggest extends React.Component {
 
         if (term) {
 
-            let facetName = this.getExploreData().filter(t => t.terms.find(f => f.termName === term));
+            let facetName = this.getExploreData().filter(t => t.terms.find(f => f.termName === term));0
             this.setState({selectedFacet: facetName[0].facetName, selectedTerm: term});
         }
         else {
 
             this.setState({selectedFacet: "", selectedTerm: ""});
         }
+    };
+
+    onSuggestionsFound = (suggestionsFound) => {
+
+        this.setState({disabled: !suggestionsFound});
     };
 
     visitExploreLink = () => {
@@ -140,7 +155,7 @@ class HomepageAutosuggest extends React.Component {
                 "facetName": this.state.selectedFacet,
                 "terms": [this.state.selectedTerm]
             }]);
-            window.location.href = `${process.env.GATSBY_EXPLORE_URL}specimens?filter=${facetFilter}`;
+            window.location.href = `${process.env.GATSBY_EXPLORE_URL}projects?filter=${facetFilter}`;
         }
         if (!this.state.selectedTerm) {
             console.log("error");
@@ -156,7 +171,8 @@ class HomepageAutosuggest extends React.Component {
                                 homepage={true}
                                 showCount={false}
                                 onEnter={this.onEnter.bind(this)}
-                                onSelected={this.onSelected.bind(this)}/>
+                                onSelected={this.onSelected.bind(this)}
+                                onSuggestionsFound={this.onSuggestionsFound.bind(this)}/>
                 <a onClick={this.visitExploreLink} className={this.getSearchButtonClass()}>Search</a>
             </div>
         );
