@@ -20,6 +20,7 @@ const classNames = require('classnames');
 
 // Facet blacklist - exclude from autosuggest
 const FACET_BLACKLIST = [
+    "contactName",
     "laboratory",
     "organismAge",
     "organismAgeUnit"
