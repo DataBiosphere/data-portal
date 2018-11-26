@@ -18,18 +18,17 @@ import compStyles from './homepageAutosuggest.module.css';
 
 const classNames = require('classnames');
 
-// Vars
-const SELECTABLE_TERM_FACET_NAMES = [
-    "biologicalSex",
-    "disease",
-    "genusSpecies",
-    "institution",
-    "instrumentManufacturerModel",
+// Facet blacklist - exclude from autosuggest
+const FACET_BLACKLIST = [
     "laboratory",
-    "organ",
-    "organPart",
-    "project"
+    "organismAge",
+    "organismAgeUnit"
 ];
+
+// Facet display names
+const FACET_DISPLAY_NAMES = {
+    "disease": "knownDiseases"
+};
 
 class HomepageAutosuggest extends React.Component {
 
@@ -72,7 +71,20 @@ class HomepageAutosuggest extends React.Component {
                 terms: []
             });
 
-            const termFacets = this.listSelectableTermFacets(this.props.termFacets);
+            const termFacets = this.listSelectableTermFacets(this.props.termFacets)
+                .map((facet) => {
+                    
+                    const displayName = FACET_DISPLAY_NAMES[facet.facetName];
+                    if ( displayName ) {
+                        return Object.assign({}, facet, {
+                            facetName: displayName
+                        });
+                    }
+                    return facet;
+                });
+            termFacets.sort((facet0, facet1) => {
+                return facet0.facetName > facet1.facetName ? 1 : -1;
+            });
             termFacets.forEach((termFacet) => {
                 data.push(this.buildExploreDataCategory(termFacet.facetName, termFacet.terms));
             });
@@ -121,7 +133,7 @@ class HomepageAutosuggest extends React.Component {
 
         return termFacets.filter(termFacet => {
 
-            return SELECTABLE_TERM_FACET_NAMES.indexOf(termFacet.facetName) >= 0;
+            return FACET_BLACKLIST.indexOf(termFacet.facetName) === -1;
         });
     };
 
