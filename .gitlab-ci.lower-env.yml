@@ -33,6 +33,20 @@ build_develop:
   only:
     - develop
 
+
+# Develop Build
+build_ux-dev:
+  <<: *build_template
+  environment:
+    name: ux-dev
+  script:
+    - export GATSBY_EXPLORE_URL=https://ux-dev.data.humancellatlas.org/explore/
+    - export GATSBY_FILE_SUMMARY_API_URL=https://service.dev.explore.data.humancellatlas.org/repository/summary
+    - export GATSBY_TERM_FACETS_API_URL=https://service.dev.explore.data.humancellatlas.org/repository/projects
+    - gatsby build
+  only:
+    - ux-dev
+
 # Integration Build
 build_integration:
   <<: *build_template
@@ -82,6 +96,17 @@ deploy_develop:
     - aws cloudfront create-invalidation --distribution-id EDQUW4UP25O4L --paths "/*"
   only:
     - develop
+# Dev Deploy
+deploy_ux-dev:
+  <<: *deploy_template
+  environment:
+    name: ux-dev
+  script:
+    - export BUCKET=s3://ux-dev.data.humancellatlas.org/
+    - aws s3 sync --acl public-read public/ $BUCKET --delete
+    - aws cloudfront create-invalidation --distribution-id E3JWRFLK4O8V1L --paths "/*"
+  only:
+    - ux-dev
 # Integration Deploy
 deploy_integration:
   <<: *deploy_template
