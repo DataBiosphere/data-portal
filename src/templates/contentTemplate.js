@@ -95,7 +95,6 @@ export const pageQuery = graphql`
         title
         subTitle
         componentName
-        noNav
         linked {
                childMarkdownRemark{
                    html

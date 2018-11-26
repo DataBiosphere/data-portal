@@ -7,6 +7,7 @@
 // Imports
 const path = require("path");
 const {createFilePath} = require(`gatsby-source-filesystem`);
+const siteMap = require('./src/siteMap');
 
 
 // find our template files
@@ -86,7 +87,7 @@ exports.createPages = ({boundActionCreators, graphql}) => {
 
             if (path) {
                 createPage({
-                    path: path,
+                    path: siteMap.getPath(path),
                     component: getTemplate(node.frontmatter.template),  // extract template name from front matter and use it to retrieve the template.
                     context: {id: node.id, metadataCoreName: node.frontmatter.metadataCoreName} // additional data can be passed via context
                 });

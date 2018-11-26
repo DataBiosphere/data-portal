@@ -28,7 +28,7 @@ const getTabClassName = (tab, docPath) => {
 const getLinkForTab = (tab) => {
 
     if (tab.children[0]) {
-        return tab.children[0].key;
+        return siteMap.getPath(tab.children[0].key);
     }
     else {
         return "/";

@@ -7,6 +7,8 @@
 
 // TODO move to yml and put in the content directory
 
+
+// The  sitemap is an array of sections.
 const siteMap =
     [
         {
@@ -20,6 +22,7 @@ const siteMap =
                         {
                             name: "What is the Platform",
                             key: "/about/platform/dcp",
+                            path: "/about",
                             children: [
                                 {
                                     name: "Ingest Service",
@@ -61,7 +64,8 @@ const siteMap =
                     children: [
                         {
                             name: "Visualization Portals",
-                            key: "/analyze/portals/visualization-portals"
+                            key: "/analyze/portals/visualization-portals",
+                            path: "/analyze"
                         },
                         {
                             name: "About Visualization Portals",
@@ -111,10 +115,11 @@ const siteMap =
                             {
                                 name: "Accessing Data",
                                 key: "/learn/userguides/accessing-data",
+                                path: "/learn",
                                 children: [
                                     {
                                         name: "Quick Start Guide",
-                                        key: "/learn/userguides/accessing-data/quick-start-guide"
+                                        key: "/learn/userguides/accessing-data/quick-start-guide",
                                     },
                                     {
                                         name: "CLI Data Access",
@@ -126,8 +131,7 @@ const siteMap =
 
                                 name: "Contributing Data",
                                 key: "/learn/userguides/contributing-data",
-                                children: [
-                                ]
+                                children: []
                             },
                             {
                                 name: "Data Processing Pipelines",
@@ -276,11 +280,13 @@ const siteMap =
                     children: [
                         {
                             name: "Contact Us",
-                            key: "/contact/contact/contact-us"
+                            key: "/contact/contact/contact-us",
+                            path: "/contact"
                         },
                         {
                             name: "Join the Discussion",
-                            key: "/contact/contact/join-the-discussion"
+                            key: "/contact/contact/join-the-discussion",
+                            path: "/contact/join-the-discussion"
                         }
                     ]
                 }
@@ -331,8 +337,9 @@ const siteMap =
                     key: "overview",
                     children: [
                         {
-                            name: "Overview",
-                            key: "/contribute/overview/overview"
+                            name: "Contributing Data",
+                            key: "/contribute/overview/overview",
+                            path: "/contribute"
                         }
                     ]
                 }
@@ -348,7 +355,8 @@ const siteMap =
                     children: [
                         {
                             name: "Help & FAQ",
-                            key: "/help/help/help-and-faq"
+                            key: "/help/help/help-and-faq",
+                            path: "/help"
                         }
                     ]
                 }
@@ -364,7 +372,8 @@ const siteMap =
                     children: [
                         {
                             name: "",
-                            key: "/privacy/privacy/privacy"
+                            key: "/privacy/privacy/privacy",
+                            path: "/privacy"
                         }
                     ]
                 }
@@ -372,7 +381,14 @@ const siteMap =
         }
     ];
 
-export function getSection(path) {
+
+/**
+ * Determine the top level section from the path.
+ * The document path is configured in the markdown front matter.
+ * @param path
+ * @returns {*}
+ */
+ function getSection(path) {
 
     const key = path.split("/")[1];
     const section = siteMap.find((s) => {
@@ -385,7 +401,15 @@ export function getSection(path) {
     return section;
 }
 
-export function getTabs(path) {
+/**
+ * Given a path, retrun the set of tabs for the path's section.
+ * If the section has no tabs throw an error. Every section must have one tab,
+ * even if that tab has no name it will contain at least one document.
+ *
+ * This is used to draw out the tabs across a documents top section.
+ * @param path
+ */
+ function getTabs(path) {
 
     const section = getSection(path);
 
@@ -402,7 +426,40 @@ export function getTabs(path) {
     return section.children;
 }
 
-export function getTab(path) {
+
+/**
+ * Given a path return the children of the tab.
+ * This is used to draw the left nav in the document page.
+ * @param path
+ * @returns {Array}
+ */
+ function getNav(path) {
+    const tab = getTab(path);
+
+    // if (!tab) {
+    //     // seems this cant happen.
+    //     return [];
+    // }
+    return tab.children;
+}
+
+ function getPath(key){
+    const path = keytoPath.get(key);
+    if(path){
+        return path;
+    }
+    else{
+        return key
+    };
+
+}
+
+/**
+ * Given a document path, find the tab associated with the document.
+ * @param path
+ * @returns {T|*}
+ */
+function getTab(path) {
     const tabs = getTabs(path);
     const key = path.split("/")[2];
     const tab = tabs.find((s) => {
@@ -415,11 +472,45 @@ export function getTab(path) {
     return tab;
 }
 
-export function getNav(path) {
-    const tab = getTab(path);
-    if (!tab) {
-        return [];
+
+
+/**
+ * sections
+ *    tabs
+ *       docs
+ *          subdocs
+ * @type {*}
+ */
+const keytoPath = siteMap.reduce((acc, section) => {
+    return section.children.reduce((acc, tab) => {
+        return tab.children.reduce((acc, doc) => {
+            addToMap(acc,doc);
+            if(doc.children) {
+                doc.children.forEach(childDoc => addToMap(acc, childDoc));
+            }
+            return acc;
+        }, acc);
+    }, acc);
+}, new Map());
+
+
+
+function addToMap(acc, doc) {
+    if (doc.path) {
+        acc.set(doc.key, doc.path);
+    } else {
+        acc.set(doc.key,doc.key);
     }
-    return tab.children;
 }
+
+module.exports = {
+    getSection,
+    getTabs,
+    getNav,
+    getPath
+}
+
+
+
+
 

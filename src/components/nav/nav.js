@@ -69,12 +69,12 @@ class Nav extends React.Component {
                     {siteMap.getNav(this.props.docPath).map((p, i) =>
                             <div key={i}>
                                 <li className={getNavClassName(this.props.docPath, p)} key={i}><Link
-                                    to={p.key}>{p.name}</Link></li>
+                                    to={siteMap.getPath(p.key)}>{p.name}</Link></li>
                                 {p.children && expanded ?
                                     <ul>
                                         {p.children.map((c, j) => <li className={getNavClassName(this.props.docPath, c)}
                                                                       key={j}><Link
-                                            to={c.key}>{c.name}</Link></li>)}
+                                            to={siteMap.getPath(c.key)}>{c.name}</Link></li>)}
                                     </ul> : null}
                             </div>)}
                 </ul>
@@ -86,12 +86,12 @@ class Nav extends React.Component {
                         siteMap.getNav(this.props.docPath).map((p, i) =>
                             <div key={i}>
                                 <li className={getNavClassName(this.props.docPath, p)} key={i}><Link
-                                    to={p.key}>{p.name}</Link></li>
+                                    to={siteMap.getPath(p.key)}>{p.name}</Link></li>
                                 {p.children && expanded ?
                                     <ul>
                                         {p.children.map((c, j) => <li className={getNavClassName(this.props.docPath, c)}
                                                                       key={j}><Link
-                                            to={c.key}>{c.name}</Link></li>)}
+                                            to={siteMap.getPath(c.key)}>{c.name}</Link></li>)}
                                     </ul> : null}
                             </div>) : null}
                 </ul>

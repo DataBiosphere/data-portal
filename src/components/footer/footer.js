@@ -18,11 +18,11 @@ const Footer = () => (
         <div className={compStyles.wrapper}>
             <a href="https://www.humancellatlas.org/" className={compStyles.logo}><i className='material-icons'>chevron_left</i><img src={footerLogo}/></a>
             <div className={compStyles.links}>
-                <Link to="/about/platform/dcp">About</Link>
-                <Link to="/help/help/help-and-faq">Help</Link>
+                <Link to="/about">About</Link>
+                <Link to="/help">Help</Link>
                 <Link to="/attributions">Attributions</Link>
-                <Link to="/privacy/privacy/privacy">Privacy</Link>
-                <Link to="/contact/contact/contact-us">Contact</Link>
+                <Link to="/privacy">Privacy</Link>
+                <Link to="/contact">Contact</Link>
             </div>
         </div>
     </div>
