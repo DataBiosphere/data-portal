@@ -36,7 +36,7 @@ class HomepageAutosuggest extends React.Component {
     constructor() {
         super();
         this.state = {
-            disabled: false, // False if user has entered suggestion text that results in no hits,
+            disabled: false, // True if user has entered suggestion text that results in no hits
             selectedFacet: "",
             selectedTerm: ""
         };
@@ -59,6 +59,14 @@ class HomepageAutosuggest extends React.Component {
             facetDisplayName: stringFormatter.convertCamelCasetoTitleCase(facetName),
             terms: selectableTerms
         };
+    };
+
+    clearSelectedFacet = () => {
+
+        this.setState({
+            selectedFacet: "",
+            selectedTerm: ""
+        });
     };
 
     getExploreData = () => {
@@ -138,6 +146,11 @@ class HomepageAutosuggest extends React.Component {
         });
     };
 
+    onBlur = () => {
+
+        this.clearSelectedFacet();
+    };
+
     onEnter = () => {
 
         this.visitExploreLink();
@@ -147,12 +160,12 @@ class HomepageAutosuggest extends React.Component {
 
         if (term) {
 
-            let facetName = this.getExploreData().filter(t => t.terms.find(f => f.termName === term));0
+            let facetName = this.getExploreData().filter(t => t.terms.find(f => f.termName === term));
             this.setState({selectedFacet: facetName[0].facetName, selectedTerm: term});
         }
         else {
 
-            this.setState({selectedFacet: "", selectedTerm: ""});
+            this.clearSelectedFacet();
         }
     };
 
@@ -170,9 +183,6 @@ class HomepageAutosuggest extends React.Component {
             }]);
             window.location.href = `${process.env.GATSBY_EXPLORE_URL}projects?filter=${facetFilter}`;
         }
-        if (!this.state.selectedTerm) {
-            console.log("error");
-        }
     };
 
     render() {
@@ -183,6 +193,7 @@ class HomepageAutosuggest extends React.Component {
                                 placeholder={this.getPlaceholder()}
                                 homepage={true}
                                 showCount={false}
+                                onBlur={this.onBlur.bind(this)}
                                 onEnter={this.onEnter.bind(this)}
                                 onSelected={this.onSelected.bind(this)}
                                 onSuggestionsFound={this.onSuggestionsFound.bind(this)}/>

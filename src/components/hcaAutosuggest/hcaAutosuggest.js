@@ -141,6 +141,7 @@ class HCAAutosuggest extends React.Component {
         const {value, suggestions, suggestionsFound} = this.state;
         const inputProps = {
             disabled: this.props.disabled,
+            onBlur: this.props.onBlur,
             onChange: this.onChange,
             placeholder: this.props.placeholder,
             value
