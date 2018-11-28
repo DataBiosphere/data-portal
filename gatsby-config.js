@@ -16,7 +16,7 @@ if (process.env.GATSBY_DEV_ENV == "LOCAL") {
     console.log("LAUNCHING USING LOCAL CONFIG");
     // uncomment to use the local content repo vs the npm repo.
     //contentPath = "../data-portal-content/content";
-    metadataSchemaDocsPath = "..//hca-metadata-schema/docs";
+    metadataSchemaDocsPath = "../hca-metadata-schema/docs";
     metadataSchemaJsonPath = "../hca-metadata-schema/json_schema"
 }
 
