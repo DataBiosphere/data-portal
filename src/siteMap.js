@@ -79,7 +79,8 @@ const siteMap =
                     children: [
                         {
                             name: "Methods",
-                            key: "/analyze/methods/methods"
+                            key: "/analyze/methods/methods",
+                            path: "/analyze/methods"
                         },
                         {
                             name: "About Methods",
@@ -93,7 +94,8 @@ const siteMap =
                     children: [
                         {
                             name: "Visualization Components",
-                            key: "/analyze/visualization-components/visualization-components"
+                            key: "/analyze/visualization-components/visualization-components",
+                            path: "/analyze/visualization-components"
                         },
                         {
                             name: "About Visualization Components",
