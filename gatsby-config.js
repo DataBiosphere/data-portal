@@ -20,11 +20,31 @@ if (process.env.GATSBY_DEV_ENV == "LOCAL") {
     metadataSchemaJsonPath = "../hca-metadata-schema/json_schema"
 }
 
+
+let gtmId = process.env.GATSBY_GTM_ID;
+let gtmAuth = process.env.GATSBY_GTM_AUTH;
+let gtmEnvName = process.env.GATSBY_ENV_NAME;
+
+
 module.exports = {
     siteMetadata: {
         title: 'HCA Data Portal'
     },
     plugins: [
+        {
+            resolve: `gatsby-plugin-google-tagmanager`,
+            options: {
+                id: gtmId,
+
+                // Include GTM in development.
+                // Defaults to false meaning GTM will only be loaded in production.
+                includeInDevelopment: false,
+
+                // Specify optional GTM environment details.
+                gtmAuth: gtmAuth,
+                gtmPreview: gtmEnvName,
+            },
+        },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
