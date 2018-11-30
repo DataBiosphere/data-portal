@@ -80,8 +80,8 @@ class Header extends React.Component {
                                 <span>Learn</span>
                                 <span>Find user guides and how-to’s here</span>
                             </Link>
-                            <Link to="/about" activeClassName={compStyles.active}
-                                  className={compStyles.about} onClick={this.toggleMenu}>About</Link>
+                            <Link to="/help" activeClassName={compStyles.active}
+                                  className={compStyles.about} onClick={this.toggleMenu}>Help</Link>
                         </div> : null}
                     <div className={classNames(compStyles.links)} ref={(div) => this.links = div}>
                         <a href={process.env.GATSBY_EXPLORE_URL}>
@@ -105,9 +105,9 @@ class Header extends React.Component {
                             </Link>
                         </div>
                     </div>
-                    <Link to="/about" activeClassName={compStyles.active}
-                          className={compStyles.about}>About</Link>
-                    <div className={compStyles.menuDropDown} onClick={this.toggleMenu}>Menu</div>
+                    <Link to="/help" activeClassName={compStyles.active}
+                          className={compStyles.about}>Help</Link>
+                    <div className={compStyles.menuDropDown} onClick={this.toggleMenu}>Help</div>
                     {this.state.showNav ? <div className={compStyles.hcaNavOverlay} onClick={this.toggleMenu}/> : null}
                 </div>
             </div>
