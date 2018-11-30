@@ -16,11 +16,11 @@ const siteMap =
             key: "about",
             children: [
                 {
-                    name: "What is the Platform",
+                    name: "",
                     key: "platform",
                     children: [
                         {
-                            name: "What is the Platform",
+                            name: "Data Coordination Platform",
                             key: "/about/platform/dcp",
                             path: "/about",
                             children: [
