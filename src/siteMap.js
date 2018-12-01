@@ -147,11 +147,6 @@ const siteMap =
                                 ]
                             },
                             {
-
-                                name: "Analysis Applications",
-                                key: "/learn/userguides/analysis-applications"
-                            },
-                            {
                                 name: "Data Lifecycle",
                                 key: "/learn/userguides/data-lifecycle",
                             },
