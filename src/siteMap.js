@@ -41,14 +41,6 @@ const siteMap =
                                     key: "/about/platform/dcp/data-processing-pipelines"
                                 }
                             ]
-                        },
-                        {
-                            name: "Data Lifecycle",
-                            key: "/about/platform/data-lifecycle",
-                        },
-                        {
-                            name: "Data Use Agreement",
-                            key: "/about/platform/data-use-agreement",
                         }
                     ]
                 }
@@ -111,29 +103,17 @@ const siteMap =
             children:
                 [
                     {
-                        name: "User Guides",
+                        name: "Introduction",
                         key: "userguides",
                         children: [
                             {
-                                name: "Accessing Data",
-                                key: "/learn/userguides/accessing-data",
-                                path: "/learn",
-                                children: [
-                                    {
-                                        name: "Quick Start Guide",
-                                        key: "/learn/userguides/accessing-data/quick-start-guide",
-                                    },
-                                    {
-                                        name: "CLI Data Access",
-                                        key: "/learn/userguides/accessing-data/using-the-cli-to-access-data"
-                                    }
-                                ]
-
-                            }, {
-
-                                name: "Contributing Data",
-                                key: "/learn/userguides/contributing-data",
-                                children: []
+                                name: "Quick Start Guide",
+                                key: "/learn/userguides/quick-start-guide",
+                                path:"/learn"
+                            },
+                            {
+                                name: "CLI Data Access",
+                                key: "/learn/userguides/using-the-cli-to-access-data"
                             },
                             {
                                 name: "Data Processing Pipelines",
@@ -170,6 +150,14 @@ const siteMap =
 
                                 name: "Analysis Applications",
                                 key: "/learn/userguides/analysis-applications"
+                            },
+                            {
+                                name: "Data Lifecycle",
+                                key: "/learn/userguides/data-lifecycle",
+                            },
+                            {
+                                name: "Data Use Agreement",
+                                key: "/learn/userguides/data-use-agreement",
                             }
                         ]
                     },
