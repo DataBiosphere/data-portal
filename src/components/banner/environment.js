@@ -49,7 +49,7 @@ class Environment extends React.Component {
             <div className={compStyles.environment}>
                 <div className={compStyles.wrapper}>
                     <div>
-                        <p className={compStyles.s}>This is a test environment and periodically may be unavailable and/or may contain test data.</p>
+                        <p className={compStyles.s}>{this.props.message}</p>
                     </div>
                     <a className={compStyles.dismiss} onClick={() => {
                         this.accept()
