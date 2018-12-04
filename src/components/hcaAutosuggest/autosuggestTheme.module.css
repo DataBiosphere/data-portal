@@ -9,6 +9,8 @@
  * Core react-autosuggest theming API end points.
  */
 
+@import "../../styles/vars.module.css";
+
 /* Input container */
 .container {
     position: relative; /* Positions sugestions container */
@@ -16,11 +18,11 @@
 
 /* Input */
 .input {
-    background-color: #ffffff; /* TODO colour */
+    background-color: var(--white);
     box-sizing: border-box;
-    border: 1px solid #CCCCCC; /* TODO colour */
+    border: 1px solid var(--gray-light);
     border-radius: 3px;
-    color: #999999;
+    color: var(--gray-medium);
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
     font-weight: 400;
@@ -38,8 +40,8 @@
 
 /* Suggestions container */
 .suggestionsContainerOpen {
-    background-color: #ffffff; /* TODO colour */
-    border: 1px solid #CCCCCC; /* TODO hca-gray-light */
+    background-color: var(--white);
+    border: 1px solid var(--gray-light);
     border-radius: 1px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06); /* TODO colour */
     box-sizing: border-box;
@@ -61,7 +63,7 @@
 
 /* Section title */
 .sectionTitle {
-    color: #999999; /* TODO colour */
+    color: var(--gray-medium);
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 10px; /* TODO typography */
     font-weight: 500; /* TODO typography */

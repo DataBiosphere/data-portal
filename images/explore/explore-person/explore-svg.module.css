@@ -5,18 +5,20 @@
  * Style definitions specific to the HCA Data Portal explore svg component.
  */
 
+@import '../../../src/styles/vars.module.css';
+
 svg.explorePerson {
     display: none;
 }
 
 .active {
     cursor: pointer;
-    fill: #1c7cc7;
+    fill: var(--primary);
     transition: all 0.75s ease 0s;
 }
 
 .active polygon, .active rect {
-    fill: #1c7cc7;
+    fill: var(--primary);
     transition: all 0.75s ease 0s;
 }
 

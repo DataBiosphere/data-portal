@@ -13,8 +13,6 @@ import React from 'react';
 // App dependencies
 import Site from './site';
 
-import compStyles from './index.module.css';
-
 require(`prismjs/themes/prism-solarizedlight.css`);
 require(`katex/dist/katex.min.css`);
 
@@ -22,10 +20,9 @@ const Layout = ({children, data}) => (
     <div>
         <Helmet>
             <title>{data.site.siteMetadata.title}</title>
-            <body className={compStyles.index}/>
             <link rel="stylesheet" href="https://use.typekit.net/qhb0geh.css"/>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700"/>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"/>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono"/>
             <link rel="stylesheet" href="https://use.typekit.net/qhb0geh.css"/>
         </Helmet>

@@ -5,10 +5,12 @@
  * Style definitions specific to the HCA Data Portal tab nav component.
  */
 
+@import '../../styles/vars.module.css';
+
 /* Tabs */
 .hcaTabs {
-    background-color: #ffffff;  /* Required for content scroll */
-    border-bottom: 1px solid #CCCCCC; /* Tab line */ /* TODO colour hca-gray-light */
+    background-color: var(--white);  /* Required for content scroll */
+    border-bottom: 1px solid var(--gray-light); /* Tab line */
     margin-top: -24px; /* To position closer to section */
 }
 
@@ -32,13 +34,13 @@
 
 /* Fade on horizontal scroll RHS */
 .wrapper::after {
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0), #ffffff, #ffffff);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--white), var(--white));
     right: 0;
 }
 
 /* Fade on horizontal scroll LHS */
 .wrapper::before {
-    background: linear-gradient(90deg, #ffffff, #ffffff, rgba(255, 255, 255, 0));
+    background: linear-gradient(90deg, var(--white), var(--white), rgba(255, 255, 255, 0));
     left: 0;
 }
 
@@ -70,7 +72,7 @@
 
 /* Tab - link */
 .hcaTab a, .hcaBackTab a {
-    color: #666666; /* TODO color hca-gray-dark */
+    color: var(--gray-dark);
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 15px; /* TODO typography - confirm size */
     font-weight: 400; /* TODO typography */
@@ -91,11 +93,11 @@
 
 /* Active tab */
 .hcaTab.active {
-    border-bottom: 3px solid #00D0F4; /* TODO colour hca-blue-light */
+    border-bottom: 3px solid var(--secondary);
 }
 
 .hcaTab.active a {
-    color: #000000; /* TODO colour hca-black */
+    color: var(--black);
 }
 
 /* Disabled tab */
@@ -104,12 +106,12 @@
 }
 
 .hcaTab.disabled a {
-    color: #EAEAEA; /* TODO colour hca-gray-lightest */
+    color: var(--gray-lightest);
 }
 
 /* Hover tab */
 .hcaTab:hover > a {
-    color: #000000; /* TODO colour */
+    color: var(--black);
 }
 
 /* Last tab - on horizontal scroll - mimics gutter for RHS */

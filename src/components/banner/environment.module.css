@@ -5,9 +5,11 @@
  * Style definitions specific to the HCA Data Portal production environment component.
  */
 
+@import "../../styles/vars.module.css";
+
 /* Environment */
 .environment {
-    background-color: #000000;
+    background-color: var(--black);
 }
 
 /* Wrapper */
@@ -20,7 +22,7 @@
 
 /* Environment text */
 .environment .s {
-    color: #ffffff;
+    color: var(--white);
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
     line-height: 30px;
@@ -30,8 +32,8 @@
 /* Button - class dismiss */
 a.dismiss {
     align-items: center;
-    color: #ffffff;
-    border: 1px solid #ffffff; /* TODO colour */
+    color: var(--white);
+    border: 1px solid var(--white);
     border-radius: 0;
     box-sizing: border-box;
     display: flex;
@@ -46,8 +48,8 @@ a.dismiss {
 }
 
 a.dismiss:hover {
-    border: 1px solid #ffffff;
-    color: #ffffff;
+    border: 1px solid var(--white);
+    color: var(--white);
 }
 
 a.dismiss:focus {

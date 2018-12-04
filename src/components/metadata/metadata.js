@@ -7,10 +7,12 @@
 
 // Core dependencies
 import React from 'react';
-import compStyles from './metadata.module.css'
 
 // App dependencies
 import Linkify from 'react-linkify';
+
+// Styles
+import compStyles from './metadata.module.css'
 
 class Metadata extends React.Component {
 
@@ -20,7 +22,7 @@ class Metadata extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={compStyles.metadata}>
                 <h3>{this.props.entity.title}</h3>
                 <div>
                     {this.props.entity.properties.filter((element) => {

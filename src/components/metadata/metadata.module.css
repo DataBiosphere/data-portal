@@ -5,14 +5,16 @@
  * Style definitions specific to the HCA Data Portal metadata component.
  */
 
-h3 {
+@import "../../styles/vars.module.css";
+
+.metadata h3 {
     margin-top: 48px;
 }
 
 /* Row */
 .metadataRow {
     align-items: flex-start;
-    border-bottom: 1px solid #CCCCCC; /* TODO colour */
+    border-bottom: 1px solid var(--gray-light);
     display: flex;
     padding: 8px 0;
 }

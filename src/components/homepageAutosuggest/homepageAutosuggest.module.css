@@ -5,6 +5,8 @@
  * Style definitions specific to the homepage autosuggest component.
  */
 
+@import "../../styles/vars.module.css";
+
 .hompageAutosuggest {
     max-width: 348px; /* Width on mobile 375px */
     position: relative; /* Positions search button and hcaOptions */
@@ -14,11 +16,11 @@
 /* Button - class homepage */
 .hompageAutosuggest a.homepage {
     align-items: center;
-    background-color: #E8AA45 /* TODO colour */;
+    background-color: var(--accent);
     border: none;
     border-radius: 3px;
     box-sizing: border-box;
-    color: #ffffff; /* TODO colour */
+    color: var(--white);
     cursor: pointer;
     display: flex;
     flex-shrink: 0;
@@ -35,11 +37,11 @@
 }
 
 .hompageAutosuggest a.homepage:hover {
-    background-color: #CF912C; /* TODO review colour */
+    background-color: var(--accent-hover);
 }
 
 .hompageAutosuggest a.homepage.disabled {
-    background-color: #CCCCCC;
+    background-color: var(--gray-light);
     cursor: default;
 }
 

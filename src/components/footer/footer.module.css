@@ -5,9 +5,11 @@
  * Style definitions specific to the HCA Data Portal footer component.
  */
 
+@import "../../styles/vars.module.css";
+
 /* Footer */
 .footer {
-    background-color: rgba(0, 0, 0, 1); /* TODO colour */
+    background-color: var(--black);
 }
 
 /* Wrapper */
@@ -29,7 +31,7 @@
 
 /* Back arrow */
 .logo i {
-    color: #ffffff; /* TODO colour */
+    color: var(--white);
     cursor: pointer;
     font-size: 24px;
     left: -24px;
@@ -56,7 +58,7 @@
 
 /* Footer links */
 .links a {
-    color: #ffffff; /* TODO color */
+    color: var(--white);
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 14px; /* TODO typography */
     font-weight: 500; /* TODO typography */
