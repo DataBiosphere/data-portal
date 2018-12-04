@@ -5,6 +5,8 @@
  * Style definitions specific to HCA autosuggest component.
  */
 
+@import "../../styles/vars.module.css";
+
 /* Option (flex between option and its count) */
 .hcaOption {
     align-items: flex-start;
@@ -30,7 +32,7 @@
 
 /* Error */
 .error input + div > div:first-of-type {
-    background-color: #eaeaea; /* TODO */
+    background-color: var(--gray-lightest);
     cursor: default;
     margin: -8px -16px 0;
     width: calc(100% + 32px + 8px);
@@ -39,7 +41,7 @@
 
 /* Error message */
 .error input + div > div:first-of-type div {
-    color: rgba(0, 0, 0, 0.8); /* TODO typography */
+    color: rgba(0, 0, 0, 0.8);
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 14px; /* TODO typography */
     font-weight: 400;

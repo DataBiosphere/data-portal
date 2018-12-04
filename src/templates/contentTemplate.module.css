@@ -5,72 +5,20 @@
  * Style definitions specific to the HCA Data Portal content template component.
  */
 
-/* Typography */
-/* TODO typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: "din-2014", sans-serif;
-    font-weight: 500;
-}
+@import "../styles/vars.module.css";
 
-p {
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 25px;
-    margin: 0 0 18px;
-}
-
-h2, .markdownContent h1 {
+/* Typography - markdown overrides */
+.markdownContent h1 {
     font-size: 24px;
     line-height: 30px;
-    margin: 34px 0 36px;
 }
 
-h2:first-of-type, .markdownContent h1:first-of-type {
+.markdownContent h1:first-of-type {
     margin-top: 0;
 }
 
-h3 {
-    font-size: 18px;
-    line-height: 24px;
-    margin: 16px 0 18px;
-}
-
-h4 {
-    font-size: 16px;
-    line-height: 22px;
-    margin: 14px 0 16px;
-}
-
-/* P - class "m" */
-p[class^="m"], h5 {
-    font-size: 16px;
-    font-weight: 400 !important;
-    line-height: 26px;
-    margin: 0 0 26px;
-}
-
-/* P - class "s" */
-p[class*="s"], h6 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    font-weight: 400 !important;
-    line-height: 25px;
-    margin: 0 0 18px;
-}
-
-/* P - class "xs" */
-p[class*="xs"] {
-    font-size: 13px;
-    line-height: 20px;
-    margin: 0 0 16px;
-}
-
-/* P - class "xxs" */
-p[class*="xxs"] {
-    font-size: 12px;
-    line-height: 18px;
-    margin: 0 0 14px;
+.markdownContent h2:first-of-type {
+    margin-top: 0;
 }
 
 /* Markdown styles */
@@ -88,35 +36,35 @@ iframe {
 
 /* HTML - definition list */
 dl {
-    background-color: #F4F7F9; /* TODO colour hca-blue-background */
+    background-color: var(--background);
     border-radius: 3px;
-    margin-bottom: 24px; /* TODO confirm when typography completed */
+    margin-bottom: 24px;
     padding: 24px;
 }
 
 /* HTML - dt - matches H4 spec */
 dt {
-    font-family: "din-2014", sans-serif; /* TODO typography */
-    font-size: 16px; /* TODO typography */
-    font-weight: 500; /* TODO typography */
+    font-family: "din-2014", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
     line-height: 22px;
 }
 
 /* HTML - dd - matches p spec */
 dd {
-    color: #666666; /* TODO colour - TBC by Jenn - hca-gray-dark */
+    color: var(--gray-dark);
     font-family: "Montserrat", sans-serif;
     font-size: 15px;
     font-weight: 400;
     line-height: 25px;
-    margin: 8px 0 0;
+    margin: 8px 0 0; /* dd specific */
 }
 
 /* Blockquote */
 blockquote {
-    background-color: #F4F7F9; /* TODO colour hca-blue-background */
+    background-color: var(--background);
     border-radius: 3px;
-    margin: 0 0 24px; /* TODO confirm when typography completed */
+    margin: 0 0 24px;
     padding: 16px;
 }
 
@@ -127,13 +75,13 @@ blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote h5, block
 
 /* Blockquote paragraph */
 blockquote p {
-    color: #666666;
+    color: var(--gray-dark);
     margin: 0;
 }
 
 /* Code - inline and block */
 code[class*="language-"], pre[class*="language-"] {
-    color: #000000; /* TODO colour - typography */
+    color: var(--black);
     font-family: "PT Mono", "Montserrat", sans-serif; /* TODO typography */
     font-size: 15px; /* TODO typography */
     white-space: pre-wrap !important; /* Allow line to wrap - responsive */
@@ -142,7 +90,7 @@ code[class*="language-"], pre[class*="language-"] {
 
 /* Code - inline and block - background */
 pre[class*="language-"], :not(pre) > code[class*="language-"] {
-    background-color: #F8F8F8; /* TODO colour hca-off-white */
+    background-color: var(--white-off);
     border-radius: 3px;
 }
 
@@ -157,11 +105,6 @@ pre[class*="language-"] {
     padding: 16px;
 }
 
-/* Strong */
-strong {
-    font-weight: 500;
-}
-
 /* Code within table - allows use of underscore */
 td > code {
     color: inherit !important;
@@ -171,7 +114,7 @@ td > code {
 
 /* Table */
 thead tr, tbody tr {
-    border-bottom: 1px solid #CCCCCC; /* TODO colour */
+    border-bottom: 1px solid var(--gray-light);
 }
 
 thead tr th, tbody tr td {
@@ -187,15 +130,6 @@ thead th, tbody tr {
 
 tbody tr {
     font-weight: 400 !important;
-}
-
-/* Link */
-a {
-    color: #1c7cc7; /* TODO colour */
-    cursor: pointer;
-    font: inherit;
-    margin: 0 0 18px;
-    text-decoration: none;
 }
 
 /* Wrapper */

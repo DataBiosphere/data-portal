@@ -5,18 +5,20 @@
  * Style definitions specific to the HCA Data Portal explore table svg component.
  */
 
+@import '../../../src/styles/vars.module.css';
+
 svg.exploreTable {
     height: 220px;
 }
 
 .active {
     cursor: pointer;
-    fill: #1c7cc7;
+    fill: var(--primary);
     transition: all 0.75s ease 0s;
 }
 
 .active polygon, .active rect {
-    fill: #1c7cc7;
+    fill: var(--primary);
     transition: all 0.75s ease 0s;
 }
 

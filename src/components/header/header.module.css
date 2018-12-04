@@ -5,16 +5,18 @@
  * Style definitions specific to the HCA Data Portal header component.
  */
 
+@import "../../styles/vars.module.css";
+
 /* Nav bar container */
 .navBar, .hcaHeader {
-    border-bottom: 1px solid #CCCCCC; /* TODO colour */
+    border-bottom: 1px solid var(--gray-light);
     height: 60px;
 }
 
 /* Header for all pages but the home page */
 .navBar:not(.hcaHeader) {
     border-bottom: none;
-    background-color: #F8F8F8; /* TODO colour */
+    background-color: var(--white-off);
 }
 
 /* Wrapper */
@@ -44,8 +46,8 @@ a.logo, a.logo img {
 /* Show nav links for small view */
 .links.small {
     align-items: flex-start;
-    background-color: #ffffff;
-    border-bottom: 1px solid #CCCCCC; /* TODO hca-gray-light */;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--gray-light);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -61,7 +63,7 @@ a.logo, a.logo img {
 /* Nav links */
 .links a, .links.small a {
     align-items: flex-start;
-    color: #000000; /* TODO colour */
+    color: var(--black);
     display: flex;
     flex-direction: column;
     font-family: "Montserrat", sans-serif; /* TODO typography */
@@ -76,14 +78,14 @@ a.logo, a.logo img {
 }
 
 .links.small a.about {
-    color: #666666; /* TODO colour */
+    color: var(--gray-dark);
     font-weight: 400;
     text-decoration: none;
 }
 
 /* Nav links - subtitle */
 .links a span:nth-of-type(2) {
-        color: #000000; /* TODO colour */
+        color: var(--black);
         font-size: 12px; /* TODO review with typography */
         font-weight: 400; /* TODO review with typography */
         letter-spacing: 1.2px;
@@ -94,12 +96,12 @@ a.logo, a.logo img {
 
 /* Nav links - hover */
 .links a:hover {
-    color: #000000; /* TODO colour */
+    color: var(--black);
 }
 
 /* Nav links - active */
 .links .active, .navBar .active {
-    color: #000000; /* TODO colour */
+    color: var(--black);
 }
 
 .hcaNavOverlay {
@@ -116,7 +118,7 @@ a.logo, a.logo img {
 /* About link, Menu */
 .about, .menuDropDown {
     align-items: center;
-    color: #666666; /* TODO colour */
+    color: var(--gray-dark);
     cursor: pointer;
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 14px; /* TODO typography */
@@ -133,12 +135,12 @@ a.logo, a.logo img {
 }
 
 .menuDropDown {
-    color: #000000; /* TODO typography */
+    color: var(--black);
 }
 
 /* Drop down menu icon */
 .menuDropDown::before {
-    color: #666666; /* TODO colour */
+    color: var(--gray-dark);
     content: "\E313";
     font-family: "Material Icons";
     font-size: 18px;
@@ -179,7 +181,7 @@ a.logo, a.logo img {
 
     /* Nav links */
     .links a {
-        color: #666666; /* TODO colour */
+        color: var(--gray-dark);
         font-size: 15px;
         font-weight: 600;
         line-height: 60px;

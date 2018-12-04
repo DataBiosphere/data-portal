@@ -5,6 +5,8 @@
  * Style definitions specific to the HCA Data Portal nav component.
  */
 
+@import '../../styles/vars.module.css';
+
 /* Navigation lists - no list style */
 .hcaNav ul {
     list-style: none;
@@ -28,7 +30,7 @@
 
 /* Top navigation container */
 .hcaSideNav {
-    background-color: #F8F8F8; /* TODO colour */
+    background-color: var(--white-off);
     border-radius: 3px;
     box-sizing: border-box;
     margin: 0 0 24px;
@@ -55,7 +57,7 @@
 
 /* Please select icon */
 .hcaSideNav i {
-    color: #666666;
+    color: var(--gray-dark);
     font-size: 20px;
     height: 20px;
     margin-right: -4px;
@@ -76,7 +78,7 @@
 
 /* Primary navigation - link */
 .hcaSideNav > div > li a {
-    color: #666666; /* TODO color hca-gray-dark */
+    color: var(--gray-dark);
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 15px; /* TODO typography */
     line-height: 20px;
@@ -95,7 +97,7 @@
 
 /* Secondary navigation - link */
 .hcaSideNav > div ul li a {
-    color: #666666; /* TODO color hca-gray-dark */
+    color: var(--gray-dark);
     font-family: "Montserrat", sans-serif; /* TODO typography */
     font-size: 14px; /* TODO typography - confirm size */
     font-weight: 400; /* TODO typography */
@@ -106,22 +108,22 @@
 
 /* Navigation - hover */
 .hcaSideNav > div > li:hover a, .hcaSideNav > div ul li:hover a {
-    color: #333333; /* TODO color hca-gray-darkest */
+    color: var(--gray-darkest);
 }
 
 /* Primary navigation - expanded */
 .hcaSideNav > div > li.expanded a {
-    color: #000000; /* TODO colour hca-black */
+    color: var(--black);
 }
 
 /* Selected navigation - primary & secondary */
 .hcaSideNav > div > li.selected a, .hcaSideNav > div ul li.selected a {
-    color: #1c7cc7; /* TODO color hca-primary */
+    color: var(--primary);
 }
 
 /* Navigation bar */
 .hcaSideNav > div > li.expanded:before, .hcaSideNav > div > li.selected:before, .hcaSideNav > div ul li:before {
-    background-color: #EAEAEA; /* TODO colour hca-gray-lightest */
+    background-color: var(--gray-lightest);
     content: "";
     height: 100%;
     left: -8px; /* 6px between nav bar and nav text, includes 2px border */
@@ -137,7 +139,7 @@
 
 /* Navigation bar - selected list */
 .hcaSideNav > div li.selected:before {
-    background-color: #1c7cc7; /* TODO colour hca-primary */
+    background-color: var(--primary);
 }
 
 /* Navigation bar - selected list */

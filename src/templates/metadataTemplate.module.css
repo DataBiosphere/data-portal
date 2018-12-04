@@ -5,6 +5,11 @@
  * Style definitions specific to the HCA Data Portal metadata template component.
  */
 
+/* Typography - markdown overrides */
+.markdownContent h2:first-of-type {
+    margin-top: 0;
+}
+
 /* Wrapper */
 .wrapper {
     align-items: center;
@@ -28,7 +33,7 @@
 
 /* Required fields - class fontsize-xxs */
 .hcaContent .markdownContent p.xxs {
-    margin: -32px 0 32px;
+    margin: -8px 0 32px;
 }
 
 /* Edit me */

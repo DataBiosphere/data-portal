@@ -5,9 +5,11 @@
  * Style definitions specific to the HCA Data Portal privacy component.
  */
 
+@import '../../styles/vars.module.css';
+
 /* Privacy */
 .privacy {
-    background-color: #F8F8F8; /* TODO colour */
+    background-color: var(--white-off);
 }
 
 /* Wrapper */
@@ -32,7 +34,7 @@
 /* Button - class dismiss */
 a.dismiss {
     align-items: center;
-    border: 1px solid #1c7cc7; /* TODO colour */
+    border: 1px solid var(--primary);
     border-radius: 0;
     box-sizing: border-box;
     display: flex;
@@ -47,8 +49,8 @@ a.dismiss {
 }
 
 a.dismiss:hover {
-    border: 1px solid #0363AE; /* TODO colour */
-    color: #0363AE;
+    border: 1px solid var(--primary-hover);
+    color: var(--primary-hover);
 }
 
 a.dismiss:focus {
