@@ -4,15 +4,20 @@
  *
  * HCA Data Portal metadata template component.
  */
+
 // Core dependencies
 import React from "react";
+
 // App dependencies
-import compStyles from './metadataTemplate.module.css';
 import Metadata from "../components/metadata/metadata";
-import Nav from '../components/nav/nav';
-import Section from '../components/section/section';
+import Nav from "../components/nav/nav";
+import Section from "../components/section/section";
 import TabNav from "../components/tabNav/tabNav";
 
+// Styles
+import compStyles from "./metadataTemplate.module.css";
+import fontStyles from "../styles/fontsize.module.css";
+import globalStyles from "../styles/global.module.css";
 let classNames = require('classnames');
 
 // the data prop will be injected by the GraphQL query below.
@@ -50,7 +55,7 @@ export default function Template({data}) {
         <div>
             <Section docPath={docPath}/>
             <TabNav docPath={docPath}/>
-            <div className={compStyles.wrapper}>
+            <div className={globalStyles.wrapper}>
                 <div className={compStyles.hcaContent}>
                     <Nav docPath={docPath}/>
                     <div className={classNames(compStyles.markdownContent)}>
@@ -58,7 +63,7 @@ export default function Template({data}) {
                             className="content-template"
                             dangerouslySetInnerHTML={{__html: html}}
                         />
-                        <p className={compStyles.xxs}>* Indicates a required field</p>
+                        <p className={classNames(fontStyles.xxs, compStyles.xxs)}>* Indicates a required field</p>
                         <h2>{title} Core</h2>
                         <Metadata entity={core}/>
                         <h2>{title} Types</h2>

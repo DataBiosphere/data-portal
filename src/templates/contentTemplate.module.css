@@ -34,56 +34,11 @@ iframe {
     max-width: 560px !important;
 }
 
-/* HTML - definition list */
-dl {
-    background-color: var(--background);
-    border-radius: 3px;
-    margin-bottom: 24px;
-    padding: 24px;
-}
-
-/* HTML - dt - matches H4 spec */
-dt {
-    font-family: "din-2014", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 22px;
-}
-
-/* HTML - dd - matches p spec */
-dd {
-    color: var(--gray-dark);
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 25px;
-    margin: 8px 0 0; /* dd specific */
-}
-
-/* Blockquote */
-blockquote {
-    background-color: var(--background);
-    border-radius: 3px;
-    margin: 0 0 24px;
-    padding: 16px;
-}
-
-/* Blockquote heading */
-blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote h5, blockquote h6 {
-    margin: 0 0 8px;
-}
-
-/* Blockquote paragraph */
-blockquote p {
-    color: var(--gray-dark);
-    margin: 0;
-}
-
 /* Code - inline and block */
 code[class*="language-"], pre[class*="language-"] {
     color: var(--black);
-    font-family: "PT Mono", "Montserrat", sans-serif; /* TODO typography */
-    font-size: 15px; /* TODO typography */
+    font-family: "PT Mono", "Montserrat", sans-serif;
+    font-size: 15px;
     white-space: pre-wrap !important; /* Allow line to wrap - responsive */
     word-break: break-all !important; /* Allow line to wrap - responsive */
 }
@@ -112,6 +67,18 @@ td > code {
     padding: 0 !important;
 }
 
+/* List */
+.markdownContent ol, .markdownContent ul {
+    font-size: 15px;
+    line-height: 25px;
+    list-style-position: outside;
+    margin: 0 0 18px 24px;
+}
+
+.markdownContent li {
+    margin-bottom: 4px;
+}
+
 /* Table */
 thead tr, tbody tr {
     border-bottom: 1px solid var(--gray-light);
@@ -122,21 +89,16 @@ thead tr th, tbody tr td {
 }
 
 thead th, tbody tr {
-    font-family: "Montserrat", sans-serif;
     font-size: 15px;
-    font-weight: 600 !important;
     line-height: 1;
 }
 
-tbody tr {
-    font-weight: 400 !important;
+thead th {
+    font-weight: 400;
 }
 
-/* Wrapper */
-.wrapper {
-    align-items: center;
-    display: flex;
-    padding: 0 16px;
+tbody tr {
+    font-weight: 300;
 }
 
 /* Content */
@@ -161,20 +123,6 @@ tbody tr {
     margin: 14px 0 0;
     text-align: right;
     width: 100%;
-}
-
-/* List */
-ol, ul {
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 25px;
-    list-style-position: outside;
-    margin: 0 0 18px 24px;
-}
-
-li {
-    margin-bottom: 4px;
 }
 
 /**
@@ -208,13 +156,6 @@ li {
  * Large +
  */
 @media screen and (min-width: 1200px) {
-
-    /* Wrapper */
-    .wrapper {
-        margin: 0 auto;
-        max-width: 1200px; /* Snap to 1200px, gutter 30px */
-        padding: 0 30px;
-    }
 
     /* Content - when there is no navigation */
     .noNav .markdownContent {

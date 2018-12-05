@@ -13,40 +13,8 @@
     width: 100%;
 }
 
-/* Button - class homepage */
-.hompageAutosuggest a.homepage {
-    align-items: center;
-    background-color: var(--accent);
-    border: none;
-    border-radius: 3px;
-    box-sizing: border-box;
-    color: var(--white);
-    cursor: pointer;
-    display: flex;
-    flex-shrink: 0;
-    font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 14px;
-    font-weight: 500; /* TODO typography - confirm - was 600 */
-    height: 50px;
-    justify-content: center;
-    letter-spacing: 0.74px; /* TODO typography spec is 0.21px */
-    margin: 0;
-    min-width: 84px;
-    padding: 0 9px; /* Was 16px - followed spec */
-    text-decoration: none;
-}
-
-.hompageAutosuggest a.homepage:hover {
-    background-color: var(--accent-hover);
-}
-
-.hompageAutosuggest a.homepage.disabled {
-    background-color: var(--gray-light);
-    cursor: default;
-}
-
 /* Jumbotron search button */
-.hompageAutosuggest a.homepage {
+.hompageAutosuggest .button {
     position: absolute;
     right: 0;
     top: 0;
@@ -59,6 +27,6 @@
 
     .hompageAutosuggest {
         max-width: unset;
-        width: 540px; /* TODO review */
+        width: 540px;
     }
 }

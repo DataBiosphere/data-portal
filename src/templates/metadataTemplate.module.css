@@ -10,13 +10,6 @@
     margin-top: 0;
 }
 
-/* Wrapper */
-.wrapper {
-    align-items: center;
-    display: flex;
-    padding: 0 16px;
-}
-
 /* Content */
 .hcaContent {
     display: flex;
@@ -62,18 +55,3 @@
         max-width: 600px;
     }
 }
-
-/**
- * Large +
- */
-@media screen and (min-width: 1200px) {
-
-    /* Wrapper */
-    .wrapper {
-        margin: 0 auto;
-        max-width: 1200px; /* Snap to 1200px, gutter 30px */
-        padding: 0 30px;
-    }
-}
-
-

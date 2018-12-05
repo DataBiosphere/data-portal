@@ -6,12 +6,15 @@
  */
 
 // Core dependencies
-import compStyles from './nav.module.css'
 import Link from 'gatsby-link';
 import React from 'react';
 import * as siteMap from '../../siteMap';
 
+// Styles
+import compStyles from './nav.module.css';
+import fontStyles from "../../styles/fontsize.module.css";
 const classNames = require('classnames');
+
 let active;
 let expanded;
 let initialShowNav = false;
@@ -80,7 +83,7 @@ class Nav extends React.Component {
                 </ul>
                 <ul className={compStyles.hcaSideNav}>
                     <li className={compStyles.select} onClick={this.toggleNav}>
-                        <span>Please select</span><i className='material-icons'>keyboard_arrow_down</i>
+                        <span className={fontStyles.hcaBaseFont}>Please select</span><i className='material-icons'>keyboard_arrow_down</i>
                     </li>
                     {this.state.showNav ?
                         siteMap.getNav(this.props.docPath).map((p, i) =>

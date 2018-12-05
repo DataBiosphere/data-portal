@@ -12,7 +12,8 @@ import React from 'react';
 import Linkify from 'react-linkify';
 
 // Styles
-import compStyles from './metadata.module.css'
+import compStyles from './metadata.module.css';
+import fontStyles from "../../styles/fontsize.module.css";
 
 class Metadata extends React.Component {
 
@@ -29,9 +30,9 @@ class Metadata extends React.Component {
                         return element.name !== "describedBy" && element.name !== "schema_version" && element.name !== "schema_type";
                     }).map((element, i) => <div key={i} className={compStyles.metadataRow}>
                         <div className={compStyles.metadataName}>
-                            <span>{element.userFriendly ? element.userFriendly : element.name}<span>{element.required ? '*' : null}</span></span>
+                            <span className={fontStyles.xxs}>{element.userFriendly ? element.userFriendly : element.name}<span className={fontStyles.xxs}>{element.required ? '*' : null}</span></span>
                         </div>
-                        <Linkify>{element.description}</Linkify>
+                        <Linkify className={fontStyles.xxs}>{element.description}</Linkify>
                     </div>)}
                 </div>
             </div>

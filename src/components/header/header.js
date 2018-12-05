@@ -8,11 +8,14 @@
 // Core dependencies
 import Link from 'gatsby-link';
 import React from 'react';
-import compStyles from './header.module.css';
 
 // Images
 import headerLogo from "../../../images/logo/logo-hca.png";
 
+// Styles
+import compStyles from "./header.module.css";
+import fontStyles from "../../styles/fontsize.module.css";
+import globalStyles from "../../styles/global.module.css";
 const classNames = require('classnames');
 
 class Header extends React.Component {
@@ -57,57 +60,55 @@ class Header extends React.Component {
     render() {
         return (
             <div className={this.getHeaderClassName()}>
-                <div className={compStyles.wrapper}>
+                <div className={classNames(globalStyles.wrapper, compStyles.headerWrapper)}>
                     <Link to="/" className={compStyles.logo}><img src={headerLogo}/></Link>
                     {this.state.showNav ?
                         <div className={classNames(compStyles.links, compStyles.small)}>
                             <a href={process.env.GATSBY_EXPLORE_URL} onClick={this.toggleMenu}>
-                                <span>Explore</span>
-                                <span>Search for data in the HCA</span>
+                                <span className={classNames(fontStyles.xs, compStyles.xs)}>Explore</span>
+                                <span className={classNames(fontStyles.xxs, compStyles.xxs)}>Search for data in the HCA</span>
                             </a>
                             <Link activeClassName={compStyles.active} to="/contribute"
                                   onClick={this.toggleMenu}>
-                                <span>Contribute</span>
-                                <span>Submit your data to the HCA</span>
+                                <span className={classNames(fontStyles.xs, compStyles.xs)}>Contribute</span>
+                                <span className={classNames(fontStyles.xxs, compStyles.xxs)}>Submit your data to the HCA</span>
                             </Link>
                             <Link activeClassName={compStyles.active} to="/analyze"
                                   onClick={this.toggleMenu}>
-                                <span>Analyze</span>
-                                <span>Find a list of Apps</span>
+                                <span className={classNames(fontStyles.xs, compStyles.xs)}>Analyze</span>
+                                <span className={classNames(fontStyles.xxs, compStyles.xxs)}>Find a list of Apps</span>
                             </Link>
                             <Link activeClassName={compStyles.active} to="/learn"
                                   onClick={this.toggleMenu}>
-                                <span>Learn</span>
-                                <span>Find user guides and how-to’s here</span>
+                                <span className={classNames(fontStyles.xs, compStyles.xs)}>Learn</span>
+                                <span className={classNames(fontStyles.xxs, compStyles.xxs)}>Find user guides and how-to’s here</span>
                             </Link>
-                            <Link to="/help" activeClassName={compStyles.active}
-                                  className={compStyles.about} onClick={this.toggleMenu}>Help</Link>
+                            <Link to="/help" activeClassName={compStyles.active} className={classNames(fontStyles.xs, compStyles.help)} onClick={this.toggleMenu}>Help</Link>
                         </div> : null}
                     <div className={classNames(compStyles.links)} ref={(div) => this.links = div}>
                         <a href={process.env.GATSBY_EXPLORE_URL}>
-                            <span>Explore</span>
+                            <span className={compStyles.linkTo}>Explore</span>
                         </a>
                         <div id="linkContribute" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active}
                                   to="/contribute" onMouseEnter={(e) => this.setActiveLink(1)}>
-                                <span>Contribute</span>
+                                <span className={compStyles.linkTo}>Contribute</span>
                             </Link>
                         </div>
                         <div id="linkAnalyze" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active}
                                   to="/analyze" onMouseEnter={(e) => this.setActiveLink(0)}>
-                                <span>Analyze</span>
+                                <span className={compStyles.linkTo}>Analyze</span>
                             </Link>
                         </div>
                         <div id="linkLearn" onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
                             <Link activeClassName={compStyles.active} to="/learn" onMouseEnter={(e) => this.setActiveLink(2)} >
-                                <span>Learn</span>
+                                <span className={compStyles.linkTo}>Learn</span>
                             </Link>
                         </div>
                     </div>
-                    <Link to="/help" activeClassName={compStyles.active}
-                          className={compStyles.about}>Help</Link>
-                    <div className={compStyles.menuDropDown} onClick={this.toggleMenu}>Help</div>
+                    <Link to="/help" activeClassName={compStyles.active} className={classNames(compStyles.help, fontStyles.s)}>Help</Link>
+                    <div className={classNames(compStyles.menuDropDown, fontStyles.s)} onClick={this.toggleMenu}>Help</div>
                     {this.state.showNav ? <div className={compStyles.hcaNavOverlay} onClick={this.toggleMenu}/> : null}
                 </div>
             </div>

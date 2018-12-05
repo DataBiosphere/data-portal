@@ -46,7 +46,7 @@
 
 /* Links */
 .contentFlex > div a, .contentFlex > div p:not(:first-of-type) {
-    font-weight: 500 !important;
+    font-weight: 400;
     margin: 0;
 }
 

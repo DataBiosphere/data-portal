@@ -8,7 +8,12 @@
 // Core dependencies
 import Cookies from "js-cookie";
 import React from 'react';
-import compStyles from './environment.module.css'
+
+// Styles
+import compStyles from './environment.module.css';
+import fontStyles from '../../styles/fontsize.module.css';
+import globalStyles from '../../styles/global.module.css';
+let classNames = require('classnames');
 
 class Environment extends React.Component {
 
@@ -47,11 +52,11 @@ class Environment extends React.Component {
 
         return (
             <div className={compStyles.environment}>
-                <div className={compStyles.wrapper}>
+                <div className={globalStyles.bannerWrapper}>
                     <div>
-                        <p className={compStyles.s}>{this.props.message}</p>
+                        <p className={classNames(fontStyles.l, fontStyles.bgDark, fontStyles.noMargin)}>{this.props.message}</p>
                     </div>
-                    <a className={compStyles.dismiss} onClick={() => {
+                    <a className={classNames(globalStyles.button, globalStyles.bgDark, globalStyles.outline, compStyles.narrow)} onClick={() => {
                         this.accept()
                     }}>Ok</a>
                 </div>
