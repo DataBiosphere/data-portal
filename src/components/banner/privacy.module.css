@@ -10,86 +10,18 @@
 /* Privacy */
 .privacy {
     background-color: var(--white-off);
-}
-
-/* Wrapper */
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 64px;
-    padding: 14px 16px;
-}
-
-/* Privacy text */
-.privacy .xxs {
-    font-size: 12px;
-    line-height: 18px;
-    margin: 0;
-}
-
-.privacy .xxs a {
-    font: inherit;
-}
-
-/* Button - class dismiss */
-a.dismiss {
-    align-items: center;
-    border: 1px solid var(--primary);
-    border-radius: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-shrink: 0;
-    flex-grow: 0;
-    font-size: 12px;
-    justify-content: center;
-    margin: 8px 0 0;
-    min-width: 84px;
-    padding: 2px 12px;
-    width: max-content;
-}
-
-a.dismiss:hover {
-    border: 1px solid var(--primary-hover);
-    color: var(--primary-hover);
-}
-
-a.dismiss:focus {
-    outline: none;
-}
-
-
-/**
- * Small Tablet +
- */
-@media screen and (min-width: 960px) {
-
-    /* Wrapper */
-    .wrapper {
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0 auto;
-        padding: 0 16px;
-    }
-
-    /* Button - class dismiss */
-    a.dismiss {
-        height: 38px;
-        margin: 0;
-        padding: 10px 12px;
-    }
+    padding: 14px 0;
 }
 
 /**
- * Large +
+ * Small Tablet -
  */
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 960px) {
 
-    /* Wrapper */
-    .wrapper {
-        margin: 0 auto;
-        max-width: 1200px; /* Snap to 1200px, gutter 30px */
-        padding: 0 30px;
+    /* Button - privacy component - class narrow */
+    .privacy .narrow {
+        height: unset !important;
+        margin: 8px 0 0 !important;
+        padding: 2px 12px !important;
     }
 }
-

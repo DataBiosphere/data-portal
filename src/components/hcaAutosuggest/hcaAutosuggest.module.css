@@ -42,8 +42,7 @@
 /* Error message */
 .error input + div > div:first-of-type div {
     color: rgba(0, 0, 0, 0.8);
-    font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 14px; /* TODO typography */
+    font-size: 14px;
     font-weight: 400;
     line-height: 18px;
     letter-spacing: unset;

@@ -4,7 +4,6 @@
  *
  * Style definitions specific to the HCA Data Portal header component.
  */
-
 @import "../../styles/vars.module.css";
 
 /* Nav bar container */
@@ -20,13 +19,9 @@
 }
 
 /* Wrapper */
-.wrapper {
-    align-items: center;
-    display: flex;
+.headerWrapper {
     height: inherit;
     justify-content: space-between;
-    margin: 0 auto;
-    padding: 0 16px; /* Gutter 16px */
 }
 
 /* Logo */
@@ -52,7 +47,7 @@ a.logo, a.logo img {
     flex-direction: column;
     justify-content: flex-start;
     left: 0;
-    padding-bottom: 12px;
+    padding: 12px 0;
     position: absolute;
     right: 0;
     top: 60px;
@@ -66,32 +61,22 @@ a.logo, a.logo img {
     color: var(--black);
     display: flex;
     flex-direction: column;
-    font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 13px; /* TODO review with typography */
-    font-weight: 600; /* TODO review with typography */
-    line-height: 32px; /* TODO typography */
-    margin: 0;
     padding: 12px 24px;
-    text-decoration: none;
-    text-transform: capitalize;
     width: 100%;
 }
 
-.links.small a.about {
-    color: var(--gray-dark);
-    font-weight: 400;
-    text-decoration: none;
+/* Nav links - title */
+.links .xs {
+    font-weight: 600;
+    margin: 0 0 4px;
 }
 
 /* Nav links - subtitle */
-.links a span:nth-of-type(2) {
-        color: var(--black);
-        font-size: 12px; /* TODO review with typography */
-        font-weight: 400; /* TODO review with typography */
-        letter-spacing: 1.2px;
-        line-height: 24px; /* TODO typography */
-        margin-top: -8px;
-        text-transform: none;
+.links .xxs {
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    margin: 0;
+    text-transform: none;
 }
 
 /* Nav links - hover */
@@ -104,8 +89,15 @@ a.logo, a.logo img {
     color: var(--black);
 }
 
+/* Nav link help */
+.links.small .help, .help {
+    color: var(--gray-dark);
+    font-weight: 400;
+    margin: 0;
+}
+
 .hcaNavOverlay {
-    background-color: rgba(255, 255, 255, 0.9); /* TODO colour */
+    background-color: rgba(255, 255, 255, 0.9);
     bottom: 0;
     content: "";
     left: 0;
@@ -115,27 +107,14 @@ a.logo, a.logo img {
     z-index: 99; /* Positioned below showLinks */
 }
 
-/* About link, Menu */
-.about, .menuDropDown {
-    align-items: center;
-    color: var(--gray-dark);
-    cursor: pointer;
-    font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 14px; /* TODO typography */
-    font-weight: 500; /* TODO typography - confirm - variations */
-    display: flex;
-}
-
-/* About link */
-.about {
-    font-size: 13px;
-    font-weight: 400;
-    margin: 0;
-    text-decoration: none;
-}
-
+/* Help link, Menu */
 .menuDropDown {
+    align-items: center;
     color: var(--black);
+    cursor: pointer;
+    display: flex;
+    font-weight: 500;
+    margin: 0;
 }
 
 /* Drop down menu icon */
@@ -149,8 +128,8 @@ a.logo, a.logo img {
 
 }
 
-/* Hide about link */
-.about {
+/* Hide help link */
+.help {
     display: none;
 }
 
@@ -158,12 +137,6 @@ a.logo, a.logo img {
  * Medium
  */
 @media screen and (min-width: 768px) {
-
-    /* Wrapper */
-    .wrapper {
-        margin: 0 auto;
-        max-width: 1200px; /* Snap to 1200px */
-    }
 
     .links.small, .hcaNavOverlay {
         display: none;
@@ -179,14 +152,18 @@ a.logo, a.logo img {
         position: relative;
     }
 
-    /* Nav links */
     .links a {
+        padding: 0;
+    }
+
+    /* Nav links */
+    .linkTo {
         color: var(--gray-dark);
         font-size: 15px;
         font-weight: 600;
         line-height: 60px;
         padding: 0 12px;
-        text-transform: capitalize;
+        margin: 0;
     }
 
     /* Hide menu */
@@ -194,8 +171,8 @@ a.logo, a.logo img {
         display: none;
     }
 
-    /* Show about link */
-    .about {
+    /* Show help link */
+    .help {
         display: flex;
     }
 }
@@ -204,11 +181,6 @@ a.logo, a.logo img {
  * Large +
  */
 @media screen and (min-width: 1200px) {
-
-    /* Wrapper */
-    .wrapper {
-        padding: 0 30px; /* Gutter 30px */
-    }
 
     /* Logo */
     a.logo, a.logo img {

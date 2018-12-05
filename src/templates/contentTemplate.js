@@ -10,7 +10,6 @@ import Link from 'gatsby-link';
 import React from "react";
 
 // App dependencies
-import compStyles from './contentTemplate.module.css';
 import About from "../components/about/about";
 import Analyze from "../components/analyze/analyze";
 import Nav from '../components/nav/nav';
@@ -18,6 +17,9 @@ import NavOverview from "../components/navOverview/navOverview";
 import Section from '../components/section/section';
 import TabNav from "../components/tabNav/tabNav";
 
+// Styles
+import compStyles from './contentTemplate.module.css';
+import globalStyles from '../styles/global.module.css';
 let classNames = require('classnames');
 
 // the data prop will be injected by the GraphQL query below.
@@ -60,7 +62,7 @@ export default function Template({data}) {
         <div>
             <Section docPath={docPath}/>
             <TabNav docPath={docPath}/>
-            <div className={compStyles.wrapper}>
+            <div className={globalStyles.wrapper}>
                 <div className={getContentClassName()}>
                     {noNav ? null : <Nav docPath={docPath}/>}
                     <div className={getMarkdownClassName(componentName)}>

@@ -15,7 +15,7 @@ import * as stringFormatter from "../../../src/utils/string-format.service";
 
 // Styles
 import compStyles from './homepageAutosuggest.module.css';
-
+import globalStyles from '../../styles/global.module.css';
 const classNames = require('classnames');
 
 // Facet blacklist - exclude from autosuggest
@@ -123,13 +123,17 @@ class HomepageAutosuggest extends React.Component {
         if (this.isDataInitialized()) {
 
             return classNames({
-                [compStyles.homepage]: true
+                [globalStyles.button]: true,
+                [compStyles.button]: true,
+                [globalStyles.hero]: true
             });
         }
 
         return classNames({
-            [compStyles.homepage]: true,
-            [compStyles.disabled]: true
+            [globalStyles.button]: true,
+            [compStyles.button]: true,
+            [globalStyles.hero]: true,
+            [globalStyles.disabled]: true
         });
     };
 

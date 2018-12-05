@@ -25,14 +25,14 @@
 
 /* Link */
 .homepage a {
-    color: var(--primary);
-    cursor: pointer;
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 25px;
-    margin: 0 0 18px;
-    text-decoration: none;
+    //color: var(--primary);
+    //cursor: pointer;
+    //font-family: "Montserrat", sans-serif;
+    //font-size: 15px;
+    //font-weight: 400;
+    //line-height: 25px;
+    //margin: 0 0 18px;
+    //text-decoration: none;
 }
 
 /* Wrapper */

@@ -27,37 +27,5 @@
 
 /* Heading */
 .hcaAnalyzeList h3 {
-    margin: 0;
-}
-
-/* Text */
-.hcaAnalyzeList p {
-    margin: 4px 0 16px;
-}
-
-/* Button - class analyze */
-.analyze {
-    align-items: center;
-    background-color: var(--white);
-    border: 1px solid var(--primary);
-    border-radius: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-shrink: 0;
-    font-weight: 500; /* TODO typography - confirm - was 600 */
-    height: 38px;
-    justify-content: center;
-    letter-spacing: 0.74px; /* TODO typography spec is 0.21px */
-    margin: 0;
-    min-width: 84px;
-    padding: 0 9px; /* Was 16px - followed spec */
-}
-
-.analyze:hover {
-    border: 1px solid var(--primary-hover);
-    color: var(--primary-hover);
-}
-
-.analyze:focus {
-    outline: none;
+    margin-top: 0;
 }

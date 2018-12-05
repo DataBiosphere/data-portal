@@ -43,7 +43,7 @@
     background-color: var(--white);
     border: 1px solid var(--gray-light);
     border-radius: 1px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06); /* TODO colour */
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06);
     box-sizing: border-box;
     max-height: 256px;
     -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar in IE unless actively scrolling. */
@@ -64,11 +64,11 @@
 /* Section title */
 .sectionTitle {
     color: var(--gray-medium);
-    font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 10px; /* TODO typography */
-    font-weight: 500; /* TODO typography */
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
     height: unset; /* Override MD spec */
-    letter-spacing: 0.83px; /* TODO typography */
+    letter-spacing: 0.83px;
     line-height: 20px;
     padding: 4px 0;
 }
@@ -76,9 +76,9 @@
 /* Suggestions */
 .suggestion {
     cursor: pointer;
-    font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 14px; /* TODO typography */
-    letter-spacing: 0.43px; /* TODO typography */
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.43px;
     line-height: 18px;
     margin: 0;
     min-height: 26px;

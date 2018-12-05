@@ -49,10 +49,8 @@
 
 /* Please select - text */
 .hcaSideNav .select span {
-    font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 15px;
     font-weight: 400 !important;
-    line-height: 25px;
+    margin: 0;
 }
 
 /* Please select icon */
@@ -79,11 +77,9 @@
 /* Primary navigation - link */
 .hcaSideNav > div > li a {
     color: var(--gray-dark);
-    font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 15px; /* TODO typography */
+    font-size: 15px;
     line-height: 20px;
-    font-weight: 400; /* TODO typography */
-    text-decoration: none;
+    font-weight: 400;
     width: 100%; /* Improves click-able area on link */
 }
 
@@ -91,7 +87,7 @@
 .hcaSideNav > div ul li {
     display: flex;
     margin: 0 20px;
-    padding: 6px 0; /* TODO review */
+    padding: 6px 0;
     position: relative; /* Positions nav bar */
 }
 

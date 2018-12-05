@@ -19,13 +19,6 @@
     padding: 8px 0;
 }
 
-.metadataRow span {
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-}
-
 /* Label */
 .metadataName {
     align-items: flex-start;
@@ -36,14 +29,18 @@
     width: 30%;
 }
 
-/* Required field '*' */
-.metadataName > span >span {
-    padding-left: 1px;
+.metadataRow span {
+    margin: 0;
 }
 
 /* Description */
 .metadataRow > span {
     width: 70%;
+}
+
+/* Required field '*' */
+.metadataName > span >span {
+    padding-left: 1px;
 }
 
 /* Description links */

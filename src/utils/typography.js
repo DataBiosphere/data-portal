@@ -10,8 +10,8 @@
 import Typography from 'typography';
 
 const typography = new Typography({
-    baseFontSize: '10px',
-    baseLineHeight: '15px',
+    baseFontSize: '15px',
+    baseLineHeight: '18px',
     bodyColor: '#000000',
     bodyFontFamily: ['Montserrat', 'sans-serif'],
     bodyWeight: '300',
@@ -26,36 +26,15 @@ const typography = new Typography({
     ],
     includeNormalize: true,
     overrideStyles: ({adjustFontSizeTo, scale}, options, styles) => {
-        let hcaLink = '#1c7cc7';
-        let hcaLinkHover = '#1c7cc7';
+        let primary = '#1c7cc7';
+        let background = '#f4f7f9';
+        let darkGray= '#666666';
         return {
             'body, html': {},
             '*, *:before, *:after': {
                 mozBoxSizing: 'border-box',
                 webkitBoxSizing: 'border-box',
                 boxSizing: 'border-box',
-            },
-            'dl,ol,ul,dd': {
-                margin: 0,
-                padding: 0,
-                listStyle: 'none',
-                listStyleImage: 'none',
-            },
-            'a': {
-                color: hcaLink,
-                cursor: 'pointer',
-                font: 'inherit',
-                textDecoration: 'none',
-            },
-            'a:hover': {
-                color: 'none',
-            },
-            'a:focus,a:active,a:hover': {
-                outline: 0,
-            },
-            img: {
-                border: 0,
-                marginBottom: 0,
             },
             p: {
                 ...adjustFontSizeTo('15px'),
@@ -91,6 +70,38 @@ const typography = new Typography({
                 ...adjustFontSizeTo('14px'),
                 lineHeight: '24px',
                 margin: '0 0 12px',
+            },
+            'a': {
+                color: primary,
+                cursor: 'pointer',
+                font: 'inherit',
+                textDecoration: 'none',
+            },
+            'a:hover': {
+                color: 'none',
+            },
+            'a:focus,a:active,a:hover': {
+                outline: 0,
+            },
+            blockquote: {
+                backgroundColor: background,
+                borderRadius: '3px',
+                margin: '0 0 18px',
+                padding: '16px',
+            },
+            'blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote h5, blockquote h6': {
+                margin: '0 0 8px',
+            },
+            'blockquote p': {
+                color: darkGray,
+            },
+            'dd,dl,ol,ul': {
+                margin: 0,
+                padding: 0,
+            },
+            img: {
+                border: 0,
+                marginBottom: 0,
             },
             strong: {
                 fontWeight: '400',
