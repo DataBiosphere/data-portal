@@ -53,7 +53,7 @@ class Environment extends React.Component {
                     </div>
                     <a className={compStyles.dismiss} onClick={() => {
                         this.accept()
-                    }}>I understand, dismiss this banner</a>
+                    }}>Ok</a>
                 </div>
             </div>
         );
