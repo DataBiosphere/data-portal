@@ -38,7 +38,7 @@ class Banner extends React.Component {
 
     render(props) {
         let testMessage = "This is a test environment and periodically may be unavailable and/or may contain test data.",
-            prodMessage = "This is a Beta test environment and periodically features, content, or data may change or be unavailable.";
+            prodMessage = "This is a beta test environment and periodically features, content, or data may change or be unavailable.";
         return (
             <div className={this.getBannerClassName(this.props.type)}>
                 {this.props.type === "environment" ? this.isTestEnvironment() ?
