@@ -2,7 +2,7 @@
  * Global Styles
  */
 
-@import "vars.module.css";
+@import "./vars.module.css";
 
 /* Banner wrapper */
 .bannerWrapper {
