@@ -6,9 +6,11 @@
  */
 
 // Core dependencies
-import compStyles from './navOverview.module.css'
 import Link from 'gatsby-link';
 import React from 'react';
+
+// Styles
+import compStyles from './navOverview.module.css'
 
 class NavOverview extends React.Component {
 

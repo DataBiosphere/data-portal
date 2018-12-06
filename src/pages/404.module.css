@@ -12,13 +12,6 @@
     height: calc(100vh - 262px);
 }
 
-/* Wrapper */
-.wrapper {
-    align-items: center;
-    display: flex;
-    padding: 0 16px;
-}
-
 /* Content */
 .hcaContent {
     display: flex;
@@ -29,20 +22,11 @@
 
 /* Error h2 */
 .error h2 {
-    margin-bottom: 16px;
+    margin: 0 0 16px;
 }
 
-/* Error p class m */
-.error p.m {
-        font-size: 16px;
-        font-weight: 400 !important;
-        line-height: 26px;
-        margin: 0 0 16px;
-}
-
-/* Error link */
-.error a {
-    margin-bottom: 0;
+.error a:not(:last-of-type) {
+    margin-bottom: 4px;
 }
 
 /**
@@ -56,18 +40,3 @@
         background-size: cover;
     }
 }
-
-/**
- * Large +
- */
-@media screen and (min-width: 1200px) {
-
-    /* Wrapper */
-    .wrapper {
-        margin: 0 auto;
-        max-width: 1200px; /* Snap to 1200px, gutter 30px */
-        padding: 0 30px;
-    }
-}
-
-

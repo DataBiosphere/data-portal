@@ -6,10 +6,20 @@
  */
 
 // Core dependencies
-import compStyles from './index.module.css';
 import Link from 'gatsby-link';
 import React from 'react';
 
+// App dependencies
+import HomepageAutosuggest from "../components/homepageAutosuggest/homepageAutosuggest";
+import Explore from "../../images/explore/explore-person/explore-svg";
+import ExploreStats from "../../images/explore/explore-stats/explore-stats-svg";
+import * as FileSummaryService from "../utils/fileSummary.service";
+import * as numberFormatter from "../utils/number-format.service";
+
+// Styles
+import compStyles from './index.module.css';
+import fontStyles from "../styles/fontsize.module.css";
+import globalStyles from "../styles/global.module.css";
 let classNames = require('classnames');
 
 // Images
@@ -19,13 +29,6 @@ import contribute from "../../images/data-portal/contribute.png";
 import explorePlaceholder from "../../images/data-portal/expore-placeholder.png";
 import findData from "../../images/data-portal/find-data.png";
 import processData from "../../images/data-portal/process-data.png";
-
-// App dependencies
-import HomepageAutosuggest from "../components/homepageAutosuggest/homepageAutosuggest";
-import Explore from "../../images/explore/explore-person/explore-svg";
-import ExploreStats from "../../images/explore/explore-stats/explore-stats-svg";
-import * as FileSummaryService from "../utils/fileSummary.service";
-import * as numberFormatter from "../utils/number-format.service";
 
 class IndexPage extends React.Component {
 
@@ -77,32 +80,32 @@ class IndexPage extends React.Component {
         return (
             <div className={compStyles.homepage}>
                 <div className={compStyles.jumbotron}>
-                    <div className={compStyles.wrapper}>
-                        <h1>Single-cell data building a foundation for human health</h1>
-                        <Link to="/about/overview/overview"><p className={compStyles.xs}>Learn More</p></Link>
+                    <div className={compStyles.sectionWrapper}>
+                        <h1 className={fontStyles.hero}>Single-cell data building a foundation for human health</h1>
+                        <Link to="/about"><p className={classNames(fontStyles.xs, fontStyles.noMargin)}>Learn More</p></Link>
                         <HomepageAutosuggest termFacets={this.state.termFacets}/>
                     </div>
                 </div>
                 <div className={classNames({[compStyles.statsBar]: true, [compStyles.loaded]: this.state.loaded})}>
-                    <div className={compStyles.wrapper}>
-                        <div><p className={compStyles.xs}>CELLS</p>
-                            <h1>{this.state.cellCount ? this.formatCount(this.state.cellCount) : ""}</h1></div>
-                        <div><p className={compStyles.xs}>ORGANS</p>
-                            <h1>{this.state.fileCount ? this.formatCount(this.state.organCount) : ""}</h1></div>
-                        <div><p className={compStyles.xs}>DONORS</p>
-                            <h1>{this.state.fileCount ? this.formatCount(this.state.donorCount) : ""}</h1></div>
-                        <div><p className={compStyles.xs}>PROJECTS</p>
-                            <h1>{this.state.fileCount ? this.formatCount(this.state.projectCount) : ""}</h1></div>
-                        <div><p className={compStyles.xs}>LABS</p>
-                            <h1>{this.state.fileCount ? this.formatCount(this.state.labCount) : ""}</h1></div>
+                    <div className={compStyles.sectionWrapper}>
+                        <div><p className={fontStyles.xs}>CELLS</p>
+                            <h1 className={fontStyles.noMargin}>{this.state.cellCount ? this.formatCount(this.state.cellCount) : ""}</h1></div>
+                        <div><p className={fontStyles.xs}>ORGANS</p>
+                            <h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.organCount) : ""}</h1></div>
+                        <div><p className={fontStyles.xs}>DONORS</p>
+                            <h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.donorCount) : ""}</h1></div>
+                        <div><p className={fontStyles.xs}>PROJECTS</p>
+                            <h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.projectCount) : ""}</h1></div>
+                        <div><p className={fontStyles.xs}>LABS</p>
+                            <h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.labCount) : ""}</h1></div>
                     </div>
                 </div>
                 <div className={compStyles.explore}>
-                    <div className={compStyles.wrapper}>
+                    <div className={compStyles.sectionWrapper}>
                         <div>
                             <div className={compStyles.exploreText}>
                                 <h2>Start Exploring</h2>
-                                <p className={compStyles.s}>Hover over or click on an organ to view data from that
+                                <p>Hover over or click on an organ to view data from that
                                     organ</p>
                             </div>
                             {this.state.organSummary ? 
@@ -113,7 +116,7 @@ class IndexPage extends React.Component {
                     </div>
                 </div>
                 <div className={compStyles.dataPortal}>
-                    <div className={compStyles.wrapper}>
+                    <div className={compStyles.sectionWrapper}>
                         <h4>What is the HCA Data Portal?</h4>
                         <h1>The HCA Data Portal stores and provides single-cell data contributed by labs around the
                             world.
@@ -125,8 +128,8 @@ class IndexPage extends React.Component {
                                     <img src={contribute}/>
                                 </div>
                                 <div>
-                                    <p className={compStyles.s}>Labs contribute single-cell data</p>
-                                    <Link to="/contribute/overview/overview" className={compStyles.s}>Learn about
+                                    <p>Labs contribute single-cell data</p>
+                                    <Link to="/contribute/overview/overview">Learn about
                                         contributing</Link>
                                 </div>
                             </div>
@@ -137,10 +140,9 @@ class IndexPage extends React.Component {
                                 <div>
                                     <img src={processData}/>
                                 </div>
-                                <div><p className={compStyles.s}>We process and quality-check the data with our
+                                <div><p>We process and quality-check the data with our
                                     pipelines</p><Link
-                                    to="/learn/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides"
-                                    className={compStyles.s}>Learn about Pipelines</Link>
+                                    to="/learn/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides">Learn about Pipelines</Link>
                                 </div>
                             </div>
                             <div className={compStyles.dpArrow}>
@@ -150,9 +152,8 @@ class IndexPage extends React.Component {
                                 <div>
                                     <img src={findData}/>
                                 </div>
-                                <div><p className={compStyles.s}>Anyone can find data to download or use for
-                                    analysis</p><a href={process.env.GATSBY_EXPLORE_URL}
-                                                   className={compStyles.s}>Start Searching</a></div>
+                                <div><p>Anyone can find data to download or use for
+                                    analysis</p><a href={process.env.GATSBY_EXPLORE_URL}>Start Searching</a></div>
                             </div>
                             <div className={compStyles.dpArrow}>
                                 <img src={arrowRight}/>
@@ -169,10 +170,10 @@ class IndexPage extends React.Component {
                     </div>
                 </div>
                 <div className={compStyles.contact}>
-                    <div className={compStyles.wrapper}>
+                    <div className={compStyles.sectionWrapper}>
                         <h2>Stay up-to-date with the Human Cell Atlas</h2>
                         <div className={compStyles.contactForm}>
-                            <a href="https://www.humancellatlas.org/joinHCA" className={compStyles.homepage}>Register
+                            <a href="https://www.humancellatlas.org/joinHCA" className={classNames(globalStyles.button, globalStyles.secondary, globalStyles.hero, compStyles.contactButton)}>Register
                                 For HCA</a>
                         </div>
                     </div>

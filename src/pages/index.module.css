@@ -7,36 +7,8 @@
 
 @import '../../src/styles/vars.module.css';
 
-/* P - class "s" */
-.homepage p.s {
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 25px;
-    margin: 0 0 18px;
-}
-
-/* P - class "xs" */
-.homepage p.xs {
-    font-size: 13px;
-    line-height: 20px;
-    margin: 0 0 16px;
-}
-
-/* Link */
-.homepage a {
-    //color: var(--primary);
-    //cursor: pointer;
-    //font-family: "Montserrat", sans-serif;
-    //font-size: 15px;
-    //font-weight: 400;
-    //line-height: 25px;
-    //margin: 0 0 18px;
-    //text-decoration: none;
-}
-
 /* Wrapper */
-.wrapper {
+.sectionWrapper {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -55,7 +27,7 @@
 }
 
 /* Jumbotron wrapper */
-.jumbotron .wrapper {
+.jumbotron .sectionWrapper {
     padding: 32px 16px 70px;
 }
 
@@ -66,15 +38,13 @@
 }
 
 /* Learn more link */
-.jumbotron .wrapper > a {
+.jumbotron .sectionWrapper > a {
     color: var(--black);
     margin: 10px 0 24px;
-    text-decoration: none;
 }
 
-.jumbotron .wrapper > a .xs {
-    font-weight: 500 !important;
-    margin: 0;
+.jumbotron .sectionWrapper > a p {
+    font-weight: 500;
     text-transform: uppercase;
 }
 
@@ -104,8 +74,8 @@
     display: none;
 }
 
-/* Status name - TODO review typography */
-.statsBar > div > div p.xs {
+/* Status name */
+.statsBar > div > div p {
     color: var(--white);
     letter-spacing: 3.25px;
     margin: 0 0 -4px;
@@ -114,9 +84,8 @@
 /* Status number */
 .statsBar > div > div h1 {
     color: var(--white);
-    font-size: 36px; /* TODO confirm */
-    line-height: 42px; /* TODO confirm */
-    margin: 0;
+    font-size: 36px;
+    line-height: 42px;
     min-height: 42px;
     opacity: 0;
     padding: 0 12px;
@@ -129,7 +98,7 @@
 }
 
 /* Explore */
-.explore .wrapper > div {
+.explore .sectionWrapper > div {
     position: relative;
 }
 
@@ -144,7 +113,7 @@
 }
 
 /* Explore sub-text */
-.explore p.s {
+.explore p {
     color: var(--gray-dark);
     line-height: 18px;
     margin-bottom: 0;
@@ -171,7 +140,7 @@
 .dataPortal h1 {
     font-size: 28px;
     line-height: 32px;
-    margin: 10px 0; /* TODO review */
+    margin: 10px 0;
     max-width: 650px;
     text-align: center;
 }
@@ -225,7 +194,7 @@
 }
 
 /* Second row of each box - text description */
-.portalDescription > div > div:nth-of-type(2) p.s {
+.portalDescription > div > div:nth-of-type(2) p {
     color: var(--gray-dark);
     font-weight: 500;
     line-height: 18px;
@@ -234,7 +203,8 @@
 }
 
 /* Link */
-.portalDescription > div > div:nth-of-type(2) a.s {
+.portalDescription > div > div:nth-of-type(2) a {
+    font-weight: 400;
     line-height: 18px;
     margin: 0;
     text-align: left;
@@ -259,35 +229,9 @@
 }
 
 /* Contact form button - class homepage */
-.contactForm a.homepage {
-    align-items: center;
-    background-color: var(--secondary);
-    border: none;
-    border-radius: 3px;
-    box-sizing: border-box;
-    color: var(--white);
-    cursor: pointer;
-    display: flex;
-    flex-shrink: 0;
-    font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 14px;
-    font-weight: 500; /* TODO typography - confirm - was 600 */
-    height: 50px;
-    justify-content: center;
-    letter-spacing: 0.74px; /* TODO typography spec is 0.21px */
+.contactForm .contactButton {
     margin: 4px 0;
-    min-width: 84px;
-    padding: 0 9px; /* Was 16px - followed spec */
-    text-decoration: none;
     text-transform: uppercase;
-}
-
-.contactForm a.homepage:hover {
-    background-color: var(--secondary-hover);
-}
-
-.contactForm a.homepage:focus {
-    outline: none;
 }
 
 /**
@@ -301,7 +245,7 @@
     }
 
     /* Jumbotron wrapper */
-    .jumbotron .wrapper {
+    .jumbotron .sectionWrapper {
         padding: 70px 16px;
     }
 
@@ -330,11 +274,6 @@
     /* Jumbotron */
     .jumbotron {
         background-image: url(../../images/jumbotron/jumbotron-cell.png);
-    }
-
-    .jumbotron h1 {
-        font-size: 40px; /* Hero homepage font-size */
-        line-height: 46px;
     }
 
     /* Explore text */
@@ -371,7 +310,7 @@
 @media screen and (min-width: 1024px) {
 
     /* Wrapper */
-    .wrapper {
+    .sectionWrapper {
         padding: 70px 16px;
     }
 
@@ -437,7 +376,7 @@
     }
 
     /* Second row of each box - text description & link */
-    .portalDescription > div > div:nth-of-type(2) p.s, .portalDescription > div > div:nth-of-type(2) a.s {
+    .portalDescription > div > div:nth-of-type(2) p, .portalDescription > div > div:nth-of-type(2) a {
         margin: 12px 0 0;
         text-align: center;
         width: 100%;
@@ -461,7 +400,7 @@
 @media screen and (min-width: 1200px) {
 
     /* Wrapper */
-    .wrapper {
+    .sectionWrapper {
         padding: 70px 30px;
     }
 

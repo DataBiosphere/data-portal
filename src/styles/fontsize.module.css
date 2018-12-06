@@ -7,7 +7,7 @@
 /* Header class */
 
 /* Class "fontsize-hero" */
-/* Human Cell Atlas Large Headline */
+/* Human Cell Atlas Headline */
 .hero {
     font-family: "din-2014", sans-serif;
     font-size: 40px;
@@ -99,15 +99,6 @@ p.m {
     font-weight: 300;
     line-height: 18px;
     margin: 0 0 4px;
-}
-
-/* Class "hca" */
-.hcaBaseFont {
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 25px;
-    margin: 0 0 18px;
 }
 
 /* Font colour white on dark backgrounds */

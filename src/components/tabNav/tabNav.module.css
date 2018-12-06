@@ -15,15 +15,12 @@
 }
 
 /* Wrapper */
-.wrapper {
-    align-items: center;
-    display: flex;
-    padding: 0 16px;
+.tabNavWrapper {
     position: relative; /* Positions fade on horizontal scroll */
 }
 
 /* Fade on horizontal scroll */
-.wrapper::after, .wrapper::before {
+.tabNavWrapper::after, .tabNavWrapper::before {
     content: "";
     height: 100%;
     position: absolute;
@@ -33,13 +30,13 @@
 }
 
 /* Fade on horizontal scroll RHS */
-.wrapper::after {
+.tabNavWrapper::after {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--white), var(--white));
     right: 0;
 }
 
 /* Fade on horizontal scroll LHS */
-.wrapper::before {
+.tabNavWrapper::before {
     background: linear-gradient(90deg, var(--white), var(--white), rgba(255, 255, 255, 0));
     left: 0;
 }
@@ -73,11 +70,8 @@
 /* Tab - link */
 .hcaTab a, .hcaBackTab a {
     color: var(--gray-dark);
-    font-family: "Montserrat", sans-serif; /* TODO typography */
-    font-size: 15px; /* TODO typography - confirm size */
     font-weight: 400; /* TODO typography */
     line-height: 30px;
-    text-decoration: none;
     white-space: nowrap; /* Horizontal scroll */
 }
 
@@ -122,18 +116,3 @@
     position: absolute;
     width: 16px; /* 16px tab padding */
 }
-
-/**
- * Large +
- */
-@media screen and (min-width: 1200px) {
-
-    /* Wrapper */
-    .wrapper {
-        margin: 0 auto;
-        max-width: 1200px; /* Snap to 1200px, gutter 30px */
-        padding: 0 30px;
-    }
-}
-
-

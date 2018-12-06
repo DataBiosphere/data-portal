@@ -5,13 +5,6 @@
  * Style definitions specific to the HCA Data Portal attributions page.
  */
 
-/* Wrapper */
-.wrapper {
-    align-items: center;
-    display: flex;
-    padding: 0 16px;
-}
-
 /* Content */
 .hcaContent {
     display: flex;
@@ -33,27 +26,3 @@
     margin: 4px 0;
     padding-right: 8px;
 }
-
-/* Attributions p class s */
-.attributions p.s {
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 25px;
-    margin: 0 0 18px;
-}
-
-/**
- * Large +
- */
-@media screen and (min-width: 1200px) {
-
-    /* Wrapper */
-    .wrapper {
-        margin: 0 auto;
-        max-width: 1200px; /* Snap to 1200px, gutter 30px */
-        padding: 0 30px;
-    }
-}
-
-
