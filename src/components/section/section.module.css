@@ -5,37 +5,13 @@
  * Style definitions specific to the HCA Data Portal section component.
  */
 
-/* Wrapper */
-.wrapper {
-    align-items: center;
-    display: flex;
-    padding: 0 16px;
-}
-
 /* Section heading */
 .hcaSectionHeading {
     align-items: center;
     display: flex;
     flex: 1;
-    font-family: "din-2014", sans-serif;
-    font-size: 34px;
-    font-weight: 500;
-    letter-spacing: 0.54px;
-    line-height: 44px;
+    height: 76px;
     padding: 16px 0;
+    margin: 0;
     width: 100%;
 }
-
-/**
- * Large +
- */
-@media screen and (min-width: 1200px) {
-
-    /* Wrapper */
-    .wrapper {
-        margin: 0 auto;
-        max-width: 1200px; /* Snap to 1200px, gutter 30px */
-        padding: 0 30px;
-    }
-}
-

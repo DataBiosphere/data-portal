@@ -125,6 +125,7 @@ class HomepageAutosuggest extends React.Component {
             return classNames({
                 [globalStyles.button]: true,
                 [compStyles.button]: true,
+                [globalStyles.accent]: true,
                 [globalStyles.hero]: true
             });
         }

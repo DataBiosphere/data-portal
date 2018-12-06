@@ -33,6 +33,12 @@
     justify-content: center;
     margin: 0;
     min-width: 84px;
+    padding: 0 9px;
+}
+
+/* Button - class "button hero" */
+.button.hero {
+    height: 50px;
 }
 
 /* Button - class "button primary" */
@@ -57,16 +63,14 @@
     background-color: var(--secondary-hover);
 }
 
-/* Button - class "button hero" */
-.button.hero {
+/* Button - class "button accent" */
+.button.accent {
     background-color: var(--accent);
     color: var(--white);
-    height: 50px;
-    padding: 0 9px; /* Was 16px - followed spec */
 }
 
-/* Button hover - class "button hero" */
-.button.hero:hover {
+/* Button hover - class "button accent" */
+.button.accent:hover {
     background-color: var(--accent-hover);
 }
 

@@ -83,7 +83,7 @@ class Nav extends React.Component {
                 </ul>
                 <ul className={compStyles.hcaSideNav}>
                     <li className={compStyles.select} onClick={this.toggleNav}>
-                        <span className={fontStyles.hcaBaseFont}>Please select</span><i className='material-icons'>keyboard_arrow_down</i>
+                        <span>Please select</span><i className='material-icons'>keyboard_arrow_down</i>
                     </li>
                     {this.state.showNav ?
                         siteMap.getNav(this.props.docPath).map((p, i) =>
