@@ -58,7 +58,7 @@ class Environment extends React.Component {
                     </div>
                     <a className={classNames(globalStyles.button, globalStyles.bgDark, globalStyles.outline, compStyles.narrow)} onClick={() => {
                         this.accept()
-                    }}>Ok</a>
+                    }}>OK</a>
                 </div>
             </div>
         );
