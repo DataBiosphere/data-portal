@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "dependencies": {
     "classnames": "^2.2.5",
-    "data-portal-content": "HumanCellAtlas/data-portal-content",
+    "data-portal-content": "github:HumanCellAtlas/data-portal-content",
     "gatsby": "^1.9.277",
     "gatsby-cli": "^1.1.52",
     "gatsby-link": "^1.6.40",
