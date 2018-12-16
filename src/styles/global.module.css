@@ -1,7 +1,6 @@
 /**
  * Global Styles
  */
-
 @import "./vars.module.css";
 
 /* Banner wrapper */
@@ -84,6 +83,11 @@
     line-height: 18px;
     padding: 10px 12px;
     width: max-content;
+}
+
+/* Button hover - class "button outline" */
+.button.outline:hover {
+    background-color: transparent;
 }
 
 /* Button - class "button outline primary" */
