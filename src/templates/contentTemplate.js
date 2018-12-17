@@ -10,7 +10,6 @@ import Link from 'gatsby-link';
 import React from "react";
 
 // App dependencies
-import About from "../components/about/about";
 import Analyze from "../components/analyze/analyze";
 import Nav from '../components/nav/nav';
 import NavOverview from "../components/navOverview/navOverview";
@@ -72,7 +71,6 @@ export default function Template({data}) {
                         />
                         {linked && !componentName ? <NavOverview linked={linked}/> : null}
                         {linked && (componentName === "analyze") ? <Analyze linked={linked}/> : null}
-                        {linked && (componentName === "about") ? <About subTitle={subTitle} linked={linked}/> : null}
                         <a className={compStyles.editContent} href={editPath} target="_blank">Improve this page</a>
                     </div>
                 </div>

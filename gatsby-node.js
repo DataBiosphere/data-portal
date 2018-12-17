@@ -20,12 +20,6 @@ const metadataTemplate = path.resolve(`src/templates/metadataTemplate.js`);
 function getTemplate(templateName) {
 
     // see if there is a template matching the template name from the front matter.
-    if (templateName === "aboutOverviewTemplate") {
-        return aboutOverviewTemplate;
-    }
-    if (templateName === "contributeOverviewTemplate") {
-        return contributeOverviewTemplate;
-    }
     if (templateName === "metadataTemplate") {
         return metadataTemplate;
     }

@@ -20,27 +20,9 @@ const siteMap =
                     key: "platform",
                     children: [
                         {
-                            name: "Data Coordination Platform",
+                            name: "About the DCP",
                             key: "/about/platform/dcp",
                             path: "/about",
-                            // children: [
-                            //     {
-                            //         name: "Ingest Service",
-                            //         key: "/about/platform/dcp/ingest-service"
-                            //     },
-                            //     {
-                            //         name: "Data Store",
-                            //         key: "/about/platform/dcp/data-store"
-                            //     },
-                            //     {
-                            //         name: "Data Browser",
-                            //         key: "/about/platform/dcp/data-browser"
-                            //     },
-                            //     {
-                            //         name: "Data Processing Pipelines",
-                            //         key: "/about/platform/dcp/data-processing-pipelines"
-                            //     }
-                            // ]
                         }
                     ]
                 }
