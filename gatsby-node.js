@@ -11,9 +11,7 @@ const siteMap = require('./src/siteMap');
 
 
 // find our template files
-const aboutOverviewTemplate = path.resolve(`src/templates/aboutOverviewTemplate.js`);
 const contentTemplate = path.resolve(`src/templates/contentTemplate.js`);
-const contributeOverviewTemplate = path.resolve(`src/templates/contributeOverviewTemplate.js`);
 const metadataTemplate = path.resolve(`src/templates/metadataTemplate.js`);
 
 
