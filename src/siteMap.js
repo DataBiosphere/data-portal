@@ -28,7 +28,13 @@ const siteMap =
                             name: "About the HCA",
                             key: "/about/platform/hca",
                             path: "/about/hca",
+                        },
+                        {
+                            name: "Attributions",
+                            key: "/about/platform/attributions",
+                            path: "/about/attributions",
                         }
+
                     ]
                 }
             ]
@@ -96,7 +102,7 @@ const siteMap =
                             {
                                 name: "Quick Start Guide",
                                 key: "/learn/userguides/quick-start-guide",
-                                path:"/learn"
+                                path: "/learn"
                             },
                             {
                                 name: "CLI Data Access",
@@ -360,7 +366,7 @@ const siteMap =
  * @param path
  * @returns {*}
  */
- function getSection(path) {
+function getSection(path) {
 
     const key = path.split("/")[1];
     const section = siteMap.find((s) => {
@@ -381,7 +387,7 @@ const siteMap =
  * This is used to draw out the tabs across a documents top section.
  * @param path
  */
- function getTabs(path) {
+function getTabs(path) {
 
     const section = getSection(path);
 
@@ -405,7 +411,7 @@ const siteMap =
  * @param path
  * @returns {Array}
  */
- function getNav(path) {
+function getNav(path) {
     const tab = getTab(path);
 
     // if (!tab) {
@@ -415,14 +421,15 @@ const siteMap =
     return tab.children;
 }
 
- function getPath(key){
+function getPath(key) {
     const path = keytoPath.get(key);
-    if(path){
+    if (path) {
         return path;
     }
-    else{
+    else {
         return key
-    };
+    }
+    ;
 
 }
 
@@ -445,7 +452,6 @@ function getTab(path) {
 }
 
 
-
 /**
  * sections
  *    tabs
@@ -456,8 +462,8 @@ function getTab(path) {
 const keytoPath = siteMap.reduce((acc, section) => {
     return section.children.reduce((acc, tab) => {
         return tab.children.reduce((acc, doc) => {
-            addToMap(acc,doc);
-            if(doc.children) {
+            addToMap(acc, doc);
+            if (doc.children) {
                 doc.children.forEach(childDoc => addToMap(acc, childDoc));
             }
             return acc;
@@ -466,12 +472,11 @@ const keytoPath = siteMap.reduce((acc, section) => {
 }, new Map());
 
 
-
 function addToMap(acc, doc) {
     if (doc.path) {
         acc.set(doc.key, doc.path);
     } else {
-        acc.set(doc.key,doc.key);
+        acc.set(doc.key, doc.key);
     }
 }
 

@@ -11,6 +11,7 @@ import React from "react";
 
 // App dependencies
 import Analyze from "../components/analyze/analyze";
+import Attributions from "../components/attributions/attributions";
 import Nav from '../components/nav/nav';
 import NavOverview from "../components/navOverview/navOverview";
 import Section from '../components/section/section';
@@ -71,6 +72,7 @@ export default function Template({data}) {
                         />
                         {linked && !componentName ? <NavOverview linked={linked}/> : null}
                         {linked && (componentName === "analyze") ? <Analyze linked={linked}/> : null}
+                        {componentName === "attributions" ? <Attributions/> : null}
                         <a className={compStyles.editContent} href={editPath} target="_blank">Improve this page</a>
                     </div>
                 </div>
