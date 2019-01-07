@@ -2,17 +2,8 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * Style definitions specific to the HCA Data Portal attributions page.
+ * Style definitions specific to the HCA Data Portal attributions component.
  */
-
-/* Content */
-.hcaContent {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    margin: 36px 0;
-    max-width: 600px;
-}
 
 /* Attributions */
 .attributions {
