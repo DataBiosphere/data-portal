@@ -23,6 +23,11 @@ const siteMap =
                             name: "About the DCP",
                             key: "/about/platform/dcp",
                             path: "/about",
+                        },
+                        {
+                            name: "About the HCA",
+                            key: "/about/platform/hca",
+                            path: "/about/hca",
                         }
                     ]
                 }
