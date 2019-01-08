@@ -44,47 +44,35 @@ const siteMap =
             key: "analyze",
             children: [
                 {
-                    name: "Portals",
+                    name: "Analysis Portals",
                     key: "portals",
                     children: [
                         {
-                            name: "Visualization Portals",
-                            key: "/analyze/portals/visualization-portals",
+                            name: "Analysis Portals",
+                            key: "/analyze/portals/analysis-portals",
                             path: "/analyze"
-                        },
-                        {
-                            name: "About Visualization Portals",
-                            key: "/analyze/portals/about"
                         }
                     ]
                 },
                 {
-                    name: "Methods",
+                    name: "Methods Packages",
                     key: "methods",
                     children: [
                         {
-                            name: "Methods",
-                            key: "/analyze/methods/methods",
+                            name: "Methods Packages",
+                            key: "/analyze/methods/methods-packages",
                             path: "/analyze/methods"
-                        },
-                        {
-                            name: "About Methods",
-                            key: "/analyze/methods/about"
                         }
                     ]
                 },
                 {
-                    name: "Visualization Components",
-                    key: "visualization-components",
+                    name: "Visualization Packages",
+                    key: "visualization",
                     children: [
                         {
-                            name: "Visualization Components",
-                            key: "/analyze/visualization-components/visualization-components",
-                            path: "/analyze/visualization-components"
-                        },
-                        {
-                            name: "About Visualization Components",
-                            key: "/analyze/visualization-components/about"
+                            name: "Visualization Packages",
+                            key: "/analyze/visualization/visualization-packages",
+                            path: "/analyze/visualization"
                         }
                     ]
                 }
