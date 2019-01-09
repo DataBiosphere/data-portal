@@ -10,15 +10,17 @@
 /* Analyze list */
 .hcaAnalyzeList {
     border-bottom: 1px solid var(--gray-lightest);
+    color: inherit;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 32px;
+    margin-bottom: 18px;
     position: relative; /* Positions button */
     width: 100%;
 }
 
-.hcaAnalyzeList > div {
-    margin-right: 16px;
+.hcaAnalyzeList:first-of-type {
+    margin-top: 48px;
 }
 
 .hcaAnalyzeList:last-of-type {
@@ -26,6 +28,12 @@
 }
 
 /* Heading */
-.hcaAnalyzeList h3 {
-    margin-top: 0;
+.hcaAnalyzeList h5 {
+    line-height: 20px;
+    margin: 0;
+}
+
+/* Description */
+.hcaAnalyzeList .description {
+    margin-top: 12px;
 }

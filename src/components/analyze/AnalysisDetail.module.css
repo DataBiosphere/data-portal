@@ -1,0 +1,30 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal analysis detail component.
+ */
+
+@import '../../styles/vars.module.css';
+
+/* Analyze list */
+.hcaAnalyzeDetail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    position: relative; /* Positions button */
+    width: 100%;
+}
+
+.hcaAnalyzeDetail > div {
+    margin-right: 16px;
+}
+
+/* Heading */
+.hcaAnalyzeDetail h2 {
+    margin: 0;
+}
+
+.hcaAnalyzeDetail p {
+    margin-bottom: 24px;
+}
