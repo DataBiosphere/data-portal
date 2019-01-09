@@ -129,7 +129,7 @@ class IndexPage extends React.Component {
                                 </div>
                                 <div>
                                     <p>Labs contribute single-cell data</p>
-                                    <Link to="/contribute/overview/overview">Learn about
+                                    <Link to="/contribute">Learn about
                                         contributing</Link>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@ class IndexPage extends React.Component {
                                     <img src={analysisPortal}/>
                                 </div>
                                 <div><p className={compStyles.s}>Find community analysis tools and applications</p><Link
-                                    to="/analyze/portals/visualization-portals"
+                                    to="/analyze"
                                     className={compStyles.s}>Explore applications</Link></div>
                             </div>
                         </div>
