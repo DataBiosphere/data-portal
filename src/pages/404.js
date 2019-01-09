@@ -27,7 +27,7 @@ const NotFoundPage = () => (
                     <p className={fontStyles.m}>We can’t find the page you were looking for.</p>
                     <p className={fontStyles.m}>Here are some helpful links instead:</p>
                     <Link to="/">Home Page</Link>
-                    <Link to="/contact/contact/contact-us">Contact</Link>
+                    <Link to="/contact">Contact</Link>
                 </div>
             </div>
         </div>

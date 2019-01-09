@@ -60,7 +60,7 @@ class Privacy extends React.Component {
                             and the limited processing of your
                             personal data in order to function.</p>
                         <p className={classNames(fontStyles.xxs, fontStyles.noMargin)}><span>By using the site you are agreeing to this as outlined in our </span>
-                            <Link to="/privacy/privacy/privacy">Privacy Notice</Link><span>.</span></p>
+                            <Link to="/privacy">Privacy Notice</Link><span>.</span></p>
                     </div>
                     <a className={classNames(globalStyles.button, globalStyles.primary, globalStyles.outline, compStyles.narrow)} onClick={() => {
                         this.accept()
