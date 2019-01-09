@@ -11,6 +11,7 @@ import React from "react";
 
 // App dependencies
 import Analyze from "../components/analyze/analyze";
+import AnalysisDetail from "../components/analyze/analysisDetail";
 import Attributions from "../components/attributions/attributions";
 import Nav from '../components/nav/nav';
 import NavOverview from "../components/navOverview/navOverview";
@@ -28,7 +29,7 @@ export default function Template({data}) {
     const {markdownRemark} = data; // data.markdownRemark holds our post data
     const {frontmatter, html} = markdownRemark;
 
-    let componentName, docPath, gitHubPath, linked, noNav, subTitle;
+    let componentName, docPath, gitHubPath, linked, noNav;
     docPath = markdownRemark.fields.path;
     gitHubPath = markdownRemark.fields.gitHubPath.substring(0, markdownRemark.fields.gitHubPath.lastIndexOf("/"));
 
@@ -37,7 +38,6 @@ export default function Template({data}) {
     if (frontmatter) {
         linked = frontmatter.linked;
         componentName = frontmatter.componentName;
-        subTitle = frontmatter.subTitle;
         noNav = frontmatter.noNav;
     }
 
@@ -53,7 +53,7 @@ export default function Template({data}) {
 
         return classNames({
             [compStyles.markdownContent]: true,
-            [compStyles.analyze]: (componentName === "analyze"),
+            [compStyles.analyze]: (componentName === "analysisDetail"),
             [compStyles.noNav]: noNav
         });
     };
@@ -66,12 +66,13 @@ export default function Template({data}) {
                 <div className={getContentClassName()}>
                     {noNav ? null : <Nav docPath={docPath}/>}
                     <div className={getMarkdownClassName(componentName)}>
-                        <div
+                        {componentName === "analysisDetail" ? null : <div
                             className="content-template"
                             dangerouslySetInnerHTML={{__html: html}}
-                        />
+                        />}
                         {linked && !componentName ? <NavOverview linked={linked}/> : null}
                         {linked && (componentName === "analyze") ? <Analyze linked={linked}/> : null}
+                        {componentName === "analysisDetail" ? <AnalysisDetail data={markdownRemark}/> : null}
                         {componentName === "attributions" ? <Attributions/> : null}
                         <a className={compStyles.editContent} href={editPath} target="_blank">Improve this page</a>
                     </div>
@@ -88,23 +89,28 @@ export const pageQuery = graphql`
       id
       html
       fields{
-            path
             gitHubPath
+            path
       }
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
-        title
-        subTitle
+        appUrl
+        author
         componentName
+        date(formatString: "MMMM DD, YYYY")
+        githubUrl
+        path
+        subTitle
+        title
         linked {
                childMarkdownRemark{
                    html
                    frontmatter{
-                        path
-                        title
-                        subTitle
                         githubUrl
+                        path
+                        subTitle
+                        title
+                        author
+                        description
                     }
                }
         }
