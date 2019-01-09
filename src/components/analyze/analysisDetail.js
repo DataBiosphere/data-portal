@@ -28,12 +28,14 @@ class AnalysisDetail extends React.Component {
                 <div>
                     <div>
                         <h2>{this.props.data.frontmatter.title}</h2>
-                        <p className={fontStyles.xs}>{this.props.data.frontmatter.author}</p>
+                        <p className={classNames(fontStyles.xs, compStyles.author)}>{this.props.data.frontmatter.author}</p>
+                        <a href={this.props.data.frontmatter.githubUrl} target="_blank"
+                           className={classNames(globalStyles.button, globalStyles.outline, globalStyles.primary, compStyles.view)}>View</a>
                         <div dangerouslySetInnerHTML={{__html: this.props.data.html}}/>
                     </div>
                 </div>
                 <a href={this.props.data.frontmatter.githubUrl} target="_blank"
-                   className={classNames(globalStyles.button, globalStyles.outline, globalStyles.primary)}>View</a>
+                   className={classNames(globalStyles.button, globalStyles.outline, globalStyles.primary, compStyles.view)}>View</a>
             </div>
         );
     }
