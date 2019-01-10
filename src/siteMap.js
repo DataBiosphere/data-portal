@@ -96,6 +96,11 @@ const siteMap =
                                     name: "cellxgene",
                                     key: "/analyze/portals/analysis-portals/cellxgene",
                                     path: "/analyze/portals/cellxgene"
+                                },
+                                {
+                                    name: "BioTuring Browser",
+                                    key: "/analyze/portals/analysis-portals/bioturing-browser",
+                                    path: "/analyze/portals/bioturing-browser"
                                 }
                             ]
                         }
