@@ -56,15 +56,11 @@ class Privacy extends React.Component {
             <div className={compStyles.privacy}>
                 <div className={globalStyles.bannerWrapper}>
                     <div>
-                        <p className={classNames(fontStyles.xxs, fontStyles.noMargin)}>This website requires cookies,
-                            and the limited processing of your
-                            personal data in order to function.</p>
-                        <p className={classNames(fontStyles.xxs, fontStyles.noMargin)}><span>By using the site you are agreeing to this as outlined in our </span>
-                            <Link to="/privacy">Privacy Notice</Link><span>.</span></p>
+                        <p className={classNames(fontStyles.xxs, fontStyles.noMargin)}><span>This website uses cookies, including for security and analytics purposes. By using this site, you agree to these uses. Learn more </span><Link to="/privacy#4-who-will-have-access-to-your-personal-data">here</Link><span>.</span></p>
                     </div>
                     <a className={classNames(globalStyles.button, globalStyles.primary, globalStyles.outline, compStyles.narrow)} onClick={() => {
                         this.accept()
-                    }}>I agree, dismiss this banner</a>
+                    }}>Got it</a>
                 </div>
             </div>
         );
