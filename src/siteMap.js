@@ -53,14 +53,35 @@ const siteMap =
                             path: "/analyze",
                             children: [
                                 {
-                                    name: "UCSC Cell Browser",
-                                    key: "/analyze/portals/analysis-portals/ucsc-cell-browser",
-                                    path: "/analyze/portals/ucsc-cell-browser"
+                                    name: "Automated Single cell Analysis Platform (ASAP)",
+                                    key: "/analyze/portals/analysis-portals/asap",
+                                    path: "/analyze/portals/asap"
                                 },
                                 {
-                                    name: "UCSC Xena",
-                                    key: "/analyze/portals/analysis-portals/ucsc-xena",
-                                    path: "/analyze/portals/ucsc-xena"
+                                    name: "BioTuring Browser",
+                                    key: "/analyze/portals/analysis-portals/bioturing-browser",
+                                    path: "/analyze/portals/bioturing-browser"
+                                },
+                                {
+                                    name: "cellxgene",
+                                    key: "/analyze/portals/analysis-portals/cellxgene",
+                                    path: "/analyze/portals/cellxgene"
+                                },
+                                {
+                                    name: "Cytoscape",
+                                    key: "/analyze/portals/analysis-portals/cytoscape",
+                                    path: "/analyze/portals/cytoscape"
+                                },
+
+                                {
+                                    name: "DNAstack",
+                                    key: "/analyze/portals/analysis-portals/dnastack",
+                                    path: "/analyze/portals/dnastack"
+                                },
+                                {
+                                    name: "Single Cell Expression Atlas",
+                                    key: "/analyze/portals/analysis-portals/single-cell-expression-atlas",
+                                    path: "/analyze/portals/single-cell-expression-atlas"
                                 },
                                 {
                                     name: "Single Cell Portal",
@@ -73,34 +94,14 @@ const siteMap =
                                     path: "/analyze/portals/genepattern-notebook-environment"
                                 },
                                 {
-                                    name: "Cytoscape",
-                                    key: "/analyze/portals/analysis-portals/cytoscape",
-                                    path: "/analyze/portals/cytoscape"
+                                    name: "UCSC Cell Browser",
+                                    key: "/analyze/portals/analysis-portals/ucsc-cell-browser",
+                                    path: "/analyze/portals/ucsc-cell-browser"
                                 },
                                 {
-                                    name: "Automated Single cell Analysis Platform (ASAP)",
-                                    key: "/analyze/portals/analysis-portals/asap",
-                                    path: "/analyze/portals/asap"
-                                },
-                                {
-                                    name: "DNAstack",
-                                    key: "/analyze/portals/analysis-portals/dnastack",
-                                    path: "/analyze/portals/dnastack"
-                                },
-                                {
-                                    name: "Single Cell Expression Atlas",
-                                    key: "/analyze/portals/analysis-portals/single-cell-expression-atlas",
-                                    path: "/analyze/portals/single-cell-expression-atlas"
-                                },
-                                {
-                                    name: "cellxgene",
-                                    key: "/analyze/portals/analysis-portals/cellxgene",
-                                    path: "/analyze/portals/cellxgene"
-                                },
-                                {
-                                    name: "BioTuring Browser",
-                                    key: "/analyze/portals/analysis-portals/bioturing-browser",
-                                    path: "/analyze/portals/bioturing-browser"
+                                    name: "UCSC Xena",
+                                    key: "/analyze/portals/analysis-portals/ucsc-xena",
+                                    path: "/analyze/portals/ucsc-xena"
                                 }
                             ]
                         }
@@ -116,6 +117,11 @@ const siteMap =
                             path: "/analyze/methods",
                             children: [
                                 {
+                                    name: "scmap",
+                                    key: "/analyze/methods/methods-packages/scmap",
+                                    path: "/analyze/methods/scmap"
+                                },
+                                {
                                     name: "Single-cell consensus clustering (SC3)",
                                     key: "/analyze/methods/methods-packages/sc3",
                                     path: "/analyze/methods/sc3"
@@ -124,11 +130,6 @@ const siteMap =
                                     name: "Slingshot",
                                     key: "/analyze/methods/methods-packages/slingshot",
                                     path: "/analyze/methods/slingshot"
-                                },
-                                {
-                                    name: "scmap",
-                                    key: "/analyze/methods/methods-packages/scmap",
-                                    path: "/analyze/methods/scmap"
                                 },
                                 {
                                     name: "STREAM",
@@ -159,15 +160,16 @@ const siteMap =
                                     path: "/analyze/visualization/ideogram"
                                 },
                                 {
-                                    name: "Morpheus",
-                                    key: "/analyze/visualization/visualization-packages/morpheus",
-                                    path: "/analyze/visualization/morpheus"
-                                },
-                                {
                                     name: "igv.js",
                                     key: "/analyze/visualization/visualization-packages/igv",
                                     path: "/analyze/visualization/igv"
+                                },
+                                {
+                                    name: "Morpheus",
+                                    key: "/analyze/visualization/visualization-packages/morpheus",
+                                    path: "/analyze/visualization/morpheus"
                                 }
+
                             ]
                         }
                     ]
