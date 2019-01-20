@@ -16,7 +16,7 @@ if (process.env.GATSBY_DEV_ENV == "LOCAL") {
     console.log("LAUNCHING USING LOCAL CONFIG");
     // uncomment to use the local content repo vs the npm repo.
     //contentPath = "/Users/franmcdade/sandbox/data-portal-content/content";
-    contentPath = "/Users/dave/projects/data-portal-content/content";
+    // contentPath = "/Users/dave/projects/data-portal-content/content";
     metadataSchemaDocsPath = "../hca-metadata-schema/docs";
     metadataSchemaJsonPath = "../hca-metadata-schema/json_schema"
 }
@@ -131,13 +131,21 @@ module.exports = {
                             height: 316,
                             width: 560,
                             related: false //Optional: Will remove related videos from the end of an embedded YouTube video.
-                        },
+                        }
+                    },
+                    {
+                        resolve: "gatsby-remark-external-links",
+                        options: {
+                            target: "_blank",
+                            rel: "nofollow"
+                        }
                     },
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
                             maxWidth: 740,
-                        },
+                            linkImagesToOriginal: false,
+                        }
                     },
                     `gatsby-remark-katex`,
                     `gatsby-remark-prismjs`,

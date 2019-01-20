@@ -8,16 +8,16 @@
 @import "../styles/vars.module.css";
 
 /* Typography - markdown overrides */
-.markdownContent h1 {
+.markdownContent div h1 {
     font-size: 24px;
     line-height: 30px;
 }
 
-.markdownContent h1:first-of-type {
+.markdownContent div h1:first-child {
     margin-top: 0;
 }
 
-.markdownContent h2:first-of-type {
+.markdownContent div h2:first-child {
     margin-top: 0;
 }
 
