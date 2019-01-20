@@ -17,6 +17,7 @@
     "gatsby-remark-autolink-headers": "^1.4.17",
     "gatsby-remark-copy-linked-files": "^1.5.32",
     "gatsby-remark-embed-video": "^1.2.0",
+    "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-images": "^1.5.63",
     "gatsby-remark-katex": "^1.0.14",
     "gatsby-remark-prismjs": "^2.0.2",

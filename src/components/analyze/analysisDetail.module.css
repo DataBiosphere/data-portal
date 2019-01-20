@@ -17,7 +17,7 @@
 }
 
 /* Heading */
-.hcaAnalyzeDetail h2 {
+.hcaAnalyzeDetail div h2:first-child {
     margin: 0;
 }
 
