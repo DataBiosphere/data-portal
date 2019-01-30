@@ -465,7 +465,7 @@ class Explore extends React.Component {
                                           fontWeight="400" fill="#4A4A4A">
                                         <tspan x="175.5" y="14">50,000</tspan>
                                     </text>
-                                    <rect id="barHeart" fill="#EAEAEA" x="103" y="4" width="60" height="8"/>
+                                    <polygon id="barHeart" fill="#EAEAEA" x="103" y="4" width="60" height="8"/>
                                     <text id="labelHeart" fontFamily="Montserrat-Regular, Montserrat" fontSize="14"
                                           fontWeight="400" fill="#000000">
                                         <tspan x="0" y="14">Heart</tspan>
