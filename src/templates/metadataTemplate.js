@@ -50,7 +50,6 @@ export default function Template({data}) {
         return x.node.schemaType==="module";
     }).map(n => n.node);
 
-
     return (
         <div>
             <Section docPath={docPath}/>
@@ -67,9 +66,9 @@ export default function Template({data}) {
                         <h2>{title} Core</h2>
                         <Metadata entity={core}/>
                         <h2>{title} Types</h2>
-                        {types.map((e, i) => <Metadata entity={e} key={i}/>)}
+                        {types.length ? types.map((e, i) => <Metadata entity={e} key={i}/>) : <div className={fontStyles.s}>No Modules</div>}
                         <h2>{title} Modules</h2>
-                        {modules.map((e, i) => <Metadata entity={e} key={i}/>)}
+                        {modules.length ? modules.map((e, i) => <Metadata entity={e} key={i}/>) : <div className={fontStyles.s}>No Modules</div>}
                     </div>
                 </div>
             </div>
@@ -118,7 +117,9 @@ export const pageQuery = graphql`
         properties{
           name
           description
+          items
           required
+          type
           userFriendly
         }
       }

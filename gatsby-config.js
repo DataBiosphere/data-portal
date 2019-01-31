@@ -21,7 +21,6 @@ if (process.env.GATSBY_DEV_ENV == "LOCAL") {
     metadataSchemaJsonPath = "../hca-metadata-schema/json_schema"
 }
 
-
 let gtmId = process.env.GATSBY_GTM_ID;
 let gtmAuth = process.env.GATSBY_GTM_AUTH;
 let gtmEnvName = process.env.GATSBY_ENV_NAME;
