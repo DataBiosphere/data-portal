@@ -56,7 +56,9 @@ async function onCreateNode({ node, getNode, boundActionCreators, loadNodeConten
         return {
             name: name,
             description: parsedContent.properties[name].description,
+            items: parsedContent.properties[name].items ? parsedContent.properties[name].items.type : "",
             required: requiredProperties.includes(name),
+            type: parsedContent.properties[name].type,
             userFriendly: parsedContent.properties[name].user_friendly
         }
     });
