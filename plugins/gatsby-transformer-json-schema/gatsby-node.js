@@ -47,6 +47,13 @@ async function onCreateNode({ node, getNode, boundActionCreators, loadNodeConten
         basePath: ""
     });
 
+    function splitRef(ref) {
+        let regex = /_/g;
+        let splitRef = ref.split("/");
+
+        return splitRef[splitRef.length - 1].split(".")[0].replace(regex, ' ');
+    }
+
     const sections = relativeFilePath.split("/");
 
     const propertyNames = _.keys(parsedContent.properties);
@@ -56,7 +63,9 @@ async function onCreateNode({ node, getNode, boundActionCreators, loadNodeConten
         return {
             name: name,
             description: parsedContent.properties[name].description,
-            items: parsedContent.properties[name].items ? parsedContent.properties[name].items.type : "",
+            itemsRef: parsedContent.properties[name].items ? parsedContent.properties[name].items.$ref ? splitRef(parsedContent.properties[name].items.$ref) : "" : "",
+            itemsType: parsedContent.properties[name].items ? parsedContent.properties[name].items.type : "",
+            objectRef: parsedContent.properties[name].$ref ? splitRef(parsedContent.properties[name].$ref) : "",
             required: requiredProperties.includes(name),
             type: parsedContent.properties[name].type,
             userFriendly: parsedContent.properties[name].user_friendly
