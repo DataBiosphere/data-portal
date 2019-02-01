@@ -404,6 +404,18 @@ const siteMap =
                             name: "Contributing Data",
                             key: "/contribute/overview/overview",
                             path: "/contribute"
+                        },
+                        {
+                            name: "Contributing to the Analysis Tools Registry",
+                            key: "/contribute/overview/analysis-tools-registry/contributing-to-the-analysis-tools-registry",
+                            path: "/contribute/analysis-tools-registry",
+                            children: [
+                                {
+                                    name: "Registry Standards",
+                                    key: "/contribute/overview/analysis-tools-registry/registry-standards",
+                                    path: "/contribute/registry-standards"
+                                }
+                            ]
                         }
                     ]
                 }
