@@ -117,7 +117,9 @@ export const pageQuery = graphql`
         properties{
           name
           description
-          items
+          itemsRef
+          itemsType
+          objectRef
           required
           type
           userFriendly
