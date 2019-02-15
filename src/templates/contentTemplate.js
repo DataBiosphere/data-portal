@@ -71,10 +71,10 @@ export default function Template({data}) {
                             dangerouslySetInnerHTML={{__html: html}}
                         />}
                         {linked && !componentName ? <NavOverview linked={linked}/> : null}
-                        {linked && (componentName === "analyze") ? <Analyze linked={linked}/> : null}
-                        {componentName === "analysisDetail" ? <AnalysisDetail data={markdownRemark}/> : null}
+                        {linked && (componentName === "analyze") ? <Analyze editPath={editPath} linked={linked}/> : null}
+                        {componentName === "analysisDetail" ? <AnalysisDetail editPath={editPath} data={markdownRemark}/> : null}
                         {componentName === "attributions" ? <Attributions/> : null}
-                        <a className={compStyles.editContent} href={editPath} target="_blank">Improve this page</a>
+                        {componentName === "analyze" || componentName === "analysisDetail" ? null : <a className={classNames(globalStyles.editContent, globalStyles.editContentSeparator)} href={editPath} target="_blank">Improve this page</a>}
                     </div>
                 </div>
             </div>
@@ -98,6 +98,7 @@ export const pageQuery = graphql`
         componentName
         date(formatString: "MMMM DD, YYYY")
         githubUrl
+        noNav
         path
         subTitle
         title

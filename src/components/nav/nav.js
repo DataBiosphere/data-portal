@@ -88,12 +88,12 @@ class Nav extends React.Component {
                     {this.state.showNav ?
                         siteMap.getNav(this.props.docPath).map((p, i) =>
                             <div key={i}>
-                                <li className={getNavClassName(this.props.docPath, p)} key={i}><Link
+                                <li className={getNavClassName(this.props.docPath, p)} key={i} onClick={p.children ? expanded ? this.toggleNav : null : this.toggleNav}><Link
                                     to={siteMap.getPath(p.key)}>{p.name}</Link></li>
                                 {p.children && expanded ?
                                     <ul>
                                         {p.children.map((c, j) => <li className={getNavClassName(this.props.docPath, c)}
-                                                                      key={j}><Link
+                                                                      key={j} onClick={this.toggleNav}><Link
                                             to={siteMap.getPath(c.key)}>{c.name}</Link></li>)}
                                     </ul> : null}
                             </div>) : null}

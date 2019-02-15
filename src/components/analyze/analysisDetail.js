@@ -24,18 +24,21 @@ class AnalysisDetail extends React.Component {
 
     render() {
         return (
-            <div className={compStyles.hcaAnalyzeDetail}>
-                <div>
+            <div>
+                <div className={compStyles.hcaAnalyzeDetail}>
                     <div>
-                        <h2>{this.props.data.frontmatter.title}</h2>
-                        <p className={classNames(fontStyles.xs, compStyles.author)}>{this.props.data.frontmatter.author}</p>
-                        <a href={this.props.data.frontmatter.githubUrl} target="_blank"
-                           className={classNames(globalStyles.button, globalStyles.outline, globalStyles.primary, compStyles.view)}>View</a>
-                        <div dangerouslySetInnerHTML={{__html: this.props.data.html}}/>
+                        <div>
+                            <h2>{this.props.data.frontmatter.title}</h2>
+                            <p className={classNames(fontStyles.xs, compStyles.author)}>{this.props.data.frontmatter.author}</p>
+                            <a href={this.props.data.frontmatter.githubUrl} target="_blank"
+                               className={classNames(globalStyles.button, globalStyles.outline, globalStyles.primary, compStyles.view)}>View</a>
+                            <div dangerouslySetInnerHTML={{__html: this.props.data.html}}/>
+                        </div>
                     </div>
+                    <a href={this.props.data.frontmatter.githubUrl} target="_blank"
+                       className={classNames(globalStyles.button, globalStyles.outline, globalStyles.primary, compStyles.view)}>View</a>
                 </div>
-                <a href={this.props.data.frontmatter.githubUrl} target="_blank"
-                   className={classNames(globalStyles.button, globalStyles.outline, globalStyles.primary, compStyles.view)}>View</a>
+                <a className={classNames(globalStyles.editContent, globalStyles.editContentSeparator)} href={this.props.editPath} target="_blank">Improve this page</a>
             </div>
         );
     }

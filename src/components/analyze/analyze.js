@@ -12,6 +12,7 @@ import React from 'react';
 // Styles
 import compStyles from './analyze.module.css';
 import fontStyles from '../../styles/fontsize.module.css';
+import globalStyles from "../../styles/global.module.css";
 
 class Analyze extends React.Component {
 
@@ -35,6 +36,7 @@ class Analyze extends React.Component {
                         <p className={compStyles.description}>{link.childMarkdownRemark.frontmatter.description}</p>
                     </div>
                 </Link>)}
+                <a className={globalStyles.editContent} href={this.props.editPath} target="_blank">Improve this page</a>
             </div>
         );
     }
