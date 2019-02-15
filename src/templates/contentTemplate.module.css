@@ -115,16 +115,6 @@ tbody tr {
     width: 100%;
 }
 
-/* Edit me */
-.markdownContent .editContent {
-    color: rgba(28, 124, 199, 0.6);
-    float: right;
-    font-size: 12px;
-    margin: 14px 0 0;
-    text-align: right;
-    width: 100%;
-}
-
 /**
  * Medium
  */

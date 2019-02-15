@@ -115,6 +115,18 @@
     cursor: default;
 }
 
+/* Edit content link */
+.editContent {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+/* Edit content separator */
+.editContentSeparator {
+    border-top: 1px solid var(--gray-lightest);
+    padding-top: 18px;
+}
+
 /**
  * Small Tablet +
  */

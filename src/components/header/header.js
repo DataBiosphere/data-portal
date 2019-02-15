@@ -108,7 +108,7 @@ class Header extends React.Component {
                         </div>
                     </div>
                     <Link to="/help" activeClassName={compStyles.active} className={classNames(compStyles.help, fontStyles.s)}>Help</Link>
-                    <div className={classNames(compStyles.menuDropDown, fontStyles.s)} onClick={this.toggleMenu}>Help</div>
+                    <div className={classNames(compStyles.menuDropDown, fontStyles.s)} onClick={this.toggleMenu}>Menu</div>
                     {this.state.showNav ? <div className={compStyles.hcaNavOverlay} onClick={this.toggleMenu}/> : null}
                 </div>
             </div>
