@@ -57,7 +57,7 @@ export default function Template({data}) {
             <div className={globalStyles.wrapper}>
                 <div className={compStyles.hcaContent}>
                     <Nav docPath={docPath}/>
-                    <div className={classNames(compStyles.markdownContent)}>
+                    <div className={classNames(compStyles.markdownContent, compStyles.metadataContent)}>
                         <div
                             className="content-template"
                             dangerouslySetInnerHTML={{__html: html}}
