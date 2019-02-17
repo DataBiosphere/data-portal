@@ -5,6 +5,11 @@
  * Style definitions specific to the HCA Data Portal metadata template component.
  */
 
+
+.metadataContent h1, .metadataContent h2, .metadataContent h3 {
+    text-transform: capitalize;
+}
+
 /* Typography - markdown overrides */
 .markdownContent h2:first-of-type {
     margin-top: 0;
