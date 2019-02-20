@@ -117,6 +117,16 @@ const siteMap =
                             path: "/analyze/methods",
                             children: [
                                 {
+                                    name: "MAGIC",
+                                    key: "/analyze/methods/methods-packages/magic",
+                                    path: "/analyze/methods/magic"
+                                },
+                                {
+                                    name: "PHATE",
+                                    key: "/analyze/methods/methods-packages/phate",
+                                    path: "/analyze/methods/phate"
+                                },
+                                {
                                     name: "scmap",
                                     key: "/analyze/methods/methods-packages/scmap",
                                     path: "/analyze/methods/scmap"
