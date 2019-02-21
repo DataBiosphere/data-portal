@@ -313,10 +313,6 @@ const siteMap =
                                         key: "/learn/development-guides/pipeline-processing-development-guides/testing-pipelines"
                                     },
                                     {
-                                        name: "Contributing Pipelines",
-                                        key: "/learn/development-guides/pipeline-processing-development-guides/contributing-a-pipeline-to-the-hca-dcp"
-                                    },
-                                    {
                                         name: "Portability Service Environments",
                                         key: "/learn/development-guides/pipeline-processing-development-guides/adding-an-environment-to-the-portability-service"
                                     }
@@ -426,6 +422,11 @@ const siteMap =
                                     path: "/contribute/registry-standards"
                                 }
                             ]
+                        },
+                        {
+                            name: "Contributing Analysis Pipelines",
+                            key: "/learn/development-guides/pipeline-processing-development-guides/contributing-a-pipeline-to-the-hca-dcp",
+                            path: "/contribute/registry-standards"
                         },
                         {
                             name: "Contributing Vignettes",
