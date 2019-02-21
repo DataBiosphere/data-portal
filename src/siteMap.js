@@ -426,7 +426,12 @@ const siteMap =
                                     path: "/contribute/registry-standards"
                                 }
                             ]
-                        }
+                        },
+                        {
+                            name: "Contributing Vignettes",
+                            key: "/contribute/overview/contributing-vignettes/contributing-vignettes",
+                            path: "/contribute/contributing-vignettes"
+                        },
                     ]
                 }
             ]
