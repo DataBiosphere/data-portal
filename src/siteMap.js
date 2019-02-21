@@ -425,8 +425,8 @@ const siteMap =
                         },
                         {
                             name: "Contributing Analysis Pipelines",
-                            key: "/learn/development-guides/pipeline-processing-development-guides/contributing-a-pipeline-to-the-hca-dcp",
-                            path: "/contribute/registry-standards"
+                            key: "/contribute/overview/contributing-pipelines/contributing-a-pipeline-to-the-hca-dcp",
+                            path: "/contribute/analysis-pipelines"
                         },
                         {
                             name: "Contributing Vignettes",
