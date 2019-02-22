@@ -100,6 +100,22 @@ p.m {
 	margin: 0 0 4px;
 }
 
+/* Primary Navigation */
+.navPrimary {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+/* Secondary Navigation */
+.navSecondary {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+}
+
 /* Font colour white on dark backgrounds */
 .bgDark {
 	color: var(--white);

@@ -68,15 +68,13 @@
 .hcaSideNav > div > li {
 	display: flex;
 	margin: 0 20px;
-	padding: 6px 0;
+	padding: 8px 0;
 	position: relative; /* Positions nav bar */
 }
 
 /* Primary navigation - link */
 .hcaSideNav > div > li a {
 	color: var(--gray-dark);
-	line-height: 20px;
-	font-weight: 400;
 	width: 100%; /* Improves click-able area on link */
 }
 
@@ -84,16 +82,13 @@
 .hcaSideNav > div ul li {
 	display: flex;
 	margin: 0 20px;
-	padding: 6px 0;
+	padding: 8px 0;
 	position: relative; /* Positions nav bar */
 }
 
 /* Secondary navigation - link */
 .hcaSideNav > div ul li a {
 	color: var(--gray-dark);
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 16px;
 	width: 100%; /* Improves click-able area on link */
 }
 
