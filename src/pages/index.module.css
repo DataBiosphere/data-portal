@@ -31,20 +31,21 @@
     padding: 32px 16px 70px;
 }
 
+.jumbotron .sectionWrapper > a {
+    max-width: 80%;
+}
+
 /* Jumbotron title */
 .jumbotron h1 {
-    max-width: 80%;
     text-align: center;
 }
 
 /* Learn more link */
-.jumbotron .sectionWrapper > a {
-    color: var(--black);
-    margin: 10px 0 24px;
-}
-
 .jumbotron .sectionWrapper > a p {
+    color: var(--black);
     font-weight: 500;
+    margin: 10px 0 24px;
+    text-align: center;
     text-transform: uppercase;
 }
 
@@ -314,8 +315,8 @@
         padding: 70px 16px;
     }
 
-    /* Jumbotron title */
-    .jumbotron h1 {
+    /* Jumbotron */
+    .jumbotron .sectionWrapper > a {
         max-width: unset;
     }
 
