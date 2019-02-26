@@ -20,6 +20,7 @@ import * as numberFormatter from "../utils/number-format.service";
 import compStyles from './index.module.css';
 import fontStyles from "../styles/fontsize.module.css";
 import globalStyles from "../styles/global.module.css";
+
 let classNames = require('classnames');
 
 // Images
@@ -81,23 +82,29 @@ class IndexPage extends React.Component {
             <div className={compStyles.homepage}>
                 <div className={compStyles.jumbotron}>
                     <div className={compStyles.sectionWrapper}>
-                        <h1 className={fontStyles.hero}>Single-cell data building a foundation for human health</h1>
-                        <Link to="/learn"><p className={classNames(fontStyles.xs, fontStyles.noMargin)}>Learn More</p></Link>
+                        <Link to="/learn"><h1 className={fontStyles.hero}>Single-cell data building a foundation for
+                            human health</h1>
+                            <p className={fontStyles.xs}>Learn More</p></Link>
                         <HomepageAutosuggest termFacets={this.state.termFacets}/>
                     </div>
                 </div>
                 <div className={classNames({[compStyles.statsBar]: true, [compStyles.loaded]: this.state.loaded})}>
                     <div className={compStyles.sectionWrapper}>
                         <div><p className={fontStyles.xs}>CELLS</p>
-                            <h1 className={fontStyles.noMargin}>{this.state.cellCount ? this.formatCount(this.state.cellCount) : ""}</h1></div>
+                            <h1 className={fontStyles.noMargin}>{this.state.cellCount ? this.formatCount(this.state.cellCount) : ""}</h1>
+                        </div>
                         <div><p className={fontStyles.xs}>ORGANS</p>
-                            <h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.organCount) : ""}</h1></div>
+                            <h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.organCount) : ""}</h1>
+                        </div>
                         <div><p className={fontStyles.xs}>DONORS</p>
-                            <h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.donorCount) : ""}</h1></div>
+                            <h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.donorCount) : ""}</h1>
+                        </div>
                         <div><p className={fontStyles.xs}>PROJECTS</p>
-                            <h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.projectCount) : ""}</h1></div>
+                            <h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.projectCount) : ""}</h1>
+                        </div>
                         <div><p className={fontStyles.xs}>LABS</p>
-                            <h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.labCount) : ""}</h1></div>
+                            <h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.labCount) : ""}</h1>
+                        </div>
                     </div>
                 </div>
                 <div className={compStyles.explore}>
@@ -108,8 +115,9 @@ class IndexPage extends React.Component {
                                 <p>Hover over or click on an organ to view data from that
                                     organ</p>
                             </div>
-                            {this.state.organSummary ? 
-                                <Explore organSummary={this.state.organSummary} totalCellCount={this.state.totalCellCount}/> : 
+                            {this.state.organSummary ?
+                                <Explore organSummary={this.state.organSummary}
+                                         totalCellCount={this.state.totalCellCount}/> :
                                 <img className={compStyles.explorePlaceholder} src={explorePlaceholder}/>}
                             {this.state.organCount ? <ExploreStats organSummary={this.state.organSummary}/> : null}
                         </div>
@@ -142,7 +150,8 @@ class IndexPage extends React.Component {
                                 </div>
                                 <div><p>We process and quality-check the data with our
                                     pipelines</p><Link
-                                    to="/learn/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides">Learn about Pipelines</Link>
+                                    to="/learn/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides">Learn
+                                    about Pipelines</Link>
                                 </div>
                             </div>
                             <div className={compStyles.dpArrow}>
@@ -173,7 +182,8 @@ class IndexPage extends React.Component {
                     <div className={compStyles.sectionWrapper}>
                         <h2>Stay up-to-date with the Human Cell Atlas</h2>
                         <div className={compStyles.contactForm}>
-                            <a href="https://www.humancellatlas.org/joinHCA" className={classNames(globalStyles.button, globalStyles.secondary, globalStyles.hero, compStyles.contactButton)}>Register
+                            <a href="https://www.humancellatlas.org/joinHCA"
+                               className={classNames(globalStyles.button, globalStyles.secondary, globalStyles.hero, compStyles.contactButton)}>Register
                                 For HCA</a>
                         </div>
                     </div>
