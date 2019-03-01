@@ -191,13 +191,13 @@ const siteMap =
                         key: "userguides",
                         children: [
                             {
-                                name: "Quick Start Guide",
+                                name: "Accessing HCA Data and Metadata",
                                 key: "/learn/userguides/quick-start-guide",
                                 path: "/learn"
                             },
                             {
-                                name: "CLI Data Access",
-                                key: "/learn/userguides/using-the-cli-to-access-data"
+                                name: "Installing the HCA CLI",
+                                key: "/learn/userguides/installing-the-hca-cli"
                             },
                             {
                                 name: "Data Processing Pipelines",
