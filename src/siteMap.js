@@ -127,11 +127,6 @@ const siteMap =
                                     path: "/analyze/methods/phate"
                                 },
                                 {
-                                    name: "scmap",
-                                    key: "/analyze/methods/methods-packages/scmap",
-                                    path: "/analyze/methods/scmap"
-                                },
-                                {
                                     name: "Single-cell consensus clustering (SC3)",
                                     key: "/analyze/methods/methods-packages/sc3",
                                     path: "/analyze/methods/sc3"
@@ -293,6 +288,10 @@ const siteMap =
                         key: "development-guides",
                         children: [
                             {
+                                name: "Analysis Applications",
+                                key: "/learn/development-guides/analysis-applications"
+                            },
+                            {
                                 name: "Ingest Data Brokers",
                                 key: "/learn/development-guides/ingest-broker-development-guide"
                             },
@@ -317,10 +316,6 @@ const siteMap =
                                         key: "/learn/development-guides/pipeline-processing-development-guides/adding-an-environment-to-the-portability-service"
                                     }
                                 ]
-                            },
-                            {
-                                name: "Analysis Applications",
-                                key: "/learn/development-guides/analysis-applications"
                             },
                             {
                                 name: "Data Consumer Vignettes",
