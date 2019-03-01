@@ -330,6 +330,10 @@ const siteMap =
                             {
                                 name: "Data Store API",
                                 key: "/learn/api-documentation/data-store-consumer-api"
+                            },
+                            {
+                                name: "Matrix Service API",
+                                key: "/learn/api-documentation/matrix-service-api"
                             }
                         ]
                     }
