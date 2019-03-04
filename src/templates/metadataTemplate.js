@@ -18,6 +18,7 @@ import TabNav from "../components/tabNav/tabNav";
 import compStyles from "./metadataTemplate.module.css";
 import fontStyles from "../styles/fontsize.module.css";
 import globalStyles from "../styles/global.module.css";
+
 let classNames = require('classnames');
 
 // the data prop will be injected by the GraphQL query below.
@@ -42,13 +43,64 @@ export default function Template({data}) {
         }
     ).node;
 
+    const coreObject = core.coreEntity + "_core";
+
     const types = data.metadata.edges.filter((x) => {
         return x.node.schemaType === "type";
     }).map(n => n.node);
 
-    const modules = data.metadata.edges.filter((x) =>{
-        return x.node.schemaType==="module";
+    const modules = data.metadata.edges.filter((x) => {
+        return x.node.schemaType === "module";
     }).map(n => n.node);
+
+    // Check if x_core exists
+    const isXCore = (properties) => {
+        return properties.some(p => p.name === coreObject);
+    };
+
+    // Removal of core entity x_core where x is entity name
+    const removeCoreEntity = (properties) => {
+        return properties.filter(property => property.name !== coreObject);
+    };
+
+    // Removal of duplicate properties
+    const removeDuplicateProperties = (properties) => {
+        return properties.filter((p, i, a) => a.map(a => a.name).indexOf(p.name) === i);
+    };
+
+    // Inserting core into type, removing x_core where x = entity name
+    const typesWithCore = types.map((type) => {
+
+        if (isXCore(type.properties)) {
+            // Insert core entity x_core, if exists
+            core.properties.map((c, i) => {
+                type.properties.splice(i, 0, c);
+            });
+            // Remove core entity e.g. biomaterial_core
+            type.properties = removeCoreEntity(type.properties);
+            // Remove duplicates e.g. describedBy, schema_version
+            type.properties = removeDuplicateProperties(type.properties);
+        }
+
+        return type;
+    });
+
+    // Inserting core into modules, removing x_core where x = entity name
+    const modulesWithCore = modules.map((module) => {
+
+        if (isXCore(module.properties)) {
+            // Insert core entity x_core, if exists
+            core.properties.map((c, i) => {
+                module.properties.splice(i, 0, c);
+            });
+            // Remove core entity e.g. biomaterial_core
+            module.properties = removeCoreEntity(module.properties);
+            // Remove duplicates e.g. describedBy, schema_version
+            module.properties = removeDuplicateProperties(module.properties);
+        }
+
+        return module;
+    });
 
     return (
         <div>
@@ -63,12 +115,12 @@ export default function Template({data}) {
                             dangerouslySetInnerHTML={{__html: html}}
                         />
                         <p className={classNames(fontStyles.xxs, compStyles.xxs)}>* Indicates a required field</p>
-                        <h2>{title} Core</h2>
-                        <Metadata entity={core}/>
                         <h2>{title} Types</h2>
-                        {types.length ? types.map((e, i) => <Metadata entity={e} key={i}/>) : <div className={fontStyles.s}>No Modules</div>}
+                        {typesWithCore.length ? types.map((e, i) => <Metadata entity={e} key={i}/>) :
+                            <div className={fontStyles.s}>No Modules</div>}
                         <h2>{title} Modules</h2>
-                        {modules.length ? modules.map((e, i) => <Metadata entity={e} key={i}/>) : <div className={fontStyles.s}>No Modules</div>}
+                        {modulesWithCore.length ? modules.map((e, i) => <Metadata entity={e} key={i}/>) :
+                            <div className={fontStyles.s}>No Modules</div>}
                     </div>
                 </div>
             </div>
