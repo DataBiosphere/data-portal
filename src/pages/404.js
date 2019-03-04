@@ -2,7 +2,7 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * Component displaying 404 (page not found) errors.
+ * Page displaying 404 (page not found) errors.
  */
 
 // Core dependencies
