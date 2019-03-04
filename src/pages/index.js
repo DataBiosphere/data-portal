@@ -2,7 +2,7 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * Home page component.
+ * Home page.
  */
 
 // Core dependencies
