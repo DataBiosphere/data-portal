@@ -119,7 +119,8 @@ deploy_ux-dev:
     name: ux-dev
   script:
     - export BUCKET=s3://ux-dev.data.humancellatlas.org/
-    - aws s3 sync --acl public-read public/ $BUCKET --delete
+    - if [ "$MAINTENANCE" = "true" ];then export SRCDIR=maintenance/; else export SRCDIR=public/; fi
+    - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id E3JWRFLK4O8V1L --paths "/*"
   only:
     - ux-dev
@@ -130,7 +131,8 @@ deploy_integration:
     name: integration
   script:
     - export BUCKET=s3://integration.data.humancellatlas.org/
-    - aws s3 sync --acl public-read public/ $BUCKET --delete
+    - if [ "$MAINTENANCE" = "true" ];then export SRCDIR=maintenance/; else export SRCDIR=public/; fi
+    - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id E2MB44J9QEJOYP --paths "/*"
   only:
     - integration
@@ -142,7 +144,8 @@ deploy_staging:
     name: staging
   script:
     - export BUCKET=s3://staging.data.humancellatlas.org/
-    - aws s3 sync --acl public-read public/ $BUCKET --delete
+    - if [ "$MAINTENANCE" = "true" ];then export SRCDIR=maintenance/; else export SRCDIR=public/; fi
+    - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id E38D6Y96QKYO6 --paths "/*"
   only:
     - staging
