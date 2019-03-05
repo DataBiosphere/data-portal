@@ -21,6 +21,8 @@ cache:
   artifacts:
       paths:
         - public
+        - maintenance
+
 
 # Develop Build
 build_master:
@@ -56,7 +58,8 @@ deploy_master:
     name: prod
   script:
     - export BUCKET=s3://org-humancellatlas-data-portal-prod/
-    - aws s3 sync --acl public-read public/ $BUCKET --delete
+    - if [ "$MAINTENANCE" = "true" ];then export SRCDIR=maintenance/; else export SRCDIR=public/; fi
+    - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id E3QDNPF7XH7O7G --paths "/*"
   only:
     - master
