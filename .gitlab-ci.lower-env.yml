@@ -21,6 +21,7 @@ cache:
   artifacts:
       paths:
         - public
+        - maintenance
 
 # Develop Build
 build_develop:
