@@ -4,115 +4,114 @@
  *
  * Style definitions specific to the HCA Data Portal content template component.
  */
-
-@import "../styles/vars.module.css";
+@import '../styles/vars.module.css';
 
 /* Typography - markdown overrides */
 .markdownContent div h1 {
-    font-size: 24px;
-    line-height: 30px;
+	font-size: 24px;
+	line-height: 30px;
 }
 
 .markdownContent div h1:first-child {
-    margin-top: 0;
+	margin-top: 0;
 }
 
 .markdownContent div h2:first-child {
-    margin-top: 0;
+	margin-top: 0;
 }
 
 /* Markdown styles */
 /* Embedded video wrapper */
 div[class*="gatsby-resp-iframe-wrapper"] {
-    padding-bottom: 316px !important; /* Padding equal to iframe max-height */
+	padding-bottom: 316px !important; /* Padding equal to iframe max-height */
 }
 
 /* Embedded video */
 iframe {
-    margin-bottom: 24px;
-    max-height: 316px !important;
-    max-width: 560px !important;
+	margin-bottom: 24px;
+	max-height: 316px !important;
+	max-width: 560px !important;
 }
 
 /* Code - inline and block */
 code[class*="language-"], pre[class*="language-"] {
-    color: var(--black);
-    font-family: "PT Mono", "Montserrat", sans-serif;
-    font-size: 15px;
-    white-space: pre-wrap !important; /* Allow line to wrap - responsive */
-    word-break: break-all !important; /* Allow line to wrap - responsive */
+	color: var(--black);
+	font-family: "PT Mono", "Montserrat", sans-serif;
+	font-size: 15px;
+	white-space: pre-wrap !important; /* Allow line to wrap - responsive */
+	word-break: break-all !important; /* Allow line to wrap - responsive */
 }
 
 /* Code - inline and block - background */
 pre[class*="language-"], :not(pre) > code[class*="language-"] {
-    background-color: var(--white-off);
-    border-radius: 3px;
+	background-color: var(--white-off);
+	border-radius: 3px;
 }
 
 /* Code - inline */
 :not(pre) > code[class*="language-"] {
-    padding: 2px;
+	padding: 2px;
 }
 
 /* Code - block */
 pre[class*="language-"] {
-    margin: 0 0 18px;
-    padding: 16px;
+	margin: 0 0 18px;
+	padding: 16px;
 }
 
 /* Code within table - allows use of underscore */
 td > code {
-    color: inherit !important;
-    background-color: transparent !important;
-    padding: 0 !important;
+	color: inherit !important;
+	background-color: transparent !important;
+	padding: 0 !important;
 }
 
 /* List */
 .markdownContent ol, .markdownContent ul {
-    font-size: 15px;
-    line-height: 25px;
-    list-style-position: outside;
-    margin: 0 0 18px 24px;
+	font-size: 15px;
+	line-height: 25px;
+	list-style-position: outside;
+	margin: 0 0 18px 24px;
 }
 
 .markdownContent li {
-    margin-bottom: 4px;
+	margin-bottom: 4px;
 }
 
 /* Table */
 thead tr, tbody tr {
-    border-bottom: 1px solid var(--gray-light);
+	border-bottom: 1px solid var(--gray-light);
 }
 
 thead tr th, tbody tr td {
-    border-bottom: none;
+	border-bottom: none;
 }
 
 thead th, tbody tr {
-    font-size: 15px;
-    line-height: 1;
+	font-size: 15px;
+	line-height: 1;
 }
 
 thead th {
-    font-weight: 400;
+	font-weight: 400;
 }
 
 tbody tr {
-    font-weight: 300;
+	font-weight: 300;
 }
 
 /* Content */
 .hcaContent {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    margin: 36px 0;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	margin: 36px 0;
 }
 
 /* Content */
 .hcaContent .markdownContent {
-    margin-right: 0;
-    width: 100%;
+	margin-right: 0;
+	width: 100%;
 }
 
 /**
@@ -120,26 +119,26 @@ tbody tr {
  */
 @media screen and (min-width: 768px) {
 
-    /* Content */
-    .hcaContent {
-        flex-direction: row;
-    }
+	/* Content */
+	.hcaContent {
+		flex-direction: row;
+	}
 
-    /* Content - when there is no navigation */
-    .noNav .markdownContent {
-        margin-left: 176px;
-    }
+	/* Content - when there is no navigation */
+	.noNav .markdownContent {
+		margin-left: 176px;
+	}
 
-    /* Content */
-    .hcaContent .markdownContent {
-        margin-right: 14px;
-        max-width: 600px;
-    }
+	/* Content */
+	.hcaContent .markdownContent {
+		margin-right: 14px;
+		max-width: 600px;
+	}
 
-    /* Analyze component */
-    .hcaContent .analyze {
-        max-width: 700px;
-    }
+	/* Analyze component */
+	.hcaContent .analyze {
+		max-width: 700px;
+	}
 }
 
 /**
@@ -147,10 +146,10 @@ tbody tr {
  */
 @media screen and (min-width: 1200px) {
 
-    /* Content - when there is no navigation */
-    .noNav .markdownContent {
-        margin-left: 290px;
-    }
+	/* Content - when there is no navigation */
+	.noNav .markdownContent {
+		margin-left: 290px;
+	}
 }
 
 

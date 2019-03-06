@@ -4,115 +4,114 @@
  *
  * Style definitions specific to the HCA Data Portal tab nav component.
  */
-
 @import '../../styles/vars.module.css';
 
 /* Tabs */
 .hcaTabs {
-    background-color: var(--white);  /* Required for content scroll */
-    border-bottom: 1px solid var(--gray-light); /* Tab line */
-    margin-top: -24px; /* To position closer to section */
+	background-color: var(--white); /* Required for content scroll */
+	border-bottom: 1px solid var(--gray-light); /* Tab line */
+	margin-top: -24px; /* To position closer to section */
 }
 
 /* Wrapper */
 .tabNavWrapper {
-    position: relative; /* Positions fade on horizontal scroll */
+	position: relative; /* Positions fade on horizontal scroll */
 }
 
 /* Fade on horizontal scroll */
 .tabNavWrapper::after, .tabNavWrapper::before {
-    content: "";
-    height: 100%;
-    position: absolute;
-    top: 0;
-    width: 16px;
-    z-index: 10;
+	content: "";
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 16px;
+	z-index: 10;
 }
 
 /* Fade on horizontal scroll RHS */
 .tabNavWrapper::after {
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--white), var(--white));
-    right: 0;
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--white), var(--white));
+	right: 0;
 }
 
 /* Fade on horizontal scroll LHS */
 .tabNavWrapper::before {
-    background: linear-gradient(90deg, var(--white), var(--white), rgba(255, 255, 255, 0));
-    left: 0;
+	background: linear-gradient(90deg, var(--white), var(--white), rgba(255, 255, 255, 0));
+	left: 0;
 }
 
 /* Tab list */
 .hcaTabList {
-    align-items: flex-end;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    margin: 24px -16px 0;
-    -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar in IE unless actively scrolling. */
-    overflow-x: auto; /* Horizontal scroll - hide webkit scrollbar unless actively scrolling. */
-    overflow-y: hidden;
-    width: calc(100% + 32px);
+	align-items: flex-end;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	margin: 24px -16px 0;
+	-ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar in IE unless actively scrolling. */
+	overflow-x: auto; /* Horizontal scroll - hide webkit scrollbar unless actively scrolling. */
+	overflow-y: hidden;
+	width: calc(100% + 32px);
 }
 
 .hcaTabList::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 
 /* Tab */
 .hcaTab, .hcaBackTab {
-    box-sizing: border-box;
-    cursor: pointer;
-    height: 30px;
-    margin: 0 16px;
-    position: relative; /* Horizontal scroll - last tab - RHS gutter */
+	box-sizing: border-box;
+	cursor: pointer;
+	height: 30px;
+	margin: 0 16px;
+	position: relative; /* Horizontal scroll - last tab - RHS gutter */
 }
 
 /* Tab - link */
 .hcaTab a, .hcaBackTab a {
-    color: var(--gray-dark);
-    font-weight: 400; /* TODO typography */
-    line-height: 30px;
-    white-space: nowrap; /* Horizontal scroll */
+	color: var(--gray-dark);
+	font-weight: 400; /* TODO typography */
+	line-height: 30px;
+	white-space: nowrap; /* Horizontal scroll */
 }
 
 .hcaBackTab a {
-    align-items: center;
-    display: flex;
+	align-items: center;
+	display: flex;
 }
 
 .hcaBackTab i {
-    font-size: 16px;
-    margin: 0 0 0 -4px;
+	font-size: 16px;
+	margin: 0 0 0 -4px;
 }
 
 /* Active tab */
 .hcaTab.active {
-    border-bottom: 3px solid var(--secondary);
+	border-bottom: 3px solid var(--secondary);
 }
 
 .hcaTab.active a {
-    color: var(--black);
+	color: var(--black);
 }
 
 /* Disabled tab */
 .hcaTab.disabled {
-    cursor: auto;
+	cursor: auto;
 }
 
 .hcaTab.disabled a {
-    color: var(--gray-lightest);
+	color: var(--gray-lightest);
 }
 
 /* Hover tab */
 .hcaTab:hover > a {
-    color: var(--black);
+	color: var(--black);
 }
 
 /* Last tab - on horizontal scroll - mimics gutter for RHS */
 .hcaTab:last-of-type:after {
-    bottom: -3px;
-    height: 3px;
-    content: "";
-    position: absolute;
-    width: 16px; /* 16px tab padding */
+	bottom: -3px;
+	height: 3px;
+	content: "";
+	position: absolute;
+	width: 16px; /* 16px tab padding */
 }

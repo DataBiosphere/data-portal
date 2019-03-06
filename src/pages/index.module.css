@@ -4,235 +4,234 @@
  *
  * Style definitions specific to the HCA Data Portal home page.
  */
-
 @import '../../src/styles/vars.module.css';
 
 /* Wrapper */
 .sectionWrapper {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 1200px; /* Snap to 1200px, gutter 16px */
-    padding: 30px 16px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+	max-width: 1200px; /* Snap to 1200px, gutter 16px */
+	padding: 30px 16px;
 }
 
 /* Jumbotron */
 .jumbotron {
-    background-image: url(../../images/jumbotron/jumbotron-cell-mobile.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-image: url(../../images/jumbotron/jumbotron-cell-mobile.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 /* Jumbotron wrapper */
 .jumbotron .sectionWrapper {
-    padding: 32px 16px 70px;
+	padding: 32px 16px 70px;
 }
 
 .jumbotron .sectionWrapper > a {
-    max-width: 80%;
+	max-width: 80%;
 }
 
 /* Jumbotron title */
 .jumbotron h1 {
-    text-align: center;
+	text-align: center;
 }
 
 /* Learn more link */
 .jumbotron .sectionWrapper > a p {
-    color: var(--black);
-    font-weight: 500;
-    margin: 10px 0 24px;
-    text-align: center;
-    text-transform: uppercase;
+	color: var(--black);
+	font-weight: 500;
+	margin: 10px 0 24px;
+	text-align: center;
+	text-transform: uppercase;
 }
 
 /* Stats bar */
 .statsBar {
-    background: linear-gradient(90deg, #3867FA, #5ABCEF);
+	background: linear-gradient(90deg, #3867FA, #5ABCEF);
 }
 
 /* Stats bar - wrapper */
 .statsBar > div {
-    flex-direction: row;
-    height: 90px;
-    padding: 0 16px; /* Equivalent to wrapper - gutter 16px */
+	flex-direction: row;
+	height: 90px;
+	padding: 0 16px; /* Equivalent to wrapper - gutter 16px */
 }
 
 /* Status - show Cells, Organs, Donors only */
 .statsBar > div > div {
-    align-items: center;
-    display: flex;
-    flex-basis: calc(100% / 3);
-    flex-direction: column;
-    justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-basis: calc(100% / 3);
+	flex-direction: column;
+	justify-content: center;
 }
 
 /* Status - hide Projects, Labs */
 .statsBar > div > div:nth-of-type(n + 4) {
-    display: none;
+	display: none;
 }
 
 /* Status name */
 .statsBar > div > div p {
-    color: var(--white);
-    letter-spacing: 3.25px;
-    margin: 0 0 -4px;
+	color: var(--white);
+	letter-spacing: 3.25px;
+	margin: 0 0 -4px;
 }
 
 /* Status number */
 .statsBar > div > div h1 {
-    color: var(--white);
-    font-size: 36px;
-    line-height: 42px;
-    min-height: 42px;
-    opacity: 0;
-    padding: 0 12px;
-    text-align: center;
+	color: var(--white);
+	font-size: 36px;
+	line-height: 42px;
+	min-height: 42px;
+	opacity: 0;
+	padding: 0 12px;
+	text-align: center;
 }
 
 .statsBar.loaded > div > div h1 {
-    transition: opacity 0.5s ease 0s;
-    opacity: 1;
+	transition: opacity 0.5s ease 0s;
+	opacity: 1;
 }
 
 /* Explore */
 .explore .sectionWrapper > div {
-    position: relative;
+	position: relative;
 }
 
 .explore .exploreText {
-    margin-bottom: 32px;
+	margin-bottom: 32px;
 }
 
 /* Explore heading */
 .explore h2 {
-    margin-bottom: 14px;
-    margin-top: 0;
+	margin-bottom: 14px;
+	margin-top: 0;
 }
 
 /* Explore sub-text */
 .explore p {
-    color: var(--gray-dark);
-    line-height: 18px;
-    margin-bottom: 0;
-    max-width: 336px;
+	color: var(--gray-dark);
+	line-height: 18px;
+	margin-bottom: 0;
+	max-width: 336px;
 }
 
 /* Explore svg placeholder */
 .explore .explorePlaceholder {
-    display: none;
+	display: none;
 }
 
 /* Data Portal */
 .dataPortal {
-    background-color: var(--background);
+	background-color: var(--background);
 }
 
 /* Data Portal question - "What is it?" */
 .dataPortal h4 {
-    letter-spacing: 2px;
-    text-transform: uppercase;
+	letter-spacing: 2px;
+	text-transform: uppercase;
 }
 
 /* Data Portal description */
 .dataPortal h1 {
-    font-size: 28px;
-    line-height: 32px;
-    margin: 10px 0;
-    max-width: 650px;
-    text-align: center;
+	font-size: 28px;
+	line-height: 32px;
+	margin: 10px 0;
+	max-width: 650px;
+	text-align: center;
 }
 
 /* DP Imagery and associated text */
 .portalDescription {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 56px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 56px;
 }
 
 /* Each DP has its own box */
 .portalDescription > div {
-    align-items: center;
-    flex-direction: row;
-    display: flex;
-    width: 100%;
+	align-items: center;
+	flex-direction: row;
+	display: flex;
+	width: 100%;
 }
 
 /* Arrow */
 .portalDescription .dpArrow {
-    flex: none; /* Overrides flex: 1 attribute from its own box */
-    height: 95px; /* Forces arrow container to be same height as DP images */
-    justify-content: center;
-    transform: rotate(90deg);
+	flex: none; /* Overrides flex: 1 attribute from its own box */
+	height: 95px; /* Forces arrow container to be same height as DP images */
+	justify-content: center;
+	transform: rotate(90deg);
 }
 
 /* Top row of each box - image container */
 .portalDescription > div > div:first-of-type {
-    align-items: center;
-    display: flex;
-    padding: 0 16px;
-    width: 95px;
+	align-items: center;
+	display: flex;
+	padding: 0 16px;
+	width: 95px;
 }
 
 /* Top row of each box - image */
 .portalDescription > div > div:first-of-type img, .portalDescription .dpArrow img {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 /* Second row of each box */
 .portalDescription > div > div:nth-of-type(2) {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 16px;
-    width: 205px;
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 16px;
+	width: 205px;
 }
 
 /* Second row of each box - text description */
 .portalDescription > div > div:nth-of-type(2) p {
-    color: var(--gray-dark);
-    font-weight: 500;
-    line-height: 18px;
-    margin: 0;
-    text-align: left;
+	color: var(--gray-dark);
+	font-weight: 500;
+	line-height: 18px;
+	margin: 0;
+	text-align: left;
 }
 
 /* Link */
 .portalDescription > div > div:nth-of-type(2) a {
-    font-weight: 400;
-    line-height: 18px;
-    margin: 0;
-    text-align: left;
+	font-weight: 400;
+	line-height: 18px;
+	margin: 0;
+	text-align: left;
 }
 
 /* Contact heading */
 .contact h2 {
-    color: var(--gray-darkest);
-    margin-bottom: 24px;
-    margin-top: 0;
-    text-align: center;
+	color: var(--gray-darkest);
+	margin-bottom: 24px;
+	margin-top: 0;
+	text-align: center;
 }
 
 /* Contact form */
 .contactForm {
-    align-items: center;
-    align-self: stretch; /* To take up full available width */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
+	align-items: center;
+	align-self: stretch; /* To take up full available width */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
 }
 
 /* Contact form button - class homepage */
 .contactForm .contactButton {
-    margin: 4px 0;
-    text-transform: uppercase;
+	margin: 4px 0;
+	text-transform: uppercase;
 }
 
 /**
@@ -240,30 +239,30 @@
  */
 @media screen and (min-width: 667px) {
 
-    /* Jumbotron */
-    .jumbotron {
-        background-image: url(../../images/jumbotron/jumbotron-cell.png);
-    }
+	/* Jumbotron */
+	.jumbotron {
+		background-image: url(../../images/jumbotron/jumbotron-cell.png);
+	}
 
-    /* Jumbotron wrapper */
-    .jumbotron .sectionWrapper {
-        padding: 70px 16px;
-    }
+	/* Jumbotron wrapper */
+	.jumbotron .sectionWrapper {
+		padding: 70px 16px;
+	}
 
-    /* Status */
-    .statsBar > div > div {
-        flex-basis: unset;
-    }
+	/* Status */
+	.statsBar > div > div {
+		flex-basis: unset;
+	}
 
-    /* Status - show Projects, Labs */
-    .statsBar > div > div:nth-of-type(n + 4) {
-        display: flex;
-    }
+	/* Status - show Projects, Labs */
+	.statsBar > div > div:nth-of-type(n + 4) {
+		display: flex;
+	}
 
-    /* Status number */
-    .statsBar > div > div h1 {
-        width: 110px;
-    }
+	/* Status number */
+	.statsBar > div > div h1 {
+		width: 116px;
+	}
 
 }
 
@@ -272,37 +271,37 @@
  */
 @media screen and (min-width: 768px) {
 
-    /* Jumbotron */
-    .jumbotron {
-        background-image: url(../../images/jumbotron/jumbotron-cell.png);
-    }
+	/* Jumbotron */
+	.jumbotron {
+		background-image: url(../../images/jumbotron/jumbotron-cell.png);
+	}
 
-    /* Explore text */
-    .explore .exploreText {
-        margin-bottom: 0;
-        position: absolute;
-        top: 0;
-    }
+	/* Explore text */
+	.explore .exploreText {
+		margin-bottom: 0;
+		position: absolute;
+		top: 0;
+	}
 
-    /* Explore Imagery */
-    .explore > div > div:first-of-type {
-        margin-bottom: -84px; /* Equal to wrapper padding and svg re-sized to 650px */
-        max-width: 650px;
-    }
+	/* Explore Imagery */
+	.explore > div > div:first-of-type {
+		margin-bottom: -84px; /* Equal to wrapper padding and svg re-sized to 650px */
+		max-width: 650px;
+	}
 
-    /* Svg */
-    .explore svg {
-        width: 650px;
-    }
+	/* Svg */
+	.explore svg {
+		width: 650px;
+	}
 
-    /* Svg placeholder */
-    .explore .explorePlaceholder {
-        display: block;
-        height: unset;
-        margin-bottom: 54px;
-        margin-top: 52px; /* svg is 463px high, but 54px positioned below content, leaving 52px of height at top unaccounted for in img */
-        width: 650px;
-    }
+	/* Svg placeholder */
+	.explore .explorePlaceholder {
+		display: block;
+		height: unset;
+		margin-bottom: 54px;
+		margin-top: 52px; /* svg is 463px high, but 54px positioned below content, leaving 52px of height at top unaccounted for in img */
+		width: 650px;
+	}
 }
 
 /**
@@ -310,89 +309,89 @@
  */
 @media screen and (min-width: 1024px) {
 
-    /* Wrapper */
-    .sectionWrapper {
-        padding: 70px 16px;
-    }
+	/* Wrapper */
+	.sectionWrapper {
+		padding: 70px 16px;
+	}
 
-    /* Jumbotron */
-    .jumbotron .sectionWrapper > a {
-        max-width: unset;
-    }
+	/* Jumbotron */
+	.jumbotron .sectionWrapper > a {
+		max-width: unset;
+	}
 
-    /* Status number */
-    .statsBar > div > div h1 {
-        width: 164px;
-    }
+	/* Status number */
+	.statsBar > div > div h1 {
+		width: 164px;
+	}
 
-    /* Explore Imagery */
-    .explore > div > div:first-of-type {
-        margin-bottom: -70px; /* Equal to wrapper padding */
-        max-width: 800px;
-    }
+	/* Explore Imagery */
+	.explore > div > div:first-of-type {
+		margin-bottom: -70px; /* Equal to wrapper padding */
+		max-width: 800px;
+	}
 
-    /* Svg */
-    .explore svg {
-        width: unset;
-    }
+	/* Svg */
+	.explore svg {
+		width: unset;
+	}
 
-    /* Svg placeholder */
-    .explore .explorePlaceholder {
-        margin: 0;
-        max-width: 841px;
-        width: unset;
-    }
+	/* Svg placeholder */
+	.explore .explorePlaceholder {
+		margin: 0;
+		max-width: 841px;
+		width: unset;
+	}
 
-    /* Data Portal description */
-    .dataPortal h1 {
-        font-size: 34px; /* h1 specification - override mobile */
-        line-height: 38px; /* h1 specification - override mobile */
-        max-width: 800px;
-    }
+	/* Data Portal description */
+	.dataPortal h1 {
+		font-size: 34px; /* h1 specification - override mobile */
+		line-height: 38px; /* h1 specification - override mobile */
+		max-width: 800px;
+	}
 
-    /* DP Imagery and associated text */
-    .portalDescription {
-        align-items: flex-start;
-        flex-direction: row;
-    }
+	/* DP Imagery and associated text */
+	.portalDescription {
+		align-items: flex-start;
+		flex-direction: row;
+	}
 
-    /* Portal Description */
-    .portalDescription > div {
-        flex: 1;
-        flex-direction: column;
-        width: unset;
-    }
+	/* Portal Description */
+	.portalDescription > div {
+		flex: 1;
+		flex-direction: column;
+		width: unset;
+	}
 
-    /* Top row of each box - image container */
-    .portalDescription > div > div:first-of-type {
-        height: 95px;
-        padding: 0;
-        width: unset;
-    }
+	/* Top row of each box - image container */
+	.portalDescription > div > div:first-of-type {
+		height: 95px;
+		padding: 0;
+		width: unset;
+	}
 
-    /* Second row of each box */
-    .portalDescription > div > div:nth-of-type(2) {
-        max-width: 172px;
-        padding: 0;
-    }
+	/* Second row of each box */
+	.portalDescription > div > div:nth-of-type(2) {
+		max-width: 172px;
+		padding: 0;
+	}
 
-    /* Second row of each box - text description & link */
-    .portalDescription > div > div:nth-of-type(2) p, .portalDescription > div > div:nth-of-type(2) a {
-        margin: 12px 0 0;
-        text-align: center;
-        width: 100%;
-    }
+	/* Second row of each box - text description & link */
+	.portalDescription > div > div:nth-of-type(2) p, .portalDescription > div > div:nth-of-type(2) a {
+		margin: 12px 0 0;
+		text-align: center;
+		width: 100%;
+	}
 
-    /* Arrow */
-    .portalDescription .dpArrow {
-        transform: rotate(0deg);
-    }
+	/* Arrow */
+	.portalDescription .dpArrow {
+		transform: rotate(0deg);
+	}
 
-    /* Contact form */
-    .contactForm {
-        flex-direction: row;
-        margin: 6px 0;
-    }
+	/* Contact form */
+	.contactForm {
+		flex-direction: row;
+		margin: 6px 0;
+	}
 }
 
 /**
@@ -400,14 +399,14 @@
  */
 @media screen and (min-width: 1200px) {
 
-    /* Wrapper */
-    .sectionWrapper {
-        padding: 70px 30px;
-    }
+	/* Wrapper */
+	.sectionWrapper {
+		padding: 70px 30px;
+	}
 
-    /* Stats bar - wrapper */
-    .statsBar > div {
-        padding: 0 30px; /* Equivalent to wrapper - gutter 30px */
-    }
+	/* Stats bar - wrapper */
+	.statsBar > div {
+		padding: 0 30px; /* Equivalent to wrapper - gutter 30px */
+	}
 }
 

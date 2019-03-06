@@ -6,63 +6,67 @@
  */
 
 // Core dependencies
-import Cookies from "js-cookie";
+import Cookies from 'js-cookie';
 import React from 'react';
 
 // Styles
 import compStyles from './environment.module.css';
 import fontStyles from '../../styles/fontsize.module.css';
 import globalStyles from '../../styles/global.module.css';
+
 let classNames = require('classnames');
 
 class Environment extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.accept.bind(this);
-        this.state = {visible: false};
-    }
+	constructor(props) {
+		super(props);
+		this.accept.bind(this);
+		this.state = {visible: false};
+	}
 
-    componentDidMount() {
+	componentDidMount() {
 
-        const {cookieName} = this.props;
+		const {cookieName} = this.props;
 
-        if (Cookies.get(cookieName) === undefined) {
-            this.setState({visible: true});
-        }
+		if (Cookies.get(cookieName) === undefined) {
+			this.setState({visible: true});
+		}
 
-        if (Cookies.get(cookieName) === true) {
-            this.setState({visible: false});
-        }
-    }
+		if (Cookies.get(cookieName) === true) {
+			this.setState({visible: false});
+		}
+	}
 
-    accept = () => {
+	accept = () => {
 
-        const {cookieName} = this.props;
+		const {cookieName} = this.props;
 
-        Cookies.set(cookieName, true);
-        this.setState({visible: false});
-    };
+		Cookies.set(cookieName, true);
+		this.setState({visible: false});
+	};
 
-    render() {
+	render() {
 
-        if (!this.state.visible) {
-            return null;
-        }
+		if (!this.state.visible) {
+			return null;
+		}
 
-        return (
-            <div className={compStyles.environment}>
-                <div className={globalStyles.bannerWrapper}>
-                    <div>
-                        <p className={classNames(fontStyles.l, fontStyles.bgDark, fontStyles.noMargin)}>{this.props.message}</p>
-                    </div>
-                    <a className={classNames(globalStyles.button, globalStyles.bgDark, globalStyles.outline, compStyles.narrow)} onClick={() => {
-                        this.accept()
-                    }}>OK</a>
-                </div>
-            </div>
-        );
-    }
+		return (
+			<div className={compStyles.environment}>
+				<div className={globalStyles.bannerWrapper}>
+					<div>
+						<p className={classNames(fontStyles.l, fontStyles.bgDark, fontStyles.noMargin)}>{this.props.message}</p>
+					</div>
+					<div
+						className={classNames(globalStyles.button, globalStyles.bgDark, globalStyles.outline, compStyles.narrow)}
+						onClick={() => {
+							this.accept()
+						}}>OK
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default Environment;

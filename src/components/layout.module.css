@@ -6,18 +6,18 @@
  */
 
 .site {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 /* Menu open - no scroll */
 .site.noScroll {
-    left: 0;
-    position: fixed;
-    right: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
 }
 
 .content {
-    flex: 1;
+	flex: 1;
 }

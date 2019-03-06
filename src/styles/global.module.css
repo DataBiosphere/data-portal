@@ -1,130 +1,130 @@
 /**
  * Global Styles
  */
-@import "./vars.module.css";
+@import './vars.module.css';
 
 /* Banner wrapper */
 .bannerWrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 0 16px;
+	display: flex;
+	flex-direction: column;
+	padding: 0 16px;
 }
 
 /* Wrapper */
 .wrapper {
-    align-items: center;
-    display: flex;
-    padding: 0 16px;
+	align-items: center;
+	display: flex;
+	padding: 0 16px;
 }
 
 /* Button - class "button" */
 .button {
-    align-items: center;
-    border: none;
-    border-radius: 3px;
-    box-sizing: border-box;
-    cursor: pointer;
-    display: flex;
-    flex-shrink: 0;
-    font-size: 14px;
-    font-weight: 500;
-    height: 38px;
-    justify-content: center;
-    margin: 0;
-    min-width: 84px;
-    padding: 0 9px;
+	align-items: center;
+	border: none;
+	border-radius: 3px;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: flex;
+	flex-shrink: 0;
+	font-size: 14px;
+	font-weight: 500;
+	height: 38px;
+	justify-content: center;
+	margin: 0;
+	min-width: 84px;
+	padding: 0 9px;
 }
 
 /* Button - class "button hero" */
 .button.hero {
-    height: 50px;
+	height: 50px;
 }
 
 /* Button - class "button primary" */
 .button.primary {
-    background-color: var(--primary);
-    color: var(--white);
+	background-color: var(--primary);
+	color: var(--white);
 }
 
 /* Button hover - class "button primary" */
 .button.primary:hover {
-    background-color: var(--primary-hover);
+	background-color: var(--primary-hover);
 }
 
 /* Button - class "button secondary" */
 .button.secondary {
-    background-color: var(--secondary);
-    color: var(--white);
+	background-color: var(--secondary);
+	color: var(--white);
 }
 
 /* Button hover - class "button secondary" */
 .button.secondary:hover {
-    background-color: var(--secondary-hover);
+	background-color: var(--secondary-hover);
 }
 
 /* Button - class "button accent" */
 .button.accent {
-    background-color: var(--accent);
-    color: var(--white);
+	background-color: var(--accent);
+	color: var(--white);
 }
 
 /* Button hover - class "button accent" */
 .button.accent:hover {
-    background-color: var(--accent-hover);
+	background-color: var(--accent-hover);
 }
 
 /* Button - class "button outline" */
 .button.outline {
-    background-color: transparent;
-    border-radius: 0;
-    flex-grow: 0;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    padding: 10px 12px;
-    width: max-content;
+	background-color: transparent;
+	border-radius: 0;
+	flex-grow: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 18px;
+	padding: 10px 12px;
+	width: max-content;
 }
 
 /* Button hover - class "button outline" */
 .button.outline:hover {
-    background-color: transparent;
+	background-color: transparent;
 }
 
 /* Button - class "button outline primary" */
 .button.outline.primary {
-    border: 1px solid var(--primary);
-    color: var(--primary);
+	border: 1px solid var(--primary);
+	color: var(--primary);
 }
 
 /* Button hover - class "button outline primary" */
 .button.outline.primary:hover {
-    border: 1px solid var(--primary-hover);
-    color: var(--primary-hover);
+	border: 1px solid var(--primary-hover);
+	color: var(--primary-hover);
 }
 
 /* Button - class "button outline bgDark" */
 .button.outline.bgDark {
-    border: 1px solid var(--white);
-    color: var(--white);
+	border: 1px solid var(--white);
+	color: var(--white);
 }
 
 /* Button - class "button disabled" */
 .button.disabled {
-    background-color: var(--gray-light);
-    color: var(--white);
-    cursor: default;
+	background-color: var(--gray-light);
+	color: var(--white);
+	cursor: default;
 }
 
 /* Edit content link */
 .editContent {
-    display: flex;
-    margin-bottom: 32px;
+	display: flex;
+	margin-bottom: 32px;
 }
 
 /* Edit content separator */
 .editContentSeparator {
-    border-top: 1px solid var(--gray-lightest);
-    padding-top: 18px;
+	border-top: 1px solid var(--gray-lightest);
+	padding-top: 18px;
 }
 
 /**
@@ -132,14 +132,14 @@
  */
 @media screen and (min-width: 960px) {
 
-    /* Banner wrapper */
-    .bannerWrapper {
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0 auto;
-        padding: 0 16px;
-    }
+	/* Banner wrapper */
+	.bannerWrapper {
+		align-items: center;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 0 auto;
+		padding: 0 16px;
+	}
 }
 
 /**
@@ -147,17 +147,17 @@
  */
 @media screen and (min-width: 1200px) {
 
-    /* Banner Wrapper */
-    .bannerWrapper {
-        margin: 0 auto;
-        max-width: 1200px; /* Snap to 1200px, gutter 30px */
-        padding: 0 30px;
-    }
+	/* Banner Wrapper */
+	.bannerWrapper {
+		margin: 0 auto;
+		max-width: 1200px; /* Snap to 1200px, gutter 30px */
+		padding: 0 30px;
+	}
 
-    /* Wrapper */
-    .wrapper {
-        margin: 0 auto;
-        max-width: 1200px; /* Snap to 1200px, gutter 30px */
-        padding: 0 30px;
-    }
+	/* Wrapper */
+	.wrapper {
+		margin: 0 auto;
+		max-width: 1200px; /* Snap to 1200px, gutter 30px */
+		padding: 0 30px;
+	}
 }

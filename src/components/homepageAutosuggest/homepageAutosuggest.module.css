@@ -4,20 +4,19 @@
  *
  * Style definitions specific to the homepage autosuggest component.
  */
-
-@import "../../styles/vars.module.css";
+@import '../../styles/vars.module.css';
 
 .hompageAutosuggest {
-    max-width: 348px; /* Width on mobile 375px */
-    position: relative; /* Positions search button and hcaOptions */
-    width: 100%;
+	max-width: 348px; /* Width on mobile 375px */
+	position: relative; /* Positions search button and hcaOptions */
+	width: 100%;
 }
 
 /* Jumbotron search button */
 .hompageAutosuggest .button {
-    position: absolute;
-    right: 0;
-    top: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
 /**
@@ -25,8 +24,8 @@
  */
 @media screen and (min-width: 1024px) {
 
-    .hompageAutosuggest {
-        max-width: unset;
-        width: 540px;
-    }
+	.hompageAutosuggest {
+		max-width: unset;
+		width: 540px;
+	}
 }

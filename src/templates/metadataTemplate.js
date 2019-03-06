@@ -6,79 +6,80 @@
  */
 
 // Core dependencies
-import React from "react";
+import {graphql} from 'gatsby';
+import React from 'react';
 
 // App dependencies
-import Metadata from "../components/metadata/metadata";
-import Nav from "../components/nav/nav";
-import Section from "../components/section/section";
-import TabNav from "../components/tabNav/tabNav";
+import Layout from '../components/layout';
+import Metadata from '../components/metadata/metadata';
+import Nav from '../components/nav/nav';
+import Section from '../components/section/section';
+import TabNav from '../components/tabNav/tabNav';
 
 // Styles
-import compStyles from "./metadataTemplate.module.css";
-import fontStyles from "../styles/fontsize.module.css";
-import globalStyles from "../styles/global.module.css";
+import compStyles from './metadataTemplate.module.css';
+import fontStyles from '../styles/fontsize.module.css';
+import globalStyles from '../styles/global.module.css';
+
 let classNames = require('classnames');
 
 // the data prop will be injected by the GraphQL query below.
 export default function Template({data}) {
 
-    const markdownRemark = data.markdown; // data.markdownRemark holds our post data
-    const {frontmatter, html} = markdownRemark;
+	const markdownRemark = data.markdown; // data.markdownRemark holds our post data
+	const {frontmatter, html} = markdownRemark;
 
-    let docPath, metadataCoreName, gitHubPath, title;
-    docPath = markdownRemark.fields.path;
-    gitHubPath = markdownRemark.fields.gitHubPath.substring(0, markdownRemark.fields.gitHubPath.lastIndexOf("/"));
+	let docPath, title;
+	docPath = markdownRemark.fields.path;
 
-    const editPath = "https://github.com/HumanCellAtlas/data-portal-content/tree/master/content" + gitHubPath + ".md";
+	if (frontmatter) {
+		title = frontmatter.title;
+	}
 
-    if (frontmatter) {
-        metadataCoreName = frontmatter.metadataCoreName;
-        title = frontmatter.title;
-    }
+	const core = data.metadata.edges.find((x) => {
+			return x.node.schemaType === 'core';
+		}
+	).node;
 
-    const core = data.metadata.edges.find((x) => {
-            return x.node.schemaType === "core";
-        }
-    ).node;
+	const types = data.metadata.edges.filter((x) => {
+		return x.node.schemaType === 'type';
+	}).map(n => n.node);
 
-    const types = data.metadata.edges.filter((x) => {
-        return x.node.schemaType === "type";
-    }).map(n => n.node);
+	const modules = data.metadata.edges.filter((x) => {
+		return x.node.schemaType === 'module';
+	}).map(n => n.node);
 
-    const modules = data.metadata.edges.filter((x) =>{
-        return x.node.schemaType==="module";
-    }).map(n => n.node);
-
-    return (
-        <div>
-            <Section docPath={docPath}/>
-            <TabNav docPath={docPath}/>
-            <div className={globalStyles.wrapper}>
-                <div className={compStyles.hcaContent}>
-                    <Nav docPath={docPath}/>
-                    <div className={classNames(compStyles.markdownContent, compStyles.metadataContent)}>
-                        <div
-                            className="content-template"
-                            dangerouslySetInnerHTML={{__html: html}}
-                        />
-                        <p className={classNames(fontStyles.xxs, compStyles.xxs)}>* Indicates a required field</p>
-                        <h2>{title} Core</h2>
-                        <Metadata entity={core}/>
-                        <h2>{title} Types</h2>
-                        {types.length ? types.map((e, i) => <Metadata entity={e} key={i}/>) : <div className={fontStyles.s}>No Modules</div>}
-                        <h2>{title} Modules</h2>
-                        {modules.length ? modules.map((e, i) => <Metadata entity={e} key={i}/>) : <div className={fontStyles.s}>No Modules</div>}
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+	return (
+		<Layout>
+			<Section docPath={docPath}/>
+			<TabNav docPath={docPath}/>
+			<div className={globalStyles.wrapper}>
+				<div className={compStyles.hcaContent}>
+					<Nav docPath={docPath}/>
+					<div className={classNames(compStyles.markdownContent, compStyles.metadataContent)}>
+						<div
+							className='content-template'
+							dangerouslySetInnerHTML={{__html: html}}
+						/>
+						<p className={classNames(fontStyles.xxs, compStyles.xxs)}>* Indicates a required field</p>
+						<h2>{title} Core</h2>
+						<Metadata entity={core}/>
+						<h2>{title} Types</h2>
+						{types.length ? types.map((e, i) => <Metadata entity={e} key={i}/>) :
+							<div className={fontStyles.s}>No Modules</div>}
+						<h2>{title} Modules</h2>
+						{modules.length ? modules.map((e, i) => <Metadata entity={e} key={i}/>) :
+							<div className={fontStyles.s}>No Modules</div>}
+					</div>
+				</div>
+			</div>
+		</Layout>
+	);
 }
 
 // modified to find the page by id which is passed in as context
 export const pageQuery = graphql`
-  query MetadataPostByPath($id: String!, $metadataCoreName: String!) {
+  query ($id: String!, $metadataCoreName: String!) {
     markdown: markdownRemark(id: { eq: $id  }) {
       id
       html

@@ -4,133 +4,133 @@
  *
  * Style definitions specific to the HCA Data Portal header component.
  */
-@import "../../styles/vars.module.css";
+@import '../../styles/vars.module.css';
 
 /* Nav bar container */
 .navBar, .hcaHeader {
-    border-bottom: 1px solid var(--gray-light);
-    height: 60px;
+	border-bottom: 1px solid var(--gray-light);
+	height: 60px;
 }
 
 /* Header for all pages but the home page */
 .navBar:not(.hcaHeader) {
-    border-bottom: none;
-    background-color: var(--white-off);
+	border-bottom: none;
+	background-color: var(--white-off);
 }
 
 /* Wrapper */
 .headerWrapper {
-    height: inherit;
-    justify-content: space-between;
+	height: inherit;
+	justify-content: space-between;
 }
 
 /* Logo */
 a.logo, a.logo img {
-    align-self: center;
-    cursor: pointer;
-    height: 30px;
-    line-height: 0 !important;
-    margin-bottom: 0 !important; /* TODO review global */
+	align-self: center;
+	cursor: pointer;
+	height: 30px;
+	line-height: 0 !important;
+	margin-bottom: 0 !important; /* TODO review global */
 }
 
 /* Nav links */
 .links:not(.small) {
-    display: none;
+	display: none;
 }
 
 /* Show nav links for small view */
 .links.small {
-    align-items: flex-start;
-    background-color: var(--white);
-    border-bottom: 1px solid var(--gray-light);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    left: 0;
-    padding: 12px 0;
-    position: absolute;
-    right: 0;
-    top: 60px;
-    width: 100%;
-    z-index: 100;
+	align-items: flex-start;
+	background-color: var(--white);
+	border-bottom: 1px solid var(--gray-light);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	left: 0;
+	padding: 12px 0;
+	position: absolute;
+	right: 0;
+	top: 60px;
+	width: 100%;
+	z-index: 100;
 }
 
 /* Nav links */
 .links a, .links.small a {
-    align-items: flex-start;
-    color: var(--black);
-    display: flex;
-    flex-direction: column;
-    padding: 12px 24px;
-    width: 100%;
+	align-items: flex-start;
+	color: var(--black);
+	display: flex;
+	flex-direction: column;
+	padding: 12px 24px;
+	width: 100%;
 }
 
 /* Nav links - title */
 .links .xs {
-    font-weight: 600;
-    margin: 0 0 4px;
+	font-weight: 600;
+	margin: 0 0 4px;
 }
 
 /* Nav links - subtitle */
 .links .xxs {
-    font-weight: 400;
-    letter-spacing: 1.2px;
-    margin: 0;
-    text-transform: none;
+	font-weight: 400;
+	letter-spacing: 1.2px;
+	margin: 0;
+	text-transform: none;
 }
 
 /* Nav links - hover */
 .links a:hover {
-    color: var(--black);
+	color: var(--black);
 }
 
 /* Nav links - active */
 .links .active, .navBar .active {
-    color: var(--black);
+	color: var(--black);
 }
 
 /* Nav link help */
 .links.small .help, .help {
-    color: var(--gray-dark);
-    font-weight: 400;
-    margin: 0;
+	color: var(--gray-dark);
+	font-weight: 400;
+	margin: 0;
 }
 
 .hcaNavOverlay {
-    background-color: rgba(255, 255, 255, 0.9);
-    bottom: 0;
-    content: "";
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 60px;
-    z-index: 99; /* Positioned below showLinks */
+	background-color: rgba(255, 255, 255, 0.9);
+	bottom: 0;
+	content: "";
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 60px;
+	z-index: 99; /* Positioned below showLinks */
 }
 
 /* Help link, Menu */
 .menuDropDown {
-    align-items: center;
-    color: var(--black);
-    cursor: pointer;
-    display: flex;
-    font-weight: 500;
-    margin: 0;
+	align-items: center;
+	color: var(--black);
+	cursor: pointer;
+	display: flex;
+	font-weight: 500;
+	margin: 0;
 }
 
 /* Drop down menu icon */
 .menuDropDown::before {
-    color: var(--gray-dark);
-    content: "\E313";
-    font-family: "Material Icons";
-    font-size: 18px;
-    font-weight: 400;
-    margin: 0 4px;
+	color: var(--gray-dark);
+	content: "\E313";
+	font-family: "Material Icons";
+	font-size: 18px;
+	font-weight: 400;
+	margin: 0 4px;
 
 }
 
 /* Hide help link */
 .help {
-    display: none;
+	display: none;
 }
 
 /**
@@ -138,43 +138,43 @@ a.logo, a.logo img {
  */
 @media screen and (min-width: 768px) {
 
-    .links.small, .hcaNavOverlay {
-        display: none;
-    }
+	.links.small, .hcaNavOverlay {
+		display: none;
+	}
 
-    .links:not(.small) {
-        display: flex;
-        left: 180px;
-        position: absolute;
-    }
+	.links:not(.small) {
+		display: flex;
+		left: 180px;
+		position: absolute;
+	}
 
-    [id*=link] {
-        position: relative;
-    }
+	[id*=link] {
+		position: relative;
+	}
 
-    .links a {
-        padding: 0;
-    }
+	.links a {
+		padding: 0;
+	}
 
-    /* Nav links */
-    .linkTo {
-        color: var(--gray-dark);
-        font-size: 15px;
-        font-weight: 600;
-        line-height: 60px;
-        padding: 0 12px;
-        margin: 0;
-    }
+	/* Nav links */
+	.linkTo {
+		color: var(--gray-dark);
+		font-size: 15px;
+		font-weight: 600;
+		line-height: 60px;
+		padding: 0 12px;
+		margin: 0;
+	}
 
-    /* Hide menu */
-    .menuDropDown, .menuDropDown::before {
-        display: none;
-    }
+	/* Hide menu */
+	.menuDropDown, .menuDropDown::before {
+		display: none;
+	}
 
-    /* Show help link */
-    .help {
-        display: flex;
-    }
+	/* Show help link */
+	.help {
+		display: flex;
+	}
 }
 
 /**
@@ -182,16 +182,16 @@ a.logo, a.logo img {
  */
 @media screen and (min-width: 1200px) {
 
-    /* Logo */
-    a.logo, a.logo img {
-        height: 40px;
-    }
+	/* Logo */
+	a.logo, a.logo img {
+		height: 40px;
+	}
 
-    /* Links */
-    .links:not(.small) {
-        margin-left: -140px;
-        position: unset;
-    }
+	/* Links */
+	.links:not(.small) {
+		margin-left: -140px;
+		position: unset;
+	}
 }
 
 

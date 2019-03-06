@@ -1,55 +1,54 @@
 /**
  * Typography
  */
-
-@import "./vars.module.css";
+@import './vars.module.css';
 
 /* Header class */
 
 /* Class "fontsize-hero" */
 /* Human Cell Atlas Headline */
 .hero {
-    font-family: "din-2014", sans-serif;
-    font-size: 40px;
-    font-weight: 500;
-    line-height: 48px;
-    margin: 0;
+	font-family: "din-2014", sans-serif;
+	font-size: 40px;
+	font-weight: 500;
+	line-height: 48px;
+	margin: 0;
 }
 
 /* Class "fontsize-xxl" */
 .xxl {
-    font-family: "din-2014", sans-serif;
-    font-size: 34px;
-    font-weight: 500;
-    line-height: 38px;
-    margin: 28px 0 6px;
+	font-family: "din-2014", sans-serif;
+	font-size: 34px;
+	font-weight: 500;
+	line-height: 38px;
+	margin: 28px 0 6px;
 }
 
 /* Class "fontsize-xl" */
 .xl {
-    font-family: "din-2014", sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 30px;
-    margin: 24px 0 8px;
+	font-family: "din-2014", sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 30px;
+	margin: 24px 0 8px;
 }
 
 /* Class "fontsize-l" */
 .l {
-    font-family: "din-2014", sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 24px;
-    margin: 16px 0 10px;
+	font-family: "din-2014", sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 24px;
+	margin: 16px 0 10px;
 }
 
 /* Class "fontsize-m" */
 .m {
-    font-family: "din-2014", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 22px;
-    margin: 14px 0 16px;
+	font-family: "din-2014", sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 22px;
+	margin: 14px 0 16px;
 }
 
 /* Paragraph class */
@@ -57,56 +56,56 @@
 /* Class "fontsize-l" */
 /* Paragraph font only */
 p.l {
-    font-family: "Montserrat", sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 30px;
-    margin: 0 0 24px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 30px;
+	margin: 0 0 24px;
 }
 
 /* Class "fontsize-m" */
 /* Paragraph font only */
 p.m {
-    font-family: "Montserrat", sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 28px;
-    margin: 0 0 18px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 28px;
+	margin: 0 0 18px;
 }
 
 /* Class "fontsize-s" */
 .s {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 24px;
-    margin: 0 0 12px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 24px;
+	margin: 0 0 12px;
 }
 
 /* Class "fontsize-xs" */
 .xs {
-    font-family: "Montserrat", sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 20px;
-    margin: 0 0 8px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 20px;
+	margin: 0 0 8px;
 }
 
 /* Class "fontsize-xxs" */
 .xxs {
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 18px;
-    margin: 0 0 4px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 18px;
+	margin: 0 0 4px;
 }
 
 /* Font colour white on dark backgrounds */
 .bgDark {
-    color: var(--white);
+	color: var(--white);
 }
 
 /* Removes font margin */
 .noMargin {
-    margin: 0 !important;
+	margin: 0 !important;
 }
