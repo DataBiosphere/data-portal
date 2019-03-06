@@ -4,34 +4,33 @@
  *
  * Style definitions specific to the HCA Data Portal analysis detail component.
  */
-
 @import '../../styles/vars.module.css';
 
 /* Analyze list */
 .hcaAnalyzeDetail {
-    display: flex;
-    justify-content: space-between;
-    position: relative; /* Positions button */
-    width: 100%;
+	display: flex;
+	justify-content: space-between;
+	position: relative; /* Positions button */
+	width: 100%;
 }
 
 /* Heading */
 .hcaAnalyzeDetail div h2:first-child {
-    margin: 0;
+	margin: 0;
 }
 
 /* Author */
 .hcaAnalyzeDetail .author {
-    margin-bottom: 24px;
+	margin-bottom: 24px;
 }
 
 /* Hide view button - positioned RHS */
 .hcaAnalyzeDetail > .view {
-    display: none;
+	display: none;
 }
 
 .hcaAnalyzeDetail a + div {
-    margin-top: 24px;
+	margin-top: 24px;
 }
 
 /**
@@ -39,21 +38,21 @@
  */
 @media screen and (min-width: 768px) {
 
-    .hcaAnalyzeDetail > div {
-        margin-right: 16px;
-    }
+	.hcaAnalyzeDetail > div {
+		margin-right: 16px;
+	}
 
-    /* Show view button - positioned RHS */
-    .hcaAnalyzeDetail > .view {
-        display: flex;
-    }
+	/* Show view button - positioned RHS */
+	.hcaAnalyzeDetail > .view {
+		display: flex;
+	}
 
-    /* Hide view button - positioned below author */
-    .hcaAnalyzeDetail > div .view {
-        display: none;
-    }
+	/* Hide view button - positioned below author */
+	.hcaAnalyzeDetail > div .view {
+		display: none;
+	}
 
-    .hcaAnalyzeDetail a + div {
-        margin-top: 0;
-    }
+	.hcaAnalyzeDetail a + div {
+		margin-top: 0;
+	}
 }

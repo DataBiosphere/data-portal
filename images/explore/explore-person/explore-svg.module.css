@@ -4,35 +4,34 @@
  *
  * Style definitions specific to the HCA Data Portal explore svg component.
  */
-
 @import '../../../src/styles/vars.module.css';
 
 svg.explorePerson {
-    display: none;
+	display: none;
 }
 
 .active {
-    cursor: pointer;
-    fill: var(--primary);
-    transition: all 0.75s ease 0s;
+	cursor: pointer;
+	fill: var(--primary);
+	transition: all 0.75s ease 0s;
 }
 
 .active polygon, .active rect {
-    fill: var(--primary);
-    transition: all 0.75s ease 0s;
+	fill: var(--primary);
+	transition: all 0.75s ease 0s;
 }
 
 .active text {
-    opacity: 1;
-    transition: all 0.75s ease 0s;
+	opacity: 1;
+	transition: all 0.75s ease 0s;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
 [id^="count"] {
-    opacity: 0;
+	opacity: 0;
 }
 
 /**
@@ -40,7 +39,7 @@ svg.explorePerson {
  */
 @media screen and (min-width: 768px) {
 
-    svg.explorePerson {
-        display: block;
-    }
+	svg.explorePerson {
+		display: block;
+	}
 }

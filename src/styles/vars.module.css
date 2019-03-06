@@ -3,19 +3,19 @@
  */
 
 :root {
-    --primary: #1C7CC7;
-    --primary-hover: #0F78CA;
-    --secondary: #00D0F4;
-    --secondary-hover: #2DAFD7;
-    --background: #F4F7F9;
-    --accent: #E8AA45;
-    --accent-hover: #CF912C;
-    --black: #000000;
-    --gray-darkest: #333333;
-    --gray-dark: #666666;
-    --gray-medium: #999999;
-    --gray-light: #CCCCCC;
-    --gray-lightest: #EAEAEA;
-    --white-off: #F8F8F8;
-    --white: #FFFFFF;
+	--primary: #1C7CC7;
+	--primary-hover: #0F78CA;
+	--secondary: #00D0F4;
+	--secondary-hover: #2DAFD7;
+	--background: #F4F7F9;
+	--accent: #E8AA45;
+	--accent-hover: #CF912C;
+	--black: #000000;
+	--gray-darkest: #333333;
+	--gray-dark: #666666;
+	--gray-medium: #999999;
+	--gray-light: #CCCCCC;
+	--gray-lightest: #EAEAEA;
+	--white-off: #F8F8F8;
+	--white: #FFFFFF;
 }

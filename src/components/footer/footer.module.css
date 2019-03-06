@@ -4,61 +4,60 @@
  *
  * Style definitions specific to the HCA Data Portal footer component.
  */
-
-@import "../../styles/vars.module.css";
+@import '../../styles/vars.module.css';
 
 /* Footer */
 .footer {
-    background-color: var(--black);
+	background-color: var(--black);
 }
 
 /* Wrapper - footer overrides */
 .footerWrapper {
-    flex-direction: column;
-    justify-content: center;
-    padding: 16px 0;
+	flex-direction: column;
+	justify-content: center;
+	padding: 16px 0;
 }
 
 /* Logo and back arrow */
 .logo {
-    line-height: 0;
-    margin: 0;
-    position: relative;
-    text-decoration: none;
+	line-height: 0;
+	margin: 0;
+	position: relative;
+	text-decoration: none;
 }
 
 /* Back arrow */
 .logo i {
-    color: var(--white);
-    cursor: pointer;
-    font-size: 24px;
-    left: -24px;
-    padding: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+	color: var(--white);
+	cursor: pointer;
+	font-size: 24px;
+	left: -24px;
+	padding: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 /* Logo image */
 .logo img {
-    cursor: pointer;
-    height: 72px;
-    margin-bottom: 0;
-    padding: 0;
+	cursor: pointer;
+	height: 72px;
+	margin-bottom: 0;
+	padding: 0;
 }
 
 /* Footer links container */
 .links {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
 }
 
 /* Footer links */
 .links a {
-    font-weight: 500;
-    margin: 0 16px;
-    text-transform: capitalize;
+	font-weight: 500;
+	margin: 0 16px;
+	text-transform: capitalize;
 }
 
 /**
@@ -66,44 +65,44 @@
  */
 @media screen and (min-width: 768px) {
 
-    /* Footer */
-    .footer {
-        height: 96px;
-    }
+	/* Footer */
+	.footer {
+		height: 96px;
+	}
 
-    /* Wrapper */
-    .footerWrapper {
-        flex-direction: row;
-        height: inherit;
-        justify-content: space-between;
-        padding: 0 16px;
-    }
+	/* Wrapper */
+	.footerWrapper {
+		flex-direction: row;
+		height: inherit;
+		justify-content: space-between;
+		padding: 0 16px;
+	}
 
-    /* Logo */
-    .logo {
-        align-items: center;
-        display: flex;
-    }
+	/* Logo */
+	.logo {
+		align-items: center;
+		display: flex;
+	}
 
-    /* Left arrow */
-    .logo i {
-        left: unset;
-        margin: 0 -8px;
-        position: relative;
-        top: unset;
-        transform: none;
-    }
+	/* Left arrow */
+	.logo i {
+		left: unset;
+		margin: 0 -8px;
+		position: relative;
+		top: unset;
+		transform: none;
+	}
 
-    /* Logo image */
-    .logo img {
-        cursor: pointer;
-        height: 96px;
-        margin-bottom: 0;
-        padding: 0;
-    }
+	/* Logo image */
+	.logo img {
+		cursor: pointer;
+		height: 96px;
+		margin-bottom: 0;
+		padding: 0;
+	}
 
-    .links {
-        flex-direction: row;
-        margin: 0 -16px; /* Right aligns links */
-    }
+	.links {
+		flex-direction: row;
+		margin: 0 -16px; /* Right aligns links */
+	}
 }

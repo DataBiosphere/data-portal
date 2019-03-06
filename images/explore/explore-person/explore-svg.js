@@ -8,14 +8,10 @@
 // Core dependencies
 import React from 'react';
 import compStyles from './explore-svg.module.css'
-import * as numberFormatter from "../../../src/utils/number-format.service";
-import * as stringFormatter from "../../../src/utils/string-format.service";
+import * as numberFormatter from '../../../src/utils/number-format.service';
+import * as stringFormatter from '../../../src/utils/string-format.service';
 
 class Explore extends React.Component {
-
-    constructor() {
-        super();
-    }
 
     componentDidMount() {
 

@@ -10,8 +10,8 @@
  */
 export function convertCamelCasetoTitleCase(title) {
 
-    const sentenceCase = title.replace(/([A-Z])/g, " $1");
-    return convertSentenceCasetoTitleCase(sentenceCase);
+	const sentenceCase = title.replace(/([A-Z])/g, " $1");
+	return convertSentenceCasetoTitleCase(sentenceCase);
 }
 
 /**
@@ -19,10 +19,10 @@ export function convertCamelCasetoTitleCase(title) {
  */
 export function convertSentenceCasetoTitleCase(title) {
 
-    return title.replace(
-        /\w\S*/g,
-        (text) => {
-            return text.charAt(0).toUpperCase() + text.substr(1).toLowerCase();
-        }
-    );
+	return title.replace(
+		/\w\S*/g,
+		(text) => {
+			return text.charAt(0).toUpperCase() + text.substr(1).toLowerCase();
+		}
+	);
 }

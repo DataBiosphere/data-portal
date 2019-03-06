@@ -4,53 +4,52 @@
  *
  * Style definitions specific to the HCA Data Portal metadata component.
  */
-
-@import "../../styles/vars.module.css";
+@import '../../styles/vars.module.css';
 
 .metadata h3 {
-    margin-top: 48px;
+	margin-top: 48px;
 }
 
 /* Row */
 .metadataRow {
-    align-items: flex-start;
-    border-bottom: 1px solid var(--gray-light);
-    display: flex;
-    padding: 8px 0;
+	align-items: flex-start;
+	border-bottom: 1px solid var(--gray-light);
+	display: flex;
+	padding: 8px 0;
 }
 
 /* Label */
 .metadataName {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    min-width: 160px;
-    padding-right: 8px;
-    position: relative; /* To position required field tooltip */
-    width: 30%;
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	min-width: 160px;
+	padding-right: 8px;
+	position: relative; /* To position required field tooltip */
+	width: 30%;
 }
 
 .metadataRow span {
-    margin: 0;
+	margin: 0;
 }
 
 /* Type */
 .metadataRow span.type {
-    font-size: 11px;
+	font-size: 11px;
 }
 
 /* Description */
 .metadataRow > span {
-    width: 70%;
+	width: 70%;
 }
 
 /* Required field '*' */
 .metadataName > span > span {
-    padding-left: 1px;
+	padding-left: 1px;
 }
 
 /* Description links */
 .metadataRow > span a {
-    font: inherit;
-    word-break: break-all;
+	font: inherit;
+	word-break: break-all;
 }

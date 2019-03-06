@@ -8,75 +8,71 @@
 // Core dependencies
 import React from 'react';
 import compStyles from './explore-stats.module.css'
-import * as numberFormatter from "../../../src/utils/number-format.service";
-import * as stringFormatter from "../../../src/utils/string-format.service";
+import * as numberFormatter from '../../../src/utils/number-format.service';
+import * as stringFormatter from '../../../src/utils/string-format.service';
 
 class ExploreStats extends React.Component {
-    
-    state = {
-        statsSummary: []
-    };
 
-    constructor() {
+	state = {
+		statsSummary: []
+	};
 
-        super();
-    }
+	componentDidMount() {
 
-    componentDidMount() {
+		const {organSummary} = this.props;
+		const statsSummary = organSummary.reduce((accum, summary) => {
 
-        const {organSummary} = this.props;
-        const statsSummary = organSummary.reduce((accum, summary) => {
+			accum.push({
+				label: stringFormatter.convertSentenceCasetoTitleCase(summary.label),
+				count: summary.cellCount,
+				facetName: "organ",
+				termName: summary.label
+			});
+			return accum;
+		}, []);
 
-            accum.push({
-                label: stringFormatter.convertSentenceCasetoTitleCase(summary.label),
-                count: summary.cellCount,
-                facetName: "organ",
-                termName: summary.label
-            });
-            return accum;
-        }, []);
-        
-        this.setState({
-            statsSummary
-        })
-    }
+		this.setState({
+			statsSummary
+		})
+	}
 
-    formatCount = (count) => {
+	formatCount = (count) => {
 
-        return numberFormatter.format(count, 1);
-    };
+		return numberFormatter.format(count, 1);
+	};
 
-    getOrganFilter = (facetName, termName) => {
+	getOrganFilter = (facetName, termName) => {
 
-        return JSON.stringify([{"facetName": facetName, "terms": [termName]}]);
-    };
+		return JSON.stringify([{"facetName": facetName, "terms": [termName]}]);
+	};
 
-    visitExploreLink = (facetName, termName) => {
+	visitExploreLink = (facetName, termName) => {
 
-        const organFilter = this.getOrganFilter(facetName, termName);
-        window.location.href = `${process.env.GATSBY_EXPLORE_URL}projects?filter=${organFilter}`;
-    };
+		const organFilter = this.getOrganFilter(facetName, termName);
+		window.location.href = `${process.env.GATSBY_EXPLORE_URL}projects?filter=${organFilter}`;
+	};
 
-    render() {
-        return (
-            <div className={compStyles.exploreStats}>
-                <ul>
-                    <li>
-                        <div>Organ</div>
-                        <div>Cells</div>
-                    </li>
-                    {this.state.statsSummary.map((summary) => {
-                        return (
-                            <li key={summary.label}  onClick={() => this.visitExploreLink(summary.facetName, summary.termName)}>
-                                <div>{summary.label}</div>
-                                <div>{this.formatCount(summary.count)}</div>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </div>
-        );
-    }
+	render() {
+		return (
+			<div className={compStyles.exploreStats}>
+				<ul>
+					<li>
+						<div>Organ</div>
+						<div>Cells</div>
+					</li>
+					{this.state.statsSummary.map((summary) => {
+						return (
+							<li key={summary.label}
+								onClick={() => this.visitExploreLink(summary.facetName, summary.termName)}>
+								<div>{summary.label}</div>
+								<div>{this.formatCount(summary.count)}</div>
+							</li>
+						);
+					})}
+				</ul>
+			</div>
+		);
+	}
 }
 
 export default ExploreStats;

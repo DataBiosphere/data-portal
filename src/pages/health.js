@@ -9,13 +9,14 @@
 import React from 'react';
 
 // Core dependencies
-import Section from "../components/section/section";
+import Layout from '../components/layout';
+import Section from '../components/section/section';
 
 
 const Health = () => (
-    <div>
-        <Section sectionTitle={"Health - OK"}/>
-    </div>
+	<Layout>
+		<Section sectionTitle={'Health - OK'}/>
+	</Layout>
 );
 
 export default Health;

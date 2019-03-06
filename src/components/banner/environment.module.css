@@ -4,13 +4,12 @@
  *
  * Style definitions specific to the HCA Data Portal production environment component.
  */
-
-@import "../../styles/vars.module.css";
+@import '../../styles/vars.module.css';
 
 /* Environment */
 .environment {
-    background-color: var(--black);
-    padding: 14px 0;
+	background-color: var(--black);
+	padding: 14px 0;
 }
 
 /**
@@ -18,10 +17,10 @@
  */
 @media screen and (max-width: 960px) {
 
-    /* Button - environment component - class narrow */
-    .environment .narrow {
-        height: unset !important;
-        margin: 8px 0 0 !important;
-        padding: 2px 12px !important;
-    }
+	/* Button - environment component - class narrow */
+	.environment .narrow {
+		height: unset !important;
+		margin: 8px 0 0 !important;
+		padding: 2px 12px !important;
+	}
 }

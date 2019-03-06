@@ -7,13 +7,13 @@
 
 /* Attributions */
 .attributions {
-    align-items: flex-start;
-    display: flex;
+	align-items: flex-start;
+	display: flex;
 }
 
 /* Icon */
 .attributions .mosaic {
-    height: 40px;
-    margin: 4px 0;
-    padding-right: 8px;
+	height: 40px;
+	margin: 4px 0;
+	padding-right: 8px;
 }

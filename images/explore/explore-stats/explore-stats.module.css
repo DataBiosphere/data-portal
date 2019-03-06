@@ -6,21 +6,21 @@
  */
 
 .exploreStats ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 .exploreStats li {
-    display: flex;
+	display: flex;
 }
 
 .exploreStats li:first-child {
-    font-weight: 600;
+	font-weight: 600;
 }
 
 .exploreStats li div:first-child {
-    flex: 1;
+	flex: 1;
 }
 
 /**
@@ -28,7 +28,7 @@
  */
 @media screen and (min-width: 768px) {
 
-    .exploreStats {
-        display: none;
-    }
+	.exploreStats {
+		display: none;
+	}
 }

@@ -4,46 +4,45 @@
  *
  * Style definitions specific to HCA autosuggest component.
  */
-
-@import "../../styles/vars.module.css";
+@import '../../styles/vars.module.css';
 
 /* Option (flex between option and its count) */
 .hcaOption {
-    align-items: flex-start;
-    display: flex;
-    justify-content: space-between;
+	align-items: flex-start;
+	display: flex;
+	justify-content: space-between;
 }
 
 /* Wrap of option if required */
 .hcaOption > span:first-of-type {
-    max-width: 85%;
-    padding-right: 4px;
+	max-width: 85%;
+	padding-right: 4px;
 }
 
 /* Homepage autosuggest width */
 .homepage > div > div {
-    width: calc(100% - 84px) !important;
+	width: calc(100% - 84px) !important;
 }
 
 /* Homepage input field */
 .homepage input {
-    padding-right: 100px; /* Padding to accommodate search button */
+	padding-right: 100px; /* Padding to accommodate search button */
 }
 
 /* Error */
 .error input + div > div:first-of-type {
-    background-color: var(--gray-lightest);
-    cursor: default;
-    margin: -8px -16px 0;
-    width: calc(100% + 32px + 8px);
-    padding: 8px 16px !important;
+	background-color: var(--gray-lightest);
+	cursor: default;
+	margin: -8px -16px 0;
+	width: calc(100% + 32px + 8px);
+	padding: 8px 16px !important;
 }
 
 /* Error message */
 .error input + div > div:first-of-type div {
-    color: rgba(0, 0, 0, 0.8);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: unset;
+	color: rgba(0, 0, 0, 0.8);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+	letter-spacing: unset;
 }

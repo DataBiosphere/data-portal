@@ -7,11 +7,11 @@
 
 /* Section heading */
 .hcaSectionHeading {
-    align-items: center;
-    display: flex;
-    flex: 1;
-    height: 76px;
-    padding: 16px 0;
-    margin: 0;
-    width: 100%;
+	align-items: center;
+	display: flex;
+	flex: 1;
+	height: 76px;
+	padding: 16px 0;
+	margin: 0;
+	width: 100%;
 }

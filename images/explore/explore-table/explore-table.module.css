@@ -4,31 +4,30 @@
  *
  * Style definitions specific to the HCA Data Portal explore table svg component.
  */
-
 @import '../../../src/styles/vars.module.css';
 
 svg.exploreTable {
-    height: 220px;
+	height: 220px;
 }
 
 .active {
-    cursor: pointer;
-    fill: var(--primary);
-    transition: all 0.75s ease 0s;
+	cursor: pointer;
+	fill: var(--primary);
+	transition: all 0.75s ease 0s;
 }
 
 .active polygon, .active rect {
-    fill: var(--primary);
-    transition: all 0.75s ease 0s;
+	fill: var(--primary);
+	transition: all 0.75s ease 0s;
 }
 
 .active text {
-    opacity: 1;
-    transition: all 0.75s ease 0s;
+	opacity: 1;
+	transition: all 0.75s ease 0s;
 }
 
 [id^="count"] {
-    opacity: 0;
+	opacity: 0;
 }
 
 /**
@@ -36,7 +35,7 @@ svg.exploreTable {
  */
 @media screen and (min-width: 768px) {
 
-    svg.exploreTable {
-        display: none;
-    }
+	svg.exploreTable {
+		display: none;
+	}
 }
