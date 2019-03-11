@@ -41,6 +41,7 @@ exports.createPages = ({actions, graphql}) => {
         edges {
           node {
             id
+            fileAbsolutePath
             frontmatter {
               path
               template
