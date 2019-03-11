@@ -50,7 +50,7 @@ export default function Template({data}) {
 	}).map(n => n.node);
 
 	return (
-		<Layout>
+		<Layout pageTitle={frontmatter.title}>
 			<Section docPath={docPath}/>
 			<TabNav docPath={docPath}/>
 			<div className={globalStyles.wrapper}>

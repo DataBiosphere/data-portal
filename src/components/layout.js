@@ -39,7 +39,7 @@ class Layout extends React.Component {
 		return (
 			<div>
 				<Helmet>
-					<title>HCA Data Portal</title>
+					<title>{this.props.pageTitle ? this.props.pageTitle : 'HCA Data Portal'}</title>
 					<link rel='stylesheet' href='https://use.typekit.net/qhb0geh.css'/>
 					<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>
 					<link rel='stylesheet'
