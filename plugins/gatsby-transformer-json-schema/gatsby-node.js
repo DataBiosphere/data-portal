@@ -4,10 +4,10 @@ const path = require(`path`);
 const {createFilePath} = require(`gatsby-source-filesystem`);
 
 
-async function onCreateNode({ node, getNode, boundActionCreators, loadNodeContent }) {
+async function onCreateNode({ node, getNode, actions, loadNodeContent }) {
 
 
-    const { createNode, createParentChildLink } = boundActionCreators;
+    const { createNode, createParentChildLink } = actions;
 
     function transformObject(obj, id, type) {
         const objStr = JSON.stringify(obj)
@@ -49,12 +49,12 @@ async function onCreateNode({ node, getNode, boundActionCreators, loadNodeConten
 
     function splitRef(ref) {
         let regex = /_/g;
-        let splitRef = ref.split("/");
+        let splitRef = ref.split('/');
 
         return splitRef[splitRef.length - 1].split(".")[0].replace(regex, ' ');
     }
 
-    const sections = relativeFilePath.split("/");
+    const sections = relativeFilePath.split('/');
 
     const propertyNames = _.keys(parsedContent.properties);
     const requiredProperties = parsedContent.required || [];

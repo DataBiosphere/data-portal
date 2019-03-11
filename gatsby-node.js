@@ -27,8 +27,8 @@ function getTemplate(templateName) {
 }
 
 
-exports.createPages = ({boundActionCreators, graphql}) => {
-	const {createPage} = boundActionCreators;
+exports.createPages = ({actions, graphql}) => {
+	const {createPage} = actions;
 
 
 	// create the markdown pages
@@ -65,14 +65,14 @@ exports.createPages = ({boundActionCreators, graphql}) => {
 			return Promise.reject(result.errors);
 		}
 
-		// for each mardown page
+		// for each markdown page
 		result.data.allMarkdownRemark.edges.forEach(({node}) => {
 
 			// create the page
 
 			let path;
 			if (!node.frontmatter.path) {
-				path = getPath(node.id);
+				path = getPath(node.fileAbsolutePath);
 			} else {
 				path = node.frontmatter.path
 			}
@@ -91,47 +91,35 @@ exports.createPages = ({boundActionCreators, graphql}) => {
 
 
 // Create slugs for files.
-exports.onCreateNode = ({node, getNode, boundActionCreators}) => {
+exports.onCreateNode = ({node, getNode, actions}) => {
 
-	const {createNodeField} = boundActionCreators;
+	const {createNodeField} = actions;
 
 	if (node.internal.type === 'MarkdownRemark') {
 
 		// path can come from frontmatter or... from associating a title to path
 		let path;
 		if (!node.frontmatter.path) {
-			path = getPath(node.id);
+			path = getPath(node.fileAbsolutePath);
 		} else {
 			path = node.frontmatter.path
 		}
 
-		const relativeFilePath = createFilePath({
-			node,
-			getNode,
-			basePath: ""
-		});
+		const relativeFilePath = createFilePath({node, getNode, basePath: ''});
 
 		//this adds the path under "fields"
-		createNodeField({
-			node,
-			name: 'path',
-			value: path
-		});
+		createNodeField({node, name: 'path', value: path});
 
 		//this adds the gitHubPath under "fields"
-		createNodeField({
-			node,
-			name: 'gitHubPath',
-			value: relativeFilePath
-		});
+		createNodeField({node, name: 'gitHubPath', value: relativeFilePath});
 	}
 };
 
 function getPath(markdownId) {
 
-	if (markdownId.includes('docs/structure.md')) {
+	if (markdownId && markdownId.includes('docs/structure.md')) {
 		return '/learn/metadata/structure';
-	} else if (markdownId.includes('docs/rationale.md')) {
+	} else if (markdownId && markdownId.includes('docs/rationale.md')) {
 		return '/learn/metadata/rationale';
 	}
 
