@@ -36,18 +36,12 @@ export default function Template({data}) {
 		title = frontmatter.title;
 	}
 
-	const core = data.metadata.edges.find((x) => {
-			return x.node.schemaType === 'core';
-		}
-	).node;
+	const core = data.coreMetadata.edges.find(x => x).node;
+	const types = data.typeMetadata.edges.filter(x => x).map(n => n.node);
+	const modules = data.moduleMetadata.edges.filter(x => x).map(n => n.node);
 
-	const types = data.metadata.edges.filter((x) => {
-		return x.node.schemaType === 'type';
-	}).map(n => n.node);
-
-	const modules = data.metadata.edges.filter((x) => {
-		return x.node.schemaType === 'module';
-	}).map(n => n.node);
+	// Merge Modules with Core metadata
+	const mergedSchemaCoreWithModules = modules.concat(core);
 
 	return (
 		<Layout pageTitle={frontmatter.title}>
@@ -62,14 +56,8 @@ export default function Template({data}) {
 							dangerouslySetInnerHTML={{__html: html}}
 						/>
 						<p className={classNames(fontStyles.xxs, compStyles.xxs)}>* Indicates a required field</p>
-						<h2>{title} Core</h2>
-						<Metadata entity={core}/>
-						<h2>{title} Types</h2>
-						{types.length ? types.map((e, i) => <Metadata entity={e} key={i}/>) :
-							<div className={fontStyles.s}>No Modules</div>}
-						<h2>{title} Modules</h2>
-						{modules.length ? modules.map((e, i) => <Metadata entity={e} key={i}/>) :
-							<div className={fontStyles.s}>No Modules</div>}
+						{types.length ? types.map((e, i) => <Metadata entity={e} modules={mergedSchemaCoreWithModules}
+																	  key={i}/>) : null}
 					</div>
 				</div>
 			</div>
@@ -79,48 +67,32 @@ export default function Template({data}) {
 
 // modified to find the page by id which is passed in as context
 export const pageQuery = graphql`
-  query ($id: String!, $metadataCoreName: String!) {
-    markdown: markdownRemark(id: { eq: $id  }) {
-      id
-      html
-      fields{
-            path
-            gitHubPath
-      }
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
-        title
-        subTitle
-        componentName
-        metadataCoreName
-        linked {
-               childMarkdownRemark{
-                   html
-                   frontmatter{
-                        path
-                        title
-                        subTitle
-                    }
-               }
-        }
-      }
+query ($id: String!, $metadataCoreName: String!) {
+  markdown: markdownRemark(id: {eq: $id}) {
+    id
+    html
+    fields {
+      path
     }
-    
-    metadata: allMetadataSchemaEntity(
-    filter: {coreEntity: {eq: $metadataCoreName} schemaType: {ne: "bundle"}}
-  ){
-    edges{
-      node{
+    frontmatter {
+      path
+      title
+    }
+  }
+  typeMetadata: allMetadataSchemaEntity(filter: {coreEntity: {eq: $metadataCoreName}, schemaType: {eq: "type"}}) {
+    edges {
+      node {
         title
         coreEntity
         schemaType
-        properties{
+        properties {
           name
           description
-          itemsRef
-          itemsType
-          objectRef
+          arrayModuleRef
+          arrayName
+          arrayType
+          objectModuleRef
+          objectName
           required
           type
           userFriendly
@@ -128,5 +100,44 @@ export const pageQuery = graphql`
       }
     }
   }
+  moduleMetadata: allMetadataSchemaEntity(filter: {schemaType: {eq: "module"}}) {
+  edges {
+    node {
+      title
+      coreEntity
+      schemaType
+      relativeFilePath
+      properties {
+          name
+          description
+          arrayName
+          objectName
+          required
+          type
+          userFriendly
+        }
+      }
+    }
   }
+  coreMetadata: allMetadataSchemaEntity(filter: {coreEntity: {eq: $metadataCoreName}, schemaType: {eq: "core"}}) {
+    edges {
+      node {
+        title
+        coreEntity
+        schemaType
+        relativeFilePath
+        properties {
+          name
+          description
+          arrayName
+          arrayType
+          objectName
+          required
+          type
+          userFriendly
+        }
+      }
+    }
+  }
+}
 `;
