@@ -27,7 +27,7 @@ class Metadata extends React.Component {
 		}
 
 		// Return the corresponding module that the array/object references (using relativeFilePath to find the reference)
-		return this.props.modules.filter(module => module.relativeFilePath.includes(ref));
+		return this.props.reference.filter(module => module.relativeFilePath.includes(ref));
 	};
 
 	getObjectRefProperties = (arrayRef, objectRef) => {
@@ -46,7 +46,7 @@ class Metadata extends React.Component {
 					{this.props.entity.properties.filter((element) => {
 						return element.name !== 'describedBy' && element.name !== 'schema_version' && element.name !== 'schema_type' && element.name !== 'provenance';
 					}).map((e, i) =>
-						<div key={i} className={compStyles.metadataElement}>
+						<div key={i}>
 							<MetadataRow element={e}/>
 							{this.getObjectRef(e.arrayModuleRef, e.objectModuleRef).length ?
 								<div className={compStyles.nested}>

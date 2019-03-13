@@ -7,20 +7,14 @@
 @import '../../styles/vars.module.css';
 
 .metadata h3 {
+	border-bottom: 1px solid var(--gray-lightest);
 	margin-top: 48px;
-}
-
-/* Element */
-.metadataElement {
-	border-bottom: 1px solid var(--gray-light);
 }
 
 /* Nested element */
 .nested {
-	background-color: var(--black1);
-	border: 1px dashed var(--gray-lightest);
+	background-color: var(--black3);
 	border-radius: 4px;
-	margin: 0 -8px 16px;
-	padding: 8px 8px;
+	margin: 0 0 16px;
+	padding: 16px 8px;
 }
-
