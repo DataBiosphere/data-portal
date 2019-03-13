@@ -36,15 +36,11 @@ export default function Template({data}) {
 		title = frontmatter.title;
 	}
 
-	const core = data.coreMetadata.edges.find(x => x).node;
-	const types = data.typeMetadata.edges.filter(x => x).map(n => n.node);
-	const modules = data.moduleMetadata.edges.filter(x => x).map(n => n.node);
-
-	// Merge Modules with Core metadata
-	const mergedSchemaCoreWithModules = modules.concat(core);
+	const types = data.typeMetadata.edges.map(n => n.node);
+	const referenceMetadata = data.referenceMetadata.edges.map(n => n.node);
 
 	return (
-		<Layout pageTitle={frontmatter.title}>
+		<Layout pageTitle={title}>
 			<Section docPath={docPath}/>
 			<TabNav docPath={docPath}/>
 			<div className={globalStyles.wrapper}>
@@ -56,7 +52,7 @@ export default function Template({data}) {
 							dangerouslySetInnerHTML={{__html: html}}
 						/>
 						<p className={classNames(fontStyles.xxs, compStyles.xxs)}>* Indicates a required field</p>
-						{types.length ? types.map((e, i) => <Metadata entity={e} modules={mergedSchemaCoreWithModules}
+						{types.length ? types.map((e, i) => <Metadata entity={e} reference={referenceMetadata}
 																	  key={i}/>) : null}
 					</div>
 				</div>
@@ -100,7 +96,7 @@ query ($id: String!, $metadataCoreName: String!) {
       }
     }
   }
-  moduleMetadata: allMetadataSchemaEntity(filter: {schemaType: {eq: "module"}}) {
+  referenceMetadata: allMetadataSchemaEntity(filter: {schemaType: {in: ["module","core"]}}) {
   edges {
     node {
       title
@@ -111,26 +107,6 @@ query ($id: String!, $metadataCoreName: String!) {
           name
           description
           arrayName
-          objectName
-          required
-          type
-          userFriendly
-        }
-      }
-    }
-  }
-  coreMetadata: allMetadataSchemaEntity(filter: {coreEntity: {eq: $metadataCoreName}, schemaType: {eq: "core"}}) {
-    edges {
-      node {
-        title
-        coreEntity
-        schemaType
-        relativeFilePath
-        properties {
-          name
-          description
-          arrayName
-          arrayType
           objectName
           required
           type

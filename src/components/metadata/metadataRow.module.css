@@ -14,7 +14,7 @@
 }
 
 .nested.metadataRow {
-	padding: 2px 0;
+	padding: 8px 0;
 }
 
 /* Label */
@@ -25,7 +25,11 @@
 	min-width: 160px;
 	padding-right: 8px;
 	position: relative; /* To position required field tooltip */
-	width: 30%;
+	width: 40%;
+}
+
+.nested .metadataName {
+	padding-left: 16px;
 }
 
 .metadataRow span {
@@ -34,6 +38,7 @@
 
 .metadataRow.nested span {
 	color: var(--gray-dark);
+	padding-right: 16px;
 }
 
 /* Type */
