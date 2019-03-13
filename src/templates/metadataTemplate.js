@@ -39,6 +39,7 @@ export default function Template({data}) {
 	const types = data.typeMetadata.edges.map(n => n.node);
 	const referenceMetadata = data.referenceMetadata.edges.map(n => n.node);
 
+	console.log(referenceMetadata)
 	return (
 		<Layout pageTitle={title}>
 			<Section docPath={docPath}/>
@@ -107,6 +108,7 @@ query ($id: String!, $metadataCoreName: String!) {
           name
           description
           arrayName
+          arrayType
           objectName
           required
           type
