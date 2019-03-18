@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import { navigate } from "gatsby"
 import Link from 'gatsby-link';
 import React from 'react';
 
@@ -49,23 +50,24 @@ class IndexPage extends React.Component {
 	};
 
 	/**
-	 * Load up counts and summaries on mount of component.
+	 * Load up counts and summaries on mount of component. Redirect to error page if any API call fails.
 	 */
 	componentDidMount() {
 
-		FileSummaryService.fetchFileSummary().then(fileSummary => {
-
-			this.setState({
-				...fileSummary
+		const fetchFileSummary = FileSummaryService.fetchFileSummary();
+		const fetchTermFacets = FileSummaryService.fetchTermFacets();
+		
+		Promise.all([fetchFileSummary, fetchTermFacets])
+			.then(([fileSummary, termFacets]) => {
+			
+				this.setState({
+					...fileSummary,
+					...termFacets
+				});
+			})
+			.catch(() => {
+				navigate("/error");
 			});
-		});
-
-		FileSummaryService.fetchTermFacets().then(termFacets => {
-
-			this.setState({
-				termFacets
-			});
-		});
 	}
 
 	formatCount(count) {
