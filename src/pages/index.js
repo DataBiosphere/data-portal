@@ -16,6 +16,7 @@ import Layout from '../components/layout';
 import Explore from '../../images/explore/explore-person/explore-svg';
 import ExploreStats from '../../images/explore/explore-stats/explore-stats-svg';
 import * as FileSummaryService from '../utils/fileSummary.service';
+import * as SystemService from '../utils/system.service';
 import * as numberFormatter from '../utils/number-format.service';
 
 // Styles
@@ -40,6 +41,7 @@ class IndexPage extends React.Component {
 		donorCount: 0,
 		fileCount: 0,
 		fileFormatSummary: null,
+		healthy: true,
 		labCount: 0,
 		loaded: false,
 		organCount: 0,
@@ -50,13 +52,28 @@ class IndexPage extends React.Component {
 	};
 
 	/**
-	 * Load up counts and summaries on mount of component. Redirect to error page if any API call fails.
+	 * Check system status is OK then load up counts and summaries. 
 	 */
 	componentDidMount() {
 
+		SystemService.healthCheck()
+			.then(this.fetchData)
+			.catch(() => {
+				
+				this.setState({
+					healthy: false
+				})
+			});
+	}
+
+	/**
+	 * Fetch the file summary and term facet data to be displayed in the counts bar and organs diagram. Redirect to 
+	 * error page if any API call fails.
+	 */
+	fetchData = () => {
+
 		const fetchFileSummary = FileSummaryService.fetchFileSummary();
 		const fetchTermFacets = FileSummaryService.fetchTermFacets();
-
 		Promise.all([fetchFileSummary, fetchTermFacets])
 			.then(([fileSummary, termFacets]) => {
 
@@ -65,11 +82,17 @@ class IndexPage extends React.Component {
 					termFacets
 				});
 			})
-			.catch(() => {
+			.catch((e) => {
 				navigate("/error");
 			});
-	}
+	};
 
+	/**
+	 * Format data counts to sized value (eg k, M, G etc) 
+	 * 
+	 * @param {number} count
+	 * @returns {*}
+	 */
 	formatCount(count) {
 
 		return numberFormatter.format(count, 1);
@@ -78,6 +101,7 @@ class IndexPage extends React.Component {
 	render() {
 		return (
 			<Layout>
+				{this.state.healthy ? <div>yep</div> :<div>nah</div> }
 				<div className={compStyles.homepage}>
 					<div className={compStyles.jumbotron}>
 						<div className={compStyles.sectionWrapper}>

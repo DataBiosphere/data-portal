@@ -1,0 +1,33 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Service coordinating hitting system-related API end points and formatting the corresponding responses. 
+ */
+
+// App dependencies
+import * as HttpService from '../utils/http.service';
+const SYSTEM_HEALTH_CHECK_API_URL = process.env.GATSBY_SYSTEM_HEALTH_CHECK_API_URL;
+
+/**
+ * Check current state of system.
+ */
+export function healthCheck() {
+
+	return fetch(SYSTEM_HEALTH_CHECK_API_URL)
+		.then(HttpService.checkResponseStatus)
+		.then(resp => resp.json())
+		.then(bindHealthCheckResponse);
+}
+
+/**
+ * Format response into FE-friendly format.
+ */
+function bindHealthCheckResponse(response) {
+
+	if ( response.up ) { // TODO update this for DCP response object
+		return response; // TODO map to user friendly
+	}
+	
+	throw Error('Error'); // TODO update with appropriate error value
+}
