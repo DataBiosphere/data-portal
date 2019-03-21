@@ -34,9 +34,10 @@
 }
 
 /**
- * Tablet +
+ * Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1024px) {
 
 	.hcaAnalyzeDetail > div {
 		margin-right: 16px;

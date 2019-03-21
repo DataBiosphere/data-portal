@@ -82,7 +82,7 @@
 .hcaSideNav > div ul li {
 	display: flex;
 	margin: 0 20px;
-	padding: 8px 0;
+	padding: 4px 0;
 	position: relative; /* Positions nav bar */
 }
 
@@ -176,16 +176,16 @@
 }
 
 /**
- * Large +
+ * Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-/* $md-tablet-portrait-lg-min: 840px; */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
 
 	/* Navigation container */
 	.hcaSideNav {
-		max-width: 192px;
-		min-width: 192px;
-		margin-right: 90px !important;
+		max-width: 250px; /* was 192px */
+		min-width: 250px; /* was 192px */
+		margin-right: 32px !important; /* was 90px */
 	}
 }
 
