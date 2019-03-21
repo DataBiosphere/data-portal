@@ -36,7 +36,7 @@
 /**
  * Tablet +
  */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
 
 	.hcaAnalyzeDetail > div {
 		margin-right: 16px;
