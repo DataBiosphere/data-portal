@@ -142,9 +142,10 @@ tbody tr {
 }
 
 /**
- * Large +
+ * Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
 
 	/* Content - when there is no navigation */
 	.noNav .markdownContent {
