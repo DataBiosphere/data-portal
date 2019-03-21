@@ -9,6 +9,7 @@
  */
 
 // App dependencies
+import * as HttpService from '../utils/http.service';
 const FILE_SUMMARY_API_URL = process.env.GATSBY_FILE_SUMMARY_API_URL;
 const TERM_FACETS_API_URL = process.env.GATSBY_TERM_FACETS_API_URL;
 
@@ -18,7 +19,7 @@ const TERM_FACETS_API_URL = process.env.GATSBY_TERM_FACETS_API_URL;
 export function fetchFileSummary() {
 
 	return fetch(FILE_SUMMARY_API_URL)
-		.then(checkResponseStatus)
+		.then(HttpService.checkResponseStatus)
 		.then(resp => resp.json())
 		.then(bindFileSummaryResponse);
 }
@@ -29,7 +30,7 @@ export function fetchFileSummary() {
 export function fetchTermFacets() {
 
 	return fetch(TERM_FACETS_API_URL)
-		.then(checkResponseStatus)
+		.then(HttpService.checkResponseStatus)
 		.then(resp => resp.json())
 		.then(bindTermFacetsResponse);
 }
@@ -79,16 +80,4 @@ function bindTermFacetsResponse(termFacetsResponse) {
 
 		return accum;
 	}, []);
-}
-
-/**
- * Confirm response status is OK, and throw error if not.
- */
-function checkResponseStatus(response) {
-
-	if ( !response.ok) {
-		throw response;
-	}
-	
-	return response;
 }

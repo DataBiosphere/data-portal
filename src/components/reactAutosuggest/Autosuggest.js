@@ -754,6 +754,8 @@ export default class Autosuggest extends Component {
 
 						break;
 					}
+					
+					default:
 				}
 
 				onKeyDown && onKeyDown(event);
