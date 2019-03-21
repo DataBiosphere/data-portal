@@ -12,6 +12,7 @@ import * as siteMap from '../../siteMap';
 
 // Styles
 import compStyles from './nav.module.css';
+import fontStyles from '../../styles/fontsize.module.css';
 
 const classNames = require('classnames');
 
@@ -67,12 +68,12 @@ class Nav extends React.Component {
 					{siteMap.getNav(this.props.docPath).map((p, i) =>
 						<div key={i}>
 							<li className={getNavClassName(this.props.docPath, p)} key={i}><Link
-								to={siteMap.getPath(p.key)}>{p.name}</Link></li>
+								to={siteMap.getPath(p.key)} className={fontStyles.navPrimary}>{p.name}</Link></li>
 							{p.children && expanded ?
 								<ul>
 									{p.children.map((c, j) => <li className={getNavClassName(this.props.docPath, c)}
 																  key={j}><Link
-										to={siteMap.getPath(c.key)}>{c.name}</Link></li>)}
+										to={siteMap.getPath(c.key)} className={fontStyles.navSecondary}>{c.name}</Link></li>)}
 								</ul> : null}
 						</div>)}
 				</ul>
@@ -85,12 +86,12 @@ class Nav extends React.Component {
 							<div key={i}>
 								<li className={getNavClassName(this.props.docPath, p)} key={i}
 									onClick={p.children ? expanded ? this.toggleNav : null : this.toggleNav}><Link
-									to={siteMap.getPath(p.key)}>{p.name}</Link></li>
+									to={siteMap.getPath(p.key)} className={fontStyles.navPrimary}>{p.name}</Link></li>
 								{p.children && expanded ?
 									<ul>
 										{p.children.map((c, j) => <li className={getNavClassName(this.props.docPath, c)}
 																	  key={j} onClick={this.toggleNav}><Link
-											to={siteMap.getPath(c.key)}>{c.name}</Link></li>)}
+											to={siteMap.getPath(c.key)} className={fontStyles.navSecondary}>{c.name}</Link></li>)}
 									</ul> : null}
 							</div>) : null}
 				</ul>
