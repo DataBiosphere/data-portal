@@ -283,13 +283,67 @@ const siteMap =
 			key: "docs",
 			children: [
 				{
-					name: "",
-					key: "docs",
+					name: "Development Guides",
+					key: "development-guides",
 					children: [
 						{
-							name: "Docs",
-							key: "/docs/docs/docs",
+							name: "Analysis Applications",
+							key: "/docs/development-guides/analysis-applications",
 							path: "/docs"
+						},
+						{
+							name: "Ingest Data Brokers",
+							key: "/docs/development-guides/ingest-broker-development-guide"
+						},
+						{
+							name: "Processing Pipelines",
+							key: "/docs/development-guides/pipeline-processing-development-guides/overview-pipeline-processing-development-guides",
+							children: [
+								{
+									name: "Pipeline Best Practices",
+									key: "/docs/development-guides/pipeline-processing-development-guides/workflow-best-practices"
+								},
+								{
+									name: "Building Pipelines",
+									key: "/docs/development-guides/pipeline-processing-development-guides/pipeline-development-guide"
+								},
+								{
+									name: "Testing Pipelines",
+									key: "/docs/development-guides/pipeline-processing-development-guides/testing-pipelines"
+								},
+								{
+									name: "Portability Service Environments",
+									key: "/docs/development-guides/pipeline-processing-development-guides/adding-an-environment-to-the-portability-service"
+								}
+							]
+						},
+						{
+							name: "Data Consumer Vignettes",
+							key: "/docs/development-guides/consumer-vignettes"
+						}
+					]
+				},
+				{
+					name: "API Documentation",
+					key: "api-documentation",
+					children: [
+						{
+							name: "Data Store API",
+							key: "/docs/api-documentation/data-store-consumer-api"
+						},
+						{
+							name: "Matrix Service API",
+							key: "/docs/api-documentation/matrix-service-api"
+						}
+					]
+				},
+				{
+					name: "",
+					key: "placeholder",
+					children: [
+						{
+							name: "First Doc",
+							key: "/docs/placeholder/placeholder-doc"
 						}
 					]
 				}
@@ -350,60 +404,6 @@ const siteMap =
 							{
 								name: "Data Use Agreement",
 								key: "/intro/userguides/data-use-agreement",
-							}
-						]
-					},
-					{
-						name: "Development Guides",
-						key: "development-guides",
-						children: [
-							{
-								name: "Analysis Applications",
-								key: "/intro/development-guides/analysis-applications"
-							},
-							{
-								name: "Ingest Data Brokers",
-								key: "/intro/development-guides/ingest-broker-development-guide"
-							},
-							{
-								name: "Processing Pipelines",
-								key: "/intro/development-guides/pipeline-processing-development-guides/overview-pipeline-processing-development-guides",
-								children: [
-									{
-										name: "Pipeline Best Practices",
-										key: "/intro/development-guides/pipeline-processing-development-guides/workflow-best-practices"
-									},
-									{
-										name: "Building Pipelines",
-										key: "/intro/development-guides/pipeline-processing-development-guides/pipeline-development-guide"
-									},
-									{
-										name: "Testing Pipelines",
-										key: "/intro/development-guides/pipeline-processing-development-guides/testing-pipelines"
-									},
-									{
-										name: "Portability Service Environments",
-										key: "/intro/development-guides/pipeline-processing-development-guides/adding-an-environment-to-the-portability-service"
-									}
-								]
-							},
-							{
-								name: "Data Consumer Vignettes",
-								key: "/intro/development-guides/consumer-vignettes"
-							}
-						]
-					},
-					{
-						name: "API Documentation",
-						key: "api-documentation",
-						children: [
-							{
-								name: "Data Store API",
-								key: "/intro/api-documentation/data-store-consumer-api"
-							},
-							{
-								name: "Matrix Service API",
-								key: "/intro/api-documentation/matrix-service-api"
 							}
 						]
 					}
