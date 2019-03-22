@@ -282,14 +282,28 @@ const siteMap =
 			name: "Docs",
 			key: "docs",
 			children: [
+                {
+                    name: "API Documentation",
+                    key: "api-documentation",
+                    children: [
+                        {
+                            name: "Data Store API",
+                            key: "/docs/api-documentation/data-store-consumer-api",
+                            path: "/docs"
+                        },
+                        {
+                            name: "Matrix Service API",
+                            key: "/docs/api-documentation/matrix-service-api"
+                        }
+                    ]
+                },
 				{
-					name: "Development Guides",
+					name: "Building DCP Components",
 					key: "development-guides",
 					children: [
 						{
 							name: "Analysis Applications",
-							key: "/docs/development-guides/analysis-applications",
-							path: "/docs"
+							key: "/docs/development-guides/analysis-applications"
 						},
 						{
 							name: "Ingest Data Brokers",
@@ -316,37 +330,19 @@ const siteMap =
 									key: "/docs/development-guides/pipeline-processing-development-guides/adding-an-environment-to-the-portability-service"
 								}
 							]
-						},
-						{
-							name: "Data Consumer Vignettes",
-							key: "/docs/development-guides/consumer-vignettes"
 						}
 					]
 				},
-				{
-					name: "API Documentation",
-					key: "api-documentation",
-					children: [
-						{
-							name: "Data Store API",
-							key: "/docs/api-documentation/data-store-consumer-api"
-						},
-						{
-							name: "Matrix Service API",
-							key: "/docs/api-documentation/matrix-service-api"
-						}
-					]
-				},
-				{
-					name: "",
-					key: "placeholder",
-					children: [
-						{
-							name: "First Doc",
-							key: "/docs/placeholder/placeholder-doc"
-						}
-					]
-				}
+                {
+                    name: "Reusing DCP Components",
+                    key: "placeholder",
+                    children: [
+                        {
+                            name: "First Doc",
+                            key: "/docs/placeholder/placeholder-doc"
+                        }
+                    ]
+                },
 			]
 		},
 		{
