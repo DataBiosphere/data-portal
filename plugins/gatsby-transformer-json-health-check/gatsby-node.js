@@ -89,8 +89,8 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 
 	transformObject(
 		entity,
-		`${node.id}  >>> JSON`,
-		'MetadataSchemaEntity');
+		`${node.id}  >>> HC`,
+		'HealthCheck');
 
 
 }
