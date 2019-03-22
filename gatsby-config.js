@@ -11,14 +11,16 @@
 let contentPath = `${__dirname}/node_modules/data-portal-content/content`;
 let metadataSchemaDocsPath = `${__dirname}/_metadata-schema/docs`;
 let metadataSchemaJsonPath = `${__dirname}/_metadata-schema/json_schema`;
+let hcaGithubHealthCheckDocsPath = `${__dirname}/humancellatlas.github.io`;
 
 if (process.env.GATSBY_DEV_ENV == "LOCAL") {
 	console.log("LAUNCHING USING LOCAL CONFIG");
 	// uncomment to use the local content repo vs the npm repo.
 	contentPath = "/Users/franmcdade/sandbox/data-portal-content/content";
 	// contentPath = "/Users/dave/projects/data-portal-content/content";
-	metadataSchemaDocsPath = "../hca-metadata-schema/docs";
-	metadataSchemaJsonPath = "../hca-metadata-schema/json_schema"
+	metadataSchemaDocsPath = '../hca-metadata-schema/docs';
+	metadataSchemaJsonPath = '../hca-metadata-schema/json_schema';
+	hcaGithubHealthCheckDocsPath = '../humancellatlas.github.io';
 }
 
 let gtmId = process.env.GATSBY_GTM_ID;
@@ -49,14 +51,21 @@ module.exports = {
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				path: contentPath,
-				name: "markdown-pages",
+				name: 'markdown-pages',
 			}
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				path: metadataSchemaDocsPath,
-				name: "metadata-markdown-pages",
+				name: 'metadata-markdown-pages',
+			}
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: hcaGithubHealthCheckDocsPath,
+				name: 'health-check-markdown-pages',
 			}
 		},
 		`gatsby-transformer-json-schema`,
@@ -64,13 +73,21 @@ module.exports = {
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				path: metadataSchemaJsonPath,
-				name: "json-schema",
+				name: 'json-schema',
+			},
+		},
+		`gatsby-transformer-json-health-check`,
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: hcaGithubHealthCheckDocsPath,
+				name: 'json-io',
 			},
 		},
 		{
 			resolve: `gatsby-plugin-favicon`,
 			options: {
-				logo: "./images/favicon/favicon.png",
+				logo: './images/favicon/favicon.png',
 
 				// WebApp Manifest Configuration
 				appName: 'Gatsby site',
@@ -117,9 +134,9 @@ module.exports = {
 				plugins: [
 					`gatsby-remark-autolink-headers`,
 					{
-						resolve: "gatsby-remark-copy-linked-files",
+						resolve: `gatsby-remark-copy-linked-files`,
 						options: {
-							// dont copy linked markdown files but do the normal skipping of images so they can be handled by gatsby-remark-images
+							// don't copy linked markdown files but do the normal skipping of images so they can be handled by gatsby-remark-images
 							ignoreFileExtensions: ['png', 'jpg', 'jpeg', 'bmp', 'tiff', 'md'],
 						}
 					},
@@ -133,10 +150,10 @@ module.exports = {
 						}
 					},
 					{
-						resolve: "gatsby-remark-external-links",
+						resolve: `gatsby-remark-external-links`,
 						options: {
-							target: "_blank",
-							rel: "nofollow"
+							target: '_blank',
+							rel: 'nofollow'
 						}
 					},
 					{

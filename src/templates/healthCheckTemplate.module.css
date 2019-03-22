@@ -1,0 +1,42 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal health check template component.
+ */
+
+/* Content */
+.hcaContent {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	margin: 36px 0;
+}
+
+/* Content */
+.hcaContent .healthCheckContent {
+	margin-right: 0;
+	width: 100%;
+}
+
+/* Required fields - class fontsize-xxs */
+.hcaContent .healthCheckContent p.xxs {
+	margin: -8px 0 32px;
+}
+
+/**
+ * Medium
+ */
+@media screen and (min-width: 768px) {
+
+	/* Content */
+	.hcaContent {
+		flex-direction: row;
+	}
+
+	/* Content */
+	.hcaContent .healthCheckContent {
+		margin-right: 14px;
+		max-width: 640px;
+	}
+}
