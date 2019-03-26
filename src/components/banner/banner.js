@@ -11,6 +11,7 @@ import React from 'react';
 // App dependencies
 import Environment from './environment'
 import Privacy from './privacy'
+import SystemStatus from './systemStatus'
 
 // Styles
 import compStyles from './banner.module.css'
@@ -19,19 +20,12 @@ const classNames = require('classnames');
 
 class Banner extends React.Component {
 
-	getBannerClassName = (bannerType) => {
-
-		if (bannerType === 'environment') {
+	getBannerClassName = (bannerPos) => {
 
 			return classNames({
 				[compStyles.banner]: true,
-				[compStyles.environment]: true
+				[compStyles.top]: bannerPos === 'top',
 			});
-		}
-
-		return classNames({
-			[compStyles.banner]: true
-		});
 	};
 
 	isTestEnvironment = () => {
@@ -44,11 +38,12 @@ class Banner extends React.Component {
 		let testMessage = 'This is a test environment and periodically may be unavailable and/or may contain test data.',
 			prodMessage = 'This is a beta test environment and periodically features, content, or data may change or be unavailable.';
 		return (
-			<div className={this.getBannerClassName(this.props.type)}>
-				{this.props.type === 'environment' ? this.isTestEnvironment() ?
+			<div className={this.getBannerClassName(this.props.position)}>
+				{this.props.position === 'top' ? this.props.healthy === false ? <SystemStatus/> : null : null}
+				{this.props.position === 'top' ? this.isTestEnvironment() ?
 					<Environment cookieName='environmentAccepted' message={testMessage}/> :
 					<Environment cookieName='prodEnvironmentAccepted' message={prodMessage}/> : null}
-				{this.props.type === 'privacy' ? <Privacy cookieName='privacyAccepted'/> : null}
+				{this.props.position === 'bottom' ? <Privacy cookieName='privacyAccepted'/> : null}
 			</div>
 		);
 	}

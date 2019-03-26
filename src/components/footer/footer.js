@@ -29,6 +29,7 @@ const Footer = () => (
 				<Link to='/help' className={classNames(fontStyles.s, fontStyles.bgDark)}>Help</Link>
 				<Link to='/privacy' className={classNames(fontStyles.s, fontStyles.bgDark)}>Privacy</Link>
 				<Link to='/contact' className={classNames(fontStyles.s, fontStyles.bgDark)}>Contact</Link>
+				<Link to='/system-status' className={classNames(fontStyles.s, fontStyles.bgDark)}>System Status</Link>
 			</div>
 		</div>
 	</div>

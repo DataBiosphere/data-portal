@@ -100,8 +100,7 @@ class IndexPage extends React.Component {
 
 	render() {
 		return (
-			<Layout>
-				{this.state.healthy ? <div>yep</div> :<div>nah</div> }
+			<Layout healthy={this.state.healthy}>
 				<div className={compStyles.homepage}>
 					<div className={compStyles.jumbotron}>
 						<div className={compStyles.sectionWrapper}>
