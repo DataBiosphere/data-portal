@@ -19,9 +19,20 @@
 	width: 100%;
 }
 
-/* Required fields - class fontsize-xxs */
-.hcaContent .healthCheckContent p.xxs {
-	margin: -8px 0 32px;
+.system .label, .system .systemStatus {
+	display: flex;
+	flex: 1;
+	margin: 0;
+}
+
+.system span {
+	display: inline-flex;
+	flex: 1;
+	padding: 4px 0;
+}
+
+.system span:first-of-type {
+	max-width: 200px;
 }
 
 /**
@@ -34,9 +45,26 @@
 		flex-direction: row;
 	}
 
+	/* Content - when there is no navigation */
+	.noNav .healthCheckContent {
+		margin-left: 176px;
+	}
+
 	/* Content */
 	.hcaContent .healthCheckContent {
 		margin-right: 14px;
 		max-width: 640px;
+	}
+}
+
+/**
+ * Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1024px) {
+
+	/* Content - when there is no navigation */
+	.noNav .healthCheckContent {
+		margin-left: 290px;
 	}
 }
