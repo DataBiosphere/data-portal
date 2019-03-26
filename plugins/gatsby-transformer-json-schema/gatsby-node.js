@@ -34,10 +34,13 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 		return
 	}
 
+	// We only care about the metadata JSON content
+	if (node.relativePath.includes('config.json')) {
+		return
+	}
 
 	const content = await loadNodeContent(node);
 	const parsedContent = JSON.parse(content);
-
 
 	const relativeFilePath = createFilePath({
 		node,
@@ -59,6 +62,7 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 	const sections = relativeFilePath.split('/');
 
 	const propertyNames = _.keys(parsedContent.properties);
+
 	const requiredProperties = parsedContent.required || [];
 
 	const properties = propertyNames.map((name) => {

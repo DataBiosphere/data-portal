@@ -81,7 +81,7 @@ module.exports = {
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				path: hcaGithubHealthCheckDocsPath,
-				name: 'json-io',
+				name: 'json-health-check',
 			},
 		},
 		{
