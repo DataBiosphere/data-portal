@@ -49,11 +49,11 @@ class Layout extends React.Component {
 				</Helmet>
 				<div className={classNames(compStyles.site, {[compStyles.noScroll]: this.state.noScroll})}>
 					<Header onMenuOpen={this.onMenuOpen.bind(this)}/>
-					<Banner type={'environment'}/>
+					<Banner position={'top'} healthy={this.props.healthy}/>
 					<div className={compStyles.content}>
 						{children}
 					</div>
-					<Banner type={'privacy'}/>
+					<Banner position={'bottom'}/>
 					<Footer/>
 				</div>
 			</div>

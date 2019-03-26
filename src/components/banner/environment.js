@@ -55,7 +55,7 @@ class Environment extends React.Component {
 			<div className={compStyles.environment}>
 				<div className={globalStyles.bannerWrapper}>
 					<div>
-						<p className={classNames(fontStyles.l, fontStyles.bgDark, fontStyles.noMargin)}>{this.props.message}</p>
+						<p className={classNames(fontStyles.s, fontStyles.bgDark, fontStyles.noMargin)}>{this.props.message}</p>
 					</div>
 					<div
 						className={classNames(globalStyles.button, globalStyles.bgDark, globalStyles.outline, compStyles.narrow)}

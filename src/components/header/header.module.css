@@ -166,6 +166,11 @@ a.logo, a.logo img {
 		margin: 0;
 	}
 
+	/* Nav links hover state */
+	.linkTo:hover {
+		color: var(--black);
+	}
+
 	/* Hide menu */
 	.menuDropDown, .menuDropDown::before {
 		display: none;

@@ -12,8 +12,8 @@
 	z-index: 50;
 }
 
-/* Environment banner */
-.banner.environment {
+/* Banner positioned top */
+.banner.top {
 	bottom: unset;
 	top: 0;
 }

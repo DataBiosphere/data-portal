@@ -1,0 +1,40 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * HCA Data Portal system status component.
+ */
+
+// Core dependencies
+import Cookies from 'js-cookie';
+import Link from 'gatsby-link';
+import React from 'react';
+
+// Styles
+import compStyles from './systemStatus.module.css';
+import fontStyles from '../../styles/fontsize.module.css';
+import globalStyles from '../../styles/global.module.css';
+
+let classNames = require('classnames');
+
+class SystemStatus extends React.Component {
+
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			<div className={compStyles.systemStatus}>
+				<div className={globalStyles.bannerWrapper}>
+					<div>
+						<p className={classNames(fontStyles.s, fontStyles.bgDark, fontStyles.noMargin)}>One or more of the systems composing the HCA DCP is currently unavailable.</p>
+						<p className={classNames(fontStyles.s, fontStyles.bgDark, fontStyles.noMargin)}>Full system status is available <Link to='/system-status'>here</Link>.</p>
+					</div>
+				</div>
+			</div>
+		);
+	}
+}
+
+export default SystemStatus;
