@@ -26,10 +26,13 @@ class SystemStatus extends React.Component {
 	render() {
 		return (
 			<div className={compStyles.systemStatus}>
-				<div className={globalStyles.bannerWrapper}>
+				<div className={classNames(globalStyles.bannerWrapper, compStyles.systemStatusWrapper)}>
+					<i className={classNames('material-icons', fontStyles.bgDark)}>warning</i>
 					<div>
-						<p className={classNames(fontStyles.s, fontStyles.bgDark, fontStyles.noMargin)}>One or more of the systems composing the HCA DCP is currently unavailable.</p>
-						<p className={classNames(fontStyles.s, fontStyles.bgDark, fontStyles.noMargin)}>Full system status is available <Link to='/system-status'>here</Link>.</p>
+						<p className={classNames(fontStyles.s, fontStyles.bgDark, fontStyles.noMargin)}>One or more
+							of the systems composing the HCA DCP is currently unavailable. Please try
+							again later, or monitor the full system status <Link to='/system-status'>here</Link>.
+						</p>
 					</div>
 				</div>
 			</div>

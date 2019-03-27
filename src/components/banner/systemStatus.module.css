@@ -6,12 +6,24 @@
  */
 @import '../../styles/vars.module.css';
 
-/* Environment */
+/* System status */
 .systemStatus {
 	background-color: var(--black);
 	padding: 14px 0;
 }
 
+.systemStatusWrapper {
+	align-items: flex-start;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+/* Warn icon - hide */
+.systemStatus i {
+	display: none;
+}
+
+/* Link */
 .systemStatus a {
 	color: inherit;
 	text-decoration: underline;
@@ -20,12 +32,15 @@
 /**
  * Small Tablet -
  */
-@media screen and (max-width: 960px) {
+@media screen and (min-width: 960px) {
 
-	/* Button - environment component - class narrow */
-	.systemStatus .narrow {
-		height: unset !important;
-		margin: 8px 0 0 !important;
-		padding: 2px 12px !important;
+	/* Banner Text */
+	.systemStatusWrapper > div {
+	margin-left: 16px;
+	}
+
+	/* Warn icon - show */
+	.systemStatus i {
+		display: block;
 	}
 }
