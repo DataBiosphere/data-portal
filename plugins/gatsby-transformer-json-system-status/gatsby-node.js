@@ -33,7 +33,7 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 		return
 	}
 
-	// We only care about the health check JSON content
+	// We only care about the system status JSON content
 	if (!node.relativePath.includes('config.json')) {
 		return
 	}
@@ -48,15 +48,15 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 		basePath: ''
 	});
 
-	const healthCheck = {
+	const systemStatus = {
 		systems: systems,
 		relativeFilePath: relativeFilePath,
 	};
 
 	transformObject(
-		healthCheck,
+		systemStatus,
 		`${node.id}  >>> JSON`,
-		'HealthCheck');
+		'SystemStatus');
 
 
 }

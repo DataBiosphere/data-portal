@@ -6,7 +6,6 @@
  */
 
 // Core dependencies
-import Cookies from 'js-cookie';
 import Link from 'gatsby-link';
 import React from 'react';
 

@@ -11,7 +11,7 @@
 let contentPath = `${__dirname}/node_modules/data-portal-content/content`;
 let metadataSchemaDocsPath = `${__dirname}/_metadata-schema/docs`;
 let metadataSchemaJsonPath = `${__dirname}/_metadata-schema/json_schema`;
-let hcaGithubHealthCheckDocsPath = `${__dirname}/humancellatlas.github.io`;
+let hcaGithubSystemStatusDocsPath = `${__dirname}/humancellatlas.github.io`;
 
 if (process.env.GATSBY_DEV_ENV == "LOCAL") {
 	console.log("LAUNCHING USING LOCAL CONFIG");
@@ -20,7 +20,7 @@ if (process.env.GATSBY_DEV_ENV == "LOCAL") {
 	// contentPath = "/Users/dave/projects/data-portal-content/content";
 	metadataSchemaDocsPath = '../hca-metadata-schema/docs';
 	metadataSchemaJsonPath = '../hca-metadata-schema/json_schema';
-	hcaGithubHealthCheckDocsPath = '../humancellatlas.github.io';
+	hcaGithubSystemStatusDocsPath = '../humancellatlas.github.io';
 }
 
 let gtmId = process.env.GATSBY_GTM_ID;
@@ -64,8 +64,8 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				path: hcaGithubHealthCheckDocsPath,
-				name: 'health-check-markdown-pages',
+				path: hcaGithubSystemStatusDocsPath,
+				name: 'system-status-markdown-pages',
 			}
 		},
 		`gatsby-transformer-json-schema`,
@@ -76,12 +76,12 @@ module.exports = {
 				name: 'json-schema',
 			},
 		},
-		`gatsby-transformer-json-health-check`,
+		`gatsby-transformer-json-system-status`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				path: hcaGithubHealthCheckDocsPath,
-				name: 'json-health-check',
+				path: hcaGithubSystemStatusDocsPath,
+				name: 'json-system-status',
 			},
 		},
 		{
