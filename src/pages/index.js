@@ -56,14 +56,15 @@ class IndexPage extends React.Component {
 	 */
 	componentDidMount() {
 
-		SystemService.healthCheck()
-			.then(this.fetchData)
-			.catch(() => {
-				
-				this.setState({
-					healthy: false
-				})
-			});
+		//TODO comment back in when we get the status enpoints urls and CORS is enabled on them.
+		// SystemService.healthCheck()
+		// 	.then(this.fetchData)
+		// 	.catch(() => {
+		//
+		// 		this.setState({
+		// 			healthy: false
+		// 		})
+		// 	});
 	}
 
 	/**
