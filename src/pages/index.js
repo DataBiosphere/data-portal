@@ -65,6 +65,20 @@ class IndexPage extends React.Component {
 		// 			healthy: false
 		// 		})
 		// 	});
+
+        const fetchFileSummary = FileSummaryService.fetchFileSummary();
+        const fetchTermFacets = FileSummaryService.fetchTermFacets();
+        Promise.all([fetchFileSummary, fetchTermFacets])
+            .then(([fileSummary, termFacets]) => {
+
+                this.setState({
+                    ...fileSummary,
+                    termFacets
+                });
+            })
+            .catch((e) => {
+                navigate("/error");
+            });
 	}
 
 	/**
