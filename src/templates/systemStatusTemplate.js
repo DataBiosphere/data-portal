@@ -43,12 +43,12 @@ export default function Template({data}) {
 
 	return (
 		<Layout>
-			<Section sectionTitle={`System Status  - ${currentEnv.toUpperCase()}`}/>
+			<Section sectionTitle={'System Status'}/>
 			<TabNav homeTab={false} noTab={true}/>
 			<div className={globalStyles.wrapper}>
 				<div className={classNames(compStyles.hcaContent, compStyles.noNav)}>
 					<div className={compStyles.systemStatusContent}>
-						<h2>System Status</h2>
+						<h2>Environment - {currentEnv.toUpperCase()}</h2>
 						<div className={compStyles.system}>
 							<div className={classNames(fontStyles.m, compStyles.label)}>
 								<span>System Name</span>
