@@ -2,7 +2,7 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * Style definitions specific to the HCA Data Portal health check template component.
+ * Style definitions specific to the HCA Data Portal system status template component.
  */
 
 /* Content */
@@ -14,12 +14,13 @@
 }
 
 /* Content */
-.hcaContent .healthCheckContent {
+.hcaContent .systemStatusContent {
 	margin-right: 0;
 	width: 100%;
 }
 
 .system .label, .system .systemStatus {
+	align-items: flex-start;
 	display: flex;
 	flex: 1;
 	margin: 0;
@@ -28,11 +29,15 @@
 .system span {
 	display: inline-flex;
 	flex: 1;
-	padding: 4px 0;
+	padding: 6px 0;
 }
 
 .system span:first-of-type {
+	display: block;
 	max-width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 /**
@@ -46,12 +51,12 @@
 	}
 
 	/* Content - when there is no navigation */
-	.noNav .healthCheckContent {
+	.noNav .systemStatusContent {
 		margin-left: 176px;
 	}
 
 	/* Content */
-	.hcaContent .healthCheckContent {
+	.hcaContent .systemStatusContent {
 		margin-right: 14px;
 		max-width: 640px;
 	}
@@ -64,7 +69,7 @@
 @media screen and (min-width: 1024px) {
 
 	/* Content - when there is no navigation */
-	.noNav .healthCheckContent {
+	.noNav .systemStatusContent {
 		margin-left: 290px;
 	}
 }

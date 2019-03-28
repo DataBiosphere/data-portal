@@ -13,7 +13,7 @@ const siteMap = require('./src/siteMap');
 // find our template files
 const contentTemplate = path.resolve(`src/templates/contentTemplate.js`);
 const metadataTemplate = path.resolve(`src/templates/metadataTemplate.js`);
-const healthCheckTemplate = path.resolve(`src/templates/healthCheckTemplate.js`);
+const systemStatusTemplate = path.resolve(`src/templates/systemStatusTemplate.js`);
 
 
 function getTemplate(templateName) {
@@ -23,8 +23,8 @@ function getTemplate(templateName) {
 		return metadataTemplate;
 	}
 
-	if (templateName === 'healthCheckTemplate') {
-		return healthCheckTemplate;
+	if (templateName === 'systemStatusTemplate') {
+		return systemStatusTemplate;
 	}
 
 	// if not return the default content template.

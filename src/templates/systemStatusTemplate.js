@@ -2,7 +2,7 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * HCA Data Portal environment health check template component.
+ * HCA Data Portal environment system status template component.
  */
 
 // Core dependencies
@@ -15,7 +15,7 @@ import Section from '../components/section/section';
 import TabNav from '../components/tabNav/tabNav';
 
 // Styles
-import compStyles from './healthCheckTemplate.module.css';
+import compStyles from './systemStatusTemplate.module.css';
 import fontStyles from '../styles/fontsize.module.css';
 import globalStyles from '../styles/global.module.css';
 
@@ -24,7 +24,7 @@ let classNames = require('classnames');
 // the data prop will be injected by the GraphQL query below.
 export default function Template({data}) {
 
-	const systems = data.allHealthCheck.edges.map(n => n.node)[0].systems;
+	const systems = data.allSystemStatus.edges.map(n => n.node)[0].systems;
 	let currentEnv = process.env.GATSBY_EXPLORE_URL.split('//')[1].split('.')[0];
 
 	const systemEnv = systems.filter(system => {
@@ -35,10 +35,10 @@ export default function Template({data}) {
 		return system.environments.length;
 	});
 
-	const getMetrics = (healthCheckID) => {
+	const getMetrics = (healthCheckID, type) => {
 
-		// Return the status badge
-		return `<img src="https://status.dev.data.humancellatlas.org/service/${healthCheckID}.svg"/>`;
+		// Returns svg badge
+		return `<img src="https://status.dev.data.humancellatlas.org/${type}/${healthCheckID}.svg"/>`;
 	};
 
 	return (
@@ -47,20 +47,24 @@ export default function Template({data}) {
 			<TabNav homeTab={false} noTab={true}/>
 			<div className={globalStyles.wrapper}>
 				<div className={classNames(compStyles.hcaContent, compStyles.noNav)}>
-					<div className={compStyles.healthCheckContent}>
+					<div className={compStyles.systemStatusContent}>
 						<h2>System Status</h2>
 						<div className={compStyles.system}>
 							<div className={classNames(fontStyles.m, compStyles.label)}>
 								<span>System Name</span>
 								<span>Status</span>
+								<span>Availability</span>
 							</div>
 							{systemEnv.map((s, i) =>
 								<div key={i}>
-							{s.environments.map((e, j) =>
-								<div key={j} className={classNames(fontStyles.xs, compStyles.systemStatus)}>
-										<span>{s.system_name}</span>
-										<span dangerouslySetInnerHTML={{__html: getMetrics(e.health_check_id)}}/>
-								</div>)}
+									{s.environments.map((e, j) =>
+										<div key={j} className={classNames(fontStyles.xs, compStyles.systemStatus)}>
+											<span>{s.system_name}</span>
+											<span
+												dangerouslySetInnerHTML={{__html: getMetrics(e.health_check_id, "service")}}/>
+											<span
+												dangerouslySetInnerHTML={{__html: getMetrics(e.health_check_id, "availability")}}/>
+										</div>)}
 								</div>
 							)}
 						</div>
@@ -80,7 +84,7 @@ export const pageQuery = graphql`
       id
       html
       }
-  allHealthCheck {
+  allSystemStatus {
     edges {
       node {
         relativeFilePath
