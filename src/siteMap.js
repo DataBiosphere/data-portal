@@ -36,7 +36,7 @@ const siteMap =
 						},
                         {
                             name: "Data Use Agreement",
-                            key: "/about/data-use-agreement",
+                            key: "/about/platform/data-use-agreement",
                             path: "/about/data-use-agreement"
                         }
 
