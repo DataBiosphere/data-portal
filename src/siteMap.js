@@ -182,6 +182,41 @@ const siteMap =
 			]
 		},
 		{
+			name: "APIs",
+			key: "apis",
+			children: [
+				{
+					name: "API Documentation",
+					key: "api-documentation",
+					children: [
+						{
+							name: "Data Store API",
+							key: "/apis/api-documentation/data-store-consumer-api",
+							path: "/apis"
+						},
+						{
+							name: "Matrix Service API",
+							key: "/apis/api-documentation/matrix-service-api"
+						},
+						{
+							name: "Ingest Data Brokers",
+							key: "/apis/api-documentation/ingest-broker-development-guide"
+						},
+					]
+				},
+				// {
+				// 	name: "Building DCP Components",
+				// 	key: "development-guides",
+				// 	children: [
+						// {
+						// 	name: "Analysis Applications",
+						// 	key: "/apis/development-guides/analysis-applications"
+						// },
+					// ]
+				// },
+			]
+		},
+		{
 			name: "Contact",
 			key: "contact",
 			children: [
@@ -279,127 +314,34 @@ const siteMap =
 			]
 		},
 		{
-			name: "Docs",
-			key: "docs",
-			children: [
-                {
-                    name: "API Documentation",
-                    key: "api-documentation",
-                    children: [
-                        {
-                            name: "Data Store API",
-                            key: "/docs/api-documentation/data-store-consumer-api",
-                            path: "/docs"
-                        },
-                        {
-                            name: "Matrix Service API",
-                            key: "/docs/api-documentation/matrix-service-api"
-                        }
-                    ]
-                },
-				{
-					name: "Building DCP Components",
-					key: "development-guides",
-					children: [
-						{
-							name: "Analysis Applications",
-							key: "/docs/development-guides/analysis-applications"
-						},
-						{
-							name: "Ingest Data Brokers",
-							key: "/docs/development-guides/ingest-broker-development-guide"
-						},
-						{
-							name: "Processing Pipelines",
-							key: "/docs/development-guides/pipeline-processing-development-guides/overview-pipeline-processing-development-guides",
-							children: [
-								{
-									name: "Pipeline Best Practices",
-									key: "/docs/development-guides/pipeline-processing-development-guides/workflow-best-practices"
-								},
-								{
-									name: "Building Pipelines",
-									key: "/docs/development-guides/pipeline-processing-development-guides/pipeline-development-guide"
-								},
-								{
-									name: "Testing Pipelines",
-									key: "/docs/development-guides/pipeline-processing-development-guides/testing-pipelines"
-								},
-								{
-									name: "Portability Service Environments",
-									key: "/docs/development-guides/pipeline-processing-development-guides/adding-an-environment-to-the-portability-service"
-								}
-							]
-						}
-					]
-				},
-                {
-                    name: "Reusing DCP Components",
-                    key: "placeholder",
-                    children: [
-                        {
-                            name: "First Doc",
-                            key: "/docs/placeholder/placeholder-doc"
-                        }
-                    ]
-                },
-			]
-		},
-		{
-			name: "Intro",
-			key: "intro",
+			name: "Getting Started",
+			key: "getting-started",
 			children:
 				[
 					{
-						name: "Introduction",
+						name: "",
 						key: "userguides",
 						children: [
 							{
 								name: "Accessing HCA Data and Metadata",
-								key: "/intro/userguides/quick-start-guide",
-								path: "/intro"
+								key: "/getting-started/userguides/quick-start-guide",
+								path: "/getting-started"
 							},
 							{
 								name: "Installing the HCA CLI",
-								key: "/intro/userguides/installing-the-hca-cli"
+								key: "/getting-started/userguides/installing-the-hca-cli"
 							},
 							{
-								name: "Data Processing Pipelines",
-								key: "/intro/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides",
-								children: [
-									{
-										name: "Smart-seq2 Workflow",
-										key: "/intro/userguides/data-processing-pipelines/smart-seq2-workflow"
-									},
-									{
-										name: "Optimus Prime Workflow",
-										key: "/learn/userguides/data-processing-pipelines/optimus-prime-workflow"
-									},
-									{
-										name: "File Formats",
-										key: "/intro/userguides/data-processing-pipelines/file-formats"
-									},
-									{
-										name: "QC Metrics",
-										key: "/intro/userguides/data-processing-pipelines/qc-mertics"
-									},
-									{
-										name: "Pipeline Portability",
-										key: "/intro/userguides/data-processing-pipelines/pipeline-portability"
-									},
-									{
-										name: "Community Pipeline: 3' scRNA-seq",
-										key: "/intro/userguides/data-processing-pipelines/community-pipeline-3-prime-scrna-seq"
-									}
-								]
+								name: "Data Consumer Vignettes",
+								key: "/getting-started/userguides/consumer-vignettes"
 							},
 							{
 								name: "Data Lifecycle",
-								key: "/intro/userguides/data-lifecycle",
+								key: "/getting-started/userguides/data-lifecycle",
 							},
 							{
 								name: "Data Use Agreement",
-								key: "/intro/userguides/data-use-agreement",
+								key: "/getting-started/userguides/data-use-agreement",
 							}
 						]
 					}
@@ -476,6 +418,77 @@ const siteMap =
 			]
 		},
 		{
+			name: "Pipelines",
+			key: "pipelines",
+			children: [
+				{
+					name: "HCA Pipelines",
+					key: "hca-pipelines",
+					children: [
+						{
+							name: "Data Processing Pipelines",
+							key: "/pipelines/hca-pipelines/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides",
+							path: "/pipelines",
+							children: [
+								{
+									name: "Smart-seq2 Workflow",
+									key: "/pipelines/hca-pipelines/data-processing-pipelines/smart-seq2-workflow"
+								},
+								{
+									name: "Optimus Prime Workflow",
+									key: "/pipelines/hca-pipelines/data-processing-pipelines/optimus-prime-workflow"
+								},
+								{
+									name: "File Formats",
+									key: "/pipelines/hca-pipelines/data-processing-pipelines/file-formats"
+								},
+								{
+									name: "QC Metrics",
+									key: "/pipelines/hca-pipelines/data-processing-pipelines/qc-mertics"
+								},
+								{
+									name: "Pipeline Portability",
+									key: "/pipelines/hca-pipelines/data-processing-pipelines/pipeline-portability"
+								},
+								{
+									name: "Community Pipeline: 3' scRNA-seq",
+									key: "/pipelines/hca-pipelines/data-processing-pipelines/community-pipeline-3-prime-scrna-seq"
+								}
+							]
+						},
+					]
+				},
+				{
+					name: "Community Pipelines",
+					key: "community-pipelines",
+					children: [
+						{
+							name: "Processing Pipelines",
+							key: "/pipelines/community-pipelines/processing-pipelines/overview-pipeline-processing-development-guides",
+							children: [
+								{
+									name: "Pipeline Best Practices",
+									key: "/pipelines/community-pipelines/processing-pipelines/workflow-best-practices"
+								},
+								{
+									name: "Building Pipelines",
+									key: "/pipelines/community-pipelines/processing-pipelines/pipeline-development-guide"
+								},
+								{
+									name: "Testing Pipelines",
+									key: "/pipelines/community-pipelines/processing-pipelines/testing-pipelines"
+								},
+								{
+									name: "Portability Service Environments",
+									key: "/pipelines/community-pipelines/processing-pipelines/adding-an-environment-to-the-portability-service"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			name: "Privacy",
 			key: "privacy",
 			children: [
@@ -487,23 +500,6 @@ const siteMap =
 							name: "",
 							key: "/privacy/privacy/privacy",
 							path: "/privacy"
-						}
-					]
-				}
-			]
-		},
-		{
-			name: "Vignettes",
-			key: "vignettes",
-			children: [
-				{
-					name: "",
-					key: "vignettes",
-					children: [
-						{
-							name: "Vignettes",
-							key: "/vignettes/vignettes/vignettes",
-							path: "/vignettes"
 						}
 					]
 				}

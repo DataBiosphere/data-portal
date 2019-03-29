@@ -128,7 +128,8 @@
 }
 
 /**
- * Small Tablet +
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 960px) {
 
@@ -144,6 +145,7 @@
 
 /**
  * Large +
+ * HCA custom breakpoint
  */
 @media screen and (min-width: 1200px) {
 
