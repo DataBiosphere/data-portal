@@ -72,7 +72,7 @@ class Header extends React.Component {
 							</a>
 							<Link activeClassName={compStyles.active} to='/getting-started'
 								  onClick={this.toggleMenu}>
-								<span className={classNames(fontStyles.xs, compStyles.xs)}>Getting Started</span>
+								<span className={classNames(fontStyles.xs, compStyles.xs)}>Guides</span>
 								<span
 									className={classNames(fontStyles.xxs, compStyles.xxs)}>Find user guides and how-to’s here</span>
 							</Link>
@@ -109,7 +109,7 @@ class Header extends React.Component {
 						<div id='linkGettingStarted' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
 							<Link activeClassName={compStyles.active}
 								  to='/getting-started' onMouseEnter={(e) => this.setActiveLink(1)}>
-								<span className={compStyles.linkTo}>Getting Started</span>
+								<span className={compStyles.linkTo}>Guides</span>
 							</Link>
 						</div>
 						<div id='linkMetadata' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>

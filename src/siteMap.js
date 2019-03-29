@@ -33,7 +33,12 @@ const siteMap =
 							name: "Attributions",
 							key: "/about/platform/attributions",
 							path: "/about/attributions",
-						}
+						},
+                        ,
+                        {
+                            name: "Data Use Agreement",
+                            key: "/about/data-use-agreement",
+                        }
 
 					]
 				}
@@ -199,7 +204,7 @@ const siteMap =
 							key: "/apis/api-documentation/matrix-service-api"
 						},
 						{
-							name: "Ingest Data Brokers",
+							name: "Data Ingest API",
 							key: "/apis/api-documentation/ingest-broker-development-guide"
 						},
 					]
@@ -314,7 +319,7 @@ const siteMap =
 			]
 		},
 		{
-			name: "Getting Started",
+			name: "Guides",
 			key: "getting-started",
 			children:
 				[
@@ -335,14 +340,10 @@ const siteMap =
 								name: "Data Consumer Vignettes",
 								key: "/getting-started/userguides/consumer-vignettes"
 							},
-							{
-								name: "Data Lifecycle",
-								key: "/getting-started/userguides/data-lifecycle",
-							},
-							{
-								name: "Data Use Agreement",
-								key: "/getting-started/userguides/data-use-agreement",
-							}
+                            {
+                                name: "HCA Data Lifecycle",
+                                key: "/getting-started/userguides/data-lifecycle",
+                            },
 						]
 					}
 				]
