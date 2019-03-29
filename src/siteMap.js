@@ -22,22 +22,22 @@ const siteMap =
 						{
 							name: "About the DCP",
 							key: "/about/platform/dcp",
-							path: "/about",
+							path: "/about"
 						},
 						{
 							name: "About the HCA",
 							key: "/about/platform/hca",
-							path: "/about/hca",
+							path: "/about/hca"
 						},
 						{
 							name: "Attributions",
 							key: "/about/platform/attributions",
-							path: "/about/attributions",
+							path: "/about/attributions"
 						},
-                        ,
                         {
                             name: "Data Use Agreement",
                             key: "/about/data-use-agreement",
+                            path: "/about/data-use-agreement"
                         }
 
 					]
