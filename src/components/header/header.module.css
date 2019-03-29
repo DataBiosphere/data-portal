@@ -122,7 +122,7 @@ a.logo, a.logo img {
 }
 
 /**
- * Small +
+ * Large Tablet +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 840px) {
@@ -138,7 +138,7 @@ a.logo, a.logo img {
 
 	.links:not(.small) {
 		display: flex;
-		left: 180px;
+		left: 182px; /* 16px wrapper padding, plus 176px menu width, minus 10px padding on first link */
 		position: absolute;
 	}
 
@@ -157,7 +157,7 @@ a.logo, a.logo img {
 		font-size: 14px;
 		font-weight: 500;
 		line-height: 60px;
-		padding: 0 12px;
+		padding: 0 10px;
 		margin: 0;
 		white-space: nowrap;
 	}
@@ -183,10 +183,22 @@ a.logo, a.logo img {
 	a.logo, a.logo img {
 		height: 40px;
 	}
+	/* Links */
+	.links:not(.small) {
+		left: 294px; /* 16px wrapper padding, plus 290px menu width, minus 12px padding on first link */
+	}
+
+	/* Nav links */
+	.linkTo {
+		padding: 0 12px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
 
 	/* Links */
 	.links:not(.small) {
-		left: 310px; /* 290px (equivalent to navigation) + 30px padding */
+		left: 308px; /* 30px wrapper padding, plus 290px menu width, minus 12px padding on first link */
 	}
 }
 

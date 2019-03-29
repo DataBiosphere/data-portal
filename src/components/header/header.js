@@ -70,9 +70,9 @@ class Header extends React.Component {
 								<span
 									className={classNames(fontStyles.xxs, compStyles.xxs)}>Search for data in the HCA</span>
 							</a>
-							<Link activeClassName={compStyles.active} to='/intro'
+							<Link activeClassName={compStyles.active} to='/getting-started'
 								  onClick={this.toggleMenu}>
-								<span className={classNames(fontStyles.xs, compStyles.xs)}>Intro</span>
+								<span className={classNames(fontStyles.xs, compStyles.xs)}>Getting Started</span>
 								<span
 									className={classNames(fontStyles.xxs, compStyles.xxs)}>Find user guides and how-to’s here</span>
 							</Link>
@@ -81,10 +81,10 @@ class Header extends React.Component {
 								<span className={classNames(fontStyles.xs, compStyles.xs)}>Metadata</span>
 								<span className={classNames(fontStyles.xxs, compStyles.xxs)}>Fields used to describe datasets in the Human Cell Atlas</span>
 							</Link>
-							<Link activeClassName={compStyles.active} to='/vignettes'
+							<Link activeClassName={compStyles.active} to='/pipelines'
 								  onClick={this.toggleMenu}>
-								<span className={classNames(fontStyles.xs, compStyles.xs)}>Vignettes</span>
-								<span className={classNames(fontStyles.xxs, compStyles.xxs)}>Consumer vignettes</span>
+								<span className={classNames(fontStyles.xs, compStyles.xs)}>Pipelines</span>
+								<span className={classNames(fontStyles.xxs, compStyles.xxs)}>Pipelines</span>
 							</Link>
 							<Link activeClassName={compStyles.active} to='/analyze'
 								  onClick={this.toggleMenu}>
@@ -96,20 +96,20 @@ class Header extends React.Component {
 								<span className={classNames(fontStyles.xs, compStyles.xs)}>Contributing</span>
 								<span className={classNames(fontStyles.xxs, compStyles.xxs)}>Submit your data to the HCA</span>
 							</Link>
-							<Link activeClassName={compStyles.active} to='/docs'
+							<Link activeClassName={compStyles.active} to='/apis'
 								  onClick={this.toggleMenu}>
-								<span className={classNames(fontStyles.xs, compStyles.xs)}>Docs</span>
-								<span className={classNames(fontStyles.xxs, compStyles.xxs)}>Docs</span>
+								<span className={classNames(fontStyles.xs, compStyles.xs)}>APIs</span>
+								<span className={classNames(fontStyles.xxs, compStyles.xxs)}>APIs</span>
 							</Link>
 						</div> : null}
 					<div className={classNames(compStyles.links)} ref={(div) => this.links = div}>
 						<a href={process.env.GATSBY_EXPLORE_URL}>
 							<span className={compStyles.linkTo}>Data</span>
 						</a>
-						<div id='linkIntro' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
+						<div id='linkGettingStarted' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
 							<Link activeClassName={compStyles.active}
-								  to='/intro' onMouseEnter={(e) => this.setActiveLink(1)}>
-								<span className={compStyles.linkTo}>Intro</span>
+								  to='/getting-started' onMouseEnter={(e) => this.setActiveLink(1)}>
+								<span className={compStyles.linkTo}>Getting Started</span>
 							</Link>
 						</div>
 						<div id='linkMetadata' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
@@ -118,10 +118,10 @@ class Header extends React.Component {
 								<span className={compStyles.linkTo}>Metadata</span>
 							</Link>
 						</div>
-						<div id='linkVignettes' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
-							<Link activeClassName={compStyles.active} to='/vignettes'
+						<div id='linkPipelines' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
+							<Link activeClassName={compStyles.active} to='/pipelines'
 								  onMouseEnter={(e) => this.setActiveLink(2)}>
-								<span className={compStyles.linkTo}>Vignettes</span>
+								<span className={compStyles.linkTo}>Pipelines</span>
 							</Link>
 						</div>
 						<div id='linkAnalysis' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
@@ -136,10 +136,10 @@ class Header extends React.Component {
 								<span className={compStyles.linkTo}>Contributing</span>
 							</Link>
 						</div>
-						<div id='linkDocs' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
-							<Link activeClassName={compStyles.active} to='/docs'
+						<div id='linkAPIs' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
+							<Link activeClassName={compStyles.active} to='/apis'
 								  onMouseEnter={(e) => this.setActiveLink(2)}>
-								<span className={compStyles.linkTo}>Docs</span>
+								<span className={compStyles.linkTo}>APIs</span>
 							</Link>
 						</div>
 					</div>
