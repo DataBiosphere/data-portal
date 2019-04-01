@@ -6,7 +6,6 @@
  */
 
 // Core dependencies
-import normalize from 'normalize.css';
 import Helmet from 'react-helmet';
 import React from 'react';
 

@@ -25,9 +25,7 @@ export function healthCheck() {
  */
 function bindHealthCheckResponse(response) {
 
-	if ( response.status === "ok" ) { // TODO update this for DCP response object
-		return response; // TODO map to user friendly
-	}
-	
-	throw Error('Error'); // TODO update with appropriate error value
+	return {
+		healthy: response.status === "ok" 
+	};
 }

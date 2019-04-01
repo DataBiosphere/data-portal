@@ -56,29 +56,8 @@ class IndexPage extends React.Component {
 	 */
 	componentDidMount() {
 
-		//TODO comment back in when we get the status enpoints urls and CORS is enabled on them.
-		// SystemService.healthCheck()
-		// 	.then(this.fetchData)
-		// 	.catch(() => {
-		//
-		// 		this.setState({
-		// 			healthy: false
-		// 		})
-		// 	});
-
-        const fetchFileSummary = FileSummaryService.fetchFileSummary();
-        const fetchTermFacets = FileSummaryService.fetchTermFacets();
-        Promise.all([fetchFileSummary, fetchTermFacets])
-            .then(([fileSummary, termFacets]) => {
-
-                this.setState({
-                    ...fileSummary,
-                    termFacets
-                });
-            })
-            .catch((e) => {
-                navigate("/error");
-            });
+		this.healthCheck();
+		this.fetchData();
 	}
 
 	/**
@@ -99,6 +78,24 @@ class IndexPage extends React.Component {
 			})
 			.catch((e) => {
 				navigate("/error");
+			});
+	};
+
+	/**
+	 * Check system-wide status, if any system is down or health check API call fails, display warning banner.
+	 */
+	healthCheck = () => {
+
+		SystemService.healthCheck()
+			.then((healthCheck) => {
+				this.setState({
+					...healthCheck
+				})
+			})
+			.catch(() => {
+				this.setState({
+					healthy: false
+				})
 			});
 	};
 
