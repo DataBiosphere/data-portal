@@ -23,15 +23,9 @@ class Header extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {showNav: false, tabId: null};
-		this.clearActiveLink = this.clearActiveLink.bind(this);
-		this.setActiveLink = this.setActiveLink.bind(this);
+		this.state = {showNav: false};
 		this.toggleMenu = this.toggleMenu.bind(this);
 	}
-
-	clearActiveLink = () => {
-		this.setState({tabId: null})
-	};
 
 	getHeaderClassName = () => {
 
@@ -47,10 +41,6 @@ class Header extends React.Component {
 			[compStyles.hcaHeader]: true,
 			[compStyles.navBar]: true
 		});
-	};
-
-	setActiveLink = (activeLink) => {
-		this.setState({tabId: activeLink})
 	};
 
 	toggleMenu = () => {
@@ -91,10 +81,11 @@ class Header extends React.Component {
 								<span className={classNames(fontStyles.xs, compStyles.xs)}>Analysis Tools</span>
 								<span className={classNames(fontStyles.xxs, compStyles.xxs)}>Find a list of Apps</span>
 							</Link>
-							<Link activeClassName={compStyles.active} to='/contribute'
+							<Link activeClassName={compStyles.active} to='/contributing'
 								  onClick={this.toggleMenu}>
 								<span className={classNames(fontStyles.xs, compStyles.xs)}>Contributing</span>
-								<span className={classNames(fontStyles.xxs, compStyles.xxs)}>Submit your data to the HCA</span>
+								<span
+									className={classNames(fontStyles.xxs, compStyles.xxs)}>Submit your data to the HCA</span>
 							</Link>
 							<Link activeClassName={compStyles.active} to='/apis'
 								  onClick={this.toggleMenu}>
@@ -106,39 +97,33 @@ class Header extends React.Component {
 						<a href={process.env.GATSBY_EXPLORE_URL}>
 							<span className={compStyles.linkTo}>Data</span>
 						</a>
-						<div id='linkGuides' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
-							<Link activeClassName={compStyles.active}
-								  to='/guides' onMouseEnter={(e) => this.setActiveLink(1)}>
+						<div>
+							<Link activeClassName={compStyles.active} partiallyActive={true} to='/guides'>
 								<span className={compStyles.linkTo}>Guides</span>
 							</Link>
 						</div>
-						<div id='linkMetadata' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
-							<Link activeClassName={compStyles.active}
-								  to='/metadata' onMouseEnter={(e) => this.setActiveLink(0)}>
+						<div>
+							<Link activeClassName={compStyles.active} partiallyActive={true} to='/metadata'>
 								<span className={compStyles.linkTo}>Metadata</span>
 							</Link>
 						</div>
-						<div id='linkPipelines' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
-							<Link activeClassName={compStyles.active} to='/pipelines'
-								  onMouseEnter={(e) => this.setActiveLink(2)}>
+						<div>
+							<Link activeClassName={compStyles.active} partiallyActive={true} to='/pipelines'>
 								<span className={compStyles.linkTo}>Pipelines</span>
 							</Link>
 						</div>
-						<div id='linkAnalysis' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
-							<Link activeClassName={compStyles.active} to='/analyze'
-								  onMouseEnter={(e) => this.setActiveLink(2)}>
+						<div>
+							<Link activeClassName={compStyles.active} partiallyActive={true} to='/analyze'>
 								<span className={compStyles.linkTo}>Analysis Tools</span>
 							</Link>
 						</div>
-						<div id='linkContributing' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
-							<Link activeClassName={compStyles.active} to='/contribute'
-								  onMouseEnter={(e) => this.setActiveLink(2)}>
+						<div>
+							<Link activeClassName={compStyles.active} partiallyActive={true} to='/contributing'>
 								<span className={compStyles.linkTo}>Contributing</span>
 							</Link>
 						</div>
-						<div id='linkAPIs' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
-							<Link activeClassName={compStyles.active} to='/apis'
-								  onMouseEnter={(e) => this.setActiveLink(2)}>
+						<div>
+							<Link activeClassName={compStyles.active} partiallyActive={true} to='/apis'>
 								<span className={compStyles.linkTo}>APIs</span>
 							</Link>
 						</div>

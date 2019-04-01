@@ -58,11 +58,15 @@ a.logo, a.logo img {
 /* Nav links */
 .links a, .links.small a {
 	align-items: flex-start;
-	color: var(--black);
 	display: flex;
 	flex-direction: column;
 	padding: 12px 24px;
 	width: 100%;
+}
+
+/* Nav links - small */
+.links.small a {
+    color: var(--black);
 }
 
 /* Nav links - title */
@@ -85,7 +89,7 @@ a.logo, a.logo img {
 }
 
 /* Nav links - active */
-.links .active, .navBar .active {
+.links .active .linkTo {
 	color: var(--black);
 }
 

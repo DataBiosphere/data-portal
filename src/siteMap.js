@@ -271,38 +271,38 @@ const siteMap =
 		},
 		{
 			name: "Contributing",
-			key: "contribute",
+			key: "contributing",
 			children: [
 				{
 					name: "",
-					key: "overview",
+					key: "data",
 					children: [
 						{
 							name: "Contributing Data",
-							key: "/contribute/overview/overview",
-							path: "/contribute"
+							key: "/contributing/data/contributing-to-hca",
+							path: "/contributing"
 						},
 						{
 							name: "Contributing to the Analysis Tools Registry",
-							key: "/contribute/overview/analysis-tools-registry/contributing-to-the-analysis-tools-registry",
-							path: "/contribute/analysis-tools-registry",
+							key: "/contributing/data/analysis-tools-registry",
+							path: "/contributing/analysis-tools-registry",
 							children: [
 								{
 									name: "Registry Standards",
-									key: "/contribute/overview/analysis-tools-registry/registry-standards",
-									path: "/contribute/registry-standards"
+									key: "/contributing/data/analysis-tools-registry/registry-standards",
+									path: "/contributing/analysis-tools-registry/registry-standards"
 								}
 							]
 						},
 						{
 							name: "Contributing Analysis Pipelines",
-							key: "/contribute/overview/contributing-pipelines/contributing-a-pipeline-to-the-hca-dcp",
-							path: "/contribute/analysis-pipelines"
+							key: "/contributing/data/contributing-a-pipeline-to-the-hca-dcp",
+							path: "/contributing/analysis-pipelines"
 						},
 						{
 							name: "Contributing Vignettes",
-							key: "/contribute/overview/contributing-vignettes/contributing-vignettes",
-							path: "/contribute/contributing-vignettes"
+							key: "/contributing/data/contributing-vignettes",
+							path: "/contributing/contributing-vignettes"
 						},
 					]
 				}
@@ -421,7 +421,7 @@ const siteMap =
 					children: [
 						{
 							name: "Data Processing Pipelines",
-							key: "/pipelines/hca-pipelines/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides",
+							key: "/pipelines/hca-pipelines/data-processing-pipelines/data-processing-pipelines-user-guides",
 							path: "/pipelines",
 							children: [
 								{
@@ -438,7 +438,7 @@ const siteMap =
 								},
 								{
 									name: "QC Metrics",
-									key: "/pipelines/hca-pipelines/data-processing-pipelines/qc-mertics"
+									key: "/pipelines/hca-pipelines/data-processing-pipelines/qc-metrics"
 								},
 								{
 									name: "Pipeline Portability",
