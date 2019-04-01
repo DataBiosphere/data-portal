@@ -70,7 +70,7 @@ class Header extends React.Component {
 								<span
 									className={classNames(fontStyles.xxs, compStyles.xxs)}>Search for data in the HCA</span>
 							</a>
-							<Link activeClassName={compStyles.active} to='/getting-started'
+							<Link activeClassName={compStyles.active} to='/guides'
 								  onClick={this.toggleMenu}>
 								<span className={classNames(fontStyles.xs, compStyles.xs)}>Guides</span>
 								<span
@@ -106,9 +106,9 @@ class Header extends React.Component {
 						<a href={process.env.GATSBY_EXPLORE_URL}>
 							<span className={compStyles.linkTo}>Data</span>
 						</a>
-						<div id='linkGettingStarted' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
+						<div id='linkGuides' onMouseLeave={this.clearActiveLink} onClick={this.clearActiveLink}>
 							<Link activeClassName={compStyles.active}
-								  to='/getting-started' onMouseEnter={(e) => this.setActiveLink(1)}>
+								  to='/guides' onMouseEnter={(e) => this.setActiveLink(1)}>
 								<span className={compStyles.linkTo}>Guides</span>
 							</Link>
 						</div>

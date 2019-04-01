@@ -34,11 +34,11 @@ const siteMap =
 							key: "/about/platform/attributions",
 							path: "/about/attributions"
 						},
-                        {
-                            name: "Data Use Agreement",
-                            key: "/about/platform/data-use-agreement",
-                            path: "/about/data-use-agreement"
-                        }
+						{
+							name: "Data Use Agreement",
+							key: "/about/platform/data-use-agreement",
+							path: "/about/data-use-agreement"
+						}
 
 					]
 				}
@@ -209,16 +209,6 @@ const siteMap =
 						},
 					]
 				},
-				// {
-				// 	name: "Building DCP Components",
-				// 	key: "development-guides",
-				// 	children: [
-						// {
-						// 	name: "Analysis Applications",
-						// 	key: "/apis/development-guides/analysis-applications"
-						// },
-					// ]
-				// },
 			]
 		},
 		{
@@ -320,7 +310,7 @@ const siteMap =
 		},
 		{
 			name: "Guides",
-			key: "getting-started",
+			key: "guides",
 			children:
 				[
 					{
@@ -329,21 +319,24 @@ const siteMap =
 						children: [
 							{
 								name: "Accessing HCA Data and Metadata",
-								key: "/getting-started/userguides/quick-start-guide",
-								path: "/getting-started"
+								key: "/guides/userguides/quick-start-guide",
+								path: "/guides"
 							},
 							{
 								name: "Installing the HCA CLI",
-								key: "/getting-started/userguides/installing-the-hca-cli"
+								key: "/guides/userguides/installing-the-hca-cli",
+								path: "/guides/installing-the-hca-cli"
 							},
 							{
 								name: "Data Consumer Vignettes",
-								key: "/getting-started/userguides/consumer-vignettes"
+								key: "/guides/userguides/consumer-vignettes",
+								path: "/guides/consumer-vignettes"
 							},
-                            {
-                                name: "HCA Data Lifecycle",
-                                key: "/getting-started/userguides/data-lifecycle",
-                            },
+							{
+								name: "HCA Data Lifecycle",
+								key: "/guides/userguides/data-lifecycle",
+								path: "/guides/data-lifecycle"
+							},
 						]
 					}
 				]
@@ -465,15 +458,15 @@ const siteMap =
 					children: [
 						{
 							name: "Processing Pipelines",
-							key: "/pipelines/community-pipelines/processing-pipelines/overview-pipeline-processing-development-guides",
+							key: "/pipelines/community-pipelines/processing-pipelines/pipeline-processing-development-guides",
 							children: [
 								{
 									name: "Pipeline Best Practices",
-									key: "/pipelines/community-pipelines/processing-pipelines/workflow-best-practices"
+									key: "/pipelines/community-pipelines/processing-pipelines/pipeline-best-practices"
 								},
 								{
 									name: "Building Pipelines",
-									key: "/pipelines/community-pipelines/processing-pipelines/pipeline-development-guide"
+									key: "/pipelines/community-pipelines/processing-pipelines/building-pipelines"
 								},
 								{
 									name: "Testing Pipelines",
@@ -481,7 +474,7 @@ const siteMap =
 								},
 								{
 									name: "Portability Service Environments",
-									key: "/pipelines/community-pipelines/processing-pipelines/adding-an-environment-to-the-portability-service"
+									key: "/pipelines/community-pipelines/processing-pipelines/portability-service-environments"
 								}
 							]
 						}
