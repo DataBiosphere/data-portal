@@ -270,8 +270,8 @@ const siteMap =
 			]
 		},
 		{
-			name: "Contributing",
-			key: "contributing",
+			name: "Contribute",
+			key: "contribute",
 			children: [
 				{
 					name: "",
@@ -279,30 +279,30 @@ const siteMap =
 					children: [
 						{
 							name: "Contributing Data",
-							key: "/contributing/data/contributing-to-hca",
-							path: "/contributing"
+							key: "/contribute/data/contributing-to-hca",
+							path: "/contribute"
 						},
 						{
 							name: "Contributing to the Analysis Tools Registry",
-							key: "/contributing/data/analysis-tools-registry",
-							path: "/contributing/analysis-tools-registry",
+							key: "/contribute/data/analysis-tools-registry",
+							path: "/contribute/analysis-tools-registry",
 							children: [
 								{
 									name: "Registry Standards",
-									key: "/contributing/data/analysis-tools-registry/registry-standards",
-									path: "/contributing/analysis-tools-registry/registry-standards"
+									key: "/contribute/data/analysis-tools-registry/registry-standards",
+									path: "/contribute/analysis-tools-registry/registry-standards"
 								}
 							]
 						},
 						{
 							name: "Contributing Analysis Pipelines",
-							key: "/contributing/data/contributing-a-pipeline-to-the-hca-dcp",
-							path: "/contributing/analysis-pipelines"
+							key: "/contribute/data/contributing-a-pipeline-to-the-hca-dcp",
+							path: "/contribute/analysis-pipelines"
 						},
 						{
 							name: "Contributing Vignettes",
-							key: "/contributing/data/contributing-vignettes",
-							path: "/contributing/contributing-vignettes"
+							key: "/contribute/data/contributing-vignettes",
+							path: "/contribute/contributing-vignettes"
 						},
 					]
 				}

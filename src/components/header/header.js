@@ -56,7 +56,7 @@ class Header extends React.Component {
 					{this.state.showNav ?
 						<div className={classNames(compStyles.links, compStyles.small)}>
 							<a href={process.env.GATSBY_EXPLORE_URL} onClick={this.toggleMenu}>
-								<span className={classNames(fontStyles.xs, compStyles.xs)}>Data</span>
+								<span className={classNames(fontStyles.xs, compStyles.xs)}>Explore</span>
 								<span
 									className={classNames(fontStyles.xxs, compStyles.xxs)}>Search for data in the HCA</span>
 							</a>
@@ -81,9 +81,9 @@ class Header extends React.Component {
 								<span className={classNames(fontStyles.xs, compStyles.xs)}>Analysis Tools</span>
 								<span className={classNames(fontStyles.xxs, compStyles.xxs)}>Find a list of Apps</span>
 							</Link>
-							<Link activeClassName={compStyles.active} to='/contributing'
+							<Link activeClassName={compStyles.active} to='/contribute'
 								  onClick={this.toggleMenu}>
-								<span className={classNames(fontStyles.xs, compStyles.xs)}>Contributing</span>
+								<span className={classNames(fontStyles.xs, compStyles.xs)}>Contribute</span>
 								<span
 									className={classNames(fontStyles.xxs, compStyles.xxs)}>Submit your data to the HCA</span>
 							</Link>
@@ -95,7 +95,7 @@ class Header extends React.Component {
 						</div> : null}
 					<div className={classNames(compStyles.links)} ref={(div) => this.links = div}>
 						<a href={process.env.GATSBY_EXPLORE_URL}>
-							<span className={compStyles.linkTo}>Data</span>
+							<span className={compStyles.linkTo}>Explore</span>
 						</a>
 						<div>
 							<Link activeClassName={compStyles.active} partiallyActive={true} to='/guides'>
@@ -118,8 +118,8 @@ class Header extends React.Component {
 							</Link>
 						</div>
 						<div>
-							<Link activeClassName={compStyles.active} partiallyActive={true} to='/contributing'>
-								<span className={compStyles.linkTo}>Contributing</span>
+							<Link activeClassName={compStyles.active} partiallyActive={true} to='/contribute'>
+								<span className={compStyles.linkTo}>Contribute</span>
 							</Link>
 						</div>
 						<div>
