@@ -47,7 +47,7 @@ class Layout extends React.Component {
 					<link rel='stylesheet' href='https://use.typekit.net/qhb0geh.css'/>
 				</Helmet>
 				<div className={classNames(compStyles.site, {[compStyles.noScroll]: this.state.noScroll})}>
-					<Header onMenuOpen={this.onMenuOpen.bind(this)}/>
+					<Header onMenuOpen={this.onMenuOpen.bind(this)} homePage={this.props.homePage}/>
 					<Banner position={'top'} healthy={this.props.healthy}/>
 					<div className={compStyles.content}>
 						{children}

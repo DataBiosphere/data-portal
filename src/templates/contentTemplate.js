@@ -52,7 +52,7 @@ export default function Template({data}) {
 		});
 	};
 
-	const getMarkdownClassName = (component) => {
+	const getMarkdownClassName = () => {
 
 		return classNames({
 			[compStyles.markdownContent]: true,
@@ -68,7 +68,7 @@ export default function Template({data}) {
 			<div className={globalStyles.wrapper}>
 				<div className={getContentClassName()}>
 					{noNav ? null : <Nav docPath={docPath}/>}
-					<div className={getMarkdownClassName(componentName)}>
+					<div className={getMarkdownClassName()}>
 						{componentName === 'analysisDetail' ? null : <div
 							className='content-template'
 							dangerouslySetInnerHTML={{__html: html}}

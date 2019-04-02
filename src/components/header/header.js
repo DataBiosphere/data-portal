@@ -27,22 +27,6 @@ class Header extends React.Component {
 		this.toggleMenu = this.toggleMenu.bind(this);
 	}
 
-	getHeaderClassName = () => {
-
-		const browser = typeof window !== 'undefined';
-		let homePage = browser && window.location.href.split('/')[3];
-
-		if (homePage) {
-			return classNames({
-				[compStyles.navBar]: true
-			});
-		}
-		return classNames({
-			[compStyles.hcaHeader]: true,
-			[compStyles.navBar]: true
-		});
-	};
-
 	toggleMenu = () => {
 		this.setState({showNav: !this.state.showNav});
 		this.props.onMenuOpen(this.state.showNav);
@@ -50,7 +34,7 @@ class Header extends React.Component {
 
 	render() {
 		return (
-			<div className={this.getHeaderClassName()}>
+			<div className={classNames(compStyles.navBar, {[compStyles.hcaHeader]: this.props.homePage})}>
 				<div className={classNames(globalStyles.wrapper, compStyles.headerWrapper)}>
 					<Link to='/' className={compStyles.logo}><img src={headerLogo} alt='HCA'/></Link>
 					{this.state.showNav ?

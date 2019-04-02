@@ -38,8 +38,14 @@ class Nav extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {showNav: initialShowNav};
-		this.getTab();
 		this.toggleNav = this.toggleNav.bind(this);
+	}
+
+	/**
+	 * Get tabs.
+	 */
+	componentDidMount() {
+		this.getTab();
 	}
 
 	getTab = () => {
