@@ -374,38 +374,38 @@ const siteMap =
 								{
 									name: "Biomaterial",
 									key: "/metadata/metadata/metadata-dictionary/biomaterial",
-									path: "metadata/dictionary/biomaterial"
+									path: "/metadata/dictionary/biomaterial"
 								},
 								{
 									name: "Process",
 									key: "/metadata/metadata/metadata-dictionary/process",
-									path: "metadata/dictionary/process"
+									path: "/metadata/dictionary/process"
 								},
 								{
 									name: "Protocol",
 									key: "/metadata/metadata/metadata-dictionary/protocol",
-									path: "metadata/dictionary/protocol"
+									path: "/metadata/dictionary/protocol"
 								},
 								{
 									name: "Project",
 									key: "/metadata/metadata/metadata-dictionary/project",
-									path: "metadata/dictionary/project"
+									path: "/metadata/dictionary/project"
 								},
 								{
 									name: "File",
 									key: "/metadata/metadata/metadata-dictionary/file",
-									path: "metadata/dictionary/file"
+									path: "/metadata/dictionary/file"
 								}]
 						},
 						{
 							name: "Metadata Structure",
 							key: "/metadata/metadata/structure",
-							path: "metadata/structure"
+							path: "/metadata/structure"
 						},
 						{
 							name: "Metadata Design Choices",
 							key: "/metadata/metadata/rationale",
-							path: "metadata/rationale"
+							path: "/metadata/rationale"
 						}
 					]
 				}
