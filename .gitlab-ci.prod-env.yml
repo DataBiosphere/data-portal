@@ -14,9 +14,10 @@ cache:
   stage: build
   before_script:
     - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
-    - npm install npm@6.5.0 -g
+    - git clone https://github.com/HumanCellAtlas/humancellatlas.github.io
+    - npm install npm@6.9.0 -g
     - npm -v
-    - npm install gatsby-cli@2.4.13 --global
+    - npm install gatsby-cli@2.5.4 --global
     - npm install
   artifacts:
       paths:
