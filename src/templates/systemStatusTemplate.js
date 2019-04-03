@@ -38,7 +38,7 @@ export default function Template({data}) {
 	const getMetrics = (healthCheckID, type) => {
 
 		// Returns svg badge
-		return `<img src="https://status.dev.data.humancellatlas.org/${type}/${healthCheckID}.svg"/>`;
+		return `<img src="${process.env.GATSBY_SYSTEM_STATUS_URL}${type}/${healthCheckID}.svg"/>`;
 	};
 
 	return (
