@@ -22,17 +22,22 @@ const siteMap =
 						{
 							name: "About the DCP",
 							key: "/about/platform/dcp",
-							path: "/about",
+							path: "/about"
 						},
 						{
 							name: "About the HCA",
 							key: "/about/platform/hca",
-							path: "/about/hca",
+							path: "/about/hca"
 						},
 						{
 							name: "Attributions",
 							key: "/about/platform/attributions",
-							path: "/about/attributions",
+							path: "/about/attributions"
+						},
+						{
+							name: "Data Use Agreement",
+							key: "/about/platform/data-use-agreement",
+							path: "/about/data-use-agreement"
 						}
 
 					]
@@ -182,161 +187,29 @@ const siteMap =
 			]
 		},
 		{
-			name: "Learn",
-			key: "learn",
-			children:
-				[
-					{
-						name: "Introduction",
-						key: "userguides",
-						children: [
-							{
-								name: "Accessing HCA Data and Metadata",
-								key: "/learn/userguides/quick-start-guide",
-								path: "/learn"
-							},
-							{
-								name: "Installing the HCA CLI",
-								key: "/learn/userguides/installing-the-hca-cli"
-							},
-							{
-								name: "Data Processing Pipelines",
-								key: "/learn/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides",
-								children: [
-									{
-										name: "Smart-seq2 Workflow",
-										key: "/learn/userguides/data-processing-pipelines/smart-seq2-workflow"
-									},
-									{
-										name: "Optimus Prime Workflow",
-										key: "/learn/userguides/data-processing-pipelines/optimus-prime-workflow"
-									},
-									{
-										name: "File Formats",
-										key: "/learn/userguides/data-processing-pipelines/file-formats"
-									},
-									{
-										name: "QC Metrics",
-										key: "/learn/userguides/data-processing-pipelines/qc-mertics"
-									},
-									{
-										name: "Pipeline Portability",
-										key: "/learn/userguides/data-processing-pipelines/pipeline-portability"
-									},
-									{
-										name: "Community Pipeline: 3' scRNA-seq",
-										key: "/learn/userguides/data-processing-pipelines/community-pipeline-3-prime-scrna-seq"
-									}
-								]
-							},
-							{
-								name: "Data Lifecycle",
-								key: "/learn/userguides/data-lifecycle",
-							},
-							{
-								name: "Data Use Agreement",
-								key: "/learn/userguides/data-use-agreement",
-							}
-						]
-					},
-					{
-						name: "Metadata",
-						key: "metadata",
-						children: [
-							{
-								name: "Metadata Dictionary",
-								key: "/learn/metadata/metadata-dictionary",
-								children: [
-									{
-										name: "Biomaterial",
-										key: "/learn/metadata/metadata-dictionary/biomaterial"
-									},
-									{
-										name: "Process",
-										key: "/learn/metadata/metadata-dictionary/process"
-									},
-									{
-										name: "Protocol",
-										key: "/learn/metadata/metadata-dictionary/protocol"
-									},
-									{
-										name: "Project",
-										key: "/learn/metadata/metadata-dictionary/project"
-									},
-									{
-										name: "File",
-										key: "/learn/metadata/metadata-dictionary/file"
-									}
-								]
-							}
-							,
-							{
-								name: "Metadata Structure",
-								key: "/learn/metadata/structure"
-							},
-							{
-								name: "Metadata Design Choices",
-								key: "/learn/metadata/rationale"
-							}
-
-
-						]
-					},
-					{
-						name: "Development Guides",
-						key: "development-guides",
-						children: [
-							{
-								name: "Analysis Applications",
-								key: "/learn/development-guides/analysis-applications"
-							},
-							{
-								name: "Ingest Data Brokers",
-								key: "/learn/development-guides/ingest-broker-development-guide"
-							},
-							{
-								name: "Processing Pipelines",
-								key: "/learn/development-guides/pipeline-processing-development-guides/overview-pipeline-processing-development-guides",
-								children: [
-									{
-										name: "Pipeline Best Practices",
-										key: "/learn/development-guides/pipeline-processing-development-guides/workflow-best-practices"
-									},
-									{
-										name: "Building Pipelines",
-										key: "/learn/development-guides/pipeline-processing-development-guides/pipeline-development-guide"
-									},
-									{
-										name: "Testing Pipelines",
-										key: "/learn/development-guides/pipeline-processing-development-guides/testing-pipelines"
-									},
-									{
-										name: "Portability Service Environments",
-										key: "/learn/development-guides/pipeline-processing-development-guides/adding-an-environment-to-the-portability-service"
-									}
-								]
-							},
-							{
-								name: "Data Consumer Vignettes",
-								key: "/learn/development-guides/consumer-vignettes"
-							}
-						]
-					},
-					{
-						name: "API Documentation",
-						key: "api-documentation",
-						children: [
-							{
-								name: "Data Store API",
-								key: "/learn/api-documentation/data-store-consumer-api"
-							},
-							{
-								name: "Matrix Service API",
-								key: "/learn/api-documentation/matrix-service-api"
-							}
-						]
-					}
-				]
+			name: "APIs",
+			key: "apis",
+			children: [
+				{
+					name: "API Documentation",
+					key: "api-documentation",
+					children: [
+						{
+							name: "Data Store API",
+							key: "/apis/api-documentation/data-store-consumer-api",
+							path: "/apis"
+						},
+						{
+							name: "Matrix Service API",
+							key: "/apis/api-documentation/matrix-service-api"
+						},
+						{
+							name: "Data Ingest API",
+							key: "/apis/api-documentation/ingest-broker-development-guide"
+						},
+					]
+				},
+			]
 		},
 		{
 			name: "Contact",
@@ -402,38 +275,71 @@ const siteMap =
 			children: [
 				{
 					name: "",
-					key: "overview",
+					key: "data",
 					children: [
 						{
 							name: "Contributing Data",
-							key: "/contribute/overview/overview",
+							key: "/contribute/data/contributing-to-hca",
 							path: "/contribute"
 						},
 						{
 							name: "Contributing to the Analysis Tools Registry",
-							key: "/contribute/overview/analysis-tools-registry/contributing-to-the-analysis-tools-registry",
+							key: "/contribute/data/analysis-tools-registry",
 							path: "/contribute/analysis-tools-registry",
 							children: [
 								{
 									name: "Registry Standards",
-									key: "/contribute/overview/analysis-tools-registry/registry-standards",
-									path: "/contribute/registry-standards"
+									key: "/contribute/data/analysis-tools-registry/registry-standards",
+									path: "/contribute/analysis-tools-registry/registry-standards"
 								}
 							]
 						},
 						{
 							name: "Contributing Analysis Pipelines",
-							key: "/contribute/overview/contributing-pipelines/contributing-a-pipeline-to-the-hca-dcp",
+							key: "/contribute/data/contributing-a-pipeline-to-the-hca-dcp",
 							path: "/contribute/analysis-pipelines"
 						},
 						{
 							name: "Contributing Vignettes",
-							key: "/contribute/overview/contributing-vignettes/contributing-vignettes",
+							key: "/contribute/data/contributing-vignettes",
 							path: "/contribute/contributing-vignettes"
 						},
 					]
 				}
 			]
+		},
+		{
+			name: "Guides",
+			key: "guides",
+			children:
+				[
+					{
+						name: "",
+						key: "userguides",
+						children: [
+							{
+								name: "Accessing HCA Data and Metadata",
+								key: "/guides/userguides/quick-start-guide",
+								path: "/guides"
+							},
+							{
+								name: "Installing the HCA CLI",
+								key: "/guides/userguides/installing-the-hca-cli",
+								path: "/guides/installing-the-hca-cli"
+							},
+							{
+								name: "Data Consumer Vignettes",
+								key: "/guides/userguides/consumer-vignettes",
+								path: "/guides/consumer-vignettes"
+							},
+							{
+								name: "HCA Data Lifecycle",
+								key: "/guides/userguides/data-lifecycle",
+								path: "/guides/data-lifecycle"
+							},
+						]
+					}
+				]
 		},
 		{
 			name: "Help",
@@ -447,6 +353,130 @@ const siteMap =
 							name: "Help & FAQ",
 							key: "/help/help/help-and-faq",
 							path: "/help"
+						}
+					]
+				}
+			]
+		},
+		{
+			name: "Metadata",
+			key: "metadata",
+			children: [
+				{
+					name: "",
+					key: "metadata",
+					children: [
+						{
+							name: "Metadata Dictionary",
+							key: "/metadata/metadata/metadata-dictionary",
+							path: "/metadata",
+							children: [
+								{
+									name: "Biomaterial",
+									key: "/metadata/metadata/metadata-dictionary/biomaterial",
+									path: "/metadata/dictionary/biomaterial"
+								},
+								{
+									name: "Process",
+									key: "/metadata/metadata/metadata-dictionary/process",
+									path: "/metadata/dictionary/process"
+								},
+								{
+									name: "Protocol",
+									key: "/metadata/metadata/metadata-dictionary/protocol",
+									path: "/metadata/dictionary/protocol"
+								},
+								{
+									name: "Project",
+									key: "/metadata/metadata/metadata-dictionary/project",
+									path: "/metadata/dictionary/project"
+								},
+								{
+									name: "File",
+									key: "/metadata/metadata/metadata-dictionary/file",
+									path: "/metadata/dictionary/file"
+								}]
+						},
+						{
+							name: "Metadata Structure",
+							key: "/metadata/metadata/structure",
+							path: "/metadata/structure"
+						},
+						{
+							name: "Metadata Design Choices",
+							key: "/metadata/metadata/rationale",
+							path: "/metadata/rationale"
+						}
+					]
+				}
+			]
+		},
+		{
+			name: "Pipelines",
+			key: "pipelines",
+			children: [
+				{
+					name: "HCA Pipelines",
+					key: "hca-pipelines",
+					children: [
+						{
+							name: "Data Processing Pipelines",
+							key: "/pipelines/hca-pipelines/data-processing-pipelines/data-processing-pipelines-user-guides",
+							path: "/pipelines",
+							children: [
+								{
+									name: "Smart-seq2 Workflow",
+									key: "/pipelines/hca-pipelines/data-processing-pipelines/smart-seq2-workflow"
+								},
+								{
+									name: "Optimus Prime Workflow",
+									key: "/pipelines/hca-pipelines/data-processing-pipelines/optimus-prime-workflow"
+								},
+								{
+									name: "File Formats",
+									key: "/pipelines/hca-pipelines/data-processing-pipelines/file-formats"
+								},
+								{
+									name: "QC Metrics",
+									key: "/pipelines/hca-pipelines/data-processing-pipelines/qc-metrics"
+								},
+								{
+									name: "Pipeline Portability",
+									key: "/pipelines/hca-pipelines/data-processing-pipelines/pipeline-portability"
+								},
+								{
+									name: "Community Pipeline: 3' scRNA-seq",
+									key: "/pipelines/hca-pipelines/data-processing-pipelines/community-pipeline-3-prime-scrna-seq"
+								}
+							]
+						},
+					]
+				},
+				{
+					name: "Community Pipelines",
+					key: "community-pipelines",
+					children: [
+						{
+							name: "Processing Pipelines",
+							key: "/pipelines/community-pipelines/processing-pipelines/pipeline-processing-development-guides",
+							children: [
+								{
+									name: "Pipeline Best Practices",
+									key: "/pipelines/community-pipelines/processing-pipelines/pipeline-best-practices"
+								},
+								{
+									name: "Building Pipelines",
+									key: "/pipelines/community-pipelines/processing-pipelines/building-pipelines"
+								},
+								{
+									name: "Testing Pipelines",
+									key: "/pipelines/community-pipelines/processing-pipelines/testing-pipelines"
+								},
+								{
+									name: "Portability Service Environments",
+									key: "/pipelines/community-pipelines/processing-pipelines/portability-service-environments"
+								}
+							]
 						}
 					]
 				}
@@ -468,7 +498,7 @@ const siteMap =
 					]
 				}
 			]
-		}
+		},
 	];
 
 

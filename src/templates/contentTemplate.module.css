@@ -106,6 +106,7 @@ tbody tr {
 	flex: 1;
 	flex-direction: column;
 	margin: 36px 0;
+	width: 100%;
 }
 
 /* Content */

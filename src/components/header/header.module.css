@@ -58,11 +58,15 @@ a.logo, a.logo img {
 /* Nav links */
 .links a, .links.small a {
 	align-items: flex-start;
-	color: var(--black);
 	display: flex;
 	flex-direction: column;
 	padding: 12px 24px;
 	width: 100%;
+}
+
+/* Nav links - small */
+.links.small a {
+    color: var(--black);
 }
 
 /* Nav links - title */
@@ -85,15 +89,8 @@ a.logo, a.logo img {
 }
 
 /* Nav links - active */
-.links .active, .navBar .active {
+.links .active .linkTo {
 	color: var(--black);
-}
-
-/* Nav link help */
-.links.small .help, .help {
-	color: var(--gray-dark);
-	font-weight: 400;
-	margin: 0;
 }
 
 .hcaNavOverlay {
@@ -107,7 +104,7 @@ a.logo, a.logo img {
 	z-index: 99; /* Positioned below showLinks */
 }
 
-/* Help link, Menu */
+/* Menu */
 .menuDropDown {
 	align-items: center;
 	color: var(--black);
@@ -128,15 +125,16 @@ a.logo, a.logo img {
 
 }
 
-/* Hide help link */
-.help {
-	display: none;
-}
-
 /**
- * Medium
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 840px) {
+
+	.headerWrapper {
+		justify-content: flex-start;
+		position: relative; /* Positions links - left aligned with content */
+	}
 
 	.links.small, .hcaNavOverlay {
 		display: none;
@@ -144,7 +142,7 @@ a.logo, a.logo img {
 
 	.links:not(.small) {
 		display: flex;
-		left: 180px;
+		left: 182px; /* 16px wrapper padding, plus 176px menu width, minus 10px padding on first link */
 		position: absolute;
 	}
 
@@ -154,16 +152,18 @@ a.logo, a.logo img {
 
 	.links a {
 		padding: 0;
+		width: unset;
 	}
 
 	/* Nav links */
 	.linkTo {
 		color: var(--gray-dark);
-		font-size: 15px;
-		font-weight: 600;
+		font-size: 14px;
+		font-weight: 500;
 		line-height: 60px;
-		padding: 0 12px;
+		padding: 0 10px;
 		margin: 0;
+		white-space: nowrap;
 	}
 
 	/* Nav links hover state */
@@ -174,11 +174,6 @@ a.logo, a.logo img {
 	/* Hide menu */
 	.menuDropDown, .menuDropDown::before {
 		display: none;
-	}
-
-	/* Show help link */
-	.help {
-		display: flex;
 	}
 }
 
@@ -192,11 +187,22 @@ a.logo, a.logo img {
 	a.logo, a.logo img {
 		height: 40px;
 	}
+	/* Links */
+	.links:not(.small) {
+		left: 294px; /* 16px wrapper padding, plus 290px menu width, minus 12px padding on first link */
+	}
+
+	/* Nav links */
+	.linkTo {
+		padding: 0 12px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
 
 	/* Links */
 	.links:not(.small) {
-		margin-left: -140px;
-		position: unset;
+		left: 308px; /* 30px wrapper padding, plus 290px menu width, minus 12px padding on first link */
 	}
 }
 
