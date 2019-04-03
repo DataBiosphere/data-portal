@@ -7,14 +7,11 @@
 // Imports
 const path = require('path');
 const {createFilePath} = require(`gatsby-source-filesystem`);
-const siteMap = require('./src/siteMap');
-
 
 // find our template files
 const contentTemplate = path.resolve(`src/templates/contentTemplate.js`);
 const metadataTemplate = path.resolve(`src/templates/metadataTemplate.js`);
 const systemStatusTemplate = path.resolve(`src/templates/systemStatusTemplate.js`);
-
 
 function getTemplate(templateName) {
 
@@ -31,10 +28,48 @@ function getTemplate(templateName) {
 	return contentTemplate;
 }
 
+// Returns document path or key.
+function getKeyOrPath(key, siteMapPathOrKey) {
+
+	const path = siteMapPathOrKey.get(key);
+
+	if (path) {
+		return path;
+	}
+	else {
+		return key
+	}
+}
+
+// sections -> tabs -> primary docs -> secondary docs
+function keyToPath(siteMap) {
+	return siteMap.reduce((acc, section) => {
+		if (section.tabs) {
+			return section.tabs.reduce((acc, tab) => {
+				return tab.primaryLinks.reduce((acc, pLink) => {
+					addToMap(acc, pLink);
+					if (pLink.secondaryLinks) {
+						pLink.secondaryLinks.forEach(sLink => addToMap(acc, sLink));
+					}
+					return acc;
+				}, acc);
+			}, acc);
+		}
+		return acc;
+	}, new Map());
+}
+
+function addToMap(acc, doc) {
+
+	if (doc.path) {
+		acc.set(doc.key, doc.path);
+	} else {
+		acc.set(doc.key, doc.key);
+	}
+}
 
 exports.createPages = ({actions, graphql}) => {
 	const {createPage} = actions;
-
 
 	// create the markdown pages
 	return graphql(`
@@ -63,6 +98,29 @@ exports.createPages = ({actions, graphql}) => {
           }
         }
       }
+	  allSiteMapYaml {
+		  edges {
+			  node {
+				name
+				key
+				path
+				tabs {
+					name
+					key
+					primaryLinks {
+						name
+						key
+						path
+						secondaryLinks {
+							name
+							key
+							path
+						}
+					}
+				}
+			  }
+		  }
+		}
     }
       `).then(result => {
 
@@ -70,6 +128,11 @@ exports.createPages = ({actions, graphql}) => {
 		if (result.errors) {
 			return Promise.reject(result.errors);
 		}
+
+		// get siteMap from data-portal-content
+		let yamlSiteMap = result.data.allSiteMapYaml.edges.map(n => n.node);
+
+		let yamlSiteMapPathOrKey = keyToPath(yamlSiteMap);
 
 		// for each markdown page
 		result.data.allMarkdownRemark.edges.forEach(({node}) => {
@@ -85,7 +148,7 @@ exports.createPages = ({actions, graphql}) => {
 
 			if (path) {
 				createPage({
-					path: siteMap.getPath(path),
+					path: getKeyOrPath(path, yamlSiteMapPathOrKey),
 					component: getTemplate(node.frontmatter.template),  // extract template name from front matter and use it to retrieve the template.
 					context: {id: node.id, metadataCoreName: node.frontmatter.metadataCoreName} // additional data can be passed via context
 				});

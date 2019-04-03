@@ -13,14 +13,9 @@ import React from 'react';
 import Analyze from '../components/analyze/analyze';
 import AnalysisDetail from '../components/analyze/analysisDetail';
 import Attributions from '../components/attributions/attributions';
-import Layout from '../components/layout'
-import Nav from '../components/nav/nav';
-import NavOverview from '../components/navOverview/navOverview';
-import Section from '../components/section/section';
-import TabNav from '../components/tabNav/tabNav';
+import Layout from '../components/layout';
 
 // Styles
-import compStyles from './contentTemplate.module.css';
 import globalStyles from '../styles/global.module.css';
 
 let classNames = require('classnames');
@@ -44,47 +39,18 @@ export default function Template({data}) {
 		pageTitle = frontmatter.title;
 	}
 
-	const getContentClassName = () => {
-
-		return classNames({
-			[compStyles.hcaContent]: true,
-			[compStyles.noNav]: noNav
-		});
-	};
-
-	const getMarkdownClassName = () => {
-
-		return classNames({
-			[compStyles.markdownContent]: true,
-			[compStyles.analyze]: (componentName === 'analysisDetail'),
-			[compStyles.noNav]: noNav
-		});
-	};
-
 	return (
-		<Layout pageTitle={pageTitle}>
-			<Section docPath={docPath}/>
-			<TabNav docPath={docPath}/>
-			<div className={globalStyles.wrapper}>
-				<div className={getContentClassName()}>
-					{noNav ? null : <Nav docPath={docPath}/>}
-					<div className={getMarkdownClassName()}>
-						{componentName === 'analysisDetail' ? null : <div
-							className='content-template'
-							dangerouslySetInnerHTML={{__html: html}}
-						/>}
-						{linked && !componentName ? <NavOverview linked={linked}/> : null}
-						{linked && (componentName === 'analyze') ?
-							<Analyze editPath={editPath} linked={linked}/> : null}
-						{componentName === 'analysisDetail' ?
-							<AnalysisDetail editPath={editPath} data={markdownRemark}/> : null}
-						{componentName === 'attributions' ? <Attributions/> : null}
-						{componentName === 'analyze' || componentName === 'analysisDetail' ? null :
-							<a className={classNames(globalStyles.editContent, globalStyles.editContentSeparator)}
-							   href={editPath} target='_blank' rel='noopener noreferrer'>Improve this page</a>}
-					</div>
-				</div>
-			</div>
+		<Layout pageTitle={pageTitle} docPath={docPath} noNav={noNav}>
+			{componentName === 'analysisDetail' ? null :
+				<div className={globalStyles.md} dangerouslySetInnerHTML={{__html: html}}/>}
+			{linked && (componentName === 'analyze') ?
+				<Analyze editPath={editPath} linked={linked}/> : null}
+			{componentName === 'analysisDetail' ?
+				<AnalysisDetail editPath={editPath} data={markdownRemark}/> : null}
+			{componentName === 'attributions' ? <Attributions/> : null}
+			{componentName === 'analyze' || componentName === 'analysisDetail' ? null :
+				<a className={classNames(globalStyles.editContent, globalStyles.editContentSeparator)}
+				   href={editPath} target='_blank' rel='noopener noreferrer'>Improve this page</a>}
 		</Layout>
 	);
 }

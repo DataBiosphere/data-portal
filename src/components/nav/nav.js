@@ -8,7 +8,10 @@
 // Core dependencies
 import Link from 'gatsby-link';
 import React from 'react';
-import * as siteMap from '../../siteMap';
+
+// App dependencies
+import {navSiteMap} from '../../hooks/nav-siteMap';
+import * as NavigationService from '../../utils/navigation.service';
 
 // Styles
 import compStyles from './nav.module.css';
@@ -20,18 +23,6 @@ let active;
 let expanded;
 let initialShowNav = false;
 let tab;
-
-const getNavClassName = (docPath, nav) => {
-
-	const key = docPath.split('/')[3];
-	active = nav.key === docPath;
-	expanded = (key === nav.key.split('/')[3] && nav.children);
-
-	return classNames({
-		[compStyles.expanded]: expanded,
-		[compStyles.selected]: active
-	});
-};
 
 class Nav extends React.Component {
 
@@ -48,11 +39,22 @@ class Nav extends React.Component {
 		this.getTab();
 	}
 
+	getNavClassName = (docPath, nav) => {
+
+		active = nav.key === docPath;
+		expanded = (NavigationService.getKeyOfPath(docPath, 3) === NavigationService.getKeyOfPath(nav.key, 3) && nav.secondaryLinks);
+
+		return classNames({
+			[compStyles.expanded]: expanded,
+			[compStyles.selected]: active
+		});
+	};
+
 	getTab = () => {
 
-		if (tab !== this.props.docPath.split('/')[2]) {
+		if (tab !== NavigationService.getKeyOfPath(this.props.docPath, 2)) {
 			this.setState({showNav: false});
-			tab = this.props.docPath.split('/')[2]
+			tab = NavigationService.getKeyOfPath(this.props.docPath, 2);
 		}
 	};
 
@@ -68,18 +70,19 @@ class Nav extends React.Component {
 	};
 
 	render() {
+		const {docPath, nav} = this.props;
 		return (
 			<div className={compStyles.hcaNav}>
 				<ul className={compStyles.hcaSideNav}>
-					{siteMap.getNav(this.props.docPath).map((p, i) =>
+					{nav.map((p, i) =>
 						<div key={i}>
-							<li className={getNavClassName(this.props.docPath, p)} key={i}><Link
-								to={siteMap.getPath(p.key)} className={fontStyles.navPrimary}>{p.name}</Link></li>
-							{p.children && expanded ?
+							<li className={this.getNavClassName(docPath, p)} key={i}><Link
+								to={NavigationService.getPath(p)} className={fontStyles.navPrimary}>{p.name}</Link></li>
+							{p.secondaryLinks && expanded ?
 								<ul>
-									{p.children.map((c, j) => <li className={getNavClassName(this.props.docPath, c)}
+									{p.secondaryLinks.map((c, j) => <li className={this.getNavClassName(docPath, c)}
 																  key={j}><Link
-										to={siteMap.getPath(c.key)} className={fontStyles.navSecondary}>{c.name}</Link></li>)}
+										to={NavigationService.getPath(c)} className={fontStyles.navSecondary}>{c.name}</Link></li>)}
 								</ul> : null}
 						</div>)}
 				</ul>
@@ -88,16 +91,17 @@ class Nav extends React.Component {
 						<span>Please select</span><i className='material-icons'>keyboard_arrow_down</i>
 					</li>
 					{this.state.showNav ?
-						siteMap.getNav(this.props.docPath).map((p, i) =>
+						nav.map((p, i) =>
 							<div key={i}>
-								<li className={getNavClassName(this.props.docPath, p)} key={i}
-									onClick={p.children ? expanded ? this.toggleNav : null : this.toggleNav}><Link
-									to={siteMap.getPath(p.key)} className={fontStyles.navPrimary}>{p.name}</Link></li>
-								{p.children && expanded ?
+								<li className={this.getNavClassName(docPath, p)} key={i}
+									onClick={p.secondaryLinks ? expanded ? this.toggleNav : null : this.toggleNav}><Link
+									to={NavigationService.getPath(p)} className={fontStyles.navPrimary}>{p.name}</Link></li>
+								{p.secondaryLinks && expanded ?
 									<ul>
-										{p.children.map((c, j) => <li className={getNavClassName(this.props.docPath, c)}
+										{p.secondaryLinks.map((c, j) => <li className={this.getNavClassName(docPath, c)}
 																	  key={j} onClick={this.toggleNav}><Link
-											to={siteMap.getPath(c.key)} className={fontStyles.navSecondary}>{c.name}</Link></li>)}
+											to={NavigationService.getPath(c)}
+											className={fontStyles.navSecondary}>{c.name}</Link></li>)}
 									</ul> : null}
 							</div>) : null}
 				</ul>
@@ -106,4 +110,11 @@ class Nav extends React.Component {
 	}
 }
 
-export default Nav;
+export default (props) => {
+
+	const nav = props.docPath ? navSiteMap(props.docPath) : '';
+
+	return (
+		<Nav nav={nav} {...props}/>
+	);
+}

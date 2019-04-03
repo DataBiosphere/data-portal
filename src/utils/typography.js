@@ -28,7 +28,8 @@ const typography = new Typography({
 	overrideStyles: ({adjustFontSizeTo, scale}, options, styles) => {
 		let primary = '#1c7cc7';
 		let background = '#f4f7f9';
-		let darkGray = '#666666';
+		let grayDark = '#666666';
+		let grayLight = '#CCCCCC';
 		return {
 			'body, html': {},
 			'*, *:before, *:after': {
@@ -93,7 +94,7 @@ const typography = new Typography({
 				margin: '0 0 8px',
 			},
 			'blockquote p': {
-				color: darkGray,
+				color: grayDark,
 			},
 			'dd,dl,ol,ul': {
 				margin: 0,
@@ -106,6 +107,22 @@ const typography = new Typography({
 			strong: {
 				fontWeight: '400',
 			},
+			'thead tr, tbody tr': {
+				borderBottom: '1px solid' + grayLight,
+			},
+			'thead tr th, tbody tr td': {
+				borderBottom: 'none',
+			},
+			'thead th, tbody tr': {
+				fontSize: '13px',
+				lineHeight: 1,
+			},
+			'thead th': {
+				fontWeight: 400,
+			},
+			'tbody tr': {
+				fontWeight: 300,
+			}
 		}
 	}
 });

@@ -12,9 +12,6 @@ import React from 'react';
 // App dependencies
 import Layout from '../components/layout';
 import Metadata from '../components/metadata/metadata';
-import Nav from '../components/nav/nav';
-import Section from '../components/section/section';
-import TabNav from '../components/tabNav/tabNav';
 
 // Styles
 import compStyles from './metadataTemplate.module.css';
@@ -40,23 +37,11 @@ export default function Template({data}) {
 	const referenceMetadata = data.referenceMetadata.edges.map(n => n.node);
 
 	return (
-		<Layout pageTitle={title}>
-			<Section docPath={docPath}/>
-			<TabNav docPath={docPath}/>
-			<div className={globalStyles.wrapper}>
-				<div className={compStyles.hcaContent}>
-					<Nav docPath={docPath}/>
-					<div className={classNames(compStyles.markdownContent, compStyles.metadataContent)}>
-						<div
-							className='content-template'
-							dangerouslySetInnerHTML={{__html: html}}
-						/>
-						<p className={classNames(fontStyles.xxs, compStyles.xxs)}>* Indicates a required field</p>
-						{types.length ? types.map((e, i) => <Metadata entity={e} reference={referenceMetadata}
-																	  key={i}/>) : null}
-					</div>
-				</div>
-			</div>
+		<Layout pageTitle={title} docPath={docPath}>
+			<div className={classNames(globalStyles.md, compStyles.meta)} dangerouslySetInnerHTML={{__html: html}}/>
+			<p className={fontStyles.xxs}>* Indicates a required field</p>
+			{types.length ? types.map((e, i) => <Metadata entity={e} reference={referenceMetadata}
+														  key={i}/>) : null}
 		</Layout>
 	);
 }

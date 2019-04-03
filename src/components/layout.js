@@ -2,7 +2,7 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * HCA Data Portal root component; works as wrapper around site component.
+ * HCA Data Portal layout component; works as wrapper around site component.
  */
 
 // Core dependencies
@@ -13,9 +13,11 @@ import React from 'react';
 import Banner from './banner/banner';
 import Footer from './footer/footer';
 import Header from './header/header';
+import HCAContent from './hcaContent/hcaContent';
 
 // Styles
 import compStyles from './layout.module.css';
+import globalStyles from '../styles/global.module.css';
 
 let classNames = require('classnames');
 
@@ -34,11 +36,11 @@ class Layout extends React.Component {
 	};
 
 	render() {
-		const {children} = this.props;
+		const {children, docPath, healthy, homePage, homeTab, noNav, noTab, pageTitle, sectionTitle} = this.props;
 		return (
 			<div>
 				<Helmet>
-					<title>{this.props.pageTitle ? this.props.pageTitle : 'HCA Data Portal'}</title>
+					<title>{pageTitle ? pageTitle : 'HCA Data Portal'}</title>
 					<link rel='stylesheet' href='https://use.typekit.net/qhb0geh.css'/>
 					<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>
 					<link rel='stylesheet'
@@ -47,11 +49,11 @@ class Layout extends React.Component {
 					<link rel='stylesheet' href='https://use.typekit.net/qhb0geh.css'/>
 				</Helmet>
 				<div className={classNames(compStyles.site, {[compStyles.noScroll]: this.state.noScroll})}>
-					<Header onMenuOpen={this.onMenuOpen.bind(this)} homePage={this.props.homePage}/>
-					<Banner position={'top'} healthy={this.props.healthy}/>
-					<div className={compStyles.content}>
-						{children}
-					</div>
+					<Header onMenuOpen={this.onMenuOpen.bind(this)} homePage={homePage}/>
+					<Banner position={'top'} healthy={healthy}/>
+					{homePage ? <div className={globalStyles.pageWrapper}>{children}</div> :
+						<HCAContent docPath={docPath} homeTab={homeTab} noNav={noNav} noTab={noTab}
+									sectionTitle={sectionTitle}>{children}</HCAContent>}
 					<Banner position={'bottom'}/>
 					<Footer/>
 				</div>

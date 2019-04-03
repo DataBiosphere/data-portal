@@ -11,13 +11,10 @@ import React from 'react';
 
 // App dependencies
 import Layout from '../components/layout';
-import Section from '../components/section/section';
-import TabNav from '../components/tabNav/tabNav';
 
 // Styles
 import compStyles from './systemStatusTemplate.module.css';
 import fontStyles from '../styles/fontsize.module.css';
-import globalStyles from '../styles/global.module.css';
 
 let classNames = require('classnames');
 
@@ -42,34 +39,26 @@ export default function Template({data}) {
 	};
 
 	return (
-		<Layout>
-			<Section sectionTitle={'System Status'}/>
-			<TabNav homeTab={false} noTab={true}/>
-			<div className={globalStyles.wrapper}>
-				<div className={classNames(compStyles.hcaContent, compStyles.noNav)}>
-					<div className={compStyles.systemStatusContent}>
-						<h2>Environment - {currentEnv.toUpperCase()}</h2>
-						<div className={compStyles.system}>
-							<div className={classNames(fontStyles.m, compStyles.label)}>
-								<span>System Name</span>
-								<span>Status</span>
-								<span>Availability</span>
-							</div>
-							{systemEnv.map((s, i) =>
-								<div key={i}>
-									{s.environments.map((e, j) =>
-										<div key={j} className={classNames(fontStyles.xs, compStyles.systemStatus)}>
-											<span>{s.system_name}</span>
-											<span
-												dangerouslySetInnerHTML={{__html: getMetrics(e.health_check_id, "service")}}/>
-											<span
-												dangerouslySetInnerHTML={{__html: getMetrics(e.health_check_id, "availability")}}/>
-										</div>)}
-								</div>
-							)}
-						</div>
-					</div>
+		<Layout sectionTitle={'System Status'} homeTab={false} noTab={true} noNav={true}>
+			<h2>Environment - {currentEnv.toUpperCase()}</h2>
+			<div className={compStyles.system}>
+				<div className={classNames(fontStyles.m, compStyles.label)}>
+					<span>System Name</span>
+					<span>Status</span>
+					<span>Availability</span>
 				</div>
+				{systemEnv.map((s, i) =>
+					<div key={i}>
+						{s.environments.map((e, j) =>
+							<div key={j} className={classNames(fontStyles.xs, compStyles.systemStatus)}>
+								<span>{s.system_name}</span>
+								<span
+									dangerouslySetInnerHTML={{__html: getMetrics(e.health_check_id, "service")}}/>
+								<span
+									dangerouslySetInnerHTML={{__html: getMetrics(e.health_check_id, "availability")}}/>
+							</div>)}
+					</div>
+				)}
 			</div>
 		</Layout>
 	);

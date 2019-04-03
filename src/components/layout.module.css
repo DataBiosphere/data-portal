@@ -2,9 +2,10 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * Style definitions specific to the HCA Data Portal site component.
+ * Style definitions specific to the HCA Data Portal layout component.
  */
 
+/* Site */
 .site {
 	display: flex;
 	flex-direction: column;
@@ -16,8 +17,4 @@
 	left: 0;
 	position: fixed;
 	right: 0;
-}
-
-.content {
-	flex: 1;
 }

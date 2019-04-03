@@ -5,20 +5,7 @@
  * Style definitions specific to the HCA Data Portal system status template component.
  */
 
-/* Content */
-.hcaContent {
-	display: flex;
-	flex: 1;
-	flex-direction: column;
-	margin: 36px 0;
-}
-
-/* Content */
-.hcaContent .systemStatusContent {
-	margin-right: 0;
-	width: 100%;
-}
-
+/* Label, status */
 .system .label, .system .systemStatus {
 	align-items: flex-start;
 	display: flex;
@@ -38,38 +25,4 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-}
-
-/**
- * Medium
- */
-@media screen and (min-width: 768px) {
-
-	/* Content */
-	.hcaContent {
-		flex-direction: row;
-	}
-
-	/* Content - when there is no navigation */
-	.noNav .systemStatusContent {
-		margin-left: 176px;
-	}
-
-	/* Content */
-	.hcaContent .systemStatusContent {
-		margin-right: 14px;
-		max-width: 640px;
-	}
-}
-
-/**
- * Medium +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 1024px) {
-
-	/* Content - when there is no navigation */
-	.noNav .systemStatusContent {
-		margin-left: 290px;
-	}
 }
