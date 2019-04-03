@@ -116,7 +116,7 @@ class IndexPage extends React.Component {
 				<div className={compStyles.homepage}>
 					<div className={compStyles.jumbotron}>
 						<div className={compStyles.sectionWrapper}>
-							<Link to='/learn'><h1 className={fontStyles.hero}>Single-cell data building a foundation for
+							<Link to='/guides'><h1 className={fontStyles.hero}>Single-cell data building a foundation for
 								human health</h1>
 								<p className={fontStyles.xs}>Learn More</p></Link>
 							<HomepageAutosuggest termFacets={this.state.termFacets}/>
@@ -185,7 +185,7 @@ class IndexPage extends React.Component {
 									</div>
 									<div><p>We process and quality-check the data with our
 										pipelines</p><Link
-										to='/learn/userguides/data-processing-pipelines/overview-of-data-processing-pipelines-user-guides'>Learn
+										to='/pipelines'>Learn
 										about Pipelines</Link>
 									</div>
 								</div>

@@ -9,6 +9,7 @@
 .metadata h3 {
 	border-bottom: 1px solid var(--gray-lightest);
 	margin-top: 48px;
+	text-transform: capitalize;
 }
 
 /* Nested element */

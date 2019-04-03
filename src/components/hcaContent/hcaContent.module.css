@@ -1,0 +1,43 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal content component.
+ */
+
+/* Content */
+.hcaContent {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	margin: 36px 0;
+	width: 100%; /* TODO confirm */
+}
+
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 768px) {
+
+	/* Content */
+	.hcaContent {
+		flex-direction: row;
+	}
+
+	/* Content - when there is no navigation */
+	.noNav > div {
+		margin-left: 176px;
+	}
+}
+
+/**
+ * Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1024px) {
+
+	/* Content - when there is no navigation */
+	.noNav > div {
+		margin-left: 290px;
+	}
+}

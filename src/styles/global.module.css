@@ -3,6 +3,11 @@
  */
 @import './vars.module.css';
 
+/* Page wrapper */
+.pageWrapper {
+	flex: 1;
+}
+
 /* Banner wrapper */
 .bannerWrapper {
 	display: flex;
@@ -15,6 +20,34 @@
 	align-items: center;
 	display: flex;
 	padding: 0 16px;
+}
+
+/* Inner content */
+.hcaContentInner {
+	margin-right: 0;
+	width: 100%;
+}
+
+/* Inner markdown related styles */
+.md ol, .md ul {
+	font-size: 15px;
+	line-height: 25px;
+	list-style-position: outside;
+	margin: 0 0 18px 24px;
+}
+
+.md li {
+	margin-bottom: 4px;
+}
+
+.md > h1:first-of-type {
+	font-size: 24px;
+	line-height: 30px;
+	margin-top: 0;
+}
+
+.md > h2:first-of-type, .hcaContentInner > h2:first-of-type {
+	margin-top: 0;
 }
 
 /* Button - class "button" */
@@ -125,6 +158,18 @@
 .editContentSeparator {
 	border-top: 1px solid var(--gray-lightest);
 	padding-top: 18px;
+}
+
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 768px) {
+
+	/* Inner content */
+	.hcaContentInner {
+		margin-right: 14px;
+		max-width: 640px;
+	}
 }
 
 /**

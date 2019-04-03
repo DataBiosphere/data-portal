@@ -7,24 +7,34 @@
 
 // Core dependencies
 import React from 'react';
-import * as siteMap from '../../siteMap';
+
+// App dependencies
+import {sectionSiteMap} from '../../hooks/section-siteMap';
 
 // Styles
 import compStyles from './section.module.css';
 import fontStyles from '../../styles/fontsize.module.css';
 import globalStyles from '../../styles/global.module.css';
 
-let classNames = require('classnames');
+class Section extends React.Component {
 
-const Section = ({docPath, sectionTitle}) => (
+	render() {
+		const {sectionName} = this.props;
+		return (
+			<div className={compStyles.hcaSection}>
+				<div className={globalStyles.wrapper}>
+					<div className={fontStyles.xxl}>{sectionName}</div>
+				</div>
+			</div>
+		);
+	}
+}
 
-	<div>
-		<div className={globalStyles.wrapper}>
-			{docPath ? <div
-					className={classNames(compStyles.hcaSectionHeading, fontStyles.xxl)}>{siteMap.getSection(docPath).name}</div> :
-				<div className={classNames(compStyles.hcaSectionHeading, fontStyles.xxl)}>{sectionTitle}</div>}
-		</div>
-	</div>
-);
+export default (props) => {
 
-export default Section;
+	const sectionName = props.sectionTitle ? props.sectionTitle : props.docPath ? sectionSiteMap(props.docPath) : '';
+
+	return (
+		<Section sectionName={sectionName}/>
+	);
+}

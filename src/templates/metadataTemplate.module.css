@@ -5,48 +5,12 @@
  * Style definitions specific to the HCA Data Portal metadata template component.
  */
 
-.metadataContent h1, .metadataContent h2, .metadataContent h3 {
+/* Capitalize <h1>, <h2> */
+.meta h1, .meta h2 {
 	text-transform: capitalize;
 }
 
-/* Typography - markdown overrides */
-.markdownContent h2:first-of-type {
-	margin-top: 0;
-}
-
-/* Content */
-.hcaContent {
-	display: flex;
-	flex: 1;
-	flex-direction: column;
-	margin: 36px 0;
-	width: 100%;
-}
-
-/* Content */
-.hcaContent .markdownContent {
-	margin-right: 0;
-	width: 100%;
-}
-
-/* Required fields - class fontsize-xxs */
-.hcaContent .markdownContent p.xxs {
+/* Required fields */
+.meta + p {
 	margin: -8px 0 32px;
-}
-
-/**
- * Medium
- */
-@media screen and (min-width: 768px) {
-
-	/* Content */
-	.hcaContent {
-		flex-direction: row;
-	}
-
-	/* Content */
-	.hcaContent .markdownContent {
-		margin-right: 14px;
-		max-width: 640px;
-	}
 }
