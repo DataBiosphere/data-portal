@@ -16,6 +16,7 @@ import Attributions from '../components/attributions/attributions';
 import Layout from '../components/layout';
 
 // Styles
+import '../styles/markdown.module.css';
 import globalStyles from '../styles/global.module.css';
 
 let classNames = require('classnames');
