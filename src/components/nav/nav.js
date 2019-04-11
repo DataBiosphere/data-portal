@@ -10,6 +10,7 @@ import Link from 'gatsby-link';
 import React from 'react';
 
 // App dependencies
+import {metadataSiteMap} from '../../hooks/metadata-siteMap';
 import {navSiteMap} from '../../hooks/nav-siteMap';
 import * as NavigationService from '../../utils/navigation.service';
 
@@ -81,8 +82,9 @@ class Nav extends React.Component {
 							{p.secondaryLinks && expanded ?
 								<ul>
 									{p.secondaryLinks.map((c, j) => <li className={this.getNavClassName(docPath, c)}
-																  key={j}><Link
-										to={NavigationService.getPath(c)} className={fontStyles.navSecondary}>{c.name}</Link></li>)}
+																		key={j}><Link
+										to={NavigationService.getPath(c)}
+										className={fontStyles.navSecondary}>{c.name}</Link></li>)}
 								</ul> : null}
 						</div>)}
 				</ul>
@@ -95,11 +97,12 @@ class Nav extends React.Component {
 							<div key={i}>
 								<li className={this.getNavClassName(docPath, p)} key={i}
 									onClick={p.secondaryLinks ? expanded ? this.toggleNav : null : this.toggleNav}><Link
-									to={NavigationService.getPath(p)} className={fontStyles.navPrimary}>{p.name}</Link></li>
+									to={NavigationService.getPath(p)} className={fontStyles.navPrimary}>{p.name}</Link>
+								</li>
 								{p.secondaryLinks && expanded ?
 									<ul>
 										{p.secondaryLinks.map((c, j) => <li className={this.getNavClassName(docPath, c)}
-																	  key={j} onClick={this.toggleNav}><Link
+																			key={j} onClick={this.toggleNav}><Link
 											to={NavigationService.getPath(c)}
 											className={fontStyles.navSecondary}>{c.name}</Link></li>)}
 									</ul> : null}
@@ -112,7 +115,12 @@ class Nav extends React.Component {
 
 export default (props) => {
 
-	const nav = props.docPath ? navSiteMap(props.docPath) : '';
+	let docPath = props.docPath,
+		metaNav = docPath.includes('/metadata/dictionary/'),
+		pagesSiteMap = navSiteMap(docPath),
+		metaSiteMap = metaNav ? metadataSiteMap(docPath) : '';
+
+	const nav = metaNav ? pagesSiteMap.concat(metaSiteMap) : docPath ? pagesSiteMap : '';
 
 	return (
 		<Nav nav={nav} {...props}/>
