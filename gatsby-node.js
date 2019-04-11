@@ -85,7 +85,6 @@ exports.createPages = ({actions, graphql}) => {
             frontmatter {
               path
               template
-              metadataCoreName
               linked {
                childMarkdownRemark{
                 frontmatter{
@@ -121,7 +120,17 @@ exports.createPages = ({actions, graphql}) => {
 			  }
 		  }
 		}
-    }
+	  allMetadataSchemaEntity(filter: {schemaType: {eq: "type"}}) {
+		edges {
+		  node {
+			id
+			relativeFilePath
+			schemaType
+			title
+		  }
+		}
+	  }
+  }
       `).then(result => {
 
 		// if there is an error return
@@ -150,10 +159,27 @@ exports.createPages = ({actions, graphql}) => {
 				createPage({
 					path: getKeyOrPath(path, yamlSiteMapPathOrKey),
 					component: getTemplate(node.frontmatter.template),  // extract template name from front matter and use it to retrieve the template.
-					context: {id: node.id, metadataCoreName: node.frontmatter.metadataCoreName} // additional data can be passed via context
+					context: {id: node.id, metadataCoreName: node.frontmatter.metadataCoreName, metadataPath: '', metadataTitle: ''} // additional data can be passed via context
 				});
 			}
 		});
+
+		// for each metadata type create a page
+		result.data.allMetadataSchemaEntity.edges.forEach(({node}) => {
+
+			// create the page
+
+			let path = getMetadataDictionaryPath(node.relativeFilePath).slice(0, -1);
+
+			if (path) {
+				createPage({
+					path: path,
+					component: metadataTemplate,  // extract template name from front matter and use it to retrieve the template.
+					context: {id: node.id, metadataCoreName: path.split('/')[3], metadataPath: node.relativeFilePath, metadataTitle: node.title} // additional data can be passed via context
+				});
+			}
+		});
+
 	});
 
 };
@@ -182,19 +208,32 @@ exports.onCreateNode = ({node, getNode, actions}) => {
 		//this adds the gitHubPath under "fields"
 		createNodeField({node, name: 'gitHubPath', value: relativeFilePath});
 	}
+
+	if (node.internal.type === 'MetadataSchemaEntity' && node.relativeFilePath.includes('/type/')) {
+
+		let path = getMetadataDictionaryPath(node.relativeFilePath).slice(0, -1);
+
+		//this adds the path under "fields"
+		createNodeField({node, name: 'path', value: path});
+	}
 };
 
 function getPath(markdownId) {
 
 	if (markdownId && markdownId.includes('docs/structure.md')) {
-		return '/metadata/metadata/structure';
+		return '/metadata/design-principles/structure';
 	} else if (markdownId && markdownId.includes('docs/rationale.md')) {
-		return '/metadata/metadata/rationale';
+		return '/metadata/design-principles/rationale';
 	}
 
 	else {
 		return null;
 	}
+}
+
+function getMetadataDictionaryPath(path) {
+
+	return path.replace('/type/', '/metadata/dictionary/')
 }
 
 

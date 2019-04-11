@@ -5,12 +5,12 @@
  * Style definitions specific to the HCA Data Portal metadata template component.
  */
 
-/* Capitalize <h1>, <h2> */
-.meta h1, .meta h2 {
-	text-transform: capitalize;
+/* Code base for type */
+.meta + p {
+	font-size: 15px;
+	margin: 4px 0;
 }
 
-/* Required fields */
-.meta + p {
-	margin: -8px 0 32px;
+.meta + p + p {
+	margin-bottom: 24px;
 }

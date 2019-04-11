@@ -12,6 +12,7 @@ import React from 'react';
 // App dependencies
 import Layout from '../components/layout';
 import Metadata from '../components/metadata/metadata';
+import * as StringFormatService from '../utils/string-format.service';
 
 // Styles
 import compStyles from './metadataTemplate.module.css';
@@ -23,49 +24,39 @@ let classNames = require('classnames');
 // the data prop will be injected by the GraphQL query below.
 export default function Template({data}) {
 
-	const markdownRemark = data.markdown; // data.markdownRemark holds our post data
-	const {frontmatter, html} = markdownRemark;
+	let coreEntity, docPath, pageTitle, referenceMetadata, title, type;
 
-	let docPath, title;
-	docPath = markdownRemark.fields.path;
+	if (data.allSitePage.edges.length) {
 
-	if (frontmatter) {
-		title = frontmatter.title;
+		docPath = data.allSitePage.edges.map(n => n.node)[0].path;
 	}
 
-	const types = data.typeMetadata.edges.map(n => n.node);
-	const referenceMetadata = data.referenceMetadata.edges.map(n => n.node);
+	type = data.typeMetadata.edges.map(n => n.node)[0];
+	referenceMetadata = data.referenceMetadata.edges.map(n => n.node);
+
+	coreEntity = StringFormatService.convertSentenceCasetoTitleCase(type.coreEntity);
+	title = StringFormatService.convertSentenceCasetoTitleCase(type.title);
+	pageTitle = `${coreEntity} - ${title}`;
+
 
 	return (
-		<Layout pageTitle={title} docPath={docPath}>
-			<div className={classNames(globalStyles.md, compStyles.meta)} dangerouslySetInnerHTML={{__html: html}}/>
+		<Layout pageTitle={pageTitle} docPath={docPath}>
+			<h2 className={classNames(globalStyles.md, compStyles.meta)}>{pageTitle}</h2>
+			<p className={fontStyles.hcaCode}>{type.name}</p>
 			<p className={fontStyles.xxs}>* Indicates a required field</p>
-			{types.length ? types.map((e, i) => <Metadata entity={e} reference={referenceMetadata}
-														  key={i}/>) : null}
+			<Metadata entity={type} reference={referenceMetadata} unFriendly={type.name}/>
 		</Layout>
 	);
 }
 
 // modified to find the page by id which is passed in as context
 export const pageQuery = graphql`
-query ($id: String!, $metadataCoreName: String!) {
-  markdown: markdownRemark(id: {eq: $id}) {
-    id
-    html
-    fields {
-      path
-    }
-    frontmatter {
-      path
-      title
-    }
-  }
-  typeMetadata: allMetadataSchemaEntity(filter: {coreEntity: {eq: $metadataCoreName}, schemaType: {eq: "type"}}) {
+query ($id: String!, $metadataPath: String!) {
+  typeMetadata: allMetadataSchemaEntity(filter: {relativeFilePath: {eq: $metadataPath}}) {
     edges {
       node {
-        title
         coreEntity
-        schemaType
+        name
         properties {
           name
           description
@@ -78,26 +69,39 @@ query ($id: String!, $metadataCoreName: String!) {
           type
           userFriendly
         }
+        relativeFilePath
+        schemaType
+        title
       }
     }
   }
   referenceMetadata: allMetadataSchemaEntity(filter: {schemaType: {in: ["module","core"]}}) {
-  edges {
-    node {
-      title
-      coreEntity
-      schemaType
-      relativeFilePath
-      properties {
+    edges {
+      node {
+        coreEntity
+        name
+        properties {
           name
           description
+          arrayModuleRef
           arrayName
           arrayType
+          objectModuleRef
           objectName
           required
           type
           userFriendly
         }
+        relativeFilePath
+        schemaType
+        title
+      }
+    }
+  }
+  allSitePage(filter: {context: {id: {eq: $id}}}) {
+    edges {
+      node {
+        path
       }
     }
   }

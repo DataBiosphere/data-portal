@@ -39,22 +39,21 @@ class Metadata extends React.Component {
 	};
 
 	render() {
+		const {entity, unFriendly} = this.props,
+			{properties} = entity;
 		return (
 			<div className={compStyles.metadata}>
-				<h3>{this.props.entity.title}</h3>
-				<div>
-					{this.props.entity.properties.filter((element) => {
-						return element.name !== 'describedBy' && element.name !== 'schema_version' && element.name !== 'schema_type' && element.name !== 'provenance';
-					}).map((e, i) =>
-						<div key={i}>
-							<MetadataRow element={e}/>
-							{this.getObjectRef(e.arrayModuleRef, e.objectModuleRef).length ?
-								<div className={compStyles.nested}>
-									{this.getObjectRefProperties(e.arrayModuleRef, e.objectModuleRef).map((nestedElement, j) =>
-										<MetadataRow key={j} element={nestedElement} nested={true}/>)}</div> : null}
-						</div>
-					)}
-				</div>
+				{properties.filter((e) => {
+					return e.name !== 'describedBy' && e.name !== 'schema_version' && e.name !== 'schema_type' && e.name !== 'provenance';
+				}).map((e1, i) =>
+				this.getObjectRef(e1.arrayModuleRef, e1.objectModuleRef).length ?
+					this.getObjectRefProperties(e1.arrayModuleRef, e1.objectModuleRef).map((e2, j) =>
+								this.getObjectRef(e2.arrayModuleRef, e2.objectModuleRef).length ?
+									this.getObjectRefProperties(e2.arrayModuleRef, e2.objectModuleRef).map((e3, k) =>
+										<MetadataRow key={k} element={e3}
+													 unFriendly={`${unFriendly}.${e2.name}.${e1.name}`}/>) :
+									<MetadataRow key={j} element={e2} unFriendly={`${unFriendly}.${e1.name}`}/>) :
+					<MetadataRow key={i} element={e1} unFriendly={unFriendly}/>)}
 			</div>
 		);
 	}

@@ -6,6 +6,8 @@
  * Filters navigation by location and orders navigation links.
  */
 
+import * as StringFormatService from './string-format.service';
+
 /**
  * Filter navigation links by location (header, footer).
  * @param navigationLinks
@@ -89,6 +91,46 @@ export function getNav(siteMap, docPath) {
 	const tab = getTab(siteMap, docPath);
 
 	return tab.primaryLinks;
+}
+
+/**
+ * Given a path and the metadata json return the links of the tab the metadata belongs to.
+ * This is used to draw the left nav in the document page for metadata dictionary pages.
+ * @param metaMap
+ * @param docPath
+ */
+export function getMetadataNav(metaMap, docPath) {
+
+	let splitDocPath = docPath.split('/'),
+		sectionAndTabPathName = `/${splitDocPath[1]}/${splitDocPath[2]}/`,
+		core = metaMap.map(m => m.context.metadataCoreName).filter((v, i, a) => a.indexOf(v) === i).sort();
+
+	return core.map((c, i) => {
+
+		// Get the secondary links and order alphabetically.
+		let secondaryLinks = metaMap.filter(m => m.context.metadataCoreName === c).map(sl => {
+
+			return {name: sl.context.metadataTitle, key: sl.path, path: sl.path};
+		}).sort((sl0, sl1) => {
+			if (sl0.name.toUpperCase() > sl1.name.toUpperCase()) {
+				return 1;
+			}
+			if (sl0.name.toUpperCase() < sl1.name.toUpperCase()) {
+				return -1;
+			}
+			return 0;
+		});
+
+		// Get the first secondary link 's path and allocate it to the primary link path
+		let primaryLinkPath = secondaryLinks[0].path;
+
+		return {
+			name: StringFormatService.convertSentenceCasetoTitleCase(c),
+			key: `${sectionAndTabPathName}${c}`,
+			path: primaryLinkPath,
+			secondaryLinks: secondaryLinks
+		};
+	});
 }
 
 /**

@@ -5,7 +5,6 @@ const {createFilePath} = require(`gatsby-source-filesystem`);
 
 async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 
-
 	const {createNode, createParentChildLink} = actions;
 
 	function transformObject(obj, id, type) {
@@ -19,6 +18,7 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 			id,
 			children: [],
 			parent: node.id,
+			myPath: node.relativeFilePath,
 			internal: {
 				contentDigest,
 				type,
@@ -82,13 +82,14 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 
 
 	const entity = {
-		title: parsedContent.title,
+		category: sections[4] ? sections[3] : '',
+		coreEntity: sections[2], // core type biomaterial, project,
 		description: parsedContent.description,
+		name: parsedContent.name,
 		properties: properties,
 		relativeFilePath: relativeFilePath,
 		schemaType: sections[1], // core, type or module
-		coreEntity: sections[2], // core type biomaterial, project,
-		category: sections[4] ? sections[3] : ''
+		title: parsedContent.title
 	};
 
 	transformObject(

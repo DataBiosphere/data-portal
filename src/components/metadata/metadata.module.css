@@ -6,16 +6,6 @@
  */
 @import '../../styles/vars.module.css';
 
-.metadata h3 {
+.metadata {
 	border-bottom: 1px solid var(--gray-lightest);
-	margin-top: 48px;
-	text-transform: capitalize;
-}
-
-/* Nested element */
-.nested {
-	background-color: var(--black3);
-	border-radius: 4px;
-	margin: 0 0 16px;
-	padding: 8px 0;
 }

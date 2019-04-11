@@ -91,6 +91,11 @@ p.m {
 	margin: 0 0 8px;
 }
 
+/* "fontsize-xs" "semiBold" */
+.xs.semiBold {
+	font-weight: 500;
+}
+
 /* Class "fontsize-xxs" */
 .xxs {
 	font-family: "Montserrat", sans-serif;
@@ -114,6 +119,13 @@ p.m {
     font-size: 14px;
     font-weight: 300;
     line-height: 20px;
+}
+
+.hcaCode {
+	font-family: "Source Code Pro", monospace;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 18px;
 }
 
 /* Font colour white on dark backgrounds */

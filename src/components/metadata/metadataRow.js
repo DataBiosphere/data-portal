@@ -19,20 +19,40 @@ const classNames = require('classnames');
 
 class MetadataRow extends React.Component {
 
+	/**
+	 * Returns the unFriendly list separated by <span> for each unFriendly.
+	 * Allows wrapping of the list if required.
+	 * @param unFriendlyList
+	 * @returns {string}
+	 */
+	wrapByPeriod = (unFriendlyList) => {
+		return unFriendlyList.split('.').map((u, i) => {
+
+			if (i === 0) {
+				return `<span>${u}</span>`;
+			}
+			return `<span>.${u}</span>`;
+		}).join('');
+	};
+
 	render() {
+		const {element, unFriendly} = this.props,
+			{arrayName, arrayType, description, name, objectName, required, type, userFriendly} = element;
+
 		return (
-			<div className={classNames(compStyles.metadataRow, {[compStyles.nested]: this.props.nested})}>
-				<div className={compStyles.metadataName}>
-							<span
-								className={classNames({[fontStyles.xs]: !this.props.nested}, {[fontStyles.xxs]: this.props.nested})}>{this.props.element.userFriendly ? this.props.element.userFriendly : this.props.element.name}<span
-								className={classNames({[fontStyles.xs]: !this.props.nested}, {[fontStyles.xxs]: this.props.nested})}>{this.props.element.required ? '*' : null}</span>
-							</span>
+			<div className={compStyles.metadataRow}>
+				<div className={compStyles.metadataDetails}>
+					<span
+						className={classNames(fontStyles.xs, fontStyles.semiBold)}>{userFriendly ? userFriendly : name}<span
+						className={fontStyles.xs}>{required ? '*' : null}</span>
+					</span>
 					<span
 						className={classNames(fontStyles.xxs, compStyles.type)}>
-							{this.props.element.type === 'object' ? `${this.props.element.objectName} ` : this.props.element.type === 'array' ? this.props.element.arrayName ? `${this.props.element.arrayName} ` : `${this.props.element.arrayType} ` : null}{this.props.element.type}</span>
+							{type === 'object' ? `${objectName} ` : type === 'array' ? arrayName ? `${arrayName} ` : `${arrayType} ` : null}{type}</span>
+					<Linkify className={classNames(fontStyles.xs, compStyles.description)}>{description}</Linkify>
+					<span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}
+						  dangerouslySetInnerHTML={{__html: this.wrapByPeriod(`${unFriendly}.${element.name}`)}}/>
 				</div>
-				<Linkify
-					className={classNames({[fontStyles.xs]: !this.props.nested}, {[fontStyles.xxs]: this.props.nested})}>{this.props.element.description}</Linkify>
 			</div>
 		);
 	}

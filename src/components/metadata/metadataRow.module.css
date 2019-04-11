@@ -9,51 +9,51 @@
 /* Row */
 .metadataRow {
 	align-items: flex-start;
+	border-left: 1px solid var(--gray-lightest);
+	border-right: 1px solid var(--gray-lightest);
+	border-top: 1px solid var(--gray-lightest);
 	display: flex;
-	padding: 8px 0;
+	flex-direction: column;
+	width: 100%;
 }
 
-/* Label */
-.metadataName {
+/* Details */
+.metadataDetails {
 	align-items: flex-start;
 	display: flex;
 	flex-direction: column;
-	min-width: 160px;
-	padding-right: 8px;
-	position: relative; /* To position required field tooltip */
-	width: 40%;
+	margin: 8px 0;
+	padding: 0 8px;
 }
 
-.nested .metadataName {
-	padding-left: 16px;
-}
-
-.metadataRow span {
+.metadataDetails span {
 	margin: 0;
 }
 
-.metadataRow.nested span {
-	color: var(--gray-dark);
-	padding-right: 16px;
-}
-
 /* Type */
-.metadataRow span.type {
+.metadataDetails .type {
+	color: var(--gray-dark);
 	font-size: 11px;
 }
 
 /* Description */
-.metadataRow > span {
-	width: 70%;
+.metadataDetails .description {
+	padding: 4px 0;
+}
+
+.metadataDetails .unFriendly {
+	display: flex;
+	flex-wrap: wrap;
 }
 
 /* Required field '*' */
-.metadataName > span > span {
+.metadataDetails > span:first-of-type > span {
 	padding-left: 1px;
 }
 
 /* Description links */
-.metadataRow > span a {
+.metadataDetails .description a {
 	font: inherit;
 	word-break: break-all;
 }
+

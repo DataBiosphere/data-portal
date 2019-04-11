@@ -46,6 +46,7 @@ class Layout extends React.Component {
 					<link rel='stylesheet'
 						  href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700'/>
 					<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=PT+Mono'/>
+					<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400'/>
 					<link rel='stylesheet' href='https://use.typekit.net/qhb0geh.css'/>
 				</Helmet>
 				<div className={classNames(compStyles.site, {[compStyles.noScroll]: this.state.noScroll})}>
