@@ -7,5 +7,4 @@
 @import '../../styles/vars.module.css';
 
 .metadata {
-	border-bottom: 1px solid var(--gray-lightest);
 }
