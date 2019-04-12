@@ -9,11 +9,9 @@
 /* Row */
 .metadataRow {
 	align-items: flex-start;
-	border-left: 1px solid var(--gray-lightest);
-	border-right: 1px solid var(--gray-lightest);
-	border-top: 1px solid var(--gray-lightest);
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 16px;
 	width: 100%;
 }
 

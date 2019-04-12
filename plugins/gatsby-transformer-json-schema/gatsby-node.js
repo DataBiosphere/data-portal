@@ -80,7 +80,6 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 		}
 	});
 
-
 	const entity = {
 		category: sections[4] ? sections[3] : '',
 		coreEntity: sections[2], // core type biomaterial, project,

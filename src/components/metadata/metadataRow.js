@@ -51,7 +51,7 @@ class MetadataRow extends React.Component {
 							{type === 'object' ? `${objectName} ` : type === 'array' ? arrayName ? `${arrayName} ` : `${arrayType} ` : null}{type}</span>
 					<Linkify className={classNames(fontStyles.xs, compStyles.description)}>{description}</Linkify>
 					<span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}
-						  dangerouslySetInnerHTML={{__html: this.wrapByPeriod(`${unFriendly}.${element.name}`)}}/>
+						  dangerouslySetInnerHTML={{__html: this.wrapByPeriod(unFriendly)}}/>
 				</div>
 			</div>
 		);

@@ -30,6 +30,11 @@ class Metadata extends React.Component {
 		return this.props.reference.filter(module => module.relativeFilePath.includes(ref));
 	};
 
+	getObjectRefName = (e1) => {
+
+		return this.getObjectRef(e1.arrayModuleRef, e1.objectModuleRef)[0].name;
+	};
+
 	getObjectRefProperties = (arrayRef, objectRef) => {
 
 		// Return the properties of the referenced module object/array
@@ -51,9 +56,9 @@ class Metadata extends React.Component {
 								this.getObjectRef(e2.arrayModuleRef, e2.objectModuleRef).length ?
 									this.getObjectRefProperties(e2.arrayModuleRef, e2.objectModuleRef).map((e3, k) =>
 										<MetadataRow key={k} element={e3}
-													 unFriendly={`${unFriendly}.${e2.name}.${e1.name}`}/>) :
-									<MetadataRow key={j} element={e2} unFriendly={`${unFriendly}.${e1.name}`}/>) :
-					<MetadataRow key={i} element={e1} unFriendly={unFriendly}/>)}
+													 unFriendly={`${unFriendly}.${this.getObjectRefName(e1)}.${this.getObjectRefName(e2)}.${e3.name}`}/>) :
+									<MetadataRow key={j} element={e2} unFriendly={`${unFriendly}.${this.getObjectRefName(e1)}.${e2.name}`}/>) :
+					<MetadataRow key={i} element={e1} unFriendly={`${unFriendly}.${e1.name}`}/>)}
 			</div>
 		);
 	}
