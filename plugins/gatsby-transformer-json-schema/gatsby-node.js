@@ -48,45 +48,31 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 		basePath: ''
 	});
 
-	function removeFileType(ref) {
-		return ref.split('.json')[0];
-	}
-
-	function splitRef(ref) {
-		let regex = /_/g;
-		let splitRef = ref.split('/');
-
-		return splitRef[splitRef.length - 1].split('.')[0].replace(regex, ' ');
-	}
-
 	const sections = relativeFilePath.split('/');
-
 	const propertyNames = _.keys(parsedContent.properties);
 
-	const requiredProperties = parsedContent.required || [];
+	// Excluded properties from each type json
+	const excludedProperties = ['describedBy', 'schema_version', 'schema_type', 'provenance'];
 
-	const properties = propertyNames.map((name) => {
+	const properties = propertyNames.filter(name => !excludedProperties.includes(name)).map(name => {
+
+		// stringify properties.example
+		// gatsby infers type on build and chooses type based on first read - graphiql cannot handle a field of differing type
+		parsedContent.properties[name].example = JSON.stringify(parsedContent.properties[name].example);
+
 		return {
 			name: name,
-			description: parsedContent.properties[name].description,
-			arrayModuleRef: parsedContent.properties[name].items ? parsedContent.properties[name].items.$ref ? removeFileType(parsedContent.properties[name].items.$ref) : '' : '',
-			arrayName: parsedContent.properties[name].items ? parsedContent.properties[name].items.$ref ? splitRef(parsedContent.properties[name].items.$ref) : '' : '',
-			arrayType: parsedContent.properties[name].items ? parsedContent.properties[name].items.type : '',
-			objectModuleRef: parsedContent.properties[name].$ref ? removeFileType(parsedContent.properties[name].$ref) : '',
-			objectName: parsedContent.properties[name].$ref ? splitRef(parsedContent.properties[name].$ref) : '',
-			required: requiredProperties.includes(name),
-			type: parsedContent.properties[name].type,
-			userFriendly: parsedContent.properties[name].user_friendly
+			properties: parsedContent.properties[name]
 		}
 	});
 
 	const entity = {
-		category: sections[4] ? sections[3] : '',
 		coreEntity: sections[2], // core type biomaterial, project,
 		description: parsedContent.description,
 		name: parsedContent.name,
 		properties: properties,
 		relativeFilePath: relativeFilePath,
+		required: parsedContent.required,
 		schemaType: sections[1], // core, type or module
 		title: parsedContent.title
 	};

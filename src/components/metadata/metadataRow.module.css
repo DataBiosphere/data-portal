@@ -34,9 +34,9 @@
 	font-size: 11px;
 }
 
-/* Description */
-.metadataDetails .description {
-	padding: 4px 0;
+/* Description, example, type */
+.metadataDetails .description, .metadataDetails .example, .metadataDetails .type {
+	padding-bottom: 4px;
 }
 
 .metadataDetails .unFriendly {

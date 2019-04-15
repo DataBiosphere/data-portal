@@ -9,56 +9,58 @@
 import React from 'react';
 
 // App dependencies
+import MetadataGroupReference from './metadataGroupReference';
 import MetadataRow from './metadataRow';
-
-// Styles
-import compStyles from './metadata.module.css';
 
 class Metadata extends React.Component {
 
-	getObjectRef = (arrayRef, objectRef) => {
+	getPropertyRef = (property) => {
 
-		// Get the array/object reference
-		const ref = arrayRef !== '' ? arrayRef : objectRef;
+		// Return a value if property has _ref or items._ref value
+		// Return an empty string if both values are null
+		let propertyReference = property.properties._ref ? property.properties._ref.split('.json')[0] : property.properties.items && property.properties.items._ref ? property.properties.items._ref.split('.json')[0] : '';
 
-		// Return empty if there are no array/object references
-		if (ref === '') {
+		// Remove internal references to type
+		// TODO add internal reference
+		if (propertyReference.includes('type/')) {
 			return '';
 		}
 
-		// Return the corresponding module that the array/object references (using relativeFilePath to find the reference)
-		return this.props.reference.filter(module => module.relativeFilePath.includes(ref));
+		return propertyReference;
 	};
 
-	getObjectRefName = (e1) => {
+	getPropertyRefProperties = (property) => {
 
-		return this.getObjectRef(e1.arrayModuleRef, e1.objectModuleRef)[0].name;
-	};
+		let propertyRef = this.getPropertyRef(property);
 
-	getObjectRefProperties = (arrayRef, objectRef) => {
+		// Return empty if there are no array/object references
+		if (propertyRef === '') {
+			return '';
+		}
 
 		// Return the properties of the referenced module object/array
-		return this.getObjectRef(arrayRef, objectRef)[0].properties.filter((nestedElement) => {
-			return nestedElement.name !== 'describedBy' && nestedElement.name !== 'schema_version' && nestedElement.name !== 'schema_type' && nestedElement.name !== 'provenance';
-		});
+		return this.props.reference.filter(reference => reference.relativeFilePath.includes(propertyRef))[0];
 	};
 
 	render() {
 		const {entity, unFriendly} = this.props,
-			{properties} = entity;
+			{properties, required} = entity;
 		return (
-			<div className={compStyles.metadata}>
-				{properties.filter((e) => {
-					return e.name !== 'describedBy' && e.name !== 'schema_version' && e.name !== 'schema_type' && e.name !== 'provenance';
-				}).map((e1, i) =>
-				this.getObjectRef(e1.arrayModuleRef, e1.objectModuleRef).length ?
-					this.getObjectRefProperties(e1.arrayModuleRef, e1.objectModuleRef).map((e2, j) =>
-								this.getObjectRef(e2.arrayModuleRef, e2.objectModuleRef).length ?
-									this.getObjectRefProperties(e2.arrayModuleRef, e2.objectModuleRef).map((e3, k) =>
+			<div>
+				{properties.map((e1, i) =>
+					this.getPropertyRef(e1) !== '' ?
+						<MetadataGroupReference key={i} friendly={this.getPropertyRefProperties(e1).title}>
+							{this.getPropertyRefProperties(e1).properties.map((e2, j) =>
+								this.getPropertyRef(e2) !== '' ?
+									this.getPropertyRefProperties(e2).properties.map((e3, k) =>
 										<MetadataRow key={k} element={e3}
-													 unFriendly={`${unFriendly}.${this.getObjectRefName(e1)}.${this.getObjectRefName(e2)}.${e3.name}`}/>) :
-									<MetadataRow key={j} element={e2} unFriendly={`${unFriendly}.${this.getObjectRefName(e1)}.${e2.name}`}/>) :
-					<MetadataRow key={i} element={e1} unFriendly={`${unFriendly}.${e1.name}`}/>)}
+													 required={this.getPropertyRefProperties(e2).required}
+													 unFriendly={`${unFriendly}.${this.getPropertyRefProperties(e1).name}.${this.getPropertyRefProperties(e2).name}.${e3.name}`}/>) :
+									<MetadataRow key={j} element={e2}
+												 required={this.getPropertyRefProperties(e1).required}
+												 unFriendly={`${unFriendly}.${this.getPropertyRefProperties(e1).name}.${e2.name}`}/>)}</MetadataGroupReference> :
+						<MetadataRow key={i} element={e1} required={required}
+									 unFriendly={`${unFriendly}.${e1.name}`}/>)}
 			</div>
 		);
 	}
