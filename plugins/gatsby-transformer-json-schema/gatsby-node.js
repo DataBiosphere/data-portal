@@ -51,9 +51,12 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 	const sections = relativeFilePath.split('/');
 	const propertyNames = _.keys(parsedContent.properties);
 
+	const definitionTaskPropertyNames = parsedContent.definitions ? parsedContent.definitions.task ? _.keys(parsedContent.definitions.task.properties) : '' : '';
+	const definitionParameterPropertyNames = parsedContent.definitions ? parsedContent.definitions.parameter ? _.keys(parsedContent.definitions.parameter.properties) : '' : '';
+
+	// Get properties of each element
 	// Excluded properties from each type json
 	const excludedProperties = ['describedBy', 'schema_version', 'schema_type', 'provenance'];
-
 	const properties = propertyNames.filter(name => !excludedProperties.includes(name)).map(name => {
 
 		// stringify properties.example
@@ -66,11 +69,47 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 		}
 	});
 
+	// Get definition/task if it exists in json (e.g. https://github.com/HumanCellAtlas/metadata-schema/blob/master/json_schema/type/process/analysis/analysis_process.json)
+	const definitionTaskProperties = definitionTaskPropertyNames ? definitionTaskPropertyNames.map(name => {
+		return {
+			name: name,
+			type: parsedContent.definitions.task.properties[name].type ? parsedContent.definitions.task.properties[name].type : ''
+		}
+	}) : '';
+
+	// Get definition/parameter if it exists in json (e.g. https://github.com/HumanCellAtlas/metadata-schema/blob/master/json_schema/type/process/analysis/analysis_process.json)
+	const definitionParameterProperties = definitionParameterPropertyNames ? definitionParameterPropertyNames.map(name => {
+		return {
+			name: name,
+			type: parsedContent.definitions.parameter.properties[name].type ? parsedContent.definitions.parameter.properties[name].type : '',
+			description: parsedContent.definitions.parameter.properties[name].description ? parsedContent.definitions.parameter.properties[name].description : ''
+		}
+	}) : '';
+
+	let definitions;
+
+	if (parsedContent.definitions && parsedContent.definitions.task) {
+
+		definitions = {
+			task: {
+				required: parsedContent.definitions.task.required,
+				type: parsedContent.definitions.task.type,
+				properties: definitionTaskProperties
+			},
+			parameter: {
+				required: parsedContent.definitions.parameter.required,
+				type: parsedContent.definitions.parameter.type,
+				properties: definitionParameterProperties
+			}
+		};
+	}
+
 	const entity = {
 		coreEntity: sections[2], // core type biomaterial, project,
 		description: parsedContent.description,
 		name: parsedContent.name,
 		type: parsedContent.type,
+		definitions: definitions,
 		properties: properties,
 		relativeFilePath: relativeFilePath,
 		required: parsedContent.required,

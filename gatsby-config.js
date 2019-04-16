@@ -17,8 +17,8 @@ let yamlPath = `${__dirname}/node_modules/data-portal-content/siteMap`;
 if (process.env.GATSBY_DEV_ENV == "LOCAL") {
 	console.log("LAUNCHING USING LOCAL CONFIG");
 	// uncomment to use the local content repo vs the npm repo.
-	contentPath = '/Users/franmcdade/sandbox/data-portal-content/content';
-	yamlPath = '/Users/franmcdade/sandbox/data-portal-content/siteMap';
+	// contentPath = '/Users/franmcdade/sandbox/data-portal-content/content';
+	// yamlPath = '/Users/franmcdade/sandbox/data-portal-content/siteMap';
 	// contentPath = "/Users/dave/projects/data-portal-content/content";
 	metadataSchemaDocsPath = '../hca-metadata-schema/docs';
 	metadataSchemaJsonPath = '../hca-metadata-schema/json_schema';

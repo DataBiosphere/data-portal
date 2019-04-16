@@ -35,13 +35,6 @@ class MetadataRow extends React.Component {
 		}).join('');
 	};
 
-	splitRef = (ref) => {
-		let regex = /_/g;
-		let splitRef = ref.split('/');
-
-		return splitRef[splitRef.length - 1].split('.')[0].replace(regex, ' ');
-	};
-
 	listByEnum = (propertyEnum) => {
 
 		let noOfEnums = propertyEnum.length - 1;
@@ -64,11 +57,11 @@ class MetadataRow extends React.Component {
 		const {element, required, unFriendly} = this.props;
 		const {name, properties} = element,
 			{description, example, items, _ref, type, user_friendly} = properties,
-			itemRefOrType = items ? items._ref ? this.splitRef(items._ref) : items.type : '',
-			objectName = _ref ? this.splitRef(_ref) : '',
 			propertyEnum = properties.enum,
-			exampleOrEnum = properties.enum ? `${this.listByEnum(propertyEnum)}.` : example ? `${this.listByExample(example)}.` : null;
-
+			exampleOrEnum = properties.enum ? `${this.listByEnum(propertyEnum)}.` : example ? `${this.listByExample(example)}.` : null,
+			regex = /_/g,
+			elementType = type ? type : items && items._ref ? items.type : null,
+			isRef = _ref || (items && items._ref);
 		return (
 			<div className={compStyles.metadataRow}>
 				<div className={compStyles.metadataDetails}>
@@ -77,8 +70,7 @@ class MetadataRow extends React.Component {
 						className={fontStyles.xs}>{required && required.includes(name) ? '*' : null}</span>
 					</span>
 					<span
-						className={classNames(fontStyles.xxs, compStyles.type)}>
-							{type === 'object' ? `${objectName} ` : type === 'array' ? `${itemRefOrType} ` : null}{type}{propertyEnum ? ' enum' : null}</span>
+						className={classNames(fontStyles.xxs, compStyles.type)}>{isRef ? name.replace(regex, ' ') : null} {elementType} {propertyEnum ? ' enum' : null}</span>
 					<Linkify className={classNames(fontStyles.xs, compStyles.description)}>{description}</Linkify>
 					<span className={classNames(fontStyles.xxs, compStyles.example)}>{exampleOrEnum}</span>
 					<span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}
