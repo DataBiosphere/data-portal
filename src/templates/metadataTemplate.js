@@ -88,6 +88,7 @@ query ($metadataPath: String!) {
         coreEntity
         title
         name
+        type
         description
         properties {
           name

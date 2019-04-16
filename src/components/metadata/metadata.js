@@ -49,7 +49,7 @@ class Metadata extends React.Component {
 			<div>
 				{properties.map((e1, i) =>
 					this.getPropertyRef(e1) !== '' ?
-						<MetadataGroupReference key={i} friendly={this.getPropertyRefProperties(e1).title}>
+						<MetadataGroupReference key={i} element={this.getPropertyRefProperties(e1)}>
 							{this.getPropertyRefProperties(e1).properties.map((e2, j) =>
 								this.getPropertyRef(e2) !== '' ?
 									this.getPropertyRefProperties(e2).properties.map((e3, k) =>
