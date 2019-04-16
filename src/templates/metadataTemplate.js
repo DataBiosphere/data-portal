@@ -77,7 +77,7 @@ query ($metadataPath: String!) {
       }
     }
   }
-  referenceMetadata: allMetadataSchemaEntity(filter: {schemaType: {in: ["module","core"]}}) {
+  referenceMetadata: allMetadataSchemaEntity(filter: {schemaType: {in: ["module","core","type"]}}) {
     edges {
       node {
         relativeFilePath
@@ -90,6 +90,25 @@ query ($metadataPath: String!) {
         name
         type
         description
+        definitions {
+          task {
+            required
+            type
+            properties {
+              name
+              type
+            }
+          }
+          parameter {
+            required
+            type
+            properties {
+              name
+              type
+              description
+            }
+          }
+        }
         properties {
           name
           properties {

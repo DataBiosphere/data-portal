@@ -10,6 +10,10 @@
 	position: relative; /* Positions reference .metadataGroupReference */
 }
 
+.metadataGroup + .metadataGroup {
+	margin-top: 32px;
+}
+
 /* Hide */
 .metadataGroupReference {
 	display: none;
@@ -17,6 +21,11 @@
 
 .metadataGroupReference span {
 	margin: 0;
+}
+
+/* Required field '*' */
+.metadataGroupReference > span:first-of-type > span {
+	padding-left: 1px;
 }
 
 .metadataGroupReference .title {
