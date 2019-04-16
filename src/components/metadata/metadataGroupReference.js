@@ -17,12 +17,15 @@ const classNames = require('classnames');
 class MetadataGroupReference extends React.Component {
 
 	render() {
-		const {children, friendly} = this.props;
-
+		const {children, element} = this.props,
+			{description, name, title, type} = element,
+			regex = /_/g;
 		return (
 			<div className={compStyles.metadataGroup}>
-				<div className={classNames(fontStyles.xs, compStyles.metadataGroupReference)}>
-					<span>{friendly}</span>
+				<div className={compStyles.metadataGroupReference}>
+					<span className={classNames(fontStyles.xs, fontStyles.regular, compStyles.title)}>{title}</span>
+					<span className={classNames(fontStyles.xxs, compStyles.type)}>{name.replace(regex, ' ')} {type}</span>
+					<span className={classNames(fontStyles.xxs, compStyles.description)}>{description}</span>
 				</div>
 				{children}
 			</div>

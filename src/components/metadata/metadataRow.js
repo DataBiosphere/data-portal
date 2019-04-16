@@ -78,7 +78,7 @@ class MetadataRow extends React.Component {
 					</span>
 					<span
 						className={classNames(fontStyles.xxs, compStyles.type)}>
-							{type === 'object' ? `${objectName} ` : type === 'array' ? `${itemRefOrType} ` : null}{type}</span>
+							{type === 'object' ? `${objectName} ` : type === 'array' ? `${itemRefOrType} ` : null}{type}{propertyEnum ? ' enum' : null}</span>
 					<Linkify className={classNames(fontStyles.xs, compStyles.description)}>{description}</Linkify>
 					<span className={classNames(fontStyles.xxs, compStyles.example)}>{exampleOrEnum}</span>
 					<span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}

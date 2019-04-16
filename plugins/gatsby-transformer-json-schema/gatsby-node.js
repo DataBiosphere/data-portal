@@ -70,6 +70,7 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 		coreEntity: sections[2], // core type biomaterial, project,
 		description: parsedContent.description,
 		name: parsedContent.name,
+		type: parsedContent.type,
 		properties: properties,
 		relativeFilePath: relativeFilePath,
 		required: parsedContent.required,

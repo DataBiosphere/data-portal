@@ -91,6 +91,11 @@ p.m {
 	margin: 0 0 8px;
 }
 
+/* "fontsize-xs" "regular" */
+.xs.regular {
+	font-weight: 400;
+}
+
 /* "fontsize-xs" "semiBold" */
 .xs.semiBold {
 	font-weight: 500;

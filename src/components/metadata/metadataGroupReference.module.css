@@ -15,6 +15,26 @@
 	display: none;
 }
 
+.metadataGroupReference span {
+	margin: 0;
+}
+
+.metadataGroupReference .title {
+	padding-top: 8px;
+}
+
+.metadataGroupReference .type, .metadataGroupReference .description {
+	padding-bottom: 4px;
+}
+
+.metadataGroupReference .type {
+	font-size: 11px;
+}
+
+.metadataGroupReference .description {
+	max-width: 350px;
+}
+
 /**
  * Large +
  * HCA custom breakpoint
@@ -24,22 +44,21 @@
 	/* Reference container */
 	.metadataGroupReference {
 		border-left: 1px solid var(--gray-lightest);
-		color: var(--gray-medium);
-		display: block;
+		color: var(--gray-dark);
+		display: flex;
+		flex-direction: column;
 		height: 100%;
 		left: 100%;
 		margin-left: 8px;
-		padding-left: 8px;
+		padding: 0 30px 0 8px;
 		position: absolute;
-		max-width: calc(100vw - 30px - 290px - 640px - 8px); /* Padding, nav, content */
+		max-width: calc(((100vw - 1140px) / 2) + (1140px - 290px - 640px - 8px)); /* Padding, nav, content */
 		width: 100%;
 	}
 
-	/* Title */
-	.metadataGroupReference span {
-		display: block;
+	/* Ellipsis on content - excludes .description */
+	.metadataGroupReference span:not(.description) {
 		overflow: hidden;
-		padding-top: 8px;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
