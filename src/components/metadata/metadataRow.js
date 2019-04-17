@@ -9,6 +9,7 @@
 import React from 'react';
 
 // App dependencies
+import HeadingTag from '../anchor/anchor';
 import Linkify from 'react-linkify';
 
 // Styles
@@ -60,19 +61,19 @@ class MetadataRow extends React.Component {
 			propertyEnum = properties.enum,
 			exampleOrEnum = properties.enum ? `${this.listByEnum(propertyEnum)}.` : example ? `${this.listByExample(example)}.` : null,
 			regex = /_/g,
+			whiteSpace = /\s/g,
 			elementType = type ? type : items && items._ref ? items.type : null,
-			isRef = _ref || (items && items._ref);
+			isRef = _ref || (items && items._ref),
+			anchor = unFriendly.replace(whiteSpace,'').replace(/\./g, '-');
 		return (
-			<div className={compStyles.metadataRow}>
+			<div id={anchor} className={compStyles.metadataRow}>
 				<div className={compStyles.metadataDetails}>
-					<span
-						className={classNames(fontStyles.xs, fontStyles.semiBold)}>{user_friendly ? user_friendly : name}<span
-						className={fontStyles.xs}>{required && required.includes(name) ? '*' : null}</span>
-					</span>
+					<span className={fontStyles.m}>{user_friendly ? user_friendly : name}<span
+						className={fontStyles.xs}>{required && required.includes(name) ? '*' : null}</span><HeadingTag anchor={anchor}/></span>
 					<span
 						className={classNames(fontStyles.xxs, compStyles.type)}>{isRef ? name.replace(regex, ' ') : null} {elementType} {propertyEnum ? ' enum' : null}</span>
-					<Linkify className={classNames(fontStyles.xs, compStyles.description)}>{description}</Linkify>
-					<span className={classNames(fontStyles.xxs, compStyles.example)}>{exampleOrEnum}</span>
+					<Linkify className={compStyles.description}>{description}</Linkify>
+					<span className={classNames(fontStyles.xs, compStyles.example)}>{exampleOrEnum}</span>
 					<span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}
 						  dangerouslySetInnerHTML={{__html: this.wrapByPeriod(unFriendly)}}/>
 				</div>

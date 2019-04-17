@@ -9,6 +9,7 @@
 import React from 'react';
 
 // App dependencies
+import HeadingTag from '../anchor/anchor';
 import Linkify from 'react-linkify';
 
 // Styles
@@ -38,13 +39,14 @@ class MetadataInternalRow extends React.Component {
 	render() {
 		const {element, required, unFriendly} = this.props,
 			{name, description, type} = element,
-			regex = /_/g;
+			regex = /_/g,
+			whiteSpace = /\s/g,
+			anchor = unFriendly.replace(whiteSpace,'').replace(regex, '-').replace(/\./g, '-');
 		return (
 			<div className={compStyles.metadataRow}>
 				<div className={compStyles.metadataDetails}>
-					<span
-						className={classNames(fontStyles.xs, fontStyles.semiBold)}>{name.replace(regex, ' ')}<span
-						className={fontStyles.xs}>{required && required.includes(name) ? '*' : null}</span>
+					<span id={anchor} className={classNames(fontStyles.xs, fontStyles.semiBold)}>{name.replace(regex, ' ')}<span
+						className={fontStyles.xs}>{required && required.includes(name) ? '*' : null}</span><HeadingTag anchor={anchor}/>
 					</span>
 					<span
 						className={classNames(fontStyles.xxs, compStyles.type)}>{type}</span>
