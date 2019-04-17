@@ -11,9 +11,18 @@
 	align-items: flex-start;
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 16px;
-	padding-right: 8px;
+	padding-bottom: 16px;
+	position: relative; /* Positions <MetadataReference> */
 	width: 100%;
+}
+
+.metadataRow.groupEnd {
+	margin-bottom: 16px;
+	padding-bottom: 0;
+}
+
+.metadataRow.groupEnd + .metadataRow.groupBegin {
+	margin-top: 32px;
 }
 
 /* Details */

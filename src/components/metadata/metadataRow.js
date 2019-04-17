@@ -11,6 +11,7 @@ import React from 'react';
 // App dependencies
 import HeadingTag from '../anchor/anchor';
 import Linkify from 'react-linkify';
+import MetadataReference from './metadataReference';
 
 // Styles
 import compStyles from './metadataRow.module.css';
@@ -55,8 +56,11 @@ class MetadataRow extends React.Component {
 	};
 
 	render() {
-		const {element, required, unFriendly} = this.props;
+		const {element, elementParent, elementRef, elementRefChild, elementRefRequired, k, j, last, unFriendly} = this.props;
 		const {name, properties} = element,
+			required = elementParent && elementParent.required,
+			isRequired = required && required.includes(name),
+			first = j === 0 || (j === 0 && k === 0),
 			{description, example, items, _ref, type, user_friendly} = properties,
 			propertyEnum = properties.enum,
 			exampleOrEnum = properties.enum ? `${this.listByEnum(propertyEnum)}.` : example ? `${this.listByExample(example)}.` : null,
@@ -66,10 +70,10 @@ class MetadataRow extends React.Component {
 			isRef = _ref || (items && items._ref),
 			anchor = unFriendly.replace(whiteSpace,'').replace(/\./g, '-');
 		return (
-			<div id={anchor} className={compStyles.metadataRow}>
+			<div id={anchor} className={classNames(compStyles.metadataRow, {[compStyles.groupEnd]: last}, {[compStyles.groupBegin]: first})}>
 				<div className={compStyles.metadataDetails}>
 					<span className={fontStyles.m}>{user_friendly ? user_friendly : name}<span
-						className={fontStyles.xs}>{required && required.includes(name) ? '*' : null}</span><HeadingTag anchor={anchor}/></span>
+						className={fontStyles.xs}>{isRequired ? '*' : null}</span><HeadingTag anchor={anchor}/></span>
 					<span
 						className={classNames(fontStyles.xxs, compStyles.type)}>{isRef ? name.replace(regex, ' ') : null} {elementType} {propertyEnum ? ' enum' : null}</span>
 					<Linkify className={compStyles.description}>{description}</Linkify>
@@ -77,6 +81,7 @@ class MetadataRow extends React.Component {
 					<span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}
 						  dangerouslySetInnerHTML={{__html: this.wrapByPeriod(unFriendly)}}/>
 				</div>
+				{elementRef ? <MetadataReference elementRef={elementRef} elementRefChild={elementRefChild} elementRefRequired={elementRefRequired} k={k} j={j}/> : null}
 			</div>
 		);
 	}
