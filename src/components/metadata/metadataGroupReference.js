@@ -30,11 +30,11 @@ class MetadataGroupReference extends React.Component {
 			<div className={compStyles.metadataGroup}>
 				<div className={compStyles.metadataGroupReference}>
 					<span
-						className={classNames(fontStyles.xs, fontStyles.regular, compStyles.title)}>{user_friendly}<span
+						className={classNames(fontStyles.m, compStyles.title)}>{user_friendly}<span
 						className={fontStyles.xs}>{required ? '*' : null}</span></span>
 					<span
 						className={classNames(fontStyles.xxs, compStyles.type)}>{isRef && !isInternal ? `${name.replace(regex, ' ')}` : null} {!isInternal && elementType === 'array' ? elementChild.type : null} {elementType}</span>
-					<span className={classNames(fontStyles.xxs, compStyles.description)}>{description}</span>
+					<span className={classNames(fontStyles.xs, compStyles.description)}>{description}</span>
 				</div>
 				{children}
 			</div>

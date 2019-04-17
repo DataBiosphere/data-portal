@@ -32,12 +32,12 @@
 	padding-top: 8px;
 }
 
-.metadataGroupReference .type, .metadataGroupReference .description {
+.metadataGroupReference .description {
 	padding-bottom: 4px;
 }
 
 .metadataGroupReference .type {
-	font-size: 11px;
+	padding-bottom: 8px;
 }
 
 .metadataGroupReference .description {
@@ -52,7 +52,7 @@
 
 	/* Reference container */
 	.metadataGroupReference {
-		border-left: 1px solid var(--gray-lightest);
+		border-left: 1px solid var(--secondary);
 		color: var(--gray-dark);
 		display: flex;
 		flex-direction: column;

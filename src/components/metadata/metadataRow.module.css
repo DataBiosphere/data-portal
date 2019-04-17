@@ -31,11 +31,11 @@
 /* Type */
 .metadataDetails .type {
 	color: var(--gray-dark);
-	font-size: 11px;
+	padding-bottom: 8px;
 }
 
 /* Description, example, type */
-.metadataDetails .description, .metadataDetails .example, .metadataDetails .type {
+.metadataDetails .description, .metadataDetails .example {
 	padding-bottom: 4px;
 }
 
