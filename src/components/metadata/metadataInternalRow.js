@@ -9,6 +9,7 @@
 import React from 'react';
 
 // App dependencies
+import MetadataReference from './metadataReference';
 import HeadingTag from '../anchor/anchor';
 import Linkify from 'react-linkify';
 
@@ -37,15 +38,16 @@ class MetadataInternalRow extends React.Component {
 	};
 
 	render() {
-		const {element, required, unFriendly} = this.props,
+		const {element, elementRef, elementRefChild, elementRefRequired, l, last, required, unFriendly} = this.props,
 			{name, description, type} = element,
+			first = l === 0,
 			regex = /_/g,
 			whiteSpace = /\s/g,
 			anchor = unFriendly.replace(whiteSpace,'').replace(regex, '-').replace(/\./g, '-');
 		return (
-			<div className={compStyles.metadataRow}>
+			<div id={anchor} className={classNames(compStyles.metadataRow, {[compStyles.groupEnd]: last}, {[compStyles.groupBegin]: first})}>
 				<div className={compStyles.metadataDetails}>
-					<span id={anchor} className={classNames(fontStyles.xs, fontStyles.semiBold)}>{name.replace(regex, ' ')}<span
+					<span className={classNames(fontStyles.xs, fontStyles.semiBold)}>{name.replace(regex, ' ')}<span
 						className={fontStyles.xs}>{required && required.includes(name) ? '*' : null}</span><HeadingTag anchor={anchor}/>
 					</span>
 					<span
@@ -54,6 +56,7 @@ class MetadataInternalRow extends React.Component {
 					<span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}
 						  dangerouslySetInnerHTML={{__html: this.wrapByPeriod(unFriendly)}}/>
 				</div>
+				{elementRef ? <MetadataReference elementRef={elementRef} elementRefChild={elementRefChild} elementRefRequired={elementRefRequired} j={l}/> : null}
 			</div>
 		);
 	}
