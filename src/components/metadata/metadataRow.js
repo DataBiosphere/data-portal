@@ -9,33 +9,15 @@
 import React from 'react';
 
 // App dependencies
-import HeadingTag from '../anchor/anchor';
-import Linkify from 'react-linkify';
+import MetadataDetail from './metadataDetail';
 import MetadataReference from './metadataReference';
 
 // Styles
 import compStyles from './metadataRow.module.css';
-import fontStyles from '../../styles/fontsize.module.css';
 
 const classNames = require('classnames');
 
 class MetadataRow extends React.Component {
-
-	/**
-	 * Returns the unFriendly list separated by <span> for each unFriendly.
-	 * Allows wrapping of the list if required.
-	 * @param unFriendlyList
-	 * @returns {string}
-	 */
-	wrapByPeriod = (unFriendlyList) => {
-		return unFriendlyList.split('.').map((u, i) => {
-
-			if (i === 0) {
-				return `<span>${u}</span>`;
-			}
-			return `<span>.${u}</span>`;
-		}).join('');
-	};
 
 	listByEnum = (propertyEnum) => {
 
@@ -67,20 +49,20 @@ class MetadataRow extends React.Component {
 			whiteSpace = /\s/g,
 			elementType = type ? type : items && items._ref ? items.type : null,
 			isRef = _ref || (items && items._ref),
-			anchor = unFriendly.replace(whiteSpace,'').replace(/\./g, '-');
+			anchor = unFriendly.replace(whiteSpace, '').replace(/\./g, '-'),
+			detailType = isRef ? name.replace(regex, ' ') : null + {elementType} + propertyEnum ? ' enum' : null;
 		return (
-			<div id={anchor} className={classNames(compStyles.metadataRow, {[compStyles.groupEnd]: isLast}, {[compStyles.groupBegin]: isFirst})}>
-				<div className={compStyles.metadataDetails}>
-					<span className={fontStyles.m}>{user_friendly ? user_friendly : name}<span
-						className={fontStyles.xs}>{isRequired ? '*' : null}</span><HeadingTag anchor={anchor}/></span>
-					<span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}
-						  dangerouslySetInnerHTML={{__html: this.wrapByPeriod(unFriendly)}}/>
-					<span
-						className={classNames(fontStyles.xxs, compStyles.type)}>{isRef ? name.replace(regex, ' ') : null} {elementType} {propertyEnum ? ' enum' : null}</span>
-					<Linkify className={compStyles.description}>{description}</Linkify>
-					<span className={classNames(fontStyles.xs, compStyles.example)}>{exampleOrEnum}</span>
-				</div>
-				{elementRef ? <MetadataReference elementRef={elementRef} elementRefRequired={elementRefRequired} isFirst={isFirst}/> : null}
+			<div id={anchor}
+				 className={classNames(compStyles.metadataRow, {[compStyles.groupEnd]: isLast}, {[compStyles.groupBegin]: isFirst})}>
+				<MetadataDetail anchor={anchor}
+								exampleOrEnum={exampleOrEnum}
+								description={description}
+								isRequired={isRequired}
+								label={user_friendly ? user_friendly : name}
+								type={detailType}
+								unFriendly={unFriendly}/>
+				{elementRef ? <MetadataReference elementRef={elementRef} elementRefRequired={elementRefRequired}
+												 isFirst={isFirst}/> : null}
 			</div>
 		);
 	}
