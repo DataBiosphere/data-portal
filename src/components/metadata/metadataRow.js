@@ -56,11 +56,10 @@ class MetadataRow extends React.Component {
 	};
 
 	render() {
-		const {element, elementParent, elementRef, elementRefChild, elementRefRequired, k, j, last, unFriendly} = this.props;
+		const {element, elementParent, elementRef, elementRefChild, elementRefRequired, isFirst, isLast, unFriendly} = this.props;
 		const {name, properties} = element,
 			required = elementParent && elementParent.required,
 			isRequired = required && required.includes(name),
-			first = j === 0 || (j === 0 && k === 0),
 			{description, example, items, _ref, type, user_friendly} = properties,
 			propertyEnum = properties.enum,
 			exampleOrEnum = properties.enum ? `${this.listByEnum(propertyEnum)}.` : example ? `${this.listByExample(example)}.` : null,
@@ -70,18 +69,18 @@ class MetadataRow extends React.Component {
 			isRef = _ref || (items && items._ref),
 			anchor = unFriendly.replace(whiteSpace,'').replace(/\./g, '-');
 		return (
-			<div id={anchor} className={classNames(compStyles.metadataRow, {[compStyles.groupEnd]: last}, {[compStyles.groupBegin]: first})}>
+			<div id={anchor} className={classNames(compStyles.metadataRow, {[compStyles.groupEnd]: isLast}, {[compStyles.groupBegin]: isFirst})}>
 				<div className={compStyles.metadataDetails}>
 					<span className={fontStyles.m}>{user_friendly ? user_friendly : name}<span
 						className={fontStyles.xs}>{isRequired ? '*' : null}</span><HeadingTag anchor={anchor}/></span>
+					<span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}
+						  dangerouslySetInnerHTML={{__html: this.wrapByPeriod(unFriendly)}}/>
 					<span
 						className={classNames(fontStyles.xxs, compStyles.type)}>{isRef ? name.replace(regex, ' ') : null} {elementType} {propertyEnum ? ' enum' : null}</span>
 					<Linkify className={compStyles.description}>{description}</Linkify>
 					<span className={classNames(fontStyles.xs, compStyles.example)}>{exampleOrEnum}</span>
-					<span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}
-						  dangerouslySetInnerHTML={{__html: this.wrapByPeriod(unFriendly)}}/>
 				</div>
-				{elementRef ? <MetadataReference elementRef={elementRef} elementRefChild={elementRefChild} elementRefRequired={elementRefRequired} k={k} j={j}/> : null}
+				{elementRef ? <MetadataReference elementRef={elementRef} elementRefChild={elementRefChild} elementRefRequired={elementRefRequired} isFirst={isFirst}/> : null}
 			</div>
 		);
 	}

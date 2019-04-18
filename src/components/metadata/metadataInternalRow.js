@@ -38,25 +38,24 @@ class MetadataInternalRow extends React.Component {
 	};
 
 	render() {
-		const {element, elementRef, elementRefChild, elementRefRequired, l, last, required, unFriendly} = this.props,
+		const {element, elementRef, elementRefChild, elementRefRequired, isFirst, isLast, required, unFriendly} = this.props,
 			{name, description, type} = element,
-			first = l === 0,
 			regex = /_/g,
 			whiteSpace = /\s/g,
 			anchor = unFriendly.replace(whiteSpace,'').replace(regex, '-').replace(/\./g, '-');
 		return (
-			<div id={anchor} className={classNames(compStyles.metadataRow, {[compStyles.groupEnd]: last}, {[compStyles.groupBegin]: first})}>
+			<div id={anchor} className={classNames(compStyles.metadataRow, {[compStyles.groupEnd]: isLast}, {[compStyles.groupBegin]: isFirst})}>
 				<div className={compStyles.metadataDetails}>
 					<span className={classNames(fontStyles.xs, fontStyles.semiBold)}>{name.replace(regex, ' ')}<span
 						className={fontStyles.xs}>{required && required.includes(name) ? '*' : null}</span><HeadingTag anchor={anchor}/>
 					</span>
+					<span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}
+						  dangerouslySetInnerHTML={{__html: this.wrapByPeriod(unFriendly)}}/>
 					<span
 						className={classNames(fontStyles.xxs, compStyles.type)}>{type}</span>
 					<Linkify className={classNames(fontStyles.xs, compStyles.description)}>{description}</Linkify>
-					<span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}
-						  dangerouslySetInnerHTML={{__html: this.wrapByPeriod(unFriendly)}}/>
 				</div>
-				{elementRef ? <MetadataReference elementRef={elementRef} elementRefChild={elementRefChild} elementRefRequired={elementRefRequired} j={l}/> : null}
+				{elementRef ? <MetadataReference elementRef={elementRef} elementRefChild={elementRefChild} elementRefRequired={elementRefRequired} isFirst={isFirst}/> : null}
 			</div>
 		);
 	}
