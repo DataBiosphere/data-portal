@@ -56,7 +56,7 @@ class MetadataRow extends React.Component {
 	};
 
 	render() {
-		const {element, elementParent, elementRef, elementRefChild, elementRefRequired, isFirst, isLast, unFriendly} = this.props;
+		const {element, elementParent, elementRef, elementRefRequired, isFirst, isLast, unFriendly} = this.props;
 		const {name, properties} = element,
 			required = elementParent && elementParent.required,
 			isRequired = required && required.includes(name),
@@ -80,7 +80,7 @@ class MetadataRow extends React.Component {
 					<Linkify className={compStyles.description}>{description}</Linkify>
 					<span className={classNames(fontStyles.xs, compStyles.example)}>{exampleOrEnum}</span>
 				</div>
-				{elementRef ? <MetadataReference elementRef={elementRef} elementRefChild={elementRefChild} elementRefRequired={elementRefRequired} isFirst={isFirst}/> : null}
+				{elementRef ? <MetadataReference elementRef={elementRef} elementRefRequired={elementRefRequired} isFirst={isFirst}/> : null}
 			</div>
 		);
 	}

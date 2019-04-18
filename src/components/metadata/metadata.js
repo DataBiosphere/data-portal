@@ -56,7 +56,6 @@ class Metadata extends React.Component {
 													 element={i2}
 													 elementParent={this.getPropertyRefProperties(e1)}
 													 elementRef={e1}
-													 elementRefChild={this.getPropertyRefProperties(e1)}
 													 elementRefRequired={required.includes(e1.name)}
 													 isFirst={l === 0}
 													 isLast={!this.getPropertyRefProperties(e1).definitions[this.getInternalRef(e1)].properties[l + 1]}
@@ -68,7 +67,6 @@ class Metadata extends React.Component {
 													 element={e3}
 													 elementParent={this.getPropertyRefProperties(e2)}
 													 elementRef={e1}
-													 elementRefChild={this.getPropertyRefProperties(e1)}
 													 elementRefRequired={required.includes(e1.name)}
 													 isFirst={k === 0 && j === 0}
 													 isLast={!this.getPropertyRefProperties(e2).properties[k + 1] && !this.getPropertyRefProperties(e1).properties[j + 1]}
@@ -77,7 +75,6 @@ class Metadata extends React.Component {
 												 element={e2}
 												 elementParent={this.getPropertyRefProperties(e1)}
 												 elementRef={e1}
-												 elementRefChild={this.getPropertyRefProperties(e1)}
 												 elementRefRequired={required.includes(e1.name)}
 												 isFirst={j === 0}
 												 isLast={!this.getPropertyRefProperties(e1).properties[j + 1]}

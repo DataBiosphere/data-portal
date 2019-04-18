@@ -17,15 +17,10 @@ const classNames = require('classnames');
 class MetadataReference extends React.Component {
 
 	render() {
-		const {elementRef, elementRefChild, isFirst, elementRefRequired} = this.props,
+		const {elementRef, isFirst, elementRefRequired} = this.props,
 			{properties} = elementRef,
-			{name} = elementRefChild,
-			{description, items, _ref, type, user_friendly} = properties,
-			regex = /_/g,
-			elementType = type ? type : items && items._ref ? items.type : null,
-			isRef = _ref || (items && items._ref),
-			elementReference = _ref ? _ref : (items && items._ref) ? items._ref : '',
-			isInternal = elementReference.includes('#');
+			{description, items, type, user_friendly} = properties,
+			elementType = type ? type : items && items._ref ? items.type : null;
 		return (
 			<div className={compStyles.metadataGroup}>
 				{isFirst ? <div className={compStyles.groupDetails}>
@@ -33,7 +28,7 @@ class MetadataReference extends React.Component {
 						className={classNames(fontStyles.m, compStyles.title)}>{user_friendly}<span
 						className={fontStyles.xs}>{elementRefRequired ? '*' : null}</span></span>
 					<span
-						className={classNames(fontStyles.xxs, compStyles.type)}>{isRef && !isInternal ? `${name.replace(regex, ' ')}` : null} {!isInternal && elementType === 'array' ? elementRefChild.type : null} {elementType}</span>
+						className={classNames(fontStyles.xxs, compStyles.type)}>{elementType}</span>
 					<span className={classNames(fontStyles.xs, compStyles.description)}>{description}</span>
 				</div> : null}
 			</div>
