@@ -141,7 +141,12 @@ module.exports = {
 			options: {
 				excerpt_separator: `<!-- end -->`,
 				plugins: [
-					`gatsby-remark-autolink-headers`,
+					{
+						resolve: `gatsby-remark-autolink-headers`,
+						options: {
+							offsetY: '-167', // Header + section + tab height, ignores top banner.
+						},
+					},
 					{
 						resolve: `gatsby-remark-copy-linked-files`,
 						options: {
