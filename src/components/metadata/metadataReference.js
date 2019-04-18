@@ -8,29 +8,29 @@
 // Core dependencies
 import React from 'react';
 
+// App dependencies
+import MetadataDetail from './metadataDetail';
+
 // Styles
 import compStyles from './metadataReference.module.css';
-import fontStyles from '../../styles/fontsize.module.css';
-
-const classNames = require('classnames');
+import * as StringFormat from '../../utils/string-format.service';
 
 class MetadataReference extends React.Component {
 
 	render() {
 		const {elementRef, isFirst, elementRefRequired} = this.props,
-			{properties} = elementRef,
+			{name, properties} = elementRef,
 			{description, items, type, user_friendly} = properties,
-			elementType = type ? type : items && items._ref ? items.type : null;
+			elementType = type ? type : items && items._ref ? items.type : null,
+			regex = /_/g;
 		return (
 			<div className={compStyles.metadataGroup}>
-				{isFirst ? <div className={compStyles.groupDetails}>
-					<span
-						className={classNames(fontStyles.m, compStyles.title)}>{user_friendly}<span
-						className={fontStyles.xs}>{elementRefRequired ? '*' : null}</span></span>
-					<span
-						className={classNames(fontStyles.xxs, compStyles.type)}>{elementType}</span>
-					<span className={classNames(fontStyles.xs, compStyles.description)}>{description}</span>
-				</div> : null}
+				{isFirst ? <MetadataDetail
+					description={description}
+					groupRef={true}
+					isRequired={elementRefRequired}
+					label={user_friendly ? user_friendly : StringFormat.convertSentenceCasetoTitleCase(name.replace(regex, ' '))}
+					type={elementType}/> : null}
 			</div>
 		);
 	}

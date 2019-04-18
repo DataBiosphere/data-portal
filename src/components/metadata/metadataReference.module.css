@@ -8,42 +8,13 @@
 
 .metadataGroup {
 	border-left: 1px solid var(--secondary);
+	display: none;
 	height: 100%;
 	left: 100%;
 	margin-left: 8px;
 	max-width: calc(((100vw - 1140px) / 2) + (1140px - 290px - 640px - 8px)); /* Padding, nav, content */
 	position: absolute;
 	width: 100%;
-}
-
-/* Hide */
-.metadataGroup {
-	display: none;
-}
-
-.groupDetails span {
-	margin: 0;
-}
-
-/* Required field '*' */
-.groupDetails > span:first-of-type > span {
-	padding-left: 1px;
-}
-
-.groupDetails .title {
-	padding-top: 8px;
-}
-
-.groupDetails .description {
-	padding-bottom: 4px;
-}
-
-.groupDetails .type {
-	padding-bottom: 8px;
-}
-
-.groupDetails .description {
-	max-width: 350px;
 }
 
 /**
@@ -54,22 +25,6 @@
 
 	.metadataGroup {
 		display: block;
-	}
-
-	/* Reference container */
-	.groupDetails {
-		color: var(--gray-dark);
-		display: flex;
-		flex-direction: column;
-		height: inherit;
-		padding: 0 30px 0 8px;
-	}
-
-	/* Ellipsis on content - excludes .description */
-	.groupDetails span:not(.description) {
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
 	}
 }
 
