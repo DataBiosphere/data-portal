@@ -56,7 +56,7 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 
 	// Get properties of each element
 	// Excluded properties from each type json
-	const excludedProperties = ['describedBy', 'schema_version', 'schema_type', 'provenance'];
+	const excludedProperties = ['describedBy', 'schema_version', 'schema_type'];
 	const properties = propertyNames.filter(name => !excludedProperties.includes(name)).map(name => {
 
 		// stringify properties.example

@@ -1,0 +1,78 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata detail component.
+ */
+@import '../../styles/vars.module.css';
+
+/* Detail */
+.metadataDetail {
+	//align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+}
+
+.metadataDetail:not(.byGroup) {
+	margin: 8px 0;
+}
+
+/* Metadata group reference - container */
+.metadataDetail.byGroup {
+	color: var(--gray-dark);
+	height: inherit;
+	padding: 0 30px 0 8px;
+}
+
+/* Metadata group reference - ellipsis on content, excludes .description */
+.metadataDetail.byGroup span:not(.description) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.metadataDetail span {
+	margin: 0;
+}
+
+/* Metadata group reference - title */
+.metadataDetail.byGroup .title {
+	padding-top: 8px;
+}
+
+/* Required field '*' */
+.metadataDetail > span:first-of-type > span {
+	padding-left: 1px;
+}
+
+/* Path */
+.metadataDetail .unFriendly {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Type */
+.metadataDetail .type {
+	padding-bottom: 8px;
+}
+
+.metadataDetail:not(.byGroup) .type {
+	color: var(--gray-dark);
+}
+
+/* Metadata group reference - description */
+.metadataDetail.byGroup .description {
+	max-width: 350px;
+}
+
+/* Description, example */
+.metadataDetail .description, .metadataDetail .example {
+	padding-bottom: 4px;
+}
+
+/* Description links */
+.metadataDetail .description a {
+	font: inherit;
+	word-break: break-all;
+}
+
