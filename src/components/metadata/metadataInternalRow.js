@@ -38,7 +38,7 @@ class MetadataInternalRow extends React.Component {
 	};
 
 	render() {
-		const {element, elementRef, elementRefChild, elementRefRequired, isFirst, isLast, required, unFriendly} = this.props,
+		const {element, elementRef, elementRefRequired, isFirst, isLast, required, unFriendly} = this.props,
 			{name, description, type} = element,
 			regex = /_/g,
 			whiteSpace = /\s/g,
@@ -55,7 +55,7 @@ class MetadataInternalRow extends React.Component {
 						className={classNames(fontStyles.xxs, compStyles.type)}>{type}</span>
 					<Linkify className={classNames(fontStyles.xs, compStyles.description)}>{description}</Linkify>
 				</div>
-				{elementRef ? <MetadataReference elementRef={elementRef} elementRefChild={elementRefChild} elementRefRequired={elementRefRequired} isFirst={isFirst}/> : null}
+				{elementRef ? <MetadataReference elementRef={elementRef} elementRefRequired={elementRefRequired} isFirst={isFirst}/> : null}
 			</div>
 		);
 	}
