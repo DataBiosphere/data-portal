@@ -22,6 +22,7 @@ class MetadataInternalRow extends React.Component {
 	render() {
 		const {element, elementRef, elementRefRequired, isFirst, isLast, required, unFriendly} = this.props,
 			{name, description, type} = element,
+			isRequired = required && required.includes(name),
 			regex = /_/g,
 			whiteSpace = /\s/g,
 			anchor = unFriendly.replace(whiteSpace, '').replace(regex, '-').replace(/\./g, '-');
@@ -30,7 +31,7 @@ class MetadataInternalRow extends React.Component {
 				 className={classNames(compStyles.metadataRow, {[compStyles.groupEnd]: isLast}, {[compStyles.groupBegin]: isFirst})}>
 				<MetadataDetail anchor={anchor}
 								description={description}
-								isRequired={required && required.includes(name)}
+								isRequired={isRequired}
 								label={name.replace(regex, ' ')}
 								type={type}
 								unFriendly={unFriendly}/>
