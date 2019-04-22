@@ -47,10 +47,12 @@ class MetadataRow extends React.Component {
 			exampleOrEnum = properties.enum ? `${this.listByEnum(propertyEnum)}.` : example ? `${this.listByExample(example)}.` : null,
 			regex = /_/g,
 			whiteSpace = /\s/g,
-			elementType = type ? type : items && items._ref ? items.type : null,
-			isRef = _ref || (items && items._ref),
 			anchor = unFriendly.replace(whiteSpace, '').replace(/\./g, '-'),
-			detailType = isRef ? name.replace(regex, ' ') : null + {elementType} + propertyEnum ? ' enum' : null;
+			isRef = _ref || (items && items._ref),
+			elementTypeName = type ? type : items && items._ref ? items.type : '',
+			enumTypeName = propertyEnum ? 'enum' : '',
+			detailTypeName = isRef ? name.replace(regex, ' ') : '',
+			elementType = detailTypeName.concat(elementTypeName, ' ').concat(enumTypeName, ' ').trim();
 		return (
 			<div id={anchor}
 				 className={classNames(compStyles.metadataRow, {[compStyles.groupEnd]: isLast}, {[compStyles.groupBegin]: isFirst})}>
@@ -59,7 +61,7 @@ class MetadataRow extends React.Component {
 								description={description}
 								isRequired={isRequired}
 								label={user_friendly ? user_friendly : name}
-								type={detailType}
+								type={elementType}
 								unFriendly={unFriendly}/>
 				{elementRef ? <MetadataReference elementRef={elementRef} elementRefRequired={elementRefRequired}
 												 isFirst={isFirst}/> : null}
