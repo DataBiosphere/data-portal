@@ -56,43 +56,29 @@ class IndexPage extends React.Component {
 	 */
 	componentDidMount() {
 
-		this.healthCheck();
-		this.fetchData();
+		this.initComponent();
 	}
 
 	/**
-	 * Fetch the file summary and term facet data to be displayed in the counts bar and organs diagram. Redirect to 
-	 * error page if any API call fails.
+	 * Fetch the file summary and term facet data to be displayed in the counts bar and organs diagram, and check
+	 * system-wide status. If any system is down or health check API call fails, or if data requests reuturn an error
+	 * status, display warning banner.
 	 */
-	fetchData = () => {
+	initComponent = () => {
 
 		const fetchFileSummary = FileSummaryService.fetchFileSummary();
 		const fetchTermFacets = FileSummaryService.fetchTermFacets();
-		Promise.all([fetchFileSummary, fetchTermFacets])
-			.then(([fileSummary, termFacets]) => {
+		const fetchHealthCheck = SystemService.healthCheck();
+		Promise.all([fetchFileSummary, fetchTermFacets, fetchHealthCheck])
+			.then(([fileSummary, termFacets, healthCheck]) => {
 
 				this.setState({
 					...fileSummary,
+					...healthCheck,
 					termFacets
 				});
 			})
 			.catch((e) => {
-				navigate("/error");
-			});
-	};
-
-	/**
-	 * Check system-wide status, if any system is down or health check API call fails, display warning banner.
-	 */
-	healthCheck = () => {
-
-		SystemService.healthCheck()
-			.then((healthCheck) => {
-				this.setState({
-					...healthCheck
-				})
-			})
-			.catch(() => {
 				this.setState({
 					healthy: false
 				})
