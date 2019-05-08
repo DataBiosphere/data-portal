@@ -1,0 +1,21 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata component.
+ */
+@import '../../styles/vars.module.css';
+
+/* TOC */
+.toc {
+	margin: 24px 0;
+}
+
+.toc p {
+	position: relative;
+}
+
+.toc p span {
+	font: inherit;
+	padding-left: 1px;
+}

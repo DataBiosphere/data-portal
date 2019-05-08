@@ -12,14 +12,22 @@ import React from 'react';
 import MetadataInternalRow from './metadataInternalRow';
 import MetadataRow from './metadataRow';
 
+// Styles
+import compStyles from './metadata.module.css';
+import fontStyles from '../../styles/fontsize.module.css';
+
+const classNames = require('classnames');
+
 class Metadata extends React.Component {
 
 	getInternalRef = (property) => {
+
 		let myRef = this.getPropertyRef(property)[1].split('/');
 		return myRef[myRef.length - 1];
 	};
 
 	getInternalRequired = (property) => {
+
 		return this.getPropertyRefProperties(property).definitions[this.getInternalRef(property)].required;
 	};
 
@@ -43,11 +51,56 @@ class Metadata extends React.Component {
 		return this.props.reference.filter(reference => reference.relativeFilePath.includes(propertyRef[0]))[0];
 	};
 
+	getTOCLink = (property) => {
+
+		let TOCLink;
+		if (this.getPropertyRef(property) !== '') {
+
+			// Check for internal references
+			if (this.getPropertyRef(property)[1].includes('#')) {
+				this.getPropertyRefProperties(property).definitions[this.getInternalRef(property)].properties.map((i2, l) => {
+					if (l === 0) {
+						TOCLink = `${property.name}-${i2.name}`;
+					}
+				})
+			}
+			// External references
+			this.getPropertyRefProperties(property).properties.forEach((e2, j) => {
+				if (this.getPropertyRef(e2) !== '') {
+					this.getPropertyRefProperties(e2).properties.forEach((e3, k) => {
+						if (k === 0 && j === 0 && !TOCLink) {
+							TOCLink = `${property.name}-${e2.name}-${e3.name}`;
+						}
+					})
+				}
+				if (j === 0 && !TOCLink) {
+					TOCLink = `${property.name}-${e2.name}`;
+				}
+			})
+		}
+		else {
+			TOCLink = `${property.name}`;
+		}
+
+		return `#${this.props.unFriendly}-${TOCLink}`;
+	};
+
 	render() {
 		const {entity, unFriendly} = this.props,
 			{properties, required} = entity;
+
 		return (
 			<div>
+				<div className={compStyles.toc}>
+					{properties.map((toc, h) =>
+						<p key={h} className={classNames(fontStyles.s, fontStyles.noMargin)}>
+							<a href={this.getTOCLink(toc)}>
+								{toc.properties.user_friendly ? toc.properties.user_friendly : toc.name}
+								{required.includes(toc.name) ? <span className={fontStyles.xs}>*</span> : null}
+							</a>
+						</p>
+					)}
+				</div>
 				{properties.map((e1, i) =>
 					this.getPropertyRef(e1) !== '' ?
 						this.getPropertyRef(e1)[1].includes('#') ?
@@ -70,6 +123,7 @@ class Metadata extends React.Component {
 													 elementRefRequired={required.includes(e1.name)}
 													 isFirst={k === 0 && j === 0}
 													 isLast={!this.getPropertyRefProperties(e2).properties[k + 1] && !this.getPropertyRefProperties(e1).properties[j + 1]}
+													 typeRef={unFriendly}
 													 unFriendly={`${unFriendly}.${e1.name}.${e2.name}.${e3.name}`}/>) :
 									<MetadataRow key={j}
 												 element={e2}
@@ -78,10 +132,12 @@ class Metadata extends React.Component {
 												 elementRefRequired={required.includes(e1.name)}
 												 isFirst={j === 0}
 												 isLast={!this.getPropertyRefProperties(e1).properties[j + 1]}
+												 typeRef={unFriendly}
 												 unFriendly={`${unFriendly}.${e1.name}.${e2.name}`}/>) :
 						<MetadataRow key={i}
 									 element={e1}
 									 required={required}
+									 typeRef={unFriendly}
 									 unFriendly={`${unFriendly}.${e1.name}`}/>)}
 			</div>
 		);

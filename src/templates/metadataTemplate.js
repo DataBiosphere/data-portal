@@ -37,7 +37,8 @@ export default function Template({data}) {
 		<Layout pageTitle={pageTitle} docPath={docPath}>
 			<h2 className={classNames(globalStyles.md, compStyles.meta)}>{pageTitle}</h2>
 			<p className={fontStyles.hcaCode}>{type.name}</p>
-			<p className={fontStyles.xxs}>* Indicates a required field</p>
+			<p className={fontStyles.l}>{type.description}</p>
+			<p className={classNames(fontStyles.xxs, fontStyles.noMargin)}>* Indicates a required field</p>
 			<Metadata entity={type} reference={referenceMetadata} unFriendly={type.name}/>
 		</Layout>
 	);
