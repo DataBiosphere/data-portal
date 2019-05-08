@@ -25,7 +25,7 @@ class MetadataInternalRow extends React.Component {
 			isRequired = required && required.includes(name),
 			regex = /_/g,
 			whiteSpace = /\s/g,
-			anchor = unFriendly.replace(whiteSpace, '').replace(regex, '-').replace(/\./g, '-');
+			anchor = unFriendly.replace(whiteSpace, '').replace(/\./g, '-');
 		return (
 			<div id={anchor}
 				 className={classNames(compStyles.metadataRow, {[compStyles.groupEnd]: isLast}, {[compStyles.groupBegin]: isFirst})}>
