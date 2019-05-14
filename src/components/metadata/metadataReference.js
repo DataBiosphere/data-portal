@@ -13,7 +13,6 @@ import MetadataDetail from './metadataDetail';
 
 // Styles
 import compStyles from './metadataReference.module.css';
-import * as StringFormat from '../../utils/string-format.service';
 
 class MetadataReference extends React.Component {
 
@@ -29,7 +28,7 @@ class MetadataReference extends React.Component {
 					description={description}
 					groupRef={true}
 					isRequired={elementRefRequired}
-					label={user_friendly ? user_friendly : StringFormat.convertSentenceCasetoTitleCase(name.replace(regex, ' '))}
+					label={user_friendly ? user_friendly : name.replace(regex, ' ')}
 					type={elementType}/> : null}
 			</div>
 		);
