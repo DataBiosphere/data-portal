@@ -11,13 +11,13 @@
 export function convertCamelCasetoTitleCase(title) {
 
 	const sentenceCase = title.replace(/([A-Z])/g, " $1");
-	return convertSentenceCasetoTitleCase(sentenceCase);
+	return convertSentenceCaseToTitleCase(sentenceCase);
 }
 
 /**
  * Convert sentence case to title case. Based off https://stackoverflow.com/a/196991.
  */
-export function convertSentenceCasetoTitleCase(title) {
+export function convertSentenceCaseToTitleCase(title) {
 
 	return title.replace(
 		/\w\S*/g,

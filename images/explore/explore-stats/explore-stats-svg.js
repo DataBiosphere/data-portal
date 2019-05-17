@@ -23,7 +23,7 @@ class ExploreStats extends React.Component {
 		const statsSummary = organSummary.reduce((accum, summary) => {
 
 			accum.push({
-				label: stringFormatter.convertSentenceCasetoTitleCase(summary.label),
+				label: stringFormatter.convertSentenceCaseToTitleCase(summary.label),
 				count: summary.cellCount,
 				facetName: "organ",
 				termName: summary.label

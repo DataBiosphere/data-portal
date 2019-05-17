@@ -40,6 +40,19 @@ export function fetchTermFacets() {
  */
 function bindFileSummaryResponse(fileSummaryResponse) {
 
+	// Filter out any organ summaries that have multiple organ types (as we currently do not have handling for multiple
+	// labels when generating the SVG and associated stats).
+	const organSummary = fileSummaryResponse.organSummaries
+		.filter(summary => summary.organType.length === 1)
+		.map(summary => {
+			return {
+				label: summary.organType[0],
+				count: summary.countOfDocsWithOrganType,
+				cellCount: summary.totalCellCountByOrgan
+			}
+		});
+
+	// Bind response values to file summary view format
 	return {
 		cellCount: fileSummaryResponse.totalCellCount,
 		donorCount: fileSummaryResponse.donorCount,
@@ -53,13 +66,7 @@ function bindFileSummaryResponse(fileSummaryResponse) {
 		labCount: fileSummaryResponse.labCount,
 		loaded: true,
 		organCount: fileSummaryResponse.organCount,
-		organSummary: fileSummaryResponse.organSummaries.map((summary) => {
-			return {
-				label: summary.organType,
-				count: summary.countOfDocsWithOrganType,
-				cellCount: summary.totalCellCountByOrgan
-			}
-		}),
+		organSummary: organSummary,
 		projectCount: fileSummaryResponse.projectCount,
 		totalCellCount: fileSummaryResponse.totalCellCount
 	}

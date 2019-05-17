@@ -29,7 +29,7 @@ export default function Template({data}) {
 	docPath = data.typeMetadata.edges.map(n => n.node)[0].fields.path;
 	type = data.typeMetadata.edges.map(n => n.node)[0];
 	referenceMetadata = data.referenceMetadata.edges.map(n => n.node);
-	coreEntity = StringFormatService.convertSentenceCasetoTitleCase(type.coreEntity);
+	coreEntity = StringFormatService.convertSentenceCaseToTitleCase(type.coreEntity);
 	title = type.title;
 	pageTitle = `${coreEntity} - ${title}`;
 
