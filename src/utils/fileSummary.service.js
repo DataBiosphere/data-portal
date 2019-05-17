@@ -40,13 +40,12 @@ export function fetchTermFacets() {
  */
 function bindFileSummaryResponse(fileSummaryResponse) {
 
-	// Filter out any organ summaries that have multiple organ types (as we currently do not have handling for multiple
-	// labels when generating the SVG and associated stats).
 	const organSummary = fileSummaryResponse.organSummaries
-		.filter(summary => summary.organType.length === 1)
+		.filter(isValidOrganSummary)
 		.map(summary => {
+
 			return {
-				label: summary.organType[0],
+				label: formatOrganSummaryOrganTypeForDisplay(summary.organType),
 				count: summary.countOfDocsWithOrganType,
 				cellCount: summary.totalCellCountByOrgan
 			}
@@ -87,4 +86,32 @@ function bindTermFacetsResponse(termFacetsResponse) {
 
 		return accum;
 	}, []);
+}
+
+/**
+ * Format organ summary organ type for display. If we're dealing with the old API, return the organ type as is (as the
+ * organ type is a string). Otherwise we're dealing with the new API and must return the first value in the organ type
+ * array.
+ */
+function formatOrganSummaryOrganTypeForDisplay(organType) {
+	
+	return Array.isArray(organType) ? organType[0] : organType;
+}
+
+/**
+ * An organ summary is valid if it only has a single value for its organ type, as we currently do not have handling for
+ * multiple labels when generating the SVG and associated stats). Retain handling of older version of the API where organ
+ * type is a string (in which case, the organ summary is automatically considered valid)
+ */
+function isValidOrganSummary(summary) {
+
+	const organType = summary.organType;
+
+	// Organ types that are not arrays are always considered valid (old API)
+	if ( !Array.isArray(organType) ) {
+		return true;
+	}
+
+	// Otherwise an array organ type is only valid if it has a single value (new API)
+	return summary.organType.length === 1;
 }
