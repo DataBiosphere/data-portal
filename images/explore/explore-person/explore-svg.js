@@ -11,7 +11,7 @@ import compStyles from './explore-svg.module.css'
 import * as numberFormatter from '../../../src/utils/number-format.service';
 import * as stringFormatter from '../../../src/utils/string-format.service';
 
-class Explore extends React.Component {
+class   Explore extends React.Component {
 
     componentDidMount() {
 
@@ -210,7 +210,7 @@ class Explore extends React.Component {
 
             accum.push({
                 displayKey: this.translateOrganNameToDisplayKey(summary.label),
-                label: stringFormatter.convertSentenceCasetoTitleCase(summary.label),
+                label: stringFormatter.convertSentenceCaseToTitleCase(summary.label),
                 count: summary.cellCount,
                 facetName: "organ",
                 termName: summary.label

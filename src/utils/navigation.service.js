@@ -125,7 +125,7 @@ export function getMetadataNav(metaMap, docPath) {
 		let primaryLinkPath = secondaryLinks[0].path;
 
 		return {
-			name: StringFormatService.convertSentenceCasetoTitleCase(c),
+			name: StringFormatService.convertSentenceCaseToTitleCase(c),
 			key: `${sectionAndTabPathName}${c}`,
 			path: primaryLinkPath,
 			secondaryLinks: secondaryLinks
