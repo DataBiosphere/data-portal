@@ -46,6 +46,7 @@ class IndexPage extends React.Component {
 		organCount: 0,
 		organSummary: null,
 		projectCount: 0,
+		searchTerms: null,
 		termFacets: null,
 		totalCellCount: 0
 	};
@@ -74,6 +75,7 @@ class IndexPage extends React.Component {
 				this.setState({
 					...fileSummary,
 					...healthCheck,
+					searchTerms: FileSummaryService.buildSearchTerms(termFacets),
 					termFacets
 				});
 			})
@@ -104,7 +106,7 @@ class IndexPage extends React.Component {
 							<Link to='/guides'><h1 className={fontStyles.hero}>Single-cell data building a foundation for
 								human health</h1>
 								<p className={fontStyles.xs}>Learn More</p></Link>
-							<HomepageAutosuggest termFacets={this.state.termFacets}/>
+							<HomepageAutosuggest termFacets={this.state.searchTerms}/>
 						</div>
 					</div>
 					<div className={classNames({[compStyles.statsBar]: true, [compStyles.loaded]: this.state.loaded})}>

@@ -14,6 +14,32 @@ const FILE_SUMMARY_API_URL = process.env.GATSBY_FILE_SUMMARY_API_URL;
 const TERM_FACETS_API_URL = process.env.GATSBY_TERM_FACETS_API_URL;
 
 /**
+ * Build the set of search terms from the specified set of term facets.
+ */
+export function buildSearchTerms(termFacets) {
+
+	return termFacets.reduce(function (accum, termFacet) {
+
+		let projectFacet = (termFacet.facetName === "project");
+
+		if ( projectFacet ) {
+			accum.push(	{
+				facetName: "projectId",
+				terms: buildProjectIdSearchTerms(termFacet.terms)
+			});
+		}
+		else {
+			accum.push(	{
+				facetName: termFacet.facetName,
+				terms: termFacet.terms
+			});
+		}
+
+		return accum;
+	}, []);
+}
+
+/**
  * Execute request for counts and summaries.
  */
 export function fetchFileSummary() {
@@ -84,6 +110,24 @@ function bindTermFacetsResponse(termFacetsResponse) {
 			terms: facet.terms
 		});
 
+		return accum;
+	}, []);
+}
+
+/**
+ * Build the set of terms for the project facet. This facet is converted to "projectId" and we must use the project ID
+ * as the search value.
+ */
+function buildProjectIdSearchTerms(terms) {
+
+	return terms.reduce((accum, term) => {
+
+		term.projectId.forEach(projectId => {
+			accum.push({
+				term: projectId,
+				termDisplayName: term.term
+			});
+		});
 		return accum;
 	}, []);
 }

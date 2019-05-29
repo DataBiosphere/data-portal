@@ -56,13 +56,13 @@ class HCAAutosuggest extends React.Component {
 				return {
 					facetName: section.facetName,
 					facetDisplayName: section.facetDisplayName,
-					terms: section.terms.filter(term => regex.test(term.termName))
+					terms: section.terms.filter(term => regex.test(term.termDisplayName))
 				};
 			})
 			.filter(section => section.terms.length > 0);
 	};
 
-	getSuggestionValue = suggestion => suggestion.termName;
+	getSuggestionValue = suggestion => suggestion.termDisplayName;
 
 	onChange = (event, {newValue, method}) => {
 
@@ -116,7 +116,7 @@ class HCAAutosuggest extends React.Component {
 
 	onSuggestionSelected = (event, value) => {
 
-		this.props.onSelected(value.suggestionValue);
+		this.props.onSelected(value.suggestion.termName);
 		this.props.onEnter();
 	};
 
@@ -127,7 +127,7 @@ class HCAAutosuggest extends React.Component {
 		const {showCounts} = this.props;
 		return (
 			<div className={compStyles.hcaOption}>
-				<span>{suggestion.termName}</span>{showCounts ? <span>{suggestion.termCount}</span> : null}
+				<span>{suggestion.termDisplayName}</span>{showCounts ? <span>{suggestion.termCount}</span> : null}
 			</div>
 		);
 	};
