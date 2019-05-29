@@ -19,8 +19,8 @@ class ExploreStats extends React.Component {
 
 	componentDidMount() {
 
-		const {organSummary} = this.props;
-		const statsSummary = organSummary.reduce((accum, summary) => {
+		const {cellCountSummaries} = this.props;
+		const statsSummary = cellCountSummaries.reduce((accum, summary) => {
 
 			accum.push({
 				label: stringFormatter.convertSentenceCaseToTitleCase(summary.label),

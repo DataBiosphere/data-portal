@@ -37,6 +37,7 @@ class IndexPage extends React.Component {
 
 	state = {
 		cellCount: 0,
+		cellCountSummaries: null,
 		donorCount: 0,
 		fileCount: 0,
 		fileFormatSummary: null,
@@ -44,7 +45,6 @@ class IndexPage extends React.Component {
 		labCount: 0,
 		loaded: false,
 		organCount: 0,
-		organSummary: null,
 		projectCount: 0,
 		searchTerms: null,
 		termFacets: null,
@@ -136,12 +136,12 @@ class IndexPage extends React.Component {
 									<p>Hover over or click on an organ to view data from that
 										organ</p>
 								</div>
-								{this.state.organSummary ?
-									<Explore organSummary={this.state.organSummary}
+								{this.state.cellCountSummaries ?
+									<Explore cellCountSummaries={this.state.cellCountSummaries}
 											 totalCellCount={this.state.totalCellCount}/> :
 									<img className={compStyles.explorePlaceholder} src={explorePlaceholder}
 										 alt='Explore'/>}
-								{this.state.organCount ? <ExploreStats organSummary={this.state.organSummary}/> : null}
+								{this.state.organCount ? <ExploreStats cellCountSummaries={this.state.cellCountSummaries}/> : null}
 							</div>
 						</div>
 					</div>
