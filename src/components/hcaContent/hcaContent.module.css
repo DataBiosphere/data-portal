@@ -14,6 +14,17 @@
 	width: 100%; /* TODO confirm */
 }
 
+/* Inner content */
+.hcaContentInner {
+	margin-right: 0;
+	width: 100%;
+	z-index: 2; /* Required for heading anchor */
+}
+
+.hcaContentInner > h2:first-of-type {
+	margin-top: 0;
+}
+
 /**
  * HCA specific breakpoint
  */
@@ -28,6 +39,11 @@
 	.noNav > div {
 		margin-left: 176px;
 	}
+
+	/* Inner content */
+	.hcaContentInner {
+		max-width: 640px;
+	}
 }
 
 /**
@@ -39,5 +55,10 @@
 	/* Content - when there is no navigation */
 	.noNav > div {
 		margin-left: 290px;
+	}
+
+	/* Inner content */
+	.hcaContentInner {
+		margin-right: 14px;
 	}
 }

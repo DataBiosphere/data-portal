@@ -8,20 +8,39 @@
 
 /* Row */
 .metadataRow {
+	background-color: var(--black3);
 	align-items: flex-start;
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 16px;
+	padding: 0 16px 16px;
 	position: relative; /* Positions <MetadataReference> */
 	width: 100%;
 }
 
-.metadataRow.groupEnd {
-	margin-bottom: 16px;
-	padding-bottom: 0;
+/* Ungrouped metadata */
+.metadataRow.unGrouped {
+	background-color: transparent;
 }
 
-.metadataRow.groupEnd + .metadataRow.groupBegin {
-	margin-top: 32px;
+/* End of group */
+.metadataRow.groupEnd {
+	margin-bottom: 16px;
+	padding: 0 16px 0;
+}
+
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 768px) {
+
+	/* Row */
+	.metadataRow {
+		padding: 0 8px;
+	}
+
+	/* End of group */
+	.metadataRow.groupEnd {
+		padding: 0 8px 0;
+	}
 }
 

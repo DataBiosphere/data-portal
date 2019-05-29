@@ -8,36 +8,17 @@
 
 /* Detail */
 .metadataDetail {
-	//align-items: flex-start;
 	display: flex;
 	flex-direction: column;
-}
-
-.metadataDetail:not(.byGroup) {
 	margin: 8px 0;
 }
 
-/* Metadata group reference - container */
 .metadataDetail.byGroup {
-	color: var(--gray-dark);
-	height: inherit;
-	padding: 0 30px 0 8px;
-}
-
-/* Metadata group reference - ellipsis on content, excludes .description */
-.metadataDetail.byGroup span:not(.description) {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+	margin: 8px 0 16px;
 }
 
 .metadataDetail span {
 	margin: 0;
-}
-
-/* Metadata group reference - title */
-.metadataDetail.byGroup .title {
-	padding-top: 8px;
 }
 
 /* Required field '*' */
@@ -53,16 +34,36 @@
 
 /* Type */
 .metadataDetail .type {
-	padding-bottom: 8px;
-}
-
-.metadataDetail:not(.byGroup) .type {
 	color: var(--gray-dark);
 }
 
-/* Metadata group reference - description */
+.metadataDetail:not(.byGroup) .type {
+	padding-bottom: 8px;
+}
+
+/* Type - metadata group reference */
+.metadataDetail.byGroup .type {
+	font-size: 11px;
+	padding-left: 8px;
+}
+
+/* Description - metadata group reference */
 .metadataDetail.byGroup .description {
-	max-width: 350px;
+	font-weight: 300;
+	color: var(--gray-dark);
+	padding: 4px 0 16px;
+	position: relative; /* Positions line separator */
+}
+
+/* Metadata group reference - line separator */
+.metadataDetail.byGroup .description:after {
+	background-color: var(--secondary);
+	bottom: 0;
+	content: '';
+	display: block;
+	height: 1px;
+	position: absolute;
+	width: 42px;
 }
 
 /* Description, example */

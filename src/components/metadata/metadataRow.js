@@ -10,7 +10,6 @@ import React from 'react';
 
 // App dependencies
 import MetadataDetail from './metadataDetail';
-import MetadataReference from './metadataReference';
 
 // Styles
 import compStyles from './metadataRow.module.css';
@@ -38,9 +37,9 @@ class MetadataRow extends React.Component {
 	};
 
 	render() {
-		const {element, elementParent, elementRef, elementRefRequired, isFirst, isLast, unFriendly} = this.props;
+		const {children, element, elementParent, groupRef, isLast, requiredList, unFriendly, unGrouped} = this.props;
 		const {name, properties} = element,
-			required = elementParent && elementParent.required,
+			required = requiredList || (elementParent && elementParent.required),
 			isRequired = required && required.includes(name),
 			{description, example, items, _ref, type, user_friendly} = properties,
 			propertyEnum = properties.enum,
@@ -51,20 +50,22 @@ class MetadataRow extends React.Component {
 			isRef = _ref || (items && items._ref),
 			elementTypeName = type ? type : items && items._ref ? items.type : '',
 			enumTypeName = propertyEnum ? 'enum' : '',
-			detailTypeName = isRef ? name.replace(regex, ' ') : '',
-			elementType = detailTypeName.concat(elementTypeName, ' ').concat(enumTypeName, ' ').trim();
+			detailTypeName = element === elementParent ? '' : isRef ? name.replace(regex, ' ') : '',
+			elementType = detailTypeName.concat(' ', elementTypeName).concat(' ', enumTypeName).trim();
 		return (
-			<div id={anchor}
-				 className={classNames(compStyles.metadataRow, {[compStyles.groupEnd]: isLast}, {[compStyles.groupBegin]: isFirst})}>
-				<MetadataDetail anchor={anchor}
-								exampleOrEnum={exampleOrEnum}
-								description={description}
-								isRequired={isRequired}
-								label={user_friendly ? user_friendly : name}
-								type={elementType}
-								unFriendly={unFriendly}/>
-				{elementRef ? <MetadataReference elementRef={elementRef} elementRefRequired={elementRefRequired}
-												 isFirst={isFirst}/> : null}
+			<div>
+				<div id={anchor}
+					 className={classNames({[compStyles.unGrouped]: unGrouped}, compStyles.metadataRow, {[compStyles.groupEnd]: isLast})}>
+					<MetadataDetail anchor={anchor}
+									exampleOrEnum={exampleOrEnum}
+									description={description}
+									groupRef={groupRef}
+									isRequired={isRequired}
+									label={user_friendly ? user_friendly : name}
+									type={elementType}
+									unFriendly={unFriendly}/>
+				</div>
+				{children}
 			</div>
 		);
 	}

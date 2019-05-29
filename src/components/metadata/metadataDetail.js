@@ -40,14 +40,14 @@ class MetadataDetail extends React.Component {
 		const {anchor, exampleOrEnum, description, groupRef, isRequired, label, type, unFriendly} = this.props;
 		return (
 			<div className={classNames(compStyles.metadataDetail, {[compStyles.byGroup]: groupRef})}>
-					<span className={classNames(fontStyles.m, compStyles.title)}>{label}
-						{isRequired ? <span className={fontStyles.xs}>*</span> : null}
+					<span className={classNames({[fontStyles.xs]: !groupRef}, {[fontStyles.semiBold]: !groupRef}, {[fontStyles.l]: groupRef}, compStyles.title)}>{label}
+						{isRequired ? <span className={fontStyles.xs}>*</span> : null}{groupRef ? <span className={classNames(fontStyles.xxs, compStyles.type)}>({type})</span> : null}
 						{anchor ? <HeadingTag anchor={anchor}/> : null}</span>
-				{unFriendly ? <span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}
-									dangerouslySetInnerHTML={{__html: this.wrapByPeriod(unFriendly)}}/> : null}
-				{type ? <span
+				{unFriendly && !groupRef ? <span className={classNames(fontStyles.hcaCode, compStyles.unFriendly)}
+												 dangerouslySetInnerHTML={{__html: this.wrapByPeriod(unFriendly)}}/> : null}
+				{type && !groupRef ? <span
 					className={classNames(fontStyles.xxs, compStyles.type)}>{type}</span> : null}
-				{description ? <Linkify className={classNames({[fontStyles.xs]: groupRef}, compStyles.description)}>{description}</Linkify> : null}
+				{description ? <Linkify className={classNames(fontStyles.xs, compStyles.description)}>{description}</Linkify> : null}
 				{exampleOrEnum ?
 					<span className={classNames(fontStyles.xs, compStyles.example)}>{exampleOrEnum}</span> : null}
 			</div>

@@ -141,6 +141,9 @@
 	/* Navigation */
 	.hcaNav {
 		height: 100%;
+		position: sticky;
+		top: 24px;
+		z-index: 1; /* Required for heading anchors */
 	}
 
 	.hcaSideNav:nth-of-type(2) {
@@ -161,7 +164,7 @@
 		background-color: transparent;
 		border-radius: 0;
 		display: block;
-		max-width: 148px; /* Total allowable width 156px */
+		max-width: 148px; /* Total allowable width 176px */
 		min-width: 148px;
 		margin-bottom: 0;
 		margin-left: 8px !important;
@@ -183,9 +186,9 @@
 
 	/* Navigation container */
 	.hcaSideNav {
-		max-width: 250px; /* was 192px */
-		min-width: 250px; /* was 192px */
-		margin-right: 32px !important; /* was 90px */
+		max-width: 250px; /* Total allowable width 290px */
+		min-width: 250px;
+		margin-right: 32px !important;
 	}
 }
 

@@ -22,12 +22,6 @@
 	padding: 0 16px;
 }
 
-/* Inner content */
-.hcaContentInner {
-	margin-right: 0;
-	width: 100%;
-}
-
 /* Inner markdown related styles */
 .md ol, .md ul {
 	font-size: 15px;
@@ -46,7 +40,7 @@
 	margin-top: 0;
 }
 
-.md > h2:first-of-type, .hcaContentInner > h2:first-of-type {
+.md > h2:first-of-type {
 	margin-top: 0;
 }
 
@@ -161,18 +155,6 @@
 }
 
 /**
- * HCA specific breakpoint
- */
-@media screen and (min-width: 768px) {
-
-	/* Inner content */
-	.hcaContentInner {
-		margin-right: 14px;
-		max-width: 640px;
-	}
-}
-
-/**
  * Small +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
@@ -189,7 +171,7 @@
 }
 
 /**
- * Large +
+ * Medium +
  * HCA custom breakpoint
  */
 @media screen and (min-width: 1200px) {

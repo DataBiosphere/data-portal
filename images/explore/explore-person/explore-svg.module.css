@@ -10,27 +10,27 @@ svg.explorePerson {
 	display: none;
 }
 
-.active {
+svg .active {
 	cursor: pointer;
 	fill: var(--primary);
 	transition: all 0.75s ease 0s;
 }
 
-.active polygon, .active rect {
+svg .active polygon, svg .active rect {
 	fill: var(--primary);
 	transition: all 0.75s ease 0s;
 }
 
-.active text {
+svg .active text[id^="count"] {
 	opacity: 1;
 	transition: all 0.75s ease 0s;
 }
 
-.hidden {
+svg .hidden {
 	display: none;
 }
 
-[id^="count"] {
+svg text[id^="count"] {
 	opacity: 0;
 }
 
