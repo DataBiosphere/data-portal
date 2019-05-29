@@ -15,10 +15,10 @@ class   Explore extends React.Component {
 
     componentDidMount() {
 
-        const {organSummary, totalCellCount} = this.props;
+        const {cellCountSummaries, totalCellCount} = this.props;
         
         // Create view-friendly model of organ summary
-        const statsSummary = this.translateOrganSummaryToViewModel(organSummary);
+        const statsSummary = this.translateCellCountSummariesToViewModel(cellCountSummaries);
         
         // Grab the stats elements
         const statsEl = this.svg.getElementById("stats");
@@ -131,8 +131,8 @@ class   Explore extends React.Component {
         organStatsEls.forEach((organStatsEl) => {
 
             const organName = this.parseOrganNameFromElement(organStatsEl);
-            const summary = statsSummary.find(organSummary => {
-                return organSummary.displayKey.toLowerCase() === organName.toLowerCase();
+            const summary = statsSummary.find(summary => {
+                return summary.displayKey.toLowerCase() === organName.toLowerCase();
             });
             
             // Grab the corresponding organ image element, if any
@@ -204,9 +204,9 @@ class   Explore extends React.Component {
         }
     };
     
-    translateOrganSummaryToViewModel = (organSummary) => {
+    translateCellCountSummariesToViewModel = (cellCountSummaries) => {
 
-        return organSummary.reduce((accum, summary) => {
+        return cellCountSummaries.reduce((accum, summary) => {
 
             accum.push({
                 displayKey: this.translateOrganNameToDisplayKey(summary.label),

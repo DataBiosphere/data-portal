@@ -66,12 +66,12 @@ export function fetchTermFacets() {
  */
 function bindFileSummaryResponse(fileSummaryResponse) {
 
-	const organSummary = fileSummaryResponse.organSummaries
-		.filter(isValidOrganSummary)
+	const cellCountSummaries = fileSummaryResponse.cellCountSummaries
+		.filter(isValidCellCountSummaries)
 		.map(summary => {
 
 			return {
-				label: formatOrganSummaryOrganTypeForDisplay(summary.organType),
+				label: formatCellCountSummariesOrganTypeForDisplay(summary.organType),
 				count: summary.countOfDocsWithOrganType,
 				cellCount: summary.totalCellCountByOrgan
 			}
@@ -80,6 +80,7 @@ function bindFileSummaryResponse(fileSummaryResponse) {
 	// Bind response values to file summary view format
 	return {
 		cellCount: fileSummaryResponse.totalCellCount,
+		cellCountSummaries: cellCountSummaries,
 		donorCount: fileSummaryResponse.donorCount,
 		fileCount: fileSummaryResponse.fileCount,
 		fileFormatSummary: fileSummaryResponse.fileTypeSummaries.map((summary) => {
@@ -90,8 +91,8 @@ function bindFileSummaryResponse(fileSummaryResponse) {
 		}),
 		labCount: fileSummaryResponse.labCount,
 		loaded: true,
-		organCount: fileSummaryResponse.organCount,
-		organSummary: organSummary,
+		organCount: fileSummaryResponse.organTypes.length,
+		organTypes: fileSummaryResponse.organTypes,
 		projectCount: fileSummaryResponse.projectCount,
 		totalCellCount: fileSummaryResponse.totalCellCount
 	}
@@ -137,17 +138,17 @@ function buildProjectIdSearchTerms(terms) {
  * organ type is a string). Otherwise we're dealing with the new API and must return the first value in the organ type
  * array.
  */
-function formatOrganSummaryOrganTypeForDisplay(organType) {
+function formatCellCountSummariesOrganTypeForDisplay(organType) {
 	
 	return Array.isArray(organType) ? organType[0] : organType;
 }
 
 /**
- * An organ summary is valid if it only has a single value for its organ type, as we currently do not have handling for
- * multiple labels when generating the SVG and associated stats). Retain handling of older version of the API where organ
- * type is a string (in which case, the organ summary is automatically considered valid)
+ * A cell count summary is valid if it only has a single value for its organ type, as we currently do not have handling
+ * for multiple labels when generating the SVG and associated stats). Retain handling of older version of the API where
+ * organ type is a string (in which case, the organ summary is automatically considered valid).
  */
-function isValidOrganSummary(summary) {
+function isValidCellCountSummaries(summary) {
 
 	const organType = summary.organType;
 
@@ -157,5 +158,5 @@ function isValidOrganSummary(summary) {
 	}
 
 	// Otherwise an array organ type is only valid if it has a single value (new API)
-	return summary.organType.length === 1;
+	return organType.length === 1;
 }
