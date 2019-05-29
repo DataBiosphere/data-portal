@@ -13,7 +13,7 @@ import React from 'react';
 import Banner from './banner/banner';
 import Footer from './footer/footer';
 import Header from './header/header';
-import HCAContent from './hcaContent/hcaContent';
+import HCAMain from './hcaMain/hcaMain';
 
 // Styles
 import compStyles from './layout.module.css';
@@ -53,8 +53,8 @@ class Layout extends React.Component {
 					<Header onMenuOpen={this.onMenuOpen.bind(this)} homePage={homePage}/>
 					<Banner position={'top'} healthy={healthy}/>
 					{homePage ? <div className={globalStyles.pageWrapper}>{children}</div> :
-						<HCAContent docPath={docPath} homeTab={homeTab} noNav={noNav} noTab={noTab}
-									sectionTitle={sectionTitle}>{children}</HCAContent>}
+						<HCAMain docPath={docPath} homeTab={homeTab} noNav={noNav} noTab={noTab}
+								 sectionTitle={sectionTitle}>{children}</HCAMain>}
 					<Banner position={'bottom'}/>
 					<Footer/>
 				</div>

@@ -1,0 +1,90 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal toc component.
+ */
+@import '../../styles/vars.module.css';
+
+.hcaToc {
+	display: none;
+}
+
+/* Unordered lists - no list style */
+.hcaToc ul {
+	list-style: none;
+}
+
+/* TOC list */
+.tocs li {
+	display: flex;
+	margin: 0;
+	position: relative; /* Positions nav bar */
+}
+
+/* TOC - link */
+.tocs li a {
+	color: var(--gray-dark);
+	padding: 4px 0;
+	width: 100%; /* Improves click-able area on link */
+}
+
+/* TOC - link required */
+.tocs li a span {
+	padding-left: 2px;
+}
+
+/* TOC - depth 3 */
+.tocs li a.depth3 {
+	//margin-left: 8px;
+}
+
+/* TOC link - hover */
+.tocs > li:hover a {
+	color: var(--gray-darkest);
+}
+
+/* TOC link - active */
+.tocs > li.active a {
+	color: var(--black);
+}
+
+/* TOC bar */
+.tocs > li:before {
+	background-color: var(--gray-lightest);
+	content: "";
+	height: 100%;
+	left: -8px;
+	position: absolute;
+	top: 0;
+	width: 1px;
+}
+
+/* TOC bar - active */
+.tocs > li.active:before {
+	background-color: var(--primary);
+	left: -8px;
+}
+
+/**
+ * Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1024px) {
+
+	/* TOC */
+	.hcaToc {
+		display: flex;
+		height: 100%;
+		margin-bottom: 88px; /* Prevents TOC extending beyond content end */
+		position: sticky;
+		top: 24px;
+	}
+
+	/* TOCs */
+	.tocs {
+		margin-left: 18px !important; /* Total separation between content and TOC is 32px */
+		max-width: 178px; /* Max TOC width total is 196px - includes 18px margin */
+		min-width: 178px; /* Max TOC width total is 196px - includes 18px margin */
+	}
+}

@@ -142,7 +142,7 @@ module.exports = {
 					{
 						resolve: `gatsby-remark-autolink-headers`,
 						options: {
-							offsetY: '-167', // Header + section + tab height, ignores top banner.
+							offsetY: '-143', // Header + section + tab height, ignores top banner, 24px from top.
 						},
 					},
 					{

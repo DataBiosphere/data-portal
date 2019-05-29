@@ -5,7 +5,7 @@
  * Style definitions specific to the HCA Data Portal metadata template component.
  */
 
-/* Code base for type */
+/* Type */
 .meta + p {
 	font-size: 15px;
 	margin: 4px 0;
@@ -14,4 +14,9 @@
 /* Description */
 .meta + p + p {
 	margin: 8px 0 4px 0;
+}
+
+/* Required */
+.meta + p + p + p {
+	margin-bottom: 32px;
 }

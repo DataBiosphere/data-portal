@@ -10,7 +10,6 @@ import React from 'react';
 
 // App dependencies
 import MetadataDetail from './metadataDetail';
-import MetadataReference from './metadataReference';
 
 // Styles
 import compStyles from './metadataRow.module.css';
@@ -20,7 +19,7 @@ const classNames = require('classnames');
 class MetadataInternalRow extends React.Component {
 
 	render() {
-		const {element, elementRef, elementRefRequired, isFirst, isLast, required, unFriendly} = this.props,
+		const {element, isFirst, isLast, required, unFriendly} = this.props,
 			{name, description, type} = element,
 			isRequired = required && required.includes(name),
 			regex = /_/g,
@@ -35,8 +34,6 @@ class MetadataInternalRow extends React.Component {
 								label={name.replace(regex, ' ')}
 								type={type}
 								unFriendly={unFriendly}/>
-				{elementRef ? <MetadataReference elementRef={elementRef} elementRefRequired={elementRefRequired}
-												 isFirst={isFirst}/> : null}
 			</div>
 		);
 	}
