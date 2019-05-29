@@ -29,7 +29,8 @@ const FACET_BLACKLIST = [
 
 // Facet display names
 const FACET_DISPLAY_NAMES = {
-	"disease": "knownDiseases"
+	"disease": "knownDiseases",
+	"projectId": "project"
 };
 
 class HomepageAutosuggest extends React.Component {
@@ -44,20 +45,21 @@ class HomepageAutosuggest extends React.Component {
 		this.onSelected = this.onSelected.bind(this);
 	}
 
-	buildExploreDataCategory = (facetName, terms) => {
+	buildExploreDataCategory = (facetName, facetDisplayName, terms) => {
 
 		const selectableTerms = terms
 			.filter(term => !!term.term)
 			.map((term) => {
 				return {
 					termName: term.term,
+					termDisplayName: term.termDisplayName || term.term,
 					termCount: numberFormatter.format(term.count, 1)
 				}
 			});
 
 		return {
 			facetName: facetName,
-			facetDisplayName: stringFormatter.convertCamelCasetoTitleCase(facetName),
+			facetDisplayName: stringFormatter.convertCamelCasetoTitleCase(facetDisplayName),
 			terms: selectableTerms
 		};
 	};
@@ -84,19 +86,15 @@ class HomepageAutosuggest extends React.Component {
 			const termFacets = this.listSelectableTermFacets(this.props.termFacets)
 				.map((facet) => {
 
-					const displayName = FACET_DISPLAY_NAMES[facet.facetName];
-					if (displayName) {
-						return Object.assign({}, facet, {
-							facetName: displayName
-						});
-					}
-					return facet;
+					return Object.assign({}, facet, {
+						facetDisplayName: FACET_DISPLAY_NAMES[facet.facetName] || facet.facetName 
+					});
 				});
 			termFacets.sort((facet0, facet1) => {
 				return facet0.facetName > facet1.facetName ? 1 : -1;
 			});
 			termFacets.forEach((termFacet) => {
-				data.push(this.buildExploreDataCategory(termFacet.facetName, termFacet.terms));
+				data.push(this.buildExploreDataCategory(termFacet.facetName, termFacet.facetDisplayName, termFacet.terms));
 			});
 		}
 
