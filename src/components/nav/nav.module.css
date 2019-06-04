@@ -142,7 +142,7 @@
 	.hcaNav {
 		height: 100%;
 		position: sticky;
-		top: 24px;
+		top: 84px;
 		z-index: 1; /* Required for heading anchors */
 	}
 

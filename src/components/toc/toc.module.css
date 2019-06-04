@@ -78,7 +78,7 @@
 		height: 100%;
 		margin-bottom: 88px; /* Prevents TOC extending beyond content end */
 		position: sticky;
-		top: 24px;
+		top: 84px;
 	}
 
 	/* TOCs */

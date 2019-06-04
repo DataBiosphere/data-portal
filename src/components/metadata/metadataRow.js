@@ -37,7 +37,7 @@ class MetadataRow extends React.Component {
 	};
 
 	render() {
-		const {children, element, elementParent, groupRef, isLast, requiredList, unFriendly, unGrouped} = this.props;
+		const {children, element, elementParent, groupRef, requiredList, unFriendly, unGrouped} = this.props;
 		const {name, properties} = element,
 			required = requiredList || (elementParent && elementParent.required),
 			isRequired = required && required.includes(name),
@@ -55,7 +55,7 @@ class MetadataRow extends React.Component {
 		return (
 			<div>
 				<div id={anchor}
-					 className={classNames({[compStyles.unGrouped]: unGrouped}, compStyles.metadataRow, {[compStyles.groupEnd]: isLast})}>
+					 className={classNames({[compStyles.unGrouped]: unGrouped}, compStyles.metadataRow)}>
 					<MetadataDetail anchor={anchor}
 									exampleOrEnum={exampleOrEnum}
 									description={description}
