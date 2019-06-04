@@ -50,8 +50,8 @@ class TOCSpy extends React.Component {
 
 	handleScroll = () => {
 
-		let currentScrollPos = window.scrollY + 28;
-		let endScrollPos = document.body.clientHeight - window.innerHeight + 28;
+		let currentScrollPos = window.scrollY + 88;
+		let endScrollPos = document.body.clientHeight - window.innerHeight + 88;
 
 		// Check not at the bottom of the page
 		if (currentScrollPos !== endScrollPos) {

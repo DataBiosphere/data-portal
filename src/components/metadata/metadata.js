@@ -67,7 +67,6 @@ class Metadata extends React.Component {
 									<MetadataInternalRow key={l}
 														 element={i2}
 														 elementParent={this.getPropertyRefProperties(e1)}
-														 isLast={!this.getPropertyRefProperties(e1).definitions[this.getInternalRef(e1)].properties[l + 1]}
 														 required={this.getInternalRequired(e1)}
 														 unFriendly={`${unFriendly}.${e1.name}.${i2.name}`}/>) :
 								this.getPropertyRefProperties(e1).properties.map((e2, j) =>
@@ -75,13 +74,11 @@ class Metadata extends React.Component {
 											<MetadataRow key={k}
 														 element={e3}
 														 elementParent={this.getPropertyRefProperties(e2)}
-														 isLast={!this.getPropertyRefProperties(e2).properties[k + 1] && !this.getPropertyRefProperties(e1).properties[j + 1]}
 														 typeRef={unFriendly}
 														 unFriendly={`${unFriendly}.${e1.name}.${e2.name}.${e3.name}`}/>) :
 										<MetadataRow key={j}
 													 element={e2}
 													 elementParent={this.getPropertyRefProperties(e1)}
-													 isLast={!this.getPropertyRefProperties(e1).properties[j + 1]}
 													 typeRef={unFriendly}
 													 unFriendly={`${unFriendly}.${e1.name}.${e2.name}`}/>)}</MetadataRow> :
 						<MetadataRow key={i}

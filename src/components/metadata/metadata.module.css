@@ -9,6 +9,10 @@
 	margin: 0 -16px;
 }
 
+.metadata > div {
+	margin-bottom: 24px;
+}
+
 /**
  * HCA specific breakpoint
  */
