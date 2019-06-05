@@ -10,8 +10,10 @@
 
 * `npm` ([https://www.npmjs.com/](https://www.npmjs.com/)) is bundled with `Node.js` and is required to manage application dependencies.
 
+* [git-secrets] must be installed
 
-* [git-secrets]
+[git-secrets]: https://github.com/awslabs/git-secrets
+
 
 ### Setup
 
