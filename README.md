@@ -4,11 +4,14 @@
 
 ### Requirements
 
-* `Node.js` ([https://nodejs.org/en/](https://nodejs.org/en/)), version 10.0.0. 
+* `Node.js` ([https://nodejs.org/en/](https://nodejs.org/en/)), version 10.16.0. 
 
 * We recommend using `n` ([https://github.com/tj/n](https://github.com/tj/n)) as the Node.js package manger. 
 
 * `npm` ([https://www.npmjs.com/](https://www.npmjs.com/)) is bundled with `Node.js` and is required to manage application dependencies.
+
+
+* [git-secrets]
 
 ### Setup
 
@@ -17,6 +20,17 @@
 Clone the `data-portal` repo:
 
 	git@github.com:HumanCellAtlas/data-portal.git
+
+##### Install git-secrets
+
+If you have push access to the remote, you'll need to install [git-secrets],
+   enable the commit hooks for it and configure patterns for AWS and Google:
+
+   ```
+   git secrets --install
+   git secrets --register-aws
+   git secrets --add '[-]----BEGIN.PRIVATE.KEY-----'
+   ```
 
 ##### Install Gatsby Command Line Tool
 
@@ -61,3 +75,4 @@ The built version can be viewed at:
 #### Material Components
 
 HCA Data Preview uses Material Components ([https://material.io/components/web/](https://material.io/components/web/)) for its Material Design library.
+
