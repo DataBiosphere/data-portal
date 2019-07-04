@@ -1,0 +1,76 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - gatsby > gatsby-cli > yurnalist > inquirer > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby-remark-autolink-headers > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > react-hot-loader > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > eslint-plugin-import > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > eslint > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > css-loader > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby-plugin-sharp > async > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > @babel/core > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > @babel/traverse > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > eslint > inquirer > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > webpack-dev-server > http-proxy-middleware > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > babel-eslint > @babel/traverse > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > eslint > table > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > babel-preset-gatsby > @babel/preset-env > @babel/plugin-transform-block-scoping > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > @gatsbyjs/relay-compiler > babel-preset-fbjs > @babel/plugin-transform-block-scoping > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > babel-eslint > @babel/traverse > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby-plugin-favicon > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > babel-preset-gatsby > @babel/preset-env > @babel/plugin-transform-sticky-regex > @babel/helper-regex > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > @babel/core > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > @gatsbyjs/relay-compiler > babel-preset-fbjs > @babel/plugin-transform-modules-commonjs > @babel/helper-module-transforms > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > babel-eslint > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > babel-preset-gatsby > @babel/preset-react > @babel/plugin-transform-react-jsx > @babel/helper-builder-react-jsx > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > @gatsbyjs/relay-compiler > babel-preset-fbjs > @babel/plugin-transform-react-jsx > @babel/helper-builder-react-jsx > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > @babel/core > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > babel-eslint > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > babel-preset-gatsby > @babel/preset-env > @babel/plugin-transform-modules-commonjs > @babel/helper-module-transforms > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > @babel/core > @babel/helpers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > @gatsbyjs/relay-compiler > babel-preset-fbjs > @babel/plugin-transform-modules-commonjs > @babel/helper-module-transforms > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > babel-preset-gatsby > @babel/preset-env > @babel/plugin-transform-parameters > @babel/helper-call-delegate > @babel/traverse > @babel/generator > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > @gatsbyjs/relay-compiler > babel-preset-fbjs > @babel/plugin-transform-classes > @babel/helper-replace-supers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > babel-preset-gatsby > @babel/plugin-proposal-class-properties > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > @gatsbyjs/relay-compiler > babel-preset-fbjs > @babel/plugin-transform-classes > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > @gatsbyjs/relay-compiler > babel-preset-fbjs > @babel/plugin-proposal-class-properties > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
+    - gatsby > babel-preset-gatsby > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2019-07-04T02:10:32.160Z'
