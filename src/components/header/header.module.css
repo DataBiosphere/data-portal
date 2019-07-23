@@ -8,11 +8,12 @@
 
 /* Nav bar container */
 .navBar, .hcaHeader {
+	background-color: var(--white);
 	border-bottom: 1px solid var(--gray-light);
 	height: 60px;
 	position: sticky;
 	top: 0;
-	z-index: 10;
+	z-index: 20;
 }
 
 /* Header for all pages but the home page */
