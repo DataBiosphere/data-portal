@@ -9,6 +9,38 @@
 import * as StringFormatService from './string-format.service';
 
 /**
+ * Returns the siteMap for all documents if the current environment is dev.
+ * Otherwise a filtered siteMap is returned that will exclude any documents in draft mode.
+ * @param environment
+ * @param allPages
+ * @param draftPages
+ * @returns {*}
+ */
+export function getPagesSiteMapByEnvironment(environment, allPages, draftPages) {
+
+	if ( environment === 'dev') {
+
+		// Return the siteMap for all documents
+		return allPages;
+	}
+	else {
+
+		// Return a filtered siteMap, excluding any documents in draft mode
+		// Draft mode is indicated by frontmatter where "draft" is true
+		return allPages.filter(page => {
+
+			if (page.secondaryLinks) {
+				page.secondaryLinks = page.secondaryLinks.filter(secondaryLink => {
+					return !draftPages.some(draftPage => draftPage.fields.path === secondaryLink.key)
+				});
+			}
+
+			return !draftPages.some(draftPage => draftPage.fields.path === page.key);
+		});
+	}
+}
+
+/**
  * Filter navigation links by location (header, footer).
  * @param navigationLinks
  * @param locationType
