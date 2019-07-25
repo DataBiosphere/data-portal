@@ -34,6 +34,7 @@
     "prop-types": "15.6.2",
     "react": "^16.8.6",
     "react-autowhatever": "10.2.0",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-linkify": "^0.2.2",
