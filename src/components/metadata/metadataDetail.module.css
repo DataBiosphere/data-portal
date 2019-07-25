@@ -11,6 +11,7 @@
 	display: flex;
 	flex-direction: column;
 	margin: 8px 0;
+	width: 100%; /* Required for copy to clipboard hover state */
 }
 
 .metadataDetail.byGroup {
@@ -27,9 +28,29 @@
 }
 
 /* Path */
-.metadataDetail .unFriendly {
+.metadataDetail .unFriendly, .metadataDetail .unFriendly span {
+	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
+}
+
+.metadataDetail:hover .unFriendly {
+	cursor: pointer;
+}
+
+/* Copy to clipboard */
+.metadataDetail i {
+	color: var(--gray-light);
+	cursor: pointer;
+	font-size: 14px;
+	height: 14px;
+	margin-left: 6px;
+	opacity: 0;
+}
+
+/* Copy to clipboard - hover */
+.metadataDetail:hover i {
+	opacity: 1;
 }
 
 /* Type */
@@ -76,4 +97,3 @@
 	font: inherit;
 	word-break: break-all;
 }
-
