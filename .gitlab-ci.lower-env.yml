@@ -1,5 +1,6 @@
 
 stages:
+  - test
   - build
   - deploy
 
@@ -27,13 +28,14 @@ cache:
 
 # Test with Trufflehog
 test_trufflehog:
-  stage: build
+  stage: test
   image: python:3.5
   before_script:
     - pip install trufflehog
   script:
     - trufflehog --regex --rules trufflehog-rules.json --branch develop --entropy=False --max_depth 30 https://github.com/HumanCellAtlas/data-portal.git
-
+  except:
+    - master
 
 # Develop Build
 build_develop:
