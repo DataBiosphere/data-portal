@@ -117,11 +117,10 @@ class Nav extends React.Component {
 export default (props) => {
 
 		let docPath = props.docPath,
-			currentEnv = process.env.GATSBY_EXPLORE_URL.split('//')[1].split('.')[0],
 			metaNav = docPath.includes('/metadata/dictionary/'),
 			allPagesSiteMap = navSiteMap(docPath),
 			documentsInDraftMode = draftSiteMap(),
-			pagesSiteMap = NavigationService.getPagesSiteMapByEnvironment(currentEnv, allPagesSiteMap, documentsInDraftMode),
+			pagesSiteMap = NavigationService.getPagesSiteMapByEnvironment(allPagesSiteMap, documentsInDraftMode),
 			metaSiteMap = metaNav ? metadataSiteMap(docPath) : '';
 
 	const nav = metaNav ? pagesSiteMap.concat(metaSiteMap) : docPath ? pagesSiteMap : '';

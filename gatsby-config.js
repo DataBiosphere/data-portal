@@ -14,7 +14,7 @@ let metadataSchemaJsonPath = `${__dirname}/_metadata-schema/json_schema`;
 let hcaGithubSystemStatusDocsPath = `${__dirname}/humancellatlas.github.io`;
 let yamlPath = `${__dirname}/node_modules/data-portal-content/siteMap`;
 
-if (process.env.GATSBY_DEV_ENV == "LOCAL") {
+if (process.env.GATSBY_ENV == "LOCAL") {
 	console.log("LAUNCHING USING LOCAL CONFIG");
     contentPath = '../data-portal-content/content';
     yamlPath = '../data-portal-content/siteMap';

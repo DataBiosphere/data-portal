@@ -10,6 +10,7 @@ import {graphql} from 'gatsby';
 import React from 'react';
 
 // App dependencies
+import * as EnvironmentService from '../utils/environment.service';
 import Layout from '../components/layout';
 
 // Styles
@@ -22,15 +23,24 @@ let classNames = require('classnames');
 export default function Template({data}) {
 
 	const systems = data.allSystemStatus.edges.map(n => n.node)[0].systems;
-	let currentEnv = process.env.GATSBY_EXPLORE_URL.split('//')[1].split('.')[0];
+	const currentEnv = EnvironmentService.getCurrentEnvironment();
+	const displayEnv = currentEnv === 'LOCAL' ? 'DEV' : currentEnv;
 
-	const systemEnv = systems.filter(system => {
+	const systemEnv = systems.reduce((accum, system) => {
 
 		// Filter out all other environments that do not match the current environment
 		// Return the system only if the environment exists
-		system.environments = system.environments.filter(environment => environment.name === currentEnv);
-		return system.environments.length;
-	});
+		const applicableEnvironments = system.environments.filter(environment =>
+			EnvironmentService.isCurrentEnvironment(environment.name.toUpperCase(), true));
+		
+		if ( applicableEnvironments.length ) {
+			accum.push({
+				...system,
+				environments: applicableEnvironments
+			})
+		}
+		return accum;
+	}, []);
 
 	const getMetrics = (healthCheckID, type) => {
 
@@ -40,7 +50,7 @@ export default function Template({data}) {
 
 	return (
 		<Layout sectionTitle={'System Status'} homeTab={false} noTab={true} noNav={true}>
-			<h2>Environment - {currentEnv.toUpperCase()}</h2>
+			<h2>Environment - {displayEnv}</h2>
 			<div className={compStyles.system}>
 				<div className={classNames(fontStyles.m, compStyles.label)}>
 					<span>System Name</span>

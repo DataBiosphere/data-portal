@@ -48,6 +48,7 @@ build_master:
     - export GATSBY_GTM_ID=GTM-M2J5NTJ
     - export GATSBY_GTM_AUTH=xm3qglWPEFim7Lb4AxXnsA
     - export GATSBY_ENV_NAME=env-2
+    - export GATSBY_ENV=PROD
     - gatsby build
   only:
     - master
