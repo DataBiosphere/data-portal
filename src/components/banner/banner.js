@@ -10,12 +10,12 @@ import React from 'react';
 
 // App dependencies
 import Environment from './environment'
+import * as EnvironmentService from '../../utils/environment.service';
 import Privacy from './privacy'
 import SystemStatus from './systemStatus'
 
 // Styles
 import compStyles from './banner.module.css'
-
 const classNames = require('classnames');
 
 class Banner extends React.Component {
@@ -30,8 +30,7 @@ class Banner extends React.Component {
 
 	isTestEnvironment = () => {
 
-		let environment = process.env.GATSBY_EXPLORE_URL.split('//')[1].split('.')[0];
-		return ((environment === 'dev') || (environment === 'integration') || (environment === 'staging'));
+		return EnvironmentService.isTestEnvironment();
 	};
 
 	render(props) {

@@ -6,7 +6,41 @@
  * Filters navigation by location and orders navigation links.
  */
 
+// App dependencies
+import * as EnvironmentService from '../utils/environment.service';
 import * as StringFormatService from './string-format.service';
+
+/**
+ * Returns the siteMap for all documents if the current environment is local, dev or ux-dev.
+ * Otherwise a filtered siteMap is returned that will exclude any documents in draft mode.
+ *
+ * @param allPages
+ * @param draftPages
+ * @returns {*}
+ */
+export function getPagesSiteMapByEnvironment(allPages, draftPages) {
+
+	if ( EnvironmentService.isLocal() || EnvironmentService.isDev() || EnvironmentService.isUXDev() ) {
+
+		// Return the siteMap for all documents
+		return allPages;
+	}
+	else {
+
+		// Return a filtered siteMap, excluding any documents in draft mode
+		// Draft mode is indicated by frontmatter where "draft" is true
+		return allPages.filter(page => {
+
+			if (page.secondaryLinks) {
+				page.secondaryLinks = page.secondaryLinks.filter(secondaryLink => {
+					return !draftPages.some(draftPage => draftPage.fields.path === secondaryLink.key)
+				});
+			}
+
+			return !draftPages.some(draftPage => draftPage.fields.path === page.key);
+		});
+	}
+}
 
 /**
  * Filter navigation links by location (header, footer).
