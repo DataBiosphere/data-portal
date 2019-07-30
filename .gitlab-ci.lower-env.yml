@@ -14,7 +14,7 @@ cache:
   image: node:10.0.0
   stage: build
   before_script:
-    - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
+    - git clone https://github.com/HumanCellAtlas/data-portal-content.git data-portal-content
     - git clone https://github.com/HumanCellAtlas/humancellatlas.github.io
     - npm install npm@6.9.0 -g
     - npm -v
@@ -43,6 +43,7 @@ build_develop:
   environment:
     name: develop
   script:
+    - git clone https://github.com/HumanCellAtlas/metadata-schema.git#develop _metadata-schema
     - export GATSBY_EXPLORE_URL=https://dev.data.humancellatlas.org/explore/
     - export GATSBY_FILE_SUMMARY_API_URL=https://service.dev.explore.data.humancellatlas.org/repository/summary
     - export GATSBY_TERM_FACETS_API_URL=https://service.dev.explore.data.humancellatlas.org/repository/projects
@@ -63,6 +64,7 @@ build_ux-dev:
   environment:
     name: ux-dev
   script:
+    - git clone https://github.com/HumanCellAtlas/metadata-schema.git#develop _metadata-schema
     - export GATSBY_EXPLORE_URL=https://ux-dev.data.humancellatlas.org/explore/
     - export GATSBY_FILE_SUMMARY_API_URL=https://service.dev.explore.data.humancellatlas.org/repository/summary
     - export GATSBY_TERM_FACETS_API_URL=https://service.dev.explore.data.humancellatlas.org/repository/projects
@@ -82,6 +84,7 @@ build_integration:
   environment:
     name: integration
   script:
+    - git clone https://github.com/HumanCellAtlas/metadata-schema.git#integration _metadata-schema
     - export GATSBY_EXPLORE_URL=https://integration.data.humancellatlas.org/explore/
     - export GATSBY_FILE_SUMMARY_API_URL=https://service.integration.explore.data.humancellatlas.org/repository/summary
     - export GATSBY_TERM_FACETS_API_URL=https://service.integration.explore.data.humancellatlas.org/repository/projects
@@ -101,6 +104,7 @@ build_staging:
   environment:
     name: staging
   script:
+    - git clone https://github.com/HumanCellAtlas/metadata-schema.git#staging _metadata-schema
     - export GATSBY_EXPLORE_URL=https://staging.data.humancellatlas.org/explore/
     - export GATSBY_FILE_SUMMARY_API_URL=https://service.staging.explore.data.humancellatlas.org/repository/summary
     - export GATSBY_TERM_FACETS_API_URL=https://service.staging.explore.data.humancellatlas.org/repository/projects
