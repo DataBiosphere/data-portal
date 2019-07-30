@@ -11,19 +11,19 @@ import compStyles from './explore-svg.module.css'
 import * as numberFormatter from '../../../src/utils/number-format.service';
 import * as stringFormatter from '../../../src/utils/string-format.service';
 
-class   Explore extends React.Component {
+class Explore extends React.Component {
 
     componentDidMount() {
 
         const {cellCountSummaries, totalCellCount} = this.props;
-        
+
         // Create view-friendly model of organ summary
         const statsSummary = this.translateCellCountSummariesToViewModel(cellCountSummaries);
-        
+
         // Grab the stats elements
         const statsEl = this.svg.getElementById("stats");
         const existingOrganStatsEls = statsEl.querySelectorAll("*[id^='stats']");
-        
+
         // Add any stats elements for organ summaries that don't have an existing stats element
         const organStatsEls = this.createMissingStatElements(statsSummary, statsEl, existingOrganStatsEls);
 
@@ -44,7 +44,7 @@ class   Explore extends React.Component {
 
         // Find the stats summaries where there is no corresponding stats element
         const statsSummariesWithNoStatsEls = this.listStatsSummariesWithNoStatsEls(statsSummary, existingOrganStatsEls);
-        
+
         const organStatsEls = Array.from(existingOrganStatsEls);
 
         // Add stats elements for the stats summaries where an element does not already exist
@@ -100,7 +100,7 @@ class   Explore extends React.Component {
 
         return JSON.stringify([{"facetName": facetName, "terms": [termName]}]);
     };
-    
+
     listStatsSummariesWithNoStatsEls = (statsSummary, organStatsEls) => {
 
         // List the names of organs that already have a stats el
@@ -125,7 +125,7 @@ class   Explore extends React.Component {
     };
 
     updateStatsElsPositionAndContent = (statsSummary, organStatsEls, totalCellCount) => {
-        
+
         const maxBarLength = 168;
         let displayIndex = 0;
         organStatsEls.forEach((organStatsEl) => {
@@ -134,20 +134,21 @@ class   Explore extends React.Component {
             const summary = statsSummary.find(summary => {
                 return summary.displayKey.toLowerCase() === organName.toLowerCase();
             });
-            
+
             // Grab the corresponding organ image element, if any
             const organImageEl = this.svg.getElementById(`organ${organName}`);
-            
-            // Hide the stats and organ image if there isn't corresponding data for it
-            if ( !summary ) {
+
+            // Hide the stats and organ image if there isn't corresponding data for it,
+            // and limit the number of stats/organs displayed to 11 (the remainder are hidden).
+            if ( !summary || displayIndex > 10 ) {
                 organStatsEl.setAttribute("class", compStyles.hidden);
-                if ( organImageEl ) {
+                if (organImageEl) {
                     organImageEl.setAttribute("class", compStyles.hidden);
                 }
                 return;
             }
 
-            // Reposition organ stats now that some stats could be hidden 
+            // Reposition organ stats now that some stats could be hidden
             organStatsEl.setAttribute("transform", `translate(0, ${displayIndex * 24})`);
             displayIndex++;
 
@@ -194,7 +195,7 @@ class   Explore extends React.Component {
             organStatsEl.addEventListener("mouseleave", this.clearActiveOrgan(organGroup));
         });
     };
-    
+
     setActiveOrgan = (organGroup) => {
 
         return (event) => {
@@ -203,7 +204,7 @@ class   Explore extends React.Component {
             })
         }
     };
-    
+
     translateCellCountSummariesToViewModel = (cellCountSummaries) => {
 
         return cellCountSummaries.reduce((accum, summary) => {
@@ -224,17 +225,17 @@ class   Explore extends React.Component {
         switch ( organName ) {
             case "bone":
                 return "bonemarrow";
-            case "lymph node": 
+            case "lymph node":
                 return "immune";
-            case "oesophagus": 
+            case "oesophagus":
                 return "esophagus";
             case "skin of body":
                 return "skinofbody";
-            default: 
+            default:
                 return organName;
         }
     };
-    
+
     visitExploreLink = (facetName, termName) => {
 
         const organFilter = this.getOrganFilter(facetName, termName);
