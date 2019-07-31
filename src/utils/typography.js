@@ -100,6 +100,9 @@ const typography = new Typography({
 				margin: 0,
 				padding: 0,
 			},
+			'ol, ul': {
+				marginBottom: '24px',
+			},
 			img: {
 				border: 0,
 				marginBottom: 0,

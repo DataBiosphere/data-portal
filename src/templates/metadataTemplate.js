@@ -35,7 +35,7 @@ export default function Template({data}) {
 
 	return (
 		<Layout pageTitle={pageTitle} docPath={docPath}>
-			<h2 className={classNames(globalStyles.md, compStyles.meta)}>{pageTitle}</h2>
+			<h1 className={classNames(globalStyles.md, compStyles.meta)}>{pageTitle}</h1>
 			<p className={fontStyles.hcaCode}>{type.name}</p>
 			<p className={fontStyles.l}>{type.description}</p>
 			<p className={fontStyles.xxs}>* Indicates a required field</p>

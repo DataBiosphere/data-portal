@@ -15,11 +15,12 @@ import Layout from '../components/layout';
 // Styles
 import compStyles from './error.module.css';
 import fontStyles from '../styles/fontsize.module.css';
+import globalStyles from '../styles/global.module.css';
 
 const NotFoundPage = () => (
 	<Layout homeTab={true} noNav={true} sectionTitle={'Page Not Found'}>
 		<div className={compStyles.cellImage}/>
-		<h2>Oops!</h2>
+		<h1 className={globalStyles.md}>Oops!</h1>
 		<p className={fontStyles.m}>We can’t find the page you were looking for.</p>
 		<p className={fontStyles.m}>Here are some helpful links instead:</p>
 		<p><Link to='/'>Home Page</Link></p>

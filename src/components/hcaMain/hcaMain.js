@@ -15,6 +15,7 @@ import Section from '../section/section';
 import TabNav from '../tabNav/tabNav';
 
 // Styles
+import compStyles from './hcaMain.module.css';
 import globalStyles from '../../styles/global.module.css';
 
 class HCAMain extends React.Component {
@@ -25,7 +26,7 @@ class HCAMain extends React.Component {
 			<div className={globalStyles.pageWrapper}>
 				<Section docPath={docPath} sectionTitle={sectionTitle}/>
 				<TabNav docPath={docPath} homeTab={homeTab} noTab={noTab}/>
-				<div style={{position: 'relative'}}>
+				<div className={compStyles.main}>
 					<div className={globalStyles.wrapper}>
 						<HCAContent docPath={docPath} noNav={noNav}>{children}</HCAContent>
 					</div>

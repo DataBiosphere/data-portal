@@ -5,7 +5,9 @@
 
 /* Page wrapper */
 .pageWrapper {
+	display: flex; /* Required for 404 and error cell image */
 	flex: 1;
+	flex-direction: column;
 }
 
 /* Banner wrapper */
@@ -34,14 +36,11 @@
 	margin-bottom: 4px;
 }
 
-.md > h1:first-of-type {
-	font-size: 24px;
-	line-height: 30px;
-	margin-top: 0;
-}
-
-.md > h2:first-of-type {
-	margin-top: 0;
+/* <h1> - overrides h1 specification for markdown content */
+.md > h1, h1.md {
+	font-size: 30px;
+	line-height: 36px;
+	margin: 0 0 18px;
 }
 
 /* Button - class "button" */
