@@ -103,8 +103,7 @@ class IndexPage extends React.Component {
 				<div className={compStyles.homepage}>
 					<div className={compStyles.jumbotron}>
 						<div className={compStyles.sectionWrapper}>
-							<Link to='/guides'><h1 className={fontStyles.hero}>Single-cell data building a foundation for
-								human health</h1>
+							<Link to='/guides'><h1 className={fontStyles.hero}>Mapping the human body at the cellular level</h1>
 								<p className={fontStyles.xs}>Learn More</p></Link>
 							<HomepageAutosuggest termFacets={this.state.searchTerms}/>
 						</div>
