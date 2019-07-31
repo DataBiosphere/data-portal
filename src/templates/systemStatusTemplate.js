@@ -16,6 +16,7 @@ import Layout from '../components/layout';
 // Styles
 import compStyles from './systemStatusTemplate.module.css';
 import fontStyles from '../styles/fontsize.module.css';
+import globalStyles from '../styles/global.module.css';
 
 let classNames = require('classnames');
 
@@ -50,7 +51,7 @@ export default function Template({data}) {
 
 	return (
 		<Layout sectionTitle={'System Status'} homeTab={false} noTab={true} noNav={true}>
-			<h2>Environment - {displayEnv}</h2>
+			<h1 className={globalStyles.md}>Environment - {displayEnv}</h1>
 			<div className={compStyles.system}>
 				<div className={classNames(fontStyles.m, compStyles.label)}>
 					<span>System Name</span>

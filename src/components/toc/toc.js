@@ -33,7 +33,7 @@ class TOC extends React.Component {
 
 	getAnchor = (heading) => {
 
-		let specialCharacters = /[:?.,]/g,
+		let specialCharacters = /[:?.,()]/g,
 			whiteSpace = /\s/g;
 
 		return heading.replace(whiteSpace, '-').replace(specialCharacters, '').toLowerCase();
@@ -77,7 +77,7 @@ class TOC extends React.Component {
 export default (props) => {
 
 	let docPath = props.docPath,
-		pagesTOC = TOCSiteMap(docPath) ? TOCSiteMap(docPath).headings.slice(1).filter(heading => heading.depth <= 3) : '',
+		pagesTOC = TOCSiteMap(docPath) ? TOCSiteMap(docPath).headings.filter(heading => heading.depth > 1 && heading.depth <= 3) : '',
 		metaNav = docPath.includes('/metadata/dictionary/'),
 		docPathSplitByPath = docPath.split('/'),
 		docPathSplitByPathLength = docPathSplitByPath.length - 1,

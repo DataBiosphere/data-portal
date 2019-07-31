@@ -9,27 +9,23 @@
 /* Analyze list */
 .hcaAnalyzeDetail {
 	display: flex;
-	justify-content: space-between;
-	position: relative; /* Positions button */
+	flex-direction: column;
 	width: 100%;
 }
 
-/* Heading */
-.hcaAnalyzeDetail div h2:first-child {
-	margin: 0;
+/* Title, author container */
+.hcaAnalyzeDetail > div {
+	max-width: 540px;
 }
 
 /* Author */
 .hcaAnalyzeDetail .author {
-	margin-bottom: 24px;
+	color: var(--gray-darkest);
+	margin: -14px 0 24px;
 }
 
-/* Hide view button - positioned RHS */
-.hcaAnalyzeDetail > .view {
-	display: none;
-}
-
-.hcaAnalyzeDetail a + div {
+/* Markdown */
+.hcaAnalyzeDetail + div {
 	margin-top: 24px;
 }
 
@@ -39,21 +35,19 @@
  */
 @media screen and (min-width: 1024px) {
 
+	/* Analyze list */
+	.hcaAnalyzeDetail {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	/* Title, author container */
 	.hcaAnalyzeDetail > div {
 		margin-right: 16px;
 	}
 
-	/* Show view button - positioned RHS */
-	.hcaAnalyzeDetail > .view {
-		display: flex;
-	}
-
-	/* Hide view button - positioned below author */
-	.hcaAnalyzeDetail > div .view {
-		display: none;
-	}
-
-	.hcaAnalyzeDetail a + div {
+	/* Markdown */
+	.hcaAnalyzeDetail + div {
 		margin-top: 0;
 	}
 }

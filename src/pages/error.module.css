@@ -10,17 +10,11 @@
 	background: url(../../images/data-portal/cell.png) center no-repeat;
 	background-size: cover;
 	bottom: 0;
-	height: 100vh;
 	left: 0;
 	position: absolute;
 	right: 0;
 	top: 0;
 	z-index: -1;
-}
-
-/* Error h2 */
-.error h2 {
-	margin: 0 0 16px;
 }
 
 .error a:not(:last-of-type) {

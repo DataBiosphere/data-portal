@@ -21,10 +21,6 @@
 	z-index: 2; /* Required for heading anchor */
 }
 
-.hcaContentInner > h2:first-of-type {
-	margin-top: 0;
-}
-
 /**
  * HCA specific breakpoint
  */
