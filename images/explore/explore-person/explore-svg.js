@@ -17,8 +17,11 @@ class Explore extends React.Component {
 
         const {cellCountSummaries, totalCellCount} = this.props;
 
+        // Exclude any unspecified label values
+        const cellCountSummariesNoUnspecified = cellCountSummaries.filter(cellCountSummary => cellCountSummary.label !== "unspecified");
+
         // Create view-friendly model of organ summary
-        const statsSummary = this.translateCellCountSummariesToViewModel(cellCountSummaries);
+        const statsSummary = this.translateCellCountSummariesToViewModel(cellCountSummariesNoUnspecified);
 
         // Grab the stats elements
         const statsEl = this.svg.getElementById("stats");
@@ -87,7 +90,7 @@ class Explore extends React.Component {
 
             organStatsEls.push(g);
         });
-        
+
         return organStatsEls;
     };
 
