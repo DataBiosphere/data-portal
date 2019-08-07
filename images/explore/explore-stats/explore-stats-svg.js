@@ -20,7 +20,11 @@ class ExploreStats extends React.Component {
 	componentDidMount() {
 
 		const {cellCountSummaries} = this.props;
-		const statsSummary = cellCountSummaries.reduce((accum, summary) => {
+
+		// Exclude any unspecified label values
+		const cellCountSummariesNoUnspecified = cellCountSummaries.filter(cellCountSummary => cellCountSummary.label !== "unspecified");
+
+		const statsSummary = cellCountSummariesNoUnspecified.reduce((accum, summary) => {
 
 			accum.push({
 				label: stringFormatter.convertSentenceCaseToTitleCase(summary.label),

@@ -68,6 +68,7 @@ function bindFileSummaryResponse(fileSummaryResponse) {
 
 	const cellCountSummaries = fileSummaryResponse.cellCountSummaries
 		.filter(isValidCellCountSummaries)
+		.map(nullCellCountSummaries)
 		.map(summary => {
 
 			return {
@@ -139,7 +140,7 @@ function buildProjectIdSearchTerms(terms) {
  * array.
  */
 function formatCellCountSummariesOrganTypeForDisplay(organType) {
-	
+
 	return Array.isArray(organType) ? organType[0] : organType;
 }
 
@@ -159,4 +160,19 @@ function isValidCellCountSummaries(summary) {
 
 	// Otherwise an array organ type is only valid if it has a single value (new API)
 	return organType.length === 1;
+}
+
+/**
+ * Any cell count summary with a null organType value is converted to the value "unspecified".
+ */
+function nullCellCountSummaries(summary) {
+
+	const organType = summary.organType;
+
+	// Change any null value to "unspecified"
+	if ( !organType[0] ) {
+		summary.organType = "unspecified";
+	}
+
+	return summary;
 }
