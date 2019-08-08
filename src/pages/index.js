@@ -24,12 +24,12 @@ import fontStyles from '../styles/fontsize.module.css';
 import globalStyles from '../styles/global.module.css';
 
 // Images
-import analysisPortal from '../../images/data-portal/analysis-portal.png';
-import arrowRight from '../../images/data-portal/arrow-right.png';
-import contribute from '../../images/data-portal/contribute.png';
+import arrow from '../../images/data-portal/arrow@2x.png';
 import explorePlaceholder from '../../images/data-portal/expore-placeholder.png';
-import findData from '../../images/data-portal/find-data.png';
-import processData from '../../images/data-portal/process-data.png';
+import labsContribute from '../../images/data-portal/HCA-Icons_labs-contribute.png';
+import pipelineProcessing from '../../images/data-portal/HCA-Icons_pipeline-processing.png';
+import searchCommunity from '../../images/data-portal/HCA-Icons_search-community.png';
+import searchData from '../../images/data-portal/HCA-Icons_search-data.png';
 
 let classNames = require('classnames');
 
@@ -52,7 +52,7 @@ class IndexPage extends React.Component {
 	};
 
 	/**
-	 * Check system status is OK then load up counts and summaries. 
+	 * Check system status is OK then load up counts and summaries.
 	 */
 	componentDidMount() {
 
@@ -87,8 +87,8 @@ class IndexPage extends React.Component {
 	};
 
 	/**
-	 * Format data counts to sized value (eg k, M, G etc) 
-	 * 
+	 * Format data counts to sized value (eg k, M, G etc)
+	 *
 	 * @param {number} count
 	 * @returns {*}
 	 */
@@ -152,47 +152,47 @@ class IndexPage extends React.Component {
 								Anyone
 								can contribute data, find data, or access community tools and applications.</h1>
 							<div className={compStyles.portalDescription}>
-								<div>
-									<div>
-										<img src={contribute} alt='Contribute'/>
+								<div className={compStyles.dpTile}>
+									<div className={compStyles.dpTileImage}>
+										<img src={labsContribute} alt='Labs Contribute'/>
 									</div>
-									<div>
+									<div className={compStyles.dpTileDescription}>
 										<p>Labs contribute single-cell data</p>
 										<Link to='/contribute'>Learn about
 											contributing</Link>
 									</div>
 								</div>
 								<div className={compStyles.dpArrow}>
-									<img src={arrowRight} alt='Arrow'/>
+									<img src={arrow} alt='Arrow'/>
 								</div>
-								<div>
-									<div>
-										<img src={processData} alt='Pipelines'/>
+								<div className={compStyles.dpTile}>
+									<div className={compStyles.dpTileImage}>
+										<img src={pipelineProcessing} alt='Process through Pipelines'/>
 									</div>
-									<div><p>We process and quality-check the data with our
+									<div className={compStyles.dpTileDescription}><p>We process and quality-check the data with our
 										pipelines</p><Link
 										to='/pipelines'>Learn
 										about Pipelines</Link>
 									</div>
 								</div>
 								<div className={compStyles.dpArrow}>
-									<img src={arrowRight} alt='Arrow'/>
+									<img src={arrow} alt='Arrow'/>
 								</div>
-								<div>
-									<div>
-										<img src={findData} alt='Find Data'/>
+								<div className={compStyles.dpTile}>
+									<div className={compStyles.dpTileImage}>
+										<img src={searchData} alt='Search Data'/>
 									</div>
-									<div><p>Anyone can find data to download or use for
+									<div className={compStyles.dpTileDescription}><p>Anyone can find data to download or use for
 										analysis</p><a href={process.env.GATSBY_EXPLORE_URL}>Start Searching</a></div>
 								</div>
 								<div className={compStyles.dpArrow}>
-									<img src={arrowRight} alt='Arrow'/>
+									<img src={arrow} alt='Arrow'/>
 								</div>
-								<div>
-									<div>
-										<img src={analysisPortal} alt='Analysis Tools'/>
+								<div className={compStyles.dpTile}>
+									<div className={compStyles.dpTileImage}>
+										<img src={searchCommunity} alt='Find Community Analysis Tools'/>
 									</div>
-									<div><p className={compStyles.s}>Find community analysis tools and applications</p>
+									<div className={compStyles.dpTileDescription}><p className={compStyles.s}>Find community analysis tools and applications</p>
 										<Link
 											to='/analyze'
 											className={compStyles.s}>Explore applications</Link></div>

@@ -145,69 +145,64 @@
 	text-align: center;
 }
 
-/* DP Imagery and associated text */
+/* DP tiles container */
 .portalDescription {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	margin-top: 56px;
+	margin-top: 20px;
 }
 
-/* Each DP has its own box */
-.portalDescription > div {
+/* DP tile container */
+.portalDescription .dpTile {
 	align-items: center;
-	flex-direction: row;
 	display: flex;
+	flex-direction: row;
+}
+
+/* DP tile image container */
+.portalDescription .dpTileImage {
+	height: 100px;
+	width: 100px;
+}
+
+/* DP tile image */
+.portalDescription .dpTileImage img {
+	height: 100%;
 	width: 100%;
 }
 
-/* Arrow */
-.portalDescription .dpArrow {
-	flex: none; /* Overrides flex: 1 attribute from its own box */
-	height: 95px; /* Forces arrow container to be same height as DP images */
-	justify-content: center;
-	transform: rotate(90deg);
-}
-
-/* Top row of each box - image container */
-.portalDescription > div > div:first-of-type {
-	align-items: center;
-	display: flex;
-	padding: 0 16px;
-	width: 95px;
-}
-
-/* Top row of each box - image */
-.portalDescription > div > div:first-of-type img, .portalDescription .dpArrow img {
-	margin-bottom: 0;
-}
-
-/* Second row of each box */
-.portalDescription > div > div:nth-of-type(2) {
-	align-items: flex-start;
+/* DP tile description container */
+.portalDescription .dpTileDescription {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	padding: 0 16px;
-	width: 205px;
+	width: 188px;
 }
 
-/* Second row of each box - text description */
-.portalDescription > div > div:nth-of-type(2) p {
+/* DP tile description paragraph */
+.portalDescription .dpTileDescription p {
 	color: var(--gray-dark);
 	font-weight: 500;
 	line-height: 18px;
-	margin: 0;
-	text-align: left;
+	margin: 0 0 8px;
 }
 
-/* Link */
-.portalDescription > div > div:nth-of-type(2) a {
+/* DP tile description link */
+.portalDescription .dpTileDescription a {
 	font-weight: 400;
 	line-height: 18px;
 	margin: 0;
-	text-align: left;
+}
+
+/* DP arrow container */
+.portalDescription .dpArrow {
+	transform: rotate(90deg);
+}
+
+/* DP arrow image */
+.portalDescription .dpArrow img {
+	margin: 16px 0;
+	width: 27px;
 }
 
 /* Contact heading */
@@ -264,6 +259,21 @@
 		width: 116px;
 	}
 
+	/* DP tile image container */
+	.portalDescription .dpTileImage {
+		height: 168px;
+		width: 168px;
+	}
+
+	/* DP tile description container */
+	.portalDescription .dpTileDescription {
+		width: 230px;
+	}
+
+	/* DP tile arrow image */
+	.portalDescription .dpArrow img {
+		margin: 0;
+	}
 }
 
 /**
@@ -350,42 +360,35 @@
 		max-width: 800px;
 	}
 
-	/* DP Imagery and associated text */
+	/* DP tiles container */
 	.portalDescription {
 		align-items: flex-start;
 		flex-direction: row;
 	}
 
-	/* Portal Description */
-	.portalDescription > div {
-		flex: 1;
+	/* DP tile container */
+	.portalDescription .dpTile {
 		flex-direction: column;
-		width: unset;
 	}
 
-	/* Top row of each box - image container */
-	.portalDescription > div > div:first-of-type {
-		height: 95px;
-		padding: 0;
-		width: unset;
-	}
-
-	/* Second row of each box */
-	.portalDescription > div > div:nth-of-type(2) {
-		max-width: 172px;
-		padding: 0;
-	}
-
-	/* Second row of each box - text description & link */
-	.portalDescription > div > div:nth-of-type(2) p, .portalDescription > div > div:nth-of-type(2) a {
+	/* DP tile description paragraph & link */
+	.portalDescription .dpTileDescription p, .portalDescription .dpTileDescription a {
 		margin: 12px 0 0;
 		text-align: center;
 		width: 100%;
 	}
 
-	/* Arrow */
+	/* DP tile arrow container */
 	.portalDescription .dpArrow {
+		display: flex;
+		height: 168px; /* Forces arrow container to be same height as DP images */
 		transform: rotate(0deg);
+	}
+
+	/* DP tile arrow image */
+	.portalDescription .dpArrow img {
+		align-self: center;
+		margin: 0;
 	}
 
 	/* Contact form */
