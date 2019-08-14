@@ -135,31 +135,21 @@ function buildProjectIdSearchTerms(terms) {
 }
 
 /**
- * Format organ summary organ type for display. If we're dealing with the old API, return the organ type as is (as the
- * organ type is a string). Otherwise we're dealing with the new API and must return the first value in the organ type
- * array.
+ * Format organ summary organ type for display; return the first value in the organ type array.
  */
 function formatCellCountSummariesOrganTypeForDisplay(organType) {
 
-	return Array.isArray(organType) ? organType[0] : organType;
+	return (organType || [])[0];
 }
 
 /**
  * A cell count summary is valid if it only has a single value for its organ type, as we currently do not have handling
- * for multiple labels when generating the SVG and associated stats). Retain handling of older version of the API where
- * organ type is a string (in which case, the organ summary is automatically considered valid).
+ * for multiple labels when generating the SVG and associated stats).
  */
 function isValidCellCountSummaries(summary) {
 
-	const organType = summary.organType;
-
-	// Organ types that are not arrays are always considered valid (old API)
-	if ( !Array.isArray(organType) ) {
-		return true;
-	}
-
-	// Otherwise an array organ type is only valid if it has a single value (new API)
-	return organType.length === 1;
+	// Organ type is only valid if it has a single value.
+	return (summary.organType || []).length === 1;
 }
 
 /**
