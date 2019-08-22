@@ -135,6 +135,12 @@ module.exports = {
 			}
 		},
 		{
+			resolve: `gatsby-plugin-sharp`,
+			options: {
+				quality: 100
+			},
+		},
+		{
 			resolve: `gatsby-transformer-remark`,
 			options: {
 				excerpt_separator: `<!-- end -->`,
@@ -171,10 +177,11 @@ module.exports = {
 					{
 						resolve: `gatsby-remark-images`,
 						options: {
-							maxWidth: 740,
-							linkImagesToOriginal: false,
+							maxWidth: 4000,
+							linkImagesToOriginal: false
 						}
 					},
+					`gatsby-remark-images-medium-zoom`,
 					`gatsby-remark-katex`,
 					`gatsby-remark-prismjs`,
 					`gatsby-remark-responsive-iframe`,
