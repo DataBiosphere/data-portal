@@ -24,7 +24,7 @@
 	padding: 0 16px;
 }
 
-/* Inner markdown related styles */
+/* Lists */
 .md ol, .md ul {
 	font-size: 15px;
 	line-height: 25px;
