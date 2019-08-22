@@ -24,18 +24,6 @@
 	padding: 0 16px;
 }
 
-/* Inner markdown related styles */
-/* Img */
-.md img {
-	transform: scale(1);
-	transition: all 0.3s;
-}
-
-.md img:hover {
-	transform: scale(1.025);
-	transition: all 0.3s;
-}
-
 /* Lists */
 .md ol, .md ul {
 	font-size: 15px;
