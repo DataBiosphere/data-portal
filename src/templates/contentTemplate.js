@@ -31,7 +31,7 @@ export default function Template({data}) {
 	docPath = markdownRemark.fields.path;
 	gitHubPath = markdownRemark.fields.gitHubPath.substring(0, markdownRemark.fields.gitHubPath.lastIndexOf('/'));
 
-	const editPath = 'https://github.com/HumanCellAtlas/data-portal-content/tree/master/content' + gitHubPath + '.md';
+	const editPath = 'https://github.com/HumanCellAtlas/data-portal/tree/staging/content' + gitHubPath + '.md';
 
 	if (frontmatter) {
 		linked = frontmatter.linked;
