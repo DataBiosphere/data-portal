@@ -8,11 +8,11 @@
 
 // gatsby-config.js
 
-let contentPath = `${__dirname}/data-portal/content`;
+let contentPath = `${__dirname}/content`;
 let metadataSchemaDocsPath = `${__dirname}/_metadata-schema/docs`;
 let metadataSchemaJsonPath = `${__dirname}/_metadata-schema/json_schema`;
 let hcaGithubSystemStatusDocsPath = `${__dirname}/humancellatlas.github.io`;
-let yamlPath = `${__dirname}/data-portal/content/siteMap`;
+let yamlPath = `${__dirname}/content`;
 
 if (process.env.GATSBY_ENV == "LOCAL") {
 	console.log("LAUNCHING USING LOCAL CONFIG");
