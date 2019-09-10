@@ -10,7 +10,7 @@ The [Matrix Service](https://github.com/HumanCellAtlas/matrix-service) (MS) prov
 [Human Cell Atlas](/) [Data Coordination
 Platform](https://www.humancellatlas.org/data-sharing) (DCP). 
  
-The service exposes a [REST API](https://matrix.staging.data.humancellatlas.org) for querying and retrieving
+The service exposes a [REST API](https://matrix.data.humancellatlas.org) for querying and retrieving
 expression matrix results.
 
 ## File formats
@@ -18,7 +18,6 @@ expression matrix results.
 The DCP MS enables users to prepare expression matrices in several formats by supplying the `format` parameter in the
 POST request to the `/matrix` endpoint. The following is a list of supported file formats:
 
-- [.zarr](https://zarr.readthedocs.io/en/stable/) (default)
-- [.loom](http://loompy.org/)
+- [.loom](http://loompy.org/) (default)
 - [.csv](https://en.wikipedia.org/wiki/Comma-separated_values)
 - [.mtx](https://math.nist.gov/MatrixMarket/formats.html)
