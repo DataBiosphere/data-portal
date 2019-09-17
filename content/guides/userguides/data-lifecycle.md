@@ -51,3 +51,6 @@ See the *Pipelines* Section for [detailed information](/pipelines) about the DCP
 ## Data Access by End Users
 Access to the Data Store is supported with REST API (and associated CLI) using the Data Store's Consumer API. In addition, we have developed a Data Browser, accessible from the *Explore* section, that enables extensive browsing of the data through this Data Portal. Data will also be accessible through tools and portals developed by the community.
 
+## Data Use Policy
+For information regarding data sharing and data use, please see our [Data Release Policy](https://www.humancellatlas.org/data-release-policy/)
+
