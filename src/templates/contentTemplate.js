@@ -8,11 +8,13 @@
 // Core dependencies
 import {graphql} from 'gatsby';
 import React from 'react';
+import rehypeReact from 'rehype-react';
 
 // App dependencies
 import Analyze from '../components/analyze/analyze';
 import AnalysisDetail from '../components/analyze/analysisDetail';
 import Attributions from '../components/attributions/attributions';
+import DataLifecycleDiagram from '../components/dataLifecycleDiagram/dataLifecycleDiagram';
 import Layout from '../components/layout';
 
 // Styles
@@ -21,11 +23,16 @@ import globalStyles from '../styles/global.module.css';
 
 let classNames = require('classnames');
 
+const renderAst = new rehypeReact({
+    createElement: React.createElement,
+    components: { "data-lifecycle-diagram": DataLifecycleDiagram }
+}).Compiler;
+
 // the data prop will be injected by the GraphQL query below.
 export default function Template({data}) {
 
 	const {markdownRemark} = data; // data.markdownRemark holds our post data
-	const {frontmatter, html} = markdownRemark;
+	const {frontmatter, htmlAst} = markdownRemark;
 
 	let componentName, docPath, gitHubPath, linked, noNav, pageTitle;
 	docPath = markdownRemark.fields.path;
@@ -43,7 +50,7 @@ export default function Template({data}) {
 	return (
 		<Layout pageTitle={pageTitle} docPath={docPath} noNav={noNav}>
 			{componentName === 'analysisDetail' ? null :
-				<div className={globalStyles.md} dangerouslySetInnerHTML={{__html: html}}/>}
+                <div className={globalStyles.md}>{renderAst(htmlAst)}</div>}
 			{linked && (componentName === 'analyze') ?
 				<Analyze editPath={editPath} linked={linked}/> : null}
 			{componentName === 'analysisDetail' ?
@@ -61,7 +68,7 @@ export const pageQuery = graphql`
   query ($id: String!) {
     markdownRemark(id: { eq: $id  }) {
       id
-      html
+      htmlAst
       fields{
             gitHubPath
             path
