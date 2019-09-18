@@ -39,6 +39,14 @@
 	text-align: center;
 }
 
+/* Jumbotron subtitle */
+.jumbotron h2 {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	margin: 10px 0 16px;
+	text-align: center;
+}
+
 /* Learn more link */
 .jumbotron .sectionWrapper > a p {
 	color: var(--black);
