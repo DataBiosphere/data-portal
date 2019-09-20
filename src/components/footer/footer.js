@@ -10,7 +10,7 @@ import Link from 'gatsby-link';
 import React from 'react';
 
 // App dependencies
-import {footerSiteMap} from '../../hooks/footer-siteMap';
+import {FooterSiteMap} from '../../hooks/footer-siteMap';
 
 // Images
 import footerLogo from '../../../images/logo/logo-hca-white.png';
@@ -44,6 +44,6 @@ class Footer extends React.Component {
 
 export default () => {
 	return (
-		<Footer links={footerSiteMap()}/>
+		<Footer links={FooterSiteMap()}/>
 	)
 }
