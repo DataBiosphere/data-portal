@@ -18,19 +18,22 @@ let classNames = require('classnames');
 class AnalysisDetail extends React.Component {
 
 	render() {
+		const {data, editPath} = this.props,
+			{frontmatter, html} = data,
+			{author, githubUrl, title} = frontmatter;
 		return (
 			<div>
 				<div className={compStyles.hcaAnalyzeDetail}>
 					<div>
-						<h1 className={globalStyles.md}>{this.props.data.frontmatter.title}</h1>
-						<p className={classNames(fontStyles.s, compStyles.author)}>{this.props.data.frontmatter.author}</p>
+						<h1 className={globalStyles.md}>{title}</h1>
+						<p className={classNames(fontStyles.s, compStyles.author)}>{author}</p>
 					</div>
-					<a href={this.props.data.frontmatter.githubUrl} target='_blank' rel='noopener noreferrer'
+					<a href={githubUrl} target='_blank' rel='noopener noreferrer'
 					   className={classNames(globalStyles.button, globalStyles.outline, globalStyles.primary, compStyles.view)}>View</a>
 				</div>
-				<div dangerouslySetInnerHTML={{__html: this.props.data.html}}/>
+				<div dangerouslySetInnerHTML={{__html: html}}/>
 				<a className={classNames(globalStyles.editContent, globalStyles.editContentSeparator)}
-				   href={this.props.editPath} target='_blank' rel='noopener noreferrer'>Improve this page</a>
+				   href={editPath} target='_blank' rel='noopener noreferrer'>Improve this page</a>
 			</div>
 		);
 	}
