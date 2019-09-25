@@ -18,7 +18,7 @@ You should also be acquainted with the content in this tutorial:
 
 -   [Accessing HCA Data and Metadata][quick-start-guide]
 
-Terra [recommends the Google Chrome browser][terra-registration], which we
+Terra [recommends the Google Chrome browser][terra-register], which we
 follow in this tutorial.
 
 Overview of Terra
@@ -29,6 +29,8 @@ ability to use data, tools, and workflows to do interactive analysis in the
 cloud. To start using Terra, visit <https://app.terra.bio>.
 
 For more information about how to use Terra, visit the [Terra Support][terra-support] page.
+
+To register for a Terra account, see [How to register for a Terra account][terra-register].
 
 Overview of Dockstore
 ---------------------
@@ -145,6 +147,6 @@ There are many different ways to launch Jupyter Notebooks including:
   [explorer]: <https://data.humancellatlas.org/explore/projects>
   [terra]: <https://terra.bio>
   [terra-support]: <https://support.terra.bio/hc/en-us>
-  [terra-registration]: <https://support.terra.bio/hc/en-us/articles/360028235911-How-to-register-for-a-Terra-account>
+  [terra-register]: <https://support.terra.bio/hc/en-us/articles/360028235911-How-to-register-for-a-Terra-account>
   [dockstore]: <https://dockstore.org>
   [dockstore-doc]: <https://docs.dockstore.org/docs>
