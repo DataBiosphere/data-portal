@@ -11,14 +11,33 @@ Exporting search results from the HCA Data Explorer to Terra
 In this tutorial, you'll learn how to send search results from the HCA Data
 Explorer to Terra and how to run a basic workflow with that data.
 
-We'll assume that you have some familiarity with the tools aforementioned.
-In particular, you'll want to be acquainted with the content in these
-tutorials:
+This tutorial assumes some familiarity with the aforementioned tools. If not,
+see the [Overview of Terra](#overview-of-terra) section below.
+
+You should also be acquainted with the content in this tutorial:
 
 -   [Accessing HCA Data and Metadata][quick-start-guide]
 
-You'll want to use Google Chrome for this tutorial; Terra has poorer support
-for other browsers.
+Terra [recommends the Google Chrome browser][terra-registration], which we
+follow in this tutorial.
+
+Overview of Terra
+-----------------
+
+[Terra][terra] is a scalable cloud platform for biomedical research. Terra offers the
+ability to use data, tools, and workflows to do interactive analysis in the 
+cloud. To start using Terra, visit <https://app.terra.bio>.
+
+For more information about how to use Terra, visit the [Terra Support][terra-support] page.
+
+Overview of Dockstore
+---------------------
+
+[Dockstore][dockstore] is a platform for sharing bioscience tools by wrapping them in Docker
+containers and describing their use with high-level workflow languages like the Common Workflow
+Language (CWL) and the Workflow Description Language (WDL).
+
+For more information about how to use the Dockstore, see the [Dockstore documentation][dockstore-doc].
 
 Step one: finding BAM files with the HCA Data Explorer
 ------------------------------------------------------
@@ -124,3 +143,8 @@ There are many different ways to launch Jupyter Notebooks including:
   [jupyterlab]: <https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906>
   [quick-start-guide]: <https://data.humancellatlas.org/guides/quick-start-guide>
   [explorer]: <https://data.humancellatlas.org/explore/projects>
+  [terra]: <https://terra.bio>
+  [terra-support]: <https://support.terra.bio/hc/en-us>
+  [terra-registration]: <https://support.terra.bio/hc/en-us/articles/360028235911-How-to-register-for-a-Terra-account>
+  [dockstore]: <https://dockstore.org>
+  [dockstore-doc]: <https://docs.dockstore.org/docs>
