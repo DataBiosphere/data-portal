@@ -23,9 +23,10 @@ class Analyze extends React.Component {
 	};
 
 	render() {
+		const {editPath, linked} = this.props;
 		return (
 			<div>
-				{this.props.linked.map((link, i) => <Link to={this.getMarkdownFileName(link)}
+				{linked.map((link, i) => <Link to={this.getMarkdownFileName(link)}
 														  className={compStyles.hcaAnalyzeList} key={i}>
 					<div>
 						<h5>{link.childMarkdownRemark.frontmatter.title}</h5>
@@ -34,7 +35,7 @@ class Analyze extends React.Component {
 						<p className={compStyles.description}>{link.childMarkdownRemark.frontmatter.description}</p>
 					</div>
 				</Link>)}
-				<a className={globalStyles.editContent} href={this.props.editPath} target='_blank'
+				<a className={globalStyles.editContent} href={editPath} target='_blank'
 				   rel='noopener noreferrer'>Improve this page</a>
 			</div>
 		);
