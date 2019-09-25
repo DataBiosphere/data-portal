@@ -56,7 +56,7 @@ The development server can be viewed at:
 
 `localhost:8000`
 
-### Deployment
+### Building 
 
 Run the following command to build the application:
 
@@ -77,4 +77,7 @@ The built version can be viewed at:
 #### Material Components
 
 HCA Data Preview uses Material Components ([https://material.io/components/web/](https://material.io/components/web/)) for its Material Design library.
+
+## Deployment
+The deployment runbook can be accessed [here](https://allspark.dev.data.humancellatlas.org/dcp-ops/docs/wikis/Data-Portal-Runbook)
 
