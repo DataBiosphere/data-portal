@@ -68,6 +68,7 @@ export const pageQuery = graphql`
   query ($id: String!) {
     markdownRemark(id: { eq: $id  }) {
       id
+      html
       htmlAst
       fields{
             gitHubPath
