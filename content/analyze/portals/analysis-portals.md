@@ -9,7 +9,8 @@ linked:
     - ./cellxgene.md
     - ./cytoscape.md
     - ./dnastack.md
-    - ./genepattern-notebook.md   
+    - ./genepattern-notebook.md
+    - ./hca-galaxy-instance.md
     - ./single-cell-expression-atlas.md
     - ./single-cell-portal.md
     - ./ucsc-cell-browser.md
