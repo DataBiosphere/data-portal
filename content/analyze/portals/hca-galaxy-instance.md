@@ -1,5 +1,5 @@
 ---
-path: "/analyze/portals/analysis-portals/hca-galaxy-instance
+path: "/analyze/portals/analysis-portals/hca-galaxy-instance"
 date: "2019-9-26"
 title: "Human Cell Atlas Galaxy Instance"
 author: "P Moreno, N Huang, J Manning, S Mohammed, C Talavera-Lopez, K Polanski, W Bacon, B Gruening, H Rasche, K Meyer, S Teichmann, A Brazma, I Papatheodorou"
