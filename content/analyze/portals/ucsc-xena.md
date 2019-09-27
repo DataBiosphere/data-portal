@@ -9,7 +9,7 @@ githubUrl: "https://singlecell.xenahubs.net"
 componentName: "analysisDetail"
 ---
 
-[UCSC Xena single cell browser](https://singlecell.xenahubs.net) is an online exploration tool for single cell RNA-seq data and associated meta-data and annotations. Xena is built for performance, allowing you to dynamically 1 million cells at a time. Xena downloads the latest HCA gene expression matrices available at [HCA Data Portal](/) and makes them available for visualization via our Visual Spreadsheet. 
+[UCSC Xena single cell browser](https://singlecell.xenahubs.net) is an online exploration tool for single cell RNA-seq data and associated meta-data and annotations. Xena is built for performance, allowing you to dynamically view 1 million cells at a time. Xena downloads the latest HCA gene expression matrices available at [HCA Data Portal](/) and makes them available for visualization via our Visual Spreadsheet. 
 
 Xena's Visual Spreadsheet is analogous to an office spreadsheet: it is a visual representation of a data grid where each column is a slice of genomic data (e.g. a gene or a set of genes' expression, inferred cell type, cell location), and each row is a single cell. Users interactively build their spreadsheet, enabling the discovery across multiple genes and cell annotations. Researchers can dynamically combine their own data, such as cluster calls, with the data from the HCA while still keeping their data private.
 
