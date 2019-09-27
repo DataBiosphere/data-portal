@@ -11,9 +11,9 @@ The [Analysis Tools Registry](/analyze) lists portals, methods packages, and vis
 ## Submission Forms
 Submissions are contributed via GitHub - use these links to access the submission forms:
 
-[Portal submission](https://github.com/HumanCellAtlas/data-portal-content/issues/new/?template=submit-portal.md)\
-[Methods package submission](https://github.com/HumanCellAtlas/data-portal-content/issues/new/?template=submit-method-package.md)\
-[Visualization package submission](https://github.com/HumanCellAtlas/data-portal-content/issues/new/?template=submit-visualization-component-package.md)
+[Portal submission](https://github.com/HumanCellAtlas/data-portal/issues/new/?template=submit-portal.md)\
+[Methods package submission](https://github.com/HumanCellAtlas/data-portalissues/new/?template=submit-method-package.md)\
+[Visualization package submission](https://github.com/HumanCellAtlas/data-portal/issues/new/?template=submit-visualization-component-package.md)
 
 Below, we provide details about the information requested in the methods and visualizations submission forms.
 
