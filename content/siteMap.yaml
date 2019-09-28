@@ -329,3 +329,16 @@
   position:
     location: "f"
     order: 4
+- name: "Feedback"
+  key: "feedback"
+  path: "/feedback"
+  position:
+    location: "f"
+    order: 5
+  tabs:
+    - name: ""
+      key: "feedback"
+      primaryLinks:
+        - name: ""
+          key: "/privacy"
+          path: "/privacy"
