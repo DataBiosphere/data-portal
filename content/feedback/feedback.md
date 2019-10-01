@@ -7,7 +7,9 @@ noNav: true
 
 # HCA DCP Feedback
 
-The Human Cell Atlas Data Coordination Platform team needs your feedback to help us improve and refine the DCP.  Please use one of the links below to report a problem, request a feature or view open community generated issues on Github.
+The Human Cell Atlas Data Coordination Platform team needs your feedback to help us improve and refine the DCP. Please use one of the links below to report a problem, request a feature or view open community generated issues on Github.
+
+Alternatively, email us at [data-help@humancellatlas.org](mailto:data-help@humancellatlas.org) to ask questions or report issues.
 
 
 ## View Issues
