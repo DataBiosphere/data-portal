@@ -38,7 +38,8 @@ In order to process your cellular resolution data, we will request the following
 
 Learn more about what to expect and how to prepare for the data submission process [here](/contribute/contributing-expect-prepare).
 
-> Ready to contribute? Start the conversation by emailing [data-help@humancellatlas.org](mailto:data-help@humancellatlas.org).
+> Ready to contribute? Start the conversation by emailing\
+> [wrangler-team@data.humancellatlas.org](mailto:wrangler-team@data.humancellatlas.org).
 
 ## Data Processing and Results
 
@@ -53,4 +54,4 @@ Learn more about what results will be available for different data types [here](
 
 > #### Start the Process
 > Start the HCA submission process by emailing\
-> [data-help@humancellatlas.org](mailto:data-help@humancellatlas.org).
+> [wrangler-team@data.humancellatlas.org](mailto:wrangler-team@data.humancellatlas.org).

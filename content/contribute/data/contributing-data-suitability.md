@@ -44,4 +44,4 @@ The HCA currently *supports* processing of human 10x 3' v2 and paired-end Smart-
 
 The HCA data suitability policy will evolve as required in response to new experimental and tissue preparation technologies, access to samples, and community requirements in order to build the HCA.
 
-If you have data that meets any of the amber or red criteria and would like to discuss its suitability for the HCA, or if you have any further questions about this policy, please email [data-help@humancellatlas.org](mailto:data-help@humancellatlas.org).
+If you have data that meets any of the amber or red criteria and would like to discuss its suitability for the HCA, or if you have any further questions about this policy, please email [wrangler-team@data.humancellatlas.org](mailto:wrangler-team@data.humancellatlas.org).
