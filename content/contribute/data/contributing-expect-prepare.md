@@ -19,5 +19,5 @@ In order to process your cellular resolution data, we will request the following
 - Confirmation that data is consented for open access
 
 > Ready to contribute? Start the conversation by emailing\
- [wrangler-team@data.humancellatlas.org](mailto:wrangler-team@data.humancellatlas.org).
+> [wrangler-team@data.humancellatlas.org](mailto:wrangler-team@data.humancellatlas.org).
 

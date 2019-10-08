@@ -39,7 +39,7 @@ In order to process your cellular resolution data, we will request the following
 Learn more about what to expect and how to prepare for the data submission process [here](/contribute/contributing-expect-prepare).
 
 > Ready to contribute? Start the conversation by emailing\
-[wrangler-team@data.humancellatlas.org](mailto:wrangler-team@data.humancellatlas.org).
+> [wrangler-team@data.humancellatlas.org](mailto:wrangler-team@data.humancellatlas.org).
 
 ## Data Processing and Results
 
