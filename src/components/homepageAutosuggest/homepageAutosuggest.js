@@ -25,7 +25,8 @@ const FACET_BLACKLIST = [
 	"contactName",
 	"laboratory",
 	"organismAge",
-	"organismAgeUnit"
+	"organismAgeUnit",
+	"projectId"
 ];
 
 // Facet display names
