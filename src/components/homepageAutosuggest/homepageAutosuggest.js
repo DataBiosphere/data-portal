@@ -26,6 +26,7 @@ const FACET_BLACKLIST = [
 	"laboratory",
 	"organismAge",
 	"organismAgeUnit",
+	"project",
 	"projectId"
 ];
 
