@@ -16,13 +16,6 @@ import compStyles from './hcaAutosuggest.module.css';
 // Styles
 const classNames = require('classnames');
 
-const getHomePageClassName = (homepage, suggestionsFound) => {
-	return classNames({
-		[compStyles.homepage]: homepage,
-		[compStyles.error]: !suggestionsFound
-	});
-};
-
 class HCAAutosuggest extends React.Component {
 
 	constructor(props) {
@@ -148,7 +141,7 @@ class HCAAutosuggest extends React.Component {
 		};
 
 		return (
-			<div className={getHomePageClassName(this.props.homepage, suggestionsFound)}>
+			<div className={classNames(compStyles.search, {[compStyles.error]: !suggestionsFound})}>
 				<Autosuggest
 					alwaysRenderSuggestions={true}
 					getSectionSuggestions={this.getSectionSuggestions}

@@ -3,21 +3,24 @@
  */
 
 :root {
+	--accent: #E8AA45;
+	--accent-hover: #CF912C;
+	--background: #F4F7F9;
+	--blue-dark: #0C87C6;
+	--blue-light: #DAF0F6;
+	--gray-dark: #666666;
+	--gray-darkest: #333333;
+	--gray-light: #CCCCCC;
+	--gray-lightest: #EAEAEA;
+	--gray-medium: #999999;
+	--gray-search: #717272;
 	--primary: #1C7CC7;
 	--primary-hover: #0F78CA;
 	--secondary: #00D0F4;
 	--secondary-hover: #2DAFD7;
-	--background: #F4F7F9;
-	--accent: #E8AA45;
-	--accent-hover: #CF912C;
-	--black: #000000;
-	--gray-darkest: #333333;
-	--gray-dark: #666666;
-	--gray-medium: #999999;
-	--gray-light: #CCCCCC;
-	--gray-lightest: #EAEAEA;
-	--white-off: #F8F8F8;
 	--white: #FFFFFF;
+	--white-off: #F8F8F8;
+	--black: #000000;
 	--black1: rgba(0, 0, 0, 0.01);
 	--black3: rgba(0, 0, 0, 0.03);
 }

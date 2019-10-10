@@ -6,6 +6,7 @@
  */
 @import '../../src/styles/vars.module.css';
 
+/* Section */
 /* Wrapper */
 .sectionWrapper {
 	align-items: center;
@@ -15,6 +16,12 @@
 	margin: 0 auto;
 	max-width: 1200px; /* Snap to 1200px, gutter 16px */
 	padding: 30px 16px;
+}
+
+/* Non section related styles */
+/* Heading - level 4 */
+.homepage h4 {
+	letter-spacing: 1.5px;
 }
 
 /* Jumbotron */

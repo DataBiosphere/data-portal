@@ -1,0 +1,37 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the search browser component.
+ */
+@import '../../styles/vars.module.css';
+
+/* Section */
+.searchBrowser {
+	background: url('../../../images/data-portal/browserCell.png') right / cover no-repeat;
+	padding: 56px 0;
+}
+
+/* Section inner */
+.searchBrowser > div {
+	align-items: flex-start;
+	flex-direction: column; /* Overrides global flex */
+}
+
+/* Search browser text */
+.searchBrowser h4 {
+	margin: 0;
+	text-transform: uppercase;
+}
+
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 768px) {
+
+	/* Section inner */
+	.searchBrowser > div {
+		align-items: center;
+		flex-direction: row;
+	}
+}
