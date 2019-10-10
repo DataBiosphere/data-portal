@@ -209,6 +209,11 @@ class IndexPage extends React.Component {
 							</div>
 						</div>
 					</section>
+					<section className={compStyles.lifecycle}>
+						<div className={classNames(compStyles.sectionInner, compStyles.s, compStyles.intro)}>
+							<p>Aliquam eros ante, ornare in hendrerit at, faucibus at eros. Morbi gravida augue in nunc pulvinar hendrerit. Cras et lobortis leo, a placerat risus <Link to="/guides/data-lifecycle">learn about Data Lifecycle.</Link></p>
+						</div>
+					</section>
 					<section className={compStyles.contact}>
 						<div className={classNames(compStyles.sectionInner, compStyles.s)}>
 								<h4 className={classNames(fontStyles.introTitle, globalStyles.bgDark, compStyles.intro)}>Stay up-to-date
