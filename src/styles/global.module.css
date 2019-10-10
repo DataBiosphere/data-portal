@@ -43,6 +43,11 @@
 	margin: 0 0 18px;
 }
 
+/* Dark background */
+.bgDark {
+	color: white;
+}
+
 /* Button - class "button" */
 .button {
 	align-items: center;
@@ -63,7 +68,17 @@
 
 /* Button - class "button hero" */
 .button.hero {
+	background-color: var(--blue-light);
+	border-radius: 2px;
+	color: var(--blue-dark);
+	display: inline-flex;
+	font-family: 'din-2014', sans-serif;
+	font-size: 16px;
 	height: 50px;
+	letter-spacing: 1.5px;
+	min-width: 152px;
+	padding: 0 40px;
+	text-transform: uppercase;
 }
 
 /* Button - class "button primary" */
@@ -151,6 +166,19 @@
 .editContentSeparator {
 	border-top: 1px solid var(--gray-lightest);
 	padding-top: 18px;
+}
+
+/* Flex */
+.flex {
+	display: flex;
+}
+
+/* Section inner */
+.sectionInner {
+	box-sizing: content-box;
+	margin: 0 auto;
+	max-width: 768px;
+	padding: 0 16px;
 }
 
 /**

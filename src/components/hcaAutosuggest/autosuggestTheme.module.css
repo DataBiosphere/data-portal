@@ -11,7 +11,7 @@
 
 /* Input container */
 .container {
-	position: relative; /* Positions sugestions container */
+	position: relative; /* Positions suggestions container */
 }
 
 /* Input - removes default IOS */
@@ -24,15 +24,14 @@ input[type=text] {
 /* Input */
 .input {
 	background-color: var(--white);
+	border: none;
 	box-sizing: border-box;
-	border: 1px solid var(--gray-light);
-	border-radius: 3px;
-	color: var(--gray-medium);
-	font-family: "Montserrat", sans-serif;
-	font-size: 18px;
+	border-radius: 2px;
+	color: var(--gray-search);
+	font-size: 16px;
 	font-weight: 400;
 	height: 50px;
-	line-height: normal;
+	line-height: 24px;
 	overflow: hidden;
 	padding: 0 16px;
 	text-overflow: ellipsis;
@@ -40,6 +39,13 @@ input[type=text] {
 	width: 100%;
 }
 
+/* Input placeholder */
+input::placeholder, input::-webkit-input-placeholder {
+	color: var(--gray-search);
+	opacity: 1;
+}
+
+/* Input focused */
 .inputFocused {
 	outline: none;
 }
@@ -47,7 +53,7 @@ input[type=text] {
 /* Suggestions container */
 .suggestionsContainerOpen {
 	background-color: var(--white);
-	border: 1px solid var(--gray-light);
+	border: none;
 	border-radius: 1px;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06);
 	box-sizing: border-box;

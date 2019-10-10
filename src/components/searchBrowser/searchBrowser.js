@@ -2,20 +2,20 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * HCA Data Portal homepage autosuggest component.
+ * HCA Data Portal search browser component.
  */
 
 // Core dependencies
 import React from 'react';
 
 // App dependencies
-import HCAAutosuggest from '../hcaAutosuggest/hcaAutosuggest';
-import * as numberFormatter from '../../utils/number-format.service';
 import * as stringFormatter from '../../../src/utils/string-format.service';
+import * as numberFormatter from '../../utils/number-format.service';
+import HCAAutosuggest from '../hcaAutosuggest/hcaAutosuggest';
 
 // Styles
-import compStyles from './homepageAutosuggest.module.css';
 import globalStyles from '../../styles/global.module.css';
+import compStyles from './searchBrowser.module.css';
 
 const classNames = require('classnames');
 
@@ -38,7 +38,7 @@ const FACET_DISPLAY_NAMES = {
 	"projectId": "project"
 };
 
-class HomepageAutosuggest extends React.Component {
+class SearchBrowser extends React.Component {
 
 	constructor() {
 		super();
@@ -92,7 +92,7 @@ class HomepageAutosuggest extends React.Component {
 				.map((facet) => {
 
 					return Object.assign({}, facet, {
-						facetDisplayName: FACET_DISPLAY_NAMES[facet.facetName] || facet.facetName 
+						facetDisplayName: FACET_DISPLAY_NAMES[facet.facetName] || facet.facetName
 					});
 				});
 			termFacets.sort((facet0, facet1) => {
@@ -116,7 +116,7 @@ class HomepageAutosuggest extends React.Component {
 			if (windowWidth < 1024) {
 				return 'Search for data by organs';
 			}
-			return 'Search for data now by organs, projects, etc';
+			return 'Search data by organ, project, etc.';
 		}
 
 		return 'Loading data...'
@@ -128,15 +128,12 @@ class HomepageAutosuggest extends React.Component {
 
 			return classNames({
 				[globalStyles.button]: true,
-				[compStyles.button]: true,
-				[globalStyles.accent]: true,
 				[globalStyles.hero]: true
 			});
 		}
 
 		return classNames({
 			[globalStyles.button]: true,
-			[compStyles.button]: true,
 			[globalStyles.hero]: true,
 			[globalStyles.disabled]: true
 		});
@@ -196,20 +193,23 @@ class HomepageAutosuggest extends React.Component {
 
 	render() {
 		return (
-			<div className={compStyles.hompageAutosuggest}>
-				<HCAAutosuggest autosuggestData={this.getExploreData()}
-								disabled={!this.isDataInitialized()}
-								placeholder={this.getPlaceholder()}
-								homepage={true}
-								showCount={false}
-								onBlur={this.onBlur.bind(this)}
-								onEnter={this.onEnter.bind(this)}
-								onSelected={this.onSelected.bind(this)}
-								onSuggestionsFound={this.onSuggestionsFound.bind(this)}/>
-				<div onClick={this.visitExploreLink} className={this.getSearchButtonClass()}>Search</div>
-			</div>
+			<section className={compStyles.searchBrowser}>
+				<div
+					className={classNames(globalStyles.flex, globalStyles.sectionInner)}>
+					<h4 className={globalStyles.bgDark}>Search Browser</h4>
+					<HCAAutosuggest autosuggestData={this.getExploreData()}
+									disabled={!this.isDataInitialized()}
+									placeholder={this.getPlaceholder()}
+									showCount={false}
+									onBlur={this.onBlur.bind(this)}
+									onEnter={this.onEnter.bind(this)}
+									onSelected={this.onSelected.bind(this)}
+									onSuggestionsFound={this.onSuggestionsFound.bind(this)}/>
+					<div onClick={this.visitExploreLink} className={this.getSearchButtonClass()}>Search</div>
+				</div>
+			</section>
 		);
 	}
 }
 
-export default HomepageAutosuggest;
+export default SearchBrowser;

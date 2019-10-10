@@ -10,8 +10,8 @@ import Link from 'gatsby-link';
 import React from 'react';
 
 // App dependencies
-import HomepageAutosuggest from '../components/homepageAutosuggest/homepageAutosuggest';
 import Layout from '../components/layout';
+import SearchBrowser from '../components/searchBrowser/searchBrowser';
 import Explore from '../../images/explore/explore-person/explore-svg';
 import ExploreStats from '../../images/explore/explore-stats/explore-stats-svg';
 import * as FileSummaryService from '../utils/fileSummary.service';
@@ -19,9 +19,9 @@ import * as SystemService from '../utils/system.service';
 import * as numberFormatter from '../utils/number-format.service';
 
 // Styles
-import compStyles from './index.module.css';
 import fontStyles from '../styles/fontsize.module.css';
 import globalStyles from '../styles/global.module.css';
+import compStyles from './index.module.css';
 
 // Images
 import arrow from '../../images/data-portal/arrow@2x.png';
@@ -106,7 +106,6 @@ class IndexPage extends React.Component {
 							<Link to='/guides'><h1 className={fontStyles.hero}>Mapping the human body at the cellular level</h1>
 								<h2 className={fontStyles.l}>Community generated, multi-omic, open data processed by standardized pipelines</h2>
 								<p className={fontStyles.xs}>Learn More</p></Link>
-							<HomepageAutosuggest termFacets={this.state.searchTerms}/>
 						</div>
 					</div>
 					<div className={classNames({[compStyles.statsBar]: true, [compStyles.loaded]: this.state.loaded})}>
@@ -145,6 +144,7 @@ class IndexPage extends React.Component {
 							</div>
 						</div>
 					</div>
+					<SearchBrowser termFacets={this.state.searchTerms}/>
 					<div className={compStyles.dataPortal}>
 						<div className={compStyles.sectionWrapper}>
 							<h4>What is the HCA Data Portal?</h4>
