@@ -101,13 +101,16 @@ class IndexPage extends React.Component {
 		return (
 			<Layout healthy={this.state.healthy} homePage={true}>
 				<div className={compStyles.homepage}>
-					<div className={compStyles.jumbotron}>
-						<div className={compStyles.sectionWrapper}>
-							<Link to='/guides'><h1 className={fontStyles.hero}>Mapping the human body at the cellular level</h1>
-								<h2 className={fontStyles.l}>Community generated, multi-omic, open data processed by standardized pipelines</h2>
-								<p className={fontStyles.xs}>Learn More</p></Link>
+					<section className={compStyles.hero}>
+						<div
+							className={globalStyles.sectionInner}>
+							<h1 className={fontStyles.headline}><span>Explore the human body </span><span>at the cellular level.</span></h1>
+							<p className={fontStyles.subhead}>We curate and quality check data from contributing labs
+								around
+								the world and make it openly available to any researcher. Download raw or processed data
+								here, or explore it using our library of analysis tools and portals.</p>
 						</div>
-					</div>
+					</section>
 					<div className={classNames({[compStyles.statsBar]: true, [compStyles.loaded]: this.state.loaded})}>
 						<div className={compStyles.sectionWrapper}>
 							<div><p className={fontStyles.xs}>CELLS</p>
@@ -206,7 +209,7 @@ class IndexPage extends React.Component {
 							<h2>Stay up-to-date with the Human Cell Atlas</h2>
 							<div className={compStyles.contactForm}>
 								<a href='https://www.humancellatlas.org/joinHCA'
-								   className={classNames(globalStyles.button, globalStyles.secondary, globalStyles.hero, compStyles.contactButton)}>Register
+								   className={classNames(globalStyles.button, globalStyles.blue, globalStyles.light, compStyles.contactButton)}>Register
 									For HCA</a>
 							</div>
 						</div>

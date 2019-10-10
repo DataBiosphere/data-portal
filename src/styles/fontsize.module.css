@@ -5,14 +5,25 @@
 
 /* Header class */
 
-/* Class "fontsize-hero" */
+/* Class "fontsize-headline" */
 /* Human Cell Atlas Headline */
-.hero {
+.headline {
+	color: var(--blue-dark);
 	font-family: "din-2014", sans-serif;
-	font-size: 40px;
+	font-size: 50px;
 	font-weight: 500;
-	line-height: 48px;
+	line-height: 58px;
 	margin: 0;
+}
+
+/* Class "fontsize-headline" */
+/* Human Cell Atlas Subhead */
+.subhead {
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	margin: 24px 0 0;
 }
 
 /* Class "fontsize-xxl" */

@@ -24,43 +24,18 @@
 	letter-spacing: 1.5px;
 }
 
-/* Jumbotron */
-.jumbotron {
-	background-image: url(../../images/jumbotron/jumbotron-cell-mobile.png);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+/* Hero */
+.hero {
+	padding: 48px 0;
 }
 
-/* Jumbotron wrapper */
-.jumbotron .sectionWrapper {
-	padding: 32px 16px 70px;
+/* Hero headline and subhead */
+.hero h1, .hero p {
+	text-align: left;
 }
 
-.jumbotron .sectionWrapper > a {
-	max-width: 80%;
-}
-
-/* Jumbotron title */
-.jumbotron h1 {
-	text-align: center;
-}
-
-/* Jumbotron subtitle */
-.jumbotron h2 {
-	font-family: "Montserrat", sans-serif;
-	font-weight: 400;
-	margin: 10px 0 16px;
-	text-align: center;
-}
-
-/* Learn more link */
-.jumbotron .sectionWrapper > a p {
-	color: var(--black);
-	font-weight: 500;
-	margin: 10px 0 24px;
-	text-align: center;
-	text-transform: uppercase;
+/* Hero headline - wraps text at specified <span> break */
+.hero h1 span {
 }
 
 /* Stats bar */
@@ -245,19 +220,21 @@
 }
 
 /**
+ * HCA specific breakpoint
+ * For hero headline only
+ */
+@media screen and (min-width: 540px) {
+
+	/* Hero headline - wraps text at specified <span> break */
+	.hero h1 span {
+		display: block;
+	}
+}
+
+/**
  * Mobile landscape
  */
 @media screen and (min-width: 667px) {
-
-	/* Jumbotron */
-	.jumbotron {
-		background-image: url(../../images/jumbotron/jumbotron-cell.png);
-	}
-
-	/* Jumbotron wrapper */
-	.jumbotron .sectionWrapper {
-		padding: 70px 16px;
-	}
 
 	/* Status */
 	.statsBar > div > div {
@@ -296,9 +273,9 @@
  */
 @media screen and (min-width: 768px) {
 
-	/* Jumbotron */
-	.jumbotron {
-		background-image: url(../../images/jumbotron/jumbotron-cell.png);
+	/* Hero headline and subhead */
+	.hero h1, .hero p {
+		text-align: center;
 	}
 
 	/* Explore text */
@@ -338,11 +315,6 @@
 	/* Wrapper */
 	.sectionWrapper {
 		padding: 70px 16px;
-	}
-
-	/* Jumbotron */
-	.jumbotron .sectionWrapper > a {
-		max-width: unset;
 	}
 
 	/* Status number */
