@@ -156,7 +156,9 @@ class IndexPage extends React.Component {
 						<div className={classNames(compStyles.sectionInner, compStyles.s)}>
 							<div className={compStyles.intro}>
 								<h4 className={fontStyles.introTitle}>What is the HCA Data Portal?</h4>
-								<p className={fontStyles.introText}>The HCA Data Portal stores and provides single-cell data contributed by labs around the world. Anyone can contribute data, find data, or access community tools and applications.</p>
+								<p className={fontStyles.introText}>The HCA Data Portal stores and provides single-cell
+									data contributed by labs around the world. Anyone can contribute data, find data, or
+									access community tools and applications.</p>
 							</div>
 							<div className={classNames(compStyles.process, compStyles.module)}>
 								<div className={compStyles.tile}>
@@ -207,16 +209,16 @@ class IndexPage extends React.Component {
 							</div>
 						</div>
 					</section>
-					<div className={compStyles.contact}>
-						<div className={compStyles.sectionWrapper}>
-							<h2>Stay up-to-date with the Human Cell Atlas</h2>
-							<div className={compStyles.contactForm}>
+					<section className={compStyles.contact}>
+						<div className={classNames(compStyles.sectionInner, compStyles.s)}>
+								<h4 className={classNames(fontStyles.introTitle, globalStyles.bgDark, compStyles.intro)}>Stay up-to-date
+									with the Human Cell Atlas</h4>
+							<div className={classNames(compStyles.module, compStyles.visit)}>
 								<a href='https://www.humancellatlas.org/joinHCA'
-								   className={classNames(globalStyles.button, globalStyles.blue, globalStyles.light, compStyles.contactButton)}>Register
-									For HCA</a>
+								   className={classNames(globalStyles.button, globalStyles.blue, globalStyles.light)}>Visit HCA.org</a>
 							</div>
 						</div>
-					</div>
+					</section>
 				</main>
 			</Layout>
 		);
