@@ -10,7 +10,7 @@ import React from 'react';
 
 // App dependencies
 import {TOCSiteMap} from '../../hooks/toc-siteMap';
-import {metadataTOCSiteMap} from "../../hooks/metatoc-siteMap";
+import {MetadataTOCSiteMap} from "../../hooks/metatoc-siteMap";
 
 // Styles
 import compStyles from './toc.module.css';
@@ -83,7 +83,7 @@ export default (props) => {
 		docPathSplitByPathLength = docPathSplitByPath.length - 1,
 		metaType = metaNav ? docPathSplitByPath[3] : '',
 		metaProp = metaNav ? docPathSplitByPath[docPathSplitByPathLength] : '',
-		metaTOC = metaNav ? metadataTOCSiteMap(metaType, metaProp) : null;
+		metaTOC = metaNav ? MetadataTOCSiteMap(metaType, metaProp) : null;
 
 	return (
 		<TOC metaProp={metaProp} metaTOC={metaTOC} pagesTOC={pagesTOC} {...props}/>

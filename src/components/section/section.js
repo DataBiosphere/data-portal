@@ -9,7 +9,7 @@
 import React from 'react';
 
 // App dependencies
-import {sectionSiteMap} from '../../hooks/section-siteMap';
+import {SectionSiteMap} from '../../hooks/section-siteMap';
 
 // Styles
 import compStyles from './section.module.css';
@@ -32,7 +32,7 @@ class Section extends React.Component {
 
 export default (props) => {
 
-	const sectionName = props.sectionTitle ? props.sectionTitle : props.docPath ? sectionSiteMap(props.docPath) : '';
+	const sectionName = props.sectionTitle ? props.sectionTitle : props.docPath ? SectionSiteMap(props.docPath) : '';
 
 	return (
 		<Section sectionName={sectionName}/>
