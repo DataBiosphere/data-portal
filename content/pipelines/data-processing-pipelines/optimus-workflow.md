@@ -6,7 +6,7 @@ title: "Optimus"
 
 # Introduction to the Optimus Workflow
 
-The long-term goal of the Optimus workflow is to support any 3 prime single cell transcriptomics assay selected by the HCA project. Using the correct modularity, we hope to grow a generic pipeline that has specific modules to address differences in assays, while leveraging common code where steps of the assays are the same. We offer this as a community resource for community development and improvement. The first assay this workflow supports is the [10x v2 (and v3) gene expression assay](https://www.10xgenomics.com/solutions/single-cell/).
+The long-term goal of the Optimus workflow is to support any 3 prime single cell transcriptomics assay selected by the HCA project. Using the correct modularity, we hope to grow a generic pipeline that has specific modules to address differences in assays, while leveraging common code where steps of the assays are the same. We offer this as a community resource for community development and improvement. The first assay this workflow supports is the [10x v2 and v3 gene expression assay](https://www.10xgenomics.com/solutions/single-cell/). Optimus has been validated for analyzing both [human](../../benchmarking/optimus/optimus_report.rst) and [mouse](https://docs.google.com/document/d/1_3oO0ZQSrwEoe6D3GgKdSmAQ9qkzH_7wrE7x6_deL10/edit) data sets. 
 
 ## Commonalities Among Sequencing Assays
 
@@ -22,15 +22,15 @@ The bead-specific barcodes and UMIs are encoded on sequencing primers that also 
 
 | Pipeline Features | Description | Source |
 |-------------------|---------------------------------------------------------------|-----------------------|
-|Assay Type | 10x Single Cell Expression (v2, v3) |[10x Genomics](https://www.10xgenomics.com)
+|Assay Type | 10x Single Cell Expression (v2 and v3) |[10x Genomics](https://www.10xgenomics.com)
 | Overall Workflow  |Quality control module and transcriptome quantification module | Code available from [Github](https://github.com/HumanCellAtlas/skylab/blob/master/pipelines/optimus/Optimus.wdl) |
 | Workflow Language |WDL          |[openWDL](https://github.com/openwdl/wdl)|
-| Genomic Reference Sequence|GRCh38 human genome primary sequence|[GENCODE](https://www.gencodegenes.org/human/release_27.html)|
-|Transcriptomic Reference Sequence |V27 GenCode human transcriptome |[GENCODE](https://www.gencodegenes.org/human/release_27.html)|
+| Genomic Reference Sequence|GRCh38 human genome primary sequence and M21 (GRCm38.p6) mouse genome primary sequence|GENCODE [Human](https://www.gencodegenes.org/human/release_27.html) and [Mouse](https://www.gencodegenes.org/mouse/release_M21.html)|
+|Transcriptomic Reference Annotation |V27 GenCode human transcriptome and M21 mouse transcriptome |GENCODE [Human](ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_27/gencode.v27.annotation.gtf.gz) and [Mouse](ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M21/gencode.vM21.annotation.gff3.gz) |
 | Aligner           |STAR       |[Dobin, et al.,2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530905/)|
 | Transcript Quantification |Utilities for processing large-scale single cell datasets |[Sctools](https://github.com/HumanCellAtlas/sctools) |                      
 |Data Input File Format |File format in which sequencing data is provided |[FASTQ](https://academic.oup.com/nar/article/38/6/1767/3112533) |                       
-|Data Output File Format |File formats in which Optimus output is provided |[BAM](http://samtools.github.io/hts-specs/), [Zarr version 2](https://zarr.readthedocs.io/en/stable/spec/v2.html) |
+|Data Output File Format |File formats in which Optimus output is provided |[BAM](http://samtools.github.io/hts-specs/), [Zarr version 2](https://zarr.readthedocs.io/en/stable/spec/v2.html), Python numpy arrays (internal), [Loom](http://loompy.org/) |
 
 ## Optimus Modules Summary
 
@@ -52,7 +52,7 @@ A general overview of the pipeline is shown below, followed by more detailed des
 
 ## Input Data Preparation 
 
-Each 10X v2 3’ sequencing experiment generates triplets of Fastq files:
+Each 10X v2 and v3 3’ sequencing experiment generates triplets of Fastq files:
 
 1. forward reads (R1), containing the unique molecular identifier and cell barcode sequences
 2. reverse reads (R2), which is the alignable genomic information from the mRNA transcript 
