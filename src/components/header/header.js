@@ -10,7 +10,7 @@ import Link from 'gatsby-link';
 import React from 'react';
 
 // App dependencies
-import {headerSiteMap} from '../../hooks/header-siteMap';
+import {HeaderSiteMap} from '../../hooks/header-siteMap';
 
 // Images
 import headerLogo from '../../../images/logo/logo-hca.png';
@@ -76,6 +76,6 @@ class Header extends React.Component {
 
 export default (props) => {
 	return (
-		<Header links={headerSiteMap()} {...props}/>
+		<Header links={HeaderSiteMap()} {...props}/>
 	);
 }
