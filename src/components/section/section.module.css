@@ -14,4 +14,5 @@
 	padding: 16px 0;
 	margin: 0;
 	width: 100%;
+	z-index: 1; /* Required - positioned above tabNav component */
 }

@@ -14,6 +14,8 @@ import * as numberFormatter from '../../utils/number-format.service';
 import HCAAutosuggest from '../hcaAutosuggest/hcaAutosuggest';
 
 // Styles
+import mainStyles from '../../pages/index.module.css';
+import fontStyles from '../../styles/fontsize.module.css';
 import globalStyles from '../../styles/global.module.css';
 import compStyles from './searchBrowser.module.css';
 
@@ -197,8 +199,8 @@ class SearchBrowser extends React.Component {
 		return (
 			<section className={compStyles.searchBrowser}>
 				<div
-					className={classNames(globalStyles.flex, globalStyles.sectionInner)}>
-					<h4 className={globalStyles.bgDark}>Search Browser</h4>
+					className={classNames(globalStyles.flex, mainStyles.sectionInner, mainStyles.s, compStyles.sectionInner)}>
+					<h4 className={classNames(globalStyles.bgDark, fontStyles.introTitle)}>Search Browser</h4>
 					<HCAAutosuggest autosuggestData={this.getExploreData()}
 									disabled={!this.isDataInitialized()}
 									placeholder={this.getPlaceholder()}
