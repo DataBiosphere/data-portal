@@ -100,11 +100,14 @@ class IndexPage extends React.Component {
 	render() {
 		return (
 			<Layout healthy={this.state.healthy} homePage={true}>
-				<div className={compStyles.homepage}>
+				<main className={compStyles.main}>
 					<section className={compStyles.hero}>
 						<div
-							className={globalStyles.sectionInner}>
-							<h1 className={fontStyles.headline}><span>Explore the human body </span><span>at the cellular level.</span></h1>
+							className={classNames(compStyles.sectionInner, compStyles.s)}>
+							<h1 className={fontStyles.headline}>
+								<span>Explore the human body </span>
+								<span>at the cellular level.</span>
+							</h1>
 							<p className={fontStyles.subhead}>We curate and quality check data from contributing labs
 								around
 								the world and make it openly available to any researcher. Download raw or processed data
@@ -143,67 +146,67 @@ class IndexPage extends React.Component {
 											 totalCellCount={this.state.totalCellCount}/> :
 									<img className={compStyles.explorePlaceholder} src={explorePlaceholder}
 										 alt='Explore'/>}
-								{this.state.organCount ? <ExploreStats cellCountSummaries={this.state.cellCountSummaries}/> : null}
+								{this.state.organCount ?
+									<ExploreStats cellCountSummaries={this.state.cellCountSummaries}/> : null}
 							</div>
 						</div>
 					</div>
 					<SearchBrowser termFacets={this.state.searchTerms}/>
-					<div className={compStyles.dataPortal}>
-						<div className={compStyles.sectionWrapper}>
-							<h4>What is the HCA Data Portal?</h4>
-							<h1>The HCA Data Portal stores and provides single-cell data contributed by labs around the
-								world.
-								Anyone
-								can contribute data, find data, or access community tools and applications.</h1>
-							<div className={compStyles.portalDescription}>
-								<div className={compStyles.dpTile}>
-									<div className={compStyles.dpTileImage}>
+					<section className={compStyles.portal}>
+						<div className={classNames(compStyles.sectionInner, compStyles.s)}>
+							<div className={compStyles.intro}>
+								<h4 className={fontStyles.introTitle}>What is the HCA Data Portal?</h4>
+								<p className={fontStyles.introText}>The HCA Data Portal stores and provides single-cell data contributed by labs around the world. Anyone can contribute data, find data, or access community tools and applications.</p>
+							</div>
+							<div className={classNames(compStyles.process, compStyles.module)}>
+								<div className={compStyles.tile}>
+									<div className={compStyles.icon}>
 										<img src={labsContribute} alt='Labs Contribute'/>
 									</div>
-									<div className={compStyles.dpTileDescription}>
+									<div className={compStyles.text}>
 										<p>Labs contribute single-cell data</p>
 										<Link to='/contribute'>Learn about
 											contributing</Link>
 									</div>
 								</div>
-								<div className={compStyles.dpArrow}>
+								<div className={compStyles.arrow}>
 									<img src={arrow} alt='Arrow'/>
 								</div>
-								<div className={compStyles.dpTile}>
-									<div className={compStyles.dpTileImage}>
+								<div className={compStyles.tile}>
+									<div className={compStyles.icon}>
 										<img src={pipelineProcessing} alt='Process through Pipelines'/>
 									</div>
-									<div className={compStyles.dpTileDescription}><p>We process and quality-check the data with our
-										pipelines</p><Link
-										to='/pipelines'>Learn
-										about Pipelines</Link>
+									<div className={compStyles.text}>
+										<p>We process and quality-check the data with our pipelines</p>
+										<Link to='/pipelines'>Learn about Pipelines</Link>
 									</div>
 								</div>
-								<div className={compStyles.dpArrow}>
+								<div className={compStyles.arrow}>
 									<img src={arrow} alt='Arrow'/>
 								</div>
-								<div className={compStyles.dpTile}>
-									<div className={compStyles.dpTileImage}>
+								<div className={compStyles.tile}>
+									<div className={compStyles.icon}>
 										<img src={searchData} alt='Search Data'/>
 									</div>
-									<div className={compStyles.dpTileDescription}><p>Anyone can find data to download or use for
-										analysis</p><a href={process.env.GATSBY_EXPLORE_URL}>Start Searching</a></div>
+									<div className={compStyles.text}>
+										<p>Anyone can find data to download or use for analysis</p>
+										<a href={process.env.GATSBY_EXPLORE_URL}>Start Searching</a></div>
 								</div>
-								<div className={compStyles.dpArrow}>
+								<div className={compStyles.arrow}>
 									<img src={arrow} alt='Arrow'/>
 								</div>
-								<div className={compStyles.dpTile}>
-									<div className={compStyles.dpTileImage}>
+								<div className={compStyles.tile}>
+									<div className={compStyles.icon}>
 										<img src={searchCommunity} alt='Find Community Analysis Tools'/>
 									</div>
-									<div className={compStyles.dpTileDescription}><p className={compStyles.s}>Find community analysis tools and applications</p>
-										<Link
-											to='/analyze'
-											className={compStyles.s}>Explore applications</Link></div>
+									<div className={compStyles.text}>
+										<p className={compStyles.s}>Find community analysis tools and applications</p>
+										<Link to='/analyze' className={compStyles.s}>Explore applications</Link>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</section>
 					<div className={compStyles.contact}>
 						<div className={compStyles.sectionWrapper}>
 							<h2>Stay up-to-date with the Human Cell Atlas</h2>
@@ -214,7 +217,7 @@ class IndexPage extends React.Component {
 							</div>
 						</div>
 					</div>
-				</div>
+				</main>
 			</Layout>
 		);
 	}

@@ -173,14 +173,6 @@
 	display: flex;
 }
 
-/* Section inner */
-.sectionInner {
-	box-sizing: content-box;
-	margin: 0 auto;
-	max-width: 768px;
-	padding: 0 16px;
-}
-
 /**
  * Small +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints

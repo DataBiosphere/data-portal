@@ -6,6 +6,161 @@
  */
 @import '../../src/styles/vars.module.css';
 
+/**
+ * Section
+ */
+
+/* Padding - 48px */
+/* Hero */
+.main .hero {
+	padding: 48px 0;
+}
+
+/* Padding - 64px */
+/* What is the HCA portal */
+.main .portal {
+	padding: 64px 0;
+}
+
+/**
+ * Section Inner
+ */
+
+/* Inner - container */
+.main .sectionInner {
+	box-sizing: content-box;
+	margin: 0 auto;
+	padding: 0 16px;
+}
+
+/* Inner - small */
+.main .sectionInner.s {
+	max-width: 768px;
+}
+
+/**
+ * Text Alignment
+ */
+
+/* Hero, Section Intro */
+.main .hero, .main .intro {
+	text-align: left;
+}
+
+/**
+ * Modules
+ */
+
+/* Margin - 32px */
+.main .module:not(.spacer) {
+	margin: 32px 0 0;
+}
+
+/* Margin - 56px */
+.main .module.spacer {
+	margin: 56px 0 0;
+}
+
+/*
+ * Sections
+ */
+
+/* Display - flex */
+/* Process, tile container, tile text container, process arrow container */
+.main .process, .main .process .tile, .main .process .text, .main .process .arrow {
+	display: flex;
+}
+
+/* Flex - column */
+/* Process container, tile text container */
+.main .process, .main .process .text {
+	flex-direction: column;
+}
+
+/* Flex - row */
+/* Tile container */
+.main .process .tile {
+	flex-direction: row;
+}
+
+/* Flex - justify content - center */
+/* Process arrow container */
+.main .process .arrow {
+	justify-content: center;
+}
+
+/* Flex - align items - center */
+/* Process */
+.main .process {
+	align-items: center;
+}
+
+/* Flex - align self - start */
+/* Tile container, process arrow container */
+.main .process .tile, .main .process .arrow {
+	align-self: start;
+}
+
+/* Flex - align self - center */
+/* Tile text container */
+.main .process .text {
+	align-self: center;
+}
+
+/* Flex - 1 */
+/* Tile container, tile text container */
+.main .process .tile, .main .process .text {
+	flex: 1;
+}
+
+/**
+ * What is the HCA Portal?
+ */
+
+/* Tile icon container */
+.main .process .icon {
+	height: 100px;
+	width: 100px;
+}
+
+/* Tile icon image */
+.main .process .icon img {
+	height: 100%;
+	width: 100%;
+}
+
+/* Tile text container */
+.main .process .text {
+	max-width: 300px;
+}
+
+/* Tile description */
+.main .process .text p {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	margin: 0;
+}
+
+/* Tile link */
+.main .process .text a {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 21px;
+	margin: 8px 0 0;
+}
+
+/* Process arrow container */
+.main .process .arrow {
+	width: 100px;
+}
+
+/* Process arrow image */
+.main .process .arrow img {
+	transform: rotate(90deg);
+	width: 20px;
+}
+
 /* Section */
 /* Wrapper */
 .sectionWrapper {
@@ -16,26 +171,6 @@
 	margin: 0 auto;
 	max-width: 1200px; /* Snap to 1200px, gutter 16px */
 	padding: 30px 16px;
-}
-
-/* Non section related styles */
-/* Heading - level 4 */
-.homepage h4 {
-	letter-spacing: 1.5px;
-}
-
-/* Hero */
-.hero {
-	padding: 48px 0;
-}
-
-/* Hero headline and subhead */
-.hero h1, .hero p {
-	text-align: left;
-}
-
-/* Hero headline - wraps text at specified <span> break */
-.hero h1 span {
 }
 
 /* Stats bar */
@@ -115,86 +250,6 @@
 	display: none;
 }
 
-/* Data Portal */
-.dataPortal {
-	background-color: var(--background);
-}
-
-/* Data Portal question - "What is it?" */
-.dataPortal h4 {
-	letter-spacing: 2px;
-	text-transform: uppercase;
-}
-
-/* Data Portal description */
-.dataPortal h1 {
-	font-size: 28px;
-	line-height: 32px;
-	margin: 10px 0;
-	max-width: 650px;
-	text-align: center;
-}
-
-/* DP tiles container */
-.portalDescription {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	margin-top: 20px;
-}
-
-/* DP tile container */
-.portalDescription .dpTile {
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-}
-
-/* DP tile image container */
-.portalDescription .dpTileImage {
-	height: 100px;
-	width: 100px;
-}
-
-/* DP tile image */
-.portalDescription .dpTileImage img {
-	height: 100%;
-	width: 100%;
-}
-
-/* DP tile description container */
-.portalDescription .dpTileDescription {
-	display: flex;
-	flex-direction: column;
-	width: 188px;
-}
-
-/* DP tile description paragraph */
-.portalDescription .dpTileDescription p {
-	color: var(--gray-dark);
-	font-weight: 500;
-	line-height: 18px;
-	margin: 0 0 8px;
-}
-
-/* DP tile description link */
-.portalDescription .dpTileDescription a {
-	font-weight: 400;
-	line-height: 18px;
-	margin: 0;
-}
-
-/* DP arrow container */
-.portalDescription .dpArrow {
-	transform: rotate(90deg);
-}
-
-/* DP arrow image */
-.portalDescription .dpArrow img {
-	margin: 16px 0;
-	width: 27px;
-}
-
 /* Contact heading */
 .contact h2 {
 	color: var(--gray-darkest);
@@ -226,7 +281,7 @@
 @media screen and (min-width: 540px) {
 
 	/* Hero headline - wraps text at specified <span> break */
-	.hero h1 span {
+	.main .hero h1 span {
 		display: block;
 	}
 }
@@ -235,6 +290,30 @@
  * Mobile landscape
  */
 @media screen and (min-width: 667px) {
+
+	/**
+	 * Sections
+	 */
+
+	/**
+	 * What is the HCA Portal?
+	 */
+
+	/* Tile icon container */
+	.main .process .icon {
+		height: 168px;
+		width: 168px;
+	}
+
+	/* Process arrow container */
+	.main .process .arrow {
+		width: 168px;
+	}
+
+	/* Process arrow img */
+	.main .process .arrow img {
+		width: 27px;
+	}
 
 	/* Status */
 	.statsBar > div > div {
@@ -250,22 +329,6 @@
 	.statsBar > div > div h1 {
 		width: 116px;
 	}
-
-	/* DP tile image container */
-	.portalDescription .dpTileImage {
-		height: 168px;
-		width: 168px;
-	}
-
-	/* DP tile description container */
-	.portalDescription .dpTileDescription {
-		width: 230px;
-	}
-
-	/* DP tile arrow image */
-	.portalDescription .dpArrow img {
-		margin: 0;
-	}
 }
 
 /**
@@ -273,9 +336,22 @@
  */
 @media screen and (min-width: 768px) {
 
-	/* Hero headline and subhead */
-	.hero h1, .hero p {
+	/**
+	 * Text Alignment
+	 */
+	/* Hero, Section Intro */
+	.main .hero, .main .intro {
 		text-align: center;
+	}
+
+	/**
+	 * Sections
+	 */
+
+	/* Flex - align self - center */
+	/* Tile container, process arrow container */
+	.main .process .tile, .main .process .arrow {
+		align-self: center;
 	}
 
 	/* Explore text */
@@ -312,6 +388,102 @@
  */
 @media screen and (min-width: 1024px) {
 
+	/**
+	 * Sections
+	*/
+
+	/* Display - flex */
+	/* Process arrow container */
+	.main .process .arrow {
+		display: flex;
+	}
+
+	/* Flex - column */
+	/* Tile container */
+	.main .process .tile  {
+		flex-direction: column;
+	}
+
+	/* Flex - row */
+	/* Process */
+	.main .process {
+		flex-direction: row;
+	}
+
+	/* Flex - align items - center */
+	/* Arrow icon */
+	.main .process .arrow {
+		align-items: center;
+	}
+
+	/* Flex - align items - stretch */
+	/* Process */
+	.main .process {
+		align-items: stretch;
+	}
+
+	/* Flex - align self - unset */
+	/* Tile container, process arrow container */
+	.main .process .tile, .main .process .arrow {
+		align-self: unset;
+	}
+
+	/* Flex - 1 */
+	/* Tile text container, tile description */
+	.main .process .text, .main .process .text p {
+		flex: 1;
+	}
+
+	/**
+	 * What is the HCA Portal?
+	 */
+
+	/* Tile icon container */
+	.main .process .icon {
+		height: 168px;
+		width: 100%;
+	}
+
+	/* Tile icon image */
+	.main .process .icon img {
+		height: 100%;
+		width: inherit;
+	}
+
+	/* Tile text container */
+	.main .process .text {
+		width: unset;
+	}
+
+	/* Tile description, tile link */
+	.main .process .text p, .main .process .text a {
+		text-align: center;
+		width: 100%;
+	}
+
+	/* Tile description */
+	.main .process .text p {
+		margin: 8px 0 0;
+	}
+
+	/* Tile link */
+	.main .process .text a {
+		height: 42px;
+		margin: 16px 0 0;
+	}
+
+	/* Process arrow container */
+	.main .process .arrow {
+		height: 168px; /* Forces arrow container to be same height as tile icon container */
+		margin-right: 5px;
+		width: unset;
+	}
+
+	/* Process arrow image */
+	.main .process .arrow img {
+		transform: rotate(0deg);
+	}
+
 	/* Wrapper */
 	.sectionWrapper {
 		padding: 70px 16px;
@@ -338,44 +510,6 @@
 		margin: 0;
 		max-width: 841px;
 		width: unset;
-	}
-
-	/* Data Portal description */
-	.dataPortal h1 {
-		font-size: 34px; /* h1 specification - override mobile */
-		line-height: 38px; /* h1 specification - override mobile */
-		max-width: 800px;
-	}
-
-	/* DP tiles container */
-	.portalDescription {
-		align-items: flex-start;
-		flex-direction: row;
-	}
-
-	/* DP tile container */
-	.portalDescription .dpTile {
-		flex-direction: column;
-	}
-
-	/* DP tile description paragraph & link */
-	.portalDescription .dpTileDescription p, .portalDescription .dpTileDescription a {
-		margin: 12px 0 0;
-		text-align: center;
-		width: 100%;
-	}
-
-	/* DP tile arrow container */
-	.portalDescription .dpArrow {
-		display: flex;
-		height: 168px; /* Forces arrow container to be same height as DP images */
-		transform: rotate(0deg);
-	}
-
-	/* DP tile arrow image */
-	.portalDescription .dpArrow img {
-		align-self: center;
-		margin: 0;
 	}
 
 	/* Contact form */
