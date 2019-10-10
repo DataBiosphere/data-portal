@@ -128,13 +128,15 @@ class SearchBrowser extends React.Component {
 
 			return classNames({
 				[globalStyles.button]: true,
-				[globalStyles.hero]: true
+				[globalStyles.blue]: true,
+				[globalStyles.light]: true
 			});
 		}
 
 		return classNames({
 			[globalStyles.button]: true,
-			[globalStyles.hero]: true,
+			[globalStyles.blue]: true,
+			[globalStyles.light]: true,
 			[globalStyles.disabled]: true
 		});
 	};

@@ -66,8 +66,8 @@
 	padding: 0 9px;
 }
 
-/* Button - class "button hero" */
-.button.hero {
+/* Button - class "button blue light" */
+.button.blue.light {
 	background-color: var(--blue-light);
 	border-radius: 2px;
 	color: var(--blue-dark);
