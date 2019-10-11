@@ -10,6 +10,12 @@
  * Section
  */
 
+/* Padding - specific */
+/* Metrics bar */
+.main .metricsBar {
+	padding: 30px 0 35px 0;
+}
+
 /* Padding - 42px */
 /* Hero */
 .main .lifecycle {
@@ -35,6 +41,20 @@
 }
 
 /**
+ * Section Background
+ */
+
+/* Metrics bar, lifecycle */
+.main .metricsBar, .main .lifecycle {
+	background-color: var(--blue-light);
+}
+
+/* Stay up to date */
+.main .contact {
+	background: url('../../images/cell/visitProject.png') center / cover no-repeat;
+}
+
+/**
  * Section Inner
  */
 
@@ -50,23 +70,9 @@
 	max-width: 768px;
 }
 
-/**
- * Text Alignment
- */
-
-/* Hero, Section Intro */
-.main .hero, .main .intro {
-	text-align: left;
-}
-
-/* Text - shared font styles */
-/* Paragraph */
-/* Tile description, lifecycle */
-.main .process .text p, .main .lifecycle p {
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 24px;
-	margin: 0;
+/* Inner - large */
+.main .sectionInner.l {
+	max-width: 1168px;
 }
 
 /**
@@ -83,26 +89,53 @@
 	margin: 56px 0 0;
 }
 
+/**
+ * Text
+ */
+
+/* Text - alignment */
+/* Hero, Section Intro */
+.main .hero, .main .intro {
+	text-align: left;
+}
+
+/* Text - shared font styles */
+/* Paragraph */
+/* Tile description, lifecycle */
+.main .process .text p, .main .lifecycle p {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	margin: 0;
+}
+
 /*
- * Sections
+ * Section Specific Styles
  */
 
 /* Display - flex */
-/* Process, tile container, tile text container, process arrow container, visit project container */
+/* Process, tile container, tile text container, process arrow container */
+/* Visit project container */
+/* Metrics container, metric container */
 .main .process, .main .process .tile, .main .process .text, .main .process .arrow,
-.main .visit {
+.main .visit,
+.main .metrics, .main .metric {
 	display: flex;
 }
 
 /* Flex - column */
 /* Process container, tile text container */
-.main .process, .main .process .text {
+/* Metrics container */
+.main .process, .main .process .text,
+.main .metrics {
 	flex-direction: column;
 }
 
 /* Flex - row */
 /* Tile container */
-.main .process .tile {
+/* Metric container */
+.main .process .tile,
+.main .metric {
 	flex-direction: row;
 }
 
@@ -110,6 +143,12 @@
 /* Process arrow container */
 .main .process .arrow {
 	justify-content: center;
+}
+
+/* Flex - justify content - space between */
+/* Metrics container */
+.main .metrics {
+	justify-content: space-between;
 }
 
 /* Flex - justify content - start */
@@ -138,8 +177,72 @@
 
 /* Flex - 1 */
 /* Tile container, tile text container */
-.main .process .tile, .main .process .text {
+/* Metrics container */
+.main .process .tile, .main .process .text,
+.main .metrics {
 	flex: 1;
+}
+
+/**
+ * Metrics
+ */
+
+/* Metrics bar container - loading */
+.main .loading .metrics {
+	opacity: 0.6;
+}
+
+/* Metrics bar - loaded */
+.main .metrics {
+	opacity: 1;
+	transition: opacity 2s ease;
+}
+
+/* Metric container */
+.main .metric {
+	height: 85px;
+}
+
+/* Metric container - evens */
+.main .metric:nth-of-type(2n) {
+	margin: 8px 0;
+}
+
+/* Metric image */
+.main .metric img {
+	height: 100%;
+	margin-right: 8px;
+}
+
+/* Metric count */
+.main .metric .count {
+	color: var(--blue-dark);
+	font-size: 50px;
+	line-height: 61px; /* Per specification */
+	letter-spacing: 0.22px;
+	padding-top: 2px;
+}
+
+/* Metric label */
+.main .metric .label {
+	font-family: "din-2014", sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 1.5px;
+	line-height: 19px; /* Per specification */
+	margin-top: -6px;
+	padding-bottom: 9px;
+}
+
+/* Metric text - loading */
+.main .loading .metric .count, .main .loading .metric .label {
+	color: var(--gray-search);
+}
+
+/* Metric text - loaded */
+.main .metric .count, .main .metric .label {
+	display: block;
+	transition: color 2s ease; /* Loaded */
 }
 
 /**
@@ -182,24 +285,6 @@
 	width: 20px;
 }
 
-/**
- * Data Lifecycle
- */
-
-/* Lifecycle */
-.main .lifecycle {
-	background-color: var(--blue-light);
-}
-
-/**
- * Project Link
- */
-
-/* Stay up to date */
-.main .contact {
-	background: url('../../images/data-portal/learnMoreCell.png') center / cover no-repeat;
-}
-
 /* Section */
 /* Wrapper */
 .sectionWrapper {
@@ -210,55 +295,6 @@
 	margin: 0 auto;
 	max-width: 1200px; /* Snap to 1200px, gutter 16px */
 	padding: 30px 16px;
-}
-
-/* Stats bar */
-.statsBar {
-	background: linear-gradient(90deg, #3867FA, #5ABCEF);
-}
-
-/* Stats bar - wrapper */
-.statsBar > div {
-	flex-direction: row;
-	height: 90px;
-	padding: 0 16px; /* Equivalent to wrapper - gutter 16px */
-}
-
-/* Status - show Cells, Organs, Donors only */
-.statsBar > div > div {
-	align-items: center;
-	display: flex;
-	flex-basis: calc(100% / 3);
-	flex-direction: column;
-	justify-content: center;
-}
-
-/* Status - hide Projects, Labs */
-.statsBar > div > div:nth-of-type(n + 4) {
-	display: none;
-}
-
-/* Status name */
-.statsBar > div > div p {
-	color: var(--white);
-	letter-spacing: 3.25px;
-	margin: 0 0 -4px;
-}
-
-/* Status number */
-.statsBar > div > div h1 {
-	color: var(--white);
-	font-size: 36px;
-	line-height: 42px;
-	min-height: 42px;
-	opacity: 0;
-	padding: 0 12px;
-	text-align: center;
-}
-
-.statsBar.loaded > div > div h1 {
-	transition: opacity 0.5s ease 0s;
-	opacity: 1;
 }
 
 /* Explore */
@@ -306,8 +342,8 @@
  */
 @media screen and (min-width: 667px) {
 
-	/**
-	 * Sections
+	/*
+	 * Section Specific Styles
 	 */
 
 	/**
@@ -329,21 +365,6 @@
 	.main .process .arrow img {
 		width: 27px;
 	}
-
-	/* Status */
-	.statsBar > div > div {
-		flex-basis: unset;
-	}
-
-	/* Status - show Projects, Labs */
-	.statsBar > div > div:nth-of-type(n + 4) {
-		display: flex;
-	}
-
-	/* Status number */
-	.statsBar > div > div h1 {
-		width: 116px;
-	}
 }
 
 /**
@@ -359,8 +380,8 @@
 		text-align: center;
 	}
 
-	/**
-	 * Sections
+	/*
+	 * Section Specific Styles
 	 */
 
 	/* Flex - justify content - center */
@@ -409,9 +430,9 @@
  */
 @media screen and (min-width: 1024px) {
 
-	/**
-	 * Sections
-	*/
+	/*
+	 * Section Specific Styles
+	 */
 
 	/* Display - flex */
 	/* Process arrow container */
@@ -427,7 +448,9 @@
 
 	/* Flex - row */
 	/* Process */
-	.main .process {
+	/* Metrics container */
+	.main .process,
+	.main .metrics {
 		flex-direction: row;
 	}
 
@@ -453,6 +476,15 @@
 	/* Tile text container, tile description */
 	.main .process .text, .main .process .text p {
 		flex: 1;
+	}
+
+	/**
+	 * Metrics
+	 */
+
+	/* Metric container - evens */
+	.main .metric:nth-of-type(2n) {
+		margin: 0;
 	}
 
 	/**
@@ -510,11 +542,6 @@
 		padding: 70px 16px;
 	}
 
-	/* Status number */
-	.statsBar > div > div h1 {
-		width: 164px;
-	}
-
 	/* Explore Imagery */
 	.explore > div > div:first-of-type {
 		margin-bottom: -70px; /* Equal to wrapper padding */
@@ -542,11 +569,6 @@
 	/* Wrapper */
 	.sectionWrapper {
 		padding: 70px 30px;
-	}
-
-	/* Stats bar - wrapper */
-	.statsBar > div {
-		padding: 0 30px; /* Equivalent to wrapper - gutter 30px */
 	}
 }
 

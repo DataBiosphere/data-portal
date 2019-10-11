@@ -7,10 +7,10 @@
 
 /* Cell background image */
 .cellImage {
-	background: url(../../images/data-portal/cell.png) center no-repeat;
-	background-size: cover;
+	background: url('../../images/cell/error.png') center / cover no-repeat;
 	bottom: 0;
 	left: 0;
+	opacity: 0.6;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -19,16 +19,4 @@
 
 .error a:not(:last-of-type) {
 	margin-bottom: 4px;
-}
-
-/**
- * HCA specific breakpoint
- */
-@media screen and (min-width: 768px) {
-
-	/* Cell background image */
-	.cellImage {
-		background: url(../../images/data-portal/cell.png) top no-repeat;
-		background-size: cover;
-	}
 }
