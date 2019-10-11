@@ -24,12 +24,17 @@ import globalStyles from '../styles/global.module.css';
 import compStyles from './index.module.css';
 
 // Images
-import arrow from '../../images/data-portal/arrow@2x.png';
-import explorePlaceholder from '../../images/data-portal/expore-placeholder.png';
-import labsContribute from '../../images/data-portal/HCA-Icons_labs-contribute.png';
-import pipelineProcessing from '../../images/data-portal/HCA-Icons_pipeline-processing.png';
-import searchCommunity from '../../images/data-portal/HCA-Icons_search-community.png';
-import searchData from '../../images/data-portal/HCA-Icons_search-data.png';
+import explorePlaceholder from '../../images/explore/exporePlaceholder.png';
+import cells from '../../images/icon/metrics/cells.png';
+import donors from '../../images/icon/metrics/donors.png';
+import labs from '../../images/icon/metrics/labs.png';
+import organs from '../../images/icon/metrics/organs.png';
+import projects from '../../images/icon/metrics/projects.png';
+import arrow from '../../images/icon/portal/arrow.png';
+import labsContribute from '../../images/icon/portal/labsContribute.png';
+import pipelineProcessing from '../../images/icon/portal/pipelineProcessing.png';
+import searchCommunity from '../../images/icon/portal/searchCommunity.png';
+import searchData from '../../images/icon/portal/searchData.png';
 
 let classNames = require('classnames');
 
@@ -114,25 +119,45 @@ class IndexPage extends React.Component {
 								here, or explore it using our library of analysis tools and portals.</p>
 						</div>
 					</section>
-					<div className={classNames({[compStyles.statsBar]: true, [compStyles.loaded]: this.state.loaded})}>
-						<div className={compStyles.sectionWrapper}>
-							<div><p className={fontStyles.xs}>CELLS</p>
-								<h1 className={fontStyles.noMargin}>{this.state.cellCount ? this.formatCount(this.state.cellCount) : ""}</h1>
+					<section className={classNames({[compStyles.metricsBar]: true, [compStyles.loading]: !this.state.loaded})}>
+						<div className={classNames(compStyles.sectionInner, compStyles.l, compStyles.metrics)}>
+							<div className={compStyles.metric}>
+								<img src={cells} alt='cells'/>
+								<div>
+									<span className={compStyles.count}>{this.state.cellCount ? this.formatCount(this.state.cellCount) : "00"}</span>
+									<span className={compStyles.label}>CELLS</span>
+								</div>
 							</div>
-							<div><p className={fontStyles.xs}>ORGANS</p>
-								<h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.organCount) : ""}</h1>
+							<div className={compStyles.metric}>
+								<img src={organs} alt='Organs'/>
+								<div>
+									<span className={compStyles.count}>{this.state.fileCount ? this.formatCount(this.state.organCount) : "00"}</span>
+									<span className={compStyles.label}>ORGANS</span>
+								</div>
 							</div>
-							<div><p className={fontStyles.xs}>DONORS</p>
-								<h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.donorCount) : ""}</h1>
+							<div className={compStyles.metric}>
+								<img src={donors} alt='Donors'/>
+								<div>
+									<span className={compStyles.count}>{this.state.fileCount ? this.formatCount(this.state.donorCount) : "00"}</span>
+									<span className={compStyles.label}>DONORS</span>
+								</div>
 							</div>
-							<div><p className={fontStyles.xs}>PROJECTS</p>
-								<h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.projectCount) : ""}</h1>
+							<div className={compStyles.metric}>
+								<img src={projects} alt='Projects'/>
+								<div>
+									<span className={compStyles.count}>{this.state.fileCount ? this.formatCount(this.state.donorCount) : "00"}</span>
+									<span className={compStyles.label}>PROJECTS</span>
+								</div>
 							</div>
-							<div><p className={fontStyles.xs}>LABS</p>
-								<h1 className={fontStyles.noMargin}>{this.state.fileCount ? this.formatCount(this.state.labCount) : ""}</h1>
+							<div className={compStyles.metric}>
+								<img src={labs} alt='Labs'/>
+								<div>
+									<span className={compStyles.count}>{this.state.fileCount ? this.formatCount(this.state.labCount) : "00"}</span>
+									<span className={compStyles.label}>LABS</span>
+								</div>
 							</div>
 						</div>
-					</div>
+					</section>
 					<div className={compStyles.explore}>
 						<div className={compStyles.sectionWrapper}>
 							<div>
