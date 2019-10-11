@@ -6,6 +6,10 @@
  */
 @import '../../src/styles/vars.module.css';
 
+.hide {
+	display: none;
+}
+
 /**
  * Section
  */
@@ -14,6 +18,11 @@
 /* Metrics bar */
 .main .metricsBar {
 	padding: 30px 0 35px 0;
+}
+
+/* Explore */
+.main .explore {
+	padding: 64px 0;
 }
 
 /* Padding - 42px */
@@ -70,6 +79,11 @@
 	max-width: 768px;
 }
 
+/* Inner - medium */
+.main .sectionInner.m {
+	max-width: 968px;
+}
+
 /* Inner - large */
 .main .sectionInner.l {
 	max-width: 1168px;
@@ -119,7 +133,7 @@
 /* Metrics container, metric container */
 .main .process, .main .process .tile, .main .process .text, .main .process .arrow,
 .main .visit,
-.main .metrics, .main .metric {
+.main .metrics, .metric {
 	display: flex;
 }
 
@@ -133,9 +147,7 @@
 
 /* Flex - row */
 /* Tile container */
-/* Metric container */
-.main .process .tile,
-.main .metric {
+.main .process .tile {
 	flex-direction: row;
 }
 
@@ -232,6 +244,7 @@
 	line-height: 19px; /* Per specification */
 	margin-top: -6px;
 	padding-bottom: 9px;
+	text-transform: uppercase;
 }
 
 /* Metric text - loading */
@@ -285,46 +298,6 @@
 	width: 20px;
 }
 
-/* Section */
-/* Wrapper */
-.sectionWrapper {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 auto;
-	max-width: 1200px; /* Snap to 1200px, gutter 16px */
-	padding: 30px 16px;
-}
-
-/* Explore */
-.explore .sectionWrapper > div {
-	position: relative;
-}
-
-.explore .exploreText {
-	margin-bottom: 32px;
-}
-
-/* Explore heading */
-.explore h2 {
-	margin-bottom: 14px;
-	margin-top: 0;
-}
-
-/* Explore sub-text */
-.explore p {
-	color: var(--gray-dark);
-	line-height: 18px;
-	margin-bottom: 0;
-	max-width: 336px;
-}
-
-/* Explore svg placeholder */
-.explore .explorePlaceholder {
-	display: none;
-}
-
 /**
  * HCA specific breakpoint
  * For hero headline only
@@ -345,6 +318,15 @@
 	/*
 	 * Section Specific Styles
 	 */
+
+	/**
+	 * Explore
+	 */
+
+	/* Intro text - wraps text at specified <span> break */
+	.main .explore .intro p span {
+		display: block;
+	}
 
 	/**
 	 * What is the HCA Portal?
@@ -395,32 +377,17 @@
 	.main .process .tile, .main .process .arrow {
 		align-self: center;
 	}
+}
 
-	/* Explore text */
-	.explore .exploreText {
-		margin-bottom: 0;
-		position: absolute;
-		top: 0;
-	}
+/**
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 960px) {
 
-	/* Explore Imagery */
-	.explore > div > div:first-of-type {
-		margin-bottom: -84px; /* Equal to wrapper padding and svg re-sized to 650px */
-		max-width: 650px;
-	}
-
-	/* Svg */
-	.explore svg {
-		width: 650px;
-	}
-
-	/* Svg placeholder */
-	.explore .explorePlaceholder {
-		display: block;
-		height: unset;
-		margin-bottom: 54px;
-		margin-top: 52px; /* svg is 463px high, but 54px positioned below content, leaving 52px of height at top unaccounted for in img */
-		width: 650px;
+	/* Explore */
+	.main .explore {
+		padding: 64px 0 0;
 	}
 }
 
@@ -536,39 +503,4 @@
 	.main .process .arrow img {
 		transform: rotate(0deg);
 	}
-
-	/* Wrapper */
-	.sectionWrapper {
-		padding: 70px 16px;
-	}
-
-	/* Explore Imagery */
-	.explore > div > div:first-of-type {
-		margin-bottom: -70px; /* Equal to wrapper padding */
-		max-width: 800px;
-	}
-
-	/* Svg */
-	.explore svg {
-		width: unset;
-	}
-
-	/* Svg placeholder */
-	.explore .explorePlaceholder {
-		margin: 0;
-		max-width: 841px;
-		width: unset;
-	}
 }
-
-/**
- * Large +
- */
-@media screen and (min-width: 1200px) {
-
-	/* Wrapper */
-	.sectionWrapper {
-		padding: 70px 30px;
-	}
-}
-

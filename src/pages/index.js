@@ -10,6 +10,7 @@ import Link from 'gatsby-link';
 import React from 'react';
 
 // App dependencies
+import ExploreData from '../components/explore/exploreData';
 import Layout from '../components/layout';
 import SearchBrowser from '../components/searchBrowser/searchBrowser';
 import Explore from '../../images/explore/explore-person/explore-svg';
@@ -125,47 +126,47 @@ class IndexPage extends React.Component {
 								<img src={cells} alt='cells'/>
 								<div>
 									<span className={compStyles.count}>{this.state.cellCount ? this.formatCount(this.state.cellCount) : "00"}</span>
-									<span className={compStyles.label}>CELLS</span>
+									<span className={compStyles.label}>Cells</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
 								<img src={organs} alt='Organs'/>
 								<div>
 									<span className={compStyles.count}>{this.state.fileCount ? this.formatCount(this.state.organCount) : "00"}</span>
-									<span className={compStyles.label}>ORGANS</span>
+									<span className={compStyles.label}>Organs</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
 								<img src={donors} alt='Donors'/>
 								<div>
 									<span className={compStyles.count}>{this.state.fileCount ? this.formatCount(this.state.donorCount) : "00"}</span>
-									<span className={compStyles.label}>DONORS</span>
+									<span className={compStyles.label}>Donors</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
 								<img src={projects} alt='Projects'/>
 								<div>
 									<span className={compStyles.count}>{this.state.fileCount ? this.formatCount(this.state.donorCount) : "00"}</span>
-									<span className={compStyles.label}>PROJECTS</span>
+									<span className={compStyles.label}>Projects</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
 								<img src={labs} alt='Labs'/>
 								<div>
 									<span className={compStyles.count}>{this.state.fileCount ? this.formatCount(this.state.labCount) : "00"}</span>
-									<span className={compStyles.label}>LABS</span>
+									<span className={compStyles.label}>Labs</span>
 								</div>
 							</div>
 						</div>
 					</section>
-					<div className={compStyles.explore}>
-						<div className={compStyles.sectionWrapper}>
-							<div>
-								<div className={compStyles.exploreText}>
-									<h2>Start Exploring</h2>
-									<p>Hover over or click on an organ to view data from that
-										organ</p>
-								</div>
+					<section className={compStyles.explore}>
+						<div className={classNames(compStyles.sectionInner, compStyles.m)}>
+							<div className={compStyles.intro}>
+								<h4 className={fontStyles.introTitle}>Start Exploring Data</h4>
+								<p className={fontStyles.introText}><span>Millions of Cells, Hundreds of Contributors, </span><span> One Browser</span></p>
+							</div>
+							<ExploreData/>
+							<div className={compStyles.hide}>
 								{this.state.cellCountSummaries ?
 									<Explore cellCountSummaries={this.state.cellCountSummaries}
 											 totalCellCount={this.state.totalCellCount}/> :
@@ -173,9 +174,9 @@ class IndexPage extends React.Component {
 										 alt='Explore'/>}
 								{this.state.organCount ?
 									<ExploreStats cellCountSummaries={this.state.cellCountSummaries}/> : null}
-							</div>
+								</div>
 						</div>
-					</div>
+					</section>
 					<SearchBrowser termFacets={this.state.searchTerms}/>
 					<section className={compStyles.portal}>
 						<div className={classNames(compStyles.sectionInner, compStyles.s)}>
