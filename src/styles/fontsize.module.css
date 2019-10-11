@@ -3,7 +3,7 @@
  */
 @import './vars.module.css';
 
-/* Class "fontsize-headline" */
+/* Class "headline" */
 /* Human Cell Atlas Headline */
 .headline {
 	color: var(--blue-dark);
@@ -14,7 +14,7 @@
 	margin: 0;
 }
 
-/* Class "fontsize-headline" */
+/* Class "subhead" */
 /* Human Cell Atlas Subhead */
 .subhead {
 	font-family: "Montserrat", sans-serif;
@@ -24,7 +24,7 @@
 	margin: 24px 0 0;
 }
 
-/* Class "fontsize-introTitle" */
+/* Class "introTitle" */
 /* Human Cell Atlas Intro Title */
 .introTitle {
 	letter-spacing: 1.5px;
@@ -32,7 +32,7 @@
 	text-transform: uppercase;
 }
 
-/* Class "fontsize-introText" */
+/* Class "introText" */
 /* Human Cell Atlas Intro Text */
 .introText {
 	font-family: "din-2014", sans-serif;

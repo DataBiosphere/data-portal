@@ -1,0 +1,133 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA explore controls component.
+ */
+
+/* Controls container */
+.controls {
+	align-self: center;
+	max-width: 468px;
+	width: 100%;
+}
+
+/* Text - Shared Styles */
+/* Metric label, organ text, view more organs */
+.controls.label, .controls .organ span, .controls .moreOrgans {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+/* Text - line heights - 21px */
+/* Organ text, view more organs */
+.controls .organ span, .controls .moreOrgans {
+	line-height: 21px;
+}
+
+/* Color - Shared Styles - blue dark */
+/* Metric count, organ text, view more organs */
+.controls .count, .controls .organ span, .controls .moreOrgans {
+	color: var(--blue-dark);
+}
+
+/* Metric count */
+.controls .count {
+	font-size: 40px;
+	line-height: 49px; /* Per specification */
+}
+
+/* Metric label */
+.controls .label {
+	font-family: "din-2014", sans-serif;
+	letter-spacing: 1.5px;
+	line-height: 19px; /* Per specification */
+	padding-top: 4px;
+	text-transform: uppercase;
+}
+
+/* Metric text */
+.controls .count, .controls .label {
+	display: block;
+}
+
+/* Flex */
+/* Organs container, organ control */
+.controls .organs, .controls .organ {
+	display: flex;
+	flex: 1;
+}
+
+/* Organs container */
+.controls .organs {
+	flex-wrap: wrap;
+	padding: 20px 0 60px;
+}
+
+/* Organ control */
+.controls .organ {
+	align-items: center;
+	border: 1px solid var(--blue-light);
+	border-radius: 2px;
+	cursor: pointer;
+	flex-basis: 100%;
+	height: 58px;
+	margin: 4px 0;
+	padding: 0 43px 0 18px;
+	position: relative; /* Positions arrow */
+}
+
+/* Organ arrow */
+.controls .organ img {
+	display: none;
+	height: 10px;
+	position: absolute;
+	right: 19px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 6px;
+}
+
+/* Organ control - hover */
+.controls .organ:hover {
+	background-color: var(--blue-dark);
+	border: 1px solid var(--blue-dark);
+}
+
+/* Organ control, hover - text */
+.controls .organ:hover span {
+	color: var(--white);
+}
+
+/* Organ control, hover - arrow */
+.controls .organ:hover img {
+	display: block;
+}
+
+/* Organ control - transition */
+.controls .organ, .controls .organ:hover {
+	transition: all 0.25s ease;
+}
+
+/**
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 667px) {
+
+	.controls .organ {
+		flex-basis: 50%;
+		max-width: calc(50% - 4px);
+	}
+
+	/* Organ control - odds */
+	.controls .organ:nth-of-type(1n) {
+		margin: 4px 4px 4px 0;
+	}
+
+	/* Organ control - evens */
+	.controls .organ:nth-of-type(2n) {
+		margin: 4px 0 4px 4px;
+	}
+}
+
