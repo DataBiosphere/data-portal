@@ -5,7 +5,7 @@
   "dependencies": {
     "@fastly/performance-observer-polyfill": "1.0.2",
     "classnames": "^2.2.6",
-    "gatsby": "2.15.34",
+    "gatsby": "^2.15.34",
     "gatsby-plugin-catch-links": "^2.0.15",
     "gatsby-plugin-favicon": "^3.1.6",
     "gatsby-plugin-google-tagmanager": "^2.0.15",
@@ -31,7 +31,7 @@
     "js-cookie": "^2.2.0",
     "katex": "^0.10.2",
     "normalize.css": "^8.0.1",
-    "npm": "^6.9.0",
+    "npm": "^6.12.0",
     "prism": "^4.1.2",
     "prismjs": "^1.16.0",
     "prop-types": "15.6.2",
@@ -44,6 +44,7 @@
     "react-typography": "^0.16.19",
     "rehype-react": "^4.0.1",
     "shallow-equal": "1.0.0",
+    "snyk": "^1.234.2",
     "typography": "^0.16.19"
   },
   "keywords": [
