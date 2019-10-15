@@ -5,8 +5,21 @@
  * Style definitions specific to the HCA explore data component.
  */
 
+/* Explore container */
 .exploring {
 	align-items: flex-start;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+}
+
+/**
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 960px) {
+
+	/* Explore container */
+	.exploring {
+		justify-content: space-between;
+	}
 }

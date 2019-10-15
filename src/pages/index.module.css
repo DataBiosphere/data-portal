@@ -6,10 +6,6 @@
  */
 @import '../../src/styles/vars.module.css';
 
-.hide {
-	display: none;
-}
-
 /**
  * Section
  */
@@ -368,7 +364,9 @@
 
 	/* Flex - justify content - center */
 	/* Visit project container */
-	.main .visit {
+	/* Metric container */
+	.main .visit,
+	.main .metric {
 		justify-content: center;
 	}
 
