@@ -30,10 +30,11 @@ class ExploreData extends React.Component {
 	};
 
 	render() {
-		const {organ} = this.state;
+		const {cellCountSummaries, totalCellCount} = this.props,
+		{organ} = this.state;
 		return (
 			<div className={classNames(mainStyles.module, mainStyles.spacer, compStyles.exploring)}>
-				<ExploreControls onActiveOrgan={this.onActiveOrgan.bind(this)}/>
+				<ExploreControls onActiveOrgan={this.onActiveOrgan.bind(this)} cellCountSummaries={cellCountSummaries} totalCellCount={totalCellCount}/>
 				<ExploreDiagram activeOrgan={organ}/>
 			</div>
 		);

@@ -8,13 +8,12 @@
 /* Controls container */
 .controls {
 	align-self: center;
-	max-width: 468px;
 	width: 100%;
 }
 
 /* Text - Shared Styles */
 /* Metric label, organ text, view more organs */
-.controls.label, .controls .organ span, .controls .moreOrgans {
+.controls .label, .controls .organ span, .controls .moreOrgans {
 	font-size: 16px;
 	font-weight: 500;
 }
@@ -47,7 +46,9 @@
 }
 
 /* Metric text */
-.controls .count, .controls .label {
+/* View more text */
+.controls .count, .controls .label,
+.controls a {
 	display: block;
 }
 
@@ -69,12 +70,17 @@
 	align-items: center;
 	border: 1px solid var(--blue-light);
 	border-radius: 2px;
-	cursor: pointer;
+	cursor: default;
 	flex-basis: 100%;
 	height: 58px;
 	margin: 4px 0;
 	padding: 0 43px 0 18px;
 	position: relative; /* Positions arrow */
+}
+
+/* Organ control text - no click through */
+.controls .organ.unspecified span {
+	cursor: inherit;
 }
 
 /* Organ arrow */
@@ -89,18 +95,22 @@
 }
 
 /* Organ control - hover */
-.controls .organ:hover {
+/* Excludes "no click through" control */
+.controls .organ:not(.unspecified):hover {
 	background-color: var(--blue-dark);
 	border: 1px solid var(--blue-dark);
+	cursor: pointer;
 }
 
 /* Organ control, hover - text */
-.controls .organ:hover span {
+/* Excludes "no click through" control */
+.controls .organ:not(.unspecified):hover span {
 	color: var(--white);
 }
 
 /* Organ control, hover - arrow */
-.controls .organ:hover img {
+/* Excludes "no click through" control */
+.controls .organ:not(.unspecified):hover img {
 	display: block;
 }
 
@@ -115,6 +125,7 @@
  */
 @media screen and (min-width: 667px) {
 
+	/* Organ control */
 	.controls .organ {
 		flex-basis: 50%;
 		max-width: calc(50% - 4px);
@@ -131,3 +142,34 @@
 	}
 }
 
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 768px) {
+
+	/* Metric text */
+	/* View more text */
+	.controls .count, .controls .label,
+	.controls a {
+		text-align: center;
+	}
+}
+
+/**
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 960px) {
+
+	/* Controls container */
+	.controls {
+		max-width: 468px;
+	}
+
+	/* Metric text */
+	/* View more text */
+	.controls .count, .controls .label,
+	.controls a {
+		text-align: left;
+	}
+}

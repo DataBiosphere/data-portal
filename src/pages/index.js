@@ -6,15 +6,13 @@
  */
 
 // Core dependencies
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
 // App dependencies
 import ExploreData from '../components/explore/exploreData';
 import Layout from '../components/layout';
 import SearchBrowser from '../components/searchBrowser/searchBrowser';
-import Explore from '../../images/explore/explore-person/explore-svg';
-import ExploreStats from '../../images/explore/explore-stats/explore-stats-svg';
 import * as FileSummaryService from '../utils/fileSummary.service';
 import * as SystemService from '../utils/system.service';
 import * as numberFormatter from '../utils/number-format.service';
@@ -25,7 +23,6 @@ import globalStyles from '../styles/global.module.css';
 import compStyles from './index.module.css';
 
 // Images
-import explorePlaceholder from '../../images/explore/exporePlaceholder.png';
 import cells from '../../images/icon/metrics/cells.png';
 import donors from '../../images/icon/metrics/donors.png';
 import labs from '../../images/icon/metrics/labs.png';
@@ -93,14 +90,15 @@ class IndexPage extends React.Component {
 	};
 
 	/**
-	 * Format data counts to sized value (eg k, M, G etc)
+	 * Format data counts to sized value (eg k, M, G etc).
+	 * Returns "00" if count is 0.
 	 *
 	 * @param {number} count
 	 * @returns {*}
 	 */
 	formatCount(count) {
 
-		return numberFormatter.format(count, 1);
+		return count ? numberFormatter.format(count, 1) : "00";
 	}
 
 	render() {
@@ -125,35 +123,35 @@ class IndexPage extends React.Component {
 							<div className={compStyles.metric}>
 								<img src={cells} alt='cells'/>
 								<div>
-									<span className={compStyles.count}>{this.state.cellCount ? this.formatCount(this.state.cellCount) : "00"}</span>
+									<span className={compStyles.count}>{this.formatCount(this.state.cellCount)}</span>
 									<span className={compStyles.label}>Cells</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
 								<img src={organs} alt='Organs'/>
 								<div>
-									<span className={compStyles.count}>{this.state.fileCount ? this.formatCount(this.state.organCount) : "00"}</span>
+									<span className={compStyles.count}>{this.formatCount(this.state.organCount)}</span>
 									<span className={compStyles.label}>Organs</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
 								<img src={donors} alt='Donors'/>
 								<div>
-									<span className={compStyles.count}>{this.state.fileCount ? this.formatCount(this.state.donorCount) : "00"}</span>
+									<span className={compStyles.count}>{this.formatCount(this.state.donorCount)}</span>
 									<span className={compStyles.label}>Donors</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
 								<img src={projects} alt='Projects'/>
 								<div>
-									<span className={compStyles.count}>{this.state.fileCount ? this.formatCount(this.state.donorCount) : "00"}</span>
+									<span className={compStyles.count}>{this.formatCount(this.state.donorCount)}</span>
 									<span className={compStyles.label}>Projects</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
 								<img src={labs} alt='Labs'/>
 								<div>
-									<span className={compStyles.count}>{this.state.fileCount ? this.formatCount(this.state.labCount) : "00"}</span>
+									<span className={compStyles.count}>{this.formatCount(this.state.labCount)}</span>
 									<span className={compStyles.label}>Labs</span>
 								</div>
 							</div>
@@ -165,16 +163,7 @@ class IndexPage extends React.Component {
 								<h4 className={fontStyles.introTitle}>Start Exploring Data</h4>
 								<p className={fontStyles.introText}><span>Millions of Cells, Hundreds of Contributors, </span><span> One Browser</span></p>
 							</div>
-							<ExploreData/>
-							<div className={compStyles.hide}>
-								{this.state.cellCountSummaries ?
-									<Explore cellCountSummaries={this.state.cellCountSummaries}
-											 totalCellCount={this.state.totalCellCount}/> :
-									<img className={compStyles.explorePlaceholder} src={explorePlaceholder}
-										 alt='Explore'/>}
-								{this.state.organCount ?
-									<ExploreStats cellCountSummaries={this.state.cellCountSummaries}/> : null}
-								</div>
+							<ExploreData cellCountSummaries={this.state.cellCountSummaries} totalCellCount={this.formatCount(this.state.totalCellCount)}/>
 						</div>
 					</section>
 					<SearchBrowser termFacets={this.state.searchTerms}/>
