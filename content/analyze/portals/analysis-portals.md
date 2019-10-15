@@ -9,10 +9,10 @@ linked:
     - ./cellxgene.md
     - ./cytoscape.md
     - ./dnastack.md
-    - ./genepattern-notebook.md
     - ./hca-galaxy-instance.md
     - ./single-cell-expression-atlas.md
     - ./single-cell-portal.md
+    - ./genepattern-notebook.md
     - ./ucsc-cell-browser.md
     - ./ucsc-xena.md
 ---
