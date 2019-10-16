@@ -34,7 +34,7 @@
 }
 
 /* Padding - 64px */
-/* What is the HCA portal */
+/* What is the HCA portal? */
 .main .portal {
 	padding: 64px 0;
 }
@@ -106,7 +106,7 @@
 /* Text - alignment */
 /* Hero, Section Intro */
 .main .hero, .main .intro {
-	text-align: left;
+	text-align: center;
 }
 
 /* Text - shared font styles */
@@ -124,12 +124,12 @@
  */
 
 /* Display - flex */
-/* Process, tile container, tile text container, process arrow container */
+/* Metrics container, metric container, metric image container */
+/* Process, tile container, tile text container, process arrow container, tile image container */
 /* Visit project container */
-/* Metrics container, metric container */
-.main .process, .main .process .tile, .main .process .text, .main .process .arrow,
-.main .visit,
-.main .metrics, .metric {
+.main .metrics, .metric, .main .metric > span,
+.main .process, .main .process .tile, .main .process .text, .main .process .arrow, .main .process .icon,
+.main .visit {
 	display: flex;
 }
 
@@ -149,7 +149,11 @@
 
 /* Flex - justify content - center */
 /* Process arrow container */
-.main .process .arrow {
+/* Metric container */
+/* Visit project container */
+.main .process .arrow,
+.main .metric,
+.main .visit {
 	justify-content: center;
 }
 
@@ -159,22 +163,16 @@
 	justify-content: space-between;
 }
 
-/* Flex - justify content - start */
-/* Visit project container */
-.main .visit {
-	justify-content: flex-start;
+/* Flex - justify content - end */
+/* Metric image container */
+.main .metric > span {
+	justify-content: flex-end;
 }
 
 /* Flex - align items - center */
 /* Process */
 .main .process {
 	align-items: center;
-}
-
-/* Flex - align self - start */
-/* Tile container, process arrow container */
-.main .process .tile, .main .process .arrow {
-	align-self: start;
 }
 
 /* Flex - align self - center */
@@ -185,9 +183,9 @@
 
 /* Flex - 1 */
 /* Tile container, tile text container */
-/* Metrics container */
+/* Metrics container, metric image container, metric text container */
 .main .process .tile, .main .process .text,
-.main .metrics {
+.main .metrics, .main .metric > span, .main .metric > div {
 	flex: 1;
 }
 
@@ -216,10 +214,20 @@
 	margin: 8px 0;
 }
 
+/* Metric image container */
+.main .metric > span {
+	height: inherit;
+	margin-right: 4px;
+}
+
 /* Metric image */
 .main .metric img {
 	height: 100%;
-	margin-right: 8px;
+}
+
+/* Metric text */
+.main .metric > div {
+	margin-left: 4px;
 }
 
 /* Metric count */
@@ -258,21 +266,16 @@
  * What is the HCA Portal?
  */
 
-/* Tile icon container */
-.main .process .icon {
-	height: 100px;
-	width: 100px;
+/* Tile container */
+.main .process .tile {
+	max-width: 460px;
+	width: 100%;
 }
 
 /* Tile icon image */
 .main .process .icon img {
-	height: 100%;
-	width: 100%;
-}
-
-/* Tile text container */
-.main .process .text {
-	max-width: 300px;
+	height: 120px;
+	width: 120px;
 }
 
 /* Tile link */
@@ -285,7 +288,7 @@
 
 /* Process arrow container */
 .main .process .arrow {
-	width: 100px;
+	margin: 8px 0;
 }
 
 /* Process arrow image */
@@ -295,10 +298,37 @@
 }
 
 /**
+ * XSmall +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 480px) {
+
+	/* Tile icon image */
+	.main .process .icon img {
+		height: 168px;
+		width: 168px;
+	}
+
+	/* Process arrow container */
+	.main .process .arrow {
+		margin: 0;
+	}
+
+	/* Process arrow image */
+	.main .process .arrow img {
+		width: 27px;
+	}
+}
+
+/**
  * HCA specific breakpoint
  * For hero headline only
  */
-@media screen and (min-width: 540px) {
+@media screen and (min-width: 600px) {
+
+	/*
+	 * Section Specific Styles
+	 */
 
 	/* Hero headline - wraps text at specified <span> break */
 	.main .hero h1 span {
@@ -322,58 +352,6 @@
 	/* Intro text - wraps text at specified <span> break */
 	.main .explore .intro p span {
 		display: block;
-	}
-
-	/**
-	 * What is the HCA Portal?
-	 */
-
-	/* Tile icon container */
-	.main .process .icon {
-		height: 168px;
-		width: 168px;
-	}
-
-	/* Process arrow container */
-	.main .process .arrow {
-		width: 168px;
-	}
-
-	/* Process arrow img */
-	.main .process .arrow img {
-		width: 27px;
-	}
-}
-
-/**
- * HCA specific breakpoint
- */
-@media screen and (min-width: 768px) {
-
-	/**
-	 * Text Alignment
-	 */
-	/* Hero, Section Intro */
-	.main .hero, .main .intro {
-		text-align: center;
-	}
-
-	/*
-	 * Section Specific Styles
-	 */
-
-	/* Flex - justify content - center */
-	/* Visit project container */
-	/* Metric container */
-	.main .visit,
-	.main .metric {
-		justify-content: center;
-	}
-
-	/* Flex - align self - center */
-	/* Tile container, process arrow container */
-	.main .process .tile, .main .process .arrow {
-		align-self: center;
 	}
 }
 
@@ -431,15 +409,9 @@
 		align-items: stretch;
 	}
 
-	/* Flex - align self - unset */
-	/* Tile container, process arrow container */
-	.main .process .tile, .main .process .arrow {
-		align-self: unset;
-	}
-
 	/* Flex - 1 */
-	/* Tile text container, tile description */
-	.main .process .text, .main .process .text p {
+	/* Tile description */
+	.main .process .text p {
 		flex: 1;
 	}
 
@@ -456,27 +428,9 @@
 	 * What is the HCA Portal?
 	 */
 
-	/* Tile icon container */
-	.main .process .icon {
-		height: 168px;
-		width: 100%;
-	}
-
-	/* Tile icon image */
-	.main .process .icon img {
-		height: 100%;
-		width: inherit;
-	}
-
-	/* Tile text container */
-	.main .process .text {
-		width: unset;
-	}
-
 	/* Tile description, tile link */
 	.main .process .text p, .main .process .text a {
 		text-align: center;
-		width: 100%;
 	}
 
 	/* Tile description */
@@ -486,7 +440,7 @@
 
 	/* Tile link */
 	.main .process .text a {
-		height: 42px;
+		height: 42px; /* Top aligns link; forces link to be of similar height, allowing flex on paragraph to be equal across each tile */
 		margin: 16px 0 0;
 	}
 
@@ -494,7 +448,6 @@
 	.main .process .arrow {
 		height: 168px; /* Forces arrow container to be same height as tile icon container */
 		margin-right: 5px;
-		width: unset;
 	}
 
 	/* Process arrow image */

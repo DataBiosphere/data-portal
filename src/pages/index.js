@@ -109,47 +109,44 @@ class IndexPage extends React.Component {
 						<div
 							className={classNames(compStyles.sectionInner, compStyles.s)}>
 							<h1 className={fontStyles.headline}>
-								<span>Explore the human body </span>
-								<span>at the cellular level.</span>
+								<span>Mapping the human body </span>
+								<span>at the cellular level</span>
 							</h1>
-							<p className={fontStyles.subhead}>We curate and quality check data from contributing labs
-								around
-								the world and make it openly available to any researcher. Download raw or processed data
-								here, or explore it using our library of analysis tools and portals.</p>
+							<p className={fontStyles.subhead}>Community generated, multi-omic, open data processed by standardized pipelines</p>
 						</div>
 					</section>
 					<section className={classNames({[compStyles.metricsBar]: true, [compStyles.loading]: !this.state.loaded})}>
 						<div className={classNames(compStyles.sectionInner, compStyles.l, compStyles.metrics)}>
 							<div className={compStyles.metric}>
-								<img src={cells} alt='cells'/>
+								<span><img src={cells} alt='cells'/></span>
 								<div>
 									<span className={compStyles.count}>{this.formatCount(this.state.cellCount)}</span>
 									<span className={compStyles.label}>Cells</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
-								<img src={organs} alt='Organs'/>
+								<span><img src={organs} alt='Organs'/></span>
 								<div>
 									<span className={compStyles.count}>{this.formatCount(this.state.organCount)}</span>
 									<span className={compStyles.label}>Organs</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
-								<img src={donors} alt='Donors'/>
+								<span><img src={donors} alt='Donors'/></span>
 								<div>
 									<span className={compStyles.count}>{this.formatCount(this.state.donorCount)}</span>
 									<span className={compStyles.label}>Donors</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
-								<img src={projects} alt='Projects'/>
+								<span><img src={projects} alt='Projects'/></span>
 								<div>
 									<span className={compStyles.count}>{this.formatCount(this.state.donorCount)}</span>
 									<span className={compStyles.label}>Projects</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
-								<img src={labs} alt='Labs'/>
+								<span><img src={labs} alt='Labs'/></span>
 								<div>
 									<span className={compStyles.count}>{this.formatCount(this.state.labCount)}</span>
 									<span className={compStyles.label}>Labs</span>
@@ -224,11 +221,11 @@ class IndexPage extends React.Component {
 							</div>
 						</div>
 					</section>
-					<section className={compStyles.lifecycle}>
-						<div className={classNames(compStyles.sectionInner, compStyles.s, compStyles.intro)}>
-							<p>Aliquam eros ante, ornare in hendrerit at, faucibus at eros. Morbi gravida augue in nunc pulvinar hendrerit. Cras et lobortis leo, a placerat risus <Link to="/guides/data-lifecycle">learn about Data Lifecycle.</Link></p>
-						</div>
-					</section>
+					{/*<section className={compStyles.lifecycle}>*/}
+						{/*<div className={classNames(compStyles.sectionInner, compStyles.s, compStyles.intro)}>*/}
+							{/*<p>Aliquam eros ante, ornare in hendrerit at, faucibus at eros. Morbi gravida augue in nunc pulvinar hendrerit. Cras et lobortis leo, a placerat risus <Link to="/guides/data-lifecycle">learn about Data Lifecycle.</Link></p>*/}
+						{/*</div>*/}
+					{/*</section>*/}
 					<section className={compStyles.contact}>
 						<div className={classNames(compStyles.sectionInner, compStyles.s)}>
 								<h4 className={classNames(fontStyles.introTitle, globalStyles.bgDark, compStyles.intro)}>Stay up-to-date
