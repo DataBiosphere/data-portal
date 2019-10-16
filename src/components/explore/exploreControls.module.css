@@ -4,6 +4,7 @@
  *
  * Style definitions specific to the HCA explore controls component.
  */
+@import '../../../src/styles/vars.module.css';
 
 /* Controls container */
 .controls {
@@ -50,6 +51,7 @@
 .controls .count, .controls .label,
 .controls a {
 	display: block;
+	text-align: center;
 }
 
 /* Flex */
@@ -123,7 +125,7 @@
  * Small +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 667px) {
+@media screen and (min-width: 600px) {
 
 	/* Organ control */
 	.controls .organ {
@@ -139,19 +141,6 @@
 	/* Organ control - evens */
 	.controls .organ:nth-of-type(2n) {
 		margin: 4px 0 4px 4px;
-	}
-}
-
-/**
- * HCA specific breakpoint
- */
-@media screen and (min-width: 768px) {
-
-	/* Metric text */
-	/* View more text */
-	.controls .count, .controls .label,
-	.controls a {
-		text-align: center;
 	}
 }
 
