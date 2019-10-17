@@ -64,7 +64,7 @@ class IndexPage extends React.Component {
 
 	/**
 	 * Fetch the file summary and term facet data to be displayed in the counts bar and organs diagram, and check
-	 * system-wide status. If any system is down or health check API call fails, or if data requests reuturn an error
+	 * system-wide status. If any system is down or health check API call fails, or if data requests return an error
 	 * status, display warning banner.
 	 */
 	initComponent = () => {
@@ -89,18 +89,6 @@ class IndexPage extends React.Component {
 			});
 	};
 
-	/**
-	 * Format data counts to sized value (eg k, M, G etc).
-	 * Returns "00" if count is 0.
-	 *
-	 * @param {number} count
-	 * @returns {*}
-	 */
-	formatCount(count) {
-
-		return count ? numberFormatter.format(count, 1) : "00";
-	}
-
 	render() {
 		return (
 			<Layout healthy={this.state.healthy} homePage={true}>
@@ -120,35 +108,35 @@ class IndexPage extends React.Component {
 							<div className={compStyles.metric}>
 								<span><img src={cells} alt='cells'/></span>
 								<div>
-									<span className={compStyles.count}>{this.formatCount(this.state.cellCount)}</span>
+									<span className={compStyles.count}>{numberFormatter.formatCount(this.state.cellCount)}</span>
 									<span className={compStyles.label}>Cells</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
 								<span><img src={organs} alt='Organs'/></span>
 								<div>
-									<span className={compStyles.count}>{this.formatCount(this.state.organCount)}</span>
+									<span className={compStyles.count}>{numberFormatter.formatCount(this.state.organCount)}</span>
 									<span className={compStyles.label}>Organs</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
 								<span><img src={donors} alt='Donors'/></span>
 								<div>
-									<span className={compStyles.count}>{this.formatCount(this.state.donorCount)}</span>
+									<span className={compStyles.count}>{numberFormatter.formatCount(this.state.donorCount)}</span>
 									<span className={compStyles.label}>Donors</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
 								<span><img src={projects} alt='Projects'/></span>
 								<div>
-									<span className={compStyles.count}>{this.formatCount(this.state.donorCount)}</span>
+									<span className={compStyles.count}>{numberFormatter.formatCount(this.state.donorCount)}</span>
 									<span className={compStyles.label}>Projects</span>
 								</div>
 							</div>
 							<div className={compStyles.metric}>
 								<span><img src={labs} alt='Labs'/></span>
 								<div>
-									<span className={compStyles.count}>{this.formatCount(this.state.labCount)}</span>
+									<span className={compStyles.count}>{numberFormatter.formatCount(this.state.labCount)}</span>
 									<span className={compStyles.label}>Labs</span>
 								</div>
 							</div>
@@ -158,9 +146,12 @@ class IndexPage extends React.Component {
 						<div className={classNames(compStyles.sectionInner, compStyles.m)}>
 							<div className={compStyles.intro}>
 								<h4 className={fontStyles.introTitle}>Start Exploring Data</h4>
-								<p className={fontStyles.introText}><span>Millions of Cells, Hundreds of Contributors, </span><span> One Browser</span></p>
+								<p className={fontStyles.introText}>
+									<span>Millions of Cells, Hundreds of Contributors, </span>
+									<span>One Browser</span>
+								</p>
 							</div>
-							<ExploreData cellCountSummaries={this.state.cellCountSummaries} totalCellCount={this.formatCount(this.state.totalCellCount)}/>
+							<ExploreData cellCountSummaries={this.state.cellCountSummaries} totalCellCount={numberFormatter.formatCount(this.state.totalCellCount)}/>
 						</div>
 					</section>
 					<SearchBrowser termFacets={this.state.searchTerms}/>

@@ -10,6 +10,7 @@ import React from 'react';
 
 // App dependencies
 import * as stringFormatter from '../../../src/utils/string-format.service';
+import * as numberFormatter from '../../../src/utils/number-format.service';
 
 // Images
 import arrow from '../../../images/icon/explore/arrow.png';
@@ -19,6 +20,8 @@ import compStyles from './exploreControls.module.css';
 
 let classNames = require('classnames');
 
+/* List of organ term names for display */
+/* Excludes "development samples", "gut", "female reproductive", "male reproductive" */
 let organTermList = [
 	"blood",
 	"kidney",
@@ -26,12 +29,8 @@ let organTermList = [
 	"liver",
 	"brain",
 	"lung",
-	"development samples",
 	"pancreas",
-	"gut",
-	"female reproductive",
 	"heart",
-	"male reproductive",
 	"immune system",
 	"skin of body"
 ];
@@ -40,6 +39,8 @@ class ExploreControls extends React.Component {
 
 	constructor(props) {
 		super(props);
+
+		this.state = {activeOrgan: ""};
 		this.setOrganActive = this.setOrganActive.bind(this);
 	}
 
@@ -55,13 +56,48 @@ class ExploreControls extends React.Component {
 
 		return () => {
 
+			this.setState({activeOrgan: ""});
 			this.props.onActiveOrgan("");
+		}
+	};
+
+	getCellCount = () => {
+
+		const {totalCellCount} = this.props;
+		const activeOrgan = this.state.activeOrgan;
+
+		if ( activeOrgan === "" ) {
+
+			return totalCellCount; // No organ is active, show total cell count
+		}
+		else if ( !this.isOrganSummarized(activeOrgan) ) {
+
+			return "00"; // For any organ not summarized by browser
+		}
+		else {
+
+			// Organ is summarized and will return a cell count value
+			return numberFormatter.formatCount(this.getOrganFilter(activeOrgan)[0].cellCount);
+		}
+	};
+
+	getCellCountLabel = () => {
+
+		const activeOrgan = this.state.activeOrgan;
+
+		if ( activeOrgan === "" ) {
+
+			return "All"; // No organ is active
+		}
+		else {
+
+			return this.getOrganDisplayLabel(activeOrgan); // Show display label for active organ
 		}
 	};
 
 	getOrganDisplayLabel = (organ) => {
 
-		const displayLabel = this.translateOrganNameToDisplayLabel(organ);
+		const displayLabel = this.translateOrganNameToDisplayLabel(organ); // Converts any organ to corresponding display label (if specified)
 
 		return stringFormatter.convertSentenceCaseToTitleCase(displayLabel);
 	};
@@ -75,12 +111,12 @@ class ExploreControls extends React.Component {
 
 		const {cellCountSummaries} = this.props;
 
-		if ( !cellCountSummaries ) {
+		if ( !cellCountSummaries || cellCountSummaries.length === 0 ) {
 
-			return [];
+			return []; // For when cell count summary is being fetched, or empty
 		}
 
-		return cellCountSummaries.filter(cellCountSummary => cellCountSummary.label === organ)[0];
+		return cellCountSummaries.filter(cellCountSummary => cellCountSummary.label === organ);
 	};
 
 	getOrganId = (organ) => {
@@ -92,14 +128,12 @@ class ExploreControls extends React.Component {
 
 	getOrganIdStem = (organId) => {
 
-		return organId.split("organ")[1];
+		return organId.split("organ")[1]; // Reverts organ id to organ id stem
 	};
 
 	isOrganSummarized = (organ) => {
 
-		const {cellCountSummaries} = this.props;
-
-		return cellCountSummaries && this.getOrganFilter(organ) ? true : false;
+		return this.getOrganFilter(organ).length > 0; // Returns true when the specified organ is listed in the summary
 	};
 
 	removeOrganInteractions = () => {
@@ -119,6 +153,9 @@ class ExploreControls extends React.Component {
 		return () => {
 
 			const organId = this.getOrganIdStem(organEl.getAttribute("id"));
+			const organLabel = stringFormatter.convertCamelCasetoTitleCase(organId).toLowerCase().trim();
+
+			this.setState({activeOrgan: organLabel});
 			this.props.onActiveOrgan(organId);
 		}
 	};
@@ -157,22 +194,22 @@ class ExploreControls extends React.Component {
 	visitExploreLink = (organ) => {
 
 		if ( !this.isOrganSummarized(organ) ) {
-			return;
+
+			return; // Corresponding organ is not summarised by cell count summary
 		}
 
-		const organFilter = this.getOrganFilter(organ);
+		const organFilter = this.getOrganFilter(organ)[0];
 		const stringifyOrganFilter = this.stringifyOrganFilter(organFilter.label);
 
 		window.location.href = `${process.env.GATSBY_EXPLORE_URL}projects?filter=${stringifyOrganFilter}`;
 	};
 
 	render() {
-		const {totalCellCount} = this.props;
 		return (
 			<div className={compStyles.controls}>
 				<div>
-					<span className={compStyles.count}>{totalCellCount} Cells</span>
-					<span className={compStyles.label}>All Cells</span>
+					<span className={compStyles.count}>{this.getCellCount()} Cells</span>
+					<span className={compStyles.label}>{this.getCellCountLabel()} Cells</span>
 				</div>
 				<div className={compStyles.organs}>
 					{organTermList ? organTermList.map((organ, i) =>

@@ -27,35 +27,38 @@ class ExploreDiagram extends React.Component {
 
 	getOrganEl = (organ) => {
 
-		return document.querySelector(`[id^=path${organ}]`);
+		// Note, svg organ element id stem should correspond with browser cell count summary label
+		return organ ? document.querySelector(`[id^=path${organ}]`) : null // Returns corresponding organ element when organ is specified
 	};
 
 	setOrganAttributes = () => {
 
-		// Get active organ
-		const {activeOrgan} = this.props;
+		// Get (current) active organ and its corresponding element
+		const prevOrgan = this.state.organ;
+		const prevOrganEl = this.getOrganEl(prevOrgan);
 
-		if (activeOrgan === this.state.organ) {
-			return // Do nothing;
+		// Get (new) active organ and its corresponding element
+		const nextOrgan = this.props.activeOrgan;
+		const nextOrganEl = this.getOrganEl(nextOrgan);
+
+		// Update state when active organ does not equal current organ
+		if ( nextOrgan !== prevOrgan ) {
+
+			// Update state with (new) active organ
+			this.setState({organ: nextOrgan});
 		}
-		else {
 
-			if (this.state.organ === "") {
+		// Remove class when current organ is valid with a corresponding element
+		if ( prevOrganEl ) {
 
-				// No need to remove any existing class
-				// Get corresponding organ element and set class
-				const organEl = this.getOrganEl(activeOrgan);
-				organEl.setAttribute('class', compStyles.active);
-			}
-			else {
+			prevOrganEl.removeAttribute('class');
+		}
 
-				// Get organ with active class, and remove class
-				const organEl = this.getOrganEl(this.state.organ);
-				organEl.removeAttribute('class');
-			}
+		// Add class when new organ is valid with a corresponding element
+		if ( nextOrganEl ) {
 
-			// Update state with active organ
-			this.setState({organ: activeOrgan});
+			// Set class to corresponding next organ element - if exists
+			nextOrganEl.setAttribute('class', compStyles.active);
 		}
 	};
 
