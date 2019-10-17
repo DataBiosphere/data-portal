@@ -28,3 +28,15 @@ export function format(num, digits) {
 	}
 	return (num / si[i].value).toFixed(digits).replace(rx, '$1') + si[i].symbol;
 }
+
+/**
+ * Format data counts to sized value (eg k, M, G etc).
+ * Returns "00" if count is 0.
+ *
+ * @param {number} count
+ * @returns {*}
+ */
+export function formatCount(count) {
+
+	return count ? format(count, 1) : "00";
+}

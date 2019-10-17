@@ -8,7 +8,7 @@
 
 /* Controls container */
 .controls {
-	align-self: center;
+	align-self: flex-start;
 	width: 100%;
 }
 
