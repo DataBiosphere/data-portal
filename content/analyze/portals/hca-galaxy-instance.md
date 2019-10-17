@@ -17,7 +17,8 @@ The portal runs as part of the larger usegalaxy.eu infrastructure and has access
 [![Human Cell Atlas Galaxy Instance](../_images/portals/hca-galaxy-instance.png)](https://humancellatlas.usegalaxy.eu)
 
 ## Contact
-Pablo Moreno ([pmoreno@ebi.ac.uk](mailto:pmoreno@ebi.ac.uk))
+Website: [https://www.ebi.ac.uk/support/gxasc](https://www.ebi.ac.uk/support/gxasc)\
+Twitter: [@ExpressionAtlas](https://twitter.com/ExpressionAtlas)
 
 ## Source code
 <https://github.com/ebi-gene-expression-group/container-galaxy-sc-tertiary>
