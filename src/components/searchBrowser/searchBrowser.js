@@ -199,7 +199,7 @@ class SearchBrowser extends React.Component {
 		return (
 			<section className={compStyles.searchBrowser}>
 				<div
-					className={classNames(globalStyles.flex, mainStyles.sectionInner, mainStyles.s, compStyles.sectionInner)}>
+					className={classNames(globalStyles.flex, mainStyles.sectionInner, mainStyles.m, compStyles.sectionInner)}>
 					<h4 className={classNames(globalStyles.bgDark, fontStyles.introTitle)}>Search Browser</h4>
 					<HCAAutosuggest autosuggestData={this.getExploreData()}
 									disabled={!this.isDataInitialized()}

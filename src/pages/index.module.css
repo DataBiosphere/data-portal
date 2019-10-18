@@ -195,13 +195,13 @@
 
 /* Metrics bar container - loading */
 .main .loading .metrics {
-	opacity: 0.6;
+	opacity: 0;
 }
 
 /* Metrics bar - loaded */
 .main .metrics {
 	opacity: 1;
-	transition: opacity 2s ease;
+	transition: opacity .5s ease 0s;
 }
 
 /* Metric container */
@@ -251,15 +251,9 @@
 	text-transform: uppercase;
 }
 
-/* Metric text - loading */
-.main .loading .metric .count, .main .loading .metric .label {
-	color: var(--gray-search);
-}
-
-/* Metric text - loaded */
+/* Metric text */
 .main .metric .count, .main .metric .label {
 	display: block;
-	transition: color 2s ease; /* Loaded */
 }
 
 /**
@@ -322,7 +316,7 @@
 
 /**
  * HCA specific breakpoint
- * For hero headline only
+ * For hero headline and explore intro text only
  */
 @media screen and (min-width: 600px) {
 
@@ -331,26 +325,8 @@
 	 */
 
 	/* Hero headline - wraps text at specified <span> break */
-	.main .hero h1 span {
-		display: block;
-	}
-}
-
-/**
- * Mobile landscape
- */
-@media screen and (min-width: 667px) {
-
-	/*
-	 * Section Specific Styles
-	 */
-
-	/**
-	 * Explore
-	 */
-
-	/* Intro text - wraps text at specified <span> break */
-	.main .explore .intro p span {
+	/* Explore intro text - wraps text at specified <span> break */
+	.main .hero h1 span, .main .explore p span {
 		display: block;
 	}
 }
@@ -413,6 +389,12 @@
 	/* Tile description */
 	.main .process .text p {
 		flex: 1;
+	}
+
+	/* Flex - none */
+	/* Metric image container */
+	.main .metric > span {
+		flex: none;
 	}
 
 	/**
