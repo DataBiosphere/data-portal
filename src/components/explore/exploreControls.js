@@ -205,9 +205,10 @@ class ExploreControls extends React.Component {
 	};
 
 	render() {
+		const {cellCountSummaries} = this.props;
 		return (
 			<div className={compStyles.controls}>
-				<div>
+				<div className={classNames({[compStyles.loading]: !cellCountSummaries})}>
 					<span className={compStyles.count}>{this.getCellCount()} Cells</span>
 					<span className={compStyles.label}>{this.getCellCountLabel()} Cells</span>
 				</div>

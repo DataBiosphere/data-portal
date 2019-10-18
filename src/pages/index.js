@@ -100,7 +100,7 @@ class IndexPage extends React.Component {
 								<span>Mapping the human body </span>
 								<span>at the cellular level</span>
 							</h1>
-							<p className={fontStyles.subhead}>Community generated, multi-omic, open data processed by standardized pipelines</p>
+							{/*<p className={fontStyles.subhead}>[insert]</p>*/}
 						</div>
 					</section>
 					<section className={classNames({[compStyles.metricsBar]: true, [compStyles.loading]: !this.state.loaded})}>
@@ -147,8 +147,8 @@ class IndexPage extends React.Component {
 							<div className={compStyles.intro}>
 								<h4 className={fontStyles.introTitle}>Start Exploring Data</h4>
 								<p className={fontStyles.introText}>
-									<span>Millions of Cells, Hundreds of Contributors, </span>
-									<span>One Browser</span>
+									<span>Community generated, multi-omic, </span>
+									<span>open data processed by standardized pipelines</span>
 								</p>
 							</div>
 							<ExploreData cellCountSummaries={this.state.cellCountSummaries} totalCellCount={numberFormatter.formatCount(this.state.totalCellCount)}/>

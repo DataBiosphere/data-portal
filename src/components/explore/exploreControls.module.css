@@ -46,6 +46,18 @@
 	text-transform: uppercase;
 }
 
+/* Metric label, count - loaded */
+.controls .label, .controls .count {
+	opacity: 1;
+	transition: opacity .5s ease 0s;
+}
+
+/* Metric label, count - loading */
+.controls .loading .label, .controls .loading .count {
+	opacity: 0;
+	transition: opacity .5s ease 0s;
+}
+
 /* Metric text */
 /* View more text */
 .controls .count, .controls .label,
@@ -118,7 +130,7 @@
 
 /* Organ control - transition */
 .controls .organ, .controls .organ:hover {
-	transition: all 0.25s ease;
+	transition: background-color .5s ease 0s, border .5s ease 0s, color .5s ease 0s;
 }
 
 /**

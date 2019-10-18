@@ -25,7 +25,7 @@ svg.humanBody [id^="path"].active {
 
 /* Transition */
 svg.humanBody [id^="path"], svg.humanBody [id^="path"].active {
-	transition: opacity 0.25s ease;
+	transition: opacity .5s ease 0s;
 }
 
 /**
