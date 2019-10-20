@@ -18,7 +18,7 @@ cache:
     - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
     - npm install npm@6.9.0 -g
     - npm -v
-    - npm install gatsby-cli@2.7.58 --global
+    - npm install gatsby-cli@2.8.3 --global
     - npm install
   artifacts:
       paths:
