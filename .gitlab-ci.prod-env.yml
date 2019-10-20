@@ -11,15 +11,14 @@ cache:
 # Build Jobs
 # Build Job Template
 .build_template: &build_template
-  image: node:10.0.0
+  image: node:10.16.0
   stage: build
   before_script:
-    - git clone https://github.com/HumanCellAtlas/data-portal-content.git data-portal-content
     - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
     - git clone https://github.com/HumanCellAtlas/humancellatlas.github.io
     - npm install npm@6.9.0 -g
     - npm -v
-    - npm install gatsby-cli@2.5.4 --global
+    - npm install gatsby-cli@2.8.3 --global
     - npm install
   artifacts:
       paths:
