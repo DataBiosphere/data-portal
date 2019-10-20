@@ -21,7 +21,6 @@ import globalStyles from '../styles/global.module.css';
 
 let classNames = require('classnames');
 
-require(`prismjs/themes/prism-solarizedlight.css`);
 require(`katex/dist/katex.min.css`);
 
 class Layout extends React.Component {

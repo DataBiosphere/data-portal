@@ -6,3 +6,6 @@
 
 // Required for Edge, otherwise we get a "PerformanceObserver not defined" error 
 import '@fastly/performance-observer-polyfill/polyfill'
+
+// Add styles for inline and block code - https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/
+require(`prismjs/themes/prism-solarizedlight.css`);
