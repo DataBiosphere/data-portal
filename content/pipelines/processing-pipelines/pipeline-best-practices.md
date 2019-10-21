@@ -71,7 +71,7 @@ Code should not change to enable a pipeline to run on a different technical arch
 
 ### Separation between the environment, the execution of the pipeline, and the pipeline itself.
 - *Do*: Use a containerization technology, such as [Docker](https://www.docker.com/), to execute software.
-- *Do*: Incorporate into your testing the execution of the pipeline in multiple execution environments; see, for example: [HCA DCP portability service](/pipelines/hca-pipelines/data-processing-pipelines/pipeline-portability).
+- *Do*: Incorporate into your testing the execution of the pipeline in multiple execution environments; see, for example: [HCA DCP portability service](/pipelines/pipeline-portability).
 - *Don’t*: Put environmental paths in software tools or the workflow language. When they must exist they belong in the configuration or (if they refer to the execution environment) in the container’s build instructions (Eg. Dockerfile).
 
 ## Scaling Characteristics
