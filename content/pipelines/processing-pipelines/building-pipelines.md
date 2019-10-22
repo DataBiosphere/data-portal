@@ -40,7 +40,7 @@ One can also use Common Workflow Language, or [CWL](https://www.commonwl.org/), 
 
 [Unity Benchmarking Service](https://unity.broadinstitute.org/), currently under construction and described [here](https://docs.google.com/document/d/1_gxct8eVb2dXjQe3YXAFh_0R5dtYMvpc9lfhRh0JgU4/edit), is designed to facilitate community development and contribution of pipelines and pipeline improvements.
 
-[Portability Service](/pipelines/hca-pipelines/data-processing-pipelines/pipeline-portability) allows you to determine whether your pipeline works in the HCA, or in select non-HCA environments. Conversely, it also enables you to attach your execution environment to the portability system to check whether HCA pipelines work in that environment as part of our pipeline testing process.
+[Portability Service](/pipelines/pipeline-portability) allows you to determine whether your pipeline works in the HCA, or in select non-HCA environments. Conversely, it also enables you to attach your execution environment to the portability system to check whether HCA pipelines work in that environment as part of our pipeline testing process.
 
 ## Containerization Resources
 

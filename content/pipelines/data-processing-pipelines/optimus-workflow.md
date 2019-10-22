@@ -82,7 +82,7 @@ UMIs are designed to distinguish unique transcripts present in the cell at lysis
 
 ## Metrics
 
-A number of [quality control tools](https://github.com/HumanCellAtlas/sctools) are used to assess the quality of the data output each time this pipeline is run. For a list of the tools and information about each one please see our [QC Metrics](/pipelines/hca-pipelines/data-processing-pipelines/qc-metrics) page.
+A number of [quality control tools](https://github.com/HumanCellAtlas/sctools) are used to assess the quality of the data output each time this pipeline is run. For a list of the tools and information about each one please see our [QC Metrics](/pipelines/qc-metrics) page.
 
 ## Identification of Empty Droplets
 

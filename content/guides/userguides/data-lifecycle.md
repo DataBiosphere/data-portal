@@ -46,7 +46,7 @@ In the HCA DCP, data processing refers to the use of a computational pipeline to
 
 When raw data moves into the Data Store a notification is triggered and sent to the Data Processing Pipeline Service, indicating data is available for processing. If a processing pipeline specific for that data type exists, the service activates a series of three sub workflows to 1) obtain the data file(s) from the Data Store, 2) run the data through the appropriate pipeline, producing new files of analysis results, and 3) submit the new results back to the Ingest Service to be stored in the Data Store.
 
-See the *Pipelines* Section for [detailed information](/pipelines) about the DCP Data Processing Pipelines; [guides for developing pipelines](/pipelines/pipeline-development/processing-pipelines/pipeline-processing-development-guides) are also in *Pipelines*.
+See the *Pipelines* Section for [detailed information](/pipelines) about the DCP Data Processing Pipelines; [guides for developing pipelines](/pipelines/pipeline-processing-development-guides) are also in *Pipelines*.
 
 ## Data Access by End Users
 Access to the Data Store is supported with REST API (and associated CLI) using the Data Store's Consumer API. In addition, we have developed a Data Browser, accessible from the *Explore* section, that enables extensive browsing of the data through this Data Portal. Data will also be accessible through tools and portals developed by the community.
