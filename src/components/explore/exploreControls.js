@@ -25,7 +25,7 @@ let classNames = require('classnames');
 let organTermList = [
 	"blood",
 	"kidney",
-	"bone",
+	"bone tissue",
 	"liver",
 	"brain",
 	"lung",
@@ -180,6 +180,8 @@ class ExploreControls extends React.Component {
 	translateOrganNameToDisplayLabel = (organName) => {
 
 		switch (organName) {
+			case "bone tissue":
+				return "bone";
 			case "female reproductive":
 				return "Reproductive (Female)";
 			case "male reproductive":
