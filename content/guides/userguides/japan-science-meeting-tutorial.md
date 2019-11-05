@@ -52,7 +52,7 @@ facets you can search on in the Data Explorer.  Another important feature in thi
 link in the table.  This allows you to download an easy-to-parse TSV file that contains all of
 the metadata available for each project.
 
-![Performing a Search in the Data Explorer](./_images/screen1.png "Search")
+![Performing a Search in the Data Explorer](./_images/browser_searching.png "Search")
 **Figure 1**: The Data Explorer offers a faceted-browser that allows you to quickly search for projects,
 samples, and files. Here we are searching for all projects that have data from pancreas cells and
 further refining our search to focus on the Enge et al. study.
@@ -65,8 +65,11 @@ available for this project.  With your search entered, all you now have to do is
 "Request Expression Matrix" button, you should see a dialog asking what format you'd like.  We'll
 use "loom" format for this tutorial.
 
-![Requesting a matrix](./_images/screen2.png "Matrix")
-**Figure 2**: The request matrix option gives a summary of the number of files processed to return the
+![Requesting a matrix](./_images/browser-request-matrix.png "Matrix")
+**Figure 2**: Insert caption
+
+![Request loom format](./_images/browser-request-loom.png "Loom format")
+**Figure 3**: The request matrix option gives a summary of the number of files processed to return the
 gene by cell matrix you requested along with other statistics.  You have the option of 3 different formats,
 we'll use the loom format for this tutorial.
 
@@ -75,11 +78,14 @@ The matrix generation can take some time to complete, recent tests show this pro
 prevent you from getting your matrix URL that we need for the next step.  You can, of course, continue
 to explore the portal in another tab while waiting for your matrix.
 
+![Matrix generation](./_images/browser-request-being-prepared.png "Matrix generation")
+**Figure 4**: Insert caption
+
 Eventually, you will be presented with a result dialog that allows you to download or copy the URL
 for your matrix result.
 
-![Getting a matrix](./_images/screen5.png "Matrix")
-**Figure 3**: The download options for the resulting matrix.
+![Getting a matrix](./_images/browser-download-matrix.png "Matrix")
+**Figure 5**: The download options for the resulting matrix.
 
 Make sure you copy the URL starting with https://s3... for the next step.
 
@@ -114,11 +120,11 @@ http://localhost:8888
 
 To interact with the Jupter Notebook environment.  You can then
 select the `notebooks_hca_demo_scanpy.ipynb` notebook from the `Files` section.
-Go ahead and open it up, you should something like Figure 4, which includes results
+Go ahead and open it up, you should something like Figure 6, which includes results
 from a previous run of the notebook.
 
 ![Opening the Notebook in Terra](./_images/screen6.png "Notebook")
-**Figure 4**: The Jupyter notebook opened and running in Terra.  Running a Jupyter Notebook locally will look almost identical to the Terra interface presented here.
+**Figure 6**: The Jupyter notebook opened and running in Terra.  Running a Jupyter Notebook locally will look almost identical to the Terra interface presented here.
 
 ## Step 4 - Examining the Result
 
@@ -136,16 +142,16 @@ Your address will be different of course.  You don't need (or want) to rerun thi
 you paste in your URL to the text field, the variable will be updated for other cells as soon as you paste your URL in the field.
 
 ![URL for matrix service](./_images/screen7.png "URL")
-**Figure 5**: Fill in the URL you got from the data explorer.
+**Figure 7**: Fill in the URL you got from the data explorer.
 
 Now that you have your matrix URL pasted into the field run the 3rd, 4th, etc code blocks one by one
 until you reach the end.  Notice, a running code cell will show as `In [*]` as it's running.
 **Make sure you let each code cell finish running before you move onto the next cell**.
 
-In the end, you should get a figure in the final code cell that looks almost identical to Figure 6.
+In the end, you should get a figure in the final code cell that looks almost identical to Figure 8.
 
 ![final result](./_images/screen8.png "result")
-**Figure 6**: The final cell clusters.
+**Figure 8**: The final cell clusters.
 
 ## Next Steps
 

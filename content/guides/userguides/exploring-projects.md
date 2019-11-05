@@ -83,6 +83,6 @@ For projects with supported library construction approaches, the project detail 
  The rows in the expression matrix represent cells, columns give the expression value for the column's gene.
 
 
-![Partial Expression Matrox](./_images/exploring-projects-expression-matrix.png "Expression Matrix")
+![Partial Expression Matrix](./_images/exploring-projects-expression-matrix.png "Expression Matrix")
 **Figure 5**: A partial view of a project's expression matrix in csv format. 
 
