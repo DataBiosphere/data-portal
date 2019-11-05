@@ -105,16 +105,18 @@ Step three: running the workflow in Terra
 -----------------------------------------
 
 On this screen, we want to select a single file from the data that we exported
-and find the MD5 checksum of that file. Make sure that the *Process single workflow
-from files* radio button is selected (so that we only calculate the checksum of a 
-single file) and then select the file you want to checksum by clicking on the 
-*Attribute* text field in the row with the *inputFile* variable. (It is highlighted
-with a red box in the screenshot above.)
+and find the MD5 checksum of that file. Make sure that the *Process multiple
+workflows* radio button is selected, then choose a single file to process by
+navigating to *Select Date* > *Choose specific rows to process*.
 
-Select any attribute pointing to a file. Once you are done, click *Save*. You will
-see a blue *Run Analysis* button pop up. Click that one, and confirm your input
-when prompted. Terra is now running the workflow - take a break for a few minutes,
-grab a coffee, stretch. You deserve it.
+Next, tell the workflow how to find the file you selected by setting the
+*inputFile* variable. Click on the *Attribute* field (red box in the
+screenshot above).
+Select the DRS URL attribute (something like `this.__bam__.drs_url`). Once
+you're done, click *Save*. You will see a blue *Run Analysis* button pop up.
+Click that one, and confirm your input when prompted. Terra's running the
+workflow now - walk away for a few minutes, grab a coffee, stretch. You
+deserve it.
 
 When you come back, refresh the page. Hopefully, your workflow will be done
 running. If it is, you will seem something like this:
