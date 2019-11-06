@@ -53,7 +53,7 @@ The project detail page contains:
 
 For each project, the HCA DCP maintains a project specific tsv file containing the full project metadata. The tsv contains a row for each file in the project and columns for each metadata property. Meanings of the metadata properties are listed in the [HCA Metadata Dictionary](/metadata).
 
-The metadata tsv file gives a flattened representation of the projects metadata graph that can be sorted and filtered using standard spreadsheet or data manipulation tools.
+The metadata tsv file gives a flattenedjapan-science-meeting-tutorial.md representation of the projects metadata graph that can be sorted and filtered using standard spreadsheet or data manipulation tools.
 
 The "Project Downloads" section of the project details page contains a link to download the project metadata file.
 
@@ -80,7 +80,6 @@ For projects with supported library construction approaches, the project detail 
  Expression matrices are available in [.loom](http://loompy.org/), [.csv](https://en.wikipedia.org/wiki/Comma-separated_values) and [.mtx](https://math.nist.gov/MatrixMarket/formats.html) formats and also contain a subset of the available ingest metadata for the project. 
  
  The rows in the expression matrix represent cells, columns give the expression value for the column's gene.
-
 
 ![Partial Expression Matrix](./_images/exploring-projects-expression-matrix.png "Expression Matrix")
 **Figure 5**: A partial view of a project's expression matrix in csv format. 

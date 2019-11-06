@@ -8,9 +8,8 @@ subTitle: ""
 # Accessing HCA Data in a Jupyter Notebook
 
 This tutorial will walk you through the process of:
- 
-1. Finding data in the HCA Data
-Explorer.
+
+1. Finding data in the HCA Data Explorer.
 1. Generating an expression matrix in loom format.
 1. Loading these data into Scanpy via a Jupyter notebook for exploration.
 
