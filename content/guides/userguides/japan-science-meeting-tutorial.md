@@ -77,10 +77,10 @@ With your search entered, click the
 "Export Selected Data" button and then "Start" under "Create Concatenated Expression Matrix". You should see a dialog asking what format you'd like.  We'll
 use "loom" format for this tutorial.
 
-![Requesting a matrix](./_images/browser-request-matrix.png "Matrix")
+![Requesting a matrix](./_images/browser-matrix-request.png "Matrix")
 **Figure 2**: Export Data page with the "Request Concatenated Expression Matrix" option at the top.
 
-![Request loom format](./_images/browser-request-loom.png "Loom format")
+![Request loom format](./_images/browser-matrix-request-loom.png "Loom format")
 **Figure 3**: The request matrix option gives a summary of the number of files processed to return the
 gene by cell matrix you requested along with other statistics.  You have the option of 3 different formats,
 we'll use the loom format for this tutorial.
@@ -90,13 +90,13 @@ The matrix generation can take some time to complete, recent tests show this pro
 prevent you from getting your matrix URL that we need for the next step.  You can, of course, continue
 to explore the portal in another tab while waiting for your matrix.
 
-![Matrix generation](./_images/browser-request-being-prepared.png "Matrix generation")
+![Matrix generation](./_images/browser-matrix-request-being-prepared.png "Matrix generation")
 **Figure 4**: Matrix generaton in progress.
 
 Eventually, you will be presented with a result dialog that allows you to download or copy the URL
 for your matrix result.
 
-![Getting a matrix](./_images/browser-download-matrix.png "Matrix")
+![Getting a matrix](./_images/browser-matrix-ready.png "Matrix")
 **Figure 5**: The download options for the resulting matrix.
 
 Make sure you copy the URL starting with https://s3... for the next step.

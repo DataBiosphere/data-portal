@@ -53,10 +53,9 @@ The project detail page contains:
 
 For each project, the HCA DCP maintains a project specific tsv file containing the full project metadata. The tsv contains a row for each file in the project and columns for each metadata property. Meanings of the metadata properties are listed in the [HCA Metadata Dictionary](/metadata).
 
- The metadata tsv file gives a flattened representation of the projects metadata graph that can be sorted and filtered using standard spreadsheet or data manipulation tools.
- 
- The "Project Downloads" section of the project details page contains a link to download the project metadata file. 
-  
+The metadata tsv file gives a flattened representation of the projects metadata graph that can be sorted and filtered using standard spreadsheet or data manipulation tools.
+
+The "Project Downloads" section of the project details page contains a link to download the project metadata file.
 
 ![Project Downloads](./_images/exploring-projects-project-downloads.png "Project Downloads")
 **Figure 3**: The "Project Downloads" section of the project details page.
@@ -70,9 +69,9 @@ CD4+ cytotoxic T lymphocytes 2019-07-19 19.09.tsv
 ```
 
 A partial example of a tsv file is listed below:
- 
-  ![Partial Metadata tsv](./_images/exploring-projects-tsv.png "TSV File")
-  **Figure 4**: A partial view of a project's metadata tsv file. 
+
+![Partial Metadata tsv](./_images/exploring-projects-tsv.png "TSV File")
+**Figure 4**: A partial view of a project's metadata tsv file.
 
 ## Downloading Project Expression Matrices
 
