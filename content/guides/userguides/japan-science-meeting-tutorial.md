@@ -7,16 +7,21 @@ subTitle: ""
 
 # Accessing HCA Data in a Jupyter Notebook
 
-This tutorial will walk you through the process of finding data in the HCA Data
-Explorer, generating an expression matrix in loom format, and then loading these data
-into Scanpy via a Jupyter notebook for exploration.
+This tutorial will walk you through the process of:
+
+1. Finding data in the HCA Data Explorer.
+1. Generating an expression matrix in loom format.
+1. Loading these data into Scanpy via a Jupyter notebook for exploration.
 
 This work leverages data from the study [Single-Cell Analysis of Human Pancreas Reveals Transcriptional Signatures of Aging and Somatic Mutation Patterns by Enge, et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6047899/) and attempts to provide examples of the type of analysis found in this paper.  
+
 While the techniques shown in this Jupyter notebook can be used generally when analyzing single cell data
 there are a few caveats.  First, this notebook is not an attempt to perfectly recreate the results
 of this paper, there are additional analysis and filtering steps that are omitted here.  Second,
 this notebook leverages key gene lists for coloring clusters and these lists will change depending on a
-given study's experimental design.  To work with projects other than the Enge et al. study, you
+given study's experimental design. 
+ 
+ To work with projects other than the Enge et al. study, you
 will need to modify this notebook. This notebook it is designed to be a starting point for your own research not a general use tool.
 
 The notebook presented here is based on a [Data Consumer Vignette](https://github.com/HumanCellAtlas/data-consumer-vignettes)
@@ -42,17 +47,21 @@ criteria.
 
 Let's get started by searching for all the data from the Enge et al. study.  First choose the
 Tissue Type facet and then choose the Organ to be pancreas.  You'll see the project list
-automatically filter down to just the 3 projects that contain samples from pancreas.  Next, limit the results down to just the Enge et al. study, the easiest way to do this is
-to select the study with the checkbox to the left of the project name.  You can see a few things when
+automatically filter down to just the projects that contain samples from pancreas.  Next, limit the results down to just the Enge et al. study, the easiest way to do this is
+to select the study with the checkbox to the left of the project name.
+  
+You can see a few things when
 you do this.  First, the number of projects, donors, specimens, estimated cell count, files, and file
 size all automatically update.  Second, you see you can request either a File Manifest or an
 Expression Matrix.  We'll use the latter in the next step and you can use the former if you want to
 download files to your system and/or want to see metadata on these files that correspond to the
-facets you can search on in the Data Explorer.  Another important feature in this page is the Metadata
+facets you can search on in the Data Explorer.
+  
+Another important feature in this page is the Metadata
 link in the table.  This allows you to download an easy-to-parse TSV file that contains all of
 the metadata available for each project.
 
-![Performing a Search in the Data Explorer](./_images/screen1.png "Search")
+![Performing a Search in the Data Explorer](./_images/browser_searching.png "Search")
 **Figure 1**: The Data Explorer offers a faceted-browser that allows you to quickly search for projects,
 samples, and files. Here we are searching for all projects that have data from pancreas cells and
 further refining our search to focus on the Enge et al. study.
@@ -61,12 +70,17 @@ further refining our search to focus on the Enge et al. study.
 
 Now that you've done the very simple query in the previous step to find all data from the Enge et al.
 study let's go ahead and generate a cell by gene matrix of expression values for all ~2.5K cells
-available for this project.  With your search entered, all you now have to do is click the
-"Request Expression Matrix" button, you should see a dialog asking what format you'd like.  We'll
+available for this project. 
+ 
+With your search entered, click the
+"Export Selected Data" button and then "Start" under "Create Concatenated Expression Matrix". You should see a dialog asking what format you'd like.  We'll
 use "loom" format for this tutorial.
 
-![Requesting a matrix](./_images/screen2.png "Matrix")
-**Figure 2**: The request matrix option gives a summary of the number of files processed to return the
+![Requesting a matrix](./_images/browser-matrix-request.png "Matrix")
+**Figure 2**: Export Data page with the "Request Concatenated Expression Matrix" option at the top.
+
+![Request loom format](./_images/browser-matrix-request-loom.png "Loom format")
+**Figure 3**: The request matrix option gives a summary of the number of files processed to return the
 gene by cell matrix you requested along with other statistics.  You have the option of 3 different formats,
 we'll use the loom format for this tutorial.
 
@@ -75,11 +89,14 @@ The matrix generation can take some time to complete, recent tests show this pro
 prevent you from getting your matrix URL that we need for the next step.  You can, of course, continue
 to explore the portal in another tab while waiting for your matrix.
 
+![Matrix generation](./_images/browser-matrix-request-being-prepared.png "Matrix generation")
+**Figure 4**: Matrix generaton in progress.
+
 Eventually, you will be presented with a result dialog that allows you to download or copy the URL
 for your matrix result.
 
-![Getting a matrix](./_images/screen5.png "Matrix")
-**Figure 3**: The download options for the resulting matrix.
+![Getting a matrix](./_images/browser-matrix-ready.png "Matrix")
+**Figure 5**: The download options for the resulting matrix.
 
 Make sure you copy the URL starting with https://s3... for the next step.
 
@@ -114,11 +131,11 @@ http://localhost:8888
 
 To interact with the Jupter Notebook environment.  You can then
 select the `notebooks_hca_demo_scanpy.ipynb` notebook from the `Files` section.
-Go ahead and open it up, you should something like Figure 4, which includes results
+Go ahead and open it up, you should something like Figure 6, which includes results
 from a previous run of the notebook.
 
 ![Opening the Notebook in Terra](./_images/screen6.png "Notebook")
-**Figure 4**: The Jupyter notebook opened and running in Terra.  Running a Jupyter Notebook locally will look almost identical to the Terra interface presented here.
+**Figure 6**: The Jupyter notebook opened and running in Terra.  Running a Jupyter Notebook locally will look almost identical to the Terra interface presented here.
 
 ## Step 4 - Examining the Result
 
@@ -136,16 +153,16 @@ Your address will be different of course.  You don't need (or want) to rerun thi
 you paste in your URL to the text field, the variable will be updated for other cells as soon as you paste your URL in the field.
 
 ![URL for matrix service](./_images/screen7.png "URL")
-**Figure 5**: Fill in the URL you got from the data explorer.
+**Figure 7**: Fill in the URL you got from the data explorer.
 
 Now that you have your matrix URL pasted into the field run the 3rd, 4th, etc code blocks one by one
 until you reach the end.  Notice, a running code cell will show as `In [*]` as it's running.
 **Make sure you let each code cell finish running before you move onto the next cell**.
 
-In the end, you should get a figure in the final code cell that looks almost identical to Figure 6.
+In the end, you should get a figure in the final code cell that looks almost identical to Figure 8.
 
 ![final result](./_images/screen8.png "result")
-**Figure 6**: The final cell clusters.
+**Figure 8**: The final cell clusters.
 
 ## Next Steps
 
