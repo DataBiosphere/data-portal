@@ -116,9 +116,9 @@ class SearchBrowser extends React.Component {
 		if (this.isDataInitialized()) {
 
 			if (windowWidth < 1024) {
-				return 'Search for data by organs';
+				return 'Filter projects by attribute';
 			}
-			return 'Search data by organ, project, etc.';
+			return 'Filter projects by attribute e.g. organ, project title.';
 		}
 
 		return 'Loading data...'
@@ -200,7 +200,7 @@ class SearchBrowser extends React.Component {
 			<section className={compStyles.searchBrowser}>
 				<div
 					className={classNames(globalStyles.flex, mainStyles.sectionInner, mainStyles.m, compStyles.sectionInner)}>
-					<h4 className={classNames(globalStyles.bgDark, fontStyles.introTitle)}>Search Browser</h4>
+					<h4 className={classNames(globalStyles.bgDark, fontStyles.introTitle)}>Find Projects</h4>
 					<HCAAutosuggest autosuggestData={this.getExploreData()}
 									disabled={!this.isDataInitialized()}
 									placeholder={this.getPlaceholder()}
@@ -209,7 +209,7 @@ class SearchBrowser extends React.Component {
 									onEnter={this.onEnter.bind(this)}
 									onSelected={this.onSelected.bind(this)}
 									onSuggestionsFound={this.onSuggestionsFound.bind(this)}/>
-					<div onClick={this.visitExploreLink} className={this.getSearchButtonClass()}>Search</div>
+					<div onClick={this.visitExploreLink} className={this.getSearchButtonClass()}>Go</div>
 				</div>
 			</section>
 		);
