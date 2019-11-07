@@ -66,6 +66,20 @@
 	padding: 0 9px;
 }
 
+/* Button - register - mobile only */
+.button.blue.light.register {
+    flex-wrap: wrap;
+    height: unset;
+    line-height: 24px;
+    padding: 4px 12px;
+    width: 100%;
+}
+
+/* Button content - within <span> */
+.button.blue.light span {
+    white-space: pre; /* Forces spaces to render */
+}
+
 /* Button - class "button blue light" */
 .button.blue.light {
 	background-color: var(--blue-light);
@@ -171,6 +185,34 @@
 /* Flex */
 .flex {
 	display: flex;
+}
+
+/**
+ * Medium handset +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 360px) {
+
+    /* Button - register - mobile only */
+    .button.blue.light.register {
+        flex-wrap: unset;
+        height: 50px;
+        line-height: unset;
+        padding: 0;
+    }
+}
+
+/**
+ * Large handset +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 480px) {
+
+    /* Button - register - mobile only */
+    .button.blue.light.register {
+        padding: 0 40px;
+        width: unset;
+    }
 }
 
 /**

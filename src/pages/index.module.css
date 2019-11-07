@@ -288,6 +288,7 @@
 /* Process arrow image */
 .main .process .arrow img {
 	transform: rotate(90deg);
+	height: 100%; /* Required for safari */
 	width: 20px;
 }
 
@@ -361,7 +362,7 @@
 
 	/* Flex - column */
 	/* Tile container */
-	.main .process .tile  {
+	.main .process .tile {
 		flex-direction: column;
 	}
 
@@ -434,6 +435,7 @@
 
 	/* Process arrow image */
 	.main .process .arrow img {
+		height: unset; /* Required for safari */
 		transform: rotate(0deg);
 	}
 }
