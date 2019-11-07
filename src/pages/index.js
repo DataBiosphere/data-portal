@@ -223,7 +223,7 @@ class IndexPage extends React.Component {
 									with the Human Cell Atlas</h4>
 							<div className={classNames(compStyles.module, compStyles.visit)}>
 								<a href='https://www.humancellatlas.org/joinHCA'
-								   className={classNames(globalStyles.button, globalStyles.blue, globalStyles.light)}>Visit HCA.org</a>
+                                   className={classNames(globalStyles.button, globalStyles.blue, globalStyles.light, globalStyles.register)}><span>Join the </span><span>HCA Register of Interest</span></a>
 							</div>
 						</div>
 					</section>
