@@ -112,6 +112,7 @@ navigating to *Select Date* > *Choose specific rows to process*.
 Next, tell the workflow how to find the file you selected by setting the
 *inputFile* variable. Click on the *Attribute* field (red box in the
 screenshot above).
+
 Select the DRS URL attribute (something like `this.__bam__.drs_url`). Once
 you're done, click *Save*. You will see a blue *Run Analysis* button pop up.
 Click that one, and confirm your input when prompted. Terra's running the
