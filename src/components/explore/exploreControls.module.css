@@ -108,31 +108,6 @@
 	width: 6px;
 }
 
-/* Organ control - hover */
-/* Excludes "no click through" control */
-.controls .organ:not(.unspecified):hover {
-	background-color: var(--blue-dark);
-	border: 1px solid var(--blue-dark);
-	cursor: pointer;
-}
-
-/* Organ control, hover - text */
-/* Excludes "no click through" control */
-.controls .organ:not(.unspecified):hover span {
-	color: var(--white);
-}
-
-/* Organ control, hover - arrow */
-/* Excludes "no click through" control */
-.controls .organ:not(.unspecified):hover img {
-	display: block;
-}
-
-/* Organ control - transition */
-.controls .organ, .controls .organ:hover {
-	transition: background-color .5s ease 0s, border .5s ease 0s, color .5s ease 0s;
-}
-
 /**
  * Small +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
@@ -173,4 +148,33 @@
 	.controls a {
 		text-align: left;
 	}
+}
+
+/* Hover state - excludes all touch devices */
+@media (any-hover: hover) {
+
+    /* Organ control - hover */
+    /* Excludes "no click through" control */
+    .controls .organ:not(.unspecified):hover {
+        background-color: var(--blue-dark);
+        border: 1px solid var(--blue-dark);
+        cursor: pointer;
+    }
+
+    /* Organ control, hover - text */
+    /* Excludes "no click through" control */
+    .controls .organ:not(.unspecified):hover span {
+        color: var(--white);
+    }
+
+    /* Organ control, hover - arrow */
+    /* Excludes "no click through" control */
+    .controls .organ:not(.unspecified):hover img {
+        display: block;
+    }
+
+    /* Organ control - transition */
+    .controls .organ, .controls .organ:hover {
+        transition: background-color .5s ease 0s, border .5s ease 0s, color .5s ease 0s;
+    }
 }
