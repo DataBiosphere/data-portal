@@ -23,6 +23,7 @@ const classNames = require('classnames');
 const FACET_BLACKLIST = [
 	"assayType",
 	"contactName",
+	"effectiveOrgan",
 	"laboratory",
 	"organismAge",
 	"organismAgeUnit",
