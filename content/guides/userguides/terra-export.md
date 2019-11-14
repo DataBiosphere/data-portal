@@ -107,7 +107,7 @@ Step three: running the workflow in Terra
 On this screen, we want to select a single file from the data that we exported
 and find the MD5 checksum of that file. Make sure that the *Process multiple
 workflows* radio button is selected, then choose a single file to process by
-navigating to *Select Date* > *Choose specific rows to process*.
+navigating to *Select Data* > *Choose specific rows to process*.
 
 Next, tell the workflow how to find the file you selected by setting the
 *inputFile* variable. Click on the *Attribute* field (red box in the
