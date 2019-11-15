@@ -16,8 +16,10 @@
 	padding: 30px 0 35px 0;
 }
 
+/* Padding - 64px */
 /* Explore */
-.main .explore {
+/* Anatogram */
+.main .explore, .main .anatogram {
 	padding: 64px 0;
 }
 
@@ -52,6 +54,11 @@
 /* Metrics bar, lifecycle */
 .main .metricsBar, .main .lifecycle {
 	background-color: var(--blue-light);
+}
+
+/* Portal */
+.main .portal {
+	background-color: var(--black1);
 }
 
 /* Stay up to date */
@@ -90,13 +97,19 @@
  */
 
 /* Margin - 32px */
-.main .module:not(.spacer) {
+.main .module {
 	margin: 32px 0 0;
 }
 
 /* Margin - 56px */
+/* TODO review */
 .main .module.spacer {
 	margin: 56px 0 0;
+}
+
+/* Margin - 0 */
+.main .module.zero {
+	margin: 0;
 }
 
 /**
@@ -338,8 +351,9 @@
  */
 @media screen and (min-width: 960px) {
 
-	/* Explore */
-	.main .explore {
+	/* Padding */
+	/* Anatorgram */
+	.main .anatogram {
 		padding: 64px 0 0;
 	}
 }
