@@ -151,10 +151,15 @@ class IndexPage extends React.Component {
 									<span>open data processed by standardized pipelines</span>
 								</p>
 							</div>
-							<ExploreData cellCountSummaries={this.state.cellCountSummaries} totalCellCount={numberFormatter.formatCount(this.state.totalCellCount)}/>
 						</div>
 					</section>
 					<SearchBrowser termFacets={this.state.searchTerms}/>
+					<section className={compStyles.anatogram}>
+						<div className={classNames(compStyles.sectionInner, compStyles.m)}>
+							<ExploreData cellCountSummaries={this.state.cellCountSummaries}
+										 totalCellCount={numberFormatter.formatCount(this.state.totalCellCount)}/>
+						</div>
+					</section>
 					<section className={compStyles.portal}>
 						<div className={classNames(compStyles.sectionInner, compStyles.s)}>
 							<div className={compStyles.intro}>
@@ -213,9 +218,9 @@ class IndexPage extends React.Component {
 						</div>
 					</section>
 					{/*<section className={compStyles.lifecycle}>*/}
-						{/*<div className={classNames(compStyles.sectionInner, compStyles.s, compStyles.intro)}>*/}
-							{/*<p>Aliquam eros ante, ornare in hendrerit at, faucibus at eros. Morbi gravida augue in nunc pulvinar hendrerit. Cras et lobortis leo, a placerat risus <Link to="/guides/data-lifecycle">learn about Data Lifecycle.</Link></p>*/}
-						{/*</div>*/}
+					{/*<div className={classNames(compStyles.sectionInner, compStyles.s, compStyles.intro)}>*/}
+					{/*<p>Aliquam eros ante, ornare in hendrerit at, faucibus at eros. Morbi gravida augue in nunc pulvinar hendrerit. Cras et lobortis leo, a placerat risus <Link to="/guides/data-lifecycle">learn about Data Lifecycle.</Link></p>*/}
+					{/*</div>*/}
 					{/*</section>*/}
 					<section className={compStyles.contact}>
 						<div className={classNames(compStyles.sectionInner, compStyles.s)}>
