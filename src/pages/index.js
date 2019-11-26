@@ -129,7 +129,7 @@ class IndexPage extends React.Component {
 							<div className={compStyles.metric}>
 								<span><img src={projects} alt='Projects'/></span>
 								<div>
-									<span className={compStyles.count}>{numberFormatter.formatCount(this.state.donorCount)}</span>
+									<span className={compStyles.count}>{numberFormatter.formatCount(this.state.projectCount)}</span>
 									<span className={compStyles.label}>Projects</span>
 								</div>
 							</div>
