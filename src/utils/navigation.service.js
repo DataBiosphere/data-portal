@@ -20,7 +20,7 @@ import * as StringFormatService from './string-format.service';
  */
 export function getPagesSiteMapByEnvironment(allPages, draftPages) {
 
-	if ( EnvironmentService.isLocal() || EnvironmentService.isDev() || EnvironmentService.isUXDev() ) {
+	if ( EnvironmentService.isLocal() || EnvironmentService.isDev() || EnvironmentService.isUXDev() || EnvironmentService.isStaging()) {
 
 		// Return the siteMap for all documents
 		return allPages;
