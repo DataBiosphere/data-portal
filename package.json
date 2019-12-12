@@ -43,7 +43,7 @@
     "react-typography": "^0.16.19",
     "rehype-react": "^4.0.1",
     "shallow-equal": "1.0.0",
-    "snyk": "^1.234.2",
+    "snyk": "^1.258.2",
     "typography": "^0.16.19"
   },
   "keywords": [
@@ -54,10 +54,13 @@
     "build": "source ./set-dev-env.sh && gatsby build --verbose",
     "start": "source ./set-dev-env.sh && gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "gatsby-cli": "^2.6.4",
     "prettier": "^1.17.1"
-  }
+  },
+  "snyk": true
 }
