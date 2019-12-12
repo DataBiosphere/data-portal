@@ -54,4 +54,4 @@ To assess the quality of the input data, this module uses a pre-constructed inde
 
 This second module uses RSEM (RNA-Seq by Expectation Maximization) to quantify abundances of the transcripts identified in the first module. RSEM uses a statistical model that accounts for the uncertainties of read mapping, as RNA-Seq reads do not always map uniquely to a single gene. Using a pre-constructed transcriptome index created from GRCh38 and GenCode Annotation v27, HISAT2 aligns the test data with the reference transcriptome and a bam file of aligned data is generated. The RSEM program rsem-calculate-expression is then used to estimate gene/isoform expression levels, resulting in an  output file including expected_counts, TPM (Transcripts Per Million), or FPKM (Fragments Per Kilobase of transcript per Million mapped reads).
 
-More detailed information about this pipeline can be found [here](https://github.com/HumanCellAtlas/skylab/wiki/SmartSeq2-Pipeline-(v0.2.0)).
+More detailed information about this pipeline can be found [here](https://github.com/HumanCellAtlas/skylab/tree/master/pipelines/smartseq2_single_sample).
