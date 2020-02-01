@@ -43,7 +43,7 @@
     "react-typography": "^0.16.19",
     "rehype-react": "^4.0.1",
     "shallow-equal": "1.0.0",
-    "snyk": "^1.234.2",
+    "snyk": "^1.290.1",
     "typography": "^0.16.19"
   },
   "keywords": [
