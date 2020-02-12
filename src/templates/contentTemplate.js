@@ -16,6 +16,7 @@ import AnalysisDetail from '../components/analyze/analysisDetail';
 import Attributions from '../components/attributions/attributions';
 import DataLifecycleDiagram from '../components/dataLifecycleDiagram/dataLifecycleDiagram';
 import Layout from '../components/layout';
+import * as EditPageService from '../utils/edit-page.service';
 
 // Styles
 import '../styles/markdown.module.css';
@@ -24,33 +25,25 @@ import globalStyles from '../styles/global.module.css';
 let classNames = require('classnames');
 
 const renderAst = new rehypeReact({
-    createElement: React.createElement,
-    components: { "data-lifecycle-diagram": DataLifecycleDiagram }
+	createElement: React.createElement,
+	components: {"data-lifecycle-diagram": DataLifecycleDiagram}
 }).Compiler;
 
 // the data prop will be injected by the GraphQL query below.
 export default function Template({data}) {
 
 	const {markdownRemark} = data; // data.markdownRemark holds our post data
-	const {frontmatter, htmlAst} = markdownRemark;
+	const {frontmatter, htmlAst} = markdownRemark,
+		{fields} = markdownRemark || {},
+		{gitHubPath, path} = fields || {},
+		{componentName, linked, noNav, pageTitle} = frontmatter || {};
 
-	let componentName, docPath, gitHubPath, linked, noNav, pageTitle;
-	docPath = markdownRemark.fields.path;
-	gitHubPath = markdownRemark.fields.gitHubPath.substring(0, markdownRemark.fields.gitHubPath.lastIndexOf('/'));
-
-	const editPath = 'https://github.com/HumanCellAtlas/data-portal/tree/staging/content' + gitHubPath + '.md';
-
-	if (frontmatter) {
-		linked = frontmatter.linked;
-		componentName = frontmatter.componentName;
-		noNav = frontmatter.noNav;
-		pageTitle = frontmatter.title;
-	}
+	const editPath = EditPageService.getEditPageLink(path, gitHubPath);
 
 	return (
-		<Layout pageTitle={pageTitle} docPath={docPath} noNav={noNav}>
+		<Layout pageTitle={pageTitle} docPath={path} noNav={noNav}>
 			{componentName === 'analysisDetail' ? null :
-                <div className={globalStyles.md}>{renderAst(htmlAst)}</div>}
+				<div className={globalStyles.md}>{renderAst(htmlAst)}</div>}
 			{linked && (componentName === 'analyze') ?
 				<Analyze editPath={editPath} linked={linked}/> : null}
 			{componentName === 'analysisDetail' ?
