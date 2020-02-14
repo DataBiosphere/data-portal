@@ -194,19 +194,28 @@ exports.onCreateNode = ({node, getNode, actions}) => {
 
 		// path can come from frontmatter or... from associating a title to path
 		let path;
-		if (!node.frontmatter.path) {
+
+		if ( !node.frontmatter.path ) {
+
 			path = getPath(node.fileAbsolutePath);
-		} else {
+		}
+		else {
+
 			path = node.frontmatter.path
 		}
 
 		const relativeFilePath = createFilePath({node, getNode, basePath: ''});
 
-		//this adds the path under "fields"
+		const editPage = isShowEditPage(node.frontmatter, path);
+
+		//this adds path under "fields"
 		createNodeField({node, name: 'path', value: path});
 
-		//this adds the gitHubPath under "fields"
+		//this adds gitHubPath under "fields"
 		createNodeField({node, name: 'gitHubPath', value: relativeFilePath});
+
+		//this adds editPage under "fields"
+		createNodeField({node, name: 'editPage', value: editPage});
 	}
 
 	if (node.internal.type === 'MetadataSchemaEntity' && node.relativeFilePath.includes('/type/')) {
@@ -247,5 +256,20 @@ function getMetadataDictionaryPath(path) {
 	return path.replace('/type/', '/metadata/dictionary/')
 }
 
+function isShowEditPage(frontmatter, path) {
 
+	// Exclude documents with frontmatter component name 'analyze' and 'analysisDetail'
+	// These documents have their own specific template and edit page functionality
+	if ( frontmatter && (frontmatter.componentName === 'analyze' || frontmatter.componentName === 'analysisDetail') ) {
 
+		return false;
+	}
+	// Exclude documents from the metadata schema repository
+	if ( path && (path.includes('/metadata/design-principles/rationale') || path.includes('/metadata/design-principles/structure')) ) {
+
+		return false;
+	}
+
+	// Show "edit this page" for all other documents
+	return true;
+}
