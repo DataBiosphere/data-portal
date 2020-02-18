@@ -190,7 +190,8 @@ module.exports = {
                     `gatsby-remark-katex`,
                     `gatsby-remark-prismjs`,
                     `gatsby-remark-responsive-iframe`,
-                    'gatsby-remark-relative-linker'
+                    `gatsby-remark-metadata-absolute-linker`,
+                    `gatsby-remark-relative-linker`
                 ],
             },
         },
