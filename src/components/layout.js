@@ -10,6 +10,7 @@ import Helmet from 'react-helmet';
 import React from 'react';
 
 // App dependencies
+import * as EnvironmentService from "../utils/environment.service";
 import Banner from './banner/banner';
 import Footer from './footer/footer';
 import Header from './header/header';
@@ -39,6 +40,7 @@ class Layout extends React.Component {
 			<div>
 				<Helmet>
 					<title>{pageTitle ? pageTitle : 'HCA Data Portal'}</title>
+					{EnvironmentService.isProd() ? null : <meta name="robots" content="noindex" />}
 					<link rel='stylesheet' href='https://use.typekit.net/qhb0geh.css'/>
 					<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>
 					<link rel='stylesheet'
