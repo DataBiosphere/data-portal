@@ -33,6 +33,7 @@ import labsContribute from '../../images/icon/portal/labsContribute.png';
 import pipelineProcessing from '../../images/icon/portal/pipelineProcessing.png';
 import searchCommunity from '../../images/icon/portal/searchCommunity.png';
 import searchData from '../../images/icon/portal/searchData.png';
+import go from '../../images/icon/release/arrow.png';
 
 let classNames = require('classnames');
 
@@ -100,7 +101,11 @@ class IndexPage extends React.Component {
 								<span>Mapping the human body </span>
 								<span>at the cellular level</span>
 							</h1>
-							{/*<p className={fontStyles.subhead}>[insert]</p>*/}
+							<h2 className={fontStyles.subhead}>
+								<span>Community generated, <span
+									className={compStyles.noWrap}>multi-omic, </span></span>
+								<span><span>open data processed by </span><span className={compStyles.noWrap}>standardized pipelines</span></span>
+							</h2>
 						</div>
 					</section>
 					<section className={classNames({[compStyles.metricsBar]: true, [compStyles.loading]: !this.state.loaded})}>
@@ -142,14 +147,19 @@ class IndexPage extends React.Component {
 							</div>
 						</div>
 					</section>
-					<section className={compStyles.explore}>
-						<div className={classNames(compStyles.sectionInner, compStyles.m)}>
+					<section className={compStyles.release}>
+						<div className={classNames(compStyles.sectionInner, compStyles.s)}>
 							<div className={compStyles.intro}>
-								<h4 className={fontStyles.introTitle}>Start Exploring Data</h4>
-								<p className={fontStyles.introText}>
-									<span>Community generated, multi-omic, </span>
-									<span>open data processed by standardized pipelines</span>
-								</p>
+								<h4 className={fontStyles.introTitle}>March 2020 Release</h4>
+								<p className={fontStyles.introText}>Lorem ipsum dolor sit amet, consectetur adipiscing
+									elit. Curabitur enim tellus, molestie in molestie ac, maximus sit amet mi.</p>
+								<div className={compStyles.module}>
+									<a href={`${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`}
+									   className={classNames(globalStyles.button, globalStyles.blue, globalStyles.light, compStyles.latest)}>
+										<span>See Our Latest Release</span>
+										<img className={compStyles.go} src={go} alt="arrow"/>
+									</a>
+								</div>
 							</div>
 						</div>
 					</section>
@@ -228,7 +238,9 @@ class IndexPage extends React.Component {
 									with the Human Cell Atlas</h4>
 							<div className={classNames(compStyles.module, compStyles.visit)}>
 								<a href='https://www.humancellatlas.org/join-hca/'
-                                   className={classNames(globalStyles.button, globalStyles.blue, globalStyles.light, globalStyles.register)}><span>Join the </span><span>HCA Register of Interest</span></a>
+								   className={classNames(globalStyles.button, globalStyles.blue, globalStyles.light, globalStyles.register)}>
+									<span>Join the </span><span>HCA Register of Interest</span>
+								</a>
 							</div>
 						</div>
 					</section>
