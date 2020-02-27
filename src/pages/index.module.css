@@ -16,11 +16,25 @@
 	padding: 30px 0 35px 0;
 }
 
+/* Padding - 80px */
+/* Stay up to date */
+.main .contact {
+	padding: 80px 0;
+}
+
 /* Padding - 64px */
-/* Explore */
 /* Anatogram */
-.main .explore, .main .anatogram {
+/* What is the HCA portal? */
+.main .anatogram, .main .portal {
 	padding: 64px 0;
+}
+
+
+/* Padding - 48px 0 60px */
+/* Hero */
+/* "r" release */
+.main .hero, .main .release {
+	padding: 48px 0 60px;
 }
 
 /* Padding - 42px */
@@ -29,27 +43,14 @@
 	padding: 42px 0;
 }
 
-/* Padding - 48px */
-/* Hero */
-.main .hero {
-	padding: 48px 0;
-}
-
-/* Padding - 64px */
-/* What is the HCA portal? */
-.main .portal {
-	padding: 64px 0;
-}
-
-/* Padding - 80px */
-/* Stay up to date */
-.main .contact {
-	padding: 80px 0;
-}
-
 /**
  * Section Background
  */
+
+/* R release */
+.main .release {
+	background-color: var(--gray-pale);
+}
 
 /* Metrics bar, lifecycle */
 .main .metricsBar, .main .lifecycle {
@@ -102,7 +103,6 @@
 }
 
 /* Margin - 56px */
-/* TODO review */
 .main .module.spacer {
 	margin: 56px 0 0;
 }
@@ -270,6 +270,21 @@
 }
 
 /**
+ * "r" release
+ */
+
+/* "r" release button */
+.main .release .latest {
+	padding: 0 20px !important;
+}
+
+/* "r" release button arrow */
+.main .release .go {
+	height: 10px;
+	padding-left: 12px;
+}
+
+/**
  * What is the HCA Portal?
  */
 
@@ -306,10 +321,28 @@
 }
 
 /**
+ * XSmall
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 400px) {
+
+	/* Whitespace - "nowrap" */
+	/* Hero subhead - prevents wrap of text at specified <span> break */
+	.main .noWrap {
+		white-space: nowrap;
+	}
+}
+
+/**
  * XSmall +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 480px) {
+
+	/* "r" release button */
+	.main .release .latest {
+		padding: 0 40px !important;
+	}
 
 	/* Tile icon image */
 	.main .process .icon img {
@@ -339,8 +372,8 @@
 	 */
 
 	/* Hero headline - wraps text at specified <span> break */
-	/* Explore intro text - wraps text at specified <span> break */
-	.main .hero h1 span, .main .explore p span {
+	/* Hero subhead - wraps text at specified <span> break */
+	.main .hero h1 span, .main .hero h2 > span {
 		display: block;
 	}
 }
