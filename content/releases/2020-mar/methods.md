@@ -81,7 +81,7 @@ Single Cell Portal compatible outputs were generated with the following paramete
 | generate_scp_outputs |  Generate outputs compatible with Single-Cell Portal | true |
 | output_dense | Boolean describing if outputs should be in dense format | false |
 
-## Cell Annotations
+## Cell annotations
 
 Cell annotations were obtained from the publications listed on each dataset’s project page or from the project contributors. The nomenclature for annotations was harmonized across all DCP Release projects using the [Ontology Lookup Service](https://www.ebi.ac.uk/ols/index) and the mapping tool Zooma (https://www.ebi.ac.uk/spot/zooma/). The resulting harmonized annotations were mapped to Cumulus output loom and h5ad matrix files (listed in the [Release Files table](#release-files) using cell barcodes (for 10x technology) or IDs (for Smart-seq2 technology).
 
