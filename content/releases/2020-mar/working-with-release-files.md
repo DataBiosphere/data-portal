@@ -6,3 +6,6 @@ draft: true
 ---
 
 ## Working with Release Files
+
+
+![Creating a new workspace](./_images/01_new_workspace_card.png)
