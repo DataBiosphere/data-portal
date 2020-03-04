@@ -15,6 +15,6 @@ To learn more about these processes and get started working with the release, pl
 
 ## Release Datasets
 
-The release datasets are available at the following link: [2020 March release datasets](https://ux-dev.data.humancellatlas.org/explore/releases/2020-mar)
+View the release datasets here: [HCA DCP 2020 March release datasets](https://ux-dev.data.humancellatlas.org/explore/releases/2020-mar)
 
 >Fran TODO: Make the link above respect the portal environment (note ux-dev is hard coded) Thx!
