@@ -14,4 +14,4 @@ Overall, projects were stratified into individual datasets by organ, development
 Cell type annotations were taken from publications or project contributor feedback, were harmonized, and then added to analyzed files. You can read more about these processes from the [Methods page](INSERT LINK) or you can take a [tutorial on how to replicate these analyses](INSERT LINK).
 
 
-**the Ready to explore release files now?** Check out the tips and tricks in the  [Working with Release Files guide](INSERT LINK). 
+**Ready to explore release files now?** Check out the tips and tricks in the  [Working with Release Files guide](INSERT LINK). 
