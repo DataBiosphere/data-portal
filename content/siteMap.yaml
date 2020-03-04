@@ -354,5 +354,28 @@
       key: "feedback"
       primaryLinks:
         - name: ""
-          key: "/privacy"
-          path: "/privacy"
+          key: "/feedback"
+          path: "/feedback"
+- name: "Releases"
+  key: "releases"
+  path: "/releases"
+  position:
+      location: "h"
+      order: 8
+  tabs:
+    - name: "Documentation"
+      key: "documentation"
+      primaryLinks:
+        - name: "2020 March"
+          key: "/releases/documentation/2020-mar/overview"
+          path: "/releases"
+          secondaryLinks:
+            - name: "Methods"
+              key: "/releases/documentation/2020-mar/methods"
+              path: "/releases/2020-mar/methods"
+            - name: "Working with Release Files"
+              key: "/releases/documentation/2020-mar/working-with-release-files"
+              path: "/releases/2020-mar/working-with-release-files"
+            - name: "Replicating the HCA DCP Release Analysis"
+              key: "/releases/documentation/2020-mar/replicating-the-hca-dcp-release-analysis"
+              path: "/releases/2020-mar/replicating-the-hca-dcp-release-analysis"
