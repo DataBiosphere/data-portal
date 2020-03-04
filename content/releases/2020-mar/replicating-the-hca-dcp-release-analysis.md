@@ -1,3 +1,10 @@
+---
+path: "/releases/documentation/2020-mar/replicating-the-hca-dcp-release-analysis"
+date: "2018-05-03"
+title: "Working with Release Files"
+draft: true
+---
+
 #  Clustering, differential expression analyses, and data visualization using the Cumulus workflow. 
 This tutorial covers how to process a DCP loom for clustering, differential expression, and visualization using the Cumulus workflow in a Terra workspace. We will use the same [methods](insert links) outlined for the DCP March 2020 Release. All projects for the release were divided into individual datasets which are listed on the [DCP Release Page](INSERT LINK). For this tutorial, we will use the sample dataset 2020-Mar-Landscape-Adult-Liver-10x derived from the project [“Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations”](https://data.humancellatlas.org/explore/projects/4d6f6c96-2a83-43d8-8fe1-0f53bffd4674). You can explore other datasets and repeat these analyses on additional loom files.
 
