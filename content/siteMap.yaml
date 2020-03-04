@@ -358,7 +358,7 @@
           path: "/feedback"
 - name: "Releases"
   key: "releases"
-  path: "/releases"
+  path: "/releases/2020-mar"
   position:
       location: "h"
       order: 8
@@ -368,7 +368,7 @@
       primaryLinks:
         - name: "2020 March"
           key: "/releases/documentation/2020-mar/overview"
-          path: "/releases"
+          path: "/releases/2020-mar"
           secondaryLinks:
             - name: "Methods"
               key: "/releases/documentation/2020-mar/methods"
