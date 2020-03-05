@@ -8,7 +8,7 @@ draft: true
 ## Methods
 # HCA Release March 2020 Methods
 ## Overview
-This document details the Human Cell Atlas (HCA) Data Coordination Platform’s (DCP) methods for cell clustering, differential expression analyses, and data visualization used in the HCA March 2020 Data Release. Overall, individual DCP project loom files (available for download from the [DCP Data Portal]() were analyzed using Cumulus (v0.13.0), a single-cell analysis workflow ( [Li et al. 2019](https://www.biorxiv.org/content/10.1101/823682v1)). 
+This document details the Human Cell Atlas (HCA) Data Coordination Platform’s (DCP) methods for cell clustering, differential expression analyses, and data visualization used in the HCA March 2020 Data Release. Overall, individual DCP project loom files (available for download from the [DCP Data Portal]() were analyzed using Cumulus (v0.13.0), a single-cell analysis workflow ([Li et al. 2019](https://www.biorxiv.org/content/10.1101/823682v1)). 
 Further details about the HCA March 2020 Data Release can be found on the [DCP Portal’s  Data Release Page](INSERTLINK). A step-by-step guide for the entire release methods, including using the Cumulus workflow, is provided at [](INSERT LINK). Additionally, you can find techniques for manipulating and interacting with release files in [this tutorial](INSERT LINK).
 
 ## Project stratification and loom file preparation
