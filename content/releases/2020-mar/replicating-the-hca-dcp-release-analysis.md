@@ -4,7 +4,6 @@ date: "2018-05-03"
 title: "Working with Release Files"
 draft: true
 ---
-
 #  Clustering, differential expression analyses, and data visualization using the Cumulus workflow. 
 This tutorial covers how to process a DCP loom for clustering, differential expression, and visualization using the Cumulus workflow in a Terra workspace. We will use the same [methods](insert links) outlined for the DCP March 2020 Release. All projects for the release were divided into individual datasets which are listed on the [DCP Release Page](INSERT LINK). For this tutorial, we will use the sample dataset 2020-Mar-Landscape-Adult-Liver-10x derived from the project [“Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations”](https://data.humancellatlas.org/explore/projects/4d6f6c96-2a83-43d8-8fe1-0f53bffd4674). You can explore other datasets and repeat these analyses on additional loom files.
 
@@ -26,12 +25,11 @@ This tutorial covers how to process a DCP loom for clustering, differential expr
 ![image](_images/02_new_workspace_info.png)
 
 #### 4. Upload your loom file to the workspace google bucket
-Each Terra workspace you create comes with its own google bucket.\
-   *  4.1 Go to the Data tab
-   *  4.2 In the “Other Data” section, select the Files option
+Each Terra workspace you create comes with its own google bucket. 
+4.1 Go to the Data tab
+4.2 In the “Other Data” section, select the Files option
 ![image](_images/03_other_files_section.png)
-   *  4.3 Click the plus icon to upload the loom file to workspace google bucket.
-
+4.2 Click the plus icon to upload the loom file to workspace google bucket.
 If you are already familiar with Terra and cloud computing, you can also transfer files using gsutils (see description [here](https://support.terra.bio/hc/en-us/articles/360024056512))
 
 ## Uploading Cumulus workflow to Terra workspace
@@ -83,12 +81,13 @@ You will need to specify a string in quotes that includes the google bucket loca
 #### 1. On the Workflows configuration page, select the radial button next to “Run workflow with inputs defined by file paths”
 #### 2. Select save
 #### 3. Select Run Analysis and then Launch
+![image](_images/12_launch_workflow)
 #### 4. You can check the status of your run in the Job History tab
-#### 5, When the analysis is complete, return to the workspace Data tab and select Files. You will see a folder called output. All Cumulus workflow output files will be in this folder.
 
 ## What you should see after running Cumulus
 #### 1. Return the Terra workspace Data tab.
 #### 2. In the Files section, select the output folder
+![image](_images/16_data_tab_output)
 #### 3. You should see the now processed data files. 
 Although these files are processed for clustering and differential expression, they are still unannotated. 
 
