@@ -33,9 +33,11 @@ To import Cumulus output loom files, use the command:
  [Seurat](https://satijalab.org/seurat/) is an R package used for single-cell data quality control, analysis, and exploration. 
 
 To import Cumulus h5ad files, use the command:
-> ad <- import("anndata", convert = FALSE)
+```R
+ad <- import("anndata", convert = FALSE)
 > test_ad <- ad$read_h5ad("output_name.seurat.h5ad")
 > result <- convert_h5ad_to_seurat(test_ad)
+```
 
 To import Cumulus loom files:
 First, install the loomR package. 
