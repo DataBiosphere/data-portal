@@ -1,10 +1,3 @@
----
-path: "/releases/documentation/2020-mar/working-with-release-files"
-date: "2018-05-03"
-title: "Working with Release Files"
-draft: true
----
-
 # Working with Release Files 
 
 There are multiple tools available to view and manipulate the March 2020 Release files. This guide focuses on importing release files into Python and R-supported software such as Pegasus, Seurat, and Scanpy, in addition to visualizing and annotating files in Single Cell Portal. We will use the [2020-Mar-Landscape-Adult-Liver-10x](INSERT LINK TO RELEASE PAGE) dataset as an example, but the following techniques will work for all Release datasets. The software we use is only a subset of single-cell analysis tools; we encourage the community to explore these files using other portals and tools as they become available!
@@ -100,7 +93,7 @@ for f in file_list:
 data[f]
 ```
 
-## Creating a Single Cell Portal Study Page and Importing Cumulus Results
+## Creating a Single Cell Portal study page and importing Cumulus results
 You can visualize or annotate DCP Release files by either using the existing studies in [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release) or by creating a new Single Cell Portal Study. Specific instructions for getting started with Single Cell Portal can be found on the [Single Cell Portal wiki]( https://github.com/broadinstitute/single_cell_portal/wiki/Synchronizing-Study-Data). You will need a Google compatible email account to login. If your institutional account is backed by Google, you may use it.
 
 **The following instructions are a continuation from the [analysis tutorial](INSERT LINK) and focus on importing Cumulus output files from an existing Terra workspace. These steps use the 2020-Mar-Landscape-Adult-Liver-10x example files derived from the [analysis tutorial](INSERT LINK). ** 
@@ -114,15 +107,18 @@ You can visualize or annotate DCP Release files by either using the existing stu
 #### 1. Navigate to [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell) and login.
 
 #### 2. Go to the profile drop-down menu and select “Add Study”
+![image](_images/13_SCP_add_study.png)
 
 #### 3. You will need to select a unique name for the study page and billing information (note that if you want to import files from a Terra workspace, the billing information must match the billing information used on Terra). 
+![image](_images/14_SCP_new_study.png)
 
 #### 4. Select Yes for using an existing Terra workspace. 
 
-#### 5. Enter the Terra workspace name in the Existing Terra Workspace field. 
-For the 2020-Mar-Landscape-Adult-Liver-10x dataset, you would use “2020-Mar-Landscape-Adult-Liver-10x”.
+#### 5. Enter the Terra workspace name in the Existing Terra Workspace field. \For the 2020-Mar-Landscape-Adult-Liver-10x dataset, you would use “2020-Mar-Landscape-Adult-Liver-10x”.
 
 #### 6. Scroll to the bottom of the page and select “Create Study”.
+![image](_images/15_Create_study.png)
+
 #### 7. Select the files you would like to import. 
 
 *While some of these files are necessary to Single Cell Portal functionality, others files, like differential expression analyses, are often shared with colleagues. The table below lists all necessary and recommended files. Additionally, for some Single Cell Portal files, the order of import is important. We have noted this in the Notes section of the table.*
