@@ -96,7 +96,7 @@ data[f]
 ## Creating a Single Cell Portal study page and importing Cumulus results
 You can visualize or annotate DCP Release files by either using the existing studies in [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release) or by creating a new Single Cell Portal Study. Specific instructions for getting started with Single Cell Portal can be found on the [Single Cell Portal wiki]( https://github.com/broadinstitute/single_cell_portal/wiki/Synchronizing-Study-Data). You will need a Google compatible email account to login. If your institutional account is backed by Google, you may use it.
 
-**The following instructions are a continuation from the [analysis tutorial](INSERT LINK) and focus on importing Cumulus output files from an existing Terra workspace. These steps use the 2020-Mar-Landscape-Adult-Liver-10x example files derived from the [analysis tutorial](INSERT LINK). ** 
+**The following instructions are a continuation from the [analysis tutorial](INSERT LINK) and focus on importing Cumulus output files from an existing Terra workspace. These steps use the 2020-Mar-Landscape-Adult-Liver-10x example files derived from the [analysis tutorial](INSERT LINK).** 
 
 
 
