@@ -22,12 +22,12 @@ Add in r and python versions
 
 To import the annotated Cumulus h5ad output files for the 2020-Mar-Landscape-Adult-Liver-10x, use the command:
 
-> import pegasus as pg
+> \>>> import pegasus as pg
 adata = pg.read_input("output_name.h5ad")
 
 To import Cumulus output loom files, use the command:
-> import pegasus as pg
-data = pg.read_input("output_name.loom", genome = "GRCh38")
+    import pegasus as pg
+    data = pg.read_input("output_name.loom", genome = "GRCh38")
 
 #### Seurat 
  [Seurat](https://satijalab.org/seurat/) is an R package used for single-cell data quality control, analysis, and exploration. 
