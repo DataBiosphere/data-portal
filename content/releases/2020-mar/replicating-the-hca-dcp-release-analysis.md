@@ -70,7 +70,7 @@ You will see that it is expecting a file. You will need to specify the google bu
 
 ##### 2. Examine the output_name attribute. 
 You will need to specify a string in quotes that includes the google bucket location, an output folder, and a prefix you would like to give all analysis files. ![image](_images/10_output_name.png)
-- The google bucket location can be found on the right side of the workspace Dashboard tab ![image](_images/11_Dashboard_google_bucket). 
+- The google bucket location can be found on the right side of the workspace Dashboard tab ![image](_images/11_Dashboard_google_bucket.png). 
 - We used an output folder called “output”. For a prefix, we used the dataset ID 2020-Mar-Landscape-Adult-Liver-10x . The final string should look like “gs://GOOGLE_BUCKET/output/2020-Mar-Landscape-Adult-Liver-10x.
 
 
@@ -81,13 +81,13 @@ You will need to specify a string in quotes that includes the google bucket loca
 #### 1. On the Workflows configuration page, select the radial button next to “Run workflow with inputs defined by file paths”
 #### 2. Select save
 #### 3. Select Run Analysis and then Launch
-![image](_images/12_launch_workflow)
+![image](_images/12_launch_workflow.png)
 #### 4. You can check the status of your run in the Job History tab
 
 ## What you should see after running Cumulus
 #### 1. Return the Terra workspace Data tab.
 #### 2. In the Files section, select the output folder
-![image](_images/16_data_tab_output)
+![image](_images/16_data_tab_output.png)
 #### 3. You should see the now processed data files. 
 Although these files are processed for clustering and differential expression, they are still unannotated. 
 
