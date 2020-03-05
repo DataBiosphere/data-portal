@@ -21,7 +21,7 @@ Add in r and python versions
 [Pegasus](https://pegasus.readthedocs.io/en/latest/) is a Python package used by Cumulus for analyzing very large single-cell transcriptomes. 
 
 To import the annotated Cumulus h5ad output files for the 2020-Mar-Landscape-Adult-Liver-10x, use the command:
-``` 
+```Python 
 >>> import pegasus as pg
 >>> adata = pg.read_input("output_name.h5ad") 
 ```
