@@ -379,3 +379,10 @@
             - name: "Replicating the HCA DCP Release Analysis"
               key: "/releases/documentation/2020-mar/replicating-the-hca-dcp-release-analysis"
               path: "/releases/2020-mar/replicating-the-hca-dcp-release-analysis"
+            - name: "Community Feedback"
+              key: "/releases/documentation/2020-mar/feedback"
+              path: "/releases/2020-mar/feedback"
+            - name: "Attributions"
+              key: "/releases/documentation/2020-mar/attributions"
+              path: "/releases/2020-mar/attributions"
+
