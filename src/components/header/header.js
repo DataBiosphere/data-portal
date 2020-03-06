@@ -30,6 +30,11 @@ class Header extends React.Component {
 		this.toggleMenu = this.toggleMenu.bind(this);
 	}
 
+	getReleasesUrl = () => {
+
+		return `${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`;
+	};
+
 	toggleMenu = () => {
 		this.setState({showNav: !this.state.showNav});
 		this.props.onMenuOpen(this.state.showNav);
@@ -40,20 +45,31 @@ class Header extends React.Component {
 		return (
 			<div className={classNames(compStyles.navBar, {[compStyles.hcaHeader]: homePage})}>
 				<div className={classNames(globalStyles.wrapper, compStyles.headerWrapper)}>
-					<Link to='/' className={compStyles.logo}><img src={headerLogo} alt='HCA'/></Link>
+					<Link to='/' className={compStyles.logo}>
+						<img src={headerLogo} alt='HCA'/>
+					</Link>
 					{this.state.showNav ?
 						<div className={classNames(compStyles.links, compStyles.small)}>
 							<a href={process.env.GATSBY_EXPLORE_URL} onClick={this.toggleMenu}>
 								<span className={classNames(fontStyles.xs, compStyles.xs)}>Explore</span>
 								<span
-									className={classNames(fontStyles.xxs, compStyles.xxs)}>Search for data in the HCA</span>
+									className={classNames(fontStyles.xxs,
+										compStyles.xxs)}>Search for data in the HCA</span>
 							</a>
-							{this.props.links.map((l, i) => <Link key={i} activeClassName={compStyles.active} to={l.path}
-								  onClick={this.toggleMenu}>
-								<span className={classNames(fontStyles.xs, compStyles.xs)}>{l.headerName? l.headerName : l.name}</span>
+							{this.props.links.map(
+								(l, i) => <Link key={i} activeClassName={compStyles.active} to={l.path}
+												onClick={this.toggleMenu}>
+									<span className={classNames(fontStyles.xs,
+										compStyles.xs)}>{l.headerName ? l.headerName : l.name}</span>
+									<span
+										className={classNames(fontStyles.xxs, compStyles.xxs)}>{l.description}</span>
+								</Link>)}
+							<a href={this.getReleasesUrl()} onClick={this.toggleMenu}>
+								<span className={classNames(fontStyles.xs, compStyles.xs)}>March 2020 Release</span>
 								<span
-									className={classNames(fontStyles.xxs, compStyles.xxs)}>{l.description}</span>
-							</Link>)}
+									className={classNames(fontStyles.xxs,
+										compStyles.xxs)}>Explore, visualize, and interact with 24 annotated datasets</span>
+							</a>
 						</div> : null}
 					<div className={classNames(compStyles.links)} ref={(div) => this.links = div}>
 						<a href={process.env.GATSBY_EXPLORE_URL}>
@@ -61,9 +77,12 @@ class Header extends React.Component {
 						</a>
 						{this.props.links.map((l, i) => <div key={i}>
 							<Link activeClassName={compStyles.active} partiallyActive={true} to={l.path}>
-								<span className={compStyles.linkTo}>{l.headerName? l.headerName : l.name}</span>
+								<span className={compStyles.linkTo}>{l.headerName ? l.headerName : l.name}</span>
 							</Link>
 						</div>)}
+						<a href={this.getReleasesUrl()}>
+							<span className={compStyles.linkTo}>March 2020 Release</span>
+						</a>
 					</div>
 					<div className={classNames(compStyles.menuDropDown, fontStyles.s)} onClick={this.toggleMenu}>Menu
 					</div>
