@@ -1,3 +1,11 @@
+---
+path: "/releases/documentation/2020-mar/working-with-release-files"
+date: "2018-05-03"
+title: "Working with Release Files"
+draft: true
+---
+
+
 # Working with Release Files 
 
 There are multiple tools available to view and manipulate the March 2020 Release files. This guide focuses on importing release files into Python and R-supported software such as Pegasus, Seurat, and Scanpy, in addition to visualizing and annotating files in Single Cell Portal. We will use the [2020-Mar-Landscape-Adult-Liver-10x](INSERT LINK TO RELEASE PAGE) dataset as an example, but the following techniques will work for all Release datasets. The software we use is only a subset of single-cell analysis tools; we encourage the community to explore these files using other portals and tools as they become available!
