@@ -359,9 +359,6 @@
 - name: "Releases"
   key: "releases"
   path: "/releases/2020-mar"
-  position:
-      location: "h"
-      order: 8
   tabs:
     - name: "Documentation"
       key: "documentation"
@@ -376,9 +373,9 @@
             - name: "Working with Release Files"
               key: "/releases/documentation/2020-mar/working-with-release-files"
               path: "/releases/2020-mar/working-with-release-files"
-            - name: "Replicating the HCA DCP Release Analysis"
-              key: "/releases/documentation/2020-mar/replicating-the-hca-dcp-release-analysis"
-              path: "/releases/2020-mar/replicating-the-hca-dcp-release-analysis"
+            - name: "Replicating the Release Analysis"
+              key: "/releases/documentation/2020-mar/replicating-the-release-analysis"
+              path: "/releases/2020-mar/replicating-the-release-analysis"
             - name: "Community Feedback"
               key: "/releases/documentation/2020-mar/feedback"
               path: "/releases/2020-mar/feedback"

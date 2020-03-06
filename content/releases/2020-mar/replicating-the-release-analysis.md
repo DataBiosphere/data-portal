@@ -1,7 +1,7 @@
 ---
-path: "/releases/documentation/2020-mar/replicating-the-hca-dcp-release-analysis"
+path: "/releases/documentation/2020-mar/replicating-the-release-analysis"
 date: "2018-05-03"
-title: "Working with Release Files"
+title: "Replicating the Release Analysis"
 draft: true
 ---
 #  Clustering, differential expression analyses, and data visualization using the Cumulus workflow. 
