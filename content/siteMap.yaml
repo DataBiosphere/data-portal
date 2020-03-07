@@ -363,7 +363,7 @@
     - name: "Documentation"
       key: "documentation"
       primaryLinks:
-        - name: "2020 March"
+        - name: "2020 March Data Release"
           key: "/releases/documentation/2020-mar/overview"
           path: "/releases/2020-mar"
           secondaryLinks:

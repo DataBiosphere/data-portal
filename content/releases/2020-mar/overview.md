@@ -5,17 +5,17 @@ title: "Overview"
 draft: true
 ---
 
-# 2020 March HCA DCP Release 
+# 2020 March Data Release 
 
 
 ## Release Datasets
 
->View the release datasets here: 
-<link-to-browser relativelink="/releases/2020-mar">HCA DCP 2020 March release datasets</link-to-browser>
 
-The HCA DCP March 2020 release includes datasets from all human DCP projects that have been processed using DCP standardized pipelines (Optimus or Smart-seq2). 
+The <link-to-browser relativelink="/releases/2020-mar">March 2020 Data Release</link-to-browser> includes datasets from all human DCP projects that have been processed using the DCP's standardized pipelines ([Optimus](/pipelines/optimus-workflow) or [Smart-seq2](/pipelines/smart-seq2-workflow)). 
 
-Projects were stratified into individual datasets by organ, developmental stage, and sequencing technology, and were further processed using [Cumulus](INSERT LINK), a tool for cell clustering, differential expression analyses, and visualization. Cell type annotations were taken from publications or project contributor feedback, were harmonized, and then added to analyzed files.
+Projects were stratified into individual datasets by organ, developmental stage, and sequencing technology, and were further processed using [Cumulus](INSERT LINK), a tool for cell clustering, differential expression analyses, and visualization.
+ 
+ Cell type annotations were taken from publications or project contributor feedback, were harmonized, and then added to analyzed files.
 
 To learn more about these processes and get started working with the release, please review the [methods page](/releases/2020-mar/methods), take a [tutorial on how to replicate these analyses](/releases/2020-mar/replicating-the-hca-dcp-release-analysis) or view tips for [working with release files](/releases/2020-mar/working-with-release-files). 
 
