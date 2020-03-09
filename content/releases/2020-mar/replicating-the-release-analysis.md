@@ -86,7 +86,7 @@ This attribute requires a “String” input. Specify a string in quotes that in
 - The Google bucket location can be found on the right side of the workspace Dashboard tab ![image](_images/11_Dashboard_google_bucket.png). 
 - The output folder can have any name, but for this example, we choose “output”. 
 - The filename prefix can also be any name to identify the dataset, but we used the dataset ID 2020-Mar-Landscape-Adult-Liver-10x. 
-The final string should look similar to: “gs://GOOGLE_BUCKET/output/2020-Mar-Landscape-Adult-Liver-10x.
+The final string should look similar to: “gs://GOOGLE_BUCKET/output/2020-Mar-Landscape-Adult-Liver-10x".
 
 #### 3. Select Save on the configuration page
 
