@@ -9,11 +9,11 @@ draft: true
 ## Overview
 This document details the Human Cell Atlas (HCA) Data Coordination Platform’s (DCP) methods for cell clustering, differential expression analyses, and data visualization used in the HCA March 2020 Data Release. Overall, 13 individual DCP projects were stratified into 24 datasets by organ, developmental stage and sample processing technology. Unnormalized count matrices for each dataset were uploaded into the cloud-based platform [Terra](app.terra.bio) and analyzed using Cumulus (v0.13.0), a single-cell analysis workflow ([Li et al. 2019](https://www.biorxiv.org/content/10.1101/823682v1)). All Release files are available for download on the [main Data Release Page](data.humancellatlas.org/explore/releases/2020-mar)
 
-A step-by-step tutorial for replicating the entire release analyses is provided at [](INSERT LINK). Additionally, you can find techniques for manipulating and interacting with release files in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files).
+A step-by-step tutorial for replicating the entire release analyses is provided in the [Release documentation](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). Additionally, you can find techniques for manipulating and interacting with release files in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files).
 
 
 ## Project stratification and unnormalized count matrix preparation
-The March 2020 Release includes all human DCP projects that were processed with standardized pipelines. Each project was stratified into individual datasets by organ and when applicable, by developmental stage (adult or fetal) or by sample processing technology (10x or Smart-seq2). Unnormalized count matrices (loom file format) for the stratified Release datasets were obtained by filtering projects on the [DCP Data Portal](data.humancellatlas.org/explore/) using the stratification criteria above. The metadata in the unnormalized count matrix files was then modified to include new ontology labels and corrections to existing ontology labels. Additionally, due to a processing error, all EmptyDrops data was removed from files produced with the Optimus pipeline. All updated unnormalized matrix files (loom format) used for the March 2020 Release are available for download on the [DCP Portal’s Data Release page](data.humancellatlas.org/explore/releases/2020-mar)(see Pipeline Input files). 
+The March 2020 Release includes all human DCP projects that were processed with standardized pipelines. Each project was stratified into individual datasets by organ and when applicable, by developmental stage (adult or fetal) or by sample processing technology (10x or Smart-seq2). Unnormalized count matrices (loom file format) for the stratified Release datasets were obtained by filtering projects on the [DCP Data Portal](data.humancellatlas.org/explore/) using the stratification criteria above. The metadata in the unnormalized count matrix files was then modified to include new ontology labels and corrections to existing ontology labels. Additionally, due to a processing error, all EmptyDrops data was removed from files produced with the Optimus pipeline. All updated unnormalized matrix files (loom format) used for the March 2020 Release are available for download on the [DCP Portal’s Data Release page](data.humancellatlas.org/explore/releases/2020-mar) (see Pipeline Input files). 
 
 ## Dataset IDs
 Each dataset was given a unique ID with a “2020-Mar...” prefix. All dataset IDs are listed on the March 2020 Release page in the “Dataset” column. This Dataset ID was used to name all input and output files relevant to each dataset. 
@@ -141,7 +141,7 @@ The following table describes the final Release files available in the DCP Relea
 | Dataset_ID.scp.features.tsv | SCP | 10X compatible features (genes) file for Single Cell Portal | TSV |	
 | Dataset_ID.scp.matrix.mtx | SCP | 10X compatible mtx expression file for Single Cell Portal | mtx |
 | Dataset_ID.scp.metadata.txt | SCP | Metadata matrix for Single Cell Portal | TXT | 
-Dataset_ID_annotated_v1.scp.metadata.txt | SCP | Annotated metadata matrix file for Single Cell Portal |
+Dataset_ID_annotated_v1.scp.metadata.txt | SCP | Annotated metadata matrix file for Single Cell Portal | TXT |
 
 
 
@@ -153,5 +153,6 @@ Dataset_ID_annotated_v1.scp.metadata.txt | SCP | Annotated metadata matrix file 
 ## Want to learn more?
 
 Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide] (data.humancellatlas.org/releases/2020-mar/working-with-release-files). You can get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). You can also find more details about each individual dataset by visiting the [March 2020 Release page](data.humancellatlas.org/explore/releases/2020-mar).
+
 
 
