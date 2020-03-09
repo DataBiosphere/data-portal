@@ -8,41 +8,46 @@ draft: true
 
 # Working with Release Files 
 
-There are multiple tools available to view and manipulate the March 2020 Release files. This guide focuses on importing release files into Python and R-supported software such as Pegasus, Seurat, and Scanpy, in addition to visualizing and annotating files in Single Cell Portal. We will use the [2020-Mar-Landscape-Adult-Liver-10x](INSERT LINK TO RELEASE PAGE) dataset as an example, but the following techniques will work for all Release datasets. The software we use is only a subset of single-cell analysis tools; we encourage the community to explore these files using other portals and tools as they become available!
+There are multiple tools to view and manipulate the March 2020 Release files. This guide focuses on importing release files into Python and R-supported software such as Pegasus, Seurat, and SCANPY, in addition to visualizing and annotating files in Single Cell Portal. When applicable, we will use file names from the [2020-Mar-Landscape-Adult-Liver-10x](data.humancellatlas.org/explore/projects/4d6f6c96-2a83-43d8-8fe1-0f53bffd4674/m/releases/2020-mar/datasets/2020-Mar-Landscape-Adult-Liver-10x/release-files) dataset as an example, but the following techniques will work for files from any Release dataset. The software we use for these examples is only a subset of single-cell analysis tools; we encourage the community to explore these files using other portals and tools as they become available!
 
-If you would like to know more about how these release files were generated, please see [March 2020 Release Methods] or take the [analysis tutorial](INSERT LINK) which demonstrates how to replicate Release analyses using the 2020-Mar-Landscape-Adult-Liver-10x Release dataset. 
+If you would like to know more about how these release files were generated, please see [March 2020 Release Methods] or take the [analysis tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis) which demonstrates how to replicate Release analyses using the 2020-Mar-Landscape-Adult-Liver-10x Release dataset. 
 
-## Importing annotated release files into R and Python visualization resources
+Descriptions of all the March 2020 Release files can be found in the [Final March 2020 Release files section](data.humancellatlas.org/releases/2020-mar/methods#final-march-2020-release-files) of the Methods documentation.
 
-Use the suggested code below to view the annotated Cumulus output loom and h5ad files in [Pegasus](https://pegasus.readthedocs.io/en/latest/), [Seurat](https://satijalab.org/seurat/), and [SCANPY](https://github.com/theislab/scanpy). You can find more details about importing Cumulus outputs into these resources from the [Cumulus documentation](https://cumulus.readthedocs.io/en/latest/cumulus.html#load-cumulus-results-into-pegasus). 
+## Importing annotated March 2020 Release files into R and Python visualization resources
+
+Each Release dataset has normalized gene expression matrices containing cell clustering information and annotated cell types. This annotated matrix is provided in two file formats: a loom and a h5ad. Both file types are named with an “_annotated_v1” suffix and can be found under Release Files on the [main Release page](data.humancellatlas.org/explore/releases/2020-mar). The normalized matrices were generated using the Cumulus workflow and annotated using published cell types (see more details in the [Methods]data.humancellatlas.org/releases/2020-mar/methods). 
+
+Use the suggested code below to view annotated loom and h5ad files in [Pegasus](https://pegasus.readthedocs.io/en/latest/), [Seurat](https://satijalab.org/seurat/), and [SCANPY](https://github.com/theislab/scanpy). You can use the [Cumulus documentation](https://cumulus.readthedocs.io/en/latest/cumulus.html#load-cumulus-results-into-pegasus) to learn more about importing the annotated expression matrices into these Python and R resources. 
 
 ### Pegasus 
-[Pegasus](https://pegasus.readthedocs.io/en/latest/) is a Python package used by Cumulus for analyzing very large single-cell transcriptomes. The following 2020-Mar-Landscape-Adult-Liver-10x examples were tested using Python v.INSERT and Pegasus v.INSERT. 
+[Pegasus](https://pegasus.readthedocs.io/en/latest/) is a Python package used by Cumulus for analyzing very large single-cell transcriptomes. The following 2020-Mar-Landscape-Adult-Liver-10x examples were tested using Python v3.7.5 and Pegasus v0.16.11. 
 
-In Python, load the annotated h5ad output file using:
+In Python, load the annotated h5ad file using:
 
 ```Python
 import pegasus as pg
 adata = pg.read_input("2020-Mar-Landscape-Adult-Liver-10x_annotated_v1.h5ad")
 ```
 
-Load the annotated output loom files using:
+Load the annotated loom file using:
 
 ```Python
 import pegasus as pg
 data = pg.read_input("2020-Mar-Landscape-Adult-Liver-10x_annotated_v1.loom", genome = "GRCh38")
 ```
 ### Seurat 
- [Seurat](https://satijalab.org/seurat/) is an R package used for single-cell data quality control, analysis, and exploration. The following examples were tested using R v.INSERT with Python v.INSERT.
+ [Seurat](https://satijalab.org/seurat/) is an R package used for single-cell data quality control, analysis, and exploration. The following examples were tested using R v3.6.3, Python v3.7.5, Seurat v3.1.2, and LoomR v0.2.1.9000
 
-Load the annotated Cumulus h5ad files using:
+Load the annotated h5ad file using:
 
 ```R
+source("https://raw.githubusercontent.com/klarman-cell-observatory/cumulus/master/workflows/cumulus/h5ad2seurat.R")
 ad <- import("anndata", convert = FALSE)
 test_ad <- ad$read_h5ad("2020-Mar-Landscape-Adult-Liver-10x_annotated_v1.seurat.h5ad")
 result <- convert_h5ad_to_seurat(test_ad)
 ```
-To load the Cumulus output loom file, you must first install the LoomR v.INSERT package:
+To load the annotated Cumulus output loom file, you must first install the LoomR v.INSERT package:
 
 ```R
 install.package("devtools")
@@ -55,26 +60,27 @@ source("https://raw.githubusercontent.com/klarman-cell-observatory/cumulus/maste
 > result <- convert_loom_to_seurat("2020-Mar-Landscape-Adult-Liver-10x_annotated_v1.loom")
 ```
 ### SCANPY
-[SCANPY](https://github.com/theislab/scanpy) is a Python-based analysis toolkit for single-cell expression data built with [anndata](https://anndata.readthedocs.io/en/stable/). The following 2020-Mar-Landscape-Adult-Liver-10x examples were tested using Python v.INSERT and SCANPY v.INSERT. 
+[SCANPY](https://github.com/theislab/scanpy) is a Python-based analysis toolkit for single-cell expression data built with [anndata](https://anndata.readthedocs.io/en/stable/). The following 2020-Mar-Landscape-Adult-Liver-10x examples were tested using Python v3.7.5, SCANPY v1.4.5.1, and LoomPy v3.0.6. 
 
-Load the annotated Cumulus h5ad output file using:
+Load the annotated h5ad output file using:
 
 ```Python
 import scanpy as sc
 adata = sc.read_h5ad("2020-Mar-Landscape-Adult-Liver-10x_annotated_v1.seurat.h5ad")’
 ```
+Load the annotated loom file using:
+
 ```Python
-Load the annotated Cumulus h5ad loom file:
 import scanpy as sc
 adata = sc.read_loom("2020-Mar-Landscape-Adult-Liver-10x_annotated_v1.loom")
 ```
 
 ## Loading differential expression results in R or Python
-Differential expression analyses were performed on the louvain cell clusters identified with the Cumulus workflow (see the [Methods page](INSERT LINK). For each Release dataset, there are two files containing differential expression results:
+Differential expression analyses were performed on the louvain cell clusters identified with the Cumulus workflow (see the [Methods page](data.humancellatlas.org/releases/2020-mar/methods). For each Release dataset, there are two files containing differential expression results:
 -  a .de.xlsx 
--  a CSV.zip
+-  a .CSV.zip
 
-Each louvain cluster in the .de.xlsx file has one excel sheet for upregulated genes and one for downregulated genes. To make viewing these results easier in R and Python, we converted all excel sheets into a zip of individual CSV files. You can download the zip file from the project release page (see [here](INSERT LINK) for the 2020-Mar-Landscape-Adult-Liver-10x dataset), unzip it into your directory of choice, and view the CSVs in R or Python using the instructions below.
+Each louvain cluster in the .de.xlsx file has one excel sheet for upregulated genes and one for downregulated genes. To make viewing these results easier in R and Python, we converted all excel sheets into a zip of individual CSV files. You can download the zip file from the Release Files column on the [March 2020 Release page](data.humancellatlas.org/explore/releases/2020-mar), unzip it into your directory of choice, and view the CSVs in R or Python using the instructions below. 
 
 For both R and Python instructions, you will need to specify the name of the directory containing the CSV files (specified below with “DIRECTORY_NAME”).
 
@@ -101,42 +107,41 @@ for f in file_list:
 data[f]
 ```
 
-## Creating a Single Cell Portal study page and importing Cumulus results
-You can visualize or annotate DCP Release files by either using the existing studies in [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release) or by creating a new Single Cell Portal Study. Specific instructions for getting started with Single Cell Portal can be found on the [Single Cell Portal wiki]( https://github.com/broadinstitute/single_cell_portal/wiki/Synchronizing-Study-Data). You will need a Google compatible email account to login. If your institutional account is backed by Google, you may use it.
+## Creating a Single Cell Portal study page and importing Cumulus results from Terra
+You can visualize or annotate DCP Release files by either using the existing studies in [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release) or by creating a new Single Cell Portal study. Detailed instructions for getting started with Single Cell Portal can be found on the [Single Cell Portal wiki]( https://github.com/broadinstitute/single_cell_portal/wiki/Synchronizing-Study-Data). You will need a Google compatible email account to login. If your institutional account is backed by Google, you may use it.
 
-**The following instructions are a continuation from the [analysis tutorial](INSERT LINK) and focus on importing Cumulus output files from an existing Terra workspace. These steps use the 2020-Mar-Landscape-Adult-Liver-10x example files derived from the [analysis tutorial](INSERT LINK).** 
+**The following instructions are a continuation from the [replicating release analyses tutorial](Idata.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis) and focus on importing Cumulus output files from an existing Terra workspace. These steps use the 2020-Mar-Landscape-Adult-Liver-10x example files derived from the techniques in the tutorial.**
 
-
-
-
-
-### Creating a Single Cell Portal Study
+### Creating a Single Cell Portal study
 
 #### 1. Navigate to [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell) and login.
 
-#### 2. Go to the profile drop-down menu and select “Add Study”
+#### 2. Go to the profile drop-down menu and select Add Study.
 ![image](_images/13_SCP_add_study.png)
 
-#### 3. You will need to select a unique name for the study page and billing information (note that if you want to import files from a Terra workspace, the billing information must match the billing information used on Terra). 
+#### 3. Select a unique name for the study page and billing information. 
+If you want to import files from a, existing Terra workspace, the billing information must match the billing information used on Terra. 
+
 ![image](_images/14_SCP_new_study.png)
 
-#### 4. Select Yes for using an existing Terra workspace. 
+#### 4. Select Yes for using an existing Terra workspace if you wish to import Terra workspace files. 
 
-#### 5. Enter the Terra workspace name in the Existing Terra Workspace field. \For the 2020-Mar-Landscape-Adult-Liver-10x dataset, you would use “2020-Mar-Landscape-Adult-Liver-10x”.
+#### 5. Enter the Terra workspace name in the “Existing Terra Workspace” field. 
+For the 2020-Mar-Landscape-Adult-Liver-10x example dataset used in the [analysis tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis), you would type the name “2020-Mar-Landscape-Adult-Liver-10x”.
 
-#### 6. Scroll to the bottom of the page and select “Create Study”.
+#### 6. Scroll to the bottom of the page and select Create Study.
 ![image](_images/15_Create_study.png)
 
-#### 7. Select the files you would like to import. 
+#### 7. If using an existing Terra workspace, select the files you would like to import. 
 
-*While some of these files are necessary to Single Cell Portal functionality, others files, like differential expression analyses, are often shared with colleagues. The table below lists all necessary and recommended files. Additionally, for some Single Cell Portal files, the order of import is important. We have noted this in the Notes section of the table.*
+**The following table details recommended Cumulus output files to import into a Single Cell Portal study. While some of these files are necessary to Single Cell Portal functionality (all files marked with a .scp), others files, like differential expression analyses, are recommended as they are often shared with colleagues. When importing from Terra, the order of import can be important. We have noted this in the Notes section of the table.**
 
 | File Name | Description | File type | Notes |
 |---|---|---|---|
 | 2020-Mar-Landscape-Adult-Liver-10x.loom | Loom file generated by the HCA Matrix service and used as input to the Cumulus pipeline. | Other | --- |
 | output/2020-Mar-Landscape-Adult-Liver-10x.de.xlsx | Differential expression with correction (Cumulus output) | Other | --- |
 | output/2020-Mar-Landscape-Adult-Liver-10x.filt.xlsx | File describing cumulus filtering information | Other | ---  |
-| output/2020-Mar-Landscape-Adult-Liver-10x.loom | Contains Clustering information (Pegasus, Scanpy, and Seurat compatible) | Other | This is output loom file is not annotated  |
+| output/2020-Mar-Landscape-Adult-Liver-10x.loom | Contains Clustering information (Pegasus, SCANPY, and Seurat compatible) | Other | This is output loom file is not annotated  |
 | output/2020-Mar-Landscape-Adult-Liver-10x.scp.X_diffmap_pca.coords.txt | Diffusion map coordinates | Cluster | This file is necessary Single Cell Portal visualization; Specify 3 axis labels as “Diffmap n” where n=1,2,3 |
 | output/2020-Mar-Landscape-Adult-Liver-10x.scp.X_fitsne.coords.txt | FIt-SNE coordinates | Cluster | This file is necessary for Single Cell Portal visualization; Specify axis labels as “FIt-SNE n”, where n=1,2 |
 | output/2020-Mar-Landscape-Adult-Liver-10x.scp.X_fle.coords.txt | fle cluster coordinates | Cluster | This file is necessary for Single Cell Portal visualization; Specify axis labels as ”Fle n”, where n=1,2 |
@@ -147,5 +152,37 @@ You can visualize or annotate DCP Release files by either using the existing stu
 | output/2020-Mar-Landscape-Adult-Liver-10x.scp.metadata.txt | Metadata matrix | Metadata |  |
 | output/2020-Mar-Landscape-Adult-Liver-10x.seurat.h5ad | Seurat compatible output containing clustering information (Cumulus output) | Other | ---  |
 
-### Annotating cells in Single Cell Portal
-Note that the DCP used publications and suggestions from project contributors for cell annotations, but we encourage researchers to explore and create new annotations. Here is a link to a Single Cell Portal [cell annotation guide](https://github.com/broadinstitute/single_cell_portal/wiki/Annotations).
+Please note that any Cumulus files generated in Terra using the techniques outlined in the Replicating Release Analyses tutorial are not annotated. After importing files to a Single Cell Portal study, you can create your own annotations using the guide suggested in the next section.
+
+### Annotating cell types in Single Cell Portal
+The March 2020 Release used publications and project contributor feedback for cell type annotations. However, we encourage researchers to explore and create new annotations. Here is a link to a Single Cell Portal [cell annotation guide](https://github.com/broadinstitute/single_cell_portal/wiki/Annotations).
+
+#### Viewing annotated cell clusters in Single Cell Portal
+Each March 2020 Release dataset has a Single Cell Portal study page where you can view annotated cell clusters. You can find a link to these pagers on the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar) or on the [March 2020 Release page on Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release).
+
+To visualize the annotated cell clusters for Release dataset, go to the Explore tab of the Single Cell Portal study and follow the instructions below:
+#### 1. Select the View Options gear icon.
+![image](_images/17_SCP_explore_view_options.png)
+
+#### 2. Open the Select Annotations drop-down menu.
+![image](_images/18_SCP_Select_annotation.png)
+
+#### 3. Choose either annotated_cell_identity.text or annotated_cell_identity.ontology_label. 
+![image](_images/19_cell_type_annotations.png).
+
+**The annotated_cell_identity.text option will list the cell types defined by project contributors. The annotated_cell_identity.ontology_label will list cell types that have been harmonized using ontology services.**
+
+### Searching for genes across March 2020 Release datasets using Global Gene Search
+The March 2020 Release offers a Global Gene Search option using Single Cell Portal.
+#### 1. [Go the March 2020 Release Single Cell Portal page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release).
+When you enter the page, you will likely by default be on the Search Studies tab of the landing page. 
+#### 2. Select the Search Genes tab
+![image](_images/20_SCP_Release_pagepng
+#### 3. Type in the gene of interest. 
+![image](_images/21_tmem119_search.png
+At the top of the search, the number of datasets that has a positive match will appear. Below teh search, a graphical display cell clusters containing the gene of interest will display for all projects with the gene, 
+
+## Next steps
+You can replicate the release analyses using your own files by [taking this tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). 
+
+If you have any suggestions for this tutorial or questions, please see the [Community Feedback page](.data.humancellatlas.org/releases/2020-mar/feedback).
