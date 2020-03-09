@@ -28,7 +28,8 @@ If you already have a Terra account, follow these step-by-step instructions:
 ![image](_images/01_new_workspace_card.png)
 
 #### 2. Select the Create a New Workspace card.
-#### 3. Fill out a unique workspace name and billing information. You can also optionally add a description of the workspace purpose. You can also optionally fill out the authorization domain. If you are unsure about his field, you can read more information in [this article](https://support.terra.bio/hc/en-us/articles/360026775691)
+#### 3. Fill out a unique workspace name and billing information.
+You can also optionally add a description of the workspace purpose. You can also optionally fill out the authorization domain. If you are unsure about his field, you can read more information in [this article](https://support.terra.bio/hc/en-us/articles/360026775691)
 ![image](_images/02_new_workspace_info.png)
 
 #### 4. Upload the unnormalized count matrix (2020-Mar-Landscape-Adult-Liver-10x.loom file) to the workspace Google bucket.
