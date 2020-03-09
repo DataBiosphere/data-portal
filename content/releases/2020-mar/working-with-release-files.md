@@ -172,7 +172,7 @@ To visualize the annotated cell clusters for Release dataset, go to the Explore 
 
 **The annotated_cell_identity.text option will list the cell types defined by project contributors. The annotated_cell_identity.ontology_label will list cell types that have been harmonized using ontology services.**
 
-### Searching for genes across March 2020 Release datasets using Global Gene Search
+## Searching for genes across March 2020 Release datasets using Global Gene Search
 The March 2020 Release offers a Global Gene Search option using Single Cell Portal.
 #### 1. [Go the March 2020 Release Single Cell Portal page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release).
 When you enter the page, you will likely by default be on the Search Studies tab of the landing page. 
