@@ -26,7 +26,7 @@ The Cumulus workflow was used to perform cell clustering, differential expressio
 
 The following sections describe the specific Cumulus workflow parameters used for the HCA March 2020 Release. Global inputs are described first, followed by parameters for each Cumulus task: clustering, differential expression, and visualization. Additionally, this section lists the parameters for generating [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release)-compatible outputs. 
 
-All parameters are detailed in the [Cumulus documentation](https://cumulus.readthedocs.io/en/latest/cumulus.html#run-cumulus-analysis). Any unspecified Cumulus parameters (not listed in tables below) were set to the default attributes (also listed in the documentation). To run the Cumulus workflow in Terra, these parameters were specified using a workspace configuration file (JSON format) which was uploaded directly to each workspace (see an example JSON file used for the [March 2020 Release](insert link)).
+All parameters are detailed in the [Cumulus documentation](https://cumulus.readthedocs.io/en/latest/cumulus.html#run-cumulus-analysis). Any unspecified Cumulus parameters (not listed in tables below) were set to the default attributes (also listed in the documentation). To run the Cumulus workflow in Terra, these parameters were specified using a workspace configuration file (JSON format) which was uploaded directly to each workspace (see an example JSON file used for the [March 2020 Release](_downloads/Example.JSON).
 
 ### Global inputs
 The table below details the attributes for Cumulus input files, output files, and the CPUs that were used for analyses in Terra.
@@ -153,6 +153,7 @@ Dataset_ID_annotated_v1.scp.metadata.txt | SCP | Annotated metadata matrix file 
 ## Want to learn more?
 
 Techniques for uploading loom and h5ad files into common analysis software are described in this [Release Tutorial] (INSERT LINK). You can get hands-on experience with these methods by following our step-by-step guide (INSERT LINK). You can also find more details about each individual dataset by visiting INSERT RELEASE PAGE.
+
 
 
 
