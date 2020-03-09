@@ -177,12 +177,13 @@ The March 2020 Release offers a Global Gene Search option using Single Cell Port
 #### 1. [Go the March 2020 Release Single Cell Portal page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release).
 When you enter the page, you will likely by default be on the Search Studies tab of the landing page. 
 #### 2. Select the Search Genes tab
-![image](_images/20_SCP_Release_pagepng
+![image](_images/20_SCP_Release_page.png)
 #### 3. Type in the gene of interest. 
-![image](_images/21_tmem119_search.png
+![image](_images/21_tmem119_search.png)
 At the top of the search, the number of datasets that has a positive match will appear. Below teh search, a graphical display cell clusters containing the gene of interest will display for all projects with the gene, 
 
 ## Next steps
 You can replicate the release analyses using your own files by [taking this tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). 
 
 If you have any suggestions for this tutorial or questions, please see the [Community Feedback page](.data.humancellatlas.org/releases/2020-mar/feedback).
+
