@@ -78,7 +78,7 @@ To visualize cell clusters, multiple low-dimension embeddings were generated usi
 | plot_umap | Create a uniform manifold approximation and projection (UMAP)-like plot | "louvain_labels,Channel” | "louvain_labels” |
 
 
-### Generating Single-Cell Portal compatible outputs: 
+### Generating Single Cell Portal compatible outputs: 
 Single Cell Portal compatible outputs were generated with the following parameters. The resulting files were used to create interactive [Single Cell Portal studies](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release).
 
 | Input name | Description |  Attribute | 
