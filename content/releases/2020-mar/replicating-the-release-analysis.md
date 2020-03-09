@@ -28,9 +28,9 @@ To start your analyses, you will need to download the unnormalized count matrix 
 If you already have a Terra account, follow these step-by-step instructions for setting up a workspce:
 
 #### 1. Go to app.terra.bio and select the View Workspaces card.
+#### 2. Select the Create a New Workspace card.
 ![image](_images/01_new_workspace_card.png)
 
-#### 2. Select the Create a New Workspace card.
 #### 3. Fill out a unique workspace name and billing information. 
 You can optionally add a description of the workspace purpose. You can also optionally fill out the authorization domain. If you are unsure about the authorization domain field, you can read more information in [this article](https://support.terra.bio/hc/en-us/articles/360026775691)
 ![image](_images/02_new_workspace_info.png)
