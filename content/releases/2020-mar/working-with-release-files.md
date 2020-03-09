@@ -157,7 +157,7 @@ Please note that any Cumulus files generated in Terra using the techniques outli
 ### Annotating cell types in Single Cell Portal
 The March 2020 Release used publications and project contributor feedback for cell type annotations. However, we encourage researchers to explore and create new annotations. Here is a link to a Single Cell Portal [cell annotation guide](https://github.com/broadinstitute/single_cell_portal/wiki/Annotations).
 
-#### Viewing annotated cell clusters in Single Cell Portal
+### Viewing annotated cell clusters in Single Cell Portal
 Each March 2020 Release dataset has a Single Cell Portal study page where you can view annotated cell clusters. You can find a link to these pagers on the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar) or on the [March 2020 Release page on Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release).
 
 To visualize the annotated cell clusters for Release dataset, go to the Explore tab of the Single Cell Portal study and follow the instructions below:
