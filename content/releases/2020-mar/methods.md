@@ -19,13 +19,13 @@ The March 2020 Release includes all human DCP projects that were processed with 
 | :-- |
 | It depends on the sequencing technology of the dataset. The gene matrix for datasets processed with the 10x technology contain gene counts. The matrix for datasets processed with Smart-seq2 technology contain RSEM TPMs. All matrices also include important metadata, such as sample processing and organ information. |
 
-The metadata in each count matrix file was modified to include new ontology labels and corrections to existing ontology labels. Additionally, due to a processing error, all EmptyDrops output was removed from files produced with the Optimus pipeline. This has been corrected and EmptyDrops will be available in future releases. All updated gene matrix files (loom format) used for the March 2020 Release are available for download under the Release Files column of the [DCP Portal’s Data Release page](data.humancellatlas.org/explore/releases/2020-mar) (see the Pipeline Input files section). 
+The metadata in each gene matrix file was modified to include new ontology labels and corrections to existing ontology labels. Additionally, due to a processing error, all EmptyDrops output was removed from files produced with the Optimus pipeline. This has been corrected and EmptyDrops will be available in future releases. All updated gene matrix files (loom format) used for the March 2020 Release are available for download under the Release Files column of the [DCP Portal’s Data Release page](data.humancellatlas.org/explore/releases/2020-mar). 
 
 ## Dataset IDs
 Each dataset was given a unique ID with a “2020-Mar...” prefix. All dataset IDs are listed on the March 2020 Release page in the “Dataset” column. This Dataset ID was used to name all input and output files relevant to each dataset. 
 
 ## Terra workspace preparation
-Each Release dataset was analyzed in individual workspaces in the cloud-based platform [Terra](app.bio.terra). The Cumulus workflow ([Snapshot 14](https://portal.firecloud.org/#methods/cumulus/cumulus/14/wdl)) was imported from the Broad Methods Repository into each Terra workspace. Each workspace links to a workspace-specific Google bucket (WORKSPACE_BUCKET); each dataset’s gene matrix (loom format) was uploaded to the Google bucket. Throughout the Cumulus workflow, the cloud path to the Google bucket was used to specify the name of each dataset’s input and output files (see an example in the [Global Inputs section](#-global-inputs). 
+Each Release dataset was analyzed in individual workspaces in the cloud-based platform [Terra](app.bio.terra). The Cumulus workflow ([Snapshot 14](https://portal.firecloud.org/#methods/cumulus/cumulus/14/wdl)) was imported from the Broad Methods Repository into each Terra workspace. Each workspace links to a workspace-specific Google bucket (WORKSPACE_BUCKET); each dataset’s gene matrix (loom format) was uploaded to the Google bucket. Throughout the Cumulus workflow, the cloud path to the Google bucket was used to specify the name of each dataset’s input and output files (see an example in the [Global Inputs section](#-global-inputs)). 
 
 ## Cumulus workflow
 The Cumulus workflow was used to perform cell clustering, differential expression analyses, and plotting using each dataset’s gene matrix (loom format) as input. More information about Cumulus can be found in the [main documentation](https://cumulus.readthedocs.io/en/0.13.0/cumulus.html). Additionally, you can view the Cumulus workflow used for these analyses in the [Broad Methods Repository](https://portal.firecloud.org/#methods/cumulus/cumulus/14/wdl) or on [GitHub](https://github.com/klarman-cell-observatory/cumulus/blob/c937a832718aacbe75a0fdbca9cde682c48e2407/workflows/cumulus/cumulus.wdl). 
@@ -93,7 +93,7 @@ Single Cell Portal compatible outputs were generated with the following paramete
 | output_dense | Boolean describing if outputs should be in dense format | false |
 
 ## Cumulus output files
-The following table describes all Cumulus output files, including unannotated, normalized expression matrices. Files with a “.scp” demarcation are only needed to create Single Cell Portal studies and can be found on the Single Cell Portal study page (see the [Single Cell Portal March 2020 Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release). 
+The following table describes all Cumulus output files, including unannotated, normalized expression matrices. Files with a “.scp” demarcation are only needed to create Single Cell Portal studies and can be found on the Single Cell Portal study page (see the [Single Cell Portal March 2020 Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release)). 
 
 All output file names start with the Dataset ID, the unique ID given to each release dataset that is listed on the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar).
 
@@ -118,7 +118,7 @@ For more information regarding how cell clustering information is stored in the 
 
 ## Cell type annotations
 
-Cell type annotations were obtained from the publications listed on each dataset’s project page or from the project contributors. The nomenclature for annotations was harmonized across all DCP Release projects using the [Ontology Lookup Service](https://www.ebi.ac.uk/ols/index) and the mapping tool Zooma(https://www.ebi.ac.uk/spot/zooma/). The resulting harmonized annotations were mapped to the normalized expression matrices (loom and h5ad file formats) generated by Cumulus using cell barcodes (for 10x technology) or IDs (for Smart-seq2 technology). 
+Cell type annotations were obtained from the publications listed on each dataset’s project page or from the project contributors. The nomenclature for annotations was harmonized across all DCP Release projects using the [Ontology Lookup Service](https://www.ebi.ac.uk/ols/index) and the mapping tool [Zooma](https://www.ebi.ac.uk/spot/zooma/). The resulting harmonized annotations were mapped to the normalized expression matrices (loom and h5ad file formats) generated by Cumulus using cell barcodes (for 10x technology) or IDs (for Smart-seq2 technology). 
 
 Annotations were added to normalized expression matrices in loom and h5ad formats using [LoomPy](http://loompy.org/) and [SCANPY](https://icb-scanpy.readthedocs-hosted.com/en/stable/), respectively. Three column attributes were added to each file:
 - “annotated_cell_identity.text”: the original cell type labels provided by the project contributor
@@ -131,7 +131,7 @@ All final annotated expression matrices are available for download on the DCP [M
 
 
 ## Final March 2020 Release files
-The following table describes the final Release files available in the DCP Release page and in interactive portals. Files with a “.scp” demarcation are only needed to create Single Cell Portal studies and can be found on the Single Cell Portal study page (see the [Single Cell Portal March 2020 Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release). All other files, including the output loom, h5ad, and differential expression xlsx and CSV files are available for download on the dataset-specific pages listed on the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar). All output file names start with the Dataset ID, the unique ID given to each release dataset and is listed on the DCP Release page.
+The following table describes the final Release files available in the DCP Release page and in interactive portals. Files with a “.scp” demarcation are only needed to create Single Cell Portal studies and can be found on the Single Cell Portal study page (see the [Single Cell Portal March 2020 Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release)). All other files, including the output loom, h5ad, and differential expression xlsx and CSV files are available for download on the dataset-specific pages listed on the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar). All output file names start with the Dataset ID, the unique ID given to each release dataset and is listed on the DCP Release page.
 
 | File name | File location: DCP) and/or SCP | Description | Format | 
 | --- | --- | --- | --- |
@@ -161,6 +161,7 @@ Dataset_ID_annotated_v1.scp.metadata.txt | SCP | Annotated metadata matrix file 
 ## Want to learn more?
 
 Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files). You can also get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). For additional details about each individual dataset, visit the [March 2020 Release page](data.humancellatlas.org/explore/releases/2020-mar).
+
 
 
 
