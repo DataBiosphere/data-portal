@@ -16,7 +16,6 @@ To start your analyses, you will need to download the gene matrix from the DCP. 
 #### 1. Navigate to the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar).
 #### 2. Find the sample dataset 2020-Mar-Landscape-Adult-Liver-10x in the table.
 #### 3. Select “View Files”.
-#### 3. Scroll to the section “Pipeline Input”. 
 #### 4. Download the gene matrix (2020-Mar-Landscape-Adult-Liver-10x.loom file).
 
 ## Creating a Terra workspace
@@ -33,7 +32,7 @@ If you already have a Terra account, follow these step-by-step instructions for 
 
 #### 3. Fill out a unique workspace name and billing information. 
 You can optionally add a description of the workspace purpose. You can also optionally fill out the authorization domain. If you are unsure about the authorization domain field, you can read more information in [this article](https://support.terra.bio/hc/en-us/articles/360026775691)
-![image](_images/02_new_workspace_info.png)
+![image](_images/02_new_workspace_info.png).
 
 #### 4. Upload the gene matrix (2020-Mar-Landscape-Adult-Liver-10x.loom file) to the workspace Google bucket.
 Each Terra workspace you create comes with its own Google bucket. 
@@ -58,11 +57,11 @@ This will redirect you to the Broad Methods (you will no longer be in Terra).
 #### 8. Select Use Blank Configuration.
 A new page will appear with a Destination Workspace drop-down menu. 
 #### 9. Select your destination workspace from this menu. 
-An option will appear to go to your workspace.You will be redirected back into the Terra workflow configuration page. 
+An option will appear to go to your workspace. You will be redirected back into the Terra workflow configuration page. 
 
 ## Importing a workflow configuration file (JSON format)
 The sequencing data for all March 2020 Release datasets were generated using either 10x or Smart-seq2 technology. There are two Cumulus workflow configuration files available for Terra import depending on which sequencing technology (10x or Smart-seq2) was used for the dataset of interest. The technology will be specified next to the dataset on the [Release page](data.humancellatlas.org/explore/releases/2020-mar). 
-The 2020-Mar-Landscape-Adult-Liver-10x dataset uses the 10x configuration. For all datasets, you can download the 10x configuration (JSON) [here](_downloads/10x_json.JSON) or the Smart-seq2 [here](_downloads/SS2_json.JSON). 
+The 2020-Mar-Landscape-Adult-Liver-10x dataset uses the 10x configuration. For all datasets, you can download the 10x configuration (JSON) [here](_downloads/10x_json.JSON) or the Smart-seq2 configuration [here](_downloads/SS2_json.JSON). 
 
 After downloading the 10x_json.JSON (to be used with the 2020-Mar-Landscape-Adult-Liver-10x dataset), do the following:
 
@@ -77,7 +76,7 @@ After downloading the 10x_json.JSON (to be used with the 2020-Mar-Landscape-Adul
 
 ## Specifying workflow input and output files
 
-#### 1. Examine the input field of the workflow configuration page. 
+#### 1. Examine the input_file attribute of the workflow configuration page. 
 Notice the field requires a “File” input. Specify the Google bucket location for the gene matrix (loom) file. To do this, select the folder icon in the input_file attribute box. Choose the 2020-Mar-Landscape-Adult-Liver-10x.loom. 
 ![image](_images/09_input_file.png)
 
@@ -88,7 +87,7 @@ This attribute requires a “String” input. Specify a string in quotes that in
 - The filename prefix can also be any name to identify the dataset, but we used the dataset ID 2020-Mar-Landscape-Adult-Liver-10x. 
 The final string should look similar to: “gs://GOOGLE_BUCKET/output/2020-Mar-Landscape-Adult-Liver-10x”.
 
-#### 3. Select Save on the configuration page
+#### 3. Select Save on the configuration page.
 
 ## Running the workflow
 
@@ -104,9 +103,9 @@ The final string should look similar to: “gs://GOOGLE_BUCKET/output/2020-Mar-L
 ![image](_images/16_data_tab_output.png)
 #### 3. You should now see the processed data files. 
 
-The processed files include the normalized expression matrices (in loom and h5ad formats), differential expression analyses, (xlsx and CSV formats), and Single Cell portal outputs. These are each described in the [Methods documentation](data.humancellatlas.org/releases/2020-mar/methods). 
+The processed files include the normalized expression matrices (in loom and h5ad formats), differential expression analyses, (xlsx), and Single Cell portal outputs. These are each described in the [Methods documentation](data.humancellatlas.org/releases/2020-mar/methods). 
 
-**Note:** Although the normalized expression files (loom and h5ad) contain cell clustering, they are still unannotated.
+**Note:** Although the normalized expression files (loom and h5ad) contain cell clustering, they do not yet contain cell type annotations.
 
 ## Annotating Release files
 The March2020 Release includes normalized expression matrices that have been annotated with the guidance of project contributors. This tutorial does not cover how to add these annotations to expression matrices, but there are multiple tools you can use to add annotations including [LoomPy](http://loompy.org/) and [SCANPY](https://icb-scanpy.readthedocs-hosted.com/en/stable/). Additionally, you can add annotations using [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release). See the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files) for details about creating your own Single Cell Portal study. 
@@ -115,3 +114,4 @@ The March2020 Release includes normalized expression matrices that have been ann
 You can export Cumulus workflow output files from the Terra workspace to a Single Cell Portal study. There, you can visualize cell clusters and make annotations. Please see the [“Working with Release Files” documentation](data.humancellatlas.org/releases/2020-mar/working-with-release-files) for available tools (including Single Cell Portal) you can use to interact with Release data. 
 
 If you have any suggestions for this tutorial or questions, please see the [Community Feedback page](.data.humancellatlas.org/releases/2020-mar/feedback).
+
