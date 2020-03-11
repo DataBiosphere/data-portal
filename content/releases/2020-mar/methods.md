@@ -7,24 +7,28 @@ draft: true
 
 # March 2020 Release Methods
 ## Overview
-This document details the Human Cell Atlas (HCA) Data Coordination Platform’s (DCP) methods for cell clustering, differential expression analyses, and data visualization used in the HCA March 2020 Data Release. Overall, 13 individual DCP projects were stratified into 24 datasets by organ, developmental stage and sample processing technology. Unnormalized count matrices for each dataset were uploaded into the cloud-based platform [Terra](app.terra.bio) and analyzed using Cumulus (v0.13.0), a single-cell analysis workflow ([Li et al. 2019](https://www.biorxiv.org/content/10.1101/823682v1)). All Release files are available for download on the [main Data Release Page](data.humancellatlas.org/explore/releases/2020-mar)
+This document details the Human Cell Atlas (HCA) Data Coordination Platform’s (DCP) methods for cell clustering, differential expression analyses, and data visualization used in the HCA March 2020 Data Release. Overall, 13 individual DCP projects were stratified into 24 datasets by organ, developmental stage and sample processing technology. Gene matrices for each dataset were uploaded into the cloud-based platform [Terra](app.terra.bio) and analyzed using Cumulus (v0.13.0), a single-cell analysis workflow ([Li et al. 2019](https://www.biorxiv.org/content/10.1101/823682v1)). All Release files are available for download on the [main Data Release Page](data.humancellatlas.org/explore/releases/2020-mar)
 
 A step-by-step tutorial for replicating the release analyses is provided in the [Release documentation](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). Additionally, you can find techniques for manipulating and interacting with release files in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files).
 
 
-## Project stratification and unnormalized count matrix preparation
-The March 2020 Release includes all human DCP projects that were processed with DCP standardized pipelines (Optimus or Smart-seq2). Each project was stratified into individual datasets by organ and when applicable, by developmental stage (adult or fetal) or by sample processing technology (10x or Smart-seq2). Unnormalized gene count matrices (loom files) for the stratified Release datasets were obtained by filtering projects on the [DCP Data Portal](data.humancellatlas.org/explore/) using the stratification criteria above. 
+## Project stratification and gene matrix preparation
+The March 2020 Release includes all human DCP projects that were processed with DCP standardized pipelines (Optimus or Smart-seq2). Each project was stratified into individual datasets by organ and when applicable, by developmental stage (adult or fetal) or by sample processing technology (10x or Smart-seq2). For each Release dataset, gene matrices in loom format (see the “What is in the gene matrix” note below) were obtained by filtering projects on the [DCP Data Portal](data.humancellatlas.org/explore/) using the stratification criteria above. 
 
-The metadata in each count matrix file was modified to include new ontology labels and corrections to existing ontology labels. Additionally, due to a processing error, all EmptyDrops data was removed from files produced with the Optimus pipeline. All updated unnormalized matrix files (loom format) used for the March 2020 Release are available for download under the Release Files column of the [DCP Portal’s Data Release page](data.humancellatlas.org/explore/releases/2020-mar) (see the Pipeline Input files section). 
+| What is in the gene matrix? |
+| :-- |
+| It depends on the sequencing technology of the dataset. The gene matrix for datasets processed with the 10x technology contain gene counts. The matrix for datasets processed with Smart-seq2 technology contain RSEM TPMs. All matrices also include important metadata, such as sample processing and organ information. |
+
+The metadata in each count matrix file was modified to include new ontology labels and corrections to existing ontology labels. Additionally, due to a processing error, all EmptyDrops output was removed from files produced with the Optimus pipeline. This has been corrected and EmptyDrops will be available in future releases. All updated gene matrix files (loom format) used for the March 2020 Release are available for download under the Release Files column of the [DCP Portal’s Data Release page](data.humancellatlas.org/explore/releases/2020-mar) (see the Pipeline Input files section). 
 
 ## Dataset IDs
 Each dataset was given a unique ID with a “2020-Mar...” prefix. All dataset IDs are listed on the March 2020 Release page in the “Dataset” column. This Dataset ID was used to name all input and output files relevant to each dataset. 
 
 ## Terra workspace preparation
-Each Release dataset was analyzed in individual workspaces in the cloud-based platform [Terra](app.bio.terra). The Cumulus workflow ([Snapshot 14](https://portal.firecloud.org/#methods/cumulus/cumulus/14/wdl)) was imported from the Broad Methods Repository into each Terra workspace. Each workspace links to a workspace-specific Google bucket (WORKSPACE_BUCKET); each dataset’s unnormalized count matrix (loom format) was uploaded to the Google bucket. Throughout the Cumulus workflow, the cloud path to the Google bucket was used to specify the name of each dataset’s input and output files (see an example in the [Global Inputs section](#-global-inputs). 
+Each Release dataset was analyzed in individual workspaces in the cloud-based platform [Terra](app.bio.terra). The Cumulus workflow ([Snapshot 14](https://portal.firecloud.org/#methods/cumulus/cumulus/14/wdl)) was imported from the Broad Methods Repository into each Terra workspace. Each workspace links to a workspace-specific Google bucket (WORKSPACE_BUCKET); each dataset’s gene matrix (loom format) was uploaded to the Google bucket. Throughout the Cumulus workflow, the cloud path to the Google bucket was used to specify the name of each dataset’s input and output files (see an example in the [Global Inputs section](#-global-inputs). 
 
 ## Cumulus workflow
-The Cumulus workflow was used to perform cell clustering, differential expression analyses, and plotting using each dataset’s unnormalized count matrix (loom format) as input. More information about Cumulus can be found in the [main documentation](https://cumulus.readthedocs.io/en/0.13.0/cumulus.html). Additionally, you can view the Cumulus workflow used for these analyses in the [Broad Methods Repository](https://portal.firecloud.org/#methods/cumulus/cumulus/14/wdl) or on [GitHub](https://github.com/klarman-cell-observatory/cumulus/blob/c937a832718aacbe75a0fdbca9cde682c48e2407/workflows/cumulus/cumulus.wdl). 
+The Cumulus workflow was used to perform cell clustering, differential expression analyses, and plotting using each dataset’s gene matrix (loom format) as input. More information about Cumulus can be found in the [main documentation](https://cumulus.readthedocs.io/en/0.13.0/cumulus.html). Additionally, you can view the Cumulus workflow used for these analyses in the [Broad Methods Repository](https://portal.firecloud.org/#methods/cumulus/cumulus/14/wdl) or on [GitHub](https://github.com/klarman-cell-observatory/cumulus/blob/c937a832718aacbe75a0fdbca9cde682c48e2407/workflows/cumulus/cumulus.wdl). 
 
 The following sections describe the specific Cumulus workflow parameters used for the March 2020 Release. Global inputs are described first, followed by parameters for each Cumulus task: clustering, differential expression, and visualization. Additionally, this section lists the parameters for generating [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release)-compatible outputs. 
 
@@ -41,7 +45,7 @@ The table below details the attributes for Cumulus input files, output files, an
 
 
 ### Clustering
-The Cumulus workflow was set to cluster cells using the Louvain method, a modularity-based community detection algorithm ([Li et al. 2019]( https://www.biorxiv.org/content/10.1101/823682v1.full)). The following table lists all the Cumulus workflow parameters used for cell clustering.  
+The Cumulus workflow was set to cluster cells using the Louvain method, a modularity-based community detection algorithm ([Li et al. 2019]( https://www.biorxiv.org/content/10.1101/823682v1.full)). The following table lists all the Cumulus workflow parameters used for cell clustering and dimensionality reduction.
 
 | Input name | Description |  Attribute | 
 | --- | --- | --- |
@@ -89,7 +93,7 @@ Single Cell Portal compatible outputs were generated with the following paramete
 | output_dense | Boolean describing if outputs should be in dense format | false |
 
 ## Cumulus output files
-The following table describes all Cumulus output files, including unannotated, normalized expression matrices. Files with a “.scp” demarcation are Single Cell Portal-specific files and are only available on the Single Cell Portal study page (see the [Single Cell Portal March 2020 Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release). 
+The following table describes all Cumulus output files, including unannotated, normalized expression matrices. Files with a “.scp” demarcation are only needed to create Single Cell Portal studies and can be found on the Single Cell Portal study page (see the [Single Cell Portal March 2020 Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release). 
 
 All output file names start with the Dataset ID, the unique ID given to each release dataset that is listed on the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar).
 
@@ -98,23 +102,23 @@ All output file names start with the Dataset ID, the unique ID given to each rel
 | File name | Description |  Format | 
 | --- | --- | --- |
 | Dataset_ID.de.xlsx | Output file containing differential expression with correction | XLSX |	
-| Dataset_ID.filt.xlsx | Filtering information | XLSX |		
-| Output/Dataset_ID.loom | Normalized expression matrix; contains clustering information, cell annotations, and log-transformed gene expression | Loom |	
-| Output/Dataset_ID.seurat.h5ad | Seurat-compatible, normalized expression matrix generated; contains clustering information, cell annotations, and log-transformed gene expression | h5ad |
+| Dataset_ID.filt.xlsx | Output file containing filtering information | XLSX |		
+| Output/Dataset_ID.loom | Expression matrix; contains clustering information and log-transformed gene expression | Loom |	
+| Output/Dataset_ID.seurat.h5ad | Seurat-compatible expression matrix; contains clustering information and log-transformed gene expression | h5ad |
 | Dataset_ID.scp.X_diffmap_pca.coords.txt | Diffusion map coordinates for Single Cell Portal | TXT |		
 | Dataset_ID.scp.X_fitsne.coords.txt | FIt-SNE coordinates for Single Cell Portal | TXT |	
 | Dataset_ID.scp.X_fle.coords.txt | fle cluster coordinates for Single Cell Portal |  TXT |
 | Dataset_ID.scp.X_umap.coords.txt | UMAP cluster coordinates for Single Cel Portal| TXT |	
-| Dataset_ID.scp.barcodes.tsv | 10X compatible barcodes file for Single Cell Portal | TSV |	
-| Dataset_ID.scp.features.tsv | 10X compatible features (genes) file for Single Cell Portal | TSV |	
-| Dataset_ID.scp.matrix.mtx | 10X compatible mtx expression file for Single Cell Portal | mtx |
+| Dataset_ID.scp.barcodes.tsv | 10x compatible barcodes file for Single Cell Portal | TSV |	
+| Dataset_ID.scp.features.tsv | 10x compatible features (genes) file for Single Cell Portal | TSV |	
+| Dataset_ID.scp.matrix.mtx | 10x compatible mtx expression file for Single Cell Portal | mtx |
 | Dataset_ID.scp.metadata.txt | Metadata matrix for Single Cell Portal | TXT | 
 
 For more information regarding how cell clustering information is stored in the normalized expression matrix (h5ad and loom format files), please read the [Cumulus Documentation](https://cumulus.readthedocs.io/en/0.13.0/cumulus.html#cluster-outputs). You can also read more about the available differential expression outputs in the [Cumulus DE Outputs documentation](https://cumulus.readthedocs.io/en/0.13.0/cumulus.html#de-analysis-outputs). 
 
 ## Cell type annotations
 
-Cell type annotations were obtained from the publications listed on each dataset’s project page or from the project contributors. The nomenclature for annotations was harmonized across all DCP Release projects using the [Ontology Lookup Service](https://www.ebi.ac.uk/ols/index) and the mapping tool Zooma (https://www.ebi.ac.uk/spot/zooma/). The resulting harmonized annotations were mapped to the normalized expression matrices (loom and h5ad file formats) generated by Cumulus using cell barcodes (for 10x technology) or IDs (for Smart-seq2 technology). 
+Cell type annotations were obtained from the publications listed on each dataset’s project page or from the project contributors. The nomenclature for annotations was harmonized across all DCP Release projects using the [Ontology Lookup Service](https://www.ebi.ac.uk/ols/index) and the mapping tool Zooma(https://www.ebi.ac.uk/spot/zooma/). The resulting harmonized annotations were mapped to the normalized expression matrices (loom and h5ad file formats) generated by Cumulus using cell barcodes (for 10x technology) or IDs (for Smart-seq2 technology). 
 
 Annotations were added to normalized expression matrices in loom and h5ad formats using [LoomPy](http://loompy.org/) and [SCANPY](https://icb-scanpy.readthedocs-hosted.com/en/stable/), respectively. Three column attributes were added to each file:
 - “annotated_cell_identity.text”: the original cell type labels provided by the project contributor
@@ -127,23 +131,23 @@ All final annotated expression matrices are available for download on the DCP [M
 
 
 ## Final March 2020 Release files
-The following table describes the final Release files available in the DCP Release page and in interactive portals. Files with a “.scp” demarcation are Single Cell Portal-specific files and are only available on the Single Cell Portal study page (see the [Single Cell Portal March 2020 Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release). All other files, including the output loom, h5ad, and differential expression xlsx and CSV files are available for download on the dataset-specific pages listed on the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar). All output file names start with the Dataset ID, the unique ID given to each release dataset and is listed on the DCP Release page.
+The following table describes the final Release files available in the DCP Release page and in interactive portals. Files with a “.scp” demarcation are only needed to create Single Cell Portal studies and can be found on the Single Cell Portal study page (see the [Single Cell Portal March 2020 Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release). All other files, including the output loom, h5ad, and differential expression xlsx and CSV files are available for download on the dataset-specific pages listed on the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar). All output file names start with the Dataset ID, the unique ID given to each release dataset and is listed on the DCP Release page.
 
 | File name | File location: DCP) and/or SCP | Description | Format | 
 | --- | --- | --- | --- |
-|  Dataset_ID.loom | DCP/SCP | Unnormalized count matrix generated by the HCA Matrix service and used as input to the Cumulus pipeline. | Loom |			
+|  Dataset_ID.loom | DCP/SCP | Gene matrix file generated with DCP standardized pipelines (Optimus and Smart-seq2) and used as Cumulus input. | Loom |			
 | Dataset_ID.de.xlsx | DCP/SCP | Cumulus output file containing differential expression with correction | XLSX |	
 | Dataset_ID.de.CSV.zip | DCP/SCP | zip of CSV files containing differential expression analyses | CSV |	
-| Dataset_ID.filt.xlsx | DCP/SCP | Filtering information | XLSX |		
-| Dataset_ID_annoated_v1.loom | DCP/SCP | Normalized expression matrix generated by Cumulus and annotated using harmonized cell types; contains clustering information, cell annotations, and log-transformed gene expression | Loom |	
-| Dataset_ID.seurat_annotated_v1.h5ad | DCP/SCP | Seurat compatible, normalized expression matrix generated by Cumulus and annotated using harmonized cell types; contains clustering information, cell annotations, and log-transformed gene expression | h5ad |
+| Dataset_ID.filt.xlsx | DCP/SCP | Cumulus output file containing filtering information | XLSX |	
+| Dataset_ID_annoated_v1.loom | DCP/SCP | Expression matrix generated by Cumulus and annotated using harmonized cell types; contains clustering information, cell annotations, and log-transformed gene expression | Loom |	
+| Dataset_ID.seurat_annotated_v1.h5ad | DCP/SCP | Seurat compatible expression matrix generated by Cumulus and annotated using harmonized cell types; contains clustering information, cell annotations, and log-transformed gene expression | h5ad |
 | Dataset_ID.scp.X_diffmap_pca.coords.txt | SCP | Diffusion map coordinates for Single Cell Portal | TXT |		
 | Dataset_ID.scp.X_fitsne.coords.txt | SCP | FIt-SNE coordinates for Single Cell Portal | TXT |	
 | Dataset_ID.scp.X_fle.coords.txt | SCP | fle cluster coordinates for Single Cell Portal |  TXT |
 | Dataset_ID.scp.X_umap.coords.txt | SCP | UMAP cluster coordinates for Single Cel Portal| TXT |	
-| Dataset_ID.scp.barcodes.tsv | SCP | 10X compatible barcodes file for Single Cell Portal | TSV |	
-| Dataset_ID.scp.features.tsv | SCP | 10X compatible features (genes) file for Single Cell Portal | TSV |	
-| Dataset_ID.scp.matrix.mtx | SCP | 10X compatible mtx expression file for Single Cell Portal | mtx |
+| Dataset_ID.scp.barcodes.tsv | SCP | 10x compatible barcodes file for Single Cell Portal | TSV |	
+| Dataset_ID.scp.features.tsv | SCP | 10x compatible features (genes) file for Single Cell Portal | TSV |	
+| Dataset_ID.scp.matrix.mtx | SCP | 10x compatible mtx expression file for Single Cell Portal | mtx |
 | Dataset_ID.scp.metadata.txt | SCP | Metadata matrix for Single Cell Portal | TXT | 
 Dataset_ID_annotated_v1.scp.metadata.txt | SCP | Annotated metadata matrix file for Single Cell Portal | TXT |
 *DCP = Data Coordination Platform; SCP = Single Cell Portal*
@@ -156,7 +160,7 @@ Dataset_ID_annotated_v1.scp.metadata.txt | SCP | Annotated metadata matrix file 
 
 ## Want to learn more?
 
-Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide] (data.humancellatlas.org/releases/2020-mar/working-with-release-files). You can also get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). For additional details about each individual dataset, visit the [March 2020 Release page](data.humancellatlas.org/explore/releases/2020-mar).
+Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files). You can also get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). For additional details about each individual dataset, visit the [March 2020 Release page](data.humancellatlas.org/explore/releases/2020-mar).
 
 
 
