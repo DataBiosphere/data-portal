@@ -47,7 +47,7 @@ The Cumulus workflow was set to cluster cells using the Louvain method, a modula
 
 | Input name | Description |  Attribute | 
 | --- | --- | --- |
-| channel | Specifies the sample ID in the input dataset | `“cell_suspension.provenance.document_id”` |
+| `channel` | Specifies the sample ID in the input dataset | `“cell_suspension.provenance.document_id”` |
 | `considered_refs’ | Will read all groups from reference genome` | GRCh38 |
 | `output_filtration_results` | Output the filtration results | true |
 | `output_loom` | Output the loom file | true |
