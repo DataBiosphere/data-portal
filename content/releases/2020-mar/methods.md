@@ -37,7 +37,7 @@ The table below details the attributes for Cumulus input files, output files, an
 
 | Input name | Description |  Attribute | 
 | --- | --- | --- |
-| `Input_file` | String location of the google cloud bucket hosting the DCP dataset loom file | `“gs://WORKSPACE_BUCKET”` |
+| `Input_file` | String location of the google cloud bucket hosting the DCP dataset gene matrix (loom format) | `“gs://WORKSPACE_BUCKET”` |
 | `Num_cpu` | Number of CPUs recommended for the analysis | 8 |
 | `Output_name` | String describing cloud path to an outpath folder | `"gs://WORKSPACE_BUCKET/output/Dataset ID”` |
 
@@ -167,6 +167,7 @@ All output file names start with the Dataset ID, the unique ID given to each rel
 ## Want to learn more?
 
 Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files). You can also get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). For additional details about each individual dataset, visit the [March 2020 Release page](data.humancellatlas.org/explore/releases/2020-mar).
+
 
 
 
