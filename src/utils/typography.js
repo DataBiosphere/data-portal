@@ -118,7 +118,7 @@ const typography = new Typography({
 			},
 			'thead th, tbody tr': {
 				fontSize: '13px',
-				lineHeight: 1,
+				lineHeight: '18px',
 			},
 			'thead th': {
 				fontWeight: 400,
