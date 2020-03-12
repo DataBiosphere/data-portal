@@ -33,8 +33,8 @@ Some March 2020 Release files are used for interactive visualization in Single C
 | `Dataset_ID.scp.features.tsv` | SCP | 10x compatible features (genes) file for Single Cell Portal | TSV |	
 | `Dataset_ID.scp.matrix.mtx` | SCP | 10x compatible mtx expression file for Single Cell Portal | mtx |
 | `Dataset_ID.scp.metadata.txt` | SCP | Metadata matrix for Single Cell Portal | TXT | 
-`Dataset_ID_annotated_v1.scp.metadata.txt` | SCP | Annotated metadata matrix file for Single Cell Portal | TXT |
-\
+`Dataset_ID_annotated_v1.scp.metadata.txt` | SCP | Annotated metadata matrix file for Single Cell Portal | TXT |\
+
 *DCP = Data Coordination Platform; SCP = Single Cell Portal*
 
 
