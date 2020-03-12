@@ -98,7 +98,7 @@ Files with a “.scp” demarcation are only needed to create Single Cell Portal
 
 All output file names start with the Dataset ID, the unique ID given to each release dataset that is listed on the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar).
 
-*Important Note*: These files include unannotated expression matrices and are not the final Release files. For descriptions of the final Release files, please see the [Final March 2020 Release files on DCP Data Portal](#final-march-2020-release-files-on-dcp-data-portal]. 
+*Important Note*: These files include unannotated expression matrices and are not the final Release files. For descriptions of the final Release files, please see the [Final March 2020 Release files on DCP Data Portal](#final-march-2020-release-files-on-dcp-data-portal). 
 
 | File name | Description |  Format | 
 | --- | --- | --- |
