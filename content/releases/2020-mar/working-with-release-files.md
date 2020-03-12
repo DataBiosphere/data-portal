@@ -195,7 +195,7 @@ To visualize the annotated cells for a Release dataset, go to the Explore tab of
 #### 3. Choose either `annotated_cell_identity.text` or `annotated_cell_identity.ontology_label`. 
 ![image](_images/19_cell_type_annotations.png).
 
-**The `annotated_cell_identity.text` option will list the cell types defined by the project contributors. The `annotated_cell_identity.ontology_label` will list cell types that have been harmonized using ontology services.**
+The `annotated_cell_identity.text` option will list the cell types defined by the project contributors. The `annotated_cell_identity.ontology_label` will list cell types that have been harmonized using ontology services.
 
 ## Searching for genes across March 2020 Release datasets using Global Gene Search
 The March 2020 Release offers a Global Gene Search option using Single Cell Portal.
