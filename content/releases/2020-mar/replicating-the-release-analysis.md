@@ -38,7 +38,7 @@ You can optionally add a description of the workspace purpose. You can also opti
 Each Terra workspace you create comes with its own Google bucket. 
 - 4.1 Go to the Data tab.
 - 4.2 In the “Other Data” section, select the Files option.
-![image](_images/03_other_files_section.png)
+![image](_images/Sample.png)
 - 4.3 Click the plus icon to upload the gene matrix file (2020-Mar-Landscape-Adult-Liver-10x.loom file) to the workspace Google bucket.
 If you are already familiar with Terra and cloud computing, you can also transfer files to the workspace Google Bucket using gsutils (see description [here](https://support.terra.bio/hc/en-us/articles/360024056512)).
 
