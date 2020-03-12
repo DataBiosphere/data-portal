@@ -28,21 +28,17 @@ If you already have a Terra account, follow these step-by-step instructions for 
 
 #### 1. Go to app.terra.bio and select the View Workspaces card.
 #### 2. Select the Create a New Workspace card.
-
 ![image](_images/01_new_workspace_card.png)
 
 #### 3. Fill out a unique workspace name and billing information. 
-You can optionally add a description of the workspace purpose. You can also optionally fill out the authorization domain. If you are unsure about the authorization domain field, you can read more information in [this article](https://support.terra.bio/hc/en-us/articles/360026775691).
-
+You can optionally add a description of the workspace purpose. You can also optionally fill out the authorization domain. If you are unsure about the authorization domain field, you can read more information in [this article](https://support.terra.bio/hc/en-us/articles/360026775691)
 ![image](_images/02_new_workspace_info.png).
 
 #### 4. Upload the gene matrix (2020-Mar-Landscape-Adult-Liver-10x.loom file) to the workspace Google bucket.
 Each Terra workspace you create comes with its own Google bucket. 
 - 4.1 Go to the Data tab.
 - 4.2 In the “Other Data” section, select the Files option.
-
 ![image](_images/03_other_files_section.png)
-
 - 4.3 Click the plus icon to upload the gene matrix file (2020-Mar-Landscape-Adult-Liver-10x.loom file) to the workspace Google bucket.
 If you are already familiar with Terra and cloud computing, you can also transfer files to the workspace Google Bucket using gsutils (see description [here](https://support.terra.bio/hc/en-us/articles/360024056512)).
 
@@ -80,23 +76,17 @@ After downloading the 10x_json.JSON (to be used with the 2020-Mar-Landscape-Adul
 
 ## Specifying workflow input and output files
 
-#### 1. Examine the input_file attribute of the workflow configuration page. 
-Notice the field requires a “File” input. Specify the Google bucket location for the gene matrix (loom) file. To do this, select the folder icon in the input_file attribute box. Choose the 2020-Mar-Landscape-Adult-Liver-10x.loom.
+#### 1. Examine the `input_file` attribute of the workflow configuration page. 
+Notice the field requires a “File” input. Specify the Google bucket location for the gene matrix (loom) file. To do this, select the folder icon in the `input_file` attribute box. Choose the 2020-Mar-Landscape-Adult-Liver-10x.loom. 
 
 ![image](_images/09_input_file.png)
 
-##### 2. Examine the output_name attribute. 
-This attribute requires a “String” input. Specify a string in quotes that includes the workspace Google bucket location, an output folder, and a prefix you would like to give all analysis output files.
-
-![image](_images/10_output_name.png)
-
-- The Google bucket location can be found on the right side of the workspace Dashboard tab
-
-![image](_images/11_Dashboard_google_bucket.png).
-
-- The output folder can have any name, but for this example, we choose “output”.
+##### 2. Examine the `output_name` attribute. 
+This attribute requires a “String” input. Specify a string in quotes that includes the workspace Google bucket location, an output folder, and a prefix you would like to give all analysis output files. ![image](_images/10_output_name.png)
+- The Google bucket location can be found on the right side of the workspace Dashboard tab ![image](_images/11_Dashboard_google_bucket.png). 
+- The output folder can have any name, but for this example, we choose “output”. 
 - The filename prefix can also be any name to identify the dataset, but we used the dataset ID 2020-Mar-Landscape-Adult-Liver-10x. 
-The final string should look similar to: “gs://GOOGLE_BUCKET/output/2020-Mar-Landscape-Adult-Liver-10x”.
+The final string should look similar to: `“gs://GOOGLE_BUCKET/output/2020-Mar-Landscape-Adult-Liver-10x”.`
 
 #### 3. Select Save on the configuration page.
 
@@ -125,4 +115,3 @@ The March2020 Release includes normalized expression matrices that have been ann
 You can export Cumulus workflow output files from the Terra workspace to a Single Cell Portal study. There, you can visualize cell clusters and make annotations. Please see the [“Working with Release Files” documentation](data.humancellatlas.org/releases/2020-mar/working-with-release-files) for available tools (including Single Cell Portal) you can use to interact with Release data. 
 
 If you have any suggestions for this tutorial or questions, please see the [Community Feedback page](.data.humancellatlas.org/releases/2020-mar/feedback).
-
