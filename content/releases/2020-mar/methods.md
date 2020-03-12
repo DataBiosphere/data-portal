@@ -37,9 +37,9 @@ The table below details the attributes for Cumulus input files, output files, an
 
 | Input name | Description |  Attribute | 
 | --- | --- | --- |
-| Input_file | String location of the google cloud bucket hosting the DCP dataset loom file | “gs://WORKSPACE_BUCKET” |
-| Num_cpu | Number of CPUs recommended for the analysis | 8 |
-| Output_name | String describing cloud path to an outpath folder | "gs://WORKSPACE_BUCKET/output/Dataset ID” |
+| `Input_file` | String location of the google cloud bucket hosting the DCP dataset loom file | “gs://WORKSPACE_BUCKET” |
+| `Num_cpu` | Number of CPUs recommended for the analysis | 8 |
+| `Output_name` | String describing cloud path to an outpath folder | `"gs://WORKSPACE_BUCKET/output/Dataset ID”` |
 
 
 #### Clustering
@@ -47,39 +47,39 @@ The Cumulus workflow was set to cluster cells using the Louvain method, a modula
 
 | Input name | Description |  Attribute | 
 | --- | --- | --- |
-| channel | Specifies the sample ID in the input dataset | “cell_suspension.provenance.document_id” |
-| considered_refs | Will read all groups from reference genome | GRCh38 |
-| output_filtration_results | Output the filtration results | true |
-| output_loom | Output the loom file | true |
-| output_seurat_compatible | Generate Seurat-compatible h5ad file. Caution: File size might be large, do not turn this option on for large data sets. | true |
-| plot_filtration_results | Plot the filtration results | true
-| run_diffmap | Run a diffusion map for visualization | true  |
-| run_fitsne | Run a FFT-accelerated Interpolation-based t-SNE (FItSNE) for visualization | true |
-| run_fle | Run force-directed layout embedding (FLE) for visualization | true |
-| run_louvain | Run Louvain clustering algorithm | true |
-| run_umap | Run umap for visualization | true |
-| max_genes | Only keep cells with less than <max_genes> of genes. This is set higher than the default parameter to avoid filtering cells | 15,000 | 
-| percent_mito | Only keep cells with mitochondrial ratio less than <percent_mito>% of total counts. This is set lower than default parameters to avoid filtering cells. | 5.0 | 
+| channel | Specifies the sample ID in the input dataset | `“cell_suspension.provenance.document_id”` |
+| `considered_refs | Will read all groups from reference genome` | GRCh38 |
+| `output_filtration_results` | Output the filtration results | true |
+| `output_loom` | Output the loom file | true |
+| `output_seurat_compatible` | Generate Seurat-compatible h5ad file. Caution: File size might be large, do not turn this option on for large data sets. | true |
+| `plot_filtration_results` | Plot the filtration results | true
+| `run_diffmap` | Run a diffusion map for visualization | true  |
+| `run_fitsne` | Run a FFT-accelerated Interpolation-based t-SNE (FItSNE) for visualization | true |
+| `run_fle` | Run force-directed layout embedding (FLE) for visualization | true |
+| `run_louvain` | Run Louvain clustering algorithm | true |
+| `run_umap` | Run umap for visualization | true |
+| `max_genes` | Only keep cells with less than <max_genes> of genes. This is set higher than the default parameter to avoid filtering cells | 15,000 | 
+| `percent_mito` | Only keep cells with mitochondrial ratio less than <percent_mito>% of total counts. This is set lower than default parameters to avoid filtering cells. | 5.0 | 
 
 #### Differential expression
 Differential expression analyses were carried out using the statistical tests specified in the table below. False Discovery Rates were calculated using the Benjamini-Hochberg procedure with a default alpha set to 0.05. For each test, gene expression within a specified louvain cluster was compared to the average of all other clusters. 
 
 | Input name | Description |  Attribute | 
 | --- | --- | --- |
-| auc | Calculates area under the curve | true |
-| Fisher | Calculate fisher exact test | true |
-| mwu | Calculate Mann-Whitney U | true |
-| perform_de_analysis | Perform differential expression analyses | true |
-| t_test | Calculate Welch’s t-test | true |
+| `auc` | Calculates area under the curve | true |
+| `Fisher` | Calculate fisher exact test | true |
+| `mwu` | Calculate Mann-Whitney U | true |
+| `perform_de_analysis` | Perform differential expression analyses | true |
+| `t_test` | Calculate Welch’s t-test | true |
 
 #### Visualization (plotting)
 To visualize cell clusters, multiple low-dimension embeddings were generated using the Cumulus parameters below. The attributes for visualization depended on sequencing technology (10x vs. Smart-seq2), as described in the table.
 
 | Input name | Description | 10x Attributes | Smart-seq2 Attributes |
 | --- | --- | --- | --- |
-| plot_fitsne | Create a FFT-accelerated Interpolation-based t-SNE (FItSNE)-like plot according to “attribute, “attribute...”  | “louvain_labels,Channel” | “louvain_labels” |
-| plot_fle | Create a Force-directed Layout Embedding (FLE)-like plot according to “attribute, “attribute...”  | “louvain_labels,Channel” | “louvain_labels” |
-| plot_umap | Create a uniform manifold approximation and projection (UMAP)-like plot | "louvain_labels,Channel” | "louvain_labels” |
+| `plot_fitsne` | Create a FFT-accelerated Interpolation-based t-SNE (FItSNE)-like plot according to “attribute, “attribute...”  | “louvain_labels,Channel” | “louvain_labels” |
+| `plot_fle` | Create a Force-directed Layout Embedding (FLE)-like plot according to “attribute, “attribute...”  | “louvain_labels,Channel” | “louvain_labels” |
+| `plot_umap` | Create a uniform manifold approximation and projection (UMAP)-like plot | "louvain_labels,Channel” | "louvain_labels” |
 
 
 #### Generating Single Cell Portal compatible outputs: 
@@ -87,8 +87,8 @@ Single Cell Portal compatible outputs were generated with the following paramete
 
 | Input name | Description |  Attribute | 
 | --- | --- | --- |
-| generate_scp_outputs |  Generate outputs compatible with Single-Cell Portal | true |
-| output_dense | Boolean describing if outputs should be in dense format | false |
+| `generate_scp_outputs` |  Generate outputs compatible with Single-Cell Portal | true |
+| `output_dense` | Boolean describing if outputs should be in dense format | false |
 
 ## Cumulus output files
 The following table describes all Cumulus output files, including unannotated, normalized expression matrices. 
@@ -101,18 +101,18 @@ All output file names start with the Dataset ID, the unique ID given to each rel
 
 | File name | Description |  Format | 
 | --- | --- | --- |
-| Dataset_ID.de.xlsx | Output file containing differential expression with correction | XLSX |	
-| Dataset_ID.filt.xlsx | Output file containing filtering information | XLSX |		
-| Output/Dataset_ID.loom | Expression matrix; contains clustering information and log-transformed gene expression | Loom |	
-| Output/Dataset_ID.seurat.h5ad | Seurat-compatible expression matrix; contains clustering information and log-transformed gene expression | h5ad |
-| Dataset_ID.scp.X_diffmap_pca.coords.txt | Diffusion map coordinates for Single Cell Portal | TXT |		
-| Dataset_ID.scp.X_fitsne.coords.txt | FIt-SNE coordinates for Single Cell Portal | TXT |	
-| Dataset_ID.scp.X_fle.coords.txt | fle cluster coordinates for Single Cell Portal |  TXT |
-| Dataset_ID.scp.X_umap.coords.txt | UMAP cluster coordinates for Single Cel Portal| TXT |	
-| Dataset_ID.scp.barcodes.tsv | 10x compatible barcodes file for Single Cell Portal | TSV |	
-| Dataset_ID.scp.features.tsv | 10x compatible features (genes) file for Single Cell Portal | TSV |	
-| Dataset_ID.scp.matrix.mtx | 10x compatible mtx expression file for Single Cell Portal | mtx |
-| Dataset_ID.scp.metadata.txt | Metadata matrix for Single Cell Portal | TXT | 
+| `Dataset_ID.de.xlsx` | Output file containing differential expression with correction | XLSX |	
+| `Dataset_ID.filt.xlsx` | Output file containing filtering information | XLSX |		
+| `Output/Dataset_ID.loom` | Expression matrix; contains clustering information and log-transformed gene expression | Loom |	
+| `Output/Dataset_ID.seurat.h5ad` | Seurat-compatible expression matrix; contains clustering information and log-transformed gene expression | h5ad |
+| `Dataset_ID.scp.X_diffmap_pca.coords.txt` | Diffusion map coordinates for Single Cell Portal | TXT |		
+| `Dataset_ID.scp.X_fitsne.coords.txt` | FIt-SNE coordinates for Single Cell Portal | TXT |	
+| `Dataset_ID.scp.X_fle.coords.txt` | fle cluster coordinates for Single Cell Portal |  TXT |
+| `Dataset_ID.scp.X_umap.coords.txt` | UMAP cluster coordinates for Single Cel Portal| TXT |	
+| `Dataset_ID.scp.barcodes.tsv` | 10x compatible barcodes file for Single Cell Portal | TSV |	
+| `Dataset_ID.scp.features.tsv` | 10x compatible features (genes) file for Single Cell Portal | TSV |	
+| `Dataset_ID.scp.matrix.mtx` | 10x compatible mtx expression file for Single Cell Portal | mtx |
+| `Dataset_ID.scp.metadata.txt` | Metadata matrix for Single Cell Portal | TXT | 
 
 For more information regarding how cell clustering information is stored in the normalized expression matrix (h5ad and loom format files), please read the [Cumulus Documentation](https://cumulus.readthedocs.io/en/0.13.0/cumulus.html#cluster-outputs). You can also read more about the available differential expression outputs in the [Cumulus DE Outputs documentation](https://cumulus.readthedocs.io/en/0.13.0/cumulus.html#de-analysis-outputs). 
 
@@ -126,11 +126,11 @@ Annotations were added to normalized expression matrices in loom and h5ad format
 
 #### Annotation metadata
 Three column attributes were added to each Cumulus output expression matrix (loom and h5ad):
-- “annotated_cell_identity.text”: the original cell type labels provided by the project contributor
-- “annotated_cell_identity.ontology”: the ontology ID
-- “annotated_cell_identity.ontology_label”: the harmonized cell type label obtained using the specified ontology
+- `annotated_cell_identity.text`: the original cell type labels provided by the project contributor
+- `annotated_cell_identity.ontology`: the ontology ID
+- `annotated_cell_identity.ontology_label`: the harmonized cell type label obtained using the specified ontology
 
-For visualization in Single Cell Portal, these columns were also added to the file named Dataset_ID_annotated_v1.scp.metadata.txt. 
+For visualization in Single Cell Portal, these columns were also added to the file named `Dataset_ID_annotated_v1.scp.metadata.txt`. 
 
 
 ## Final March 2020 Release files
@@ -140,32 +140,33 @@ All output file names start with the Dataset ID, the unique ID given to each rel
 
 | File name | File location: DCP and/or SCP | Description | Format | 
 | --- | --- | --- | --- |
-|  Dataset_ID.loom | DCP/SCP | Gene matrix file generated with DCP standardized pipelines (Optimus and Smart-seq2) and used as Cumulus input. | Loom |			
-| Dataset_ID.de.xlsx | DCP/SCP | Cumulus output file containing differential expression with correction | XLSX |	
-| Dataset_ID.de.CSV.zip | DCP/SCP | zip of CSV files containing differential expression analyses | CSV |	
-| Dataset_ID.filt.xlsx | DCP/SCP | Cumulus output file containing filtering information | XLSX |	
-| Dataset_ID_annoated_v1.loom | DCP/SCP | Expression matrix generated by Cumulus and annotated using harmonized cell types; contains clustering information, cell annotations, and log-transformed gene expression | Loom |	
-| Dataset_ID.seurat_annotated_v1.h5ad | DCP/SCP | Seurat compatible expression matrix generated by Cumulus and annotated using harmonized cell types; contains clustering information, cell annotations, and log-transformed gene expression | h5ad |
-| Dataset_ID.scp.X_diffmap_pca.coords.txt | SCP | Diffusion map coordinates for Single Cell Portal | TXT |		
-| Dataset_ID.scp.X_fitsne.coords.txt | SCP | FIt-SNE coordinates for Single Cell Portal | TXT |	
-| Dataset_ID.scp.X_fle.coords.txt | SCP | fle cluster coordinates for Single Cell Portal |  TXT |
-| Dataset_ID.scp.X_umap.coords.txt | SCP | UMAP cluster coordinates for Single Cel Portal| TXT |	
-| Dataset_ID.scp.barcodes.tsv | SCP | 10x compatible barcodes file for Single Cell Portal | TSV |	
-| Dataset_ID.scp.features.tsv | SCP | 10x compatible features (genes) file for Single Cell Portal | TSV |	
-| Dataset_ID.scp.matrix.mtx | SCP | 10x compatible mtx expression file for Single Cell Portal | mtx |
-| Dataset_ID.scp.metadata.txt | SCP | Metadata matrix for Single Cell Portal | TXT | 
-Dataset_ID_annotated_v1.scp.metadata.txt | SCP | Annotated metadata matrix file for Single Cell Portal | TXT |
+|  `Dataset_ID.loom` | DCP/SCP | Gene matrix file generated with DCP standardized pipelines (Optimus and Smart-seq2) and used as Cumulus input. | Loom |			
+| `Dataset_ID.de.xlsx` | DCP/SCP | Cumulus output file containing differential expression with correction | XLSX |	
+| `Dataset_ID.de.CSV.zip` | DCP/SCP | zip of CSV files containing differential expression analyses | CSV |	
+| `Dataset_ID.filt.xlsx` | DCP/SCP | Cumulus output file containing filtering information | XLSX |	
+| `Dataset_ID_annoated_v1.loom` | DCP/SCP | Expression matrix generated by Cumulus and annotated using harmonized cell types; contains clustering information, cell annotations, and log-transformed gene expression | Loom |	
+| `Dataset_ID.seurat_annotated_v1.h5ad` | DCP/SCP | Seurat compatible expression matrix generated by Cumulus and annotated using harmonized cell types; contains clustering information, cell annotations, and log-transformed gene expression | h5ad |
+| `Dataset_ID.scp.X_diffmap_pca.coords.txt` | SCP | Diffusion map coordinates for Single Cell Portal | TXT |		
+| `Dataset_ID.scp.X_fitsne.coords.txt` | SCP | FIt-SNE coordinates for Single Cell Portal | TXT |	
+| `Dataset_ID.scp.X_fle.coords.txt` | SCP | fle cluster coordinates for Single Cell Portal |  TXT |
+| `Dataset_ID.scp.X_umap.coords.txt` | SCP | UMAP cluster coordinates for Single Cel Portal| TXT |	
+| `Dataset_ID.scp.barcodes.tsv` | SCP | 10x compatible barcodes file for Single Cell Portal | TSV |	
+| `Dataset_ID.scp.features.tsv` | SCP | 10x compatible features (genes) file for Single Cell Portal | TSV |	
+| `Dataset_ID.scp.matrix.mtx` | SCP | 10x compatible mtx expression file for Single Cell Portal | mtx |
+| `Dataset_ID.scp.metadata.txt` | SCP | Metadata matrix for Single Cell Portal | TXT | 
+`Dataset_ID_annotated_v1.scp.metadata.txt` | SCP | Annotated metadata matrix file for Single Cell Portal | TXT |\
 *DCP = Data Coordination Platform; SCP = Single Cell Portal*
 
 
 | Note about CSV files | 
 | :-- |
-| The CSV files contain differential expression data. These were generated from the Dataset_ID.de.xlsx to enable easier viewing with R or Python. Detailed steps for using these files are listed in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files)). |
+| The CSV files contain differential expression data. These were generated from the `Dataset_ID.de.xlsx` to enable easier viewing with R or Python. Detailed steps for using these files are listed in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files)). |
 
 
 ## Want to learn more?
 
 Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files). You can also get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). For additional details about each individual dataset, visit the [March 2020 Release page](data.humancellatlas.org/explore/releases/2020-mar).
+
 
 
 
