@@ -30,11 +30,10 @@ Each Release dataset was analyzed in individual workspaces in the cloud-based pl
 ## Cumulus workflow
 The Cumulus workflow was used to perform cell clustering, differential expression analyses, and plotting using each dataset’s gene matrix (loom format) as input. More information about Cumulus can be found in the [main documentation](https://cumulus.readthedocs.io/en/0.13.0/cumulus.html). Additionally, you can view the Cumulus workflow used for these analyses in the [Broad Methods Repository](https://portal.firecloud.org/#methods/cumulus/cumulus/14/wdl) or on [GitHub](https://github.com/klarman-cell-observatory/cumulus/blob/c937a832718aacbe75a0fdbca9cde682c48e2407/workflows/cumulus/cumulus.wdl). 
 
-The following sections describe the specific Cumulus workflow parameters used for the March 2020 Release. Global inputs are described first, followed by parameters for each Cumulus task: clustering, differential expression, and visualization. Additionally, this section lists the parameters for generating [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release)-compatible outputs. 
-
+### Parameters
 All parameters are detailed in the [Cumulus documentation](https://cumulus.readthedocs.io/en/latest/cumulus.html#run-cumulus-analysis). Any unspecified Cumulus parameters (not listed in the tables below) were set to default attributes listed in the documentation. To run the Cumulus workflow in Terra, these parameters were specified using a workspace configuration file (JSON format) which was uploaded directly to each workspace (see an [example JSON](_downloads/Example.JSON) file used for the March 2020 Release).
 
-### Global inputs
+#### Global inputs
 The table below details the attributes for Cumulus input files, output files, and the CPUs that were used for analyses in Terra.
 
 | Input name | Description |  Attribute | 
@@ -44,7 +43,7 @@ The table below details the attributes for Cumulus input files, output files, an
 | Output_name | String describing cloud path to an outpath folder | "gs://WORKSPACE_BUCKET/output/Dataset ID” |
 
 
-### Clustering
+#### Clustering
 The Cumulus workflow was set to cluster cells using the Louvain method, a modularity-based community detection algorithm ([Li et al. 2019]( https://www.biorxiv.org/content/10.1101/823682v1.full)). The following table lists all the Cumulus workflow parameters used for cell clustering and dimensionality reduction.
 
 | Input name | Description |  Attribute | 
@@ -63,7 +62,7 @@ The Cumulus workflow was set to cluster cells using the Louvain method, a modula
 | max_genes | Only keep cells with less than <max_genes> of genes. This is set higher than the default parameter to avoid filtering cells | 15,000 | 
 | percent_mito | Only keep cells with mitochondrial ratio less than <percent_mito>% of total counts. This is set lower than default parameters to avoid filtering cells. | 5.0 | 
 
-### Differential expression
+#### Differential expression
 Differential expression analyses were carried out using the statistical tests specified in the table below. False Discovery Rates were calculated using the Benjamini-Hochberg procedure with a default alpha set to 0.05. For each test, gene expression within a specified louvain cluster was compared to the average of all other clusters. 
 
 | Input name | Description |  Attribute | 
@@ -74,7 +73,7 @@ Differential expression analyses were carried out using the statistical tests sp
 | perform_de_analysis | Perform differential expression analyses | true |
 | t_test | Calculate Welch’s t-test | true |
 
-### Visualization (plotting)
+#### Visualization (plotting)
 To visualize cell clusters, multiple low-dimension embeddings were generated using the Cumulus parameters below. The attributes for visualization depended on sequencing technology (10x vs. Smart-seq2), as described in the table.
 
 | Input name | Description | 10x Attributes | Smart-seq2 Attributes |
@@ -84,7 +83,7 @@ To visualize cell clusters, multiple low-dimension embeddings were generated usi
 | plot_umap | Create a uniform manifold approximation and projection (UMAP)-like plot | "louvain_labels,Channel” | "louvain_labels” |
 
 
-### Generating Single Cell Portal compatible outputs: 
+#### Generating Single Cell Portal compatible outputs: 
 Single Cell Portal compatible outputs were generated with the following parameters. The resulting files were used to create interactive [Single Cell Portal studies](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release).
 
 | Input name | Description |  Attribute | 
@@ -93,7 +92,9 @@ Single Cell Portal compatible outputs were generated with the following paramete
 | output_dense | Boolean describing if outputs should be in dense format | false |
 
 ## Cumulus output files
-The following table describes all Cumulus output files, including unannotated, normalized expression matrices. Files with a “.scp” demarcation are only needed to create Single Cell Portal studies and can be found on the Single Cell Portal study page (see the [Single Cell Portal March 2020 Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release)). 
+The following table describes all Cumulus output files, including unannotated, normalized expression matrices. 
+
+Files with a “.scp” demarcation are only needed to create Single Cell Portal studies and can be found on the Single Cell Portal study page (see the [Single Cell Portal March 2020 Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release)). 
 
 All output file names start with the Dataset ID, the unique ID given to each release dataset that is listed on the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar).
 
