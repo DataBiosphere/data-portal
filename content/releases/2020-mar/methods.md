@@ -125,12 +125,12 @@ Cell type annotations were obtained from the publications listed on each dataset
 Annotations were added to normalized expression matrices in loom and h5ad formats using [LoomPy](http://loompy.org/) and [SCANPY](https://icb-scanpy.readthedocs-hosted.com/en/stable/), respectively. 
 
 #### Annotation metadata
-Three column attributes were added to each file:
+Three column attributes were added to each Cumulus output expression matrix (loom and h5ad):
 - “annotated_cell_identity.text”: the original cell type labels provided by the project contributor
 - “annotated_cell_identity.ontology”: the ontology ID
 - “annotated_cell_identity.ontology_label”: the harmonized cell type label obtained using the specified ontology
 
-For visualization in Single Cell Portal, the columns were also added to the file named Dataset_ID_annotated_v1.scp.metadata.txt. 
+For visualization in Single Cell Portal, these columns were also added to the file named Dataset_ID_annotated_v1.scp.metadata.txt. 
 
 
 ## Final March 2020 Release files
@@ -166,7 +166,6 @@ Dataset_ID_annotated_v1.scp.metadata.txt | SCP | Annotated metadata matrix file 
 ## Want to learn more?
 
 Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files). You can also get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). For additional details about each individual dataset, visit the [March 2020 Release page](data.humancellatlas.org/explore/releases/2020-mar).
-
 
 
 
