@@ -37,7 +37,7 @@ The table below details the attributes for Cumulus input files, output files, an
 
 | Input name | Description |  Attribute | 
 | --- | --- | --- |
-| `Input_file` | String location of the google cloud bucket hosting the DCP dataset loom file | “gs://WORKSPACE_BUCKET” |
+| `Input_file` | String location of the google cloud bucket hosting the DCP dataset loom file | `“gs://WORKSPACE_BUCKET”` |
 | `Num_cpu` | Number of CPUs recommended for the analysis | 8 |
 | `Output_name` | String describing cloud path to an outpath folder | `"gs://WORKSPACE_BUCKET/output/Dataset ID”` |
 
@@ -48,7 +48,7 @@ The Cumulus workflow was set to cluster cells using the Louvain method, a modula
 | Input name | Description |  Attribute | 
 | --- | --- | --- |
 | channel | Specifies the sample ID in the input dataset | `“cell_suspension.provenance.document_id”` |
-| `considered_refs | Will read all groups from reference genome` | GRCh38 |
+| `considered_refs’ | Will read all groups from reference genome` | GRCh38 |
 | `output_filtration_results` | Output the filtration results | true |
 | `output_loom` | Output the loom file | true |
 | `output_seurat_compatible` | Generate Seurat-compatible h5ad file. Caution: File size might be large, do not turn this option on for large data sets. | true |
@@ -155,6 +155,7 @@ All output file names start with the Dataset ID, the unique ID given to each rel
 | `Dataset_ID.scp.matrix.mtx` | SCP | 10x compatible mtx expression file for Single Cell Portal | mtx |
 | `Dataset_ID.scp.metadata.txt` | SCP | Metadata matrix for Single Cell Portal | TXT | 
 `Dataset_ID_annotated_v1.scp.metadata.txt` | SCP | Annotated metadata matrix file for Single Cell Portal | TXT |\
+
 *DCP = Data Coordination Platform; SCP = Single Cell Portal*
 
 
