@@ -48,7 +48,7 @@ The Cumulus workflow was set to cluster cells using the Louvain method, a modula
 | Input name | Description |  Attribute | 
 | --- | --- | --- |
 | `channel` | Specifies the sample ID in the input dataset | `“cell_suspension.provenance.document_id”` |
-| `considered_refs’ | Will read all groups from reference genome` | GRCh38 |
+| `considered_refs` | Will read all groups from reference genome` | GRCh38 |
 | `output_filtration_results` | Output the filtration results | true |
 | `output_loom` | Output the loom file | true |
 | `output_seurat_compatible` | Generate Seurat-compatible h5ad file. Caution: File size might be large, do not turn this option on for large data sets. | true |
@@ -167,6 +167,7 @@ All output file names start with the Dataset ID, the unique ID given to each rel
 ## Want to learn more?
 
 Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files). You can also get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). For additional details about each individual dataset, visit the [March 2020 Release page](data.humancellatlas.org/explore/releases/2020-mar).
+
 
 
 
