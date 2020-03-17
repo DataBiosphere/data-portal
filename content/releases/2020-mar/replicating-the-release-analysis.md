@@ -28,7 +28,7 @@ If you already have a Terra account, follow these step-by-step instructions for 
 
 #### 1. Go to app.terra.bio and select the View Workspaces card.
 #### 2. Select the Create a New Workspace card.
-![image](_images/01_new_workspace_card.png)
+![image](_images/01_new_workspace_card_v2.png)
 
 #### 3. Fill out a unique workspace name and billing information. 
 You can optionally add a description of the workspace purpose. You can also optionally fill out the authorization domain. If you are unsure about the authorization domain field, you can read more information in [this article](https://support.terra.bio/hc/en-us/articles/360026775691)
