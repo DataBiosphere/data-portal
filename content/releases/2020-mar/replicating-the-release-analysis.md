@@ -49,7 +49,7 @@ If you are already familiar with Terra and cloud computing, you can also transfe
 ![image](_images/04_Find_Addnl_Workflows.png)
 This will redirect you to the Broad Methods (you will no longer be in Terra).
 #### 4. In the search bar, type “Cumulus” to search for the Cumulus workflow.
-![image](_images/05_Find_Cumulus.png)
+![image](_images/05_Find_Cumulus_v2.png)
 #### 5. Select the “cumulus/cumulus” option.
 #### 6. Change the Snapshot to 14.
 ![image](_images/07_snapshot14_export.png)
