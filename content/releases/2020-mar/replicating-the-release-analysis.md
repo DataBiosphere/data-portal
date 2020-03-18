@@ -6,7 +6,7 @@ draft: true
 ---
 
 #  Replicating the March 2020 Release Analyses
-This tutorial covers how to process a gene matrix (in loom format) for clustering, differential expression, and visualization using the Cumulus workflow in a Terra workspace. We will use the same [methods](data.humancellatlas.org/releases/2020-mar/methods) outlined for the DCP March 2020 Release. 
+This tutorial covers how to process a gene matrix (in loom format) for clustering, differential expression, and visualization using the Cumulus workflow in a Terra workspace. It uses the same [methods](data.humancellatlas.org/releases/2020-mar/methods) outlined for the DCP March 2020 Release. 
 
 All projects for the release were divided into individual datasets which are listed on the [DCP Release Page](data.humancellatlas.org/explore/releases/2020-mar). For this tutorial, we use the sample dataset 2020-Mar-Landscape-Adult-Liver-10x derived from the project [“Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations”](https://data.humancellatlas.org/explore/projects/4d6f6c96-2a83-43d8-8fe1-0f53bffd4674). You can explore other datasets and repeat these analyses on additional matrix files.
 
@@ -77,7 +77,7 @@ After downloading the 10x_json.JSON (to be used with the 2020-Mar-Landscape-Adul
 
 | Note about the Cumulus workflow configuration |
 | :-- |
-| The configuration files list the Cumulus workflow parameters, which are detailed in the [Release Methods](data.humancellatlas.org/releases/2020-mar/methods). Using these two configuration files will produce clustered loom and h5ad files, as well as differential expression files. |
+| The configuration files list the Cumulus workflow parameters, which are detailed in the [Release Methods](data.humancellatlas.org/releases/2020-mar/methods). Using these two configuration files, Cumulus will produce clustered loom and h5ad files, as well as differential expression files. |
 
 ## Specifying workflow input and output files
 
@@ -105,7 +105,7 @@ The final string should look similar to: `“gs://GOOGLE_BUCKET/output/2020-Mar-
 #### 4. You can check the status of your run in the workspace Job History tab.
 
 ## What you should see after running Cumulus
-#### 1. Return the Terra workspace Data tab.
+#### 1. Return to the Terra workspace Data tab.
 #### 2. In the Files section, select the “output” folder.
 ![image](_images/16_data_tab_output.png)
  
@@ -116,7 +116,7 @@ The processed files include the normalized expression matrices (in loom and h5ad
 **Note:** Although the normalized expression files (loom and h5ad) contain cell clustering, they do not yet contain cell type annotations.
 
 ## Annotating Release files
-The March2020 Release includes normalized expression matrices that have been annotated with the guidance of project contributors. This tutorial does not cover how to add these annotations to expression matrices, but there are multiple tools you can use to add annotations including [LoomPy](http://loompy.org/) and [SCANPY](https://icb-scanpy.readthedocs-hosted.com/en/stable/). Additionally, you can add annotations using [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release). See the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files) for details about creating your own Single Cell Portal study. 
+The March2020 Release includes normalized expression matrices that have been annotated with the guidance of project contributors. This tutorial does not cover how to add these annotations to expression matrices, but there are multiple tools you can use to add annotations, including [LoomPy](http://loompy.org/) and [SCANPY](https://icb-scanpy.readthedocs-hosted.com/en/stable/). Additionally, you can add annotations using [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release). See the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files) for details about creating your own Single Cell Portal study. 
 
 ## Next steps
 You can export Cumulus workflow output files from the Terra workspace to a Single Cell Portal study. There, you can visualize cell clusters and make annotations. Please see the [“Working with Release Files” documentation](data.humancellatlas.org/releases/2020-mar/working-with-release-files) for available tools (including Single Cell Portal) you can use to interact with Release data. 
