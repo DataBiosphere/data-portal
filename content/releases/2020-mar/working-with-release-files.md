@@ -190,7 +190,7 @@ To visualize the annotated cells for a Release dataset, go to the Explore tab of
 ![image](_images/17_SCP_explore_view_options.png)
 
 #### 2. Open the Select Annotations drop-down menu.
-![image](_images/18_SCP_Select_annotation.png)
+![image](_images/18_SCP_Select_annotation_v2.png)
 
 #### 3. Choose either `annotated_cell_identity.text` or `annotated_cell_identity.ontology_label`. 
 ![image](_images/19_cell_type_annotations.png).
