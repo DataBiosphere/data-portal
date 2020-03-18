@@ -28,7 +28,7 @@ Some March 2020 Release files are used for interactive visualization in Single C
 | `Dataset_ID.scp.X_diffmap_pca.coords.txt` | SCP | Diffusion map coordinates for Single Cell Portal | TXT |		
 | `Dataset_ID.scp.X_fitsne.coords.txt` | SCP | FIt-SNE coordinates for Single Cell Portal | TXT |	
 | `Dataset_ID.scp.X_fle.coords.txt` | SCP | fle cluster coordinates for Single Cell Portal |  TXT |
-| `Dataset_ID.scp.X_umap.coords.txt` | SCP | UMAP cluster coordinates for Single Cel Portal| TXT |	
+| `Dataset_ID.scp.X_umap.coords.txt` | SCP | UMAP cluster coordinates for Single Cell Portal| TXT |	
 | `Dataset_ID.scp.barcodes.tsv` | SCP | 10x compatible barcodes file for Single Cell Portal | TSV |	
 | `Dataset_ID.scp.features.tsv` | SCP | 10x compatible features (genes) file for Single Cell Portal | TSV |	
 | `Dataset_ID.scp.matrix.mtx` | SCP | 10x compatible mtx expression file for Single Cell Portal | mtx |
