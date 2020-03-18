@@ -10,7 +10,7 @@ draft: true
 This release represents the work of many people, the dataset contributors who provided both the raw data and the cell type annotation, the release working group who assembled the release data, ran the clustering pipelines and produced the DCP interfaces and the DCP implementation team who built the DCP
 
 # DCP Release Working Group
-
+Nick Barkas<sup>2</sup>, Laura Clarke<sup>1</sup>, Kylee Degatano<sup>2</sup>, Trevor Heathorn<sup>3</sup>, Elizabeth Kiernan<sup>2</sup>, Bo Li<sup>4</sup>, John Marioni<sup>1</sup>, Nikelle Petrillo<sup>1</sup>, Zinaida Perova<sup>1</sup>, Dave Rogers<sup>3</sup>, Hannes Schmidt<sup>3</sup>, Marion Shadbol<sup>1</sup>, Kathleen Tibbetts<sup>2</sup>, Timothy Tickle<sup>2</sup>, Yiming Yang<sup>4</sup>, Galabina Yordanova<sup>1</sup>, Jing Zhu<sup>3</sup>
 # Single Cell Portal Team
 Eno-Abasi Augustine-Akpan<sup>2</sup>, Jonathan Bistline<sup>2</sup>, Devon Bush<sup>2</sup>, Jean Chang<sup>2</sup>, Vicky Horst<sup>2</sup>, Christine Loreth<sup>2</sup>, Jared Nedzel<sup>2</sup>, Eric Weitz<sup>2</sup>
 
