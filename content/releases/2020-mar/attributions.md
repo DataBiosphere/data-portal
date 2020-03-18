@@ -12,6 +12,7 @@ This release represents the work of many people, the dataset contributors who pr
 # DCP Release Working Group
 
 # Single Cell Portal Team
+Eno-Abasi Augustine-Akpan<sup>2</sup>, Jonathan Bistline<sup>2</sup>, Devon Bush<sup>2</sup>, Jean Chang<sup>2</sup>, Vicky Horst<sup>2</sup>, Christine Loreth<sup>2</sup>, Jared Nedzel<sup>2</sup>, Eric Weitz<sup>2</sup>
 
 # DCP Implementation team
 
