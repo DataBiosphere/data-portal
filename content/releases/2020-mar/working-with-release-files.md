@@ -17,7 +17,7 @@ Descriptions of all the March 2020 Release files can be found in the table below
 
 Some March 2020 Release files are used for interactive visualization in Single Cell Portal (any file with a .scp demarcation). These files are only available in Single Cell Portal and not on the DCP Data portal. 
 
-| File name | File location: DCP) and/or SCP | Description | Format | 
+| File name | File location: DCP and/or SCP | Description | Format | 
 | --- | --- | --- | --- |
 |  `Dataset_ID.loom` | DCP/SCP | Gene matrix file generated with DCP standardized pipelines (Optimus and Smart-seq2) and used as Cumulus input. | Loom |			
 | `Dataset_ID.de.xlsx` | DCP/SCP | Cumulus output file containing differential expression with correction | XLSX |	
@@ -28,7 +28,7 @@ Some March 2020 Release files are used for interactive visualization in Single C
 | `Dataset_ID.scp.X_diffmap_pca.coords.txt` | SCP | Diffusion map coordinates for Single Cell Portal | TXT |		
 | `Dataset_ID.scp.X_fitsne.coords.txt` | SCP | FIt-SNE coordinates for Single Cell Portal | TXT |	
 | `Dataset_ID.scp.X_fle.coords.txt` | SCP | fle cluster coordinates for Single Cell Portal |  TXT |
-| `Dataset_ID.scp.X_umap.coords.txt` | SCP | UMAP cluster coordinates for Single Cell Portal| TXT |	
+| `Dataset_ID.scp.X_umap.coords.txt` | SCP | UMAP cluster coordinates for Single Cel Portal| TXT |	
 | `Dataset_ID.scp.barcodes.tsv` | SCP | 10x compatible barcodes file for Single Cell Portal | TSV |	
 | `Dataset_ID.scp.features.tsv` | SCP | 10x compatible features (genes) file for Single Cell Portal | TSV |	
 | `Dataset_ID.scp.matrix.mtx` | SCP | 10x compatible mtx expression file for Single Cell Portal | mtx |
@@ -211,6 +211,7 @@ At the top of the search, the number of datasets that have a positive match for 
 You can replicate the release analyses using your own files by [taking this tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). 
 
 If you have any suggestions for the Working with Release Files guide or questions, please see the [Community Feedback page](.data.humancellatlas.org/releases/2020-mar/feedback).
+
 
 
 
