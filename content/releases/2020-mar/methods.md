@@ -15,13 +15,13 @@ The March 2020 Release includes all human DCP projects that were processed with 
 
 | What is in the gene matrix? |
 | :-- |
-| It depends on the sequencing technology of the dataset. The gene matrix for datasets processed with the 10x technology contain gene counts. The matrix for datasets processed with Smart-seq2 technology contain RSEM TPMs. All matrices also include important metadata, such as sample processing and organ information. |
+| The content of the gene matrix depends on the sequencing technology of the dataset. The gene matrix for datasets processed with the 10x technology contain gene counts. The matrix for datasets processed with Smart-seq2 technology contain RSEM TPMs. All matrices also include important metadata, such as sample processing and organ information. |
 
 #### Gene matrix corrections
 The metadata in each gene matrix file was modified to include new ontology labels and corrections to existing ontology labels. Additionally, due to a processing error, all EmptyDrops output was removed from files produced with the Optimus pipeline. This has been corrected and EmptyDrops will be available in future releases. All updated gene matrix files (loom format) used for the March 2020 Release are available for download under the Release Files column of the [DCP Portal’s Data Release page](data.humancellatlas.org/explore/releases/2020-mar). 
 
 ## Dataset IDs
-Each dataset was given a unique ID with a “2020-Mar...” prefix. All dataset IDs are listed on the March 2020 Release page in the “Dataset” column. This Dataset ID was used to name all input and output files relevant to each dataset. 
+Each dataset was given a unique ID with a “2020-Mar...” prefix. All Dataset IDs are listed on the March 2020 Release page in the “Dataset” column. This Dataset ID was used to name all input and output files relevant to each dataset. 
 
 ## Terra workspace preparation
 Each Release dataset was analyzed in individual workspaces in the cloud-based platform [Terra](app.bio.terra). The Cumulus workflow ([Snapshot 14](https://portal.firecloud.org/#methods/cumulus/cumulus/14/wdl)) was imported from the Broad Methods Repository into each Terra workspace. Each workspace links to a workspace-specific Google bucket (WORKSPACE_BUCKET); each dataset’s gene matrix (loom format) was uploaded to the Google bucket. Throughout the Cumulus workflow, the cloud path to the Google bucket was used to specify the name of each dataset’s input and output files (see an example in the [Global Inputs section](#-global-inputs)). 
@@ -39,7 +39,8 @@ The table below details the attributes for Cumulus input files, output files, an
 | --- | --- | --- |
 | `Input_file` | String location of the google cloud bucket hosting the DCP dataset gene matrix (loom format) | `“gs://WORKSPACE_BUCKET”` |
 | `Num_cpu` | Number of CPUs recommended for the analysis | 8 |
-| `Output_name` | String describing cloud path to an outpath folder | `"gs://WORKSPACE_BUCKET/output/Dataset ID”` |
+| `Output_name` | String describing cloud path to an outpath folder | `"gs://WORKSPACE_BUCKET/output/Dataset ID”` |\
+
 
 
 #### Clustering
@@ -59,7 +60,8 @@ The Cumulus workflow was set to cluster cells using the Louvain method, a modula
 | `run_louvain` | Run Louvain clustering algorithm | true |
 | `run_umap` | Run umap for visualization | true |
 | `max_genes` | Only keep cells with less than <max_genes> of genes. This is set higher than the default parameter to avoid filtering cells | 15,000 | 
-| `percent_mito` | Only keep cells with mitochondrial ratio less than <percent_mito>% of total counts. This is set lower than default parameters to avoid filtering cells. | 5.0 | 
+| `percent_mito` | Only keep cells with mitochondrial ratio less than <percent_mito>% of total counts. This is set lower than default parameters to avoid filtering cells. | 5.0 | \
+ 
 
 #### Differential expression
 Differential expression analyses were carried out using the statistical tests specified in the table below. False Discovery Rates were calculated using the Benjamini-Hochberg procedure with a default alpha set to 0.05. For each test, gene expression within a specified louvain cluster was compared to the average of all other clusters. 
@@ -70,7 +72,8 @@ Differential expression analyses were carried out using the statistical tests sp
 | `Fisher` | Calculate fisher exact test | true |
 | `mwu` | Calculate Mann-Whitney U | true |
 | `perform_de_analysis` | Perform differential expression analyses | true |
-| `t_test` | Calculate Welch’s t-test | true |
+| `t_test` | Calculate Welch’s t-test | true |\
+ 
 
 #### Visualization (plotting)
 To visualize cell clusters, multiple low-dimension embeddings were generated using the Cumulus parameters below. The attributes for visualization depended on sequencing technology (10x vs. Smart-seq2), as described in the table.
@@ -79,7 +82,8 @@ To visualize cell clusters, multiple low-dimension embeddings were generated usi
 | --- | --- | --- | --- |
 | `plot_fitsne` | Create a FFT-accelerated Interpolation-based t-SNE (FItSNE)-like plot according to “attribute, “attribute...”  | “louvain_labels,Channel” | “louvain_labels” |
 | `plot_fle` | Create a Force-directed Layout Embedding (FLE)-like plot according to “attribute, “attribute...”  | “louvain_labels,Channel” | “louvain_labels” |
-| `plot_umap` | Create a uniform manifold approximation and projection (UMAP)-like plot | "louvain_labels,Channel” | "louvain_labels” |
+| `plot_umap` | Create a uniform manifold approximation and projection (UMAP)-like plot | "louvain_labels,Channel” | "louvain_labels” |\ 
+
 
 
 #### Generating Single Cell Portal compatible outputs: 
@@ -88,7 +92,8 @@ Single Cell Portal compatible outputs were generated with the following paramete
 | Input name | Description |  Attribute | 
 | --- | --- | --- |
 | `generate_scp_outputs` |  Generate outputs compatible with Single-Cell Portal | true |
-| `output_dense` | Boolean describing if outputs should be in dense format | false |
+| `output_dense` | Boolean describing if outputs should be in dense format | false |\ 
+
 
 ## Cumulus output files
 The following table describes all Cumulus output files, including unannotated, normalized expression matrices. 
@@ -112,7 +117,8 @@ All output file names start with the Dataset ID, the unique ID given to each rel
 | `Dataset_ID.scp.barcodes.tsv` | 10x compatible barcodes file for Single Cell Portal | TSV |	
 | `Dataset_ID.scp.features.tsv` | 10x compatible features (genes) file for Single Cell Portal | TSV |	
 | `Dataset_ID.scp.matrix.mtx` | 10x compatible mtx expression file for Single Cell Portal | mtx |
-| `Dataset_ID.scp.metadata.txt` | Metadata matrix for Single Cell Portal | TXT | 
+| `Dataset_ID.scp.metadata.txt` | Metadata matrix for Single Cell Portal | TXT |\ 
+
 
 For more information regarding how cell clustering information is stored in the normalized expression matrix (h5ad and loom format files), please read the [Cumulus Documentation](https://cumulus.readthedocs.io/en/0.13.0/cumulus.html#cluster-outputs). You can also read more about the available differential expression outputs in the [Cumulus DE Outputs documentation](https://cumulus.readthedocs.io/en/0.13.0/cumulus.html#de-analysis-outputs). 
 
@@ -161,7 +167,8 @@ All output file names start with the Dataset ID, the unique ID given to each rel
 
 | Note about CSV files | 
 | :-- |
-| The CSV files contain differential expression data. These were generated from the `Dataset_ID.de.xlsx` to enable easier viewing with R or Python. Detailed steps for using these files are listed in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files)). |
+| The CSV files contain differential expression data. These were generated from the `Dataset_ID.de.xlsx` to enable easier viewing with R or Python. Detailed steps for using these files are listed in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files)). |\
+ 
 
 
 ## Want to learn more?
