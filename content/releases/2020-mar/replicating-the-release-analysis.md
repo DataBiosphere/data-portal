@@ -30,10 +30,12 @@ If you already have a Terra account, follow these step-by-step instructions for 
 #### 2. Select the Create a New Workspace card.
 ![image](_images/01_new_workspace_card_v2.png)
 
-#### 3. Fill out a unique workspace name and billing information. 
-You can optionally add a description of the workspace purpose. You can also optionally fill out the authorization domain. If you are unsure about the authorization domain field, you can read more information in [this article](https://support.terra.bio/hc/en-us/articles/360026775691)
-![image](_images/02_new_workspace_info.png).
 
+#### 3. Fill out a unique workspace name and billing information. 
+You can optionally add a description of the workspace purpose. You can also optionally fill out the authorization domain. If you are unsure about the authorization domain field, you can read more information in [this article](https://support.terra.bio/hc/en-us/articles/360026775691).
+
+![image](_images/02_new_workspace_info.png)
+ 
 #### 4. Upload the gene matrix (2020-Mar-Landscape-Adult-Liver-10x.loom file) to the workspace Google bucket.
 Each Terra workspace you create comes with its own Google bucket. 
 - 4.1 Go to the Data tab.
@@ -47,12 +49,14 @@ If you are already familiar with Terra and cloud computing, you can also transfe
 #### 2. Select the Find a Workflow card.
 #### 3. Under “Find Additional Workflows”, select the Broad Methods Repository.
 ![image](_images/04_Find_Addnl_Workflows.png)
+ 
 This will redirect you to the Broad Methods (you will no longer be in Terra).
 #### 4. In the search bar, type “Cumulus” to search for the Cumulus workflow.
 ![image](_images/05_Find_Cumulus_v2.png)
 #### 5. Select the “cumulus/cumulus” option.
 #### 6. Change the Snapshot to 14.
 ![image](_images/07_snapshot14_export.png)
+  
 #### 7. Select Export to Workspace.
 #### 8. Select Use Blank Configuration.
 A new page will appear with a Destination Workspace drop-down menu. 
@@ -67,6 +71,7 @@ After downloading the 10x_json.JSON (to be used with the 2020-Mar-Landscape-Adul
 
 #### 1. Select the “upload json” link on the Workflow configuration page and choose the appropriate configuration file.
 ![image](_images/08_json_upload.png)
+ 
 
 #### 2. Click Save.
 
@@ -80,6 +85,7 @@ After downloading the 10x_json.JSON (to be used with the 2020-Mar-Landscape-Adul
 Notice the field requires a “File” input. Specify the Google bucket location for the gene matrix (loom) file. To do this, select the folder icon in the `input_file` attribute box. Choose the 2020-Mar-Landscape-Adult-Liver-10x.loom. 
 
 ![image](_images/09_input_file.png)
+ 
 
 ##### 2. Examine the `output_name` attribute. 
 This attribute requires a “String” input. Specify a string in quotes that includes the workspace Google bucket location, an output folder, and a prefix you would like to give all analysis output files. ![image](_images/10_output_name.png)
@@ -102,6 +108,7 @@ The final string should look similar to: `“gs://GOOGLE_BUCKET/output/2020-Mar-
 #### 1. Return the Terra workspace Data tab.
 #### 2. In the Files section, select the “output” folder.
 ![image](_images/16_data_tab_output.png)
+ 
 #### 3. You should now see the processed data files. 
 
 The processed files include the normalized expression matrices (in loom and h5ad formats), differential expression analyses, (xlsx), and Single Cell portal outputs. These are each described in the [Methods documentation](data.humancellatlas.org/releases/2020-mar/methods). 
@@ -115,3 +122,8 @@ The March2020 Release includes normalized expression matrices that have been ann
 You can export Cumulus workflow output files from the Terra workspace to a Single Cell Portal study. There, you can visualize cell clusters and make annotations. Please see the [“Working with Release Files” documentation](data.humancellatlas.org/releases/2020-mar/working-with-release-files) for available tools (including Single Cell Portal) you can use to interact with Release data. 
 
 If you have any suggestions for this tutorial or questions, please see the [Community Feedback page](.data.humancellatlas.org/releases/2020-mar/feedback).
+
+
+
+
+
