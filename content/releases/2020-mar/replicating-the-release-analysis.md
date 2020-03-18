@@ -55,7 +55,7 @@ This will redirect you to the Broad Methods (you will no longer be in Terra).
 ![image](_images/05_Find_Cumulus_v2.png)
 #### 5. Select the “cumulus/cumulus” option.
 #### 6. Change the Snapshot to 14.
-![image](_images/07_snapshot14_export.png)
+![image](_images/07_snapshot14_export_v2.png)
   
 #### 7. Select Export to Workspace.
 #### 8. Select Use Blank Configuration.
