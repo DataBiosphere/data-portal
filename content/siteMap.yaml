@@ -380,6 +380,6 @@
               key: "/releases/documentation/2020-mar/feedback"
               path: "/releases/2020-mar/feedback"
             - name: "Attributions"
-              key: "/releases/documentation/2020-mar/attributions"
-              path: "/releases/2020-mar/attributions"
+              key: "/releases/documentation/2020-mar/acknowledgements"
+              path: "/releases/2020-mar/acknowledgements"
 

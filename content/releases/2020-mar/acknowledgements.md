@@ -1,7 +1,7 @@
 ---
-path: "/releases/documentation/2020-mar/attributions"
+path: "/releases/documentation/2020-mar/acknowledgements"
 date: "2020-03-31"
-title: "Attributions"
+title: "Acknowledgements"
 draft: true
 ---
 
