@@ -376,7 +376,7 @@
             - name: "Replicating the Release Analysis"
               key: "/releases/documentation/2020-mar/replicating-the-release-analysis"
               path: "/releases/2020-mar/replicating-the-release-analysis"
-            - name: "Community Feedback"
+            - name: "Release Feedback"
               key: "/releases/documentation/2020-mar/feedback"
               path: "/releases/2020-mar/feedback"
             - name: "Acknowledgements"
