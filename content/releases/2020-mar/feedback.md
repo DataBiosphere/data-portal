@@ -5,7 +5,7 @@ title: "Feedbback"
 draft: true
 ---
 
-# HCA DCP 2020 March Release  - Community Feedback
+# Community Feedback
 
 The Human Cell Atlas Data Coordination Platform team needs your feedback to help us improve and refine the DCP. Please use one of the links below to report a problem, request a feature or view open community generated issues on Github.
 
