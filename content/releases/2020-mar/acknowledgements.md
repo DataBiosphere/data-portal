@@ -9,7 +9,7 @@ draft: true
 
 This release represents the work of many people, the dataset contributors who provided both the raw data and the cell type annotation, the release working group who assembled the release data, ran the clustering pipelines and produced the DCP interfaces and the DCP implementation team who built the DCP
 
-## Dataset contributors
+## Dataset Contributors
 
 
 ## DCP Release Working Group
