@@ -17,7 +17,7 @@ Projects were stratified into individual datasets by organ, developmental stage,
  
  Cell type annotations were taken from publications or project contributor feedback, were harmonized, and then added to analyzed files.
 
-To learn more about these processes and get started working with the release, please review the [methods page](/releases/2020-mar/methods), take a [tutorial on how to replicate these analyses](/releases/2020-mar/replicating-the-hca-dcp-release-analysis) or view tips for [working with release files](/releases/2020-mar/working-with-release-files). 
+To learn more about these processes and get started working with the release, please review the [methods page](methods.md)), take a [tutorial on how to replicate these analyses](/releases/2020-mar/replicating-the-hca-dcp-release-analysis) or view tips for [working with release files](/releases/2020-mar/working-with-release-files). 
 
 
 
