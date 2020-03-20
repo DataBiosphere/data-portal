@@ -83,7 +83,7 @@ Next, load the loom file using:
 
 ```R
 source("https://raw.githubusercontent.com/klarman-cell-observatory/cumulus/master/workflows/cumulus/loom2seurat.R")
-> result <- convert_loom_to_seurat("2020-Mar-Landscape-Adult-Liver-10x_annotated_v1.loom")
+result <- convert_loom_to_seurat("2020-Mar-Landscape-Adult-Liver-10x_annotated_v1.loom")
 ```
 ### SCANPY
 [SCANPY](https://github.com/theislab/scanpy) is a Python-based analysis toolkit for single-cell expression data built with [anndata](https://anndata.readthedocs.io/en/stable/). The following example files were tested using Python v3.7.5, SCANPY v1.4.5.1, and LoomPy v3.0.6. 
