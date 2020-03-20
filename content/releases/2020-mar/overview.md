@@ -13,7 +13,7 @@ draft: true
 
 The <link-to-browser relativelink="/releases/2020-mar">March 2020 Data Release</link-to-browser> includes datasets from all human DCP projects that have been processed using the DCP's standardized pipelines ([Optimus](/pipelines/optimus-workflow) or [Smart-seq2](/pipelines/smart-seq2-workflow)). 
 
-Projects were stratified into individual datasets by organ, developmental stage, and sequencing technology, and were further processed using [Cumulus](INSERT LINK), a tool for cell clustering, differential expression analyses, and visualization.
+Projects were stratified into individual datasets by organ, developmental stage, and sequencing technology, and were further processed using [Cumulus](https://cumulus.readthedocs.io/en/latest/cumulus.html#), a tool for cell clustering, differential expression analyses, and visualization.
  
  Cell type annotations were taken from publications or project contributor feedback, were harmonized, and then added to analyzed files.
 
