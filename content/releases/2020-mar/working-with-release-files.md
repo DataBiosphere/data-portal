@@ -63,9 +63,9 @@ import pegasus as pg
 data = pg.read_input("2020-Mar-Landscape-Adult-Liver-10x_annotated_v1.loom", genome = "GRCh38")
 ```
 ### Seurat 
- [Seurat](https://satijalab.org/seurat/) is an R package used for single-cell data quality control, analysis, and exploration. The following example files were tested using R v3.6.3, Python v3.7.5, Seurat v3.1.2, and LoomR v0.2.1.
+ [Seurat](https://satijalab.org/seurat/) is an R package used for single-cell data quality control, analysis, and exploration. The following example files were tested using R v3.6.3, Python v3.7.5, Seurat v3.1.2, and LoomR v0.2.1.  
 
-Load the annotated h5ad file using:
+To load the annotated h5ad file, you will need to have [anndata](https://anndata.readthedocs.io/en/latest/index.html) and [reticulate](https://cran.r-project.org/web/packages/reticulate/index.html) installed. Then use:
 
 ```R
 source("https://raw.githubusercontent.com/klarman-cell-observatory/cumulus/master/workflows/cumulus/h5ad2seurat.R")
