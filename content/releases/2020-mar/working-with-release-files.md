@@ -8,16 +8,16 @@ draft: true
 
 # Working with Release Files 
 
-There are multiple tools to view and manipulate the March 2020 Release files. This guide focuses on importing release files into Python and R-supported software such as Pegasus, Seurat, and SCANPY, in addition to visualizing and annotating files in Single Cell Portal. When applicable, we use file names from the [2020-Mar-Landscape-Adult-Liver-10x](data.humancellatlas.org/explore/projects/4d6f6c96-2a83-43d8-8fe1-0f53bffd4674/m/releases/2020-mar/datasets/2020-Mar-Landscape-Adult-Liver-10x/release-files) dataset as an example, but the following techniques will work for files from any Release dataset. 
+There are multiple tools to view and manipulate the March 2020 Release files. This guide focuses on importing release files into Python and R-supported software such as Pegasus, Seurat, and SCANPY, in addition to visualizing and annotating files in Single Cell Portal. When applicable, we use file names from the <link-to-browser relativelink="/explore/projects/4d6f6c96-2a83-43d8-8fe1-0f53bffd4674/m/releases/2020-mar/datasets/2020-Mar-Landscape-Adult-Liver-10x/release-files">2020-Mar-Landscape-Adult-Liver-10x</link-to-browser> dataset as an example, but the following techniques will work for files from any Release dataset. 
 
 **Note: The software used in this guide is only a subset of single-cell analysis tools; we encourage the community to explore these files using other portals and tools as they become available!**
 
-If you would like to know more about how these release files were generated, please see the [March 2020 Release Methods](methods.md) or take the [analysis tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis) which demonstrates how to replicate Release analyses using the 2020-Mar-Landscape-Adult-Liver-10x Release dataset. 
+If you would like to know more about how these release files were generated, please see the [March 2020 Release Methods](methods.md) or take the [analysis tutorial](replicating-the-release-analysis.md) which demonstrates how to replicate Release analyses using the 2020-Mar-Landscape-Adult-Liver-10x Release dataset. 
 
 ## What are the release files?
 Descriptions of all the March 2020 Release files can be found in the table below. Each Release dataset has a unique Dataset ID which is listed on the March 2020 Release page in the “Dataset” column. This ID is used as a prefix for all Release dataset files. 
 
-Some March 2020 Release files are used for interactive visualization in Single Cell Portal (any file with a .scp demarcation). These files are only available in [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release) (SCP) and not on the HCA Data Coordination Platform (DCP) [Data Portal](https://data.humancellatlas.org/). 
+Some March 2020 Release files are used for interactive visualization in Single Cell Portal (any file with a .scp demarcation). These files are only available in [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release) (SCP) and not on the HCA [Data Coordination Platform](https://data.humancellatlas.org/) (DCP). 
 
 | File name | File location: DCP and/or SCP | Description | Format | 
 | --- | --- | --- | --- |
@@ -42,9 +42,9 @@ Some March 2020 Release files are used for interactive visualization in Single C
 
 ## Importing annotated March 2020 Release files into R and Python visualization resources
 
-Each Release dataset has gene expression matrices containing cell clustering information and annotated cell types. This annotated expression matrix is provided in two file formats: a loom and a h5ad. Both file types are named with an `“_annotated_v1”` suffix and can be found under Release Files on the [main Release page](data.humancellatlas.org/explore/releases/2020-mar). The normalized matrices were generated using the Cumulus workflow and annotated using published cell types (see more details in the [Methods](methods.md)). 
+Each Release dataset has gene expression matrices containing cell clustering information and annotated cell types. This annotated expression matrix is provided in two file formats: a loom and a h5ad. Both file types are named with an `“_annotated_v1”` suffix and can be found under Release Files on the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page. The normalized matrices were generated using the Cumulus workflow and annotated using published cell types (see more details in the [Methods](methods.md)). 
 
-Use the suggested code below to view annotated loom and h5ad files in [Pegasus](https://pegasus.readthedocs.io/en/latest/), [Seurat](https://satijalab.org/seurat/), and [SCANPY](https://github.com/theislab/scanpy). You can view the [Cumulus documentation](https://cumulus.readthedocs.io/en/latest/cumulus.html#load-cumulus-results-into-pegasus) to learn more about importing the annotated expression matrices into these Python and R resources. For the examples below, we use files from the [2020-Mar-Landscape-Adult-Liver-10x dataset](data.humancellatlas.org/explore/projects/4d6f6c96-2a83-43d8-8fe1-0f53bffd4674/m/releases/2020-mar/datasets/2020-Mar-Landscape-Adult-Liver-10x/release-files).
+Use the suggested code below to view annotated loom and h5ad files in [Pegasus](https://pegasus.readthedocs.io/en/latest/), [Seurat](https://satijalab.org/seurat/), and [SCANPY](https://github.com/theislab/scanpy). You can view the [Cumulus documentation](https://cumulus.readthedocs.io/en/latest/cumulus.html#load-cumulus-results-into-pegasus) to learn more about importing the annotated expression matrices into these Python and R resources. For the examples below, we use files from the <link-to-browser relativelink="/explore/projects/4d6f6c96-2a83-43d8-8fe1-0f53bffd4674/m/releases/2020-mar/datasets/2020-Mar-Landscape-Adult-Liver-10x/release-files">2020-Mar-Landscape-Adult-Liver-10x</link-to-browser> dataset.
 
 ### Pegasus 
 [Pegasus](https://pegasus.readthedocs.io/en/latest/) is a Python package used by Cumulus for analyzing very large single-cell transcriptomes. The following example files were tested using Python v3.7.5 and Pegasus v0.16.11. 
@@ -106,7 +106,7 @@ Differential expression analyses were performed on the louvain cell clusters ide
 -  a .de.xlsx 
 -  a .CSV.zip
 
-Each louvain cluster in the .de.xlsx file has one excel sheet for upregulated genes and one for downregulated genes. To make viewing these results easier in R and Python, we converted all excel sheets into a zip of individual CSV files. You can download the zip file from the Release Files column on the [March 2020 Release page](data.humancellatlas.org/explore/releases/2020-mar), unzip it into your directory of choice, and view the CSVs in R or Python using the instructions below. 
+Each louvain cluster in the .de.xlsx file has one excel sheet for upregulated genes and one for downregulated genes. To make viewing these results easier in R and Python, we converted all excel sheets into a zip of individual CSV files. You can download the zip file from the Release Files column on the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page, unzip it into your directory of choice, and view the CSVs in R or Python using the instructions below. 
 
 For both R and Python instructions, you will need to list the name of the directory containing the CSV files (specified below with `“DIRECTORY_NAME”`).
 
@@ -136,7 +136,7 @@ data[f]
 ## Creating a Single Cell Portal study page and importing Cumulus results from Terra
 You can visualize or annotate DCP Release files by either using the existing March 2020 Release studies in [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release) or by creating a new Single Cell Portal study. Detailed instructions for getting started with Single Cell Portal can be found on the [Single Cell Portal wiki]( https://github.com/broadinstitute/single_cell_portal/wiki/Synchronizing-Study-Data). You will need a Google compatible email account to login. You may also use your institutional account if it is backed by Google.
 
-**The following instructions are a continuation from the [replicating release analyses tutorial](Ireplicating-the-release-analysis.md) and focus on importing Cumulus output files from an existing Terra workspace. These steps use the 2020-Mar-Landscape-Adult-Liver-10x example files derived using the tutorial techniques.**
+**The following instructions are a continuation from the [replicating release analyses tutorial](replicating-the-release-analysis.md) and focus on importing Cumulus output files from an existing Terra workspace. These steps use the 2020-Mar-Landscape-Adult-Liver-10x example files derived using the tutorial techniques.**
 
 ### Creating a Single Cell Portal study
 
@@ -184,7 +184,7 @@ Any Cumulus files generated using the techniques outlined in the Replicating Rel
 The March 2020 Release used publications and project contributor feedback for cell type annotations. However, we encourage researchers to explore and create new annotations. Get started by viewing this Single Cell Portal [cell annotation guide](https://github.com/broadinstitute/single_cell_portal/wiki/Annotations). 
 
 ## Viewing and interacting with annotated cells in Single Cell Portal
-Each March 2020 Release dataset has a Single Cell Portal study page where you can view annotated cells. You can find a link to these pages on the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar) or on the [March 2020 Release page on Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release).
+Each March 2020 Release dataset has a Single Cell Portal study page where you can view annotated cells. You can find a link to these pages on the DCP <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> or on the [Single Cell Portal HCA Release page ](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release).
 
 To visualize the annotated cells for a Release dataset, go to the Explore tab of the Single Cell Portal study and follow the instructions below:
 
@@ -201,7 +201,7 @@ The `annotated_cell_identity.text` option will list the cell types defined by th
 
 ## Searching for genes across March 2020 Release datasets using Global Gene Search
 The March 2020 Release offers a Global Gene Search option using Single Cell Portal.
-#### 1. [Go the March 2020 Release Single Cell Portal page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release).
+#### 1. Go to the [Single Cell Portal HCA Release] page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release).
 When you enter the page, you will be defaulted to the Search Studies tab of the landing page. 
 #### 2. Select the Search Genes tab.
 ![image](_images/20_SCP_Release_page.png)
@@ -212,9 +212,6 @@ At the top of the search, the number of datasets that have a positive match for 
 ## Next steps
 You can replicate the release analyses using your own files by [taking this tutorial](replicating-the-release-analysis.md). 
 
-If you have any suggestions for the Working with Release Files guide or questions, please see the [Community Feedback page](.data.humancellatlas.org/releases/2020-mar/feedback).
-
-
-
+If you have any suggestions for the Working with Release Files guide or questions, please see the [Community Feedback page](feedback.md).
 
 
