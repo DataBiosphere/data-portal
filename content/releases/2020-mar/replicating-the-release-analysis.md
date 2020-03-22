@@ -13,8 +13,8 @@ All projects for the release were divided into individual datasets which are lis
 ## Downloading the gene matrix (loom format) for the example dataset
 To start your analyses, you will need to download the gene matrix from the DCP. For each dataset, this matrix was generated using a standardized DCP pipeline (Optimus or Smart-seq2). The matrix contains either gene counts (10x samples) or RSEM TPMS (Smart-seq2 datasets), in addition to important metadata, such as specimen and sample processing information. This file will be used as input for the Cumulus workflow.
 
-#### 1. Navigate to the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar).
-#### 2. Find the sample dataset 2020-Mar-Landscape-Adult-Liver-10x in the table.
+#### 1. Navigate to the DCP <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser>.
+#### 2. Find the sample dataset 2020-Mar-Landscape-Adult-Liver-10x in the Liver section.
 #### 3. Select “View Files”.
 #### 4. Download the gene matrix (2020-Mar-Landscape-Adult-Liver-10x.loom file).
 
@@ -64,7 +64,7 @@ A new page will appear with a Destination Workspace drop-down menu.
 An option will appear to go to your workspace. You will be redirected back into the Terra workflow configuration page. 
 
 ## Importing a workflow configuration file (JSON format)
-The sequencing data for all March 2020 Release datasets were generated using either 10x or Smart-seq2 technology. There are two Cumulus workflow configuration files available for Terra import depending on which sequencing technology (10x or Smart-seq2) was used for the dataset of interest. The technology will be specified next to the dataset on the [Release page](data.humancellatlas.org/explore/releases/2020-mar). 
+The sequencing data for all March 2020 Release datasets were generated using either 10x or Smart-seq2 technology. There are two Cumulus workflow configuration files available for Terra import depending on which sequencing technology (10x or Smart-seq2) was used for the dataset of interest. The technology will be specified next to the dataset on the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page. 
 The 2020-Mar-Landscape-Adult-Liver-10x dataset uses the 10x configuration. For all datasets, you can download the 10x configuration (JSON) [here](_downloads/10x_json.JSON) or the Smart-seq2 configuration [here](_downloads/SS2_json.JSON). 
 
 After downloading the 10x_json.JSON (to be used with the 2020-Mar-Landscape-Adult-Liver-10x dataset), do the following:
@@ -121,7 +121,7 @@ The March2020 Release includes normalized expression matrices that have been ann
 ## Next steps
 You can export Cumulus workflow output files from the Terra workspace to a Single Cell Portal study. There, you can visualize cell clusters and make annotations. Please see the [“Working with Release Files” documentation](working-with-release-files.md) for available tools (including Single Cell Portal) you can use to interact with Release data. 
 
-If you have any suggestions for this tutorial or questions, please see the [Community Feedback page](.data.humancellatlas.org/releases/2020-mar/feedback).
+If you have any suggestions for this tutorial or questions, please see the [Community Feedback page](feedback.md).
 
 
 
