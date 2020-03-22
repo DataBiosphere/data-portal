@@ -8,7 +8,7 @@ draft: true
 #  Replicating the March 2020 Release Analyses
 This tutorial covers how to process a gene matrix (in loom format) for clustering, differential expression, and visualization using the Cumulus workflow in a Terra workspace. It uses the same [methods](methods.md) outlined for the DCP March 2020 Release. 
 
-All projects for the release were divided into individual datasets which are listed on the [DCP Release Page](data.humancellatlas.org/explore/releases/2020-mar). For this tutorial, we use the sample dataset 2020-Mar-Landscape-Adult-Liver-10x derived from the project [“Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations”](https://data.humancellatlas.org/explore/projects/4d6f6c96-2a83-43d8-8fe1-0f53bffd4674). You can explore other datasets and repeat these analyses on additional matrix files.
+All projects for the release were divided into individual datasets which are listed on the DCP <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page. For this tutorial, we use the sample dataset 2020-Mar-Landscape-Adult-Liver-10x derived from the project [“Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations”](https://data.humancellatlas.org/explore/projects/4d6f6c96-2a83-43d8-8fe1-0f53bffd4674). You can explore other datasets and repeat these analyses on additional matrix files.
 
 ## Downloading the gene matrix (loom format) for the example dataset
 To start your analyses, you will need to download the gene matrix from the DCP. For each dataset, this matrix was generated using a standardized DCP pipeline (Optimus or Smart-seq2). The matrix contains either gene counts (10x samples) or RSEM TPMS (Smart-seq2 datasets), in addition to important metadata, such as specimen and sample processing information. This file will be used as input for the Cumulus workflow.
@@ -122,8 +122,5 @@ The March2020 Release includes normalized expression matrices that have been ann
 You can export Cumulus workflow output files from the Terra workspace to a Single Cell Portal study. There, you can visualize cell clusters and make annotations. Please see the [“Working with Release Files” documentation](working-with-release-files.md) for available tools (including Single Cell Portal) you can use to interact with Release data. 
 
 If you have any suggestions for this tutorial or questions, please see the [Community Feedback page](feedback.md).
-
-
-
 
 
