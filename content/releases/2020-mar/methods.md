@@ -7,7 +7,7 @@ draft: true
 
 # March 2020 Release Methods
 ## Overview
-This document details the Human Cell Atlas (HCA) Data Coordination Platform’s (DCP) methods for cell clustering, differential expression analyses, and data visualization used in the HCA March 2020 Data Release. Overall, 13 individual DCP projects were stratified into 24 datasets by organ, developmental stage and sample processing technology. Gene matrices for each dataset were uploaded into the cloud-based platform [Terra](app.terra.bio) and analyzed using Cumulus (v0.13.0), a single-cell analysis workflow ([Li et al. 2019](https://www.biorxiv.org/content/10.1101/823682v1)). All Release files are available for download on the [main Data Release Page](data.humancellatlas.org/explore/releases/2020-mar)
+This document details the Human Cell Atlas (HCA) Data Coordination Platform’s (DCP) methods for cell clustering, differential expression analyses, and data visualization used in the HCA March 2020 Data Release. Overall, 13 individual DCP projects were stratified into 24 datasets by organ, developmental stage and sample processing technology. Gene matrices for each dataset were uploaded into the cloud-based platform [Terra](app.terra.bio) and analyzed using Cumulus (v0.13.0), a single-cell analysis workflow ([Li et al. 2019](https://www.biorxiv.org/content/10.1101/823682v1)). All Release files are available for download on the main <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page.
 
 
 ## Project stratification and gene matrix preparation
@@ -18,10 +18,11 @@ The March 2020 Release includes all human DCP projects that were processed with 
 | The content of the gene matrix depends on the sequencing technology of the dataset. The gene matrix for datasets processed with the 10x technology contain gene counts. The matrix for datasets processed with Smart-seq2 technology contain RSEM TPMs. All matrices also include important metadata, such as sample processing and organ information. |
 
 #### Gene matrix corrections
-The metadata in each gene matrix file was modified to include new ontology labels and corrections to existing ontology labels. Additionally, due to a processing error, all EmptyDrops output was removed from files produced with the Optimus pipeline. This has been corrected and EmptyDrops will be available in future releases. All updated gene matrix files (loom format) used for the March 2020 Release are available for download under the Release Files column of the [DCP Portal’s Data Release page](data.humancellatlas.org/explore/releases/2020-mar). 
+The metadata in each gene matrix file was modified to include new ontology labels and corrections to existing ontology labels. Additionally, due to a processing error, all EmptyDrops output was removed from files produced with the Optimus pipeline. This has been corrected and EmptyDrops will be available in future releases. All updated gene matrix files (loom format) used for the March 2020 Release are available for download under the Release Files column of the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser>
+page. 
 
 ## Dataset IDs
-Each dataset was given a unique ID with a “2020-Mar...” prefix. All Dataset IDs are listed on the March 2020 Release page in the “Dataset” column. This Dataset ID was used to name all input and output files relevant to each dataset. 
+Each dataset was given a unique ID with a “2020-Mar...” prefix. All Dataset IDs are listed on the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page in the “Dataset” column. This Dataset ID was used to name all input and output files relevant to each dataset. 
 
 ## Terra workspace preparation
 Each Release dataset was analyzed in individual workspaces in the cloud-based platform [Terra](app.bio.terra). The Cumulus workflow ([Snapshot 14](https://portal.firecloud.org/#methods/cumulus/cumulus/14/wdl)) was imported from the Broad Methods Repository into each Terra workspace. Each workspace links to a workspace-specific Google bucket (WORKSPACE_BUCKET); each dataset’s gene matrix (loom format) was uploaded to the Google bucket. Throughout the Cumulus workflow, the cloud path to the Google bucket was used to specify the name of each dataset’s input and output files (see an example in the [Global Inputs section](#-global-inputs)). 
@@ -98,11 +99,12 @@ Single Cell Portal compatible outputs were generated with the following paramete
 ## Cumulus output files
 The following table describes all Cumulus output files, including unannotated, normalized expression matrices. 
 
-Files with a “.scp” demarcation are only needed to create Single Cell Portal studies and can be found on the Single Cell Portal study page (see the [Single Cell Portal March 2020 Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release)). 
+Files with a “.scp” demarcation are only needed to create Single Cell Portal studies and can be found on the Single Cell Portal study page (see the [Single Cell Portal HCA Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release)). 
 
-All output file names start with the Dataset ID, the unique ID given to each release dataset that is listed on the [DCP Release page](data.humancellatlas.org/explore/releases/2020-mar).
+All output file names start with the Dataset ID, the unique ID given to each release dataset that is listed on the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page.
+.
 
-*Important Note*: These files include unannotated expression matrices and are not the final Release files. For descriptions of the final Release files, please see the [Final March 2020 Release files on DCP Data Portal](#final-march-2020-release-files-on-dcp-data-portal). 
+*Important Note*: These files include unannotated expression matrices and are not the final Release files. For descriptions of the final Release files, please see the section [Final March 2020 Release files](#final-march-2020-release-files). 
 
 | File name | Description |  Format | 
 | --- | --- | --- |
@@ -140,7 +142,7 @@ For visualization in Single Cell Portal, these columns were also added to the fi
 
 
 ## Final March 2020 Release files
-The following table describes the final Release files available in the DCP Release page and in interactive portals. Files with a “.scp” demarcation are only needed to create Single Cell Portal studies and can be found on the Single Cell Portal study page (see the [Single Cell Portal March 2020 Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release)). 
+The following table describes the final Release files available in the DCP Release page and in interactive portals. Files with a “.scp” demarcation are only needed to create Single Cell Portal studies and can be found on the Single Cell Portal study page (see the [Single Cell Portal HCA Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release)). 
 
 All output file names start with the Dataset ID, the unique ID given to each release dataset and is listed on the DCP Release page.
 
@@ -167,13 +169,13 @@ All output file names start with the Dataset ID, the unique ID given to each rel
 
 | Note about CSV files | 
 | :-- |
-| The CSV files contain differential expression data. These were generated from the `Dataset_ID.de.xlsx` to enable easier viewing with R or Python. Detailed steps for using these files are listed in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files)). |\
+| The CSV files contain differential expression data. These were generated from the `Dataset_ID.de.xlsx` to enable easier viewing with R or Python. Detailed steps for using these files are listed in the [Working with Release Files guide](working-with-release-files.md)). |\
  
 
 
 ## Want to learn more?
 
-Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files). You can also get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](data.humancellatlas.org/releases/2020-mar/replicating-the-release-analysis). For additional details about each individual dataset, visit the [March 2020 Release page](data.humancellatlas.org/explore/releases/2020-mar).
+Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files). You can also get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](replicating-the-release-analysis.md). For additional details about each individual dataset, visit the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page.
 
 
 
