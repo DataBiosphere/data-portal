@@ -175,7 +175,8 @@ All output file names start with the Dataset ID, the unique ID given to each rel
 
 ## Want to learn more?
 
-Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide](data.humancellatlas.org/releases/2020-mar/working-with-release-files). You can also get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](replicating-the-release-analysis.md). For additional details about each individual dataset, visit the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page.
+Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide](working-with-release-files.md). You can also get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](replicating-the-release-analysis.md). For additional details about each individual dataset, visit the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page.
+
 
 
 
