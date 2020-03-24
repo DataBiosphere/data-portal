@@ -201,7 +201,7 @@ The `annotated_cell_identity.text` option will list the cell types defined by th
 
 ## Searching for genes across March 2020 Release datasets using Global Gene Search
 The March 2020 Release offers a Global Gene Search option using Single Cell Portal.
-#### 1. Go to the [Single Cell Portal HCA Release] page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release).
+#### 1. Go to the [Single Cell Portal HCA Release](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release) page.
 When you enter the page, you will be defaulted to the Search Studies tab of the landing page. 
 #### 2. Select the Search Genes tab.
 ![image](_images/20_SCP_Release_page.png)
