@@ -151,7 +151,7 @@ class IndexPage extends React.Component {
 						<div className={classNames(compStyles.sectionInner, compStyles.s)}>
 							<div className={compStyles.intro}>
 								<h4 className={fontStyles.introTitle}>March 2020 Data Release</h4>
-								<p className={fontStyles.introText}>Explore, visualize, and interact with 24 annotated datasets</p>
+								<p className={fontStyles.introText}>Explore, visualize, and interact with 23 annotated datasets</p>
 								<div className={compStyles.module}>
 									<a href={`${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`}
 									   className={classNames(globalStyles.button, globalStyles.blue, globalStyles.light, compStyles.latest)}>
