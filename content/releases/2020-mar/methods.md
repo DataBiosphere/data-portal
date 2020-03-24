@@ -11,7 +11,7 @@ This document details the Human Cell Atlas (HCA) Data Coordination Platform’s 
 
 
 ## Project stratification and gene matrix preparation
-The March 2020 Release includes all human DCP projects that were processed with DCP standardized pipelines (Optimus or Smart-seq2). Each project was stratified into individual datasets by organ and when applicable, by developmental stage (adult or fetal) or by sample processing technology (10x or Smart-seq2). For each Release dataset, gene matrices in loom format were obtained by filtering projects on the [DCP Data Portal](data.humancellatlas.org/explore/) using the stratification criteria above. 
+The March 2020 Release includes all human DCP projects that were processed with DCP standardized pipelines (Optimus or Smart-seq2). Each project was stratified into individual datasets by organ and when applicable, by developmental stage (adult or fetal) or by sample processing technology (10x or Smart-seq2). For each Release dataset, gene matrices in loom format were obtained by filtering projects on the <link-to-browser relativelink="/#">DCP Data Browser</link-to-browser> using the stratification criteria above. 
 
 | What is in the gene matrix? |
 | :-- |
