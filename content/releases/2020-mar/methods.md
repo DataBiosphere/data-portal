@@ -25,7 +25,7 @@ page.
 Each dataset was given a unique ID with a “2020-Mar...” prefix. All Dataset IDs are listed on the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page in the “Dataset” column. This Dataset ID was used to name all input and output files relevant to each dataset. 
 
 ## Terra workspace preparation
-Each Release dataset was analyzed in individual workspaces in the cloud-based platform [Terra](app.bio.terra). The Cumulus workflow ([Snapshot 14](https://portal.firecloud.org/#methods/cumulus/cumulus/14/wdl)) was imported from the Broad Methods Repository into each Terra workspace. Each workspace links to a workspace-specific Google bucket (WORKSPACE_BUCKET); each dataset’s gene matrix (loom format) was uploaded to the Google bucket. Throughout the Cumulus workflow, the cloud path to the Google bucket was used to specify the name of each dataset’s input and output files (see an example in the [Global Inputs section](#-global-inputs)). 
+Each Release dataset was analyzed in individual workspaces in the cloud-based platform [Terra](app.bio.terra). The Cumulus workflow ([Snapshot 14](https://portal.firecloud.org/#methods/cumulus/cumulus/14/wdl)) was imported from the Broad Methods Repository into each Terra workspace. Each workspace links to a workspace-specific Google bucket (WORKSPACE_BUCKET); each dataset’s gene matrix (loom format) was uploaded to the Google bucket. Throughout the Cumulus workflow, the cloud path to the Google bucket was used to specify the name of each dataset’s input and output files (see an example in the [Global Inputs section](#global-inputs)). 
 
 ## Cumulus workflow
 The Cumulus workflow was used to perform cell clustering, differential expression analyses, and plotting using each dataset’s gene matrix (loom format) as input. More information about Cumulus can be found in the [main documentation](https://cumulus.readthedocs.io/en/0.13.0/cumulus.html). Additionally, you can view the Cumulus workflow used for these analyses in the [Broad Methods Repository](https://portal.firecloud.org/#methods/cumulus/cumulus/14/wdl) or on [GitHub](https://github.com/klarman-cell-observatory/cumulus/blob/c937a832718aacbe75a0fdbca9cde682c48e2407/workflows/cumulus/cumulus.wdl). 
@@ -176,6 +176,7 @@ All output file names start with the Dataset ID, the unique ID given to each rel
 ## Want to learn more?
 
 Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide](working-with-release-files.md). You can also get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](replicating-the-release-analysis.md). For additional details about each individual dataset, visit the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page.
+
 
 
 
