@@ -7,7 +7,7 @@ draft: true
 
 # March 2020 Release Methods
 ## Overview
-This document details the Human Cell Atlas (HCA) Data Coordination Platform’s (DCP) methods for cell clustering, differential expression analyses, and data visualization used in the HCA March 2020 Data Release. Overall, 12 individual DCP projects were stratified into 23 datasets by organ, developmental stage and sample processing technology. Gene matrices for each dataset were uploaded into the cloud-based platform [Terra](app.terra.bio) and analyzed using Cumulus (v0.13.0), a single-cell analysis workflow ([Li et al. 2019](https://www.biorxiv.org/content/10.1101/823682v1)). All Release files are available for download on the main <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page.
+This document details the Human Cell Atlas (HCA) Data Coordination Platform’s (DCP) methods for cell clustering, differential expression analyses, and data visualization used in the HCA March 2020 Data Release. Overall, 12 individual DCP projects were stratified into 23 datasets by organ, developmental stage and sample processing technology. Gene matrices for each dataset were uploaded into the cloud-based platform [Terra](https://app.terra.bio/) and analyzed using Cumulus (v0.13.0), a single-cell analysis workflow ([Li et al. 2019](https://www.biorxiv.org/content/10.1101/823682v1)). All Release files are available for download on the main <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page.
 
 
 
