@@ -22,7 +22,7 @@ The March 2020 Release includes all human DCP projects that were processed with 
 The metadata in each gene matrix file was modified to include new ontology labels and corrections to existing ontology labels. Additionally, due to a processing error, all EmptyDrops output was removed from files produced with the Optimus pipeline. This has been corrected and EmptyDrops will be available in future releases. All updated gene matrix files (loom format) used for the March 2020 Release are available for download under the Release Files column of the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser>
 page. 
 
-**Please note that the March 2020 Release datasets were not corrected for batch-effects.** Discrepancies may exist between published datasets and the March 2020 Release datasets. 
+**Please note that the March 2020 Release datasets were not corrected for batch effects.** Discrepancies may exist between published datasets and the March 2020 Release datasets. 
 
 
 ## Dataset IDs
@@ -179,6 +179,7 @@ All output file names start with the Dataset ID, the unique ID given to each rel
 ## Want to learn more?
 
 Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files](working-with-release-files.md) guide. You can also get hands-on experience with these methods by following the [Replicating the Release Analysis](replicating-the-release-analysis.md) tutorial. For additional details about each individual dataset, visit the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page.
+
 
 
 
