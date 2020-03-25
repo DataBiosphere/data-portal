@@ -10,6 +10,7 @@ draft: true
 This document details the Human Cell Atlas (HCA) Data Coordination Platform’s (DCP) methods for cell clustering, differential expression analyses, and data visualization used in the HCA March 2020 Data Release. Overall, 13 individual DCP projects were stratified into 24 datasets by organ, developmental stage and sample processing technology. Gene matrices for each dataset were uploaded into the cloud-based platform [Terra](app.terra.bio) and analyzed using Cumulus (v0.13.0), a single-cell analysis workflow ([Li et al. 2019](https://www.biorxiv.org/content/10.1101/823682v1)). All Release files are available for download on the main <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page.
 
 
+
 ## Project stratification and gene matrix preparation
 The March 2020 Release includes all human DCP projects that were processed with DCP standardized pipelines (Optimus or Smart-seq2). Each project was stratified into individual datasets by organ and when applicable, by developmental stage (adult or fetal) or by sample processing technology (10x or Smart-seq2). For each Release dataset, gene matrices in loom format were obtained by filtering projects on the <link-to-browser relativelink="/#">DCP Data Browser</link-to-browser> using the stratification criteria above. 
 
@@ -20,6 +21,9 @@ The March 2020 Release includes all human DCP projects that were processed with 
 #### Gene matrix corrections
 The metadata in each gene matrix file was modified to include new ontology labels and corrections to existing ontology labels. Additionally, due to a processing error, all EmptyDrops output was removed from files produced with the Optimus pipeline. This has been corrected and EmptyDrops will be available in future releases. All updated gene matrix files (loom format) used for the March 2020 Release are available for download under the Release Files column of the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser>
 page. 
+
+**Please note that the March 2020 Release datasets were not corrected for batch-effects.** Discrepancies may exist between published datasets and the March 2020 Release datasets. 
+
 
 ## Dataset IDs
 Each dataset was given a unique ID with a “2020-Mar...” prefix. All Dataset IDs are listed on the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page in the “Dataset” column. This Dataset ID was used to name all input and output files relevant to each dataset. 
@@ -169,13 +173,13 @@ All output file names start with the Dataset ID, the unique ID given to each rel
 
 | Note about CSV files | 
 | :-- |
-| The CSV files contain differential expression data. These were generated from the `Dataset_ID.de.xlsx` to enable easier viewing with R or Python. Detailed steps for using these files are listed in the [Working with Release Files guide](working-with-release-files.md)). |\
+| The CSV files contain differential expression data. These were generated from the `Dataset_ID.de.xlsx` to enable easier viewing with R or Python. Detailed steps for using these files are listed in the [Working with Release Files](working-with-release-files.md) guide). |\
  
-
 
 ## Want to learn more?
 
-Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files guide](working-with-release-files.md). You can also get hands-on experience with these methods by following the [Replicating the Release Analysis tutorial](replicating-the-release-analysis.md). For additional details about each individual dataset, visit the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page.
+Techniques for uploading loom and h5ad files into common analysis software are described in the [Working with Release Files](working-with-release-files.md) guide. You can also get hands-on experience with these methods by following the [Replicating the Release Analysis](replicating-the-release-analysis.md) tutorial. For additional details about each individual dataset, visit the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page.
+
 
 
 
