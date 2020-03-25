@@ -106,7 +106,6 @@ The following table describes all Cumulus output files, including unannotated, n
 Files with a “.scp” demarcation are only needed to create Single Cell Portal studies and can be found on the Single Cell Portal study page (see the [Single Cell Portal HCA Release Page](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release)). 
 
 All output file names start with the Dataset ID, the unique ID given to each release dataset that is listed on the <link-to-browser relativelink="/releases/2020-mar">March 2020 Release</link-to-browser> page.
-.
 
 *Important Note*: These files include unannotated expression matrices and are not the final Release files. For descriptions of the final Release files, please see the section [Final March 2020 Release files](#final-march-2020-release-files). 
 
