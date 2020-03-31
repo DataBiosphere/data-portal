@@ -85,6 +85,13 @@ export default (props) => {
 		metaProp = metaNav ? docPathSplitByPath[docPathSplitByPathLength] : '',
 		metaTOC = metaNav ? MetadataTOCSiteMap(metaType, metaProp) : null;
 
+	// Relocate provenance to the end of properties
+	if ( metaTOC && metaTOC.properties[0].name === "provenance" ) {
+
+			const provenance = metaTOC.properties.shift();
+			metaTOC.properties.push(provenance);
+		}
+
 	return (
 		<TOC metaProp={metaProp} metaTOC={metaTOC} pagesTOC={pagesTOC} {...props}/>
 	);
