@@ -42,7 +42,7 @@ class Privacy extends React.Component {
 
 		const {cookieName} = this.props;
 
-		Cookies.set(cookieName, true);
+		Cookies.set(cookieName, true, { expires: new Date(2300, 1, 1) });
 		this.setState({visible: false});
 	};
 
