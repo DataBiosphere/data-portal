@@ -33,6 +33,13 @@ export default function Template({data}) {
 	title = type.title;
 	pageTitle = `${coreEntity} - ${title}`;
 
+	// Relocate provenance to the end of properties
+	if ( type && type.properties[0].name === "provenance" ) {
+
+		const provenance = type.properties.shift();
+		type.properties.push(provenance);
+	}
+
 	return (
 		<Layout pageTitle={pageTitle} docPath={docPath}>
 			<h1 className={classNames(globalStyles.md, compStyles.meta)}>{pageTitle}</h1>
