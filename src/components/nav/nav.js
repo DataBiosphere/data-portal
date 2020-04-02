@@ -11,7 +11,7 @@ import React from 'react';
 
 // App dependencies
 import {DraftSiteMap} from '../../hooks/draft-siteMap';
-import {MetadataSiteMap} from '../../hooks/metadata-siteMap';
+import {MetadataNavSiteMap} from '../../hooks/metanav-siteMap';
 import {NavSiteMap} from '../../hooks/nav-siteMap';
 import * as NavigationService from '../../utils/navigation.service';
 import ClickHandler from "../clickHandler/clickHandler";
@@ -20,7 +20,7 @@ import ClickHandler from "../clickHandler/clickHandler";
 import compStyles from './nav.module.css';
 import fontStyles from '../../styles/fontsize.module.css';
 
-const classNames = require('classnames');
+let classNames = require('classnames');
 
 let active;
 let expanded;
@@ -128,7 +128,7 @@ export default (props) => {
 			allPagesSiteMap = NavSiteMap(docPath),
 			documentsInDraftMode = DraftSiteMap(),
 			pagesSiteMap = NavigationService.getPagesSiteMapByEnvironment(allPagesSiteMap, documentsInDraftMode),
-			metaSiteMap = metaNav ? MetadataSiteMap(docPath) : '';
+			metaSiteMap = metaNav ? MetadataNavSiteMap(docPath) : '';
 
 	const nav = metaNav ? pagesSiteMap.concat(metaSiteMap) : docPath ? pagesSiteMap : '';
 

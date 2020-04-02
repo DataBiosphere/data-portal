@@ -4,6 +4,7 @@
  *
  * Style definitions specific to the HCA Data Portal metadata detail component.
  */
+@import '../../styles/vars.module.css';
 
 .metadata {
 	margin: 0 -16px;
@@ -11,6 +12,18 @@
 
 .metadata > div {
 	margin-bottom: 24px;
+}
+
+/* Show/hide required metadata */
+.metadata .filter {
+	color: var(--primary);
+	cursor: pointer;
+	text-align: right;
+}
+
+/* Show/hide required metadata - '*' indicator */
+.metadata .filter span span {
+	margin-left: 1px;
 }
 
 /**

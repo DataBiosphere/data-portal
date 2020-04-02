@@ -39,6 +39,24 @@ class TOC extends React.Component {
 		return heading.replace(whiteSpace, '-').replace(specialCharacters, '').toLowerCase();
 	};
 
+	filterMetadata = () => {
+
+		const {metaTOC, showAllMetadata} = this.props,
+			{properties, required} = metaTOC || {};
+
+		if ( metaTOC && properties ) {
+
+			if ( showAllMetadata ) {
+
+				return properties;
+			}
+			else {
+
+				return properties.filter(property => required.includes(property.name));
+			}
+		}
+	};
+
 	isActive = (heading, activeTOC) => {
 		return `#${this.getAnchor(heading)}` === activeTOC;
 	};
@@ -48,10 +66,9 @@ class TOC extends React.Component {
 	};
 
 	render() {
-		const {activeTOC, metaProp, metaTOC, pagesTOC} = this.props;
-		if (metaTOC) {
-			var {properties, required} = metaTOC;
-		}
+		const {activeTOC, metaProp, metaTOC, pagesTOC} = this.props,
+			{required} = metaTOC || {};
+		const displayProperties = this.filterMetadata();
 		return (
 			<div className={compStyles.hcaToc}>
 				<ul className={compStyles.tocs}>
@@ -61,8 +78,8 @@ class TOC extends React.Component {
 							<a className={classNames(fontStyles.xs, {[compStyles.depth3]: heading.depth === 3})}
 							   href={`#${this.getAnchor(heading.value)}`}>{heading.value}</a>
 						</li>) : null}
-					{metaTOC ? properties.map((property, j) =>
-						<li key={j}
+					{metaTOC ? displayProperties.map((property, j) =>
+					<li key={j}
 							className={classNames({[compStyles.active]: this.isMetaActive(property.name, activeTOC)})}>
 							<a className={fontStyles.xs}
 							   href={`#${metaProp}-${property.name}`}>{property.properties.user_friendly ? property.properties.user_friendly : property.name}{required && required.includes(property.name) ?
@@ -88,9 +105,9 @@ export default (props) => {
 	// Relocate provenance to the end of properties
 	if ( metaTOC && metaTOC.properties[0].name === "provenance" ) {
 
-			const provenance = metaTOC.properties.shift();
-			metaTOC.properties.push(provenance);
-		}
+		const provenance = metaTOC.properties.shift();
+		metaTOC.properties.push(provenance);
+	}
 
 	return (
 		<TOC metaProp={metaProp} metaTOC={metaTOC} pagesTOC={pagesTOC} {...props}/>

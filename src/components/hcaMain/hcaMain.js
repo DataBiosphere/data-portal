@@ -21,14 +21,14 @@ import globalStyles from '../../styles/global.module.css';
 class HCAMain extends React.Component {
 
 	render() {
-		const {children, docPath, homeTab, noNav, noTab, sectionTitle} = this.props;
+		const {children, docPath, homeTab, noNav, noTab, sectionTitle, showAllMetadata} = this.props;
 		return (
 			<div className={globalStyles.pageWrapper}>
 				<Section docPath={docPath} sectionTitle={sectionTitle}/>
 				<TabNav docPath={docPath} homeTab={homeTab} noTab={noTab}/>
 				<div className={compStyles.main}>
 					<div className={globalStyles.wrapper}>
-						<HCAContent docPath={docPath} noNav={noNav}>{children}</HCAContent>
+						<HCAContent docPath={docPath} noNav={noNav} showAllMetadata={showAllMetadata}>{children}</HCAContent>
 					</div>
 				</div>
 			</div>

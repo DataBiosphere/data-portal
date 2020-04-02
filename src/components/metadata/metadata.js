@@ -13,9 +13,18 @@ import MetadataInternalRow from './metadataInternalRow';
 import MetadataRow from './metadataRow';
 
 // Styles
+import fontStyles from '../../styles/fontsize.module.css';
 import compStyles from './metadata.module.css';
 
+let classNames = require('classnames');
+
 class Metadata extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {showAllMetadata: true};
+		this.toggleRequiredMetadata = this.toggleRequiredMetadata.bind(this);
+	}
 
 	getInternalRef = (property) => {
 
@@ -45,14 +54,22 @@ class Metadata extends React.Component {
 		}
 
 		// Return the properties of the referenced module object/array
-		return this.props.reference.filter(reference => reference.relativeFilePath.includes(propertyRef[0]))[0];
+		return this.props.references.filter(reference => reference.relativeFilePath.includes(propertyRef[0]))[0];
+	};
+
+	toggleRequiredMetadata = () => {
+
+		this.setState({showAllMetadata: !this.state.showAllMetadata});
+		this.props.onShowMetadata(this.state.showAllMetadata);
 	};
 
 	render() {
 		const {entity, unFriendly} = this.props,
 			{properties, required} = entity;
+		const toggleMessage = this.state.showAllMetadata ? <span>Show required<span>*</span> metadata</span> : <span>Show all metadata</span>;
 		return (
 			<div className={compStyles.metadata}>
+				<p className={classNames(fontStyles.xxs, compStyles.filter)} onClick={this.toggleRequiredMetadata}>{toggleMessage}</p>
 				{properties.map((e1, i) =>
 					this.getPropertyRef(e1) !== '' ?
 						<MetadataRow
@@ -61,6 +78,7 @@ class Metadata extends React.Component {
 							elementParent={e1}
 							groupRef={true}
 							requiredList={required}
+							showAllMetadata={this.state.showAllMetadata}
 							unFriendly={`${unFriendly}.${e1.name}`}>{
 							this.getPropertyRef(e1)[1].includes('#') ?
 								this.getPropertyRefProperties(e1).definitions[this.getInternalRef(e1)].properties.map((i2, l) =>

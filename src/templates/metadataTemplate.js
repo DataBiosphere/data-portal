@@ -6,32 +6,63 @@
  */
 
 // Core dependencies
-import {graphql} from 'gatsby';
 import React from 'react';
 
 // App dependencies
 import Layout from '../components/layout';
 import Metadata from '../components/metadata/metadata';
+import {MetadataSiteMap} from "../hooks/metadata-siteMap";
+import {MetadataTypeSiteMap} from "../hooks/metadata-type-sitemap";
 import * as StringFormatService from '../utils/string-format.service';
 
 // Styles
-import compStyles from './metadataTemplate.module.css';
 import fontStyles from '../styles/fontsize.module.css';
 import globalStyles from '../styles/global.module.css';
+import compStyles from './metadataTemplate.module.css';
 
 let classNames = require('classnames');
 
 // the data prop will be injected by the GraphQL query below.
-export default function Template({data}) {
+class MetadataTemplate extends React.Component {
 
-	let coreEntity, docPath, pageTitle, referenceMetadata, title, type;
+	constructor(props) {
+		super(props);
+		this.state = ({showAllMetadata: true});
+	}
 
-	docPath = data.typeMetadata.edges.map(n => n.node)[0].fields.path;
-	type = data.typeMetadata.edges.map(n => n.node)[0];
-	referenceMetadata = data.referenceMetadata.edges.map(n => n.node);
-	coreEntity = StringFormatService.convertSentenceCaseToTitleCase(type.coreEntity);
-	title = type.title;
-	pageTitle = `${coreEntity} - ${title}`;
+	onShowMetadata = (event) => {
+
+		this.setState({showAllMetadata: !event});
+	};
+
+	render() {
+		const {docPath, references, type} = this.props,
+			{description} = type,
+			name = type.name,
+			coreEntity = StringFormatService.convertSentenceCaseToTitleCase(type.coreEntity),
+			title = type.title,
+			pageTitle = `${coreEntity} - ${title}`;
+		return (
+			<Layout pageTitle={pageTitle} docPath={docPath} showAllMetadata={this.state.showAllMetadata}>
+				<h1 className={classNames(globalStyles.md, compStyles.meta)}>{pageTitle}</h1>
+				<p className={fontStyles.hcaCode}>{name}</p>
+				<p className={fontStyles.l}>{description}</p>
+				<p className={fontStyles.xxs}>* Indicates a required field</p>
+				<Metadata entity={type} onShowMetadata={this.onShowMetadata.bind(this)} references={references}
+						  unFriendly={name}/>
+			</Layout>
+		);
+	}
+}
+
+export default (props) => {
+
+	const docPath = props.path;
+	const metadataPath = props.pageContext.metadataPath;
+	const types = MetadataTypeSiteMap();
+	const references = MetadataSiteMap();
+
+	const type = types.find(type => type.relativeFilePath === metadataPath);
 
 	// Relocate provenance to the end of properties
 	if ( type && type.properties[0].name === "provenance" ) {
@@ -41,100 +72,6 @@ export default function Template({data}) {
 	}
 
 	return (
-		<Layout pageTitle={pageTitle} docPath={docPath}>
-			<h1 className={classNames(globalStyles.md, compStyles.meta)}>{pageTitle}</h1>
-			<p className={fontStyles.hcaCode}>{type.name}</p>
-			<p className={fontStyles.l}>{type.description}</p>
-			<p className={fontStyles.xxs}>* Indicates a required field</p>
-			<Metadata entity={type} reference={referenceMetadata} unFriendly={type.name}/>
-		</Layout>
+		<MetadataTemplate docPath={docPath} references={references} type={type}/>
 	);
 }
-
-// modified to find the page by id which is passed in as context
-export const pageQuery = graphql`
-query ($metadataPath: String!) {
-  typeMetadata: allMetadataSchemaEntity(filter: {relativeFilePath: {eq: $metadataPath}}) {
-    edges {
-      node {
-        relativeFilePath
-        fields {
-          path
-        }
-        schemaType
-        coreEntity
-        title
-        name
-        description
-        properties {
-          name
-          properties {
-            description
-            type
-            user_friendly
-            _ref
-            enum
-            example
-            items {
-              type
-              _ref
-            }
-          }
-        }
-        required
-      }
-    }
-  }
-  referenceMetadata: allMetadataSchemaEntity(filter: {schemaType: {in: ["module","core","type","system"]}}) {
-    edges {
-      node {
-        relativeFilePath
-        fields {
-          path
-        }
-        schemaType
-        coreEntity
-        title
-        name
-        type
-        description
-        definitions {
-          task {
-            required
-            type
-            properties {
-              name
-              type
-            }
-          }
-          parameter {
-            required
-            type
-            properties {
-              name
-              type
-              description
-            }
-          }
-        }
-        properties {
-          name
-          properties {
-            description
-            type
-            user_friendly
-            _ref
-            enum
-            example
-            items {
-              type
-              _ref
-            }
-          }
-        }
-        required
-      }
-    }
-  }
-}
-`;
