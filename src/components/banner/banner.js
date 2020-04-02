@@ -15,8 +15,9 @@ import Privacy from './privacy'
 import SystemStatus from './systemStatus'
 
 // Styles
-import compStyles from './banner.module.css'
-const classNames = require('classnames');
+import compStyles from './banner.module.css';
+
+let classNames = require('classnames');
 
 class Banner extends React.Component {
 

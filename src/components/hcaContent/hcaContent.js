@@ -35,7 +35,7 @@ class HCAContent extends React.Component {
 	};
 
 	render() {
-		const {children, docPath, noNav} = this.props;
+		const {children, docPath, noNav, showAllMetadata} = this.props;
 		return (
 			<div
 				className={classNames(compStyles.hcaContent, {[compStyles.noNav]: noNav})}>
@@ -44,7 +44,7 @@ class HCAContent extends React.Component {
 					<div id={'hcaContent'} className={compStyles.hcaContentInner}>{children}</div>
 				</TOCSpy>
 				{this.state.isTOC && !noNav ?
-					<TOC activeTOC={this.state.activeTOC} docPath={docPath} isTOC={this.isTOC.bind(this)}/> : null}
+					<TOC activeTOC={this.state.activeTOC} docPath={docPath} isTOC={this.isTOC.bind(this)} showAllMetadata={showAllMetadata}/> : null}
 			</div>
 		);
 	}

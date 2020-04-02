@@ -37,7 +37,7 @@ class MetadataRow extends React.Component {
 	};
 
 	render() {
-		const {children, element, elementParent, groupRef, requiredList, unFriendly, unGrouped} = this.props;
+		const {children, element, elementParent, groupRef, requiredList, showAllMetadata, unFriendly, unGrouped} = this.props;
 		const {name, properties} = element,
 			required = requiredList || (elementParent && elementParent.required),
 			isRequired = required && required.includes(name),
@@ -51,9 +51,10 @@ class MetadataRow extends React.Component {
 			elementTypeName = type ? type : items && items._ref ? items.type : '',
 			enumTypeName = propertyEnum ? 'enum' : '',
 			detailTypeName = element === elementParent ? '' : isRef ? name.replace(regex, ' ') : '',
-			elementType = detailTypeName.concat(' ', elementTypeName).concat(' ', enumTypeName).trim();
+			elementType = detailTypeName.concat(' ', elementTypeName).concat(' ', enumTypeName).trim(),
+			toggleRequiredMetadata = showAllMetadata ? true : isRequired;
 		return (
-			<div>
+			toggleRequiredMetadata ? <div>
 				<div id={anchor}
 					 className={classNames({[compStyles.unGrouped]: unGrouped}, compStyles.metadataRow)}>
 					<MetadataDetail anchor={anchor}
@@ -66,7 +67,7 @@ class MetadataRow extends React.Component {
 									unFriendly={unFriendly}/>
 				</div>
 				{children}
-			</div>
+			</div> : null
 		);
 	}
 }

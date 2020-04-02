@@ -1,23 +1,62 @@
 import {useStaticQuery, graphql} from 'gatsby';
-import * as NavigationService from '../utils/navigation.service';
 
-export const MetadataSiteMap = (docPath) => {
-	const {allSitePage} = useStaticQuery(
+export const MetadataSiteMap = () => {
+	const {allMetadataSchemaEntity} = useStaticQuery(
 		graphql`
 		query MetadataSiteMap {
-			allSitePage(filter: {path: {regex: "/metadata/dictionary/"}}) {
-				edges {
-					node {
-						path
-						context {
-							metadataCoreName
-							metadataTitle
-						}
-					}
+		  allMetadataSchemaEntity(filter: {schemaType: {in: ["module","core","type","system"]}}) {
+			edges {
+			  node {
+				relativeFilePath
+				fields {
+				  path
 				}
+				schemaType
+				coreEntity
+				title
+				name
+				type
+				description
+				definitions {
+				  task {
+					required
+					type
+					properties {
+					  name
+					  type
+					}
+				  }
+				  parameter {
+					required
+					type
+					properties {
+					  name
+					  type
+					  description
+					}
+				  }
+				}
+				properties {
+				  name
+				  properties {
+					description
+					type
+					user_friendly
+					_ref
+					enum
+					example
+					items {
+					  type
+					  _ref
+					}
+				  }
+				}
+				required
+			  }
 			}
+		  }
 		}
 		`
 	);
-	return NavigationService.getMetadataNav(allSitePage.edges.map(e => e.node), docPath);
+	return allMetadataSchemaEntity.edges.map(e => e.node);
 };
