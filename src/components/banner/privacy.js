@@ -10,6 +10,9 @@ import Cookies from 'js-cookie';
 import Link from 'gatsby-link';
 import React from 'react';
 
+// App dependencies
+import ClickHandler from "../clickHandler/clickHandler";
+
 // Styles
 import compStyles from './privacy.module.css'
 import fontStyles from '../../styles/fontsize.module.css';
@@ -59,12 +62,10 @@ class Privacy extends React.Component {
 						<p className={classNames(fontStyles.xxs, fontStyles.noMargin)}><span>This website uses cookies for security and analytics purposes. By using this site, you agree to these uses. Learn more </span><Link
 							to='/privacy#4-who-will-have-access-to-your-personal-data'>here</Link><span>.</span></p>
 					</div>
-					<div
+					<ClickHandler
 						className={classNames(globalStyles.button, globalStyles.primary, globalStyles.outline, compStyles.narrow)}
-						onClick={() => {
-							this.accept()
-						}}>Got it
-					</div>
+						clickAction={() => this.accept()}
+						tag={'div'}>Got it</ClickHandler>
 				</div>
 			</div>
 		);

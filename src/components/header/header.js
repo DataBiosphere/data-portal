@@ -11,6 +11,7 @@ import React from 'react';
 
 // App dependencies
 import {HeaderSiteMap} from '../../hooks/header-siteMap';
+import ClickHandler from "../clickHandler/clickHandler";
 
 // Images
 import headerLogo from '../../../images/logo/logo-hca.png';
@@ -84,9 +85,12 @@ class Header extends React.Component {
 							<span className={compStyles.linkTo}>March 2020 Release</span>
 						</a>
 					</div>
-					<div className={classNames(compStyles.menuDropDown, fontStyles.s)} onClick={this.toggleMenu}>Menu
-					</div>
-					{this.state.showNav ? <div className={compStyles.hcaNavOverlay} onClick={this.toggleMenu}/> : null}
+					<ClickHandler className={classNames(compStyles.menuDropDown, fontStyles.s)}
+								  clickAction={this.toggleMenu}
+								  tag={'div'}>Menu</ClickHandler>
+					{this.state.showNav ? <ClickHandler className={compStyles.hcaNavOverlay}
+														clickAction={this.toggleMenu}
+														tag={'div'}/> : null}
 				</div>
 			</div>
 		);

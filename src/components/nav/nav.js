@@ -14,6 +14,7 @@ import {DraftSiteMap} from '../../hooks/draft-siteMap';
 import {MetadataSiteMap} from '../../hooks/metadata-siteMap';
 import {NavSiteMap} from '../../hooks/nav-siteMap';
 import * as NavigationService from '../../utils/navigation.service';
+import ClickHandler from "../clickHandler/clickHandler";
 
 // Styles
 import compStyles from './nav.module.css';
@@ -90,22 +91,28 @@ class Nav extends React.Component {
 						</div>)}
 				</ul>
 				<ul className={compStyles.hcaSideNav}>
-					<li className={compStyles.select} onClick={this.toggleNav}>
+					<ClickHandler className={compStyles.select} clickAction={this.toggleNav} tag={'li'}>
 						<span>Also in this section</span><i className='material-icons'>keyboard_arrow_down</i>
-					</li>
+					</ClickHandler>
 					{this.state.showNav ?
 						nav.map((p, i) =>
 							<div key={i}>
-								<li className={this.getNavClassName(docPath, p)} key={i}
-									onClick={p.secondaryLinks ? expanded ? this.toggleNav : null : this.toggleNav}><Link
-									to={NavigationService.getPath(p)} className={fontStyles.navPrimary}>{p.name}</Link>
-								</li>
+								<ClickHandler className={this.getNavClassName(docPath, p)}
+											  clickAction={p.secondaryLinks ? expanded ? this.toggleNav : null : this.toggleNav}
+											  key={i}
+											  tag={'li'}>
+									<Link to={NavigationService.getPath(p)} className={fontStyles.navPrimary}>{p.name}</Link>
+								</ClickHandler>
 								{p.secondaryLinks && expanded ?
 									<ul>
-										{p.secondaryLinks.map((c, j) => <li className={this.getNavClassName(docPath, c)}
-																			key={j} onClick={this.toggleNav}><Link
-											to={NavigationService.getPath(c)}
-											className={fontStyles.navSecondary}>{c.name}</Link></li>)}
+										{p.secondaryLinks.map((c, j) =>
+											<ClickHandler className={this.getNavClassName(docPath, c)}
+														  clickAction={this.toggleNav}
+														  key={j}
+														  tag={'li'}>
+												<Link className={fontStyles.navSecondary}
+													  to={NavigationService.getPath(c)}>{c.name}</Link>
+											</ClickHandler>)}
 									</ul> : null}
 							</div>) : null}
 				</ul>
