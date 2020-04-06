@@ -11,6 +11,7 @@ import React from 'react';
 // App dependencies
 import * as stringFormatter from '../../../src/utils/string-format.service';
 import * as numberFormatter from '../../utils/number-format.service';
+import ClickHandler from "../clickHandler/clickHandler";
 import HCAAutosuggest from '../hcaAutosuggest/hcaAutosuggest';
 
 // Styles
@@ -209,7 +210,10 @@ class SearchBrowser extends React.Component {
 									onEnter={this.onEnter.bind(this)}
 									onSelected={this.onSelected.bind(this)}
 									onSuggestionsFound={this.onSuggestionsFound.bind(this)}/>
-					<div onClick={this.visitExploreLink} className={this.getSearchButtonClass()}>Go</div>
+					<ClickHandler
+						className={this.getSearchButtonClass()}
+						clickAction={this.visitExploreLink}
+						tag={'div'}>Go</ClickHandler>
 				</div>
 			</section>
 		);

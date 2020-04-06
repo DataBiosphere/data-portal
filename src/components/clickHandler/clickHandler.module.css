@@ -1,0 +1,10 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal click handler component.
+ */
+
+.handler:focus {
+	outline: none;
+}

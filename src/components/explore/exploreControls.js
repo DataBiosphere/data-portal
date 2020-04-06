@@ -11,6 +11,7 @@ import React from 'react';
 // App dependencies
 import * as stringFormatter from '../../../src/utils/string-format.service';
 import * as numberFormatter from '../../../src/utils/number-format.service';
+import ClickHandler from "../clickHandler/clickHandler";
 
 // Images
 import arrow from '../../../images/icon/explore/arrow.png';
@@ -216,14 +217,14 @@ class ExploreControls extends React.Component {
 				</div>
 				<div className={compStyles.organs}>
 					{organTermList ? organTermList.map((organ, i) =>
-						<div
+						<ClickHandler
 							className={classNames(compStyles.organ, {[compStyles.unspecified]: !this.isOrganSummarized(organ)})}
+							clickAction={() => this.visitExploreLink(organ)}
 							id={this.getOrganId(organ)}
-							onClick={() => this.visitExploreLink(organ)}
-							key={i}>
+							key={i}
+							tag={'div'}>
 							<span>{this.getOrganDisplayLabel(organ)}</span>
-							<img src={arrow} alt="Select"/>
-						</div>) : null}
+							<img src={arrow} alt="Select"/></ClickHandler>) : null}
 				</div>
 				<a href={process.env.GATSBY_EXPLORE_URL} className={compStyles.moreOrgans}>View More Organs</a>
 			</div>

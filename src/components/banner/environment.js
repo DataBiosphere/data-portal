@@ -9,6 +9,9 @@
 import Cookies from 'js-cookie';
 import React from 'react';
 
+// App dependencies
+import ClickHandler from "../clickHandler/clickHandler";
+
 // Styles
 import compStyles from './environment.module.css';
 import fontStyles from '../../styles/fontsize.module.css';
@@ -57,12 +60,10 @@ class Environment extends React.Component {
 					<div>
 						<p className={classNames(fontStyles.s, fontStyles.bgDark, fontStyles.noMargin)}>{this.props.message}</p>
 					</div>
-					<div
+					<ClickHandler
 						className={classNames(globalStyles.button, globalStyles.bgDark, globalStyles.outline, compStyles.narrow)}
-						onClick={() => {
-							this.accept()
-						}}>OK
-					</div>
+						clickAction={() => this.accept()}
+						tag={'div'}>OK</ClickHandler>
 				</div>
 			</div>
 		);
