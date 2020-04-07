@@ -37,49 +37,108 @@ a.logo, a.logo img {
 	margin-bottom: 0 !important; /* TODO review global */
 }
 
-/* Nav links */
-.links:not(.small) {
-	display: none;
+/* Links */
+/* Both views - links */
+.links {
+	display: flex;
+	position: absolute;
 }
 
-/* Show nav links for small view */
-.links.small {
+/* Normal view - links */
+.links:not(.small) {
+	left: 182px; /* 16px wrapper padding, plus 176px menu width, minus 10px padding on first link */
+}
+
+/* Menu view - links */
+.small {
 	align-items: flex-start;
 	background-color: var(--white);
 	border-bottom: 1px solid var(--gray-light);
-	display: flex;
 	flex-direction: column;
+	height: calc(100vh - 60px);
 	justify-content: flex-start;
 	left: 0;
+	overflow-y: auto;
 	padding: 12px 0;
-	position: absolute;
 	right: 0;
 	top: 60px;
 	width: 100%;
 	z-index: 100;
 }
 
-/* Nav links */
-.links a, .links.small a {
-	align-items: flex-start;
+/* List */
+/* Both views - list */
+.links li {
+	list-style: none;
+	margin: 0;
+}
+
+/* Menu view - list */
+.small li {
+	width: 100%;
+}
+
+/* Link <a>, <button> */
+/* Both views - link */
+.links a, .links button {
 	display: flex;
+}
+
+/* Drop down button - link */
+.links button {
+	background-color: transparent;
+	border: none;
+	text-align: left;
+}
+
+/* Normal view - drop down button */
+.links:not(.small) button {
+	cursor: pointer;
+}
+
+/* Drop down button - focus */
+.links button, .links button:focus {
+	outline: none;
+}
+
+/* Normal view - link */
+.links:not(.small) a, .links:not(.small) button {
+	align-items: center;
+	color: var(--gray-dark);
+	font-size: 14px;
+	font-weight: 500;
+	height: 60px;
+	padding: 0 10px;
+	width: unset;
+	white-space: nowrap;
+}
+
+/* Menu view - link */
+.small a, .small button {
+	align-items: flex-start;
+	color: var(--black);
 	flex-direction: column;
 	padding: 12px 24px;
 	width: 100%;
 }
 
-/* Nav links - small */
-.links.small a {
-    color: var(--black);
+/* Link state - hover & active */
+.links a:hover, .links:not(.small) .active, .links button:hover span {
+	color: var(--black);
 }
 
-/* Nav links - title */
+/* Label */
+/* Both views - label */
 .links .xs {
 	font-weight: 600;
+}
+
+/* Menu view - label */
+.small .xs {
 	margin: 0 0 4px;
 }
 
-/* Nav links - subtitle */
+/* Description */
 .links .xxs {
 	font-weight: 400;
 	letter-spacing: 1.2px;
@@ -87,17 +146,8 @@ a.logo, a.logo img {
 	text-transform: none;
 }
 
-/* Nav links - hover */
-.links a:hover {
-	color: var(--black);
-}
-
-/* Nav links - active */
-.links .active .linkTo {
-	color: var(--black);
-}
-
-.hcaNavOverlay {
+/* Overlay - menu open */
+.overlay {
 	background-color: rgba(255, 255, 255, 0.9);
 	bottom: 0;
 	content: "";
@@ -129,55 +179,21 @@ a.logo, a.logo img {
 
 }
 
+/* Hide */
+.hide, .links.hide {
+	display: none;
+}
+
 /**
  * Large Tablet +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 840px) {
 
+	/* Wrapper */
 	.headerWrapper {
 		justify-content: flex-start;
 		position: relative; /* Positions links - left aligned with content */
-	}
-
-	.links.small, .hcaNavOverlay {
-		display: none;
-	}
-
-	.links:not(.small) {
-		display: flex;
-		left: 182px; /* 16px wrapper padding, plus 176px menu width, minus 10px padding on first link */
-		position: absolute;
-	}
-
-	[id*=link] {
-		position: relative;
-	}
-
-	.links a {
-		padding: 0;
-		width: unset;
-	}
-
-	/* Nav links */
-	.linkTo {
-		color: var(--gray-dark);
-		font-size: 14px;
-		font-weight: 500;
-		line-height: 60px;
-		padding: 0 10px;
-		margin: 0;
-		white-space: nowrap;
-	}
-
-	/* Nav links hover state */
-	.linkTo:hover {
-		color: var(--black);
-	}
-
-	/* Hide menu */
-	.menuDropDown, .menuDropDown::before {
-		display: none;
 	}
 }
 
@@ -191,20 +207,25 @@ a.logo, a.logo img {
 	a.logo, a.logo img {
 		height: 40px;
 	}
-	/* Links */
+
+	/* Normal view - links */
 	.links:not(.small) {
 		left: 294px; /* 16px wrapper padding, plus 290px menu width, minus 12px padding on first link */
 	}
 
-	/* Nav links */
-	.linkTo {
+	/* Normal view - link */
+	.links:not(.small) a {
 		padding: 0 12px;
 	}
 }
 
+/**
+ * Medium +
+ * HCA custom breakpoint
+ */
 @media screen and (min-width: 1200px) {
 
-	/* Links */
+	/* Normal view - links */
 	.links:not(.small) {
 		left: 308px; /* 30px wrapper padding, plus 290px menu width, minus 12px padding on first link */
 	}
