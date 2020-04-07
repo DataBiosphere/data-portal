@@ -5,6 +5,8 @@
  * Style definitions specific to the HCA Data Portal header nav drop down component.
  */
 
+@import '../../styles/vars.module.css';
+
 /* Drop down - container */
 .dropDown {
 	position: relative; /* Positions menu */
@@ -24,7 +26,14 @@
 	padding: 8px 0;
 	position: absolute;
 	width: 180px;
+	top: 46px;
 }
+
+/* Links - normal view */
+.dropDownMenu:not(.stack) a:hover {
+	background-color: var(--blue-light);
+}
+
 
 /* Show, stack */
 .show, .stack {
