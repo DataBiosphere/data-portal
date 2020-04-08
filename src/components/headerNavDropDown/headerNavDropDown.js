@@ -57,15 +57,13 @@ class HeaderNavDropDown extends React.Component {
 	};
 
 	render() {
-		const {activeClassName, children} = this.props,
-			label = children.find(child => child.type.name === 'HeaderNavDisplay'),
-			list = children.find(child => child.type === 'ul'),
-			menu = list ? this.addDropDownClass(list) : null;
+		const {activeClassName, button, menu} = this.props,
+			menuClone = menu ? this.addDropDownClass(menu) : null;
 
 		return (
 			<li className={compStyles.dropDown} ref={this.dropDown}>
-				<button className={activeClassName} onClick={this.toggleDropDown}>{label}</button>
-				{menu}
+				<button className={activeClassName} onClick={this.toggleDropDown}>{button}</button>
+				{menuClone}
 			</li>
 		);
 	}
