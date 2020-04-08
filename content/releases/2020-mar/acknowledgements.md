@@ -51,12 +51,12 @@ Anand Ghanekar, University Health Network (Clinician)\
 David Grant, University Health Network (Clinician)\
 Paul Greig, University Health Network (Clinician)\
 Rahul Gupta, University Health Network (Experimental Scientist)\
-Brendan T Innes, University of Toronto (Clinician)\
+Brendan T Innes, University of Toronto (Computational Scientist)\
 Gordon Keller, University Health Network (Co-investigator)\
 Nicholas Khuu, University Health Network (Experimental Scientist)\
 Elizabeth Lee, University Health Network (Administrator)\
 Ivan Linares, University Health Network (Clinician)\
-Jeff C Liu, University of Toronto (Clinician)\
+Jeff C Liu, University of Toronto (Computational Scientist)\
 Lewis Y Liu, University Health Network (Experimental Scientist)\
 Xue-Zhong Ma, University Health Network (Clinician)\
 Sonya A MacParland, University of Toronto (Principal Investigator)\
@@ -207,7 +207,7 @@ Kourosh Saeb-Parsy, University of Cambridge (Clinician)\
 Marion F Shadbolt, EMBL-EBI (Data Curator)\
 Oliver Stegle, EMBL-EBI (Principal Investigator)\
 Michael JT Stubbington, Wellcome Sanger Institute (Co-investigator)\
-Sarah A Teichmann, Wellcome Sanger Institute (Principal Investigator)\
+Sarah A Teichmann, Wellcome Sanger Institute (Co-investigator)\
 Anthi Tsingene, Wellcome Sanger Institute (Experimental Scientist)\
 Danielle Welter, EMBL-EBI (Data Curator)\
 Anna Wilbrey-Clark, Wellcome Sanger Institute (Experimental Scientist)
