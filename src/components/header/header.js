@@ -103,25 +103,6 @@ class Header extends React.Component {
 			)
 		};
 
-		const DropDownReleaseNav = () => {
-
-			const {openNav} = this.state;
-
-			return (
-				<HeaderNavDropDown activeClassName={classNames({[compStyles.active]: releasesMenuActive})} stack={openNav}>
-					<HeaderNavDisplay description={releaseDescription} label={releaseLabel}/>
-					<ul>
-						<ExternalLink linkTo={this.getReleasesUrl()}>
-							<span className={classNames(fontStyles.xs, compStyles.xs, dropStyles.item)}>Datasets</span>
-						</ExternalLink>
-						<InternalLink path={releaseDocumentationUrl}>
-							<span className={classNames(fontStyles.xs, compStyles.xs, dropStyles.item)}>Documentation</span>
-						</InternalLink>
-					</ul>
-				</HeaderNavDropDown>
-			)
-		};
-
 		const ExternalLink = (props) => {
 
 			const {children, className, linkTo} = props;
@@ -146,19 +127,6 @@ class Header extends React.Component {
 			)
 		};
 
-		const HeaderNav = (props) => {
-
-			const {nav} = props,
-				{description, headerName, name, path} = nav || {},
-				label = headerName ? headerName : name;
-
-			return (
-				<InternalLink path={path}>
-					<HeaderNavDisplay description={description} label={label}/>
-				</InternalLink>
-			)
-		};
-
 		const InternalLink = (props) => {
 
 			const {children, className, path} = props;
@@ -173,6 +141,48 @@ class Header extends React.Component {
 			)
 		};
 
+		const Nav = (props) => {
+
+			const {nav} = props,
+				{description, headerName, name, path} = nav || {},
+				label = headerName ? headerName : name;
+
+			return (
+				<InternalLink path={path}>
+					<HeaderNavDisplay description={description} label={label}/>
+				</InternalLink>
+			)
+		};
+
+		const NavExplore = () => {
+
+			return(
+				<ExternalLink linkTo={browserLink}>
+					<HeaderNavDisplay description={exploreDescription} label={exploreLabel}/>
+				</ExternalLink>
+			)
+		};
+
+		const NavRelease = () => {
+
+			const button = <HeaderNavDisplay description={releaseDescription} label={releaseLabel}/>,
+				menu = (
+							<ul>
+								<ExternalLink linkTo={this.getReleasesUrl()}>
+									<span className={classNames(fontStyles.xs, compStyles.xs, dropStyles.item)}>Datasets</span>
+								</ExternalLink>
+								<InternalLink path={releaseDocumentationUrl}>
+									<span className={classNames(fontStyles.xs, compStyles.xs, dropStyles.item)}>Documentation</span>
+								</InternalLink>
+							</ul>
+						),
+				{openNav} = this.state;
+
+			return (
+				<HeaderNavDropDown activeClassName={classNames({[compStyles.active]: releasesMenuActive})} button={button} menu={menu} stack={openNav}/>
+			)
+		};
+
 		return (
 			<div className={classNames(compStyles.navBar, {[compStyles.hcaHeader]: homePage})}>
 				<div className={classNames(globalStyles.wrapper, compStyles.headerWrapper)}>
@@ -180,11 +190,9 @@ class Header extends React.Component {
 						<img src={headerLogo} alt='HCA'/>
 					</Link>
 					<div className={classNames(compStyles.links, {[compStyles.small]: menuNav}, {[compStyles.hide]: hideLinks})}>
-						<ExternalLink linkTo={browserLink}>
-							<HeaderNavDisplay description={exploreDescription} label={exploreLabel}/>
-						</ExternalLink>
-						{links.map((l, i) => <HeaderNav key={i} nav={l}/>)}
-						<DropDownReleaseNav/>
+						<NavExplore/>
+						{links.map((l, i) => <Nav key={i} nav={l}/>)}
+						<NavRelease/>
 					</div>
 					<ClickHandler className={classNames(compStyles.menuDropDown, fontStyles.s, {[compStyles.hide]: !menuNav})}
 								  clickAction={this.toggleMenu}
