@@ -16,7 +16,7 @@ const Bowser = require("bowser");
 exports.onClientEntry = () => {
 
 	// Exit if path is static page for browser not supported
-	if ( window.location.pathname === "/browser-not-supported.html" || window.location.pathname === "/browser-not-supported-static.html" ) {
+	if ( window.location.pathname === "/browser-not-supported.html" ) {
 
 		return;
 	}
@@ -33,22 +33,9 @@ exports.onClientEntry = () => {
 		}
 	});
 
-	// List of browsers requiring an "image" only unsupported page due to css inadequacies.
-	const browserCSSNotSupported = browser.satisfies({
-
-		ie: "<=9",
-	});
-
 	// Redirect to static "browser not supported" page, should browser be unsupported by the AnVIL site.
 	if ( browserNotSupported ) {
 
-		if ( browserCSSNotSupported ) {
-
-			window.location.replace("/browser-not-supported-static.html");
-		}
-		else {
-
-			window.location.replace("/browser-not-supported.html");
-		}
+		window.location.replace("/browser-not-supported.html");
 	}
 };
