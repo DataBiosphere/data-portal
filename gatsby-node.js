@@ -5,6 +5,7 @@
  */
 
 // Imports
+const express = require('express');
 const path = require('path');
 const {createFilePath} = require(`gatsby-source-filesystem`);
 
@@ -273,3 +274,11 @@ function isShowEditPage(frontmatter, path) {
 	// Show "edit this page" for all other documents
 	return true;
 }
+
+// See: https://github.com/gatsbyjs/gatsby/issues/18213
+// See: https://github.com/gatsbyjs/gatsby/issues/13072
+// To access static folder while in develop mode
+exports.onCreateDevServer=({app})=>{
+
+	app.use(express.static('public'))
+};

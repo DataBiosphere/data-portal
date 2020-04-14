@@ -41,7 +41,6 @@ class Layout extends React.Component {
 				<Helmet>
 					<title>{pageTitle ? pageTitle : 'HCA Data Portal'}</title>
 					{EnvironmentService.isProd() ? null : <meta name="robots" content="noindex" />}
-					<link rel='stylesheet' href='https://use.typekit.net/qhb0geh.css'/>
 					<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>
 					<link rel='stylesheet'
 						  href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700'/>
