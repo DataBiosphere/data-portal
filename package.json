@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@fastly/performance-observer-polyfill": "1.0.2",
+    "bowser": "^2.9.0",
     "classnames": "2.2.6",
     "gatsby": "2.18.10",
     "gatsby-plugin-catch-links": "2.1.25",
