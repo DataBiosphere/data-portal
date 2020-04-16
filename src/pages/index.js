@@ -14,6 +14,7 @@ import ExploreData from '../components/explore/exploreData';
 import Layout from '../components/layout';
 import SearchBrowser from '../components/searchBrowser/searchBrowser';
 import * as FileSummaryService from '../utils/fileSummary.service';
+import * as ReleaseService from '../utils/release.service';
 import * as SystemService from '../utils/system.service';
 import * as numberFormatter from '../utils/number-format.service';
 
@@ -91,6 +92,7 @@ class IndexPage extends React.Component {
 	};
 
 	render() {
+		const releaseVisible = ReleaseService.isReleaseVisible();
 		return (
 			<Layout healthy={this.state.healthy} homePage={true}>
 				<main className={compStyles.main}>
@@ -147,21 +149,23 @@ class IndexPage extends React.Component {
 							</div>
 						</div>
 					</section>
-					<section className={compStyles.release}>
-						<div className={classNames(compStyles.sectionInner, compStyles.s)}>
-							<div className={compStyles.intro}>
-								<h4 className={fontStyles.introTitle}>March 2020 Data Release</h4>
-								<p className={fontStyles.introText}>Explore, visualize, and interact with 23 annotated datasets</p>
-								<div className={compStyles.module}>
-									<a href={`${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`}
-									   className={classNames(globalStyles.button, globalStyles.blue, globalStyles.light, compStyles.latest)}>
-										<span>View the March 2020 Release</span>
-										<img className={compStyles.go} src={go} alt="arrow"/>
-									</a>
+					{releaseVisible ? 
+						<section className={compStyles.release}>
+							<div className={classNames(compStyles.sectionInner, compStyles.s)}>
+								<div className={compStyles.intro}>
+									<h4 className={fontStyles.introTitle}>March 2020 Data Release</h4>
+									<p className={fontStyles.introText}>Explore, visualize, and interact with 23 annotated datasets</p>
+									<div className={compStyles.module}>
+										<a href={`${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`}
+										   className={classNames(globalStyles.button, globalStyles.blue, globalStyles.light, compStyles.latest)}>
+											<span>View the March 2020 Release</span>
+											<img className={compStyles.go} src={go} alt="arrow"/>
+										</a>
+									</div>
 								</div>
 							</div>
-						</div>
-					</section>
+						</section> :
+						null}
 					<SearchBrowser termFacets={this.state.searchTerms}/>
 					<section className={compStyles.anatogram}>
 						<div className={classNames(compStyles.sectionInner, compStyles.m)}>
