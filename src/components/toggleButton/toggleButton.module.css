@@ -8,22 +8,27 @@
 
 /* Button */
 .toggle {
-	background-color: var(--primary);
+	background-color: var(--blue-light);
 	border: none;
 	border-radius: 3px;
 	box-sizing: border-box;
-	color: var(--white);
+	color: var(--primary);
 	display: inline-flex;
 	flex-shrink: 0;
 	font-family: "Montserrat", sans-serif;
 	font-size: 12px;
 	font-weight: 500;
-	height: 28px;
+	height: 32px;
 	justify-content: center;
 	letter-spacing: .21px;
 	min-width: 84px;
 	padding: 0 12px;
+	transition: background-color .25s ease 0s;
 	white-space: nowrap;
+}
+
+.toggle:hover {
+	background-color: rgba(218, 240, 246, 0.54); /* Light blue RGB */
 }
 
 .toggle:focus {
@@ -32,6 +37,7 @@
 
 /* Button - metadata */
 .toggle.metadata {
+	cursor: pointer;
 	margin: 0 0 12px 16px;
 	min-width: 200px;
 }
@@ -42,6 +48,6 @@
 @media screen and (min-width: 768px) {
 
 	.toggle.metadata {
-		margin: 0 0 12px 0;
+		margin: 0 0 16px 0;
 	}
 }
