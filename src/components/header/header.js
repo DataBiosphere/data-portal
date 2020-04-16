@@ -11,9 +11,9 @@ import React from 'react';
 
 // App dependencies
 import {HeaderStaticQuery} from '../../hooks/header-hook';
+import * as ReleaseService from '../../utils/release.service';
 import ClickHandler from '../clickHandler/clickHandler';
 import HeaderNavDropDown from '../headerNavDropDown/headerNavDropDown';
-import * as ReleaseService from '../../utils/release.service';
 
 // Images
 import headerLogo from '../../../images/logo/logo-hca.png';
@@ -93,7 +93,8 @@ class Header extends React.Component {
 			releaseDescription = 'Explore, visualize, and interact with 24 annotated datasets',
 			releaseDocumentationUrl = '/releases/2020-mar',
 			releaseLabel = 'March 2020 Release',
-			releasesMenuActive = this.isActiveClassName(docPath);
+			releasesMenuActive = this.isActiveClassName(docPath),
+		        releaseVisible = ReleaseService.isReleaseVisible();
 
 		const Description = (props) => {
 
@@ -164,9 +165,7 @@ class Header extends React.Component {
 			)
 		};
 
-		const releaseVisible = ReleaseService.isReleaseVisible();
-
-		const NavRelease = releaseVisible ? () => {
+		const NavRelease = () => {
 
 			const button = <HeaderNavDisplay description={releaseDescription} label={releaseLabel}/>,
 				menu = (
@@ -184,7 +183,7 @@ class Header extends React.Component {
 			return (
 				<HeaderNavDropDown activeClassName={classNames({[compStyles.active]: releasesMenuActive})} button={button} menu={menu} stack={openNav}/>
 			)
-		} : null;
+		};
 
 		return (
 			<div className={classNames(compStyles.navBar, {[compStyles.hcaHeader]: homePage})}>
@@ -195,7 +194,7 @@ class Header extends React.Component {
 					<div className={classNames(compStyles.links, {[compStyles.small]: menuNav}, {[compStyles.hide]: hideLinks})}>
 						<NavExplore/>
 						{links.map((l, i) => <Nav key={i} nav={l}/>)}
-						{NavRelease ? <NavRelease/> : null}
+						{releaseVisible ? <NavRelease/> : null}
 					</div>
 					<ClickHandler className={classNames(compStyles.menuDropDown, fontStyles.s, {[compStyles.hide]: !menuNav})}
 								  clickAction={this.toggleMenu}
