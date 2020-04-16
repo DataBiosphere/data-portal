@@ -13,6 +13,7 @@ import React from 'react';
 import {HeaderStaticQuery} from '../../hooks/header-hook';
 import ClickHandler from '../clickHandler/clickHandler';
 import HeaderNavDropDown from '../headerNavDropDown/headerNavDropDown';
+import * as ReleaseService from '../../utils/release.service';
 
 // Images
 import headerLogo from '../../../images/logo/logo-hca.png';
@@ -163,7 +164,9 @@ class Header extends React.Component {
 			)
 		};
 
-		const NavRelease = () => {
+		const releaseVisible = ReleaseService.isReleaseVisible();
+
+		const NavRelease = releaseVisible ? () => {
 
 			const button = <HeaderNavDisplay description={releaseDescription} label={releaseLabel}/>,
 				menu = (
@@ -181,7 +184,7 @@ class Header extends React.Component {
 			return (
 				<HeaderNavDropDown activeClassName={classNames({[compStyles.active]: releasesMenuActive})} button={button} menu={menu} stack={openNav}/>
 			)
-		};
+		} : null;
 
 		return (
 			<div className={classNames(compStyles.navBar, {[compStyles.hcaHeader]: homePage})}>
@@ -192,7 +195,7 @@ class Header extends React.Component {
 					<div className={classNames(compStyles.links, {[compStyles.small]: menuNav}, {[compStyles.hide]: hideLinks})}>
 						<NavExplore/>
 						{links.map((l, i) => <Nav key={i} nav={l}/>)}
-						<NavRelease/>
+						{NavRelease ? <NavRelease/> : null}
 					</div>
 					<ClickHandler className={classNames(compStyles.menuDropDown, fontStyles.s, {[compStyles.hide]: !menuNav})}
 								  clickAction={this.toggleMenu}
