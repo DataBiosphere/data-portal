@@ -7,31 +7,31 @@ export const MetadataTypeSiteMap = () => {
 		  type: allMetadataSchemaEntity {
 			edges {
 			  node {
-				relativeFilePath
+				coreEntity
+				description
 				fields {
 				  path
 				}
-				schemaType
-				coreEntity
-				title
 				name
-				description
 				properties {
 				  name
 				  properties {
 					description
+					enum
+					example
 					type
 					user_friendly
 					_ref
-					enum
-					example
 					items {
 					  type
 					  _ref
 					}
 				  }
 				}
+				relativeFilePath
 				required
+				schemaType
+				title
 			  }
 			}
 		  }

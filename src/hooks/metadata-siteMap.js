@@ -7,51 +7,51 @@ export const MetadataSiteMap = () => {
 		  allMetadataSchemaEntity(filter: {schemaType: {in: ["module","core","type","system"]}}) {
 			edges {
 			  node {
-				relativeFilePath
+				coreEntity
+				definitions {
+				  parameter {
+					properties {
+					  description
+					  name
+					  type
+					}
+					required
+					type
+				  }
+				  task {
+					properties {
+					  name
+					  type
+					}
+					required
+					type
+				  }
+				}
+				description
 				fields {
 				  path
 				}
-				schemaType
-				coreEntity
-				title
 				name
-				type
-				description
-				definitions {
-				  task {
-					required
-					type
-					properties {
-					  name
-					  type
-					}
-				  }
-				  parameter {
-					required
-					type
-					properties {
-					  name
-					  type
-					  description
-					}
-				  }
-				}
 				properties {
 				  name
 				  properties {
 					description
-					type
-					user_friendly
-					_ref
 					enum
 					example
 					items {
 					  type
 					  _ref
 					}
+					type
+					user_friendly
+					_ref
 				  }
 				}
+				relativeFilePath
 				required
+				schemaType
+				title
+				type
 			  }
 			}
 		  }

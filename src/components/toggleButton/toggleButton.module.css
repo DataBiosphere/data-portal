@@ -1,0 +1,47 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal toggle button component.
+ */
+@import '../../styles/vars.module.css';
+
+/* Button */
+.toggle {
+	background-color: var(--primary);
+	border: none;
+	border-radius: 3px;
+	box-sizing: border-box;
+	color: var(--white);
+	display: inline-flex;
+	flex-shrink: 0;
+	font-family: "Montserrat", sans-serif;
+	font-size: 12px;
+	font-weight: 500;
+	height: 28px;
+	justify-content: center;
+	letter-spacing: .21px;
+	min-width: 84px;
+	padding: 0 12px;
+	white-space: nowrap;
+}
+
+.toggle:focus {
+	outline: none;
+}
+
+/* Button - metadata */
+.toggle.metadata {
+	margin: 0 0 12px 16px;
+	min-width: 200px;
+}
+
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 768px) {
+
+	.toggle.metadata {
+		margin: 0 0 12px 0;
+	}
+}
