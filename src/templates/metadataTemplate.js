@@ -30,6 +30,17 @@ class MetadataTemplate extends React.Component {
 		this.state = ({showAllMetadata: true});
 	}
 
+	componentDidMount() {
+
+		const showMetadata = localStorage.getItem('showMetadata') !== "false";
+		this.setState({showAllMetadata: showMetadata});
+	}
+
+	componentWillUnmount() {
+
+		localStorage.setItem('showMetadata', this.state.showAllMetadata);
+	}
+
 	onShowMetadata = (event) => {
 
 		this.setState({showAllMetadata: !event});
@@ -41,14 +52,16 @@ class MetadataTemplate extends React.Component {
 			name = type.name,
 			coreEntity = StringFormatService.convertSentenceCaseToTitleCase(type.coreEntity),
 			title = type.title,
-			pageTitle = `${coreEntity} - ${title}`;
+			pageTitle = `${coreEntity} - ${title}`,
+			showAllMetadata = this.state.showAllMetadata;
 		return (
-			<Layout pageTitle={pageTitle} docPath={docPath} showAllMetadata={this.state.showAllMetadata}>
+			<Layout pageTitle={pageTitle} docPath={docPath} showAllMetadata={showAllMetadata}>
 				<h1 className={classNames(globalStyles.md, compStyles.meta)}>{pageTitle}</h1>
 				<p className={fontStyles.hcaCode}>{name}</p>
 				<p className={fontStyles.l}>{description}</p>
 				<p className={fontStyles.xxs}>* Indicates a required field</p>
 				<Metadata entity={type} onShowMetadata={this.onShowMetadata.bind(this)} references={references}
+						  showAllMetadata={showAllMetadata}
 						  unFriendly={name}/>
 			</Layout>
 		);

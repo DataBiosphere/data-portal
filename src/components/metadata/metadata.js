@@ -9,20 +9,19 @@
 import React from 'react';
 
 // App dependencies
+import ToggleButton from "../toggleButton/toggleButton";
 import MetadataInternalRow from './metadataInternalRow';
 import MetadataRow from './metadataRow';
 
 // Styles
-import fontStyles from '../../styles/fontsize.module.css';
+import buttonStyles from '../toggleButton/toggleButton.module.css';
 import compStyles from './metadata.module.css';
-
-let classNames = require('classnames');
 
 class Metadata extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {showAllMetadata: true};
+
 		this.toggleRequiredMetadata = this.toggleRequiredMetadata.bind(this);
 	}
 
@@ -59,17 +58,18 @@ class Metadata extends React.Component {
 
 	toggleRequiredMetadata = () => {
 
-		this.setState({showAllMetadata: !this.state.showAllMetadata});
-		this.props.onShowMetadata(this.state.showAllMetadata);
+		const {showAllMetadata} = this.props;
+
+		this.props.onShowMetadata(showAllMetadata);
 	};
 
 	render() {
-		const {entity, unFriendly} = this.props,
-			{properties, required} = entity;
-		const toggleMessage = this.state.showAllMetadata ? <span>Show required<span>*</span> metadata</span> : <span>Show all metadata</span>;
+		const {entity, showAllMetadata, unFriendly} = this.props,
+			{properties, required} = entity,
+			toggleMessage = showAllMetadata ? 'Show Required Fields Only' : 'Show All Fields';
 		return (
 			<div className={compStyles.metadata}>
-				<p className={classNames(fontStyles.xxs, compStyles.filter)} onClick={this.toggleRequiredMetadata}>{toggleMessage}</p>
+				<ToggleButton className={buttonStyles.metadata} clickAction={this.toggleRequiredMetadata}>{toggleMessage}</ToggleButton>
 				{properties.map((e1, i) =>
 					this.getPropertyRef(e1) !== '' ?
 						<MetadataRow
@@ -78,7 +78,7 @@ class Metadata extends React.Component {
 							elementParent={e1}
 							groupRef={true}
 							requiredList={required}
-							showAllMetadata={this.state.showAllMetadata}
+							showAllMetadata={showAllMetadata}
 							unFriendly={`${unFriendly}.${e1.name}`}>{
 							this.getPropertyRef(e1)[1].includes('#') ?
 								this.getPropertyRefProperties(e1).definitions[this.getInternalRef(e1)].properties.map((i2, l) =>
@@ -92,17 +92,20 @@ class Metadata extends React.Component {
 											<MetadataRow key={k}
 														 element={e3}
 														 elementParent={this.getPropertyRefProperties(e2)}
+														 showAllMetadata={showAllMetadata}
 														 typeRef={unFriendly}
 														 unFriendly={`${unFriendly}.${e1.name}.${e2.name}.${e3.name}`}/>) :
 										<MetadataRow key={j}
 													 element={e2}
 													 elementParent={this.getPropertyRefProperties(e1)}
+													 showAllMetadata={showAllMetadata}
 													 typeRef={unFriendly}
 													 unFriendly={`${unFriendly}.${e1.name}.${e2.name}`}/>)}</MetadataRow> :
 						<MetadataRow key={i}
 									 element={e1}
 									 unGrouped={true}
 									 requiredList={required}
+									 showAllMetadata={showAllMetadata}
 									 typeRef={unFriendly}
 									 unFriendly={`${unFriendly}.${e1.name}`}/>)}
 			</div>
