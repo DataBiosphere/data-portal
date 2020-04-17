@@ -47,7 +47,7 @@ class Header extends React.Component {
 		window.removeEventListener('resize', this.setNavStyle);
 	}
 
-	shouldComponentUpdate(___, nextState) {
+	shouldComponentUpdate(_, nextState) {
 
 		return this.state !== nextState;
 	}
