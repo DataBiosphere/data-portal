@@ -6,15 +6,14 @@
  */
 
 // Core dependencies
-import Helmet from 'react-helmet';
 import React from 'react';
 
 // App dependencies
-import * as EnvironmentService from "../utils/environment.service";
 import Banner from './banner/banner';
 import Footer from './footer/footer';
 import Header from './header/header';
 import HCAMain from './hcaMain/hcaMain';
+import SEO from './seo/seo';
 
 // Styles
 import compStyles from './layout.module.css';
@@ -35,19 +34,11 @@ class Layout extends React.Component {
 	};
 
 	render() {
-		const {children, docPath, healthy, homePage, homeTab, noNav, noTab, pageTitle, sectionTitle, showAllMetadata} = this.props;
+
+		const {children, description, docPath, healthy, homePage, homeTab, noNav, noTab, pageTitle, sectionTitle, showAllMetadata} = this.props;
 		return (
 			<div>
-				<Helmet>
-					<title>{pageTitle ? pageTitle : 'HCA Data Portal'}</title>
-					{EnvironmentService.isProd() ? null : <meta name="robots" content="noindex" />}
-					<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>
-					<link rel='stylesheet'
-						  href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700'/>
-					<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=PT+Mono'/>
-					<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400'/>
-					<link rel='stylesheet' href='https://use.typekit.net/qhb0geh.css'/>
-				</Helmet>
+				<SEO description={description} pageTitle={pageTitle}/>
 				<div className={classNames(compStyles.site, {[compStyles.noScroll]: this.state.noScroll})}>
 					<Header onMenuOpen={this.onMenuOpen.bind(this)} homePage={homePage} docPath={docPath}/>
 					<Banner position={'top'} healthy={healthy}/>
