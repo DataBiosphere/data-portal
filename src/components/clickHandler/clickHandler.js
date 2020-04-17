@@ -25,10 +25,10 @@ class ClickHandler extends React.Component {
 	};
 
 	render() {
-		const {children, className, clickAction, tag: Tag} = this.props;
+		const {children, className, clickAction, id, tag: Tag} = this.props;
 
 		return (
-			<Tag className={classNames(className, compStyles.handler)} onClick={clickAction}
+			<Tag className={classNames(className, compStyles.handler)} id={id} onClick={clickAction}
 				 onKeyDown={(e) => this.handleKeyDown(e, clickAction)} role='button' tabIndex={0}>{children}</Tag>
 		);
 	}
