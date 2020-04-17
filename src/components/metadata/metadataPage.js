@@ -53,7 +53,7 @@ class MetadataPage extends React.Component {
 			pageTitle = `${coreEntity} - ${title}`,
 			{showAllMetadata} = this.state;
 		return (
-			<Layout pageTitle={pageTitle} docPath={path} showAllMetadata={showAllMetadata}>
+			<Layout description={type.description} pageTitle={pageTitle} docPath={path} showAllMetadata={showAllMetadata}>
 				<h1 className={classNames(globalStyles.md, compStyles.meta)}>{pageTitle}</h1>
 				<p className={fontStyles.hcaCode}>{name}</p>
 				<p className={fontStyles.l}>{description}</p>
@@ -62,6 +62,9 @@ class MetadataPage extends React.Component {
 						  showAllMetadata={showAllMetadata}
 						  unFriendly={name}/>
 			</Layout>
+			
+			
+			
 		);
 	}
 }

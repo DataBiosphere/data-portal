@@ -50,7 +50,7 @@ export default function Template({data}) {
 	};
 
 	return (
-		<Layout sectionTitle={'System Status'} homeTab={false} noTab={true} noNav={true}>
+		<Layout homeTab={false} noTab={true} noNav={true} pageTitle={'System Status'} sectionTitle={'System Status'} >
 			<h1 className={globalStyles.md}>Environment - {displayEnv}</h1>
 			<div className={compStyles.system}>
 				<div className={classNames(fontStyles.m, compStyles.label)}>

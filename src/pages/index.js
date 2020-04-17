@@ -93,8 +93,10 @@ class IndexPage extends React.Component {
 
 	render() {
 		const releaseVisible = ReleaseService.isReleaseVisible();
+		const description = 'Community generated, multi-omic, open data processed by standardized pipelines';
+		const pageTitle = 'Mapping the human body at the cellular level';
 		return (
-			<Layout healthy={this.state.healthy} homePage={true}>
+			<Layout description={description} healthy={this.state.healthy} homePage={true} pageTitle={pageTitle}>
 				<main className={compStyles.main}>
 					<section className={compStyles.hero}>
 						<div
