@@ -28,7 +28,6 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 		createParentChildLink({parent: node, child: jsonNode})
 	}
 
-
 	// We only care about JSON content.
 	if (node.internal.mediaType !== `application/json`) {
 		return
@@ -36,6 +35,11 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 
 	// We only care about the metadata JSON content
 	if (node.relativePath.includes('config.json')) {
+		return
+	}
+
+	// We only want the JSON from hca metadata json-schema
+	if (node.sourceInstanceName === 'markdown-pages') {
 		return
 	}
 
@@ -49,6 +53,13 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 	});
 
 	const sections = relativeFilePath.split('/');
+	const coreEntity = sections[2];
+
+	if ( !coreEntity ) {
+
+		return
+	}
+
 	const propertyNames = _.keys(parsedContent.properties);
 
 	const definitionTaskPropertyNames = parsedContent.definitions ? parsedContent.definitions.task ? _.keys(parsedContent.definitions.task.properties) : '' : '';
@@ -105,7 +116,7 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 	}
 
 	const entity = {
-		coreEntity: sections[2], // core type biomaterial, project,
+		coreEntity: coreEntity, // core type biomaterial, project,
 		description: parsedContent.description,
 		name: parsedContent.name,
 		type: parsedContent.type,

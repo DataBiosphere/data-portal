@@ -10,7 +10,7 @@ import Link from 'gatsby-link';
 import React from 'react';
 
 // App dependencies
-import {HeaderStaticQuery} from '../../hooks/header-hook';
+import {HeaderQuery} from '../../hooks/headerQuery';
 import * as ReleaseService from '../../utils/release.service';
 import ClickHandler from '../clickHandler/clickHandler';
 import HeaderNavDropDown from '../headerNavDropDown/headerNavDropDown';
@@ -213,6 +213,6 @@ export default (props) => {
 	const {docPath} = props;
 
 	return (
-		<Header links={HeaderStaticQuery()} docPath={docPath} {...props}/>
+		<Header links={HeaderQuery()} docPath={docPath} {...props}/>
 	);
 }

@@ -72,19 +72,29 @@ export function orderNavigationLinks(navigationLinks) {
 /**
  * Determine the top level section from the path.
  * The document path is configured in the markdown front matter.
+ *
  * @param siteMap
  * @param docPath
- * @returns {section}
+ * @returns string
  */
 export function sectionTitle(siteMap, docPath) {
 
-	let section = siteMap.filter(n => n.key === getKeyOfPath(docPath, 1))[0].name;
+	if ( siteMap && docPath ) {
 
-	if (!section) {
-		throw new Error('Section with key: ' + getKeyOfPath(docPath, 1) + ' is not found!');
+		const sectionKey = getKeyOfPath(docPath, 1);
+		const section = siteMap.find(n => n.key === sectionKey);
+
+		if ( !section ) {
+
+			throw new Error('Section with key: ' + sectionKey + ' is not found!');
+		}
+
+		return section.name;
 	}
+	else {
 
-	return section;
+		return '';
+	}
 }
 
 /**
@@ -98,19 +108,30 @@ export function sectionTitle(siteMap, docPath) {
  */
 export function getTabs(siteMap, docPath) {
 
-	const section = siteMap.filter(n => n.key === getKeyOfPath(docPath, 1))[0];
+	if ( siteMap && docPath ) {
 
-	if (!section.tabs) {
-		throw new Error('No tabs for section: ' + section);
-	}
+		const sectionKey = getKeyOfPath(docPath, 1);
+		const section = siteMap.find(n => n.key === sectionKey);
 
-	section.tabs.forEach((tab) => {
-		if (!tab.primaryLinks || tab.primaryLinks.length === 0) {
-			throw new Error('Tab  ' + tab.name + ' has no children and therefore no landing page.');
+		if ( !section ) {
+
+			throw new Error('No tabs for section: ' + section);
 		}
-	});
 
-	return section.tabs;
+		section.tabs.forEach((tab) => {
+
+			if ( !tab.primaryLinks || tab.primaryLinks.length === 0 ) {
+
+				throw new Error('Tab  ' + tab.name + ' has no children and therefore no landing page.');
+			}
+		});
+
+		return section.tabs;
+	}
+	else {
+
+		return '';
+	}
 }
 
 /**

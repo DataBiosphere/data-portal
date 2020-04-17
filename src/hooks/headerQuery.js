@@ -1,10 +1,10 @@
 import {useStaticQuery, graphql} from 'gatsby';
 import * as NavigationService from '../utils/navigation.service';
 
-export const HeaderStaticQuery = () => {
+export const HeaderQuery = () => {
 	const {allSiteMapYaml} = useStaticQuery(
 		graphql`
-		query HeaderStaticQuery {
+		query HeaderQuery {
 		  allSiteMapYaml {
 			edges {
 			  node {

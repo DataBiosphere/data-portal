@@ -1,22 +1,14 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const TabsSiteMap = () => {
+export const SectionQuery = () => {
 	const {allSiteMapYaml} = useStaticQuery(
 		graphql`
-		query TabsSiteMap {
+		query SectionQuery {
 		  allSiteMapYaml {
 			edges {
 			  node {
 				name
 				key
-				tabs {
-					name
-					key
-					primaryLinks {
-						key
-						path
-					}
-				}
 			  }
 			}
 		  }

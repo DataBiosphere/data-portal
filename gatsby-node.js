@@ -150,13 +150,17 @@ exports.createPages = ({actions, graphql}) => {
 			// create the page
 
 			let path;
+
 			if (!node.frontmatter.path) {
+
 				path = getPath(node.fileAbsolutePath);
 			} else {
+
 				path = node.frontmatter.path
 			}
 
-			if (path) {
+			if ( path ) {
+
 				createPage({
 					path: getKeyOrPath(path, yamlSiteMapPathOrKey),
 					component: getTemplate(node.frontmatter.template),  // extract template name from front matter and use it to retrieve the template.
@@ -172,7 +176,8 @@ exports.createPages = ({actions, graphql}) => {
 
 			let path = getMetadataDictionaryPath(node.relativeFilePath).slice(0, -1);
 
-			if (path) {
+			if ( path ) {
+
 				createPage({
 					path: path,
 					component: metadataTemplate,  // extract template name from front matter and use it to retrieve the template.

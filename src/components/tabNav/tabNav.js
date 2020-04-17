@@ -10,8 +10,8 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 // App dependencies
-import {TabsSiteMap} from '../../hooks/tabs-siteMap';
 import * as NavigationService from '../../utils/navigation.service';
+import {TabsSiteMap} from '../../hooks/tabs-siteMap';
 
 // Styles
 import compStyles from './tabNav.module.css'
@@ -50,7 +50,8 @@ class TabNav extends React.Component {
 
 export default (props) => {
 
-	const tabs = props.noTab ? '' : props.docPath ? TabsSiteMap(props.docPath) : '';
+	const {docPath, noTab} = props,
+		tabs = noTab ? '' : NavigationService.getTabs(TabsSiteMap(), docPath);
 
 	return (
 		<TabNav tabs={tabs} {...props}/>
