@@ -47,6 +47,11 @@ class Header extends React.Component {
 		window.removeEventListener('resize', this.setNavStyle);
 	}
 
+	shouldComponentUpdate(___, nextState) {
+
+		return this.state !== nextState;
+	}
+
 	getReleasesUrl = () => {
 
 		return `${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`;
@@ -94,7 +99,7 @@ class Header extends React.Component {
 			releaseDocumentationUrl = '/releases/2020-mar',
 			releaseLabel = 'March 2020 Release',
 			releasesMenuActive = this.isActiveClassName(docPath),
-		        releaseVisible = ReleaseService.isReleaseVisible();
+			releaseVisible = ReleaseService.isReleaseVisible();
 
 		const Description = (props) => {
 
