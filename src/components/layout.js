@@ -13,6 +13,7 @@ import Banner from './banner/banner';
 import Footer from './footer/footer';
 import Header from './header/header';
 import HCAMain from './hcaMain/hcaMain';
+import PageHead from "./pageHead/pageHead";
 import SEO from './seo/seo';
 
 // Styles
@@ -38,6 +39,7 @@ class Layout extends React.Component {
 		const {children, description, docPath, healthy, homePage, homeTab, noNav, noTab, pageTitle, sectionTitle, showAllMetadata} = this.props;
 		return (
 			<div>
+				<PageHead pageTitle={pageTitle}/>
 				<SEO description={description} pageTitle={pageTitle}/>
 				<div className={classNames(compStyles.site, {[compStyles.noScroll]: this.state.noScroll})}>
 					<Header onMenuOpen={this.onMenuOpen.bind(this)} homePage={homePage} docPath={docPath}/>
