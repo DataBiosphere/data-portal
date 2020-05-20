@@ -10,9 +10,9 @@ import React from 'react';
 
 // App dependencies
 import Environment from './environment'
-import * as EnvironmentService from '../../utils/environment.service';
 import Privacy from './privacy'
 import SystemStatus from './systemStatus'
+import * as EnvironmentService from '../../utils/environment/environment.service';
 
 // Styles
 import compStyles from './banner.module.css';
