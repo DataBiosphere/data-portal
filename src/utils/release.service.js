@@ -6,7 +6,7 @@
  */
 
 // App dependencies
-import * as EnvironmentService from '../utils/environment.service';
+import * as EnvironmentService from './environment/environment.service';
 
 /**
  * Returns true if release is visible for the current environment; true if local or ux-dev

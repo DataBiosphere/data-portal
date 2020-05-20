@@ -10,8 +10,8 @@ import {graphql} from 'gatsby';
 import React from 'react';
 
 // App dependencies
-import * as EnvironmentService from '../utils/environment.service';
 import Layout from '../components/layout';
+import * as EnvironmentService from '../utils/environment/environment.service';
 
 // Styles
 import compStyles from './systemStatusTemplate.module.css';

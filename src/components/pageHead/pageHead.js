@@ -10,7 +10,7 @@ import Helmet from 'react-helmet';
 import React from 'react';
 
 // App dependencies
-import * as EnvironmentService from '../../utils/environment.service';
+import * as EnvironmentService from '../../utils/environment/environment.service';
 
 class PageHead extends React.Component {
 

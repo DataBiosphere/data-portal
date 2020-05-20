@@ -7,7 +7,7 @@
  */
 
 // App dependencies
-import * as EnvironmentService from '../utils/environment.service';
+import * as EnvironmentService from './environment/environment.service';
 import * as StringFormatService from './string-format.service';
 
 /**
