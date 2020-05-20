@@ -8,5 +8,5 @@
 export const EnvironmentUrl = {
     "LOCAL": "http://localhost:8000/",
     "MASTER": "https://data.humancellatlas.org/",
-    "STAGING": "https://dev.singlecell.gi.ucsc.edu/"
+    "STAGING": "https://staging.data.humancellatlas.org/"
 };
