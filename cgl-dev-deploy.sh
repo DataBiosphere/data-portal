@@ -7,9 +7,9 @@ export GATSBY_FILE_SUMMARY_API_URL=https://service.dev.singlecell.gi.ucsc.edu/in
 export GATSBY_TERM_FACETS_API_URL=https://service.dev.singlecell.gi.ucsc.edu/index/projects
 export GATSBY_SYSTEM_HEALTH_CHECK_API_URL=https://status.data.humancellatlas.org/service/dcp-health-check-prod
 export GATSBY_SYSTEM_STATUS_URL=https://status.data.humancellatlas.org/
-export GATSBY_GTM_ID=GTM-xxxxx
-export GATSBY_GTM_AUTH=xx
-export GATSBY_ENV_NAME=env-xx
+export GATSBY_GTM_ID=GTM-M2J5NTJ
+export GATSBY_GTM_AUTH=CzDpc0__fhyqfREDehPK8Q
+export GATSBY_ENV_NAME=env-83
 export GATSBY_ENV=LOCAL
 export GATSBY_CONTENT_VERSION=2
 gatsby build
