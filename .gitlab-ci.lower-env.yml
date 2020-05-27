@@ -53,6 +53,7 @@ build_develop:
     - export GATSBY_GTM_AUTH=9YN1zUWSooX9gvYK43KPlg
     - export GATSBY_ENV_NAME=env-6
     - export GATSBY_ENV=DEV
+    - export GATSBY_CONTENT_VERSION=1
     - gatsby build
   only:
     - develop
@@ -74,6 +75,7 @@ build_ux-dev:
     - export GATSBY_GTM_AUTH=V6JsS1EO6wZraCRRVvsrlw
     - export GATSBY_ENV_NAME=env-11
     - export GATSBY_ENV=UX_DEV
+    - export GATSBY_CONTENT_VERSION=1
     - gatsby build
   only:
     - ux-dev
@@ -94,6 +96,7 @@ build_integration:
     - export GATSBY_GTM_AUTH=idWkz24fhkH__F0XXIBNGA
     - export GATSBY_ENV_NAME=env-8
     - export GATSBY_ENV=INTEGRATION
+    - export GATSBY_CONTENT_VERSION=1
     - gatsby build
   only:
     - integration
@@ -114,6 +117,7 @@ build_staging:
     - export GATSBY_GTM_AUTH=CVR6RDnBikpJoyAEnybSBw
     - export GATSBY_ENV_NAME=env-10
     - export GATSBY_ENV=STAGING
+    - export GATSBY_CONTENT_VERSION=1
     - gatsby build
   only:
     - staging

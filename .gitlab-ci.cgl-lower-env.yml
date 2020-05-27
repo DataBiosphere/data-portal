@@ -1,0 +1,87 @@
+
+stages:
+  - test
+  - build
+  - deploy
+
+cache:
+  paths:
+  - node_modules/
+
+# Build Jobs
+# Build Job Template
+.build_template: &build_template
+  image: node:10.16.0
+  stage: build
+  before_script:
+    - git clone https://github.com/HumanCellAtlas/humancellatlas.github.io
+    - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
+    - npm install npm@6.9.0 -g
+    - npm -v
+    - npm install gatsby-cli@2.8.3 --global
+    - npm install
+  artifacts:
+      paths:
+        - public
+        - maintenance
+
+
+# Test with Trufflehog
+#test_trufflehog:
+#  stage: test
+#  image: python:3.5
+#  before_script:
+#    - pip install trufflehog
+#  script:
+#    - trufflehog --regex --rules trufflehog-rules.json --branch develop --entropy=False --max_depth 30 https://github.com/HumanCellAtlas/data-portal.git
+#  except:
+#    - master
+
+# Develop Build
+build_cgl-dev:
+  <<: *build_template
+  environment:
+    name: cgl-dev
+  script:
+    - cd_metadata-schema && git checkout develop
+    - export GATSBY_EXPLORE_URL=https://dev.singlecell.gi.ucsc.edu/explore/
+    - export GATSBY_FILE_SUMMARY_API_URL=https://service.dev.singlecell.gi.ucsc.edu/index/summary
+    - export GATSBY_TERM_FACETS_API_URL=https://service.dev.singlecell.gi.ucsc.edu/index/projects
+    - export GATSBY_SYSTEM_HEALTH_CHECK_API_URL=https://status.data.humancellatlas.org/service/dcp-health-check-prod
+    - export GATSBY_SYSTEM_STATUS_URL=https://status.data.humancellatlas.org/
+    - export GATSBY_GTM_ID=GTM-xxxxx
+    - export GATSBY_GTM_AUTH=xx
+    - export GATSBY_ENV_NAME=env-xx
+    - export GATSBY_ENV=CGL_DEV
+    - export GATSBY_CONTENT_VERSION=2
+    - gatsby build
+  only:
+    - develop
+
+
+
+
+########################################
+# Deploy Jobs
+########################################
+
+
+# Deploy Job Template
+.deploy_template: &deploy_template
+  stage: deploy
+  image: python:3.5
+  before_script:
+    - pip install awscli
+
+# Dev Deploy
+deploy_cgl-dev:
+  <<: *deploy_template
+  environment:
+    name: develop
+  script:
+    - export BUCKET=s3://dev.singlecell.gi.ucsc.edu/
+    - if [ "$MAINTENANCE" = "true" ];then export SRCDIR=maintenance/; else export SRCDIR=public/; fi
+    - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
+    - aws cloudfront create-invalidation --distribution-id E3562WJBOLN8W8 --paths "/*"
+  only:
+    - develop
