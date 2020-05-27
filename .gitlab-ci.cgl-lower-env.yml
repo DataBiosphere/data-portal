@@ -77,11 +77,11 @@ build_cgl-dev:
 deploy_cgl-dev:
   <<: *deploy_template
   environment:
-    name: develop
+    name: cgl-dev
   script:
     - export BUCKET=s3://dev.singlecell.gi.ucsc.edu/
     - if [ "$MAINTENANCE" = "true" ];then export SRCDIR=maintenance/; else export SRCDIR=public/; fi
     - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id E3562WJBOLN8W8 --paths "/*"
   only:
-    - develop
+    - staging
