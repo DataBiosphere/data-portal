@@ -56,7 +56,7 @@ build_cgl-dev:
     - export GATSBY_CONTENT_VERSION=2
     - gatsby build
   only:
-    - develop
+    - staging
 
 
 
