@@ -192,7 +192,9 @@ class SearchBrowser extends React.Component {
 				"facetName": this.state.selectedFacet,
 				"terms": [this.state.selectedTerm]
 			}]);
-			window.location.href = `${process.env.GATSBY_EXPLORE_URL}projects?filter=${facetFilter}`;
+            const params = new URLSearchParams();
+			params.set("filter", facetFilter);
+			window.location.href = `${process.env.GATSBY_EXPLORE_URL}projects?${params.toString()}`;
 		}
 	};
 
