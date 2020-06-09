@@ -8,7 +8,7 @@ export const TOCSiteMap = (docPath) => {
 			edges {
 			  node {
 				fields {
-				  path
+				  slug
 				}
 				headings {
 				  depth
@@ -20,5 +20,5 @@ export const TOCSiteMap = (docPath) => {
 		}
     `
 	);
-	return allMarkdownRemark.edges.map(e => e.node).filter(n => n.fields.path === docPath)[0];
+	return allMarkdownRemark.edges.map(e => e.node).filter(n => n.fields.slug === docPath)[0];
 };

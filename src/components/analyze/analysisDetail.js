@@ -18,7 +18,7 @@ let classNames = require('classnames');
 class AnalysisDetail extends React.Component {
 
 	render() {
-		const {data, editPath} = this.props,
+		const {data} = this.props,
 			{frontmatter, html} = data,
 			{author, githubUrl, title} = frontmatter;
 		return (
@@ -32,8 +32,6 @@ class AnalysisDetail extends React.Component {
 					   className={classNames(globalStyles.button, globalStyles.outline, globalStyles.primary, compStyles.view)}>View</a>
 				</div>
 				<div dangerouslySetInnerHTML={{__html: html}}/>
-				<a className={classNames(globalStyles.editContent, globalStyles.editContentSeparator)}
-				   href={editPath} target='_blank' rel='noopener noreferrer'>Improve this page</a>
 			</div>
 		);
 	}

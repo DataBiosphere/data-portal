@@ -18,6 +18,10 @@ export default function Template({data}) {
 	const type = data.typeMetadata.edges.map(n => n.node)[0];
 	const references = data.referenceMetadata.edges.map(n => n.node);
 
+	const {sitePage} = data,
+		{context} = sitePage || {},
+		{nav} = context || {};
+
 	// Relocate provenance to the end of properties
 	if ( type && type.properties[0].name === "provenance" ) {
 
@@ -26,94 +30,125 @@ export default function Template({data}) {
 	}
 
 	return (
-		<MetadataPage references={references} type={type}/>
+		<MetadataPage nav={nav} references={references} type={type}/>
 	);
 }
 
 // modified to find the page by id which is passed in as context
 export const pageQuery = graphql`
-query ($metadataPath: String!) {
-  typeMetadata: allMetadataSchemaEntity(filter: {relativeFilePath: {eq: $metadataPath}}) {
-    edges {
-      node {
-        relativeFilePath
-        fields {
-          path
-        }
-        schemaType
-        coreEntity
-        title
-        name
-        description
-        properties {
+  query ($id: String!) {
+    typeMetadata: allMetadataSchemaEntity(filter: {id: {eq: $id}}) {
+      edges {
+        node {
+          relativeFilePath
+          fields {
+            slug
+          }
+          schemaType
+          coreEntity
+          title
           name
+          description
           properties {
-            description
-            type
-            user_friendly
-            _ref
-            enum
-            example
-            items {
-              type
-              _ref
-            }
-          }
-        }
-        required
-      }
-    }
-  }
-  referenceMetadata: allMetadataSchemaEntity(filter: {schemaType: {in: ["module","core","type","system"]}}) {
-    edges {
-      node {
-        relativeFilePath
-        fields {
-          path
-        }
-        schemaType
-        coreEntity
-        title
-        name
-        type
-        description
-        definitions {
-          task {
-            required
-            type
+            name
             properties {
-              name
-              type
-            }
-          }
-          parameter {
-            required
-            type
-            properties {
-              name
-              type
               description
-            }
-          }
-        }
-        properties {
-          name
-          properties {
-            description
-            type
-            user_friendly
-            _ref
-            enum
-            example
-            items {
               type
+              user_friendly
               _ref
+              enum
+              example
+              items {
+                type
+                _ref
+              }
             }
           }
+          required
         }
-        required
       }
     }
+    referenceMetadata: allMetadataSchemaEntity(filter: {schemaType: {in: ["module","core","type","system"]}}) {
+      edges {
+        node {
+          relativeFilePath
+          fields {
+            slug
+          }
+          schemaType
+          coreEntity
+          title
+          name
+          type
+          description
+          definitions {
+            task {
+              required
+              type
+              properties {
+                name
+                type
+              }
+            }
+            parameter {
+              required
+              type
+              properties {
+                name
+                type
+                description
+              }
+            }
+          }
+          properties {
+            name
+            properties {
+              description
+              type
+              user_friendly
+              _ref
+              enum
+              example
+              items {
+                type
+                _ref
+              }
+            }
+          }
+          required
+        }
+      }
+    }
+    sitePage(context: {id: {eq: $id }}) {
+      context {
+        id
+        nav {
+          section {
+            key
+            name
+            path
+          }
+          tabs {
+            active
+            key
+            name
+            path
+          }
+          links {
+            active
+            key
+            name
+            path
+            sLinks {
+              active
+              key
+              name
+              path
+            }
+          }
+        }
+      }
+      path
+    }
   }
-}
 `;

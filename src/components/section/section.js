@@ -8,10 +8,6 @@
 // Core dependencies
 import React from 'react';
 
-// App dependencies
-import {SectionQuery} from '../../hooks/sectionQuery';
-import * as NavigationService from '../../utils/navigation.service';
-
 // Styles
 import compStyles from './section.module.css';
 import fontStyles from '../../styles/fontsize.module.css';
@@ -20,7 +16,9 @@ import globalStyles from '../../styles/global.module.css';
 class Section extends React.Component {
 
 	render() {
-		const {sectionName} = this.props;
+		const {section, sectionTitle} = this.props,
+			{name} = section || {};
+		const sectionName = name ? name : sectionTitle;
 		return (
 			<div className={compStyles.hcaSection}>
 				<div className={globalStyles.wrapper}>
@@ -31,12 +29,4 @@ class Section extends React.Component {
 	}
 }
 
-export default (props) => {
-
-	const {docPath, sectionTitle} = props,
-	sectionName = sectionTitle ? sectionTitle : NavigationService.sectionTitle(SectionQuery(), docPath);
-
-	return (
-		<Section sectionName={sectionName}/>
-	);
-}
+export default Section;

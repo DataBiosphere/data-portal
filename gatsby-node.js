@@ -1,289 +1,222 @@
-/**
- * Implement Gatsby's Node APIs in this file.
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
  *
- * See: https://www.gatsbyjs.org/docs/node-apis/
+ * Gatsby node APIs.
  */
 
-// Imports
-const express = require('express');
-const path = require('path');
-const {createFilePath} = require(`gatsby-source-filesystem`);
+// App dependencies
+const express = require("express");
+const {createFilePath} = require("gatsby-source-filesystem");
+const {buildPostSlug, isPostNodeEnabled, isPostNodeFeatured} = require("./src/utils/node/create-node.service");
+const {buildPostPath, getPostTemplate} = require("./src/utils/node/create-pages.service");
+const {buildMetadataKeysByTitle,
+    buildMetadataLinks,
+    getMetadataPostNavigation,
+    getPostNavigation,
+    removeBlacklistedPosts} = require("./src/utils/node/create-node-navigation.service");
+const {buildPostKeysByPath} = require("./src/utils/node/site-map.service");
 
-// find our template files
-const contentTemplate = path.resolve(`src/templates/contentTemplate.js`);
-const metadataTemplate = path.resolve(`src/templates/metadataTemplate.js`);
-const systemStatusTemplate = path.resolve(`src/templates/systemStatusTemplate.js`);
+/**
+ * Create new node fields, placed under the "fields" key on the extended node object.
+ *
+ * @param node
+ * @param getNode
+ * @param actions
+ */
+exports.onCreateNode = ({node, getNode, actions}) => {
 
-function getTemplate(templateName) {
+    const {createNodeField} = actions;
+    const {internal, relativeFilePath} = node,
+        {type} = internal;
 
-	// see if there is a template matching the template name from the front matter.
-	if (templateName === 'metadataTemplate') {
-		return metadataTemplate;
-	}
+    /* Create new node fields for the posts featured. */
+    if ( isPostNodeFeatured(type, relativeFilePath) ) {
 
-	if (templateName === 'systemStatusTemplate') {
-		return systemStatusTemplate;
-	}
+        const {frontmatter} = node,
+            {draft, version} = frontmatter || {};
 
-	// if not return the default content template.
-	return contentTemplate;
-}
+        const filePath = createFilePath({node, getNode, basePath: ""});
+        const nodeValueEnabled = isPostNodeEnabled(draft, version);
+        const nodeValueSlug = buildPostSlug(filePath);
 
-// Returns document path or key.
-function getKeyOrPath(key, siteMapPathOrKey) {
+        /* Create nodes */
+        /* "enabled" */
+        createNodeField({
+            node,
+            name: "enabled",
+            value: nodeValueEnabled
+        });
+        /* "slug" */
+        createNodeField({
+            node,
+            name: "slug",
+            value: nodeValueSlug
+        });
+    }
+};
 
-	const path = siteMapPathOrKey.get(key);
-
-	if (path) {
-		return path;
-	}
-	else {
-		return key
-	}
-}
-
-// sections -> tabs -> primary docs -> secondary docs
-function keyToPath(siteMap) {
-	return siteMap.reduce((acc, section) => {
-		if (section.tabs) {
-			return section.tabs.reduce((acc, tab) => {
-				return tab.primaryLinks.reduce((acc, pLink) => {
-					addToMap(acc, pLink);
-					if (pLink.secondaryLinks) {
-						pLink.secondaryLinks.forEach(sLink => addToMap(acc, sLink));
-					}
-					return acc;
-				}, acc);
-			}, acc);
-		}
-		return acc;
-	}, new Map());
-}
-
-function addToMap(acc, doc) {
-
-	if (doc.path) {
-		acc.set(doc.key, doc.path);
-	} else {
-		acc.set(doc.key, doc.key);
-	}
-}
-
-exports.createPages = ({actions, graphql}) => {
-	const {createPage} = actions;
-
-	// create the markdown pages
-	return graphql(`
+/**
+ * Create pages.
+ *
+ * @param graphql
+ * @param actions
+ */
+exports.createPages = async ({graphql, actions}) => {
+    const {createPage} = actions;
+    await graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allMarkdownRemark {
         edges {
           node {
-            id
-            fileAbsolutePath
+            fields {
+              enabled
+              slug
+            }
             frontmatter {
               path
               template
-              linked {
-               childMarkdownRemark{
-                frontmatter{
-                    title
-                    subTitle
+            }
+            id
+          }
+        }
+      }
+      allMetadataSchemaEntity(filter: {schemaType: {eq: "type"}}, sort: {fields: title}) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            id
+            title
+          }
+        }
+      }
+      allSiteMapYaml {
+        edges {
+          node {
+            key
+            name
+            path
+            tabs {
+              key
+              name
+              primaryLinks {
+                key
+                name
+                path
+                secondaryLinks {
+                  key
+                  name
+                  path
                 }
-               }
               }
             }
           }
         }
       }
-	  allSiteMapYaml {
-		  edges {
-			  node {
-				name
-				key
-				path
-				tabs {
-					name
-					key
-					primaryLinks {
-						name
-						key
-						path
-						secondaryLinks {
-							name
-							key
-							path
-						}
-					}
-				}
-			  }
-		  }
-		}
-	  allMetadataSchemaEntity(filter: {schemaType: {eq: "type"}}) {
-		edges {
-		  node {
-			id
-			relativeFilePath
-			schemaType
-			title
-		  }
-		}
-	  }
-  }
-      `).then(result => {
+      allSitePage {
+        edges {
+          node {
+            path
+          }
+        }
+      }
+    }
+    `).then(result => {
 
-		// if there is an error return
-		if (result.errors) {
-			return Promise.reject(result.errors);
-		}
+        /* If there is an error, return. */
+        if ( result.errors ) {
 
-		// get siteMap from data-portal-content
-		let yamlSiteMap = result.data.allSiteMapYaml.edges.map(n => n.node);
+            return Promise.reject(result.errors);
+        }
 
-		let yamlSiteMapPathOrKey = keyToPath(yamlSiteMap);
+        const {data} = result,
+            {allMarkdownRemark, allMetadataSchemaEntity, allSiteMapYaml} = data;
 
-		// for each markdown page
-		result.data.allMarkdownRemark.edges.forEach(({node}) => {
+        /* For all site map documents associate the document key with a path. */
+        /* The postKeysByPath object will shape post navigation outcomes - i.e. the removal of blacklisted posts. */
+        const postsKeysByPath = buildPostKeysByPath(allSiteMapYaml, allMarkdownRemark);
+        const postsSiteMap = removeBlacklistedPosts(postsKeysByPath, allSiteMapYaml);
 
-			// create the page
+        /* For all metadata schema documents associate the document key with a title. */
+        const metadataPostsKeysByTitle = buildMetadataKeysByTitle(allMetadataSchemaEntity);
 
-			let path;
+        /* Pre-build the metadata primary and secondary navigation links. */
+        const metaLinks = buildMetadataLinks(metadataPostsKeysByTitle);
 
-			if (!node.frontmatter.path) {
+        /* For each markdown file create a post. */
+        allMarkdownRemark.edges.forEach(({node}) => {
 
-				path = getPath(node.fileAbsolutePath);
-			} else {
+            const {id, fields, frontmatter} = node,
+                {enabled, slug} = fields,
+                {template} = frontmatter || {};
 
-				path = node.frontmatter.path
-			}
+            const path = buildPostPath(slug, postsKeysByPath);
 
-			if ( path ) {
+            /* Create a post, if there is a slug and the post is enabled. */
+            if ( path && enabled ) {
 
-				createPage({
-					path: getKeyOrPath(path, yamlSiteMapPathOrKey),
-					component: getTemplate(node.frontmatter.template),  // extract template name from front matter and use it to retrieve the template.
-					context: {id: node.id, metadataCoreName: node.frontmatter.metadataCoreName, metadataPath: '', metadataTitle: ''} // additional data can be passed via context
-				});
-			}
-		});
+                const postComponent = getPostTemplate(template);
 
-		// for each metadata type create a page
-		result.data.allMetadataSchemaEntity.edges.forEach(({node}) => {
+                /* Get the post's navigation. */
+                const postNav = getPostNavigation(slug, postsSiteMap, metaLinks);
 
-			// create the page
+                createPage({
+                    path: path,
+                    component: postComponent,
+                    context: {
+                        id: id,
+                        nav: postNav
+                    }
+                });
+            }
+        });
 
-			let path = getMetadataDictionaryPath(node.relativeFilePath).slice(0, -1);
+        /* For each metadata type create a post. */
+        allMetadataSchemaEntity.edges.forEach(({node}) => {
 
-			if ( path ) {
+            /* Find the node's slug. */
+            const {fields, id} = node,
+                {slug} = fields;
 
-				createPage({
-					path: path,
-					component: metadataTemplate,  // extract template name from front matter and use it to retrieve the template.
-					context: {id: node.id, metadataCoreName: path.split('/')[3], metadataPath: node.relativeFilePath, metadataTitle: node.title} // additional data can be passed via context
-				});
-			}
-		});
+            /* Create a page, if there is a slug. */
+            if ( slug ) {
 
-	});
+                /* Get the metadata post's navigation. */
+                const metaNav = getMetadataPostNavigation(slug, metaLinks, postsSiteMap);
 
+                createPage({
+                    path: slug,
+                    component: getPostTemplate("METADATA"),
+                    context: {
+                        id: id,
+                        nav: metaNav
+                    }
+                });
+            }
+        });
+
+    });
 };
 
-
-// Create slugs for files.
-exports.onCreateNode = ({node, getNode, actions}) => {
-
-	const {createNodeField} = actions;
-
-	if (node.internal.type === 'MarkdownRemark') {
-
-		// path can come from frontmatter or... from associating a title to path
-		let path;
-
-		if ( !node.frontmatter.path ) {
-
-			path = getPath(node.fileAbsolutePath);
-		}
-		else {
-
-			path = node.frontmatter.path
-		}
-
-		const relativeFilePath = createFilePath({node, getNode, basePath: ''});
-
-		const editPage = isShowEditPage(node.frontmatter, path);
-
-		//this adds path under "fields"
-		createNodeField({node, name: 'path', value: path});
-
-		//this adds gitHubPath under "fields"
-		createNodeField({node, name: 'gitHubPath', value: relativeFilePath});
-
-		//this adds editPage under "fields"
-		createNodeField({node, name: 'editPage', value: editPage});
-	}
-
-	if (node.internal.type === 'MetadataSchemaEntity' && node.relativeFilePath.includes('/type/')) {
-
-		let path = getMetadataDictionaryPath(node.relativeFilePath).slice(0, -1);
-
-		//this adds the path under "fields"
-		createNodeField({node, name: 'path', value: path});
-	}
+/* Required for Edge. This function can be removed once Gatsby upgrades to @babel-preset-gatsby@0.2.3. */
+/* See: https://github.com/gatsbyjs/gatsby/issues/14848 */
+exports.onCreateBabelConfig = ({actions}) => {
+    actions.setBabelPlugin({
+        name: `@babel/plugin-transform-spread`,
+        options: {
+            loose: false,
+        },
+    });
 };
 
-// Required for Edge. This function can be removed once Gatsby upgrades to @babel-preset-gatsby@0.2.3. See:
-// https://github.com/gatsbyjs/gatsby/issues/14848
-exports.onCreateBabelConfig = ({ actions, stage }) => {
-	actions.setBabelPlugin({
-		name: `@babel/plugin-transform-spread`,
-		options: {
-			loose: false,
-		},
-	});
-};
+/**
+ * See: https://github.com/gatsbyjs/gatsby/issues/18213
+ * See: https://github.com/gatsbyjs/gatsby/issues/13072
+ * To access static folder while in develop mode.
+ */
+exports.onCreateDevServer = ({app}) => {
 
-function getPath(markdownId) {
-
-	if (markdownId && markdownId.includes('docs/structure.md')) {
-		return '/metadata/design-principles/structure';
-	} else if (markdownId && markdownId.includes('docs/rationale.md')) {
-		return '/metadata/design-principles/rationale';
-	}
-
-	else {
-		return null;
-	}
-}
-
-function getMetadataDictionaryPath(path) {
-
-	return path.replace('/type/', '/metadata/dictionary/')
-}
-
-function isShowEditPage(frontmatter, path) {
-
-	// Exclude documents with frontmatter component name 'analyze' and 'analysisDetail'
-	// These documents have their own specific template and edit page functionality
-	if ( frontmatter && (frontmatter.componentName === 'analyze' || frontmatter.componentName === 'analysisDetail') ) {
-
-		return false;
-	}
-	// Exclude documents from the metadata schema repository
-	if ( path && (path.includes('/metadata/design-principles/rationale') || path.includes('/metadata/design-principles/structure')) ) {
-
-		return false;
-	}
-
-	// Show "edit this page" for all other documents
-	return true;
-}
-
-// See: https://github.com/gatsbyjs/gatsby/issues/18213
-// See: https://github.com/gatsbyjs/gatsby/issues/13072
-// To access static folder while in develop mode
-exports.onCreateDevServer=({app})=>{
-
-	app.use(express.static('public'))
+    app.use(express.static("public"))
 };

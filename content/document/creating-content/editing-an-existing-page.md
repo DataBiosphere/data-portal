@@ -18,7 +18,7 @@ Once you have found the page, you can edit and do a basic preview of the page in
 Selecting the  edit button will open the file in the github web editor and let you make changes to the page content.  The page content is in standard markdown.
 
  
-![Edit an Existing Page](./_images/edit-existing-page.png "Edit an Existing Page")
+![Edit an Existing Page](../_images/edit-existing-page.png "Edit an Existing Page")
 
 ## Edit/Preview the Markdown
 Once in the editor, you can update content as you like and even preview the markdown by selecing the "Preview Changes" tab.
@@ -28,7 +28,7 @@ The preview will be styled for the github site, not for the HCA site, but you ca
 >Note that the github editor does not highlight spell check errors so be vigilant.
 
 
-![Edit in Github](./_images/edit-mode.png "Edit an Existing Page")
+![Edit in Github](../_images/edit-mode.png "Edit an Existing Page")
 
 ### Front Matter
 
@@ -43,7 +43,7 @@ At the top of the file you will see a "Front Matter" sections between the `---` 
 ```
 
 >####Tip
->Note that any changes to the `path:` section need a corresponding change to a `sitemap.js` file in the data-data portal repository. Please create [Github/Zenhub](https://app.zenhub.com/workspace/o/humancellatlas/data-portal-content/boards?repos=130759918) ticket for updating the stiemap.
+>Note that any changes to the `path:` section need a corresponding change to a `site-map.yaml` file in the data-data portal repository. Please create [Github/Zenhub](https://app.zenhub.com/workspace/o/humancellatlas/data-portal-content/boards?repos=130759918) ticket for updating the stiemap.
 
 ## Create a Pull Request
 
@@ -51,6 +51,6 @@ Once you are ready, request a review from a peer, by creating a pull request in 
 
 Once your pull request is merged it will be deployed to the site.
 
-![Create a Pull Reqeust](./_images/edit-mode.png "Edit an Existing Page")
+![Create a Pull Reqeust](../_images/edit-mode.png "Edit an Existing Page")
  
  

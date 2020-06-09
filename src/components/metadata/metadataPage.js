@@ -45,15 +45,15 @@ class MetadataPage extends React.Component {
 	};
 
 	render() {
-		const {references, type} = this.props,
+		const {nav, references, type} = this.props,
 			{description, fields, title} = type,
-			{path} = fields,
+			{slug} = fields,
 			name = type.name,
 			coreEntity = StringFormatService.convertSentenceCaseToTitleCase(type.coreEntity),
 			pageTitle = `${coreEntity} - ${title}`,
 			{showAllMetadata} = this.state;
 		return (
-			<Layout description={type.description} pageTitle={pageTitle} docPath={path} showAllMetadata={showAllMetadata}>
+			<Layout description={type.description} pageTitle={pageTitle} docPath={slug} nav={nav} showAllMetadata={showAllMetadata}>
 				<h1 className={classNames(globalStyles.md, compStyles.meta)}>{pageTitle}</h1>
 				<p className={fontStyles.hcaCode}>{name}</p>
 				<p className={fontStyles.l}>{description}</p>
@@ -75,6 +75,6 @@ export default (props) => {
 	type = props.type;
 
 	return (
-		<MetadataPage references={references} type={type}/>
+		<MetadataPage references={references} type={type} {...props}/>
 	);
 }

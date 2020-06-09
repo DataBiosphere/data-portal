@@ -50,7 +50,7 @@ export default function Template({data}) {
 	};
 
 	return (
-		<Layout homeTab={false} noTab={true} noNav={true} pageTitle={'System Status'} sectionTitle={'System Status'} >
+		<Layout pageTitle={'System Status'} sectionTitle={'System Status'} >
 			<h1 className={globalStyles.md}>Environment - {displayEnv}</h1>
 			<div className={compStyles.system}>
 				<div className={classNames(fontStyles.m, compStyles.label)}>
@@ -74,8 +74,6 @@ export default function Template({data}) {
 		</Layout>
 	);
 }
-
-// modified to find the page by id which is passed in as context
 
 // modified to find the page by id which is passed in as context
 export const pageQuery = graphql`

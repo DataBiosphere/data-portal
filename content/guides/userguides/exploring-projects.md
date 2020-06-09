@@ -22,14 +22,14 @@ Projects are a basic unit of data organization in the HCA Data Coordination Plat
 
 The HCA Data Explorer lists all projects on its home page along with key project metadata. The project list is filterable by the metadata values. 
 
-![Browsing Projects in the Data Explorer](./_images/exploring-projects-project-list.png "Exploring Projects")
+![Browsing Projects in the Data Explorer](../_images/exploring-projects-project-list.png "Exploring Projects")
 **Figure 1**: The Data Explorer's projects tab lists the projects making up the DCP. 
 
 ## Viewing Project Details
 
 Selecting a project title on the project list takes you to the project's detail page. 
 
-![Viewing Project Details](./_images/exploring-projects-project-detail.png "Project Detail")
+![Viewing Project Details](../_images/exploring-projects-project-detail.png "Project Detail")
 **Figure 2**: A project detail page showing the various information and downloads available for the project.
 
 
@@ -57,7 +57,7 @@ The metadata tsv file gives a flattenedjapan-science-meeting-tutorial.md represe
 
 The "Project Downloads" section of the project details page contains a link to download the project metadata file.
 
-![Project Downloads](./_images/exploring-projects-project-downloads.png "Project Downloads")
+![Project Downloads](../_images/exploring-projects-project-downloads.png "Project Downloads")
 **Figure 3**: The "Project Downloads" section of the project details page.
 
 Metadata file sizes vary across projects but will generally be between 1 and 100 megabytes.
@@ -70,7 +70,7 @@ CD4+ cytotoxic T lymphocytes 2019-07-19 19.09.tsv
 
 A partial example of a tsv file is listed below:
 
-![Partial Metadata tsv](./_images/exploring-projects-tsv.png "TSV File")
+![Partial Metadata tsv](../_images/exploring-projects-tsv.png "TSV File")
 **Figure 4**: A partial view of a project's metadata tsv file.
 
 ## Downloading Project Expression Matrices
@@ -81,6 +81,6 @@ For projects with supported library construction approaches, the project detail 
  
  The rows in the expression matrix represent cells, columns give the expression value for the column's gene.
 
-![Partial Expression Matrix](./_images/exploring-projects-expression-matrix.png "Expression Matrix")
+![Partial Expression Matrix](../_images/exploring-projects-expression-matrix.png "Expression Matrix")
 **Figure 5**: A partial view of a project's expression matrix in csv format. 
 

@@ -10,10 +10,10 @@ import Link from 'gatsby-link';
 import React from 'react';
 
 // App dependencies
-import {HeaderQuery} from '../../hooks/headerQuery';
-import * as ReleaseService from '../../utils/release.service';
 import ClickHandler from '../clickHandler/clickHandler';
 import HeaderNavDropDown from '../headerNavDropDown/headerNavDropDown';
+import {HeaderQuery} from '../../hooks/header-query';
+import * as ReleaseService from '../../utils/release.service';
 
 // Images
 import headerLogo from '../../../images/logo/logo-hca.png';

@@ -27,11 +27,23 @@ export function getPageH1(headings) {
 /**
  * Returns github content url, for the specified path.
  *
- * @param gitHubPath
+ * @param slug
  * @returns {string}
  */
-export function getPageEditUrl(gitHubPath) {
+export function getPageEditUrl(slug) {
 
-	const pathSliced = gitHubPath.trim().slice(0, -1);
-	return `https://github.com/HumanCellAtlas/data-portal/tree/staging/content${pathSliced}.md`;
+	return `https://github.com/HumanCellAtlas/data-portal/tree/staging/content${slug}.md`;
+}
+
+/**
+ * Returns true if the edit page should be featured.
+ *
+ * @param slug
+ * @returns {boolean}
+ */
+export function editPageFeatured(slug) {
+
+    const metadataDesignPrinciples = slug && slug.includes("metadata/design-principles/");
+
+    return !metadataDesignPrinciples;
 }

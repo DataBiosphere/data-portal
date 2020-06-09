@@ -4,12 +4,12 @@ date: "2018-05-03"
 title: "Methods Packages"
 componentName: "analyze"
 linked:
-    - ./infercnv.md
-    - ./magic.md
-    - ./phate.md
-    - ./sc3.md
-    - ./slingshot.md
-    - ./stream.md
+    - ./methods-packages/infer.md
+    - ./methods-packages/magic.md
+    - ./methods-packages/phate.md
+    - ./methods-packages/sc3.md
+    - ./methods-packages/slingshot.md
+    - ./methods-packages/stream.md
 ---
 
 #  Methods Packages
