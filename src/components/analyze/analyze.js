@@ -12,18 +12,17 @@ import React from 'react';
 // Styles
 import compStyles from './analyze.module.css';
 import fontStyles from '../../styles/fontsize.module.css';
-import globalStyles from '../../styles/global.module.css';
 
 class Analyze extends React.Component {
 
 	getMarkdownFileName = (link) => {
 
-		let path = link.childMarkdownRemark.frontmatter.path.split('/');
+		let path = link.childMarkdownRemark.fields.slug.split('/');
 		return ('/' + path[1] + '/' + path[2] + '/' + path[4]);
 	};
 
 	render() {
-		const {editPath, linked} = this.props;
+		const {linked} = this.props;
 		return (
 			<div>
 				{linked.map((link, i) => <Link to={this.getMarkdownFileName(link)}
@@ -35,8 +34,6 @@ class Analyze extends React.Component {
 						<p className={compStyles.description}>{link.childMarkdownRemark.frontmatter.description}</p>
 					</div>
 				</Link>)}
-				<a className={globalStyles.editContent} href={editPath} target='_blank'
-				   rel='noopener noreferrer'>Improve this page</a>
 			</div>
 		);
 	}

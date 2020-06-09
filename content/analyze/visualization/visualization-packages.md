@@ -4,10 +4,10 @@ date: "2018-05-03"
 title: "Visualization Packages"
 componentName: "analyze"
 linked:
-    - ./anatomogram.md
-    - ./ideogram.md
-    - ./igv.md
-    - ./morpheus.md
+    - ./visualization-packages/anatomogram.md
+    - ./visualization-packages/ideogram.md
+    - ./visualization-packages/igv.md
+    - ./visualization-packages/morpheus.md
 ---
 
 # Visualization Packages

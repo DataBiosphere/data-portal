@@ -13,7 +13,7 @@ import Layout from '../components/layout';
 
 
 const Health = () => (
-	<Layout noNav={true} noTab={true} sectionTitle={'Health - OK'} />
+	<Layout sectionTitle={'Health - OK'} />
 );
 
 export default Health;

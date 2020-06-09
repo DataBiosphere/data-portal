@@ -35,8 +35,7 @@ class Layout extends React.Component {
 	};
 
 	render() {
-
-		const {children, description, docPath, healthy, homePage, homeTab, noNav, noTab, pageTitle, sectionTitle, showAllMetadata} = this.props;
+		const {children, description, docPath, healthy, homePage, homeTab, nav, pageTitle, sectionTitle, showAllMetadata} = this.props;
 		return (
 			<div>
 				<PageHead pageTitle={pageTitle}/>
@@ -45,7 +44,7 @@ class Layout extends React.Component {
 					<Header onMenuOpen={this.onMenuOpen.bind(this)} homePage={homePage} docPath={docPath}/>
 					<Banner position={'top'} healthy={healthy}/>
 					{homePage ? children :
-						<HCAMain docPath={docPath} homeTab={homeTab} noNav={noNav} noTab={noTab}
+						<HCAMain docPath={docPath} homeTab={homeTab} nav={nav}
 								 sectionTitle={sectionTitle} showAllMetadata={showAllMetadata}>{children}</HCAMain>}
 					<Banner position={'bottom'}/>
 					<Footer/>

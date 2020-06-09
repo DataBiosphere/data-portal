@@ -43,7 +43,7 @@ Each sub section may have a left hand nav of 0 or more documents.
 Each top level left nav document may have 0 or more child documents.
 
 #Site Map
-The sitemap is controlled by a siteMap.js file in the Data Portal Repository. This file is a json file that defines the structure of website. Reach out on the [Content Team Slack Channel](https://slack.com/app_redirect?channel=CA53K2C3A&team=T2EQJFTMJ) for help getting modifications made to the site map. 
+The site-map is controlled by a site-map.yaml file in the Data Portal Repository. This file is a json file that defines the structure of website. Reach out on the [Content Team Slack Channel](https://slack.com/app_redirect?channel=CA53K2C3A&team=T2EQJFTMJ) for help getting modifications made to the site map.
 
 
 

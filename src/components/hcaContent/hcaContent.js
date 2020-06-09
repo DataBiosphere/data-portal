@@ -35,24 +35,20 @@ class HCAContent extends React.Component {
 	};
 
 	render() {
-		const {children, docPath, noNav, showAllMetadata} = this.props;
+		const {children, docPath, links, showAllMetadata, tabKey} = this.props;
+		const linksExist = links && links.length;
 		return (
 			<div
-				className={classNames(compStyles.hcaContent, {[compStyles.noNav]: noNav})}>
-				{noNav ? null : <Nav docPath={docPath}/>}
+				className={classNames(compStyles.hcaContent, {[compStyles.noNav]: !linksExist})}>
+				{linksExist ? <Nav links={links} tabKey={tabKey}/> : null}
 				<TOCSpy onTOCChange={this.onTOCChange.bind(this)}>
 					<div id={'hcaContent'} className={compStyles.hcaContentInner}>{children}</div>
 				</TOCSpy>
-				{this.state.isTOC && !noNav ?
+				{this.state.isTOC && linksExist ?
 					<TOC activeTOC={this.state.activeTOC} docPath={docPath} isTOC={this.isTOC.bind(this)} showAllMetadata={showAllMetadata}/> : null}
 			</div>
 		);
 	}
 }
 
-export default (props) => {
-
-	return (
-		<HCAContent {...props}/>
-	);
-}
+export default HCAContent;

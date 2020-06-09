@@ -16,12 +16,12 @@ Most of what you see in the general guides will work on ths site. Below we give 
 
 Here for example is a demo of adding an immage to a page:
 
-![Data Portal](./_images/data-portal.png "Data Potal Learn Section")
+![Data Portal](../_images/data-portal.png "Data Potal Learn Section")
 
 First upload the image to the _images folder at the same level as your source document.
 Then, link to the the image using something like:
 
-```![Data Portal](./_images/data-portal.png "Data Potal Learn Section")```
+```![Data Portal](../_images/data-portal.png "Data Potal Learn Section")```
 
 ## Viewing the Source Markdown for this page on Github
 

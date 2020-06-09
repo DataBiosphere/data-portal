@@ -1,7 +1,8 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
  *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
+ * Gatsby Browser APIs.
  */
 
 // Required for Edge, otherwise we get a "PerformanceObserver not defined" error 

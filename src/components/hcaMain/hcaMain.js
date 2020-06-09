@@ -21,14 +21,15 @@ import globalStyles from '../../styles/global.module.css';
 class HCAMain extends React.Component {
 
 	render() {
-		const {children, docPath, homeTab, noNav, noTab, sectionTitle, showAllMetadata} = this.props;
+		const {children, docPath, homeTab, nav, sectionTitle, showAllMetadata} = this.props,
+			{links, section, tabKey, tabs} = nav || {};
 		return (
 			<div className={globalStyles.pageWrapper}>
-				<Section docPath={docPath} sectionTitle={sectionTitle}/>
-				<TabNav docPath={docPath} homeTab={homeTab} noTab={noTab}/>
+				<Section section={section} sectionTitle={sectionTitle}/>
+				<TabNav homeTab={homeTab} tabs={tabs}/>
 				<div className={compStyles.main}>
 					<div className={globalStyles.wrapper}>
-						<HCAContent docPath={docPath} noNav={noNav} showAllMetadata={showAllMetadata}>{children}</HCAContent>
+						<HCAContent docPath={docPath} links={links} showAllMetadata={showAllMetadata} tabKey={tabKey}>{children}</HCAContent>
 					</div>
 				</div>
 			</div>
@@ -36,9 +37,4 @@ class HCAMain extends React.Component {
 	}
 }
 
-export default (props) => {
-
-	return (
-		<HCAMain {...props}/>
-	);
-}
+export default HCAMain;

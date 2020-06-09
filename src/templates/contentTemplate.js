@@ -11,17 +11,17 @@ import React from 'react';
 import rehypeReact from 'rehype-react';
 
 // App dependencies
-import * as TemplateService from '../utils/template.service';
-import Analyze from '../components/analyze/analyze';
 import AnalysisDetail from '../components/analyze/analysisDetail';
+import Analyze from '../components/analyze/analyze';
 import Attributions from '../components/attributions/attributions';
 import DataLifecycleDiagram from '../components/dataLifecycleDiagram/dataLifecycleDiagram';
 import Layout from '../components/layout';
 import LinkToBrowser from "../components/linkToBrowser/linkToBrowser";
+import * as TemplateService from '../utils/template.service';
 
 // Styles
-import '../styles/markdown.module.css';
 import globalStyles from '../styles/global.module.css';
+import '../styles/markdown.module.css';
 
 let classNames = require('classnames');
 
@@ -33,22 +33,24 @@ const renderAst = new rehypeReact({
 // the data prop will be injected by the GraphQL query below.
 export default function Template({data}) {
 
-	const {markdownRemark} = data; // data.markdownRemark holds our post data
+	const {markdownRemark, sitePage} = data; // data.markdownRemark holds our post data
 	const {frontmatter, headings, htmlAst} = markdownRemark,
+		{context} = sitePage,
+		{nav} = context || {},
 		{fields} = markdownRemark || {},
-		{editPage, gitHubPath, path} = fields || {},
-		{componentName, description, linked, noNav, title} = frontmatter || {};
-
-	const editPath = TemplateService.getPageEditUrl(gitHubPath);
+		{slug} = fields || {},
+		{componentName, description, linked, title} = frontmatter || {};
+	const editPage = TemplateService.editPageFeatured(slug);
+	const editPath = TemplateService.getPageEditUrl(slug);
 	const h1 = TemplateService.getPageH1(headings);
 	const pageTitle = h1 ? h1 : title;
 
 	return (
-		<Layout description={description} docPath={path} noNav={noNav} pageTitle={pageTitle}>
-			{componentName === 'analysisDetail' ? <AnalysisDetail editPath={editPath} data={markdownRemark}/> :
+		<Layout description={description} docPath={slug} nav={nav} pageTitle={pageTitle}>
+			{componentName === 'analysisDetail' ? <AnalysisDetail data={markdownRemark}/> :
 				<div className={globalStyles.md}>{renderAst(htmlAst)}</div>}
 			{linked && (componentName === 'analyze') ?
-				<Analyze editPath={editPath} linked={linked}/> : null}
+				<Analyze linked={linked}/> : null}
 			{componentName === 'attributions' ? <Attributions/> : null}
 			{editPage ?
 				<a className={classNames(globalStyles.editContent, globalStyles.editContentSeparator)}
@@ -68,10 +70,8 @@ export const pageQuery = graphql`
       }
       html
       htmlAst
-      fields{
-        editPage
-        gitHubPath
-        path
+      fields {
+        slug
       }
       frontmatter {
         appUrl
@@ -80,24 +80,58 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         githubUrl
-        noNav
-        path
-        subTitle
-        title
         linked {
-          childMarkdownRemark{
-            html
+          childMarkdownRemark {
+            fields {
+              slug
+            }
             frontmatter{
+              author
+              description
               githubUrl
               path
               subTitle
               title
-              author
-              description
-             }
-           }
+            }
+            html
+          }
+        }
+        path
+        subTitle
+        title
+      }
+    }
+    sitePage(context: {id: {eq: $id }}) {
+      context {
+        id
+        nav {
+          section {
+            key
+            name
+            path
+          }
+          tabKey
+          tabs {
+            active
+            key
+            name
+            path
+          }
+          links {
+            active
+            key
+            name
+            path
+            sLinks {
+              active
+              key
+              name
+              path
+            }
+          }
         }
       }
+      path
     }
   }
 `;

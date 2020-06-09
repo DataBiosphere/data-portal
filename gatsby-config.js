@@ -5,9 +5,7 @@
  * Gatsby configuration file.
  */
 
-
-// gatsby-config.js
-
+// Template variables
 let contentPath = `${__dirname}/content`;
 let metadataSchemaDocsPath = `${__dirname}/_metadata-schema/docs`;
 let metadataSchemaJsonPath = `${__dirname}/_metadata-schema/json_schema`;
@@ -26,7 +24,6 @@ if (process.env.GATSBY_ENV == "LOCAL") {
 let gtmId = process.env.GATSBY_GTM_ID;
 let gtmAuth = process.env.GATSBY_GTM_AUTH;
 let gtmEnvName = process.env.GATSBY_ENV_NAME;
-
 
 module.exports = {
     siteMetadata: {
@@ -66,7 +63,7 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 path: hcaGithubSystemStatusDocsPath,
-                name: 'system-status-markdown-pages',
+                name: 'status-markdown-pages',
             }
         },
         `gatsby-transformer-json-schema`,
@@ -82,7 +79,7 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 path: hcaGithubSystemStatusDocsPath,
-                name: 'json-system-status',
+                name: 'json-status',
             },
         },
         `gatsby-transformer-yaml`,
