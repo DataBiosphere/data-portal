@@ -8,6 +8,7 @@
 
 /* Button */
 .toggle {
+	align-items: center;
 	background-color: var(--blue-light);
 	border: none;
 	border-radius: 3px;
