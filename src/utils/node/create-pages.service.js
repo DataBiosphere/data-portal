@@ -14,24 +14,23 @@ const templatePath = {
 };
 
 /**
- * Returns the post's path or key (if the post path does not exist),
- * specified by post slug.
+ * Returns the post's path or key (if the post path does not exist).
+ *
+ * A null path will prevent the post's page from being created.
  *
  * @param slug
- * @param postKeyByPath
+ * @param postsKeysByPath
  * @returns {*}
  * @constructor
  */
-const buildPostPath = function buildPostPath(slug, postKeyByPath) {
+const buildPostPath = function buildPostPath(slug, postsKeysByPath) {
 
     if ( !slug ) {
 
         return null;
     }
-    else {
 
-        return getPostPathOrKey(slug, postKeyByPath);
-    }
+    return getPostPathOrKey(slug, postsKeysByPath);
 };
 
 /**
@@ -49,17 +48,39 @@ const getPostTemplate = function getPostTemplate(templateName) {
 };
 
 /**
+ * Returns a set of posts blacklisted i.e. not "enabled".
+ *
+ * @param markdownRemark
+ * @returns {Set}
+ */
+const setOfPostsBlacklisted = function setOfPostsBlacklisted(markdownRemark) {
+
+    return markdownRemark.edges.map(e => e.node).reduce((acc, node) => {
+
+        const {fields} = node,
+            {enabled, slug} = fields;
+
+        if ( enabled === false ) {
+
+            acc.add(slug);
+        }
+
+        return acc;
+    }, new Set());
+};
+
+/**
  * Returns the corresponding post's path.
  *
  * @param slug
- * @param postKeyByPath
+ * @param postsKeysByPath
  * @returns {*}
  */
-function getPostPathOrKey(slug, postKeyByPath) {
+function getPostPathOrKey(slug, postsKeysByPath) {
 
-    if ( postKeyByPath && postKeyByPath.has(slug) ) {
+    if ( postsKeysByPath && postsKeysByPath.has(slug) ) {
 
-        return postKeyByPath.get(slug);
+        return postsKeysByPath.get(slug);
     }
 
     return null;
@@ -67,3 +88,4 @@ function getPostPathOrKey(slug, postKeyByPath) {
 
 module.exports.buildPostPath = buildPostPath;
 module.exports.getPostTemplate = getPostTemplate;
+module.exports.setOfPostsBlacklisted = setOfPostsBlacklisted;

@@ -42,23 +42,23 @@ const buildPostSlug = function buildPostSlug(filePath) {
 
 /**
  * Returns true if the post node is enabled.
- * A post in draft mode with the gatsby environment in "PROD" and
+ * A post in draft mode with the gatsby environment in "PROD" or
  * a mismatch in the specified post version with gatsby content version will result in a false value.
  *
- * @param draft
+ * @param draftExists
  * @param version
  * @returns {boolean}
  * @constructor
  */
-const isPostNodeEnabled = function isPostNodeEnabled(draft, version) {
+const isPostNodeEnabled = function isPostNodeEnabled(draftExists, version) {
 
-    /* Post should not be enabled if draft mode is true and environment is "PROD". */
-    if ( draft === true && gatsbyEnv === "PROD" ) {
+    /* Post will not be enabled if draft mode is true and environment is "PROD". */
+    if ( draftExists === true && gatsbyEnv === "PROD" ) {
 
         return false;
     }
 
-    /* Post will be enabled if version exists and correlates with gatsby content version. */
+    /* Post will not be enabled if a specified version does not correlate with gatsby content version. */
     if ( version && version > 0 ) {
 
         return Number(gatsbyContentVersion) === Number(version);
@@ -69,7 +69,7 @@ const isPostNodeEnabled = function isPostNodeEnabled(draft, version) {
 
 /**
  * Returns true if the post node is relevant to the site.
- * Posts include any content and "type" metadata (which will comprise of the metadata pages).
+ * Posts include any content and "type" metadata (which will ultimately build the metadata pages).
  *
  * @param type
  * @param relativeFilePath
