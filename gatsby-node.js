@@ -9,12 +9,12 @@
 const express = require("express");
 const {createFilePath} = require("gatsby-source-filesystem");
 const {buildPostSlug, isPostNodeEnabled, isPostNodeFeatured} = require("./src/utils/node/create-node.service");
-const {buildPostPath, getPostTemplate} = require("./src/utils/node/create-pages.service");
+const {buildPostPath, getPostTemplate, setOfPostsBlacklisted} = require("./src/utils/node/create-pages.service");
 const {buildMetadataKeysByTitle,
     buildMetadataLinks,
     getMetadataPostNavigation,
     getPostNavigation,
-    removeBlacklistedPosts} = require("./src/utils/node/create-node-navigation.service");
+    removeBlacklistedPosts} = require("./src/utils/node/create-pages-navigation.service");
 const {buildPostKeysByPath} = require("./src/utils/node/site-map.service");
 
 /**
@@ -30,7 +30,7 @@ exports.onCreateNode = ({node, getNode, actions}) => {
     const {internal, relativeFilePath} = node,
         {type} = internal;
 
-    /* Create new node fields for the posts featured. */
+    /* Create new node fields for the posts of interest e.g. markdown pages, metadata schema. */
     if ( isPostNodeFeatured(type, relativeFilePath) ) {
 
         const {frontmatter} = node,
@@ -115,13 +115,6 @@ exports.createPages = async ({graphql, actions}) => {
           }
         }
       }
-      allSitePage {
-        edges {
-          node {
-            path
-          }
-        }
-      }
     }
     `).then(result => {
 
@@ -134,10 +127,16 @@ exports.createPages = async ({graphql, actions}) => {
         const {data} = result,
             {allMarkdownRemark, allMetadataSchemaEntity, allSiteMapYaml} = data;
 
+        /* Create a set of all posts blacklisted i.e. posts not "enabled". */
+        /* Posts blacklisted will be omitted from the navigation structure. */
+        const postsByKeyBlacklisted = setOfPostsBlacklisted(allMarkdownRemark);
+
         /* For all site map documents associate the document key with a path. */
-        /* The postKeysByPath object will shape post navigation outcomes - i.e. the removal of blacklisted posts. */
-        const postsKeysByPath = buildPostKeysByPath(allSiteMapYaml, allMarkdownRemark);
-        const postsSiteMap = removeBlacklistedPosts(postsKeysByPath, allSiteMapYaml);
+        /* This will be used to create the correct path for each post. */
+        const postsKeysByPath = buildPostKeysByPath(allSiteMapYaml, postsByKeyBlacklisted);
+
+        /* Build the site map, and remove any blacklisted posts. */
+        const postsSiteMap = removeBlacklistedPosts(allSiteMapYaml, postsByKeyBlacklisted);
 
         /* For all metadata schema documents associate the document key with a title. */
         const metadataPostsKeysByTitle = buildMetadataKeysByTitle(allMetadataSchemaEntity);
@@ -154,7 +153,7 @@ exports.createPages = async ({graphql, actions}) => {
 
             const path = buildPostPath(slug, postsKeysByPath);
 
-            /* Create a post, if there is a slug and the post is enabled. */
+            /* Create a post, if there is a path and the post is enabled. */
             if ( path && enabled ) {
 
                 const postComponent = getPostTemplate(template);

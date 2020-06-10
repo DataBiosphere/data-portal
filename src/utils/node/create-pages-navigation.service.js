@@ -102,7 +102,7 @@ const buildMetadataLinks = function buildMetadataLinks(metadataPostsKeysByTitle)
 const getMetadataPostNavigation = function getMetadataPostNavigation(postSlug, metaLinks, postsSiteMap) {
 
     /* Get the metadata post's site map. The metadata post will be built into this site map. */
-    const metadataSiteMap = getPostSiteMap("metadata", postsSiteMap);
+    const metadataSiteMap = getPostSiteMapBySectionKey("metadata", postsSiteMap);
 
     return buildPostMetadataNavigation(postSlug, metadataSiteMap, metaLinks);
 };
@@ -121,7 +121,7 @@ const getPostNavigation = function getPostNavigation(postSlug, postsSiteMap, met
     const postSectionKey = getPostSectionKey(postSlug);
 
     /* Get the post's site map. */
-    const postSiteMap = getPostSiteMap(postSectionKey, postsSiteMap);
+    const postSiteMap = getPostSiteMapBySectionKey(postSectionKey, postsSiteMap);
 
     /* Build the post's navigation. */
     return buildPostNavigation(postSlug, postSiteMap, metaLinks);
@@ -130,11 +130,11 @@ const getPostNavigation = function getPostNavigation(postSlug, postsSiteMap, met
 /**
  * Removes any blacklisted posts from the site map.
  *
- * @param postsKeysByPath
  * @param siteMapYAML
+ * @param postsByKeyBlacklisted
  * @returns {Array}
  */
-const removeBlacklistedPosts = function removeBlacklistedPosts(postsKeysByPath, siteMapYAML) {
+const removeBlacklistedPosts = function removeBlacklistedPosts(siteMapYAML, postsByKeyBlacklisted) {
 
     const siteMapNodes = siteMapYAML.edges.map(e => e.node);
 
@@ -144,19 +144,14 @@ const removeBlacklistedPosts = function removeBlacklistedPosts(postsKeysByPath, 
 
             tab.primaryLinks = tab.primaryLinks.flatMap(pLink => {
 
-                /* Remove blacklisted secondary links. */
+                /* Keep secondary links if they are not blacklisted. */
                 if ( pLink.secondaryLinks ) {
 
-                    pLink.secondaryLinks = pLink.secondaryLinks.flatMap(sLink => postsKeysByPath.has(sLink.key) ? sLink : []);
+                    pLink.secondaryLinks = pLink.secondaryLinks.flatMap(sLink => getWhiteListedLink(sLink, postsByKeyBlacklisted));
                 }
 
-                /* Remove blacklisted primary links. */
-                if ( postsKeysByPath.has(pLink.key) ) {
-
-                    return pLink;
-                }
-
-                return [];
+                /* Keep primary links if they are not blacklisted. */
+                return getWhiteListedLink(pLink, postsByKeyBlacklisted);
             });
 
             /* Remove tab, if no primary links. */
@@ -281,12 +276,12 @@ function buildPostNavigation(postSlug, postSiteMap, metaLinks) {
         return {}
     }
 
-    /* Post links. */
+    /* Post links - post's site map links. */
     const siteMapLinks = buildPostLinks(postSlug, postTab);
 
     let postLinks = siteMapLinks;
 
-    /* Concatenate metadata links to the site map links, if the post's tab is "dictionary". */
+    /* Concatenate metadata links to the post's site map links, if the post's tab is "dictionary". */
     if ( postTabKey === "dictionary" ) {
 
         postLinks = siteMapLinks.concat(metaLinks);
@@ -426,12 +421,29 @@ function getPostTabKey(slug) {
  * @param postsSiteMap
  * @returns {T}
  */
-function getPostSiteMap(sectionKey, postsSiteMap) {
+function getPostSiteMapBySectionKey(sectionKey, postsSiteMap) {
 
     if ( postsSiteMap ) {
 
         return postsSiteMap.find(section => section.key === sectionKey);
     }
+}
+
+/**
+ * Returns the link if it isn't blacklisted.
+ *
+ * @param link
+ * @param postsByKeyBlacklisted
+ * @returns {*}
+ */
+function getWhiteListedLink(link, postsByKeyBlacklisted) {
+
+    if ( postsByKeyBlacklisted.has(link.key) ) {
+
+        return [];
+    }
+
+    return link;
 }
 
 /**

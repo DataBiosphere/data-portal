@@ -39,7 +39,7 @@ class Nav extends React.Component {
 	getNavClassName = (nav) => {
 
 		active = nav.active;
-		expanded = nav.sLinks ? nav.active || nav.sLinks.some(sLink => sLink.active) : false;
+		expanded = nav.sLinks && nav.sLinks.length > 0 ? nav.active || nav.sLinks.some(sLink => sLink.active) : false;
 
 		return classNames({
 			[compStyles.expanded]: expanded,

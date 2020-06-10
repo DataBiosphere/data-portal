@@ -10,7 +10,7 @@ Once submitted to the Human Cell Atlas, your data will be processed and made ava
  
 ## Searchable in the HCA Data Browser
 
-Your raw data and metadata will be searchable in the [HCA Data Browser](/explore/projects) immediately after submission.
+Your raw data and metadata will be searchable in the <link-to-browser relativeLink="/projects">HCA Data Browser</link-to-browser> immediately after submission.
 
 ## Processed by the Data Processing Pipelines
 
