@@ -80,7 +80,7 @@ const isPostNodeFeatured = function isPostNodeFeatured(type, relativeFilePath) {
     const fileMetadataType = relativeFilePath && relativeFilePath.includes("/type/");
 
     const contentFeatured = type === "MarkdownRemark";
-    const metadataFeatured = type === "MetadataSchemaEntity" && fileMetadataType;
+    const metadataFeatured = (type === "MetadataSchemaEntity") && fileMetadataType;
 
     return contentFeatured || metadataFeatured;
 };

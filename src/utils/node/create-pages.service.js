@@ -55,12 +55,14 @@ const getPostTemplate = function getPostTemplate(templateName) {
  */
 const setOfPostsBlacklisted = function setOfPostsBlacklisted(markdownRemark) {
 
-    return markdownRemark.edges.map(e => e.node).reduce((acc, node) => {
+    return markdownRemark.edges
+        .map(e => e.node)
+        .reduce((acc, node) => {
 
         const {fields} = node,
             {enabled, slug} = fields;
 
-        if ( enabled === false ) {
+        if ( !enabled ) {
 
             acc.add(slug);
         }

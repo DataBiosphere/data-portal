@@ -16,51 +16,56 @@
  */
 const buildPostKeysByPath = function buildPostKeysByPath(siteMapYAML, postsByKeyBlacklisted) {
 
-    const siteMap = siteMapYAML.edges.map(n => n.node);
-
     /* Build the site-map object. */
-    return siteMap.reduce((acc, section) => {
+    return siteMapYAML.edges
+        .map(n => n.node)
+        .reduce((sectionAcc, section) => {
 
         const sectionTabs = section.tabs;
 
         if ( sectionTabs ) {
 
-            return sectionTabs.reduce((acc, tab) => {
+            return sectionTabs.reduce((tabAcc, tab) => {
 
                 const primaryLinks = tab.primaryLinks;
 
-                return primaryLinks.reduce((acc, pLink) => {
+                return primaryLinks.reduce((primaryAcc, pLink) => {
 
-                    setPostKeyValuePair(acc, pLink, postsByKeyBlacklisted);
+                    if ( !postsByKeyBlacklisted.has(pLink.key) ) {
+
+                        setPostKeyValuePair(primaryAcc, pLink);
+                    }
 
                     const secondaryLinks = pLink.secondaryLinks;
 
                     if ( secondaryLinks ) {
 
-                        secondaryLinks.forEach(sLink => setPostKeyValuePair(acc, sLink, postsByKeyBlacklisted));
+                        secondaryLinks.forEach(sLink => {
+
+                            if ( !postsByKeyBlacklisted.has(sLink.key) ) {
+
+                                setPostKeyValuePair(primaryAcc, sLink)
+                            }
+                        });
                     }
-                    return acc;
-                }, acc);
-            }, acc);
+                    return primaryAcc;
+                }, tabAcc);
+            }, sectionAcc);
         }
-        return acc;
+        return sectionAcc;
         }, new Map());
 };
 
 /**
- * Returns a post key value pair, if the post is not blacklisted.
+ * Returns a post key value pair.
  * The key is the site map document key and value is the site map document path or key.
  *
  * @param acc
  * @param doc
- * @param postsByKeyBlacklisted
  */
-function setPostKeyValuePair(acc, doc, postsByKeyBlacklisted) {
+function setPostKeyValuePair(acc, doc) {
 
-    if ( !postsByKeyBlacklisted.has(doc.key) ) {
-
-        acc.set(doc.key, doc.path || doc.key);
-    }
+    acc.set(doc.key, doc.path || doc.key);
 }
 
 module.exports.buildPostKeysByPath = buildPostKeysByPath;
