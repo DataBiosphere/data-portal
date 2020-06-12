@@ -17,7 +17,7 @@ If you would like to know more about how these release files were generated, ple
 ## What are the release files?
 Descriptions of all the March 2020 Release files can be found in the table below. Each Release dataset has a unique Dataset ID which is listed on the March 2020 Release page in the “Dataset” column. This ID is used as a prefix for all Release dataset files. 
 
-Some March 2020 Release files are used for interactive visualization in Single Cell Portal (any file with a .scp demarcation). These files are only available in [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release) (SCP) and not on the HCA [Data Coordination Platform](https://data.humancellatlas.org/) (DCP). 
+Some March 2020 Release files are used for interactive visualization in Single Cell Portal (any file with a .scp demarcation). These files are only available in [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release) (SCP) and not on the HCA [Data Coordination Platform](/) (DCP).
 
 | File name | File location: DCP and/or SCP | Description | Format | 
 | --- | --- | --- | --- |
@@ -143,12 +143,12 @@ You can visualize or annotate DCP Release files by either using the existing Mar
 #### 1. Navigate to [Single Cell Portal](https://singlecell.broadinstitute.org/single_cell) and login.
 
 #### 2. Go to the profile drop-down menu and select Add Study.
-![image](_images/13_SCP_add_study.png)
+![image](../../_images/13_SCP_add_study.png)
 
 #### 3. Select a unique name for the study page and billing information. 
 If you want to import files from an existing Terra workspace, the billing information must match the billing information used on Terra. 
 
-![image](_images/14_SCP_new_study.png)
+![image](../../_images/14_SCP_new_study.png)
 
 #### 4. If you wish to import Terra workspace files, Select Yes for using an existing Terra workspace.
 
@@ -156,7 +156,7 @@ If you want to import files from an existing Terra workspace, the billing inform
 For the 2020-Mar-Landscape-Adult-Liver-10x example dataset used in the [analysis tutorial](replicating-the-release-analysis.md), you would type the name “2020-Mar-Landscape-Adult-Liver-10x”.
 
 #### 6. Scroll to the bottom of the page and select Create Study.
-![image](_images/15_Create_study.png)
+![image](../../_images/15_Create_study.png)
 
 #### 7. If using an existing Terra workspace, you will be prompted to select the files you would like to import. 
 
@@ -189,13 +189,13 @@ Each March 2020 Release dataset has a Single Cell Portal study page where you ca
 To visualize the annotated cells for a Release dataset, go to the Explore tab of the Single Cell Portal study and follow the instructions below:
 
 #### 1. Select the View Options gear icon in the upper right corner.
-![image](_images/17_SCP_explore_view_options.png)
+![image](../../_images/17_SCP_explore_view_options.png)
 
 #### 2. Open the Select Annotations drop-down menu.
-![image](_images/18_SCP_Select_annotation_v2.png)
+![image](../../_images/18_SCP_Select_annotation_v2.png)
 
 #### 3. Choose either `annotated_cell_identity.text` or `annotated_cell_identity.ontology_label`. 
-![image](_images/19_cell_type_annotations.png).
+![image](../../_images/19_cell_type_annotations.png).
 
 The `annotated_cell_identity.text` option will list the cell types defined by the project contributors. The `annotated_cell_identity.ontology_label` will list cell types that have been harmonized using ontology services.
 
@@ -204,9 +204,9 @@ The March 2020 Release offers a Global Gene Search option using Single Cell Port
 #### 1. Go to the [Single Cell Portal HCA Release](https://singlecell.broadinstitute.org/single_cell?scpbr=human-cell-atlas-march-2020-release) page.
 When you enter the page, you will be defaulted to the Search Studies tab of the landing page. 
 #### 2. Select the Search Genes tab.
-![image](_images/20_SCP_Release_page.png)
+![image](../../_images/20_SCP_Release_page.png)
 #### 3. Type in the gene of interest. 
-![image](_images/21_tmem119_search.png)
+![image](../../_images/21_tmem119_search.png)
 At the top of the search, the number of datasets that have a positive match for the gene will appear. Below the search, a graphical display of cell clusters containing the gene of interest will display for all datasets containing the gene. 
 
 ## Next steps
