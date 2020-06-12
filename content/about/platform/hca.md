@@ -8,7 +8,7 @@ The Human Cell Atlas (HCA) is a collaborative community of international scienti
 
 The HCA registry has more than one thousand member scientists from hundreds of institutions around the world. The project is steered and governed by an Organizing Committee, co-chaired by Aviv Regev and Sarah Teichmann.
 
-To learn more about the HCA, visit https://www.humancellatlas.org/.
+To learn more about the HCA, visit <https://www.humancellatlas.org>.
 
-To join the HCA community, you can register on this page: https://www.humancellatlas.org/joinHCA
+To join the HCA community, you can register on this page: <https://www.humancellatlas.org/join-hca>
 

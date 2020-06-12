@@ -45,7 +45,7 @@ For more information about how to use the Dockstore, see the [Dockstore document
 Step one: finding BAM files with the HCA Data Explorer
 ------------------------------------------------------
 
-You can use the [HCA Data Explorer][explorer] to find data to export to Terra.
+You can use the <link-to-browser relativelink="/projects">HCA Data Explorer</link-to-browser> to find data to export to Terra.
 The Data Explorer lists projects with data available for download from the Data
 Store and lets you filter the data for a number of attributes.
 
@@ -147,8 +147,7 @@ run the Jupyter notebooks in that repository, including:
 
   [dcv]: <https://github.com/HumanCellAtlas/data-consumer-vignettes>
   [jupyterlab]: <https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906>
-  [quick-start-guide]: <https://data.humancellatlas.org/guides/quick-start-guide>
-  [explorer]: <https://data.humancellatlas.org/explore/projects>
+  [quick-start-guide]: </guides/quick-start-guide>
   [terra]: <https://terra.bio>
   [terra-support]: <https://support.terra.bio/hc/en-us>
   [terra-register]: <https://support.terra.bio/hc/en-us/articles/360028235911-How-to-register-for-a-Terra-account>

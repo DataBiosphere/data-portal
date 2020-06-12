@@ -93,7 +93,7 @@ Commonly used contractions like “don’t”, “it’s”, “isn’t”, “d
 
 * Each sentence, even a sentence fragment, should start with a capital letter and end with a period.
 
-* Keep paragraph size to 3-4 sentences OR LESS. Add subheadings to break up longer paragraphs, for ease of reading on the web. This page is a great example of using subheadings: https://dev.data.humancellatlas.org/about/platform/dcp/ingest-service
+* Keep paragraph size to 3-4 sentences OR LESS. Add subheadings to break up longer paragraphs, for ease of reading on the web.
 
 ### Graphics and Color
 * Make sure that the colors in your graphics are color-blind friendly.  There are many helpful articles online about choosing the best colors; for example, [How to Optimize Charts For Color Blind Readers Using Color Blind Friendly Palettes](https://venngage.com/blog/color-blind-friendly-palette/)

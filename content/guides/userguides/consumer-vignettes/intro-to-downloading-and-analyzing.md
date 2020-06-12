@@ -21,7 +21,7 @@ tutorials:
 
 ## Step one: finding BAM files with the HCA Data Explorer
 
-You can use the [HCA Data Explorer][explorer] to find data to download using
+You can use the <link-to-browser relativelink="/projects">HCA Data Explorer</link-to-browser> to find data to download using
 the HCA CLI tools. The Data Explorer lists projects with data available
 for download from the Data Store and lets you filter the data for a number of
 attributes.
@@ -112,7 +112,6 @@ There are many different ways to launch Jupyter Notebooks including:
 
 
   [login]: https://github.com/HumanCellAtlas/data-consumer-vignettes/blob/master/Login%20to%20the%20DSS/Log%20In.ipynb
-  [explorer]: https://data.humancellatlas.org/explore/projects
   [dcv]: https://github.com/HumanCellAtlas/data-consumer-vignettes
   [download-bam]: https://github.com/HumanCellAtlas/data-consumer-vignettes/tree/master/Download%20Any%20BAM%20File
   [pysam]: https://pysam.readthedocs.io/en/latest/api.html

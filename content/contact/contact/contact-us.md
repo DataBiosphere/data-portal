@@ -14,7 +14,7 @@ Find something that’s not working right?  Have questions about the Data Portal
 
 ## Register with the HCA
 
-Register with the Human Cell Atlas to find collaborators and stay up-to-date about news and events.  [Register with the HCA](https://www.humancellatlas.org/joinHCA).
+Register with the Human Cell Atlas to find collaborators and stay up-to-date about news and events.  [Register with the HCA](https://www.humancellatlas.org/join-hca).
 
 ## Contribute to the HCA
 

@@ -22,7 +22,7 @@ To reference the image we use markdown like:
 ![Cell Image](../_images/jumbotron-cell-mobile.png "That Cell!")
 ```
 
-Note the `../images/` preceding the image name. This is required to tell the CMS where the image is.
+Note the `../_images/` preceding the image name. This is required to tell the CMS where the image is.
 
 This renders like:
 
