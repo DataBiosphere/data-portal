@@ -14,7 +14,15 @@
  */
 const buildMetadataKeysByTitle = function buildMetadataKeysByTitle(metadataSchema) {
 
-    const metadataNodes = metadataSchema.edges.map(n => n.node);
+    const metadataNodes = metadataSchema.edges
+        .map(n => n.node)
+        .sort(function(node0, node1) {
+
+            const title0 = node0.title.toLowerCase();
+            const title1 = node1.title.toLowerCase();
+
+            return compareDataValues(title0, title1);
+        });
 
     return metadataNodes.reduce((acc, node) => {
 
@@ -48,13 +56,7 @@ const buildMetadataLinks = function buildMetadataLinks(metadataPostsKeysByTitle)
     /* Sort the primary link keys alphabetically. */
     const sortedPrimaryLinks = [...primaryLinks].sort(function (link0, link1) {
 
-        if (link0 < link1) {
-            return -1;
-        }
-        if (link0 > link1) {
-            return 1;
-        }
-        return 0;
+        return compareDataValues(link0, link1);
     });
 
     /* Build the primary and secondary links. */
@@ -344,6 +346,29 @@ function buildPostTabs(tabKey, siteMap) {
             return acc.concat(postTab);
         }
     }, []);
+}
+
+/**
+ * A simple comparison between two variables, returning a value to indicate an order of the variables in relation to each other.
+ * Used by the sort function.
+ *
+ * @param value0
+ * @param value1
+ * @returns {number}
+ */
+function compareDataValues(value0, value1) {
+
+    if ( value0 < value1 ) {
+
+        return -1;
+    }
+
+    if ( value0 > value1) {
+
+        return 1;
+    }
+
+    return 0;
 }
 
 /**
