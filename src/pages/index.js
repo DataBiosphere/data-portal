@@ -94,7 +94,7 @@ class IndexPage extends React.Component {
 	render() {
 		const releaseVisible = ReleaseService.isReleaseVisible();
 		const description = 'Community generated, multi-omic, open data processed by standardized pipelines';
-		const pageTitle = 'Mapping the human body at the cellular level';
+		const pageTitle = 'Mapping the Human Body at the Cellular Level';
 		return (
 			<Layout description={description} healthy={this.state.healthy} homePage={true} pageTitle={pageTitle}>
 				<main className={compStyles.main}>
@@ -102,8 +102,8 @@ class IndexPage extends React.Component {
 						<div
 							className={classNames(compStyles.sectionInner, compStyles.s)}>
 							<h1 className={fontStyles.headline}>
-								<span>Mapping the human body </span>
-								<span>at the cellular level</span>
+								<span>Mapping the Human Body </span>
+								<span>at the Cellular Level</span>
 							</h1>
 							<h2 className={fontStyles.subhead}>
 								<span>Community generated, <span
