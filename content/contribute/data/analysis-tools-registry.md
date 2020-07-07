@@ -2,6 +2,7 @@
 path: "/contribute/data/analysis-tools-registry"
 date: "2019-02-01"
 title: "Contributing to the Analysis Tools Registry"
+description: "The Analysis Tools Registry lists portals, methods packages, and visualization packages suitable for working with HCA DCP data."
 ---
 
 # Contributing to the Analysis Tools Registry

@@ -2,6 +2,7 @@
 path: "/contact/contact/contact-us"
 date: "2018-05-03"
 title: "Contact Us"
+description: "Get involved to give us feedback, ask questions, and learn about the newest updates to the HCA Data Portal."
 ---
 
 # Contact Us

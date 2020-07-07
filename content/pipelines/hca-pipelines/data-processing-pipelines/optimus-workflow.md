@@ -2,6 +2,7 @@
 path: "/pipelines/hca-pipelines/data-processing-pipelines/optimus-workflow"
 date: "2018-05-03"
 title: "Optimus"
+description: "Overview of the HCA DCP Optimus analysis workflow."
 ---
 
 # Introduction to the Optimus Workflow

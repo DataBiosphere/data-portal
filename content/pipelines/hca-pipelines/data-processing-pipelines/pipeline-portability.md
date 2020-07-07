@@ -2,6 +2,7 @@
 path: "/pipelines/hca-pipelines/data-processing-pipelines/pipeline-portability"
 date: "2018-07-12"
 title: "Data Processing Pipeline Portability"
+description: "Overview of the data processing pipeline portability in the HCA DCP."
 ---
 
 # Data Processing Pipeline Portability

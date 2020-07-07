@@ -2,6 +2,7 @@
 path: "/pipelines/hca-pipelines/data-processing-pipelines/qc-metrics"
 date: "2018-05-03"
 title: "Data Processing Pipelines QC Metrics"
+description: "Overview of the quality control metrics used to evaluate data quality for each data processing pipeline in the HCA DCP."
 ---
 
 # Data Processing Pipelines QC Metrics

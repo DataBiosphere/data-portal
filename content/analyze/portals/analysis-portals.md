@@ -2,6 +2,7 @@
 path: "/analyze/portals/analysis-portals"
 date: "2018-05-03"
 title: "Analysis Portals"
+description: "Analysis portals providing a human-friendly UI in a web or native app to search and explore biological data."
 componentName: "analyze"
 linked:
     - ./analysis-portals/asap.md

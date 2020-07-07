@@ -2,6 +2,7 @@
 path: "/analyze/methods/methods-packages"
 date: "2018-05-03"
 title: "Methods Packages"
+description: "Methods packages for performing analyses involving computational biology approaches for analyzing single-cell data."
 componentName: "analyze"
 linked:
     - ./methods-packages/infer.md
@@ -14,7 +15,7 @@ linked:
 
 #  Methods Packages
 
-Methods packages listed below are tools for performing analyses involving computational biology approaches for analyzing single cell data. Method software is pre-installed in container images. Registry methods can be called programmatically for easy integration into portals. These methods provide domain-specific ways to analyze biological data produced by Human Cell Atlas.
+Methods packages listed below are tools for performing analyses involving computational biology approaches for analyzing single-cell data. Method software is pre-installed in container images. Registry methods can be called programmatically for easy integration into portals. These methods provide domain-specific ways to analyze biological data produced by Human Cell Atlas.
 
 These solutions are built by third parties, and fostered by the HCA DCP.
 

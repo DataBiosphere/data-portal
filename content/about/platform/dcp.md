@@ -1,6 +1,7 @@
 ---
 date: "2018-05-03"
 title: "About the Data Coordination Platform"
+description: "The Human Cell Atlas Data Coordination Platform (HCA DCP) is an open source, cloud-based platform developed to organize, standardize, and make accessible the data that constitute the Human Cell Atlas."
 draft: false
 ---
 

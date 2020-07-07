@@ -2,6 +2,7 @@
 path: "/document/creating-content/creating-links"
 date: "2018-05-30"
 title: "Creating Links"
+description: "How to create links in the HCA Data Portal."
 ---
 
 # Creating Links in Markdown

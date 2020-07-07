@@ -2,6 +2,7 @@
 path: "/contact/contact/join-the-discussion"
 date: "2018-05-03"
 title: "Join the Discussion"
+description: "The Human Cell Atlas is a community-driven effort. There are many opportunities to get involved."
 ---
 
 # Join the Discussion

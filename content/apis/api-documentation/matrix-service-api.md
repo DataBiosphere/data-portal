@@ -2,6 +2,7 @@
 path: "/apis/api-documentation/matrix-service-api"
 date: "2019-02-28"
 title: "Matrix Service API"
+description: "The Matrix Service provides an interface to aggregrate, query and access gene expression matrices stored in the HCA DCP."
 ---
 
 # Matrix Service API

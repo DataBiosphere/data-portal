@@ -3,6 +3,7 @@ path: "/apis/api-documentation/ingest-broker-development-guide"
 date: "2018-05-03"
 title: "Ingest Broker Development Guide"
 subTitle: "General guidelines for developing brokers for the Ingest API."
+description: "The Ingestion Service provides a programmatic API for submitting data to the HCA DCP."
 ---
 
 # Ingest API

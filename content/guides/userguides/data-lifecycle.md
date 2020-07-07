@@ -2,6 +2,7 @@
 path: "/guides/userguides/data-lifecycle"
 date: "2018-05-03"
 title: "Data Lifecycle"
+description: "A description of the general process of data flow through the components of the DCP."
 ---
 
 # Data Lifecycle

@@ -3,6 +3,7 @@ path: "/guides/userguides/consumer-vignettes/accessing-hca-data-in-a-jupyter-not
 date: "2019-05-14"
 title: "Accessing HCA Data in a Jupyter Notebook"
 subTitle: ""
+description: "This tutorial will walk you through the process of accessing HCA data in a Jupyter Notebook."
 ---
 
 # Accessing HCA Data in a Jupyter Notebook

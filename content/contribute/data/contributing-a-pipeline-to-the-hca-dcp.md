@@ -2,6 +2,7 @@
 path: "/contribute/data/contributing-a-pipeline-to-the-hca-dcp"
 date: "2018-05-03"
 title: "Contributing a Pipeline to the HCA DCP"
+description: "Overview of the analysis pipeline submission process for the HCA DCP."
 ---
 
 # Contributing a Pipeline to the HCA DCP

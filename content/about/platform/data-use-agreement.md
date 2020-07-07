@@ -2,6 +2,7 @@
 path: "/about/platform/data-use-agreement"
 date: "2018-05-03"
 title: "Data Use Agreement"
+description: "Data Use Agreement for the HCA DCP."
 subTitle: ""
 ---
 

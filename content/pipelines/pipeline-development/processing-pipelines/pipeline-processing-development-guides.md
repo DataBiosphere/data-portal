@@ -3,6 +3,7 @@ path: "/pipelines/pipeline-development/processing-pipelines/pipeline-processing-
 date: "2018-05-03"
 title: "Pipeline Processing Development Guides"
 subTitle: "Information and resources to help you produce and optimize single cell data processing pipelines."
+description: "Overview of pipeline processing development guides of the HCA DCP."
 ---
 
 # Pipeline Processing Development Guides

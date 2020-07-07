@@ -2,6 +2,7 @@
 path: "/contribute/data/analysis-tools-registry/registry-standards"
 date: "2019-02-01"
 title: "Registry Standards"
+description: "HCA DCP Analysis Tools Registry standards ensure reusability and ease deployment of methods and visualizations for analyses of Human Cell Atlas datasets for portals and others."
 ---
 
 # Analysis Tools Registry Standards Overview

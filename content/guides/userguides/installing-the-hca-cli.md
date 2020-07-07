@@ -2,6 +2,7 @@
 path: "/guides/userguides/installing-the-hca-cli"
 date: "2018-05-30"
 title: "Installing the HCA CLI"
+description: "Overview of installing the HCA Command Line Interface."
 ---
 
 # Installing the HCA Command Line Interface (HCA CLI)

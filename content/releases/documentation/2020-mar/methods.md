@@ -2,6 +2,7 @@
 path: "/releases/documentation/2020-mar/methods"
 date: "2020-03-31"
 title: "Methods"
+description: "This document details the Human Cell Atlas (HCA) Data Coordination Platform’s (DCP) methods for cell clustering, differential expression analyses, and data visualization used in the HCA March 2020 Data Release."
 draft: true
 ---
 

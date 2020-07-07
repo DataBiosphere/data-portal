@@ -2,6 +2,7 @@
 path: "/analyze/visualization/visualization-packages"
 date: "2018-05-03"
 title: "Visualization Packages"
+description: "JavaScript visualization packages that enable analysis through interactive data exploration on the web."
 componentName: "analyze"
 linked:
     - ./visualization-packages/anatomogram.md

@@ -2,6 +2,7 @@
 path: "/contribute/data/contributing-to-hca/contributing-expect-prepare"
 date: "2019-04-29"
 title: "Data Submission Process"
+description: "Overview of the HCA DCP data submission process."
 ---
 
 # Data Submission Process

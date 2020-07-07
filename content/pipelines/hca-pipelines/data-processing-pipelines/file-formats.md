@@ -2,6 +2,7 @@
 path: "/pipelines/hca-pipelines/data-processing-pipelines/file-formats"
 date: "2018-05-03"
 title: "Data Processing Pipelines File Formats"
+description: "Overview of the file formats used by the data processing pipelines of the HCA DCP."
 ---
 
 # File Formats of the Data Processing Pipelines Service

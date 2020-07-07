@@ -2,6 +2,7 @@
 path: "/pipelines/hca-pipelines/data-processing-pipelines/smart-seq2-workflow"
 date: "2018-05-03"
 title: "Smart-seq2"
+description: "Overview of Smart-seq2 scRNA sequencing in the HCA DCP."
 ---
 
 # Description of Smart-seq2 scRNA Sequencing

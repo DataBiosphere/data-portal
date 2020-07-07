@@ -2,6 +2,7 @@
 path: "/releases/documentation/2020-mar/working-with-release-files"
 date: "2018-05-03"
 title: "Working with Release Files"
+description: "This guide focuses on importing release files into Python and R-supported software such as Pegasus, Seurat, and SCANPY, in addition to visualizing and annotating files in Single Cell Portal."
 draft: true
 ---
 

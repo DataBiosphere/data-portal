@@ -2,6 +2,7 @@
 path: "/metadata/dictionary/metadata-dictionary"
 date: "2018-05-30"
 title: "Metadata Dictionary"
+description: "A list of the current set of metadata fields used to describe datasets in the Human Cell Atlas."
 componentName: "metadata"
 ---
 

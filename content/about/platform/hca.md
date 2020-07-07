@@ -1,6 +1,7 @@
 ---
 date: "2018-05-03"
 title: "About the Human Cell Atlas"
+description: "Our mission is to create comprehensive reference maps of all the cells in the human body as a basis for both understanding human health and diagnosing, monitoring, and treating disease."
 ---
 
 # About the Human Cell Atlas

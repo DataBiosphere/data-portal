@@ -2,6 +2,7 @@
 path: "/pipelines/pipeline-development/processing-pipelines/testing-pipelines"
 date: "2018-07-12"
 title: "Pipeline Testing Guide"
+description: "Overview of testing pipelines in the Portability Service of the HCA DCP."
 ---
 
 # How do I test my pipeline in the Portability Service?
