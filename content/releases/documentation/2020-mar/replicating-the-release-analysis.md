@@ -2,6 +2,7 @@
 path: "/releases/documentation/2020-mar/replicating-the-release-analysis"
 date: "2018-05-03"
 title: "Replicating the Release Analysis"
+description: "This tutorial covers how to process a gene matrix (in loom format) for clustering, differential expression, and visualization using the Cumulus workflow in a Terra workspace."
 draft: true
 ---
 

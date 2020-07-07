@@ -3,6 +3,7 @@ path: "/guides/userguides/consumer-vignettes/intro-to-downloading-and-analyzing"
 date: "2019-08-19"
 title: "Introduction to Downloading and Analyzing HCA Data"
 subTitle: ""
+description: "This tutorial will walk you through downloading and analyzing HCA Data."
 ---
 
 # Introduction to Downloading and Analyzing HCA Data

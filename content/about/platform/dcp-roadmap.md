@@ -2,6 +2,7 @@
 path: "/about/platform/dcp-roadmap"
 date: "2019-12-03"
 title: "DCP Roadmap"
+description: "The Data Coordination Platform’s (DCP) purpose is to support the creation of the Human Cell Atlas by providing a cloud-based platform for researchers to share, organize, analyze, and interrogate single-cell data, as described in five Strategic Aims."
 draft: true
 ---
 

@@ -2,6 +2,7 @@
 path: "/contribute/data/contributing-to-hca/contributing-data-processing-results"
 date: "2019-04-29"
 title: "Data Processing and Results"
+description: "Overview of processing of data submissions."
 ---
 
 # Data Processing and Results

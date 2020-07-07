@@ -2,6 +2,7 @@
 path: "/document/creating-content/using-images"
 date: "2018-05-30"
 title: "Using Images"
+description: "How to use images in the HCA Data Portal."
 ---
 
 # Using Images

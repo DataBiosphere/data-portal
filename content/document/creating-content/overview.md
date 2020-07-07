@@ -2,13 +2,14 @@
 path: "/document/creating-content/overview"
 date: "2018-05-30"
 title: "Overview"
+description: "Overview of how to create content in the HCA Data Portal."
 ---
 
 # Overview
 
 The HCA Data Portal is a [JAMStack](https://jamstack.org/) style site that uses [Gatsby.js](https://www.gatsbyjs.org/ ) as the static site generator.
 
-In a JAMStack site, rather than mixing contet with a style template on every request to a webserver, templates are combined with content during a build step.
+In a JAMStack site, rather than mixing content with a style template on every request to a webserver, templates are combined with content during a build step.
 
 The resulting static web pages are then deployed to an AWS S3 bucket and fronted by the AWS Cloudfront Content Delivery Network.
 

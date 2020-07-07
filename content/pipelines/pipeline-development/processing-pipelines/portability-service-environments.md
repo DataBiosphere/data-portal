@@ -2,6 +2,7 @@
 path: "/pipelines/pipeline-development/processing-pipelines/portability-service-environments"
 date: "2018-07-12"
 title: "Adding an Environment to the Portability Service"
+description: "Overview of adding an environment to the Portability Service of the HCA DCP."
 ---
 
 # Why add an environment to the Portability Service?

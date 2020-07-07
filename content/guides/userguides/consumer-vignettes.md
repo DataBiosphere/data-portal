@@ -3,6 +3,7 @@ path: "/guides/userguides/consumer-vignettes"
 date: "2018-08-14"
 title: "Consumer Vignettes"
 subTitle: "All HCA DCP software has an associated GitHub repository that will include more detailed technical documentation of the software."
+description: "How to find examples of developing against DCP services."
 ---
 
 # How Do I Find Examples of Developing Against DCP Services?

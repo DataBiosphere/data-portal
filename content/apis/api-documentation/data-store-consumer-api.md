@@ -2,6 +2,7 @@
 path: "/apis/api-documentation/data-store-consumer-api"
 date: "2018-05-03"
 title: "Data Store Consumer API"
+description: "Deprecated API: The HCA Data Storage System (DSS) is a replicated data storage system designed for hosting large sets of scientific experimental data on Amazon S3 and Google Storage."
 ---
 
 # Data Store API

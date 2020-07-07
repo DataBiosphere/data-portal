@@ -2,6 +2,7 @@
 path: "/feedback"
 date: "2018-05-03"
 title: "Feedback"
+description: "The Human Cell Atlas Data Coordination Platform team needs your feedback to help us improve and refine the DCP."
 ---
 
 # HCA DCP Feedback

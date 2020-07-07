@@ -2,6 +2,7 @@
 path: "/releases/documentation/2020-mar/overview"
 date: "2020-03-31"
 title: "Overview"
+description: "The March 2020 Data Release includes datasets from all human DCP projects that have been processed using the DCP's standardized pipelines (Optimus or Smart-seq2)."
 draft: true
 ---
 

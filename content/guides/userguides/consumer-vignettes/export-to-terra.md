@@ -3,6 +3,7 @@ path: "/guides/userguides/consumer-vignettes/export-to-terra"
 date: "2019-09-17"
 title: "Exporting HCA Data to Terra"
 subTitle: ""
+description: "This tutorial will walk you through exporting search results from the HCA Data Explorer to Terra."
 ---
 
 Exporting search results from the HCA Data Explorer to Terra

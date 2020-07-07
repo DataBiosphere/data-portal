@@ -2,6 +2,7 @@
 path: "/pipelines/pipeline-development/processing-pipelines/pipeline-best-practices"
 date: "2018-05-03"
 title: "Best Practices for Building Data Processing Pipelines"
+description: "Overview of best practices for building data processing pipelines in the HCA DCP."
 ---
 
 # Best Practices for Building Data Processing Pipelines

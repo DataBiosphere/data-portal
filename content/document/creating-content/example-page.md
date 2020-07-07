@@ -2,6 +2,7 @@
 path: "/document/creating-content/example-page"
 date: "2018-05-30"
 title: "Example Page"
+description: "An example page in the HCA Data Portal."
 ---
 
 # Example Page - the Kitchen Sink

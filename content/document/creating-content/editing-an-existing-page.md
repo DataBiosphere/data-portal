@@ -2,6 +2,7 @@
 path: "/document/creating-content/editing-an-existing-page"
 date: "2018-05-30"
 title: "Editing an Existing Page"
+description: "How to edit an existing page in the HCP Data Portal."
 ---
 
 # Editing an Existing Page Directly in Github

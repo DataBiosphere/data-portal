@@ -3,11 +3,10 @@ path: "/guides/userguides/exploring-projects"
 date: "2018-05-30"
 title: "Exploring Projects"
 draft: false
+description: "Overview of exploring projects in the HCA Data Browser."
 ---
 
-
 # Exploring Projects
-
 
 Projects are a basic unit of data organization in the HCA Data Coordination Platform (HCA DCP). Project contributors contribute raw sequencing and associated [files](/metadata/dictionary/file/sequence_file) along with rich metadata describing:
 

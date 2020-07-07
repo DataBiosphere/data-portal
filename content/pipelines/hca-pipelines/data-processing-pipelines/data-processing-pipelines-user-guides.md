@@ -2,6 +2,7 @@
 path: "/pipelines/hca-pipelines/data-processing-pipelines/data-processing-pipelines-user-guides"
 date: "2018-05-03"
 title: "Overview of Data Processing Pipelines"
+description: "Overview of the data processing pipelines in the HCA DCP."
 ---
 
 # Overview of Data Processing Pipelines

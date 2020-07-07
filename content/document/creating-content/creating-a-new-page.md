@@ -2,6 +2,7 @@
 path: "/document/creating-content/creating-a-new-page"
 date: "2018-05-30"
 title: "Creating a New Page"
+description: "How to create a new page in the HCA Data Portal."
 ---
 
 # Creating a New Page

@@ -2,12 +2,13 @@
 path: "/releases/documentation/2020-mar/acknowledgements"
 date: "2020-03-31"
 title: "Acknowledgements"
+description: "This release represents the work of many people, the dataset contributors who provided both the raw data and the cell type annotation, the release working group who assembled the release data, ran the clustering pipelines and produced the DCP interfaces and the DCP implementation team who built the DCP."
 draft: true
 ---
 
 # Acknowledgements
 
-This release represents the work of many people, the dataset contributors who provided both the raw data and the cell type annotation, the release working group who assembled the release data, ran the clustering pipelines and produced the DCP interfaces and the DCP implementation team who built the DCP
+This release represents the work of many people, the dataset contributors who provided both the raw data and the cell type annotation, the release working group who assembled the release data, ran the clustering pipelines and produced the DCP interfaces and the DCP implementation team who built the DCP.
 
 ## Dataset Contributors
 ### A single-cell transcriptome atlas of the adult human retina

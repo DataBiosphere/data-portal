@@ -2,6 +2,7 @@
 path: "/document/creating-content/content-style-guide"
 date: "2018-05-30"
 title: "Style Guide"
+description: "Overview of the HCA DCP style guide."
 ---
 
 # DCP Content Style Guide

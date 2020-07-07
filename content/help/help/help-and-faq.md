@@ -2,6 +2,7 @@
 path: "/help/help/help-and-faq"
 date: "2018-05-03"
 title: "Get Help"
+description: "If you have questions or issues to report please email data-help@humancellatlas.org."
 ---
 
 # Get Help

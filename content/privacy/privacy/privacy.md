@@ -2,6 +2,7 @@
 path: "/privacy/privacy/privacy"
 date: "2018-05-03"
 title: "Privacy"
+description: "Privacy notice for Human Cell Atlas Data Portal."
 ---
 
 # Privacy Notice for Human Cell Atlas Data Portal Public Website

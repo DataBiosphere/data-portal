@@ -2,6 +2,7 @@
 path: "/guides/userguides/quick-start-guide"
 date: "2018-05-30"
 title: "Quick Start Guide"
+description: "A quick start guide on accessing HCA data and metadata."
 ---
 
 

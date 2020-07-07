@@ -2,6 +2,7 @@
 path: "/pipelines/hca-pipelines/data-processing-pipelines/community-pipeline-3-prime-scrna-seq"
 date: "2018-10-17"
 title: "Community Pipeline: 3' scRNA-seq"
+description: "Overview of the 3' scRNA-seq pipeline."
 ---
 
 # Community Pipeline: 3' scRNA-seq
