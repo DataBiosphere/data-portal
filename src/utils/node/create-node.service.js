@@ -8,7 +8,6 @@
 // Template variables
 const gatsbyContentVersion = process.env.GATSBY_CONTENT_VERSION;
 const gatsbyEnv = process.env.GATSBY_ENV;
-const pathMetadataDictionary = "/metadata/dictionary";
 const pathMetadataRationale = "/metadata/design-principles/rationale";
 const pathMetadataStructure = "/metadata/design-principles/structure";
 
@@ -22,12 +21,6 @@ const buildPostSlug = function buildPostSlug(filePath) {
 
     /* Strip the file path's tailing "/". */
     const slug = filePath.replace(/\/$/, "");
-
-    /* Return the "type" metadata slug */
-    if ( slug.startsWith("/type/") ) {
-
-        return slug.replace("/type", pathMetadataDictionary);
-    }
 
     /* Return the "markdown" slug. */
     switch (slug) {
@@ -80,7 +73,7 @@ const isPostNodeFeatured = function isPostNodeFeatured(type, relativeFilePath) {
     const fileMetadataType = relativeFilePath && relativeFilePath.includes("/type/");
 
     const contentFeatured = type === "MarkdownRemark";
-    const metadataFeatured = (type === "MetadataSchemaEntity") && fileMetadataType;
+    const metadataFeatured = (type === "MetadataType");
 
     return contentFeatured || metadataFeatured;
 };

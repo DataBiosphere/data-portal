@@ -39,16 +39,6 @@
 /* Button - metadata */
 .toggle.metadata {
 	cursor: pointer;
-	margin: 0 0 12px 16px;
+	margin: 0 0 16px 0;
 	min-width: 200px;
-}
-
-/**
- * HCA specific breakpoint
- */
-@media screen and (min-width: 768px) {
-
-	.toggle.metadata {
-		margin: 0 0 16px 0;
-	}
 }

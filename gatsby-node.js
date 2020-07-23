@@ -81,7 +81,7 @@ exports.createPages = async ({graphql, actions}) => {
           }
         }
       }
-      allMetadataSchemaEntity(filter: {schemaType: {eq: "type"}}, sort: {fields: title}) {
+      allMetadataType(sort: {fields: title}) {
         edges {
           node {
             fields {
@@ -125,7 +125,7 @@ exports.createPages = async ({graphql, actions}) => {
         }
 
         const {data} = result,
-            {allMarkdownRemark, allMetadataSchemaEntity, allSiteMapYaml} = data;
+            {allMarkdownRemark, allMetadataType, allSiteMapYaml} = data;
 
         /* Create a set of all posts blacklisted i.e. posts not "enabled". */
         /* Posts blacklisted will be omitted from the navigation structure. */
@@ -139,7 +139,7 @@ exports.createPages = async ({graphql, actions}) => {
         const postsSiteMap = removeBlacklistedPosts(allSiteMapYaml, postsByKeyBlacklisted);
 
         /* For all metadata schema documents associate the document key with a title. */
-        const metadataPostsKeysByTitle = buildMetadataKeysByTitle(allMetadataSchemaEntity);
+        const metadataPostsKeysByTitle = buildMetadataKeysByTitle(allMetadataType);
 
         /* Pre-build the metadata primary and secondary navigation links. */
         const metaLinks = buildMetadataLinks(metadataPostsKeysByTitle);
@@ -173,7 +173,7 @@ exports.createPages = async ({graphql, actions}) => {
         });
 
         /* For each metadata type create a post. */
-        allMetadataSchemaEntity.edges.forEach(({node}) => {
+        allMetadataType.edges.forEach(({node}) => {
 
             /* Find the node's slug. */
             const {fields, id} = node,

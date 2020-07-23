@@ -29,12 +29,17 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 	}
 
 	// We only care about JSON content.
-	if (node.internal.mediaType !== `application/json`) {
+	if ( node.internal.mediaType !== `application/json` ) {
+		return
+	}
+
+	// Remove any gatsby-source-metadata content
+    if ( node.internal.type === "MetadataCore" || node.internal.type === "MetadataType" || node.internal.type === "MetadataProperty" ) {
 		return
 	}
 
 	// We only care about the system status JSON content
-	if (!node.relativePath.includes('config.json')) {
+	if ( !node.relativePath.includes('config.json') ) {
 		return
 	}
 
