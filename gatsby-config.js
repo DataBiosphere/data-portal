@@ -8,7 +8,6 @@
 // Template variables
 let contentPath = `${__dirname}/content`;
 let metadataSchemaDocsPath = `${__dirname}/_metadata-schema/docs`;
-let metadataSchemaJsonPath = `${__dirname}/_metadata-schema/json_schema`;
 let hcaGithubSystemStatusDocsPath = `${__dirname}/humancellatlas.github.io`;
 let yamlPath = `${__dirname}/content`;
 
@@ -17,7 +16,6 @@ if (process.env.GATSBY_ENV == "LOCAL") {
     contentPath = './content';
     yamlPath = './content';
     metadataSchemaDocsPath = '../hca-metadata-schema/docs';
-    metadataSchemaJsonPath = '../hca-metadata-schema/json_schema';
     hcaGithubSystemStatusDocsPath = '../humancellatlas.github.io';
 }
 
@@ -45,6 +43,7 @@ module.exports = {
             },
         },
         `gatsby-plugin-react-svg`,
+        `gatsby-source-metadata`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -65,14 +64,6 @@ module.exports = {
                 path: hcaGithubSystemStatusDocsPath,
                 name: 'status-markdown-pages',
             }
-        },
-        `gatsby-transformer-json-schema`,
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: metadataSchemaJsonPath,
-                name: 'json-schema',
-            },
         },
         `gatsby-transformer-json-system-status`,
         {
@@ -132,7 +123,7 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-autolink-headers`,
                         options: {
-                            offsetY: '-84', // header + 24px, ignores top banner.
+                            offsetY: '84', // header + 24px, ignores top banner.
                         },
                     },
                     {

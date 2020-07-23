@@ -1,0 +1,82 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata property component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Property - container */
+.property {
+    display: inline-block;
+    padding: 0 16px;
+    width: 100%;
+}
+
+/* Property - container - grouped */
+.property.grouped {
+    background-color: var(--black3);
+}
+
+/* Property - container - margin spacing */
+.property.primary {
+    margin-top: 24px;
+}
+
+/* Property - first */
+.property:first-of-type {
+    margin-top: 0;
+}
+
+/* Property - internal container */
+.property > div {
+    display: flex;
+    flex-direction: column;
+    margin: 8px 0;
+}
+
+/* Property - internal container - first grouped */
+.property.primary.grouped > div {
+    margin: 8px 0 16px;
+}
+
+/* Property - <span> */
+.property span {
+    margin: 0;
+}
+
+/* Property type */
+.property .type {
+    color: var(--gray-dark);
+    font-size: 11px;
+    padding-bottom: 8px;
+}
+
+/* Property description */
+.property .description {
+    font-weight: 300;
+    padding: 4px 0;
+}
+
+/* Property description links */
+.property .description a {
+    font: inherit;
+    word-break: break-all;
+}
+
+/* Property example */
+.property .example {
+    padding-bottom: 4px;
+}
+
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 768px) {
+
+    /* Property */
+    .property {
+        padding: 0 8px;
+    }
+}
+
