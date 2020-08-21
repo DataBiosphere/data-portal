@@ -1,0 +1,13 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal footer link component.
+ */
+
+/* Footer link */
+.link {
+    font-weight: 500;
+    margin: 0 16px;
+    text-transform: capitalize;
+}
