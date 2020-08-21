@@ -6,33 +6,40 @@
  */
 
 // Core dependencies
-import Link from 'gatsby-link';
-import React from 'react';
+import Link from "gatsby-link";
+import React from "react";
+
+// App dependencies
+import * as EnvironmentService from "../../utils/environment/environment.service";
 
 // Styles
-import compStyles from './systemStatus.module.css';
-import fontStyles from '../../styles/fontsize.module.css';
-import globalStyles from '../../styles/global.module.css';
+import fontStyles from "../../styles/fontsize.module.css";
+import globalStyles from "../../styles/global.module.css";
+import compStyles from "./systemStatus.module.css";
 
-let classNames = require('classnames');
+let classNames = require("classnames");
 
 class SystemStatus extends React.Component {
 
-	render() {
-		return (
-			<div className={compStyles.systemStatus}>
-				<div className={classNames(globalStyles.bannerWrapper, compStyles.systemStatusWrapper)}>
-					<i className={classNames('material-icons', fontStyles.bgDark)}>warning</i>
-					<div>
-						<p className={classNames(fontStyles.s, fontStyles.bgDark, fontStyles.noMargin)}>One or more
-							of the systems composing the HCA DCP is currently unavailable. Please try
-							again later, or monitor the full system status <Link to='/status'>here</Link>.
-						</p>
-					</div>
-				</div>
-			</div>
-		);
-	}
+    render() {
+        const showStatusLink = !EnvironmentService.isCGLEnvironment();
+        return (
+            <div className={compStyles.systemStatus}>
+                <div className={classNames(globalStyles.bannerWrapper, compStyles.systemStatusWrapper)}>
+                    <i className={classNames("material-icons", fontStyles.bgDark)}>warning</i>
+                    <p className={classNames(fontStyles.s, fontStyles.bgDark)}>
+                        <span>One or more of the systems composing the HCA DCP is currently unavailable. </span>
+                        <span>
+                            <span>Please try again later</span>
+                            {showStatusLink ?
+                                <span>, or monitor the full system status <Link to="/status">here</Link>.</span> :
+                                <span>.</span>}
+                        </span>
+                    </p>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default SystemStatus;
