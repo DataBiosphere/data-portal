@@ -17,7 +17,7 @@ const GATSBY_ENV = process.env.GATSBY_ENV;
  */
 export function getCurrentEnvironment() {
 
-	return GATSBY_ENV;
+    return GATSBY_ENV;
 }
 
 /**
@@ -25,9 +25,21 @@ export function getCurrentEnvironment() {
  */
 export function getCurrentEnvironmentURL() {
 
-	const currentEnvironment = getCurrentEnvironment().toUpperCase();
+    const currentEnvironment = getCurrentEnvironment().toUpperCase();
 
-	return EnvironmentUrl[currentEnvironment];
+    return EnvironmentUrl[currentEnvironment];
+}
+
+/**
+ * Returns true if the current content version is two i.e. i.e. the new “cgl” environment.
+ *
+ * @returns {number}
+ */
+export function isCGLEnvironment() {
+
+    const contentVersion = Number(process.env.GATSBY_CONTENT_VERSION);
+
+    return contentVersion === 2;
 }
 
 /**
@@ -35,13 +47,13 @@ export function getCurrentEnvironmentURL() {
  */
 export function isCurrentEnvironment(environment, localAsDev) {
 
-	// Local is equivalent to dev, if applicable
-	if ( localAsDev && environment === 'DEV' && isLocal() ) {
-		return true;
-	}
+    // Local is equivalent to dev, if applicable
+    if ( localAsDev && environment === "DEV" && isLocal() ) {
+        return true;
+    }
 
-	// Otherwise explicitly check
-	return GATSBY_ENV === environment;
+    // Otherwise explicitly check
+    return GATSBY_ENV === environment;
 }
 
 /**
@@ -49,7 +61,7 @@ export function isCurrentEnvironment(environment, localAsDev) {
  */
 export function isDev() {
 
-	return GATSBY_ENV === 'DEV';
+    return GATSBY_ENV === "DEV";
 }
 
 /**
@@ -57,7 +69,7 @@ export function isDev() {
  */
 export function isLocal() {
 
-	return GATSBY_ENV === 'LOCAL';
+    return GATSBY_ENV === "LOCAL";
 }
 
 /**
@@ -65,7 +77,7 @@ export function isLocal() {
  */
 export function isIntegration() {
 
-	return GATSBY_ENV === 'INTEGRATION';
+    return GATSBY_ENV === "INTEGRATION";
 }
 
 /**
@@ -73,7 +85,7 @@ export function isIntegration() {
  */
 export function isProd() {
 
-	return GATSBY_ENV === 'PROD';
+    return GATSBY_ENV === "PROD";
 }
 
 /**
@@ -81,7 +93,7 @@ export function isProd() {
  */
 export function isStaging() {
 
-	return GATSBY_ENV === 'STAGING';
+    return GATSBY_ENV === "STAGING";
 }
 
 /**
@@ -89,13 +101,13 @@ export function isStaging() {
  */
 export function isUXDev() {
 
-	return GATSBY_ENV === 'UX_DEV';
+    return GATSBY_ENV === "UX_DEV";
 }
 
 /**
- * Returns true if the current environment is either local, dev, ux-dev, integration or staging. 
+ * Returns true if the current environment is either local, dev, ux-dev, integration or staging.
  */
 export function isTestEnvironment() {
 
-	return isLocal() || isDev() || isUXDev() || isIntegration() || isStaging(); 
+    return isLocal() || isDev() || isUXDev() || isIntegration() || isStaging();
 }

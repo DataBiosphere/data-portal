@@ -6,6 +6,7 @@
  */
 
 // App dependencies
+import * as EnvironmentService from "./environment/environment.service";
 import {FooterQuery} from "../hooks/footer-query";
 
 /**
@@ -20,13 +21,18 @@ export function getFooterLinks() {
 
 /**
  * Returns a filtered list of footer links.
- * Are all footer links are returned; however the system status will be filtered when
- * - the gatsby content version is equivalent to version 2 i.e. the new “cgl” environment and
- * - the path is "/status" (system status).
+ * All footer links are returned.
+ * The exception being that system status is removed when the gatsby content version
+ * is equivalent to version 2 i.e. the new “cgl” environment.
  *
  * @returns {boolean}
  */
 function filterFooterLinks(links) {
+
+    if ( !links ) {
+
+        return [];
+    }
 
     return links.filter(link => {
 
@@ -34,11 +40,9 @@ function filterFooterLinks(links) {
 
         if ( path === "/status" ) {
 
-            const contentVersion = process.env.GATSBY_CONTENT_VERSION;
-            const cglEnvExists = Number(contentVersion) === 2;
-
-            return !cglEnvExists;
+            return !EnvironmentService.isCGLEnvironment();
         }
+
         return true;
     })
 }
