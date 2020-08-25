@@ -37,15 +37,17 @@ export function getTOCs(docPath, showAllMetadata) {
  * @param depth
  * @param name
  * @param required
- * @returns {{anchor: *, level: *, name: *, required: boolean}}
+ * @param tocType
+ * @returns {{anchor: string, depth: *, name: *, required: boolean, type: *}}
  */
-function buildTOC(anchor, depth, name, required = true) {
+function buildTOC(anchor, depth, name, required = true, tocType) {
 
     return {
         anchor: `#${anchor}`,
         depth: depth,
         name: name,
-        required: required
+        required: required,
+        type: tocType
     }
 }
 
@@ -61,17 +63,19 @@ function buildTOCsMarkdown(docPath) {
     /* Find the TOC query for the specified path. */
     const tocPage = tocQuery.find(page => page.fields.slug === docPath);
 
-    /* Remove any top level headings. */
-    const headings = tocPage.headings.filter(heading => heading.depth !== 1);
+    /* Filter for <h2> and <h3> headings. */
+    const headings = tocPage.htmlAst.children
+        .filter(child => child.tagName === "h2" || child.tagName === "h3");
 
     /* Return the TOC. */
     return headings.map(heading => {
 
-        const anchor = getAnchor(heading.value);
-        const tocDepth = heading.depth;
-        const tocName = heading.value;
+        const anchor = `${heading.properties.id}`;
+        const tocDepth = Number(heading.tagName.charAt(1));
+        const tocName = heading.children.find(child => child.type === "text").value;
+        const tocType = "docs";
 
-        return buildTOC(anchor, tocDepth, tocName);
+        return buildTOC(anchor, tocDepth, tocName, false, tocType);
     });
 }
 
@@ -97,20 +101,6 @@ function buildTOCsMetadata(docPath, showAllMetadata) {
 }
 
 /**
- * Returns the TOC anchor built from the TOC name.
- *
- * @param name
- * @returns {string}
- */
-function getAnchor(name) {
-
-    const specialCharacters = /[:?.,()]/g;
-    const whiteSpace = /\s/g;
-
-    return name.replace(whiteSpace, "-").replace(specialCharacters, "").toLowerCase();
-}
-
-/**
  * Returns a built TOC, for each property.
  *
  * @param tocProperties
@@ -133,7 +123,7 @@ function getMetadataTOC(tocProperties) {
             tocName = property.label;
         }
 
-        return buildTOC(anchor, tocDepth, tocName, tocRequired);
+        return buildTOC(anchor, tocDepth, tocName, tocRequired, "metadata");
     });
 }
 
