@@ -10,10 +10,7 @@ export const TOCPageQuery = () => {
                 fields {
                   slug
                 }
-                headings {
-                  depth
-                  value
-                }
+                htmlAst
               }
             }
           }

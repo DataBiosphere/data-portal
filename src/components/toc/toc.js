@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import TOCList from "../tocList/tocList";
+import TOCItem from "../tocItem/tocItem";
 import * as TOCService from "../../utils/toc.service";
 
 // Styles
@@ -22,7 +22,7 @@ class TOC extends React.Component {
         return (
             <div className={compStyles.tocs}>
                 <ul>
-                    {tocs ? tocs.map((toc, t) => <TOCList key={t} activeTOC={activeTOC} toc={toc}/>) : null}
+                    {tocs ? tocs.map((toc, t) => <TOCItem key={t} activeTOC={activeTOC} toc={toc}/>) : null}
                 </ul>
             </div>
         );

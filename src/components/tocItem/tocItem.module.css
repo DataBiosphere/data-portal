@@ -2,11 +2,11 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * Style definitions specific to the HCA Data Portal TOC list component.
+ * Style definitions specific to the HCA Data Portal TOC item component.
  */
 @import "../../styles/vars.module.css";
 
-/* TOC list */
+/* TOC item */
 .toc {
     display: flex;
     margin: 0;
