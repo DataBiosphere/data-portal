@@ -363,6 +363,16 @@
         - name: ""
           key: "/feedback/feedback/feedback"
           path: "/feedback"
+- name: "Community Update"
+  key: "community-update"
+  path: "/coming-soon-DCP-2-with-support-for-controlled-access-data"
+  tabs:
+    - name: ""
+      key: "community-update"
+      primaryLinks:
+        - name: ""
+          key: "/community-update/community-update/dcp-2-coming-soon-with-support-for-controlled-access-data"
+          path: "/coming-soon-DCP-2-with-support-for-controlled-access-data"
 - name: "Releases"
   key: "releases"
   path: "/releases/2020-mar"
