@@ -329,7 +329,7 @@
   path: "/privacy"
   position:
     location: "f"
-    order: 1
+    order: 2
   tabs:
     - name: ""
       key: "privacy"
@@ -353,9 +353,6 @@
 - name: "Feedback"
   key: "feedback"
   path: "/feedback"
-  position:
-    location: "f"
-    order: 5
   tabs:
     - name: ""
       key: "feedback"
