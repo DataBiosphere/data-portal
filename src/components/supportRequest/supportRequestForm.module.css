@@ -18,7 +18,7 @@
     position: fixed;
     right: 24px;
     width: 450px;
-    z-index: 2;
+    z-index: 100;
 }
 
 /* Thank you */

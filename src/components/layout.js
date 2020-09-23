@@ -28,23 +28,16 @@ class Layout extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            noScroll: false,
-            supportRequestActive: false
-        };
+        this.state = {noScroll: false};
     }
 
     onMenuOpen = (event) => {
         this.setState({noScroll: !event});
     };
 
-    onToggleSupportRequestForm = (active) => {
-        this.setState({supportRequestActive: active});
-    };
-
     render() {
         const {children, description, docPath, healthy, homePage, homeTab, nav, pageTitle, sectionTitle, showAllMetadata} = this.props;
-        const {noScroll, supportRequestActive} = this.state;
+        const {noScroll} = this.state;
         return (
             <div>
                 <PageHead pageTitle={pageTitle}/>
@@ -55,11 +48,7 @@ class Layout extends React.Component {
                     {homePage ? children :
                         <HCAMain docPath={docPath} homeTab={homeTab} nav={nav}
                                  sectionTitle={sectionTitle} showAllMetadata={showAllMetadata}>{children}</HCAMain>}
-                    {supportRequestActive ?
-                        <SupportRequest dismissFn={() => this.onToggleSupportRequestForm(false)}/> :
-                        <button className={compStyles.supportRequestBtn}
-                                onClick={() => this.onToggleSupportRequestForm(true)}>Feedback &amp; Support
-                        </button>}
+                    <SupportRequest/>
                     <Banner position={'bottom'}/>
                     <Footer/>
                 </div>
