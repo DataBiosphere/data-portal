@@ -1,0 +1,12 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to displaying Zendesk submitted ("thank you") screen.
+ */
+
+@import "../../styles/vars.module.css";
+
+.supportRequestSubmitted {
+    position: absolute;
+}
