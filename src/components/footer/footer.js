@@ -23,6 +23,7 @@ let classNames = require("classnames");
 class Footer extends React.Component {
 
     render() {
+        const {onFeedbackClicked} = this.props;
         const wrapperClassName = classNames(globalStyles.wrapper, compStyles.wrapper);
         return (
             <div className={compStyles.footer}>
@@ -31,7 +32,7 @@ class Footer extends React.Component {
                         <i className="material-icons">chevron_left</i>
                         <img src={footerLogo} alt="Human Cell Atlas"/>
                     </a>
-                    <FooterLinks/>
+                    <FooterLinks onFeedbackClicked={onFeedbackClicked}/>
                 </div>
             </div>
         );
