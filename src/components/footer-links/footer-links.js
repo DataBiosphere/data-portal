@@ -18,7 +18,12 @@ import compStyles from "./footer-links.module.css";
 class FooterLinks extends React.Component {
 
     render() {
-        const {links} = this.props;
+        const {links, onFeedbackClicked} = this.props;
+        const feedbackLink = {
+            name: "Feedback",
+            clickFn: onFeedbackClicked
+        };
+        links.push(feedbackLink);
         return (
             <div className={compStyles.links}>
                 {links.map((link, l) => <FooterLink key={l} link={link}/>)}
@@ -27,11 +32,11 @@ class FooterLinks extends React.Component {
     }
 }
 
-export default () => {
+export default ({onFeedbackClicked}) => {
 
     const footerLinks = FooterService.getFooterLinks();
 
     return (
-        <FooterLinks links={footerLinks}/>
+        <FooterLinks links={footerLinks} onFeedbackClicked={onFeedbackClicked}/>
     )
 }

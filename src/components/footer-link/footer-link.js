@@ -19,10 +19,15 @@ class FooterLink extends React.Component {
 
     render() {
         const {link} = this.props,
-            {name, path} = link || {};
+            {clickFn, name, path} = link || {};
         const footerLinkClassName = classNames(fontStyles.bgDark, compStyles.link, fontStyles.s);
         return (
-            <Link to={path} className={footerLinkClassName}>{name}</Link>
+            <>
+                {clickFn ?
+                    <button className={compStyles.button} onClick={clickFn}>{name}</button> :
+                    <Link to={path} className={footerLinkClassName}>{name}</Link>
+                }
+            </>
         );
     }
 }

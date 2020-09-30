@@ -12,18 +12,23 @@ import React, {useState} from "react";
 import SupportRequestForm from "./supportRequestForm";
 import SupportRequestButton from "./supportRequestButton";
 
-const SupportRequest = () => {
+const SupportRequest = ({active = false, onToggle}) => {
 
-    const [supportRequestActive, setSupportRequestActive] = useState(false);
+    const [supportRequestActive, setSupportRequestActive] = useState(active);
+
+    React.useEffect(() => {
+        setSupportRequestActive(active);
+    }, [active]);
 
     const onToggleSupportRequestForm = (active) => {
         setSupportRequestActive(active);
+        onToggle(active);
     };
 
     return (
         <>
             {supportRequestActive ?
-                <SupportRequestForm dismissFn={() => onToggleSupportRequestForm(false)}/> :
+                <SupportRequestForm active={active} dismissFn={() => onToggleSupportRequestForm(false)}/> :
                 <SupportRequestButton clickFn={() => onToggleSupportRequestForm(true)}/>
                 }
         </>
