@@ -9,14 +9,17 @@
 
 /* Support request button */
 .supportRequestBtn {
-    background-color: var(--accent);
+    background-color: var(--primary);
     border: 0;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
+    box-shadow: 0 0 8px var(--black38);
     color: var(--white);
     cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
     outline: 0;
-    padding: 8px 16px;
+    padding: 12px 16px;
     position: fixed;
     right: 0;
     top: 40%;
@@ -27,7 +30,7 @@
 }
 
 .supportRequestBtn:hover {
-    background-color: var(--accent-hover);
+    background-color: var(--primary-hover);
 }
 
 /**
