@@ -91,7 +91,7 @@ class Header extends React.Component {
 	render() {
 		const {docPath, homePage, links} = this.props,
 			{menuNav, openNav} = this.state,
-			browserLink = process.env.GATSBY_DATA_BROWSER_URL,
+			browserLink = process.env.GATSBY_EXPLORE_URL,
 			exploreDescription = 'Search for data in the HCA',
 			exploreLabel = 'Explore',
 			hideLinks = menuNav && !openNav,
