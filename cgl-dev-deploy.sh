@@ -2,7 +2,6 @@
 
 gatsby clean
 
-export GATSBY_DATA_BROWSER_URL=https://dev.singlecell.gi.ucsc.edu/explore/projects?filter=%5B%7B"facetName":"genusSpecies","terms":%5B"Homo%20sapiens"%5D%7D%5D
 export GATSBY_EXPLORE_URL=https://dev.singlecell.gi.ucsc.edu/explore/
 export GATSBY_FILE_SUMMARY_API_URL=https://service.dev.singlecell.gi.ucsc.edu/index/summary
 export GATSBY_TERM_FACETS_API_URL=https://service.dev.singlecell.gi.ucsc.edu/index/projects
