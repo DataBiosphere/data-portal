@@ -6,6 +6,7 @@
  */
 
 // App dependencies
+import * as EnvironmentService from "../utils/environment/environment.service";
 import * as HttpService from '../utils/http.service';
 const SYSTEM_HEALTH_CHECK_API_URL = process.env.GATSBY_SYSTEM_HEALTH_CHECK_API_URL;
 
@@ -26,6 +27,6 @@ export function healthCheck() {
 function bindHealthCheckResponse(response) {
 
 	return {
-		healthy: response.status === "ok" 
-	};
+        healthy: EnvironmentService.isCGLEnvironment() ? response.up : response.status === "ok"
+    };
 }
