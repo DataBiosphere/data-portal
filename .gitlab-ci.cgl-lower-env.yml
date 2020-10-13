@@ -47,7 +47,7 @@ build_cgl-dev:
     - export GATSBY_EXPLORE_URL=https://dev.singlecell.gi.ucsc.edu/explore/
     - export GATSBY_FILE_SUMMARY_API_URL=https://service.dev.singlecell.gi.ucsc.edu/index/summary
     - export GATSBY_TERM_FACETS_API_URL=https://service.dev.singlecell.gi.ucsc.edu/index/projects
-    - export GATSBY_SYSTEM_HEALTH_CHECK_API_URL=https://status.data.humancellatlas.org/service/dcp-health-check-prod
+    - export GATSBY_SYSTEM_HEALTH_CHECK_API_URL=https://service.dev.singlecell.gi.ucsc.edu/health/progress
     - export GATSBY_SYSTEM_STATUS_URL=https://status.data.humancellatlas.org/
     - export GATSBY_GTM_ID=GTM-M2J5NTJ
     - export GATSBY_GTM_AUTH=CzDpc0__fhyqfREDehPK8Q
