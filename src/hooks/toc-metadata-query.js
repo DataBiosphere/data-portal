@@ -1,26 +1,21 @@
 import {useStaticQuery, graphql} from "gatsby";
 
 export const TOCMetadataQuery = () => {
-    const {allMetadataCore} = useStaticQuery(
+    const {allMetadataSchema} = useStaticQuery(
         graphql`
         query TOCMetadataQuery {
-        allMetadataCore {
+        allMetadataSchema {
           edges {
             node {
-              name
-              types {
-                description
-                entity
-                fields {
-                  slug
-                }
-                properties {
-                  anchor
-                  label
-                  primary
-                  primaryRequired
-                  required
-                }
+              fields {
+                slug
+              }
+              properties {
+                anchor
+                name
+                primary
+                primaryRequired
+                required
               }
             }
           }
@@ -28,5 +23,5 @@ export const TOCMetadataQuery = () => {
       }
     `
     );
-    return allMetadataCore.edges.map(n => n.node);
+    return allMetadataSchema.edges.map(n => n.node);
 };

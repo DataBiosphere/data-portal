@@ -8,6 +8,9 @@
 // Core dependencies
 import React from "react";
 
+// App dependencies
+import MetadataSchemaPropertyWordWrapper from "../metadata/metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper";
+
 // Styles
 import fontStyles from "../../styles/fontsize.module.css";
 import compStyles from "./tocItem.module.css";
@@ -29,8 +32,8 @@ class TOCItem extends React.Component {
         /* Handle case for metadata TOC. */
         else {
 
-            const toc0 = activeTOC.split("-")[1];
-            const toc1 = anchor.split("-")[1];
+            const [toc0,] = activeTOC.split("-");
+            const [toc1,] = anchor.split("-");
 
             return toc0 === toc1;
         }
@@ -41,9 +44,12 @@ class TOCItem extends React.Component {
             {anchor, depth, name} = toc;
         const classTOCLink = classNames({[compStyles.depth3]: depth === 3}, fontStyles.xs);
         const classTOCItem = classNames({[compStyles.active]: this.isTOCActive()}, compStyles.toc);
+        const [tocName,] = name.split(" *");
+        const metadataTOC = tocName.includes("_") && !tocName.includes(" ");
+        const tocItem = metadataTOC ? <MetadataSchemaPropertyWordWrapper word={name}/> : name;
         return (
             <li className={classTOCItem}>
-                <a className={classTOCLink} href={anchor}>{name}</a>
+                <a className={classTOCLink} href={anchor}>{tocItem}</a>
             </li>
         );
     }

@@ -7,34 +7,42 @@
  */
 
 // Core dependencies
-import React from 'react';
+import React from "react";
 
 // App dependencies
-import HCAContent from '../hcaContent/hcaContent';
-import Section from '../section/section';
-import TabNav from '../tabNav/tabNav';
+import HCAContent from "../hcaContent/hcaContent";
+import MetadataSearch from "../metadata/metadataSearch/metadataSearch";
+import Section from "../section/section";
+import Tabs from "../tabs/tabs";
 
 // Styles
-import compStyles from './hcaMain.module.css';
-import globalStyles from '../../styles/global.module.css';
+import compStyles from "./hcaMain.module.css";
+import globalStyles from "../../styles/global.module.css";
 
-class HCAMain extends React.Component {
+function HCAMain(props) {
 
-	render() {
-		const {children, docPath, homeTab, nav, sectionTitle, showAllMetadata} = this.props,
-			{links, section, tabKey, tabs} = nav || {};
-		return (
-			<div className={globalStyles.pageWrapper}>
-				<Section section={section} sectionTitle={sectionTitle}/>
-				<TabNav homeTab={homeTab} tabs={tabs}/>
-				<div className={compStyles.main}>
-					<div className={globalStyles.wrapper}>
-						<HCAContent docPath={docPath} links={links} showAllMetadata={showAllMetadata} tabKey={tabKey}>{children}</HCAContent>
-					</div>
-				</div>
-			</div>
-		);
-	}
+    const {children, docPath, homeTab, metadataContent, nav, onMenuOpen, sectionTitle, showAllMetadata} = props,
+        {label, links, secondaryTabs, section, tabKey, tabs} = nav || {};
+    const showMetadataSearch = docPath ? docPath.startsWith("/metadata") : false;
+
+    return (
+        <div className={globalStyles.pageWrapper}>
+            <Section section={section} sectionTitle={sectionTitle}/>
+            {showMetadataSearch ? <MetadataSearch onMenuOpen={onMenuOpen}/> : null}
+            <Tabs homeTab={homeTab} tabs={tabs}/>
+            {metadataContent ?<Tabs secondary tabs={secondaryTabs}/> : null}
+            <div className={compStyles.main}>
+                <div className={globalStyles.wrapper}>
+                    <HCAContent docPath={docPath}
+                                label={label}
+                                links={links}
+                                metadataContent={metadataContent}
+                                showAllMetadata={showAllMetadata}
+                                tabKey={tabKey}>{children}</HCAContent>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default HCAMain;

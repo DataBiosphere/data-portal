@@ -6,131 +6,137 @@
  */
 @import '../../styles/vars.module.css';
 
+/* Navigation - label. */
+.hcaNav .label {
+    display: none;
+    padding: 0 8px;
+}
+
 /* Navigation lists - no list style */
 .hcaNav ul {
-	list-style: none;
+    list-style: none;
 }
 
 /* Navigation lists - no margin */
 .hcaNav ul li {
-	cursor: pointer;
-	margin: 0;
+    cursor: pointer;
+    margin: 0;
 }
 
 /* Navigation - secondary ul */
 .hcaNav ul > div > ul {
-	margin: 0;
-	margin-left: 16px !important;
+    margin: 0;
+    margin-left: 16px !important;
 }
 
 .hcaSideNav:first-of-type {
-	display: none;
+    display: none;
 }
 
 /* Top navigation container */
 .hcaSideNav {
-	background-color: var(--white-off);
-	border-radius: 3px;
-	box-sizing: border-box;
-	margin: 0 0 24px;
+    background-color: var(--white-off);
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin: 0 0 24px;
 }
 
 /* Please select */
 .hcaSideNav .select {
-	align-items: center;
-	cursor: pointer;
-	display: flex;
-	justify-content: space-between;
-	margin: 0;
-	min-height: 50px;
-	padding: 0 20px;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    min-height: 50px;
+    padding: 0 20px;
 }
 
 /* Please select - text */
 .hcaSideNav .select span {
-	font-weight: 400;
+    font-weight: 400;
 }
 
 /* Please select icon */
 .hcaSideNav i {
-	color: var(--gray-dark);
-	font-size: 20px;
-	height: 20px;
-	margin-right: -4px;
-	width: 20px;
+    color: var(--gray-dark);
+    font-size: 20px;
+    height: 20px;
+    margin-right: -4px;
+    width: 20px;
 }
 
 .hcaSideNav > div:last-child {
-	padding-bottom: 24px;
+    padding-bottom: 24px;
 }
 
 /* Primary navigation */
 .hcaSideNav > div > li {
-	display: flex;
-	margin: 0 20px;
-	padding: 8px 0;
-	position: relative; /* Positions nav bar */
+    display: flex;
+    margin: 0 20px;
+    padding: 8px 0;
+    position: relative; /* Positions nav bar */
 }
 
 /* Primary navigation - link */
 .hcaSideNav > div > li a {
-	color: var(--gray-dark);
-	width: 100%; /* Improves click-able area on link */
+    color: var(--gray-dark);
+    width: 100%; /* Improves click-able area on link */
 }
 
 /* Secondary navigation */
 .hcaSideNav > div ul li {
-	display: flex;
-	margin: 0 20px;
-	padding: 4px 0;
-	position: relative; /* Positions nav bar */
+    display: flex;
+    margin: 0 20px;
+    padding: 4px 0;
+    position: relative; /* Positions nav bar */
 }
 
 /* Secondary navigation - link */
 .hcaSideNav > div ul li a {
-	color: var(--gray-dark);
-	width: 100%; /* Improves click-able area on link */
+    color: var(--gray-dark);
+    width: 100%; /* Improves click-able area on link */
 }
 
 /* Navigation - hover */
 .hcaSideNav > div > li:hover a, .hcaSideNav > div ul li:hover a {
-	color: var(--gray-darkest);
+    color: var(--gray-darkest);
 }
 
 /* Primary navigation - expanded */
 .hcaSideNav > div > li.expanded a {
-	color: var(--black);
+    color: var(--black);
 }
 
 /* Selected navigation - primary & secondary */
 .hcaSideNav > div > li.selected a, .hcaSideNav > div ul li.selected a {
-	color: var(--primary);
+    color: var(--primary);
 }
 
 /* Navigation bar */
 .hcaSideNav > div > li.expanded:before, .hcaSideNav > div > li.selected:before, .hcaSideNav > div ul li:before {
-	background-color: var(--gray-lightest);
-	content: "";
-	height: 100%;
-	left: -8px; /* 6px between nav bar and nav text, includes 2px border */
-	position: absolute;
-	top: 0;
-	width: 2px;
+    background-color: var(--gray-lightest);
+    content: "";
+    height: 100%;
+    left: -8px; /* 6px between nav bar and nav text, includes 2px border */
+    position: absolute;
+    top: 0;
+    width: 2px;
 }
 
 /* Navigation bar - secondary list */
 .hcaSideNav > div ul li:before {
-	left: -24px; /* 6px between nav bar and nav text, includes 2px border */
+    left: -24px; /* 6px between nav bar and nav text, includes 2px border */
 }
 
 /* Navigation bar - selected list */
 .hcaSideNav > div li.selected:before {
-	background-color: var(--primary);
+    background-color: var(--primary);
 }
 
 /* Navigation bar - selected list */
 .hcaSideNav > div > li:not(.expanded).selected:before {
-	display: none;
+    display: none;
 }
 
 /**
@@ -138,44 +144,49 @@
  */
 @media screen and (min-width: 768px) {
 
-	/* Navigation */
-	.hcaNav {
-		height: 100%;
-		position: sticky;
-		top: 84px;
-		z-index: 1; /* Required for heading anchors */
-	}
+    /* Navigation */
+    .hcaNav {
+        height: 100%;
+        position: sticky;
+        top: 84px;
+        z-index: 1; /* Required for heading anchors */
+    }
 
-	.hcaSideNav:nth-of-type(2) {
-		display: none;
-	}
+    /* Navigation - label. */
+    .hcaNav .label {
+        display: block;
+    }
 
-	.hcaSideNav:first-of-type {
-		display: block;
-	}
+    .hcaSideNav:nth-of-type(2) {
+        display: none;
+    }
 
-	/* Select box - hide */
-	.hcaSideNav .select {
-		display: none;
-	}
+    .hcaSideNav:first-of-type {
+        display: block;
+    }
 
-	/* Navigation container */
-	.hcaSideNav {
-		background-color: transparent;
-		border-radius: 0;
-		display: block;
-		max-width: 148px; /* Total allowable width 176px */
-		min-width: 148px;
-		margin-bottom: 0;
-		margin-left: 8px !important;
-		margin-right: 20px !important;
-		padding-bottom: 0;
-	}
+    /* Select box - hide */
+    .hcaSideNav .select {
+        display: none;
+    }
 
-	/* Primary navigation */
-	.hcaSideNav > div > li, .hcaSideNav > div > ul li {
-		margin: 0;
-	}
+    /* Navigation container */
+    .hcaSideNav {
+        background-color: transparent;
+        border-radius: 0;
+        display: block;
+        max-width: 148px; /* Total allowable width 176px */
+        min-width: 148px;
+        margin-bottom: 0;
+        margin-left: 8px !important;
+        margin-right: 20px !important;
+        padding-bottom: 0;
+    }
+
+    /* Primary navigation */
+    .hcaSideNav > div > li, .hcaSideNav > div > ul li {
+        margin: 0;
+    }
 }
 
 /**
@@ -184,12 +195,12 @@
  */
 @media screen and (min-width: 1024px) {
 
-	/* Navigation container */
-	.hcaSideNav {
-		max-width: 250px; /* Total allowable width 290px */
-		min-width: 250px;
-		margin-right: 32px !important;
-	}
+    /* Navigation container */
+    .hcaSideNav {
+        max-width: 250px; /* Total allowable width 290px */
+        min-width: 250px;
+        margin-right: 32px !important;
+    }
 }
 
 

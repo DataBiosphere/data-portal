@@ -11,6 +11,8 @@ import React from 'react';
 
 // App dependencies
 import ClickHandler from "../clickHandler/clickHandler";
+import MetadataOverline from "../metadata/metadataOverline/metadataOverline";
+import MetadataSchemaPropertyWordWrapper from "../metadata/metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper";
 
 // Styles
 import compStyles from './nav.module.css';
@@ -58,6 +60,25 @@ class Nav extends React.Component {
 		}
 	};
 
+	isShowSideNav = () => {
+
+		const {links} = this.props;
+
+		if ( links.length > 0 ) {
+
+			const [firstLink,] = links;
+
+			if ( links.length > 1 ) {
+
+				return true;
+			}
+
+			return firstLink.sLinks && firstLink.sLinks.length > 0;
+		}
+
+		return false;
+	};
+
 	toggleNav = () => {
 
 		// Toggle the navigation open/closed
@@ -67,10 +88,11 @@ class Nav extends React.Component {
 	};
 
 	render() {
-		const {links} = this.props,
+		const {label, links, metadataContent} = this.props,
 			{showNav} = this.state;
 		return (
 			<div className={compStyles.hcaNav}>
+				{label ? <div className={compStyles.label}><MetadataOverline semiBold><span>{label} entities</span></MetadataOverline></div> : null}
 				<ul className={compStyles.hcaSideNav}>
 					{links.map((pLink, i) =>
 						<div key={i}>
@@ -81,12 +103,14 @@ class Nav extends React.Component {
 								<ul>
 									{pLink.sLinks.map((sLink, j) =>
 										<li className={this.getNavClassName(sLink)} key={j}>
-											<Link to={sLink.path} className={fontStyles.navSecondary}>{sLink.name}</Link>
+											<Link to={sLink.path} className={fontStyles.navSecondary}>
+												{metadataContent ? <MetadataSchemaPropertyWordWrapper word={sLink.name} wrap/> : sLink.name}
+											</Link>
 										</li>)}
 								</ul> : null}
 						</div>)}
 				</ul>
-				<ul className={compStyles.hcaSideNav}>
+				{this.isShowSideNav() ? <ul className={compStyles.hcaSideNav}>
 					<ClickHandler className={compStyles.select} clickAction={this.toggleNav} tag={'li'}>
 						<span>Also in this section</span><i className='material-icons'>keyboard_arrow_down</i>
 					</ClickHandler>
@@ -111,7 +135,7 @@ class Nav extends React.Component {
 											</ClickHandler>)}
 									</ul> : null}
 							</div>) : null}
-				</ul>
+				</ul> : null}
 			</div>
 		);
 	}

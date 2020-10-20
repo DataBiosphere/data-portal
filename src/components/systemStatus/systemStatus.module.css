@@ -1,0 +1,38 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal system status component.
+ */
+
+/* Label, status */
+.system .label, .system .systemStatus {
+    align-items: flex-start;
+    display: flex;
+    flex: 1;
+    margin: 0;
+}
+
+.system span {
+    display: inline-flex;
+    flex: 1;
+    padding: 6px 0;
+}
+
+.system span:first-of-type {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/**
+ * Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1024px) {
+
+    .system span:first-of-type {
+        flex-basis: 20%;
+    }
+}

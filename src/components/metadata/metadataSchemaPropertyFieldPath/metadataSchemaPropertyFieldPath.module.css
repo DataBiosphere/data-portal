@@ -1,0 +1,28 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata schema property field path component.
+ */
+
+/* Property path. */
+.propertyPath {
+    cursor: pointer; /* For copy action. */
+    margin-bottom: 8px !important; /* Overrides style on all <p> in component metadataSchemaProperty. */
+}
+
+/* Property path. */
+.propertyPath, .propertyPath span {
+    flex-wrap: wrap;
+}
+
+/**
+ * 1280px - Large tablet landscape, medium window
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Property path. */
+    .propertyPath {
+        margin-bottom: 0 !important; /* Overrides style on all <p> in component metadataSchemaProperty. */
+    }
+}
