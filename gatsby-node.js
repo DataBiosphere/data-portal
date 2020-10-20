@@ -10,7 +10,7 @@ const express = require("express");
 const {createFilePath} = require("gatsby-source-filesystem");
 const {buildPostSlug, isPostNodeEnabled, isPostNodeFeatured} = require("./src/utils/node/create-node.service");
 const {buildPostPath, getPostTemplate, setOfPostsBlacklisted} = require("./src/utils/node/create-pages.service");
-const {buildMetadataEntityCategorySchemaNameByKey,
+const {buildMetadataEntityCategorySchemaTitleByKey,
     buildMetadataLinksByEntity,
     buildMetadataTabs,
     getMetadataPostNavigation,
@@ -104,7 +104,7 @@ exports.createPages = async ({graphql, actions}) => {
               slug
             }
             id
-            schemaName
+            title
           }
         }
       }
@@ -154,14 +154,14 @@ exports.createPages = async ({graphql, actions}) => {
         /* Build the site map, and remove any blacklisted posts. */
         const postsSiteMap = removeBlacklistedPosts(allSiteMapYaml, postsByKeyBlacklisted);
 
-        /* For all metadata schema documents associate the document key with schema entity, category and schema name. */
-        const metadataEntityCategorySchemaNameByKey = buildMetadataEntityCategorySchemaNameByKey(allMetadataSchema);
+        /* For all metadata schema documents associate the document key with schema entity, category and schema title. */
+        const metadataEntityCategorySchemaTitleByKey = buildMetadataEntityCategorySchemaTitleByKey(allMetadataSchema);
 
         /* Pre-build the metadata primary and secondary navigation links. */
-        const metaLinksByEntity = buildMetadataLinksByEntity(metadataEntityCategorySchemaNameByKey, allMetadataEntity);
+        const metaLinksByEntity = buildMetadataLinksByEntity(metadataEntityCategorySchemaTitleByKey, allMetadataEntity);
 
         /* Pre-build the metadata secondary tabs. */
-        const metaTabs = buildMetadataTabs(metadataEntityCategorySchemaNameByKey, allMetadataEntity);
+        const metaTabs = buildMetadataTabs(metadataEntityCategorySchemaTitleByKey, allMetadataEntity);
 
         /* For each markdown file create a post. */
         allMarkdownRemark.edges.forEach(({node}) => {

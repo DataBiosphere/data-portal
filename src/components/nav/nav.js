@@ -12,7 +12,6 @@ import React from 'react';
 // App dependencies
 import ClickHandler from "../clickHandler/clickHandler";
 import MetadataOverline from "../metadata/metadataOverline/metadataOverline";
-import MetadataSchemaPropertyWordWrapper from "../metadata/metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper";
 
 // Styles
 import compStyles from './nav.module.css';
@@ -103,9 +102,7 @@ class Nav extends React.Component {
 								<ul>
 									{pLink.sLinks.map((sLink, j) =>
 										<li className={this.getNavClassName(sLink)} key={j}>
-											<Link to={sLink.path} className={fontStyles.navSecondary}>
-												{metadataContent ? <MetadataSchemaPropertyWordWrapper word={sLink.name} wrap/> : sLink.name}
-											</Link>
+											<Link to={sLink.path} className={fontStyles.navSecondary}>{sLink.name}</Link>
 										</li>)}
 								</ul> : null}
 						</div>)}
