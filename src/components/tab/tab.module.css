@@ -71,19 +71,21 @@
 
 /* Secondary tab. */
 .tab.secondary {
-    height: 20px;
+    align-items: center;
+    display: flex;
+    height: 100%;
 }
 
 /* Secondary tab - link. */
 .tab.secondary a {
     color: var(--gray-dark);
-    font-size: 12px;
+    font-size: 13px;
     line-height: 20px;
 }
 
 /* Active secondary tab. */
 .tab.secondary.active {
-    border-bottom: 1px solid var(--gray-darkest);
+    border-bottom-width: 2px;
 }
 
 /* Secondary tab - hover tab. */
