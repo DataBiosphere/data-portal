@@ -21,7 +21,7 @@ export function getTOCs(docPath, showAllMetadata) {
     if ( docPath ) {
 
         /* Metadata TOC. */
-        if ( docPath.startsWith("/metadata/dictionary/") && !docPath.includes("metadata-dictionary") ) {
+        if ( docPath.startsWith("/metadata/dictionary/") ) {
 
             return buildTOCsMetadata(docPath, showAllMetadata);
         }
