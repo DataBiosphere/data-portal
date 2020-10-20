@@ -34,7 +34,7 @@ exports.onClientEntry = () => {
 		}
 	});
 
-	// Redirect to static "browser not supported" page, should browser be unsupported by the AnVIL site.
+	// Redirect to static "browser not supported" page, should browser be unsupported by the site.
 	if ( browserNotSupported ) {
 
 		window.location.replace("/browser-not-supported.html");

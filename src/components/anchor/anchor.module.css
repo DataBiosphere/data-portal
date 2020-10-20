@@ -15,6 +15,17 @@
 	padding-right: 4px;
 }
 
+/* Compressed. */
+.anchor.s {
+    margin-left: -16px;
+}
+
+/* Compressed - svg. */
+.anchor.s svg {
+    height: 12px;
+    width: 12px;
+}
+
 /* Anchor typically hidden */
 .anchor svg {
 	visibility: hidden;

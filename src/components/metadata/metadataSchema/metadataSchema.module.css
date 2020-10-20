@@ -1,0 +1,16 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata schema component.
+ */
+
+/* Schema title. */
+.title > a {
+    padding-left: 8px;
+}
+
+/* Schema description */
+.description {
+    margin: 0 0 32px 0;
+}

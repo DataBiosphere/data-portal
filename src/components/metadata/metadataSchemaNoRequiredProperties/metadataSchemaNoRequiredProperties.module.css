@@ -1,0 +1,21 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata schema no required properties component.
+ */
+@import "../../../styles/vars.module.css";
+
+/* No results. */
+.noResults {
+    background-color: var(--black3);
+    border-top: 1px solid var(--gray-lightest);
+    display: flex;
+    margin-top: 24px;
+    padding: 12px;
+}
+
+/* All <p>. */
+.noResults p {
+    margin: 0;
+}

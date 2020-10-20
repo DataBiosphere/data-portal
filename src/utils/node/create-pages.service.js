@@ -10,7 +10,6 @@ const path = require("path");
 const templatePath = {
     "CONTENT": "src/templates/contentTemplate.js",
     "METADATA": "src/templates/metadataTemplate.js",
-    "SYSTEM_STATUS": "src/templates/systemStatusTemplate.js"
 };
 
 /**

@@ -1,0 +1,583 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Service coordinating metadata search functionality.
+ */
+
+/* Search input deny list. */
+export const DenyListInputs = ["^", "~", ":", "-", "+"];
+
+// Template variables
+const AllowListScoreCriteria = ["description", "example", "classes", "ontologies", "relations", "schema", "pathSegmentFirst", "pathSegmentSecond", "path", "friendlyName"];
+const AllListScoreTypeEarlyBreakers = ["pathSegmentSecondFullMatch", "pathSegmentSecondSomeMatch", "pathSomeMatch", "friendlyNameFullMatch"];
+const DenyListScoreType = ["searchModel"];
+const DenyListScoreTypeProcesses = ["pathSegmentFirstFullMatch", "pathSegmentFirstSomeMatch"];
+
+/**
+ * Returns search results - modelled, analyzed, scored, and filtered.
+ *
+ * @param schemas
+ * @param properties
+ * @param setOfResults
+ * @param resultKey
+ * @param setOfProperties
+ * @param inputValue
+ * @returns {Array}
+ */
+export function buildResults(schemas, properties, setOfResults, resultKey, setOfProperties, inputValue) {
+
+    if ( inputValue ) {
+
+        const queryStr = inputValue.toLowerCase();
+        const querySegmentDepth = getQuerySegmentDepth(queryStr);
+
+        /* Filter the properties and schemas for any search hits. */
+        const filteredProperties = filterEntities(properties, setOfResults, resultKey, setOfProperties);
+        const filteredSchemas = filterEntities(schemas, setOfResults, resultKey, setOfProperties);
+
+        /* Build the search models. */
+        const searchModels = buildSearchModels(filteredSchemas, filteredProperties);
+
+        /* Early exit. */
+        if ( searchModels.length === 0 ) {
+
+            return [];
+        }
+
+        /* Grab the current length of query. */
+        const queryLength = queryStr.length;
+
+        /* Build the analyzed models. */
+        const analyzedModels = buildAnalyzedModels(searchModels, queryStr, queryLength);
+
+        /* Build the set of search models by score type. */
+        const setOfSearchModelsByScoreType = buildSetOfSearchModelsByScoreType(analyzedModels);
+
+        /* Filter and return search models. */
+        return filterSearchModels(setOfSearchModelsByScoreType, querySegmentDepth, queryLength);
+    }
+
+    return [];
+}
+
+/**
+ * Returns the complete set of properties, specified by element key.
+ * Mimics a full setOfResults; used when a search group has not been queried.
+ *
+ * @param entities
+ * @param resultKey
+ * @returns {Set}
+ */
+export function getSetOfProperties(entities, resultKey) {
+
+    if ( entities ) {
+
+        return entities.reduce((acc, entity) => {
+
+            /* Add to set the entity. */
+            acc.add(entity[resultKey]);
+
+            return acc;
+        }, new Set());
+    }
+
+    return new Set();
+}
+
+/**
+ * Returns a set of search groups.
+ *
+ * @returns {Set}
+ */
+export function getSetOfSearchGroups() {
+
+    const setOfSearchGroups = new Set();
+
+    /* Add "input" to the set. */
+    setOfSearchGroups.add("input");
+
+    return setOfSearchGroups;
+}
+
+/**
+ * Returns the analyzed model.
+ * Uses the allow list score criteria to build an analyzed model of the search model.
+ * Returns a boolean value for each search model element, for each type of "hit" on the element.
+ * e.g. query string "cell_line" will return true values for a full, starts with and partial path match.
+ *
+ * @param searchModel
+ * @param queryStr
+ * @param queryLength
+ * @returns {*}
+ */
+function buildAnalyzedModel(searchModel, queryStr, queryLength) {
+
+    return AllowListScoreCriteria.reduce((acc, modelKey) => {
+
+        /* Create the keys. */
+        const fullMatchKey = `${modelKey}FullMatch`;
+        const someMatchKey = `${modelKey}SomeMatch`;
+
+        const [fullMatchValue, someMatchValue] = getAnalyzedModelValues(searchModel, modelKey, queryStr, queryLength);
+
+        /* Assign values to associated key and return accumulator. */
+        const fullMatch = {[fullMatchKey]: fullMatchValue};
+        const someMatch = {[someMatchKey]: someMatchValue};
+        acc = Object.assign(acc, {...fullMatch, ...someMatch});
+
+        return acc;
+    }, {});
+
+}
+
+/**
+ * Returns the analyzed models.
+ *
+ * @param searchModels
+ * @param queryStr
+ * @param queryLength
+ * @returns {Array}
+ */
+function buildAnalyzedModels(searchModels, queryStr, queryLength) {
+
+    if ( searchModels.length > 0 ) {
+
+        return searchModels.map(searchModel => {
+
+            /* Build the analyzed model. */
+            const analyzedModel = buildAnalyzedModel(searchModel, queryStr, queryLength);
+
+            return Object.assign({searchModel: searchModel}, analyzedModel);
+        });
+    }
+
+    return [];
+}
+
+/**
+ * Returns the search models.
+ * Schemas and properties models are normalized to facilitate the scoring of hits.
+ *
+ * @param schemas
+ * @param properties
+ */
+function buildSearchModels(schemas, properties) {
+
+    return schemas.concat(properties)
+        .map(result => {
+
+            const {description, example, graphRestriction, label,
+                    propertyPath, propertyPaths, schemaName, title} = result || {},
+                {classes, ontologies, relations} = graphRestriction || {};
+            const modelDescription = description ? description.toLowerCase() : description;
+            const modelExample = example ? example.toLowerCase() : example;
+            const modelFriendly = title ? title.toLowerCase() : label.toLowerCase();
+            const modelPath = propertyPath ? propertyPath.toLowerCase() : propertyPath;
+            const modelSchema = schemaName ? schemaName.toLowerCase() : schemaName;
+            const [pathSegmentFirst, pathSegmentSecond,] = propertyPaths || [];
+
+            return {
+                description: modelDescription,
+                classes: classes,
+                example: modelExample,
+                friendlyName: modelFriendly,
+                hit: result,
+                ontologies: ontologies,
+                path: modelPath,
+                pathSegmentFirst: pathSegmentFirst,
+                pathSegmentSecond: pathSegmentSecond,
+                relations: relations,
+                schema: modelSchema
+            }
+        });
+}
+
+/**
+ * Returns a set of models.
+ *
+ * @param model
+ * @param setOfModels
+ * @returns {Set.<T>}
+ */
+function buildSetOfModels(model, setOfModels = new Set()) {
+
+    return setOfModels.add(model);
+}
+
+/**
+ * Returns a set of score types.
+ *
+ * @param analyzedModels
+ * @returns {Set}
+ */
+function buildSetOfScoreTypes(analyzedModels) {
+
+    const setOfScoreTypes = new Set();
+
+    analyzedModels.forEach(analyzedModel => {
+
+        /* Grab the model keys. */
+        const modelKeys = Object.keys(analyzedModel);
+
+        /* For each model key, add to the set. */
+        /* Deny list excludes the search model. */
+        modelKeys.forEach(modelKey => {
+
+            if ( !DenyListScoreType.includes(modelKey) ) {
+
+                setOfScoreTypes.add(modelKey);
+            }
+        })
+    });
+
+    return setOfScoreTypes;
+}
+
+/**
+ * Returns map object key value pair of score type and set of search models.
+ *
+ * @param analyzedModels
+ * @returns {Map}
+ */
+function buildSetOfSearchModelsByScoreType(analyzedModels) {
+
+    const setOfModelsByScoreType = new Map();
+
+    if ( analyzedModels.length > 0 ) {
+
+        /* Build the complete set of score types and associated map object. */
+        const setOfScoreTypes = buildSetOfScoreTypes(analyzedModels);
+        [...setOfScoreTypes].forEach(scoreType => setOfModelsByScoreType.set(scoreType, new Set()));
+
+        /* For each model, add the model and any hits on score types to the map object. */
+        analyzedModels.forEach(analyzedModel => {
+
+            const {searchModel} = analyzedModel;
+
+            /* Grab the score types. */
+            const scoreTypes = [...setOfModelsByScoreType.keys()];
+
+            scoreTypes.forEach(scoreType => {
+
+                if ( analyzedModel[scoreType] ) {
+
+                    const setOfModels = setOfModelsByScoreType.get(scoreType);
+                    setOfModelsByScoreType.set(scoreType, buildSetOfModels(searchModel, setOfModels))
+                }
+            })
+        });
+    }
+
+    return setOfModelsByScoreType;
+}
+
+/**
+ * Returns the entities filtered by results from the search.
+ *
+ * @param entities
+ * @param setOfResults
+ * @param resultKey
+ * @param setOfEntities
+ * @returns {*}
+ */
+function filterEntities(entities, setOfResults, resultKey, setOfEntities) {
+
+    /* Set of results is empty. */
+    if ( setOfResults.size === 0 ) {
+
+        return [];
+    }
+
+    /* Full set of entities are returned - results set is complete. */
+    if ( setOfEntities.size === setOfResults.size ) {
+
+        return entities;
+    }
+
+    /* Filter entities - results set activated and returned hits from the search. */
+    if ( entities ) {
+
+        return entities.filter(entity => setOfResults.has(entity[resultKey]));
+    }
+
+    return [];
+}
+
+/**
+ * Returns filtered results.
+ *
+ * @param setOfSearchModelsByScoreType
+ * @param querySegmentDepth
+ * @param queryLength
+ */
+function filterSearchModels(setOfSearchModelsByScoreType, querySegmentDepth, queryLength) {
+
+    let setOfResultsByScoreType = new Map();
+
+    if ( setOfSearchModelsByScoreType.size > 0 ) {
+
+        for ( let [scoreType, setOfSearchModels] of setOfSearchModelsByScoreType ) {
+
+            const setSizeSearchModels = setOfSearchModels.size;
+
+            /* Early continue. */
+            if ( setSizeSearchModels === 0 ) {
+
+                continue;
+            }
+
+            /* Grab the models. */
+            const models = setOfSearchModels.values();
+
+            /* Process each model to see if it should be included as a result. */
+            for ( const model of models ) {
+
+                /* Confirm score type should be processed. */
+                const processHits = isProcessHits(model, scoreType, querySegmentDepth);
+
+                /* Process score types. */
+                if ( processHits ) {
+
+                    /* Switch the score type - if required. */
+                    scoreType = switchScoreType(scoreType);
+
+                    /* Grab the set of results for the score type. */
+                    const setOfResults = setOfResultsByScoreType.get(scoreType);
+
+                    setOfResultsByScoreType.set(scoreType, buildSetOfModels(model, setOfResults));
+                }
+            }
+
+            /* Early break. */
+            if ( isEarlyBreak(scoreType, setOfResultsByScoreType, queryLength) ) {
+
+                break;
+            }
+        }
+    }
+
+    return reduceResults(reorderSetOfResultsByScoreType(setOfResultsByScoreType));
+}
+
+/**
+ * Returns the full match boolean value and some match boolean value for the specified model element and query string.
+ *
+ * @param searchModel
+ * @param modelKey
+ * @param queryStr
+ * @param queryLength
+ * @returns {[boolean,boolean]}
+ */
+function getAnalyzedModelValues(searchModel, modelKey, queryStr, queryLength) {
+
+    /* Initialize the full match and some match values. */
+    let fullMatchValue = false;
+    let someMatchValue = false;
+
+    /* Grab the model value to compare against. */
+    /* Convert any string value to an array to streamline the process. */
+    let modelValue = searchModel[modelKey];
+
+    if ( typeof modelValue === "string" ) {
+
+        modelValue = Array.from([modelValue]);
+    }
+
+    if ( Array.isArray(modelValue) ) {
+
+        fullMatchValue = modelValue.some(modelStr => modelStr.toLowerCase() === queryStr);
+
+        if ( !fullMatchValue ) {
+
+            /* Look for "starts with" match value, if there is no full match. */
+            someMatchValue = modelValue.some(modelStr => modelStr.toLowerCase().startsWith(queryStr));
+
+            if ( !someMatchValue && queryLength > 1 ) {
+
+                /* Only look for partial matches within the value, if there is no full match, or starts with match. */
+                /* Bypass if query length is only one character. */
+                someMatchValue = modelValue.some(modelStr => modelStr.toLowerCase().includes(queryStr));
+            }
+        }
+    }
+
+    return [fullMatchValue, someMatchValue];
+}
+
+/**
+ * Returns the query path segment depth.
+ *
+ * @param queryStr
+ * @returns {*}
+ */
+function getQuerySegmentDepth(queryStr) {
+
+    if ( queryStr.includes(".") ) {
+
+        return queryStr.split(".").length;
+    }
+
+    return 0;
+}
+
+/**
+ * Returns true if there is an early break on processing results.
+ * Break occurs with hits on:
+ * - some hit on schema, with query length a single character and results exist.
+ * - some hit on property path second segment.
+ * - full hit on friendly field.
+ *
+ * @param scoreType
+ * @param setOfResultsByScoreType
+ * @param queryLength
+ * @returns {boolean}
+ */
+function isEarlyBreak(scoreType, setOfResultsByScoreType, queryLength) {
+
+    /* Score type is some hit on schema, query length is one character and there are results. */
+    if ( queryLength === 1 && setOfResultsByScoreType.size > 0 && scoreType === "schemaSomeMatch" ) {
+
+        return true;
+    }
+
+    return AllListScoreTypeEarlyBreakers.includes(scoreType);
+}
+
+/**
+ * Returns true if the hits for the specified score type should be added to the results.
+ *
+ * @param model
+ * @param scoreType
+ * @param querySegmentDepth
+ * @returns {boolean}
+ */
+function isProcessHits(model, scoreType, querySegmentDepth) {
+
+    if ( DenyListScoreTypeProcesses.includes(scoreType) ) {
+
+        return false;
+    }
+
+    /* Grab any variables required for processing score type. */
+    const {hit, pathSegmentSecond} = model || {},
+        {propertyPaths} = hit || {};
+    const pathHasTwoSegments = propertyPaths && propertyPaths.length === 2;
+    const pathDepth = propertyPaths ? propertyPaths.length : 0;
+    const secondSegmentIsProvenance = /provenance/.test(pathSegmentSecond);
+
+    /* Grab score types - for a/typical processing of each score type [group] of interest. */
+    const fullPathHit = scoreType === "pathFullMatch";
+    const somePathHit = scoreType === "pathSomeMatch";
+    const pathHit = fullPathHit || somePathHit;
+    const fullSecondSegmentHit = scoreType === "pathSegmentSecondFullMatch";
+    const someSecondSegmentHit = scoreType === "pathSegmentSecondSomeMatch";
+    const secondSegmentHit = fullSecondSegmentHit || someSecondSegmentHit;
+
+    if ( secondSegmentHit ) {
+
+        return pathHasTwoSegments && !secondSegmentIsProvenance;
+    }
+    else if ( pathHit ) {
+
+        return pathDepth - querySegmentDepth === 0;
+    }
+    else {
+
+        return true;
+    }
+}
+
+/**
+ * Returns the results.
+ * Reduces sets of results to a flat array of results.
+ *
+ * @param setOfResultsByScoreType
+ */
+function reduceResults(setOfResultsByScoreType) {
+
+    if ( setOfResultsByScoreType.size > 0 ) {
+
+        const setOfResults = [...setOfResultsByScoreType.values()].reduce((acc, setOfResults) => {
+
+            if ( setOfResults ) {
+
+                [...setOfResults].forEach(result => {
+
+                    acc.add(result.hit)
+                });
+            }
+
+            return acc;
+        }, new Set());
+
+        return [...setOfResults];
+    }
+
+    return [];
+}
+
+/**
+ * Returns the set of results by score type with any general hits placed in last position.
+ *
+ * @param setOfResultsByScoreType
+ * @returns {*}
+ */
+function reorderSetOfResultsByScoreType(setOfResultsByScoreType) {
+
+    if ( setOfResultsByScoreType.size > 0 ) {
+
+        /* Reorganise general hits to the end of the results. */
+        /* We want to display higher value hits first. */
+        /* Grab the general hits. */
+        const setOfGeneralHitResults = setOfResultsByScoreType.get("generalHit");
+
+        /* Delete the general hits. */
+        setOfResultsByScoreType.delete("generalHit");
+
+        /* Only add the general hits back in, if they exist. */
+        if ( setOfGeneralHitResults ) {
+
+            setOfResultsByScoreType.set("generalHit", setOfGeneralHitResults);
+        }
+    }
+
+    return setOfResultsByScoreType;
+}
+
+/**
+ * Switches key score type to key result hit type.
+ * Used to generalize and group hits on score types like "description" and "example".
+ *
+ * @param scoreType
+ * @returns {*}
+ */
+function switchScoreType(scoreType) {
+
+    switch (scoreType) {
+        case "friendlyNameSomeMatch":
+            return "generalHit";
+        case "descriptionFullMatch":
+            return "generalHit";
+        case "descriptionSomeMatch":
+            return "generalHit";
+        case "exampleFullMatch":
+            return "generalHit";
+        case "exampleSomeMatch":
+            return "generalHit";
+        case "classesFullMatch":
+            return "generalHit";
+        case "classesSomeMatch":
+            return "generalHit";
+        case "ontologiesFullMatch":
+            return "generalHit";
+        case "ontologiesSomeMatch":
+            return "generalHit";
+        case "relationsFullMatch":
+            return "generalHit";
+        case "relationsSomeMatch":
+            return "generalHit";
+        default:
+            return scoreType;
+    }
+}

@@ -1,0 +1,46 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata search results panel component.
+ */
+@import "../../../styles/vars.module.css";
+
+/* Panel. */
+.panel {
+    border-top: 1px solid var(--gray-light);
+    background-color: var(--white);
+    height: calc(100vh - 60px - 76px - 38px - 6px); /* Minus header, minus section, minus input box height, minus top margin. */
+    left: 0;
+    margin: 6px 0 0;
+    overflow: scroll;
+    padding-bottom: 24px;
+    position: absolute; /* Positions hero. */
+    width: 100vw;
+    z-index: 16; /* Above inner content, overlay. */
+}
+
+/* Panel - hero. */
+.panel [id="hero"] {
+    align-items: center;
+    background-color: var(--white);
+    box-shadow: 0 0 8px var(--black38);
+    display: flex;
+    height: 60px;
+    margin: 0;
+    padding: 16px var(--gutter-x);
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+/* Panel - label i.e. "schema" or "property". */
+.panel [id="label"] {
+    margin: 0;
+    padding: 16px var(--gutter-x) 4px;
+}
+
+/* All <p> - last. */
+.panel > p:last-of-type {
+    margin: 0;
+}

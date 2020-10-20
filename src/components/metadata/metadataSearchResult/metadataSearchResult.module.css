@@ -1,0 +1,100 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata search result component.
+ */
+@import "../../../styles/vars.module.css";
+
+/* Result. */
+.result {
+    align-items: stretch;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 8px var(--gutter-x);
+}
+
+/* Result - hover state. */
+.result:hover {
+    background-color: var(--white-off);
+}
+
+/* All columns. */
+.result > span {
+    display: flex;
+    flex-direction: column;
+}
+
+/* First column. */
+.result > span:first-of-type {
+    flex: 1;
+    order: 2;
+}
+
+/* Second column. */
+.result > span:nth-of-type(2) {
+    flex-basis: 100%;
+    margin-bottom: -4px;
+    order: 1;
+}
+
+/* Last column. */
+.result > span:last-of-type {
+    flex: 1;
+    order: 3;
+}
+
+/* Title. */
+.result h5 {
+    margin-top: 0;
+}
+
+/* All text. */
+.result span {
+    margin-top: 0;
+}
+
+/* Text - second column - space between first entry and second entry. */
+.result > span:last-of-type > span:first-child {
+    margin-bottom: 0;
+}
+
+/* Text - second column - space between first entry and second entry. */
+.result > span:last-of-type > span:last-child {
+    margin: 4px 0 0;
+}
+
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 768px) {
+
+    /* Result. */
+    .result {
+        flex-direction: row;
+    }
+
+    /* First column. */
+    .result > span:first-of-type {
+        max-width: 334px;
+        order: 1;
+    }
+
+    /* Second column. */
+    .result > span:nth-of-type(2) {
+        flex-basis: auto;
+        margin-bottom: 0;
+        order: 2;
+        padding-left: 16px;
+        width: 76px;
+    }
+
+    /* Last column. */
+    .result > span:last-of-type {
+        border-left: 1px solid var(--blue-darkest);
+        margin-left: 16px;
+        padding-left: 16px;
+    }
+}

@@ -10,8 +10,9 @@ const express = require("express");
 const {createFilePath} = require("gatsby-source-filesystem");
 const {buildPostSlug, isPostNodeEnabled, isPostNodeFeatured} = require("./src/utils/node/create-node.service");
 const {buildPostPath, getPostTemplate, setOfPostsBlacklisted} = require("./src/utils/node/create-pages.service");
-const {buildMetadataKeysByTitle,
-    buildMetadataLinks,
+const {buildMetadataEntityCategorySchemaNameByKey,
+    buildMetadataLinksByEntity,
+    buildMetadataTabs,
     getMetadataPostNavigation,
     getPostNavigation,
     removeBlacklistedPosts} = require("./src/utils/node/create-pages-navigation.service");
@@ -27,11 +28,11 @@ const {buildPostKeysByPath} = require("./src/utils/node/site-map.service");
 exports.onCreateNode = ({node, getNode, actions}) => {
 
     const {createNodeField} = actions;
-    const {internal, relativeFilePath} = node,
+    const {internal} = node,
         {type} = internal;
 
     /* Create new node fields for the posts of interest e.g. markdown pages, metadata schema. */
-    if ( isPostNodeFeatured(type, relativeFilePath) ) {
+    if ( isPostNodeFeatured(type) ) {
 
         const {frontmatter} = node,
             {draft, version} = frontmatter || {};
@@ -63,7 +64,11 @@ exports.onCreateNode = ({node, getNode, actions}) => {
  * @param actions
  */
 exports.createPages = async ({graphql, actions}) => {
-    const {createPage} = actions;
+    const {createPage, createRedirect} = actions;
+
+    /* Redirect "/metadata" path to "/metadata/dictionary/biomaterial/cell_line". */
+    createRedirect({fromPath: "/metadata", toPath: "/metadata/dictionary/biomaterial/cell_line", isPermanent: true, redirectInBrowser: true});
+
     await graphql(`
     {
       allMarkdownRemark {
@@ -75,20 +80,31 @@ exports.createPages = async ({graphql, actions}) => {
             }
             frontmatter {
               path
-              template
             }
             id
           }
         }
       }
-      allMetadataType(sort: {fields: title}) {
+      allMetadataEntity {
         edges {
           node {
+            categories {
+              categoryName
+            }
+            entityName
+          }
+        }
+      }
+      allMetadataSchema(sort: {fields: fields___slug}) {
+        edges {
+          node {
+            category
+            entity
             fields {
               slug
             }
             id
-            title
+            schemaName
           }
         }
       }
@@ -125,7 +141,7 @@ exports.createPages = async ({graphql, actions}) => {
         }
 
         const {data} = result,
-            {allMarkdownRemark, allMetadataType, allSiteMapYaml} = data;
+            {allMarkdownRemark, allMetadataEntity, allMetadataSchema, allSiteMapYaml} = data;
 
         /* Create a set of all posts blacklisted i.e. posts not "enabled". */
         /* Posts blacklisted will be omitted from the navigation structure. */
@@ -138,11 +154,14 @@ exports.createPages = async ({graphql, actions}) => {
         /* Build the site map, and remove any blacklisted posts. */
         const postsSiteMap = removeBlacklistedPosts(allSiteMapYaml, postsByKeyBlacklisted);
 
-        /* For all metadata schema documents associate the document key with a title. */
-        const metadataPostsKeysByTitle = buildMetadataKeysByTitle(allMetadataType);
+        /* For all metadata schema documents associate the document key with schema entity, category and schema name. */
+        const metadataEntityCategorySchemaNameByKey = buildMetadataEntityCategorySchemaNameByKey(allMetadataSchema);
 
         /* Pre-build the metadata primary and secondary navigation links. */
-        const metaLinks = buildMetadataLinks(metadataPostsKeysByTitle);
+        const metaLinksByEntity = buildMetadataLinksByEntity(metadataEntityCategorySchemaNameByKey, allMetadataEntity);
+
+        /* Pre-build the metadata secondary tabs. */
+        const metaTabs = buildMetadataTabs(metadataEntityCategorySchemaNameByKey, allMetadataEntity);
 
         /* For each markdown file create a post. */
         allMarkdownRemark.edges.forEach(({node}) => {
@@ -159,7 +178,7 @@ exports.createPages = async ({graphql, actions}) => {
                 const postComponent = getPostTemplate(template);
 
                 /* Get the post's navigation. */
-                const postNav = getPostNavigation(slug, postsSiteMap, metaLinks);
+                const postNav = getPostNavigation(slug, postsSiteMap, metaLinksByEntity);
 
                 createPage({
                     path: path,
@@ -173,17 +192,17 @@ exports.createPages = async ({graphql, actions}) => {
         });
 
         /* For each metadata type create a post. */
-        allMetadataType.edges.forEach(({node}) => {
+        allMetadataSchema.edges.forEach(({node}) => {
 
             /* Find the node's slug. */
-            const {fields, id} = node,
+            const {entity, fields, id} = node,
                 {slug} = fields;
 
             /* Create a page, if there is a slug. */
             if ( slug ) {
 
                 /* Get the metadata post's navigation. */
-                const metaNav = getMetadataPostNavigation(slug, metaLinks, postsSiteMap);
+                const metaNav = getMetadataPostNavigation(slug, postsSiteMap, metaLinksByEntity, metaTabs, entity);
 
                 createPage({
                     path: slug,
@@ -197,6 +216,25 @@ exports.createPages = async ({graphql, actions}) => {
         });
 
     });
+};
+
+/**
+ * Schema customization.
+ *
+ * @param actions
+ * @returns {*}
+ */
+exports.createSchemaCustomization = ({actions}) => {
+
+    const {createFieldExtension, createTypes} = actions;
+
+    createTypes(`
+    type Frontmatter {
+        template: String
+    }
+    type MarkdownRemark implements Node {
+        frontmatter: Frontmatter
+    }`);
 };
 
 /* Required for Edge. This function can be removed once Gatsby upgrades to @babel-preset-gatsby@0.2.3. */

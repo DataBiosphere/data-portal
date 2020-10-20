@@ -128,7 +128,11 @@ module.exports = {
                     },
                     {
                         resolve: "gatsby-remark-component",
-                        options: {components: ["data-lifecycle-diagram", "link-to-browser"]}
+                        options: {components: [
+                            "data-lifecycle-diagram",
+                            "link-to-browser",
+                            "system-status"
+                        ]}
                     },
                     {
                         resolve: `gatsby-remark-copy-linked-files`,

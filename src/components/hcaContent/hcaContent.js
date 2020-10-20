@@ -7,48 +7,75 @@
  */
 
 // Core dependencies
-import React from 'react';
+import React from "react";
 
 // App dependencies
-import Nav from '../nav/nav';
-import TOC from '../toc/toc';
-import TOCSpy from './TOCSpy';
+import ContentWrapper from "../contentWrapper/contentWrapper";
+import Nav from "../nav/nav";
+import TOC from "../toc/toc";
+import TOCSpy from "./TOCSpy";
 
 // Styles
-import compStyles from './hcaContent.module.css';
+import compStyles from "./hcaContent.module.css";
 
-let classNames = require('classnames');
+let classNames = require("classnames");
 
 class HCAContent extends React.Component {
 
-	constructor(props) {
-		super(props);
-		this.state = ({activeTOC: '', isTOC: true});
-	}
+    constructor(props) {
+        super(props);
+        this.state = ({activeTOC: "", showTOC: true});
+    }
 
-	onTOCChange = (event) => {
-		this.setState({activeTOC: event});
-	};
+    onTOCChange = (event) => {
 
-	isTOC = (event) => {
-		this.setState({isTOC: event});
-	};
+        this.setState({activeTOC: event});
+    };
 
-	render() {
-		const {children, docPath, links, showAllMetadata, tabKey} = this.props;
-		const linksExist = links && links.length;
-		return (
-			<div
-				className={classNames(compStyles.hcaContent, {[compStyles.noNav]: !linksExist})}>
-				{linksExist ? <Nav links={links} tabKey={tabKey}/> : null}
-				<TOCSpy onTOCChange={this.onTOCChange.bind(this)}>
-					<div id={'hcaContent'} className={compStyles.hcaContentInner}>{children}</div>
-				</TOCSpy>
-				{this.state.isTOC && linksExist ?
-					<TOC activeTOC={this.state.activeTOC} docPath={docPath} isTOC={this.isTOC.bind(this)} showAllMetadata={showAllMetadata}/> : null}
-			</div>
-		);
-	}
+    isUseNav = () => {
+
+        const {links} = this.props;
+
+        return links && links.length > 0;
+    };
+
+    isUseToc = () => {
+
+        const {showTOC} = this.state;
+
+        return showTOC;
+    };
+
+    onHandleUseTOC = (event) => {
+
+        this.setState({showTOC: event});
+    };
+
+    render() {
+        const {children, docPath, label, links, metadataContent, showAllMetadata, tabKey} = this.props,
+            {activeTOC} = this.state;
+        const useToc = this.isUseToc();
+        const useNav = this.isUseNav();
+        const classNamesContent = classNames(
+            compStyles.hcaContent,
+            {[compStyles.metadataContent]: metadataContent});
+
+        return (
+            <div className={classNamesContent}>
+                <ContentWrapper marginLeft={!useNav} marginRight={!useToc}>
+                    {useNav ? <Nav label={label} links={links} metadataContent={metadataContent} tabKey={tabKey}/> : null}
+                    {useToc ?
+                        <>
+                        <TOCSpy onTOCChange={this.onTOCChange.bind(this)} showAllMetadata={showAllMetadata}>
+                            <div id={"hcaContent"} className={compStyles.innerContainer}>{children}</div>
+                        </TOCSpy>
+                        <TOC activeTOC={activeTOC} docPath={docPath} onHandleUseTOC={this.onHandleUseTOC.bind(this)} showAllMetadata={showAllMetadata}/>
+                        </> :
+                        <div className={compStyles.innerContainer}>{children}</div>}
+                </ContentWrapper>
+            </div>
+        );
+    }
 }
 
 export default HCAContent;

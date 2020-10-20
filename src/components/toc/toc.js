@@ -17,6 +17,19 @@ import compStyles from "./toc.module.css";
 
 class TOC extends React.Component {
 
+    componentDidMount() {
+
+        /* Handle show/hide TOC. */
+        this.onHandleUseTOC();
+    }
+
+    onHandleUseTOC = () => {
+
+        const {useTOC} = this.props;
+
+        this.props.onHandleUseTOC(useTOC);
+    };
+
     render() {
         const {activeTOC, tocs} = this.props;
         return (
@@ -33,8 +46,9 @@ export default (props) => {
 
     const {docPath, showAllMetadata} = props;
     const tocs = TOCService.getTOCs(docPath, showAllMetadata);
+    const useTOC = tocs.length > 0;
 
     return (
-        <TOC tocs={tocs} {...props}/>
+        <TOC tocs={tocs} useTOC={useTOC} {...props}/>
     );
 }
