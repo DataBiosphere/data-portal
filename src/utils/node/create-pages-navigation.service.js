@@ -11,21 +11,21 @@ const orderEntities = ["type", "core", "module", "system"];
 
 /**
  * Returns the metadata object key-value pair comprising of metadata slug and
- * a string array of schema entity, category and schema name.
+ * a string array of schema entity, category and schema title.
  *
  * @param metadataSchema
  * @returns {*}
  */
-const buildMetadataEntityCategorySchemaNameByKey = function buildMetadataEntityCategorySchemaNameByKey(metadataSchema) {
+const buildMetadataEntityCategorySchemaTitleByKey = function buildMetadataEntityCategorySchemaTitleByKey(metadataSchema) {
 
     return metadataSchema.edges
         .map(n => n.node)
         .reduce((acc, node) => {
 
-        const {category, entity, fields, schemaName} = node,
+        const {category, entity, fields, title} = node,
             {slug} = fields;
 
-        acc.set(slug, [entity, category, schemaName]);
+        acc.set(slug, [entity, category, title]);
 
         return acc;
     }, new Map());
@@ -34,10 +34,10 @@ const buildMetadataEntityCategorySchemaNameByKey = function buildMetadataEntityC
 /**
  * Builds metadata primary and secondary links.
  *
- * @param metadataEntityCategorySchemaNameByKey
+ * @param metadataEntityCategorySchemaTitleByKey
  * @param allMetadataEntity
  */
-const buildMetadataLinksByEntity = function buildMetadataLinksByEntity(metadataEntityCategorySchemaNameByKey, allMetadataEntity) {
+const buildMetadataLinksByEntity = function buildMetadataLinksByEntity(metadataEntityCategorySchemaTitleByKey, allMetadataEntity) {
 
     /* Create an object key-value pair of entity and set of associated categories. */
     const setOfCategoriesByEntity = allMetadataEntity.edges
@@ -60,7 +60,7 @@ const buildMetadataLinksByEntity = function buildMetadataLinksByEntity(metadataE
         const categoryLinks = [...setOfCategories].map(category => {
 
             /* Find all related metadata posts i.e. schema from the same entity - they share the same primary link key. */
-            const filteredMetadataPosts = filterMetadataPostsByEntityCategory(metadataEntityCategorySchemaNameByKey, entity, category);
+            const filteredMetadataPosts = filterMetadataPostsByEntityCategory(metadataEntityCategorySchemaTitleByKey, entity, category);
 
             /* For each set of links, get the first link key - this will be the slug/path for the primary link. */
             const primaryLinkKey = filteredMetadataPosts.keys().next().value;
@@ -79,14 +79,14 @@ const buildMetadataLinksByEntity = function buildMetadataLinksByEntity(metadataE
             }
 
             /* Build the secondary links. */
-            const secondaryLinks = [...filteredMetadataPosts].map(([metadataPostKey, entityCategorySchemaName]) => {
+            const secondaryLinks = [...filteredMetadataPosts].map(([metadataPostKey, entityCategorySchemaTitle]) => {
 
-                const [,,schemaName] = entityCategorySchemaName;
+                const [,,schemaTitle] = entityCategorySchemaTitle;
 
                 return {
                     active: false, /* Let "active" be false, for now. */
                     key: metadataPostKey,
-                    name: schemaName,
+                    name: schemaTitle,
                     path: metadataPostKey
                 }
             });
@@ -111,11 +111,11 @@ const buildMetadataLinksByEntity = function buildMetadataLinksByEntity(metadataE
  * Builds the metadata tab comprising of entities with corresponding path for the entity.
  * The path matches the entity's first category's first schema.
  *
- * @param metadataEntityCategorySchemaNameByKey
+ * @param metadataEntityCategorySchemaTitleByKey
  * @param allMetadataEntity
  * @returns {Array}
  */
-const buildMetadataTabs = function buildMetadataTabs(metadataEntityCategorySchemaNameByKey, allMetadataEntity) {
+const buildMetadataTabs = function buildMetadataTabs(metadataEntityCategorySchemaTitleByKey, allMetadataEntity) {
 
     const metadataEntities = allMetadataEntity.edges.map(n => n.node);
 
@@ -133,7 +133,7 @@ const buildMetadataTabs = function buildMetadataTabs(metadataEntityCategorySchem
             const {entityName} = entity;
 
             /* Find the first metadata path for the specified entity. */
-            const tabPath = findMetadataTabPathByEntity(metadataEntityCategorySchemaNameByKey, entityName);
+            const tabPath = findMetadataTabPathByEntity(metadataEntityCategorySchemaTitleByKey, entityName);
 
             /* Create tab name. */
             const tabName = `${capitalizeString(entityName)} Entities`;
@@ -456,15 +456,15 @@ function capitalizeString(str) {
  * Returns the metadata tab's path for the specified tab [entity].
  * Finds the first schema path belonging the specified entity.
  *
- * @param metadataEntityCategorySchemaNameByKey
+ * @param metadataEntityCategorySchemaTitleByKey
  * @param entityName
  */
-function findMetadataTabPathByEntity(metadataEntityCategorySchemaNameByKey, entityName) {
+function findMetadataTabPathByEntity(metadataEntityCategorySchemaTitleByKey, entityName) {
 
-    const [metadataPostKey,] = [...metadataEntityCategorySchemaNameByKey]
-        .find(([metadataPostKey, entityCategorySchemaName]) => {
+    const [metadataPostKey,] = [...metadataEntityCategorySchemaTitleByKey]
+        .find(([metadataPostKey, entityCategorySchemaTitle]) => {
 
-            const [schemaEntity,,] = entityCategorySchemaName;
+            const [schemaEntity,,] = entityCategorySchemaTitle;
             return schemaEntity === entityName;
         });
 
@@ -602,25 +602,25 @@ function getWhitelistedLink(link, postsByKeyBlacklisted) {
 
 /**
  * Returns the metadata object key-value pair comprising of metadata slug and
- * a string array of schema entity, category and schema name, filtered by entity and category.
+ * a string array of schema entity, category and schema title, filtered by entity and category.
  * Filters all schemas that belong to the specified entity.
  *
- * @param metadataEntityCategorySchemaNameByKey
+ * @param metadataEntityCategorySchemaTitleByKey
  * @param entity
  * @param category
  * @returns {Map}
  */
-function filterMetadataPostsByEntityCategory(metadataEntityCategorySchemaNameByKey, entity, category) {
+function filterMetadataPostsByEntityCategory(metadataEntityCategorySchemaTitleByKey, entity, category) {
 
-    return new Map([...metadataEntityCategorySchemaNameByKey].filter(([metadataPostKey, entityCategorySchemaName]) => {
+    return new Map([...metadataEntityCategorySchemaTitleByKey].filter(([metadataPostKey, entityCategorySchemaTitle]) => {
 
-        const [schemaEntity, schemaCategory,] = entityCategorySchemaName;
+        const [schemaEntity, schemaCategory,] = entityCategorySchemaTitle;
 
         return schemaEntity === entity && schemaCategory === category;
     }));
 }
 
-module.exports.buildMetadataEntityCategorySchemaNameByKey = buildMetadataEntityCategorySchemaNameByKey;
+module.exports.buildMetadataEntityCategorySchemaTitleByKey = buildMetadataEntityCategorySchemaTitleByKey;
 module.exports.buildMetadataLinksByEntity = buildMetadataLinksByEntity;
 module.exports.buildMetadataTabs = buildMetadataTabs;
 module.exports.getMetadataPostNavigation = getMetadataPostNavigation;

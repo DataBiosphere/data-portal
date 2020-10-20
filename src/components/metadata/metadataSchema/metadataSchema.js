@@ -28,10 +28,10 @@ class MetadataSchema extends React.Component {
             <>
             <p>{entityDescription}</p>
             <h2 className={compStyles.title}>
-                <span>{schemaName}</span>
+                <span>{title}</span>
                 <a className={fontStyles.xxs} href={urlGitHub} rel="noopener noreferrer" target="_blank">View Schema Source</a>
             </h2>
-            <p className={fontStyles.xs}>{title}</p>
+            <p className={fontStyles.xs}>{schemaName}</p>
             <p className={compStyles.description}>{description}</p>
             <MetadataToggleRequiredFields/>
             {showProperties ?
