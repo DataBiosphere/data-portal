@@ -53,17 +53,7 @@
 
 /* All text. */
 .result span {
-    margin-top: 0;
-}
-
-/* Text - second column - space between first entry and second entry. */
-.result > span:last-of-type > span:first-child {
-    margin-bottom: 0;
-}
-
-/* Text - second column - space between first entry and second entry. */
-.result > span:last-of-type > span:last-child {
-    margin: 4px 0 0;
+    margin: 0;
 }
 
 /**

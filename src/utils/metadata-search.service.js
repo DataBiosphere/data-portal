@@ -9,7 +9,7 @@
 export const DenyListInputs = ["^", "~", ":", "-", "+"];
 
 // Template variables
-const AllowListScoreCriteria = ["description", "example", "classes", "ontologies", "relations", "schema", "pathSegmentFirst", "pathSegmentSecond", "path", "friendlyName"];
+const AllowListScoreCriteria = ["description", "example", "classes", "ontologies", "schema", "pathSegmentFirst", "pathSegmentSecond", "path", "friendlyName"];
 const AllListScoreTypeEarlyBreakers = ["pathSegmentSecondFullMatch", "pathSegmentSecondSomeMatch", "pathSomeMatch", "friendlyNameFullMatch"];
 const DenyListScoreType = ["searchModel"];
 const DenyListScoreTypeProcesses = ["pathSegmentFirstFullMatch", "pathSegmentFirstSomeMatch"];
@@ -169,7 +169,7 @@ function buildSearchModels(schemas, properties) {
 
             const {description, example, graphRestriction, label,
                     propertyPath, propertyPaths, schemaName, title} = result || {},
-                {classes, ontologies, relations} = graphRestriction || {};
+                {classes, ontologies} = graphRestriction || {};
             const modelDescription = description ? description.toLowerCase() : description;
             const modelExample = example ? example.toLowerCase() : example;
             const modelFriendly = title ? title.toLowerCase() : label.toLowerCase();
@@ -187,7 +187,6 @@ function buildSearchModels(schemas, properties) {
                 path: modelPath,
                 pathSegmentFirst: pathSegmentFirst,
                 pathSegmentSecond: pathSegmentSecond,
-                relations: relations,
                 schema: modelSchema
             }
         });
@@ -339,13 +338,35 @@ function filterSearchModels(setOfSearchModelsByScoreType, querySegmentDepth, que
                 /* Process score types. */
                 if ( processHits ) {
 
+                    /* Register when a result has a hit in the score type "classes", "example" or "ontologies". */
+                    /* The boolean will determine whether the field is displayed in the search results. */
+                    const resultHasClassesHit = scoreType.startsWith("classes");
+                    const resultHasExampleHit = scoreType.startsWith("example");
+                    const resultHasOntologiesHit = scoreType.startsWith("ontologies");
+
+                    /* Clone model and model hit. */
+                    /* Update clone with boolean. */
+                    const modelClone = Object.assign({}, model);
+                    const modelHitClone = Object.assign({}, model.hit);
+                    Object.assign(modelHitClone, {showClasses: resultHasClassesHit, showExample: resultHasExampleHit, showOntologies: resultHasOntologiesHit});
+                    modelClone.hit = modelHitClone;
+
                     /* Switch the score type - if required. */
-                    scoreType = switchScoreType(scoreType);
+                    const sType = switchScoreType(scoreType);
 
                     /* Grab the set of results for the score type. */
-                    const setOfResults = setOfResultsByScoreType.get(scoreType);
+                    const setOfResults = setOfResultsByScoreType.get(sType);
 
-                    setOfResultsByScoreType.set(scoreType, buildSetOfModels(model, setOfResults));
+                    /* Add the result to the score type - if it hasn't already been added. */
+                    /* Bundle score types like "description" and "example" and "classes" etc. together. */
+                    /* With modifications to the model (clone), this step prevents duplicate properties added to the set of results "generalHit". */
+                    /* This satisfies two criteria - . */
+                    /* Any property with a hit on description and then example, should not display twice. */
+                    /* The property will not need to display the example field; the hit on description is sufficient. */
+                    if ( !isResultInScoreType(model, setOfResults, sType) ) {
+
+                        setOfResultsByScoreType.set(sType, buildSetOfModels(modelClone, setOfResults));
+                    }
                 }
             }
 
@@ -357,7 +378,7 @@ function filterSearchModels(setOfSearchModelsByScoreType, querySegmentDepth, que
         }
     }
 
-    return reduceResults(reorderSetOfResultsByScoreType(setOfResultsByScoreType));
+    return getDistinctResults(reorderSetOfResultsByScoreType(setOfResultsByScoreType));
 }
 
 /**
@@ -403,6 +424,46 @@ function getAnalyzedModelValues(searchModel, modelKey, queryStr, queryLength) {
     }
 
     return [fullMatchValue, someMatchValue];
+}
+
+/**
+ * Returns distinct results.
+ * The set of results by score type are in order of display preference.
+ * Any subsequent duplicates are removed from the results - the duplicate will have had a hit on a more preferential
+ * score type.
+ * e.g. any duplications within the score type "generalHit" (which comprises of score types like "example" or "description") will not be
+ * included into the results if the same schema or property has a hit on a score type like "schema" or "path".
+ *
+ * @param setOfResultsByScoreType
+ */
+function getDistinctResults(setOfResultsByScoreType) {
+
+    if ( setOfResultsByScoreType.size > 0 ) {
+
+        const setOfResultsByIdentifier = new Map();
+
+        [...setOfResultsByScoreType.values()].forEach(setOfResults => {
+
+            if ( setOfResults ) {
+
+                [...setOfResults].forEach(result => {
+
+                    const {hit, path, schema} = result || {};
+                    const resultIdentifier = schema || path;
+                    const resultExists = setOfResultsByIdentifier.has(resultIdentifier);
+
+                    if ( !resultExists ) {
+
+                        setOfResultsByIdentifier.set(resultIdentifier, hit);
+                    }
+                });
+            }
+        });
+
+        return [...setOfResultsByIdentifier.values()];
+    }
+
+    return [];
 }
 
 /**
@@ -489,36 +550,37 @@ function isProcessHits(model, scoreType, querySegmentDepth) {
 }
 
 /**
- * Returns the results.
- * Reduces sets of results to a flat array of results.
+ * Returns true if the model is already registered with the score type "generalHit".
  *
- * @param setOfResultsByScoreType
+ * @param model
+ * @param setOfModels
+ * @param scoreType
  */
-function reduceResults(setOfResultsByScoreType) {
+function isResultInScoreType(model, setOfModels, scoreType) {
 
-    if ( setOfResultsByScoreType.size > 0 ) {
+    /* Only process score types "generalHit". */
+    /* Other score types are not bundled up together and therefore will not have modified, cloned models. */
+    if ( scoreType.startsWith("generalHit") && setOfModels ) {
 
-        const setOfResults = [...setOfResultsByScoreType.values()].reduce((acc, setOfResults) => {
+        const {hit, path} = model || {},
+            {type} = hit || {};
 
-            if ( setOfResults ) {
+        /* Grab the model type. */
+        const propertyExists = /property/.test(type);
 
-                [...setOfResults].forEach(result => {
+        /* If the model type is a property, check the property is not already in the set. */
+        /* Schema models will not be duplicated; lunr indexing on schema is for description only. */
+        if ( propertyExists ) {
 
-                    acc.add(result.hit)
-                });
-            }
-
-            return acc;
-        }, new Set());
-
-        return [...setOfResults];
+            return [...setOfModels].some(model => model.path === path);
+        }
     }
 
-    return [];
+    return false;
 }
 
 /**
- * Returns the set of results by score type with any general hits placed in last position.
+ * Returns the set of results by score type with the score type "generalHits" placed in last position, if it exists.
  *
  * @param setOfResultsByScoreType
  * @returns {*}
@@ -528,7 +590,7 @@ function reorderSetOfResultsByScoreType(setOfResultsByScoreType) {
     if ( setOfResultsByScoreType.size > 0 ) {
 
         /* Reorganise general hits to the end of the results. */
-        /* We want to display higher value hits first. */
+        /* Higher value hits are displayed first. */
         /* Grab the general hits. */
         const setOfGeneralHitResults = setOfResultsByScoreType.get("generalHit");
 
