@@ -21,6 +21,7 @@ export const MetadataSchemaPropertiesQuery = () => {
               name
               primary
               primaryRequired
+              propertyFriendlies
               propertyFrom
               propertyFromLink
               propertyPath
@@ -30,10 +31,6 @@ export const MetadataSchemaPropertiesQuery = () => {
               referenceFromLink
               relativePath
               required
-              schema {
-                schemaName
-                title
-              }
               type
               urlTo
             }

@@ -9,8 +9,9 @@
 .friendly {
     display: inline-flex;
     flex-wrap: wrap;
+    margin: 0;
 }
 
-.friendly > span {
+.friendly span {
     white-space: pre;
 }

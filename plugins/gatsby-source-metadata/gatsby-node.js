@@ -240,6 +240,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         name: String
         primary: Boolean
         primaryRequired: Boolean
+        propertyFriendlies: [String]
         propertyFrom: String
         propertyFromLink: String
         propertyPath: String

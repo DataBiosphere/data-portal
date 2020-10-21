@@ -87,7 +87,7 @@ class Nav extends React.Component {
 	};
 
 	render() {
-		const {label, links, metadataContent} = this.props,
+		const {label, links} = this.props,
 			{showNav} = this.state;
 		return (
 			<div className={compStyles.hcaNav}>

@@ -69,8 +69,6 @@
 
 /* Tabs - secondary. */
 .hcaTabs.secondary .tabs {
-    align-items: center;
-    display: flex;
     height: 44px;
     margin: 0 -16px 0;
 }

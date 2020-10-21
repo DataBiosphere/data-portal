@@ -60,6 +60,7 @@ export const pageQuery = graphql`
                 name
                 primary
                 primaryRequired
+                propertyFriendlies
                 propertyFrom
                 propertyFromLink
                 propertyPath
@@ -77,10 +78,8 @@ export const pageQuery = graphql`
               usedByProperties {
                 description
                 label
+                propertyFriendlies
                 propertyPath
-                schema {
-                  title
-                }
                 urlTo
               }
               urlGitHub

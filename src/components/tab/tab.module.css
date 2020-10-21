@@ -71,8 +71,6 @@
 
 /* Secondary tab. */
 .tab.secondary {
-    align-items: center;
-    display: flex;
     height: 100%;
 }
 
@@ -80,7 +78,7 @@
 .tab.secondary a {
     color: var(--gray-dark);
     font-size: 13px;
-    line-height: 20px;
+    line-height: 44px;
 }
 
 /* Active secondary tab. */
