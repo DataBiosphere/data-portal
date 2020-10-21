@@ -9,9 +9,6 @@
 // Core dependencies
 import React from "react";
 
-// App dependencies
-import MetadataSchemaPropertyFieldLabel from "../metadataSchemaPropertyFieldLabel/metadataSchemaPropertyFieldLabel";
-
 // Styles
 import compStyles from "./metadataSchemaPropertyFieldFriendlies.module.css";
 import fontStyles from "../../../styles/fontsize.module.css";
@@ -21,14 +18,29 @@ const classNames = require("classnames");
 function MetadataSchemaPropertyFieldFriendlies(props) {
 
     const {property} = props,
-        {schema} = property || {},
-        {title} = schema || {};
+        {propertyFriendlies} = property || {};
+    const showFriendlies = propertyFriendlies && propertyFriendlies.length > 0;
+    const friendlyDepth = showFriendlies ? propertyFriendlies.length - 1 : 0;
+
+    const Friendly = (props) => {
+
+        const {counter, friendly, friendlyDepth} = props;
+        const lastSlash = counter === friendlyDepth;
+        const showSlash = !lastSlash;
+
+        return (
+            <span>
+                <span>{friendly}</span>
+                {showSlash ? <span> / </span> : null}
+            </span>
+        )
+    };
 
     return (
-        <span className={classNames(compStyles.friendly, fontStyles.s, fontStyles.regular)}>
-            <span>{title} / </span>
-            <MetadataSchemaPropertyFieldLabel  property={property}/>
-        </span>
+        showFriendlies ?
+            <span className={classNames(compStyles.friendly, fontStyles.s, fontStyles.regular)}>
+                {propertyFriendlies.map((friendly, f) => <Friendly key={f} counter={f} friendly={friendly} friendlyDepth={friendlyDepth}/>)}
+            </span> : null
     );
 }
 

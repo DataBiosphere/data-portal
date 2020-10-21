@@ -109,11 +109,12 @@ const getMetadataSchemaProperties = function getMetadataSchemaProperties(schemaJ
         /* Create the propertyPaths field, starting with schema name. */
         /* This will be added to with property names and will help build the property anchor field. */
         const propertyPaths = [schemaJSON.name];
+        const propertyFriendlies = [schemaJSON.title];
 
         /* Grab the top level schema name. */
         const schemaName = schemaJSON.name;
 
-        return acc.concat(processSchemaProperties(schemaName, schemaJSON, schemaFilePath, schemaJSONByPath, schemaFilePathsByRelativePath, propertyPaths, schemaFilePath));
+        return acc.concat(processSchemaProperties(schemaName, schemaJSON, schemaFilePath, schemaJSONByPath, schemaFilePathsByRelativePath, propertyPaths, propertyFriendlies, schemaFilePath));
     }, []);
 };
 
@@ -247,11 +248,12 @@ function buildFEModelSchema(schemaFilePath, schemaRelativePath, schemaJSON) {
  * @param schemaJSONByPath
  * @param schemaFilePathsByRelativePath
  * @param propPaths
+ * @param propFriendlies
  * @param propPrimaryFilePath
  * @param propPrimary
  * @param propPrimaryRequired
  */
-function buildFEModelSchemaProperties(schemaName, schemaJSON, schemaFilePath, propertyNames, requiredProperties, schemaJSONByPath, schemaFilePathsByRelativePath, propPaths, propPrimaryFilePath, propPrimary, propPrimaryRequired) {
+function buildFEModelSchemaProperties(schemaName, schemaJSON, schemaFilePath, propertyNames, requiredProperties, schemaJSONByPath, schemaFilePathsByRelativePath, propPaths, propFriendlies, propPrimaryFilePath, propPrimary, propPrimaryRequired) {
 
     /* Build the properties. */
     const properties = propertyNames.map(propertyName => {
@@ -263,20 +265,22 @@ function buildFEModelSchemaProperties(schemaName, schemaJSON, schemaFilePath, pr
 
         /* Create property fields. */
         /* Fields are DP metadata specific fields - used by the metadata pages. */
-        const propertyPaths = getPropertyPaths(propPaths, propertyName);
-        const propertyPath = propertyPaths.join(".");
-        const anchor = getPropertyAnchor(propertyPaths); /* TODO. */
-        const example = getPropertyExample(propertyJSON);
-        const graphRestriction = getPropertyGraphRestriction(propertyJSON);
         const label = user_friendly || propertyName;
+        const propertyPaths = getPropertyPaths(propPaths, propertyName);
+        const _ref = getPropertyReference(propertyJSON);
+        const reference = buildPropertyReference(_ref, schemaFilePathsByRelativePath);
+        const required = requiredProperties.includes(propertyName);
+        /* Fields - continued - built from other fields. */
+        const anchor = getPropertyAnchor(propertyPaths);
+        const dataType = getPropertyDataType(propertyJSON, reference);
+        const example = getPropertyExample(propertyJSON);
+        const propertyFriendlies = getPropertyFriendlies(propFriendlies, label);
+        const graphRestriction = getPropertyGraphRestriction(propertyJSON);
         const name = getPropertyName(propertyPaths);
         const propertyFrom = schemaJSON.name;
         const propertyFromLink = getPropertyFromLink(schemaFilePath, schemaFilePathsByRelativePath);
-        const _ref = getPropertyReference(propertyJSON);
-        const reference = buildPropertyReference(_ref, schemaFilePathsByRelativePath);
+        const propertyPath = propertyPaths.join(".");
         const relativePath = schemaFilePathsByRelativePath.get(propPrimaryFilePath);
-        const dataType = getPropertyDataType(propertyJSON, reference);
-        const required = requiredProperties.includes(propertyName);
         const primaryRequired = getPropertyPrimaryRequired(propPrimary, required, propPrimaryRequired);
 
         /* Build the property JSON. */
@@ -290,6 +294,7 @@ function buildFEModelSchemaProperties(schemaName, schemaJSON, schemaFilePath, pr
             name: name,
             primary: propPrimary,
             primaryRequired: primaryRequired,
+            propertyFriendlies: propertyFriendlies,
             propertyFrom: propertyFrom,
             propertyFromLink: propertyFromLink,
             propertyPath: propertyPath,
@@ -502,6 +507,26 @@ function getPropertyExample(propertyJSON) {
 
         return ` or "${e}"`;
         }).join("").concat(".");
+}
+
+/**
+ * Create the propertyFriendlies field - DP metadata specific field required for metadata friendlies.
+ * Provides full friendly history.
+ * e.g. for the property "cell_line.cell_morphology.cell_size_unit"
+ * the value returned will be ["cell line", "cell morphology", "cell size unit"].
+ *
+ * @param propertyFriendlies
+ * @param propertyFriendly
+ * @returns {Array}
+ */
+function getPropertyFriendlies(propertyFriendlies, propertyFriendly) {
+
+    if ( propertyFriendlies ) {
+
+        return propertyFriendlies.concat(propertyFriendly);
+    }
+
+    return propertyFriendly;
 }
 
 /**
@@ -849,15 +874,16 @@ function insertReferencedProperties(properties, schemaName, schemaJSONByPath, sc
 
             if ( referenceSchemaFilePath ) {
 
-                /* Get the JSON for the specified path. */
+                /* Get the JSON for the specified path, and any fields that rely on parent field information. */
                 const referenceSchemaJSON = getSchemaJSON(referenceSchemaFilePath, schemaJSONByPath);
                 const [schemaFilePath,] = referenceSchemaFilePath.split("#");
+                const referencePropertyFriendlies = property.propertyFriendlies;
                 const referencePropertyPaths = property.propertyPaths;
                 const referencePrimaryRequired = property.primaryRequired;
 
                 /* Build the referenced properties and push them onto the accumulator. */
                 /* Note, this is a recursive call on a method, and will complete when all referenced properties have been processed. */
-                const referenceProperties = processSchemaProperties(schemaName, referenceSchemaJSON, schemaFilePath, schemaJSONByPath, schemaFilePathsByRelativePath, referencePropertyPaths, propPrimaryFilePath, false, referencePrimaryRequired);
+                const referenceProperties = processSchemaProperties(schemaName, referenceSchemaJSON, schemaFilePath, schemaJSONByPath, schemaFilePathsByRelativePath, referencePropertyPaths, referencePropertyFriendlies, propPrimaryFilePath, false, referencePrimaryRequired);
 
                 acc.push(...referenceProperties);
             }
@@ -938,11 +964,12 @@ async function mapSchemaJSONByPath(dirPath) {
  * @param schemaJSONByPath
  * @param schemaFilePathsByRelativePath
  * @param propertyPaths
+ * @param propertyFriendlies
  * @param propPrimaryFilePath
  * @param propPrimary
  * @param propPrimaryRequired
  */
-function processSchemaProperties(schemaName, schemaJSON, schemaFilePath, schemaJSONByPath, schemaFilePathsByRelativePath, propertyPaths, propPrimaryFilePath, propPrimary = true, propPrimaryRequired = false) {
+function processSchemaProperties(schemaName, schemaJSON, schemaFilePath, schemaJSONByPath, schemaFilePathsByRelativePath, propertyPaths, propertyFriendlies, propPrimaryFilePath, propPrimary = true, propPrimaryRequired = false) {
 
     /* Created required field - remove deny listed properties. */
     const requiredProperties = filterRequiredProperties(schemaJSON);
@@ -954,7 +981,7 @@ function processSchemaProperties(schemaName, schemaJSON, schemaFilePath, schemaJ
     const sortedPropertyNames = propertyNames.sort();
 
     /* Build the properties. */
-    return buildFEModelSchemaProperties(schemaName, schemaJSON, schemaFilePath, sortedPropertyNames, requiredProperties, schemaJSONByPath, schemaFilePathsByRelativePath, propertyPaths, propPrimaryFilePath, propPrimary, propPrimaryRequired);
+    return buildFEModelSchemaProperties(schemaName, schemaJSON, schemaFilePath, sortedPropertyNames, requiredProperties, schemaJSONByPath, schemaFilePathsByRelativePath, propertyPaths, propertyFriendlies, propPrimaryFilePath, propPrimary, propPrimaryRequired);
 }
 
 /**

@@ -63,7 +63,7 @@ class HCAContent extends React.Component {
         return (
             <div className={classNamesContent}>
                 <ContentWrapper marginLeft={!useNav} marginRight={!useToc}>
-                    {useNav ? <Nav label={label} links={links} metadataContent={metadataContent} tabKey={tabKey}/> : null}
+                    {useNav ? <Nav label={label} links={links} tabKey={tabKey}/> : null}
                     {useToc ?
                         <>
                         <TOCSpy onTOCChange={this.onTOCChange.bind(this)} showAllMetadata={showAllMetadata}>

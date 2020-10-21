@@ -12,7 +12,7 @@ import React, {useState} from "react";
 import HeadingTag from "../../anchor/anchor";
 import MetadataRequired from "../metadataRequired/metadataRequired";
 import MetadataSchemaPropertyFieldPath from "../metadataSchemaPropertyFieldPath/metadataSchemaPropertyFieldPath";
-import MetadataSchemaPropertyFieldRefIntro from "../metadataSchemaPropertyFieldRefIntro/metadataSchemaPropertyFieldRefIntro";
+import MetadataSchemaPropertyFieldReference from "../metadataSchemaPropertyFieldReference/metadataSchemaPropertyFieldReference";
 import MetadataSchemaPropertyFields from "../metadataSchemaPropertyFields/metadataSchemaPropertyFields";
 
 // Styles
@@ -37,7 +37,7 @@ function MetadataSchemaProperty(props) {
     return (
         <>
         <div id={anchor} className={compStyles.schemaProperty}>
-            <MetadataSchemaPropertyFieldRefIntro property={property}/>
+            <MetadataSchemaPropertyFieldReference property={property}/>
             <span onMouseEnter={() => onMouseEnter()}
                   onMouseLeave={() => onMouseLeave()}
                   role="presentation">
