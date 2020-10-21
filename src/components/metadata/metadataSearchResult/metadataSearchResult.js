@@ -23,7 +23,7 @@ function MetadataSearchResult(props) {
     const {result} = props,
         {type, urlTo} = result || {};
     const {showAllMetadata, onHandleToggleRequiredFields} = useContext(ContextMetadataToggleRequiredFields);
-    const {onHandleInput, onHandleEsc} = useContext(ContextMetadataSearch);
+    const {inputValue, onHandleInput, onHandleEsc} = useContext(ContextMetadataSearch);
     const showSchema = /schema/.test(type);
 
     const redirectTo = () => {
@@ -68,7 +68,9 @@ function MetadataSearchResult(props) {
 
     return (
         <ClickHandler className={compStyles.result} clickAction={redirectTo} tag={"div"}>
-            {showSchema ? <MetadataSearchResultSchema result={result}/> : <MetadataSearchResultProperty result={result}/>}
+            {showSchema ?
+                <MetadataSearchResultSchema result={result} searchTerm={inputValue}/> :
+                <MetadataSearchResultProperty result={result} searchTerm={inputValue}/>}
         </ClickHandler>
     )
 }

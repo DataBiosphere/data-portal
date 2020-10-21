@@ -9,6 +9,7 @@
 import React from "react";
 
 // App dependencies
+import Highlight from "../../highlight/highlight";
 import MetadataOverline from "../metadataOverline/metadataOverline";
 import MetadataSchemaPropertyWordWrapper from "../metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper";
 
@@ -19,20 +20,26 @@ const classNames = require("classnames");
 
 function MetadataSearchResultSchema(props) {
 
-    const {result} = props,
+    const {result, searchTerm} = props,
         {description, schemaName, title} = result || {};
 
     return (
         <>
         <span>
-            <MetadataSchemaPropertyWordWrapper font={"hcaCode"} word={schemaName} wrap/>
+            <Highlight term={searchTerm}>
+                <MetadataSchemaPropertyWordWrapper font={"hcaCode"} word={schemaName} wrap/>
+            </Highlight>
         </span>
         <span>
             <MetadataOverline><span>Entity</span></MetadataOverline>
         </span>
         <span>
-            <span className={classNames(fontStyles.regular, fontStyles.s)}>{title}</span>
-            <span className={fontStyles.xs}>{description}</span>
+            <Highlight term={searchTerm}>
+                <span className={classNames(fontStyles.regular, fontStyles.s)}>{title}</span>
+            </Highlight>
+            <Highlight term={searchTerm}>
+                <span className={fontStyles.xs}>{description}</span>
+            </Highlight>
         </span>
         </>
     )

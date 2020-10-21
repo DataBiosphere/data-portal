@@ -9,6 +9,7 @@
 import React from "react";
 
 // App dependencies
+import Highlight from "../../highlight/highlight";
 import MetadataOverline from "../metadataOverline/metadataOverline";
 import MetadataSchemaPropertyFieldDescription from "../metadataSchemaPropertyFieldDescription/metadataSchemaPropertyFieldDescription";
 import MetadataSchemaPropertyFieldExample from "../metadataSchemaPropertyFieldExample/metadataSchemaPropertyFieldExample";
@@ -18,22 +19,28 @@ import MetadataSchemaPropertyWordWrapper from "../metadataSchemaPropertyWordWrap
 
 function MetadataSearchResultProperty(props) {
 
-    const {result} = props,
+    const {result, searchTerm} = props,
         {propertyPath, showClasses, showExample, showOntologies} = result || {};
 
     return (
         <>
         <span>
-            <MetadataSchemaPropertyWordWrapper font={"hcaCode"} word={propertyPath} wrap/>
+            <Highlight term={searchTerm}><MetadataSchemaPropertyWordWrapper font={"hcaCode"} word={propertyPath} wrap/></Highlight>
         </span>
         <span>
             <MetadataOverline><span>Property</span></MetadataOverline>
         </span>
         <span>
             <MetadataSchemaPropertyFieldFriendlies property={result}/>
-            <MetadataSchemaPropertyFieldDescription font={"xs"} property={result}/>
-            {showExample ? <MetadataSchemaPropertyFieldExample font={"xs"} property={result}/> : null}
-            {showClasses || showOntologies ? <MetadataSchemaPropertyFieldGraphRestriction property={result} showLink={false}/> : null}
+            <Highlight term={searchTerm}><MetadataSchemaPropertyFieldDescription font={"xs"} property={result}/></Highlight>
+            {showExample ?
+                <Highlight term={searchTerm}>
+                    <MetadataSchemaPropertyFieldExample font={"xs"} property={result}/>
+                </Highlight> : null}
+            {showClasses || showOntologies ?
+                <Highlight term={searchTerm}>
+                    <MetadataSchemaPropertyFieldGraphRestriction property={result} showLink={false}/>
+                </Highlight> : null}
         </span>
         </>
     )

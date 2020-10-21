@@ -1,0 +1,11 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal highlight component.
+ */
+
+/* Highlight. */
+.highlight mark {
+    background-color: rgba(255, 255, 0, 0.30);
+}
