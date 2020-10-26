@@ -8,6 +8,7 @@
 // App dependencies
 import * as EnvironmentService from "../utils/environment/environment.service";
 import * as HttpService from '../utils/http.service';
+
 const SYSTEM_HEALTH_CHECK_API_URL = process.env.GATSBY_SYSTEM_HEALTH_CHECK_API_URL;
 
 /**
@@ -15,10 +16,10 @@ const SYSTEM_HEALTH_CHECK_API_URL = process.env.GATSBY_SYSTEM_HEALTH_CHECK_API_U
  */
 export function healthCheck() {
 
-	return fetch(SYSTEM_HEALTH_CHECK_API_URL)
-		.then(HttpService.checkResponseStatus)
-		.then(resp => resp.json())
-		.then(bindHealthCheckResponse);
+    return fetch(SYSTEM_HEALTH_CHECK_API_URL)
+        .then(HttpService.checkResponseStatus)
+        .then(resp => resp.json())
+        .then(bindHealthCheckResponse);
 }
 
 /**
@@ -26,7 +27,8 @@ export function healthCheck() {
  */
 function bindHealthCheckResponse(response) {
 
-	return {
-        healthy: EnvironmentService.isCGLEnvironment() ? response.up : response.status === "ok"
+    // Temporarily disable system status banner for DCP 1 - see #769.
+    return {
+        healthy: EnvironmentService.isCGLEnvironment() ? response.up : true/*response.status === "ok"*/
     };
 }
