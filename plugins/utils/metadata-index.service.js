@@ -11,7 +11,7 @@ const lunr = require("lunr");
 const path = require("path");
 
 // App dependencies
-const {parseArraySpecialCharValues} = require(path.resolve(__dirname, "./metadata-index-field.service.js"));
+const {parseArraySpecialCharValues, parsePropertyExample, parseStrSpecialCharValues} = require(path.resolve(__dirname, "./metadata-index-field.service.js"));
 
 /**
  * Generates the lunr search index for the metadata.
@@ -28,6 +28,7 @@ const generateMetadataIndex = function generateMetadataIndex(properties, schemas
         this.field("classes");
         this.field("description");
         this.field("example");
+        this.field("label");
         this.field("name");
         this.field("ontologies");
         this.field("propertyPath");
@@ -44,11 +45,12 @@ const generateMetadataIndex = function generateMetadataIndex(properties, schemas
         properties.forEach(property => {
 
             const classes = parseArraySpecialCharValues(property.graphRestriction.classes);
-            const description = property.description;
+            const description = parseStrSpecialCharValues(property.description);
             const id = property.id;
+            const label = property.label;
             const name = property.name;
             const ontologies = parseArraySpecialCharValues(property.graphRestriction.ontologies);
-            const propertyExample = property.example;
+            const propertyExample = parsePropertyExample(property.example);
             const propertyPath = property.propertyPath;
             const propertyPaths = property.propertyPaths;
             const relations = parseArraySpecialCharValues(property.graphRestriction.relations);
@@ -58,6 +60,7 @@ const generateMetadataIndex = function generateMetadataIndex(properties, schemas
                 "description": description,
                 "example": propertyExample,
                 "id": id,
+                "label": label,
                 "name": name,
                 "ontologies": ontologies,
                 "propertyPath": propertyPath,

@@ -1,0 +1,16 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata toggle required fields component.
+ */
+@import "../../../styles/vars.module.css";
+
+/* Toggle. */
+.toggle {
+    align-items: center;
+    background-color: var(--blue-light);
+    border-radius: 4px;
+    display: flex;
+    padding: 8px 16px;
+}

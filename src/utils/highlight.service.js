@@ -6,52 +6,68 @@
  */
 
 /**
- * Inserts <mark> tags, when required, within the specified ref object.
- * Looks for a term match on the innerHTML of any "text" <span> tags.
- * Rewrites the innerHTML with <mark> tags wrapped around the term match.
+ * Adds <mark> tags, where required, within the specified ref object.
+ * Looks for a term match on the innerHTML of any tags (<div>, <p>, <span>) containing text only.
+ * Rewrites the innerHTML with <mark> tags wrapped around the text that matches the term.
  *
  * @param highlightRef
  * @param regex
  */
-export function insertMarks(highlightRef, regex) {
+export function addMarks(highlightRef, regex) {
 
-    /* Grab all <span> nodes. */
-    const spanNodes = highlightRef.current.querySelectorAll("span");
+    if ( highlightRef && regex ) {
 
-    /* Filter <span> nodes; keep only non-nested <span> tags. */
-    const filteredSpanNodes = [...spanNodes].filter(spanEl => {
+        /* Grab all <div>, <p> and <span> nodes. */
+        const contentNodes = highlightRef.current.querySelectorAll("div, p, span");
 
-        const {childNodes} = spanEl;
-        return childNodes.length === 1 && !childNodes[0].tagName;
-    });
+        /* Filter nodes; keep only non-nested tags - where the childNode has no "tagName". */
+        const filteredNodes = [...contentNodes].filter(spanEl => {
 
-    /* Insert the <mark> tag around search terms. */
-    if ( filteredSpanNodes ) {
-
-        filteredSpanNodes.forEach(span => {
-
-            span.innerHTML = span.innerHTML.replace(regex, `<mark>$1</mark>`);
+            const {childNodes} = spanEl;
+            return childNodes.length === 1 && !childNodes[0].tagName;
         });
+
+        /* Insert the <mark> tag around search terms. */
+        if ( filteredNodes ) {
+
+            filteredNodes.forEach(node => {
+
+                node.innerHTML = node.innerHTML.replace(regex, `<mark>$1</mark>`);
+            });
+        }
     }
 }
 
 /**
- * Strips <mark> tags from specified ref object.
- * Returns the ref object back to its original DOM element.
+ * Removes <mark> tags from specified ref object.
+ * Returns the ref object back to its original DOM element sans mark up.
  *
  * @param highlightRef
+ * @param regex
  */
-export function stripMarks(highlightRef) {
+export function removeMarks(highlightRef, regex) {
 
-    /* Grab all <mark> nodes. */
-    const markNodes = highlightRef.current.querySelectorAll("mark");
+    if ( highlightRef && regex ) {
 
-    /* Remove the <mark> tag; replaces outer html with outer text. */
-    if ( markNodes ) {
+        const markNodes = highlightRef.current.querySelectorAll("mark");
 
-        [...markNodes].forEach(markEl => {
+        if ( markNodes ) {
 
-            markEl.outerHTML = markEl.outerText;
-        })
+            /* Grab a set of parent elements for all mark nodes. */
+            const setOfParentElements = new Set();
+
+            markNodes.forEach(markNode => {
+
+                setOfParentElements.add(markNode.parentElement)
+            });
+
+            /* For each parent element, replace the inner HTML with text content. */
+            /* Removes any <mark> tags from the element, returning it to its original text content. */
+            /* e.g. element inner HTML such as "The <mark>typ</mark>e of cell line." returns "The type of cell line.". */
+            [...setOfParentElements].forEach(parentNode => {
+
+                parentNode.innerHTML = parentNode.textContent;
+            })
+        }
     }
 }

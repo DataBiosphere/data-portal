@@ -5,12 +5,56 @@
  * Style definitions specific to the HCA Data Portal metadata schema component.
  */
 
-/* Schema title. */
-.title > a {
-    padding-left: 8px;
+/* Schema - highlight. */
+.reveal {
+    animation: highlighter 10s ease-in 1;
+}
+
+/* Animation - highlighter. */
+@-webkit-keyframes highlighter {
+    0% {
+        background-color: var(--highlight);
+    }
+    75% {
+        background-color: var(--highlight);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Animation - highlighter. */
+@keyframes highlighter {
+    0% {
+        background-color: var(--highlight);
+    }
+    75% {
+        background-color: var(--highlight);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Schema source. */
+.source {
+    align-items: center;
+    display: flex;
+    margin: 0 0 8px;
+    white-space: pre;
+}
+
+/* Schema source - removal of margin from fontStyles. */
+.source > * {
+    margin: 0;
+}
+
+/* Schema source - external link to schema. */
+.source > a {
+    padding-right: 16px;
 }
 
 /* Schema description */
 .description {
-    margin: 0 0 32px 0;
+    margin: 16px 0 16px 0;
 }

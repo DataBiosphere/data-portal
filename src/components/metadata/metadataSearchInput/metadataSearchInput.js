@@ -18,10 +18,10 @@ let classNames = require("classnames");
 
 function MetadataSearchInput() {
 
-    const {inputActive, inputValue, onHandleEsc, onHandleInput} = useContext(ContextMetadataSearch);
+    const {inputActive, onHandleEsc, onHandleInput} = useContext(ContextMetadataSearch);
     const inputRef = useRef();
     const [inputFocused, setInputFocused] = useState(false);
-    const [inputText, setInputText] = useState(inputValue);
+    const [inputText, setInputText] = useState("");
     const [timer, setTimer] = useState(500);
     const showClear = !!inputText;
 
@@ -54,14 +54,6 @@ function MetadataSearchInput() {
         return () => clearTimeout(delaySearch);
     }, [inputText, onHandleInput, timer]);
 
-    /* useEffect - componentDidUpdate - inputValue. */
-    /* Handles initialization of inputText from URL. */
-    useEffect(() => {
-
-        setTimer(500);
-        setInputText(inputValue);
-    }, [inputValue]);
-
     /* useEffect - componentDidUpdate - inputFocused. */
     /* Handles focus changes to the <input>. */
     useEffect(() => {
@@ -85,10 +77,10 @@ function MetadataSearchInput() {
 
     const onHandleChange = (event) => {
 
-        const inputText = event.target.value;
+        const text = event.target.value;
 
         setTimer(500);
-        setInputText(inputText);
+        setInputText(text);
     };
 
     const onHandleClearInput = () => {
@@ -113,7 +105,6 @@ function MetadataSearchInput() {
     };
 
     return useMemo(() => {
-
         return (
             <>
             <span className={compStyles.searchBar}>

@@ -16,6 +16,13 @@ const Bowser = require("bowser");
 
 exports.onClientEntry = () => {
 
+    /* Redirect "/metadata" to "/metadata/dictionary/biomaterial/cell_line". */
+    /* TODO review. */
+    if ( typeof window !== "undefined" && window.location.pathname === "/metadata" ) {
+
+        window.location.href = "/metadata/dictionary/biomaterial/cell_line";
+    }
+
 	// Exit if path is static page for browser not supported
 	if ( window.location.pathname === "/browser-not-supported.html" ) {
 

@@ -6,9 +6,10 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
+import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
 import MetadataSchemaNoRequiredProperties from "../metadataSchemaNoRequiredProperties/metadataSchemaNoRequiredProperties";
 import MetadataSchemaProperties from "../metadataSchemaProperties/metadataSchemaProperties";
 import MetadataToggleRequiredFields from "../metadataToggleRequiredFields/metadataToggleRequiredFields";
@@ -17,29 +18,36 @@ import MetadataToggleRequiredFields from "../metadataToggleRequiredFields/metada
 import compStyles from "./metadataSchema.module.css";
 import fontStyles from "../../../styles/fontsize.module.css";
 
-class MetadataSchema extends React.Component {
+const classNames = require("classnames");
 
-    render() {
-        const {entity, schema} = this.props,
-            {entityDescription} = entity || {},
-            {description, properties, schemaName, title, urlGitHub} = schema || {};
-        const showProperties = properties.length > 0;
-        return (
-            <>
-            <p>{entityDescription}</p>
-            <h2 className={compStyles.title}>
-                <span>{title}</span>
-                <a className={fontStyles.xxs} href={urlGitHub} rel="noopener noreferrer" target="_blank">View Schema Source</a>
-            </h2>
-            <p className={fontStyles.xs}>{schemaName}</p>
-            <p className={compStyles.description}>{description}</p>
-            <MetadataToggleRequiredFields/>
-            {showProperties ?
-                <MetadataSchemaProperties properties={properties} schema={schema}/> :
-                <MetadataSchemaNoRequiredProperties/> }
-            </>
-        );
-    }
+function MetadataSchema(props) {
+
+    const {entity, schema} = props,
+        {entityDescription} = entity || {},
+        {description, properties, schemaName, title, urlGitHub, urlTo} = schema || {};
+    const {highlightActive, highlightValue} = useContext(ContextMetadataDisplaying);
+    const showHighlighter = highlightActive && highlightValue === urlTo;
+    const showProperties = properties.length > 0;
+
+    return (
+        <>
+        <p>{entityDescription}</p>
+        <h2>
+            <span className={classNames({[compStyles.reveal]: showHighlighter})}>{title}</span>
+        </h2>
+        <p className={compStyles.description}>
+            <span className={classNames({[compStyles.reveal]: showHighlighter})}>{description}</span>
+        </p>
+        <div className={compStyles.source}>
+            <span className={fontStyles.xs}>View Schema Source: </span>
+            <a className={fontStyles.s} href={urlGitHub} rel="noopener noreferrer" target="_blank">{schemaName}</a>
+            <MetadataToggleRequiredFields background/>
+        </div>
+        {showProperties ?
+            <MetadataSchemaProperties properties={properties} schema={schema}/> :
+            <MetadataSchemaNoRequiredProperties/>}
+        </>
+    );
 }
 
 export default MetadataSchema;

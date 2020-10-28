@@ -15,6 +15,37 @@
     flex-wrap: wrap;
 }
 
+/* Property - highlight. */
+.schemaProperty.reveal {
+    animation: highlighter 10s ease-in 1;
+}
+
+/* Animation - highlighter. */
+@-webkit-keyframes highlighter {
+    0% {
+        background-color: transparent;
+    }
+    75% {
+        background-color: var(--highlight);
+    }
+    100% {
+        background-color: var(--highlight);
+    }
+}
+
+/* Animation - highlighter. */
+@keyframes highlighter {
+    0% {
+        background-color: var(--highlight);
+    }
+    75% {
+        background-color: var(--highlight);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
 /* Property - first. */
 .schemaProperty:first-of-type {
     margin-top: 8px;

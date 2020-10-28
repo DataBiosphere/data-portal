@@ -10,8 +10,8 @@ import React, {useContext} from "react";
 
 // App dependencies
 import ClickHandler from "../../clickHandler/clickHandler";
+import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
-import ContextMetadataToggleRequiredFields from "../contextMetadataToggleRequiredFields/contextMetadataToggleRequiredFields";
 import MetadataSearchResultProperty from "../metadataSearchResultProperty/metadataSearchResultProperty";
 import MetadataSearchResultSchema from "../metadataSearchResultSchema/metadataSearchResultSchema";
 
@@ -22,7 +22,7 @@ function MetadataSearchResult(props) {
 
     const {result} = props,
         {type, urlTo} = result || {};
-    const {showAllMetadata, onHandleToggleRequiredFields} = useContext(ContextMetadataToggleRequiredFields);
+    const {showAllMetadata, onHandleSearchHit, onHandleToggleRequiredFields} = useContext(ContextMetadataDisplaying);
     const {inputValue, onHandleInput, onHandleEsc} = useContext(ContextMetadataSearch);
     const showSchema = /schema/.test(type);
 
@@ -34,12 +34,15 @@ function MetadataSearchResult(props) {
             onHandleToggleRequiredFields();
         }
 
+        /* Handle the display of highlight on search hit result page. */
+        onHandleSearchHit(urlTo);
+
         /* Grab the current path and compare against selected path. */
         /* Assign timer value if the selected path (doesn't have a hash value) is not the same as the current path. */
         const currentPathName = window.location.pathname;
         const hasHash = urlTo.includes("#");
         const redirectToSamePage = urlTo.startsWith(currentPathName) && hasHash;
-        const timer = redirectToSamePage ? 0 : 250;
+        const timer = redirectToSamePage ? 0 : 500;
 
         if ( !redirectToSamePage ) {
 

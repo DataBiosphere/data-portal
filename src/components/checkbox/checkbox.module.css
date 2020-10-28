@@ -89,7 +89,7 @@
 .label, .count {
     font-size: 12px;
     font-weight: 300;
-    line-height: 16px; /* Required to equal checkbox height for alignment when label wraps. */
+    line-height: 15px; /* Required to equal checkbox height for alignment when label wraps. Was 16px. */
 }
 
 .check, .icon, .label {

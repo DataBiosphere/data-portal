@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useContext, useMemo} from "react";
+import React, {useContext} from "react";
 
 // App dependencies
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
@@ -21,15 +21,13 @@ function MetadataSearchResults() {
     const searching = useContext(ContextMetadataSearch),
         {results, showResultsPanel} = searching;
 
-    return useMemo(() => {
-        return (
-            showResultsPanel ?
-                <MetadataSearchResultsPanel>
-                    <h5 className={fontStyles.l} id={"hero"}>Search Results</h5>
-                    {results.map((result, r) => <MetadataSearchResult key={r} result={result}/>)}
-                </MetadataSearchResultsPanel> : null
-        )
-    }, [results, showResultsPanel]);
+    return (
+        showResultsPanel ?
+            <MetadataSearchResultsPanel>
+                <h5 className={fontStyles.l} id={"hero"}>Search Results</h5>
+                {results.map((result, r) => <MetadataSearchResult key={r} result={result}/>)}
+            </MetadataSearchResultsPanel> : null
+    )
 }
 
 export default MetadataSearchResults;

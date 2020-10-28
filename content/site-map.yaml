@@ -254,7 +254,7 @@
 - name: "Metadata"
   description: "Fields used to describe datasets in the Human Cell Atlas"
   key: "metadata"
-  path: "/metadata"
+  path: "/metadata/dictionary/biomaterial/cell_line"
   position:
     location: "h"
     order: 1

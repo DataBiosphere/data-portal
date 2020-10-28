@@ -19,33 +19,35 @@ function Highlight(props) {
 
     const {children, term} = props;
     const highlightRef = useRef();
-    const [regex, setRegex] = useState();
     const [termRegex, setTermRegex] = useState();
+    const markRegex = /<mark>(.*?)<\/mark>/gi;
 
     /* useEffect - componentDidUpdate - term. */
     /* Handles changes on term. */
     useEffect(() => {
 
-        setTermRegex(term.split(/[.|_\s]/g).join("|"))
+        if ( term ) {
+
+            const regex = term
+                .trim()
+                .split(/[.|_\s]/g)
+                .filter(term => !!term)
+                .join("|");
+
+            setTermRegex(new RegExp(`(${regex})`, "gi"));
+        }
     }, [term]);
-
-    /* useEffect - componentDidUpdate - termRegex. */
-    /* Handles changes on termRegex. */
-    useEffect(() => {
-
-        setRegex(new RegExp(`(${termRegex})`, "gi"));
-    }, [termRegex]);
 
     /* useEffect - componentDidUpdate - regex. */
     /* Handles changes on regex. */
     useEffect(() => {
 
-        /* Strip out any existing marks. */
-        HighlightService.stripMarks(highlightRef);
+        /* Remove any existing marks. */
+        HighlightService.removeMarks(highlightRef, markRegex);
 
-        /* Insert marks. */
-        HighlightService.insertMarks(highlightRef, regex);
-    }, [regex]);
+        /* Add marks. */
+        HighlightService.addMarks(highlightRef, termRegex);
+    }, [markRegex, termRegex]);
 
     return (
         <span className={compStyles.highlight} ref={highlightRef}>{children}</span>

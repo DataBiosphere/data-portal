@@ -29,7 +29,7 @@ export function buildResults(schemas, properties, setOfResults, resultKey, setOf
 
     if ( inputValue ) {
 
-        const queryStr = inputValue.toLowerCase();
+        const queryStr = inputValue.toLowerCase().trim();
         const querySegmentDepth = getQuerySegmentDepth(queryStr);
 
         /* Filter the properties and schemas for any search hits. */
@@ -418,7 +418,12 @@ function getAnalyzedModelValues(searchModel, modelKey, queryStr, queryLength) {
 
                 /* Only look for partial matches within the value, if there is no full match, or starts with match. */
                 /* Bypass if query length is only one character. */
-                someMatchValue = modelValue.some(modelStr => modelStr.toLowerCase().includes(queryStr));
+                someMatchValue = modelValue.some(modelStr => {
+
+                    /* Check query string, including query with more than a single word. */
+                    const queries = queryStr.split(" ");
+                    return queries.some(query => modelStr.toLowerCase().includes(query));
+                });
             }
         }
     }

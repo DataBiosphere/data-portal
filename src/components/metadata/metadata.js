@@ -9,7 +9,7 @@
 import React, {useContext} from "react";
 
 // App dependencies
-import ContextMetadataToggleRequiredFields from "./contextMetadataToggleRequiredFields/contextMetadataToggleRequiredFields";
+import ContextMetadataDisplaying from "./contextMetadataDisplaying/contextMetadataDisplaying";
 import Layout from "../layout";
 import MetadataSchema from "./metadataSchema/metadataSchema";
 import * as MetadataService from "../../utils/metadata.service";
@@ -17,7 +17,7 @@ import * as MetadataService from "../../utils/metadata.service";
 function Metadata(props) {
 
     const {entities, nav, sitePageId} = props;
-    const {showAllMetadata} = useContext(ContextMetadataToggleRequiredFields);
+    const {showAllMetadata} = useContext(ContextMetadataDisplaying);
     const entity = MetadataService.getMetadataEntity(entities);
     const category = MetadataService.getMetadataCategory(sitePageId, entities);
     const schema = MetadataService.getMetadataSchema(category, sitePageId, showAllMetadata);

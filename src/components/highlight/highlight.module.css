@@ -4,8 +4,9 @@
  *
  * Style definitions specific to the HCA Data Portal highlight component.
  */
+@import "../../styles/vars.module.css";
 
 /* Highlight. */
 .highlight mark {
-    background-color: rgba(255, 255, 0, 0.30);
+    background-color: var(--highlight);
 }

@@ -10,15 +10,20 @@ import React, {useContext} from "react";
 
 // App dependencies
 import Checkbox from "../../checkbox/checkbox";
-import ContextMetadataToggleRequiredFields from "../contextMetadataToggleRequiredFields/contextMetadataToggleRequiredFields";
+import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
+
+// Styles
+import compStyles from "./metadataToggleRequiredFields.module.css";
 
 function MetadataToggleRequiredFields() {
 
-    const {showAllMetadata, onHandleToggleRequiredFields} = useContext(ContextMetadataToggleRequiredFields);
+    const {showAllMetadata, onHandleToggleRequiredFields} = useContext(ContextMetadataDisplaying);
     const label = "Show required fields only";
 
     return (
-        <Checkbox checked={!showAllMetadata} clickAction={onHandleToggleRequiredFields} label={label} value={"showMetadata"}/>
+        <span className={compStyles.toggle}>
+            <Checkbox checked={!showAllMetadata} clickAction={onHandleToggleRequiredFields} label={label} value={"showMetadata"}/>
+        </span>
     );
 }
 

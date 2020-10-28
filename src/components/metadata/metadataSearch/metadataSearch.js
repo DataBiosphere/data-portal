@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useMemo} from "react";
+import React from "react";
 
 // App dependencies
 import {MetadataSchemaQuery} from "../../../hooks/metadata-schema-query";
@@ -32,23 +32,21 @@ function MetadataSearch(props) {
     const setOfProperties = MetadataSearchService.getSetOfProperties(properties, lunrIndexRefField);
     const setOfSearchGroups = MetadataSearchService.getSetOfSearchGroups();
 
-    return useMemo(() => {
-        return (
-            <ProviderMetadataIndexing metadataIndexFileName={metadataIndexFileName}
-                                      onMenuOpen={onMenuOpen}
-                                      properties={properties}
-                                      resultKey={lunrIndexRefField}
-                                      schemas={schemas}
-                                      setOfProperties={setOfProperties}
-                                      setOfSearchGroups={setOfSearchGroups}>
-                <div className={compStyles.search}>
-                    <MetadataSearchInput/>
-                    <MetadataSearchNoResult/>
-                    <MetadataSearchResults/>
-                </div>
-            </ProviderMetadataIndexing>
-        );
-    }, [onMenuOpen, properties, setOfProperties, setOfSearchGroups, schemas]);
+    return (
+        <ProviderMetadataIndexing metadataIndexFileName={metadataIndexFileName}
+                                  onMenuOpen={onMenuOpen}
+                                  properties={properties}
+                                  resultKey={lunrIndexRefField}
+                                  schemas={schemas}
+                                  setOfProperties={setOfProperties}
+                                  setOfSearchGroups={setOfSearchGroups}>
+            <div className={compStyles.search}>
+                <MetadataSearchInput/>
+                <MetadataSearchNoResult/>
+                <MetadataSearchResults/>
+            </div>
+        </ProviderMetadataIndexing>
+    );
 }
 
 export default MetadataSearch;

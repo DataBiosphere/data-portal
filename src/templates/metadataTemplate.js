@@ -11,7 +11,7 @@ import React from "react";
 
 // App dependencies
 import Metadata from "../components/metadata/metadata";
-import ProviderMetadataToggleRequiredFields from "../components/metadata/providerMetadataToggleRequiredFields/providerMetadataToggleRequiredFields";
+import ProviderMetadataDisplaying from "../components/metadata/providerMetadataDisplaying/providerMetadataDisplaying";
 
 // the data prop will be injected by the GraphQL query below.
 export default function Template({data}) {
@@ -21,9 +21,9 @@ export default function Template({data}) {
         {id: sitePageId, nav} = context || {};
 
     return (
-        <ProviderMetadataToggleRequiredFields>
+        <ProviderMetadataDisplaying>
             <Metadata entities={allMetadataEntity} nav={nav} sitePageId={sitePageId}/>
-        </ProviderMetadataToggleRequiredFields>
+        </ProviderMetadataDisplaying>
     );
 }
 
@@ -72,6 +72,7 @@ export const pageQuery = graphql`
                 schema {
                   title
                 }
+                urlTo
               }
               schemaName
               title
@@ -83,6 +84,7 @@ export const pageQuery = graphql`
                 urlTo
               }
               urlGitHub
+              urlTo
             }
           }
         }

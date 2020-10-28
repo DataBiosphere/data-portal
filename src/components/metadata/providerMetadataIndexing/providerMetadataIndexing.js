@@ -262,7 +262,7 @@ class ProviderMetadataIndexing extends React.Component {
 
     onHandleSearch = (inputValue) => {
 
-        let searchValue = inputValue;
+        let searchValue = inputValue.trim();
 
         /* Pre process input value for any special character. */
         if ( this.isInputDenied(inputValue) ) {
@@ -295,11 +295,11 @@ class ProviderMetadataIndexing extends React.Component {
 
     searchStateChanged = (prevState) => {
 
-        const {inputValue, metadataIndexMounted} = this.state;
+        const {searchValue, metadataIndexMounted} = this.state;
 
-        const inputValueChanged = prevState.inputValue !== inputValue;
+        const searchValueChanged = prevState.searchValue !== searchValue;
 
-        if ( metadataIndexMounted && inputValueChanged ) {
+        if ( metadataIndexMounted && searchValueChanged ) {
 
             /* Update set of results. */
             this.updateSetOfResults();

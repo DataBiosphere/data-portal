@@ -6,10 +6,11 @@
  */
 
 // Core dependencies
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 
 // App dependencies
 import HeadingTag from "../../anchor/anchor";
+import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
 import MetadataRequired from "../metadataRequired/metadataRequired";
 import MetadataSchemaPropertyFieldPath from "../metadataSchemaPropertyFieldPath/metadataSchemaPropertyFieldPath";
 import MetadataSchemaPropertyFieldReference from "../metadataSchemaPropertyFieldReference/metadataSchemaPropertyFieldReference";
@@ -18,11 +19,15 @@ import MetadataSchemaPropertyFields from "../metadataSchemaPropertyFields/metada
 // Styles
 import compStyles from "./metadataSchemaProperty.module.css";
 
+const classNames = require("classnames");
+
 function MetadataSchemaProperty(props) {
 
     const {property} = props,
-        {anchor} = property || {};
+        {anchor, urlTo} = property || {};
+    const {highlightActive, highlightValue} = useContext(ContextMetadataDisplaying);
     const [active, setActive] = useState(false);
+    const showHighlighter = highlightActive && highlightValue === urlTo;
 
     const onMouseEnter = () => {
 
@@ -36,7 +41,7 @@ function MetadataSchemaProperty(props) {
 
     return (
         <>
-        <div id={anchor} className={compStyles.schemaProperty}>
+        <div id={anchor} className={classNames({[compStyles.reveal]: showHighlighter}, compStyles.schemaProperty)}>
             <MetadataSchemaPropertyFieldReference property={property}/>
             <span onMouseEnter={() => onMouseEnter()}
                   onMouseLeave={() => onMouseLeave()}
