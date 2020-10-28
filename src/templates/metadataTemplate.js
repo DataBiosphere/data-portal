@@ -33,7 +33,6 @@ export const pageQuery = graphql`
     allMetadataEntity(filter: {categories: {elemMatch: {schemas: {elemMatch: {id: {eq: $id}}}}}}) {
       edges {
         node {
-          entityDescription
           entityName
           categories {
             categoryName

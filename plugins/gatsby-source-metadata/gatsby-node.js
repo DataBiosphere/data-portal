@@ -202,7 +202,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type MetadataEntity implements Node @dontInfer {
         id: ID!
-        entityDescription: String
         entityName: String!
         categories: [MetadataEntityCategory] @categories
     }
