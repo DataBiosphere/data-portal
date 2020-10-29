@@ -138,37 +138,61 @@ const getPostNavigation = function getPostNavigation(postSlug, postsSiteMap, met
  * Removes any blacklisted posts from the site map.
  *
  * @param siteMapYAML
- * @param postsByKeyBlacklisted
+ * @param denyListPostsByKey
  * @returns {Array}
  */
-const removeBlacklistedPosts = function removeBlacklistedPosts(siteMapYAML, postsByKeyBlacklisted) {
+const removeBlacklistedPosts = function removeBlacklistedPosts(siteMapYAML, denyListPostsByKey) {
 
     const siteMapNodes = siteMapYAML.edges.map(e => e.node);
 
     return siteMapNodes.map(node => {
 
-        node.tabs = node.tabs.flatMap(tab => {
+        /* Clone node. */
+        const nodeClone = Object.assign({}, node);
 
-            tab.primaryLinks = tab.primaryLinks.flatMap(pLink => {
+        /* Update the node with tabs. */
+        nodeClone.tabs = node.tabs.reduce((acc, tab) => {
 
-                /* Keep secondary links if they are not blacklisted. */
+            /* Clone tab. */
+            const tabClone = Object.assign({}, tab);
+
+            /* Update the tab with primary links. */
+            tabClone.primaryLinks = tab.primaryLinks.reduce((acc, pLink) => {
+
+                /* Clone the primary link. */
+                const pLinkClone = Object.assign(pLink);
+
+                /* Secondary links - only accumulate if not on the deny list. */
                 if ( pLink.secondaryLinks ) {
 
-                    pLink.secondaryLinks = pLink.secondaryLinks.flatMap(sLink => getWhitelistedLink(sLink, postsByKeyBlacklisted));
+                    pLinkClone.secondaryLinks = pLink.secondaryLinks.reduce((acc, sLink) => {
+
+                        if ( isPostAllowList(sLink, denyListPostsByKey) ) {
+
+                            acc.push(sLink);
+                        }
+
+                        return acc;
+                    }, []);
                 }
 
-                /* Keep primary links if they are not blacklisted. */
-                return getWhitelistedLink(pLink, postsByKeyBlacklisted);
-            });
+                /* Primary link - only accumulate if not on the deny list. */
+                if ( isPostAllowList(pLink, denyListPostsByKey) ) {
+
+                    acc.push(pLinkClone);
+                }
+
+                return acc;
+            }, []);
 
             /* Remove tab, if no primary links. */
-            if ( tab.primaryLinks.length ) {
+            if ( tabClone.primaryLinks.length > 0 ) {
 
-                return tab;
+                acc.push(tabClone);
             }
 
-            return [];
-        });
+            return acc;
+        }, []);
 
         return node;
     });
@@ -464,23 +488,6 @@ function getPostSiteMapBySectionKey(sectionKey, postsSiteMap) {
 }
 
 /**
- * Returns the link if it isn't blacklisted.
- *
- * @param link
- * @param postsByKeyBlacklisted
- * @returns {*}
- */
-function getWhitelistedLink(link, postsByKeyBlacklisted) {
-
-    if ( postsByKeyBlacklisted.has(link.key) ) {
-
-        return [];
-    }
-
-    return link;
-}
-
-/**
  * Returns the post keys by path for the specified key.
  *
  * @param key
@@ -490,6 +497,18 @@ function getWhitelistedLink(link, postsByKeyBlacklisted) {
 function filterPostsKeysByPath(key, postsKeysByPath) {
 
     return new Map([...postsKeysByPath].filter(([postKey]) => postKey.includes(`/${key}/`)));
+}
+
+/**
+ * Returns true if the link isn't blacklisted.
+ *
+ * @param link
+ * @param denyListPostsByKey
+ * @returns {*}
+ */
+function isPostAllowList(link, denyListPostsByKey) {
+
+    return !denyListPostsByKey.has(link.key);
 }
 
 module.exports.buildMetadataKeysByTitle = buildMetadataKeysByTitle;
