@@ -308,7 +308,9 @@ class SupportRequestForm extends React.Component {
                                 {attachmentToken ?
                                     <div className={compStyles.inputAttachmentAttached}>
                                         <div className={compStyles.inputAttachmentFileName}>{attachmentName}</div>
-                                        <button className={compStyles.inputAttachmentDelete} onClick={this.onAttachmentDeleted}/>
+                                        <button className={compStyles.inputAttachmentDelete}
+                                                aria-label="Delete Attachment"
+                                                onClick={this.onAttachmentDeleted}/>
                                     </div> :
                                     <button className={classNames(compStyles.inputAttachment,
                                                                 {[compStyles.inputAttachmentDragging]: dragging})}
