@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.14.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   SNYK-JS-AXIOS-472067:
@@ -14,6 +14,10 @@ ignore:
     - gatsby > @gatsbyjs/relay-compiler > yargs > os-locale > mem:
         reason: no fix available
         expires: '2019-11-10T16:29:24.400Z'
+  SNYK-JS-DECOMPRESSTAR-559095:
+    - gatsby-plugin-sharp > imagemin-pngquant > pngquant-bin > bin-build > download > decompress > decompress-tarbz2 > decompress-tar:
+        reason: ''
+        expires: '2020-11-28T21:16:44.552Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   SNYK-JS-HTTPSPROXYAGENT-469131:
