@@ -7,6 +7,7 @@
 
 // Core dependencies
 import React from "react";
+import { navigate } from "@reach/router";
 
 // Styles
 import fontStyles from "../../styles/fontsize.module.css";
@@ -36,6 +37,11 @@ class TOCItem extends React.Component {
         }
     };
 
+    onTOCClicked = (anchor) => {
+
+        navigate(anchor);
+    };
+
     render() {
         const {toc} = this.props,
             {anchor, depth, name} = toc;
@@ -43,7 +49,7 @@ class TOCItem extends React.Component {
         const classTOCItem = classNames({[compStyles.active]: this.isTOCActive()}, compStyles.toc);
         return (
             <li className={classTOCItem}>
-                <a className={classTOCLink} href={anchor}>{name}</a>
+                <a className={classTOCLink} onClick={() => this.onTOCClicked(anchor)}>{name}</a>
             </li>
         );
     }

@@ -122,9 +122,6 @@ module.exports = {
                 plugins: [
                     {
                         resolve: `gatsby-remark-autolink-headers`,
-                        options: {
-                            offsetY: '84', // header + 24px, ignores top banner.
-                        },
                     },
                     {
                         resolve: "gatsby-remark-component",

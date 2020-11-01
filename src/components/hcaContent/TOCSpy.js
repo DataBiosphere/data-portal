@@ -16,19 +16,19 @@ class TOCSpy extends React.Component {
     constructor(props) {
         super(props);
         this.state = ({activeTOC: ''});
-        this.handleScroll = this.handleScroll.bind(this);
-        this.handleHashChange = this.handleHashChange.bind(this);
+        // this.handleScroll = this.handleScroll.bind(this);
+        // this.handleHashChange = this.handleHashChange.bind(this);
     }
 
     componentDidMount() {
         this.getPageAnchors();
-        window.addEventListener('scroll', this.handleScroll);
-        window.addEventListener('hashchange', this.handleHashChange, false);
+        // window.addEventListener('scroll', this.handleScroll);
+        // window.addEventListener('hashchange', this.handleHashChange, false);
     };
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-        window.removeEventListener('hashchange', this.handleHashChange, false);
+        // window.removeEventListener('scroll', this.handleScroll);
+        // window.removeEventListener('hashchange', this.handleHashChange, false);
     };
 
     getPageAnchors = () => {
