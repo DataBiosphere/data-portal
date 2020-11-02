@@ -1,0 +1,33 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata schema property word break component.
+ */
+@import "../../../styles/vars.module.css";
+
+/* Word - stack, wrap. */
+.stack, .wrap {
+    display: inline-flex;
+}
+
+/* Word - stack. */
+.stack {
+    flex-direction: column;
+}
+
+/* Word - wrap. */
+.wrap {
+    flex-wrap: wrap;
+}
+
+/* All text. */
+.stack span, .wrap span {
+    display: inherit;
+    line-height: inherit;
+}
+
+/* Icon - last. */
+.wrap i:last-child {
+    margin-left: 4px;
+}

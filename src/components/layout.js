@@ -36,16 +36,18 @@ class Layout extends React.Component {
     }
 
     onMenuOpen = (event) => {
+
         this.setState({noScroll: !event});
     };
 
     onToggleSupportRequestForm = (active) => {
+
         this.setState({supportRequestActive: active});
     };
 
     render() {
-        const { activeLocation, children, description, docPath, healthy, homePage, homeTab,
-            nav, pageTitle, sectionTitle, showAllMetadata} = this.props;
+        const {activeLocation, children, description, docPath, healthy, homePage, homeTab,
+            metadataContent, nav, pageTitle, sectionTitle, showAllMetadata} = this.props;
         const {noScroll, supportRequestActive} = this.state;
         return (
             <div>
@@ -54,13 +56,20 @@ class Layout extends React.Component {
                 <div className={classNames(compStyles.site, {[compStyles.noScroll]: noScroll})}>
                     <Header onMenuOpen={this.onMenuOpen.bind(this)} homePage={homePage} docPath={docPath}/>
                     <DCP2Announcement/>
-                    <Banner position={'top'} healthy={healthy}/>
+                    <Banner position={"top"} healthy={healthy}/>
                     {homePage ? children :
-                        <HCAMain activeLocation={activeLocation} docPath={docPath} homeTab={homeTab} nav={nav}
-                                 sectionTitle={sectionTitle} showAllMetadata={showAllMetadata}>{children}</HCAMain>}
+                        <HCAMain activeLocation={activeLocation}
+                                 docPath={docPath}
+                                 homeTab={homeTab}
+                                 metadataContent={metadataContent}
+                                 nav={nav}
+                                 onMenuOpen={this.onMenuOpen.bind(this)}
+                                 sectionTitle={sectionTitle}
+                                 showAllMetadata={showAllMetadata}>{children}</HCAMain>}
                     <SupportRequest active={supportRequestActive} onToggle={(active) => this.onToggleSupportRequestForm(active)}/>
-                    <Banner position={'bottom'}/>
+                    <Banner position={"bottom"}/>
                     <Footer onFeedbackClicked={() => this.onToggleSupportRequestForm(true)}/>
+                    <div id="portal"/>
                 </div>
             </div>
         )

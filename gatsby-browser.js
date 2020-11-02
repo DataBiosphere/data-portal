@@ -16,6 +16,13 @@ const Bowser = require("bowser");
 
 exports.onClientEntry = () => {
 
+    /* Redirect "/metadata" to "/metadata/dictionary/biomaterial/cell_line". */
+    /* TODO review. */
+    if ( typeof window !== "undefined" && window.location.pathname === "/metadata" ) {
+
+        window.location.href = "/metadata/dictionary/biomaterial/cell_line";
+    }
+
 	// Exit if path is static page for browser not supported
 	if ( window.location.pathname === "/browser-not-supported.html" ) {
 
@@ -34,7 +41,7 @@ exports.onClientEntry = () => {
 		}
 	});
 
-	// Redirect to static "browser not supported" page, should browser be unsupported by the AnVIL site.
+	// Redirect to static "browser not supported" page, should browser be unsupported by the site.
 	if ( browserNotSupported ) {
 
 		window.location.replace("/browser-not-supported.html");

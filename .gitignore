@@ -19,3 +19,6 @@ site/style-bundle.js
 /.cache/
 /public/
 /node_modules_bak/
+
+# Metadata search index
+static/metadata-index.json

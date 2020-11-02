@@ -8,8 +8,8 @@
 // Template variables
 const gatsbyContentVersion = process.env.GATSBY_CONTENT_VERSION;
 const gatsbyEnv = process.env.GATSBY_ENV;
-const pathMetadataRationale = "/metadata/design-principles/rationale";
-const pathMetadataStructure = "/metadata/design-principles/structure";
+const pathMetadataRationale = "/metadata/metadata-design/rationale";
+const pathMetadataStructure = "/metadata/metadata-structure/structure";
 
 /**
  * Builds the post file path into a slug.
@@ -62,18 +62,15 @@ const isPostNodeEnabled = function isPostNodeEnabled(draftExists, version) {
 
 /**
  * Returns true if the post node is relevant to the site.
- * Posts include any content and "type" metadata (which will ultimately build the metadata pages).
+ * Posts include any content and "schema" metadata (which will ultimately build the metadata pages).
  *
  * @param type
- * @param relativeFilePath
  * @returns {boolean}
  */
-const isPostNodeFeatured = function isPostNodeFeatured(type, relativeFilePath) {
-
-    const fileMetadataType = relativeFilePath && relativeFilePath.includes("/type/");
+const isPostNodeFeatured = function isPostNodeFeatured(type) {
 
     const contentFeatured = type === "MarkdownRemark";
-    const metadataFeatured = (type === "MetadataType");
+    const metadataFeatured = (type === "MetadataSchema");
 
     return contentFeatured || metadataFeatured;
 };

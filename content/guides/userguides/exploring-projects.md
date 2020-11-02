@@ -11,11 +11,11 @@ description: "Overview of exploring projects in the HCA Data Browser."
 Projects are a basic unit of data organization in the HCA Data Coordination Platform (HCA DCP). Project contributors contribute raw sequencing and associated [files](/metadata/dictionary/file/sequence_file) along with rich metadata describing:
 
   1. the  [origin and type of the cells](/metadata/dictionary/biomaterial/cell_line) used in the project
-  1. the [processes](/metadata/dictionary/process/analysis/analysis_process) and [protocols](/metadata/dictionary/protocol/biomaterial_collection/aggregate_generation_protocol) used to collect and process the cells prior to sequencing
-  1. the  [sequencing](/metadata/dictionary/protocol/sequencing/sequencing_protocol)  methods used
+  1. the [processes](/metadata/dictionary/process/analysis_process) and [protocols](/metadata/dictionary/protocol/aggregate_generation_protocol) used to collect and process the cells prior to sequencing
+  1. the  [sequencing](/metadata/dictionary/protocol/sequencing_protocol)  methods used
   1. details about the [project](/metadata/dictionary/project/project) contributors and their institutions
  
-[Metadata](/metadata/dictionary/process/analysis/analysis_process)  about [analyses](/pipelines) performed by the HCA DCP are also added to the project during project ingest.
+[Metadata](/metadata/dictionary/process/analysis_process) about [analyses](/pipelines) performed by the HCA DCP are also added to the project during project ingest.
 
 ## Finding a Project of Interest
 

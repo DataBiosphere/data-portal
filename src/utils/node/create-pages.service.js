@@ -10,7 +10,6 @@ const path = require("path");
 const templatePath = {
     "CONTENT": "src/templates/contentTemplate.js",
     "METADATA": "src/templates/metadataTemplate.js",
-    "SYSTEM_STATUS": "src/templates/systemStatusTemplate.js"
 };
 
 /**
@@ -48,12 +47,12 @@ const getPostTemplate = function getPostTemplate(templateName) {
 };
 
 /**
- * Returns a set of posts blacklisted i.e. not "enabled".
+ * Returns a set of posts deny listed i.e. not "enabled".
  *
  * @param markdownRemark
  * @returns {Set}
  */
-const setOfPostsBlacklisted = function setOfPostsBlacklisted(markdownRemark) {
+const setOfPostsDenyListed = function setOfPostsDenyListed(markdownRemark) {
 
     return markdownRemark.edges
         .map(e => e.node)
@@ -90,4 +89,4 @@ function getPostPathOrKey(slug, postsKeysByPath) {
 
 module.exports.buildPostPath = buildPostPath;
 module.exports.getPostTemplate = getPostTemplate;
-module.exports.setOfPostsBlacklisted = setOfPostsBlacklisted;
+module.exports.setOfPostsDenyListed = setOfPostsDenyListed;

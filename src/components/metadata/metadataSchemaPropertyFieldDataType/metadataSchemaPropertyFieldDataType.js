@@ -1,0 +1,33 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * HCA Data Portal metadata schema property field data type component.
+ */
+
+// Core dependencies
+import Link from "gatsby-link";
+import React from "react";
+
+// App dependencies
+import MetadataSchemaPropertyFieldFromRef from "../metadataSchemaPropertyFieldFromRef/metadataSchemaPropertyFieldFromRef";
+
+// Styles
+import compStyles from "./metadataSchemaPropertyFieldDataType.module.css";
+
+function MetadataSchemaPropertyFieldDataType(props) {
+
+    const {property} = props,
+        {dataType, referenceFromLink} = property || {};
+
+    return (
+        <span className={compStyles.dataType}>
+            <span> (</span>
+            {referenceFromLink ? <Link to={referenceFromLink}>{dataType}</Link> : <span>{dataType}</span>}
+            <MetadataSchemaPropertyFieldFromRef property={property}/>
+            <span>) </span>
+        </span>
+    );
+}
+
+export default MetadataSchemaPropertyFieldDataType;

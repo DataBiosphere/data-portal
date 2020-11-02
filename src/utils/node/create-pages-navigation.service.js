@@ -6,30 +6,26 @@
  * Builds the post's navigation (for metadata and markdown pages).
  */
 
+// Template variables
+const orderEntities = ["type", "core", "module", "system"];
+
 /**
- * Returns the metadata object key-value pair comprising of metadata slug and title.
+ * Returns the metadata object key-value pair comprising of metadata slug and
+ * a string array of schema entity, category and schema title.
  *
  * @param metadataSchema
  * @returns {*}
  */
-const buildMetadataKeysByTitle = function buildMetadataKeysByTitle(metadataSchema) {
+const buildMetadataEntityCategorySchemaTitleByKey = function buildMetadataEntityCategorySchemaTitleByKey(metadataSchema) {
 
-    const metadataNodes = metadataSchema.edges
+    return metadataSchema.edges
         .map(n => n.node)
-        .sort(function(node0, node1) {
+        .reduce((acc, node) => {
 
-            const title0 = node0.title.toLowerCase();
-            const title1 = node1.title.toLowerCase();
-
-            return compareDataValues(title0, title1);
-        });
-
-    return metadataNodes.reduce((acc, node) => {
-
-        const {fields, title} = node,
+        const {category, entity, fields, title} = node,
             {slug} = fields;
 
-        acc.set(slug, title);
+        acc.set(slug, [entity, category, title]);
 
         return acc;
     }, new Map());
@@ -38,75 +34,135 @@ const buildMetadataKeysByTitle = function buildMetadataKeysByTitle(metadataSchem
 /**
  * Builds metadata primary and secondary links.
  *
- * @param metadataPostsKeysByTitle
+ * @param metadataEntityCategorySchemaTitleByKey
+ * @param allMetadataEntity
  */
-const buildMetadataLinks = function buildMetadataLinks(metadataPostsKeysByTitle) {
+const buildMetadataLinksByEntity = function buildMetadataLinksByEntity(metadataEntityCategorySchemaTitleByKey, allMetadataEntity) {
 
-    /* Get the complete list of metadata keys. */
-    const metadataKeys = [...metadataPostsKeysByTitle.keys()];
+    /* Create an object key-value pair of entity and set of associated categories. */
+    const setOfCategoriesByEntity = allMetadataEntity.edges
+        .map(n => n.node)
+        .reduce((acc, entity) => {
 
-    /* From the list of metadata keys, create a set of primary link "keys". */
-    const primaryLinks = metadataKeys.reduce((acc, key) => {
+            const {categories, entityName} = entity;
 
-        acc.add(key.split("/")[3]);
+            /* Grab the set of categories. */
+            const setOfCategories = new Set(categories.map(category => category.categoryName));
+
+            acc.set(entityName, setOfCategories);
+
+            return acc;
+        }, new Map());
+
+    /* Build the primary and secondary links for each entity's category. */
+    return [...setOfCategoriesByEntity].reduce((acc, [entity, setOfCategories]) => {
+
+        const categoryLinks = [...setOfCategories].map(category => {
+
+            /* Find all related metadata posts i.e. schema from the same entity - they share the same primary link key. */
+            const filteredMetadataPosts = filterMetadataPostsByEntityCategory(metadataEntityCategorySchemaTitleByKey, entity, category);
+
+            /* For each set of links, get the first link key - this will be the slug/path for the primary link. */
+            const primaryLinkKey = filteredMetadataPosts.keys().next().value;
+
+            /* Handle special case where entity "system" does not have any categories. */
+            /* e.g. "System" becomes the category name for entity "system". */
+            let pLinkName;
+
+            if ( category ) {
+
+                pLinkName = capitalizeString(category);
+            }
+            else {
+
+                pLinkName = capitalizeString(entity);
+            }
+
+            /* Build the secondary links. */
+            const secondaryLinks = [...filteredMetadataPosts].map(([metadataPostKey, entityCategorySchemaTitle]) => {
+
+                const [,,schemaTitle] = entityCategorySchemaTitle;
+
+                return {
+                    active: false, /* Let "active" be false, for now. */
+                    key: metadataPostKey,
+                    name: schemaTitle,
+                    path: metadataPostKey
+                }
+            });
+
+            /* Return the primary link. */
+            return {
+                active: false, /* The metadata primary link is never active. */
+                key: primaryLinkKey,
+                name: pLinkName,
+                path: primaryLinkKey,
+                sLinks: secondaryLinks
+            };
+        });
+
+        acc.set(entity, categoryLinks);
 
         return acc;
-    }, new Set());
+    }, new Map());
+};
 
-    /* Sort the primary link keys alphabetically. */
-    const sortedPrimaryLinks = [...primaryLinks].sort(function (link0, link1) {
+/**
+ * Builds the metadata tab comprising of entities with corresponding path for the entity.
+ * The path matches the entity's first category's first schema.
+ *
+ * @param metadataEntityCategorySchemaTitleByKey
+ * @param allMetadataEntity
+ * @returns {Array}
+ */
+const buildMetadataTabs = function buildMetadataTabs(metadataEntityCategorySchemaTitleByKey, allMetadataEntity) {
 
-        return compareDataValues(link0, link1);
+    const metadataEntities = allMetadataEntity.edges.map(n => n.node);
+
+    /* Reorder entities - by predefined order. */
+    /* This sets up the metadata tab order of display. */
+    const reorderedEntities = orderEntities.map(entity => {
+
+        return metadataEntities.find(MetadataEntity => MetadataEntity.entityName === entity);
     });
 
-    /* Build the primary and secondary links. */
-    return sortedPrimaryLinks.map(pLinkKey => {
+    /* Create an object key-value pair of entity and set of associated categories. */
+    return reorderedEntities
+        .map(entity => {
 
-        /* Find all related metadata posts - they share the same primary link key. */
-        const metadataPostsByPrimaryLink = filterPostsKeysByPath(pLinkKey, metadataPostsKeysByTitle);
+            const {entityName} = entity;
 
-        /* For each set of links, get the first link key - this will be the slug/path for the primary link. */
-        const primaryLinkKey = metadataPostsByPrimaryLink.keys().next().value;
+            /* Find the first metadata path for the specified entity. */
+            const tabPath = findMetadataTabPathByEntity(metadataEntityCategorySchemaTitleByKey, entityName);
 
-        /* Build the secondary links. */
-        const secondaryLinks = [...metadataPostsByPrimaryLink].map(sLink => {
+            /* Create tab name. */
+            const tabName = `${capitalizeString(entityName)} Entities`;
 
             return {
                 active: false, /* Let "active" be false, for now. */
-                key: sLink[0],
-                name: sLink[1],
-                path: sLink[0]
+                key: entityName,
+                name: tabName,
+                path: tabPath
             }
-        });
-
-        /* Based off https://stackoverflow.com/a/196991 (see string-format.service.js) */
-        const pLinkName = pLinkKey.replace(/\w\S*/g, (text) => {return text.charAt(0).toUpperCase() + text.substr(1).toLowerCase();});
-
-        /* Build the primary links. */
-        return {
-            active: false, /* The metadata primary link is never active. */
-            key: primaryLinkKey,
-            name: pLinkName,
-            path: primaryLinkKey,
-            sLinks: secondaryLinks
-        }
-    });
+        })
 };
 
 /**
  * Returns the metadata post's navigation, including the post's section and tabs.
  *
  * @param postSlug
- * @param metaLinks
  * @param postsSiteMap
- * @returns {{links, section, tabs}}
+ * @param metaLinksByEntity
+ * @param metaTabs
+ * @param entity
+ * @returns {{}|{links, section, secondaryTabs, tabKey, tabs}}
  */
-const getMetadataPostNavigation = function getMetadataPostNavigation(postSlug, metaLinks, postsSiteMap) {
+const getMetadataPostNavigation = function getMetadataPostNavigation(postSlug, postsSiteMap, metaLinksByEntity, metaTabs, entity) {
 
-    /* Get the metadata post's site map. The metadata post will be built into this site map. */
+    /* Get the metadata post's site map. The metadata post will be built onto this site map. */
     const metadataSiteMap = getPostSiteMapBySectionKey("metadata", postsSiteMap);
 
-    return buildPostMetadataNavigation(postSlug, metadataSiteMap, metaLinks);
+    return buildPostMetadataNavigation(postSlug, metadataSiteMap, metaLinksByEntity, metaTabs, entity);
 };
 
 /**
@@ -114,10 +170,10 @@ const getMetadataPostNavigation = function getMetadataPostNavigation(postSlug, m
  *
  * @param postSlug
  * @param postsSiteMap
- * @param metaLinks
+ * @param metaLinksByEntity
  * @returns {{links, section, tabs}}
  */
-const getPostNavigation = function getPostNavigation(postSlug, postsSiteMap, metaLinks) {
+const getPostNavigation = function getPostNavigation(postSlug, postsSiteMap, metaLinksByEntity) {
 
     /* Get the post's section key. */
     const postSectionKey = getPostSectionKey(postSlug);
@@ -131,17 +187,17 @@ const getPostNavigation = function getPostNavigation(postSlug, postsSiteMap, met
     }
 
     /* Build the post's navigation. */
-    return buildPostNavigation(postSlug, postSiteMap, metaLinks);
+    return buildPostNavigation(postSlug, postSiteMap, metaLinksByEntity);
 };
 
 /**
- * Removes any blacklisted posts from the site map.
+ * Removes any deny listed posts from the site map.
  *
  * @param siteMapYAML
  * @param denyListPostsByKey
  * @returns {Array}
  */
-const removeBlacklistedPosts = function removeBlacklistedPosts(siteMapYAML, denyListPostsByKey) {
+const removeDenyListedPosts = function removeDenyListedPosts(siteMapYAML, denyListPostsByKey) {
 
     const siteMapNodes = siteMapYAML.edges.map(e => e.node);
 
@@ -199,6 +255,27 @@ const removeBlacklistedPosts = function removeBlacklistedPosts(siteMapYAML, deny
 };
 
 /**
+ * Builds a dummy metadata dictionary tab for use within the metadata section.
+ *
+ * @param metaLinksByEntity
+ * @param active
+ * @returns {{active: *, key: string, name: string, path: string}}
+ */
+function buildDummyMetadataDictionaryTab(metaLinksByEntity, active = false) {
+
+    /* Grab the first "type" entity schema for the metadata dictionary dummy tab. */
+    /* We will use this path as the entry point into the metadata dictionary. */
+    const [firstSchema,] = metaLinksByEntity.get("type");
+
+    return {
+        active: active,
+        key: "/metadata/dictionary/",
+        name: "Metadata Dictionary",
+        path: firstSchema.path
+    };
+}
+
+/**
  * Builds the post's links for the specified post.
  *
  * @param postSlug
@@ -208,7 +285,7 @@ function buildPostLinks(postSlug, postTab) {
 
     if ( !postTab || !postTab.primaryLinks ) {
 
-        return;
+        return [];
     }
 
     return postTab.primaryLinks.map(pLink => {
@@ -246,10 +323,12 @@ function buildPostLinks(postSlug, postTab) {
  *
  * @param postSlug
  * @param metadataSiteMap
- * @param metaLinks
- * @returns {{links, section, tabs}}
+ * @param metaLinksByEntity
+ * @param metaTabs
+ * @param entity
+ * @returns {*}
  */
-function buildPostMetadataNavigation(postSlug, metadataSiteMap, metaLinks) {
+function buildPostMetadataNavigation(postSlug, metadataSiteMap, metaLinksByEntity, metaTabs, entity) {
 
     /* Post section. */
     const postSection = buildPostSection(metadataSiteMap);
@@ -257,28 +336,29 @@ function buildPostMetadataNavigation(postSlug, metadataSiteMap, metaLinks) {
     /* Post tabs. */
     const postTabs = buildPostTabs("dictionary", metadataSiteMap);
 
-    /* Post tab. */
-    const postTab = getPostTab("dictionary", metadataSiteMap);
+    /* Build dummy "Metadata Dictionary" tab. */
+    /* Insert "Metadata Dictionary" tab to post tabs. */
+    const metadataDictionaryTab = buildDummyMetadataDictionaryTab(metaLinksByEntity, true);
+    postTabs.unshift(metadataDictionaryTab);
 
-    /* No post tab for this post i.e. no primary links for this post's tab exist. */
-    if ( !postTab ) {
-
-        return {}
-    }
-
-    /* Build any related non-metadata site map links. */
-    const siteMapLinks = buildPostLinks(postSlug, postTab);
+    /* Grab the metaLinks for the post's entity. */
+    /* Handles special case for metadata pages. */
+    /* Schema's are grouped by schema entity, controlled by a secondary tab menu (unlike regular post navigation). */
+    /* e.g. the entity "module", selected by the tab menu, will only display categories and corresponding schema belonging to "module". */
+    const metaLinks = metaLinksByEntity.get(entity);
 
     /* Update the metaLinks with active state. */
     const metadataLinks = getMetaLinksActiveState(postSlug, metaLinks);
 
-    /* Add metadata links to the site map links. */
-    siteMapLinks.push(...metadataLinks);
+    /* Update the metaTabs with active state. */
+    const metadataTabs = getMetaTabsActiveState(metaTabs, entity);
 
     return {
-        links: siteMapLinks,
+        label: entity,
+        links: metadataLinks,
         section: postSection,
-        tabKey: postTab.key,
+        secondaryTabs: metadataTabs,
+        tabKey: "dictionary",
         tabs: postTabs
     }
 }
@@ -288,19 +368,29 @@ function buildPostMetadataNavigation(postSlug, metadataSiteMap, metaLinks) {
  *
  * @param postSlug
  * @param postSiteMap
- * @param metaLinks
+ * @param metaLinksByEntity
  * @returns {{links, section, tabs}}
  */
-function buildPostNavigation(postSlug, postSiteMap, metaLinks) {
+function buildPostNavigation(postSlug, postSiteMap, metaLinksByEntity) {
 
     /* Post section. */
     const postSection = buildPostSection(postSiteMap);
+    const sectionKey = postSection.key;
 
     /* Get the post's tab key. */
     const postTabKey = getPostTabKey(postSlug);
 
     /* Post tabs. */
     const postTabs = buildPostTabs(postTabKey, postSiteMap);
+
+    /* Handle case where post belongs to the section "metadata". */
+    /* Build dummy "Metadata Dictionary" tab. */
+    if ( sectionKey === "metadata" ) {
+
+        /* Insert "Metadata Dictionary" tab to post tabs. */
+        const metadataDictionaryTab = buildDummyMetadataDictionaryTab(metaLinksByEntity);
+        postTabs.unshift(metadataDictionaryTab);
+    }
 
     /* Post tab. */
     const postTab = getPostTab(postTabKey, postSiteMap);
@@ -314,15 +404,11 @@ function buildPostNavigation(postSlug, postSiteMap, metaLinks) {
     /* Post links - post's site map links. */
     const siteMapLinks = buildPostLinks(postSlug, postTab);
 
-    /* Add metadata links to the post's site map links, if the post's tab is "dictionary". */
-    if ( postTabKey === "dictionary" ) {
-
-        siteMapLinks.push(...metaLinks);
-    }
-
     /* Return the built post's navigation. */
     return {
+        label: null, /* Not required for markdown posts. */
         links: siteMapLinks,
+        secondaryTabs: null, /* Not required for markdown posts. */
         section: postSection,
         tabKey: postTab.key,
         tabs: postTabs,
@@ -373,26 +459,40 @@ function buildPostTabs(tabKey, siteMap) {
 }
 
 /**
- * A simple comparison between two variables, returning a value to indicate an order of the variables in relation to each other.
- * Used by the sort function.
+ * Returns a formatted string with capitalization.
  *
- * @param value0
- * @param value1
- * @returns {number}
+ * @param str
+ * @returns {*}
  */
-function compareDataValues(value0, value1) {
+function capitalizeString(str) {
 
-    if ( value0 < value1 ) {
+    if ( str && typeof str === "string" ) {
 
-        return -1;
+        const [first, ...rest] = [...str];
+
+        return [first.toUpperCase(), ...rest].join("");
     }
 
-    if ( value0 > value1) {
+    return str;
+}
 
-        return 1;
-    }
+/**
+ * Returns the metadata tab's path for the specified tab [entity].
+ * Finds the first schema path belonging the specified entity.
+ *
+ * @param metadataEntityCategorySchemaTitleByKey
+ * @param entityName
+ */
+function findMetadataTabPathByEntity(metadataEntityCategorySchemaTitleByKey, entityName) {
 
-    return 0;
+    const [metadataPostKey,] = [...metadataEntityCategorySchemaTitleByKey]
+        .find(([metadataPostKey, entityCategorySchemaTitle]) => {
+
+            const [schemaEntity,,] = entityCategorySchemaTitle;
+            return schemaEntity === entityName;
+        });
+
+    return metadataPostKey;
 }
 
 /**
@@ -434,6 +534,26 @@ function getMetaLinksActiveState(postSlug, metaLinks) {
 
         return pLinkClone;
     });
+}
+
+/**
+ * Returns the metadata tabs with corresponding active state for the post.
+ *
+ * @param metaTabs
+ * @param entity
+ */
+function getMetaTabsActiveState(metaTabs, entity) {
+
+    return metaTabs.map(tab => {
+
+        /* Clone tab. */
+        const tabClone = Object.assign({}, tab);
+
+        /* Update active state. */
+        tabClone.active = tab.key === entity;
+
+        return tabClone;
+    })
 }
 
 /**
@@ -488,19 +608,30 @@ function getPostSiteMapBySectionKey(sectionKey, postsSiteMap) {
 }
 
 /**
+<<<<<<< HEAD
  * Returns the post keys by path for the specified key.
+=======
+ * Returns the metadata object key-value pair comprising of metadata slug and
+ * a string array of schema entity, category and schema title, filtered by entity and category.
+ * Filters all schemas that belong to the specified entity.
  *
- * @param key
- * @param postsKeysByPath
+ * @param metadataEntityCategorySchemaTitleByKey
+ * @param entity
+ * @param category
  * @returns {Map}
  */
-function filterPostsKeysByPath(key, postsKeysByPath) {
+function filterMetadataPostsByEntityCategory(metadataEntityCategorySchemaTitleByKey, entity, category) {
 
-    return new Map([...postsKeysByPath].filter(([postKey]) => postKey.includes(`/${key}/`)));
+    return new Map([...metadataEntityCategorySchemaTitleByKey].filter(([metadataPostKey, entityCategorySchemaTitle]) => {
+
+        const [schemaEntity, schemaCategory,] = entityCategorySchemaTitle;
+
+        return schemaEntity === entity && schemaCategory === category;
+    }));
 }
 
 /**
- * Returns true if the link isn't blacklisted.
+ * Returns true if the link is not on the deny list.
  *
  * @param link
  * @param denyListPostsByKey
@@ -511,8 +642,9 @@ function isPostAllowList(link, denyListPostsByKey) {
     return !denyListPostsByKey.has(link.key);
 }
 
-module.exports.buildMetadataKeysByTitle = buildMetadataKeysByTitle;
-module.exports.buildMetadataLinks = buildMetadataLinks;
+module.exports.buildMetadataEntityCategorySchemaTitleByKey = buildMetadataEntityCategorySchemaTitleByKey;
+module.exports.buildMetadataLinksByEntity = buildMetadataLinksByEntity;
+module.exports.buildMetadataTabs = buildMetadataTabs;
 module.exports.getMetadataPostNavigation = getMetadataPostNavigation;
 module.exports.getPostNavigation = getPostNavigation;
-module.exports.removeBlacklistedPosts = removeBlacklistedPosts;
+module.exports.removeDenyListedPosts = removeDenyListedPosts;
