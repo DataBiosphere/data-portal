@@ -7,18 +7,21 @@
 
 /* Content */
 .hcaContent {
-	display: flex;
-	flex: 1;
-	flex-direction: column;
-	margin: 36px 0;
-	width: 100%; /* TODO confirm */
+    margin: 36px 0;
+    width: 100%;
 }
 
 /* Inner content */
-.hcaContentInner {
-	margin-right: 0;
-	width: 100%;
-	z-index: 2; /* Required for heading anchor */
+.innerContainer {
+    margin: 0 auto;
+    width: 100%;
+    z-index: 2; /* Required for heading anchor - nav overlaps anchor position. */
+}
+
+/* Content - metadata - max width at 1000px. */
+/* Available for metadata content. */
+.metadataContent .innerContainer {
+    max-width: 1000px;
 }
 
 /**
@@ -26,35 +29,8 @@
  */
 @media screen and (min-width: 768px) {
 
-	/* Content */
-	.hcaContent {
-		flex-direction: row;
-	}
-
-	/* Content - when there is no navigation */
-	.noNav > div {
-		margin-left: 176px;
-	}
-
-	/* Inner content */
-	.hcaContentInner {
-		max-width: 640px;
-	}
-}
-
-/**
- * Medium +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 1024px) {
-
-	/* Content - when there is no navigation */
-	.noNav > div {
-		margin-left: 290px;
-	}
-
-	/* Inner content */
-	.hcaContentInner {
-		margin-right: 14px;
-	}
+    /* Inner content */
+    .innerContainer {
+        max-width:800px;
+    }
 }

@@ -1,0 +1,51 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata schema used by component.
+ */
+
+/* Used by path. */
+.usedBy {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 12px;
+}
+
+/* All columns. */
+.usedBy > span {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* All text. */
+.usedBy > span > * {
+    margin: 0;
+}
+
+/**
+ * 1280px - Large tablet landscape, medium window
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Property. */
+    .usedBy {
+        flex-direction: row;
+    }
+
+    /* First column. */
+    .usedBy > span:first-of-type {
+        width: 35%;
+    }
+
+    /* Second column. */
+    .usedBy > span:nth-of-type(2) {
+        border-left: 1px solid var(--blue-darkest);
+        flex: 1;
+        margin-left: 12px;
+        padding-left: 12px;
+    }
+}

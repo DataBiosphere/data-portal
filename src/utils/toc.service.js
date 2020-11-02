@@ -18,16 +18,21 @@ import {TOCPageQuery} from "../hooks/toc-page-query";
  */
 export function getTOCs(docPath, showAllMetadata) {
 
-    /* Metadata TOC. */
-    if ( docPath.startsWith("/metadata/dictionary/" ) && !docPath.includes("metadata-dictionary") ) {
+    if ( docPath ) {
 
-        return buildTOCsMetadata(docPath, showAllMetadata);
-    }
-    /* Page (markdown) TOC. */
-    else {
+        /* Metadata TOC. */
+        if ( docPath.startsWith("/metadata/dictionary/") ) {
 
-        return buildTOCsMarkdown(docPath);
+            return buildTOCsMetadata(docPath, showAllMetadata);
+        }
+        /* Page (markdown) TOC. */
+        else {
+
+            return buildTOCsMarkdown(docPath);
+        }
     }
+
+    return [];
 }
 
 /**
@@ -90,14 +95,26 @@ function buildTOCsMetadata(docPath, showAllMetadata) {
 
     const tocQuery = TOCMetadataQuery();
 
-    /* Find the type for the specified path. */
-    const tocType = getMetadataType(tocQuery, docPath);
+    /* Find the schema for the specified path. */
+    const tocSchema = getMetadataSchema(tocQuery, docPath);
 
     /* Filter for primary properties and/or show/hide fields. */
-    const tocProperties = filterMetadataProperties(tocType, showAllMetadata);
+    const tocProperties = filterMetadataProperties(tocSchema, showAllMetadata);
 
     /* Return the TOC. */
     return getMetadataTOC(tocProperties);
+}
+
+/**
+ * Returns the metadata schema for the specified path.
+ *
+ * @param schemas
+ * @param docPath
+ * @returns {*}
+ */
+function getMetadataSchema(schemas, docPath) {
+
+    return schemas.find(schema => schema.fields.slug === docPath);
 }
 
 /**
@@ -116,11 +133,11 @@ function getMetadataTOC(tocProperties) {
 
         if ( tocRequired ) {
 
-            tocName = `${property.label} *`;
+            tocName = `${property.name} *`;
         }
         else {
 
-            tocName = property.label;
+            tocName = property.name;
         }
 
         return buildTOC(anchor, tocDepth, tocName, tocRequired, "metadata");
@@ -128,39 +145,20 @@ function getMetadataTOC(tocProperties) {
 }
 
 /**
- * Returns the metadata type for the specified path.
- *
- * @param tocQuery
- * @param docPath
- * @returns {*}
- */
-function getMetadataType(tocQuery, docPath) {
-
-    return tocQuery.reduce((acc, core) => {
-
-        const metadataType = core.types.find(type => type.fields.slug === docPath);
-
-        Object.assign(acc, metadataType);
-
-        return acc;
-    }, {});
-}
-
-/**
  * Returns properties that are primary.
  * If the show all metadata toggle is false, then only properties that are primary and required are returned.
  *
- * @param tocType
+ * @param tocSchema
  * @param showAllMetadata
  * @returns {Array.<T>}
  */
-function filterMetadataProperties(tocType, showAllMetadata) {
+function filterMetadataProperties(tocSchema, showAllMetadata) {
 
     /* Filter to include only the primary properties. */
     /* Filter if the show all metadata toggle is "required" only. */
-    return tocType.properties.filter(property => {
+    return tocSchema.properties.filter(property => {
 
-        const {primary, primaryRequired} = property;
+        const {primary, primaryRequired} = property || {};
 
         if ( showAllMetadata ) {
 

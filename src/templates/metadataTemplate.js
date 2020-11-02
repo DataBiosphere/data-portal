@@ -10,57 +10,82 @@ import {graphql} from "gatsby";
 import React from "react";
 
 // App dependencies
-import MetadataType from "../components/metadataType/metadataType";
-import * as MetadataService from "../utils/metadata.service";
+import Metadata from "../components/metadata/metadata";
+import ProviderMetadataDisplaying from "../components/metadata/providerMetadataDisplaying/providerMetadataDisplaying";
 
 // the data prop will be injected by the GraphQL query below.
 export default function Template({data, location}) {
 
-    const {allMetadataCore, sitePage} = data,
+    const {allMetadataEntity, sitePage} = data,
         {context} = sitePage || {},
         {id: sitePageId, nav} = context || {};
     const {pathname, hash} = location;
 
-    const core = MetadataService.getMetadataCore(allMetadataCore);
-    const type = MetadataService.getMetadataType(sitePageId, allMetadataCore);
-
     return (
-        <MetadataType activeLocation={{pathname, hash}} core={core} nav={nav} type={type}/>
+        <ProviderMetadataDisplaying>
+            <Metadata activeLocation={{pathname, hash}} entities={allMetadataEntity} nav={nav} sitePageId={sitePageId}/>
+        </ProviderMetadataDisplaying>
     );
 }
 
 // modified to find the page by id which is passed in as context
 export const pageQuery = graphql`
   query ($id: String!) {
-    allMetadataCore(filter: {types: {elemMatch: {id: {eq: $id}}}}) {
+    allMetadataEntity(filter: {categories: {elemMatch: {schemas: {elemMatch: {id: {eq: $id}}}}}}) {
       edges {
         node {
-          name
-          types {
-            description
-            entity
-            fields {
-              slug
-            }
-            id
-            name
-            properties {
-              anchor
-              core
-              dataType
+          entityName
+          categories {
+            categoryName
+            schemas {
               description
-              example
-              grouped
-              label
-              primary
-              primaryRequired
-              required
-              unfriendly
+              entity
+              fields {
+                slug
+              }
+              id
+              properties {
+                anchor
+                dataType
+                description
+                example
+                graphRestriction {
+                  classes
+                  direct
+                  includeSelf
+                  ontologies
+                  relations
+                }
+                label
+                name
+                primary
+                primaryRequired
+                propertyFriendlies
+                propertyFrom
+                propertyFromLink
+                propertyPath
+                propertyPaths
+                _ref
+                referenceFrom
+                referenceFromLink
+                required
+                schema {
+                  title
+                }
+                urlTo
+              }
+              schemaName
+              title
+              usedByProperties {
+                description
+                label
+                propertyFriendlies
+                propertyPath
+                urlTo
+              }
+              urlGitHub
+              urlTo
             }
-            relativePath
-            required
-            title
-            unfriendly
           }
         }
       }
@@ -69,6 +94,13 @@ export const pageQuery = graphql`
       context {
         id
         nav {
+          label
+          secondaryTabs {
+            active
+            key
+            name
+            path
+          }
           section {
             key
             name

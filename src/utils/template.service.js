@@ -36,14 +36,27 @@ export function getPageEditUrl(slug) {
 }
 
 /**
- * Returns true if the edit page should be featured.
+ * Returns false when the slug matches case.
+ * A true value will show the "edit page" feature.
+ * A false value will hide the "edit page" feature.
  *
  * @param slug
  * @returns {boolean}
  */
-export function editPageFeatured(slug) {
+export function showEditPage(slug) {
 
-    const metadataDesignPrinciples = slug && slug.includes("metadata/design-principles/");
-
-    return !metadataDesignPrinciples;
+    switch(slug) {
+        case "/metadata/design-principles/rationale":
+            return false;
+        case "/metadata/design-principles/structure":
+            return false;
+        case "/metadata/explore/metadata-explore":
+            return false;
+        case "/metadata/search/metadata-search":
+            return false;
+        case "/status/status/system-status":
+            return false;
+        default:
+            return true;
+    }
 }

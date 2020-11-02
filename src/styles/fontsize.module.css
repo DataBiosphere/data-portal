@@ -113,6 +113,11 @@ p.m {
 	margin: 0 0 12px;
 }
 
+/* Class "fontsize-s" "regular" */
+.s.regular, .s .regular {
+    font-weight: 400;
+}
+
 /* Class "fontsize-xs" */
 .xs {
 	font-family: "Montserrat", sans-serif;
@@ -136,6 +141,22 @@ p.m {
 	margin: 0 0 4px;
 }
 
+/* Class "fontsize-xxs" "regular" */
+.xxs.regular {
+    font-weight: 400;
+}
+
+/* Class "fontsize-xxs" "semiBold" */
+.xxs.semiBold {
+    font-weight: 500;
+}
+
+/* Link. */
+.link {
+    cursor: pointer;
+    color: var(--primary);
+}
+
 /* Primary Navigation */
 .navPrimary {
     font-family: "Montserrat", sans-serif;
@@ -156,7 +177,7 @@ p.m {
 	font-family: "Source Code Pro", monospace;
 	font-size: 13px;
 	font-weight: 300;
-	line-height: 20px;
+	line-height: 24px;
 }
 
 /* Font colour white on dark backgrounds */

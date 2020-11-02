@@ -122,7 +122,7 @@ module.exports = {
                 plugins: [
                     {
                         resolve: "gatsby-remark-component",
-                        options: {components: ["internal-link", "data-lifecycle-diagram", "link-to-browser"]}
+                        options: {components: ["internal-link", "data-lifecycle-diagram", "link-to-browser", "system-status"]}
                     },
                     {
                         resolve: `gatsby-remark-copy-linked-files`,
