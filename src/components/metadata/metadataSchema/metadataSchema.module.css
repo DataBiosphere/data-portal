@@ -40,13 +40,14 @@
 .source {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     margin: 0 0 8px;
     white-space: pre;
 }
 
 /* Schema source - removal of margin from fontStyles. */
 .source > * {
-    margin: 0;
+    margin: 4px 0;
 }
 
 /* Schema source - external link to schema. */
