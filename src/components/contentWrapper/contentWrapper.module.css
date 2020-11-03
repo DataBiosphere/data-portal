@@ -10,15 +10,6 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    position: relative;
-    z-index: 4; /* Required to position metadata search results above inner content. */
-}
-
-/* Wrapper - not first. */
-/* Handles spacing between metadata secondary tabs and search bar, with metadata content. */
-.contentWrapper:not(:first-of-type) {
-    padding-top: 36px;
-    z-index: 2; /* Required to position metadata search results above inner content. */
 }
 
 /* Wrapper - when there is no navigation */

@@ -23,12 +23,14 @@ class TabNav extends React.Component {
         const {homeTab, secondary, tabs} = this.props;
         const classNamesTabs = classNames(compStyles.hcaTabs, {[compStyles.secondary]: secondary});
         const classNamesWrappers = classNames(globalStyles.wrapper, compStyles.wrapper);
+        const tabsExist = tabs && tabs.length > 0;
         return (
             <div className={classNamesTabs}>
                 <div className={classNamesWrappers}>
                     <div className={compStyles.tabs}>
-                        {homeTab ? <Tab back tab={{active: false, name: "Home", path: "/"}}/> : null}
-                        {tabs ? tabs.map((tab, t) => <Tab key={t} secondary={secondary} tab={tab}/>) : <Tab/>}
+                        {tabsExist ?
+                            tabs.map((tab, t) => <Tab key={t} secondary={secondary} tab={tab}/>) :
+                            homeTab ? <Tab back tab={{active: false, name: "Home", path: "/"}}/> : null}
                     </div>
                 </div>
             </div>

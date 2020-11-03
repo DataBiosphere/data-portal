@@ -45,6 +45,7 @@
     align-items: flex-end;
     display: flex;
     flex-wrap: nowrap;
+    height: 30px; /* Matches tab height. Required to maintain height for no tabs. */
     justify-content: flex-start;
     margin: 24px -16px 0;
     -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar in IE unless actively scrolling. */

@@ -25,10 +25,11 @@ class Tab extends React.Component {
             {[compStyles.secondary]: secondary},
             compStyles.tab);
         return (
-            <div className={classNamesTab}>
-                {back ? <i className="material-icons">keyboard_arrow_left</i> : null}
-                <Link to={path}>{name}</Link>
-            </div>
+            path ?
+                <div className={classNamesTab}>
+                    {back ? <i className="material-icons">keyboard_arrow_left</i> : null}
+                    <Link to={path}>{name}</Link>
+                </div> : null
         );
     }
 }

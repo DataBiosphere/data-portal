@@ -6,7 +6,7 @@
  */
 
 /* Search input deny list. */
-export const DenyListInputs = ["^", "~", ":", "-", "+"];
+export const DenyListInputs = ["^", "~", ":", "-", "+", "*", "\\"];
 
 // Template variables
 const AllowListScoreCriteria = ["description", "example", "classes", "ontologies", "schema", "pathSegmentFirst", "pathSegmentSecond", "path", "friendlyName"];

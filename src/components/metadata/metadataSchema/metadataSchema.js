@@ -13,6 +13,7 @@ import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetad
 import MetadataEntityDescription from "../metadataEntityDescription/metadataEntityDescription";
 import MetadataSchemaNoRequiredProperties from "../metadataSchemaNoRequiredProperties/metadataSchemaNoRequiredProperties";
 import MetadataSchemaProperties from "../metadataSchemaProperties/metadataSchemaProperties";
+import MetadataSchemaUsedBys from "../metadataSchemaUsedBys/metadataSchemaUsedBys";
 import MetadataToggleRequiredFields from "../metadataToggleRequiredFields/metadataToggleRequiredFields";
 
 // Styles
@@ -46,6 +47,7 @@ function MetadataSchema(props) {
         {showProperties ?
             <MetadataSchemaProperties properties={properties} schema={schema}/> :
             <MetadataSchemaNoRequiredProperties/>}
+        <MetadataSchemaUsedBys schema={schema}/>
         </>
     );
 }
