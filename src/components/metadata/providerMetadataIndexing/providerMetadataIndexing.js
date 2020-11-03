@@ -276,10 +276,11 @@ class ProviderMetadataIndexing extends React.Component {
                 searchValue = inputValue.replace(/:/g, "_");
             }
             /* Handles input value with other special characters - prevents lunr search error. */
-            /* Replaces any "~", "-" or "^", "+" with a non-space. */
+            /* Replaces any ";", "/", "\", "*", "~", "-", "^" or "+" with a non-space. */
+            /* Replaces any multiple spaces and trims - improves lunr search performance. */
             else {
 
-                searchValue = inputValue.replace(/~|-|\^|\+/g, "");
+                searchValue = inputValue.replace(/;|\/|\\|\*|~|-|\^|\+/g, "").replace(/\s\s+/g, " ").trim();
             }
         }
 

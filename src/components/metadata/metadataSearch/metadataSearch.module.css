@@ -12,5 +12,5 @@
     margin: 0 0 24px 0;
     padding: 0 var(--gutter-x);
     position: relative; /* Positions results panel. */
-    z-index: 16; /* Above tabs, below header. */
+    z-index: 11; /* Above tabs (12), below header (20), below banner (12). */
 }

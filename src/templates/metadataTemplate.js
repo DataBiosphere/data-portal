@@ -79,8 +79,11 @@ export const pageQuery = graphql`
               usedByProperties {
                 description
                 label
+                primaryRequired
                 propertyFriendlies
                 propertyPath
+                required
+                type
                 urlTo
               }
               urlGitHub

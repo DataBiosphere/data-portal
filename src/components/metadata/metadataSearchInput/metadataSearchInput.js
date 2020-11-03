@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import { globalHistory, useLocation } from "@reach/router";
 import React, {useContext, useEffect, useMemo, useRef, useState} from "react";
 
 // App dependencies
@@ -19,6 +20,7 @@ let classNames = require("classnames");
 function MetadataSearchInput() {
 
     const {inputActive, onHandleEsc, onHandleInput} = useContext(ContextMetadataSearch);
+    const currentLocation = useLocation();
     const inputRef = useRef();
     const [inputFocused, setInputFocused] = useState(false);
     const [inputText, setInputText] = useState("");
@@ -74,6 +76,39 @@ function MetadataSearchInput() {
 
         setInputFocused(inputActive);
     }, [inputActive]);
+
+    /* useEffect - componentDidUpdate - globalHistory. */
+    /* Listens to change in location and handles multiple actions when there is a location change on hash value only. */
+    /* Will scroll property element into view, after input is cleared and search menu is closed. */
+    /* Facilitiates scroll action to property, when navigating to a property within the same schema, after navigation action is complete. */
+    /* Navigation away from the current schema does not require this action due to unmounting and remounting of the component. */
+    useEffect(() => {
+
+        return globalHistory.listen(({location, action}) => {
+
+            const {hash, pathname} = location;
+            const [,identifier] = hash.split("#");
+            const currentPathName = currentLocation.pathname;
+
+            if ( inputActive && action === "PUSH" && currentPathName === pathname ) {
+
+                /* Clear input. */
+                onHandleInput("");
+
+                /* Close search menu - allows site to scroll. */
+                onHandleEsc(false);
+
+                /* Grab property by identifier. */
+                /* Scroll property into view. */
+                const propertyEl = document.getElementById(identifier);
+
+                if ( propertyEl ) {
+
+                    propertyEl.scrollIntoView();
+                }
+            }
+        });
+    }, [currentLocation, inputActive, onHandleEsc, onHandleInput]);
 
     const onHandleChange = (event) => {
 

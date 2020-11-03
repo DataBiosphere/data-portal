@@ -10,19 +10,14 @@ import React from "react";
 
 // App dependencies
 import MetadataSchemaProperty from "../metadataSchemaProperty/metadataSchemaProperty";
-import MetadataSchemaUsedBys from "../metadataSchemaUsedBys/metadataSchemaUsedBys";
 
-class MetadataSchemaProperties extends React.Component {
+function MetadataSchemaProperties(props) {
 
-    render() {
-        const {properties, schema} = this.props;
-        return (
-            <>
-            {properties.map((property, p) => <MetadataSchemaProperty key={p} property={property}/>)}
-            <MetadataSchemaUsedBys schema={schema}/>
-            </>
-        );
-    }
+    const {properties} = props;
+
+    return (
+        properties.map((property, p) => <MetadataSchemaProperty key={p} property={property}/>)
+    );
 }
 
 export default MetadataSchemaProperties;
