@@ -10,8 +10,9 @@
 .searchBar {
     display: inline-block;
     position: relative; /* Positions clear button. */
-    width: 350px;
+    max-width: 350px;
     z-index: 16; /* Above overlay. */
+    width: 100%;
 }
 
 /* Clear icon. */
