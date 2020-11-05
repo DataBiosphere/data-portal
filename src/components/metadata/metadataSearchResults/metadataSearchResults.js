@@ -12,22 +12,27 @@ import React, {useContext} from "react";
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
 import MetadataSearchResult from "../metadataSearchResult/metadataSearchResult";
 import MetadataSearchResultsPanel from "../metadataSearchResultsPanel/metadataSearchResultsPanel";
+import MetadataSearchResultsPanelKeyDownSpy from "../metadataSearchResultsPanelKeyDownSpy/metadataSearchResultsPanelKeyDownSpy";
 
 // Styles
 import fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSearchResults() {
 
-    const searching = useContext(ContextMetadataSearch),
-        {results, showResultsPanel} = searching;
+    const {results, showResultsPanel} = useContext(ContextMetadataSearch);
 
     return (
         showResultsPanel ?
             <MetadataSearchResultsPanel>
                 <h5 className={fontStyles.l} id={"hero"}>Search Results</h5>
-                {results.map((result, r) => <MetadataSearchResult key={r} result={result}/>)}
+                <MetadataSearchResultsPanelKeyDownSpy results={results}>
+                    {results.map((result, r) =>
+                        <MetadataSearchResult key={r}
+                                              counter={r}
+                                              result={result}/>)}
+                </MetadataSearchResultsPanelKeyDownSpy>
             </MetadataSearchResultsPanel> : null
     )
 }
 
-export default MetadataSearchResults;
+export default React.memo(MetadataSearchResults);
