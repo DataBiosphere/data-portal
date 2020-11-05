@@ -101,6 +101,44 @@ export function getSetOfSearchGroups() {
 }
 
 /**
+ * Returns the next index (key) on the results list from the current index.
+ *
+ * @param currentIndex
+ * @param resultsDepth
+ * @returns {*}
+ */
+export function onHandleSearchResultArrowDown(currentIndex, resultsDepth) {
+
+    /* Increment down the list. */
+    if ( currentIndex < resultsDepth ) {
+
+        return currentIndex + 1;
+    }
+
+    /* Return to start of list. */
+    return 0;
+}
+
+/**
+ * Returns the previous index (key) on the results list from the current index.
+ *
+ * @param currentIndex
+ * @param resultsDepth
+ * @returns {*}
+ */
+export function onHandleSearchResultArrowUp(currentIndex, resultsDepth) {
+
+    /* Increment up the list. */
+    if ( currentIndex > 0 ) {
+
+        return currentIndex - 1;
+    }
+
+    /* Go to end of list. */
+    return resultsDepth;
+}
+
+/**
  * Returns the analyzed model.
  * Uses the allow list score criteria to build an analyzed model of the search model.
  * Returns a boolean value for each search model element, for each type of "hit" on the element.

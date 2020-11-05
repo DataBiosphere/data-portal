@@ -6,8 +6,8 @@
  */
 
 // Core dependencies
+import { navigate } from "gatsby";
 import React from "react";
-import { navigate } from "@reach/router";
 
 // App dependencies
 import MetadataSchemaPropertyWordWrapper from "../metadata/metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper";
@@ -56,8 +56,8 @@ class TOCItem extends React.Component {
         return (
             <li className={classTOCItem}>
                 <button aria-label={name}
-                   className={classTOCLink}
-                   onClick={() => this.onTOCClicked(anchor)} >{tocItem}</button>
+                        className={classTOCLink}
+                        onClick={() => this.onTOCClicked(anchor)} >{tocItem}</button>
             </li>
         );
     }

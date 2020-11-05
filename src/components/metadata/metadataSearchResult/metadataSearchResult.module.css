@@ -14,10 +14,11 @@
     flex-direction: column;
     flex-wrap: wrap;
     padding: 8px var(--gutter-x);
+    scroll-margin-top: 60px; /* Required - prevents result from scrolling to position under result panel hero. */
 }
 
-/* Result - hover state. */
-.result:hover {
+/* Result - active state. */
+.result.active {
     background-color: var(--white-off);
 }
 
