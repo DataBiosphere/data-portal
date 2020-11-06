@@ -1,0 +1,22 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata search results panel header component.
+ */
+@import "../../../styles/vars.module.css";
+
+/* Hero. */
+.hero {
+    background-color: var(--white);
+    box-shadow: 0 0 8px var(--black38);
+    padding: 16px var(--gutter-x);
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+/* Hero - title. */
+.hero h5 {
+    margin: 0;
+}

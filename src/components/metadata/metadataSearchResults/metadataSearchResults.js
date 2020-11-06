@@ -12,10 +12,8 @@ import React, {useContext} from "react";
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
 import MetadataSearchResult from "../metadataSearchResult/metadataSearchResult";
 import MetadataSearchResultsPanel from "../metadataSearchResultsPanel/metadataSearchResultsPanel";
+import MetadataSearchResultsPanelHeader from "../metadataSearchResultsPanelHeader/metadataSearchResultsPanelHeader";
 import MetadataSearchResultsPanelKeyDownSpy from "../metadataSearchResultsPanelKeyDownSpy/metadataSearchResultsPanelKeyDownSpy";
-
-// Styles
-import fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSearchResults() {
 
@@ -24,7 +22,7 @@ function MetadataSearchResults() {
     return (
         showResultsPanel ?
             <MetadataSearchResultsPanel>
-                <h5 className={fontStyles.l} id={"hero"}>Search Results</h5>
+                <MetadataSearchResultsPanelHeader>Search Results</MetadataSearchResultsPanelHeader>
                 <MetadataSearchResultsPanelKeyDownSpy results={results}>
                     {results.map((result, r) =>
                         <MetadataSearchResult key={r}

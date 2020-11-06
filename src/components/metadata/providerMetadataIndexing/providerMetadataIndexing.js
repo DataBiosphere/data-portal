@@ -38,6 +38,11 @@ class ProviderMetadataIndexing extends React.Component {
             this.onHandleSearch(event);
         };
 
+        this.onHandleSearchClose = () => {
+
+            console.log("close search");
+        };
+
         this.state = ({
             inputActive: false,
             inputValue: "",
@@ -50,6 +55,7 @@ class ProviderMetadataIndexing extends React.Component {
             setOfResultsBySearchGroups: new Map(),
             onHandleEsc: this.onHandleEsc,
             onHandleInput: this.onHandleInput,
+            onHandleSearchClose: this.onHandleSearchClose
         });
     }
 
@@ -280,7 +286,7 @@ class ProviderMetadataIndexing extends React.Component {
             /* Replaces any multiple spaces and trims - improves lunr search performance. */
             else {
 
-                searchValue = inputValue.replace(/;|\/|\\|\*|~|-|\^|\+/g, "").replace(/\s\s+/g, " ").trim();
+                searchValue = inputValue.replace(/[;\/\\*~\-^+]/g, "").replace(/\s\s+/g, " ").trim();
             }
         }
 
@@ -344,13 +350,13 @@ class ProviderMetadataIndexing extends React.Component {
 
     render() {
         const {children, properties, resultKey, schemas, setOfProperties} = this.props,
-            {inputActive, inputValue, setOfResults, onHandleEsc, onHandleInput} = this.state;
+            {inputActive, inputValue, setOfResults, onHandleEsc, onHandleInput, onHandleSearchClose} = this.state;
         const results = MetadataSearchService.buildResults(schemas, properties, setOfResults, resultKey, setOfProperties, inputValue);
         const showNoResultsPanel = this.isShowNoResultsPanel(results);
         const showResultsPanel = this.isShowResultsPanel(results);
         return (
             <ContextMetadataSearch.Provider
-                value={{inputActive, inputValue, results, showNoResultsPanel, showResultsPanel, onHandleEsc, onHandleInput}}>
+                value={{inputActive, inputValue, results, showNoResultsPanel, showResultsPanel, onHandleEsc, onHandleInput, onHandleSearchClose}}>
                 {children}
             </ContextMetadataSearch.Provider>
         )

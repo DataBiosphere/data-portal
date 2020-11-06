@@ -11,15 +11,14 @@ import React, {useContext, useEffect, useMemo, useRef, useState} from "react";
 
 // App dependencies
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
+import MetadataSearchInputClear from "../metadataSearchInputClear/metadataSearchInputClear";
 
 // Styles
 import compStyles from "./metadataSearchInput.module.css";
 
-let classNames = require("classnames");
-
 function MetadataSearchInput() {
 
-    const {inputActive, onHandleEsc, onHandleInput} = useContext(ContextMetadataSearch);
+    const {inputActive, onHandleEsc, onHandleInput, onHandleSearchClose} = useContext(ContextMetadataSearch);
     const currentLocation = useLocation();
     const inputRef = useRef();
     const [inputFocused, setInputFocused] = useState(false);
@@ -148,14 +147,12 @@ function MetadataSearchInput() {
                        type="text"
                        value={inputText}
                        onChange={(e) => onHandleChange(e)}/>
-                <span className={classNames(compStyles.icon, "material-icons", {[compStyles.active]: showClear})}
-                      role="presentation"
-                      onClick={onHandleClearInput}>close</span>
+                <MetadataSearchInputClear showClear={showClear} onHandleClearInput={onHandleClearInput}/>
             </span>
-            {inputFocused ? <div className={compStyles.overlay} onClick={onHandleClearInput} role="presentation"/> : null}
+            {inputFocused ? <div className={compStyles.overlay} onClick={onHandleSearchClose} role="presentation"/> : null}
             </>
         )
-    }, [inputFocused, inputText, showClear]);
+    }, [inputFocused, inputText, showClear, onHandleSearchClose]);
 }
 
 export default MetadataSearchInput;
