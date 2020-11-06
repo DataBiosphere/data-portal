@@ -13,19 +13,10 @@ import React from "react";
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
 import * as MetadataSearchService from "../../../utils/metadata-search.service";
 
-class ProviderMetadataIndexing extends React.Component {
+class ProviderMetadataSearching extends React.Component {
 
     constructor(props) {
         super(props);
-
-        this.onHandleEsc = (event) => {
-
-            const {onMenuOpen} = this.props;
-
-            /* Toggle site scrolling. */
-            onMenuOpen(!event);
-            this.setState({inputActive: event});
-        };
 
         this.onHandleInput = (event) => {
 
@@ -40,7 +31,22 @@ class ProviderMetadataIndexing extends React.Component {
 
         this.onHandleSearchClose = () => {
 
-            console.log("close search");
+            const {onHandleSiteScroll} = this.props;
+
+            /* Handle site scrolling. */
+            onHandleSiteScroll(true);
+
+            this.setState({inputActive: false});
+        };
+
+        this.onHandleSearchOpen = () => {
+
+            const {onHandleSiteScroll} = this.props;
+
+            /* Handle site scrolling. */
+            onHandleSiteScroll(false);
+
+            this.setState({inputActive: true});
         };
 
         this.state = ({
@@ -53,9 +59,9 @@ class ProviderMetadataIndexing extends React.Component {
             searchValue: "",
             setOfResults: new Set(),
             setOfResultsBySearchGroups: new Map(),
-            onHandleEsc: this.onHandleEsc,
             onHandleInput: this.onHandleInput,
-            onHandleSearchClose: this.onHandleSearchClose
+            onHandleSearchClose: this.onHandleSearchClose,
+            onHandleSearchOpen: this.onHandleSearchOpen
         });
     }
 
@@ -240,7 +246,7 @@ class ProviderMetadataIndexing extends React.Component {
         const {inputActive, inputValue} = this.state;
         const noResults = results && results.length === 0;
 
-        return noResults && inputActive && inputValue;
+        return inputActive && inputValue && noResults;
     };
 
     isShowResultsPanel = (results) => {
@@ -250,7 +256,7 @@ class ProviderMetadataIndexing extends React.Component {
         const noResults = results && results.length === 0;
         const filteredResults = setOfProperties.size !== setOfResults.size;
 
-        return filteredResults && !noResults && inputActive;
+        return inputActive && filteredResults && !noResults;
     };
 
     metadataIndexMountedStateChanged = (prevState) => {
@@ -286,7 +292,7 @@ class ProviderMetadataIndexing extends React.Component {
             /* Replaces any multiple spaces and trims - improves lunr search performance. */
             else {
 
-                searchValue = inputValue.replace(/[;\/\\*~\-^+]/g, "").replace(/\s\s+/g, " ").trim();
+                searchValue = inputValue.replace(/[;/\\*~\-^+]/g, "").replace(/\s\s+/g, " ").trim();
             }
         }
 
@@ -350,17 +356,17 @@ class ProviderMetadataIndexing extends React.Component {
 
     render() {
         const {children, properties, resultKey, schemas, setOfProperties} = this.props,
-            {inputActive, inputValue, setOfResults, onHandleEsc, onHandleInput, onHandleSearchClose} = this.state;
+            {inputActive, inputValue, setOfResults, onHandleInput, onHandleSearchClose, onHandleSearchOpen} = this.state;
         const results = MetadataSearchService.buildResults(schemas, properties, setOfResults, resultKey, setOfProperties, inputValue);
         const showNoResultsPanel = this.isShowNoResultsPanel(results);
         const showResultsPanel = this.isShowResultsPanel(results);
         return (
             <ContextMetadataSearch.Provider
-                value={{inputActive, inputValue, results, showNoResultsPanel, showResultsPanel, onHandleEsc, onHandleInput, onHandleSearchClose}}>
+                value={{inputActive, inputValue, results, showNoResultsPanel, showResultsPanel, onHandleInput, onHandleSearchClose, onHandleSearchOpen}}>
                 {children}
             </ContextMetadataSearch.Provider>
         )
     }
 }
 
-export default ProviderMetadataIndexing;
+export default ProviderMetadataSearching;

@@ -19,12 +19,13 @@ function MetadataSearchResultsPanelScrollSpy(props) {
         if ( activeResultEl ) {
 
             const {offsetHeight, offsetParent, offsetTop} = activeResultEl,
-                {clientHeight, scrollTop} = offsetParent;
+                {lastElementChild} = offsetParent,
+                {clientHeight, scrollTop} = lastElementChild;
 
             /* Keep to top view. */
             /* Note, scroll-margin-top added to classname "result". */
             /* Prevents result from scrolling to position under result panel hero. */
-            if (offsetTop - scrollTop < 60) {
+            if (offsetTop - scrollTop < 56) {
 
                 activeResultEl.scrollIntoView({block: "start"});
             }

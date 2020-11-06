@@ -14,7 +14,7 @@ import {MetadataSchemaPropertiesQuery} from "../../../hooks/metadata-schema-prop
 import MetadataSearchInput from "../metadataSearchInput/metadataSearchInput";
 import MetadataSearchNoResult from "../metadataSearchNoResult/metadataSearchNoResult";
 import MetadataSearchResults from "../metadataSearchResults/metadataSearchResults";
-import ProviderMetadataIndexing from "../providerMetadataIndexing/providerMetadataIndexing";
+import ProviderMetadataSearching from "../providerMetadataSearching/providerMetadataSearching";
 import * as MetadataSearchService from "../../../utils/metadata-search.service";
 
 // Styles
@@ -26,26 +26,26 @@ const lunrIndexRefField = "id";
 
 function MetadataSearch(props) {
 
-    const {onMenuOpen} = props;
+    const {onHandleSiteScroll} = props;
     const properties = MetadataSchemaPropertiesQuery();
     const schemas = MetadataSchemaQuery();
     const setOfProperties = MetadataSearchService.getSetOfProperties(properties, lunrIndexRefField);
     const setOfSearchGroups = MetadataSearchService.getSetOfSearchGroups();
 
     return (
-        <ProviderMetadataIndexing metadataIndexFileName={metadataIndexFileName}
-                                  onMenuOpen={onMenuOpen}
-                                  properties={properties}
-                                  resultKey={lunrIndexRefField}
-                                  schemas={schemas}
-                                  setOfProperties={setOfProperties}
-                                  setOfSearchGroups={setOfSearchGroups}>
+        <ProviderMetadataSearching metadataIndexFileName={metadataIndexFileName}
+                                   onHandleSiteScroll={onHandleSiteScroll}
+                                   properties={properties}
+                                   resultKey={lunrIndexRefField}
+                                   schemas={schemas}
+                                   setOfProperties={setOfProperties}
+                                   setOfSearchGroups={setOfSearchGroups}>
             <div className={compStyles.search}>
                 <MetadataSearchInput/>
                 <MetadataSearchNoResult/>
                 <MetadataSearchResults/>
             </div>
-        </ProviderMetadataIndexing>
+        </ProviderMetadataSearching>
     );
 }
 

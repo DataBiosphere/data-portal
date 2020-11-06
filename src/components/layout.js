@@ -30,14 +30,14 @@ class Layout extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            noScroll: false,
+            scrollable: true,
             supportRequestActive: false
         };
     }
 
-    onMenuOpen = (event) => {
+    onHandleSiteScroll = (scrollable) => {
 
-        this.setState({noScroll: !event});
+        this.setState({scrollable: scrollable});
     };
 
     onToggleSupportRequestForm = (active) => {
@@ -48,13 +48,13 @@ class Layout extends React.Component {
     render() {
         const {activeLocation, children, description, docPath, healthy, homePage, homeTab,
             metadataContent, nav, pageTitle, sectionTitle, showAllMetadata} = this.props;
-        const {noScroll, supportRequestActive} = this.state;
+        const {scrollable, supportRequestActive} = this.state;
         return (
             <div>
                 <PageHead pageTitle={pageTitle}/>
                 <SEO description={description} pageTitle={pageTitle}/>
-                <div className={classNames(compStyles.site, {[compStyles.noScroll]: noScroll})}>
-                    <Header onMenuOpen={this.onMenuOpen.bind(this)} homePage={homePage} docPath={docPath}/>
+                <div className={classNames(compStyles.site, {[compStyles.noScroll]: !scrollable})}>
+                    <Header onHandleSiteScroll={this.onHandleSiteScroll} homePage={homePage} docPath={docPath}/>
                     <DCP2Announcement/>
                     <Banner position={"top"} healthy={healthy}/>
                     {homePage ? children :
@@ -63,7 +63,7 @@ class Layout extends React.Component {
                                  homeTab={homeTab}
                                  metadataContent={metadataContent}
                                  nav={nav}
-                                 onMenuOpen={this.onMenuOpen.bind(this)}
+                                 onHandleSiteScroll={this.onHandleSiteScroll}
                                  sectionTitle={sectionTitle}
                                  showAllMetadata={showAllMetadata}>{children}</HCAMain>}
                     <SupportRequest active={supportRequestActive} onToggle={(active) => this.onToggleSupportRequestForm(active)}/>
