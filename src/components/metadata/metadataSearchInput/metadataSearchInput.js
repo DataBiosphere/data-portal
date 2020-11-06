@@ -7,7 +7,7 @@
 
 // Core dependencies
 import { globalHistory, useLocation } from "@reach/router";
-import React, {useContext, useEffect, useMemo, useRef, useState} from "react";
+import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from "react";
 
 // App dependencies
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
@@ -18,33 +18,65 @@ import compStyles from "./metadataSearchInput.module.css";
 
 function MetadataSearchInput() {
 
-    const {inputActive, onHandleEsc, onHandleInput, onHandleSearchClose} = useContext(ContextMetadataSearch);
+    const {inputActive, onHandleInput, onHandleSearchClose, onHandleSearchOpen} = useContext(ContextMetadataSearch);
     const currentLocation = useLocation();
-    const inputRef = useRef();
-    const [inputFocused, setInputFocused] = useState(false);
+    const inputRef = useRef(null);
     const [inputText, setInputText] = useState("");
-    const [timer, setTimer] = useState(500);
+    const [timer, setTimer] = useState(0);
     const showClear = !!inputText;
+
+    const onHandleChange = (event) => {
+
+        const text = event.target.value;
+
+        setTimer(500);
+        setInputText(text);
+    };
+
+    const onHandleClearInput = useCallback(() => {
+
+        /* Maintain <input> focus. */
+        /* Set timer to zero and clear the input. */
+        inputRef.current.focus();
+        setTimer(0);
+        setInputText("");
+    }, []);
+
+    const onHandleKeyDown = useCallback((keyEvent) => {
+
+        const {key} = keyEvent;
+
+        if ( key === "Escape" ) {
+
+            onHandleSearchClose();
+        }
+    }, [onHandleSearchClose]);
 
     /* useEffect - componentDidMount/componentWillUnmount. */
     useEffect(() => {
 
-        /* Allows handling of focus on <input>. */
-        inputRef.current = document.querySelector("input");
-
-        /* Add event listener "focus" to <input>. */
-        inputRef.current.addEventListener("focus", onHandleFocus, false);
-
-        /* Add event listener "keydown" [escape key] to blur and clear <input>. */
-        document.addEventListener("keydown", onHandleEscape, false);
+        /* Add event listener "keydown" [escape key] to handle closing of search. */
+        document.addEventListener("keydown", onHandleKeyDown, false);
 
         return () => {
 
             /* Remove event listeners. */
-            document.removeEventListener("focus", onHandleFocus, false);
-            document.removeEventListener("keydown", onHandleEscape, false);
+            document.removeEventListener("keydown", onHandleKeyDown, false);
         }
-    }, []);
+    }, [onHandleKeyDown]);
+
+    /* useEffect - componentDidUpdate - inputActive. */
+    /* Handles external control of focus changes to the <input>. */
+    /* e.g. keyed selection of search result. */
+    useEffect(() => {
+
+        if ( !inputActive ) {
+
+            inputRef.current.blur();
+            setTimer(0);
+            setInputText("");
+        }
+    }, [inputActive]);
 
     /* useEffect - componentDidUpdate - inputText. */
     /* Handles changes on <input>. */
@@ -54,27 +86,6 @@ function MetadataSearchInput() {
         const delaySearch = setTimeout(() => onHandleInput(inputText), timer);
         return () => clearTimeout(delaySearch);
     }, [inputText, onHandleInput, timer]);
-
-    /* useEffect - componentDidUpdate - inputFocused. */
-    /* Handles focus changes to the <input>. */
-    useEffect(() => {
-
-        onHandleEsc(inputFocused);
-
-        if ( !inputFocused ) {
-
-            /* Clear input. */
-            setInputText("");
-        }
-    }, [inputFocused, onHandleEsc]);
-
-    /* useEffect - componentDidUpdate - inputActive. */
-    /* Handles external focus changes to the <input>. */
-    /* e.g. selection of search result clears input, and resets provider state inputActive to false. */
-    useEffect(() => {
-
-        setInputFocused(inputActive);
-    }, [inputActive]);
 
     /* useEffect - componentDidUpdate - globalHistory. */
     /* Listens to change in location and handles multiple actions when there is a location change on hash value only. */
@@ -91,11 +102,8 @@ function MetadataSearchInput() {
 
             if ( inputActive && action === "PUSH" && currentPathName === pathname ) {
 
-                /* Clear input. */
-                onHandleInput("");
-
-                /* Close search menu - allows site to scroll. */
-                onHandleEsc(false);
+                /* Close search menu. */
+                onHandleSearchClose();
 
                 /* Grab property by identifier. */
                 /* Scroll property into view. */
@@ -107,52 +115,25 @@ function MetadataSearchInput() {
                 }
             }
         });
-    }, [currentLocation, inputActive, onHandleEsc, onHandleInput]);
-
-    const onHandleChange = (event) => {
-
-        const text = event.target.value;
-
-        setTimer(500);
-        setInputText(text);
-    };
-
-    const onHandleClearInput = () => {
-
-        /* Set timer to zero and set active state to false. */
-        setTimer(0);
-        setInputFocused(false);
-    };
-
-    const onHandleEscape = (e) => {
-
-        if ( e.key === "Escape" ) {
-
-            inputRef.current.blur();
-            setInputFocused(false);
-        }
-    };
-
-    const onHandleFocus = () => {
-
-        setInputFocused(true);
-    };
+    }, [currentLocation, inputActive, onHandleSearchClose]);
 
     return useMemo(() => {
         return (
             <>
             <span className={compStyles.searchBar}>
-                <input className={compStyles.input}
-                       placeholder={"Search all metadata"}
-                       type="text"
-                       value={inputText}
-                       onChange={(e) => onHandleChange(e)}/>
+            <input className={compStyles.input}
+                   placeholder={"Search all metadata"}
+                   ref={inputRef}
+                   type="text"
+                   value={inputText}
+                   onChange={(e) => onHandleChange(e)}
+                   onFocus={onHandleSearchOpen}/>
                 <MetadataSearchInputClear showClear={showClear} onHandleClearInput={onHandleClearInput}/>
             </span>
-            {inputFocused ? <div className={compStyles.overlay} onClick={onHandleSearchClose} role="presentation"/> : null}
+            {inputActive ? <div className={compStyles.overlay} onClick={onHandleSearchClose} role="presentation"/> : null}
             </>
         )
-    }, [inputFocused, inputText, showClear, onHandleSearchClose]);
+    }, [inputActive, inputText, showClear, onHandleClearInput, onHandleSearchClose, onHandleSearchOpen]);
 }
 
 export default MetadataSearchInput;

@@ -15,6 +15,9 @@ import MetadataSearchResultsPanel from "../metadataSearchResultsPanel/metadataSe
 import MetadataSearchResultsPanelHeader from "../metadataSearchResultsPanelHeader/metadataSearchResultsPanelHeader";
 import MetadataSearchResultsPanelKeyDownSpy from "../metadataSearchResultsPanelKeyDownSpy/metadataSearchResultsPanelKeyDownSpy";
 
+// Styles
+import compStyles from "./metadataSearchResults.module.css";
+
 function MetadataSearchResults() {
 
     const {results, showResultsPanel} = useContext(ContextMetadataSearch);
@@ -23,12 +26,14 @@ function MetadataSearchResults() {
         showResultsPanel ?
             <MetadataSearchResultsPanel>
                 <MetadataSearchResultsPanelHeader>Search Results</MetadataSearchResultsPanelHeader>
-                <MetadataSearchResultsPanelKeyDownSpy results={results}>
-                    {results.map((result, r) =>
-                        <MetadataSearchResult key={r}
-                                              counter={r}
-                                              result={result}/>)}
-                </MetadataSearchResultsPanelKeyDownSpy>
+                <div className={compStyles.results}>
+                    <MetadataSearchResultsPanelKeyDownSpy results={results}>
+                        {results.map((result, r) =>
+                            <MetadataSearchResult key={r}
+                                                  counter={r}
+                                                  result={result}/>)}
+                    </MetadataSearchResultsPanelKeyDownSpy>
+                </div>
             </MetadataSearchResultsPanel> : null
     )
 }

@@ -11,7 +11,7 @@
     background-color: var(--white);
     box-shadow: 0 0 8px var(--black38);
     padding: 16px var(--gutter-x);
-    position: sticky;
+    position: absolute;
     top: 0;
     width: 100%;
 }

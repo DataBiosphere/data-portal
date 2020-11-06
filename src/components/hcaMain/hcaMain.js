@@ -21,14 +21,14 @@ import globalStyles from "../../styles/global.module.css";
 
 function HCAMain(props) {
 
-    const {activeLocation, children, docPath, homeTab, metadataContent, nav, onMenuOpen, sectionTitle, showAllMetadata} = props,
+    const {activeLocation, children, docPath, homeTab, metadataContent, nav, onHandleSiteScroll, sectionTitle, showAllMetadata} = props,
         {label, links, secondaryTabs, section, tabKey, tabs} = nav || {};
     const showMetadataSearch = docPath ? docPath.startsWith("/metadata") : false;
 
     return (
         <div className={globalStyles.pageWrapper}>
             <Section section={section} sectionTitle={sectionTitle}/>
-            {showMetadataSearch ? <MetadataSearch onMenuOpen={onMenuOpen}/> : null}
+            {showMetadataSearch ? <MetadataSearch onHandleSiteScroll={onHandleSiteScroll}/> : null}
             <Tabs homeTab={homeTab} tabs={tabs}/>
             {metadataContent ?<Tabs secondary tabs={secondaryTabs}/> : null}
             <div className={compStyles.main}>

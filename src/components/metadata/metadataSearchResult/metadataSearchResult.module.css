@@ -14,7 +14,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     padding: 8px var(--gutter-x);
-    scroll-margin-top: 60px; /* Required - prevents result from scrolling to position under result panel hero. */
+    scroll-margin-top: 56px; /* Required - prevents result from scrolling to position under result panel hero. */
 }
 
 /* Result - active state. */
