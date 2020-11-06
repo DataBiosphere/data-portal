@@ -15,9 +15,15 @@ const classNames = require("classnames");
 
 function Icon(props) {
 
-    const {children, show} = props;
+    const {children, fontSize, showHover, showIcon} = props;
+    const size = fontSize ? `${fontSize}px` : "24px";
+    const classNamesIcon = classNames(
+        {[compStyles.hover]: showHover},
+        compStyles.icon, "material-icons",
+        {[compStyles.show]: showIcon});
+
     return (
-        <i className={classNames(compStyles.icon, {[compStyles.show]: show})}>{children}</i>
+        <i className={classNamesIcon} style={{fontSize: size}}>{children}</i>
     );
 }
 

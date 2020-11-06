@@ -15,31 +15,6 @@
     width: 100%;
 }
 
-/* Clear icon. */
-.icon {
-    color: var(--gray-light);
-    font-size: 24px;
-    opacity: 0;
-    padding: 7px;
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-/* Clear icon - hover. */
-.icon.active:hover {
-    color: var(--gray-medium);
-}
-
-/* Clear icon - active. */
-.icon.active {
-    cursor: pointer;
-    opacity: 1;
-    pointer-events: visible;
-    transition: opacity 250ms cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
 /* Input. */
 .input {
     background-color: transparent;
@@ -50,7 +25,7 @@
     display: inline-block;
     font-weight: 400;
     height: 38px;
-    padding: 0 30px 0 8px;
+    padding: 0 36px 0 8px;
     width: 100%;
 }
 

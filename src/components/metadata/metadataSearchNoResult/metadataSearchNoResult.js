@@ -11,6 +11,7 @@ import React, {useContext} from "react";
 // App dependencies
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
 import MetadataSearchResultsPanel from "../metadataSearchResultsPanel/metadataSearchResultsPanel";
+import MetadataSearchResultsPanelHeader from "../metadataSearchResultsPanelHeader/metadataSearchResultsPanelHeader";
 
 // Styles
 import compStyles from "./metadataSearchNoResult.module.css";
@@ -23,7 +24,7 @@ function MetadataSearchNoResults() {
     return (
         showNoResultsPanel ?
             <MetadataSearchResultsPanel error>
-                <h5 className={fontStyles.l} id={"hero"}>No Results</h5>
+                <MetadataSearchResultsPanelHeader>No Results</MetadataSearchResultsPanelHeader>
                 <div className={compStyles.result}>
                     <p className={fontStyles.s}>Oops! We don’t have an exact match, it may be called by a different name.</p>
                     <p className={fontStyles.s}>Try starting with a schema name, for example "cell_line" or "specimen_from_organism".</p>

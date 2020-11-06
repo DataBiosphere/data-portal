@@ -1,0 +1,37 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Styles for Data Portal button component.
+ */
+
+/* Button. */
+.button {
+    align-items: center;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    font-family: "Montserrat",sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    height: 38px;
+    justify-content: center;
+    margin: 0;
+    min-width: 84px;
+    padding: 0 12px;
+    white-space: nowrap;
+}
+
+/* Button - icon. */
+.button.icon {
+    background-color: transparent;
+    min-width: unset;
+    padding: 8px;
+}
+
+/* Button - focus. */
+.button:focus {
+    outline: none;
+}

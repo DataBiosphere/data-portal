@@ -31,7 +31,7 @@ function MetadataSchemaPropertyFieldPath(props) {
             <p className={classNamesPropertyPath}>
                 <MetadataSchemaPropertyWordWrapper word={propertyPath} wrap={wrap}>
                     <Tooltip label={"Copy"}>
-                        <Icon show={active}>file_copy</Icon>
+                        <Icon fontSize={14} showIcon={active}>file_copy</Icon>
                     </Tooltip>
                 </MetadataSchemaPropertyWordWrapper>
             </p>

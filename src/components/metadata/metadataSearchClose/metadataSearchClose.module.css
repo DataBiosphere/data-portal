@@ -1,0 +1,14 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata search close button wrapper component.
+ */
+
+/* Close search button. */
+.close {
+    position: absolute;
+    right: calc(var(--gutter-x) - 8px);
+    top: 50%;
+    transform: translateY(-50%);
+}
