@@ -15,6 +15,7 @@ import AnalysisDetail from '../components/analyze/analysisDetail';
 import Analyze from '../components/analyze/analyze';
 import Attributions from '../components/attributions/attributions';
 import DataLifecycleDiagram from '../components/dataLifecycleDiagram/dataLifecycleDiagram';
+import InternalLink from '../components/internal-link/internalLink';
 import Layout from '../components/layout';
 import LinkToBrowser from "../components/linkToBrowser/linkToBrowser";
 import * as TemplateService from '../utils/template.service';
@@ -27,7 +28,7 @@ let classNames = require('classnames');
 
 const renderAst = new rehypeReact({
     createElement: React.createElement,
-    components: { "data-lifecycle-diagram": DataLifecycleDiagram, "link-to-browser": LinkToBrowser }
+    components: { "internal-link": InternalLink, "data-lifecycle-diagram": DataLifecycleDiagram, "link-to-browser": LinkToBrowser }
 }).Compiler;
 
 // the data prop will be injected by the GraphQL query below.

@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import HeadingTag from "../anchor/anchor";
+import InternalLink from "../internal-link/internalLink";
 
 // Styles
 import compStyles from "./metadataPropertyHeader.module.css";
@@ -27,7 +27,7 @@ class MetadataPropertyHeader extends React.Component {
                 <span className={classHeader}>{label}</span>
                 {required ? <span className={classNames(compStyles.required, fontStyles.xs)}>*</span> : null}
                 {firstInGroup ? <span className={classNames(fontStyles.xxs, compStyles.dataType)}>({dataType})</span> : null}
-                {anchor ? <HeadingTag anchor={anchor}/> : null}
+                {anchor ? <InternalLink anchor={anchor}/> : null}
             </span>
         );
     }
