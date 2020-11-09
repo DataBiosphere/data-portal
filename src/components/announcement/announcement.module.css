@@ -1,0 +1,38 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal announcement component.
+ */
+
+@import "../../styles/vars.module.css";
+
+/* Announcement */
+.announcement {
+    background-color: var(--blue-light);
+    padding: 14px 16px; /* Site gutter */
+}
+
+.announcement span {
+    margin-bottom: 0;
+}
+
+.announcement strong {
+    font-weight: 500;
+}
+
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 1200px) {
+
+    :host {
+        padding: 14px 30px; /* Site gutter */
+    }
+
+    /* Center align content - for banners at the top of site */
+    .announcement {
+        display: flex;
+        justify-content: center;
+    }
+}
