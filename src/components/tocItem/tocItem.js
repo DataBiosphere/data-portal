@@ -49,7 +49,9 @@ class TOCItem extends React.Component {
         const classTOCItem = classNames({[compStyles.active]: this.isTOCActive()}, compStyles.toc);
         return (
             <li className={classTOCItem}>
-                <a className={classTOCLink} onClick={() => this.onTOCClicked(anchor)}>{name}</a>
+                <button aria-label={name}
+                   className={classTOCLink}
+                   onClick={() => this.onTOCClicked(anchor)} >{name}</button>
             </li>
         );
     }

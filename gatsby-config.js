@@ -121,11 +121,8 @@ module.exports = {
                 excerpt_separator: `<!-- end -->`,
                 plugins: [
                     {
-                        resolve: `gatsby-remark-autolink-headers`,
-                    },
-                    {
                         resolve: "gatsby-remark-component",
-                        options: {components: ["data-lifecycle-diagram", "link-to-browser"]}
+                        options: {components: ["internal-link", "data-lifecycle-diagram", "link-to-browser"]}
                     },
                     {
                         resolve: `gatsby-remark-copy-linked-files`,
@@ -162,7 +159,8 @@ module.exports = {
                     `gatsby-remark-prismjs`,
                     `gatsby-remark-responsive-iframe`,
                     `gatsby-remark-metadata-absolute-linker`,
-                    `gatsby-remark-relative-linker`
+                    `gatsby-remark-relative-linker`,
+                    `gatsby-remark-autointernallink-headers`
                 ],
             },
         },

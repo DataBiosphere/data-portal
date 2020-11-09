@@ -14,24 +14,29 @@
 }
 
 /* TOC - link */
-.toc a {
+.toc button {
+    background: transparent;
+    border: 0;
     color: var(--gray-dark);
+    cursor: pointer;
+    outline: 0;
     padding: 4px 0;
+    text-align: left;
     width: 100%; /* Improves click-able area on link */
 }
 
 /* TOC - depth 3 */
-.toc a.depth3 {
+.toc button.depth3 {
     margin-left: 8px;
 }
 
 /* TOC link - hover */
-.toc:hover a {
+.toc:hover button {
     color: var(--gray-darkest);
 }
 
 /* TOC link - active */
-.toc.active a {
+.toc.active button {
     color: var(--black);
 }
 
