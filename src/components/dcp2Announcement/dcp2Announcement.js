@@ -18,8 +18,7 @@ class DCP2Announcement extends React.Component {
         const dcp2ComingSoonPath = "/coming-soon-DCP-2-with-support-for-controlled-access-data";
         return (
             <Announcement>
-                <strong>An important update for the HCA community:</strong> The HCA DCP is undergoing a major upgrade to
-                handle controlled access data. <Link to={dcp2ComingSoonPath}>Read the announcement.</Link>
+                <strong>An important update for the HCA community:</strong> The HCA DCP is undergoing a major upgrade. <Link to={dcp2ComingSoonPath}>Read the announcement.</Link>
             </Announcement>
         );
     }
