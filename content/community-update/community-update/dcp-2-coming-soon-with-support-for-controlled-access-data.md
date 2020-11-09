@@ -1,11 +1,11 @@
 ---
-date: "2020-09-09"
-title: Coming Soon - DCP 2.0 with Support for Controlled Access Data
-description: "An important update for the community - The HCA DCP is undergoing a major upgrade to handle controlled access data."
+date: "2020-10-09"
+title: Coming Soon - DCP 2.0
+description: "An important update for the community - The HCA DCP is undergoing a major upgrade."
 ---
 
 
-# Coming Soon - DCP 2.0 with Support for Controlled Access Data
+# Coming Soon - DCP 2.0
 
 Dear HCA Community Member,
 
