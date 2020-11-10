@@ -13,7 +13,6 @@ const ContextMetadataSearch = React.createContext({
     inputActive: false,
     inputValue: "",
     results: [],
-    showNoResultsPanel: false,
     showResultsPanel: false,
     onHandleInput: () => {},
     onHandleSearchClose: () => {},

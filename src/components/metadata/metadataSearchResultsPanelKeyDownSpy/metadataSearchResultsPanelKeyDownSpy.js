@@ -75,15 +75,15 @@ function MetadataSearchResultsPanelKeyDownSpy(props) {
         setKeyDownCode(keyEvent.code);
     };
 
-return (
-    <MetadataSearchResultsPanelScrollSpy activeResultEl={activeResultEl}>
-        {React.Children.map(children, (child, c) =>
-            React.cloneElement(child,
-                {active: c === activeCounter,
+    return (
+        <MetadataSearchResultsPanelScrollSpy activeResultEl={activeResultEl}>
+            {React.Children.map(children, (child, c) =>
+                React.cloneElement(child, {
+                    active: c === activeCounter,
                     setActiveCounter: setActiveCounter,
                     setActiveResult: setActiveResult,
                     setActiveResultEl: setActiveResultEl}))}
-    </MetadataSearchResultsPanelScrollSpy>
+        </MetadataSearchResultsPanelScrollSpy>
     )
 }
 

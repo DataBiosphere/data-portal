@@ -10,10 +10,10 @@ import React, {useContext} from "react";
 
 // App dependencies
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
-import MetadataSearchResult from "../metadataSearchResult/metadataSearchResult";
+import MetadataSearchResultsEmpty from "../metadataSearchResultsEmpty/metadataSearchResultsEmpty";
+import MetadataSearchResultsExist from "../metadataSearchResultsExist/metadataSearchResultsExist";
 import MetadataSearchResultsPanel from "../metadataSearchResultsPanel/metadataSearchResultsPanel";
 import MetadataSearchResultsPanelHeader from "../metadataSearchResultsPanelHeader/metadataSearchResultsPanelHeader";
-import MetadataSearchResultsPanelKeyDownSpy from "../metadataSearchResultsPanelKeyDownSpy/metadataSearchResultsPanelKeyDownSpy";
 
 // Styles
 import compStyles from "./metadataSearchResults.module.css";
@@ -21,18 +21,17 @@ import compStyles from "./metadataSearchResults.module.css";
 function MetadataSearchResults() {
 
     const {results, showResultsPanel} = useContext(ContextMetadataSearch);
+    const resultsExist = results && results.length > 0;
+    const panelHeroText = resultsExist ? "Search Results" : "No Results";
 
     return (
         showResultsPanel ?
             <MetadataSearchResultsPanel>
-                <MetadataSearchResultsPanelHeader>Search Results</MetadataSearchResultsPanelHeader>
+                <MetadataSearchResultsPanelHeader>{panelHeroText}</MetadataSearchResultsPanelHeader>
                 <div className={compStyles.results}>
-                    <MetadataSearchResultsPanelKeyDownSpy results={results}>
-                        {results.map((result, r) =>
-                            <MetadataSearchResult key={r}
-                                                  counter={r}
-                                                  result={result}/>)}
-                    </MetadataSearchResultsPanelKeyDownSpy>
+                    {resultsExist ?
+                        <MetadataSearchResultsExist results={results}/> :
+                        <MetadataSearchResultsEmpty/>}
                 </div>
             </MetadataSearchResultsPanel> : null
     )

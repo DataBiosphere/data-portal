@@ -46,6 +46,13 @@ function MetadataSearchInput() {
 
         const {key} = keyEvent;
 
+        /* Key arrow up - prevent default. */
+        /* Prevent changes to input cursor position when keying up/down in results panel. */
+        if ( key === "ArrowUp" ) {
+
+            keyEvent.preventDefault();
+        }
+
         if ( key === "Escape" ) {
 
             onHandleSearchClose();

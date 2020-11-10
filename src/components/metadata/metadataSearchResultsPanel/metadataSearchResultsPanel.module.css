@@ -10,7 +10,7 @@
 .panel {
     border-top: 1px solid var(--gray-light);
     background-color: var(--white);
-    height: calc(100vh - 60px - 76px - 38px - 6px + 1px); /* Minus header, minus section, minus input box height, minus top margin, plus border. */
+    height: 100vh;
     left: 0;
     margin: 6px 0 0;
     overflow: hidden;

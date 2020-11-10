@@ -9,7 +9,6 @@
 import React, {useContext, useState} from "react";
 
 // App dependencies
-import HeadingTag from "../../anchor/anchor";
 import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
 import MetadataRequired from "../metadataRequired/metadataRequired";
 import MetadataSchemaPropertyFieldPath from "../metadataSchemaPropertyFieldPath/metadataSchemaPropertyFieldPath";
@@ -46,7 +45,6 @@ function MetadataSchemaProperty(props) {
             <span onMouseEnter={() => onMouseEnter()}
                   onMouseLeave={() => onMouseLeave()}
                   role="presentation">
-                <HeadingTag anchor={anchor} small/>
                 <MetadataSchemaPropertyFieldPath active={active} property={property} wrap/>
                 <MetadataRequired property={property}/>
             </span>
