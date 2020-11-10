@@ -241,22 +241,16 @@ class ProviderMetadataSearching extends React.Component {
         return MetadataSearchService.DenyListInputs.some(deniedInput => inputValue.includes(deniedInput));
     };
 
-    isShowNoResultsPanel = (results) => {
-
-        const {inputActive, inputValue} = this.state;
-        const noResults = results && results.length === 0;
-
-        return inputActive && inputValue && noResults;
-    };
-
     isShowResultsPanel = (results) => {
 
         const {setOfProperties} = this.props,
-            {inputActive, setOfResults} = this.state;
+            {inputActive, inputValue, setOfResults} = this.state;
         const noResults = results && results.length === 0;
         const filteredResults = setOfProperties.size !== setOfResults.size;
+        const resultsEmpty = inputActive && inputValue && noResults;
+        const resultsExist = inputActive && filteredResults && !noResults;
 
-        return inputActive && filteredResults && !noResults;
+        return resultsEmpty || resultsExist;
     };
 
     metadataIndexMountedStateChanged = (prevState) => {
@@ -358,11 +352,10 @@ class ProviderMetadataSearching extends React.Component {
         const {children, properties, resultKey, schemas, setOfProperties} = this.props,
             {inputActive, inputValue, setOfResults, onHandleInput, onHandleSearchClose, onHandleSearchOpen} = this.state;
         const results = MetadataSearchService.buildResults(schemas, properties, setOfResults, resultKey, setOfProperties, inputValue);
-        const showNoResultsPanel = this.isShowNoResultsPanel(results);
         const showResultsPanel = this.isShowResultsPanel(results);
         return (
             <ContextMetadataSearch.Provider
-                value={{inputActive, inputValue, results, showNoResultsPanel, showResultsPanel, onHandleInput, onHandleSearchClose, onHandleSearchOpen}}>
+                value={{inputActive, inputValue, results, showResultsPanel, onHandleInput, onHandleSearchClose, onHandleSearchOpen}}>
                 {children}
             </ContextMetadataSearch.Provider>
         )

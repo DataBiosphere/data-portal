@@ -12,7 +12,6 @@ import React from "react";
 import {MetadataSchemaQuery} from "../../../hooks/metadata-schema-query";
 import {MetadataSchemaPropertiesQuery} from "../../../hooks/metadata-schema-properties-query";
 import MetadataSearchInput from "../metadataSearchInput/metadataSearchInput";
-import MetadataSearchNoResult from "../metadataSearchNoResult/metadataSearchNoResult";
 import MetadataSearchResults from "../metadataSearchResults/metadataSearchResults";
 import ProviderMetadataSearching from "../providerMetadataSearching/providerMetadataSearching";
 import * as MetadataSearchService from "../../../utils/metadata-search.service";
@@ -42,7 +41,6 @@ function MetadataSearch(props) {
                                    setOfSearchGroups={setOfSearchGroups}>
             <div className={compStyles.search}>
                 <MetadataSearchInput/>
-                <MetadataSearchNoResult/>
                 <MetadataSearchResults/>
             </div>
         </ProviderMetadataSearching>
