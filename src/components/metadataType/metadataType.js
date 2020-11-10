@@ -34,7 +34,7 @@ class MetadataType extends React.Component {
     };
 
     render() {
-        const {core, nav, type} = this.props,
+        const {activeLocation, core, nav, type} = this.props,
             {name} = core,
             {description, fields, name: schemaName, properties, title} = type || {},
             {slug} = fields,
@@ -42,7 +42,8 @@ class MetadataType extends React.Component {
         const categoryName = StringFormatService.convertSentenceCaseToTitleCase(name);
         const pageTitle = `${categoryName} - ${title}`;
         return (
-            <Layout description={description}
+            <Layout activeLocation={activeLocation}
+                    description={description}
                     docPath={slug}
                     nav={nav}
                     pageTitle={pageTitle}
