@@ -10,10 +10,10 @@
 /* Announcement */
 .announcement {
     background-color: var(--blue-light);
-    padding: 14px 16px; /* Site gutter */
+    padding: 20px 16px; /* Site gutter */
 }
 
-.announcement span {
+.announcement p {
     margin-bottom: 0;
 }
 
