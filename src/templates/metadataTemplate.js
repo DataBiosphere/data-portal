@@ -14,17 +14,18 @@ import MetadataType from "../components/metadataType/metadataType";
 import * as MetadataService from "../utils/metadata.service";
 
 // the data prop will be injected by the GraphQL query below.
-export default function Template({data}) {
+export default function Template({data, location}) {
 
     const {allMetadataCore, sitePage} = data,
         {context} = sitePage || {},
         {id: sitePageId, nav} = context || {};
+    const {pathname, hash} = location;
 
     const core = MetadataService.getMetadataCore(allMetadataCore);
     const type = MetadataService.getMetadataType(sitePageId, allMetadataCore);
 
     return (
-        <MetadataType core={core} nav={nav} type={type}/>
+        <MetadataType activeLocation={{pathname, hash}} core={core} nav={nav} type={type}/>
     );
 }
 

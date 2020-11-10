@@ -44,7 +44,8 @@ class Layout extends React.Component {
     };
 
     render() {
-        const {children, description, docPath, healthy, homePage, homeTab, nav, pageTitle, sectionTitle, showAllMetadata} = this.props;
+        const { activeLocation, children, description, docPath, healthy, homePage, homeTab,
+            nav, pageTitle, sectionTitle, showAllMetadata} = this.props;
         const {noScroll, supportRequestActive} = this.state;
         return (
             <div>
@@ -55,7 +56,7 @@ class Layout extends React.Component {
                     <DCP2Announcement/>
                     <Banner position={'top'} healthy={healthy}/>
                     {homePage ? children :
-                        <HCAMain docPath={docPath} homeTab={homeTab} nav={nav}
+                        <HCAMain activeLocation={activeLocation} docPath={docPath} homeTab={homeTab} nav={nav}
                                  sectionTitle={sectionTitle} showAllMetadata={showAllMetadata}>{children}</HCAMain>}
                     <SupportRequest active={supportRequestActive} onToggle={(active) => this.onToggleSupportRequestForm(active)}/>
                     <Banner position={'bottom'}/>

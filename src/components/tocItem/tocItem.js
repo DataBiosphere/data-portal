@@ -19,18 +19,18 @@ class TOCItem extends React.Component {
 
     isTOCActive = () => {
 
-        const {activeTOC, toc} = this.props,
-            {anchor, type} = toc;
+        const {activeLocation = {}, toc} = this.props;
+        const {anchor, type} = toc;
 
         /* Handle case for markdown TOC. */
         if ( /docs/.test(type) ) {
 
-            return activeTOC === anchor;
+            return activeLocation.hash === anchor;
         }
         /* Handle case for metadata TOC. */
         else {
 
-            const toc0 = activeTOC.split("-")[1];
+            const toc0 = activeLocation.hash.split("-")[1];
             const toc1 = anchor.split("-")[1];
 
             return toc0 === toc1;
@@ -43,8 +43,8 @@ class TOCItem extends React.Component {
     };
 
     render() {
-        const {toc} = this.props,
-            {anchor, depth, name} = toc;
+        const {toc} = this.props;
+        const {anchor, depth, name} = toc;
         const classTOCLink = classNames({[compStyles.depth3]: depth === 3}, fontStyles.xs);
         const classTOCItem = classNames({[compStyles.active]: this.isTOCActive()}, compStyles.toc);
         return (

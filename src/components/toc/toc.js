@@ -18,11 +18,11 @@ import compStyles from "./toc.module.css";
 class TOC extends React.Component {
 
     render() {
-        const {activeTOC, tocs} = this.props;
+        const {activeLocation, tocs} = this.props;
         return (
             <div className={compStyles.tocs}>
                 <ul>
-                    {tocs ? tocs.map((toc, t) => <TOCItem key={t} activeTOC={activeTOC} toc={toc}/>) : null}
+                    {tocs ? tocs.map((toc, t) => <TOCItem key={t} activeLocation={activeLocation} toc={toc}/>) : null}
                 </ul>
             </div>
         );

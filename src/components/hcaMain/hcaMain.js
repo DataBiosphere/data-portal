@@ -21,7 +21,7 @@ import globalStyles from '../../styles/global.module.css';
 class HCAMain extends React.Component {
 
 	render() {
-		const {children, docPath, homeTab, nav, sectionTitle, showAllMetadata} = this.props,
+		const {activeLocation, children, docPath, homeTab, nav, sectionTitle, showAllMetadata} = this.props,
 			{links, section, tabKey, tabs} = nav || {};
 		return (
 			<div className={globalStyles.pageWrapper}>
@@ -29,7 +29,8 @@ class HCAMain extends React.Component {
 				<TabNav homeTab={homeTab} tabs={tabs}/>
 				<div className={compStyles.main}>
 					<div className={globalStyles.wrapper}>
-						<HCAContent docPath={docPath} links={links} showAllMetadata={showAllMetadata} tabKey={tabKey}>{children}</HCAContent>
+						<HCAContent activeLocation={activeLocation} docPath={docPath} links={links}
+									showAllMetadata={showAllMetadata} tabKey={tabKey}>{children}</HCAContent>
 					</div>
 				</div>
 			</div>

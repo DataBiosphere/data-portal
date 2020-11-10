@@ -32,8 +32,9 @@ const renderAst = new rehypeReact({
 }).Compiler;
 
 // the data prop will be injected by the GraphQL query below.
-export default function Template({data}) {
+export default function Template({data, location}) {
 
+	const {pathname, hash} = location;
 	const {markdownRemark, sitePage} = data; // data.markdownRemark holds our post data
 	const {frontmatter, headings, htmlAst} = markdownRemark,
 		{context} = sitePage,
@@ -47,7 +48,7 @@ export default function Template({data}) {
 	const pageTitle = h1 ? h1 : title;
 
 	return (
-		<Layout description={description} docPath={slug} nav={nav} pageTitle={pageTitle}>
+		<Layout activeLocation={{pathname, hash}} description={description} docPath={slug} nav={nav} pageTitle={pageTitle}>
 			{componentName === 'analysisDetail' ? <AnalysisDetail data={markdownRemark}/> :
 				<div className={globalStyles.md}>{renderAst(htmlAst)}</div>}
 			{linked && (componentName === 'analyze') ?
