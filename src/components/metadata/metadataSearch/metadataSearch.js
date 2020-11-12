@@ -47,4 +47,4 @@ function MetadataSearch(props) {
     );
 }
 
-export default MetadataSearch;
+export default React.memo(MetadataSearch);

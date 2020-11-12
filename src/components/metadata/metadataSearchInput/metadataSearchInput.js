@@ -7,7 +7,7 @@
 
 // Core dependencies
 import { globalHistory, useLocation } from "@reach/router";
-import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from "react";
+import React, {useCallback, useContext, useEffect, useRef, useState} from "react";
 
 // App dependencies
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
@@ -20,27 +20,35 @@ function MetadataSearchInput() {
 
     const {inputActive, onHandleInput, onHandleSearchClose, onHandleSearchOpen} = useContext(ContextMetadataSearch);
     const currentLocation = useLocation();
+    const delaySearchRef = useRef(0);
     const inputRef = useRef(null);
-    const [inputText, setInputText] = useState("");
-    const [timer, setTimer] = useState(0);
-    const showClear = !!inputText;
+    const [showClear, setShowClear] = useState(false);
+    const timer = 200;
 
-    const onHandleChange = (event) => {
+    const onHandleChange = () => {
 
-        const text = event.target.value;
+        /* Clear any previously set timeout. */
+        if ( delaySearchRef.current ) {
 
-        setTimer(500);
-        setInputText(text);
+            clearTimeout(delaySearchRef.current);
+        }
+
+        /* Delay search over entities - improves indexing/search performance. */
+        delaySearchRef.current = setTimeout(() => {
+
+            onHandleInput(inputRef.current.value);
+        }, timer);
+        return () => clearTimeout(delaySearchRef.current);
     };
 
     const onHandleClearInput = useCallback(() => {
 
         /* Maintain <input> focus. */
-        /* Set timer to zero and clear the input. */
+        /* Set timerRef to zero and clear the inputRef value. */
         inputRef.current.focus();
-        setTimer(0);
-        setInputText("");
-    }, []);
+        inputRef.current.value = "";
+        onHandleInput("");
+    }, [onHandleInput]);
 
     const onHandleKeyDown = useCallback((keyEvent) => {
 
@@ -59,6 +67,29 @@ function MetadataSearchInput() {
         }
     }, [onHandleSearchClose]);
 
+    const onHandleLocationChange = useCallback((location, action) => {
+
+        const {hash, pathname} = location;
+        const [,identifier] = hash.split("#");
+        const currentPathName = currentLocation.pathname;
+
+        if ( inputActive && action === "PUSH" && currentPathName === pathname ) {
+
+            /* Close search menu. */
+            onHandleSearchClose();
+
+            /* Grab property by identifier. */
+            /* Scroll property into view. */
+            const propertyEl = document.getElementById(identifier);
+
+            if ( propertyEl ) {
+
+                propertyEl.scrollIntoView();
+            }
+        }
+
+    }, [currentLocation, inputActive, onHandleSearchClose]);
+
     /* useEffect - componentDidMount/componentWillUnmount. */
     useEffect(() => {
 
@@ -73,26 +104,20 @@ function MetadataSearchInput() {
     }, [onHandleKeyDown]);
 
     /* useEffect - componentDidUpdate - inputActive. */
-    /* Handles external control of focus changes to the <input>. */
-    /* e.g. keyed selection of search result. */
+    /* Handles external control of focus changes to the <input> and changes to clear button 'x'. */
     useEffect(() => {
 
         if ( !inputActive ) {
 
             inputRef.current.blur();
-            setTimer(0);
-            setInputText("");
+            inputRef.current.value = "";
+            setShowClear(false);
+        }
+        else {
+
+            setShowClear(true);
         }
     }, [inputActive]);
-
-    /* useEffect - componentDidUpdate - inputText. */
-    /* Handles changes on <input>. */
-    useEffect(() => {
-
-        /* Delay search over entities to improve performance on rendering input value. */
-        const delaySearch = setTimeout(() => onHandleInput(inputText), timer);
-        return () => clearTimeout(delaySearch);
-    }, [inputText, onHandleInput, timer]);
 
     /* useEffect - componentDidUpdate - globalHistory. */
     /* Listens to change in location and handles multiple actions when there is a location change on hash value only. */
@@ -103,44 +128,24 @@ function MetadataSearchInput() {
 
         return globalHistory.listen(({location, action}) => {
 
-            const {hash, pathname} = location;
-            const [,identifier] = hash.split("#");
-            const currentPathName = currentLocation.pathname;
-
-            if ( inputActive && action === "PUSH" && currentPathName === pathname ) {
-
-                /* Close search menu. */
-                onHandleSearchClose();
-
-                /* Grab property by identifier. */
-                /* Scroll property into view. */
-                const propertyEl = document.getElementById(identifier);
-
-                if ( propertyEl ) {
-
-                    propertyEl.scrollIntoView();
-                }
-            }
+            onHandleLocationChange(location, action);
         });
-    }, [currentLocation, inputActive, onHandleSearchClose]);
+    }, [onHandleLocationChange]);
 
-    return useMemo(() => {
-        return (
-            <>
-            <span className={compStyles.searchBar}>
-            <input className={compStyles.input}
-                   placeholder={"Search all metadata"}
-                   ref={inputRef}
-                   type="text"
-                   value={inputText}
-                   onChange={(e) => onHandleChange(e)}
-                   onFocus={onHandleSearchOpen}/>
-                <MetadataSearchInputClear showClear={showClear} onHandleClearInput={onHandleClearInput}/>
-            </span>
-            {inputActive ? <div className={compStyles.overlay} onClick={onHandleSearchClose} role="presentation"/> : null}
-            </>
-        )
-    }, [inputActive, inputText, showClear, onHandleClearInput, onHandleSearchClose, onHandleSearchOpen]);
+    return (
+        <>
+        <span className={compStyles.searchBar}>
+        <input className={compStyles.input}
+               placeholder={"Search all metadata"}
+               ref={inputRef}
+               type="text"
+               onChange={() => onHandleChange()}
+               onFocus={onHandleSearchOpen}/>
+            <MetadataSearchInputClear showClear={showClear} onHandleClearInput={onHandleClearInput}/>
+        </span>
+        {inputActive ? <div className={compStyles.overlay} onClick={onHandleSearchClose} role="presentation"/> : null}
+        </>
+    )
 }
 
-export default MetadataSearchInput;
+export default React.memo(MetadataSearchInput);
