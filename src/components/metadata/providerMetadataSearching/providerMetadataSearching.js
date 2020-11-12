@@ -7,7 +7,7 @@
 
 // Core dependencies
 import lunr from "lunr";
-import React, {useCallback, useEffect, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 
 // App dependencies
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
@@ -16,17 +16,14 @@ import * as MetadataSearchService from "../../../utils/metadata-search.service";
 function ProviderMetadataSearching(props) {
 
     const {children, metadataIndexFileName, properties, resultKey, schemas, setOfProperties, setOfSearchGroups, onHandleSiteScroll} = props;
+    const setOfResultsBySearchGroupsRef = useRef(new Map());
     const [inputActive, setInputActive] = useState(false);
-    const [inputValue, setInputValue] = useState("");
-    const [lastSearchHit, setLastSearchHit] = useState("");
     const [metadataIndex, setMetadataIndex] = useState([]);
     const [metadataIndexMounted, setMetadataIndexMounted] = useState(false);
-    const [query, setQuery] = useState(""); // Analytics-specific value, used to specify the current query state when tracking a change
     const [results, setResults] = useState([]);
-    const [searchValue, setSearchValue] = useState("");
-    const [setOfResults, setSetOfResults] = useState(new Set());
-    const [setOfResultsBySearchGroups, setSetOfResultsBySearchGroups] = useState(new Map());
+    const [queries, setQueries] = useState({inputValue: "", lastSearchHit: "", query: "", searchValue: ""});
     const [showResultsPanel, setShowResultsPanel] = useState(false);
+    const {inputValue, lastSearchHit, query, searchValue} = queries;
 
     const buildInputValueString = useCallback(() => {
 
@@ -75,11 +72,11 @@ function ProviderMetadataSearching(props) {
             });
     }, [metadataIndexFileName]);
 
-    const findIntersectionSetOfResults = useCallback(() => {
+    const findIntersectionSetOfResults = useCallback((soResultsBySearchGroups) => {
 
         const sortSetsOfResults = () => {
 
-            return [...setOfResultsBySearchGroups.values()]
+            return [...soResultsBySearchGroups.values()]
                 .sort(function (set0, set1) {
 
                     if ( set0.size > set1.size ) {
@@ -109,7 +106,12 @@ function ProviderMetadataSearching(props) {
         }
 
         return new Set();
-    }, [setOfResultsBySearchGroups]);
+    }, []);
+
+    const getResults = useCallback((soResults) => {
+
+        return MetadataSearchService.buildResults(schemas, properties, soResults, resultKey, setOfProperties, inputValue);
+    }, [inputValue, properties, resultKey, schemas, setOfProperties]);
 
     const getResultsByQuery = useCallback((inputStr) => {
 
@@ -119,13 +121,13 @@ function ProviderMetadataSearching(props) {
         return new Set(indexResults.map(result => result.ref));
     }, [metadataIndex]);
 
-    const getSetOfInputResults = useCallback((currentSetOfResultsBySearchGroups) => {
+    const getSetOfInputResults = useCallback(() => {
 
         /* Continue with query if search value is valid. */
         if ( searchValue ) {
 
             /* Grab current set of results for the input. */
-            const setOfResultsBySearchGroup = currentSetOfResultsBySearchGroups.get("input");
+            const setOfResultsBySearchGroup = setOfResultsBySearchGroupsRef.current.get("input");
 
             /* Continue with query if most recent "hit" was on the input. */
             if ( lastSearchHit === "input" || !setOfResultsBySearchGroup ) {
@@ -146,25 +148,40 @@ function ProviderMetadataSearching(props) {
         return setOfProperties;
     }, [buildInputValueString, getResultsByQuery, lastSearchHit, searchValue, setOfProperties]);
 
-    const getSetOfResultsBySearchGroup = useCallback((searchGroup, currentSetOfResultsBySearchGroups) => {
+    const getSetOfResults = useCallback((soResultsBySearchGroups) => {
+
+        return findIntersectionSetOfResults(soResultsBySearchGroups);
+    }, [findIntersectionSetOfResults]);
+
+    const getSetOfResultsBySearchGroup = useCallback((searchGroup) => {
 
         /* Return a set of results for the search group "input". */
         if ( searchGroup === "input" ) {
 
-            return getSetOfInputResults(currentSetOfResultsBySearchGroups);
+            return getSetOfInputResults();
         }
     }, [getSetOfInputResults]);
 
-    const getSetOfResultsBySearchGroups = useCallback((currentSetOfResultsBySearchGroups) => {
+    const getSetOfResultsBySearchGroups = useCallback(() => {
 
         return [...setOfSearchGroups].reduce((acc, searchGroup) => {
 
-            const resultsBySearchGroup = getSetOfResultsBySearchGroup(searchGroup, currentSetOfResultsBySearchGroups);
+            const resultsBySearchGroup = getSetOfResultsBySearchGroup(searchGroup);
             acc.set(searchGroup, resultsBySearchGroup);
 
             return acc;
         }, new Map());
     }, [getSetOfResultsBySearchGroup, setOfSearchGroups]);
+
+    const getShowResultsPanel = useCallback((_results, soResults) => {
+
+        const noResults = _results && _results.length === 0;
+        const filteredResults = setOfProperties.size !== soResults.size;
+        const resultsEmpty = inputActive && inputValue && noResults;
+        const resultsExist = inputActive && filteredResults && !noResults;
+
+        return resultsEmpty || resultsExist;
+    }, [inputActive, inputValue, setOfProperties]);
 
     const isInputDenied = (inputStr) => {
 
@@ -207,10 +224,7 @@ function ProviderMetadataSearching(props) {
         const currentQuery = buildQuery(inputStr);
 
         /* Update inputValue, lastSearchHit, query and searchValue. */
-        setInputValue(inputStr);
-        setLastSearchHit("input");
-        setQuery(currentQuery);
-        setSearchValue(searchStr);
+        setQueries({inputValue: inputStr, lastSearchHit: "input", query: currentQuery, searchValue: searchStr});
     };
 
     const onHandleSearchClose = () => {
@@ -231,40 +245,30 @@ function ProviderMetadataSearching(props) {
         setInputActive(true);
     };
 
-    const updateResults = useCallback(() => {
-
-        setResults(MetadataSearchService.buildResults(schemas, properties, setOfResults, resultKey, setOfProperties, inputValue));
-    }, [inputValue, properties, resultKey, schemas, setOfProperties, setOfResults]);
-
-    const updateSetOfResults = useCallback(() => {
-
-        setSetOfResults(findIntersectionSetOfResults());
-    }, [findIntersectionSetOfResults]);
-
-    const updateSetOfResultsBySearchGroups = useCallback(() => {
-
-        /* Update set of results by search groups. */
-        setSetOfResultsBySearchGroups(currentSetOfResultsBySearchGroups => new Map(getSetOfResultsBySearchGroups(currentSetOfResultsBySearchGroups)));
-    }, [getSetOfResultsBySearchGroups]);
-
-    const updateShowResultsPanel = useCallback(() => {
-
-        const noResults = results && results.length === 0;
-        const filteredResults = setOfProperties.size !== setOfResults.size;
-        const resultsEmpty = inputActive && inputValue && noResults;
-        const resultsExist = inputActive && filteredResults && !noResults;
-        const showPanel = resultsEmpty || resultsExist;
-
-        if ( showPanel !== showResultsPanel ) {
-
-            setShowResultsPanel(showPanel);
-        }
-    }, [inputActive, inputValue, results, setOfProperties, setOfResults, showResultsPanel]);
-
     const updateURLSearchParams = useCallback(() => {
 
         /* TODO. */
     }, []);
+
+    const generateResults = useCallback(() => {
+
+        /* Get set of results by search groups. */
+        const _setOfResultsBySearchGroups = getSetOfResultsBySearchGroups();
+
+        /* Get set of results. */
+        const _setOfResults = getSetOfResults(_setOfResultsBySearchGroups);
+
+        /* Get results. */
+        const _results = getResults(_setOfResults);
+
+        /* Get show results panel. */
+        const _showResultsPanel = getShowResultsPanel(_results, _setOfResults);
+
+        /* Update URL with query. */
+        //updateURLSearchParams();
+
+        return [_results, _setOfResultsBySearchGroups, _showResultsPanel];
+    }, [getResults, getSetOfResults, getSetOfResultsBySearchGroups, getShowResultsPanel]);
 
     /* useEffect - componentDidMount/componentWillUnmount. */
     useEffect(() => {
@@ -279,46 +283,14 @@ function ProviderMetadataSearching(props) {
 
         if ( metadataIndexMounted ) {
 
-            /* Update set of results by search groups. */
-            updateSetOfResultsBySearchGroups();
+            /* Generate results. */
+            const [_results, _setOfResultsBySearchGroups, _showResultsPanel] = generateResults();
 
-            /* Update URL with query. */
-            updateURLSearchParams();
+            setOfResultsBySearchGroupsRef.current = _setOfResultsBySearchGroups;
+            setResults(_results);
+            setShowResultsPanel(_showResultsPanel);
         }
-    }, [metadataIndexMounted, updateSetOfResultsBySearchGroups, updateURLSearchParams]);
-
-    /* useEffect - componentDidUpdate - searchValue, metadataIndexMounted. */
-    /* Update setOfResults with change in setOfResultsBySearchGroups. */
-    useEffect(() => {
-
-        if ( metadataIndexMounted ) {
-
-            /* Update set of results. */
-            updateSetOfResults();
-        }
-    }, [metadataIndexMounted, setOfResultsBySearchGroups, updateSetOfResults]);
-
-    /* useEffect - componentDidUpdate - setOfResults. */
-    /* Update results with change in setOfResults. */
-    useEffect(() => {
-
-        if ( metadataIndexMounted ) {
-
-            /* Update results. */
-            updateResults();
-        }
-    }, [metadataIndexMounted, updateResults]);
-
-    /* useEffect - componentDidUpdate - results. */
-    /* Update showResultsPanel with change in results. */
-    useEffect(() => {
-
-        if ( metadataIndexMounted ) {
-
-            /* Update showResultsPanel. */
-            updateShowResultsPanel();
-        }
-    }, [metadataIndexMounted, updateShowResultsPanel]);
+    }, [generateResults, metadataIndexMounted]);
 
     return (
         <ContextMetadataSearch.Provider value={{inputActive, inputValue, results, showResultsPanel, onHandleInput, onHandleSearchClose, onHandleSearchOpen}}>
