@@ -7,7 +7,7 @@
 
 // Core dependencies
 import lunr from "lunr";
-import React, {useCallback, useEffect, useRef, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 
 // App dependencies
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
@@ -173,11 +173,11 @@ function ProviderMetadataSearching(props) {
 
     const onHandleInput = (event) => {
 
-        /* Update lastSearchHit state. */
-        setLastSearchHit("input");
+        if ( event !== inputValue ) {
 
-        /* Handle change in search value. */
-        onHandleSearch(event);
+            /* Handle change in search value. */
+            onHandleSearch(event);
+        }
     };
 
     const onHandleSearch = (inputStr) => {
@@ -206,8 +206,9 @@ function ProviderMetadataSearching(props) {
 
         const currentQuery = buildQuery(inputStr);
 
-        /* Update inputValue, query and searchValue. */
+        /* Update inputValue, lastSearchHit, query and searchValue. */
         setInputValue(inputStr);
+        setLastSearchHit("input");
         setQuery(currentQuery);
         setSearchValue(searchStr);
     };
@@ -254,13 +255,16 @@ function ProviderMetadataSearching(props) {
         const resultsExist = inputActive && filteredResults && !noResults;
         const showPanel = resultsEmpty || resultsExist;
 
-        setShowResultsPanel(showPanel);
-    }, [inputActive, inputValue, results, setOfProperties, setOfResults]);
+        if ( showPanel !== showResultsPanel ) {
+
+            setShowResultsPanel(showPanel);
+        }
+    }, [inputActive, inputValue, results, setOfProperties, setOfResults, showResultsPanel]);
 
     const updateURLSearchParams = useCallback(() => {
 
         /* TODO. */
-    }, [inputActive, query]);
+    }, []);
 
     /* useEffect - componentDidMount/componentWillUnmount. */
     useEffect(() => {
