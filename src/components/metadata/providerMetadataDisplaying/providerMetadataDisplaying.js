@@ -7,132 +7,120 @@
 
 // Core dependencies
 import {navigate} from "gatsby";
-import React from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 
 // App dependencies
 import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
 
-class ProviderMetadataDisplaying extends React.Component {
+function ProviderMetadataDisplaying(props) {
 
-    constructor(props) {
-        super(props);
-        this.highlightTimerRef = React.createRef();
+    const {children} = props;
+    const highlightTimerRef = useRef(0);
+    const [highlight, setHighlight] = useState({active: false, value: ""});
+    const [showAllMetadata, setShowAllMetadata] = useState(true);
+    const {active, value} = highlight;
 
-        this.onHandleNavigationHit = (result) => {
-
-            const {showAllMetadata} = this.state;
-            const {primaryRequired, required, type, urlTo} = result || {};
-            const toggleMetadata = !showAllMetadata && /property/.test(type) && !(required && primaryRequired);
-
-            /* Toggle required fields "Show required fields only". */
-            /* If the result is a property, and the property is not required. */
-            /* Then set showAllMetadata to true to ensure the result is viewable. */
-            if ( toggleMetadata ) {
-
-                this.setState({showAllMetadata: true});
-            }
-
-            /* Handle the display of highlight on search hit result page. */
-            this.onHandleSearchHit(urlTo);
-
-            /* Navigate. */
-            navigate(urlTo);
-        };
-
-        this.onHandleToggleRequiredFields = () => {
-
-            const {showAllMetadata} = this.state;
-
-            this.setState({showAllMetadata: !showAllMetadata});
-        };
-
-        this.state = ({
-            highlightActive: false,
-            highlightValue: "",
-            showAllMetadata: true,
-            onHandleNavigationHit: this.onHandleNavigationHit,
-            onHandleToggleRequiredFields: this.onHandleToggleRequiredFields
-        });
-    }
-
-    componentDidMount() {
-
-        /* Get the local storage values. */
-        this.getLocalStorageValues();
-    }
-
-    componentDidUpdate(_, prevState) {
-
-        this.setLocalStorageValues();
-        this.onUpdateHighlight(prevState);
-    }
-
-    componentWillUnmount() {
-
-        /* Set local storage values. */
-        this.setLocalStorageValues();
-
-        /* Clear timeout. */
-        clearTimeout(this.highlightTimerRef.current);
-    }
-
-    getLocalStorageValues = () => {
+    const getLocalStorageValues = () => {
 
         /* Grab the local storage values. */
         /* Note, returned value from local storage is a string. */
         const highlightActive = localStorage.getItem("highlightActive") === "true";
         const highlightValue = localStorage.getItem("highlightValue");
-        const showMetadata = localStorage.getItem("showMetadata") === "true";
+        const showEntireMetadata = localStorage.getItem("showMetadata") === "true";
 
-        this.setState({highlightActive: highlightActive, highlightValue: highlightValue, showAllMetadata: showMetadata});
+        setHighlight({active: highlightActive, value: highlightValue});
+        setShowAllMetadata(showEntireMetadata);
     };
 
-    onHandleSearchHit = (urlTo) => {
+    const onUpdateHighlight = useCallback(() => {
 
-        this.setState({highlightActive: true, highlightValue: urlTo})
-    };
+        /* Clear any previously set timeout. */
+        if ( highlightTimerRef.current ) {
 
-    onUpdateHighlight = (prevState) => {
-
-        const {highlightValue} = this.state;
-        const stateChanged = prevState.highlightValue !== highlightValue;
-
-        if ( stateChanged ) {
-
-            /* Clear any previously set timeout. */
-            if ( this.highlightTimerRef.current ) {
-
-                clearTimeout(this.highlightTimerRef.current);
-            }
-
-            /* Set and maintain highlight for a period, and then clear the highlight. */
-            this.highlightTimerRef.current = setTimeout(() => {
-
-                this.setState({highlightActive: false, highlightValue: ""})
-            }, 10000);
-            return () => clearTimeout(this.highlightTimerRef.current);
+            clearTimeout(highlightTimerRef.current);
         }
+
+        /* Set and maintain highlight for a period, and then clear the highlight. */
+        highlightTimerRef.current = setTimeout(() => {
+
+            setHighlight({active: false, value: ""});
+        }, 10000);
+        return () => clearTimeout(highlightTimerRef.current);
+    }, []);
+
+    const onHandleNavigationHit = (result) => {
+
+        const {primaryRequired, required, type, urlTo} = result || {};
+        const toggleMetadata = !showAllMetadata && /property/.test(type) && !(required && primaryRequired);
+
+        /* Toggle required fields "Show required fields only". */
+        /* If the result is a property, and the property is not required. */
+        /* Then set showAllMetadata to true to ensure the result is viewable. */
+        if ( toggleMetadata ) {
+
+            setShowAllMetadata(true);
+        }
+
+        /* Handle the display of highlight on search hit result page. */
+        onHandleSearchHit(urlTo);
+
+        /* Navigate. */
+        navigate(urlTo);
     };
 
-    setLocalStorageValues = () => {
+    const onHandleSearchHit = (urlTo) => {
 
-        const {highlightActive, highlightValue, showAllMetadata} = this.state;
+        setHighlight({active: true, value: urlTo});
+    };
+
+    const onHandleToggleRequiredFields = () => {
+
+        setShowAllMetadata(showAllMetadata => !showAllMetadata);
+    };
+
+    const setLocalStorageValues = useCallback(() => {
 
         /* Set the local storage values. */
-        localStorage.setItem("highlightActive", highlightActive);
-        localStorage.setItem("highlightValue", highlightValue);
+        localStorage.setItem("highlightActive", active);
+        localStorage.setItem("highlightValue", value);
         localStorage.setItem("showMetadata", showAllMetadata);
-    };
+    }, [active, value, showAllMetadata]);
 
-    render() {
-        const {children} = this.props,
-            {highlightValue, highlightActive, showAllMetadata, onHandleNavigationHit, onHandleToggleRequiredFields} = this.state;
-        return (
-            <ContextMetadataDisplaying.Provider value={{highlightActive, highlightValue, showAllMetadata, onHandleNavigationHit, onHandleToggleRequiredFields}}>
-                {children}
-            </ContextMetadataDisplaying.Provider>
-        )
-    }
+    /* useEffect - componentDidMount. */
+    useEffect(() => {
+
+        /* Get the local storage values. */
+        getLocalStorageValues();
+    }, []);
+
+    /* useEffect - componentWillUnmount. */
+    useEffect(() => {
+
+        return() => {
+
+            /* Clear timeout. */
+            clearTimeout(highlightTimerRef.current);
+        }
+    }, []);
+
+    /* useEffect - componentDidUpdate. */
+    useEffect(() => {
+
+        /* Set local storage values. */
+        setLocalStorageValues();
+    }, [setLocalStorageValues]);
+
+    useEffect(() => {
+
+        /* Update highlight. */
+        onUpdateHighlight();
+    }, [onUpdateHighlight]);
+
+    return (
+        <ContextMetadataDisplaying.Provider value={{highlightActive: active, highlightValue: value, showAllMetadata, onHandleNavigationHit, onHandleToggleRequiredFields}}>
+            {children}
+        </ContextMetadataDisplaying.Provider>
+    )
 }
 
 export default ProviderMetadataDisplaying;
