@@ -26,8 +26,8 @@ function MetadataSchema(props) {
 
     const {entity, schema} = props,
         {description, properties, schemaName, title, urlGitHub, urlTo} = schema || {};
-    const {highlightActive, highlightValue} = useContext(ContextMetadataDisplaying);
-    const showHighlighter = highlightActive && highlightValue === urlTo;
+    const {highlightValue} = useContext(ContextMetadataDisplaying);
+    const showHighlighter = highlightValue === urlTo;
     const showProperties = properties.length > 0;
 
     return (

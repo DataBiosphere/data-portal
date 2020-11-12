@@ -32,4 +32,4 @@ function MetadataSearchInputClear(props) {
     )
 }
 
-export default MetadataSearchInputClear;
+export default React.memo(MetadataSearchInputClear);

@@ -16,21 +16,26 @@ function ProviderMetadataDisplaying(props) {
 
     const {children} = props;
     const highlightTimerRef = useRef(0);
-    const [highlight, setHighlight] = useState({active: false, value: ""});
+    const [highlightValue, setHighlightValue] = useState("");
     const [showAllMetadata, setShowAllMetadata] = useState(true);
-    const {active, value} = highlight;
 
-    const getLocalStorageValues = () => {
+    const getLocalStorageValues = useCallback(() => {
 
         /* Grab the local storage values. */
         /* Note, returned value from local storage is a string. */
-        const highlightActive = localStorage.getItem("highlightActive") === "true";
-        const highlightValue = localStorage.getItem("highlightValue");
-        const showEntireMetadata = localStorage.getItem("showMetadata") === "true";
+        const storeHLValue = localStorage.getItem("highlightValue");
+        const storeShowMetadata = localStorage.getItem("showMetadata") === "true";
 
-        setHighlight({active: highlightActive, value: highlightValue});
-        setShowAllMetadata(showEntireMetadata);
-    };
+        if ( storeHLValue ) {
+
+            setHighlightValue(storeHLValue);
+        }
+
+        if ( storeShowMetadata !== showAllMetadata ) {
+
+            setShowAllMetadata(storeShowMetadata);
+        }
+    }, [showAllMetadata]);
 
     const onUpdateHighlight = useCallback(() => {
 
@@ -40,10 +45,10 @@ function ProviderMetadataDisplaying(props) {
             clearTimeout(highlightTimerRef.current);
         }
 
-        /* Set and maintain highlight for a period, and then clear the highlight. */
+        /* Set and maintain highlight for a period, and then clear the highlightValue. */
         highlightTimerRef.current = setTimeout(() => {
 
-            setHighlight({active: false, value: ""});
+            setHighlightValue("");
         }, 10000);
         return () => clearTimeout(highlightTimerRef.current);
     }, []);
@@ -70,7 +75,7 @@ function ProviderMetadataDisplaying(props) {
 
     const onHandleSearchHit = (urlTo) => {
 
-        setHighlight({active: true, value: urlTo});
+        setHighlightValue(urlTo);
     };
 
     const onHandleToggleRequiredFields = () => {
@@ -81,17 +86,16 @@ function ProviderMetadataDisplaying(props) {
     const setLocalStorageValues = useCallback(() => {
 
         /* Set the local storage values. */
-        localStorage.setItem("highlightActive", active);
-        localStorage.setItem("highlightValue", value);
+        localStorage.setItem("highlightValue", highlightValue);
         localStorage.setItem("showMetadata", showAllMetadata);
-    }, [active, value, showAllMetadata]);
+    }, [highlightValue, showAllMetadata]);
 
     /* useEffect - componentDidMount. */
     useEffect(() => {
 
         /* Get the local storage values. */
         getLocalStorageValues();
-    }, []);
+    }, [getLocalStorageValues]);
 
     /* useEffect - componentWillUnmount. */
     useEffect(() => {
@@ -110,6 +114,7 @@ function ProviderMetadataDisplaying(props) {
         setLocalStorageValues();
     }, [setLocalStorageValues]);
 
+    /* useEffect - componentDidUpdate. */
     useEffect(() => {
 
         /* Update highlight. */
@@ -117,7 +122,7 @@ function ProviderMetadataDisplaying(props) {
     }, [onUpdateHighlight]);
 
     return (
-        <ContextMetadataDisplaying.Provider value={{highlightActive: active, highlightValue: value, showAllMetadata, onHandleNavigationHit, onHandleToggleRequiredFields}}>
+        <ContextMetadataDisplaying.Provider value={{highlightValue, showAllMetadata, onHandleNavigationHit, onHandleToggleRequiredFields}}>
             {children}
         </ContextMetadataDisplaying.Provider>
     )

@@ -24,9 +24,9 @@ function MetadataSchemaProperty(props) {
 
     const {property} = props,
         {anchor, urlTo} = property || {};
-    const {highlightActive, highlightValue} = useContext(ContextMetadataDisplaying);
+    const {highlightValue} = useContext(ContextMetadataDisplaying);
     const [active, setActive] = useState(false);
-    const showHighlighter = highlightActive && highlightValue === urlTo;
+    const showHighlighter = highlightValue === urlTo;
 
     const onMouseEnter = () => {
 
