@@ -23,11 +23,15 @@
     box-sizing: border-box;
     color: var(--gray-darkest);
     display: inline-block;
-    font-size: 15px;
     font-weight: 400;
     height: 38px;
     padding: 0 36px 0 8px;
     width: 100%;
+}
+
+/* Input. */
+input, input[type="text"] {
+    font-size: 16px; /* Required to prevent zoom on focus of <input> on mobile. */
 }
 
 /* Input focus. */
