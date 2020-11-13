@@ -26,16 +26,9 @@ function ProviderMetadataDisplaying(props) {
         const storeHLValue = localStorage.getItem("highlightValue");
         const storeShowMetadata = localStorage.getItem("showMetadata") === "true";
 
-        if ( storeHLValue ) {
-
-            setHighlightValue(storeHLValue);
-        }
-
-        if ( storeShowMetadata !== showAllMetadata ) {
-
-            setShowAllMetadata(storeShowMetadata);
-        }
-    }, [showAllMetadata]);
+        setHighlightValue(storeHLValue);
+        setShowAllMetadata(storeShowMetadata);
+    }, []);
 
     const onUpdateHighlight = useCallback(() => {
 

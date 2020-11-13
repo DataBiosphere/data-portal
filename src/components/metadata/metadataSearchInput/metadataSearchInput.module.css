@@ -32,6 +32,7 @@
 /* Input. */
 input, input[type="text"] {
     font-size: 16px; /* Required to prevent zoom on focus of <input> on mobile. */
+    line-height: 32px;
 }
 
 /* Input focus. */
@@ -40,8 +41,8 @@ input, input[type="text"] {
     outline: none;
 }
 
-/* Input, placeholder. */
-.input, .input::placeholder {
+/* Input - placeholder. */
+.input::placeholder {
     font-size: 12px;
     line-height: 32px;
 }
@@ -61,4 +62,15 @@ input, input[type="text"] {
     top: 0;
     width: 100%;
     z-index: 14; /* Above tabs, below search bar. */
+}
+
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 768px) {
+
+    /* Input. */
+    input, input[type="text"] {
+        font-size: 12px;
+    }
 }

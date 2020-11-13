@@ -17,13 +17,12 @@ function ProviderMetadataSearching(props) {
 
     const {children, metadataIndexFileName, properties, resultKey, schemas, setOfProperties, setOfSearchGroups, onHandleSiteScroll} = props;
     const setOfResultsBySearchGroupsRef = useRef(new Map());
-    const [inputActive, setInputActive] = useState(false);
     const [metadataIndex, setMetadataIndex] = useState([]);
     const [metadataIndexMounted, setMetadataIndexMounted] = useState(false);
     const [results, setResults] = useState([]);
-    const [queries, setQueries] = useState({inputValue: "", lastSearchHit: "", query: "", searchValue: ""});
+    const [queries, setQueries] = useState({inputActive: false, inputValue: "", lastSearchHit: "", query: "", searchValue: ""});
     const [showResultsPanel, setShowResultsPanel] = useState(false);
-    const {inputValue, lastSearchHit, query, searchValue} = queries;
+    const {inputActive, inputValue, lastSearchHit, query, searchValue} = queries;
 
     const buildInputValueString = useCallback(() => {
 
@@ -224,17 +223,16 @@ function ProviderMetadataSearching(props) {
         const currentQuery = buildQuery(inputStr);
 
         /* Update inputValue, lastSearchHit, query and searchValue. */
-        setQueries({inputValue: inputStr, lastSearchHit: "input", query: currentQuery, searchValue: searchStr});
+        setQueries(queries => ({...queries, inputValue: inputStr, lastSearchHit: "input", query: currentQuery, searchValue: searchStr}));
     };
 
     const onHandleSearchClose = () => {
 
-        /* Handle search params TODO. */
-
         /* Handle site scrolling. */
         onHandleSiteScroll(true);
 
-        setInputActive(false);
+        /* Clear queries and set inputActive to false. */
+        setQueries(queries => ({...queries, inputActive: false, inputValue: "", lastSearchHit: "", query: "", searchValue: ""}));
     };
 
     const onHandleSearchOpen = () => {
@@ -242,7 +240,8 @@ function ProviderMetadataSearching(props) {
         /* Handle site scrolling. */
         onHandleSiteScroll(false);
 
-        setInputActive(true);
+        /* Set inputActive to true. */
+        setQueries(queries => ({...queries, inputActive: true}));
     };
 
     const updateURLSearchParams = useCallback(() => {
