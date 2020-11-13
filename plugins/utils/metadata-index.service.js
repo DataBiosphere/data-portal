@@ -11,7 +11,7 @@ const lunr = require("lunr");
 const path = require("path");
 
 // App dependencies
-const {parseArraySpecialCharValues, parsePropertyExample, parseStrSpecialCharValues} = require(path.resolve(__dirname, "./metadata-index-field.service.js"));
+const {getPropertyPaths, parseArraySpecialCharValues, parsePropertyExample, parseStrSpecialCharValues} = require(path.resolve(__dirname, "./metadata-index-field.service.js"));
 
 /**
  * Generates the lunr search index for the metadata.
@@ -52,7 +52,7 @@ const generateMetadataIndex = function generateMetadataIndex(properties, schemas
             const ontologies = parseArraySpecialCharValues(property.graphRestriction.ontologies);
             const propertyExample = parsePropertyExample(property.example);
             const propertyPath = property.propertyPath;
-            const propertyPaths = property.propertyPaths;
+            const propertyPaths = getPropertyPaths(property.propertyPaths);
             const relations = parseArraySpecialCharValues(property.graphRestriction.relations);
 
             this.add({
