@@ -286,6 +286,7 @@ function ProviderMetadataSearching(props) {
             /* Generate results. */
             const [_results, _setOfResultsBySearchGroups, _showResultsPanel] = generateResults();
 
+            /* Update state. */
             setOfResultsBySearchGroupsRef.current = _setOfResultsBySearchGroups;
             setResults(_results);
             setShowResultsPanel(_showResultsPanel);

@@ -6,6 +6,38 @@
  */
 
 /**
+ * Returns an array of property paths.
+ *
+ * Facilitates the indexing of all possible property path values, allowing for individual word searching over a path.
+ * e.g. "donor_organism.is_living" will return "donor_organisms" and "is_living" but also
+ * "donor", "organisms", "is", and "living".
+ *
+ * @param propertyPaths
+ */
+const getPropertyPaths = function getPropertyPaths(propertyPaths) {
+
+    if ( propertyPaths && propertyPaths.length ) {
+
+        return propertyPaths.reduce((acc, propertyPath) => {
+
+            /* Accumulate the original path. */
+            acc.push(propertyPath);
+
+            /* Accumulate any individual words within the path. */
+            /* Accumulate the individual words as a single word without the "_". */
+            /* e.g. "donor_organism" returns "donor" and "organism" and "donororganism". */
+            if ( propertyPath.includes("_") ) {
+
+                const propertyWords = propertyPath.split("_");
+                acc.push(...propertyWords);
+            }
+
+            return acc;
+        }, []);
+    }
+};
+
+/**
  * Returns the array, removing any value with a colon and replacing with an underscore.
  *
  * Facilitates the indexing of the values like ontologies, classes, or relations where a value may include a colon.
@@ -65,6 +97,7 @@ const parseStrSpecialCharValues = function parseStrSpecialCharValues(str) {
     return "";
 };
 
+module.exports.getPropertyPaths = getPropertyPaths;
 module.exports.parseArraySpecialCharValues = parseArraySpecialCharValues;
 module.exports.parsePropertyExample = parsePropertyExample;
 module.exports.parseStrSpecialCharValues = parseStrSpecialCharValues;
