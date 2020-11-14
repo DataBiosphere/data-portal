@@ -5,7 +5,12 @@ title: "Matrix Service API"
 description: "The Matrix Service provides an interface to aggregrate, query and access gene expression matrices stored in the HCA DCP."
 ---
 
+
 # Matrix Service API
+
+_This API is deprecated._
+>This API is being deprecated as part of the DCP 2 upgrade. For more information please see our [announcement](/coming-soon-DCP-2-with-support-for-controlled-access-data).
+
 
 The [Matrix Service](https://github.com/HumanCellAtlas/matrix-service) (MS) provides an interface to aggregrate, query and access gene expression matrices stored in the
 [Human Cell Atlas](/) [Data Coordination
