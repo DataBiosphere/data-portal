@@ -136,8 +136,7 @@ module.exports = {
                                 "data-lifecycle-diagram",
                                 "link-to-browser",
                                 "metadata-type-entity-schemas",
-                                "system-status"],
-                            verbose: true
+                                "system-status"]
                         }
                     },
                     {

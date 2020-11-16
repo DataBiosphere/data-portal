@@ -7,7 +7,7 @@ title: "Metadata Overview"
 
 # Overview
 
-In the HCA metadata schema, Type entities represent different parts of an experiment. For example, a biomaterial (e.g. a [tissue sample][1]) can undergo a process (e.g. [dissociation][2]) to produce another biomaterial (e.g. a [sample of dissociated cells][3]) or a set of data files (e.g. [10X fastq files][4]). The process that was actually executed follows a specific protocol (e.g. a [10X protocol][5]). All of these parts make up the overall [project][6] (e.g. Understanding cell types in the human heart).
+In the HCA metadata schema, *Type* entities represent different parts of an experiment. For example, a **biomaterial** (e.g. a [tissue sample][1]) can undergo a **process** (e.g. [dissociation][2]) to produce another biomaterial (e.g. a [sample of dissociated cells][3]) or a set of data **files** (e.g. [10X fastq files][4]). The process that was actually executed follows a specific **protocol** (e.g. a [10X protocol][5]). All of these parts make up the overall [project][6] (e.g. Understanding cell types in the human heart).
 To enable reuse of common schema structures, Type entities are composed of [Core entities][7], [Module entities][8] and [System entities][9].
 Every Type entity includes a single [Core entity][7] from which it inherits properties common to its core type (e.g. Biomaterial, Process, Protocol, File or Project). Type entities also include at least one [System entity][9] ([Provenance][10]) and zero or more [Module entities][8]. See the [metadata structure][11] documentation for additional detail.
 
