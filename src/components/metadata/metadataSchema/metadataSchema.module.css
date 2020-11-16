@@ -41,7 +41,6 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 0 8px;
     white-space: pre;
 }
 
@@ -57,5 +56,5 @@
 
 /* Schema description */
 .description {
-    margin: 16px 0 16px 0;
+    margin: 4px 0;
 }

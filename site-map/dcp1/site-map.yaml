@@ -248,18 +248,24 @@
 - name: "Metadata"
   description: "Fields used to describe datasets in the Human Cell Atlas"
   key: "metadata"
-  path: "/metadata/dictionary/biomaterial/cell_line"
+  path: "/metadata"
   position:
     location: "h"
     order: 1
   tabs:
-    - name: "Metadata Structure"
+    - name: "Overview"
+      key: "metadata-overview"
+      primaryLinks:
+        - name: ""
+          key: "/metadata/metadata-overview/overview"
+          path: "/metadata"
+    - name: "Structure"
       key: "metadata-structure"
       primaryLinks:
         - name: ""
           key: "/metadata/metadata-structure/structure"
           path: "/metadata/structure"
-    - name: "Metadata Design"
+    - name: "Design"
       key: "metadata-design"
       primaryLinks:
         - name: ""

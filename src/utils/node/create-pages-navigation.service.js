@@ -270,7 +270,7 @@ function buildDummyMetadataDictionaryTab(metaLinksByEntity, active = false) {
     return {
         active: active,
         key: "/metadata/dictionary/",
-        name: "Metadata Dictionary",
+        name: "Dictionary",
         path: firstSchema.path
     };
 }
@@ -339,7 +339,7 @@ function buildPostMetadataNavigation(postSlug, metadataSiteMap, metaLinksByEntit
     /* Build dummy "Metadata Dictionary" tab. */
     /* Insert "Metadata Dictionary" tab to post tabs. */
     const metadataDictionaryTab = buildDummyMetadataDictionaryTab(metaLinksByEntity, true);
-    postTabs.unshift(metadataDictionaryTab);
+    postTabs.splice(1, 0, metadataDictionaryTab);
 
     /* Grab the metaLinks for the post's entity. */
     /* Handles special case for metadata pages. */
@@ -389,7 +389,7 @@ function buildPostNavigation(postSlug, postSiteMap, metaLinksByEntity) {
 
         /* Insert "Metadata Dictionary" tab to post tabs. */
         const metadataDictionaryTab = buildDummyMetadataDictionaryTab(metaLinksByEntity);
-        postTabs.unshift(metadataDictionaryTab);
+        postTabs.splice(1, 0, metadataDictionaryTab);
     }
 
     /* Post tab. */

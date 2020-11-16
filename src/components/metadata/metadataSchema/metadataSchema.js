@@ -10,7 +10,6 @@ import React, {useContext} from "react";
 
 // App dependencies
 import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
-import MetadataEntityDescription from "../metadataEntityDescription/metadataEntityDescription";
 import MetadataSchemaNoRequiredProperties from "../metadataSchemaNoRequiredProperties/metadataSchemaNoRequiredProperties";
 import MetadataSchemaProperties from "../metadataSchemaProperties/metadataSchemaProperties";
 import MetadataSchemaUsedBys from "../metadataSchemaUsedBys/metadataSchemaUsedBys";
@@ -24,7 +23,7 @@ const classNames = require("classnames");
 
 function MetadataSchema(props) {
 
-    const {entity, schema} = props,
+    const {schema} = props,
         {description, properties, schemaName, title, urlGitHub, urlTo} = schema || {};
     const {highlightValue} = useContext(ContextMetadataDisplaying);
     const showHighlighter = highlightValue === urlTo;
@@ -32,7 +31,6 @@ function MetadataSchema(props) {
 
     return (
         <>
-        <MetadataEntityDescription entity={entity}/>
         <h2>
             <span className={classNames({[compStyles.reveal]: showHighlighter})}>{title}</span>
         </h2>
@@ -45,7 +43,10 @@ function MetadataSchema(props) {
             <MetadataToggleRequiredFields background/>
         </div>
         {showProperties ?
-            <MetadataSchemaProperties properties={properties} schema={schema}/> :
+            <>
+            <h3>Properties</h3>
+            <MetadataSchemaProperties properties={properties} schema={schema}/>
+            </> :
             <MetadataSchemaNoRequiredProperties/>}
         <MetadataSchemaUsedBys schema={schema}/>
         </>

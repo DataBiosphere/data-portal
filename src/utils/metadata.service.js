@@ -30,6 +30,23 @@ export function buildOntologySearchUrl(restriction, ontology) {
 }
 
 /**
+ * Returns the metadata schemas, for the specified category.
+ *
+ * @param metadataTypeEntityCategories
+ * @param category
+ * @returns {{}}
+ */
+export function findMetadataTypeEntityCategory(metadataTypeEntityCategories, category) {
+
+    if ( metadataTypeEntityCategories.categories ) {
+
+        return metadataTypeEntityCategories.categories.find(metadataTypeCategory => metadataTypeCategory.categoryName === category);
+    }
+
+    return {};
+}
+
+/**
  * Returns the metadata category.
  *
  * @param sitePageId

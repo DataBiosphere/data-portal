@@ -7,7 +7,6 @@
 
 // Core dependencies
 import Link from "gatsby-link";
-import {navigate} from "@reach/router";
 import React from "react";
 
 // App dependencies
@@ -17,18 +16,6 @@ import Layout from "../components/layout";
 import compStyles from "./error.module.css";
 import fontStyles from "../styles/fontsize.module.css";
 import globalStyles from "../styles/global.module.css";
-
-const shouldPageRedirect = () => {
-
-    const pathname = typeof window !== "undefined" ? window.location.pathname : "";
-
-    if ( pathname === "/metadata" ) {
-
-        navigate("/metadata/dictionary/biomaterial/cell_line");
-    }
-};
-
-shouldPageRedirect();
 
 function NotFoundPage() {
     return (

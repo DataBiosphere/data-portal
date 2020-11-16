@@ -21,7 +21,7 @@ function MetadataSchemaUsedBys(props) {
     return (
         showUsedBy ?
             <>
-            <h2>Used by</h2>
+            <h3>Used by</h3>
             {showUsedByProperties ?
                 <>
                 <p>This entity is used by the following properties:</p>

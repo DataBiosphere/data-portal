@@ -127,9 +127,18 @@ module.exports = {
             options: {
                 excerpt_separator: `<!-- end -->`,
                 plugins: [
+                    `gatsby-remark-component`,
                     {
-                        resolve: "gatsby-remark-component",
-                        options: {components: ["internal-link", "data-lifecycle-diagram", "link-to-browser", "system-status"]}
+                        resolve: `gatsby-remark-component-parent2div`,
+                        options: {
+                            components: [
+                                "internal-link",
+                                "data-lifecycle-diagram",
+                                "link-to-browser",
+                                "metadata-type-entity-schemas",
+                                "system-status"],
+                            verbose: true
+                        }
                     },
                     {
                         resolve: `gatsby-remark-copy-linked-files`,

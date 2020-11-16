@@ -64,10 +64,7 @@ exports.onCreateNode = ({node, getNode, actions}) => {
  * @param actions
  */
 exports.createPages = async ({graphql, actions}) => {
-    const {createPage, createRedirect} = actions;
-
-    /* Redirect "/metadata" path to "/metadata/dictionary/biomaterial/cell_line". */
-    createRedirect({fromPath: "/metadata", toPath: "/metadata/dictionary/biomaterial/cell_line", isPermanent: true, redirectInBrowser: true});
+    const {createPage} = actions;
 
     await graphql(`
     {
