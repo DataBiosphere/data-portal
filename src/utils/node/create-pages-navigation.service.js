@@ -136,7 +136,7 @@ const buildMetadataTabs = function buildMetadataTabs(metadataEntityCategorySchem
             const tabPath = findMetadataTabPathByEntity(metadataEntityCategorySchemaTitleByKey, entityName);
 
             /* Create tab name. */
-            const tabName = `${capitalizeString(entityName)} Entities`;
+            const tabName = buildMetadataTabName(entityName);
 
             return {
                 active: false, /* Let "active" be false, for now. */
@@ -273,6 +273,26 @@ function buildDummyMetadataDictionaryTab(metaLinksByEntity, active = false) {
         name: "Dictionary",
         path: firstSchema.path
     };
+}
+
+/**
+ * Returns the metadata tab name, for the specified entity.
+ *
+ * @param entityName
+ * @returns {string}
+ */
+function buildMetadataTabName(entityName) {
+
+    if ( entityName === "type" ) {
+
+        return `${capitalizeString(entityName)}s`;
+    }
+    else if ( entityName === "module" ) {
+
+        return `Entity ${capitalizeString(entityName)}s`
+    }
+
+    return `${capitalizeString(entityName)} Modules`;
 }
 
 /**
