@@ -1,3 +1,8 @@
+---
+title: "HCA Data Browser API"
+description: "An overview of the HCA DCP Data Browser API."
+---
+
 # Data Browser API
 
 The HCA DCP Data Browser API specifies a REST web service for querying metadata associated with both experimental and analysis data stored in the HCA Data Store.

@@ -1,6 +1,10 @@
+---
+title: "HCA DCP APIs"
+description: "Overview of the HCA DCP ingest and data access APIs."
+---
 # HCA DCP APIs
 
-The HCA DCP provides APIs for programatic ingest and access of data and metadata.
+The HCA DCP provides APIs for programmatic ingest and access of data and metadata.
 
 ## Data Browser API
 
