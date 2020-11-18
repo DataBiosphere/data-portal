@@ -5,6 +5,9 @@
  * Basic content template service.
  */
 
+// App dependencies
+import * as EnvironmentService from "../utils/environment/environment.service";
+
 /**
  * Returns the page title for the specified page, generated from the first h1 on the page.
  *
@@ -37,7 +40,8 @@ export function getPageTitle(htmlAst) {
  */
 export function getPageEditUrl(slug) {
 
-    return `https://github.com/HumanCellAtlas/data-portal/tree/staging/content${slug}.md`;
+    const version = EnvironmentService.isCGLEnvironment() ? "-v2" : "";
+    return `https://github.com/HumanCellAtlas/data-portal/tree/staging/content${version}${slug}.md`;
 }
 
 /**
