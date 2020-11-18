@@ -1,43 +1,47 @@
 ---
-date: "2020-11-18"
-description: "A list of the current set of metadata fields used to describe datasets in the Human Cell Atlas."
+description: "An overview of the HCA metadata schema and the types it defines."
 path: "/metadata/metadata-overview/types"
 title: "Metadata Overview - Types"
 ---
 
-# Types Overview
+# HCA Metadata Schema Overview
 
-In the HCA metadata schema, *Type* entities represent different parts of an experiment. For example, a **biomaterial** (e.g. a [tissue sample][1]) can undergo a **process** (e.g. [dissociation][2]) to produce another biomaterial (e.g. a [sample of dissociated cells][3]) or a set of data **files** (e.g. [10X fastq files][4]). The process that was actually executed follows a specific **protocol** (e.g. a [10X protocol][5]). All of these parts make up the overall [project][6] (e.g. Understanding cell types in the human heart).
-To enable reuse of common schema structures, Type entities are composed of [Core entities][7], [Module entities][8] and [System entities][9].
-Every Type entity includes a single [Core entity][7] from which it inherits properties common to its core type (e.g. Biomaterial, Process, Protocol, File or Project). Type entities also include at least one [System entity][9] ([Provenance][10]) and zero or more [Module entities][8]. See the [metadata structure][11] documentation for additional detail.
+## Metadata Types
 
-Core entities are those that apply to 100% of all Type entities and are highly stable. For example, Core fields include those for IDs and accessions. Each Type entity includes a single Core entity thereby inheriting the Core entity's fields.
+In the HCA metadata schema, **Types** represent the different parts of an experiment. For example, a **biomaterial** (e.g. a [tissue sample][1]) can undergo a **process** (e.g. [dissociation][2]) to produce another biomaterial (e.g. a [sample of dissociated cells][3]) or a set of data **files** (e.g. [10X fastq files][4]). The process that was actually executed follows a specific **protocol** (e.g. a [10X protocol][5]). All of these parts together make up the overall [project][6] (e.g. Understanding cell types in the human heart).
 
-Module entities contribute groups of fields with a specific theme to one or more type entities.
+An overview of each of current metadata schema types is given below. Please see the [metadata structure](/metadata/structure) or [metadata deign](/metadata/design) documentation for additional detail.
 
-System entities are created and populated by the Data Coordination Platform during data ingest and processing.
+## Biomaterials
 
-##Entities
-
-### Project
-
-<metadata-type-entity-schemas category="project"></metadata-type-entity-schemas>
-
-### Biomaterial
+Biomaterial types represent information about any biological material that was generated/used in the project including everything from a whole organism to subcellular components.
 
 <metadata-type-entity-schemas category="biomaterial"/></metadata-type-entity-schemas>
 
-### Process
+## Processes
+
+Process types represent information relevant to how a biomaterial or file was converted into another biomaterial or file.
 
 <metadata-type-entity-schemas category="process"/></metadata-type-entity-schemas>
 
-### Protocol
+
+## Protocols
+
+Protocol types represent information about an intended protocol that was followed in a process.
 
 <metadata-type-entity-schemas category="protocol"/></metadata-type-entity-schemas>
 
-### File
+## Files
+
+File types represent information about files produced from any process.
 
 <metadata-type-entity-schemas category="file"/></metadata-type-entity-schemas>
+
+## Project
+The project type specifies information about a project that contributes to the HCA DCP.
+
+<metadata-type-entity-schemas category="project"></metadata-type-entity-schemas>
+
 
 [1]: /metadata/dictionary/biomaterial/specimen_from_organism
 [2]: /metadata/dictionary/process/process

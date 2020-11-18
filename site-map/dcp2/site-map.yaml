@@ -251,10 +251,10 @@
           key: "/metadata/metadata-overview"
           path: "/metadata"
           secondaryLinks:
-            - name: "Types"
+            - name: "Metadata Types"
               key: "/metadata/metadata-overview/types"
               path: "/metadata"
-            - name: "Modules"
+            - name: "Reusable Schema Modules"
               key: "/metadata/metadata-overview/modules"
               path: "/metadata/overview/modules"
     - name: "Structure"
