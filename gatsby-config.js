@@ -23,6 +23,7 @@ if ( process.env.GATSBY_ENV == "LOCAL" ) {
 if ( Number(process.env.GATSBY_CONTENT_VERSION) === 2 ) {
 
     siteMapPath = "./site-map/dcp2";
+    contentPath = './content-v2'
 }
 
 let gtmId = process.env.GATSBY_GTM_ID;
