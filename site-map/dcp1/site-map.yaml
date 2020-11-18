@@ -256,9 +256,16 @@
     - name: "Overview"
       key: "metadata-overview"
       primaryLinks:
-        - name: ""
-          key: "/metadata/metadata-overview/overview"
+        - name: "Overview"
+          key: "/metadata/metadata-overview"
           path: "/metadata"
+          secondaryLinks:
+            - name: "Types"
+              key: "/metadata/metadata-overview/types"
+              path: "/metadata"
+            - name: "Modules"
+              key: "/metadata/metadata-overview/modules"
+              path: "/metadata/overview/modules"
     - name: "Structure"
       key: "metadata-structure"
       primaryLinks:
