@@ -373,8 +373,11 @@ function buildPostMetadataNavigation(postSlug, metadataSiteMap, metaLinksByEntit
     /* Update the metaTabs with active state. */
     const metadataTabs = getMetaTabsActiveState(metaTabs, entity);
 
+    /* Grab the label - matches metadata tab name. */
+    const label = buildMetadataTabName(entity);
+
     return {
-        label: entity,
+        label: label,
         links: metadataLinks,
         section: postSection,
         secondaryTabs: metadataTabs,

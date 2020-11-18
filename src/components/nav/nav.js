@@ -91,7 +91,7 @@ class Nav extends React.Component {
 			{showNav} = this.state;
 		return (
 			<div className={compStyles.hcaNav}>
-				{label ? <div className={compStyles.label}><MetadataOverline semiBold><span>{label} entities</span></MetadataOverline></div> : null}
+				{label ? <div className={compStyles.label}><MetadataOverline semiBold><span>{label}</span></MetadataOverline></div> : null}
 				<ul className={compStyles.hcaSideNav}>
 					{links.map((pLink, i) =>
 						<div key={i}>
