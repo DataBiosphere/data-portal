@@ -36,7 +36,7 @@ export default function Template({data, location}) {
 
 	const {pathname, hash} = location;
 	const {markdownRemark, sitePage} = data; // data.markdownRemark holds our post data
-	const {frontmatter, headings, htmlAst} = markdownRemark,
+	const {frontmatter, htmlAst} = markdownRemark,
 		{context} = sitePage,
 		{nav} = context || {},
 		{fields} = markdownRemark || {},
@@ -44,7 +44,7 @@ export default function Template({data, location}) {
 		{componentName, description, linked, title} = frontmatter || {};
 	const editPage = TemplateService.editPageFeatured(slug);
 	const editPath = TemplateService.getPageEditUrl(slug);
-	const h1 = TemplateService.getPageH1(headings);
+	const h1 = TemplateService.getPageTitle(htmlAst);
 	const pageTitle = h1 ? h1 : title;
 
 	return (
@@ -66,10 +66,6 @@ export const pageQuery = graphql`
   query ($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
-      headings {
-        value
-        depth
-      }
       html
       htmlAst
       fields {
