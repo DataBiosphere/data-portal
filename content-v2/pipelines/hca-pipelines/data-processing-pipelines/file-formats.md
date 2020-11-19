@@ -9,7 +9,7 @@ description: "Overview of the file formats used by the data processing pipelines
 
 ## Matrix Download File Format
 
-Matrices are provided in [Loom](http://loompy.org/) file format and be downloaded through the HCA *Data Portal*. From the Portal's Data Browser, you can make a multifaceted search to dynamically generate and download matrices. Alternatively, you can explore the matrices available for download on the individual project pages.
+Matrices are provided in [Loom](http://loompy.org/) file format and be downloaded through the HCA Data Portal. From the Portal's Data Browser, you can make a multifaceted search to dynamically generate and download matrices. Alternatively, you can explore the matrices available for download on the individual project pages.
 
 #### Working with Loom Files
 
