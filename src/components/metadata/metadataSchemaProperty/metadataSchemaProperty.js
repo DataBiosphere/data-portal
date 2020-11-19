@@ -57,8 +57,8 @@ function MetadataSchemaProperty(props) {
                   onMouseLeave={() => onMouseLeave()}
                   role="presentation">
                 <MetadataSchemaPropertyFieldPath active={active} property={property} wrap/>
-                <MetadataSchemaPropertyFieldDataType property={property}/>
                 <span>
+                    <MetadataSchemaPropertyFieldDataType property={property}/>
                     <MetadataSchemaPropertyFieldDescription font={"s"} property={property}/>
                     <span> </span>
                     <MetadataSchemaPropertyFieldExample font={"s"} property={property}/>
