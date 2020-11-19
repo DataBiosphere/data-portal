@@ -30,8 +30,7 @@ function Metadata(props) {
                 docPath={slug}
                 metadataContent={true}
                 nav={nav}
-                pageTitle={title}
-                showAllMetadata={showAllMetadata}>
+                pageTitle={title}>
             <MetadataSchema entity={entity}
                             nav={nav}
                             schema={schema}/>

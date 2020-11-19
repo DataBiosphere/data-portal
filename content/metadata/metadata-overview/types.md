@@ -42,7 +42,6 @@ The project type specifies information about a project that contributes to the H
 
 <metadata-type-entity-schemas category="project"></metadata-type-entity-schemas>
 
-
 [1]: /metadata/dictionary/biomaterial/specimen_from_organism
 [2]: /metadata/dictionary/process/process
 [3]: /metadata/dictionary/biomaterial/cell_suspension

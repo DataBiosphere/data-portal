@@ -46,7 +46,7 @@ class HCAContent extends React.Component {
     };
 
     render() {
-        const {activeLocation, children, docPath, label, links, metadataContent, showAllMetadata, tabKey} = this.props;
+        const {activeLocation, children, docPath, label, links, metadataContent, tabKey} = this.props;
         const useToc = this.isUseToc();
         const useNav = this.isUseNav();
         const classNamesContent = classNames(
@@ -62,8 +62,7 @@ class HCAContent extends React.Component {
                     {useToc ?
                         <TOC activeLocation={activeLocation}
                              docPath={docPath}
-                             onHandleUseTOC={this.onHandleUseTOC.bind(this)}
-                             showAllMetadata={showAllMetadata}/> :
+                             onHandleUseTOC={this.onHandleUseTOC.bind(this)}/> :
                         null}
                 </ContentWrapper>
             </div>

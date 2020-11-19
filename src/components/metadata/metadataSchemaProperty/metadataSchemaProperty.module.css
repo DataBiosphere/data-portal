@@ -65,17 +65,19 @@
 
 /* Second column. */
 .schemaProperty > span:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
     overflow-wrap: anywhere;
     padding: 4px 12px 12px;
 }
 
-/* All <p>. */
-.schemaProperty > span > p {
+/* Column first level <span>. */
+.schemaProperty > span > span {
     margin-bottom: 4px;
 }
 
-/* Last <p> in each column. */
-.schemaProperty > span > p:last-child {
+/* Column first level <span> - last child. */
+.schemaProperty > span > span:last-child {
     margin-bottom: 0;
 }
 

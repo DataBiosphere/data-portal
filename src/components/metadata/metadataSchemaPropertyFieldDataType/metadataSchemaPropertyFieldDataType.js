@@ -14,6 +14,9 @@ import MetadataSchemaPropertyFieldFromRef from "../metadataSchemaPropertyFieldFr
 
 // Styles
 import compStyles from "./metadataSchemaPropertyFieldDataType.module.css";
+import fontStyles from "../../../styles/fontsize.module.css";
+
+const classNames = require("classnames");
 
 function MetadataSchemaPropertyFieldDataType(props) {
 
@@ -21,7 +24,7 @@ function MetadataSchemaPropertyFieldDataType(props) {
         {dataType, referenceFromLink} = property || {};
 
     return (
-        <span className={compStyles.dataType}>
+        <span className={classNames(compStyles.dataType, fontStyles.s)}>
             <span> (</span>
             {referenceFromLink ? <Link to={referenceFromLink}>{dataType}</Link> : <span>{dataType}</span>}
             <MetadataSchemaPropertyFieldFromRef property={property}/>

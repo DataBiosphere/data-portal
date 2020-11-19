@@ -9,18 +9,18 @@
 import React from "react";
 
 // Styles
+import compStyles from "./metadataSchemaPropertyFieldLabel.module.css";
 import fontStyles from "../../../styles/fontsize.module.css";
 
 const classNames = require("classnames");
 
 function MetadataSchemaPropertyFieldLabel(props) {
 
-    const {font, property} = props,
-        {label} = property,
-        {style, weight} = font || {};
+    const {children, property} = props,
+        {label} = property;
 
     return (
-        <span className={classNames({[fontStyles[style]]: !!style}, {[fontStyles[weight]]: !!weight})}>{label}</span>
+        <span className={classNames(compStyles.propertyName, fontStyles.regular, fontStyles.s)}>{label}{children}</span>
     );
 }
 

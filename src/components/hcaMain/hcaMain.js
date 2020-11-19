@@ -21,7 +21,7 @@ import globalStyles from "../../styles/global.module.css";
 
 function HCAMain(props) {
 
-    const {activeLocation, children, docPath, homeTab, metadataContent, nav, onHandleSiteScroll, sectionTitle, showAllMetadata} = props,
+    const {activeLocation, children, docPath, homeTab, metadataContent, nav, onHandleSiteScroll, sectionTitle} = props,
         {label, links, secondaryTabs, section, tabKey, tabs} = nav || {};
     const showMetadataSearch = docPath ? docPath.startsWith("/metadata") : false;
 
@@ -38,7 +38,6 @@ function HCAMain(props) {
                                 label={label}
                                 links={links}
                                 metadataContent={metadataContent}
-                                showAllMetadata={showAllMetadata}
                                 tabKey={tabKey}>{children}</HCAContent>
                 </div>
             </div>

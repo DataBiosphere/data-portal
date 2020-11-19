@@ -11,7 +11,6 @@ import React from "react";
 // App dependencies
 import Clipboard from "../clipboardCopy/clipboardCopy";
 import Icon from "../../icon/icon";
-import InternalLink from "../../internal-link/internalLink";
 import MetadataSchemaPropertyWordWrapper from "../metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper";
 import Tooltip from "../../tooltip/tooltip";
 
@@ -24,19 +23,18 @@ const classNames = require("classnames");
 function MetadataSchemaPropertyFieldPath(props) {
 
     const {active, property, wrap} = props,
-        {anchor, propertyPath} = property;
+        {propertyPath} = property;
     const classNamesPropertyPath = classNames(fontStyles.hcaCode, compStyles.propertyPath);
 
     return (
         <Clipboard copyText={propertyPath}>
-            <p className={classNamesPropertyPath}>
+            <span className={classNamesPropertyPath}>
                 <MetadataSchemaPropertyWordWrapper word={propertyPath} wrap={wrap}>
                     <Tooltip label={"Copy"}>
                         <Icon fontSize={14} showIcon={active}>file_copy</Icon>
                     </Tooltip>
-                    <InternalLink anchor={anchor} relative/>
                 </MetadataSchemaPropertyWordWrapper>
-            </p>
+            </span>
         </Clipboard>
     );
 }

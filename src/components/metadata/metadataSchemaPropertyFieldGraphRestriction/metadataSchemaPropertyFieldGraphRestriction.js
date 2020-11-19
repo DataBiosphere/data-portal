@@ -39,7 +39,7 @@ function MetadataSchemaPropertyFieldGraphRestriction(props) {
 
     return (
         showGraphRestriction ?
-            <p className={fontStyles.s}>
+            <span className={fontStyles.s}>
                 <span className={fontStyles.regular}>Graph restriction: </span>
                 {direct ? <span>Direct subclasses of </span> : <span>Subclasses of </span>}
                 {classes.map((restriction, r) =>
@@ -48,7 +48,7 @@ function MetadataSchemaPropertyFieldGraphRestriction(props) {
                 {ontologies.map((restriction, r) =>
                     <Restriction key={r} counter={r} joinBy={" or "} ontology restriction={restriction} showLink={showLink}/>)}
                 {includeSelf ? <span> including self.</span> : <span>.</span>}
-            </p> : null
+            </span> : null
     );
 }
 

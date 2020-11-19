@@ -1,0 +1,11 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata schema property field label component.
+ */
+
+/* Property name. */
+.propertyName {
+    display: block;
+}

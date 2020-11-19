@@ -47,7 +47,7 @@ class Layout extends React.Component {
 
     render() {
         const {activeLocation, children, description, docPath, healthy, homePage, homeTab,
-            metadataContent, nav, pageTitle, sectionTitle, showAllMetadata} = this.props;
+            metadataContent, nav, pageTitle, sectionTitle} = this.props;
         const {scrollable, supportRequestActive} = this.state;
         return (
             <div>
@@ -64,8 +64,7 @@ class Layout extends React.Component {
                                  metadataContent={metadataContent}
                                  nav={nav}
                                  onHandleSiteScroll={this.onHandleSiteScroll}
-                                 sectionTitle={sectionTitle}
-                                 showAllMetadata={showAllMetadata}>{children}</HCAMain>}
+                                 sectionTitle={sectionTitle}>{children}</HCAMain>}
                     <SupportRequest active={supportRequestActive} onToggle={(active) => this.onToggleSupportRequestForm(active)}/>
                     <Banner position={"bottom"}/>
                     <Footer onFeedbackClicked={() => this.onToggleSupportRequestForm(true)}/>
