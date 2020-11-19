@@ -6,8 +6,8 @@ subTitle: ""
 description: "This tutorial will walk you through exporting search results from the HCA Data Explorer to Terra."
 ---
 
-Exporting search results from the HCA Data Explorer to Terra
-============================================================
+# Exporting Search Results from the HCA Data Explorer to Terra
+
 
 In this tutorial, you will learn how to send search results from the HCA Data
 Explorer to Terra and how to run a basic workflow with that data.
