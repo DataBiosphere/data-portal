@@ -27,7 +27,7 @@ function MetadataSearchResultSchema(props) {
         <>
         <span>
             <Highlight term={searchTerm}>
-                <MetadataSchemaPropertyWordWrapper font={"hcaCode"} word={schemaName} wrap/>
+                <span className={classNames(fontStyles.regular, fontStyles.s)}>{title}</span>
             </Highlight>
         </span>
         <span>
@@ -35,7 +35,7 @@ function MetadataSearchResultSchema(props) {
         </span>
         <span>
             <Highlight term={searchTerm}>
-                <span className={classNames(fontStyles.regular, fontStyles.s)}>{title}</span>
+                <MetadataSchemaPropertyWordWrapper font={"hcaCode"} word={schemaName} wrap/>
             </Highlight>
             <Highlight term={searchTerm}>
                 <span className={fontStyles.xs}>{description}</span>

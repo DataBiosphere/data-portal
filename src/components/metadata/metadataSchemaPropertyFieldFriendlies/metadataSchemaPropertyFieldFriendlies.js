@@ -9,6 +9,9 @@
 // Core dependencies
 import React from "react";
 
+// App dependencies
+import Highlight from "../../highlight/highlight";
+
 // Styles
 import compStyles from "./metadataSchemaPropertyFieldFriendlies.module.css";
 import fontStyles from "../../../styles/fontsize.module.css";
@@ -17,7 +20,7 @@ const classNames = require("classnames");
 
 function MetadataSchemaPropertyFieldFriendlies(props) {
 
-    const {property} = props,
+    const {property, searchTerm} = props,
         {propertyFriendlies} = property || {};
     const showFriendlies = propertyFriendlies && propertyFriendlies.length > 0;
     const friendlyDepth = showFriendlies ? propertyFriendlies.length - 1 : 0;
@@ -27,11 +30,15 @@ function MetadataSchemaPropertyFieldFriendlies(props) {
         const {counter, friendly, friendlyDepth} = props;
         const lastSlash = counter === friendlyDepth;
         const showSlash = !lastSlash;
+        const showHighlighter = searchTerm && lastSlash;
 
         return (
             <span>
-                <span>{friendly}</span>
-                {showSlash ? <span> / </span> : null}
+                {showHighlighter ?
+                    <Highlight term={searchTerm}><span>{friendly}</span></Highlight> :
+                    <span>{friendly}</span>}
+                {showSlash ?
+                    <span> / </span> : null}
             </span>
         )
     };

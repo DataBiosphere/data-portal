@@ -25,13 +25,13 @@ function MetadataSearchResultProperty(props) {
     return (
         <>
         <span>
-            <Highlight term={searchTerm}><MetadataSchemaPropertyWordWrapper font={"hcaCode"} word={propertyPath} wrap/></Highlight>
+            <MetadataSchemaPropertyFieldFriendlies property={result} searchTerm={searchTerm}/>
         </span>
         <span>
             <MetadataOverline><span>Property</span></MetadataOverline>
         </span>
         <span>
-            <MetadataSchemaPropertyFieldFriendlies property={result}/>
+            <Highlight term={searchTerm}><MetadataSchemaPropertyWordWrapper font={"hcaCode"} word={propertyPath} wrap/></Highlight>
             <Highlight term={searchTerm}><MetadataSchemaPropertyFieldDescription font={"xs"} property={result}/></Highlight>
             {showExample ?
                 <Highlight term={searchTerm}>
