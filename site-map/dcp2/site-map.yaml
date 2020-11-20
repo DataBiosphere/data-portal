@@ -215,7 +215,7 @@
         - name: "Accessing HCA Data and Metadata"
           key: "/guides/userguides/quick-start-guide"
           path: "/guides/quick-start-guide"
-        - name: "Accessing and Using Expression Matrices"
+        - name: "Accessing and Using Count Matrices"
           key: "/guides/userguides/matrices"
         - name: "Exporting HCA Data to Terra"
           key: "/guides/userguides/consumer-vignettes/export-to-terra"
