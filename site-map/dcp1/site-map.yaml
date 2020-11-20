@@ -263,7 +263,7 @@
             - name: "Metadata Types"
               key: "/metadata/metadata-overview/types"
               path: "/metadata"
-            - name: "Reusable Schema Modules"
+            - name: "Schema Modules"
               key: "/metadata/metadata-overview/modules"
               path: "/metadata/overview/modules"
     - name: "Structure"
