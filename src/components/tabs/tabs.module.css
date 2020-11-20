@@ -1,0 +1,75 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal tabs component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Tabs */
+.hcaTabs {
+    background-color: var(--white); /* Required for content scroll */
+    border-bottom: 1px solid var(--gray-light); /* Tab line */
+    margin-top: -24px; /* To position closer to section */
+}
+
+/* Wrapper */
+.wrapper {
+    position: relative; /* Positions fade on horizontal scroll */
+}
+
+/* Fade on horizontal scroll */
+.wrapper::after, .wrapper::before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 16px;
+    z-index: 10;
+}
+
+/* Fade on horizontal scroll RHS */
+.wrapper::after {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--white), var(--white));
+    right: 0;
+}
+
+/* Fade on horizontal scroll LHS */
+.wrapper::before {
+    background: linear-gradient(90deg, var(--white), var(--white), rgba(255, 255, 255, 0));
+    left: 0;
+}
+
+/* Tabs */
+.tabs {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 30px; /* Matches tab height. Required to maintain height for no tabs. */
+    justify-content: flex-start;
+    margin: 24px -16px 0;
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar in IE unless actively scrolling. */
+    overflow-x: auto; /* Horizontal scroll - hide webkit scrollbar unless actively scrolling. */
+    overflow-y: hidden;
+    width: calc(100% + 32px);
+}
+
+.tabs::-webkit-scrollbar {
+    display: none;
+}
+
+/* Tabs - secondary. */
+.hcaTabs.secondary {
+    margin-top: 0;
+}
+
+/* Fade - hide on secondary tabs. */
+.hcaTabs.secondary .wrapper::after, .hcaTabs.secondary .wrapper::before {
+    display: none;
+}
+
+/* Tabs - secondary. */
+.hcaTabs.secondary .tabs {
+    height: 44px;
+    margin: 0 -16px 0;
+}

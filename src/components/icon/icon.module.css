@@ -1,0 +1,26 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal icon component.
+ */
+
+/* Icon. */
+.icon {
+    align-self: center;
+    color: var(--gray-light);
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+}
+
+/* Icon - show. */
+.icon.show {
+    opacity: 1;
+    transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Icon - hover. */
+.icon.show.hover:hover {
+    color: var(--gray-medium);
+}

@@ -1,0 +1,22 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata schema property field reference component.
+ */
+@import "../../../styles/vars.module.css";
+
+/* Reference - container. */
+.reference {
+    background-color: var(--blue-light38);
+    border-bottom: 1px solid var(--gray-lightest);
+    flex-basis: 100%; /* Full width - forces sibling dom elements to wrap. */
+    margin: 0; /* Overrides heading margin. */
+    padding: 12px;
+    width: 100%;
+}
+
+/* Reference - tertiary or more. */
+.reference.tertiary {
+    background-color: var(--black3);
+}

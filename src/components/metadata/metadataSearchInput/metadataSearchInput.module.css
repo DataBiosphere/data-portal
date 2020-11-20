@@ -1,0 +1,76 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata search input component.
+ */
+@import "../../../styles/vars.module.css";
+
+/* Search bar. */
+.searchBar {
+    display: inline-block;
+    position: relative; /* Positions clear button. */
+    max-width: 350px;
+    z-index: 16; /* Above overlay. */
+    width: 100%;
+}
+
+/* Input. */
+.input {
+    background-color: transparent;
+    border: 1px solid var(--gray-light);
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: var(--gray-darkest);
+    display: inline-block;
+    font-weight: 400;
+    height: 38px;
+    padding: 0 36px 0 8px;
+    width: 100%;
+}
+
+/* Input. */
+input, input[type="text"] {
+    font-size: 16px; /* Required to prevent zoom on focus of <input> on mobile. */
+    line-height: 32px;
+}
+
+/* Input focus. */
+.input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/* Input - placeholder. */
+.input::placeholder {
+    font-size: 12px;
+    line-height: 32px;
+}
+
+/* Input - placeholder. */
+.input::placeholder {
+    color: var(--gray-darkest);
+    font-weight: 300;
+}
+
+/* Overlay. */
+.overlay {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 14; /* Above tabs, below search bar. */
+}
+
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 768px) {
+
+    /* Input. */
+    input, input[type="text"] {
+        font-size: 12px;
+    }
+}

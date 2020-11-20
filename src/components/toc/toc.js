@@ -6,9 +6,10 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
+import ContextMetadataDisplaying from "../metadata/contextMetadataDisplaying/contextMetadataDisplaying";
 import TOCItem from "../tocItem/tocItem";
 import * as TOCService from "../../utils/toc.service";
 
@@ -16,6 +17,19 @@ import * as TOCService from "../../utils/toc.service";
 import compStyles from "./toc.module.css";
 
 class TOC extends React.Component {
+
+    componentDidMount() {
+
+        /* Handle show/hide TOC. */
+        this.onHandleUseTOC();
+    }
+
+    onHandleUseTOC = () => {
+
+        const {useTOC} = this.props;
+
+        this.props.onHandleUseTOC(useTOC);
+    };
 
     render() {
         const {activeLocation, tocs} = this.props;
@@ -31,10 +45,12 @@ class TOC extends React.Component {
 
 export default (props) => {
 
-    const {docPath, showAllMetadata} = props;
+    const {docPath} = props;
+    const {showAllMetadata} = useContext(ContextMetadataDisplaying);
     const tocs = TOCService.getTOCs(docPath, showAllMetadata);
+    const useTOC = tocs.length > 0;
 
     return (
-        <TOC tocs={tocs} {...props}/>
+        <TOC tocs={tocs} useTOC={useTOC} {...props}/>
     );
 }

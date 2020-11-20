@@ -1,0 +1,69 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal content wrapper component.
+ */
+
+/* Wrapper. */
+.contentWrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+/* Wrapper - when there is no navigation */
+.contentWrapper.mLeft {
+    margin-left: 0;
+}
+
+/* Wrapper - when there is no toc */
+.contentWrapper.mRight {
+    margin-right: 0;
+}
+
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 768px) {
+
+    /* Wrapper. */
+    .contentWrapper {
+        flex-direction: row;
+    }
+
+    /* Wrapper - when there is no navigation */
+    .contentWrapper.mLeft {
+        margin-left: 176px; /* Matches 176px nav. */
+    }
+
+    /* Wrapper - when there is no toc */
+    .contentWrapper.mRight {
+        margin-right: 16px; /* Matches 16px gutter. */
+    }
+}
+
+/**
+ * Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1024px) {
+
+    /* Wrapper - when there is no navigation */
+    .contentWrapper.mLeft {
+        margin-left: 290px; /* Matches 290px nav. */
+    }
+}
+
+/**
+ * Medium +
+ * HCA custom breakpoint
+ */
+@media screen and (min-width: 1200px) {
+
+    /* Wrapper - when there is no toc */
+    .contentWrapper.mRight {
+        margin-right: 196px; /* Matches 196px toc. */
+    }
+}
+

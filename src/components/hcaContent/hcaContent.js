@@ -10,6 +10,7 @@
 import React from "react";
 
 // App dependencies
+import ContentWrapper from "../contentWrapper/contentWrapper";
 import Nav from "../nav/nav";
 import TOC from "../toc/toc";
 
@@ -20,18 +21,50 @@ let classNames = require("classnames");
 
 class HCAContent extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = ({showTOC: true});
+    }
+
+    isUseNav = () => {
+
+        const {links} = this.props;
+
+        return links && links.length > 0;
+    };
+
+    isUseToc = () => {
+
+        const {showTOC} = this.state;
+
+        return showTOC;
+    };
+
+    onHandleUseTOC = (event) => {
+
+        this.setState({showTOC: event});
+    };
+
     render() {
-        const {activeLocation, children, docPath, links, showAllMetadata, tabKey} = this.props;
-        const linksExist = links && links.length;
+        const {activeLocation, children, docPath, label, links, metadataContent, tabKey} = this.props;
+        const useToc = this.isUseToc();
+        const useNav = this.isUseNav();
+        const classNamesContent = classNames(
+            compStyles.hcaContent,
+            {[compStyles.metadataContent]: metadataContent});
+
         return (
-            <div
-                className={classNames(compStyles.hcaContent, {[compStyles.noNav]: !linksExist})}>
-                {linksExist ? <Nav links={links} tabKey={tabKey}/> : null}
-                <div id={"hcaContent"} className={compStyles.hcaContentInner}>{children}</div>
-                {linksExist ?
-                    <TOC activeLocation={activeLocation}
-                         docPath={docPath}
-                         showAllMetadata={showAllMetadata}/> : null}
+            <div className={classNamesContent}>
+                <ContentWrapper marginLeft={!useNav} marginRight={!useToc}>
+                    {useNav ?
+                        <Nav label={label} links={links} tabKey={tabKey}/> : null}
+                        <div id={"hcaContent"} className={compStyles.innerContainer}>{children}</div>
+                    {useToc ?
+                        <TOC activeLocation={activeLocation}
+                             docPath={docPath}
+                             onHandleUseTOC={this.onHandleUseTOC.bind(this)}/> :
+                        null}
+                </ContentWrapper>
             </div>
         );
     }

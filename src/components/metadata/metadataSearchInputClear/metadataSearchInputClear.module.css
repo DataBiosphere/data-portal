@@ -1,0 +1,20 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata search input clear button wrapper component.
+ */
+
+/* Clear input button. */
+.clear {
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Clear input button - pointer events. */
+.clear.active {
+    pointer-events: all;
+}

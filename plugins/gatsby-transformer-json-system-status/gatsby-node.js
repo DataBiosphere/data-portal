@@ -34,7 +34,7 @@ async function onCreateNode({node, getNode, actions, loadNodeContent}) {
 	}
 
 	// Remove any gatsby-source-metadata content
-    if ( node.internal.type === "MetadataCore" || node.internal.type === "MetadataType" || node.internal.type === "MetadataProperty" ) {
+    if ( node.internal.type.startsWith("Metadata") ) {
 		return
 	}
 

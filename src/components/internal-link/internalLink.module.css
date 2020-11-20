@@ -17,8 +17,14 @@
     position: absolute; /* Required to prevent SVG wrapping to new line */
 }
 
+/* Anchor - relative. */
+.anchorRelative {
+    position: relative; /* Required - for metadata - to prevent SVG positioning over copy icon. */
+}
+
 /* Anchor typically hidden */
 .anchor svg {
+    vertical-align: middle;
     visibility: hidden;
 }
 

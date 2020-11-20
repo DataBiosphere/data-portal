@@ -227,7 +227,8 @@ a.logo, a.logo img {
 
 	/* Normal view - links */
 	.links:not(.small) {
-		left: 308px; /* 30px wrapper padding, plus 290px menu width, minus 12px padding on first link */
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }
 

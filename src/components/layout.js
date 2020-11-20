@@ -30,37 +30,45 @@ class Layout extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            noScroll: false,
+            scrollable: true,
             supportRequestActive: false
         };
     }
 
-    onMenuOpen = (event) => {
-        this.setState({noScroll: !event});
+    onHandleSiteScroll = (scrollable) => {
+
+        this.setState({scrollable: scrollable});
     };
 
     onToggleSupportRequestForm = (active) => {
+
         this.setState({supportRequestActive: active});
     };
 
     render() {
-        const { activeLocation, children, description, docPath, healthy, homePage, homeTab,
-            nav, pageTitle, sectionTitle, showAllMetadata} = this.props;
-        const {noScroll, supportRequestActive} = this.state;
+        const {activeLocation, children, description, docPath, healthy, homePage, homeTab,
+            metadataContent, nav, pageTitle, sectionTitle} = this.props;
+        const {scrollable, supportRequestActive} = this.state;
         return (
             <div>
                 <PageHead pageTitle={pageTitle}/>
                 <SEO description={description} pageTitle={pageTitle}/>
-                <div className={classNames(compStyles.site, {[compStyles.noScroll]: noScroll})}>
-                    <Header onMenuOpen={this.onMenuOpen.bind(this)} homePage={homePage} docPath={docPath}/>
+                <div className={classNames(compStyles.site, {[compStyles.noScroll]: !scrollable})}>
+                    <Header onHandleSiteScroll={this.onHandleSiteScroll} homePage={homePage} docPath={docPath}/>
                     <DCP2Announcement/>
-                    <Banner position={'top'} healthy={healthy}/>
+                    <Banner position={"top"} healthy={healthy}/>
                     {homePage ? children :
-                        <HCAMain activeLocation={activeLocation} docPath={docPath} homeTab={homeTab} nav={nav}
-                                 sectionTitle={sectionTitle} showAllMetadata={showAllMetadata}>{children}</HCAMain>}
+                        <HCAMain activeLocation={activeLocation}
+                                 docPath={docPath}
+                                 homeTab={homeTab}
+                                 metadataContent={metadataContent}
+                                 nav={nav}
+                                 onHandleSiteScroll={this.onHandleSiteScroll}
+                                 sectionTitle={sectionTitle}>{children}</HCAMain>}
                     <SupportRequest active={supportRequestActive} onToggle={(active) => this.onToggleSupportRequestForm(active)}/>
-                    <Banner position={'bottom'}/>
+                    <Banner position={"bottom"}/>
                     <Footer onFeedbackClicked={() => this.onToggleSupportRequestForm(true)}/>
+                    <div id="portal"/>
                 </div>
             </div>
         )

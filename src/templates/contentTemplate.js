@@ -18,6 +18,9 @@ import DataLifecycleDiagram from '../components/dataLifecycleDiagram/dataLifecyc
 import InternalLink from '../components/internal-link/internalLink';
 import Layout from '../components/layout';
 import LinkToBrowser from "../components/linkToBrowser/linkToBrowser";
+import MetadataTypeEntitySchemas from "../components/metadata/metadataTypeEntitySchemas/metadataTypeEntitySchemas";
+import ProviderMetadataDisplaying from "../components/metadata/providerMetadataDisplaying/providerMetadataDisplaying";
+import SystemStatus from "../components/systemStatus/systemStatus";
 import * as TemplateService from '../utils/template.service';
 
 // Styles
@@ -28,7 +31,13 @@ let classNames = require('classnames');
 
 const renderAst = new rehypeReact({
     createElement: React.createElement,
-    components: { "internal-link": InternalLink, "data-lifecycle-diagram": DataLifecycleDiagram, "link-to-browser": LinkToBrowser }
+    components: {
+        "data-lifecycle-diagram": DataLifecycleDiagram,
+        "internal-link": InternalLink,
+        "link-to-browser": LinkToBrowser,
+        "metadata-type-entity-schemas": MetadataTypeEntitySchemas,
+        "system-status": SystemStatus
+    }
 }).Compiler;
 
 // the data prop will be injected by the GraphQL query below.
@@ -42,22 +51,24 @@ export default function Template({data, location}) {
 		{fields} = markdownRemark || {},
 		{slug} = fields || {},
 		{componentName, description, linked, title} = frontmatter || {};
-	const editPage = TemplateService.editPageFeatured(slug);
+	const showEditPage = TemplateService.showEditPage(slug);
 	const editPath = TemplateService.getPageEditUrl(slug);
 	const h1 = TemplateService.getPageTitle(htmlAst);
 	const pageTitle = h1 ? h1 : title;
 
 	return (
-		<Layout activeLocation={{pathname, hash}} description={description} docPath={slug} nav={nav} pageTitle={pageTitle}>
-			{componentName === 'analysisDetail' ? <AnalysisDetail data={markdownRemark}/> :
-				<div className={globalStyles.md}>{renderAst(htmlAst)}</div>}
-			{linked && (componentName === 'analyze') ?
-				<Analyze linked={linked}/> : null}
-			{componentName === 'attributions' ? <Attributions/> : null}
-			{editPage ?
-				<a className={classNames(globalStyles.editContent, globalStyles.editContentSeparator)}
-				   href={editPath} target='_blank' rel='noopener noreferrer'>Improve this page</a> : null}
-		</Layout>
+        <ProviderMetadataDisplaying>
+            <Layout activeLocation={{pathname, hash}} description={description} docPath={slug} nav={nav} pageTitle={pageTitle}>
+                {componentName === 'analysisDetail' ? <AnalysisDetail data={markdownRemark}/> :
+                    <div className={globalStyles.md}>{renderAst(htmlAst)}</div>}
+                {linked && (componentName === 'analyze') ?
+                    <Analyze linked={linked}/> : null}
+                {componentName === 'attributions' ? <Attributions/> : null}
+                {showEditPage ?
+                    <a className={classNames(globalStyles.editContent, globalStyles.editContentSeparator)}
+                       href={editPath} target='_blank' rel='noopener noreferrer'>Improve this page</a> : null}
+            </Layout>
+        </ProviderMetadataDisplaying>
 	);
 }
 
@@ -103,6 +114,7 @@ export const pageQuery = graphql`
       context {
         id
         nav {
+          label
           section {
             key
             name

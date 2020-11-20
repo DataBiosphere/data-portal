@@ -11,10 +11,10 @@
  * document's key, and corresponding path or key (if path does not exist).
  *
  * @param siteMapYAML
- * @param postsByKeyBlacklisted
+ * @param postsByKeyDenyListed
  * @returns {*}
  */
-const buildPostKeysByPath = function buildPostKeysByPath(siteMapYAML, postsByKeyBlacklisted) {
+const buildPostKeysByPath = function buildPostKeysByPath(siteMapYAML, postsByKeyDenyListed) {
 
     /* Build the site-map object. */
     return siteMapYAML.edges
@@ -31,7 +31,7 @@ const buildPostKeysByPath = function buildPostKeysByPath(siteMapYAML, postsByKey
 
                 return primaryLinks.reduce((primaryAcc, pLink) => {
 
-                    if ( !postsByKeyBlacklisted.has(pLink.key) ) {
+                    if ( !postsByKeyDenyListed.has(pLink.key) ) {
 
                         setPostKeyValuePair(primaryAcc, pLink);
                     }
@@ -42,7 +42,7 @@ const buildPostKeysByPath = function buildPostKeysByPath(siteMapYAML, postsByKey
 
                         secondaryLinks.forEach(sLink => {
 
-                            if ( !postsByKeyBlacklisted.has(sLink.key) ) {
+                            if ( !postsByKeyDenyListed.has(sLink.key) ) {
 
                                 setPostKeyValuePair(primaryAcc, sLink)
                             }

@@ -84,7 +84,7 @@ class Header extends React.Component {
 		if ( menuNav ) {
 
 			this.setState({openNav: !openNav});
-			this.props.onMenuOpen(openNav);
+            this.props.onHandleSiteScroll(openNav);
 		}
 	};
 

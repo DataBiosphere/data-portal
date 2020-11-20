@@ -27,7 +27,7 @@ Data are provided in standard file formats, such as FASTQ format for sequencing 
 
 ### Validation
 
-After metadata are processed, they are validated to check if they conform to the HCA [metadata standards](/metadata/design-principles/structure). At this stage, the Ingestion Service identifies errors in the metadata and allows corrected metadata to be uploaded. Data files are checked for errors to ensure they are well-formatted and conform to the corresponding file format standards.
+After metadata are processed, they are validated to check if they conform to the HCA [metadata standards](/metadata/structure). At this stage, the Ingestion Service identifies errors in the metadata and allows corrected metadata to be uploaded. Data files are checked for errors to ensure they are well-formatted and conform to the corresponding file format standards.
 
 ### Submission
 

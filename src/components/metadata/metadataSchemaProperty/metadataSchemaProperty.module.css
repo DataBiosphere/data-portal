@@ -1,0 +1,108 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata schema property component.
+ */
+@import "../../../styles/vars.module.css";
+
+/* Property. */
+.schemaProperty {
+    align-items: flex-start;
+    border-top: 1px solid var(--gray-lightest);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    scroll-margin-top: 84px;
+}
+
+/* Property - highlight. */
+.schemaProperty.reveal {
+    animation: highlighter 10s ease-in 1;
+}
+
+/* Animation - highlighter. */
+@-webkit-keyframes highlighter {
+    0% {
+        background-color: transparent;
+    }
+    75% {
+        background-color: var(--highlight);
+    }
+    100% {
+        background-color: var(--highlight);
+    }
+}
+
+/* Animation - highlighter. */
+@keyframes highlighter {
+    0% {
+        background-color: var(--highlight);
+    }
+    75% {
+        background-color: var(--highlight);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Property - first. */
+.schemaProperty:first-of-type {
+    margin-top: 8px;
+}
+
+/* All columns. */
+.schemaProperty > span {
+    padding: 12px;
+    width: 100%;
+}
+
+/* First column. */
+.schemaProperty > span:first-of-type {
+    padding: 12px 12px 4px;
+}
+
+/* Second column. */
+.schemaProperty > span:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: anywhere;
+    padding: 4px 12px 12px;
+}
+
+/* Column first level <span>. */
+.schemaProperty > span > span {
+    margin-bottom: 4px;
+}
+
+/* Column first level <span> - last child. */
+.schemaProperty > span > span:last-child {
+    margin-bottom: 0;
+}
+
+/**
+ * 1280px - Large tablet landscape, medium window
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Property. */
+    .schemaProperty {
+        flex-direction: row;
+    }
+
+    /* All columns. */
+    .schemaProperty > span, .schemaProperty > span:first-of-type, .schemaProperty > span:nth-of-type(2) {
+        padding: 12px;
+    }
+
+    /* First column. */
+    .schemaProperty > span:first-of-type {
+        width: 35%;
+    }
+
+    /* Second column. */
+    .schemaProperty > span:nth-of-type(2) {
+        flex: 1;
+    }
+}

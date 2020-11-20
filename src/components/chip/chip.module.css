@@ -1,0 +1,14 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal chip component.
+ */
+
+/* Chip. */
+.chip {
+    background-color: var(--blue-light);
+    border-radius: 2px;
+    display: inline-block;
+    padding: 2px 6px;
+}
