@@ -62,6 +62,8 @@ function ProviderMetadataDisplaying(props) {
         /* Handle the display of highlight on search hit result page. */
         onHandleSearchHit(urlTo);
 
+        // DPGTMService.trackMetadataSearchResultClick(urlTo, inputValue, GAEntityType.METADATA) // TODO complete tracking
+
         /* Navigate. */
         navigate(urlTo);
     };

@@ -11,6 +11,8 @@ import React, {useCallback, useEffect, useRef, useState} from "react";
 
 // App dependencies
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
+import * as DPGTMService from "../../../utils/dp-gtm/dp-gtm.service";
+import { GAEntityType } from "../../../utils/dp-gtm/ga-entity-type.model";
 import * as MetadataSearchService from "../../../utils/metadata-search.service";
 
 function ProviderMetadataSearching(props) {
@@ -224,6 +226,8 @@ function ProviderMetadataSearching(props) {
 
         /* Update inputValue, lastSearchHit, query and searchValue. */
         setQueries(queries => ({...queries, inputValue: inputStr, lastSearchHit: "input", query: currentQuery, searchValue: searchStr}));
+
+        DPGTMService.trackMetadataSearchInput(inputStr, GAEntityType.METADATA);
     };
 
     const onHandleSearchClose = () => {
