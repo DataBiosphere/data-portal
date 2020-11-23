@@ -10,13 +10,15 @@ import React, {useContext, useEffect, useState} from "react";
 
 // App dependencies
 import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
+import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
 import MetadataSearchResultsPanelScrollSpy from "../metadataSearchResultsPanelScrollSpy/metadataSearchResultsPanelScrollSpy";
 import * as MetadataSearchService from "../../../utils/metadata-search.service";
 
 function MetadataSearchResultsPanelKeyDownSpy(props) {
 
     const {children, results} = props;
-    const {onHandleNavigationHit} = useContext(ContextMetadataDisplaying);
+    const {inputValue} = useContext(ContextMetadataSearch);
+    const {onHandleNavigationSearchHit} = useContext(ContextMetadataDisplaying);
     const [activeCounter, setActiveCounter] = useState(-1);
     const [activeResult, setActiveResult] = useState(null);
     const [activeResultEl, setActiveResultEl] = useState(null);
@@ -63,12 +65,12 @@ function MetadataSearchResultsPanelKeyDownSpy(props) {
         /* Handle enter event. */
         if ( keyDownCode === "Enter" && activeResult ) {
 
-            onHandleNavigationHit(activeResult);
+            onHandleNavigationSearchHit(activeResult, inputValue);
         }
 
         /* Clear key down code. */
         setKeyDownCode("");
-    }, [activeCounter, activeResult, keyDownCode, resultsDepth, onHandleNavigationHit]);
+    }, [activeCounter, activeResult, inputValue, keyDownCode, resultsDepth, onHandleNavigationSearchHit]);
 
     const onHandleKeyDown = (keyEvent) => {
 

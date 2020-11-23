@@ -23,7 +23,7 @@ function MetadataSearchResult(props) {
 
     const {active, counter, result, setActiveCounter, setActiveResult, setActiveResultEl} = props,
         {type} = result || {};
-    const {onHandleNavigationHit} = useContext(ContextMetadataDisplaying);
+    const {onHandleNavigationSearchHit} = useContext(ContextMetadataDisplaying);
     const {inputValue} = useContext(ContextMetadataSearch);
     const resultEl = useRef(null);
     const showSchema = /schema/.test(type);
@@ -45,7 +45,7 @@ function MetadataSearchResult(props) {
 
     return (
         <div className={classNamesResult}
-             onClick={() => onHandleNavigationHit(result)}
+             onClick={() => onHandleNavigationSearchHit(result, inputValue)}
              onMouseMove={() => setActiveCounter(counter)}
              ref={resultEl}
              role={"presentation"}>
