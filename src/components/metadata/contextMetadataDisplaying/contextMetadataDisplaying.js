@@ -16,6 +16,7 @@ const ContextMetadataDisplaying = React.createContext({
     highlightValue: "",
     showAllMetadata: true,
     onHandleNavigationHit: () => {},
+    onHandleNavigationSearchHit: () => {},
     onHandleToggleRequiredFields: () => {}
 });
 

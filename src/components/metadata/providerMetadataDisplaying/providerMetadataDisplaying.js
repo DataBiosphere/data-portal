@@ -11,6 +11,8 @@ import React, {useCallback, useEffect, useRef, useState} from "react";
 
 // App dependencies
 import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
+import * as DPGTMService from "../../../utils/dp-gtm/dp-gtm.service";
+import {GAEntityType} from "../../../utils/dp-gtm/ga-entity-type.model";
 
 function ProviderMetadataDisplaying(props) {
 
@@ -59,18 +61,22 @@ function ProviderMetadataDisplaying(props) {
             setShowAllMetadata(true);
         }
 
-        /* Handle the display of highlight on search hit result page. */
-        onHandleSearchHit(urlTo);
-
-        // DPGTMService.trackMetadataSearchResultClick(urlTo, inputValue, GAEntityType.METADATA) // TODO complete tracking
+        /* Handle the display of highlight on navigation to hit. */
+        setHighlightValue(urlTo);
 
         /* Navigate. */
         navigate(urlTo);
     };
 
-    const onHandleSearchHit = (urlTo) => {
+    const onHandleNavigationSearchHit = (result, inputValue) => {
 
-        setHighlightValue(urlTo);
+        const {urlTo} = result || {};
+
+        /* Execute tracking. */
+        DPGTMService.trackMetadataSearchResultClick(urlTo, inputValue, GAEntityType.METADATA);
+
+        /* Handle navigation of search hit. */
+        onHandleNavigationHit(result);
     };
 
     const onHandleToggleRequiredFields = () => {
@@ -117,7 +123,8 @@ function ProviderMetadataDisplaying(props) {
     }, [onUpdateHighlight]);
 
     return (
-        <ContextMetadataDisplaying.Provider value={{highlightValue, showAllMetadata, onHandleNavigationHit, onHandleToggleRequiredFields}}>
+        <ContextMetadataDisplaying.Provider value={{highlightValue, showAllMetadata,
+            onHandleNavigationHit, onHandleNavigationSearchHit, onHandleToggleRequiredFields}}>
             {children}
         </ContextMetadataDisplaying.Provider>
     )

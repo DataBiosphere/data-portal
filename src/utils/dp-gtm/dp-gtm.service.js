@@ -24,7 +24,6 @@ export function trackMetadataSearchInput(value, entityType) {
     });
 }
 
-
 /**
  * Track select of search result.
  * 
