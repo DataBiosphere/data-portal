@@ -76,11 +76,11 @@ A partial example of a TSV file is listed below:
 
 For projects with supported library construction methods, the project detail page will contain a link to download DCP-generated count matrices for the project.
  
- Count matrices are available in Loom format (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files) and also contain a subset of the available ingest metadata for the project. To learn more about the metadata available in the Loom, see the [DCP Matrix Overview](./matrices.md)
+ Count matrices are available in Loom format (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files) and also contain a subset of the available ingest metadata for the project. To learn more about the metadata available in the Loom, see the [DCP Matrix Overview](/guides/userguides/matrices)
  
  The columns in the count matrix represent cell-specific information while the rows represent gene-specific information. 
 
- The type of count (raw or TPM) available in the matrix depend on the pipeline used for data processing. Read more about Loom counts and metrics for [Optimus](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/Loom_schema.html) or [SS2](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema.html). Note that these are the generic pipeline documentation and do not include details of the HCA-specific metadata, which you can find in the [DCP Matrix Overview](./matrices.md).
+ The type of count (raw or TPM) available in the matrix depend on the pipeline used for data processing. Read more about Loom counts and metrics for [Optimus](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/Loom_schema.html) or [SS2](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema.html). Note that these are the generic pipeline documentation and do not include details of the HCA-specific metadata, which you can find in the [DCP Matrix Overview](/guides/userguides/matrices.md).
 
 
 ## Downloading Project Contributor Generated Matrices
