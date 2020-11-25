@@ -18,7 +18,7 @@ import compStyles from "./metadataSearchInput.module.css";
 
 function MetadataSearchInput() {
 
-    const {inputActive, onHandleInput, onHandleSearchClose, onHandleSearchOpen} = useContext(ContextMetadataSearch);
+    const {inputActive, onHandleSearch, onHandleSearchClose, onHandleSearchOpen} = useContext(ContextMetadataSearch);
     const currentLocation = useLocation();
     const delaySearchRef = useRef(0);
     const inputRef = useRef(null);
@@ -36,7 +36,7 @@ function MetadataSearchInput() {
         /* Delay search over entities - improves indexing/search performance. */
         delaySearchRef.current = setTimeout(() => {
 
-            onHandleInput(inputRef.current.value);
+            onHandleSearch(inputRef.current.value);
         }, timer);
         return () => clearTimeout(delaySearchRef.current);
     };
@@ -47,8 +47,8 @@ function MetadataSearchInput() {
         /* Set timerRef to zero and clear the inputRef value. */
         inputRef.current.focus();
         inputRef.current.value = "";
-        onHandleInput("");
-    }, [onHandleInput]);
+        onHandleSearch("");
+    }, [onHandleSearch]);
 
     const onHandleKeyDown = useCallback((keyEvent) => {
 

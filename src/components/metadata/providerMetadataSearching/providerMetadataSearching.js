@@ -184,48 +184,29 @@ function ProviderMetadataSearching(props) {
         return resultsEmpty || resultsExist;
     }, [inputActive, inputValue, setOfProperties]);
 
-    const isInputDenied = (inputStr) => {
-
-        return MetadataSearchService.DenyListInputs.some(deniedInput => inputStr.includes(deniedInput));
-    };
-
-    const onHandleInput = (event) => {
-
-        if ( event !== inputValue ) {
-
-            /* Handle change in search value. */
-            onHandleSearch(event);
-        }
-    };
-
     const onHandleSearch = (inputStr) => {
 
-        let searchStr = inputStr.trim();
+        /* Handles input value with other special characters - prevents lunr search error. */
+        /* Includes handling of ":" for ontologies. */
+        const searchStr = MetadataSearchService.onHandleParseInputString(inputStr);
 
-        /* Pre process input value for any special character. */
-        if ( isInputDenied(inputStr) ) {
+        /* Handle change in search value. */
+        if ( searchStr !== searchValue ) {
 
-            /* Replace ":" with "_". */
-            /* Handles special searches for graph restrictions like ontologies, classes and relations where any value may include ":". */
-            /* Lunr typically uses the colon as field based searching. Use of the colon whilst searching for a specific ontology return an error. */
-            /* See https://lunrjs.com/guides/searching.html. */
-            if ( inputStr.includes(":") ) {
+            /* Build current query. */
+            const currentQuery = buildQuery(inputStr);
 
-                searchStr = inputStr.replace(/:/g, "_");
-            }
-            /* Handles input value with other special characters - prevents lunr search error. */
-            else {
+            /* Update inputValue, lastSearchHit, query and searchValue. */
+            setQueries(queries => ({
+                ...queries,
+                inputValue: inputStr,
+                lastSearchHit: "input",
+                query: currentQuery,
+                searchValue: searchStr
+            }));
 
-                searchStr = MetadataSearchService.onHandleSpecialChars(inputStr);
-            }
+            DPGTMService.trackMetadataSearchInput(inputStr, GAEntityType.METADATA);
         }
-
-        const currentQuery = buildQuery(inputStr);
-
-        /* Update inputValue, lastSearchHit, query and searchValue. */
-        setQueries(queries => ({...queries, inputValue: inputStr, lastSearchHit: "input", query: currentQuery, searchValue: searchStr}));
-
-        DPGTMService.trackMetadataSearchInput(inputStr, GAEntityType.METADATA);
     };
 
     const onHandleSearchClose = () => {
@@ -290,7 +271,7 @@ function ProviderMetadataSearching(props) {
     }, [generateResults, metadataIndexMounted]);
 
     return (
-        <ContextMetadataSearch.Provider value={{inputActive, inputValue, results, showResultsPanel, onHandleInput, onHandleSearchClose, onHandleSearchOpen}}>
+        <ContextMetadataSearch.Provider value={{inputActive, inputValue, results, showResultsPanel, onHandleSearch, onHandleSearchClose, onHandleSearchOpen}}>
             {children}
         </ContextMetadataSearch.Provider>
     )

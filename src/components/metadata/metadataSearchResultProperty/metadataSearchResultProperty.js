@@ -21,7 +21,8 @@ import MetadataSchemaPropertyWordWrapper from "../metadataSchemaPropertyWordWrap
 function MetadataSearchResultProperty(props) {
 
     const {result, searchTerm} = props,
-        {propertyPath, showClasses, showExample, showOntologies} = result || {};
+        {propertyPath, _ref, showClasses, showExample, showOntologies} = result || {};
+    const showPaths = !_ref;
 
     return (
         <>
@@ -33,7 +34,8 @@ function MetadataSearchResultProperty(props) {
             <MetadataOverline><span>Property</span></MetadataOverline>
         </span>
         <span>
-            <Highlight term={searchTerm}><MetadataSchemaPropertyWordWrapper font={"hcaCode"} word={propertyPath} wrap/></Highlight>
+            {showPaths ?
+                <Highlight term={searchTerm}><MetadataSchemaPropertyWordWrapper font={"hcaCode"} word={propertyPath} wrap/></Highlight> : null}
             <Highlight term={searchTerm}><MetadataSchemaPropertyFieldDescription font={"xs"} property={result}/></Highlight>
             {showExample ?
                 <Highlight term={searchTerm}>

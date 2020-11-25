@@ -38,7 +38,7 @@ function MetadataSchema(props) {
             <span className={classNames({[compStyles.reveal]: showHighlighter})}>{description}</span>
         </p>
         <div className={compStyles.source}>
-            <span className={fontStyles.xs}>View schema source: </span>
+            <span className={fontStyles.xs}>View JSON source: </span>
             <a className={fontStyles.s} href={urlGitHub} rel="noopener noreferrer" target="_blank">{schemaName}</a>
             <MetadataToggleRequiredFields background/>
         </div>
