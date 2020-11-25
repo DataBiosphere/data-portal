@@ -53,9 +53,9 @@ The project detail page contains:
 
 For each project, the HCA DCP maintains a project specific TSV file containing the full project metadata. The TSV contains a row for each file in the project and columns for each metadata property. Meanings of the metadata properties are listed in the [HCA Metadata Dictionary](/metadata).
 
-The metadata TSV file gives a flattenedjapan-science-meeting-tutorial.md representation of the projects metadata graph that can be sorted and filtered using standard spreadsheet or data manipulation tools.
+The metadata TSV file gives a representation of the project's metadata graph that can be sorted and filtered using standard spreadsheet or data manipulation tools.
 
-The "Project Metadata" section of the project details page contains a link to download the project metadata file.
+The **"Project Metadata"** tab of the left of Project page contains a link to download the project's metadata file.
 
 ![Project Metadata](../_images/exploring-projects-project-downloads.png "Project Downloads")
 
@@ -74,14 +74,20 @@ A partial example of a TSV file is listed below:
 
 ## Downloading Project DCP Generated Matrices
 
-For projects with supported library construction methods, the project detail page will contain a link to download DCP-generated count matrices for the project.
- 
- Count matrices are available in Loom format (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files) and also contain a subset of the available ingest metadata for the project. To learn more about the metadata available in the Loom, see the [DCP Matrix Overview](/guides/userguides/matrices)
- 
- The columns in the count matrix represent cell-specific information while the rows represent gene-specific information. 
+Each project processed with DCP pipelines have DCP-generated count matrices, which are separated by species, organ, and library construction method. 
 
- The type of count (raw or TPM) available in the matrix depend on the pipeline used for data processing. Read more about Loom counts and metrics for [Optimus](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/Loom_schema.html) or [SS2](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema.html). Note that these are the generic pipeline documentation and do not include details of the HCA-specific metadata, which you can find in the [DCP Matrix Overview](/guides/userguides/matrices.md).
+To download, select the **"Project Matrices"** tab to the left of the Project page. Scroll to identify the relevant matrix and select the download icon. 
+ 
+Count matrices are available in Loom format (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files). The columns in the count matrix represent cell-specific information while the rows represent gene-specific information. 
 
+The type of count (raw or TPM) available in the matrix depends on the pipeline used for data processing. Read more about Loom counts and metrics for [Optimus (10x data)](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/Loom_schema.html) or [SS2](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema.html). 
+
+DPC Generated Matrices also contain a subset of the available ingest metadata for the project. To learn more about the metadata available in the Loom, see the [DCP Matrix Overview](/guides/userguides/matrices).
+ 
 
 ## Downloading Project Contributor Generated Matrices
-Contributor generated matrices are optionally provided by the data contributors. When available, you can download them from the individual Project page. The matrices will vary in file format and content. 
+Contributor generated matrices are optionally provided by the data contributors. These matrices will vary in file format and content. 
+
+To download, select the **"Project Matrices"** tab to the left of the Project page. 
+
+Scroll to the **Contributor Generated Matrices** section and select the download icon. 
