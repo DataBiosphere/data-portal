@@ -139,6 +139,24 @@ export function onHandleSearchResultArrowUp(currentIndex, resultsDepth) {
 }
 
 /**
+ * Handles input value with other special characters - prevents lunr search error.
+ * Replaces any special characters with a non-space.
+ * Replaces any multiple spaces and trims - improves lunr search performance.
+ *
+ * @param inputStr
+ * @returns {*}
+ */
+export function onHandleSpecialChars(inputStr) {
+
+    if ( inputStr ) {
+
+        return inputStr.replace(/[`~!@#$%^&*()|\-+=\\\]}{["';?/><,]/g, "").replace(/\s\s+/g, " ").trim();
+    }
+
+    return inputStr;
+}
+
+/**
  * Returns the analyzed model.
  * Uses the allow list score criteria to build an analyzed model of the search model.
  * Returns a boolean value for each search model element, for each type of "hit" on the element.

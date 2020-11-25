@@ -15,3 +15,8 @@
 .friendly span {
     white-space: pre;
 }
+
+/* Separator. */
+.friendly .arrow {
+    padding: 0 4px;
+}

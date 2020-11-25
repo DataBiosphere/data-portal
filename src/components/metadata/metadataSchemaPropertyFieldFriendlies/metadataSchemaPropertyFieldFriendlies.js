@@ -38,7 +38,7 @@ function MetadataSchemaPropertyFieldFriendlies(props) {
                     <Highlight term={searchTerm}><span>{friendly}</span></Highlight> :
                     <span>{friendly}</span>}
                 {showSlash ?
-                    <span> / </span> : null}
+                    <span className={compStyles.arrow}>></span> : null}
             </span>
         )
     };

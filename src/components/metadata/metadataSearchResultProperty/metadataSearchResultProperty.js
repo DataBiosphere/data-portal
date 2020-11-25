@@ -11,6 +11,7 @@ import React from "react";
 // App dependencies
 import Highlight from "../../highlight/highlight";
 import MetadataOverline from "../metadataOverline/metadataOverline";
+import MetadataRequired from "../metadataRequired/metadataRequired";
 import MetadataSchemaPropertyFieldDescription from "../metadataSchemaPropertyFieldDescription/metadataSchemaPropertyFieldDescription";
 import MetadataSchemaPropertyFieldExample from "../metadataSchemaPropertyFieldExample/metadataSchemaPropertyFieldExample";
 import MetadataSchemaPropertyFieldFriendlies from "../metadataSchemaPropertyFieldFriendlies/metadataSchemaPropertyFieldFriendlies";
@@ -26,6 +27,7 @@ function MetadataSearchResultProperty(props) {
         <>
         <span>
             <MetadataSchemaPropertyFieldFriendlies property={result} searchTerm={searchTerm}/>
+            <MetadataRequired property={result}/>
         </span>
         <span>
             <MetadataOverline><span>Property</span></MetadataOverline>

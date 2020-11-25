@@ -19,8 +19,8 @@ function MetadataSearchResultsPanelScrollSpy(props) {
         if ( activeResultEl ) {
 
             const {offsetHeight, offsetParent, offsetTop} = activeResultEl,
-                {lastElementChild} = offsetParent,
-                {clientHeight, scrollTop} = lastElementChild;
+                {lastElementChild} = offsetParent || {},
+                {clientHeight, scrollTop} = lastElementChild || 0;
             const abovePanelTop = offsetTop - scrollTop < 56;
             const belowPanelBottom = offsetTop + offsetHeight - scrollTop > clientHeight;
 

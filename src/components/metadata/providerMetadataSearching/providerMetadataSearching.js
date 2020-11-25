@@ -24,7 +24,7 @@ function ProviderMetadataSearching(props) {
     const [results, setResults] = useState([]);
     const [queries, setQueries] = useState({inputActive: false, inputValue: "", lastSearchHit: "", query: "", searchValue: ""});
     const [showResultsPanel, setShowResultsPanel] = useState(false);
-    const {inputActive, inputValue, lastSearchHit, query, searchValue} = queries;
+    const {inputActive, inputValue, lastSearchHit, searchValue} = queries;
 
     const buildInputValueString = useCallback(() => {
 
@@ -214,11 +214,9 @@ function ProviderMetadataSearching(props) {
                 searchStr = inputStr.replace(/:/g, "_");
             }
             /* Handles input value with other special characters - prevents lunr search error. */
-            /* Replaces any ";", "/", "\", "*", "~", "-", "^" or "+" with a non-space. */
-            /* Replaces any multiple spaces and trims - improves lunr search performance. */
             else {
 
-                searchStr = inputStr.replace(/[;/\\*~\-^+]/g, "").replace(/\s\s+/g, " ").trim();
+                searchStr = MetadataSearchService.onHandleSpecialChars(inputStr);
             }
         }
 
@@ -247,11 +245,6 @@ function ProviderMetadataSearching(props) {
         /* Set inputActive to true. */
         setQueries(queries => ({...queries, inputActive: true}));
     };
-
-    const updateURLSearchParams = useCallback(() => {
-
-        /* TODO. */
-    }, []);
 
     const generateResults = useCallback(() => {
 

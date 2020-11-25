@@ -23,7 +23,7 @@ function MetadataSearchInput() {
     const delaySearchRef = useRef(0);
     const inputRef = useRef(null);
     const [showClear, setShowClear] = useState(false);
-    const timer = 200;
+    const timer = 500;
 
     const onHandleChange = () => {
 

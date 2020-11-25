@@ -8,10 +8,16 @@
 /* Used by path. */
 .usedBy {
     align-items: stretch;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     padding: 12px;
+}
+
+/* Used by path - hover. */
+.usedBy:hover {
+    background-color: var(--black1);
 }
 
 /* All columns. */
