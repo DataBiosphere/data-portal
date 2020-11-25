@@ -55,7 +55,7 @@ For each project, the HCA DCP maintains a project specific TSV file containing t
 
 The metadata TSV file gives a representation of the project's metadata graph that can be sorted and filtered using standard spreadsheet or data manipulation tools.
 
-The **"Project Metadata"** tab of the left of Project page contains a link to download the project's metadata file.
+The **"Project Metadata"** tab left of the Project page contains a link to download the project's metadata file.
 
 ![Project Metadata](../_images/exploring-projects-project-downloads.png "Project Downloads")
 
@@ -76,18 +76,20 @@ A partial example of a TSV file is listed below:
 
 Each project processed with DCP pipelines have DCP-generated count matrices, which are separated by species, organ, and library construction method. 
 
-To download, select the **"Project Matrices"** tab to the left of the Project page. Scroll to identify the relevant matrix and select the download icon. 
+To download, select the **"Project Matrices"** tab left of the Project page. Scroll to identify the relevant matrix and then select the download icon. 
  
 Count matrices are available in Loom format (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files). The columns in the count matrix represent cell-specific information while the rows represent gene-specific information. 
 
 The type of count (raw or TPM) available in the matrix depends on the pipeline used for data processing. Read more about Loom counts and metrics for [Optimus (10x data)](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/Loom_schema.html) or [SS2](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema.html). 
 
-DPC Generated Matrices also contain a subset of the available ingest metadata for the project. To learn more about the metadata available in the Loom, see the [DCP Matrix Overview](/guides/userguides/matrices).
+DPC Generated Matrices also contain a subset of the available ingested metadata for the project. To learn more about the metadata available in the Loom, see the [DCP Matrix Overview](/guides/userguides/matrices).
  
 
 ## Downloading Project Contributor Generated Matrices
-Contributor generated matrices are optionally provided by the data contributors. These matrices will vary in file format and content. 
+Contributor Generated Matrices are optionally provided by the project contributors. These matrices  vary in file format and content. For questions about a specific contributor-generated matrix, reach out to the Project Contacts listed on the Project Information page. 
 
-To download, select the **"Project Matrices"** tab to the left of the Project page. 
+To download the Contributor Generated Matrix, select the **"Project Matrices"** tab to the left of the Project page. 
 
 Scroll to the **Contributor Generated Matrices** section and select the download icon. 
+
+
