@@ -13,6 +13,7 @@ import MetadataSchemaUsedBy from "../metadataSchemaUsedBy/metadataSchemaUsedBy";
 
 // Styles
 import compStyles from "./metadataSchemaUsedBys.module.css";
+import fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSchemaUsedBys(props) {
 
@@ -28,7 +29,7 @@ function MetadataSchemaUsedBys(props) {
             {showUsedByProperties ?
                 <>
                 <span className={compStyles.usedBys}>
-                    <p>This module is used by the following properties:</p>
+                    <p className={fontStyles.s}>This module is used by the following properties:</p>
                 </span>
                 {usedByProperties.map((usedByProperty, u) => <MetadataSchemaUsedBy key={u} property={usedByProperty}/>)}</> :
                 <p>This module is unused.</p>}
