@@ -10,7 +10,7 @@ import React from "react";
 
 // App dependencies
 import Banner from "./banner/banner";
-import DCP2Announcement from "./dcp2Announcement/dcp2Announcement";
+import AnnouncementCatalog from "./announcementCatalog/announcementCatalog";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import HCAMain from "./hcaMain/hcaMain";
@@ -55,7 +55,7 @@ class Layout extends React.Component {
                 <SEO description={description} pageTitle={pageTitle}/>
                 <div className={classNames(compStyles.site, {[compStyles.noScroll]: !scrollable})}>
                     <Header onHandleSiteScroll={this.onHandleSiteScroll} homePage={homePage} docPath={docPath}/>
-                    <DCP2Announcement/>
+                    <AnnouncementCatalog/>
                     <Banner position={"top"} healthy={healthy}/>
                     {homePage ? children :
                         <HCAMain activeLocation={activeLocation}
