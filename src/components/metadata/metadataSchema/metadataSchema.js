@@ -42,11 +42,9 @@ function MetadataSchema(props) {
             <a className={fontStyles.s} href={urlGitHub} rel="noopener noreferrer" target="_blank">{schemaName}</a>
             <MetadataToggleRequiredFields background/>
         </div>
+        <h3>Properties</h3>
         {showProperties ?
-            <>
-            <h3>Properties</h3>
-            <MetadataSchemaProperties properties={properties} schema={schema}/>
-            </> :
+            <MetadataSchemaProperties properties={properties} schema={schema}/> :
             <MetadataSchemaNoRequiredProperties/>}
         <MetadataSchemaUsedBys schema={schema}/>
         </>

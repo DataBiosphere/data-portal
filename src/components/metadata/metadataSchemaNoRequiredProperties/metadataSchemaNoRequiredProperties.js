@@ -18,7 +18,7 @@ class MetadataSchemaNoRequiredProperties extends React.Component {
     render() {
         return (
             <span className={compStyles.noResults}>
-                <p className={fontStyles.s}>There are no required fields for this module.</p>
+                <p className={fontStyles.s}>There are no required properties for this module.</p>
             </span>
         );
     }
