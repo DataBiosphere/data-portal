@@ -47,14 +47,14 @@
     order: 3;
 }
 
-/* Friendlies. */
-.result h5 {
-    margin-top: 0;
-}
-
 /* All text. */
 .result span {
     margin: 0;
+}
+
+/* First column - "required" chip. */
+.result > span:first-of-type > span + span {
+    margin: 4px 0;
 }
 
 /**
@@ -87,5 +87,10 @@
         border-left: 1px solid var(--blue-darkest);
         margin-left: 16px;
         padding-left: 16px;
+    }
+
+    /* First column - "required" chip. */
+    .result > span:first-of-type > span + span {
+        margin: 4px 0 0;
     }
 }

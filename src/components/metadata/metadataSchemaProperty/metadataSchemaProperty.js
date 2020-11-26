@@ -15,9 +15,9 @@ import MetadataRequired from "../metadataRequired/metadataRequired";
 import MetadataSchemaPropertyFieldDataType from "../metadataSchemaPropertyFieldDataType/metadataSchemaPropertyFieldDataType";
 import MetadataSchemaPropertyFieldDescription from "../metadataSchemaPropertyFieldDescription/metadataSchemaPropertyFieldDescription";
 import MetadataSchemaPropertyFieldExample from "../metadataSchemaPropertyFieldExample/metadataSchemaPropertyFieldExample";
+import MetadataSchemaPropertyFieldFriendlies from "../metadataSchemaPropertyFieldFriendlies/metadataSchemaPropertyFieldFriendlies";
 import MetadataSchemaPropertyFieldGraphRestriction from "../metadataSchemaPropertyFieldGraphRestriction/metadataSchemaPropertyFieldGraphRestriction";
 import MetadataSchemaPropertyFieldLabel from "../metadataSchemaPropertyFieldLabel/metadataSchemaPropertyFieldLabel";
-import MetadataSchemaPropertyFieldReference from "../metadataSchemaPropertyFieldReference/metadataSchemaPropertyFieldReference";
 import MetadataSchemaPropertyFieldPath from "../metadataSchemaPropertyFieldPath/metadataSchemaPropertyFieldPath";
 
 // Styles
@@ -28,10 +28,17 @@ const classNames = require("classnames");
 function MetadataSchemaProperty(props) {
 
     const {property} = props,
-        {anchor, urlTo} = property || {};
+        {anchor, propertyFriendlies, _ref, urlTo} = property || {};
     const {highlightValue} = useContext(ContextMetadataDisplaying);
     const [active, setActive] = useState(false);
     const showHighlighter = highlightValue === urlTo;
+    const showReference = !!_ref && propertyFriendlies;
+    const tertiary = showReference ? propertyFriendlies.length > 2 : false;
+    const classNamesSchemaProperty = classNames(
+        {[compStyles.reveal]: showHighlighter},
+        compStyles.schemaProperty,
+        {[compStyles.reference]: showReference},
+        {[compStyles.tertiary]: tertiary});
 
     const onMouseEnter = () => {
 
@@ -45,18 +52,21 @@ function MetadataSchemaProperty(props) {
 
     return (
         <>
-        <div id={anchor} className={classNames({[compStyles.reveal]: showHighlighter}, compStyles.schemaProperty)}>
-            <MetadataSchemaPropertyFieldReference property={property}/>
+        <div id={anchor} className={classNamesSchemaProperty}>
             <span>
-                <MetadataSchemaPropertyFieldLabel property={property}>
-                    <InternalLink anchor={anchor} relative/>
-                </MetadataSchemaPropertyFieldLabel>
-                <MetadataRequired property={property}/>
+                {showReference ?
+                    <MetadataSchemaPropertyFieldFriendlies property={property}>
+                        <InternalLink anchor={anchor} relative/>
+                    </MetadataSchemaPropertyFieldFriendlies> :
+                    <MetadataSchemaPropertyFieldLabel property={property}>
+                        <InternalLink anchor={anchor} relative/>
+                    </MetadataSchemaPropertyFieldLabel>}
+                    <MetadataRequired property={property}/>
             </span>
             <span onMouseEnter={() => onMouseEnter()}
                   onMouseLeave={() => onMouseLeave()}
                   role="presentation">
-                <MetadataSchemaPropertyFieldPath active={active} property={property} wrap/>
+                {showReference ? null : <MetadataSchemaPropertyFieldPath active={active} property={property} wrap/>}
                 <span>
                     <MetadataSchemaPropertyFieldDataType property={property}/>
                     <MetadataSchemaPropertyFieldDescription font={"s"} property={property}/>

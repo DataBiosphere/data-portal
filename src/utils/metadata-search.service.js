@@ -5,9 +5,6 @@
  * Service coordinating metadata search functionality.
  */
 
-/* Search input deny list. */
-export const DenyListInputs = ["^", "~", ":", "-", "+", "*", "\\"];
-
 // Template variables
 const AllowListScoreCriteria = ["description", "example", "classes", "ontologies", "schema", "pathSegmentFirst", "pathSegmentSecond", "path", "friendlyName"];
 const AllListScoreTypeEarlyBreakers = ["pathSegmentSecondFullMatch", "pathSegmentSecondSomeMatch", "pathSomeMatch", "friendlyNameFullMatch"];
@@ -29,7 +26,7 @@ export function buildResults(schemas, properties, setOfResults, resultKey, setOf
 
     if ( inputValue ) {
 
-        const queryStr = inputValue.toLowerCase().trim();
+        const queryStr = onHandleSpecialChars(inputValue).toLowerCase();
         const querySegmentDepth = getQuerySegmentDepth(queryStr);
 
         /* Filter the properties and schemas for any search hits. */
@@ -101,6 +98,29 @@ export function getSetOfSearchGroups() {
 }
 
 /**
+ * Handles input search values with special characters.
+ * Handles special searches for graph restrictions like ontologies, classes and relations where any value may include ":".
+ * Lunr typically uses the colon as field based searching. Use of the colon whilst searching for a specific ontology returns an error.
+ * See https://lunrjs.com/guides/searching.html.
+ *
+ * @param inputStr
+ * @returns {*}
+ */
+export function onHandleParseInputString(inputStr) {
+
+    if ( inputStr ) {
+
+        /* Handle case where input string includes ":". */
+        const searchStr = inputStr.trim().replace(/:/g, "_");
+
+        /* Handle case where input string has other special characters. */
+        return onHandleSpecialChars(searchStr);
+    }
+
+    return inputStr;
+}
+
+/**
  * Returns the next index (key) on the results list from the current index.
  *
  * @param currentIndex
@@ -136,6 +156,24 @@ export function onHandleSearchResultArrowUp(currentIndex, resultsDepth) {
 
     /* Go to end of list. */
     return resultsDepth;
+}
+
+/**
+ * Handles input value with other special characters - prevents lunr search error.
+ * Replaces any special characters with a non-space.
+ * Replaces any multiple spaces and trims - improves lunr search performance.
+ *
+ * @param inputStr
+ * @returns {*}
+ */
+export function onHandleSpecialChars(inputStr) {
+
+    if ( inputStr ) {
+
+        return inputStr.replace(/[`~!@#$%^&*()|\-+=\\\]}{["';?/><,]/g, "").replace(/\s\s+/g, " ").trim();
+    }
+
+    return inputStr;
 }
 
 /**

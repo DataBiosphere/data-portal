@@ -133,11 +133,11 @@ function getMetadataTOC(tocProperties) {
 
         if ( tocRequired ) {
 
-            tocName = `${property.name} *`;
+            tocName = `${property.label} *`;
         }
         else {
 
-            tocName = property.name;
+            tocName = property.label;
         }
 
         return buildTOC(anchor, tocDepth, tocName, tocRequired, "metadata");

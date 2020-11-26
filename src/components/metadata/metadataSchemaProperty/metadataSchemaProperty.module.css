@@ -8,12 +8,25 @@
 
 /* Property. */
 .schemaProperty {
+    --background-default: transparent;
     align-items: flex-start;
     border-top: 1px solid var(--gray-lightest);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     scroll-margin-top: 84px;
+}
+
+/* Property - reference - container. */
+.reference {
+    --background-default: var(--blue-light38);
+    background-color: var(--blue-light38);
+}
+
+/* Property - reference - tertiary or more. */
+.reference.tertiary {
+    --background-default: var(--black3);
+    background-color: var(--black3);
 }
 
 /* Property - highlight. */
@@ -24,7 +37,7 @@
 /* Animation - highlighter. */
 @-webkit-keyframes highlighter {
     0% {
-        background-color: transparent;
+        background-color: var(--background-default);
     }
     75% {
         background-color: var(--highlight);
@@ -43,7 +56,7 @@
         background-color: var(--highlight);
     }
     100% {
-        background-color: transparent;
+        background-color: var(--background-default);
     }
 }
 

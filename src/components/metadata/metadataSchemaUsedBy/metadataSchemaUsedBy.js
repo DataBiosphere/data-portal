@@ -17,9 +17,6 @@ import MetadataSchemaPropertyWordWrapper from "../metadataSchemaPropertyWordWrap
 
 // Styles
 import compStyles from "./metadataSchemaUsedBy.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
-
-const classNames = require("classnames");
 
 function MetadataSchemaUsedBy(props) {
 
@@ -28,19 +25,17 @@ function MetadataSchemaUsedBy(props) {
     const {onHandleNavigationHit} = useContext(ContextMetadataDisplaying);
 
     return (
-        <div className={compStyles.usedBy}>
-            <span>
-                <ClickHandler className={classNames(fontStyles.link, fontStyles.s)}
-                              clickAction={() => onHandleNavigationHit(property)}
-                              tag={"span"}>
-                    <MetadataSchemaPropertyWordWrapper font={"hcaCode"} word={propertyPath} wrap/>
-                </ClickHandler>
-            </span>
+        <ClickHandler className={compStyles.usedBy}
+                      clickAction={() => onHandleNavigationHit(property)}
+                      tag={"div"}>
             <span>
                 <MetadataSchemaPropertyFieldFriendlies property={property}/>
+            </span>
+            <span>
+                <MetadataSchemaPropertyWordWrapper font={"hcaCode"} word={propertyPath} wrap/>
                 <MetadataSchemaPropertyFieldDescription font={"xs"} property={property}/>
             </span>
-        </div>
+        </ClickHandler>
     )
 }
 

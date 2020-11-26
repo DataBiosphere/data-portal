@@ -20,7 +20,7 @@ const classNames = require("classnames");
 
 function MetadataSchemaPropertyFieldFriendlies(props) {
 
-    const {property, searchTerm} = props,
+    const {children, property, searchTerm} = props,
         {propertyFriendlies} = property || {};
     const showFriendlies = propertyFriendlies && propertyFriendlies.length > 0;
     const friendlyDepth = showFriendlies ? propertyFriendlies.length - 1 : 0;
@@ -28,17 +28,17 @@ function MetadataSchemaPropertyFieldFriendlies(props) {
     const Friendly = (props) => {
 
         const {counter, friendly, friendlyDepth} = props;
-        const lastSlash = counter === friendlyDepth;
-        const showSlash = !lastSlash;
-        const showHighlighter = searchTerm && lastSlash;
+        const lastFriendly = counter === friendlyDepth;
+        const showArrow = !lastFriendly;
+        const showHighlighter = searchTerm && lastFriendly;
 
         return (
             <span>
                 {showHighlighter ?
                     <Highlight term={searchTerm}><span>{friendly}</span></Highlight> :
                     <span>{friendly}</span>}
-                {showSlash ?
-                    <span> / </span> : null}
+                {showArrow ?
+                    <span className={compStyles.arrow}>></span> : children}
             </span>
         )
     };

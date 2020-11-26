@@ -11,6 +11,7 @@ import React, {useEffect, useRef, useState} from "react";
 
 // App dependencies
 import * as HighlightService from "../../utils/highlight.service";
+import * as MetadataSearchService from "../../utils/metadata-search.service";
 
 // Styles
 import compStyles from "./highlight.module.css";
@@ -28,7 +29,7 @@ function Highlight(props) {
 
         if ( term ) {
 
-            const regex = term
+            const regex = MetadataSearchService.onHandleSpecialChars(term)
                 .trim()
                 .split(/[.|_\s]/g)
                 .filter(term => !!term)
