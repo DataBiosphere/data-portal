@@ -32,7 +32,8 @@ let gtmEnvName = process.env.GATSBY_ENV_NAME;
 
 module.exports = {
     siteMetadata: {
-        title: 'HCA Data Portal'
+        title: 'HCA Data Portal',
+        siteUrl: `https://data.humancellatlas.org/`,
     },
     plugins: [
         {
@@ -50,6 +51,7 @@ module.exports = {
             },
         },
         `gatsby-plugin-react-svg`,
+        `gatsby-plugin-sitemap`,
         `gatsby-source-metadata`,
         {
             resolve: `gatsby-source-filesystem`,
