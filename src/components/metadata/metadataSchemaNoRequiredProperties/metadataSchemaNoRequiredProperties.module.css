@@ -8,10 +8,8 @@
 
 /* No results. */
 .noResults {
-    background-color: var(--black3);
     border-top: 1px solid var(--gray-lightest);
     display: flex;
-    margin-top: 24px;
     padding: 12px;
 }
 

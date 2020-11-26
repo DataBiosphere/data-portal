@@ -11,6 +11,10 @@ import React from "react";
 // App dependencies
 import MetadataSchemaUsedBy from "../metadataSchemaUsedBy/metadataSchemaUsedBy";
 
+// Styles
+import compStyles from "./metadataSchemaUsedBys.module.css";
+import fontStyles from "../../../styles/fontsize.module.css";
+
 function MetadataSchemaUsedBys(props) {
 
     const {schema} = props,
@@ -24,9 +28,11 @@ function MetadataSchemaUsedBys(props) {
             <h3>Used by</h3>
             {showUsedByProperties ?
                 <>
-                <p>This entity is used by the following properties:</p>
-                {usedByProperties.map((usedByProperty, u) => <MetadataSchemaUsedBy key={u} property={usedByProperty}/>)}
-                </> : <p>This entity is unused.</p>}
+                <span className={compStyles.usedBys}>
+                    <p className={fontStyles.s}>This module is used by the following properties:</p>
+                </span>
+                {usedByProperties.map((usedByProperty, u) => <MetadataSchemaUsedBy key={u} property={usedByProperty}/>)}</> :
+                <p>This module is unused.</p>}
             </> : null
     );
 }

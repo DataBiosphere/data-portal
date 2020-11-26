@@ -1,0 +1,18 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the HCA Data Portal metadata schema used bys component.
+ */
+
+/* Used bys. */
+.usedBys {
+    border-top: 1px solid var(--gray-lightest);
+    display: block;
+    padding: 12px;
+}
+
+/* All <p>. */
+.usedBys p {
+    margin: 0;
+}
