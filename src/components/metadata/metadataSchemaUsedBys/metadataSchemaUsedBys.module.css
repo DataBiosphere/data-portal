@@ -5,14 +5,14 @@
  * Style definitions specific to the HCA Data Portal metadata schema used bys component.
  */
 
-/* Used bys. */
-.usedBys {
+/* Used by. */
+.usedBy {
     border-top: 1px solid var(--gray-lightest);
     display: block;
     padding: 12px;
 }
 
 /* All <p>. */
-.usedBys p {
+.usedBy p {
     margin: 0;
 }
