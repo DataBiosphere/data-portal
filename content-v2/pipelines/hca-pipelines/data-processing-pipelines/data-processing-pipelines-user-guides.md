@@ -16,14 +16,16 @@ Data processing pipelines are each bespoke to the characteristics of the data th
 
 The following are pipelines in development or in production in this platform:
 
-| Pipeline Name | Data Type                                   | Description                                                                                                                            | Analysis Output                                     |
-|------------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
-| Smart-seq2    | Full transcript single-cell transcriptomics, paired or single- end, plate- or fluidigm-based | This pipeline currently supports the Smart-seq2 protocol as described [here](https://www.nature.com/articles/nprot.2014.006). Read more about the pipeline [here](/pipelines/smart-seq2-workflow).                              | Aligned BAM with tagsCounts Matrix (genes); QC Matrix |
-| Optimus | 3’ capture single-cell and single-nuclei transcriptomics      | This pipeline supports 3’ scRNA-Seq data from the 10x v2 and v3 assay | Aligned BAM with tagsCounts Matrix (genes); QC Matrix |
+| Pipeline Name | Data Type | Description | Analysis Output |
+| --- | --- | --- | --- |
+| Smart-seq2 | Full transcript single-cell transcriptomics, paired or single- end, plate- or fluidigm-based | This pipeline currently supports the Smart-seq2 protocol as described [here](https://www.nature.com/articles/nprot.2014.006). Read more about the pipeline [here](/pipelines/smart-seq2-workflow). | Aligned BAM with tagsCounts Matrix (genes); QC Matrix |
+| Optimus | 3’ capture single-cell and single-nuclei transcriptomics | This pipeline supports 3’ scRNA-Seq data from the 10x v2 and v3 assay. Read more about the pipeline [here](/pipelines/optimus-workflow). | Aligned BAM with tagsCounts Matrix (genes); QC Matrix |
 
+
+> Pipeline code and detailed documentation are hosted in the [WDL Analysis Research Pipelines (WARP)](https://github.com/broadinstitute/warp) repository on GitHub. 
 
 ## Access to Pipeline Outputs
-Matrices are publicly available and can be accessed through the HCA Data Browser.
+Matrices are publicly available and can be accessed through the HCA Data Browser or from the indvidiual Project page.
 
 
 

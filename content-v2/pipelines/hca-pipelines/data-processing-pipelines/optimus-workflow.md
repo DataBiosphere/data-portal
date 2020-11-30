@@ -7,7 +7,11 @@ description: "Overview of the HCA DCP Optimus analysis workflow."
 
 # Introduction to the Optimus Workflow
 
-The long-term goal of the Optimus workflow is to support any 3 prime single-cell or single- nuclei transcriptomics assay selected by the HCA project. Using the correct modularity, we hope to grow a generic pipeline that has specific modules to address differences in assays, while leveraging common code where steps of the assays are the same. We offer this as a community resource for community development and improvement. The workflow supports the [10x v2 and v3 gene expression assay](https://www.10xgenomics.com/solutions/single-cell/). Optimus has been validated for analyzing single-cell and [single-nuclei](https://docs.google.com/document/d/1rv2M7vfpOzIOsMnMfNyKB4HV18lQ9dnOGHK2tPikiH0/edit) from both [human](https://github.com/broadinstitute/warp/blob/master/pipelines/skylab/optimus/benchmarking/v1_Apr2019/optimus_report.rst) and [mouse](https://docs.google.com/document/d/1_3oO0ZQSrwEoe6D3GgKdSmAQ9qkzH_7wrE7x6_deL10/edit) data sets. 
+The long-term goal of the Optimus workflow is to support any 3 prime single-cell or single- nuclei transcriptomics assay selected by the HCA project. Using the correct modularity, we hope to grow a generic pipeline that has specific modules to address differences in assays, while leveraging common code where steps of the assays are the same. We offer this as a community resource for community development and improvement. 
+
+The workflow supports the [10x v2 and v3 gene expression assay](https://www.10xgenomics.com/solutions/single-cell/) and has been validated for analyzing single-cell and [single-nuclei](https://docs.google.com/document/d/1rv2M7vfpOzIOsMnMfNyKB4HV18lQ9dnOGHK2tPikiH0/edit) from both [human](https://github.com/broadinstitute/warp/blob/master/pipelines/skylab/optimus/benchmarking/v1_Apr2019/optimus_report.rst) and [mouse](https://docs.google.com/document/d/1_3oO0ZQSrwEoe6D3GgKdSmAQ9qkzH_7wrE7x6_deL10/edit) data sets. 
+
+> View the open source workflow code in the [WARP repository](https://github.com/broadinstitute/warp/tree/master/pipelines/skylab/optimus) on GitHub or read WARP's [Optimus Overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/) for the latest pipeline details.
 
 ## Commonalities Among Sequencing Assays
 
@@ -113,5 +117,13 @@ Outputs of the pipeline include:
 
 The Optimus pipeline is currently available on the cloud-based platform [Terra](https://app.terra.bio). If you have a Terra account, you can access the Featured Workspace using this address: https://app.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline. The workspace is preloaded with instructions and sample data. For more information on using the Terra platform, please view the [Support Center](https://support.terra.bio/hc/en-us).
 
+## Versioning
+All Optimus workflow versions are detailed in the [Optimus Changelog](https://github.com/broadinstitute/warp/blob/master/pipelines/skylab/optimus/Optimus.changelog.md) in GitHub. 
+
+> This documentation applies to Optimus v4.1.7 and later. If you are working with data processed with a previous version, please check the [Optimus changelog](https://github.com/broadinstitute/warp/blob/master/pipelines/skylab/optimus/Optimus.changelog.md) for any data processing changes that may be applicable to your data. 
+
+
 ## Learn More About Optimus
-For more detailed information about the Optimus pipeline, please see the [Optimus overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/) in the WARP repository documentation.
+For more detailed information about the Optimus pipeline, please see the [Optimus Overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/) in the WARP repository documentation.
+
+

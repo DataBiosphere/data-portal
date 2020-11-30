@@ -20,6 +20,7 @@ The SMART acronym, which stands for Switching Mechanism At the end of the 5’-e
 
 The Smart-seq2 pipeline processes data generated from plate- or fluidigm-based Smart-seq2 scRNA sequencing protocols. The pipeline is comprised of two modules: a quality control module, which generates post-alignment quality control metrics, and a transcriptome quantification module, which aligns reads to the transcriptome and estimates transcript expression levels. 
 
+> View the open source workflow code in the [WARP repository](https://github.com/broadinstitute/warp/tree/master/pipelines/skylab/smartseq2_multisample) on GitHub or read WARP's [Smart-seq2 Overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/) for the latest pipeline details.
 
 ## Quick Start Table
 
@@ -59,6 +60,11 @@ This second module uses RSEM (RNA-Seq by Expectation Maximization) to quantify t
 
 The Smart-seq2 pipeline is currently available on the cloud-based platform [Terra](https://app.terra.bio). If you have a Terra account, you can access the Featured Workspace using this address: https://app.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline. The workspace is preloaded with instructions and sample data. For more information on using the Terra platform, please view the [Support Center](https://support.terra.bio/hc/en-uso).
 
+## Versioning
+All Smart-seq2 Multi Sample workflow versions are detailed in the [Smart-seq2 Multi Sample Changelog](https://github.com/broadinstitute/warp/blob/master/pipelines/skylab/smartseq2_multisample/MultiSampleSmartSeq2.changelog.md) in GitHub. 
+
+> This documentation applies to Smart-seq2 Multi Sample v2.1.4 and later. If you are working with data processed with a previous version, please check the [Smart-seq2 Multi Sample Changelog](https://github.com/broadinstitute/warp/blob/master/pipelines/skylab/smartseq2_multisample/MultiSampleSmartSeq2.changelog.md) for any data processing changes that may be applicable to your data.
+
 ## Learn More About the Smart-seq2 Pipeline
 
-More detailed information about this pipeline can be found in the [Smart-seq2 overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Single_Sample_Pipeline/) in the WARP repository documentation.
+More detailed information about this pipeline can be found in the [Smart-seq2 Overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Single_Sample_Pipeline/) in the WARP repository documentation.

@@ -74,15 +74,15 @@ A partial example of a TSV file is listed below:
 
 ## Downloading Project DCP Generated Matrices
 
-Each project processed with DCP pipelines have DCP-generated count matrices.
+Each project processed with DCP pipelines have DCP-generated count matrices, which are separated by species, organ, and library construction method. 
 
-To download, navigate to the Project page and select the **"Project Matrices"** tab to the left. Scroll to identify the relevant matrix and then select the download icon. 
+To download, select the **"Project Matrices"** tab left of the Project page. Scroll to identify the relevant matrix and then select the download icon. 
  
-Count matrices are available in MTX, CSV, Loom formats (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files). 
+Count matrices are available in Loom format (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files). The columns in the count matrix represent cell-specific information while the rows represent gene-specific information. 
 
-> **MTX and CSV Matrix Deprecation Notice:** DCP 1.0 matrices will be deprecated once the DCP 1.0 Browser retires. Loom will be the default matrix format for all new and reprocessed DCP 2.0 datasets.
+The type of count (raw or TPM) available in the matrix depends on the pipeline used for data processing. Read more about Loom counts and metrics for [Optimus (10x data)](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/Loom_schema.html) or [SS2](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema.html). 
 
-The type of count (raw or TPM) available in the matrix depends on the pipeline used for data processing. Optimus (10x data) matrices include raw counts whereas Smart-seq2 matrices include TPMs. 
+DPC Generated Matrices also contain a subset of the available ingested metadata for the project. To learn more about the metadata available in the Loom, see the [DCP Matrix Overview](/guides/userguides/matrices).
  
 
 ## Downloading Project Contributor Generated Matrices
