@@ -26,13 +26,13 @@ function MetadataSchemaUsedBys(props) {
         showUsedBy ?
             <>
             <h3>Used by</h3>
+            <span className={compStyles.usedBy}>
+                {showUsedByProperties ?
+                    <p className={fontStyles.s}>This module is used by the following properties:</p> :
+                    <p className={fontStyles.s}>This module is unused.</p>}
+            </span>
             {showUsedByProperties ?
-                <>
-                <span className={compStyles.usedBys}>
-                    <p className={fontStyles.s}>This module is used by the following properties:</p>
-                </span>
-                {usedByProperties.map((usedByProperty, u) => <MetadataSchemaUsedBy key={u} property={usedByProperty}/>)}</> :
-                <p>This module is unused.</p>}
+                usedByProperties.map((usedByProperty, u) => <MetadataSchemaUsedBy key={u} property={usedByProperty}/>) : null}
             </> : null
     );
 }

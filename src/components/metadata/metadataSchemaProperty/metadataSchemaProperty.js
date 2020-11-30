@@ -19,11 +19,8 @@ import MetadataSchemaPropertyFieldFriendlies from "../metadataSchemaPropertyFiel
 import MetadataSchemaPropertyFieldGraphRestriction from "../metadataSchemaPropertyFieldGraphRestriction/metadataSchemaPropertyFieldGraphRestriction";
 import MetadataSchemaPropertyFieldLabel from "../metadataSchemaPropertyFieldLabel/metadataSchemaPropertyFieldLabel";
 import MetadataSchemaPropertyFieldPath from "../metadataSchemaPropertyFieldPath/metadataSchemaPropertyFieldPath";
-
-// Styles
-import compStyles from "./metadataSchemaProperty.module.css";
-
-const classNames = require("classnames");
+import MetadataSchemaPropertyPanel from "../metadataSchemaPropertyPanel/metadataSchemaPropertyPanel";
+import MetadataSchemaPropertyPanelBundle from "../metadataSchemaPropertyPanelBundle/metadataSchemaPropertyPanelBundle";
 
 function MetadataSchemaProperty(props) {
 
@@ -31,14 +28,9 @@ function MetadataSchemaProperty(props) {
         {anchor, propertyFriendlies, _ref, urlTo} = property || {};
     const {highlightValue} = useContext(ContextMetadataDisplaying);
     const [active, setActive] = useState(false);
-    const showHighlighter = highlightValue === urlTo;
-    const showReference = !!_ref && propertyFriendlies;
-    const tertiary = showReference ? propertyFriendlies.length > 2 : false;
-    const classNamesSchemaProperty = classNames(
-        {[compStyles.reveal]: showHighlighter},
-        compStyles.schemaProperty,
-        {[compStyles.reference]: showReference},
-        {[compStyles.tertiary]: tertiary});
+    const highlighter = highlightValue === urlTo;
+    const secondary = !!_ref && propertyFriendlies;
+    const tertiary = secondary ? propertyFriendlies.length > 2 : false;
 
     const onMouseEnter = () => {
 
@@ -51,10 +43,13 @@ function MetadataSchemaProperty(props) {
     };
 
     return (
-        <>
-        <div id={anchor} className={classNamesSchemaProperty}>
-            <span>
-                {showReference ?
+        <MetadataSchemaPropertyPanel border
+                                     highlighter={highlighter}
+                                     identifier={anchor}
+                                     secondary={secondary}
+                                     tertiary={tertiary}>
+            <MetadataSchemaPropertyPanelBundle>
+                {secondary ?
                     <MetadataSchemaPropertyFieldFriendlies property={property}>
                         <InternalLink anchor={anchor} relative/>
                     </MetadataSchemaPropertyFieldFriendlies> :
@@ -62,11 +57,10 @@ function MetadataSchemaProperty(props) {
                         <InternalLink anchor={anchor} relative/>
                     </MetadataSchemaPropertyFieldLabel>}
                     <MetadataRequired property={property}/>
-            </span>
-            <span onMouseEnter={() => onMouseEnter()}
-                  onMouseLeave={() => onMouseLeave()}
-                  role="presentation">
-                {showReference ? null : <MetadataSchemaPropertyFieldPath active={active} property={property} wrap/>}
+            </MetadataSchemaPropertyPanelBundle>
+            <MetadataSchemaPropertyPanelBundle onHandleMouseEnter={() => onMouseEnter()}
+                                               onHandleMouseLeave={() => onMouseLeave()}>
+                {secondary ? null : <MetadataSchemaPropertyFieldPath active={active} property={property} wrap/>}
                 <span>
                     <MetadataSchemaPropertyFieldDataType property={property}/>
                     <MetadataSchemaPropertyFieldDescription font={"s"} property={property}/>
@@ -74,9 +68,8 @@ function MetadataSchemaProperty(props) {
                     <MetadataSchemaPropertyFieldExample font={"s"} property={property}/>
                 </span>
                 <MetadataSchemaPropertyFieldGraphRestriction property={property}/>
-            </span>
-        </div>
-        </>
+            </MetadataSchemaPropertyPanelBundle>
+        </MetadataSchemaPropertyPanel>
     );
 }
 
