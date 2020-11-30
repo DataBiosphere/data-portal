@@ -74,15 +74,15 @@ A partial example of a TSV file is listed below:
 
 ## Downloading Project DCP Generated Matrices
 
-Each project processed with DCP pipelines have DCP-generated count matrices.
+Each project processed with DCP pipelines has DCP-generated count matrices.
 
-To download, navigate to the Project page and select the **"Project Matrices"** tab to the left. Scroll to identify the relevant matrix and then select the download icon. 
+To download Project matrices, navigate to the Project page and select the **"Project Matrices"** tab to the left. Scroll to identify the relevant matrix and then select the download icon. 
  
 Count matrices are available in MTX, CSV, Loom formats (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files). 
 
-> **MTX and CSV Matrix Deprecation Notice:** DCP 1.0 matrices will be deprecated once the DCP 1.0 Browser retires. Loom will be the default matrix format for all new and reprocessed DCP 2.0 datasets.
+> **DCP 1.0 Matrix Deprecation Notice:** The DCP is reprocessing DCP 1.0 data and will deprecate all DCP 1.0 matrices (MTX, CSV, and Loom files) once reprocessing is complete. All reprocessed and newly processed datasets in the DCP 2.0 will have matrices in Loom format only. 
 
-The type of count (raw or TPM) available in the matrix depends on the pipeline used for data processing. Optimus (10x data) matrices include raw counts whereas Smart-seq2 matrices include TPMs. 
+The type of count (raw or TPM) available in the matrix depends on the pipeline used for data processing. DCP 1.0 matrices generated with Optimus (10x data) include raw counts whereas matrices generated with Smart-seq2 include TPMs. 
  
 
 ## Downloading Project Contributor Generated Matrices
