@@ -9,8 +9,10 @@
 import React from "react";
 
 // App dependencies
-import Banner from "./banner/banner";
 import AnnouncementCatalog from "./announcementCatalog/announcementCatalog";
+import AnnouncementDCP2ComingSoon from "./announcementDCP2ComingSoon/announcementDCP2ComingSoon";
+import Banner from "./banner/banner";
+import * as EnvironmentServices from "../utils/environment/environment.service";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import HCAMain from "./hcaMain/hcaMain";
@@ -49,13 +51,14 @@ class Layout extends React.Component {
         const {activeLocation, children, description, docPath, healthy, homePage, homeTab,
             metadataContent, nav, pageTitle, sectionTitle} = this.props;
         const {scrollable, supportRequestActive} = this.state;
+        const v2 = EnvironmentServices.isV2();
         return (
             <div>
                 <PageHead pageTitle={pageTitle}/>
                 <SEO description={description} pageTitle={pageTitle}/>
                 <div className={classNames(compStyles.site, {[compStyles.noScroll]: !scrollable})}>
                     <Header onHandleSiteScroll={this.onHandleSiteScroll} homePage={homePage} docPath={docPath}/>
-                    <AnnouncementCatalog/>
+                    {v2 ? <AnnouncementCatalog/> : <AnnouncementDCP2ComingSoon/>}
                     <Banner position={"top"} healthy={healthy}/>
                     {homePage ? children :
                         <HCAMain activeLocation={activeLocation}

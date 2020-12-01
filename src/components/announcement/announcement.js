@@ -12,13 +12,15 @@ import React from "react";
 import compStyles from "./announcement.module.css";
 import fontStyles from "../../styles/fontsize.module.css";
 
+let classNames = require("classnames");
+
 class Announcement extends React.Component {
 
     render() {
         const {children} = this.props;
         return (
             <div className={compStyles.announcement}>
-                <p className={fontStyles.m}>
+                <p className={classNames(fontStyles.m, compStyles.announcementContent)}>
                     {children}
                 </p>
             </div>

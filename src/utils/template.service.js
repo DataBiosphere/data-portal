@@ -40,7 +40,7 @@ export function getPageTitle(htmlAst) {
  */
 export function getPageEditUrl(slug) {
 
-    const version = EnvironmentService.isCGLEnvironment() ? "-v2" : "";
+    const version = EnvironmentService.isV2() ? "-v2" : "";
     return `https://github.com/HumanCellAtlas/data-portal/tree/staging/content${version}${slug}.md`;
 }
 
