@@ -13,7 +13,7 @@
     padding: 20px 16px; /* Site gutter */
 }
 
-.announcement p {
+.announcement .announcementContent {
     margin-bottom: 0;
 }
 

@@ -35,7 +35,7 @@ export function getCurrentEnvironmentURL() {
  *
  * @returns {number}
  */
-export function isCGLEnvironment() {
+export function isV2() {
 
     const contentVersion = Number(process.env.GATSBY_CONTENT_VERSION);
 

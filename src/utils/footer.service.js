@@ -40,7 +40,7 @@ function filterFooterLinks(links) {
 
         if ( path === "/status" ) {
 
-            return !EnvironmentService.isCGLEnvironment();
+            return !EnvironmentService.isV2();
         }
 
         return true;

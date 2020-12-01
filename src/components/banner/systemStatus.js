@@ -22,7 +22,7 @@ let classNames = require("classnames");
 class SystemStatus extends React.Component {
 
     render() {
-        const showStatusLink = !EnvironmentService.isCGLEnvironment();
+        const showStatusLink = !EnvironmentService.isV2();
         return (
             <div className={compStyles.systemStatus}>
                 <div className={classNames(globalStyles.bannerWrapper, compStyles.systemStatusWrapper)}>
