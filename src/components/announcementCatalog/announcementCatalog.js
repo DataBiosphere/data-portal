@@ -17,7 +17,7 @@ import compStyles from "./announcementCatalog.module.css";
 
 function AnnouncementCatalog() {
 
-    const dcp2ComingSoonPath = "/coming-soon-DCP-2-with-support-for-controlled-access-data";
+    const dcp2ComingSoonPath = "/dcp-updates";
     const dcp2PreviewPath = `${process.env.GATSBY_EXPLORE_URL}projects?catalog=dcp2`;
     return (
         <Announcement>
