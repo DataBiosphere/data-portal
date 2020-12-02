@@ -10,10 +10,10 @@ description: "Overview of exploring projects in the HCA Data Browser."
 
 Projects are a basic unit of data organization in the HCA Data Coordination Platform (HCA DCP). Project contributors contribute raw sequencing and associated [files](/metadata/dictionary/file/sequence_file) along with rich metadata describing:
 
-  1. the  [origin and type of the cells](/metadata/dictionary/biomaterial/cell_line) used in the project
-  1. the [processes](/metadata/dictionary/process/analysis_process) and [protocols](/metadata/dictionary/protocol/aggregate_generation_protocol) used to collect and process the cells prior to sequencing
-  1. the  [sequencing](/metadata/dictionary/protocol/sequencing_protocol)  methods used
-  1. details about the [project](/metadata/dictionary/project/project) contributors and their institutions
+1. the [origin and type of the cells](/metadata/dictionary/biomaterial/cell_line) used in the project
+1. the [processes](/metadata/dictionary/process/analysis_process) and [protocols](/metadata/dictionary/protocol/aggregate_generation_protocol) used to collect and process the cells prior to sequencing
+1. the [sequencing](/metadata/dictionary/protocol/sequencing_protocol) methods used
+1. details about the [project](/metadata/dictionary/project/project) contributors and their institutions
  
 [Metadata](/metadata/dictionary/process/analysis_process) about [analyses](/pipelines) performed by the HCA DCP are also added to the project during project ingest.
 
@@ -31,21 +31,14 @@ Selecting a project title on the project list takes you to the project's detail 
 ![Viewing Project Details](../_images/exploring-projects-project-detail.png "Project Detail")
 **Figure 2**: A project detail page showing the various information and downloads available for the project.
 
-
 The project detail page contains:
 
 1. the project title and description
-
 1. contributor information, collaborating organizations, and project contacts
-
-1. any publications or accessions associated with the project 
-
-1. project details such as species, organ and library construction method 
-
+1. any publications or accessions associated with the project
+1. project details such as species, organ and library construction method
 1. counts of input, analysis and matrix files
-
 1. a project metadata download
-
 1. a project expression matrix download (if available)
 
 ## Downloading Project Metadata
@@ -75,11 +68,10 @@ A partial example of a tsv file is listed below:
 ## Downloading Project Expression Matrices
 
 For projects with supported library construction approaches, the project detail page will also contain a link to download expression matrices pre-generated for the project by the HCA Matrix Service.
- 
- Expression matrices are available in [.loom](http://loompy.org/), [.csv](https://en.wikipedia.org/wiki/Comma-separated_values) and [.mtx](https://math.nist.gov/MatrixMarket/formats.html) formats and also contain a subset of the available ingest metadata for the project. 
- 
- The rows in the expression matrix represent cells, columns give the expression value for the column's gene.
+
+Expression matrices are available in [.loom](http://loompy.org/), [.csv](https://en.wikipedia.org/wiki/Comma-separated_values) and [.mtx](https://math.nist.gov/MatrixMarket/formats.html) formats and also contain a subset of the available ingest metadata for the project.
+
+The rows in the expression matrix represent cells, columns give the expression value for the column's gene.
 
 ![Partial Expression Matrix](../_images/exploring-projects-expression-matrix.png "Expression Matrix")
-**Figure 5**: A partial view of a project's expression matrix in csv format. 
-
+**Figure 5**: A partial view of a project's expression matrix in csv format.
