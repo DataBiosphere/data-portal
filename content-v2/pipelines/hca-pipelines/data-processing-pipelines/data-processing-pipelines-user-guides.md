@@ -25,7 +25,7 @@ The following are pipelines in development or in production in this platform:
 > Pipeline code and detailed documentation are hosted in the [WDL Analysis Research Pipelines (WARP)](https://github.com/broadinstitute/warp) repository on GitHub. 
 
 ## Access to Pipeline Outputs
-Matrices are publicly available and can be accessed through the HCA Data Browser or from the indvidiual Project page.
+Matrices are publicly available and can be accessed through the HCA Data Browser or from the individual Project page.
 
 
 
