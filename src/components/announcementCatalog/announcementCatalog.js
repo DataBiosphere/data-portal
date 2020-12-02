@@ -24,7 +24,7 @@ function AnnouncementCatalog() {
             <span className={compStyles.catalog}>
                 <span><strong>Update: </strong>A preview of the HCA DCP 2.0 data is now available.</span>
                 <span>
-                    <a href={dcp2PreviewPath}>View DCP 2.0 Preview</a>
+                    <a href={dcp2PreviewPath}>View DCP 2.0 Data Preview</a>
                     <span>|</span>
                     <Link to={dcp2ComingSoonPath}>Learn More</Link>
                 </span>
