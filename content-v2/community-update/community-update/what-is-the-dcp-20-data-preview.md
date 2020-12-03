@@ -14,7 +14,7 @@ The DCP 2.0 Data Preview is a separate data view enabling you to explore and acc
 
 **DCP 1.0 View**:
 
-The [DCP 1.0 View](link) lists all the original DCP (DCP 1.0) projects. 
+The [DCP 1.0 View](https://dcp2.data.humancellatlas.org/explore/projects?filter=%5B%7B%22facetName%22:%22genusSpecies%22,%22terms%22:%5B%22Homo%20sapiens%22%5D%7D%5D&catalog=dcp1) lists all the original DCP (DCP 1.0) projects. 
 From this view, you can:
 Access raw data for DCP 1.0 projects
 Access DCP 1.0 processed data generated with standardized pipelines (BAMs, etc.)
@@ -22,7 +22,7 @@ Download DCP 1.0 project matrices (in CSV, MTX, and Loom formats)
 
 **DCP 2.0 Data Preview**:
 
-The [DCP 2.0 Data Preview](link) lists all DCP projects, including the 16 new DCP 2.0 projects.
+The [DCP 2.0 Data Preview](https://dcp2.data.humancellatlas.org/explore/projects?filter=%5B%7B%22facetName%22:%22genusSpecies%22,%22terms%22:%5B%22Homo%20sapiens%22%5D%7D%5D&catalog=dcp2) lists all DCP projects, including the 16 new DCP 2.0 projects.
 From this view, you can:
 Access the raw data for all DCP projects; for DCP 1.0 projects, this raw data is the same as that in the DCP 1.0 view 
 Download the new optional contributor-generated matrices for each project
