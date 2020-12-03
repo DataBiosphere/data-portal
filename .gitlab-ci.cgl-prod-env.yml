@@ -1,0 +1,82 @@
+
+stages:
+  - test
+  - build
+  - deploy
+
+cache:
+  paths:
+  - node_modules/
+
+# Build Jobs
+# Build Job Template
+.build_template: &build_template
+  image: node:10.16.0
+  stage: build
+  before_script:
+    - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
+    - git clone https://github.com/HumanCellAtlas/humancellatlas.github.io
+    - npm install npm@6.9.0 -g
+    - npm -v
+    - npm install gatsby-cli@2.8.3 --global
+    - npm install
+  artifacts:
+      paths:
+        - public
+        - maintenance
+
+# Test with Trufflehog
+test_trufflehog:
+  stage: test
+  image: python:3.5
+  before_script:
+    - pip install trufflehog
+  script:
+    - trufflehog --regex --rules trufflehog-rules.json --branch master --entropy=False --max_depth 30 https://github.com/HumanCellAtlas/data-portal.git
+  only:
+    - master
+
+# Develop Build
+build_master:
+  <<: *build_template
+  environment:
+    name: prod
+  script:
+    - export GATSBY_EXPLORE_URL=https://dcp2.data.humancellatlas.org/explore/
+    - export GATSBY_FILE_SUMMARY_API_URL=https://service.azul.data.humancellatlas.org/index/summary
+    - export GATSBY_TERM_FACETS_API_URL=https://service.azul.data.humancellatlas.org/index/projects
+    - export GATSBY_SYSTEM_HEALTH_CHECK_API_URL=https://service.azul.data.humancellatlas.org/health/progress
+    - export GATSBY_SYSTEM_STATUS_URL=https://status.data.humancellatlas.org/
+    - export GATSBY_GTM_ID=GTM-M2J5NTJ
+    - export GATSBY_GTM_AUTH=xm3qglWPEFim7Lb4AxXnsA
+    - export GATSBY_ENV_NAME=env-2
+    - export GATSBY_ENV=PROD
+    - export GATSBY_CONTENT_VERSION=2
+    - gatsby build
+  only:
+    - master
+
+########################################
+# Deploy Jobs
+########################################
+
+# Deploy Job Template
+.deploy_template: &deploy_template
+  stage: deploy
+  image: python:3.5
+  before_script:
+    - pip install awscli
+
+# Prod Deploy
+deploy_master:
+  <<: *deploy_template
+  environment:
+    name: prod
+  script:
+    - export BUCKET=s3://org-humancellatlas-data-portal-dcp2-prod/
+    - if [ "$MAINTENANCE" = "true" ];then export SRCDIR=maintenance/; else export SRCDIR=public/; fi
+    - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
+    - aws cloudfront create-invalidation --distribution-id E1LYQC3LZXO7M3 --paths "/*"
+  only:
+    - master
+
