@@ -18,12 +18,13 @@ This initial launch -- the first of several planned to roll out new functionalit
 * Raw data and contributor matrices for **16 new projects**!  
 
 **What’s included in the new projects?**
+
 The new projects include a mix of human and mouse data from a variety of organs and encompass:
 * 143 donors
 * 248 specimens
 * estimated 950,600 cells
 
-> View the new projects using the [DCP 2.0 Data Preview](/what-is-the-dcp-20-data-preview)**
+> View the new projects using the **[DCP 2.0 Data Preview](/what-is-the-dcp-20-data-preview)**
 
 **What’s included in the DCP 2.0 infrastructure updates?**
 
