@@ -29,6 +29,13 @@ From this view, you can:
 - When available, access data generated with updated DCP standardized pipelines
 - When available, download the newly processed DCP-generated matrices (Loom format only)
 
+**Switching between DCP 1.0 Data and DCP 2.0 Data Preview**
+
+Use the banner at the top of the Data Portal to switch between the two views:
+
+![Data Preview](../../guides/_images/data_preview_2.png "Data Preview")
+
+
 As we continue to (re)process old and new DCP projects, we will incrementally add the newly processed data and DCP-generated matrices to the DCP 2.0 Data Preview. 
 
 Once processing is complete, we will retire the DCP 1.0 View. 
