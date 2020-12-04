@@ -11,4 +11,4 @@ The HCA DCP Data Browser API specifies a REST web service for querying metadata 
   
 Data Browser API provides a uniform view of the metadata over a range of diverse schemas, effectively shielding clients from changes in the schema as they occur over time. 
 
-The API specificatoin is located at: https://service.dev.singlecell.gi.ucsc.edu/
+The Data Browse API specification is located at: [https://service.azul.data.humancellatlas.org/](https://service.azul.data.humancellatlas.org).
