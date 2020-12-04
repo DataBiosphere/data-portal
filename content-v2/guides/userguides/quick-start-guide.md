@@ -30,12 +30,27 @@ This will open a new page giving you the option to:
 To download the raw and processed data: 
 
 1. Go to **Download Selected Data Using 'curl'** and select **Start** 
-1. Select the files to include in the download- the download dialog box gives you the option to further refine the types of files 
-1. Select **Request curl Command**
 
-After a few seconds, a new window with a curl command will open. Paste this curl command in your local or cloud-based terminal to download the data. 
+![Export Data](../_images/Export_selected_data.png "Export Selected Data")
+
+2. Select the files to include in the download- the download dialog box gives you the option to further refine the types of files 
+
+![Select Files](../_images/select_file_types.png "Select Files")
+
+
+3. Select **Request curl Command**
+
+After a few seconds, a new window with a curl command will open. 
+
+
+![curl command](../_images/curl_command.png "curl command")
+
+
+Paste this curl command in your local or cloud-based terminal to download the data. 
 
 After downloading the data files, return to the **Export Selected Data** page using the back icon to download the metadata (see step-by-step instructions below).
+
+![Back icon](../_images/back_icon.png "back icon")
 
 #### Downloading Metadata in a Data Manifest
 Once you have downloaded the selected data files, you can download all the metadata associated with the cross-project data files. 
@@ -44,12 +59,17 @@ This metadata, also called a "Data Manifest" is in TSV file format and lists all
 
 To download the metadata from the **Export Selected Data** page:
 
-1. Go to **Download a File Manifest with Metadata for the Selected Data** and select **Start**.
-1. Select the file types to include in the manifest; the default selection will be the same as what you selected for the data download
-1. Select **Prepare Manifest**
+1. Go to **Download a File Manifest with Metadata for the Selected Data** and select **Start**
+![Export Manifest](../_images/Export_selected_manifest.png "Export Manifest")
+
+2. Select the file types to include in the manifest; the default selection will be the same as what you selected for the data download
+
+3. Select **Prepare Manifest**
+
+![Prepare Manifest](../_images/prepare_manifest.png "Prepare Manifest")
+
 
 When selecting file types for the metadata manifest, note that the listed **File Sizes** are for the actual data files and not for the manifest itself. 
-
 
 The format of the manifest file (TSV) is a simple tab separated text file, with the first line representing the header title for each column. It is OK to remove rows for unwanted files but the header row must remain, and the columns should remain the same.
 
