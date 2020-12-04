@@ -39,7 +39,7 @@ Learn more about the differences between the DCP 1.0 Data view and the DCP 2.0 P
 
 Selecting a project title on the project list takes you to the project's information page. 
 
-![Viewing Project Information](../_images/project_information.png "Project /Information")
+![Viewing Project Information](../_images/Project_information.png "Project /Information")
 
 The project information page contains:
 

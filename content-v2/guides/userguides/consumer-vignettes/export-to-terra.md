@@ -18,30 +18,30 @@ below.
 
 You should also be acquainted with the content in this tutorial:
 
--   [Accessing HCA Data and Metadata][quick-start-guide]
+-   [Accessing HCA Data and Metadata](../quick-start-guide)
 
-Terra [recommends the Google Chrome browser][terra-register], which we
+Terra [recommends the Google Chrome browser](https://support.terra.bio/hc/en-us/articles/360028235911), which we
 follow in this tutorial.
 
 Overview of Terra
 -----------------
 
-[Terra][terra] is a scalable cloud platform for biomedical research. Terra offers the
+[Terra](https://app.terra.bio/) is a scalable cloud platform for biomedical research. Terra offers the
 ability to use data, tools, and workflows to do interactive analysis in the 
 cloud. To start using Terra, visit <https://app.terra.bio>.
 
-For more information about how to use Terra, visit the [Terra Support][terra-support] page.
+For more information about how to use Terra, visit the [Terra Support](https://support.terra.bio/hc/en-us) page.
 
-To register for a Terra account, see [How to register for a Terra account][terra-register].
+To register for a Terra account, see [How to register for a Terra account](https://support.terra.bio/hc/en-us/articles/360028235911).
 
 Overview of Dockstore
 ---------------------
 
-[Dockstore][dockstore] is a platform for sharing bioscience tools by wrapping them in Docker
+[Dockstore](https://dockstore.org/) is a platform for sharing bioscience tools by wrapping them in Docker
 containers and describing their use with high-level workflow languages like the Common Workflow
 Language (CWL) and the Workflow Description Language (WDL).
 
-For more information about how to use the Dockstore, see the [Dockstore documentation][dockstore-doc].
+For more information about how to use the Dockstore, see the [Dockstore documentation](https://docs.dockstore.org/en/develop/).
 
 Step one: finding BAM files with the HCA Data Explorer
 ------------------------------------------------------
