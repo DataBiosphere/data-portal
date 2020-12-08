@@ -26,7 +26,9 @@ function MetadataSchemaPropertyFieldDataType(props) {
     return (
         <span className={classNames(compStyles.dataType, fontStyles.s)}>
             <span> (</span>
-            {referenceFromLink ? <Link to={referenceFromLink}>{dataType}</Link> : <span>{dataType}</span>}
+            {referenceFromLink ?
+                <span><Link to={referenceFromLink}>{dataType}</Link> array</span> :
+                <span>{dataType}</span>}
             <MetadataSchemaPropertyFieldFromRef property={property}/>
             <span>) </span>
         </span>
