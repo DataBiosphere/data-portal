@@ -151,10 +151,10 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-embed-video`,
                         options: {
-                            ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+                            ratio: 1.77, // Defaults to 16/9 = 1.77
                             height: 316,
-                            width: 560,
-                            related: false //Optional: Will remove related videos from the end of an embedded YouTube video.
+                            width: 800,
+                            related: false // Removes related videos from the end of an embedded YouTube video.
                         }
                     },
                     {
@@ -167,7 +167,7 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
-                            maxWidth: 640,
+                            maxWidth: 1000,
                             linkImagesToOriginal: false
                         }
                     },
