@@ -13,7 +13,7 @@ import React from 'react';
 import ExploreData from '../components/explore/exploreData';
 import Layout from '../components/layout';
 import SearchBrowser from '../components/searchBrowser/searchBrowser';
-import * as FileSummaryService from '../utils/fileSummary.service';
+import * as FileSummaryService from '../utils/explore/fileSummary.service';
 import * as ReleaseService from '../utils/release.service';
 import * as SystemService from '../utils/system.service';
 import * as numberFormatter from '../utils/number-format.service';
