@@ -9,7 +9,20 @@
 import { GAAction } from "./ga-action.model";
 import { GACategory } from "./ga-category.model";
 import { GADimension } from "./ga-dimension.model";
+import {GAEntityType} from "./ga-entity-type.model";
 import * as GTMService from "../gtm/gtm.service";
+
+/**
+ * Create and send a GA tracking event generated from a click on a catalog from the announcement banner.
+ *
+ * @param {string} catalog
+ */
+export function trackCatalogViewed(catalog) {
+
+    GTMService.trackEvent(GACategory.CATALOG, GAAction.VIEW_CATALOG, catalog, {
+        [GADimension.ENTITY_TYPE]: GAEntityType.CATALOG,
+    });
+}
 
 /**
  * Track input of search text.

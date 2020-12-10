@@ -6,5 +6,6 @@
  */
 
 export const GACategory = {
+    "CATALOG": "Catalog",
     "SEARCH": "Search"
 };
