@@ -21,14 +21,13 @@ const classNames = require("classnames");
 function MetadataSchemaPropertyFieldDataType(props) {
 
     const {property} = props,
-        {dataType, referenceFromLink} = property || {};
+        {dataType, referenceFrom, referenceFromLink} = property || {};
 
     return (
         <span className={classNames(compStyles.dataType, fontStyles.s)}>
             <span> (</span>
-            {referenceFromLink ?
-                <span><Link to={referenceFromLink}>{dataType}</Link> array</span> :
-                <span>{dataType}</span>}
+            {referenceFromLink ? <Link to={referenceFromLink}>{referenceFrom} </Link> : null}
+            <span>{dataType}</span>
             <MetadataSchemaPropertyFieldFromRef property={property}/>
             <span>) </span>
         </span>

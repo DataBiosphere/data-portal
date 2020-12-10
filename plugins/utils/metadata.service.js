@@ -263,7 +263,7 @@ function buildFEModelSchemaProperties(schemaName, schemaJSON, schemaFilePath, pr
         const required = requiredProperties.includes(propertyName);
         /* Fields - continued - built from other fields. */
         const anchor = getPropertyAnchor(propertyPaths);
-        const dataType = getPropertyDataType(propertyJSON, reference);
+        const dataType = getPropertyDataType(propertyJSON);
         const example = getPropertyExample(propertyJSON);
         const propertyFriendlies = getPropertyFriendlies(propFriendlies, label);
         const graphRestriction = getPropertyGraphRestriction(propertyJSON);
@@ -407,21 +407,9 @@ function getPropertyAnchor(propertyPaths) {
  * Returns the property data type field - DP metadata specific field for the metadata pages.
  *
  * @param propertyJSON
- * @param reference
  * @returns {*}
  */
-function getPropertyDataType(propertyJSON, reference) {
-
-    /* If the property JSON references another schema, return the referenced schema as the type. */
-    if ( reference ) {
-
-        const {referenceFrom} = reference || {};
-
-        if ( referenceFrom ) {
-
-            return referenceFrom;
-        }
-    }
+function getPropertyDataType(propertyJSON) {
 
     const {enum: propertyEnum, items, type} = propertyJSON || {};
 
