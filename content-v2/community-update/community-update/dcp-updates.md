@@ -6,23 +6,23 @@ description: "Latest updates for the HCA Data Coordinaton Platform (DCP)."
 
 # DCP Platform Updates
 
-#### December 7, 2020
+#### December 11, 2020
 
 ### DCP 2.0 launches; new projects, contributor generated matrices and DCP 2.0 infrastructure
 
 In the spirit of bringing HCA data to the community as quickly as possible, we are releasing the new DCP 2.0 data and infrastructure incrementally. 
 
 This initial launch -- the first of several planned to roll out new functionality, pipelines, and data -- includes: 
+* Raw data and standardized metadata for 5.8 million cells 
+* Contributor-generated matrices, embeddings, and annotations for existing and **16 new DCP projects**
 * New DCP 2.0 infrastructure (details below)
-* Optional contributor-generated matrices, embeddings, and annotations for all DCP projects
-* Raw data and contributor matrices for **16 new projects**!  
 
 **What’s included in the new projects?**
 
-The new projects include a mix of human and mouse data from a variety of organs and encompass:
+The new projects include a mix of human and mouse data from a variety of organs including adipose tissue, heart, hindlimb, spleen skin, yolk sac, diaphragm, tongue, trachea and more. These data encompass:
 * 143 donors
 * 248 specimens
-* estimated 950,600 cells
+* estimated 1.3M additional cells
 
 > View the new projects using the **[DCP 2.0 Data Preview](/what-is-the-dcp-20-data-preview)**
 
@@ -40,7 +40,11 @@ Along with the new data view we have updated DCP infrastructure by **retiring an
 
 ### What’s Coming Next?
 
-We are (re)processing the original DCP 1.0 projects as well as the 16 new projects with the latest HCA 10X and SmartSeq-2 pipelines. When processing is complete, each project will have DCP Generated matrices that are stratified by species, organ, and library construction method (i.e. 10x or Smart-seq2).
+Between now and the end of February look for:
+* Standardized analysis results (BAM and index files) made by the latest HCA 10x and SmartSeq-2 pipelines for all projects
+* DCP-generated count matrices stratified by species, library construction method, and organ for each project
+
+After these standardized analyses are complete, we will begin releasing new projects and analysis on a monthly basis. We are also working towards incorporating controlled-access projects. 
 
 Once processing is complete, we will retire DCP 1.0 View. 
 
