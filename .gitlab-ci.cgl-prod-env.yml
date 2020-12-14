@@ -42,7 +42,7 @@ build_master:
   environment:
     name: prod
   script:
-    - export GATSBY_EXPLORE_URL=https://dcp2.data.humancellatlas.org/explore/
+    - export GATSBY_EXPLORE_URL=https://data.humancellatlas.org/explore/
     - export GATSBY_FILE_SUMMARY_API_URL=https://service.azul.data.humancellatlas.org/index/summary
     - export GATSBY_TERM_FACETS_API_URL=https://service.azul.data.humancellatlas.org/index/projects
     - export GATSBY_SYSTEM_HEALTH_CHECK_API_URL=https://service.azul.data.humancellatlas.org/health/progress
