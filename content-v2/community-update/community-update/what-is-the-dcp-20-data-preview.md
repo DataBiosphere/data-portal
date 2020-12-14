@@ -6,7 +6,7 @@ description: "The DCP 2.0 Data Preview is a new data view enabling you to explor
 
 # What is the DCP 2.0 Data Preview?
 
-For the Data Coordination Platform (DCP) 2.0, we are adding contributor-genereated matrices, reprocessing DCP projects, and adding 16 new projects (read the full details of the changes in the DCP [Updates](/dcp-updates)).  
+For the Data Coordination Platform (DCP) 2.0, we are adding contributor-generated matrices, reprocessing DCP projects, and adding 16 new projects (read the full details of the changes in the DCP [Updates](/dcp-updates)).  
 
 The DCP 2.0 Data Preview is a separate data view enabling you to explore and access the new contributor-generated matrices as well as the new and reprocessed DCP data as soon as they become available! 
 
