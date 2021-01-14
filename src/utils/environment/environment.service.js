@@ -31,6 +31,16 @@ export function getCurrentEnvironmentURL() {
 }
 
 /**
+ * Returns the default catalog for the current environment.
+ * 
+ * @returns {string}
+ */
+export function getDefaultCatalog() {
+
+    return process.env.GATSBY_DEFAULT_CATALOG;
+}
+
+/**
  * Returns true if the current content version is two i.e. i.e. the new “cgl” environment.
  *
  * @returns {number}
