@@ -146,9 +146,9 @@ function buildExploreUrl(baseUrl) {
 
     const exploreUrl = new URL(baseUrl);
 
-    // Default catalog to DCP1 for v2 environments
+    // Add default catalog for v2 environments.
     if ( EnvironmentService.isV2() ) {
-        exploreUrl.searchParams.append("catalog", Catalog.DCP2);
+        exploreUrl.searchParams.append("catalog", EnvironmentService.getDefaultCatalog());
     }
     
     return exploreUrl;

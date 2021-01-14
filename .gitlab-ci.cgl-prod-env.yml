@@ -52,6 +52,7 @@ build_master:
     - export GATSBY_ENV_NAME=env-2
     - export GATSBY_ENV=PROD
     - export GATSBY_CONTENT_VERSION=2
+    - export GATSBY_DEFAULT_CATALOG=dcp1
     - gatsby build
   only:
     - master
