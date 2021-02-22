@@ -175,7 +175,7 @@ class ExploreControls extends React.Component {
 
 	stringifyOrganFilter = (term) => {
 
-		return JSON.stringify([{"facetName": "organ", "terms": [term]}]);
+		return JSON.stringify([{"facetName": "specimenOrgan", "terms": [term]}]);
 	};
 
 	translateOrganNameToDisplayLabel = (organName) => {

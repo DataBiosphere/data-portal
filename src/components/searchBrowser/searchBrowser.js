@@ -28,6 +28,8 @@ const FACET_BLACKLIST = [
 	"contactName",
 	"effectiveOrgan",
 	"laboratory",
+	"organ",
+	"organPart",
 	"organismAge",
 	"organismAgeUnit",
 	"project",
