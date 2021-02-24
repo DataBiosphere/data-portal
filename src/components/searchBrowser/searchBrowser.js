@@ -22,19 +22,25 @@ import compStyles from './searchBrowser.module.css';
 
 const classNames = require('classnames');
 
-// Facet blacklist - exclude from autosuggest
-const FACET_BLACKLIST = [
-	"assayType",
-	"contactName",
-	"effectiveOrgan",
-	"laboratory",
-	"organ",
-	"organPart",
-	"organismAge",
-	"organismAgeUnit",
-	"project",
-	"projectDescription",
-	"projectId"
+// Facet search allow list
+const ALLOW_SEARCH_FACETS = [
+	"biologicalSex",
+	"developmentStage",
+	"donorDisease",
+	"fileFormat",
+	"genusSpecies",
+	"instrumentManufacturerModel",
+	"libraryConstructionApproach",
+	"modelOrgan",
+	"nucleicAcidSource",
+	"pairedEnd",
+	"preservationMethod",
+	"sampleEntityType",
+	"selectedCellType",
+	"specimenDisease",
+	"specimenOrgan",
+	"specimenOrganPart",
+	"workflow"
 ];
 
 // Facet display names
@@ -155,7 +161,7 @@ class SearchBrowser extends React.Component {
 
 		return termFacets.filter(termFacet => {
 
-			return FACET_BLACKLIST.indexOf(termFacet.facetName) === -1;
+			return ALLOW_SEARCH_FACETS.indexOf(termFacet.facetName) >= 0;
 		});
 	};
 
