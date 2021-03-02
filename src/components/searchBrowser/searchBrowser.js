@@ -45,8 +45,11 @@ const ALLOW_SEARCH_FACETS = [
 
 // Facet display names
 const FACET_DISPLAY_NAMES = {
-	"disease": "knownDiseases",
-	"projectId": "project"
+    "libraryConstructionApproach": "libraryConstructionMethod",
+    "sampleEntityType": "sampleType",
+    "specimenOrgan": "organ",
+    "specimenOrganPart": "organPart",
+    "workflow": "analysisProtocol"
 };
 
 class SearchBrowser extends React.Component {
@@ -107,7 +110,7 @@ class SearchBrowser extends React.Component {
 					});
 				});
 			termFacets.sort((facet0, facet1) => {
-				return facet0.facetName > facet1.facetName ? 1 : -1;
+				return facet0.facetDisplayName > facet1.facetDisplayName ? 1 : -1;
 			});
 			termFacets.forEach((termFacet) => {
 				data.push(this.buildExploreDataCategory(termFacet.facetName, termFacet.facetDisplayName, termFacet.terms));
