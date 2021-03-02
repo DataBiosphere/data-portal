@@ -9,7 +9,6 @@
  */
 
 // App dependencies
-import {Catalog} from "./catalog.model";
 import * as EnvironmentService from "../environment/environment.service";
 import * as HttpService from '../http.service';
 
