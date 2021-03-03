@@ -10,9 +10,11 @@ import React from "react";
 
 // App dependencies
 import Clipboard from "../clipboardCopy/clipboardCopy";
-import Icon from "../../icon/icon";
 import MetadataSchemaPropertyWordWrapper from "../metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper";
 import Tooltip from "../../tooltip/tooltip";
+
+// Images
+import copyIcon from "../../../../images/icon/clipboard/copy.png";
 
 // Styles
 import compStyles from "./metadataSchemaPropertyFieldPath.module.css";
@@ -31,7 +33,7 @@ function MetadataSchemaPropertyFieldPath(props) {
             <span className={classNamesPropertyPath}>
                 <MetadataSchemaPropertyWordWrapper word={propertyPath} wrap={wrap}>
                     <Tooltip label={"Copy"}>
-                        <Icon fontSize={14} showIcon={active}>file_copy</Icon>
+                        <img className={classNames({[compStyles.show]: active})} src={copyIcon} alt={"copy"}/>
                     </Tooltip>
                 </MetadataSchemaPropertyWordWrapper>
             </span>
