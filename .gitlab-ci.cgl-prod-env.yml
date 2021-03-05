@@ -11,7 +11,7 @@ cache:
 # Build Jobs
 # Build Job Template
 .build_template: &build_template
-  image: node:14.16.0
+  image: node:14.16.0-buster
   stage: build
   before_script:
     - git clone https://github.com/HumanCellAtlas/metadata-schema.git _metadata-schema
@@ -20,6 +20,8 @@ cache:
     - npm -v
     - npm install gatsby-cli@2.8.3 --global
     - npm install
+    - npm rebuild sharp
+
   artifacts:
       paths:
         - public
