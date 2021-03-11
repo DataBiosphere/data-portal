@@ -20,7 +20,6 @@ import Layout from '../components/layout';
 import LinkToBrowser from "../components/linkToBrowser/linkToBrowser";
 import MetadataTypeEntitySchemas from "../components/metadata/metadataTypeEntitySchemas/metadataTypeEntitySchemas";
 import ProviderMetadataDisplaying from "../components/metadata/providerMetadataDisplaying/providerMetadataDisplaying";
-import SystemStatus from "../components/systemStatus/systemStatus";
 import * as TemplateService from '../utils/template.service';
 
 // Styles
@@ -35,8 +34,7 @@ const renderAst = new rehypeReact({
         "data-lifecycle-diagram": DataLifecycleDiagram,
         "internal-link": InternalLink,
         "link-to-browser": LinkToBrowser,
-        "metadata-type-entity-schemas": MetadataTypeEntitySchemas,
-        "system-status": SystemStatus
+        "metadata-type-entity-schemas": MetadataTypeEntitySchemas
     }
 }).Compiler;
 

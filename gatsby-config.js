@@ -74,7 +74,6 @@ module.exports = {
                 name: 'status-markdown-pages',
             }
         },
-        `gatsby-transformer-json-system-status`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
