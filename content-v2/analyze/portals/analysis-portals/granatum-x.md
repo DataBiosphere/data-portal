@@ -15,6 +15,8 @@ tools and the ability to conduct single-cell data analysis independently. Curren
 
 As a solution, GranatumX uses the plugin and virtualized framework that provides an easy and unified approach to add new methods in a data-analysis pipeline. The plugin system is agnostic to developer code and the choice of the original scripting language. It also eliminates inter-module incompatibilities, by isolating the dependencies of each module. As a data portal, GranatumX provides a graphical user interface (GUI) that requires no programming experience.
 
+The users can self-learn GraantumX extremely easily. Watching this short youtube video is also helpful: https://www.youtube.com/watch?v=Y5LcG7qLQ5s
+
 ## Deployment of GranatumX
 The web-based GUI can be accessed on various devices including desktop, tablets, and smartphones. In addition to the web-based format, GranatumX is also deployable on a broad variety of computational environments, such as private PCs, cloud services, and High-Performance Computing (HPC) platforms with minimal effort by system administrators. 
 
@@ -32,6 +34,8 @@ A comprehensive set of over 50 Gboxes are implemented in GranatumX to perform ta
 
 To assist functional analysis, GranatumX provides a core list of methods for dimension reduction, visualization (including PCA, t-SNE, and UMAP), clustering, differential expression, marker gene identification, Gene Set Enrichment Analysis, network analysis and pseudo-time construction. Versioning for each of these Gboxes has been implemented so that users can use a specific tested version of a Gbox. Developers on the other hand can work on newer versions separately before the official upgrade. Gboxes can be stored on DockerHub for public use which maintains its own versioning system <https://hub.docker.com/u/granatumx>.
 
+For advanced devlopers interesting in writing/contributing their own Gbox plug-ins, please click the link at the bottom of this webpage: http://garmiregroup.org/granatumx/app/. You can also sign up GranatumX developer's Slack group: https://granatumx-developer.slack.com/ for quick responses, rather than waiting for email reply from the contact email: lana.garmire.group@gmail.com
+
 ## Input Files
 The input files of GranatumX include expression matrices and optional sample metadata tables, acceptable in a variety of formats such as CSV, TSV, or Excel format. GranatumX even accepts zip files and gz files (GNU zip), and the user can choose that format for large expression matrices. Expression matrices are raw read counts for all genes (rows) in all cells (columns).
 
@@ -48,6 +52,9 @@ To ensure reproducibility, GranatumX can automatically generate a human-readable
 The source code and Gbox tutorial for GranatumX is available at <https://github.com/granatumx> under MIT license. All builds are deployed via Docker Hub at <https://hub.docker.com/u/granatumx>.
 
 ![GranatumX](../../_images/portals/granatum-x.png)
+
+## Software disclosure
+HE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Contact
 GranatumX Development Team (<mailto:lana.garmire.group@gmail.com>)
