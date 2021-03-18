@@ -35,6 +35,7 @@ const ALLOW_SEARCH_FACETS = [
 	"nucleicAcidSource",
 	"pairedEnd",
 	"preservationMethod",
+    "publicationTitle",
 	"sampleEntityType",
 	"selectedCellType",
 	"specimenDisease",
