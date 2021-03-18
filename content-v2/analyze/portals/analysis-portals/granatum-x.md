@@ -17,6 +17,8 @@ As a solution, GranatumX uses the plugin and virtualized framework that provides
 
 The users can self-learn GraantumX extremely easily. Watching this short youtube video is also helpful: https://www.youtube.com/watch?v=Y5LcG7qLQ5s
 
+![GranatumX](../../_images/portals/granatum-x.png)
+
 ## Deployment of GranatumX
 The web-based GUI can be accessed on various devices including desktop, tablets, and smartphones. In addition to the web-based format, GranatumX is also deployable on a broad variety of computational environments, such as private PCs, cloud services, and High-Performance Computing (HPC) platforms with minimal effort by system administrators. 
 
@@ -51,10 +53,6 @@ To ensure reproducibility, GranatumX can automatically generate a human-readable
 ## Source Code and Gbox Implementation
 The source code and Gbox tutorial for GranatumX is available at <https://github.com/granatumx> under MIT license. All builds are deployed via Docker Hub at <https://hub.docker.com/u/granatumx>.
 
-![GranatumX](../../_images/portals/granatum-x.png)
-
-## Software disclosure
-HE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Contact
 GranatumX Development Team (<mailto:lana.garmire.group@gmail.com>)
