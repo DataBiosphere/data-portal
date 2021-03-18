@@ -10,14 +10,17 @@ componentName: "analysisDetail"
 ---
 
 
+
 The objective of [GranatumX](http://garmiregroup.org/granatumx/app) is to provide scRNA-seq biologists better access to bioinformatics 
 tools and the ability to conduct single-cell data analysis independently. Currently, other scRNA-seq platforms usually only provide a fixed set of methods implemented by the authors themselves. It is difficult to add new methods developed by the community due to programming language lock-in as well as monolithic code architectures. If a pipeline is assembled between heterogeneous tools, it is manually crafted and inhibits a repeatable execution of data analysis tools by other wet-lab scientists.
+
+![GranatumX](../../_images/portals/granatum-x.png)
 
 As a solution, GranatumX uses the plugin and virtualized framework that provides an easy and unified approach to add new methods in a data-analysis pipeline. The plugin system is agnostic to developer code and the choice of the original scripting language. It also eliminates inter-module incompatibilities, by isolating the dependencies of each module. As a data portal, GranatumX provides a graphical user interface (GUI) that requires no programming experience.
 
 The users can self-learn GraantumX extremely easily. Watching this short youtube video is also helpful: https://www.youtube.com/watch?v=Y5LcG7qLQ5s
 
-![GranatumX](../../_images/portals/granatum-x.png)
+
 
 ## Deployment of GranatumX
 The web-based GUI can be accessed on various devices including desktop, tablets, and smartphones. In addition to the web-based format, GranatumX is also deployable on a broad variety of computational environments, such as private PCs, cloud services, and High-Performance Computing (HPC) platforms with minimal effort by system administrators. 
@@ -51,7 +54,9 @@ As a user-friendly tool, GranatumX allows multiple users to be affiliated with t
 To ensure reproducibility, GranatumX can automatically generate a human-readable report detailing the inputs, running arguments, and the results of all steps. All of these features are designed with the mindset of “consumer reports'' to facilitate research in experimental labs or genomics cores.
 
 ## Source Code and Gbox Implementation
-The source code and Gbox tutorial for GranatumX is available at <https://github.com/granatumx> under MIT license. All builds are deployed via Docker Hub at <https://hub.docker.com/u/granatumx>.
+The source code and Gbox tutorial for GranatumX is available at <https://github.com/granatumx> under MIT license. 
+
+All builds are deployed via Docker Hub at <https://hub.docker.com/u/granatumx>.
 
 
 ## Contact
