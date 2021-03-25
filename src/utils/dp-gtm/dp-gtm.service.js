@@ -20,7 +20,7 @@ import * as GTMService from "../gtm/gtm.service";
 export function trackCatalogViewed(catalog) {
 
     GTMService.trackEvent(GACategory.CATALOG, GAAction.VIEW_CATALOG, catalog, {
-        [GADimension.ENTITY_TYPE]: GAEntityType.CATALOG,
+        [GADimension.ENTITY_TYPE]: GAEntityType.CATALOG
     });
 }
 
@@ -33,9 +33,22 @@ export function trackCatalogViewed(catalog) {
 export function trackMetadataSearchInput(value, entityType) {
 
     GTMService.trackEvent(GACategory.SEARCH, GAAction.ENTER_TEXT, value, {
-        [GADimension.ENTITY_TYPE]: entityType,
+        [GADimension.ENTITY_TYPE]: entityType
     });
 }
+
+/**
+ * Create and send a GA tracking event generated from submitting a support request.
+ * 
+ * @param {GASource} source
+ */
+export function trackSupportRequestCreated(source) {
+
+    GTMService.trackEvent(GACategory.SUPPORT_REQUEST, GAAction.CREATE, "", {
+        [GADimension.SOURCE]:source
+    });
+}
+
 
 /**
  * Track select of search result.

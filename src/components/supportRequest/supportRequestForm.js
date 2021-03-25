@@ -18,6 +18,7 @@ import Select from "../select/select";
 import SupportRequestError from "./supportRequestError";
 import * as SupportRequestService from "./supportRequest.service";
 import SupportRequestSubmitted from "./supportRequestSubmitted";
+import * as DPGTMService from "../../utils/dp-gtm/dp-gtm.service";
 
 // Styles
 import globalStyles from "../../styles/global.module.css";
@@ -231,6 +232,7 @@ class SupportRequestForm extends React.Component {
                 submitted: true
             });
             this.requestRef.current.scrollTo(0, 0);
+            DPGTMService.trackSupportRequestCreated(this.props.source);
             setTimeout(() => this.onSupportRequestDismissed(), 3000);
         }
         catch(error) {
