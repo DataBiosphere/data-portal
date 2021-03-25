@@ -7,6 +7,7 @@
 
 export const GAAction = { 
     "CLICK": "Click",
+    "CREATE": "Create",
     "ENTER_TEXT": "Enter Text",
-    "VIEW_CATALOG": "View Catalog",
+    "VIEW_CATALOG": "View Catalog"
 };

@@ -11,10 +11,10 @@ import React from "react";
 
 // App dependencies
 import Announcement from "../announcement/announcement";
+import * as DPGTMService from "../../utils/dp-gtm/dp-gtm.service";
 
 // Styles
 import compStyles from "./announcementCatalog.module.css";
-import * as DPGTMService from "../../utils/dp-gtm/dp-gtm.service";
 
 function AnnouncementCatalog() {
 

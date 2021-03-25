@@ -22,6 +22,7 @@ import SupportRequest from "./supportRequest/supportRequest";
 
 // Styles
 import compStyles from "./layout.module.css";
+import {GASource} from "../utils/dp-gtm/ga-source.model";
 
 let classNames = require("classnames");
 
@@ -42,15 +43,18 @@ class Layout extends React.Component {
         this.setState({scrollable: scrollable});
     };
 
-    onToggleSupportRequestForm = (active) => {
-
-        this.setState({supportRequestActive: active});
+    onToggleSupportRequestForm = (active, source) => {
+        
+        this.setState({
+            supportRequestActive: active,
+            supportRequestSource: active ? source : null
+        });
     };
 
     render() {
         const {activeLocation, children, description, docPath, healthy, homePage, homeTab,
             metadataContent, nav, pageTitle, sectionTitle} = this.props;
-        const {scrollable, supportRequestActive} = this.state;
+        const {scrollable, supportRequestActive, supportRequestSource} = this.state;
         const v2 = EnvironmentServices.isV2();
         return (
             <div>
@@ -68,9 +72,11 @@ class Layout extends React.Component {
                                  nav={nav}
                                  onHandleSiteScroll={this.onHandleSiteScroll}
                                  sectionTitle={sectionTitle}>{children}</HCAMain>}
-                    <SupportRequest active={supportRequestActive} onToggle={(active) => this.onToggleSupportRequestForm(active)}/>
+                    <SupportRequest active={supportRequestActive}
+                                    source={supportRequestSource}
+                                    onToggle={(active, source) => this.onToggleSupportRequestForm(active, source)}/>
                     <Banner position={"bottom"}/>
-                    <Footer onFeedbackClicked={() => this.onToggleSupportRequestForm(true)}/>
+                    <Footer onFeedbackClicked={() => this.onToggleSupportRequestForm(true, GASource.FOOTER)}/>
                     <div id="portal"/>
                 </div>
             </div>

@@ -11,8 +11,9 @@ import React, {useState} from "react";
 // App dependencies
 import SupportRequestForm from "./supportRequestForm";
 import SupportRequestButton from "./supportRequestButton";
+import {GASource} from "../../utils/dp-gtm/ga-source.model";
 
-const SupportRequest = ({active = false, onToggle}) => {
+const SupportRequest = ({active = false, source, onToggle}) => {
 
     const [supportRequestActive, setSupportRequestActive] = useState(active);
 
@@ -20,16 +21,18 @@ const SupportRequest = ({active = false, onToggle}) => {
         setSupportRequestActive(active);
     }, [active]);
 
-    const onToggleSupportRequestForm = (active) => {
+    const onToggleSupportRequestForm = (active, source) => {
         setSupportRequestActive(active);
-        onToggle(active);
+        onToggle(active, source);
     };
 
     return (
         <>
             {supportRequestActive ?
-                <SupportRequestForm active={active} dismissFn={() => onToggleSupportRequestForm(false)}/> :
-                <SupportRequestButton clickFn={() => onToggleSupportRequestForm(true)}/>
+                <SupportRequestForm active={active}
+                                    source={source}
+                                    dismissFn={() => onToggleSupportRequestForm(false, GASource.SUPPORT_REQUEST_FORM)}/> :
+                <SupportRequestButton clickFn={() => onToggleSupportRequestForm(true, GASource.SUPPORT_REQUEST_BUTTON)}/>
                 }
         </>
     );
