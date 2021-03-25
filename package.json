@@ -47,7 +47,7 @@
     "react-typography": "0.16.19",
     "rehype-react": "4.0.1",
     "shallow-equal": "1.2.1",
-    "snyk": "1.290.1",
+    "snyk": "1.465.0",
     "typography": "0.16.19",
     "validate.js": "0.13.1"
   },
