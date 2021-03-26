@@ -66,7 +66,7 @@ Contributor generated matrices are optionally provided by the data contributors.
 ## Downloading Matrices
 Project-level matrices (both DCP-generated and contributor-generated) may be downloaded from the "Matrices" column of the DCP Data Browser (see image below) or alternatively, from the individual Project page. Additionally, you can use a curl command to download all matrices (contributor-generated and DCP-generated) as described in the [Accessing HCA Data and Metadata](/quick-start-guide) guide.
 
-![Browsing Projects in the Data Explorer](../_images/explore_dcp_2.png "Exploring Projects")
+![Browsing Projects in the Data Explorer](../_images/explore_dcp_2_matrices.png "Exploring Projects")
 
 ## Linking Project-level DCP Generated Matrices to the Data Manifest (Metadata)
 Project-level matrices only contain some of the available project metadata (species, organs, library methods, etc.). However, there are several metadata facets that you might want to link back to the matrix such as disease state or donor information. 
