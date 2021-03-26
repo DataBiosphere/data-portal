@@ -16,8 +16,8 @@ After data is processed with standardized DCP pipelines, two types of cell by ge
 
 | Matrix Type | Description |
 | --- | --- |
-| project-level matrices | matrices for a project that have been separated by species (human or mouse), organ, and library construction method (10x or SS2) |
-| library-level matrices | matrices for a project that are split by library preparation; all samples in this matrix will have the same metadata for the field `sequencing_process.provenance.document_id` |
+| project-level matrices | Matrices for a project that have been separated by species (human or mouse), organ, and library construction method (10x or SS2). These matrices have filenames in the format `<project_description-species-tissue-sequencing_method>` (i.e. `sc-landscape-human-liver-10XV2.loom`)|
+| library-level matrices | Matrices for a project that are split by library preparation. All samples in this matrix will have the same ID listed in the matrix metadata field `sequencing_process.provenance.document_id` and the matrix filename will match this ID |
 
 
 #### What's in the DCP Generated Matrix? 
@@ -45,13 +45,13 @@ HCA metadata is detailed in the global attributes of the project-level DCP Gener
 
 | Metadata Attribute Name in DCP Generated Matrix | Metadata Description | 
 | --- | --- |
-| `donor_organism.genus_species` | species information; human or mouse |
-| `library_preparation_protocol.library_construction_approach` | technology used for library preparation, i.e 10x or SS2 |
-| `specimen_from_organism.organ` | organ |	
-| `project.project_core.project_name` | project name |
-| `project.provenance.document_id` | project id |
-| `input_id` | metadata values for  `sequencing_process.provenance.document_id` |
-| `input_name` | metadata values for `sequencing_input.biomaterial_core.biomaterial_id` |
+| `donor_organism.genus_species` | Species information; human or mouse |
+| `library_preparation_protocol.library_construction_approach` | Technology used for library preparation, i.e 10x or SS2 |
+| `specimen_from_organism.organ` | Organ |	
+| `project.project_core.project_name` | Project name |
+| `project.provenance.document_id` | Project id |
+| `input_id` | Metadata values for  `sequencing_process.provenance.document_id` |
+| `input_name` | Metadata values for `sequencing_input.biomaterial_core.biomaterial_id` |
 
 More information about HCA post-processing for the project-level matrices can be found in the Matrix Overview for the [Optimus pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/Loom_schema.html#hca-data-coordination-platform-matrix-processing) and the [Smart-seq2 Pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema.html#table-2-column-attributes-cell-metrics)(in development). 
 
@@ -64,14 +64,14 @@ These matrices do not contain all the species, organ, and library HCA metadata t
 Contributor generated matrices are optionally provided by the data contributors. When available, you can download them from the individual Project page. The matrices will vary in file format and content. For questions about the Contributor Generated Matrix, reach out to the contributors listed in the Project page Contact section.
 
 ## Downloading Matrices
-Project-level matrices (both DCP-generated and contributor-generated) may be downloaded from the "Matrices" column of the DCP Data Browser (see image below) or alternatively, from the individual Project page. Additionally, you can use a curl command to download all matrices (contributor-generated and DCP-generated) as described in the [Accessing HCA Data and Metadata](https://data.humancellatlas.org/guides/quick-start-guide) guide.
+Project-level matrices (both DCP-generated and contributor-generated) may be downloaded from the "Matrices" column of the DCP Data Browser (see image below) or alternatively, from the individual Project page. Additionally, you can use a curl command to download all matrices (contributor-generated and DCP-generated) as described in the [Accessing HCA Data and Metadata](/quick-start-guide) guide.
 
 ![Browsing Projects in the Data Explorer](../_images/explore_dcp_2.png "Exploring Projects")
 
 ## Linking Project-level DCP Generated Matrices to the Data Manifest (Metadata)
 Project-level matrices only contain some of the available project metadata (species, organs, library methods, etc.). However, there are several metadata facets that you might want to link back to the matrix such as disease state or donor information. 
 
-To link back to the metadata matrix, use the matrix `input_id` field. This field includes all the values for the HCA metadata `sequencing_process.provenance.document_id`, the ID used to mark each library preparation. 
+To link back to the metadata matrix, use the matrix `input_id` field. This field includes all the values for the HCA metadata `sequencing_process.provenance.document_id`, the ID used to demarcate each library preparation. 
 
 
 

@@ -29,7 +29,7 @@ The Data Portal Explore page lists all projects by title along with key project 
 
 We are incrementally adding new projects and data for the DCP 2.0 (see the DCP [Updates](/dcp-updates) for details). 
 
-The new projects are available on the [DCP 2.0 Data Preview](https://data.humancellatlas.org/what-is-the-dcp-20-data-preview), which is now the default view on the Explore page. You may toggle between the DPC 2.0 Preview and the DCP 1.0 View using the banner at the top of the Data Portal.
+The new projects are available on the [DCP 2.0 Data Preview](/what-is-the-dcp-20-data-preview), which is now the default view on the Explore page. You may toggle between the DPC 2.0 Preview and the DCP 1.0 View using the banner at the top of the Data Portal.
 
 ![View Data Preview](../_images/data_preview_2.png "Data Preview")
 
