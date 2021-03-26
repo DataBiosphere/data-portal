@@ -37,7 +37,7 @@ DCP 2.0 matrices (Loom files) have three types of attributes containing metadata
 #### DCP Project-level Matrices
 All datasets processed with standardized pipelines have project-level matrices (in Loom file format) that are divided by **species**, **organ**, and **sequencing method**. 
 
-> For 10x datasets, the project-level matrices have been minimally filtered based the number of UMIs (only cells with 100 molecules or more are retained).
+> For 10x datasets, the project-level matrices have been minimally filtered based on the number of UMIs (only cells with 100 molecules or more are retained).
 
 DCP project-level matrices contain all the processing pipeline's standard metrics and counts, but additionally have HCA metadata included in both global and column attributes which may be useful when exploring the data and linking it back to the additional Project metadata in the Data Manifest. 
 
@@ -72,6 +72,7 @@ Project-level matrices (both DCP-generated and contributor-generated) may be dow
 Project-level matrices only contain some of the available project metadata (species, organs, library methods, etc.). However, there are several metadata facets that you might want to link back to the matrix such as disease state or donor information. 
 
 To link back to the metadata matrix, use the matrix `input_id` field. This field includes all the values for the HCA metadata `sequencing_process.provenance.document_id`, the ID used to demarcate each library preparation. 
+
 
 
 
