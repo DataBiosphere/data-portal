@@ -20,20 +20,20 @@ This [Metadata](/metadata/dictionary/process/analysis_process) is included in th
 
 ## Finding a Project of Interest
 
-The Data Portal Explore tab lists all projects on its home page along with key project metadata. The project list is filterable by metadata values. 
+The Data Portal Explore page lists all projects by title along with key project metadata. The project list is filterable by metadata values. 
 
-![Browsing Projects in the Data Explorer](../_images/explore_dcp_1.png "Exploring Projects")
+![Browsing Projects in the Data Explorer](../_images/explore_dcp_2.png "Exploring Projects")
 
 
-### Choosing the DCP 1.0 View or the DCP 2.0 Data View
+### Choosing the DCP 2.0 Preview or the DCP 1.0 Data View
 
 We are incrementally adding new projects and data for the DCP 2.0 (see the DCP [Updates](/dcp-updates) for details). 
 
-To view the new projects, select the [DCP 2.0 Data Preview](https://data.humancellatlas.org/what-is-the-dcp-20-data-preview) option in the banner at the top of the page. You may toggle between the DPC 2.0 Preview and the DCP 1.0 View using the banner.
+The new projects are available on the [DCP 2.0 Data Preview](https://data.humancellatlas.org/what-is-the-dcp-20-data-preview), which is now the default view on the Explore page. You may toggle between the DPC 2.0 Preview and the DCP 1.0 View using the banner at the top of the Data Portal.
 
 ![View Data Preview](../_images/data_preview_2.png "Data Preview")
 
-Learn more about the differences between the DCP 1.0 Data view and the DCP 2.0 Preview [here](/what-is-the-dcp-20-data-preview).
+Learn more about the differences between the DCP 2.0 Data Preview and the DCP 1.0 View [here](/what-is-the-dcp-20-data-preview).
 
 ## Viewing Project Details
 
@@ -76,20 +76,18 @@ A partial example of a TSV file is listed below:
 
 ## Downloading Project DCP Generated Matrices
 
-Each project processed with DCP pipelines has DCP-generated matrices.
-
-To download Project matrices, navigate to the Project Information page and select the **"Project Matrices"** tab to the left. 
+Each project processed with DCP pipelines has DCP-generated matrices.To download Project matrices, navigate to the Project Information page and select the **"Project Matrices"** tab to the left. 
 
 Scroll to identify the relevant matrix and then select the download icon. 
 
 ![Project Matrices](../_images/dcp_generated_matrices.png "Project Matrices")
 
-Matrices are available in the DCP 1.0 View in MTX, CSV, Loom formats (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files). 
+DCP Generated Matrices in the DCP 2.0 Preview are available in Loom format only (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files), whereas matrices in the DCP 1.0 View are available in MTX, CSV, Loom formats. 
 
 > **DCP 1.0 Matrix Deprecation Notice:** 
 The DCP is reprocessing DCP 1.0 data and will deprecate all DCP 1.0 matrices (MTX, CSV, and Loom files) once reprocessing is complete. All reprocessed and newly processed projects in the DCP 2.0 will have matrices in Loom format only. 
 
-The type of count (raw or TPM) available in the matrix depends on the pipeline used for data processing. DCP 1.0 matrices generated with Optimus (10x data) include raw counts whereas matrices generated with Smart-seq2 include TPMs. 
+The type of count available in the DCP Generated Matrix depends on the pipeline used for data processing. DCP 2.0 matrices generated with Optimus (10x data) include raw counts whereas matrices generated with Smart-seq2 include TPMs and estimated counts. 
 
 ## Downloading Project Contributor Generated Matrices
 
