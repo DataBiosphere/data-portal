@@ -57,7 +57,7 @@ Each project matrix also has HCA metadata (see table below) stored in the Loom f
 | `input_id` | Metadata values for  `sequencing_process.provenance.document_id` |
 | `input_name` | Metadata values for `sequencing_input.biomaterial_core.biomaterial_id` |
 
-More information about HCA post-processing for the project-level matrices can be found in the Matrix Overview for the [Optimus Pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/Loom_schema.html#hca-data-coordination-platform-matrix-processing) and the [Smart-seq2 Pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema.html#table-2-column-attributes-cell-metrics)(in development). 
+More information about HCA post-processing for the project-level matrices can be found in the Matrix Overview for the [Optimus Pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/Loom_schema.html#hca-data-coordination-platform-matrix-processing) and the [Smart-seq2 Pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema.html#table-2-column-attributes-cell-metrics) (in development). 
 
 
 #### DCP Library-level Matrices 
