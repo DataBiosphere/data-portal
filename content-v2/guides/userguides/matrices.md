@@ -41,23 +41,23 @@ Library-level matrices have filenames matching the numerical ID in the HCA metad
 
 
 #### DCP Project-level Matrices
-Project-level matrices are Loom files that contain standardized cell-by-gene measures and metrics for all the data in a project that are of the same species, organ, and sequencing method. This means each HCA project can have multiple project-level matrices if for example, the project contains both human and mouse or 10x and SS2 data. 
+Project-level matrices are Loom files that contain standardized cell-by-gene measures and metrics for all the data in a project that are of the same species, organ, and sequencing method. This means each HCA project can have multiple project-level matrices if for example, the project contains both human and mouse or 10x and Smart-seq2 data. 
 
-The gene measures in project matrices vary based on the pipeline used for analysis. Matrices produced with the Optimus pipeline (10x data) will have UMI-aware counts whereas matrices produced with the Smart-seq2 pipeline will have TPMs and estimated counts. Additionally, 10x matrices have been minimally filtered based on the number of UMIs (only cells with 100 molecules or more are retained).
+The gene measures in project matrices vary based on the pipeline used for analysis. Matrices produced with the Optimus Pipeline (10x data) will have UMI-aware counts whereas matrices produced with the Smart-seq2 pipeline will have TPMs and estimated counts. Additionally, 10x matrices have been minimally filtered based on the number of UMIs (only cells with 100 molecules or more are retained).
 
 Each project matrix also has HCA metadata (see table below) stored in the Loom file's global and column attributes. This metadata may be useful when exploring the data and linking it back to the additional Project metadata in the Data Manifest. Read more about each metadata field in the [Metadata Dictionary](/metadata/). 
 
 | Metadata Attribute Name in DCP Generated Matrix | Metadata Description | 
 | --- | --- |
 | `donor_organism.genus_species` | Species information; human or mouse |
-| `library_preparation_protocol.library_construction_approach` | Technology used for library preparation, i.e 10x or SS2 |
+| `library_preparation_protocol.library_construction_approach` | Technology used for library preparation, i.e 10x or Smart-seq2 |
 | `specimen_from_organism.organ` | Organ |	
 | `project.project_core.project_name` | Project name |
 | `project.provenance.document_id` | Project id |
 | `input_id` | Metadata values for  `sequencing_process.provenance.document_id` |
 | `input_name` | Metadata values for `sequencing_input.biomaterial_core.biomaterial_id` |
 
-More information about HCA post-processing for the project-level matrices can be found in the Matrix Overview for the [Optimus pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/Loom_schema.html#hca-data-coordination-platform-matrix-processing) and the [Smart-seq2 Pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema.html#table-2-column-attributes-cell-metrics)(in development). 
+More information about HCA post-processing for the project-level matrices can be found in the Matrix Overview for the [Optimus Pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/Loom_schema.html#hca-data-coordination-platform-matrix-processing) and the [Smart-seq2 Pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema.html#table-2-column-attributes-cell-metrics)(in development). 
 
 
 #### DCP Library-level Matrices 
