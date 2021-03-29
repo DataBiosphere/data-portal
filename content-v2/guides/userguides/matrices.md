@@ -61,9 +61,11 @@ More information about HCA post-processing for the project-level matrices can be
 
 
 #### DCP Library-level Matrices 
-Library-level matrices (also Loom files) are cell-by-gene matrices for each individual library preparation in a project. These matrices contain the same standardized gene (row) metrics, cell (column) metrics and counts as the project-level matrices, but are separated by the HCA metadata field for library preparation, `sequencing_process.provenance.document_id`. While a library preparation for 10x datasets will likely include all the cells for a single donor, a library preparation for Smart-seq2 data will include the individual cell (i.e. if your Smart-seq2 data has 200 cells, it will have 200 library-level matrices). 
+Library-level matrices (also Loom files) are cell-by-gene matrices for each individual library preparation in a project. These matrices contain the same standardized gene (row) metrics, cell (column) metrics and counts as the project-level matrices, but are separated by the HCA metadata field for library preparation, `sequencing_process.provenance.document_id`, allowing you to only use a sub-sampling of all the project's data. 
 
-Unlike project matrices, library-level matrices do not contain all HCA metadata for species, organ, and sequencing method in the matrix global attributes. Instead, they only contain the metadata for `input_id` and `input_name` (described in table above). 
+While a library preparation for 10x datasets will likely include all the cells for a single donor, a library preparation for Smart-seq2 data will include the individual cell (i.e. if your Smart-seq2 data has 200 cells, it will have 200 library-level matrices). 
+
+Unlike project matrices, **library-level matrices are not filtered** and they do not contain all the HCA metadata for species, organ, and sequencing method in the matrix global attributes. Instead, they only contain the metadata for `input_id` and `input_name` (described in table above). 
 
 ## Contributor Generated Matrices
 Contributor Generated Matrices are optionally provided by the data contributors. These can be useful when trying to annotate cell types or when comparing results back to a contributors published results. When these matrices are available, you can download them from the individual Project page. Across projects, these matrices will vary in file format and content. For questions about the Contributor Generated Matrix, reach out to the contributors listed in the Project page Contact section.
