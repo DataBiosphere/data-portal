@@ -17,7 +17,7 @@ In addition to individual sample count matrices, each newly processed project al
 
 **New raw data and Contributor Generated Matrices**
 
-Raw sequence files and Contributor Generated Matrices (CGMs) for an additional 11 new projects (and one existing project) are available for download from the DCP 2.0 Preview. These projects include human adult, embryonic, and fetal data derived from 10 organs - brain, blood, bone marrow, colon, thymus, pancreas, placenta, mouth, liver, and spleen. Most projects employed 10x sequencing technology, but some additionally used cite-seq and drop-seq. 
+Raw sequence files and Contributor Generated Matrices (CGMs) for an additional 11 new projects are available for download from the [DCP 2.0 Preview](https://data.humancellatlas.org/explore/projects?filter=%5B%7B%22facetName%22:%22genusSpecies%22,%22terms%22:%5B%22Homo%20sapiens%22%5D%7D%5D). These projects include human adult, embryonic, and fetal data derived from 10 organs - brain, blood, bone marrow, colon, thymus, pancreas, placenta, mouth, liver, and spleen. Most projects employed 10x sequencing technology, but some additionally used cite-seq and drop-seq. 
 
 With the addition of these new data, the DCP now has 55 total projects with over 7 million cells derived from 40 organs and 580 donors. We are grateful for the contributions and continued support of the 179 global labs who made this data available.   
 
