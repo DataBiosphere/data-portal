@@ -33,7 +33,7 @@ export function buildSearchTerms(termFacets) {
         else {
             accum.push({
                 facetName: termFacet.facetName,
-                terms: termFacet.terms
+                terms: buildFacetSearchTerms(termFacet.terms)
             });
         }
 
@@ -118,6 +118,19 @@ function bindTermFacetsResponse(termFacetsResponse) {
 
         return accum;
     }, []);
+}
+
+/**
+ * Build the set of terms for facet (excluding project facet - see buildProjectIdSearchTerms).
+ */
+function buildFacetSearchTerms(terms) {
+    
+    return terms.map(term => {
+        return {
+            term: term,
+            termDisplayName: term.term || "Unspecified"
+        };
+    });
 }
 
 /**

@@ -23,25 +23,34 @@ import compStyles from './searchBrowser.module.css';
 const classNames = require('classnames');
 
 // Facet search allow list
-const ALLOW_SEARCH_FACETS = [
-	"biologicalSex",
-	"developmentStage",
-	"donorDisease",
-	"fileFormat",
-	"genusSpecies",
-	"instrumentManufacturerModel",
-	"libraryConstructionApproach",
-	"modelOrgan",
-	"nucleicAcidSource",
-	"pairedEnd",
-	"preservationMethod",
+const ACCEPT_SEARCH_FACETS = [
+    "biologicalSex",
+    "cellLineType",
+    "developmentStage",
+    "donorDisease",
+    "fileFormat",
+    "fileSource",
+    "genusSpecies",
+    "institution",
+    "instrumentManufacturerModel",
+    "libraryConstructionApproach",
+    "modelOrgan",
+    "modelOrganPart",
+    "nucleicAcidSource",
+    "organ",
+    "organismAgeValue",
+    "organPart",
+    "pairedEnd",
+    "preservationMethod",
+    "projectTitle",
     "publicationTitle",
-	"sampleEntityType",
-	"selectedCellType",
-	"specimenDisease",
-	"specimenOrgan",
-	"specimenOrganPart",
-	"workflow"
+    "sampleDisease",
+    "sampleEntityType",
+    "selectedCellType",
+    "specimenDisease",
+    "specimenOrgan",
+    "specimenOrganPart",
+    "workflow"
 ];
 
 // Facet display names
@@ -55,183 +64,212 @@ const FACET_DISPLAY_NAMES = {
 
 class SearchBrowser extends React.Component {
 
-	constructor() {
-		super();
-		this.state = {
-			disabled: false, // True if user has entered suggestion text that results in no hits
-			selectedFacet: '',
-			selectedTerm: ''
-		};
-		this.onSelected = this.onSelected.bind(this);
-	}
+    constructor() {
+        super();
+        this.state = {
+            disabled: false, // True if user has entered suggestion text that results in no hits
+            selectedFacet: '',
+            selectedTerm: ''
+        };
+        this.onSelected = this.onSelected.bind(this);
+    }
 
-	buildExploreDataCategory = (facetName, facetDisplayName, terms) => {
+    /**
+     * Create category (facet) and options (terms) to back autosuggest.
+     *
+     * @param facetName
+     * @param facetDisplayName
+     * @param terms
+     * @returns {{facetName: *, facetDisplayName: *, terms: *}}
+     */
+    buildExploreDataCategory = (facetName, facetDisplayName, terms) => {
 
-		const selectableTerms = terms
-			.filter(term => !!term.term)
-			.map((term) => {
-				return {
-					termName: term.term,
-					termDisplayName: term.termDisplayName || term.term,
-					termCount: numberFormatter.format(term.count, 1)
-				}
-			});
+        // Map terms - use display name if specified (projectId facet terms only)
+        const selectableTerms = terms
+            .filter(term => !!term.term)
+            .map((term) => {
+                return {
+                    termName: term.term,
+                    termDisplayName: term.termDisplayName || term.term,
+                    termCount: numberFormatter.format(term.count, 1)
+                }
+            });
 
-		return {
-			facetName: facetName,
-			facetDisplayName: stringFormatter.convertCamelCasetoTitleCase(facetDisplayName),
-			terms: selectableTerms
-		};
-	};
+        // Sort terms
+        selectableTerms.sort((t0, t1) => {
+            const sortValue0 = t0.termDisplayName.toLowerCase();
+            const sortValue1 = t1.termDisplayName.toLowerCase();
+            if ( sortValue0 > sortValue1 ) {
+                return 1;
+            }
+            if ( sortValue0 < sortValue1 ) {
+                return -1;
+            }
+            return 0;
+        });
 
-	clearSelectedFacet = () => {
+        // Return model for backing autosuggest
+        return {
+            facetName: facetName,
+            facetDisplayName: stringFormatter.convertCamelCasetoTitleCase(facetDisplayName),
+            terms: selectableTerms
+        };
+    };
 
-		this.setState({
-			selectedFacet: '',
-			selectedTerm: ''
-		});
-	};
+    clearSelectedFacet = () => {
 
-	getExploreData = () => {
+        this.setState({
+            selectedFacet: '',
+            selectedTerm: ''
+        });
+    };
 
-		let data = [];
-		if (this.isDataInitialized()) {
+    getExploreData = () => {
 
-			data.push({
-				facetName: 'error',
-				facetDisplayName: 'Oops! We don’t have an exact match, it may be called by a different name. Scroll through the list to see what data we currently have available.',
-				terms: []
-			});
+        let data = [];
+        if ( this.isDataInitialized() ) {
 
-			const termFacets = this.listSelectableTermFacets(this.props.termFacets)
-				.map((facet) => {
+            data.push({
+                facetName: 'error',
+                facetDisplayName: 'Oops! We don’t have an exact match, it may be called by a different name. Scroll through the list to see what data we currently have available.',
+                terms: []
+            });
 
-					return Object.assign({}, facet, {
-						facetDisplayName: FACET_DISPLAY_NAMES[facet.facetName] || facet.facetName
-					});
-				});
-			termFacets.sort((facet0, facet1) => {
-				return facet0.facetDisplayName > facet1.facetDisplayName ? 1 : -1;
-			});
-			termFacets.forEach((termFacet) => {
-				data.push(this.buildExploreDataCategory(termFacet.facetName, termFacet.facetDisplayName, termFacet.terms));
-			});
-		}
+            // Filter facets to allow list, map facet display name if necessary. 
+            const termFacets = this.listSelectableTermFacets(this.props.termFacets)
+                .map((facet) => {
 
-		return data;
-	};
+                    return Object.assign({}, facet, {
+                        facetDisplayName: FACET_DISPLAY_NAMES[facet.facetName] || facet.facetName
+                    });
+                });
 
-	getPlaceholder = () => {
+            // Sort option categories
+            termFacets.sort((facet0, facet1) => {
+                return facet0.facetDisplayName > facet1.facetDisplayName ? 1 : -1;
+            });
 
-		const browser = typeof window !== 'undefined';
-		let windowWidth = browser && window.innerWidth;
+            // Create category/option model for backing autosuggest
+            termFacets.forEach((termFacet) => {
+                data.push(
+                    this.buildExploreDataCategory(termFacet.facetName, termFacet.facetDisplayName, termFacet.terms));
+            });
+        }
 
-		if (this.isDataInitialized()) {
+        return data;
+    };
 
-			if (windowWidth < 1024) {
-				return 'Filter projects by attribute';
-			}
-			return 'Filter projects by attribute e.g. organ, project title.';
-		}
+    getPlaceholder = () => {
 
-		return 'Loading data...'
-	};
+        const browser = typeof window !== 'undefined';
+        let windowWidth = browser && window.innerWidth;
 
-	getSearchButtonClass = () => {
+        if ( this.isDataInitialized() ) {
 
-		if (this.isDataInitialized()) {
+            if ( windowWidth < 1024 ) {
+                return 'Filter projects by attribute';
+            }
+            return 'Filter projects by attribute e.g. organ, project title.';
+        }
 
-			return classNames({
-				[globalStyles.button]: true,
-				[globalStyles.blue]: true,
-				[globalStyles.light]: true
-			});
-		}
+        return 'Loading data...'
+    };
 
-		return classNames({
-			[globalStyles.button]: true,
-			[globalStyles.blue]: true,
-			[globalStyles.light]: true,
-			[globalStyles.disabled]: true
-		});
-	};
+    getSearchButtonClass = () => {
 
-	isDataInitialized = () => {
+        if ( this.isDataInitialized() ) {
 
-		return this.props.termFacets;
-	};
+            return classNames({
+                [globalStyles.button]: true,
+                [globalStyles.blue]: true,
+                [globalStyles.light]: true
+            });
+        }
 
-	listSelectableTermFacets = (termFacets) => {
+        return classNames({
+            [globalStyles.button]: true,
+            [globalStyles.blue]: true,
+            [globalStyles.light]: true,
+            [globalStyles.disabled]: true
+        });
+    };
 
-		return termFacets.filter(termFacet => {
+    isDataInitialized = () => {
 
-			return ALLOW_SEARCH_FACETS.indexOf(termFacet.facetName) >= 0;
-		});
-	};
+        return this.props.termFacets;
+    };
 
-	onBlur = () => {
+    listSelectableTermFacets = (termFacets) => {
 
-		this.clearSelectedFacet();
-	};
+        return termFacets.filter(termFacet => ACCEPT_SEARCH_FACETS.indexOf(termFacet.facetName) >= 0);
+    };
 
-	onEnter = () => {
+    onBlur = () => {
 
-		this.visitExploreLink();
-	};
+        this.clearSelectedFacet();
+    };
 
-	onSelected = (term) => {
+    onEnter = () => {
 
-		if (term) {
+        this.visitExploreLink();
+    };
 
-			let facetName = this.getExploreData().filter(t => t.terms.find(f => f.termName === term));
-			this.setState({selectedFacet: facetName[0].facetName, selectedTerm: term});
-		}
-		else {
+    onSelected = (term) => {
 
-			this.clearSelectedFacet();
-		}
-	};
+        if ( term ) {
 
-	onSuggestionsFound = (suggestionsFound) => {
+            let facetName = this.getExploreData().filter(t => t.terms.find(f => f.termName === term));
+            this.setState({selectedFacet: facetName[0].facetName, selectedTerm: term});
+        }
+        else {
 
-		this.setState({disabled: !suggestionsFound});
-	};
+            this.clearSelectedFacet();
+        }
+    };
 
-	visitExploreLink = () => {
+    onSuggestionsFound = (suggestionsFound) => {
 
-		if (this.state.selectedTerm) {
-			const facetFilter = JSON.stringify([{
-				"facetName": this.state.selectedFacet,
-				"terms": [this.state.selectedTerm]
-			}]);
+        this.setState({disabled: !suggestionsFound});
+    };
+
+    visitExploreLink = () => {
+
+        if ( this.state.selectedTerm ) {
+            const facetFilter = JSON.stringify([
+                {
+                    "facetName": this.state.selectedFacet,
+                    "terms": [this.state.selectedTerm]
+                }
+            ]);
             const params = new URLSearchParams();
-			params.set("filter", facetFilter);
-			window.location.href = `${process.env.GATSBY_EXPLORE_URL}projects?${params.toString()}`;
-		}
-	};
+            params.set("filter", facetFilter);
+            window.location.href = `${process.env.GATSBY_EXPLORE_URL}projects?${params.toString()}`;
+        }
+    };
 
-	render() {
-		return (
-			<section className={compStyles.searchBrowser}>
-				<div
-					className={classNames(globalStyles.flex, mainStyles.sectionInner, mainStyles.m, compStyles.sectionInner)}>
-					<h4 className={classNames(globalStyles.bgDark, fontStyles.introTitle)}>Find Projects</h4>
-					<HCAAutosuggest autosuggestData={this.getExploreData()}
-									disabled={!this.isDataInitialized()}
-									placeholder={this.getPlaceholder()}
-									showCount={false}
-									onBlur={this.onBlur.bind(this)}
-									onEnter={this.onEnter.bind(this)}
-									onSelected={this.onSelected.bind(this)}
-									onSuggestionsFound={this.onSuggestionsFound.bind(this)}/>
-					<ClickHandler
-						className={this.getSearchButtonClass()}
-						clickAction={this.visitExploreLink}
-						tag={'div'}>Go</ClickHandler>
-				</div>
-			</section>
-		);
-	}
+    render() {
+        return (
+            <section className={compStyles.searchBrowser}>
+                <div
+                    className={classNames(globalStyles.flex, mainStyles.sectionInner, mainStyles.m,
+                        compStyles.sectionInner)}>
+                    <h4 className={classNames(globalStyles.bgDark, fontStyles.introTitle)}>Find Projects</h4>
+                    <HCAAutosuggest autosuggestData={this.getExploreData()}
+                                    disabled={!this.isDataInitialized()}
+                                    placeholder={this.getPlaceholder()}
+                                    showCount={false}
+                                    onBlur={this.onBlur.bind(this)}
+                                    onEnter={this.onEnter.bind(this)}
+                                    onSelected={this.onSelected.bind(this)}
+                                    onSuggestionsFound={this.onSuggestionsFound.bind(this)}/>
+                    <ClickHandler
+                        className={this.getSearchButtonClass()}
+                        clickAction={this.visitExploreLink}
+                        tag={'div'}>Go</ClickHandler>
+                </div>
+            </section>
+        );
+    }
 }
 
 export default SearchBrowser;
