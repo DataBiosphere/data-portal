@@ -127,8 +127,8 @@ function buildFacetSearchTerms(terms) {
     
     return terms.map(term => {
         return {
-            term: term,
-            termDisplayName: term.term || "Unspecified"
+            term: term.term || "Unspecified",
+            count: term.count
         };
     });
 }
