@@ -54,7 +54,6 @@ build_cgl-dev:
     - export GATSBY_GTM_AUTH=CzDpc0__fhyqfREDehPK8Q
     - export GATSBY_ENV_NAME=env-83
     - export GATSBY_ENV=STAGING
-    - export GATSBY_CONTENT_VERSION=2
     - export GATSBY_DEFAULT_CATALOG=dcp2
     - gatsby build
   only:

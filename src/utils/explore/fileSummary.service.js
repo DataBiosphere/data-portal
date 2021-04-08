@@ -152,17 +152,13 @@ function buildProjectIdSearchTerms(terms) {
 }
 
 /**
- * Add catalog for v2 environments.
+ * Add default catalog.
  */
 function buildExploreUrl(baseUrl) {
 
     const exploreUrl = new URL(baseUrl);
+    exploreUrl.searchParams.append("catalog", EnvironmentService.getDefaultCatalog()); /* Add default catalog. */
 
-    // Add default catalog for v2 environments.
-    if ( EnvironmentService.isV2() ) {
-        exploreUrl.searchParams.append("catalog", EnvironmentService.getDefaultCatalog());
-    }
-    
     return exploreUrl;
 }
 

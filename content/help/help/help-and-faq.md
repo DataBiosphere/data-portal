@@ -15,19 +15,16 @@ If you have questions or issues to report please email [data-help@humancellatlas
 
 ### What is the Human Cell Atlas?
 
-The HCA is a collaborative effort by an international group of scientists to create a comprehensive reference map of all the cells in the human body. The HCA *Data Portal* and Data Coordination Platform are built by scientists and technologists at EMBL-EBI, the Broad Institute, UC Santa Cruz, and the Chan Zuckerberg Initiative. [Learn more about the HCA project here](https://www.humancellatlas.org/). 
+The HCA is a collaborative effort by an international group of scientists to create a comprehensive reference map of all the cells in the human body. The HCA *Data Portal* and Data Coordination Platform was built in partnership with the Chan Zuckerberg Initiative and continues to be developed by scientists and technologists at EMBL-EBI, the Broad Institute, and UC Santa Cruz. [Learn more about the HCA project here](https://www.humancellatlas.org/). 
 
 ### What kind of data is in the HCA?
 
-The HCA data will eventually accept all types of single-cell data, but it currently contains single-cell RNA-sequencing data from Smart-seq2 and 10X v2 assays. While we are focused on curating a collection of data from healthy human specimens, as we grow we are accepting data from a number of sources, including model organisms and organoids, and both healthy and diseased samples. Stay tuned, the HCA is constantly evolving!
+The HCA data will eventually accept all types of single-cell data, but it currently contains single-cell and single-nuclei RNA-sequencing data from Smart-seq2 and 10x v2 and v3 assays. While we are focused on curating a collection of data from healthy human specimens, as we grow we are accepting data from a number of sources, including model organisms and organoids, and both healthy and diseased samples. Stay tuned, the HCA is constantly evolving!
 
-Currently, both Smart-seq2 and 10X v2 processed data can be downloaded as expression matrices from individual cell data using the CLI. The matrices for 10x data are per channel. 
+Currently, both Smart-seq2 and 10x processed data can be downloaded as expression or count matrices, respectively,  using the Data Browser or by navigating to the Porject page  
 
-In addition, an expression matrix containing the combined Smart-Seq2 data from all the cells of a particular project can also be obtained by requesting an expression matrix in the Data Browser.  
 
-Note that these matrices contain Gencode IDs, rather than gene name symbols. Please contact us if you need help converting Gencode IDs to gene names.
-
-### How do I get more details about projects, like protcols or publications?
+### How do I get more details about projects, like protocols or publications?
 
 You can learn more about each project by visiting the Projects tab in the *Explore* section of the *Data Portal*. We encourage all contributing projects to provide a detailed description of their protocol and post their protocol details at [protocols.io](https://www.protocols.io/). Publication information, where available, is also visible on the Projects page.
 
@@ -44,7 +41,7 @@ The URL for the HCA DCP *Data Portal*, https://data.humancellatlas.org/, can be 
 ### How do I access the data in the HCA?
 
 The user guides in the *Intro* section of the data portal contain detailed information about [how to access the data](/guides).
-We have also created a series of [data consumer vignettes](https://github.com/HumanCellAtlas/data-consumer-vignettes), which give examples of how others have accessed and used the data from the HCA.
+
 
 ### How do I visualize or analyze the data in the HCA?
 
@@ -52,7 +49,7 @@ Single-cell sequencing analysis methods are constantly changing, and there are m
 
 ### How do I make my tool compatible with HCA data and add it to the HCA Data Portal?
 
-We encourage scientists and developers to contribute their own analysis and visualization applications and data processing pipelines to the HCA.  You can learn more about how to do this in the *Intro* section of the *Data Portal*.
+We encourage scientists and developers to contribute their own analysis and visualization applications and data processing pipelines to the HCA. You can learn more about how to do this in the *Intro* section of the *Data Portal*.
 
 ### How can I get involved with the HCA?
 
@@ -60,6 +57,6 @@ Visit the *Contact* page to learn how to collaborate with us and to reach us wit
 
 ### How can I reuse parts of the DCP?
 
-One of our goals is to make the HCA data coordination platform code open and reusable to the community.  For now, contact us at data-help@humancellatlas.org with questions about reusing our code.  Stay tuned for more information about reusing code in the *Intro* section of the *Data Portal*.
+One of our goals is to make the HCA Data Coordination Platform code open and reusable to the community.  For now, contact us at data-help@humancellatlas.org with questions about reusing our code.  Stay tuned for more information about reusing code in the *Intro* section of the *Data Portal*.
 
 
