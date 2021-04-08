@@ -7,18 +7,17 @@ description: "Overview of the file formats used by the data processing pipelines
 
 # File Formats of the Data Processing Pipelines Service
 
-## Matrix Download File Formats
+## DCP Matrix Download File Format
 
-Matrices are best downloaded through the HCA *Data Portal*. You can use the portal's Data Browser to make a multifaceted search to dynamically generate matrices. This functionality is powered by our Expression Matrix Service (which will allow programmatic access in the future). Using the Data Browser, users can specify a desired file type for expression matrices during download. The following formats are currently supported: Zarr, CSV, and .loom formats.
+> **MTX and CSV Matrix Deprecation Notice:** 
+DCP 1.0 matrices will be deprecated in the DCP 2.0. Loom files will be the default format.    
 
-We are creating vignettes to demonstrate working with HCA expression matrices in several common data science environments. Please note that these notebook vignettes are intended to show how to initiate data analysis with data from the HCA DCP and that these data are usable in common environments. The vignettes are not intended to teach analysis.
+Cell by gene count matrices are provided in [Loom](http://loompy.org/) file format and be downloaded through the HCA Data Portal. From the Portal's Data Browser, you can make a multifaceted search to download matrices for multiple projects. Alternatively, you can explore the matrices available for download on the individual Project pages.
 
-* [Jupyter Notebook](https://github.com/HumanCellAtlas/data-consumer-vignettes/tree/master/Download%20Expression%20Matrix%20for%20Scanpy) showing analysis of Smart-seq2 data in python using HCA matrices.
+#### Working with Loom Files
 
-## Matrix Data Storage File Format
-
-Internally, the Data Processing Pipelines Service uses the [Zarr version 2](https://zarr.readthedocs.io/en/stable/spec/v2.html) format for storage of expression matrices and their associated metadata. Working with Zarr formatted files is only necessary when directly accessing the Data Store using the HCA CLI. For most users, the Data Portal and Expression Matrix Service are better sources of matrices and provide additional file formats (besides Zarr files). 
-
-The Zarr format stores information in groups and arrays, where groups can contain other groups and arrays are stored chunked and compressed. The group and chunk structure is conveyed in the file names and directory structure. For information about creating and using the Zarr format see this [Zarr tutorial](https://zarr.readthedocs.io/en/stable/tutorial.html#). For information about the file structure and content of the files we generate, see [this doc](https://github.com/HumanCellAtlas/skylab/blob/6aa3a97800aab23c18cd746800b9e4073e53e810/docs/matrix_format_spec.md).
+Loom files can be explored using multiple Python- and R-supported downstream analysis tools, including [Loompy](http://loompy.org/), [SCANPY](https://github.com/theislab/scanpy), and [Pegasus](https://pegasus.readthedocs.io/en/latest/). You can also visualize Loom files using Bioconductor's [LoomExperiment](https://www.bioconductor.org/packages/release/bioc/html/LoomExperiment.html).
 
 
+## Contributor-generated Matrix File Format
+When available, contributor-generated count matrices will be provided on individual Project pages. These matrices will vary in file format and content. To learn more about a specific contributor-generated matrix file, reach out to the Contacts listed on the Project page. 

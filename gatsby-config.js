@@ -8,22 +8,12 @@
 // Template variables
 let contentPath = `${__dirname}/content`;
 let metadataSchemaDocsPath = `${__dirname}/_metadata-schema/docs`;
-let hcaGithubSystemStatusDocsPath = `${__dirname}/humancellatlas.github.io`;
-let siteMapPath = `${__dirname}/site-map/dcp1`;
+let siteMapPath = `${__dirname}/site-map`;
 
 if ( process.env.GATSBY_ENV == "LOCAL" ) {
     console.log("LAUNCHING USING LOCAL CONFIG");
     contentPath = './content';
-    hcaGithubSystemStatusDocsPath = '../humancellatlas.github.io';
     metadataSchemaDocsPath = '../hca-metadata-schema/docs';
-    siteMapPath = "./site-map/dcp1";
-}
-
-/* Gatsby content version 2. */
-if ( Number(process.env.GATSBY_CONTENT_VERSION) === 2 ) {
-
-    siteMapPath = "./site-map/dcp2";
-    contentPath = './content-v2'
 }
 
 let gtmId = process.env.GATSBY_GTM_ID;
@@ -66,20 +56,6 @@ module.exports = {
                 path: metadataSchemaDocsPath,
                 name: 'metadata-markdown-pages',
             }
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: hcaGithubSystemStatusDocsPath,
-                name: 'status-markdown-pages',
-            }
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: hcaGithubSystemStatusDocsPath,
-                name: 'json-status',
-            },
         },
         `gatsby-transformer-yaml`,
         {
@@ -136,8 +112,8 @@ module.exports = {
                                 "internal-link",
                                 "data-lifecycle-diagram",
                                 "link-to-browser",
-                                "metadata-type-entity-schemas",
-                                "system-status"]
+                                "metadata-type-entity-schemas"
+                            ]
                         }
                     },
                     {

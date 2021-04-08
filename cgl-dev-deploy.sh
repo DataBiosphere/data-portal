@@ -10,7 +10,6 @@ export GATSBY_GTM_ID=GTM-M2J5NTJ
 export GATSBY_GTM_AUTH=CzDpc0__fhyqfREDehPK8Q
 export GATSBY_ENV_NAME=env-83
 export GATSBY_ENV=LOCAL
-export GATSBY_CONTENT_VERSION=2
 gatsby build
 
 

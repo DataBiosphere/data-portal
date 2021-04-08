@@ -10,9 +10,7 @@ import React from "react";
 
 // App dependencies
 import AnnouncementCatalog from "./announcementCatalog/announcementCatalog";
-import AnnouncementDCP2ComingSoon from "./announcementDCP2ComingSoon/announcementDCP2ComingSoon";
 import Banner from "./banner/banner";
-import * as EnvironmentServices from "../utils/environment/environment.service";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import HCAMain from "./hcaMain/hcaMain";
@@ -24,7 +22,7 @@ import SupportRequest from "./supportRequest/supportRequest";
 import compStyles from "./layout.module.css";
 import {GASource} from "../utils/dp-gtm/ga-source.model";
 
-let classNames = require("classnames");
+const classNames = require("classnames");
 
 require("katex/dist/katex.min.css");
 
@@ -55,14 +53,13 @@ class Layout extends React.Component {
         const {activeLocation, children, description, docPath, healthy, homePage, homeTab,
             metadataContent, nav, pageTitle, sectionTitle} = this.props;
         const {scrollable, supportRequestActive, supportRequestSource} = this.state;
-        const v2 = EnvironmentServices.isV2();
         return (
             <div>
                 <PageHead pageTitle={pageTitle}/>
                 <SEO description={description} pageTitle={pageTitle}/>
                 <div className={classNames(compStyles.site, {[compStyles.noScroll]: !scrollable})}>
                     <Header onHandleSiteScroll={this.onHandleSiteScroll} homePage={homePage} docPath={docPath}/>
-                    {v2 ? <AnnouncementCatalog/> : <AnnouncementDCP2ComingSoon/>}
+                    <AnnouncementCatalog/>
                     <Banner position={"top"} healthy={healthy}/>
                     {homePage ? children :
                         <HCAMain activeLocation={activeLocation}

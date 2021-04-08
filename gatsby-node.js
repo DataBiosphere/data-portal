@@ -35,10 +35,10 @@ exports.onCreateNode = ({node, getNode, actions}) => {
     if ( isPostNodeFeatured(type) ) {
 
         const {frontmatter} = node,
-            {draft, version} = frontmatter || {};
+            {draft} = frontmatter || {};
 
         const filePath = createFilePath({node, getNode, basePath: ""});
-        const nodeValueEnabled = isPostNodeEnabled(draft, version);
+        const nodeValueEnabled = isPostNodeEnabled(draft);
         const nodeValueSlug = buildPostSlug(filePath);
 
         /* Create nodes */
