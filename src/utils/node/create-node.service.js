@@ -6,7 +6,6 @@
  */
 
 // Template variables
-const gatsbyContentVersion = process.env.GATSBY_CONTENT_VERSION;
 const gatsbyEnv = process.env.GATSBY_ENV;
 const pathMetadataRationale = "/metadata/metadata-design/rationale";
 const pathMetadataStructure = "/metadata/metadata-structure/structure";
@@ -35,29 +34,18 @@ const buildPostSlug = function buildPostSlug(filePath) {
 
 /**
  * Returns true if the post node is enabled.
- * A post in draft mode with the gatsby environment in "PROD" or
- * a mismatch in the specified post version with gatsby content version will result in a false value.
+ * A post in draft mode with the gatsby environment in "PROD" will return a false value.
  *
  * @param draftExists
- * @param version
  * @returns {boolean}
  * @constructor
  */
-const isPostNodeEnabled = function isPostNodeEnabled(draftExists, version) {
+const isPostNodeEnabled = function isPostNodeEnabled(draftExists) {
 
     /* Post will not be enabled if draft mode is true and environment is "PROD". */
-    if ( draftExists === true && gatsbyEnv === "PROD" ) {
+    const postDraftInProdEnvironment = (gatsbyEnv === "PROD" && draftExists === true);
 
-        return false;
-    }
-
-    /* Post will not be enabled if a specified version does not correlate with gatsby content version. */
-    if ( version && version > 0 ) {
-
-        return Number(gatsbyContentVersion) === Number(version);
-    }
-
-    return true;
+    return !postDraftInProdEnvironment;
 };
 
 /**

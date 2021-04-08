@@ -11,7 +11,6 @@ import {EnvironmentUrl} from "./environment-url.model";
 // Template variables
 const GATSBY_ENV = process.env.GATSBY_ENV;
 
-
 /**
  * Return the name of the current environment
  */
@@ -38,32 +37,6 @@ export function getCurrentEnvironmentURL() {
 export function getDefaultCatalog() {
 
     return process.env.GATSBY_DEFAULT_CATALOG;
-}
-
-/**
- * Returns true if the current content version is two i.e. i.e. the new “cgl” environment.
- *
- * @returns {number}
- */
-export function isV2() {
-
-    const contentVersion = Number(process.env.GATSBY_CONTENT_VERSION);
-
-    return contentVersion === 2;
-}
-
-/**
- * Returns true if the specified environment is the current environment
- */
-export function isCurrentEnvironment(environment, localAsDev) {
-
-    // Local is equivalent to dev, if applicable
-    if ( localAsDev && environment === "DEV" && isLocal() ) {
-        return true;
-    }
-
-    // Otherwise explicitly check
-    return GATSBY_ENV === environment;
 }
 
 /**

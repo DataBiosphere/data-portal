@@ -7,70 +7,70 @@ description: "A quick start guide on accessing HCA data and metadata."
 
 
 # Accessing HCA Data and Metadata
-There are several ways to access the data in the Data Store. This section briefly reviews how to find and download data and associated metadata using the most common methods, the Data Browser and the CLI, and finally, it points to some software programs that demonstrate some programmatic access patterns. 
+This section briefly reviews how to find and download cross-project data and associated metadata using the Data Browser and curl commands. 
 
-Downloading data via the Data Browser and the CLI both first require [installation of the HCA CLI](/guides/installing-the-hca-cli).
+## Finding Data
+The **Explore** section of the Data Portal provides an interactive data browser. You can design a unique cohort, or data subset, by selecting various facets in the Browser's Organ, Method, Donor, Specimen sections. 
+
+The Specimen's tab shows you how many specimens have been selected. It also gives an estimate of the size of the data set if the entire list were downloaded.
+
+## Preparing Data for Export
+After you identify a cohort of interest, you download the raw data, analysis files, and metadata by clicking the blue **Export Selected Data** icon on the right of the page.
+
+![Export Icon](../_images/Export_icon.png "Export Data")
 
 
-## Using the Data Browser to Access Data
+This will open a new page giving you the option to:
+ 1) Download Selected Data Using "curl"
+ 2) Download a File Manifest with Metadata for the Selected Data
+ 3) Export to Terra 
 
-### Finding Data
-The *Explore* section of the data portal provides an interactive data browser. Select a subset of data by checking various boxes in the Organ, Method, Donor, Specimen sections. You can see how many specimens have been selected in the Specimens tab. It also gives an estimate of the size of the data set if the entire list were downloaded.
 
-### Downloading a Data Manifest
-Once you have selected data through the user interface, click the Download button on the right hand side of the page to download the list of data sets (note that the actual data specified by the list is NOT downloaded in this step). We call this list a manifest. The Download dialog box gives you the option to further refine the types of files you would like to be included in the manifest. Select which files to include in the manifest. Be cognizant that the sizes listed are for the actual files and not the manifest itself. 
+## Downloading Data with a Curl Command
+To download the raw and processed data: 
 
-Press the Download Manifest button and a file called `<uuid>.tsv` will be saved to your local file system. Note that the 
-file name will use a UUID to avoid overwriting previous downloads.
+1. Go to **Download Selected Data Using 'curl'** and select **Start** 
 
-The format of the manifest file is a simple tab separated text file, with the first line representing the header title for each column. It is OK to remove rows for unwanted files but the header row must remain, and the columns should remain the same.
+![Export Data](../_images/Export_selected_data.png "Export Selected Data")
 
-### Using the CLI to Download Files Listed in the Manifest
-The CLI is a powerful tool that can be used to find and download data from the Data Store. There are several subsections to the `hca` tool. Data search, inspection and download are all available from the `hca dss` section. Help text is available by typing:
+2. Select the files to include in the download- the download dialog box gives you the option to further refine the types of files 
 
-`hca dss --help`
+![Select Files](../_images/select_file_types.png "Select Files")
 
-Help is also available for the commands under the `dss` section. For example help on the get-bundle command can be seen by entering
 
-`hca dss get-bundle --help`
+3. Select **Request curl Command**
 
-Now let's try using the manifest file to download files. 
+After a few seconds, a new window with a curl command will open. 
 
-Print the help for how to download the manifest of files:
 
-`hca dss download-manifest --help`
+![curl command](../_images/curl_command.png "curl command")
 
-Now execute the command to begin the download of the files listed in the `<uuid>.tsv` file. 
 
-`hca dss download-manifest --manifest <uuid>.tsv --replica aws`
+Paste this curl command in your local or cloud-based terminal to download the data. 
 
-Note that the download could take a long time depending on the number and size of files included in the manifest file.
+After downloading the data files, return to the **Export Selected Data** page using the back icon to download the metadata (see step-by-step instructions below).
 
-### Finding Data
-You can easily get a list of bundles in the Data Store by using the following Elastic Search command:
+![Back icon](../_images/back_icon.png "back icon")
 
-`hca dss post-search --es-query "{}" --replica=aws | less`
-    
-Note that this will return the first page of results found with the command. Searching for all bundles in the Data Store is not very useful though. 
+## Downloading Metadata in a Data Manifest
+Once you have downloaded the selected data files, you can download all the metadata associated with the cross-project data files. 
 
-`hca dss post-search --replica aws --es-query '{"query": {"bool": {"must": {"match": {"files.project_json.insdc_project.text": "SRP075496"}} , "must_not": { "exists": { "field": "files.analysis_file_json" }} } } }'`
+This metadata, also called a "Data Manifest" is in TSV file format and lists all the details about your selected data such donor information and disease-state; however, the manifest is not the actual data file itself.
 
-This command will find all the ids of the original files associated with the project `SRP075496`, and not the analysis files.
+To download the metadata from the **Export Selected Data** page:
 
-### Downloading Data
-Once you find bundles that you would like to download use the command below. (Note that this command can be scripted to iterate through a list of bundle IDs with some basic shell scripting).
+1. Go to **Download a File Manifest with Metadata for the Selected Data** and select **Start**
+![Export Manifest](../_images/Export_selected_manifest.png "Export Manifest")
 
-For example, if your search returned the following bundle ID information:
+2. Select the file types to include in the manifest; the default selection will be the same as what you selected for the data download
 
-    {
-      "bundle_fqid": "2f08b7cd-2e39-44f2-b7fa-d4a373266104.2018-08-28T213422.136870Z",
-      "bundle_url": "https://dss.data.humancellatlas.org/v1/bundles/2f08b7cd-2e39-44f2-b7fa-d4a373266104?version=2018-08-28T213422.136870Z&replica=aws",
-      "search_score": null
-    }
+![Prepare Manifest](../_images/prepare_manifest.png "Prepare Manifest")
 
-then to download that bundle from the AWS replica you would use this command:
+3. Select **Prepare Manifest**
 
-    hca dss download --bundle-uuid 2f08b7cd-2e39-44f2-b7fa-d4a373266104 --version 2018-08-28T213422.136870Z --replica aws
 
-## Using the Data
-The Data Coordination Platform (DCP) offers a number of different programatic ways to access the data. The Application Programming Interfaces (APIs) that we provide are described [in the API documentation](/apis). The developers of the DCP have also created a number of example programs demonstrating how to use the APIs, and they can be found [in the consumer vignettes](/guides/consumer-vignettes). These examples are designed to demonstrate basic access patterns, but they are not intended to demonstrate any type of analysis.
+When selecting file types for the metadata manifest, note that the listed **File Sizes** are for the actual data files and not for the manifest itself. 
+
+The format of the manifest file (TSV) is a simple tab separated text file, with the first line representing the header title for each column. It is OK to remove rows for unwanted files but the header row must remain, and the columns should remain the same.
+
+

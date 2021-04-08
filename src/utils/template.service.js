@@ -5,9 +5,6 @@
  * Basic content template service.
  */
 
-// App dependencies
-import * as EnvironmentService from "../utils/environment/environment.service";
-
 /**
  * Returns the page title for the specified page, generated from the first h1 on the page.
  *
@@ -40,8 +37,7 @@ export function getPageTitle(htmlAst) {
  */
 export function getPageEditUrl(slug) {
 
-    const version = EnvironmentService.isV2() ? "-v2" : "";
-    return `https://github.com/HumanCellAtlas/data-portal/tree/staging/content${version}${slug}.md`;
+    return `https://github.com/HumanCellAtlas/data-portal/tree/staging/content${slug}.md`;
 }
 
 /**
@@ -62,8 +58,6 @@ export function showEditPage(slug) {
         case "/metadata/explore/metadata-explore":
             return false;
         case "/metadata/search/metadata-search":
-            return false;
-        case "/status/status/system-status":
             return false;
         default:
             return true;

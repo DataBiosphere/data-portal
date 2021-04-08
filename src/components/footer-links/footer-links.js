@@ -10,33 +10,23 @@ import React from "react";
 
 // App dependencies
 import FooterLink from "../footer-link/footer-link";
-import * as FooterService from "../../utils/footer.service";
+import {FooterQuery} from "../../hooks/footer-query";
 
 // Styles
 import compStyles from "./footer-links.module.css";
 
-class FooterLinks extends React.Component {
+function FooterLinks(props) {
 
-    render() {
-        const {links, onFeedbackClicked} = this.props;
-        const feedbackLink = {
-            name: "Feedback",
-            clickFn: onFeedbackClicked
-        };
-        links.push(feedbackLink);
-        return (
-            <div className={compStyles.links}>
-                {links.map((link, l) => <FooterLink key={l} link={link}/>)}
-            </div>
-        );
-    }
-}
-
-export default ({onFeedbackClicked}) => {
-
-    const footerLinks = FooterService.getFooterLinks();
+    const {onFeedbackClicked} = props;
+    const feedbackLink = {name: "Feedback", clickFn: onFeedbackClicked};
+    const links = FooterQuery();
+    links.push(feedbackLink);
 
     return (
-        <FooterLinks links={footerLinks} onFeedbackClicked={onFeedbackClicked}/>
-    )
+        <div className={compStyles.links}>
+            {links.map((link, l) => <FooterLink key={l} link={link}/>)}
+        </div>
+    );
 }
+
+export default FooterLinks;
