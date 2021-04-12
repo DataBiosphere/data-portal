@@ -17,11 +17,14 @@
 .toc button {
     background: transparent;
     border: 0;
-    color: var(--gray-dark);
+    color: var(--font-black);
     cursor: pointer;
+    letter-spacing: 0.2px; /* Matches body and left nav */
+    font-weight: 400;
     outline: 0;
     padding: 4px 0;
     text-align: left;
+    transition: color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
     width: 100%; /* Improves click-able area on link */
 }
 
@@ -32,7 +35,7 @@
 
 /* TOC link - hover */
 .toc:hover button {
-    color: var(--gray-darkest);
+    color: var(--gray-medium);
 }
 
 /* TOC link - active */

@@ -80,7 +80,7 @@
 
 /* Primary navigation - link */
 .hcaSideNav > div > li a {
-    color: var(--gray-dark);
+    color: var(--font-black);
     width: 100%; /* Improves click-able area on link */
 }
 
@@ -94,13 +94,14 @@
 
 /* Secondary navigation - link */
 .hcaSideNav > div ul li a {
-    color: var(--gray-dark);
+    color: var(--font-black);
+    transition: color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
     width: 100%; /* Improves click-able area on link */
 }
 
 /* Navigation - hover */
 .hcaSideNav > div > li:hover a, .hcaSideNav > div ul li:hover a {
-    color: var(--gray-darkest);
+    color: var(--gray-medium);
 }
 
 /* Primary navigation - expanded */
