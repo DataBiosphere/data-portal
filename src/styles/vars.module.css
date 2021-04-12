@@ -10,6 +10,7 @@
     --blue-darkest: #1f6b9a;
     --blue-light: #DAF0F6;
     --blue-light38: rgba(218, 240, 246, 0.38);
+    --font-black: #202124; /** Matches typography body style */
     --gray-dark: #666666;
     --gray-darkest: #333333;
     --gray-light: #CCCCCC;
