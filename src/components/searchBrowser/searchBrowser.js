@@ -42,6 +42,7 @@ const ACCEPT_SEARCH_FACETS = [
     "organPart",
     "pairedEnd",
     "preservationMethod",
+    "project", // project short name
     "projectTitle",
     "publicationTitle",
     "sampleDisease",
@@ -84,13 +85,13 @@ class SearchBrowser extends React.Component {
      */
     buildExploreDataCategory = (facetName, facetDisplayName, terms) => {
 
-        // Map terms - use display name if specified (projectId facet terms only)
+        // Map terms
         const selectableTerms = terms
             .filter(term => !!term.term)
             .map((term) => {
                 return {
                     termName: term.term,
-                    termDisplayName: term.termDisplayName || term.term,
+                    termDisplayName: term.term,
                     termCount: numberFormatter.format(term.count, 1)
                 }
             });
