@@ -22,20 +22,10 @@ export function buildSearchTerms(termFacets) {
 
     return termFacets.reduce(function(accum, termFacet) {
 
-        let projectFacet = (termFacet.facetName === "project");
-
-        if ( projectFacet ) {
-            accum.push({
-                facetName: "projectId",
-                terms: buildProjectIdSearchTerms(termFacet.terms)
-            });
-        }
-        else {
-            accum.push({
-                facetName: termFacet.facetName,
-                terms: buildFacetSearchTerms(termFacet.terms)
-            });
-        }
+        accum.push({
+            facetName: termFacet.facetName,
+            terms: buildFacetSearchTerms(termFacet.terms)
+        });
 
         return accum;
     }, []);
@@ -121,7 +111,7 @@ function bindTermFacetsResponse(termFacetsResponse) {
 }
 
 /**
- * Build the set of terms for facet (excluding project facet - see buildProjectIdSearchTerms).
+ * Build the set of terms for facet.
  */
 function buildFacetSearchTerms(terms) {
     
@@ -131,24 +121,6 @@ function buildFacetSearchTerms(terms) {
             count: term.count
         };
     });
-}
-
-/**
- * Build the set of terms for the project facet. This facet is converted to "projectId" and we must use the project ID
- * as the search value.
- */
-function buildProjectIdSearchTerms(terms) {
-
-    return terms.reduce((accum, term) => {
-
-        term.projectId.forEach(projectId => {
-            accum.push({
-                term: projectId,
-                termDisplayName: term.term
-            });
-        });
-        return accum;
-    }, []);
 }
 
 /**
