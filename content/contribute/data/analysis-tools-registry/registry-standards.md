@@ -15,7 +15,7 @@ Standards listed below are required or optional.  Packages must conform to all r
 The required standards must be met for packages to be listed in the Registry.
 
 ### Be Free and Open Source
-Source code for portals and packages listed in the Analysis Tools Registry must be freely licensed and under source control in a public repository on GitHub.  The license must be contained in the code repository.
+Source code for packages listed in the Analysis Tools Registry must be freely licensed and under source control in a public repository on GitHub.  The license must be contained in the code repository.
 
 ### Use Containers and Modules
 Method packages must be containerized in Docker and listed in a container registry, e.g. Docker Hub.  Visualization packages must be modular and importable using both ES6 export syntax and traditional script tags.
