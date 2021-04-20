@@ -16,6 +16,8 @@ Submissions are contributed via GitHub - use these links to access the submissio
 [Methods package submission](https://github.com/HumanCellAtlas/data-portalissues/new/?template=submit-method-package.md)\
 [Visualization package submission](https://github.com/HumanCellAtlas/data-portal/issues/new/?template=submit-visualization-component-package.md)
 
+>The approximate time frame from submission to publication of a new portal is 2-4 weeks.
+
 Below, we provide details about the information requested in the methods and visualizations submission forms.
 
 ## Package Submission Field Details
