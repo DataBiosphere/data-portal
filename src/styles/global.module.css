@@ -29,25 +29,6 @@
     padding: 0 var(--gutter-x);
 }
 
-/* Lists */
-.md ol, .md ul {
-    font-size: 15px;
-    line-height: 25px;
-    list-style-position: outside;
-    margin: 0 0 18px 24px;
-}
-
-.md li {
-    margin-bottom: 4px;
-}
-
-/* <h1> - overrides h1 specification for markdown content */
-.md > h1, h1.md {
-    font-size: 30px;
-    line-height: 36px;
-    margin: 0 0 18px;
-}
-
 /* Dark background */
 .bgDark {
     color: white;
