@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useEffect, useRef} from "react";
+import React, {useCallback, useEffect, useRef} from "react";
 import rehypeReact from "rehype-react";
 
 // App dependencies
@@ -32,43 +32,45 @@ function Markdown(props) {
         }
     }).Compiler;
 
-    const insertTableWrapperNode = () => {
+    /**
+     * Wraps a container around any markdown <table> elements to facilitate overflow styles on the table.
+     */
+    const initTableOverflow = useCallback(() => {
 
         /* Grab any direct descendants of the markdown container. */
         const markdownNodes = refMarkdown.current?.firstChild?.children;
 
         if ( markdownNodes ) {
 
+            /* Grab only table elements that are direct descendants of the markdown. */
             const tableNodes = [...markdownNodes].filter(node => node.nodeName === "TABLE");
 
-            if ( tableNodes && tableNodes.length > 0 ) {
-
-                /* For each table node, wrap within a container element. */
-                tableNodes.forEach(tableEl => {
-
-                    /* Create the container with "table" class. */
-                    const containerEl = document.createElement("div");
-                    containerEl.classList.add(compStyles.tableWrapper);
-
-                    /* Inset new container element before existing table element. */
-                    tableEl.parentNode.insertBefore(containerEl, tableEl);
-
-                    /* Append the table element to the new container element. */
-                    containerEl.appendChild(tableEl);
-                });
-            }
+            /* For each table node, wrap within a container element. */
+            tableNodes.forEach(tableEl => insertTableOverflowNode(tableEl));
         }
+    }, []);
+
+    const insertTableOverflowNode = (tableEl) => {
+
+        /* Create the container with "tableContainer" class. */
+        const containerEl = document.createElement("div");
+        containerEl.classList.add(compStyles.tableContainer);
+
+        /* Inset new container element before existing table element. */
+        tableEl.parentNode.insertBefore(containerEl, tableEl);
+
+        /* Append the table element to the new container element. */
+        containerEl.appendChild(tableEl);
     };
 
     /* useEffect - componentDidMount, componentWillUnmount. */
     useEffect(() => {
 
-        /* Set up table wrapper. */
-        insertTableWrapperNode();
-    }, []);
+        initTableOverflow();
+    }, [initTableOverflow]);
 
     return (
-        <div className={compStyles.content} ref={refMarkdown}>{renderAst(children)}</div>
+        <div className={compStyles.markdown} ref={refMarkdown}>{renderAst(children)}</div>
     );
 }
 

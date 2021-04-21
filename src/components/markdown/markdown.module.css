@@ -12,12 +12,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Embedded video. */
 /* Embedded video wrapper. */
-.content div[class*="gatsby-resp-iframe-wrapper"] {
+.markdown div[class*="gatsby-resp-iframe-wrapper"] {
     padding-bottom: 316px !important; /* Padding equal to iframe max-height */
 }
 
 /* Embedded video. */
-.content iframe {
+.markdown iframe {
     margin-bottom: 24px;
     max-height: 316px !important;
     max-width: 560px !important;
@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Code. */
 /* Code within table - allows use of underscore */
-.content td code {
+.markdown td code {
     color: inherit !important;
     background-color: transparent !important;
     font-size: inherit !important;
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Code - inline and block */
-.content code[class*="language-"], .content pre[class*="language-"] {
+.markdown code[class*="language-"], .markdown pre[class*="language-"] {
     color: var(--black);
     font-family: "PT Mono", "Montserrat", sans-serif;
     font-size: 15px;
@@ -42,24 +42,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Code - inline and block - background */
-.content pre[class*="language-"], .content :not(pre) > code[class*="language-"] {
+.markdown pre[class*="language-"], .markdown :not(pre) > code[class*="language-"] {
     background-color: var(--white-off);
     border-radius: 3px;
 }
 
 /* Code - inline */
-.content :not(pre) > code[class*="language-"] {
+.markdown :not(pre) > code[class*="language-"] {
     padding: 2px;
 }
 
 /* Code - block */
-.content pre[class*="language-"] {
+.markdown pre[class*="language-"] {
     margin: 0 0 18px;
     padding: 16px;
 }
 
 /* Lists - ordered, unordered */
-.content ol, .content ul {
+.markdown ol, .markdown ul {
     font-size: 15px;
     line-height: 25px;
     list-style-position: outside;
@@ -67,17 +67,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* List item. */
-.content li {
+.markdown li {
     margin-bottom: 4px;
 }
 
-/* Table - container. */
-.content .tableWrapper {
+/* Table container. */
+.markdown .tableContainer {
     margin-bottom: 18px; /* Facilitates margin collapse between elements. */
     overflow: auto;
 }
 
 /* Table. */
-.content .tableWrapper table {
+.markdown .tableContainer table {
     margin: 0; /* Margin added to wrapper. */
 }
