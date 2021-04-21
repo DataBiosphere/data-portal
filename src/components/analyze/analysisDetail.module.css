@@ -20,7 +20,9 @@
 
 /* Heading. */
 .hcaAnalyzeDetail h1 {
-    margin-bottom: 18px;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0 0 18px;
 }
 
 /* Author */
