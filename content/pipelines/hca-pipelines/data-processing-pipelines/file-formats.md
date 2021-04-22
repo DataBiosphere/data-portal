@@ -10,9 +10,9 @@ description: "Overview of the file formats used by the data processing pipelines
 ## DCP Matrix Download File Format
 
 > **MTX and CSV Matrix Deprecation Notice:** 
-DCP 1.0 matrices will be deprecated in the DCP 2.0. Loom files will be the default format.    
+DCP 1.0 matrices are deprecated in the DCP 2.0. Loom files are now the default format.    
 
-Cell by gene count matrices are provided in [Loom](http://loompy.org/) file format and be downloaded through the HCA Data Portal. From the Portal's Data Browser, you can make a multifaceted search to download matrices for multiple projects. Alternatively, you can explore the matrices available for download on the individual Project pages.
+Cell by gene count matrices are provided in [Loom](http://loompy.org/) file format and can be downloaded through the Data Coordination Platform's (DCP) Data Portal. From the Portal's Data Browser, you can make a multifaceted search to download matrices for multiple projects. Alternatively, you can explore the matrices available for download on the individual Project pages.
 
 #### Working with Loom Files
 

@@ -8,14 +8,14 @@ description: "Overview of exploring projects in the HCA Data Browser."
 
 # Exploring Projects
 
-Projects are a basic unit of data organization in the HCA Data Coordination Platform (HCA DCP). Project contributors contribute raw sequencing and associated [files](/metadata/dictionary/file/sequence_file) along with rich metadata describing:
+Projects are a basic unit of data organization in the Data Coordination Platform (DCP). Project contributors contribute raw sequencing and associated [files](/metadata/dictionary/file/sequence_file) along with rich metadata describing:
 
 1. the [origin and type of the cells](/metadata/dictionary/biomaterial/cell_line) used in the project
 1. the [processes](/metadata/dictionary/process/analysis_process) and [protocols](/metadata/dictionary/protocol/aggregate_generation_protocol) used to collect and process the cells prior to sequencing
 1. the [sequencing](/metadata/dictionary/protocol/sequencing_protocol) methods used
 1. details about the [project](/metadata/dictionary/project/project) contributors and their institutions
  
-This [Metadata](/metadata/dictionary/process/analysis_process) is included in the project's Metadata Manifest (TSV file). When the HCA DCP [processes](/pipelines) the contributor's raw data with standardized pipelines, this processing information is also added to the Metadata Manifest.
+This [Metadata](/metadata/dictionary/process/analysis_process) is included in the project's Metadata Manifest (TSV file). When the DCP [processes](/pipelines) the contributor's raw data with standardized pipelines, this processing information is also added to the Metadata Manifest.
 
 
 ## Finding a Project of Interest
@@ -54,7 +54,7 @@ The project information page contains:
 
 ## Downloading Project Metadata
 
-For each project, the HCA DCP maintains a project specific TSV file containing the full project metadata. The TSV contains a row for each file in the project and columns for each metadata property. Meanings of the metadata properties are listed in the [HCA Metadata Dictionary](/metadata).
+For each project, the DCP maintains a project specific TSV file containing the full project metadata. The TSV contains a row for each file in the project and columns for each metadata property. Meanings of the metadata properties are listed in the [Metadata Dictionary](/metadata).
 
 The metadata TSV file gives a representation of the project's metadata graph that can be sorted and filtered using standard spreadsheet or data manipulation tools.
 
