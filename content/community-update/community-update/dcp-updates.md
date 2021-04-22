@@ -7,6 +7,17 @@ description: "Latest updates for the HCA Data Coordinaton Platform (DCP)."
 # DCP Platform Updates
 
 
+## Raw data for 16 new projects now available 
+#### April 12, 2021
+
+Raw sequencing data for 16 new projects are now available in the DCP [Data Browser](https://data.humancellatlas.org/explore/projects). These projects include single-cell data derived from:
+- Human and mouse
+- 10x 3’, 10x 5’, Smart-seq2 technologies
+- Small intestine, aorta, brain, skeletal muscle, blood, pancreas, tonsil, lung, skin, immune system, kidney, and eye
+- Airway basal stem cells exposed to SARS-CoV-2
+- Disease states, including Crohn’s Disease, aneurysm, Multiple Sclerosis, HIV, Type 2 Diabetes, and glioblastoma
+
+
 ## Processed data now available for 26 HCA 10x datasets
 #### April 02, 2021
 
