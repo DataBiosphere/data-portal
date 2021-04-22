@@ -7,10 +7,10 @@ description: "Overview of the data processing pipelines in the HCA DCP."
 
 # Overview of Data Processing Pipelines
 ## What is Data Processing?
-In the HCA DCP, data processing refers to the use of a computational pipeline to analyze raw experimental data from a specific assay. Processing of HCA data produces collections of quality metrics and features that can be used for further analysis. For example, the processing of single-cell RNA-Seq data produces aligned, QC’d reads, a matrix of gene expression, and a matrix of quality control metrics describing the data.   
+Data processing refers to the use of a computational pipeline to analyze raw experimental data from a specific assay. Processing data submitted to the Data Coordination Platform (DCP) produces collections of quality metrics and features that can be used for further analysis. For example, the processing of single-cell RNA-Seq data produces aligned, QC’d reads, a matrix of gene expression, and a matrix of quality control metrics describing the data.   
 
 ## What is the Data Processing Pipeline Service?
-The Data Processing Pipeline Service consists of analysis pipelines and execution infrastructure that move raw data through analysis, producing measurements that are available for download by the community from the Data Portal. These include both the submitted raw data and data resulting from data processing. As new single-cell technologies and analysis methods are developed and accepted by the research community, we will implement new data processing pipelines and make both the pipelines and the data publically available.
+The Data Processing Pipeline Service consists of analysis pipelines and execution infrastructure that move raw data through analysis, producing measurements that are available for download by the community from the Data Portal. These include both the submitted raw data and data resulting from data processing. As new single-cell technologies and analysis methods are developed and accepted by the research community, we will implement new data processing pipelines and make both the pipelines and the data publicly available.
 
 Data processing pipelines are each bespoke to the characteristics of the data they process. These pipelines can attempt to address the quality of the measurements, detecting false positives or negatives, optimal processing (such as aligning, collapsing UMIs, or segmenting images into accurate features), and many other concerns. Please see the details about each of our pipelines and send us your feedback!
 
@@ -25,7 +25,7 @@ The following are pipelines in development or in production in this platform:
 > Pipeline code and detailed documentation are hosted in the [WDL Analysis Research Pipelines (WARP)](https://github.com/broadinstitute/warp) repository on GitHub. 
 
 ## Access to Pipeline Outputs
-Matrices are publicly available and can be accessed through the HCA Data Browser or from the individual Project page.
+Matrices are publicly available and can be accessed through the DCP Data Browser or from the individual Project page.
 
 
 
