@@ -10,8 +10,10 @@ linked:
     - ./analysis-portals/cellxgene.md
     - ./analysis-portals/cytoscape.md
     - ./analysis-portals/dnastack.md
+    - ./analysis-portals/fastgenomics.md
     - ./analysis-portals/granatum-x.md
     - ./analysis-portals/hca-galaxy-instance.md
+    - ./analysis-portals/omnibrowser.md
     - ./analysis-portals/single-cell-expression-atlas.md
     - ./analysis-portals/single-cell-portal.md
     - ./analysis-portals/genepattern-notebook-environment.md
