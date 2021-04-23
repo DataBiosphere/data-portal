@@ -12,30 +12,36 @@ componentName: "analysisDetail"
 
 [FASTGenomics](https://www.fastgenomics.org/) - a platform to share single-cell RNA sequencing data and analyses using reproducible workflows.
 
-![FASTGenomics](../../_images/methods/fastgenomics.png)
+![FASTGenomics](../../_images/portals/fastgenomics.png)
 
-Recent technological advances enable genomics of individual cells, the building blocks of all living organisms. Single cell data characteristics differ from those of bulk data, which led to a plethora of new analytical strategies. However, solutions are only useful for experts and currently, there are no widely accepted gold standards for single cell data analysis.
+## FASTGenomics - a cloud-based collaboration platform for data management and reproducible analyses of scRNA-seq and omics data
 
-To meet the requirements of analytical flexibility, reproducibility, ease of use and data security, we developed [FASTGenomics](https://www.fastgenomics.org) as a powerful, efficient, versatile, robust, safe and intuitive analytical ecosystem for single-cell transcriptomics [[Scholz et al., 2018](https://doi.org/10.1101/272476)]. This development has been carried out at [Comma Soft](https://www.comma-soft.com), Bonn, in collaboration with the [Schultze lab](https://www.limes-institut-bonn.de/en/research/research-departments/unit-2/schultze-lab/schultze-lab-home) at LIMES Institute in Bonn, Germany.
+Collaboration and data sharing is key in biomedical research. It involves experts from several fields of study such as Molecular Biology, Immunology, Data Science and Computer Science as well as storage and re-use of data in a reproducible environment.
+Our Life and Data Science experts at [Comma Soft](https://comma-soft.com) have therefore developed the open platform [FASTGenomics](https://beta.fastgenomics.org), which provides a common infrastructure, smart data management, is easy to use and allows direct access to data and results. It thus acts as a single point of truth and brings together all collaborators of your project.
 
-![FASTGenomics Screenshot](../../_images/methods/fastgenomics_screenshot.png)
+The aim of FASTGenomics is to provide the highest reproducibility and transparency for single-cell and omics data analysis to the whole community. The platform offers publicly available datasets, reproducible analyses, and interactive projects for the exploration and visualization of gene expression data. Docker containers provide full reproducibility and help to avoid  the "works only on my machine" problems.
 
-FASTGenomics is designed as a platform for single cell RNA-seq data open to the scientific community. A major feature is to provide highest reproducibility and transparency for single cell data analysis to the whole community.
+FASTGenomics is an open-access platform and is used as the central data and analytics platform in various European research projects such as the Human Cell Atlas project [discovAIR](https://www.discovair.org) and the EU H2020 project [SYSCID](http://www.syscid.eu).
 
-The platform provides publicly available datasets and analyses for exploration and visualization of gene expression data. Using docker containers provides full reproducibility and helps avoiding "works only on my machine" problems. 
+We are an experienced partner with a tight network of leading experts from Bioinformatics, Immunology, and Pharma. Also, we are an active member of several academic networks such as the Human Cell Atlas Lung Biological Network, Sparse2Big, and Single Cell Omics Germany.
 
-Register now at <https://www.fastgenomics.org> and have a look at our collection of data sets and example analyses.
+Together, we can help you get started with your research project, assist in data management, and leverage the power of state-of-the-art AI-based techniques. Our hybrid design also allows custom solutions such as FASTGenomics on-premises for clinical and pharmaceutical research facilities.
 
-FASTGenomics serves as a platform, where you can share your data with the community and test novel algorithms on public data sets with known results. FASTGenomics scales already routinely to more than 300k cells per project and prototype apps suggest that scaling to 1M cells is also possible [[Scholz et al., 2018](https://doi.org/10.1101/272476)]. Moreover, its hybrid design also allows custom solutions such as FASTGenomics on premise for clinical and pharmaceutical research facilities.
 
-For more information, you can find us on [Twitter](https://twitter.com/FastGenomics). To register for the platform visit us at [www.fastgenomics.org](https://www.fastgenomics.org/).
+![FASTGenomics Screenshot](../../_images/portals/fastgenomics_screenshot.jpg)
 
-**Note**: We will soon offer interactive analyses based on Jupyter notebooks. Stay tuned for the upcoming beta-test!
+## Where to find us:
+**Twitter**: [@FASTGenomics](https://twitter.com/FASTGenomics) 
 
-REFERENCES
-Scholz et al. (2018) FASTGenomics: An analytical ecosystem for single-cell RNA sequencing data. BioRxiv, 272476.
+**Youtube**: [FASTGenomics channel](https://www.youtube.com/channel/UCuox5j5_QeW2mc4-gO2mncA)
 
-![FASTGenomics Logo](../../_images/methods/fastgenomics_logo.png)
+**Slack**: [Slack support channel](https://join.slack.com/t/fastgenomics/shared_invite/enQtNjU2ODk0OTk5MTA3LTkwZTgxN2EzYzAyMmExZTJiYmYxMjRhYjM2ODBiMWIwYmQ3MzZhYmIzZDkxZTI4OGFhYjQ4ODIzMTU3OWQ2NTc)
+
+**Github**: [https://github.com/FASTGenomics](https://github.com/FASTGenomics)
+
+**Docker**: [https://hub.docker.com/u/fastgenomics](https://hub.docker.com/u/fastgenomics)
+
+![FASTGenomics Logo](../../_images/portals/fastgenomics_logo.png)
 
 ## Contact
 Michael von Papen (<mailto:michael.papen@comma-soft.com>)
