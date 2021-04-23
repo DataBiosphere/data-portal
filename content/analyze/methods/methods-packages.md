@@ -5,10 +5,8 @@ title: "Methods Packages"
 description: "Methods packages for performing analyses involving computational biology approaches for analyzing single-cell data."
 componentName: "analyze"
 linked:
-    - ./methods-packages/fastgenomics.md
     - ./methods-packages/infer.md
     - ./methods-packages/magic.md
-    - ./methods-packages/omnibrowser.md
     - ./methods-packages/phate.md
     - ./methods-packages/sc3.md
     - ./methods-packages/slingshot.md
