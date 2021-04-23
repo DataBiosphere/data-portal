@@ -29,10 +29,11 @@ function AnalysisDetail(props) {
                     <h1>{title}</h1>
                     <p className={classNames(fontStyles.s, compStyles.author)}>{author}</p>
                 </div>
-                <a className={buttonClassNames}
-                   href={githubUrl}
-                   rel="noopener noreferrer"
-                   target="_blank">View</a>
+                {githubUrl ?
+                    <a className={buttonClassNames}
+                       href={githubUrl}
+                       rel="noopener noreferrer"
+                       target="_blank">View</a> : null}
             </div>
             <div dangerouslySetInnerHTML={{__html: html}}/>
         </div>
