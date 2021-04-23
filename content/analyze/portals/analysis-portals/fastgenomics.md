@@ -2,21 +2,21 @@
 path: "/analyze/portals/analysis-portals/fastgenomics"
 date: "2021-04-23"
 title: "FASTGenomics"
-author: "CC LifeScience @ Comma Soft AG"
+author: "Comma Soft AG"
 description: "FASTGenomics is a platform to share scRNA-seq data and analyses. Users can either choose from best practices or create individual workflows for the exploration of gene expression data."
-githubUrl: "https://github.com/FASTGenomics"
+githubUrl: "https://fastgenomics.org/login"
 appUrl: "https://www.fastgenomics.org/"
 upstreamRegistryUrl: ""
 componentName: "analysisDetail"
 ---
 
-[FASTGenomics](https://www.fastgenomics.org/) - a platform to share single-cell RNA sequencing data and analyses using reproducible workflows.
+[FASTGenomics](https://www.fastgenomics.org/) - a cloud-based collaboration platform for data management and reproducible analyses of scRNA-seq and omics data.
 
 ![FASTGenomics](../../_images/portals/fastgenomics.png)
 
-## FASTGenomics - a cloud-based collaboration platform for data management and reproducible analyses of scRNA-seq and omics data
 
 Collaboration and data sharing is key in biomedical research. It involves experts from several fields of study such as Molecular Biology, Immunology, Data Science and Computer Science as well as storage and re-use of data in a reproducible environment.
+
 Our Life and Data Science experts at [Comma Soft](https://comma-soft.com) have therefore developed the open platform [FASTGenomics](https://beta.fastgenomics.org), which provides a common infrastructure, smart data management, is easy to use and allows direct access to data and results. It thus acts as a single point of truth and brings together all collaborators of your project.
 
 The aim of FASTGenomics is to provide the highest reproducibility and transparency for single-cell and omics data analysis to the whole community. The platform offers publicly available datasets, reproducible analyses, and interactive projects for the exploration and visualization of gene expression data. Docker containers provide full reproducibility and help to avoid  the "works only on my machine" problems.
@@ -31,6 +31,9 @@ Together, we can help you get started with your research project, assist in data
 ![FASTGenomics Screenshot](../../_images/portals/fastgenomics_screenshot.jpg)
 
 ## Where to find us:
+
+**Homepage**: <https://fastgenomics.org/login>
+
 **Twitter**: [@FASTGenomics](https://twitter.com/FASTGenomics) 
 
 **Youtube**: [FASTGenomics channel](https://www.youtube.com/channel/UCuox5j5_QeW2mc4-gO2mncA)
@@ -41,7 +44,7 @@ Together, we can help you get started with your research project, assist in data
 
 **Docker**: [https://hub.docker.com/u/fastgenomics](https://hub.docker.com/u/fastgenomics)
 
-![FASTGenomics Logo](../../_images/portals/fastgenomics_logo.png)
 
 ## Contact
-Michael von Papen (<mailto:michael.papen@comma-soft.com>)
+Team FASTGenomics (contact@fastgenomics.org)
+

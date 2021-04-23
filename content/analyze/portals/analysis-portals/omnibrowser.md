@@ -14,7 +14,7 @@ componentName: "analysisDetail"
 
 The underlying database of OmniBrowser is currently the largest curated scRNA-seq dataset collection in the world, with >1850 datasets from >840 publications in publication consistency. To query such datasets, OmniBrowser provides a series of web-based tools, including gene expression query, dimensional reduction visualization, differential analysis & across-dataset comparison, similar gene search, association analysis with sample metadata, GO analysis.
 
-Datasets are constantly updated on OmniBrowserTM in order to support the constantly growing demands from a board range of customers. As datasets and analytical functions continue to expand on the OmniBrowserTM platform, Analytical Biosciences will develop and distribute more collection of tools that will make the analyses of big data more efficient and effective in order to advance the biomedical R&D.
+Datasets are constantly updated on OmniBrowser in order to support the constantly growing demands from a board range of customers. As datasets and analytical functions continue to expand on the OmniBrowser platform, Analytical Biosciences will develop and distribute more collection of tools that will make the analyses of big data more efficient and effective in order to advance the biomedical R&D.
 
 ![OmniBrowser](../../_images/portals/omnibrowser.jpg)
 
