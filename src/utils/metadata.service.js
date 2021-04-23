@@ -6,27 +6,56 @@
  */
 
 // Template variables
-const oboLibrary = "://purl.obolibrary.org/obo/";
-const ebiLibrary = "://www.ebi.ac.uk/efo/";
-const operationLibrary = "://edamontology.org/";
+const OntologyId = {
+    "EFO": "EFO",
+    "HCAO": "HCAO"
+};
+const OntologyIriLibrary = {
+    "DATA": "://edamontology.org/",
+    "EFO": "://www.ebi.ac.uk/efo/",
+    "FORMAT": "://edamontology.org/",
+    "OBO": "://purl.obolibrary.org/obo/"
+};
 
 /**
  * Returns the ontology search url.
  *
- * @param restriction
  * @param ontology
  * @returns {string}
  */
-export function buildOntologySearchUrl(restriction, ontology) {
-
-    const [curie, identifier] = restriction.split(":");
+export function buildOntologySearchUrl(ontology = "") {
 
     if ( ontology ) {
+
+        const [, identifier] = ontology.split(":");
 
         return `https://www.ebi.ac.uk/ols/ontologies/${identifier}`;
     }
 
-    return buildOntologyTermUrl(curie, identifier);
+    return "";
+}
+
+/**
+ * Returns the ontology search term url.
+ *
+ * @param ontologyId
+ * @param restriction
+ * @returns {string}
+ */
+export function buildOntologyTermUrl(ontologyId, restriction = "") {
+
+    if ( ontologyId && restriction ) {
+
+        const identifier = ontologyId.toLowerCase();
+        const iriLibrary = getOntologyIriLibrarySearchUrl(restriction);
+        const ontology = restriction.replace(":", "_");
+        const ontologySearchTermCurie = switchOntologySearchTermCurie(identifier);
+        const termSearchStr = encodeURIComponent(`${iriLibrary}${ontology}`);
+
+        return `https://www.ebi.ac.uk/ols/ontologies/${ontologySearchTermCurie}/terms?iri=http${termSearchStr}`;
+    }
+
+    return "";
 }
 
 /**
@@ -44,6 +73,46 @@ export function findMetadataTypeEntityCategory(metadataTypeEntityCategories, cat
     }
 
     return {};
+}
+
+/**
+ * Returns an ontology identifier.
+ * Returns HCAO, and then EFO as the preferred ontology id, if they exist.
+ *
+ * @param ontologies
+ * @returns {string}
+ */
+export function getOntologyIdentifier(ontologies) {
+
+    /* Initialize ontology Id. */
+    let ontologyId = "";
+
+    if ( ontologies ) {
+
+        for ( let ontology of ontologies ) {
+
+            const [,identifier] = ontology.split(":");
+            const id = identifier.toUpperCase();
+
+            /* Break and return HCAO ontology. */
+            if ( id === OntologyId.HCAO ) {
+
+                ontologyId = id;
+                break;
+            }
+
+            /* Continue search; maintain EFO ontology. */
+            if ( ontologyId === OntologyId.EFO ) {
+
+                continue;
+            }
+
+            /* Assign ontology identifier. */
+            ontologyId = id;
+        }
+    }
+
+    return ontologyId;
 }
 
 /**
@@ -103,23 +172,6 @@ export function getMetadataSchema(category, sitePageId, showAllMetadata) {
 }
 
 /**
- * Returns the ontology search term url.
- *
- * @param curie
- * @param identifier
- * @returns {string}
- */
-function buildOntologyTermUrl(curie, identifier) {
-
-    const iriLibrary = switchOntologyIriLibrarySearchUrl(curie);
-    const ontologyId = curie.concat("_", identifier);
-    const ontologySearchTermCurie = switchOntologySearchTermCurie(curie);
-    const termSearchStr = encodeURIComponent(`${iriLibrary}${ontologyId}`);
-
-    return `https://www.ebi.ac.uk/ols/ontologies/${ontologySearchTermCurie}/terms?iri=http${termSearchStr}`;
-}
-
-/**
  * Returns filtered metadata schema properties to show only required fields.
  * Used when toggle "Show required fields only" is checked.
  *
@@ -143,25 +195,25 @@ function filterMetadataSchemaProperties(properties) {
 }
 
 /**
- * Switches ontology libraries specified by ontology curie.
+ * Returns the ontology libraries specified by ontology curie.
  *
- * @param curie
+ * @param restriction
  * @returns {*}
  */
-function switchOntologyIriLibrarySearchUrl(curie) {
+function getOntologyIriLibrarySearchUrl(restriction) {
 
-    const value = curie.toLowerCase();
+    if ( restriction ) {
 
-    switch(value) {
-        case "data":
-            return operationLibrary;
-        case "efo":
-            return ebiLibrary;
-        case "format":
-            return operationLibrary;
-        default:
-            return oboLibrary;
+        const [curie,] = restriction.split(":");
+        const id = curie.toUpperCase();
+
+        if ( OntologyIriLibrary[id] ) {
+
+            return OntologyIriLibrary[id];
+        }
     }
+
+    return OntologyIriLibrary.OBO;
 }
 
 /**

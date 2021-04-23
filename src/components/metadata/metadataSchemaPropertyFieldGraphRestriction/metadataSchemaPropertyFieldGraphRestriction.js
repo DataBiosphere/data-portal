@@ -9,7 +9,8 @@
 import React from "react";
 
 // App dependencies
-import * as MetadataService from "../../../utils/metadata.service";
+import MetadataSchemaPropertyFieldGraphRestrictionClasses from "../metadataSchemaPropertyFieldGraphRestrictionClasses/metadataSchemaPropertyFieldGraphRestrictionClasses";
+import MetdataSchemaPropertyFieldGraphRestrictionOntologies from "../metadataSchemaPropertyFieldGraphRestrictionOntologies/metadataSchemaPropertyFieldGraphRestrictionOntologies";
 
 // Styles
 import fontStyles from "../../../styles/fontsize.module.css";
@@ -21,35 +22,23 @@ function MetadataSchemaPropertyFieldGraphRestriction(props) {
         {classes, direct, includeSelf, ontologies} = graphRestriction || {};
     const showGraphRestriction = classes && ontologies;
 
-    const Restriction = (props) => {
-
-        const {counter, joinBy, ontology, restriction, showLink} = props;
-        const firstRestriction = counter === 0;
-        const linkTo = MetadataService.buildOntologySearchUrl(restriction, ontology);
-
-        return (
-            <>
-            {firstRestriction ? null : <span>{joinBy}</span>}
-            {showLink ?
-                <a href={linkTo} rel="noopener noreferrer" target="_blank">{restriction}</a> :
-                <span>{restriction}</span>}
-            </>
-        )
-    };
-
     return (
         showGraphRestriction ?
             <span className={fontStyles.s}>
                 <span className={fontStyles.regular}>Graph restriction: </span>
                 {direct ? <span>Direct subclasses of </span> : <span>Subclasses of </span>}
-                {classes.map((restriction, r) =>
-                    <Restriction key={r} counter={r} joinBy={", "} restriction={restriction} showLink={showLink}/>)}
+                <MetadataSchemaPropertyFieldGraphRestrictionClasses classes={classes} showLink={false}/>
                 <span> from </span>
-                {ontologies.map((restriction, r) =>
-                    <Restriction key={r} counter={r} joinBy={" or "} ontology restriction={restriction} showLink={showLink}/>)}
+                <MetdataSchemaPropertyFieldGraphRestrictionOntologies ontologies={ontologies} showLink={showLink}/>
                 {includeSelf ? <span> including self.</span> : <span>.</span>}
+                {showLink ?
+                    <>
+                        <span> See: </span>
+                        <MetadataSchemaPropertyFieldGraphRestrictionClasses classes={classes} ontologies={ontologies} showLink={true}/>
+                        <span>.</span>
+                    </> : null}
             </span> : null
     );
 }
 
-export default MetadataSchemaPropertyFieldGraphRestriction;
+export default React.memo(MetadataSchemaPropertyFieldGraphRestriction);
