@@ -52,7 +52,27 @@ const parseArraySpecialCharValues = function parseArraySpecialCharValues(array) 
 
     if ( array && array.length ) {
 
-        return array.map(value => value.replace(/:/g, "_"));
+        const setOfTerms = array.reduce((acc, value) => {
+
+            if ( value ) {
+
+                const term = value.replace(/:/g, "_");
+                acc.add(term);
+
+                /* Accumulate curie and identifier separately. */
+                const terms = term
+                    .replace(/_/g, " ")
+                    .replace(/\s+/g, " ")
+                    .trim()
+                    .split(" ");
+
+                terms.map(t => acc.add(t));
+            }
+
+            return acc;
+        }, new Set());
+
+        return [...setOfTerms];
     }
 
     return [];
