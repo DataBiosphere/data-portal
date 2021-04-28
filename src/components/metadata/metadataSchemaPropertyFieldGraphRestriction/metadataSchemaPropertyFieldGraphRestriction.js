@@ -27,16 +27,10 @@ function MetadataSchemaPropertyFieldGraphRestriction(props) {
             <span className={fontStyles.s}>
                 <span className={fontStyles.regular}>Graph restriction: </span>
                 {direct ? <span>Direct subclasses of </span> : <span>Subclasses of </span>}
-                <MetadataSchemaPropertyFieldGraphRestrictionClasses classes={classes} showLink={false}/>
+                <MetadataSchemaPropertyFieldGraphRestrictionClasses classes={classes} ontologies={ontologies} showLink={showLink}/>
                 <span> from </span>
                 <MetdataSchemaPropertyFieldGraphRestrictionOntologies ontologies={ontologies} showLink={showLink}/>
                 {includeSelf ? <span> including self.</span> : <span>.</span>}
-                {showLink ?
-                    <>
-                        <span> See: </span>
-                        <MetadataSchemaPropertyFieldGraphRestrictionClasses classes={classes} ontologies={ontologies} showLink={true}/>
-                        <span>.</span>
-                    </> : null}
             </span> : null
     );
 }
