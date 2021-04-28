@@ -13,16 +13,15 @@ import * as MetadataService from "../../../utils/metadata.service";
 
 function MetadataSchemaPropertyFieldGraphRestrictionClass(props) {
 
-    const {first, ontologyId, restriction, showLink} = props;
-    const linkTo = MetadataService.buildOntologyTermUrl(ontologyId, restriction);
-    const linkText = `${ontologyId}/${restriction}`;
+    const {first, identifier, ontology, showLink} = props;
+    const url = MetadataService.buildOntologyTermUrl(ontology, identifier);
 
     return (
         <>
         {first ? null : <span>, </span>}
-        {showLink && linkTo ?
-            <a href={linkTo} rel="noopener noreferrer" target="_blank">{linkText}</a> :
-            <span>{restriction}</span>}
+        {showLink && url ?
+            <a href={url} rel="noopener noreferrer" target="_blank">{identifier}</a> :
+            <span>{identifier}</span>}
         </>
     );
 }

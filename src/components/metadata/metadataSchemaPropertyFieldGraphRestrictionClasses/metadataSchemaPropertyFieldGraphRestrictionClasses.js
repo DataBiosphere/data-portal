@@ -15,14 +15,14 @@ import * as MetadataService from "../../../utils/metadata.service";
 function MetadataSchemaPropertyFieldGraphRestrictionClasses(props) {
 
     const {classes, ontologies, showLink} = props;
-    const ontologyId = MetadataService.getOntologyIdentifier(ontologies);
+    const ontology = MetadataService.selectPreferredOntologyId(ontologies);
 
     return (
-        classes.map((restriction, c) =>
-            <MetdataSchemaPropertyFieldGraphRestrictionClass key={c}
-                                                             first={c === 0}
-                                                             ontologyId={ontologyId}
-                                                             restriction={restriction}
+        classes.map((identifier, i) =>
+            <MetdataSchemaPropertyFieldGraphRestrictionClass key={i}
+                                                             first={i === 0}
+                                                             identifier={identifier}
+                                                             ontology={ontology}
                                                              showLink={showLink}/>)
     );
 }

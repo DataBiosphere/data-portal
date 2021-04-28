@@ -6,15 +6,26 @@
  */
 
 // Template variables
-const OntologyId = {
+const Ontology = {
     "EFO": "EFO",
     "HCAO": "HCAO"
 };
-const OntologyIriLibrary = {
-    "DATA": "://edamontology.org/",
-    "EFO": "://www.ebi.ac.uk/efo/",
-    "FORMAT": "://edamontology.org/",
-    "OBO": "://purl.obolibrary.org/obo/"
+const OntologyLibrary = {
+    "DATA": "edam",
+    "FORMAT": "edam"
+};
+const OntologyLibraryURL = {
+    "DATA": "http://edamontology.org",
+    "EFO": "http://www.ebi.ac.uk/efo",
+    "FORMAT": "http://edamontology.org",
+    "OBO": "http://purl.obolibrary.org/obo"
+};
+const OntologyTermIdentifier = {
+    "EFO:0000399": "UBERON:0000105",
+    "MONDO:0000001": "EFO:0000408"
+};
+const OntologyTermOntology = {
+    "FBbi:00000241": "fBbi",
 };
 
 /**
@@ -36,23 +47,25 @@ export function buildOntologySearchUrl(ontology = "") {
 }
 
 /**
- * Returns the ontology search term url.
+ * Returns the ontology term url for the specified identifier.
  *
- * @param ontologyId
- * @param restriction
+ * @param ontology
+ * @param identifier
  * @returns {string}
  */
-export function buildOntologyTermUrl(ontologyId, restriction = "") {
+export function buildOntologyTermUrl(ontology, identifier = "") {
 
-    if ( ontologyId && restriction ) {
+    if ( ontology && identifier ) {
 
-        const identifier = ontologyId.toLowerCase();
-        const iriLibrary = getOntologyIriLibrarySearchUrl(restriction);
-        const ontology = restriction.replace(":", "_");
-        const ontologySearchTermCurie = switchOntologySearchTermCurie(identifier);
-        const termSearchStr = encodeURIComponent(`${iriLibrary}${ontology}`);
+        /* Grab the identifier used to build the url. */
+        const id = getOntologyTermIdentifier(identifier);
 
-        return `https://www.ebi.ac.uk/ols/ontologies/${ontologySearchTermCurie}/terms?iri=http${termSearchStr}`;
+        /* Grab the url variables required to build the url. */
+        const ontologyShortName = getOntologyShortName(ontology, identifier);
+        const libraryURL = getOntologyTermLibraryURL(id);
+        const term = getOntologyTerm(id);
+
+        return `https://www.ebi.ac.uk/ols/ontologies/${ontologyShortName}/terms?iri=${libraryURL}/${term}`;
     }
 
     return "";
@@ -73,46 +86,6 @@ export function findMetadataTypeEntityCategory(metadataTypeEntityCategories, cat
     }
 
     return {};
-}
-
-/**
- * Returns an ontology identifier.
- * Returns HCAO, and then EFO as the preferred ontology id, if they exist.
- *
- * @param ontologies
- * @returns {string}
- */
-export function getOntologyIdentifier(ontologies) {
-
-    /* Initialize ontology Id. */
-    let ontologyId = "";
-
-    if ( ontologies ) {
-
-        for ( let ontology of ontologies ) {
-
-            const [,identifier] = ontology.split(":");
-            const id = identifier.toUpperCase();
-
-            /* Break and return HCAO ontology. */
-            if ( id === OntologyId.HCAO ) {
-
-                ontologyId = id;
-                break;
-            }
-
-            /* Continue search; maintain EFO ontology. */
-            if ( ontologyId === OntologyId.EFO ) {
-
-                continue;
-            }
-
-            /* Assign ontology identifier. */
-            ontologyId = id;
-        }
-    }
-
-    return ontologyId;
 }
 
 /**
@@ -172,6 +145,46 @@ export function getMetadataSchema(category, sitePageId, showAllMetadata) {
 }
 
 /**
+ * Returns the preferred, selected ontology identifier from the specified ontologies.
+ * Returns HCAO, and then EFO as the preferred ontology id, if they exist.
+ *
+ * @param ontologies
+ * @returns {string}
+ */
+export function selectPreferredOntologyId(ontologies) {
+
+    /* Initialize ontology Id. */
+    let ontologyId = "";
+
+    if ( ontologies ) {
+
+        for ( let ontology of ontologies ) {
+
+            const [,identifier] = ontology.split(":");
+            const id = identifier.toUpperCase();
+
+            /* Break and return HCAO ontology. */
+            if ( id === Ontology.HCAO ) {
+
+                ontologyId = id;
+                break;
+            }
+
+            /* Continue search; maintain EFO ontology. */
+            if ( ontologyId === Ontology.EFO ) {
+
+                continue;
+            }
+
+            /* Assign ontology identifier. */
+            ontologyId = id;
+        }
+    }
+
+    return ontologyId;
+}
+
+/**
  * Returns filtered metadata schema properties to show only required fields.
  * Used when toggle "Show required fields only" is checked.
  *
@@ -195,43 +208,113 @@ function filterMetadataSchemaProperties(properties) {
 }
 
 /**
- * Returns the ontology libraries specified by ontology curie.
+ * Returns the ontology for the specified identifier and ontology.
+ * e.g. returns "edam" for ontology "data" and "format".
  *
- * @param restriction
+ * @param ontology
+ * @param identifier
  * @returns {*}
  */
-function getOntologyIriLibrarySearchUrl(restriction) {
+function getOntologyShortName(ontology, identifier) {
 
-    if ( restriction ) {
+    /* Grab the ontology id. */
+    const ontologyId = getOntologyTermOntologyId(ontology, identifier);
 
-        const [curie,] = restriction.split(":");
-        const id = curie.toUpperCase();
+    if ( OntologyLibrary[ontologyId] ) {
 
-        if ( OntologyIriLibrary[id] ) {
-
-            return OntologyIriLibrary[id];
-        }
+        return OntologyLibrary[ontologyId];
     }
 
-    return OntologyIriLibrary.OBO;
+    return ontologyId.toLowerCase();
 }
 
 /**
- * Switches ontology search term curie for the specified curie.
+ * Returns ontology term.
  *
- * @param curie
+ * @param identifier
  * @returns {*}
  */
-function switchOntologySearchTermCurie(curie) {
+function getOntologyTerm(identifier) {
 
-    const value = curie.toLowerCase();
+    if ( identifier ) {
 
-    switch(value) {
-        case "data":
-            return "edam";
-        case "format":
-            return "edam";
-        default:
-            return value;
+        return identifier
+            .replace(":", "_");
     }
+
+    return "";
+}
+
+/**
+ * Returns the identifier; switching out any identifier for a different ontology term identifier; if required.
+ * Some identifier are not listed in the ontology of choice.
+ * These identifier may be cross referenced by another identifier.
+ * The temporary fix for these anomalies is to use the cross referenced identifier instead.
+ *
+ * @param identifier
+ * @returns {*}
+ */
+function getOntologyTermIdentifier(identifier) {
+
+    /* Grab any cross referenced ontology term identifier. */
+    const ontologyTermIdentifier = OntologyTermIdentifier[identifier];
+
+    if ( ontologyTermIdentifier ) {
+
+        return ontologyTermIdentifier;
+    }
+
+    /* The identifier is not cross referenced and can be used as is. */
+    return identifier;
+}
+
+/**
+ * Returns the encoded ontology library url.
+ *
+ * @param identifier
+ * @returns {*}
+ */
+function getOntologyTermLibraryURL(identifier) {
+
+    /* Initialize the library url. */
+    let iriLibrary = OntologyLibraryURL.OBO;
+
+    if ( identifier ) {
+
+        const [curie,] = identifier
+            .toUpperCase()
+            .split(":");
+
+        /* Grab the library url that corresponds with the curie. */
+        if ( OntologyLibraryURL[curie] ) {
+
+            iriLibrary = OntologyLibraryURL[curie];
+        }
+    }
+
+    return encodeURIComponent(iriLibrary);
+}
+
+/**
+ * Returns a pre-determined ontology id for the specified identifier.
+ * If no pre-determined ontology exists, the originally chosen ontology is returned.
+ * This is a special case for identifier "FBbi:00000241" where the required ontology is "FBbi".
+ * Returned ontology id is formatted upper case.
+ *
+ * @param ontology
+ * @param identifier
+ * @returns {*}
+ */
+function getOntologyTermOntologyId(ontology, identifier) {
+
+    /* Grab the ontology term ontology, if it exists. */
+    const ontologyTermOntology = OntologyTermOntology[identifier];
+
+    if ( ontologyTermOntology ) {
+
+        return ontologyTermOntology.toUpperCase();
+    }
+
+    /* Return the ontology. */
+    return ontology.toUpperCase();
 }
