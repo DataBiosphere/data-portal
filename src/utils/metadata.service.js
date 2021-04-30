@@ -10,10 +10,6 @@ const Ontology = {
     "EFO": "EFO",
     "HCAO": "HCAO"
 };
-const OntologyLibrary = {
-    "DATA": "edam",
-    "FORMAT": "edam"
-};
 const OntologyLibraryURL = {
     "DATA": "http://edamontology.org",
     "EFO": "http://www.ebi.ac.uk/efo",
@@ -25,7 +21,7 @@ const OntologyTermIdentifier = {
     "MONDO:0000001": "EFO:0000408"
 };
 const OntologyTermOntology = {
-    "FBbi:00000241": "fBbi",
+    "FBbi:00000241": "fbbi",
 };
 
 /**
@@ -64,8 +60,9 @@ export function buildOntologyTermUrl(ontology, identifier = "") {
         const ontologyShortName = getOntologyShortName(ontology, identifier);
         const libraryURL = getOntologyTermLibraryURL(id);
         const term = getOntologyTerm(id);
+        const iriParam = `${libraryURL}/${term}`;
 
-        return `https://www.ebi.ac.uk/ols/ontologies/${ontologyShortName}/terms?iri=${libraryURL}/${term}`;
+        return `https://www.ebi.ac.uk/ols/ontologies/${ontologyShortName}/terms?iri=${iriParam}`;
     }
 
     return "";
@@ -208,8 +205,10 @@ function filterMetadataSchemaProperties(properties) {
 }
 
 /**
- * Returns the ontology for the specified identifier and ontology.
- * e.g. returns "edam" for ontology "data" and "format".
+ * Returns a pre-determined ontology id (in short name format) for the specified identifier.
+ * If no pre-determined ontology exists, the originally selected ontology is returned.
+ * This is a special case for identifier "FBbi:00000241" where the required ontology is "fbbi".
+ * "FBbi:00000241" does not currently exist within the "HCAO" ontology.
  *
  * @param ontology
  * @param identifier
@@ -217,15 +216,16 @@ function filterMetadataSchemaProperties(properties) {
  */
 function getOntologyShortName(ontology, identifier) {
 
-    /* Grab the ontology id. */
-    const ontologyId = getOntologyTermOntologyId(ontology, identifier);
+    /* Grab the ontology term ontology, and return the ontology short name, if it exists. */
+    const ontologyTermOntology = OntologyTermOntology[identifier];
 
-    if ( OntologyLibrary[ontologyId] ) {
+    if ( ontologyTermOntology ) {
 
-        return OntologyLibrary[ontologyId];
+        return ontologyTermOntology;
     }
 
-    return ontologyId.toLowerCase();
+    /* Otherwise, return the originally selected ontology. */
+    return ontology.toLowerCase();
 }
 
 /**
@@ -293,28 +293,4 @@ function getOntologyTermLibraryURL(identifier) {
     }
 
     return encodeURIComponent(iriLibrary);
-}
-
-/**
- * Returns a pre-determined ontology id for the specified identifier.
- * If no pre-determined ontology exists, the originally chosen ontology is returned.
- * This is a special case for identifier "FBbi:00000241" where the required ontology is "FBbi".
- * Returned ontology id is formatted upper case.
- *
- * @param ontology
- * @param identifier
- * @returns {*}
- */
-function getOntologyTermOntologyId(ontology, identifier) {
-
-    /* Grab the ontology term ontology, if it exists. */
-    const ontologyTermOntology = OntologyTermOntology[identifier];
-
-    if ( ontologyTermOntology ) {
-
-        return ontologyTermOntology.toUpperCase();
-    }
-
-    /* Return the ontology. */
-    return ontology.toUpperCase();
 }
