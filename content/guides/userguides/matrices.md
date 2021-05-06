@@ -6,7 +6,9 @@ description: "An overview of the available matrices"
 ---
 
 # DCP 2.0 Data Matrix Overview 
-Cell-by-gene matrices (commonly referred to as "count matrices" or "expression matrices") are files that contain a measure of gene expression for every gene in every cell in your single-cell sample(s). These matrices can be used for downstream analyses and cell type annotations. This overview describes the Data Coordination Platform (DCP) 2.0 matrix types, how to download them, and how to link them back to the HCA metadata.
+Cell-by-gene matrices (commonly referred to as "count matrices" or "expression matrices") are files that contain a measure of gene expression for every gene in every cell in your single-cell sample(s). These matrices can be used for downstream analyses and cell type annotations. 
+
+This overview describes the Data Coordination Platform (DCP) 2.0 matrix types, how to download them, and how to link them back to the HCA metadata.
 
 Overall, three types of matrices are currently available for DCP 2.0 data: 
 - DCP-generated matrices (Loom file format) for projects 
@@ -81,6 +83,20 @@ DCP 2.0 project-level matrices only contain some of the available project metada
 To link a metadata field in the Metadata Manifest back to an individual sample in a DCP Generated Matrix, use the matrix `input_id` field. This field includes all the values for the metadata `sequencing_process.provenance.document_id`, the ID used to demarcate each library preparation. 
 
 
+## Matrix Normalization and Batch Correction
+Data normalization and batch correction account for technical noise introduced during sample processing, as well as differences between datasets generated from different contributors or at different times. Both techniques are crucial for identifying differentially expressed genes. 
 
+Normalization and batch correction techniques vary between processing methods and individual data contributors, and may not be consistent across the matrices available from the Data Portal.
+
+
+### Normalization and Batch Correction for DCP Generated Matrices
+Data processed with the [standardized pipelines](/pipelines) are **not** normalized across projects. 
+
+10x matrices produced with the [Optimus Pipeline](/pipelines/optimus-workflow) only contain raw counts whereas [Smart-seq2 Pipeline](/pipelines/smart-seq2-workflow) matrices contain raw counts as well as normalized TPMs. These TPMs are calculated per individual cell (library preparation) and not across all cells within a project. 
+
+No batch correction is performed for DCP Generated Matrices.
+
+### Normalization and Batch Correction for Contributor Generated Matrices
+For Contributor Generated Matrices, normalization and/or batch correction techniques are used at the discretion of the project contributor and vary between projects. To learn more about the techniques used for a particular matrix, please reach out to the Contact listed on the Project's Information page. 
 
 
