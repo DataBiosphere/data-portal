@@ -90,7 +90,7 @@ Normalization and batch correction techniques vary between processing methods an
 
 
 ### Normalization and Batch Correction for DCP Generated Matrices
-Data processed with the [standardized pipelines](/pipelines) are **not** normalized across projects. 
+Data processed with the [standardized pipelines](/pipelines) are **not** normalized across projects nor within projects. 
 
 10x matrices produced with the [Optimus Pipeline](/pipelines/optimus-workflow) only contain raw counts whereas [Smart-seq2 Pipeline](/pipelines/smart-seq2-workflow) matrices contain raw counts as well as normalized TPMs. These TPMs are calculated per individual cell (library preparation) and not across all cells within a project. 
 
@@ -98,5 +98,4 @@ No batch correction is performed for DCP Generated Matrices.
 
 ### Normalization and Batch Correction for Contributor Generated Matrices
 For Contributor Generated Matrices, normalization and/or batch correction techniques are used at the discretion of the project contributor and vary between projects. To learn more about the techniques used for a particular matrix, please reach out to the Contact listed on the Project's Information page. 
-
 
