@@ -6,7 +6,7 @@ description: "An overview of the available matrices"
 ---
 
 # DCP 2.0 Data Matrix Overview 
-Cell-by-gene matrices (commonly referred to as "count matrices" or "expression matrices") are files that contain a measure of gene expression for every gene in every cell in your single-cell sample(s). These matrices can be used for downstream analyses and cell type annotations. 
+Cell-by-gene matrices (commonly referred to as "count matrices" or "expression matrices") are files that contain a measure of gene expression for every gene in every cell in your single-cell sample(s). These matrices can be used for downstream analyses like filtering, clustering, differential expression testing, and annotating cell types. 
 
 This overview describes the Data Coordination Platform (DCP) 2.0 matrix types, how to download them, and how to link them back to the HCA metadata.
 
