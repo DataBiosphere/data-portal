@@ -40,27 +40,11 @@ export function getDefaultCatalog() {
 }
 
 /**
- * Returns true if the current environment is dev.
- */
-export function isDev() {
-
-    return GATSBY_ENV === "DEV";
-}
-
-/**
  * Returns true if the current environment is local.
  */
 export function isLocal() {
 
     return GATSBY_ENV === "LOCAL";
-}
-
-/**
- * Returns true if the current environment is integration.
- */
-export function isIntegration() {
-
-    return GATSBY_ENV === "INTEGRATION";
 }
 
 /**
@@ -80,17 +64,9 @@ export function isStaging() {
 }
 
 /**
- * Returns true if the current environment is ux-dev.
- */
-export function isUXDev() {
-
-    return GATSBY_ENV === "UX_DEV";
-}
-
-/**
- * Returns true if the current environment is either local, dev, ux-dev, integration or staging.
+ * Returns true if the current environment is either local or staging.
  */
 export function isTestEnvironment() {
 
-    return isLocal() || isDev() || isUXDev() || isIntegration() || isStaging();
+    return isLocal() || isStaging();
 }
