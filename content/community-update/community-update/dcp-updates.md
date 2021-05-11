@@ -9,7 +9,7 @@ description: "Latest updates for the HCA Data Coordinaton Platform (DCP)."
 ## Raw sequencing data and Contributor Generated Matrices for 23 new projects available for download
 #### May 10, 2021
 
-* Data Portal now has data for 12.2 million cells, including new standardized analyses for 13 projects as well as raw sequencing data and contributor-generated matrices for 23 new projects.
+* Data Portal now has data for 12.2 million cells, including new standardized analyses for 13 projects as well as raw sequencing data and Contributor Generated Matrices for 23 new projects.
 
 
 * The standardized data, including aligned BAMs and cell-by-gene count matrices (Loom format), are derived from:
@@ -20,14 +20,14 @@ description: "Latest updates for the HCA Data Coordinaton Platform (DCP)."
   * Disease states including HIV, drug hypersensitivity syndrome, multiple sclerosis, and thoracic aortic aneurysm
 
 
-* The 23 new projects and contributor-generated matrices include data derived from:
+* The 23 new projects and Contributor Generated Matrices include data derived from:
   * Human and mouse
   * Smart-seq2, 10x V2 and V3 3’ chemistry, Drop-seq, and Fluidigm C1 sequencing methods
   * Blood, bone marrow, brain, cord blood, epididymis, fetal gonads, immune organ, kidney organoid, lymph nodes, pancreas,  skin, and trachea
   * Disease states including Alzheimer’s Disease, multiple sclerosis, autoimmune encephalitis, and type 2 diabetes
 
 
-* The Matrix Overview guide has been updated to include additional information on matrix [batch correction and normalization](/guides/matrices#matrix-normalization-and-batch-correction). 
+* The Matrix Overview guide has been updated to include additional information on matrix [batch correction and normalization](/guides/consumer-vignettes/matrices#matrix-normalization-and-batch-correction). 
 
 ## Raw data for 16 new projects now available 
 #### April 12, 2021
