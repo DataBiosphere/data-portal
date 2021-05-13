@@ -11,7 +11,7 @@ To deliver response times that make it suitable for interactive use cases, the s
 
 Data Browser API provides a uniform view of the metadata over diverse schemas, effectively shielding clients from changes in the schema as they occur over time.
 
-For more information on the Data Browser API, see the [Data Browse API Specification](https://service.azul.data.humancellatlas.org/).
+For more information on the Data Browser API, see the [Data Browser API Specification](https://service.azul.data.humancellatlas.org/).
 
 ## API Usage Examples
 
