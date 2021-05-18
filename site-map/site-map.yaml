@@ -261,9 +261,9 @@
             - name: "Metadata Types"
               key: "/metadata/metadata-overview/types"
               path: "/metadata"
-#            - name: "Schema Modules"
-#              key: "/metadata/metadata-overview/modules"
-#              path: "/metadata/overview/modules"
+            - name: "Schema Modules"
+              key: "/metadata/metadata-overview/modules"
+              path: "/metadata/overview/modules"
     - name: "Structure"
       key: "metadata-structure"
       primaryLinks:
