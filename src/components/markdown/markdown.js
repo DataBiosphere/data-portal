@@ -10,6 +10,7 @@ import React, {useCallback, useEffect, useRef} from "react";
 import rehypeReact from "rehype-react";
 
 // App dependencies
+import ButtonCta from "../button-cta/button-cta";
 import DataLifecycleDiagram from '../dataLifecycleDiagram/dataLifecycleDiagram';
 import InternalLink from '../internal-link/internalLink';
 import LinkToBrowser from "../linkToBrowser/linkToBrowser";
@@ -25,6 +26,7 @@ function Markdown(props) {
     const renderAst = new rehypeReact({
         createElement: React.createElement,
         components: {
+            "button-cta": ButtonCta,
             "data-lifecycle-diagram": DataLifecycleDiagram,
             "internal-link": InternalLink,
             "link-to-browser": LinkToBrowser,
