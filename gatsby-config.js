@@ -109,6 +109,7 @@ module.exports = {
                         resolve: `gatsby-remark-component-parent2div`,
                         options: {
                             components: [
+                                "button-cta",
                                 "internal-link",
                                 "data-lifecycle-diagram",
                                 "link-to-browser",

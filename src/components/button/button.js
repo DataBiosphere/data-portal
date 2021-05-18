@@ -16,7 +16,7 @@ const classNames = require("classnames");
 function Button(props) {
 
     const {children, clickAction, icon} = props;
-    const classNamesButton = classNames(compStyles.button, {[compStyles.icon]:icon});
+    const classNamesButton = classNames(compStyles.button, {[compStyles.buttonIcon]:icon});
 
     const onHandleClickAction = () => {
 
