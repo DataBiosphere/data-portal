@@ -1,13 +1,16 @@
-#DCP Matrix UX Study - Spring 2021
+---
+date: "2021-05-18"
+title: HCA DCP Matrix UX Study - Spring 2021
+description: "The HCA DCP product team invites you to participate in a user experience study on the usability of the Data Portal and the project matrix file formats and metadata."
+---
 
+#DCP Matrix UX Study - Spring 2021
 
 The HCA DCP product team invites you to participate in a user experience study on the usability of the Data Portal and the DCP matrix file formats and metadata.
 
 ### What are the study goals?
 
-
 - Learn how researchers use the Data Portal when accessing the various matrices (DCP Generated Matrix and Contributor Generated Matrix).
-
 
 - Identify improvements to the presentation, schema, and file format of matrices and their metadata.
 
@@ -17,6 +20,8 @@ The HCA DCP product team invites you to participate in a user experience study o
 
 
 - Use the form to indicate if you want to participate in a virtual interview.
+
+> [Take the Survey](https://docs.google.com/forms/d/18cSUJe9NJrzZXEGftWEa7gv_pIZ9g77ONHaJ8lxlrJo/edit)
 
 
 - If you choose to participate in a virtual interview, our team will follow up with you to schedule a call.
@@ -40,3 +45,5 @@ We’ll ask you questions relating to:
 ### How is my information used after the survey/interview?
 
 - The HCA DCP product team will de-identify your information, keep it private, and only use it for the internal purposes of improving the portal, matrices, and related documentation.
+
+
