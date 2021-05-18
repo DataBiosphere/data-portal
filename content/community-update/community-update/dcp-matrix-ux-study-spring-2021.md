@@ -21,7 +21,7 @@ The HCA DCP product team invites you to participate in a user experience study o
 
 - Use the form to indicate if you want to participate in a virtual interview.
 
-> [Take the Survey](https://docs.google.com/forms/d/18cSUJe9NJrzZXEGftWEa7gv_pIZ9g77ONHaJ8lxlrJo/edit)
+> [Take the Survey](https://docs.google.com/forms/d/e/1FAIpQLSfuX6Xn1KzjURXdPUjBoQGK3fbKQMUuh3JKs2MHS9xCSR2TQw/viewform)
 
 
 - If you choose to participate in a virtual interview, our team will follow up with you to schedule a call.
