@@ -51,6 +51,17 @@ export function trackSupportRequestCreated(source) {
 
 
 /**
+ * Create and send a GA tracking event generated from clicking the "Take the survey" button for the Spring 2021 Matrix
+ * UX effort.
+ *
+ * @param {string} surveyName
+ */
+export function trackSurveyLaunch(surveyName) {
+
+    GTMService.trackEvent(GACategory.SURVEY, GAAction.LAUNCH, surveyName, {});
+}
+
+/**
  * Track select of search result.
  * 
  * @param {string} value
