@@ -62,9 +62,10 @@ function ButtonCta(props) {
       externalLink ?
       <a className={classNameButton}
          href={href}
+         onClick={trackSurveyLaunch}
          rel={Relationship.NOOPENER_NOREFERRER}
          target={target}>{children}</a> :
-      <Link className={classNameButton} to={href} onClick={trackSurveyLaunch}>{children}</Link>
+      <Link className={classNameButton} to={href}>{children}</Link>
   );
 }
 
