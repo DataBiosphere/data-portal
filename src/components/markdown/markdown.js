@@ -18,6 +18,8 @@ import MetadataTypeEntitySchemas from "../metadata/metadataTypeEntitySchemas/met
 
 // Styles
 import compStyles from "./markdown.module.css";
+import {SurveyName} from "../survey/survey-name";
+import * as DPGTMService from "../../utils/dp-gtm/dp-gtm.service";
 
 function Markdown(props) {
 
@@ -65,6 +67,17 @@ function Markdown(props) {
         containerEl.appendChild(tableEl);
     };
 
+    /**
+     * Track user clicks on survey link.
+     * TODO generalize to handle tracking of other links.
+     */
+    const trackSurveyLaunch = (e) => {
+        const { target } = e;
+        if ( target.tagName === "A" && target.innerText === "survey" ) {
+            DPGTMService.trackSurveyLaunch(SurveyName["2021_SPRING_MATRIX_UX"]);
+        } 
+    }
+
     /* useEffect - componentDidMount, componentWillUnmount. */
     useEffect(() => {
 
@@ -72,7 +85,7 @@ function Markdown(props) {
     }, [initTableOverflow]);
 
     return (
-        <div className={compStyles.markdown} ref={refMarkdown}>{renderAst(children)}</div>
+        <div className={compStyles.markdown} ref={refMarkdown} onClick={trackSurveyLaunch}>{renderAst(children)}</div>
     );
 }
 
