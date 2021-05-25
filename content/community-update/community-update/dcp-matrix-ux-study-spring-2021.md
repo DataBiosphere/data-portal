@@ -10,7 +10,7 @@ The HCA DCP product team is recruiting volunteers to participate in a 15 - 20 mi
 
 ### What are the study goals?
 
-- Learn how researchers use the Data Portal when accessing the various matrices (DCP Generated Matrix and Contributor Generated Matrix).
+- Learn how researchers use the Data Portal when accessing the various matrices (DCP-generated matrix and contributor-generated matrix).
 
 - Identify improvements to the presentation, schema, and file format of matrices and their metadata.
 
@@ -41,6 +41,7 @@ We’ll ask you questions relating to:
 ### How is my information used after the survey/interview?
 
 - The HCA DCP product team will de-identify your information, keep it private, and only use it for the internal purposes of improving the portal, matrices, and related documentation.
+
 
 
 

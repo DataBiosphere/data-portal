@@ -46,7 +46,7 @@ The project information page contains:
 1. the project title and description
 1. contributor information, collaborating organizations, and project contacts
 1. any publications or accessions associated with the project
-1. project details such as species, organ and library construction method
+1. project details such as species, organ, and library construction method
 1. counts of input
 1. a link to the project metadata download
 1. a link to the project DCP-generated count matrix download (if available)
@@ -54,11 +54,11 @@ The project information page contains:
 
 ## Downloading Project Metadata
 
-For each project, the DCP maintains a project specific TSV file containing the full project metadata. The TSV contains a row for each file in the project and columns for each metadata property. Meanings of the metadata properties are listed in the [Metadata Dictionary](/metadata).
+For each project, the DCP maintains a project-specific TSV file containing the full project metadata. The TSV contains a row for each file in the project and columns for each metadata property. Meanings of the metadata properties are listed in the [Metadata Dictionary](/metadata).
 
-The metadata TSV file gives a representation of the project's metadata graph that can be sorted and filtered using standard spreadsheet or data manipulation tools.
+The metadata TSV file gives a representation of the project's metadata graph that can be sorted and filtered using a standard spreadsheet or data manipulation tools.
 
-The **"Project Metadata"** tab left of the Project Information page contains a link to download the project's metadata file.
+The **Project Metadata"** tab left of the Project Information page contains a link to download the project's metadata file.
 
 ![Project Metadata](../_images/project_metadata.png "Project Metadata")
 
@@ -74,29 +74,31 @@ A partial example of a TSV file is listed below:
 
 ![Partial Metadata tsv](../_images/metadata_tsv.png "TSV File")
 
-## Downloading Project DCP Generated Matrices
+## Downloading Project DCP-Generated Matrices
 
-Each project processed with DCP pipelines has DCP-generated matrices.To download Project matrices, navigate to the Project Information page and select the **"Project Matrices"** tab to the left. 
+Each project processed with DCP pipelines has DCP-generated matrices. To download Project matrices, navigate to the Project Information page and select the **"Project Matrices"** tab to the left. 
 
 Scroll to identify the relevant matrix and then select the download icon. 
 
 ![Project Matrices](../_images/dcp_generated_matrices.png "Project Matrices")
 
-DCP Generated Matrices in the DCP 2.0 Preview are available in Loom format only (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files), whereas matrices in the DCP 1.0 View are available in MTX, CSV, Loom formats. 
+DCP-generated matrices in the DCP 2.0 Preview are available in Loom format only (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files), whereas matrices in the DCP 1.0 View are available in MTX, CSV, Loom formats. 
 
 > **DCP 1.0 Matrix Deprecation Notice:** 
 The DCP is reprocessing DCP 1.0 data and will deprecate all DCP 1.0 matrices (MTX, CSV, and Loom files) once reprocessing is complete. All reprocessed and newly processed projects in the DCP 2.0 will have matrices in Loom format only. 
 
-The type of count available in the DCP Generated Matrix depends on the pipeline used for data processing. DCP 2.0 matrices generated with Optimus (10x data) include raw counts whereas matrices generated with Smart-seq2 include TPMs and estimated counts. 
+The type of count available in the DCP-generated matrix depends on the pipeline used for data processing. DCP 2.0 matrices generated with Optimus (10x data) include raw counts whereas matrices generated with Smart-seq2 include TPMs and estimated counts. 
 
-## Downloading Project Contributor Generated Matrices
+## Downloading Project Contributor-Generated Matrices
 
-Contributor Generated Matrices are optionally provided by the project contributors and are available in the **[DCP 2.0 Preview](/what-is-the-dcp-20-data-preview) only**. 
+Contributor-generated matrices are optionally provided by the project contributors and are available in the **[DCP 2.0 Preview](/what-is-the-dcp-20-data-preview) only**. 
 
 These matrices vary in file format and content. For questions about a specific contributor-generated matrix, reach out to the Project Contacts listed on the Project Information page.
 
-To download the Contributor Generated Matrix, select the **"Project Matrices"** tab to the left of the Project page. 
+To download the contributor-generated matrix, select the **"Project Matrices"** tab to the left of the Project page. 
 
-Scroll to the **Contributor Generated Matrices** section and select the download icon.
+Scroll to the **Contributor-Generated Matrices** section and select the download icon.
 
 ![Contributor Matrices](../_images/contributor_matrices.png "Contributor Matrices")
+
+

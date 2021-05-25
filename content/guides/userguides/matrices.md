@@ -16,8 +16,8 @@ Overall, three types of matrices are currently available for DCP 2.0 data:
 - Contributor-generated matrices (variable file format) provided by the project-contributor
 
 
-## DCP Generated Matrices
-Each DCP 2.0 project that is processed with [standardized pipelines](/pipelines) has two types of DCP Generated Matrices available for download:
+## DCP-Generated Matrices
+Each DCP 2.0 project that is processed with [standardized pipelines](/pipelines) has two types of DCP-generated matrices available for download:
 
 - [project-level matrices](#dcp-project-level-matrices) 
 - [library-level matrices](#dcp-library-level-matrices)
@@ -43,13 +43,13 @@ Library-level matrices have filenames matching the numerical ID in the HCA metad
 
 
 #### DCP Project-level Matrices
-Project-level matrices are Loom files that contain standardized cell-by-gene measures and metrics for all the data in a project that are of the same species, organ, and sequencing method. This means each DCP project can have multiple project-level matrices if for example, the project contains both human and mouse or 10x and Smart-seq2 data. 
+Project-level matrices are Loom files that contain standardized cell-by-gene measures and metrics for all the data in a project that are of the same species, organ, and sequencing method. This means each DCP project can have multiple project-level matrices if, for example, the project contains both human and mouse or 10x and Smart-seq2 data. 
 
 The gene measures in project matrices vary based on the pipeline used for analysis. Matrices produced with the Optimus Pipeline (10x data) will have UMI-aware counts whereas matrices produced with the Smart-seq2 pipeline will have TPMs and estimated counts. Additionally, 10x matrices have been minimally filtered based on the number of UMIs (only cells with 100 molecules or more are retained).
 
 Each project matrix also has metadata (see table below) stored in the Loom file's global and column attributes. This metadata may be useful when exploring the data and linking it back to the additional Project metadata in the Data Manifest. Read more about each metadata field in the [Metadata Dictionary](/metadata/). 
 
-| Metadata Attribute Name in DCP Generated Matrix | Metadata Description | 
+| Metadata Attribute Name in DCP-Generated Matrix | Metadata Description | 
 | --- | --- |
 | `donor_organism.genus_species` | Species information; human or mouse |
 | `library_preparation_protocol.library_construction_approach` | Technology used for library preparation, i.e 10x or Smart-seq2 |
@@ -63,24 +63,24 @@ More information about DCP post-processing for the project-level matrices can be
 
 
 #### DCP Library-level Matrices 
-Library-level matrices (also Loom files) are cell-by-gene matrices for each individual library preparation in a project. These matrices contain the same standardized gene (row) metrics, cell (column) metrics and counts as the project-level matrices, but are separated by the metadata field for library preparation, `sequencing_process.provenance.document_id`, allowing you to only use a sub-sampling of all the project's data. 
+Library-level matrices (also Loom files) are cell-by-gene matrices for each individual library preparation in a project. These matrices contain the same standardized gene (row) metrics, cell (column) metrics, and counts as the project-level matrices, but are separated by the metadata field for library preparation, `sequencing_process.provenance.document_id`, allowing you to only use a sub-sampling of all the project's data. 
 
 While a library preparation for 10x datasets will likely include all the cells for a single donor, a library preparation for Smart-seq2 data will include the individual cell (i.e. if your Smart-seq2 data has 200 cells, it will have 200 library-level matrices). 
 
-Unlike project matrices, **library-level matrices are not filtered** and they do not contain all the metadata for species, organ, and sequencing method in the matrix global attributes. Instead, they only contain the metadata for `input_id` and `input_name` (described in table above). 
+Unlike project matrices, **library-level matrices are not filtered** and they do not contain all the metadata for species, organ, and sequencing method in the matrix global attributes. Instead, they only contain the metadata for `input_id` and `input_name` (described in the table above). 
 
-## Contributor Generated Matrices
-Contributor Generated Matrices are optionally provided by the data contributors. These can be useful when trying to annotate cell types or when comparing results back to a contributors published results. When these matrices are available, you can download them from the individual Project page. Across projects, these matrices will vary in file format and content. For questions about the Contributor Generated Matrix, reach out to the contributors listed in the Project page Contact section.
+## Contributor-Generated Matrices
+Contributor-generated matrices are optionally provided by the data contributors. These can be useful when trying to annotate cell types or when comparing results back to a contributor’s published results. When these matrices are available, you can download them from the individual Project page. Across projects, these matrices will vary in file format and content. For questions about the Contributor-generated matrix, reach out to the contributors listed in the Project page Contact section.
 
 ## Downloading Matrices
 DCP-generated project-level matrices and contributor-generated matrices may be downloaded from the "Matrices" column of the DCP Data Browser (see image below) or alternatively, from the individual Project page. Additionally, you can download all matrices (including library-level matrices) using a curl command as described in the [Accessing HCA Data and Metadata](../quick-start-guide) guide, or export matrices to [Terra](https://app.terra.bio/), a cloud-based platform for bioinformatic analysis (see the [Exporting to Terra](/guides/consumer-vignettes/export-to-terra) guide).
 
 ![Browsing Projects in the Data Explorer](../_images/explore_dcp_2_matrices.png "Exploring Projects")
 
-## Linking Project-level DCP Generated Matrices to the Data Manifest (Metadata)
+## Linking Project-level DCP-Generated Matrices to the Data Manifest (Metadata)
 DCP 2.0 project-level matrices only contain some of the available project metadata (species, organs, library methods, etc.). However, there are several metadata facets in the Metadata Manifest, such as disease state or donor information, that you might want to link back to the DCP-generated cell-by-gene matrix.
 
-To link a metadata field in the Metadata Manifest back to an individual sample in a DCP Generated Matrix, use the matrix `input_id` field. This field includes all the values for the metadata `sequencing_process.provenance.document_id`, the ID used to demarcate each library preparation. 
+To link a metadata field in the Metadata Manifest back to an individual sample in a DCP- generated matrix, use the matrix `input_id` field. This field includes all the values for the metadata `sequencing_process.provenance.document_id`, the ID used to demarcate each library preparation. 
 
 
 ## Matrix Normalization and Batch Correction
@@ -89,15 +89,16 @@ Data normalization and batch correction account for technical noise introduced d
 Normalization and batch correction techniques vary between processing methods and individual data contributors, and may not be consistent across the matrices available from the Data Portal.
 
 
-### Normalization and Batch Correction for DCP Generated Matrices
+### Normalization and Batch Correction for DCP-Generated Matrices
 - Data processed with the [standardized pipelines](/pipelines) are **not** normalized across nor within projects. 
 
 - 10x matrices produced with the [Optimus Pipeline](/pipelines/optimus-workflow) only contain raw counts whereas [Smart-seq2 Pipeline](/pipelines/smart-seq2-workflow) matrices contain raw counts as well as normalized TPMs. These TPMs are calculated per individual cell (library preparation) and not across all cells within a project. 
 
-- No batch correction is performed for DCP Generated Matrices.
+- No batch correction is performed for DCP-generated matrices.
 
-### Normalization and Batch Correction for Contributor Generated Matrices
-- For Contributor Generated Matrices, normalization and/or batch correction techniques are used at the discretion of the project contributor and vary between projects. 
+### Normalization and Batch Correction for Contributor-Generated Matrices
+- For contributor-generated matrices, normalization and/or batch correction techniques are used at the discretion of the project contributor and vary between projects. 
 
 - To learn more about the techniques used for a particular matrix, please reach out to the Contact listed on the Project's Information page. 
+
 
