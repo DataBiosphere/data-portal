@@ -1,15 +1,15 @@
 ---
 date: "2020-12-07"
 title: DCP Updates
-description: "Latest updates for the HCA Data Coordinaton Platform (DCP)."
+description: "Latest updates for the HCA Data Coordination Platform (DCP)."
 ---
 
 # DCP Platform Updates
 
-## Raw sequencing data and Contributor Generated Matrices for 23 new projects available for download
+## Raw sequencing data and contributor-generated matrices for 23 new projects available for download
 #### May 10, 2021
 
-* Data Portal now has data for 12.2 million cells, including new standardized analyses for 13 projects as well as raw sequencing data and Contributor Generated Matrices for 23 new projects.
+* Data Portal now has data for 12.2 million cells, including new standardized analyses for 13 projects as well as raw sequencing data and contributor-generated matrices for 23 new projects.
 
 
 * The standardized data, including aligned BAMs and cell-by-gene count matrices (Loom format), are derived from:
@@ -20,7 +20,7 @@ description: "Latest updates for the HCA Data Coordinaton Platform (DCP)."
   * Disease states including HIV, drug hypersensitivity syndrome, multiple sclerosis, and thoracic aortic aneurysm
 
 
-* The 23 new projects and Contributor Generated Matrices include data derived from:
+* The 23 new projects and contributor-generated matrices include data derived from:
   * Human and mouse
   * Smart-seq2, 10x V2 and V3 3’ chemistry, Drop-seq, and Fluidigm C1 sequencing methods
   * Blood, bone marrow, brain, cord blood, epididymis, fetal gonads, immune organ, kidney organoid, lymph nodes, pancreas,  skin, and trachea
@@ -45,19 +45,19 @@ Raw sequencing data for 16 new projects are now available in the DCP [Data Brows
 
 The [DCP 2.0 Preview](https://data.humancellatlas.org/explore/projects) now has standardized BAMs and count matrices (Loom file format) available for 26 HCA projects, including 15 new projects. These projects contain both human and mouse single-cell and single-nucleus data generated with 3’ 10x V2 and V3 sequencing technology. This data was processed using the latest version of the Optimus pipeline (see the [Optimus Overview](https://data.humancellatlas.org/pipelines/optimus-workflow)). 
 
-In addition to individual sample count matrices, each newly processed project also has standardized, project-level DCP Generated Matrices that are stratified by organ, species, and library construction method. These matrices are minimally filtered to include only cells with more than 100 UMIs. You can download the project-level DCP Generated Matrices from the Data Browser (see image below) or from the individual Project page (see the [Exploring Projects](https://data.humancellatlas.org/guides) guide)
+In addition to individual sample count matrices, each newly processed project also has standardized, project-level DCP-generated matrices that are stratified by organ, species, and library construction method. These matrices are minimally filtered to include only cells with more than 100 UMIs. You can download the project-level DCP-generated Matrices from the Data Browser (see image below) or from the individual Project page (see the [Exploring Projects](https://data.humancellatlas.org/guides) guide)
 
 ![](../../guides/_images/explore_dcp_2_matrices.png)
 
-### New raw data and Contributor Generated Matrices
+### New raw data and Contributor-Generated Matrices
 
-Raw sequence files and Contributor Generated Matrices (CGMs) for an additional 11 new projects are available for download from the [DCP 2.0 Preview](https://data.humancellatlas.org/explore/projects). These projects include human adult, embryonic, and fetal data derived from 10 organs - brain, blood, bone marrow, colon, thymus, pancreas, placenta, mouth, liver, and spleen. Most projects employed 10x sequencing technology, but some additionally used cite-seq and drop-seq. 
+Raw sequence files and contributor-generated matrices (CGMs) for an additional 11 new projects are available for download from the [DCP 2.0 Preview](https://data.humancellatlas.org/explore/projects). These projects include human adult, embryonic, and fetal data derived from 10 organs - brain, blood, bone marrow, colon, thymus, pancreas, placenta, mouth, liver, and spleen. Most projects employed 10x sequencing technology, but some additionally used cite-seq and drop-seq. 
 
 With the addition of these new data, the DCP now has 55 total projects with over 7 million cells derived from 40 organs and 580 donors. We are grateful for the contributions and continued support of the 179 global labs who made this data available.   
 
 ### Download new data using updated guides
 
-All files (raw data, CGMs, and DCP Generated BAMs and matrices) can be downloaded following the instructions in the [Accessing HCA Data and Metadata](/guides/quick-start-guide) guide. 
+All files (raw data, CGMs, and DCP-generated BAMs and matrices) can be downloaded following the instructions in the [Accessing HCA Data and Metadata](/guides/quick-start-guide) guide. 
 Additionally, you can access matrix files programmatically using the new [Programmatic Download](https://colab.research.google.com/drive/1h14mbunsepfogcnG9VEF4FIGpuyGLA-P#scrollTo=jxk27LZk4373) guide.
 
 
@@ -82,7 +82,7 @@ The new projects include a mix of human and mouse data from a variety of organs 
 
 ### What’s included in the DCP 2.0 infrastructure updates?
 
-Along with the new data view we have updated DCP infrastructure by **retiring and replacing** the following features:
+Along with the new data view, we have updated DCP infrastructure by **retiring and replacing** the following features:
 
 * HCA Command Line Interface (CLI); data are now downloaded using curl commands (see the [Accessing HCA Data and Metadata guide](/guides/quick-start-guide)) 
 
@@ -129,14 +129,15 @@ To accomplish this, we will be making the following changes and migrations:
 
 ## Transition Path to DCP 2.0
 
-More information about the transition to DCP 2.0 will be announced in the coming weeks and we will endeavour to make this transition as seamless as possible to the HCA research and developer communities.
+More information about the transition to DCP 2.0 will be announced in the coming weeks and we will endeavor to make this transition as seamless as possible to the HCA research and developer communities.
 
 > To enable a smooth transition, the DCP 1 data browser, APIs and data will remain available until January 1, 2021. 
 
-We will continue to integrate third party portals and applications into the HCA ecosystem by linking from and integrating directly into the HCA Data Browser.  
+We will continue to integrate third-party portals and applications into the HCA ecosystem by linking from and integrating directly into the HCA Data Browser.  
  
 Regards,
 
 The HCA DCP Team
+
 
 

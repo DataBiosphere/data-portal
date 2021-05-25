@@ -83,14 +83,24 @@ Commonly used contractions like “don’t”, “it’s”, “isn’t”, “d
 * Capitalize, but DON'T italicize our services, like Ingest Service, Data Store, etc.
 
 * Capitalize the words in titles, for example: Use Title Caps, not Use title caps
+
+* Capitalize two hyphenated words in title
+For example:
+    * Contributor-Generated Matrices
+    * DCP-Generated Matrices
     
 * Spell out numbers when they begin a sentence or for the numbers zero through five, unless referring to a measurement or when comparing to other numbers.  Otherwise, use the numeral. For example: 
   * There are four main sections in the *Data Portal*.
-  * These 2 visualization portalks are better suited to this use case than the other 10 on the site.
+  * These 2 visualization portals are better suited to this use case than the other 10 on the site.
   * This project has 24 specimens.
   * Download up to 1.5 Tb of data at a time.
 
 * When referring to a file type, use all uppercase (e.g., PDF, TXT, or "Download the TXT file on this page."). When referring to a specific file, use all lowercase (e.g., brain.pdf).
+
+* When referring to DCP or contributor matrix types, use a hyphen followed by lowercase (unless using in title)
+For example:
+  * DCP-generated matrix
+  * Contributor-generated matrix 
 
 * Each sentence, even a sentence fragment, should start with a capital letter and end with a period.
 
