@@ -58,7 +58,7 @@ For each project, the DCP maintains a project-specific TSV file containing the f
 
 The metadata TSV file gives a representation of the project's metadata graph that can be sorted and filtered using a standard spreadsheet or data manipulation tools.
 
-The **Project Metadata"** tab left of the Project Information page contains a link to download the project's metadata file.
+The **"Project Metadata"** tab left of the Project Information page contains a link to download the project's metadata file.
 
 ![Project Metadata](../_images/project_metadata.png "Project Metadata")
 
