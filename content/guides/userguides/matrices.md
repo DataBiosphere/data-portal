@@ -54,7 +54,7 @@ Both project matrices and library-level matrices have unique filenames.
 
 #### DCP Project-Level Matrix Overview
 Project-level matrices are Loom files that contain standardized cell-by-gene measures and metrics for all the data in a project that are of the same species, organ, and sequencing method. 
-* Example: If a project contains both human and mouse data, it will have one project matrix for human and one for mouse
+* Example: If a project contains both human and mouse data, it will have one project matrix for human and one for mouse.
 
 The gene measures in project matrices vary based on the pipeline used for analysis. 
 * Matrices produced with the Optimus Pipeline (10x data) will have UMI-aware counts. 
