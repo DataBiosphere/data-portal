@@ -28,11 +28,15 @@ Overview of Terra
 
 [Terra](https://app.terra.bio/) is a scalable cloud platform for biomedical research. Terra offers the
 ability to use data, tools, and workflows to do interactive analysis in the 
-cloud. To start using Terra, visit <https://app.terra.bio>.
+cloud. 
 
-For more information about how to use Terra, visit the [Terra Support](https://support.terra.bio/hc/en-us) page.
+Visit [Terra Support](https://support.terra.bio/hc/en-us) to learn how to [register for a Terra account](https://support.terra.bio/hc/en-us/articles/360028235911) and [get started](https://support.terra.bio/hc/en-us/sections/360006866192) with analyzing data in the cloud.
 
-To register for a Terra account, see [How to register for a Terra account](https://support.terra.bio/hc/en-us/articles/360028235911).
+After registering, you can view multiple workspaces dedicated to using HCA data, such as the:
+* [Optimus workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline) for processing 10x data with the [Optimus Pipeline](/pipelines/optimus-workflow).
+* [Smart-seq2 workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/HCA%20Smart-seq2%20Multi%20Sample%20Pipeline) for processing Smart-seq2 data with the [Smart-seq2 Multi-Sample Pipeline](/pipelines/smart-seq2-workflow).
+* [Intro-to-HCA-data-on-Terra workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra) for exporting HCA data and analyzing it with community tools like [Seurat](https://satijalab.org/seurat/index.html), [Scanpy](https://scanpy-tutorials.readthedocs.io/en/latest/index.html), [Cumulus](https://cumulus.readthedocs.io/en/latest/index.html), and [Pegasus](https://pegasus.readthedocs.io/en/stable/#). 
+
 
 Overview of Dockstore
 ---------------------
