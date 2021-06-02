@@ -22,32 +22,48 @@ Each DCP 2.0 project that is processed with [standardized pipelines](/pipelines)
 - [project-level matrices](#dcp-project-level-matrices) 
 - [library-level matrices](#dcp-library-level-matrices)
 
-Both matrix types are in Loom file format (see [Loom documentation](http://linnarssonlab.org/loompy/index.html#) for format details), and contain standard [metrics](/pipelines/hca-pipelines/data-processing-pipelines/qc-metrics) and counts that are specific to the data processing pipeline used to generate the file. 
+Both matrix types are in Loom file format, and contain standard [metrics](/pipelines/hca-pipelines/data-processing-pipelines/qc-metrics) and counts that are specific to the data processing pipeline used to generate the file. 
+
 
 > For the most up-to-date information on counts and metrics, see the Matrix Overviews for the **[Smart-seq2 Pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema.html)** and the **[Optimus Pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/Loom_schema.html) (10x data)**.
 
 
-DCP 2.0 matrices (Loom files) have three types of attributes containing metadata and metrics:
+DCP-generated Loom matrices have three types of attributes containing metadata and metrics:
 - **global**: information that applies to all data in the Loom (i.e. pipeline version, etc.)
 
 - **row**: gene-specific information and metrics (one row = one gene)
 
 - **column**: cell-specific information and metrics (one column = one cell)
 
-Both project matrices and library-level matrices have unique filenames. Project matrices have filenames in the format `<project_description>-<species>-<tissue>-<sequencing_method>`. For example, a matrix for the project "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" has the filename `sc-landscape-human-liver-10XV2.loom`. 
+For more information on working with Loom attributes and format, see the [Loom documentation](http://linnarssonlab.org/loompy/index.html#).
 
-![Project Matrices Filenames](../_images/project_matrix_name.png "Matrix Name")
+Loom files are compatible with multiple downstream community tools, including [Seurat](https://satijalab.org/seurat/index.html), [Scanpy](https://scanpy-tutorials.readthedocs.io/en/latest/index.html), [Cumulus](https://cumulus.readthedocs.io/en/latest/index.html), and [Pegasus](https://pegasus.readthedocs.io/en/stable/#). 
 
-Library-level matrices have filenames matching the numerical ID in the HCA metadata field `sequencing_process.provenance.document_id`.
+> Step-by-step Jupyter Notebook tutorials for analyzing Loom matrices with community tools are available in the cloud-based platform [Terra](https://app.terra.bio/) (login required). Get started by navigating to the [Intro-to-HCA-data-on-Terra workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra).  
+
+#### DCP-Generated Matrix Filenames
+Both project matrices and library-level matrices have unique filenames. 
+* Project matrices have filenames in the format `<project_description>-<species>-<tissue>-<sequencing_method>`. 
+	* Ex: a project-level matrix for "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" has the filename `sc-landscape-human-liver-10XV2.loom`. 
+
+     ![Project Matrices Filenames](../_images/project_matrix_name.png "Matrix Name")
+
+* Library-level matrices have filenames matching the numerical ID in the HCA metadata field `sequencing_process.provenance.document_id`.
 
 
 
-#### DCP Project-level Matrices
-Project-level matrices are Loom files that contain standardized cell-by-gene measures and metrics for all the data in a project that are of the same species, organ, and sequencing method. This means each DCP project can have multiple project-level matrices if, for example, the project contains both human and mouse or 10x and Smart-seq2 data. 
+#### DCP Project-Level Matrix Overview
+Project-level matrices are Loom files that contain standardized cell-by-gene measures and metrics for all the data in a project that are of the same species, organ, and sequencing method. 
+* Ex: If a project contains both human and mouse data, it will have one project matrix for human and one for mouse
 
-The gene measures in project matrices vary based on the pipeline used for analysis. Matrices produced with the Optimus Pipeline (10x data) will have UMI-aware counts whereas matrices produced with the Smart-seq2 pipeline will have TPMs and estimated counts. Additionally, 10x matrices have been minimally filtered based on the number of UMIs (only cells with 100 molecules or more are retained).
+The gene measures in project matrices vary based on the pipeline used for analysis. 
+* Matrices produced with the Optimus Pipeline (10x data) will have UMI-aware counts. 
+* Matrices produced with the Smart-seq2 pipeline will have TPMs and estimated counts. 
+* 10x matrices are minimally filtered by UMIs (only cells with 100 molecules or more are retained).
 
-Each project matrix also has metadata (see table below) stored in the Loom file's global and column attributes. This metadata may be useful when exploring the data and linking it back to the additional Project metadata in the Data Manifest. Read more about each metadata field in the [Metadata Dictionary](/metadata/). 
+Each project matrix also has metadata stored in the Loom file's global and column attributes, described in the table below. This metadata may be useful when exploring the data and linking it back to the additional Project metadata in the Data Manifest. 
+
+Read more about each metadata field in the [Metadata Dictionary](/metadata/). 
 
 | Metadata Attribute Name in DCP-Generated Matrix | Metadata Description | 
 | --- | --- |
@@ -62,22 +78,28 @@ Each project matrix also has metadata (see table below) stored in the Loom file'
 More information about DCP post-processing for the project-level matrices can be found in the Matrix Overview for the [Optimus Pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/Loom_schema.html#hca-data-coordination-platform-matrix-processing) and the [Smart-seq2 Pipeline](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema.html#table-2-column-attributes-cell-metrics) (in development). 
 
 
-#### DCP Library-level Matrices 
-Library-level matrices (also Loom files) are cell-by-gene matrices for each individual library preparation in a project. These matrices contain the same standardized gene (row) metrics, cell (column) metrics, and counts as the project-level matrices, but are separated by the metadata field for library preparation, `sequencing_process.provenance.document_id`, allowing you to only use a sub-sampling of all the project's data. 
+#### DCP Library-Level Matrix Overview
+Library-level matrices (also Loom files) are cell-by-gene matrices for each individual library preparation in a project. Overall, library-level matrices:
+* Contain the same standardized gene (row) metrics, cell (column) metrics, and counts as the project-level matrices.
+* Are separated by the metadata field for library preparation, `sequencing_process.provenance.document_id`, allowing you to only use a sub-sampling of all the project's data. 
+* Are **not filtered**. 
+* Only contain the metadata for `input_id` and `input_name` (described in the table above).
+    * They do not contain all the metadata for species, organ, and sequencing method in the matrix global attributes.
+  
 
-While a library preparation for 10x datasets will likely include all the cells for a single donor, a library preparation for Smart-seq2 data will include the individual cell (i.e. if your Smart-seq2 data has 200 cells, it will have 200 library-level matrices). 
+## Contributor-Generated Matrix Overview
+Contributor-generated matrices are optionally provided by the data contributors and can be useful when trying to annotate cell types or when comparing results back to a contributor’s published results. 
 
-Unlike project matrices, **library-level matrices are not filtered** and they do not contain all the metadata for species, organ, and sequencing method in the matrix global attributes. Instead, they only contain the metadata for `input_id` and `input_name` (described in the table above). 
-
-## Contributor-Generated Matrices
-Contributor-generated matrices are optionally provided by the data contributors. These can be useful when trying to annotate cell types or when comparing results back to a contributor’s published results. When these matrices are available, you can download them from the individual Project page. Across projects, these matrices will vary in file format and content. For questions about the Contributor-generated matrix, reach out to the contributors listed in the Project page Contact section.
+When these contributor-generated matrices are available, you can download them from the individual Project page. They will vary in file format and content across projects. For questions about the Contributor-generated matrix, reach out to the contributors listed in the Project page Contact section.
 
 ## Downloading Matrices
-DCP-generated project-level matrices and contributor-generated matrices may be downloaded from the "Matrices" column of the DCP Data Browser (see image below) or alternatively, from the individual Project page. Additionally, you can download all matrices (including library-level matrices) using a curl command as described in the [Accessing HCA Data and Metadata](../quick-start-guide) guide, or export matrices to [Terra](https://app.terra.bio/), a cloud-based platform for bioinformatic analysis (see the [Exporting to Terra](/guides/consumer-vignettes/export-to-terra) guide).
+DCP-generated project-level matrices and contributor-generated matrices may be downloaded from the "Matrices" column of the DCP Data Browser (see image below) or alternatively, from the individual Project page. 
 
 ![Browsing Projects in the Data Explorer](../_images/explore_dcp_2_matrices.png "Exploring Projects")
 
-## Linking Project-level DCP-Generated Matrices to the Data Manifest (Metadata)
+You can also download all matrices (including library-level matrices) using a curl command as described in the [Accessing HCA Data and Metadata](../quick-start-guide) guide, or export matrices to [Terra](https://app.terra.bio/), a cloud-based platform for bioinformatic analysis (see the [Exporting to Terra](/guides/consumer-vignettes/export-to-terra) guide).
+
+## Linking DCP-Generated Matrices to the Data Manifest (Metadata)
 DCP 2.0 project-level matrices only contain some of the available project metadata (species, organs, library methods, etc.). However, there are several metadata facets in the Metadata Manifest, such as disease state or donor information, that you might want to link back to the DCP-generated cell-by-gene matrix.
 
 To link a metadata field in the Metadata Manifest back to an individual sample in a DCP- generated matrix, use the matrix `input_id` field. This field includes all the values for the metadata `sequencing_process.provenance.document_id`, the ID used to demarcate each library preparation. 
