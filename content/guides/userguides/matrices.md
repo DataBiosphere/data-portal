@@ -44,7 +44,7 @@ Loom files are compatible with multiple downstream community tools, including [S
 #### DCP-Generated Matrix Filenames
 Both project matrices and library-level matrices have unique filenames. 
 * Project matrices have filenames in the format `<project_description>-<species>-<tissue>-<sequencing_method>`. 
-	* Ex: a project-level matrix for "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" has the filename `sc-landscape-human-liver-10XV2.loom`. 
+	* Example: the project-level matrix for "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" has the filename `sc-landscape-human-liver-10XV2.loom`. 
 
      ![Project Matrices Filenames](../_images/project_matrix_name.png "Matrix Name")
 
@@ -54,7 +54,7 @@ Both project matrices and library-level matrices have unique filenames.
 
 #### DCP Project-Level Matrix Overview
 Project-level matrices are Loom files that contain standardized cell-by-gene measures and metrics for all the data in a project that are of the same species, organ, and sequencing method. 
-* Ex: If a project contains both human and mouse data, it will have one project matrix for human and one for mouse
+* Example: If a project contains both human and mouse data, it will have one project matrix for human and one for mouse
 
 The gene measures in project matrices vary based on the pipeline used for analysis. 
 * Matrices produced with the Optimus Pipeline (10x data) will have UMI-aware counts. 
@@ -82,7 +82,7 @@ More information about DCP post-processing for the project-level matrices can be
 Library-level matrices (also Loom files) are cell-by-gene matrices for each individual library preparation in a project. Overall, library-level matrices:
 * Contain the same standardized gene (row) metrics, cell (column) metrics, and counts as the project-level matrices.
 * Are separated by the metadata field for library preparation, `sequencing_process.provenance.document_id`, allowing you to only use a sub-sampling of all the project's data. 
-* Are **not filtered**. 
+* Are **not filtered** by UMIs to remove cells with low numbers of molecules. 
 * Only contain the metadata for `input_id` and `input_name` (described in the table above).
     * They do not contain all the metadata for species, organ, and sequencing method in the matrix global attributes.
   
