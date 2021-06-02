@@ -7,11 +7,11 @@ description: "Overview of the HCA DCP Optimus analysis workflow."
 
 # Introduction to the Optimus Workflow
 
-The long-term goal of the Optimus workflow is to support any 3 prime single-cell or single- nuclei transcriptomics assay selected by the HCA project. Using the correct modularity, we hope to grow a generic pipeline that has specific modules to address differences in assays, while leveraging common code where steps of the assays are the same. We offer this as a community resource for community development and improvement. 
+The long-term goal of the Optimus workflow is to support any 3 prime single-cell or single- nucleus transcriptomics assay selected by the HCA project. Using the correct modularity, we hope to grow a generic pipeline that has specific modules to address differences in assays, while leveraging common code where steps of the assays are the same. We offer this as a community resource for community development and improvement. 
 
-The workflow supports the [10x v2 and v3 gene expression assay](https://www.10xgenomics.com/solutions/single-cell/) and has been validated for analyzing single-cell and [single-nuclei](https://docs.google.com/document/d/1rv2M7vfpOzIOsMnMfNyKB4HV18lQ9dnOGHK2tPikiH0/edit) from both [human](https://github.com/broadinstitute/warp/blob/master/pipelines/skylab/optimus/benchmarking/v1_Apr2019/optimus_report.rst) and [mouse](https://docs.google.com/document/d/1_3oO0ZQSrwEoe6D3GgKdSmAQ9qkzH_7wrE7x6_deL10/edit) data sets. 
+The workflow supports the [10x v2 and v3 gene expression assay](https://www.10xgenomics.com/solutions/single-cell/) and has been validated for analyzing single-cell and [single-nucleus](https://docs.google.com/document/d/1rv2M7vfpOzIOsMnMfNyKB4HV18lQ9dnOGHK2tPikiH0/edit) from both [human](https://github.com/broadinstitute/warp/blob/master/pipelines/skylab/optimus/benchmarking/v1_Apr2019/optimus_report.rst) and [mouse](https://docs.google.com/document/d/1_3oO0ZQSrwEoe6D3GgKdSmAQ9qkzH_7wrE7x6_deL10/edit) data sets. 
 
-> View the open source workflow code in the [WARP repository](https://github.com/broadinstitute/warp/tree/master/pipelines/skylab/optimus) on GitHub or read WARP's [Optimus Overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/) for the latest pipeline details.
+> View the open-source workflow code in the [WARP repository](https://github.com/broadinstitute/warp/tree/master/pipelines/skylab/optimus) on GitHub or read WARP's [Optimus Overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/) for the latest pipeline details.
 
 ## Commonalities Among Sequencing Assays
 
@@ -27,7 +27,7 @@ The bead-specific barcodes and UMIs are encoded on sequencing primers that also 
 
 | Pipeline Features | Description | Source |
 |-------------------|---------------------------------------------------------------|-----------------------|
-| Assay Type | 10x Single Cell/Nuclei Expression (v2 and v3) |[10x Genomics](https://www.10xgenomics.com)
+| Assay Type | 10x Single Cell/Nucleus Expression (v2 and v3) |[10x Genomics](https://www.10xgenomics.com)
 | Overall Workflow  |Quality control module and transcriptome quantification module | Code available from [Github](https://github.com/broadinstitute/warp/blob/master/pipelines/skylab/optimus/Optimus.wdl) |
 | Workflow Language | WDL | [openWDL](https://github.com/openwdl/wdl) |
 | Genomic Reference Sequence| GRCh38 human genome primary sequence and M21 (GRCm38.p6) mouse genome primary sequence | GENCODE [Human](https://www.gencodegenes.org/human/release_27.html) and [Mouse](https://www.gencodegenes.org/mouse/release_M21.html) |
@@ -41,7 +41,7 @@ The bead-specific barcodes and UMIs are encoded on sequencing primers that also 
 
 Here we describe the modules of Optimus; [the code](https://github.com/broadinstitute/warp/blob/master/pipelines/skylab/optimus/Optimus.wdl) and [library of tasks](https://github.com/broadinstitute/warp/tree/master/tasks/skylab) are available through GitHub.
 
-The workflow runs in two modes: single-cell (`sc_rna`) or single-nuclei (`sn_rna`). When appropriate, differences between the modes are noted.
+The workflow runs in two modes: single-cell (`sc_rna`) or single-nucleus (`sn_rna`). When appropriate, differences between the modes are noted.
 
 Overall, the workflow:
 1. corrects cell barcodes and Unique Molecular Identifiers (UMIs)
@@ -51,7 +51,7 @@ Overall, the workflow:
 5. calculates summary statistics
 6. returns output in BAM and Loom file formats
 
-Special care is taken to avoid the removal of reads that are not aligned or that do not contain recognizable barcodes. This design (which differs from many pipelines currently available) allows use of the entire dataset by those who may want to use alternative filtering or leverage the data for methodological development associated with the data processing.
+Special care is taken to avoid the removal of reads that are not aligned or that do not contain recognizable barcodes. This design (which differs from many pipelines currently available) allows the use of the entire dataset by those who may want to use alternative filtering or leverage the data for methodological development associated with the data processing.
 
 A general overview of the pipeline is shown below, followed by more detailed descriptions of the steps.
 
@@ -63,20 +63,20 @@ Each 10x v2 and v3 3’ sequencing experiment generates triplets of FASTQ files:
 
 1. forward reads (R1), containing the unique molecular identifier and cell barcode sequences
 2. reverse reads (R2), which is the alignable genomic information from the mRNA transcript 
-3. an index fastq file that contains the sample barcodes, when provided by the sequencing facility
+3. an index FASTQ file that contains the sample barcodes, when provided by the sequencing facility
 
 Because the pipeline processing steps require a BAM file format, the first step of Optimus is to [convert](https://github.com/broadinstitute/warp/blob/develop/tasks/skylab/FastqProcessing.wdl) the R2 FAST files, containing the alignable genomic information, to  BAM files. Next, the [FastqProcessing](https://github.com/broadinstitute/warp/blob/develop/tasks/skylab/FastqProcessing.wdl) step appends the UMI and Cell Barcode sequences from R1 to the corresponding R2 sequence as tags, in order to properly label the genomic information for alignment.
 
 ### Cell Barcode Correction
 
-Although the function of the cell barcodes is to identify unique cells, barcode errors can arise during sequencing (such as incorporation of the barcode into contaminating DNA or sequencing and PCR errors), making it difficult to distinguish unique cells from artifactual appearances of the barcode. Barcode errors are evaluated in the [FastqProcessing](https://github.com/broadinstitute/warp/blob/develop/tasks/skylab/FastqProcessing.wdl) step mentioned above, which compares the sequences against a whitelist of known barcode sequences.
+Although the function of the cell barcodes is to identify unique cells, barcode errors can arise during sequencing (such as the incorporation of the barcode into contaminating DNA or sequencing and PCR errors), making it difficult to distinguish unique cells from artifactual appearances of the barcode. Barcode errors are evaluated in the [FastqProcessing](https://github.com/broadinstitute/warp/blob/develop/tasks/skylab/FastqProcessing.wdl) step mentioned above, which compares the sequences against a whitelist of known barcode sequences.
 
 The output BAM files contain the reads with correct barcodes, including barcodes that came within one edit distance ([Levenshtein distance](http://www.levenshtein.net/)) of matching the whitelist of barcode sequences and were corrected by this tool. Correct barcodes are assigned a “CB” tag. Uncorrected barcodes (with more than one error) are preserved and given a “CR” (Cell barcode Raw) tag. Cell barcode quality scores are also preserved in the file under the “CY” tag.
 
 
 ## Alignment
 
-The [STAR alignment](https://github.com/broadinstitute/warp/blob/master/tasks/skylab/StarAlignBamSingleEnd.wdl) software ([Dobin, et al., 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530905/)) is used to map barcoded reads in the BAM files to the human genome primary assembly reference. STAR (Spliced Transcripts Alignment to a Reference) is widely-used for RNA-seq alignment and identifies the best matching location(s) on the reference for each sequencing read.
+The [STAR alignment](https://github.com/broadinstitute/warp/blob/master/tasks/skylab/StarAlignBamSingleEnd.wdl) software ([Dobin, et al., 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530905/)) is used to map barcoded reads in the BAM files to the human genome primary assembly reference. STAR (Spliced Transcripts Alignment to a Reference) is widely used for RNA-seq alignment and identifies the best matching location(s) on the reference for each sequencing read.
 
 ## Gene Annotation
 
@@ -86,7 +86,7 @@ The [TagGeneExon](https://github.com/broadinstitute/warp/tree/master/tasks/skyla
 
 Annotations include INTERGENIC, INTRONIC, UTR and CODING (EXONIC), and are stored using the 'XF' BAM tag. In cases where the gene corresponds to an **exon or UTR**, the name of the gene that overlaps the alignment is associated with the read and stored using the GE BAM tag.
 
-#### Single-nuclei mode
+#### Single-nucleus mode
 Annotations include INTERGENIC, INTRONIC, UTR and CODING (EXONIC), and are stored using the 'XF' BAM tag. In cases where the gene corresponds to an **exon, UTR, or intron**, the name of the gene that overlaps the alignment is associated with the read and stored using the GE BAM tag.
 
 ## UMI Correction
@@ -115,7 +115,11 @@ Outputs of the pipeline include:
 
 ## Try Optimus in Terra
 
-The Optimus pipeline is currently available on the cloud-based platform [Terra](https://app.terra.bio). If you have a Terra account, you can access the Featured Workspace using this address: https://app.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline. The workspace is preloaded with instructions and sample data. For more information on using the Terra platform, please view the [Support Center](https://support.terra.bio/hc/en-us).
+The Optimus pipeline is currently available on the cloud-based platform [Terra](https://app.terra.bio). If you have a Terra account, you can access the Featured Workspace using this address: https://app.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline. The workspace is preloaded with instructions and sample data. 
+
+Additionally, you can use the public [Intro-to-HCA-data-on-Terra workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra) to analyze an example Optimus cell-by-gene count matrix (Loom file) with multiple downstream community tools, such as [Seurat](https://satijalab.org/seurat/index.html), [Scanpy](https://scanpy-tutorials.readthedocs.io/en/latest/index.html), [Cumulus](https://cumulus.readthedocs.io/en/latest/index.html), and [Pegasus](https://pegasus.readthedocs.io/en/stable/#). 
+
+For more information on using the Terra platform, please view the [Support Center](https://support.terra.bio/hc/en-us).
 
 ## Versioning
 All Optimus workflow versions are detailed in the [Optimus Changelog](https://github.com/broadinstitute/warp/blob/master/pipelines/skylab/optimus/Optimus.changelog.md) in GitHub. 
@@ -125,5 +129,6 @@ All Optimus workflow versions are detailed in the [Optimus Changelog](https://gi
 
 ## Learn More About Optimus
 For more detailed information about the Optimus pipeline, please see the [Optimus Overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/) in the WARP repository documentation.
+
 
 
