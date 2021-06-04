@@ -11,7 +11,9 @@ The long-term goal of the Optimus workflow is to support any 3 prime single-cell
 
 The workflow supports the [10x v2 and v3 gene expression assay](https://www.10xgenomics.com/solutions/single-cell/) and has been validated for analyzing single-cell and [single-nucleus](https://docs.google.com/document/d/1rv2M7vfpOzIOsMnMfNyKB4HV18lQ9dnOGHK2tPikiH0/edit) from both [human](https://github.com/broadinstitute/warp/blob/master/pipelines/skylab/optimus/benchmarking/v1_Apr2019/optimus_report.rst) and [mouse](https://docs.google.com/document/d/1_3oO0ZQSrwEoe6D3GgKdSmAQ9qkzH_7wrE7x6_deL10/edit) data sets. 
 
+
 > View the open-source workflow code in the [WARP repository](https://github.com/broadinstitute/warp/tree/master/pipelines/skylab/optimus) on GitHub or in [Dockstore](https://dockstore.org/workflows/github.com/broadinstitute/warp/Optimus:Optimus_v4.2.2?tab=info). Read WARP's [Optimus Overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/) for the latest pipeline details.
+
 
 ## Commonalities Among Sequencing Assays
 
