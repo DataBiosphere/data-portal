@@ -39,7 +39,7 @@ For more information on working with Loom attributes and format, see the [Loom d
 
 Loom files are compatible with multiple downstream community tools, including [Seurat](https://satijalab.org/seurat/index.html), [Scanpy](https://scanpy-tutorials.readthedocs.io/en/latest/index.html), [Cumulus](https://cumulus.readthedocs.io/en/latest/index.html), and [Pegasus](https://pegasus.readthedocs.io/en/stable/#). 
 
-> Step-by-step Jupyter Notebook tutorials for analyzing Loom matrices with community tools are available in the cloud-based platform [Terra](https://app.terra.bio/) (login required). Get started by navigating to the [Intro-to-HCA-data-on-Terra workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra).  
+> Step-by-step Jupyter Notebook tutorials for analyzing Loom matrices with community tools are available in the cloud-based platform [Terra](https://app.terra.bio/). After registering, get started by navigating to the [Intro-to-HCA-data-on-Terra workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra).  
 
 #### DCP-Generated Matrix Filenames
 Both project matrices and library-level matrices have unique filenames. 

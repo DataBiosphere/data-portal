@@ -11,7 +11,7 @@ The long-term goal of the Optimus workflow is to support any 3 prime single-cell
 
 The workflow supports the [10x v2 and v3 gene expression assay](https://www.10xgenomics.com/solutions/single-cell/) and has been validated for analyzing single-cell and [single-nucleus](https://docs.google.com/document/d/1rv2M7vfpOzIOsMnMfNyKB4HV18lQ9dnOGHK2tPikiH0/edit) from both [human](https://github.com/broadinstitute/warp/blob/master/pipelines/skylab/optimus/benchmarking/v1_Apr2019/optimus_report.rst) and [mouse](https://docs.google.com/document/d/1_3oO0ZQSrwEoe6D3GgKdSmAQ9qkzH_7wrE7x6_deL10/edit) data sets. 
 
-> View the open-source workflow code in the [WARP repository](https://github.com/broadinstitute/warp/tree/master/pipelines/skylab/optimus) on GitHub or read WARP's [Optimus Overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/) for the latest pipeline details.
+> View the open-source workflow code in the [WARP repository](https://github.com/broadinstitute/warp/tree/master/pipelines/skylab/optimus) on GitHub or in [Dockstore](https://dockstore.org/workflows/github.com/broadinstitute/warp/Optimus:Optimus_v4.2.2?tab=info). Read WARP's [Optimus Overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Optimus_Pipeline/) for the latest pipeline details.
 
 ## Commonalities Among Sequencing Assays
 
@@ -115,7 +115,7 @@ Outputs of the pipeline include:
 
 ## Try Optimus in Terra
 
-The Optimus pipeline is currently available on the cloud-based platform [Terra](https://app.terra.bio). If you have a Terra account, you can access the Featured Workspace using this address: https://app.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline. The workspace is preloaded with instructions and sample data. 
+In addition to viewing the Optimus code in [WARP](https://github.com/broadinstitute/warp/tree/master/pipelines/skylab/optimus) or on [Dockstore](https://dockstore.org/workflows/github.com/broadinstitute/warp/Optimus:Optimus_v4.2.2?tab=info), you can try the Optimus Pipeline on the cloud-based platform [Terra](https://app.terra.bio). After registering on Terra, navigate to the [Optimus Featured Workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline) which is preloaded with instructions and sample data. 
 
 Additionally, you can use the public [Intro-to-HCA-data-on-Terra workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra) to analyze an example Optimus cell-by-gene count matrix (Loom file) with multiple downstream community tools, such as [Seurat](https://satijalab.org/seurat/index.html), [Scanpy](https://scanpy-tutorials.readthedocs.io/en/latest/index.html), [Cumulus](https://cumulus.readthedocs.io/en/latest/index.html), and [Pegasus](https://pegasus.readthedocs.io/en/stable/#). 
 
