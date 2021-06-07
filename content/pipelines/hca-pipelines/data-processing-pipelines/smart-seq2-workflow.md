@@ -20,7 +20,7 @@ The SMART acronym, which stands for Switching Mechanism At the end of the 5’-e
 
 The Smart-seq2 pipeline processes data generated from plate- or fluidigm-based Smart-seq2 scRNA sequencing protocols. The pipeline is comprised of two modules: a quality control module, which generates post-alignment quality control metrics, and a transcriptome quantification module, which aligns reads to the transcriptome and estimates transcript expression levels. 
 
-> View the open source workflow code in the [WARP repository](https://github.com/broadinstitute/warp/tree/master/pipelines/skylab/smartseq2_multisample) on GitHub or read WARP's [Smart-seq2 Overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Multi_Sample_Pipeline/) for the latest pipeline details.
+> View the open source workflow code in the [WARP repository](https://github.com/broadinstitute/warp/tree/master/pipelines/skylab/smartseq2_multisample) on GitHub or read WARP's [Smart-seq2 Overview](https://broadinstitute.github.io/warp/docs/Pipelines/Smart-seq2_Multi_Sample_Pipeline/README) for the latest pipeline details.
 
 ## Quick Start Table
 
@@ -67,4 +67,4 @@ All Smart-seq2 Multi Sample workflow versions are detailed in the [Smart-seq2 Mu
 
 ## Learn More About the Smart-seq2 Pipeline
 
-More detailed information about this pipeline can be found in the [Smart-seq2 Overview](https://broadinstitute.github.io/warp/documentation/Pipelines/Smart-seq2_Single_Sample_Pipeline/) in the WARP repository documentation.
+More detailed information about this pipeline can be found in the [Smart-seq2 Overview](https://broadinstitute.github.io/warp/docs/Pipelines/Smart-seq2_Single_Sample_Pipeline/README) in the WARP repository documentation.
