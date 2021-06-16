@@ -11,7 +11,7 @@ description: "Latest updates for the HCA Data Coordination Platform (DCP)."
 
 #### June 16, 2021
 
-* Raw data and contributor-generated matrices are available for 9 new projects. These single-cell data are derived from:
+* Raw data and contributor-generated matrices are available for 15 new projects. These single-cell data are derived from:
    * Single-cell and single-nucleus
    * 10x 3’ v2 and v3 3’ and 10x 5’ chemistry, Fluidigm C1, Smart-seq2, and sci-CAR ATAC sequencing technologies
    * Adipose tissue, blood, bone marrow, CSF, heart, kidney, lung, oral cavity, ovary, pancreas, prostate, skeletal muscle, testis, and umbilical vein
