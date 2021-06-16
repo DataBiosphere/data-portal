@@ -6,6 +6,26 @@ description: "Latest updates for the HCA Data Coordination Platform (DCP)."
 
 # DCP Platform Updates
 
+
+## Data Portal now contains data for 13.5 million cells 
+
+#### June 16, 2021
+
+* Raw data and contributor-generated matrices are available for 9 new projects. These single-cell data are derived from:
+   * Single-cell and single-nucleus
+   * 10x 3’ v2 and v3 3’ and 10x 5’ chemistry, Fluidigm C1, Smart-seq2, and sci-CAR ATAC sequencing technologies
+   * Adipose tissue, blood, bone marrow, CSF, heart, kidney, lung, oral cavity, ovary, pancreas, prostate, skeletal muscle, testis, and umbilical vein
+   * Disease states including COVID-19 infection, intracranial hypertension, multiple sclerosis, and renal cell carcinoma
+   * Developmental stages including fetal, child, adolescent, and adult
+
+* Standardized data, including aligned BAMs and cell-by-gene count matrices (Loom format), are available for 8 additional projects with data derived from:
+   * 10x v2 and v3 3’ sequencing technologies
+   * Brain (superior parietal cortex, middle temporal gyrus, and temporal cortex), epididymis, immune tissue, cortex of the kidney organoid, lymph nodes, placenta (chorionic villus and decidua), spine, testis, and thymus
+   * Disease states including Alzheimer disease and cognitive impairment with or without cerebellar ataxia
+
+
+* New Jupyter Notebook tutorials for analyzing standardized DCP matrix files are available in an [Intro-to-HCA-data-on-Terra](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra) workspace on the cloud-based platform Terra. After registering, you can try the step-by-step instructions for importing HCA data and analyzing in common community tools such as Bioconductor, Cumulus, Pegasus, Scanpy, and Seurat. 
+
 ## Raw sequencing data and contributor-generated matrices for 23 new projects available for download
 #### May 10, 2021
 
