@@ -284,7 +284,7 @@
     location: "h"
     order: 2
   tabs:
-    - name: "HCA Pipelines"
+    - name: ""
       key: "hca-pipelines"
       primaryLinks:
         - name: "Data Processing Pipelines"
