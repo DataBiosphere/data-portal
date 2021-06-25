@@ -33,7 +33,8 @@ function AnnouncementCatalog() {
     return (
         <Announcement>
             <span className={compStyles.catalog}>
-                <span><strong>Update: </strong>The  <a href={dcp2Path} onClick={() => trackCatalogViewed('dcp2')}>DCP 2.0 Data View</a> is now available.
+                <span><strong>Update: </strong>The <a href={dcp2Path} onClick={() => trackCatalogViewed('dcp2')}>DCP 2.0 Data View</a> is now available.</span>
+                <span>
                     <span>|</span>
                     <Link to={dcp2ComingSoonPath}>Learn More</Link>
                 </span>

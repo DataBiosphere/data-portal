@@ -11,6 +11,9 @@
 .announcement {
     background-color: var(--blue-light);
     padding: 20px 16px; /* Site gutter */
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .announcement .announcementContent {
@@ -28,11 +31,5 @@
 
     :host {
         padding: 14px 30px; /* Site gutter */
-    }
-
-    /* Center align content - for banners at the top of site */
-    .announcement {
-        display: flex;
-        justify-content: center;
     }
 }
