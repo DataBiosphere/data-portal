@@ -9,24 +9,11 @@
 
 /* Catalog */
 .catalog {
-    display: flex;
-    flex-wrap: wrap;
+    text-align: center;
 }
 
 /* Catalog - preview - separator. */
 .catalog > span:last-of-type > span {
     color: var(--gray-medium);
     padding: 0 8px;
-}
-
-/**
- * Small +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 600px) {
-
-    /* Catalog - announcement. */
-    .catalog > span:first-of-type {
-        margin-right: 24px;
-    }
 }
