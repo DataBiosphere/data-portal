@@ -28,14 +28,12 @@ function AnnouncementCatalog() {
         DPGTMService.trackCatalogViewed(catalog);
     };
 
-    const dcp2ComingSoonPath = "/dcp-updates";
+    const dcp2ComingSoonPath = "/what-is-the-dcp-20-data-preview";
     const dcp2Path = `${process.env.GATSBY_EXPLORE_URL}projects`;
     return (
         <Announcement>
             <span className={compStyles.catalog}>
-                <span><strong>Update: </strong>The HCA DCP 2.0 data is now available.</span>
-                <span>
-                    <a href={dcp2Path} onClick={() => trackCatalogViewed('dcp2')}>View DCP 2.0 Data</a>
+                <span><strong>Update: </strong>The  <a href={dcp2Path} onClick={() => trackCatalogViewed('dcp2')}>DCP 2.0 Data View</a> is now available.
                     <span>|</span>
                     <Link to={dcp2ComingSoonPath}>Learn More</Link>
                 </span>

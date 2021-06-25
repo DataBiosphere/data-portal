@@ -4,7 +4,7 @@ title: "What is the DCP 2.0 Data?"
 description: "The DCP 2.0 is a new data view enabling you to explore and access the new and reprocessed DCP data as soon as they become available."
 ---
 
-# What is the DCP 2.0 Data?
+# What is the DCP 2.0 Data View?
 
 For the Data Coordination Platform (DCP) 2.0, we are adding contributor-generated matrices, reprocessing DCP 1.0 projects, and adding additional new projects. Read the full details of the changes in [DCP Updates](/dcp-updates).
 
