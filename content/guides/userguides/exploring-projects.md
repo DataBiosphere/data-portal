@@ -25,15 +25,15 @@ The Data Portal Explore page lists all projects by title along with key project 
 ![Browsing Projects in the Data Explorer](../_images/explore_dcp_2.png "Exploring Projects")
 
 
-### Choosing the DCP 2.0 Preview or the DCP 1.0 Data View
+### Choosing the DCP 2.0 View or the DCP 1.0 View
 
 We are incrementally adding new projects and data for the DCP 2.0 (see the DCP [Updates](/dcp-updates) for details). 
 
-The new projects are available on the [DCP 2.0 Data Preview](/what-is-the-dcp-20-data-preview), which is now the default view on the Explore page. You may toggle between the DPC 2.0 Preview and the DCP 1.0 View using the banner at the top of the Data Portal.
+The new projects are available on the [DCP 2.0 Data View](/what-is-the-dcp-20-data-preview), which is now the default view on the Explore page. You may toggle between the DPC 2.0 View and the DCP 1.0 View using the banner at the top of the Data Portal.
 
-![View Data Preview](../_images/data_preview_2.png "Data Preview")
+![DCP2 Data View](../_images/data_preview_2.png "Data Preview")
 
-Learn more about the differences between the DCP 2.0 Data Preview and the DCP 1.0 View [here](/what-is-the-dcp-20-data-preview).
+Learn more about the differences between the DCP 2.0 Data View and the DCP 1.0 View [here](/what-is-the-dcp-20-data-preview).
 
 ## Viewing Project Details
 
@@ -50,7 +50,7 @@ The project information page contains:
 1. counts of input
 1. a link to the project metadata download
 1. a link to the project DCP-generated count matrix download (if available)
-1. a link to the project contributor-generated matrix (if available; only on the [DCP 2.0 Data Preview](/what-is-the-dcp-20-data-preview))
+1. a link to the project contributor-generated matrix (if available; only on the [DCP 2.0 Data View](/what-is-the-dcp-20-data-preview))
 
 ## Downloading Project Metadata
 
@@ -82,7 +82,7 @@ Scroll to identify the relevant matrix and then select the download icon.
 
 ![Project Matrices](../_images/dcp_generated_matrices.png "Project Matrices")
 
-DCP-generated matrices in the DCP 2.0 Preview are available in Loom format only (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files), whereas matrices in the DCP 1.0 View are available in MTX, CSV, Loom formats. 
+DCP-generated matrices in the DCP 2.0 View are available in Loom format only (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files), whereas matrices in the DCP 1.0 View are available in MTX, CSV, Loom formats. 
 
 > **DCP 1.0 Matrix Deprecation Notice:** 
 The DCP is reprocessing DCP 1.0 data and will deprecate all DCP 1.0 matrices (MTX, CSV, and Loom files) once reprocessing is complete. All reprocessed and newly processed projects in the DCP 2.0 will have matrices in Loom format only. 
@@ -91,7 +91,7 @@ The type of count available in the DCP-generated matrix depends on the pipeline 
 
 ## Downloading Project Contributor-Generated Matrices
 
-Contributor-generated matrices are optionally provided by the project contributors and are available in the **[DCP 2.0 Preview](/what-is-the-dcp-20-data-preview) only**. 
+Contributor-generated matrices are optionally provided by the project contributors and are available in the **[DCP 2.0 View](/what-is-the-dcp-20-data-preview) only**. 
 
 These matrices vary in file format and content. For questions about a specific contributor-generated matrix, reach out to the Project Contacts listed on the Project Information page.
 
