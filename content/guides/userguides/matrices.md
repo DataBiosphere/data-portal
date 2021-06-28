@@ -17,7 +17,7 @@ Overall, three types of matrices are currently available for DCP 2.0 data:
 
 
 ## DCP-Generated Matrices
-Each DCP 2.0 project that is processed with [standardized pipelines](/pipelines) has two types of DCP-generated matrices available for download:
+Each DCP 2.0 project that is processed with [uniform pipelines](/pipelines) has two types of DCP-generated matrices available for download:
 
 - [project-level matrices](#dcp-project-level-matrices) 
 - [library-level matrices](#dcp-library-level-matrices)
@@ -112,7 +112,7 @@ Normalization and batch correction techniques vary between processing methods an
 
 
 ### Normalization and Batch Correction for DCP-Generated Matrices
-- Data processed with the [standardized pipelines](/pipelines) are **not** normalized across nor within projects. 
+- Data processed with the [uniform pipelines](/pipelines) are **not** normalized across nor within projects. 
 
 - 10x matrices produced with the [Optimus Pipeline](/pipelines/optimus-workflow) only contain raw counts whereas [Smart-seq2 Pipeline](/pipelines/smart-seq2-workflow) matrices contain raw counts as well as normalized TPMs. These TPMs are calculated per individual cell (library preparation) and not across all cells within a project. 
 

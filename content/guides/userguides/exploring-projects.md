@@ -15,7 +15,7 @@ Projects are a basic unit of data organization in the Data Coordination Platform
 1. the [sequencing](/metadata/dictionary/protocol/sequencing_protocol) methods used
 1. details about the [project](/metadata/dictionary/project/project) contributors and their institutions
  
-This [Metadata](/metadata/dictionary/process/analysis_process) is included in the project's Metadata Manifest (TSV file). When the DCP [processes](/pipelines) the contributor's raw data with standardized pipelines, this processing information is also added to the Metadata Manifest.
+This [Metadata](/metadata/dictionary/process/analysis_process) is included in the project's Metadata Manifest (TSV file). When the DCP [processes](/pipelines) the contributor's raw data with uniform pipelines, this processing information is also added to the Metadata Manifest.
 
 
 ## Finding a Project of Interest

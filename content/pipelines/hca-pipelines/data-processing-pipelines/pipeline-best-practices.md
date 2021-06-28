@@ -7,7 +7,7 @@ description: "Overview of best practices for building data processing pipelines 
 
 # Best Practices for Building Data Processing Pipelines
 
-Each of our Data Coordination Platform (DCP) standardized pipelines are developed using the best practices detailed below and are approved by the [Human Cell Atlas Analysis Working Group](https://www.humancellatlas.org/learn-more/working-groups/). We describe each of these best practices to give insight as to why they are important and we provide examples to give you a sense of how to apply them.
+Each of our Data Coordination Platform (DCP) uniform pipelines are developed using the best practices detailed below and are approved by the [Human Cell Atlas Analysis Working Group](https://www.humancellatlas.org/learn-more/working-groups/). We describe each of these best practices to give insight as to why they are important and we provide examples to give you a sense of how to apply them.
 
 Overall, the best pipelines should be:
 - automated
