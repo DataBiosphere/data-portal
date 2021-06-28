@@ -93,7 +93,7 @@ class IndexPage extends React.Component {
 
 	render() {
 		const releaseVisible = ReleaseService.isReleaseVisible();
-		const description = 'Community generated, multi-omic, open data processed by standardized pipelines';
+		const description = 'Community generated, multi-omic, open data processed by uniform pipelines';
 		const pageTitle = 'Mapping the Human Body at the Cellular Level';
 		return (
 			<Layout description={description} healthy={this.state.healthy} homePage={true} pageTitle={pageTitle}>
@@ -108,7 +108,7 @@ class IndexPage extends React.Component {
 							<h2 className={fontStyles.subhead}>
 								<span>Community generated, <span
 									className={compStyles.noWrap}>multi-omic, </span></span>
-								<span><span>open data processed by </span><span className={compStyles.noWrap}>standardized pipelines</span></span>
+								<span><span>open data processed by </span><span className={compStyles.noWrap}>uniform pipelines</span></span>
 							</h2>
 						</div>
 					</section>
