@@ -9,6 +9,9 @@
 // Core dependencies
 import Typography from 'typography';
 
+// App dependencies
+import * as EnvironmentService from "../utils/environment/environment.service";
+
 const typography = new Typography({
     baseFontSize: '15px',
     baseLineHeight: '18px',
@@ -26,7 +29,7 @@ const typography = new Typography({
     ],
     includeNormalize: true,
     overrideStyles: ({adjustFontSizeTo, scale}, options, styles) => {
-        let primary = '#1c7cc7';
+        let primary = EnvironmentService.isLungMAP() ? '#005295' : '#1c7cc7';
         let background = '#f4f7f9';
         let grayDark = '#666666';
         let grayLight = '#CCCCCC';

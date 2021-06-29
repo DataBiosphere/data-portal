@@ -11,8 +11,11 @@ import React from "react";
 // App dependencies
 import AnnouncementCatalog from "./announcementCatalog/announcementCatalog";
 import Banner from "./banner/banner";
+import * as EnvironmentService from "../utils/environment/environment.service";
 import Footer from "./footer/footer";
 import Header from "./header/header";
+import FooterLungMAP from "./footer-lungmap/footer-lungmap";
+import HeaderLungMAP from "./header-lungmap/header-lungmap";
 import HCAMain from "./hcaMain/hcaMain";
 import PageHead from "./pageHead/pageHead";
 import SEO from "./seo/seo";
@@ -53,13 +56,17 @@ class Layout extends React.Component {
         const {activeLocation, children, description, docPath, healthy, homePage, homeTab,
             metadataContent, nav, pageTitle, sectionTitle} = this.props;
         const {scrollable, supportRequestActive, supportRequestSource} = this.state;
+        const atlas = EnvironmentService.getAtlas();
+        const lungmap = EnvironmentService.isLungMAP();
         return (
-            <div>
+            <div className={atlas}>
                 <PageHead pageTitle={pageTitle}/>
                 <SEO description={description} pageTitle={pageTitle}/>
                 <div className={classNames(compStyles.site, {[compStyles.noScroll]: !scrollable})}>
-                    <Header onHandleSiteScroll={this.onHandleSiteScroll} homePage={homePage} docPath={docPath}/>
-                    <AnnouncementCatalog/>
+                    {lungmap ? 
+                      <HeaderLungMAP  onHandleSiteScroll={this.onHandleSiteScroll} homePage={homePage}/> :
+                      <Header onHandleSiteScroll={this.onHandleSiteScroll} homePage={homePage} docPath={docPath}/>}
+                    {lungmap ? null : <AnnouncementCatalog/>}
                     <Banner position={"top"} healthy={healthy}/>
                     {homePage ? children :
                         <HCAMain activeLocation={activeLocation}
@@ -69,11 +76,13 @@ class Layout extends React.Component {
                                  nav={nav}
                                  onHandleSiteScroll={this.onHandleSiteScroll}
                                  sectionTitle={sectionTitle}>{children}</HCAMain>}
-                    <SupportRequest active={supportRequestActive}
+                    {lungmap ? null : <SupportRequest active={supportRequestActive}
                                     source={supportRequestSource}
-                                    onToggle={(active, source) => this.onToggleSupportRequestForm(active, source)}/>
+                                    onToggle={(active, source) => this.onToggleSupportRequestForm(active, source)}/>}
                     <Banner position={"bottom"}/>
-                    <Footer onFeedbackClicked={() => this.onToggleSupportRequestForm(true, GASource.FOOTER)}/>
+                    {lungmap ? 
+                      <FooterLungMAP/> :
+                      <Footer onFeedbackClicked={() => this.onToggleSupportRequestForm(true, GASource.FOOTER)}/>}
                     <div id="portal"/>
                 </div>
             </div>
