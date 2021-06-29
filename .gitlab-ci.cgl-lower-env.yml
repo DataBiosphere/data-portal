@@ -55,6 +55,7 @@ build_cgl-dev:
     - export GATSBY_ENV_NAME=env-83
     - export GATSBY_ENV=STAGING
     - export GATSBY_DEFAULT_CATALOG=dcp2
+    - export GATSBY_ATLAS=hca
     - gatsby build
   only:
     - staging

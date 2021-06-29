@@ -1,0 +1,236 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to the LungMAP Portal header component.
+ */
+
+/* Nav bar container */
+.navBar, .hcaHeader {
+	background-color: var(--primary);
+	border-bottom: 1px solid var(--primary);
+	height: 60px;
+	position: sticky;
+	top: 0;
+	z-index: 20;
+}
+
+/* Header for all pages but the home page */
+.navBar:not(.hcaHeader) {
+	border-bottom: none;
+	background-color: var(--primary);
+}
+
+/* Wrapper */
+.headerWrapper {
+	height: inherit;
+	justify-content: space-between;
+}
+
+/* Logo */
+a.logo, a.logo img {
+	align-self: center;
+	cursor: pointer;
+	height: 30px;
+	line-height: 0 !important;
+	margin-bottom: 0 !important; /* TODO review global */
+}
+
+/* Links */
+/* Both views - links */
+.links {
+	display: flex;
+	position: absolute;
+}
+
+/* Normal view - links */
+.links:not(.small) {
+	left: 182px; /* 16px wrapper padding, plus 176px menu width, minus 10px padding on first link */
+}
+
+/* Menu view - links */
+.small {
+	align-items: flex-start;
+	background-color: var(--white);
+	border-bottom: 1px solid var(--gray-light);
+	flex-direction: column;
+	height: calc(100vh - 60px);
+	justify-content: flex-start;
+	left: 0;
+	overflow-y: auto;
+	padding: 12px 0;
+	right: 0;
+	top: 60px;
+	width: 100%;
+	z-index: 100;
+}
+
+/* List */
+/* Both views - list */
+.links li {
+	list-style: none;
+	margin: 0;
+}
+
+/* Menu view - list */
+.small li {
+	width: 100%;
+}
+
+/* Link <a>, <button> */
+/* Both views - link */
+.links a, .links button {
+	display: flex;
+}
+
+/* Drop down button - link */
+.links button {
+	background-color: transparent;
+	border: none;
+	text-align: left;
+}
+
+/* Normal view - drop down button */
+.links:not(.small) button {
+	cursor: pointer;
+}
+
+/* Drop down button - focus */
+.links button, .links button:focus {
+	outline: none;
+}
+
+/* Normal view - link */
+.links:not(.small) a, .links:not(.small) button {
+	align-items: center;
+	color: var(--white);
+	font-size: 14px;
+	font-weight: 500;
+	height: 60px;
+	opacity: 0.8;
+	padding: 0 10px;
+	width: unset;
+	white-space: nowrap;
+}
+
+/* Menu view - link */
+.small a, .small button {
+	align-items: flex-start;
+	color: var(--black);
+	flex-direction: column;
+	padding: 12px 24px;
+	width: 100%;
+}
+
+/* Link state - hover & active */
+.links:not(.small) a:hover, .links:not(.small) .active, .links button:hover span {
+	color: var(--white);
+	opacity: 1;
+}
+
+/* Label */
+/* Both views - label */
+.links .xs {
+	font-weight: 600;
+}
+
+/* Menu view - label */
+.small .xs {
+	margin: 0 0 4px;
+}
+
+/* Description */
+.links .xxs {
+	font-weight: 400;
+	letter-spacing: 1.2px;
+	margin: 0;
+	text-transform: none;
+}
+
+/* Overlay - menu open */
+.overlay {
+	background-color: rgba(255, 255, 255, 0.9);
+	bottom: 0;
+	content: "";
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 60px;
+	z-index: 99; /* Positioned below showLinks */
+}
+
+/* Menu */
+.menuDropDown {
+	align-items: center;
+	color: var(--white);
+	cursor: pointer;
+	display: flex;
+	font-weight: 500;
+	margin: 0;
+}
+
+/* Drop down menu icon */
+.menuDropDown::before {
+	color: var(--white);
+	content: "\E313";
+	font-family: "Material Icons";
+	font-size: 18px;
+	font-weight: 400;
+	margin: 0 4px;
+
+}
+
+/* Hide */
+.hide, .links.hide {
+	display: none;
+}
+
+/**
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 840px) {
+
+	/* Wrapper */
+	.headerWrapper {
+		justify-content: flex-start;
+		position: relative; /* Positions links - left aligned with content */
+	}
+}
+
+/**
+ * Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1024px) {
+
+	/* Logo */
+	a.logo, a.logo img {
+		height: 40px;
+	}
+
+	/* Normal view - links */
+	.links:not(.small) {
+		left: 294px; /* 16px wrapper padding, plus 290px menu width, minus 12px padding on first link */
+	}
+
+	/* Normal view - link */
+	.links:not(.small) a {
+		padding: 0 12px;
+	}
+}
+
+/**
+ * Medium +
+ * HCA custom breakpoint
+ */
+@media screen and (min-width: 1200px) {
+
+	/* Normal view - links */
+	.links:not(.small) {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+

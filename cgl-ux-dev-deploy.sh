@@ -11,6 +11,7 @@ export GATSBY_GTM_AUTH=CzDpc0__fhyqfREDehPK8Q
 export GATSBY_ENV_NAME=env-83
 export GATSBY_ENV=LOCAL
 export GATSBY_DEFAULT_CATALOG=dcp2
+export GATSBY_ATLAS=hca
 gatsby build
 
 

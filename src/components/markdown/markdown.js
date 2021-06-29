@@ -85,7 +85,7 @@ function Markdown(props) {
     }, [initTableOverflow]);
 
     return (
-        <div className={compStyles.markdown} ref={refMarkdown} onClick={trackSurveyLaunch}>{renderAst(children)}</div>
+        <div className={compStyles.markdown} ref={refMarkdown} onClick={trackSurveyLaunch} role="presentation">{renderAst(children)}</div>
     );
 }
 

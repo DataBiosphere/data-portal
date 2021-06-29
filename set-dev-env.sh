@@ -9,4 +9,5 @@ export GATSBY_FILE_SUMMARY_API_URL="https://service.dev.singlecell.gi.ucsc.edu/i
 export GATSBY_TERM_FACETS_API_URL="https://service.dev.singlecell.gi.ucsc.edu/index/projects"
 export GATSBY_SYSTEM_HEALTH_CHECK_API_URL="https://service.dev.singlecell.gi.ucsc.edu/health/progress"
 export GATSBY_DEFAULT_CATALOG="dcp2"
+export GATSBY_ATLAS="hca"
 export GATSBY_ENV="LOCAL"

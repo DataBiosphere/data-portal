@@ -20,6 +20,8 @@ let gtmId = process.env.GATSBY_GTM_ID;
 let gtmAuth = process.env.GATSBY_GTM_AUTH;
 let gtmEnvName = process.env.GATSBY_ENV_NAME;
 
+const lungmap = process.env.GATSBY_ATLAS === "lungmap";
+
 module.exports = {
     siteMetadata: {
         title: 'HCA Data Portal',
@@ -67,7 +69,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-favicon`,
             options: {
-                logo: './images/favicon/favicon.png',
+                logo: lungmap ? './images/lungmap/favicon/favicon.png' : './images/favicon/favicon.png',
 
                 icons: {
                     android: true,

@@ -11,6 +11,9 @@ require('@fastly/performance-observer-polyfill/polyfill');
 // Add styles for inline and block code - https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/
 require(`prismjs/themes/prism-solarizedlight.css`);
 
+// Add environment-specific styles
+require('./src/styles/lungmap/vars-lungmap.css');
+
 // Determine site browser support
 const Bowser = require("bowser");
 

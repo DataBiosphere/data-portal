@@ -12,6 +12,14 @@ import {EnvironmentUrl} from "./environment-url.model";
 const GATSBY_ENV = process.env.GATSBY_ENV;
 
 /**
+ * Return the name of the atlas for the current environment.
+ */
+export function getAtlas() {
+
+    return process.env.GATSBY_ATLAS;
+}
+
+/**
  * Return the name of the current environment
  */
 export function getCurrentEnvironment() {
@@ -45,6 +53,14 @@ export function getDefaultCatalog() {
 export function isLocal() {
 
     return GATSBY_ENV === "LOCAL";
+}
+
+/**
+ * Return true if the atlas for the current environment is LungMAP.
+ */
+export function isLungMAP() {
+
+    return getAtlas() === "lungmap";
 }
 
 /**
