@@ -143,5 +143,5 @@ You may choose not to visit or use UC Sites or participate in HCA Data Portal Se
 
 If you have questions or complaints about our treatment of your Personal Data, or about our privacy practices more generally, please feel free to contact the UCSC Privacy Official: <mailto:gdpr@ucsc.edu> or <mailto:privacy@ucsc.edu>.
 
-Effective Date:  This statement is effective as of 09/14/2020.
+**Effective Date**:  This statement is effective as of 09/14/2020.
 
