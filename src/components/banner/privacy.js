@@ -12,6 +12,7 @@ import React from 'react';
 
 // App dependencies
 import ClickHandler from "../clickHandler/clickHandler";
+import * as EnvironmentService from '../../utils/environment/environment.service';
 
 // Styles
 import compStyles from './privacy.module.css'
@@ -54,13 +55,16 @@ class Privacy extends React.Component {
 		if (!this.state.visible) {
 			return null;
 		}
+		
+		const privacyPath = EnvironmentService.isLungMAP() ?
+			"lungmap-privacy" : "/privacy#4-who-will-have-access-to-your-personal-data";
 
 		return (
 			<div className={compStyles.privacy}>
 				<div className={globalStyles.bannerWrapper}>
 					<div>
 						<p className={classNames(fontStyles.xxs, fontStyles.noMargin)}><span>This website uses cookies for security and analytics purposes. By using this site, you agree to these uses. Learn more </span><Link
-							to='/privacy#4-who-will-have-access-to-your-personal-data'>here</Link><span>.</span></p>
+							to={privacyPath}>here</Link><span>.</span></p>
 					</div>
 					<ClickHandler
 						className={classNames(globalStyles.button, globalStyles.primary, globalStyles.outline, compStyles.narrow)}
