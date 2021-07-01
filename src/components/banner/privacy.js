@@ -56,8 +56,7 @@ class Privacy extends React.Component {
 			return null;
 		}
 		
-		const privacyPath = EnvironmentService.isLungMAP() ?
-			"lungmap-privacy" : "/privacy#4-who-will-have-access-to-your-personal-data";
+		const privacyPath = EnvironmentService.isLungMAP() ? "/lungmap-privacy" : "/privacy";
 
 		return (
 			<div className={compStyles.privacy}>
