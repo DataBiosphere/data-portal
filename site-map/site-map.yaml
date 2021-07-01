@@ -328,6 +328,16 @@
         - name: ""
           key: "/feedback/feedback/feedback"
           path: "/feedback"
+- name: "Privacy"
+  key: "lungmap-privacy"
+  path: "/lungmap-privacy"
+  tabs:
+    - name: ""
+      key: "lungmap-privacy"
+      primaryLinks:
+        - name: ""
+          key: "/privacy/privacy/lungmap-privacy"
+          path: "/lungmap-privacy"
 - name: "Community Updates"
   key: "community-update"
   path: "/coming-soon-DCP-2-with-support-for-controlled-access-data"
