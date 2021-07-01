@@ -8,6 +8,9 @@
 // Core dependencies
 import React from "react";
 
+// App dependencies
+import FooterLinksLungMAP from "../footer-links-lungmap/footer-links-lungmap";
+
 // Images
 import footerLogo from "../../../images/lungmap/logo/logo-lungmap.png";
 
@@ -28,6 +31,7 @@ class FooterLungMAP extends React.Component {
                         <i className="material-icons">chevron_left</i>
                         <img src={footerLogo} alt="LungMAP"/>
                     </a>
+                    <FooterLinksLungMAP/>
                 </div>
             </div>
         );
