@@ -139,8 +139,6 @@
           secondaryLinks:
             - name: "Data Browser API"
               key: "/apis/api-documentation/data-browser-api"
-            - name: "Data Ingest API"
-              key: "/apis/api-documentation/ingest-broker-development-guide"
 - name: "Contact"
   key: "contact"
   path: "/contact"
