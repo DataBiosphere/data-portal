@@ -9,7 +9,7 @@ export GATSBY_SYSTEM_HEALTH_CHECK_API_URL=https://service.azul.data.humancellatl
 export GATSBY_GTM_ID=GTM-M2J5NTJ
 export GATSBY_GTM_AUTH=WB1d2Aoi1q3GOmQMSGMsZA
 export GATSBY_ENV_NAME=env-150
-export GATSBY_ENV=LOCAL
+export GATSBY_ENV=PROD
 export GATSBY_DEFAULT_CATALOG=lungmap
 export GATSBY_ATLAS=lungmap
 gatsby build
