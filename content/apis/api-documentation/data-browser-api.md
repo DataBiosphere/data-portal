@@ -1,11 +1,11 @@
 ---
-title: "HCA Data Browser API"
-description: "An overview of the HCA DCP Data Browser API."
+title: "DCP Data Browser API"
+description: "An overview of the Azul Data Browser API."
 ---
 
 # Data Browser API
 
-The HCA DCP Data Browser API specifies a REST web service for querying metadata associated with both experimental and analysis data stored in the HCA Data Store.
+The Azul Data Browser API specifies a REST web service for querying metadata associated with both experimental and analysis data.
 
 To deliver response times that make it suitable for interactive use cases, the set of metadata properties that the Data Browser API exposes for sorting, filtering, and aggregation is limited.
 
