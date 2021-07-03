@@ -1,0 +1,11 @@
+
+echo \"Deleting ./.cache/\" 
+rd /q /s "./.cache"
+echo \"Deleting ./public/\"
+rd /q /s "./public"
+set "GATSBY_EXPLORE_URL=https://dev.singlecell.gi.ucsc.edu/explore/"
+set "GATSBY_FILE_SUMMARY_API_URL=https://service.dev.singlecell.gi.ucsc.edu/index/summary"
+set "GATSBY_TERM_FACETS_API_URL=https://service.dev.singlecell.gi.ucsc.edu/index/projects"
+set "GATSBY_SYSTEM_HEALTH_CHECK_API_URL=https://service.dev.singlecell.gi.ucsc.edu/health/progress"
+set "GATSBY_DEFAULT_CATALOG=dcp2"
+set "GATSBY_ENV=LOCAL"
