@@ -138,7 +138,7 @@ const getSchemaFilePathsByRelativePath = function getSchemaFilePathsByRelativePa
         /* Required for gatsby-node.js createFilePath function (specifically, the creation of slug). */
         const schemaRelativePath = getSchemaRelativePath(schemaPaths);
 
-        acc.set(schemaJSONPath, schemaRelativePath);
+        acc.set(schemaJSONPath.split(path.sep).join(path.posix.sep), schemaRelativePath);
 
         return acc;
     }, new Map());
@@ -916,7 +916,7 @@ async function mapSchemaJSONByPath(dirPath) {
             const schemaRelPath = path.relative(metadataJsonPath, path.resolve(dirPath, dirent.name));
 
             /* Add to the accumulator. */
-            acc.set(schemaRelPath, schemaJSON);
+            acc.set(schemaRelPath.split(path.sep).join(path.posix.sep), schemaJSON);
         }
 
         if ( dirent.isDirectory() ) {
