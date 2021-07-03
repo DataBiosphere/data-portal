@@ -58,6 +58,8 @@
   "scripts": {
     "build": "source ./set-dev-env.sh && gatsby build --verbose",
     "start": "source ./set-dev-env.sh && gatsby develop",
+    "build-windows": "set-dev-env-windows.bat && gatsby build --verbose",
+    "start-windows": "set-dev-env-windows.bat && gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -4,7 +4,7 @@
 
 ### Requirements
 
-* `Node.js` ([https://nodejs.org/en/](https://nodejs.org/en/)), version 10.16.0. 
+* `Node.js` ([https://nodejs.org/en/](https://nodejs.org/en/)), version 14.16.0. 
 
 * We recommend using `n` ([https://github.com/tj/n](https://github.com/tj/n)) as the Node.js package manger. 
 
@@ -50,7 +50,11 @@ Run the following command from the project's root directory to install the requi
 
 Run the following command from the root directory:
 
-`gatsby develop`
+`npm start`
+
+Or if using Windows:
+
+`npm run start-windows`
 
 The development server can be viewed at:
 
@@ -60,7 +64,11 @@ The development server can be viewed at:
 
 Run the following command to build the application:
 
-`gatsby build`
+`npm run build`
+
+Or on Windows:
+
+`npm run build-windows`
 
 #### Local Production Version
 
