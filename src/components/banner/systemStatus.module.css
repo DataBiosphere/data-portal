@@ -4,42 +4,41 @@
  *
  * Style definitions specific to the HCA Data Portal system status component.
  */
-@import "../../styles/vars.module.css";
+@import '../../styles/vars.module.css';
 
 /* System status */
 .systemStatus {
-    background-color: var(--black);
-    padding: 14px 0;
+  background-color: var(--black);
+  padding: 14px 0;
 }
 
 .systemStatusWrapper {
-    align-items: flex-start;
-    flex-direction: row;
-    justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 /* Warn icon - hide */
 .systemStatus i {
-    display: none;
+  display: none;
 }
 
 /* Banner Text */
 .systemStatusWrapper p {
-    margin: 0;
+  margin: 0;
 }
 
 /**
  * Small Tablet -
  */
 @media screen and (min-width: 960px) {
+  /* Warn icon - show */
+  .systemStatus i {
+    display: block;
+  }
 
-    /* Warn icon - show */
-    .systemStatus i {
-        display: block;
-    }
-
-    /* Banner Text */
-    .systemStatusWrapper p {
-        margin: 0 0 0 16px;
-    }
+  /* Banner Text */
+  .systemStatusWrapper p {
+    margin: 0 0 0 16px;
+  }
 }

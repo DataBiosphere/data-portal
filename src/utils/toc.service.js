@@ -6,8 +6,8 @@
  */
 
 // App dependencies
-import {TOCMetadataQuery} from "../hooks/toc-metadata-query";
-import {TOCPageQuery} from "../hooks/toc-page-query";
+import { TOCMetadataQuery } from '../hooks/toc-metadata-query'
+import { TOCPageQuery } from '../hooks/toc-page-query'
 
 /**
  * Returns the TOCs.
@@ -17,22 +17,17 @@ import {TOCPageQuery} from "../hooks/toc-page-query";
  * @returns {Array}
  */
 export function getTOCs(docPath, showAllMetadata) {
-
-    if ( docPath ) {
-
-        /* Metadata TOC. */
-        if ( docPath.startsWith("/metadata/dictionary/") ) {
-
-            return buildTOCsMetadata(docPath, showAllMetadata);
-        }
-        /* Page (markdown) TOC. */
-        else {
-
-            return buildTOCsMarkdown(docPath);
-        }
+  if (docPath) {
+    /* Metadata TOC. */
+    if (docPath.startsWith('/metadata/dictionary/')) {
+      return buildTOCsMetadata(docPath, showAllMetadata)
+    } else {
+    /* Page (markdown) TOC. */
+      return buildTOCsMarkdown(docPath)
     }
+  }
 
-    return [];
+  return []
 }
 
 /**
@@ -46,14 +41,13 @@ export function getTOCs(docPath, showAllMetadata) {
  * @returns {{anchor: string, depth: *, name: *, required: boolean, type: *}}
  */
 function buildTOC(anchor, depth, name, required = true, tocType) {
-
-    return {
-        anchor: `#${anchor}`,
-        depth: depth,
-        name: name,
-        required: required,
-        type: tocType
-    }
+  return {
+    anchor: `#${anchor}`,
+    depth: depth,
+    name: name,
+    required: required,
+    type: tocType,
+  }
 }
 
 /**
@@ -62,26 +56,25 @@ function buildTOC(anchor, depth, name, required = true, tocType) {
  * @param docPath
  */
 function buildTOCsMarkdown(docPath) {
+  const tocQuery = TOCPageQuery()
 
-    const tocQuery = TOCPageQuery();
+  /* Find the TOC query for the specified path. */
+  const tocPage = tocQuery.find(page => page.fields.slug === docPath)
 
-    /* Find the TOC query for the specified path. */
-    const tocPage = tocQuery.find(page => page.fields.slug === docPath);
+  /* Filter for <h2> and <h3> headings. */
+  const headings = tocPage.htmlAst.children.filter(
+    child => child.tagName === 'h2' || child.tagName === 'h3'
+  )
 
-    /* Filter for <h2> and <h3> headings. */
-    const headings = tocPage.htmlAst.children
-        .filter(child => child.tagName === "h2" || child.tagName === "h3");
+  /* Return the TOC. */
+  return headings.map(heading => {
+    const anchor = `${heading.properties.id}`
+    const tocDepth = Number(heading.tagName.charAt(1))
+    const tocName = heading.children.find(child => child.type === 'text').value
+    const tocType = 'docs'
 
-    /* Return the TOC. */
-    return headings.map(heading => {
-
-        const anchor = `${heading.properties.id}`;
-        const tocDepth = Number(heading.tagName.charAt(1));
-        const tocName = heading.children.find(child => child.type === "text").value;
-        const tocType = "docs";
-
-        return buildTOC(anchor, tocDepth, tocName, false, tocType);
-    });
+    return buildTOC(anchor, tocDepth, tocName, false, tocType)
+  })
 }
 
 /**
@@ -92,17 +85,16 @@ function buildTOCsMarkdown(docPath) {
  * @returns {Array}
  */
 function buildTOCsMetadata(docPath, showAllMetadata) {
+  const tocQuery = TOCMetadataQuery()
 
-    const tocQuery = TOCMetadataQuery();
+  /* Find the schema for the specified path. */
+  const tocSchema = getMetadataSchema(tocQuery, docPath)
 
-    /* Find the schema for the specified path. */
-    const tocSchema = getMetadataSchema(tocQuery, docPath);
+  /* Filter for primary properties and/or show/hide fields. */
+  const tocProperties = filterMetadataProperties(tocSchema, showAllMetadata)
 
-    /* Filter for primary properties and/or show/hide fields. */
-    const tocProperties = filterMetadataProperties(tocSchema, showAllMetadata);
-
-    /* Return the TOC. */
-    return getMetadataTOC(tocProperties);
+  /* Return the TOC. */
+  return getMetadataTOC(tocProperties)
 }
 
 /**
@@ -113,8 +105,7 @@ function buildTOCsMetadata(docPath, showAllMetadata) {
  * @returns {*}
  */
 function getMetadataSchema(schemas, docPath) {
-
-    return schemas.find(schema => schema.fields.slug === docPath);
+  return schemas.find(schema => schema.fields.slug === docPath)
 }
 
 /**
@@ -123,25 +114,20 @@ function getMetadataSchema(schemas, docPath) {
  * @param tocProperties
  */
 function getMetadataTOC(tocProperties) {
+  return tocProperties.map(property => {
+    const anchor = property.anchor
+    const tocDepth = 2
+    let tocName
+    const tocRequired = property.required
 
-    return tocProperties.map(property => {
+    if (tocRequired) {
+      tocName = `${property.label} *`
+    } else {
+      tocName = property.label
+    }
 
-        const anchor = property.anchor;
-        const tocDepth = 2;
-        let tocName;
-        const tocRequired = property.required;
-
-        if ( tocRequired ) {
-
-            tocName = `${property.label} *`;
-        }
-        else {
-
-            tocName = property.label;
-        }
-
-        return buildTOC(anchor, tocDepth, tocName, tocRequired, "metadata");
-    });
+    return buildTOC(anchor, tocDepth, tocName, tocRequired, 'metadata')
+  })
 }
 
 /**
@@ -153,18 +139,15 @@ function getMetadataTOC(tocProperties) {
  * @returns {Array.<T>}
  */
 function filterMetadataProperties(tocSchema, showAllMetadata) {
+  /* Filter to include only the primary properties. */
+  /* Filter if the show all metadata toggle is "required" only. */
+  return tocSchema.properties.filter(property => {
+    const { primary, primaryRequired } = property || {}
 
-    /* Filter to include only the primary properties. */
-    /* Filter if the show all metadata toggle is "required" only. */
-    return tocSchema.properties.filter(property => {
+    if (showAllMetadata) {
+      return primary
+    }
 
-        const {primary, primaryRequired} = property || {};
-
-        if ( showAllMetadata ) {
-
-            return primary;
-        }
-
-        return primary && primaryRequired;
-    });
+    return primary && primaryRequired
+  })
 }

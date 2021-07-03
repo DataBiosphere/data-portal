@@ -13,34 +13,35 @@
 /* Padding - specific */
 /* Metrics bar */
 .main .metricsBar {
-	padding: 30px 0 35px 0;
+  padding: 30px 0 35px 0;
 }
 
 /* Padding - 80px */
 /* Stay up to date */
 .main .contact {
-	padding: 80px 0;
+  padding: 80px 0;
 }
 
 /* Padding - 64px */
 /* Anatogram */
 /* What is the HCA portal? */
-.main .anatogram, .main .portal {
-	padding: 64px 0;
+.main .anatogram,
+.main .portal {
+  padding: 64px 0;
 }
-
 
 /* Padding - 48px 0 60px */
 /* Hero */
 /* "r" release */
-.main .hero, .main .release {
-	padding: 48px 0 60px;
+.main .hero,
+.main .release {
+  padding: 48px 0 60px;
 }
 
 /* Padding - 42px */
 /* Hero */
 .main .lifecycle {
-	padding: 42px 0;
+  padding: 42px 0;
 }
 
 /**
@@ -49,22 +50,23 @@
 
 /* R release */
 .main .release {
-	background-color: var(--gray-pale);
+  background-color: var(--gray-pale);
 }
 
 /* Metrics bar, lifecycle */
-.main .metricsBar, .main .lifecycle {
-	background-color: var(--blue-light);
+.main .metricsBar,
+.main .lifecycle {
+  background-color: var(--blue-light);
 }
 
 /* Portal */
 .main .portal {
-	background-color: var(--black1);
+  background-color: var(--black1);
 }
 
 /* Stay up to date */
 .main .contact {
-	background: url('../../images/cell/visitProject.png') center / cover no-repeat;
+  background: url('../../images/cell/visitProject.png') center / cover no-repeat;
 }
 
 /**
@@ -73,24 +75,24 @@
 
 /* Inner - container */
 .main .sectionInner {
-	box-sizing: content-box;
-	margin: 0 auto;
-	padding: 0 16px;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 /* Inner - small */
 .main .sectionInner.s {
-	max-width: 768px;
+  max-width: 768px;
 }
 
 /* Inner - medium */
 .main .sectionInner.m {
-	max-width: 968px;
+  max-width: 968px;
 }
 
 /* Inner - large */
 .main .sectionInner.l {
-	max-width: 1168px;
+  max-width: 1168px;
 }
 
 /**
@@ -99,17 +101,17 @@
 
 /* Margin - 32px */
 .main .module {
-	margin: 32px 0 0;
+  margin: 32px 0 0;
 }
 
 /* Margin - 56px */
 .main .module.spacer {
-	margin: 56px 0 0;
+  margin: 56px 0 0;
 }
 
 /* Margin - 0 */
 .main .module.zero {
-	margin: 0;
+  margin: 0;
 }
 
 /**
@@ -118,18 +120,20 @@
 
 /* Text - alignment */
 /* Hero, Section Intro */
-.main .hero, .main .intro {
-	text-align: center;
+.main .hero,
+.main .intro {
+  text-align: center;
 }
 
 /* Text - shared font styles */
 /* Paragraph */
 /* Tile description, lifecycle */
-.main .process .text p, .main .lifecycle p {
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 24px;
-	margin: 0;
+.main .process .text p,
+.main .lifecycle p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
 }
 
 /*
@@ -140,24 +144,31 @@
 /* Metrics container, metric container, metric image container */
 /* Process, tile container, tile text container, process arrow container, tile image container */
 /* Visit project container */
-.main .metrics, .metric, .main .metric > span,
-.main .process, .main .process .tile, .main .process .text, .main .process .arrow, .main .process .icon,
+.main .metrics,
+.metric,
+.main .metric > span,
+.main .process,
+.main .process .tile,
+.main .process .text,
+.main .process .arrow,
+.main .process .icon,
 .main .visit {
-	display: flex;
+  display: flex;
 }
 
 /* Flex - column */
 /* Process container, tile text container */
 /* Metrics container */
-.main .process, .main .process .text,
+.main .process,
+.main .process .text,
 .main .metrics {
-	flex-direction: column;
+  flex-direction: column;
 }
 
 /* Flex - row */
 /* Tile container */
 .main .process .tile {
-	flex-direction: row;
+  flex-direction: row;
 }
 
 /* Flex - justify content - center */
@@ -167,39 +178,42 @@
 .main .process .arrow,
 .main .metric,
 .main .visit {
-	justify-content: center;
+  justify-content: center;
 }
 
 /* Flex - justify content - space between */
 /* Metrics container */
 .main .metrics {
-	justify-content: space-between;
+  justify-content: space-between;
 }
 
 /* Flex - justify content - end */
 /* Metric image container */
 .main .metric > span {
-	justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 /* Flex - align items - center */
 /* Process */
 .main .process {
-	align-items: center;
+  align-items: center;
 }
 
 /* Flex - align self - center */
 /* Tile text container */
 .main .process .text {
-	align-self: center;
+  align-self: center;
 }
 
 /* Flex - 1 */
 /* Tile container, tile text container */
 /* Metrics container, metric image container, metric text container */
-.main .process .tile, .main .process .text,
-.main .metrics, .main .metric > span, .main .metric > div {
-	flex: 1;
+.main .process .tile,
+.main .process .text,
+.main .metrics,
+.main .metric > span,
+.main .metric > div {
+  flex: 1;
 }
 
 /**
@@ -208,65 +222,66 @@
 
 /* Metrics bar container - loading */
 .main .loading .metrics {
-	opacity: 0;
+  opacity: 0;
 }
 
 /* Metrics bar - loaded */
 .main .metrics {
-	opacity: 1;
-	transition: opacity .5s ease 0s;
+  opacity: 1;
+  transition: opacity 0.5s ease 0s;
 }
 
 /* Metric container */
 .main .metric {
-	height: 85px;
+  height: 85px;
 }
 
 /* Metric container - evens */
 .main .metric:nth-of-type(2n) {
-	margin: 8px 0;
+  margin: 8px 0;
 }
 
 /* Metric image container */
 .main .metric > span {
-	height: inherit;
-	margin-right: 4px;
+  height: inherit;
+  margin-right: 4px;
 }
 
 /* Metric image */
 .main .metric img {
-	height: 100%;
+  height: 100%;
 }
 
 /* Metric text */
 .main .metric > div {
-	margin-left: 4px;
+  margin-left: 4px;
 }
 
 /* Metric count */
 .main .metric .count {
-	color: var(--blue-dark);
-	font-size: 50px;
-	line-height: 61px; /* Per specification */
-	letter-spacing: 0.22px;
-	padding-top: 2px;
+  color: var(--blue-dark);
+  font-size: 50px;
+  line-height: 61px; /* Per specification */
+  letter-spacing: 0.22px;
+  padding-top: 2px;
 }
 
 /* Metric label */
 .main .metric .label {
-	font-family: "din-2014", sans-serif;
-	font-size: 16px;
-	font-weight: 500;
-	letter-spacing: 1.5px;
-	line-height: 19px; /* Per specification */
-	margin-top: -6px;
-	padding-bottom: 9px;
-	text-transform: uppercase;
+  font-family: 'din-2014', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  line-height: 19px; /* Per specification */
+  margin-top: -6px;
+  padding-bottom: 9px;
+  text-transform: uppercase;
 }
 
 /* Metric text */
-.main .metric .count, .main .metric .label {
-	display: block;
+.main .metric .count,
+.main .metric .label {
+  display: block;
 }
 
 /**
@@ -275,13 +290,13 @@
 
 /* "r" release button */
 .main .release .latest {
-	padding: 0 20px !important;
+  padding: 0 20px !important;
 }
 
 /* "r" release button arrow */
 .main .release .go {
-	height: 10px;
-	padding-left: 12px;
+  height: 10px;
+  padding-left: 12px;
 }
 
 /**
@@ -290,34 +305,34 @@
 
 /* Tile container */
 .main .process .tile {
-	max-width: 460px;
-	width: 100%;
+  max-width: 460px;
+  width: 100%;
 }
 
 /* Tile icon image */
 .main .process .icon img {
-	height: 120px;
-	width: 120px;
+  height: 120px;
+  width: 120px;
 }
 
 /* Tile link */
 .main .process .text a {
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 21px;
-	margin: 8px 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  margin: 8px 0 0;
 }
 
 /* Process arrow container */
 .main .process .arrow {
-	margin: 8px 0;
+  margin: 8px 0;
 }
 
 /* Process arrow image */
 .main .process .arrow img {
-	transform: rotate(90deg);
-	height: 100%; /* Required for safari */
-	width: 20px;
+  transform: rotate(90deg);
+  height: 100%; /* Required for safari */
+  width: 20px;
 }
 
 /**
@@ -325,12 +340,11 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 400px) {
-
-	/* Whitespace - "nowrap" */
-	/* Hero subhead - prevents wrap of text at specified <span> break */
-	.main .noWrap {
-		white-space: nowrap;
-	}
+  /* Whitespace - "nowrap" */
+  /* Hero subhead - prevents wrap of text at specified <span> break */
+  .main .noWrap {
+    white-space: nowrap;
+  }
 }
 
 /**
@@ -338,27 +352,26 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 480px) {
+  /* "r" release button */
+  .main .release .latest {
+    padding: 0 40px !important;
+  }
 
-	/* "r" release button */
-	.main .release .latest {
-		padding: 0 40px !important;
-	}
+  /* Tile icon image */
+  .main .process .icon img {
+    height: 168px;
+    width: 168px;
+  }
 
-	/* Tile icon image */
-	.main .process .icon img {
-		height: 168px;
-		width: 168px;
-	}
+  /* Process arrow container */
+  .main .process .arrow {
+    margin: 0;
+  }
 
-	/* Process arrow container */
-	.main .process .arrow {
-		margin: 0;
-	}
-
-	/* Process arrow image */
-	.main .process .arrow img {
-		width: 27px;
-	}
+  /* Process arrow image */
+  .main .process .arrow img {
+    width: 27px;
+  }
 }
 
 /**
@@ -366,16 +379,16 @@
  * For hero headline and explore intro text only
  */
 @media screen and (min-width: 600px) {
-
-	/*
+  /*
 	 * Section Specific Styles
 	 */
 
-	/* Hero headline - wraps text at specified <span> break */
-	/* Hero subhead - wraps text at specified <span> break */
-	.main .hero h1 span, .main .hero h2 > span {
-		display: block;
-	}
+  /* Hero headline - wraps text at specified <span> break */
+  /* Hero subhead - wraps text at specified <span> break */
+  .main .hero h1 span,
+  .main .hero h2 > span {
+    display: block;
+  }
 }
 
 /**
@@ -383,12 +396,11 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 960px) {
-
-	/* Padding */
-	/* Anatorgram */
-	.main .anatogram {
-		padding: 64px 0 0;
-	}
+  /* Padding */
+  /* Anatorgram */
+  .main .anatogram {
+    padding: 64px 0 0;
+  }
 }
 
 /**
@@ -396,93 +408,93 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1024px) {
-
-	/*
+  /*
 	 * Section Specific Styles
 	 */
 
-	/* Display - flex */
-	/* Process arrow container */
-	.main .process .arrow {
-		display: flex;
-	}
+  /* Display - flex */
+  /* Process arrow container */
+  .main .process .arrow {
+    display: flex;
+  }
 
-	/* Flex - column */
-	/* Tile container */
-	.main .process .tile {
-		flex-direction: column;
-	}
+  /* Flex - column */
+  /* Tile container */
+  .main .process .tile {
+    flex-direction: column;
+  }
 
-	/* Flex - row */
-	/* Process */
-	/* Metrics container */
-	.main .process,
-	.main .metrics {
-		flex-direction: row;
-	}
+  /* Flex - row */
+  /* Process */
+  /* Metrics container */
+  .main .process,
+  .main .metrics {
+    flex-direction: row;
+  }
 
-	/* Flex - align items - center */
-	/* Arrow icon */
-	.main .process .arrow {
-		align-items: center;
-	}
+  /* Flex - align items - center */
+  /* Arrow icon */
+  .main .process .arrow {
+    align-items: center;
+  }
 
-	/* Flex - align items - stretch */
-	/* Process */
-	.main .process {
-		align-items: stretch;
-	}
+  /* Flex - align items - stretch */
+  /* Process */
+  .main .process {
+    align-items: stretch;
+  }
 
-	/* Flex - 1 */
-	/* Tile description */
-	.main .process .text p {
-		flex: 1;
-	}
+  /* Flex - 1 */
+  /* Tile description */
+  .main .process .text p {
+    flex: 1;
+  }
 
-	/* Flex - none */
-	/* Metric image container */
-	.main .metric > span {
-		flex: none;
-	}
+  /* Flex - none */
+  /* Metric image container */
+  .main .metric > span {
+    flex: none;
+  }
 
-	/**
+  /**
 	 * Metrics
 	 */
 
-	/* Metric container - evens */
-	.main .metric:nth-of-type(2n) {
-		margin: 0;
-	}
+  /* Metric container - evens */
+  .main .metric:nth-of-type(2n) {
+    margin: 0;
+  }
 
-	/**
+  /**
 	 * What is the HCA Portal?
 	 */
 
-	/* Tile description, tile link */
-	.main .process .text p, .main .process .text a {
-		text-align: center;
-	}
+  /* Tile description, tile link */
+  .main .process .text p,
+  .main .process .text a {
+    text-align: center;
+  }
 
-	/* Tile description */
-	.main .process .text p {
-		margin: 8px 0 0;
-	}
+  /* Tile description */
+  .main .process .text p {
+    margin: 8px 0 0;
+  }
 
-	/* Tile link */
-	.main .process .text a {
-		height: 42px; /* Top aligns link; forces link to be of similar height, allowing flex on paragraph to be equal across each tile */
-		margin: 16px 0 0;
-	}
+  /* Tile link */
+  .main .process .text a {
+    height: 42px; /* Top aligns link; forces link to be of similar height, allowing flex on paragraph to be equal across each tile */
+    margin: 16px 0 0;
+  }
 
-	/* Process arrow container */
-	.main .process .arrow {
-		height: 168px; /* Forces arrow container to be same height as tile icon container */
-		margin-right: 5px;
-	}
+  /* Process arrow container */
+  .main .process .arrow {
+    height: 168px; /* Forces arrow container to be same height as tile icon container */
+    margin-right: 5px;
+  }
 
-	/* Process arrow image */
-	.main .process .arrow img {
-		height: unset; /* Required for safari */
-		transform: rotate(0deg);
-	}
+  /* Process arrow image */
+  .main .process .arrow img {
+    height: unset; /* Required for safari */
+    transform: rotate(0deg);
+  }
 }

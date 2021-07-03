@@ -7,9 +7,9 @@
 
 /* Chip. */
 .chip {
-    align-self: flex-start; /* Required for flex containers. */
-    background-color: var(--blue-light);
-    border-radius: 2px;
-    display: inline-block;
-    padding: 2px 6px;
+  align-self: flex-start; /* Required for flex containers. */
+  background-color: var(--blue-light);
+  border-radius: 2px;
+  display: inline-block;
+  padding: 2px 6px;
 }

@@ -7,48 +7,61 @@
  */
 
 // Core dependencies
-import React from "react";
+import React from 'react'
 
 // App dependencies
-import Highlight from "../../highlight/highlight";
+import Highlight from '../../highlight/highlight'
 
 // Styles
-import compStyles from "./metadataSchemaPropertyFieldFriendlies.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
+import compStyles from './metadataSchemaPropertyFieldFriendlies.module.css'
+import fontStyles from '../../../styles/fontsize.module.css'
 
-const classNames = require("classnames");
+const classNames = require('classnames')
 
 function MetadataSchemaPropertyFieldFriendlies(props) {
+  const { children, property, searchTerm } = props,
+    { propertyFriendlies } = property || {}
+  const showFriendlies = propertyFriendlies && propertyFriendlies.length > 0
+  const friendlyDepth = showFriendlies ? propertyFriendlies.length - 1 : 0
 
-    const {children, property, searchTerm} = props,
-        {propertyFriendlies} = property || {};
-    const showFriendlies = propertyFriendlies && propertyFriendlies.length > 0;
-    const friendlyDepth = showFriendlies ? propertyFriendlies.length - 1 : 0;
-
-    const Friendly = (props) => {
-
-        const {counter, friendly, friendlyDepth} = props;
-        const lastFriendly = counter === friendlyDepth;
-        const showArrow = !lastFriendly;
-        const showHighlighter = searchTerm && lastFriendly;
-
-        return (
-            <span>
-                {showHighlighter ?
-                    <Highlight term={searchTerm}><span>{friendly}</span></Highlight> :
-                    <span>{friendly}</span>}
-                {showArrow ?
-                    <span className={compStyles.arrow}>></span> : children}
-            </span>
-        )
-    };
+  const Friendly = props => {
+    const { counter, friendly, friendlyDepth } = props
+    const lastFriendly = counter === friendlyDepth
+    const showArrow = !lastFriendly
+    const showHighlighter = searchTerm && lastFriendly
 
     return (
-        showFriendlies ?
-            <span className={classNames(compStyles.friendly, fontStyles.s, fontStyles.regular)}>
-                {propertyFriendlies.map((friendly, f) => <Friendly key={f} counter={f} friendly={friendly} friendlyDepth={friendlyDepth}/>)}
-            </span> : null
-    );
+      <span>
+        {showHighlighter ? (
+          <Highlight term={searchTerm}>
+            <span>{friendly}</span>
+          </Highlight>
+        ) : (
+          <span>{friendly}</span>
+        )}
+        {showArrow ? <span className={compStyles.arrow}>></span> : children}
+      </span>
+    )
+  }
+
+  return showFriendlies ? (
+    <span
+      className={classNames(
+        compStyles.friendly,
+        fontStyles.s,
+        fontStyles.regular
+      )}
+    >
+      {propertyFriendlies.map((friendly, f) => (
+        <Friendly
+          key={f}
+          counter={f}
+          friendly={friendly}
+          friendlyDepth={friendlyDepth}
+        />
+      ))}
+    </span>
+  ) : null
 }
 
-export default MetadataSchemaPropertyFieldFriendlies;
+export default MetadataSchemaPropertyFieldFriendlies

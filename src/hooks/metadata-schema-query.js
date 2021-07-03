@@ -1,10 +1,10 @@
-import {useStaticQuery, graphql} from "gatsby";
+import { useStaticQuery, graphql } from 'gatsby'
 
 export const MetadataSchemaQuery = () => {
-    const {allMetadataSchema} = useStaticQuery(
-        graphql`
-        query MetadataSchemaQuery {
-        allMetadataSchema(sort: {fields: schemaName}) {
+  const { allMetadataSchema } = useStaticQuery(
+    graphql`
+      query MetadataSchemaQuery {
+        allMetadataSchema(sort: { fields: schemaName }) {
           edges {
             node {
               category
@@ -33,6 +33,6 @@ export const MetadataSchemaQuery = () => {
         }
       }
     `
-    );
-    return allMetadataSchema.edges.map(n => n.node);
-};
+  )
+  return allMetadataSchema.edges.map(n => n.node)
+}

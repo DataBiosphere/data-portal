@@ -8,82 +8,81 @@
 
 /* Footer */
 .footer {
-    background-color: var(--black);
+  background-color: var(--black);
 }
 
 /* Wrapper - footer overrides */
 .wrapper {
-    flex-direction: column;
-    justify-content: center;
-    padding: 16px 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 0;
 }
 
 /* Logo and back arrow */
 .logo {
-    line-height: 0;
-    margin: 0;
-    position: relative;
-    text-decoration: none;
+  line-height: 0;
+  margin: 0;
+  position: relative;
+  text-decoration: none;
 }
 
 /* Back arrow */
 .logo i {
-    color: var(--white);
-    cursor: pointer;
-    font-size: 24px;
-    left: -24px;
-    padding: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 24px;
+  left: -24px;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* Logo image */
 .logo img {
-    cursor: pointer;
-    height: 72px;
-    margin-bottom: 0;
-    padding: 0;
+  cursor: pointer;
+  height: 72px;
+  margin-bottom: 0;
+  padding: 0;
 }
 
 /**
  * HCA specific breakpoint
  */
 @media screen and (min-width: 768px) {
+  /* Footer */
+  .footer {
+    height: 96px;
+  }
 
-    /* Footer */
-    .footer {
-        height: 96px;
-    }
+  /* Wrapper */
+  .wrapper {
+    flex-direction: row;
+    height: inherit;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
 
-    /* Wrapper */
-    .wrapper {
-        flex-direction: row;
-        height: inherit;
-        justify-content: space-between;
-        padding: 0 16px;
-    }
+  /* Logo */
+  .logo {
+    align-items: center;
+    display: flex;
+  }
 
-    /* Logo */
-    .logo {
-        align-items: center;
-        display: flex;
-    }
+  /* Left arrow */
+  .logo i {
+    left: unset;
+    margin: 0 -8px;
+    position: relative;
+    top: unset;
+    transform: none;
+  }
 
-    /* Left arrow */
-    .logo i {
-        left: unset;
-        margin: 0 -8px;
-        position: relative;
-        top: unset;
-        transform: none;
-    }
-
-    /* Logo image */
-    .logo img {
-        cursor: pointer;
-        height: 96px;
-        margin-bottom: 0;
-        padding: 0;
-    }
+  /* Logo image */
+  .logo img {
+    cursor: pointer;
+    height: 96px;
+    margin-bottom: 0;
+    padding: 0;
+  }
 }

@@ -6,11 +6,11 @@
  */
 
 // Template variables
-const path = require("path");
+const path = require('path')
 const templatePath = {
-    "CONTENT": "src/templates/contentTemplate.js",
-    "METADATA": "src/templates/metadataTemplate.js",
-};
+  CONTENT: 'src/templates/contentTemplate.js',
+  METADATA: 'src/templates/metadataTemplate.js',
+}
 
 /**
  * Returns the post's path or key (if the post path does not exist).
@@ -23,14 +23,12 @@ const templatePath = {
  * @constructor
  */
 const buildPostPath = function buildPostPath(slug, postsKeysByPath) {
+  if (!slug) {
+    return null
+  }
 
-    if ( !slug ) {
-
-        return null;
-    }
-
-    return getPostPathOrKey(slug, postsKeysByPath);
-};
+  return getPostPathOrKey(slug, postsKeysByPath)
+}
 
 /**
  * Returns the template path specified by template name.
@@ -40,11 +38,10 @@ const buildPostPath = function buildPostPath(slug, postsKeysByPath) {
  * @constructor
  */
 const getPostTemplate = function getPostTemplate(templateName) {
+  const template = templateName || 'CONTENT'
 
-    const template = templateName || "CONTENT";
-
-    return path.resolve(`${templatePath[template]}`);
-};
+  return path.resolve(`${templatePath[template]}`)
+}
 
 /**
  * Returns a set of posts deny listed i.e. not "enabled".
@@ -53,22 +50,19 @@ const getPostTemplate = function getPostTemplate(templateName) {
  * @returns {Set}
  */
 const setOfPostsDenyListed = function setOfPostsDenyListed(markdownRemark) {
+  return markdownRemark.edges
+    .map(e => e.node)
+    .reduce((acc, node) => {
+      const { fields } = node,
+        { enabled, slug } = fields
 
-    return markdownRemark.edges
-        .map(e => e.node)
-        .reduce((acc, node) => {
+      if (!enabled) {
+        acc.add(slug)
+      }
 
-        const {fields} = node,
-            {enabled, slug} = fields;
-
-        if ( !enabled ) {
-
-            acc.add(slug);
-        }
-
-        return acc;
-    }, new Set());
-};
+      return acc
+    }, new Set())
+}
 
 /**
  * Returns the corresponding post's path.
@@ -78,15 +72,13 @@ const setOfPostsDenyListed = function setOfPostsDenyListed(markdownRemark) {
  * @returns {*}
  */
 function getPostPathOrKey(slug, postsKeysByPath) {
+  if (postsKeysByPath && postsKeysByPath.has(slug)) {
+    return postsKeysByPath.get(slug)
+  }
 
-    if ( postsKeysByPath && postsKeysByPath.has(slug) ) {
-
-        return postsKeysByPath.get(slug);
-    }
-
-    return null;
+  return null
 }
 
-module.exports.buildPostPath = buildPostPath;
-module.exports.getPostTemplate = getPostTemplate;
-module.exports.setOfPostsDenyListed = setOfPostsDenyListed;
+module.exports.buildPostPath = buildPostPath
+module.exports.getPostTemplate = getPostTemplate
+module.exports.setOfPostsDenyListed = setOfPostsDenyListed

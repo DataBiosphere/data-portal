@@ -5,207 +5,210 @@
  * Style definitions specific to Zendesk support request form.
  */
 
-@import "../../styles/vars.module.css";
+@import '../../styles/vars.module.css';
 
 .supportRequest {
-    background-color: white;
-    border-radius: 2px;
-    bottom: 24px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0 0 8px 0, rgba(0, 0, 0, 0.24) 0 8px 8px 0;
-    max-height: calc(100vh - 64px - 12px - 12px);
-    overflow-y: auto;
-    padding: 24px;
-    position: fixed;
-    right: 24px;
-    width: 450px;
-    z-index: 100;
+  background-color: white;
+  border-radius: 2px;
+  bottom: 24px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 0 8px 0, rgba(0, 0, 0, 0.24) 0 8px 8px 0;
+  max-height: calc(100vh - 64px - 12px - 12px);
+  overflow-y: auto;
+  padding: 24px;
+  position: fixed;
+  right: 24px;
+  width: 450px;
+  z-index: 100;
 }
 
 /* Thank you */
 .supportRequest.submitted {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 /* Thank you */
 .supportRequest .hidden {
-    opacity: 0;
-    visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .supportRequest h2:first-of-type {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 /* Form labels */
 .supportRequest h3 {
-    margin-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 /* Form controls */
-.supportRequest input, .supportRequest textarea {
-    border: 1px solid var(--gray-light);
-    border-radius: 2px;
-    height: 36px;
-    margin-bottom: 4px;
-    padding: 0 16px;
-    width: 100%;
+.supportRequest input,
+.supportRequest textarea {
+  border: 1px solid var(--gray-light);
+  border-radius: 2px;
+  height: 36px;
+  margin-bottom: 4px;
+  padding: 0 16px;
+  width: 100%;
 }
 
-.supportRequest input:focus, .supportRequest textarea:focus {
-    outline: 0;
-} 
+.supportRequest input:focus,
+.supportRequest textarea:focus {
+  outline: 0;
+}
 
 /* Subject form input */
 .supportRequest .inputSubject {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom-style: dashed;
-    margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-style: dashed;
+  margin-bottom: 0;
 }
 
 /* Description textarea */
 .supportRequest textarea {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-top-style: dashed;
-    height: 200px;
-    padding: 8px 16px;
-    resize: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-style: dashed;
+  height: 200px;
+  padding: 8px 16px;
+  resize: none;
 }
 
 /* Errors */
 .supportRequest .inputError {
-    border-color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* Attachment form control */
 .supportRequest .inputAttachment {
-    align-items: center;
-    background-color: var(--gray-lightest);
-    border: 1px dashed var(--gray-light);
-    border-radius: 2px;
-    cursor: pointer;
-    display: flex;
-    height: 36px;
-    padding: 0 16px;
-    text-align: left;
-    transition: all 500ms cubic-bezier(0.25, 0.8, 0.25, 1);
-    width: 100%;
+  align-items: center;
+  background-color: var(--gray-lightest);
+  border: 1px dashed var(--gray-light);
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  height: 36px;
+  padding: 0 16px;
+  text-align: left;
+  transition: all 500ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 100%;
 }
 
 /* "click" text */
 .supportRequest .inputAttachment span {
-    color: var(--primary);
-    text-decoration: underline;
+  color: var(--primary);
+  text-decoration: underline;
 }
 
 /* Attachment display once uploaded */
 .supportRequest .inputAttachmentAttached {
-    align-items: center;
-    background-color: var(--black3);
-    border: 1px solid var(--black6);
-    border-radius: 2px;
-    display: flex;
-    justify-content: space-between;
-    min-height: 36px;
-    padding: 4px 16px;
+  align-items: center;
+  background-color: var(--black3);
+  border: 1px solid var(--black6);
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  min-height: 36px;
+  padding: 4px 16px;
 }
 
 .supportRequest .inputAttachmentFileName {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    margin-right: 8px;
-    overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  margin-right: 8px;
+  overflow: hidden;
 }
 
 /* Delete attachment button */
 .supportRequest .inputAttachmentDelete {
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-    height: 24px;
-    outline: 0;
-    position: relative;
-    width: 30px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 24px;
+  outline: 0;
+  position: relative;
+  width: 30px;
 }
 
-.supportRequest .inputAttachmentDelete:before, .supportRequest .inputAttachmentDelete:after {
-    background-color: var(--primary);
-    content: " ";
-    height: 2px;
-    left: 10%;
-    position: absolute;
-    width: 16px;
-    transition: background-color 500ms cubic-bezier(0.25, 0.8, 0.25, 1);
-    top: 50%;
+.supportRequest .inputAttachmentDelete:before,
+.supportRequest .inputAttachmentDelete:after {
+  background-color: var(--primary);
+  content: ' ';
+  height: 2px;
+  left: 10%;
+  position: absolute;
+  width: 16px;
+  transition: background-color 500ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  top: 50%;
 }
 
-.supportRequest .inputAttachmentDelete:hover:before, .supportRequest .inputAttachmentDelete:hover:after {
-    background-color: var(--secondary);
+.supportRequest .inputAttachmentDelete:hover:before,
+.supportRequest .inputAttachmentDelete:hover:after {
+  background-color: var(--secondary);
 }
 
 .supportRequest .inputAttachmentDelete:after {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .supportRequest .inputAttachmentDelete:before {
-    transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 /* Actively dragging attachment */
 .supportRequest .inputAttachmentDragging {
-    background-color: var(--blue-light);
-    border-color: var(--primary);
+  background-color: var(--blue-light);
+  border-color: var(--primary);
 }
 
 /* Form buttons */
 .supportRequest button {
-    outline: 0;
+  outline: 0;
 }
 
 .supportRequest .buttons {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
 }
 
 .supportRequest .buttons button {
-    font-family: 'din-2014', sans-serif;
-    text-transform: uppercase;
-    transition: background-color 500ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-family: 'din-2014', sans-serif;
+  text-transform: uppercase;
+  transition: background-color 500ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .supportRequest .buttons .buttonCancel {
-    background-color: var(--white);
-    margin-right: 8px;
+  background-color: var(--white);
+  margin-right: 8px;
 }
 
 .supportRequest .buttons .buttonCancel:hover {
-    background-color: var(--gray-lightest);
+  background-color: var(--gray-lightest);
 }
 
 .supportRequest .buttons .buttonSubmit:not([disabled]) {
-    background-color: var(--blue-light);
-    color: var(--primary);
+  background-color: var(--blue-light);
+  color: var(--primary);
 }
 
 .supportRequest .buttons .buttonSubmit:not([disabled]):hover {
-    background-color: rgba(218, 240, 246, 0.54);
+  background-color: rgba(218, 240, 246, 0.54);
 }
 
 /**
  * Custom breakpoint - width of support request + left/right gutters 
  */
 @media screen and (max-width: 498px) {
-
-    .supportRequest {
-        bottom: 0;
-        left: 0;
-        max-height: unset;
-        position: fixed;
-        right: 0;
-        top: 60px;
-        width: 100vw;
-    }
+  .supportRequest {
+    bottom: 0;
+    left: 0;
+    max-height: unset;
+    position: fixed;
+    right: 0;
+    top: 60px;
+    width: 100vw;
+  }
 }

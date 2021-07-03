@@ -8,32 +8,32 @@
 
 /* Analyze list */
 .hcaAnalyzeList {
-	border-bottom: 1px solid var(--gray-lightest);
-	color: inherit;
-	cursor: pointer;
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 18px;
-	position: relative; /* Positions button */
-	width: 100%;
+  border-bottom: 1px solid var(--gray-lightest);
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  position: relative; /* Positions button */
+  width: 100%;
 }
 
 .hcaAnalyzeList:first-of-type {
-	margin-top: 48px;
+  margin-top: 48px;
 }
 
 .hcaAnalyzeList:last-of-type {
-    border-bottom: none;
-	margin-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 0;
 }
 
 /* Heading */
 .hcaAnalyzeList h5 {
-	line-height: 20px;
-	margin: 0;
+  line-height: 20px;
+  margin: 0;
 }
 
 /* Description */
 .hcaAnalyzeList .description {
-	margin-top: 12px;
+  margin-top: 12px;
 }

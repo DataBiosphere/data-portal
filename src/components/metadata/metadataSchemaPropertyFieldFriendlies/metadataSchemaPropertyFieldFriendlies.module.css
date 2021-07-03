@@ -7,16 +7,16 @@
 
 /* Friendly. */
 .friendly {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
 }
 
 .friendly span {
-    white-space: pre;
+  white-space: pre;
 }
 
 /* Separator. */
 .friendly .arrow {
-    padding: 0 4px;
+  padding: 0 4px;
 }

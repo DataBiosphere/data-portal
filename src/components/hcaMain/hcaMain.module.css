@@ -7,6 +7,6 @@
 
 /* Main */
 .main {
-    flex: 1;
-    position: relative; /* Positions cell image for error and 404 page */
+  flex: 1;
+  position: relative; /* Positions cell image for error and 404 page */
 }

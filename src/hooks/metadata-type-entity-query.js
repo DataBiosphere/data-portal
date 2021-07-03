@@ -1,10 +1,10 @@
-import {useStaticQuery, graphql} from "gatsby";
+import { useStaticQuery, graphql } from 'gatsby'
 
 export const MetadataTypeEntityQuery = () => {
-    const {allMetadataEntity} = useStaticQuery(
-        graphql`
-        query MetadataTypeEntityQuery {
-        allMetadataEntity(filter: {entityName: {eq: "type"}}) {
+  const { allMetadataEntity } = useStaticQuery(
+    graphql`
+      query MetadataTypeEntityQuery {
+        allMetadataEntity(filter: { entityName: { eq: "type" } }) {
           edges {
             node {
               categories {
@@ -22,6 +22,6 @@ export const MetadataTypeEntityQuery = () => {
         }
       }
     `
-    );
-    return allMetadataEntity.edges.map(n => n.node)[0];
-};
+  )
+  return allMetadataEntity.edges.map(n => n.node)[0]
+}

@@ -14,47 +14,41 @@
  * @param postsByKeyDenyListed
  * @returns {*}
  */
-const buildPostKeysByPath = function buildPostKeysByPath(siteMapYAML, postsByKeyDenyListed) {
+const buildPostKeysByPath = function buildPostKeysByPath(
+  siteMapYAML,
+  postsByKeyDenyListed
+) {
+  /* Build the site-map object. */
+  return siteMapYAML.edges
+    .map(n => n.node)
+    .reduce((sectionAcc, section) => {
+      const sectionTabs = section.tabs
 
-    /* Build the site-map object. */
-    return siteMapYAML.edges
-        .map(n => n.node)
-        .reduce((sectionAcc, section) => {
+      if (sectionTabs) {
+        return sectionTabs.reduce((tabAcc, tab) => {
+          const primaryLinks = tab.primaryLinks
 
-        const sectionTabs = section.tabs;
+          return primaryLinks.reduce((primaryAcc, pLink) => {
+            if (!postsByKeyDenyListed.has(pLink.key)) {
+              setPostKeyValuePair(primaryAcc, pLink)
+            }
 
-        if ( sectionTabs ) {
+            const secondaryLinks = pLink.secondaryLinks
 
-            return sectionTabs.reduce((tabAcc, tab) => {
-
-                const primaryLinks = tab.primaryLinks;
-
-                return primaryLinks.reduce((primaryAcc, pLink) => {
-
-                    if ( !postsByKeyDenyListed.has(pLink.key) ) {
-
-                        setPostKeyValuePair(primaryAcc, pLink);
-                    }
-
-                    const secondaryLinks = pLink.secondaryLinks;
-
-                    if ( secondaryLinks ) {
-
-                        secondaryLinks.forEach(sLink => {
-
-                            if ( !postsByKeyDenyListed.has(sLink.key) ) {
-
-                                setPostKeyValuePair(primaryAcc, sLink)
-                            }
-                        });
-                    }
-                    return primaryAcc;
-                }, tabAcc);
-            }, sectionAcc);
-        }
-        return sectionAcc;
-        }, new Map());
-};
+            if (secondaryLinks) {
+              secondaryLinks.forEach(sLink => {
+                if (!postsByKeyDenyListed.has(sLink.key)) {
+                  setPostKeyValuePair(primaryAcc, sLink)
+                }
+              })
+            }
+            return primaryAcc
+          }, tabAcc)
+        }, sectionAcc)
+      }
+      return sectionAcc
+    }, new Map())
+}
 
 /**
  * Returns a post key value pair.
@@ -64,8 +58,7 @@ const buildPostKeysByPath = function buildPostKeysByPath(siteMapYAML, postsByKey
  * @param doc
  */
 function setPostKeyValuePair(acc, doc) {
-
-    acc.set(doc.key, doc.path || doc.key);
+  acc.set(doc.key, doc.path || doc.key)
 }
 
-module.exports.buildPostKeysByPath = buildPostKeysByPath;
+module.exports.buildPostKeysByPath = buildPostKeysByPath

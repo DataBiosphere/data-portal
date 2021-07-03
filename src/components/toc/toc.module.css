@@ -4,16 +4,16 @@
  *
  * Style definitions specific to the HCA Data Portal TOC component.
  */
-@import "../../styles/vars.module.css";
+@import '../../styles/vars.module.css';
 
 /* TOCs */
 .tocs {
-    display: none;
+  display: none;
 }
 
 /* Unordered list - no list style */
 .tocs ul {
-    list-style: none;
+  list-style: none;
 }
 
 /**
@@ -21,20 +21,19 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1024px) {
+  /* TOC */
+  .tocs {
+    display: flex;
+    height: 100%;
+    margin-bottom: 88px; /* Prevents TOC extending beyond content end */
+    position: sticky;
+    top: 84px;
+  }
 
-    /* TOC */
-    .tocs {
-        display: flex;
-        height: 100%;
-        margin-bottom: 88px; /* Prevents TOC extending beyond content end */
-        position: sticky;
-        top: 84px;
-    }
-
-    /* TOCs - unordered list */
-    .tocs ul {
-        margin-left: 18px !important; /* Total separation between content and TOC is 32px */
-        max-width: 178px; /* Max TOC width total is 196px - includes 18px margin */
-        min-width: 178px; /* Max TOC width total is 196px - includes 18px margin */
-    }
+  /* TOCs - unordered list */
+  .tocs ul {
+    margin-left: 18px !important; /* Total separation between content and TOC is 32px */
+    max-width: 178px; /* Max TOC width total is 196px - includes 18px margin */
+    min-width: 178px; /* Max TOC width total is 196px - includes 18px margin */
+  }
 }

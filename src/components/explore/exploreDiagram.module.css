@@ -6,26 +6,27 @@
  */
 
 .humanBody {
-	display: none;
+  display: none;
 }
 
 svg.humanBody {
-	height: 715px;
+  height: 715px;
 }
 
 /* Hide organ */
-svg.humanBody [id^="path"] {
-	opacity: 0;
+svg.humanBody [id^='path'] {
+  opacity: 0;
 }
 
 /* Show organ */
-svg.humanBody [id^="path"].active {
-	opacity: 1;
+svg.humanBody [id^='path'].active {
+  opacity: 1;
 }
 
 /* Transition */
-svg.humanBody [id^="path"], svg.humanBody [id^="path"].active {
-	transition: opacity .5s ease 0s;
+svg.humanBody [id^='path'],
+svg.humanBody [id^='path'].active {
+  transition: opacity 0.5s ease 0s;
 }
 
 /**
@@ -33,10 +34,7 @@ svg.humanBody [id^="path"], svg.humanBody [id^="path"].active {
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 960px) {
-
-	.humanBody {
-		display: block;
-	}
+  .humanBody {
+    display: block;
+  }
 }
-
-

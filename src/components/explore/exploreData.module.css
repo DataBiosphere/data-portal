@@ -7,9 +7,9 @@
 
 /* Explore container */
 .exploring {
-	align-items: flex-start;
-	display: flex;
-	justify-content: center;
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
 }
 
 /**
@@ -17,9 +17,8 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 960px) {
-
-	/* Explore container */
-	.exploring {
-		justify-content: space-between;
-	}
+  /* Explore container */
+  .exploring {
+    justify-content: space-between;
+  }
 }

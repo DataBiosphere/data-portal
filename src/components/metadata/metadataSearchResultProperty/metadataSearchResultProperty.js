@@ -6,48 +6,70 @@
  */
 
 // Core dependencies
-import React from "react";
+import React from 'react'
 
 // App dependencies
-import Highlight from "../../highlight/highlight";
-import MetadataOverline from "../metadataOverline/metadataOverline";
-import MetadataRequired from "../metadataRequired/metadataRequired";
-import MetadataSchemaPropertyFieldDescription from "../metadataSchemaPropertyFieldDescription/metadataSchemaPropertyFieldDescription";
-import MetadataSchemaPropertyFieldExample from "../metadataSchemaPropertyFieldExample/metadataSchemaPropertyFieldExample";
-import MetadataSchemaPropertyFieldFriendlies from "../metadataSchemaPropertyFieldFriendlies/metadataSchemaPropertyFieldFriendlies";
-import MetadataSchemaPropertyFieldGraphRestriction from "../metadataSchemaPropertyFieldGraphRestriction/metadataSchemaPropertyFieldGraphRestriction";
-import MetadataSchemaPropertyWordWrapper from "../metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper";
+import Highlight from '../../highlight/highlight'
+import MetadataOverline from '../metadataOverline/metadataOverline'
+import MetadataRequired from '../metadataRequired/metadataRequired'
+import MetadataSchemaPropertyFieldDescription from '../metadataSchemaPropertyFieldDescription/metadataSchemaPropertyFieldDescription'
+import MetadataSchemaPropertyFieldExample from '../metadataSchemaPropertyFieldExample/metadataSchemaPropertyFieldExample'
+import MetadataSchemaPropertyFieldFriendlies from '../metadataSchemaPropertyFieldFriendlies/metadataSchemaPropertyFieldFriendlies'
+import MetadataSchemaPropertyFieldGraphRestriction from '../metadataSchemaPropertyFieldGraphRestriction/metadataSchemaPropertyFieldGraphRestriction'
+import MetadataSchemaPropertyWordWrapper from '../metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper'
 
 function MetadataSearchResultProperty(props) {
+  const { result, searchTerm } = props,
+    { propertyPath, _ref, showClasses, showExample, showOntologies } =
+      result || {}
+  const showPaths = !_ref
 
-    const {result, searchTerm} = props,
-        {propertyPath, _ref, showClasses, showExample, showOntologies} = result || {};
-    const showPaths = !_ref;
-
-    return (
-        <>
-        <span>
-            <MetadataSchemaPropertyFieldFriendlies property={result} searchTerm={searchTerm}/>
-            <MetadataRequired property={result}/>
-        </span>
-        <span>
-            <MetadataOverline><span>Property</span></MetadataOverline>
-        </span>
-        <span>
-            {showPaths ?
-                <Highlight term={searchTerm}><MetadataSchemaPropertyWordWrapper font={"hcaCode"} word={propertyPath} wrap/></Highlight> : null}
-            <Highlight term={searchTerm}><MetadataSchemaPropertyFieldDescription font={"xs"} property={result}/></Highlight>
-            {showExample ?
-                <Highlight term={searchTerm}>
-                    <MetadataSchemaPropertyFieldExample font={"xs"} property={result}/>
-                </Highlight> : null}
-            {showClasses || showOntologies ?
-                <Highlight term={searchTerm}>
-                    <MetadataSchemaPropertyFieldGraphRestriction property={result} showLink={false}/>
-                </Highlight> : null}
-        </span>
-        </>
-    )
+  return (
+    <>
+      <span>
+        <MetadataSchemaPropertyFieldFriendlies
+          property={result}
+          searchTerm={searchTerm}
+        />
+        <MetadataRequired property={result} />
+      </span>
+      <span>
+        <MetadataOverline>
+          <span>Property</span>
+        </MetadataOverline>
+      </span>
+      <span>
+        {showPaths ? (
+          <Highlight term={searchTerm}>
+            <MetadataSchemaPropertyWordWrapper
+              font={'hcaCode'}
+              word={propertyPath}
+              wrap
+            />
+          </Highlight>
+        ) : null}
+        <Highlight term={searchTerm}>
+          <MetadataSchemaPropertyFieldDescription
+            font={'xs'}
+            property={result}
+          />
+        </Highlight>
+        {showExample ? (
+          <Highlight term={searchTerm}>
+            <MetadataSchemaPropertyFieldExample font={'xs'} property={result} />
+          </Highlight>
+        ) : null}
+        {showClasses || showOntologies ? (
+          <Highlight term={searchTerm}>
+            <MetadataSchemaPropertyFieldGraphRestriction
+              property={result}
+              showLink={false}
+            />
+          </Highlight>
+        ) : null}
+      </span>
+    </>
+  )
 }
 
-export default MetadataSearchResultProperty;
+export default MetadataSearchResultProperty

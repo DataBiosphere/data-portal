@@ -7,12 +7,12 @@
 
 /* Section heading */
 .hcaSection > div > div {
-	align-items: center;
-	display: flex;
-	flex: 1;
-	height: 76px;
-	padding: 16px 0;
-	margin: 0;
-	width: 100%;
-	z-index: 1; /* Required - positioned above tabNav component */
+  align-items: center;
+  display: flex;
+  flex: 1;
+  height: 76px;
+  padding: 16px 0;
+  margin: 0;
+  width: 100%;
+  z-index: 1; /* Required - positioned above tabNav component */
 }

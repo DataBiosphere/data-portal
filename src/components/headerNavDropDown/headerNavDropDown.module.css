@@ -9,49 +9,49 @@
 
 /* Drop down - container */
 .dropDown {
-	position: relative; /* Positions menu */
+  position: relative; /* Positions menu */
 }
 
 /* Drop down menu - both views */
 .dropDownMenu {
-	display: none;
-	margin: 0;
+  display: none;
+  margin: 0;
 }
 
 /* Drop down menu - normal view */
 .dropDownMenu:not(.stack) {
-	background-color: var(--white);
-	border: 1px solid var(--gray-lightest);
-	border-radius: 4px;
-	padding: 8px 0;
-	position: absolute;
-	width: 180px;
-	top: 46px;
+  background-color: var(--white);
+  border: 1px solid var(--gray-lightest);
+  border-radius: 4px;
+  padding: 8px 0;
+  position: absolute;
+  width: 180px;
+  top: 46px;
 }
 
 /* Links - normal view */
 .dropDownMenu:not(.stack) a:hover {
-	background-color: var(--blue-light);
+  background-color: var(--blue-light);
 }
 
-
 /* Show, stack */
-.show, .stack {
-	display: block;
+.show,
+.stack {
+  display: block;
 }
 
 /* Link - normal view */
 .dropDownMenu:not(.stack) a {
-	height: 32px !important;
+  height: 32px !important;
 }
 
 /* Link - menu view */
 .stack a {
-	height: unset !important;
-	padding: 0 24px !important;
+  height: unset !important;
+  padding: 0 24px !important;
 }
 
 /* Link - text */
 .dropDownMenu .item {
-	font-weight: 400 !important;
+  font-weight: 400 !important;
 }

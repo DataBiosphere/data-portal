@@ -6,136 +6,170 @@
  */
 
 // Core dependencies
-import Link from 'gatsby-link';
-import React from 'react';
+import Link from 'gatsby-link'
+import React from 'react'
 
 // App dependencies
-import ClickHandler from "../clickHandler/clickHandler";
-import MetadataOverline from "../metadata/metadataOverline/metadataOverline";
+import ClickHandler from '../clickHandler/clickHandler'
+import MetadataOverline from '../metadata/metadataOverline/metadataOverline'
 
 // Styles
-import compStyles from './nav.module.css';
-import fontStyles from '../../styles/fontsize.module.css';
+import compStyles from './nav.module.css'
+import fontStyles from '../../styles/fontsize.module.css'
 
-let classNames = require('classnames');
+let classNames = require('classnames')
 
-let active;
-let expanded;
-let initialShowNav = false;
-let tab;
+let active
+let expanded
+let initialShowNav = false
+let tab
 
 class Nav extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { showNav: initialShowNav }
+    this.toggleNav = this.toggleNav.bind(this)
+  }
 
-	constructor(props) {
-		super(props);
-		this.state = {showNav: initialShowNav};
-		this.toggleNav = this.toggleNav.bind(this);
-	}
+  componentDidMount() {
+    this.getTab()
+  }
 
-	componentDidMount() {
+  getNavClassName = nav => {
+    active = nav.active
+    expanded =
+      nav.sLinks && nav.sLinks.length > 0
+        ? nav.active || nav.sLinks.some(sLink => sLink.active)
+        : false
 
-		this.getTab();
-	}
+    return classNames({
+      [compStyles.expanded]: expanded,
+      [compStyles.selected]: active,
+    })
+  }
 
-	getNavClassName = (nav) => {
+  getTab = () => {
+    const { tabKey } = this.props
 
-		active = nav.active;
-		expanded = nav.sLinks && nav.sLinks.length > 0 ? nav.active || nav.sLinks.some(sLink => sLink.active) : false;
+    if (tab !== tabKey) {
+      this.setState({ showNav: false })
+      tab = tabKey
+    }
+  }
 
-		return classNames({
-			[compStyles.expanded]: expanded,
-			[compStyles.selected]: active
-		});
-	};
+  isShowSideNav = () => {
+    const { links } = this.props
 
-	getTab = () => {
+    if (links.length > 0) {
+      const [firstLink] = links
 
-		const {tabKey} = this.props;
+      if (links.length > 1) {
+        return true
+      }
 
-		if ( tab !== tabKey ) {
+      return firstLink.sLinks && firstLink.sLinks.length > 0
+    }
 
-			this.setState({showNav: false});
-			tab = tabKey;
-		}
-	};
+    return false
+  }
 
-	isShowSideNav = () => {
+  toggleNav = () => {
+    // Toggle the navigation open/closed
+    this.setState({ showNav: !this.state.showNav })
 
-		const {links} = this.props;
+    initialShowNav = !this.state.showNav
+  }
 
-		if ( links.length > 0 ) {
-
-			const [firstLink,] = links;
-
-			if ( links.length > 1 ) {
-
-				return true;
-			}
-
-			return firstLink.sLinks && firstLink.sLinks.length > 0;
-		}
-
-		return false;
-	};
-
-	toggleNav = () => {
-
-		// Toggle the navigation open/closed
-		this.setState({showNav: !this.state.showNav});
-
-		initialShowNav = !this.state.showNav;
-	};
-
-	render() {
-		const {label, links} = this.props,
-			{showNav} = this.state;
-		return (
-			<div className={compStyles.hcaNav}>
-				{label ? <div className={compStyles.label}><MetadataOverline semiBold><span>{label}</span></MetadataOverline></div> : null}
-				<ul className={compStyles.hcaSideNav}>
-					{links.map((pLink, i) =>
-						<div key={i}>
-							<li className={this.getNavClassName(pLink)} key={i}>
-								<Link to={pLink.path} className={fontStyles.navPrimary}>{pLink.name}</Link>
-							</li>
-							{pLink.sLinks && expanded ?
-								<ul>
-									{pLink.sLinks.map((sLink, j) =>
-										<li className={this.getNavClassName(sLink)} key={j}>
-											<Link to={sLink.path} className={fontStyles.navSecondary}>{sLink.name}</Link>
-										</li>)}
-								</ul> : null}
-						</div>)}
-				</ul>
-				{this.isShowSideNav() ? <ul className={compStyles.hcaSideNav}>
-					<ClickHandler className={compStyles.select} clickAction={this.toggleNav} tag={'li'}>
-						<span>Also in this section</span><i className='material-icons'>keyboard_arrow_down</i>
-					</ClickHandler>
-					{showNav ?
-						links.map((pLink, i) =>
-							<div key={i}>
-								<ClickHandler className={this.getNavClassName(pLink)}
-											  clickAction={pLink.sLinks ? expanded ? this.toggleNav : null : this.toggleNav}
-											  key={i}
-											  tag={'li'}>
-									<Link to={pLink.path} className={fontStyles.navPrimary}>{pLink.name}</Link>
-								</ClickHandler>
-								{pLink.sLinks && expanded ?
-									<ul>
-										{pLink.sLinks.map((sLink, j) =>
-											<ClickHandler className={this.getNavClassName(sLink)}
-														  clickAction={this.toggleNav}
-														  key={j}
-														  tag={'li'}>
-												<Link className={fontStyles.navSecondary}
-													  to={sLink.path}>{sLink.name}</Link>
-											</ClickHandler>)}
-									</ul> : null}
-							</div>) : null}
-				</ul> : null}
-			</div>
-		);
-	}
+  render() {
+    const { label, links } = this.props,
+      { showNav } = this.state
+    return (
+      <div className={compStyles.hcaNav}>
+        {label ? (
+          <div className={compStyles.label}>
+            <MetadataOverline semiBold>
+              <span>{label}</span>
+            </MetadataOverline>
+          </div>
+        ) : null}
+        <ul className={compStyles.hcaSideNav}>
+          {links.map((pLink, i) => (
+            <div key={i}>
+              <li className={this.getNavClassName(pLink)} key={i}>
+                <Link to={pLink.path} className={fontStyles.navPrimary}>
+                  {pLink.name}
+                </Link>
+              </li>
+              {pLink.sLinks && expanded ? (
+                <ul>
+                  {pLink.sLinks.map((sLink, j) => (
+                    <li className={this.getNavClassName(sLink)} key={j}>
+                      <Link to={sLink.path} className={fontStyles.navSecondary}>
+                        {sLink.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+          ))}
+        </ul>
+        {this.isShowSideNav() ? (
+          <ul className={compStyles.hcaSideNav}>
+            <ClickHandler
+              className={compStyles.select}
+              clickAction={this.toggleNav}
+              tag={'li'}
+            >
+              <span>Also in this section</span>
+              <i className="material-icons">keyboard_arrow_down</i>
+            </ClickHandler>
+            {showNav
+              ? links.map((pLink, i) => (
+                  <div key={i}>
+                    <ClickHandler
+                      className={this.getNavClassName(pLink)}
+                      clickAction={
+                        pLink.sLinks
+                          ? expanded
+                            ? this.toggleNav
+                            : null
+                          : this.toggleNav
+                      }
+                      key={i}
+                      tag={'li'}
+                    >
+                      <Link to={pLink.path} className={fontStyles.navPrimary}>
+                        {pLink.name}
+                      </Link>
+                    </ClickHandler>
+                    {pLink.sLinks && expanded ? (
+                      <ul>
+                        {pLink.sLinks.map((sLink, j) => (
+                          <ClickHandler
+                            className={this.getNavClassName(sLink)}
+                            clickAction={this.toggleNav}
+                            key={j}
+                            tag={'li'}
+                          >
+                            <Link
+                              className={fontStyles.navSecondary}
+                              to={sLink.path}
+                            >
+                              {sLink.name}
+                            </Link>
+                          </ClickHandler>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                ))
+              : null}
+          </ul>
+        ) : null}
+      </div>
+    )
+  }
 }
 
-export default Nav;
+export default Nav

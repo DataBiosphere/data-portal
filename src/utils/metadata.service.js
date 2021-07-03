@@ -7,22 +7,22 @@
 
 // Template variables
 const Ontology = {
-    "EFO": "EFO",
-    "HCAO": "HCAO"
-};
+  EFO: 'EFO',
+  HCAO: 'HCAO',
+}
 const OntologyLibraryURL = {
-    "DATA": "http://edamontology.org",
-    "EFO": "http://www.ebi.ac.uk/efo",
-    "FORMAT": "http://edamontology.org",
-    "OBO": "http://purl.obolibrary.org/obo"
-};
+  DATA: 'http://edamontology.org',
+  EFO: 'http://www.ebi.ac.uk/efo',
+  FORMAT: 'http://edamontology.org',
+  OBO: 'http://purl.obolibrary.org/obo',
+}
 const OntologyTermIdentifier = {
-    "EFO:0000399": "UBERON:0000105",
-    "MONDO:0000001": "EFO:0000408"
-};
+  'EFO:0000399': 'UBERON:0000105',
+  'MONDO:0000001': 'EFO:0000408',
+}
 const OntologyTermOntology = {
-    "FBbi:00000241": "fbbi",
-};
+  'FBbi:00000241': 'fbbi',
+}
 
 /**
  * Returns the ontology search url.
@@ -30,16 +30,14 @@ const OntologyTermOntology = {
  * @param ontology
  * @returns {string}
  */
-export function buildOntologySearchUrl(ontology = "") {
+export function buildOntologySearchUrl(ontology = '') {
+  if (ontology) {
+    const [, identifier] = ontology.split(':')
 
-    if ( ontology ) {
+    return `https://www.ebi.ac.uk/ols/ontologies/${identifier}`
+  }
 
-        const [, identifier] = ontology.split(":");
-
-        return `https://www.ebi.ac.uk/ols/ontologies/${identifier}`;
-    }
-
-    return "";
+  return ''
 }
 
 /**
@@ -49,23 +47,21 @@ export function buildOntologySearchUrl(ontology = "") {
  * @param identifier
  * @returns {string}
  */
-export function buildOntologyTermUrl(ontology, identifier = "") {
+export function buildOntologyTermUrl(ontology, identifier = '') {
+  if (ontology && identifier) {
+    /* Grab the identifier used to build the url. */
+    const id = getOntologyTermIdentifier(identifier)
 
-    if ( ontology && identifier ) {
+    /* Grab the url variables required to build the url. */
+    const ontologyShortName = getOntologyShortName(ontology, identifier)
+    const libraryURL = getOntologyTermLibraryURL(id)
+    const term = getOntologyTerm(id)
+    const iriParam = `${libraryURL}/${term}`
 
-        /* Grab the identifier used to build the url. */
-        const id = getOntologyTermIdentifier(identifier);
+    return `https://www.ebi.ac.uk/ols/ontologies/${ontologyShortName}/terms?iri=${iriParam}`
+  }
 
-        /* Grab the url variables required to build the url. */
-        const ontologyShortName = getOntologyShortName(ontology, identifier);
-        const libraryURL = getOntologyTermLibraryURL(id);
-        const term = getOntologyTerm(id);
-        const iriParam = `${libraryURL}/${term}`;
-
-        return `https://www.ebi.ac.uk/ols/ontologies/${ontologyShortName}/terms?iri=${iriParam}`;
-    }
-
-    return "";
+  return ''
 }
 
 /**
@@ -75,14 +71,17 @@ export function buildOntologyTermUrl(ontology, identifier = "") {
  * @param category
  * @returns {{}}
  */
-export function findMetadataTypeEntityCategory(metadataTypeEntityCategories, category) {
+export function findMetadataTypeEntityCategory(
+  metadataTypeEntityCategories,
+  category
+) {
+  if (metadataTypeEntityCategories.categories) {
+    return metadataTypeEntityCategories.categories.find(
+      metadataTypeCategory => metadataTypeCategory.categoryName === category
+    )
+  }
 
-    if ( metadataTypeEntityCategories.categories ) {
-
-        return metadataTypeEntityCategories.categories.find(metadataTypeCategory => metadataTypeCategory.categoryName === category);
-    }
-
-    return {};
+  return {}
 }
 
 /**
@@ -93,10 +92,11 @@ export function findMetadataTypeEntityCategory(metadataTypeEntityCategories, cat
  * @returns {void | Array | T | *}
  */
 export function getMetadataCategory(sitePageId, allMetadataEntity) {
+  const entity = getMetadataEntity(allMetadataEntity)
 
-    const entity = getMetadataEntity(allMetadataEntity);
-
-    return entity.categories.find(category => category.schemas.find(schema => schema.id === sitePageId));
+  return entity.categories.find(category =>
+    category.schemas.find(schema => schema.id === sitePageId)
+  )
 }
 
 /**
@@ -106,9 +106,8 @@ export function getMetadataCategory(sitePageId, allMetadataEntity) {
  * @returns {T}
  */
 export function getMetadataEntity(allMetadataEntity) {
-
-    /* Get the entity. */
-    return allMetadataEntity.edges.find(entity => entity.node).node;
+  /* Get the entity. */
+  return allMetadataEntity.edges.find(entity => entity.node).node
 }
 
 /**
@@ -120,25 +119,23 @@ export function getMetadataEntity(allMetadataEntity) {
  * @returns {void | Array | T | *}
  */
 export function getMetadataSchema(category, sitePageId, showAllMetadata) {
+  /* Grab the schema. */
+  const schema = category.schemas.find(schema => schema.id === sitePageId)
 
-    /* Grab the schema. */
-    const schema = category.schemas.find(schema => schema.id === sitePageId);
+  /* Early exit - return schema with all metadata properties unfiltered. */
+  /* Toggle "Show required fields only" is unchecked. */
+  if (showAllMetadata) {
+    return schema
+  }
 
-    /* Early exit - return schema with all metadata properties unfiltered. */
-    /* Toggle "Show required fields only" is unchecked. */
-    if ( showAllMetadata ) {
+  /* Filter schema properties for required fields only. */
+  const filteredProperties = filterMetadataSchemaProperties(schema.properties)
 
-        return schema;
-    }
+  /* Clone the schema and update the properties. */
+  const schemaClone = Object.assign({}, schema)
+  schemaClone.properties = filteredProperties
 
-    /* Filter schema properties for required fields only. */
-    const filteredProperties = filterMetadataSchemaProperties(schema.properties);
-
-    /* Clone the schema and update the properties. */
-    const schemaClone = Object.assign({}, schema);
-    schemaClone.properties = filteredProperties;
-
-    return schemaClone;
+  return schemaClone
 }
 
 /**
@@ -149,36 +146,31 @@ export function getMetadataSchema(category, sitePageId, showAllMetadata) {
  * @returns {string}
  */
 export function selectPreferredOntologyId(ontologies) {
+  /* Initialize ontology Id. */
+  let ontologyId = ''
 
-    /* Initialize ontology Id. */
-    let ontologyId = "";
+  if (ontologies) {
+    for (let ontology of ontologies) {
+      const [, identifier] = ontology.split(':')
+      const id = identifier.toUpperCase()
 
-    if ( ontologies ) {
+      /* Break and return HCAO ontology. */
+      if (id === Ontology.HCAO) {
+        ontologyId = id
+        break
+      }
 
-        for ( let ontology of ontologies ) {
+      /* Continue search; maintain EFO ontology. */
+      if (ontologyId === Ontology.EFO) {
+        continue
+      }
 
-            const [,identifier] = ontology.split(":");
-            const id = identifier.toUpperCase();
-
-            /* Break and return HCAO ontology. */
-            if ( id === Ontology.HCAO ) {
-
-                ontologyId = id;
-                break;
-            }
-
-            /* Continue search; maintain EFO ontology. */
-            if ( ontologyId === Ontology.EFO ) {
-
-                continue;
-            }
-
-            /* Assign ontology identifier. */
-            ontologyId = id;
-        }
+      /* Assign ontology identifier. */
+      ontologyId = id
     }
+  }
 
-    return ontologyId;
+  return ontologyId
 }
 
 /**
@@ -189,19 +181,16 @@ export function selectPreferredOntologyId(ontologies) {
  * @returns {*}
  */
 function filterMetadataSchemaProperties(properties) {
+  /* Handle case when only required metadata properties are rendered. */
+  if (properties) {
+    return properties.filter(property => {
+      const { primaryRequired, required } = property || {}
 
-    /* Handle case when only required metadata properties are rendered. */
-    if ( properties ) {
+      return primaryRequired && required
+    })
+  }
 
-        return properties.filter(property => {
-
-            const {primaryRequired, required} = property || {};
-
-            return primaryRequired && required;
-        });
-    }
-
-    return [];
+  return []
 }
 
 /**
@@ -215,17 +204,15 @@ function filterMetadataSchemaProperties(properties) {
  * @returns {*}
  */
 function getOntologyShortName(ontology, identifier) {
+  /* Grab the ontology term ontology, and return the ontology short name, if it exists. */
+  const ontologyTermOntology = OntologyTermOntology[identifier]
 
-    /* Grab the ontology term ontology, and return the ontology short name, if it exists. */
-    const ontologyTermOntology = OntologyTermOntology[identifier];
+  if (ontologyTermOntology) {
+    return ontologyTermOntology
+  }
 
-    if ( ontologyTermOntology ) {
-
-        return ontologyTermOntology;
-    }
-
-    /* Otherwise, return the originally selected ontology. */
-    return ontology.toLowerCase();
+  /* Otherwise, return the originally selected ontology. */
+  return ontology.toLowerCase()
 }
 
 /**
@@ -235,14 +222,11 @@ function getOntologyShortName(ontology, identifier) {
  * @returns {*}
  */
 function getOntologyTerm(identifier) {
+  if (identifier) {
+    return identifier.replace(':', '_')
+  }
 
-    if ( identifier ) {
-
-        return identifier
-            .replace(":", "_");
-    }
-
-    return "";
+  return ''
 }
 
 /**
@@ -255,17 +239,15 @@ function getOntologyTerm(identifier) {
  * @returns {*}
  */
 function getOntologyTermIdentifier(identifier) {
+  /* Grab any cross referenced ontology term identifier. */
+  const ontologyTermIdentifier = OntologyTermIdentifier[identifier]
 
-    /* Grab any cross referenced ontology term identifier. */
-    const ontologyTermIdentifier = OntologyTermIdentifier[identifier];
+  if (ontologyTermIdentifier) {
+    return ontologyTermIdentifier
+  }
 
-    if ( ontologyTermIdentifier ) {
-
-        return ontologyTermIdentifier;
-    }
-
-    /* The identifier is not cross referenced and can be used as is. */
-    return identifier;
+  /* The identifier is not cross referenced and can be used as is. */
+  return identifier
 }
 
 /**
@@ -275,22 +257,17 @@ function getOntologyTermIdentifier(identifier) {
  * @returns {*}
  */
 function getOntologyTermLibraryURL(identifier) {
+  /* Initialize the library url. */
+  let iriLibrary = OntologyLibraryURL.OBO
 
-    /* Initialize the library url. */
-    let iriLibrary = OntologyLibraryURL.OBO;
+  if (identifier) {
+    const [curie] = identifier.toUpperCase().split(':')
 
-    if ( identifier ) {
-
-        const [curie,] = identifier
-            .toUpperCase()
-            .split(":");
-
-        /* Grab the library url that corresponds with the curie. */
-        if ( OntologyLibraryURL[curie] ) {
-
-            iriLibrary = OntologyLibraryURL[curie];
-        }
+    /* Grab the library url that corresponds with the curie. */
+    if (OntologyLibraryURL[curie]) {
+      iriLibrary = OntologyLibraryURL[curie]
     }
+  }
 
-    return encodeURIComponent(iriLibrary);
+  return encodeURIComponent(iriLibrary)
 }

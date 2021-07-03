@@ -4,9 +4,9 @@
  *
  * Style definitions specific to the HCA Data Portal metadata schema property field data type component.
  */
-@import "../../../styles/vars.module.css";
+@import '../../../styles/vars.module.css';
 
 /* Data Type. */
 .dataType {
-    color: var(--gray-dark);
+  color: var(--gray-dark);
 }
