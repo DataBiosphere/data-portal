@@ -6,6 +6,6 @@
  */
 
 export const Target = {
-    "BLANK": "_blank",
-    "SELF": "_self",
-};
+  BLANK: '_blank',
+  SELF: '_self',
+}

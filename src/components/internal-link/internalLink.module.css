@@ -8,24 +8,24 @@
 
 /* Anchor wrapper */
 .anchor {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    margin: 0;
-    outline: 0;
-    padding: 0 0 0 4px;
-    position: absolute; /* Required to prevent SVG wrapping to new line */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  outline: 0;
+  padding: 0 0 0 4px;
+  position: absolute; /* Required to prevent SVG wrapping to new line */
 }
 
 /* Anchor - relative. */
 .anchorRelative {
-    position: relative; /* Required - for metadata - to prevent SVG positioning over copy icon. */
+  position: relative; /* Required - for metadata - to prevent SVG positioning over copy icon. */
 }
 
 /* Anchor typically hidden */
 .anchor svg {
-    vertical-align: middle;
-    visibility: hidden;
+  vertical-align: middle;
+  visibility: hidden;
 }
 
 /* Show anchor on hover/focus */
@@ -43,5 +43,5 @@ h4 .anchor:focus svg,
 h5 .anchor:focus svg,
 h6 .anchor:focus svg,
 span:focus .anchor svg {
-    visibility: visible;
+  visibility: visible;
 }

@@ -7,67 +7,74 @@
  */
 
 // Core dependencies
-import React from "react";
+import React from 'react'
 
 // App dependencies
-import ContentWrapper from "../contentWrapper/contentWrapper";
-import Nav from "../nav/nav";
-import TOC from "../toc/toc";
+import ContentWrapper from '../contentWrapper/contentWrapper'
+import Nav from '../nav/nav'
+import TOC from '../toc/toc'
 
 // Styles
-import compStyles from "./hcaContent.module.css";
+import compStyles from './hcaContent.module.css'
 
-let classNames = require("classnames");
+let classNames = require('classnames')
 
 class HCAContent extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { showTOC: true }
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = ({showTOC: true});
-    }
+  isUseNav = () => {
+    const { links } = this.props
 
-    isUseNav = () => {
+    return links && links.length > 0
+  }
 
-        const {links} = this.props;
+  isUseToc = () => {
+    const { showTOC } = this.state
 
-        return links && links.length > 0;
-    };
+    return showTOC
+  }
 
-    isUseToc = () => {
+  onHandleUseTOC = event => {
+    this.setState({ showTOC: event })
+  }
 
-        const {showTOC} = this.state;
+  render() {
+    const {
+      activeLocation,
+      children,
+      docPath,
+      label,
+      links,
+      metadataContent,
+      tabKey,
+    } = this.props
+    const useToc = this.isUseToc()
+    const useNav = this.isUseNav()
+    const classNamesContent = classNames(compStyles.hcaContent, {
+      [compStyles.metadataContent]: metadataContent,
+    })
 
-        return showTOC;
-    };
-
-    onHandleUseTOC = (event) => {
-
-        this.setState({showTOC: event});
-    };
-
-    render() {
-        const {activeLocation, children, docPath, label, links, metadataContent, tabKey} = this.props;
-        const useToc = this.isUseToc();
-        const useNav = this.isUseNav();
-        const classNamesContent = classNames(
-            compStyles.hcaContent,
-            {[compStyles.metadataContent]: metadataContent});
-
-        return (
-            <div className={classNamesContent}>
-                <ContentWrapper marginLeft={!useNav} marginRight={!useToc}>
-                    {useNav ?
-                        <Nav label={label} links={links} tabKey={tabKey}/> : null}
-                        <div id={"hcaContent"} className={compStyles.innerContainer}>{children}</div>
-                    {useToc ?
-                        <TOC activeLocation={activeLocation}
-                             docPath={docPath}
-                             onHandleUseTOC={this.onHandleUseTOC.bind(this)}/> :
-                        null}
-                </ContentWrapper>
-            </div>
-        );
-    }
+    return (
+      <div className={classNamesContent}>
+        <ContentWrapper marginLeft={!useNav} marginRight={!useToc}>
+          {useNav ? <Nav label={label} links={links} tabKey={tabKey} /> : null}
+          <div id={'hcaContent'} className={compStyles.innerContainer}>
+            {children}
+          </div>
+          {useToc ? (
+            <TOC
+              activeLocation={activeLocation}
+              docPath={docPath}
+              onHandleUseTOC={this.onHandleUseTOC.bind(this)}
+            />
+          ) : null}
+        </ContentWrapper>
+      </div>
+    )
+  }
 }
 
-export default HCAContent;
+export default HCAContent

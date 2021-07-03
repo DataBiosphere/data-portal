@@ -6,18 +6,15 @@
  */
 
 // Core dependencies
-import React from "react";
+import React from 'react'
 
 // Styles
-import compStyles from "./chip.module.css";
+import compStyles from './chip.module.css'
 
 function Chip(props) {
+  const { children } = props
 
-    const {children} = props;
-
-    return (
-        <span className={compStyles.chip}>{children}</span>
-    )
+  return <span className={compStyles.chip}>{children}</span>
 }
 
-export default Chip;
+export default Chip

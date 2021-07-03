@@ -7,37 +7,36 @@
 
 /* Schema. */
 .schema {
-    flex-basis: 100%;
+  flex-basis: 100%;
 }
 
 /* Schema - title (link), description. */
 .schema > * {
-    display: block;
+  display: block;
 }
 
 /* Description. */
 .schema > span {
-    flex: 1;
-    margin: 4px 0 24px;
+  flex: 1;
+  margin: 4px 0 24px;
 }
 
 /**
  * HCA specific breakpoint
  */
 @media screen and (min-width: 768px) {
+  /* Schema. */
+  .schema {
+    flex-basis: calc(50% - 32px);
+  }
 
-    /* Schema. */
-    .schema {
-        flex-basis: calc(50% - 32px);
-    }
+  /* Schema - odds. */
+  .schema:nth-of-type(odd) {
+    padding-right: 16px;
+  }
 
-    /* Schema - odds. */
-    .schema:nth-of-type(odd) {
-        padding-right: 16px;
-    }
-
-    /* Schema - evens. */
-    .schema:nth-of-type(even) {
-        padding-left: 16px;
-    }
+  /* Schema - evens. */
+  .schema:nth-of-type(even) {
+    padding-left: 16px;
+  }
 }

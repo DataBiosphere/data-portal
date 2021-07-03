@@ -5,31 +5,30 @@
  * Style definitions specific to the HCA Data Portal announcement component.
  */
 
-@import "../../styles/vars.module.css";
+@import '../../styles/vars.module.css';
 
 /* Announcement */
 .announcement {
-    background-color: var(--blue-light);
-    padding: 20px 16px; /* Site gutter */
-    display: flex;
-    justify-content: center;
-    text-align: center;
+  background-color: var(--blue-light);
+  padding: 20px 16px; /* Site gutter */
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .announcement .announcementContent {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .announcement strong {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 /**
  * HCA specific breakpoint
  */
 @media screen and (min-width: 1200px) {
-
-    :host {
-        padding: 14px 30px; /* Site gutter */
-    }
+  :host {
+    padding: 14px 30px; /* Site gutter */
+  }
 }

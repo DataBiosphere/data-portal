@@ -13,30 +13,31 @@
  */
 
 // Core dependencies
-import React from 'react';
+import React from 'react'
 
 class LinkToBrowser extends React.Component {
+  trimRelativeLink = () => {
+    const { relativelink } = this.props
 
-	trimRelativeLink = () => {
+    if (relativelink.startsWith('/')) {
+      return relativelink.slice(1)
+    }
 
-		const {relativelink} = this.props;
+    return relativelink
+  }
 
-		if ( relativelink.startsWith('/') ) {
-
-			return relativelink.slice(1);
-		}
-
-		return relativelink;
-	};
-
-	render() {
-		const {children} = this.props;
-		return (
-			<a href={`${process.env.GATSBY_EXPLORE_URL}${this.trimRelativeLink()}`}
-			   target='_blank'
-			   rel='noopener noreferrer'>{children}</a>
-		);
-	}
+  render() {
+    const { children } = this.props
+    return (
+      <a
+        href={`${process.env.GATSBY_EXPLORE_URL}${this.trimRelativeLink()}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {children}
+      </a>
+    )
+  }
 }
 
-export default LinkToBrowser;
+export default LinkToBrowser

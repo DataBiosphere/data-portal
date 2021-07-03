@@ -6,5 +6,5 @@
  */
 
 export const Relationship = {
-    "NOOPENER_NOREFERRER": "noopener noreferrer",
-};
+  NOOPENER_NOREFERRER: 'noopener noreferrer',
+}

@@ -6,14 +6,19 @@
  */
 
 // Core dependencies
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs')
+const path = require('path')
 
 // Template variables
-const denyProperties = ["describedBy", "schema_version", "schema_type"];
-const denySchemaFilePaths = ["links.json", "property_migrations.json", "versions.json"];
-const metadataJsonPath = getMetadataJSONPath();
-const urlGitHubPrefix = "https://github.com/HumanCellAtlas/metadata-schema/blob/master/json_schema";
+const denyProperties = ['describedBy', 'schema_version', 'schema_type']
+const denySchemaFilePaths = [
+  'links.json',
+  'property_migrations.json',
+  'versions.json',
+]
+const metadataJsonPath = getMetadataJSONPath()
+const urlGitHubPrefix =
+  'https://github.com/HumanCellAtlas/metadata-schema/blob/master/json_schema'
 
 /**
  * Returns a map object of schema JSON and relative path.
@@ -21,9 +26,8 @@ const urlGitHubPrefix = "https://github.com/HumanCellAtlas/metadata-schema/blob/
  * @returns {Promise.<*>}
  */
 const buildSchemaJSONByPath = async function buildSchemaJSONByPath() {
-
-    return await mapSchemaJSONByPath(metadataJsonPath);
-};
+  return await mapSchemaJSONByPath(metadataJsonPath)
+}
 
 /**
  * Returns the metadata entities.
@@ -34,11 +38,12 @@ const buildSchemaJSONByPath = async function buildSchemaJSONByPath() {
  * @param setOfMetadataEntities
  * @returns {Array}
  */
-const getMetadataEntities = function getMetadataEntities(setOfMetadataEntities) {
-
-    /* Return the entities. */
-    return [...setOfMetadataEntities].map(entity => buildFEModelEntity(entity));
-};
+const getMetadataEntities = function getMetadataEntities(
+  setOfMetadataEntities
+) {
+  /* Return the entities. */
+  return [...setOfMetadataEntities].map(entity => buildFEModelEntity(entity))
+}
 
 /**
  * Returns the metadata entity categories.
@@ -49,23 +54,26 @@ const getMetadataEntities = function getMetadataEntities(setOfMetadataEntities) 
  * @param schemaFilePaths
  * @param setOfMetadataEntities
  */
-const getMetadataEntityCategories = function getMetadataEntityCategories(schemaFilePaths, setOfMetadataEntities) {
+const getMetadataEntityCategories = function getMetadataEntityCategories(
+  schemaFilePaths,
+  setOfMetadataEntities
+) {
+  /* Return the categories. */
+  return [...setOfMetadataEntities].reduce((acc, entity) => {
+    /* Grab the set of categories for the specified entity. */
+    const setOfCategories = getSetOfCategories(schemaFilePaths, entity)
 
-    /* Return the categories. */
-    return [...setOfMetadataEntities].reduce((acc, entity) => {
+    /* Sort the set of categories by alpha. */
+    const sortedCategories = [...setOfCategories].sort()
 
-        /* Grab the set of categories for the specified entity. */
-        const setOfCategories = getSetOfCategories(schemaFilePaths, entity);
+    /* For each category, build the entity category FE model. */
+    sortedCategories.map(category =>
+      acc.push(buildFEModelEntityCategory(entity, category))
+    )
 
-        /* Sort the set of categories by alpha. */
-        const sortedCategories = [...setOfCategories].sort();
-
-        /* For each category, build the entity category FE model. */
-        sortedCategories.map(category => acc.push(buildFEModelEntityCategory(entity, category)));
-
-        return acc;
-    }, []);
-};
+    return acc
+  }, [])
+}
 
 /**
  * Returns the metadata schema.
@@ -75,17 +83,18 @@ const getMetadataEntityCategories = function getMetadataEntityCategories(schemaF
  * @param schemaFilePathsByRelativePath
  * @returns {Array}
  */
-const getMetadataSchemas = function getMetadataSchemas(schemaJSONByPath, schemaFilePathsByRelativePath) {
+const getMetadataSchemas = function getMetadataSchemas(
+  schemaJSONByPath,
+  schemaFilePathsByRelativePath
+) {
+  /* Returns all schema. */
+  return [...schemaJSONByPath].map(([schemaFilePath, schemaJSON]) => {
+    /* Grab the corresponding relative path for the schema. */
+    const schemaRelativePath = schemaFilePathsByRelativePath.get(schemaFilePath)
 
-    /* Returns all schema. */
-    return [...schemaJSONByPath].map(([schemaFilePath, schemaJSON]) => {
-
-        /* Grab the corresponding relative path for the schema. */
-        const schemaRelativePath = schemaFilePathsByRelativePath.get(schemaFilePath);
-
-        return buildFEModelSchema(schemaFilePath, schemaRelativePath, schemaJSON);
-    });
-};
+    return buildFEModelSchema(schemaFilePath, schemaRelativePath, schemaJSON)
+  })
+}
 
 /**
  * Returns the metadata schema properties.
@@ -95,22 +104,34 @@ const getMetadataSchemas = function getMetadataSchemas(schemaJSONByPath, schemaF
  * @param schemaFilePathsByRelativePath
  * @returns {*}
  */
-const getMetadataSchemaProperties = function getMetadataSchemaProperties(schemaJSONByPath, schemaFilePathsByRelativePath) {
+const getMetadataSchemaProperties = function getMetadataSchemaProperties(
+  schemaJSONByPath,
+  schemaFilePathsByRelativePath
+) {
+  /* Returns all schema properties. */
+  return [...schemaJSONByPath].reduce((acc, [schemaFilePath, schemaJSON]) => {
+    /* Create the propertyPaths field, starting with schema name. */
+    /* This will be added to with property names and will help build the property anchor field. */
+    const propertyPaths = [schemaJSON.name]
+    const propertyFriendlies = [schemaJSON.title]
 
-    /* Returns all schema properties. */
-    return [...schemaJSONByPath].reduce((acc, [schemaFilePath, schemaJSON]) => {
+    /* Grab the top level schema name. */
+    const schemaName = schemaJSON.name
 
-        /* Create the propertyPaths field, starting with schema name. */
-        /* This will be added to with property names and will help build the property anchor field. */
-        const propertyPaths = [schemaJSON.name];
-        const propertyFriendlies = [schemaJSON.title];
-
-        /* Grab the top level schema name. */
-        const schemaName = schemaJSON.name;
-
-        return acc.concat(processSchemaProperties(schemaName, schemaJSON, schemaFilePath, schemaJSONByPath, schemaFilePathsByRelativePath, propertyPaths, propertyFriendlies, schemaFilePath));
-    }, []);
-};
+    return acc.concat(
+      processSchemaProperties(
+        schemaName,
+        schemaJSON,
+        schemaFilePath,
+        schemaJSONByPath,
+        schemaFilePathsByRelativePath,
+        propertyPaths,
+        propertyFriendlies,
+        schemaFilePath
+      )
+    )
+  }, [])
+}
 
 /**
  * Returns a complete map object with key value pairs of schemaJSONPath and schemaRelativePath.
@@ -120,29 +141,32 @@ const getMetadataSchemaProperties = function getMetadataSchemaProperties(schemaJ
  * @param schemaJSONByPath
  * @returns {[null]}
  */
-const getSchemaFilePathsByRelativePath = function getSchemaFilePathsByRelativePath(schemaJSONByPath) {
+const getSchemaFilePathsByRelativePath = function getSchemaFilePathsByRelativePath(
+  schemaJSONByPath
+) {
+  /* Get all schema paths. */
+  const schemaJSONPaths = [...schemaJSONByPath.keys()]
 
-    /* Get all schema paths. */
-    const schemaJSONPaths = [...schemaJSONByPath.keys()];
+  return schemaJSONPaths.reduce((acc, schemaJSONPath) => {
+    /* Grab the schema. */
+    const schemaJSON = schemaJSONByPath.get(schemaJSONPath)
+    const schemaJSONName = schemaJSON.name
 
-    return schemaJSONPaths.reduce((acc, schemaJSONPath) => {
+    /* Build the string array of schema's paths from entity, category and schema name. */
+    const schemaPaths = getSchemaPaths(schemaJSONPath, schemaJSONName)
 
-        /* Grab the schema. */
-        const schemaJSON = schemaJSONByPath.get(schemaJSONPath);
-        const schemaJSONName = schemaJSON.name;
+    /* Create relative path. */
+    /* Required for gatsby-node.js createFilePath function (specifically, the creation of slug). */
+    const schemaRelativePath = getSchemaRelativePath(schemaPaths)
 
-        /* Build the string array of schema's paths from entity, category and schema name. */
-        const schemaPaths = getSchemaPaths(schemaJSONPath, schemaJSONName);
+    acc.set(
+      schemaJSONPath.split(path.sep).join(path.posix.sep),
+      schemaRelativePath
+    )
 
-        /* Create relative path. */
-        /* Required for gatsby-node.js createFilePath function (specifically, the creation of slug). */
-        const schemaRelativePath = getSchemaRelativePath(schemaPaths);
-
-        acc.set(schemaJSONPath.split(path.sep).join(path.posix.sep), schemaRelativePath);
-
-        return acc;
-    }, new Map());
-};
+    return acc
+  }, new Map())
+}
 
 /**
  * Returns a set of metadata entries.
@@ -150,10 +174,13 @@ const getSchemaFilePathsByRelativePath = function getSchemaFilePathsByRelativePa
  * @param schemaFilePaths
  * @returns {Set}
  */
-const getSetOfMetadataEntities = function getSetOfMetadataEntities(schemaFilePaths) {
-
-    return new Set(schemaFilePaths.map(schemaFilePath => getSchemaSource(schemaFilePath)));
-};
+const getSetOfMetadataEntities = function getSetOfMetadataEntities(
+  schemaFilePaths
+) {
+  return new Set(
+    schemaFilePaths.map(schemaFilePath => getSchemaSource(schemaFilePath))
+  )
+}
 
 /**
  * Builds up the entity into a FE-compatible model.
@@ -162,10 +189,9 @@ const getSetOfMetadataEntities = function getSetOfMetadataEntities(schemaFilePat
  * @returns {{entityName: *}}
  */
 function buildFEModelEntity(entity) {
-
-    return {
-        entityName: entity
-    };
+  return {
+    entityName: entity,
+  }
 }
 
 /**
@@ -177,12 +203,11 @@ function buildFEModelEntity(entity) {
  * @param category
  * @returns {{categoryName: string, entityName: *}}
  */
-function buildFEModelEntityCategory(entity, category = "") {
-
-    return {
-        categoryName: category,
-        entity: entity
-    }
+function buildFEModelEntityCategory(entity, category = '') {
+  return {
+    categoryName: category,
+    entity: entity,
+  }
 }
 
 /**
@@ -196,32 +221,31 @@ function buildFEModelEntityCategory(entity, category = "") {
  * @returns {{category: string, description, entity: string, relativePath: string, required: Array, schemaName: string, schemaPaths: (string|string|string)[], title, urlMetadataDictionary: string, urlGitHub: string}}
  */
 function buildFEModelSchema(schemaFilePath, schemaRelativePath, schemaJSON) {
+  /* Grab the schema's entity, category and name from the file path. */
+  /* Provides schema full path history. */
+  const schemaPaths = getSchemaPaths(schemaFilePath, schemaJSON.name)
+  const [entity, category, schemaName] = schemaPaths
 
-    /* Grab the schema's entity, category and name from the file path. */
-    /* Provides schema full path history. */
-    const schemaPaths = getSchemaPaths(schemaFilePath, schemaJSON.name);
-    const [entity, category, schemaName] = schemaPaths;
+  /* Create the github url for the schema. */
+  /* Provides each schema with a link to its original source. */
+  const urlGitHub = `${urlGitHubPrefix}/${schemaFilePath}`
 
-    /* Create the github url for the schema. */
-    /* Provides each schema with a link to its original source. */
-    const urlGitHub = `${urlGitHubPrefix}/${schemaFilePath}`;
+  /* Created required field - remove deny listed properties. */
+  const requiredProperties = filterRequiredProperties(schemaJSON)
 
-    /* Created required field - remove deny listed properties. */
-    const requiredProperties = filterRequiredProperties(schemaJSON);
-
-    return {
-        category: category,
-        description: schemaJSON.description,
-        entity: entity,
-        relativePath: schemaRelativePath,
-        requiredProperties: requiredProperties,
-        schemaName: schemaName,
-        schemaPath: schemaFilePath,
-        title: schemaJSON.title,
-        type: "schema",
-        urlGitHub: urlGitHub,
-        urlTo: schemaRelativePath
-    }
+  return {
+    category: category,
+    description: schemaJSON.description,
+    entity: entity,
+    relativePath: schemaRelativePath,
+    requiredProperties: requiredProperties,
+    schemaName: schemaName,
+    schemaPath: schemaFilePath,
+    title: schemaJSON.title,
+    type: 'schema',
+    urlGitHub: urlGitHub,
+    urlTo: schemaRelativePath,
+  }
 }
 
 /**
@@ -244,68 +268,95 @@ function buildFEModelSchema(schemaFilePath, schemaRelativePath, schemaJSON) {
  * @param propPrimary
  * @param propPrimaryRequired
  */
-function buildFEModelSchemaProperties(schemaName, schemaJSON, schemaFilePath, propertyNames, requiredProperties, schemaJSONByPath, schemaFilePathsByRelativePath, propPaths, propFriendlies, propPrimaryFilePath, propPrimary, propPrimaryRequired) {
+function buildFEModelSchemaProperties(
+  schemaName,
+  schemaJSON,
+  schemaFilePath,
+  propertyNames,
+  requiredProperties,
+  schemaJSONByPath,
+  schemaFilePathsByRelativePath,
+  propPaths,
+  propFriendlies,
+  propPrimaryFilePath,
+  propPrimary,
+  propPrimaryRequired
+) {
+  /* Build the properties. */
+  const properties = propertyNames.map(propertyName => {
+    /* Get the property JSON. */
+    const propertyJSON = schemaJSON.properties[propertyName]
 
-    /* Build the properties. */
-    const properties = propertyNames.map(propertyName => {
+    const { description, user_friendly } = propertyJSON || {}
 
-        /* Get the property JSON. */
-        const propertyJSON = schemaJSON.properties[propertyName];
+    /* Create property fields. */
+    /* Fields are DP metadata specific fields - used by the metadata pages. */
+    const label = user_friendly || propertyName
+    const propertyPaths = getPropertyPaths(propPaths, propertyName)
+    const _ref = getPropertyReference(propertyJSON)
+    const reference = buildPropertyReference(
+      _ref,
+      schemaFilePathsByRelativePath
+    )
+    const required = requiredProperties.includes(propertyName)
+    /* Fields - continued - built from other fields. */
+    const anchor = getPropertyAnchor(propertyPaths)
+    const dataType = getPropertyDataType(propertyJSON)
+    const example = getPropertyExample(propertyJSON)
+    const propertyFriendlies = getPropertyFriendlies(propFriendlies, label)
+    const graphRestriction = getPropertyGraphRestriction(propertyJSON)
+    const name = getPropertyName(propertyPaths)
+    const propertyFrom = schemaJSON.name
+    const propertyFromLink = getPropertyFromLink(
+      schemaFilePath,
+      schemaFilePathsByRelativePath
+    )
+    const propertyPath = propertyPaths.join('.')
+    const relativePath = schemaFilePathsByRelativePath.get(propPrimaryFilePath)
+    const primaryRequired = getPropertyPrimaryRequired(
+      propPrimary,
+      required,
+      propPrimaryRequired
+    )
 
-        const {description, user_friendly} = propertyJSON || {};
+    /* Build the property JSON. */
+    return {
+      anchor: anchor,
+      dataType: dataType,
+      description: description,
+      example: example,
+      graphRestriction: graphRestriction,
+      label: label,
+      name: name,
+      primary: propPrimary,
+      primaryRequired: primaryRequired,
+      propertyFriendlies: propertyFriendlies,
+      propertyFrom: propertyFrom,
+      propertyFromLink: propertyFromLink,
+      propertyPath: propertyPath,
+      propertyPaths: propertyPaths,
+      _ref: _ref,
+      referenceFrom: reference.referenceFrom,
+      referenceFromLink: reference.referenceFromLink,
+      relativePath: relativePath,
+      required: required,
+      schema: schemaName,
+      type: 'property',
+      urlTo: `${relativePath}#${anchor}`,
+    }
+  })
 
-        /* Create property fields. */
-        /* Fields are DP metadata specific fields - used by the metadata pages. */
-        const label = user_friendly || propertyName;
-        const propertyPaths = getPropertyPaths(propPaths, propertyName);
-        const _ref = getPropertyReference(propertyJSON);
-        const reference = buildPropertyReference(_ref, schemaFilePathsByRelativePath);
-        const required = requiredProperties.includes(propertyName);
-        /* Fields - continued - built from other fields. */
-        const anchor = getPropertyAnchor(propertyPaths);
-        const dataType = getPropertyDataType(propertyJSON);
-        const example = getPropertyExample(propertyJSON);
-        const propertyFriendlies = getPropertyFriendlies(propFriendlies, label);
-        const graphRestriction = getPropertyGraphRestriction(propertyJSON);
-        const name = getPropertyName(propertyPaths);
-        const propertyFrom = schemaJSON.name;
-        const propertyFromLink = getPropertyFromLink(schemaFilePath, schemaFilePathsByRelativePath);
-        const propertyPath = propertyPaths.join(".");
-        const relativePath = schemaFilePathsByRelativePath.get(propPrimaryFilePath);
-        const primaryRequired = getPropertyPrimaryRequired(propPrimary, required, propPrimaryRequired);
+  /* Sort properties, alpha non-referenced first, then alpha referenced. */
+  const sortedProperties = sortSchemaProperties(properties)
 
-        /* Build the property JSON. */
-        return {
-            anchor: anchor,
-            dataType: dataType,
-            description: description,
-            example: example,
-            graphRestriction: graphRestriction,
-            label: label,
-            name: name,
-            primary: propPrimary,
-            primaryRequired: primaryRequired,
-            propertyFriendlies: propertyFriendlies,
-            propertyFrom: propertyFrom,
-            propertyFromLink: propertyFromLink,
-            propertyPath: propertyPath,
-            propertyPaths: propertyPaths,
-            _ref: _ref,
-            referenceFrom: reference.referenceFrom,
-            referenceFromLink: reference.referenceFromLink,
-            relativePath: relativePath,
-            required: required,
-            schema: schemaName,
-            type: "property",
-            urlTo: `${relativePath}#${anchor}`
-        };
-    });
-
-    /* Sort properties, alpha non-referenced first, then alpha referenced. */
-    const sortedProperties = sortSchemaProperties(properties);
-
-    /* Insert any referenced properties. */
-    return insertReferencedProperties(sortedProperties, schemaName, schemaJSONByPath, schemaFilePathsByRelativePath, propPrimaryFilePath);
+  /* Insert any referenced properties. */
+  return insertReferencedProperties(
+    sortedProperties,
+    schemaName,
+    schemaJSONByPath,
+    schemaFilePathsByRelativePath,
+    propPrimaryFilePath
+  )
 }
 
 /**
@@ -319,30 +370,27 @@ function buildFEModelSchemaProperties(schemaName, schemaJSON, schemaFilePath, pr
  * @returns {*}
  */
 function buildPropertyReference(_ref, schemaFilePathsByRelativePath) {
+  if (_ref) {
+    /* Handle case where _ref is an internal reference. */
+    const [refPath] = _ref.split('#')
 
-    if ( _ref ) {
+    /* Grab the reference schema's relative path. */
+    const schemaPath = schemaFilePathsByRelativePath.get(refPath)
 
-        /* Handle case where _ref is an internal reference. */
-        const [refPath,] = _ref.split("#");
+    /* Grab the schema name - schema path should exist - initialize schemaName as precaution. */
+    let schemaName = ''
 
-        /* Grab the reference schema's relative path. */
-        const schemaPath = schemaFilePathsByRelativePath.get(refPath);
-
-        /* Grab the schema name - schema path should exist - initialize schemaName as precaution. */
-        let schemaName = "";
-
-        if ( schemaPath ) {
-
-            schemaName = schemaPath.split("/").pop();
-        }
-
-        return {
-            referenceFrom: schemaName,
-            referenceFromLink: schemaPath
-        }
+    if (schemaPath) {
+      schemaName = schemaPath.split('/').pop()
     }
 
-    return {};
+    return {
+      referenceFrom: schemaName,
+      referenceFromLink: schemaPath,
+    }
+  }
+
+  return {}
 }
 
 /**
@@ -352,13 +400,13 @@ function buildPropertyReference(_ref, schemaFilePathsByRelativePath) {
  * @returns {Array}
  */
 function filterRequiredProperties(schemaJSON) {
+  if (schemaJSON && schemaJSON.required) {
+    return schemaJSON.required.filter(
+      property => !denyProperties.includes(property)
+    )
+  }
 
-    if ( schemaJSON && schemaJSON.required ) {
-
-        return schemaJSON.required.filter(property => !denyProperties.includes(property));
-    }
-
-    return [];
+  return []
 }
 
 /**
@@ -368,10 +416,9 @@ function filterRequiredProperties(schemaJSON) {
  * @returns {Promise.<void>}
  */
 async function generateJSON(filePath) {
+  const content = await fs.readFileSync(filePath)
 
-    const content = await fs.readFileSync(filePath);
-
-    return await JSON.parse(content);
+  return await JSON.parse(content)
 }
 
 /**
@@ -380,13 +427,11 @@ async function generateJSON(filePath) {
  * @returns {string}
  */
 function getMetadataJSONPath() {
+  if (process.env.GATSBY_ENV === 'LOCAL') {
+    return path.resolve(__dirname, '../../../hca-metadata-schema/json_schema')
+  }
 
-    if ( process.env.GATSBY_ENV === "LOCAL" ) {
-
-        return path.resolve(__dirname, "../../../hca-metadata-schema/json_schema");
-    }
-
-    return path.resolve(__dirname, "../../_metadata-schema/json_schema");
+  return path.resolve(__dirname, '../../_metadata-schema/json_schema')
 }
 
 /**
@@ -397,10 +442,9 @@ function getMetadataJSONPath() {
  * @param propertyPaths
  */
 function getPropertyAnchor(propertyPaths) {
+  const [, ...propPaths] = propertyPaths
 
-    const [, ...propPaths] = propertyPaths;
-
-    return propPaths.join("-");
+  return propPaths.join('-')
 }
 
 /**
@@ -410,29 +454,23 @@ function getPropertyAnchor(propertyPaths) {
  * @returns {*}
  */
 function getPropertyDataType(propertyJSON) {
+  const { enum: propertyEnum, items, type } = propertyJSON || {}
 
-    const {enum: propertyEnum, items, type} = propertyJSON || {};
+  let dataType = ''
 
-    let dataType = "";
-
-    if ( type ) {
-
-        dataType = type;
+  if (type) {
+    dataType = type
+  } else if (items && items.$ref) {
+    if (items.type) {
+      dataType = items.type
     }
-    else if ( items && items.$ref ) {
+  }
 
-        if ( items.type ) {
+  if (propertyEnum) {
+    return `${dataType} enum`
+  }
 
-            dataType = items.type;
-        }
-    }
-
-    if ( propertyEnum ) {
-
-        return `${dataType} enum`;
-    }
-
-    return dataType;
+  return dataType
 }
 
 /**
@@ -442,50 +480,47 @@ function getPropertyDataType(propertyJSON) {
  * @returns {string}
  */
 function getPropertyExample(propertyJSON) {
+  const { enum: propertyEnum, example: propertyExample } = propertyJSON || {}
 
-    const {enum: propertyEnum, example: propertyExample} = propertyJSON || {};
+  let example, precedingText
 
-    let example, precedingText;
+  if (propertyEnum) {
+    example = propertyEnum
+    precedingText = 'Should be one of:'
+  }
 
-    if ( propertyEnum ) {
-
-        example = propertyEnum;
-        precedingText = "Should be one of:";
+  if (JSON.stringify(propertyExample)) {
+    if (!propertyEnum) {
+      /* Stringify the property field example prior to processing. */
+      const regex = /"/g
+      example = JSON.stringify(propertyExample)
+        .replace(regex, '')
+        .split('; ')
+      precedingText = 'For example'
     }
+  }
 
-    if ( JSON.stringify(propertyExample) ) {
+  if (!example) {
+    return ''
+  }
 
-        if ( !propertyEnum ) {
+  /* Return string for property enum or example. */
+  const count = example.length - 1
 
-            /* Stringify the property field example prior to processing. */
-            const regex = /"/g;
-            example = JSON.stringify(propertyExample).replace(regex, "").split("; ");
-            precedingText = "For example";
-        }
-    }
+  return example
+    .map((e, i) => {
+      if (i === 0) {
+        return `${precedingText} "${e}"`
+      }
 
-    if ( !example ) {
+      if (i !== count) {
+        return `, "${e}"`
+      }
 
-        return "";
-    }
-
-    /* Return string for property enum or example. */
-    const count = example.length - 1;
-
-    return example.map((e, i) => {
-
-        if ( i === 0 ) {
-
-            return `${precedingText} "${e}"`;
-        }
-
-        if ( i !== count ) {
-
-            return `, "${e}"`;
-        }
-
-        return ` or "${e}"`;
-        }).join("").concat(".");
+      return ` or "${e}"`
+    })
+    .join('')
+    .concat('.')
 }
 
 /**
@@ -499,13 +534,11 @@ function getPropertyExample(propertyJSON) {
  * @returns {Array}
  */
 function getPropertyFriendlies(propertyFriendlies, propertyFriendly) {
+  if (propertyFriendlies) {
+    return propertyFriendlies.concat(propertyFriendly)
+  }
 
-    if ( propertyFriendlies ) {
-
-        return propertyFriendlies.concat(propertyFriendly);
-    }
-
-    return propertyFriendly;
+  return propertyFriendly
 }
 
 /**
@@ -515,12 +548,11 @@ function getPropertyFriendlies(propertyFriendlies, propertyFriendly) {
  * @param schemaFilePathsByRelativePath
  */
 function getPropertyFromLink(schemaFilePath, schemaFilePathsByRelativePath) {
+  /* Handles case where schemaFilePath includes an internal reference. */
+  /* e.g. "type/process/analysis/analysis_process.json#/definitions/task". */
+  const [filePath] = schemaFilePath.split('#')
 
-    /* Handles case where schemaFilePath includes an internal reference. */
-    /* e.g. "type/process/analysis/analysis_process.json#/definitions/task". */
-    const [filePath,] = schemaFilePath.split("#");
-
-    return schemaFilePathsByRelativePath.get(filePath);
+  return schemaFilePathsByRelativePath.get(filePath)
 }
 
 /**
@@ -530,17 +562,17 @@ function getPropertyFromLink(schemaFilePath, schemaFilePathsByRelativePath) {
  * @returns {{classes, direct, includeSelf, ontologies, relations}}
  */
 function getPropertyGraphRestriction(propertyJSON) {
+  const { graph_restriction } = propertyJSON || {},
+    { classes, direct, include_self, ontologies, relations } =
+      graph_restriction || {}
 
-    const {graph_restriction} = propertyJSON || {},
-        {classes, direct, include_self, ontologies, relations} = graph_restriction || {};
-
-    return {
-        classes: classes,
-        direct: direct,
-        includeSelf: include_self,
-        ontologies: ontologies,
-        relations: relations
-    }
+  return {
+    classes: classes,
+    direct: direct,
+    includeSelf: include_self,
+    ontologies: ontologies,
+    relations: relations,
+  }
 }
 
 /**
@@ -552,10 +584,9 @@ function getPropertyGraphRestriction(propertyJSON) {
  * @param propertyPaths
  */
 function getPropertyName(propertyPaths) {
+  const [, ...propPaths] = propertyPaths
 
-    const [, ...propPaths] = propertyPaths;
-
-    return propPaths.join(".");
+  return propPaths.join('.')
 }
 
 /**
@@ -569,13 +600,11 @@ function getPropertyName(propertyPaths) {
  * @returns {Array}
  */
 function getPropertyPaths(propertyPaths, propertyName) {
+  if (propertyPaths) {
+    return propertyPaths.concat(propertyName)
+  }
 
-    if ( propertyPaths ) {
-
-        return propertyPaths.concat(propertyName);
-    }
-
-    return propertyName;
+  return propertyName
 }
 
 /**
@@ -591,15 +620,13 @@ function getPropertyPaths(propertyPaths, propertyName) {
  * @returns {*}
  */
 function getPropertyPrimaryRequired(primary, required, primaryShowRequired) {
+  /* Primary schema - return required value. */
+  if (primary) {
+    return required
+  }
 
-    /* Primary schema - return required value. */
-    if ( primary ) {
-
-        return required;
-    }
-
-    /* Secondary and or tertiary schema will return the value of its primary schema. */
-    return primaryShowRequired;
+  /* Secondary and or tertiary schema will return the value of its primary schema. */
+  return primaryShowRequired
 }
 
 /**
@@ -609,20 +636,17 @@ function getPropertyPrimaryRequired(primary, required, primaryShowRequired) {
  * @returns {*}
  */
 function getPropertyReference(propertyJSON) {
+  const { items, $ref } = propertyJSON || {}
 
-    const {items, $ref} = propertyJSON || {};
+  if ($ref) {
+    return $ref
+  }
 
-    if ( $ref ) {
+  if (items && items.$ref) {
+    return items.$ref
+  }
 
-        return $ref;
-    }
-
-    if ( items && items.$ref ) {
-
-        return items.$ref;
-    }
-
-    return "";
+  return ''
 }
 
 /**
@@ -633,17 +657,15 @@ function getPropertyReference(propertyJSON) {
  * @returns {*}
  */
 function getSchemaCategory(schemaFileRelativePath) {
+  const category = schemaFileRelativePath.split('/')[1]
 
-    const category = schemaFileRelativePath.split("/")[1];
+  /* Return category if it isn't a JSON file. */
+  /* Handles case where an entity is not grouped by categories e.g. the entity "system". */
+  if (category.endsWith('.json')) {
+    return ''
+  }
 
-    /* Return category if it isn't a JSON file. */
-    /* Handles case where an entity is not grouped by categories e.g. the entity "system". */
-    if ( category.endsWith(".json") ) {
-
-        return "";
-    }
-
-    return category;
+  return category
 }
 
 /**
@@ -654,8 +676,7 @@ function getSchemaCategory(schemaFileRelativePath) {
  * @returns {*}
  */
 function getSchemaEntity(schemaFileRelativePath) {
-
-    return schemaFileRelativePath.split("/")[0];
+  return schemaFileRelativePath.split('/')[0]
 }
 
 /**
@@ -669,55 +690,52 @@ function getSchemaEntity(schemaFileRelativePath) {
  * @returns {*}
  */
 function getSchemaJSON(schemaFilePath, schemaJSONByPath) {
+  if (schemaFilePath) {
+    const [schemaPath, schemaInternalRef] = schemaFilePath.split('#')
 
-    if ( schemaFilePath ) {
+    /* Get the corresponding schema JSON, for the specified path. */
+    const schemaJSON = schemaJSONByPath.get(schemaPath)
 
-        const [schemaPath, schemaInternalRef] = schemaFilePath.split("#");
-
-        /* Get the corresponding schema JSON, for the specified path. */
-        const schemaJSON = schemaJSONByPath.get(schemaPath);
-
-        /* If an internal file reference exists, build and return the schema JSON for the reference.
+    /* If an internal file reference exists, build and return the schema JSON for the reference.
         /* e.g. see https://github.com/HumanCellAtlas/metadata-schema/blob/master/json_schema/type/process/analysis/analysis_process.json.
         /* The schema references itself (see property "tasks") e.g. where "$ref": "type/process/analysis/analysis_process.json#/definitions/task".
         /* The internal reference provides element "breadcrumbs" e.g. breadcrumbs for the example above are the keys "definitions" and "task". */
-        if ( schemaInternalRef ) {
+    if (schemaInternalRef) {
+      /* Get the internal path as an array. e.g. /definitions/task --> ["definitions", "task"]. */
+      const breadcrumbs = schemaInternalRef
+        .trim()
+        .slice(1)
+        .split('/')
 
-            /* Get the internal path as an array. e.g. /definitions/task --> ["definitions", "task"]. */
-            const breadcrumbs = schemaInternalRef.trim().slice(1).split("/");
-
-            /* Use the breadcrumbs to find the corresponding JSON for the internal reference. */
-            const internalRefJSON = breadcrumbs.reduce((acc, breadcrumb) => {
-
-                /* First pass - assign the schema to the accumulator. */
-                if ( !Object.keys(acc).length ) {
-
-                    acc = schemaJSON;
-                }
-
-                /* Check the key is valid. */
-                if ( acc[breadcrumb] ) {
-
-                    /* Assign the new schema to the accumulator. */
-                    acc = Object.assign({}, acc[breadcrumb]);
-                }
-
-                return acc;
-            }, {});
-
-            /* Build and return the internal reference JSON in a model similar to schemaJSON. */
-            /* This will facilitate the processing of the JSON into the metadata properties model. */
-            return {
-                name: schemaJSON.name,
-                properties: internalRefJSON.properties,
-                required: internalRefJSON.required
-            };
+      /* Use the breadcrumbs to find the corresponding JSON for the internal reference. */
+      const internalRefJSON = breadcrumbs.reduce((acc, breadcrumb) => {
+        /* First pass - assign the schema to the accumulator. */
+        if (!Object.keys(acc).length) {
+          acc = schemaJSON
         }
 
-        return schemaJSON;
+        /* Check the key is valid. */
+        if (acc[breadcrumb]) {
+          /* Assign the new schema to the accumulator. */
+          acc = Object.assign({}, acc[breadcrumb])
+        }
+
+        return acc
+      }, {})
+
+      /* Build and return the internal reference JSON in a model similar to schemaJSON. */
+      /* This will facilitate the processing of the JSON into the metadata properties model. */
+      return {
+        name: schemaJSON.name,
+        properties: internalRefJSON.properties,
+        required: internalRefJSON.required,
+      }
     }
 
-    return [];
+    return schemaJSON
+  }
+
+  return []
 }
 
 /**
@@ -731,16 +749,15 @@ function getSchemaJSON(schemaFilePath, schemaJSONByPath) {
  * @returns {[string,string,string]}
  */
 function getSchemaPaths(schemaFilePath, schemaName) {
+  /* Get the schema's entity. */
+  const entity = getSchemaEntity(schemaFilePath)
 
-    /* Get the schema's entity. */
-    const entity = getSchemaEntity(schemaFilePath);
+  /* Get the schema's category. */
+  const category = getSchemaCategory(schemaFilePath)
 
-    /* Get the schema's category. */
-    const category = getSchemaCategory(schemaFilePath);
-
-    /* Create schemaPaths field - DP metadata specific field required for metadata "path". */
-    /* Provides schema full path history. */
-    return [entity, category, schemaName];
+  /* Create schemaPaths field - DP metadata specific field required for metadata "path". */
+  /* Provides schema full path history. */
+  return [entity, category, schemaName]
 }
 
 /**
@@ -750,21 +767,20 @@ function getSchemaPaths(schemaFilePath, schemaName) {
  * @returns {Array.<*>}
  */
 function getSchemaPropertyNames(schemaJSON) {
+  /* Get the properties for the schema - filter out deny listed properties. */
+  const propertyNames = Object.keys(schemaJSON.properties).filter(
+    property => !denyProperties.includes(property)
+  )
 
-    /* Get the properties for the schema - filter out deny listed properties. */
-    const propertyNames = Object.keys(schemaJSON.properties)
-        .filter(property => !denyProperties.includes(property));
+  /* Move provenance property to end of the list - if it exists. */
+  if (propertyNames.includes('provenance')) {
+    const provenanceIndex = propertyNames.indexOf('provenance')
 
-    /* Move provenance property to end of the list - if it exists. */
-    if ( propertyNames.includes("provenance") ) {
+    propertyNames.splice(provenanceIndex, 1)
+    propertyNames.push('provenance')
+  }
 
-        const provenanceIndex = propertyNames.indexOf("provenance");
-
-        propertyNames.splice(provenanceIndex, 1);
-        propertyNames.push("provenance");
-    }
-
-    return propertyNames;
+  return propertyNames
 }
 
 /**
@@ -776,18 +792,16 @@ function getSchemaPropertyNames(schemaJSON) {
  * @returns {string}
  */
 function getSchemaRelativePath(schemaPaths) {
+  const [entity, category, schemaName] = schemaPaths
 
-    const [entity, category, schemaName] = schemaPaths;
+  /* Return relative path defined by category. */
+  if (category) {
+    return `/metadata/dictionary/${category}/${schemaName}`
+  }
 
-    /* Return relative path defined by category. */
-    if ( category ) {
-
-        return `/metadata/dictionary/${category}/${schemaName}`;
-    }
-
-    /* Handles case where an entity is not grouped by categories e.g. the entity "system". */
-    /* Return relative path defined by entity. */
-    return `/metadata/dictionary/${entity}/${schemaName}`;
+  /* Handles case where an entity is not grouped by categories e.g. the entity "system". */
+  /* Return relative path defined by entity. */
+  return `/metadata/dictionary/${entity}/${schemaName}`
 }
 
 /**
@@ -797,8 +811,7 @@ function getSchemaRelativePath(schemaPaths) {
  * @returns {*}
  */
 function getSchemaSource(schemaFileRelativePath) {
-
-    return schemaFileRelativePath.split("/")[0];
+  return schemaFileRelativePath.split('/')[0]
 }
 
 /**
@@ -809,19 +822,16 @@ function getSchemaSource(schemaFileRelativePath) {
  * @returns {*}
  */
 function getSetOfCategories(schemaFilePaths, entity) {
+  return schemaFilePaths.reduce((acc, schemaFilePath) => {
+    /* Process any schema file that belongs to the entity. */
+    if (schemaFilePath.startsWith(entity)) {
+      /* Grab the category. */
+      const category = getSchemaCategory(schemaFilePath)
+      acc.add(category)
+    }
 
-    return schemaFilePaths.reduce((acc, schemaFilePath) => {
-
-        /* Process any schema file that belongs to the entity. */
-        if ( schemaFilePath.startsWith(entity) ) {
-
-            /* Grab the category. */
-            const category = getSchemaCategory(schemaFilePath);
-            acc.add(category);
-        }
-
-        return acc;
-    }, new Set());
+    return acc
+  }, new Set())
 }
 
 /**
@@ -837,41 +847,57 @@ function getSetOfCategories(schemaFilePaths, entity) {
  * @param propPrimaryFilePath
  * @returns {*}
  */
-function insertReferencedProperties(properties, schemaName, schemaJSONByPath, schemaFilePathsByRelativePath, propPrimaryFilePath) {
+function insertReferencedProperties(
+  properties,
+  schemaName,
+  schemaJSONByPath,
+  schemaFilePathsByRelativePath,
+  propPrimaryFilePath
+) {
+  if (properties) {
+    /* Process each property to ascertain whether there is a referenced schema. */
+    /* Any referenced schema's properties shall be inserted into the properties array. */
+    return properties.reduce((acc, property) => {
+      /* Push the property on to the accumulator. */
+      acc.push(property)
 
-    if ( properties ) {
+      /* Grab any referenced properties. */
+      const referenceSchemaFilePath = property._ref
 
-        /* Process each property to ascertain whether there is a referenced schema. */
-        /* Any referenced schema's properties shall be inserted into the properties array. */
-        return properties.reduce((acc, property) => {
+      if (referenceSchemaFilePath) {
+        /* Get the JSON for the specified path, and any fields that rely on parent field information. */
+        const referenceSchemaJSON = getSchemaJSON(
+          referenceSchemaFilePath,
+          schemaJSONByPath
+        )
+        const [schemaFilePath] = referenceSchemaFilePath.split('#')
+        const referencePropertyFriendlies = property.propertyFriendlies
+        const referencePropertyPaths = property.propertyPaths
+        const referencePrimaryRequired = property.primaryRequired
 
-            /* Push the property on to the accumulator. */
-            acc.push(property);
+        /* Build the referenced properties and push them onto the accumulator. */
+        /* Note, this is a recursive call on a method, and will complete when all referenced properties have been processed. */
+        const referenceProperties = processSchemaProperties(
+          schemaName,
+          referenceSchemaJSON,
+          schemaFilePath,
+          schemaJSONByPath,
+          schemaFilePathsByRelativePath,
+          referencePropertyPaths,
+          referencePropertyFriendlies,
+          propPrimaryFilePath,
+          false,
+          referencePrimaryRequired
+        )
 
-            /* Grab any referenced properties. */
-            const referenceSchemaFilePath = property._ref;
+        acc.push(...referenceProperties)
+      }
 
-            if ( referenceSchemaFilePath ) {
+      return acc
+    }, [])
+  }
 
-                /* Get the JSON for the specified path, and any fields that rely on parent field information. */
-                const referenceSchemaJSON = getSchemaJSON(referenceSchemaFilePath, schemaJSONByPath);
-                const [schemaFilePath,] = referenceSchemaFilePath.split("#");
-                const referencePropertyFriendlies = property.propertyFriendlies;
-                const referencePropertyPaths = property.propertyPaths;
-                const referencePrimaryRequired = property.primaryRequired;
-
-                /* Build the referenced properties and push them onto the accumulator. */
-                /* Note, this is a recursive call on a method, and will complete when all referenced properties have been processed. */
-                const referenceProperties = processSchemaProperties(schemaName, referenceSchemaJSON, schemaFilePath, schemaJSONByPath, schemaFilePathsByRelativePath, referencePropertyPaths, referencePropertyFriendlies, propPrimaryFilePath, false, referencePrimaryRequired);
-
-                acc.push(...referenceProperties);
-            }
-
-            return acc;
-        }, []);
-    }
-
-    return [];
+  return []
 }
 
 /**
@@ -883,11 +909,10 @@ function insertReferencedProperties(properties, schemaName, schemaJSONByPath, sc
  * @returns {boolean | *}
  */
 function isDirentJSONSchemaFile(dirent) {
+  const jsonFileExists = dirent.name.endsWith('.json')
+  const jsonSchemaFile = !denySchemaFilePaths.includes(dirent.name)
 
-    const jsonFileExists = dirent.name.endsWith(".json");
-    const jsonSchemaFile = !denySchemaFilePaths.includes(dirent.name);
-
-    return dirent.isFile() && jsonFileExists && jsonSchemaFile;
+  return dirent.isFile() && jsonFileExists && jsonSchemaFile
 }
 
 /**
@@ -899,39 +924,38 @@ function isDirentJSONSchemaFile(dirent) {
  * @returns {Promise.<*>}
  */
 async function mapSchemaJSONByPath(dirPath) {
+  const dirents = await fs.readdirSync(dirPath, { withFileTypes: true })
 
-    const dirents = await fs.readdirSync(dirPath, {withFileTypes: true});
+  return await dirents.reduce(async (promise, dirent) => {
+    let acc = await promise
 
-    return await dirents.reduce(async (promise, dirent) => {
+    if (isDirentJSONSchemaFile(dirent)) {
+      /* Get the JSON. */
+      const schemaPath = path.resolve(dirPath, dirent.name)
+      const schemaJSON = await generateJSON(schemaPath)
 
-        let acc = await promise;
+      /* Get the schema relative path. */
+      const schemaRelPath = path.relative(
+        metadataJsonPath,
+        path.resolve(dirPath, dirent.name)
+      )
 
-        if ( isDirentJSONSchemaFile(dirent) ) {
+      /* Add to the accumulator. */
+      acc.set(schemaRelPath.split(path.sep).join(path.posix.sep), schemaJSON)
+    }
 
-            /* Get the JSON. */
-            const schemaPath = path.resolve(dirPath, dirent.name);
-            const schemaJSON = await generateJSON(schemaPath);
+    if (dirent.isDirectory()) {
+      /* Build the path for the directory. */
+      const dirRelPath = path.resolve(dirPath, dirent.name)
 
-            /* Get the schema relative path. */
-            const schemaRelPath = path.relative(metadataJsonPath, path.resolve(dirPath, dirent.name));
+      /* Explore new directory. */
+      const schemaFiles = await mapSchemaJSONByPath(dirRelPath)
 
-            /* Add to the accumulator. */
-            acc.set(schemaRelPath.split(path.sep).join(path.posix.sep), schemaJSON);
-        }
+      acc = new Map([...acc, ...schemaFiles])
+    }
 
-        if ( dirent.isDirectory() ) {
-
-            /* Build the path for the directory. */
-            const dirRelPath = path.resolve(dirPath, dirent.name);
-
-            /* Explore new directory. */
-            const schemaFiles = await mapSchemaJSONByPath(dirRelPath);
-
-            acc = new Map([...acc, ...schemaFiles]);
-        }
-
-        return acc;
-    }, Promise.resolve(new Map()));
+    return acc
+  }, Promise.resolve(new Map()))
 }
 
 /**
@@ -948,19 +972,42 @@ async function mapSchemaJSONByPath(dirPath) {
  * @param propPrimary
  * @param propPrimaryRequired
  */
-function processSchemaProperties(schemaName, schemaJSON, schemaFilePath, schemaJSONByPath, schemaFilePathsByRelativePath, propertyPaths, propertyFriendlies, propPrimaryFilePath, propPrimary = true, propPrimaryRequired = false) {
+function processSchemaProperties(
+  schemaName,
+  schemaJSON,
+  schemaFilePath,
+  schemaJSONByPath,
+  schemaFilePathsByRelativePath,
+  propertyPaths,
+  propertyFriendlies,
+  propPrimaryFilePath,
+  propPrimary = true,
+  propPrimaryRequired = false
+) {
+  /* Created required field - remove deny listed properties. */
+  const requiredProperties = filterRequiredProperties(schemaJSON)
 
-    /* Created required field - remove deny listed properties. */
-    const requiredProperties = filterRequiredProperties(schemaJSON);
+  /* Create list of property names. */
+  const propertyNames = getSchemaPropertyNames(schemaJSON)
 
-    /* Create list of property names. */
-    const propertyNames = getSchemaPropertyNames(schemaJSON);
+  /* Sort property names by alpha. */
+  const sortedPropertyNames = propertyNames.sort()
 
-    /* Sort property names by alpha. */
-    const sortedPropertyNames = propertyNames.sort();
-
-    /* Build the properties. */
-    return buildFEModelSchemaProperties(schemaName, schemaJSON, schemaFilePath, sortedPropertyNames, requiredProperties, schemaJSONByPath, schemaFilePathsByRelativePath, propertyPaths, propertyFriendlies, propPrimaryFilePath, propPrimary, propPrimaryRequired);
+  /* Build the properties. */
+  return buildFEModelSchemaProperties(
+    schemaName,
+    schemaJSON,
+    schemaFilePath,
+    sortedPropertyNames,
+    requiredProperties,
+    schemaJSONByPath,
+    schemaFilePathsByRelativePath,
+    propertyPaths,
+    propertyFriendlies,
+    propPrimaryFilePath,
+    propPrimary,
+    propPrimaryRequired
+  )
 }
 
 /**
@@ -971,22 +1018,19 @@ function processSchemaProperties(schemaName, schemaJSON, schemaFilePath, schemaJ
  * @returns {*}
  */
 function relocateSchemaPropertyToSchemaEnd(properties, propertyName) {
+  /* Grab the property index. */
+  const propertyIndex = properties.findIndex(property => {
+    return property.name.endsWith(propertyName)
+  })
 
-    /* Grab the property index. */
-    const propertyIndex = properties.findIndex(property => {
+  /* Move property to end of the list - if it exists. */
+  if (propertyIndex >= 0) {
+    const property = properties[propertyIndex]
+    properties.splice(propertyIndex, 1)
+    properties.push(property)
+  }
 
-        return property.name.endsWith(propertyName);
-    });
-
-    /* Move property to end of the list - if it exists. */
-    if ( propertyIndex >= 0 ) {
-
-        const property = properties[propertyIndex];
-        properties.splice(propertyIndex, 1);
-        properties.push(property);
-    }
-
-    return properties;
+  return properties
 }
 
 /**
@@ -998,59 +1042,50 @@ function relocateSchemaPropertyToSchemaEnd(properties, propertyName) {
  * @returns {*}
  */
 function sortSchemaProperties(properties) {
+  if (properties.length > 0) {
+    /* Sort properties. */
+    const sortedProperties = properties.sort(function(p0, p1) {
+      const p0ObjExists = p0._ref
+      const p1ObjExists = p1._ref
+      const p0Name = p0.name
+      const p1Name = p1.name
 
-    if ( properties.length > 0 ) {
+      /* Handle case where first property name alphabetically precedes the second property name. */
+      if (p0Name < p1Name) {
+        /* Handle case where the first property is of type "object" and the second property is not. */
+        /* In this instance, the second property takes precedence. */
+        if (p0ObjExists && !p1ObjExists) {
+          return 1
+        } else {
+          return -1
+        }
+      } else {
+      /* Handle case where first property name alphabetically supercedes the second property name. */
+        /* Handle case where the first property is of type "object" and the second property is not. */
+        /* In this instance, the second property takes precedence. */
+        if (!p0ObjExists && p1ObjExists) {
+          return -1
+        } else {
+          return 1
+        }
+      }
+    })
 
-        /* Sort properties. */
-        const sortedProperties = properties.sort(function(p0, p1) {
+    /* Move *_core and then provenance, should they exist, to the end of the schema properties. */
+    const relocatedProperties = relocateSchemaPropertyToSchemaEnd(
+      sortedProperties,
+      '_core'
+    )
+    return relocateSchemaPropertyToSchemaEnd(relocatedProperties, 'provenance')
+  }
 
-            const p0ObjExists = p0._ref;
-            const p1ObjExists = p1._ref;
-            const p0Name = p0.name;
-            const p1Name = p1.name;
-
-            /* Handle case where first property name alphabetically precedes the second property name. */
-            if ( p0Name < p1Name ) {
-
-                /* Handle case where the first property is of type "object" and the second property is not. */
-                /* In this instance, the second property takes precedence. */
-                if ( p0ObjExists && !p1ObjExists ) {
-
-                    return 1;
-                }
-                else {
-
-                    return -1;
-                }
-            }
-            /* Handle case where first property name alphabetically supercedes the second property name. */
-            else {
-
-                /* Handle case where the first property is of type "object" and the second property is not. */
-                /* In this instance, the second property takes precedence. */
-                if ( !p0ObjExists && p1ObjExists ) {
-
-                    return -1;
-                }
-                else {
-
-                    return 1;
-                }
-            }
-        });
-
-        /* Move *_core and then provenance, should they exist, to the end of the schema properties. */
-        const relocatedProperties = relocateSchemaPropertyToSchemaEnd(sortedProperties, "_core");
-        return relocateSchemaPropertyToSchemaEnd(relocatedProperties, "provenance");
-    }
-
-    return properties;
+  return properties
 }
 
-module.exports.buildSchemaJSONByPath = buildSchemaJSONByPath;
-module.exports.getMetadataEntities = getMetadataEntities;
-module.exports.getMetadataEntityCategories = getMetadataEntityCategories;
-module.exports.getMetadataSchemas = getMetadataSchemas;
-module.exports.getMetadataSchemaProperties = getMetadataSchemaProperties;
-module.exports.getSchemaFilePathsByRelativePath = getSchemaFilePathsByRelativePath;
-module.exports.getSetOfMetadataEntities = getSetOfMetadataEntities;
+module.exports.buildSchemaJSONByPath = buildSchemaJSONByPath
+module.exports.getMetadataEntities = getMetadataEntities
+module.exports.getMetadataEntityCategories = getMetadataEntityCategories
+module.exports.getMetadataSchemas = getMetadataSchemas
+module.exports.getMetadataSchemaProperties = getMetadataSchemaProperties
+module.exports.getSchemaFilePathsByRelativePath = getSchemaFilePathsByRelativePath
+module.exports.getSetOfMetadataEntities = getSetOfMetadataEntities

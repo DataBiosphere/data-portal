@@ -1,176 +1,176 @@
 /**
  * Global Styles
  */
-@import "./vars.module.css";
+@import './vars.module.css';
 
 :root {
-    --gutter-x: 16px;
+  --gutter-x: 16px;
 }
 
 /* Page wrapper */
 .pageWrapper {
-    display: flex; /* Required for 404 and error cell image */
-    flex: 1;
-    flex-direction: column;
-    position: relative; /* Positions metadata search component. */
+  display: flex; /* Required for 404 and error cell image */
+  flex: 1;
+  flex-direction: column;
+  position: relative; /* Positions metadata search component. */
 }
 
 /* Banner wrapper */
 .bannerWrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
 }
 
 /* Wrapper */
 .wrapper {
-    align-items: center;
-    display: flex;
-    padding: 0 var(--gutter-x);
+  align-items: center;
+  display: flex;
+  padding: 0 var(--gutter-x);
 }
 
 /* Dark background */
 .bgDark {
-    color: white;
+  color: white;
 }
 
 /* Button - class "button" */
 .button {
-    align-items: center;
-    border: none;
-    border-radius: 3px;
-    box-sizing: border-box;
-    cursor: pointer;
-    display: flex;
-    flex-shrink: 0;
-    font-size: 14px;
-    font-weight: 500;
-    height: 38px;
-    justify-content: center;
-    margin: 0;
-    min-width: 84px;
-    padding: 0 9px;
+  align-items: center;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 500;
+  height: 38px;
+  justify-content: center;
+  margin: 0;
+  min-width: 84px;
+  padding: 0 9px;
 }
 
 /* Button - register - mobile only */
 .button.blue.light.register {
-    flex-wrap: wrap;
-    height: unset;
-    line-height: 24px;
-    padding: 4px 12px;
-    width: 100%;
+  flex-wrap: wrap;
+  height: unset;
+  line-height: 24px;
+  padding: 4px 12px;
+  width: 100%;
 }
 
 /* Button content - within <span> */
 .button.blue.light span {
-    white-space: pre; /* Forces spaces to render */
+  white-space: pre; /* Forces spaces to render */
 }
 
 /* Button - class "button blue light" */
 .button.blue.light {
-    background-color: var(--blue-light);
-    border-radius: 2px;
-    color: var(--blue-dark);
-    display: inline-flex;
-    font-family: "din-2014", sans-serif;
-    font-size: 16px;
-    height: 50px;
-    letter-spacing: 1.5px;
-    min-width: 152px;
-    padding: 0 40px;
-    text-transform: uppercase;
+  background-color: var(--blue-light);
+  border-radius: 2px;
+  color: var(--blue-dark);
+  display: inline-flex;
+  font-family: 'din-2014', sans-serif;
+  font-size: 16px;
+  height: 50px;
+  letter-spacing: 1.5px;
+  min-width: 152px;
+  padding: 0 40px;
+  text-transform: uppercase;
 }
 
 /* Button - class "button primary" */
 .button.primary {
-    background-color: var(--primary);
-    color: var(--white);
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 /* Button hover - class "button primary" */
 .button.primary:hover {
-    background-color: var(--primary-hover);
+  background-color: var(--primary-hover);
 }
 
 /* Button - class "button secondary" */
 .button.secondary {
-    background-color: var(--secondary);
-    color: var(--white);
+  background-color: var(--secondary);
+  color: var(--white);
 }
 
 /* Button hover - class "button secondary" */
 .button.secondary:hover {
-    background-color: var(--secondary-hover);
+  background-color: var(--secondary-hover);
 }
 
 /* Button - class "button accent" */
 .button.accent {
-    background-color: var(--accent);
-    color: var(--white);
+  background-color: var(--accent);
+  color: var(--white);
 }
 
 /* Button hover - class "button accent" */
 .button.accent:hover {
-    background-color: var(--accent-hover);
+  background-color: var(--accent-hover);
 }
 
 /* Button - class "button outline" */
 .button.outline {
-    background-color: transparent;
-    border-radius: 0;
-    flex-grow: 0;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    padding: 10px 12px;
-    width: max-content;
+  background-color: transparent;
+  border-radius: 0;
+  flex-grow: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 10px 12px;
+  width: max-content;
 }
 
 /* Button hover - class "button outline" */
 .button.outline:hover {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 /* Button - class "button outline primary" */
 .button.outline.primary {
-    border: 1px solid var(--primary);
-    color: var(--primary);
+  border: 1px solid var(--primary);
+  color: var(--primary);
 }
 
 /* Button hover - class "button outline primary" */
 .button.outline.primary:hover {
-    border: 1px solid var(--primary-hover);
-    color: var(--primary-hover);
+  border: 1px solid var(--primary-hover);
+  color: var(--primary-hover);
 }
 
 /* Button - class "button outline bgDark" */
 .button.outline.bgDark {
-    border: 1px solid var(--white);
-    color: var(--white);
+  border: 1px solid var(--white);
+  color: var(--white);
 }
 
 /* Button - class "button disabled" */
 .button.disabled {
-    background-color: var(--gray-light);
-    color: var(--white);
-    cursor: default;
+  background-color: var(--gray-light);
+  color: var(--white);
+  cursor: default;
 }
 
 /* Edit content link */
 .editContent {
-    display: flex;
-    margin-bottom: 32px;
+  display: flex;
+  margin-bottom: 32px;
 }
 
 /* Edit content separator */
 .editContentSeparator {
-    border-top: 1px solid var(--gray-lightest);
-    padding-top: 18px;
+  border-top: 1px solid var(--gray-lightest);
+  padding-top: 18px;
 }
 
 /* Flex */
 .flex {
-    display: flex;
+  display: flex;
 }
 
 /**
@@ -178,14 +178,13 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 360px) {
-
-    /* Button - register - mobile only */
-    .button.blue.light.register {
-        flex-wrap: unset;
-        height: 50px;
-        line-height: unset;
-        padding: 0;
-    }
+  /* Button - register - mobile only */
+  .button.blue.light.register {
+    flex-wrap: unset;
+    height: 50px;
+    line-height: unset;
+    padding: 0;
+  }
 }
 
 /**
@@ -193,12 +192,11 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 480px) {
-
-    /* Button - register - mobile only */
-    .button.blue.light.register {
-        padding: 0 40px;
-        width: unset;
-    }
+  /* Button - register - mobile only */
+  .button.blue.light.register {
+    padding: 0 40px;
+    width: unset;
+  }
 }
 
 /**
@@ -206,15 +204,14 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 960px) {
-
-    /* Banner wrapper */
-    .bannerWrapper {
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0 auto;
-        padding: 0 16px;
-    }
+  /* Banner wrapper */
+  .bannerWrapper {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
 }
 
 /**
@@ -222,20 +219,19 @@
  * HCA custom breakpoint
  */
 @media screen and (min-width: 1200px) {
+  :root {
+    --gutter-x: 30px;
+  }
 
-    :root {
-        --gutter-x: 30px;
-    }
+  /* Banner Wrapper */
+  .bannerWrapper {
+    margin: 0 auto;
+    padding: 0 var(--gutter-x);
+  }
 
-    /* Banner Wrapper */
-    .bannerWrapper {
-        margin: 0 auto;
-        padding: 0 var(--gutter-x);
-    }
-
-    /* Wrapper */
-    .wrapper {
-        margin: 0 auto;
-        padding: 0 var(--gutter-x);
-    }
+  /* Wrapper */
+  .wrapper {
+    margin: 0 auto;
+    padding: 0 var(--gutter-x);
+  }
 }

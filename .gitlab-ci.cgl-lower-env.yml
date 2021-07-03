@@ -1,4 +1,3 @@
-
 stages:
   - test
   - build
@@ -6,7 +5,7 @@ stages:
 
 cache:
   paths:
-  - node_modules/
+    - node_modules/
 
 # Build Jobs
 # Build Job Template
@@ -23,10 +22,9 @@ cache:
     - npm rebuild sharp
 
   artifacts:
-      paths:
-        - public
-        - maintenance
-
+    paths:
+      - public
+      - maintenance
 
 # Test with Trufflehog
 test_trufflehog:
@@ -60,13 +58,9 @@ build_cgl-dev:
   only:
     - staging
 
-
-
-
 ########################################
 # Deploy Jobs
 ########################################
-
 
 # Deploy Job Template
 .deploy_template: &deploy_template

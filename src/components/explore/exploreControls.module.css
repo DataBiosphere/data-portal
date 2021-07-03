@@ -8,104 +8,113 @@
 
 /* Controls container */
 .controls {
-	align-self: flex-start;
-	width: 100%;
+  align-self: flex-start;
+  width: 100%;
 }
 
 /* Text - Shared Styles */
 /* Metric label, organ text, view more organs */
-.controls .label, .controls .organ span, .controls .moreOrgans {
-	font-size: 16px;
-	font-weight: 500;
+.controls .label,
+.controls .organ span,
+.controls .moreOrgans {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 /* Text - line heights - 21px */
 /* Organ text, view more organs */
-.controls .organ span, .controls .moreOrgans {
-	line-height: 21px;
+.controls .organ span,
+.controls .moreOrgans {
+  line-height: 21px;
 }
 
 /* Color - Shared Styles - blue dark */
 /* Metric count, organ text, view more organs */
-.controls .count, .controls .organ span, .controls .moreOrgans {
-	color: var(--blue-dark);
+.controls .count,
+.controls .organ span,
+.controls .moreOrgans {
+  color: var(--blue-dark);
 }
 
 /* Metric count */
 .controls .count {
-	font-size: 40px;
-	line-height: 49px; /* Per specification */
+  font-size: 40px;
+  line-height: 49px; /* Per specification */
 }
 
 /* Metric label */
 .controls .label {
-	font-family: "din-2014", sans-serif;
-	letter-spacing: 1.5px;
-	line-height: 19px; /* Per specification */
-	padding-top: 4px;
-	text-transform: uppercase;
+  font-family: 'din-2014', sans-serif;
+  letter-spacing: 1.5px;
+  line-height: 19px; /* Per specification */
+  padding-top: 4px;
+  text-transform: uppercase;
 }
 
 /* Metric label, count - loaded */
-.controls .label, .controls .count {
-	opacity: 1;
-	transition: opacity .5s ease 0s;
+.controls .label,
+.controls .count {
+  opacity: 1;
+  transition: opacity 0.5s ease 0s;
 }
 
 /* Metric label, count - loading */
-.controls .loading .label, .controls .loading .count {
-	opacity: 0;
-	transition: opacity .5s ease 0s;
+.controls .loading .label,
+.controls .loading .count {
+  opacity: 0;
+  transition: opacity 0.5s ease 0s;
 }
 
 /* Metric text */
 /* View more text */
-.controls .count, .controls .label,
+.controls .count,
+.controls .label,
 .controls a {
-	display: block;
-	text-align: center;
+  display: block;
+  text-align: center;
 }
 
 /* Flex */
 /* Organs container, organ control */
-.controls .organs, .controls .organ {
-	display: flex;
-	flex: 1;
+.controls .organs,
+.controls .organ {
+  display: flex;
+  flex: 1;
 }
 
 /* Organs container */
 .controls .organs {
-	flex-wrap: wrap;
-	padding: 20px 0 60px;
+  flex-wrap: wrap;
+  padding: 20px 0 60px;
 }
 
 /* Organ control */
 .controls .organ {
-	align-items: center;
-	border: 1px solid var(--blue-light);
-	border-radius: 2px;
-	cursor: default;
-	flex-basis: 100%;
-	height: 58px;
-	margin: 4px 0;
-	padding: 0 43px 0 18px;
-	position: relative; /* Positions arrow */
+  align-items: center;
+  border: 1px solid var(--blue-light);
+  border-radius: 2px;
+  cursor: default;
+  flex-basis: 100%;
+  height: 58px;
+  margin: 4px 0;
+  padding: 0 43px 0 18px;
+  position: relative; /* Positions arrow */
 }
 
 /* Organ control text - no click through */
 .controls .organ.unspecified span {
-	cursor: inherit;
+  cursor: inherit;
 }
 
 /* Organ arrow */
 .controls .organ img {
-	display: none;
-	height: 10px;
-	position: absolute;
-	right: 19px;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 6px;
+  display: none;
+  height: 10px;
+  position: absolute;
+  right: 19px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
 }
 
 /**
@@ -113,22 +122,21 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 600px) {
+  /* Organ control */
+  .controls .organ {
+    flex-basis: 50%;
+    max-width: calc(50% - 4px);
+  }
 
-	/* Organ control */
-	.controls .organ {
-		flex-basis: 50%;
-		max-width: calc(50% - 4px);
-	}
+  /* Organ control - odds */
+  .controls .organ:nth-of-type(1n) {
+    margin: 4px 4px 4px 0;
+  }
 
-	/* Organ control - odds */
-	.controls .organ:nth-of-type(1n) {
-		margin: 4px 4px 4px 0;
-	}
-
-	/* Organ control - evens */
-	.controls .organ:nth-of-type(2n) {
-		margin: 4px 0 4px 4px;
-	}
+  /* Organ control - evens */
+  .controls .organ:nth-of-type(2n) {
+    margin: 4px 0 4px 4px;
+  }
 }
 
 /**
@@ -136,45 +144,46 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 960px) {
+  /* Controls container */
+  .controls {
+    max-width: 468px;
+  }
 
-	/* Controls container */
-	.controls {
-		max-width: 468px;
-	}
-
-	/* Metric text */
-	/* View more text */
-	.controls .count, .controls .label,
-	.controls a {
-		text-align: left;
-	}
+  /* Metric text */
+  /* View more text */
+  .controls .count,
+  .controls .label,
+  .controls a {
+    text-align: left;
+  }
 }
 
 /* Hover state - excludes all touch devices */
 @media (any-hover: hover) {
+  /* Organ control - hover */
+  /* Excludes "no click through" control */
+  .controls .organ:not(.unspecified):hover {
+    background-color: var(--blue-dark);
+    border: 1px solid var(--blue-dark);
+    cursor: pointer;
+  }
 
-    /* Organ control - hover */
-    /* Excludes "no click through" control */
-    .controls .organ:not(.unspecified):hover {
-        background-color: var(--blue-dark);
-        border: 1px solid var(--blue-dark);
-        cursor: pointer;
-    }
+  /* Organ control, hover - text */
+  /* Excludes "no click through" control */
+  .controls .organ:not(.unspecified):hover span {
+    color: var(--white);
+  }
 
-    /* Organ control, hover - text */
-    /* Excludes "no click through" control */
-    .controls .organ:not(.unspecified):hover span {
-        color: var(--white);
-    }
+  /* Organ control, hover - arrow */
+  /* Excludes "no click through" control */
+  .controls .organ:not(.unspecified):hover img {
+    display: block;
+  }
 
-    /* Organ control, hover - arrow */
-    /* Excludes "no click through" control */
-    .controls .organ:not(.unspecified):hover img {
-        display: block;
-    }
-
-    /* Organ control - transition */
-    .controls .organ, .controls .organ:hover {
-        transition: background-color .5s ease 0s, border .5s ease 0s, color .5s ease 0s;
-    }
+  /* Organ control - transition */
+  .controls .organ,
+  .controls .organ:hover {
+    transition: background-color 0.5s ease 0s, border 0.5s ease 0s,
+      color 0.5s ease 0s;
+  }
 }

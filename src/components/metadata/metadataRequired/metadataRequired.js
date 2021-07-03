@@ -6,28 +6,28 @@
  */
 
 // Core dependencies
-import React from "react";
+import React from 'react'
 
 // App dependencies
-import Chip from "../../chip/chip";
+import Chip from '../../chip/chip'
 
 // Styles
-import compStyles from "./metadataRequired.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
+import compStyles from './metadataRequired.module.css'
+import fontStyles from '../../../styles/fontsize.module.css'
 
-const classNames = require("classnames");
+const classNames = require('classnames')
 
 function MetadataRequired(props) {
+  const { property } = props,
+    { required } = property
 
-    const {property} = props,
-        {required} = property;
-
-    return (
-        required ?
-            <Chip>
-                <span className={classNames(compStyles.required, fontStyles.xxs)}>Required</span>
-            </Chip> : null
-    )
+  return required ? (
+    <Chip>
+      <span className={classNames(compStyles.required, fontStyles.xxs)}>
+        Required
+      </span>
+    </Chip>
+  ) : null
 }
 
-export default MetadataRequired;
+export default MetadataRequired

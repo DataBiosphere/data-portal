@@ -7,58 +7,58 @@
 
 /* Button. */
 .button {
-    align-items: center;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-shrink: 0;
-    height: 38px;
-    justify-content: center;
-    margin: 0;
-    min-width: 84px;
-    padding: 0 12px;
-    white-space: nowrap;
-    width: max-content;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  height: 38px;
+  justify-content: center;
+  margin: 0;
+  min-width: 84px;
+  padding: 0 12px;
+  white-space: nowrap;
+  width: max-content;
 }
 
 /* Button - focus. */
 .button:focus {
-    outline: none;
+  outline: none;
 }
 
 /* Button icon. */
 .buttonIcon {
-    background-color: transparent;
-    min-width: unset;
-    padding: 8px;
+  background-color: transparent;
+  min-width: unset;
+  padding: 8px;
 }
 
 /* Button unelevated. */
 .buttonUnelevated {
-    border-radius: 3px;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.21px;
-    transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.21px;
+  transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Button unelevated secondary. */
 .buttonUnelevatedSecondary {
-    composes: button; /* Button styles. */
-    composes: buttonUnelevated; /* Unelevated button. */
-    background-color: var(--secondary);
-    color: var(--white);
+  composes: button; /* Button styles. */
+  composes: buttonUnelevated; /* Unelevated button. */
+  background-color: var(--secondary);
+  color: var(--white);
 }
 
 /* Button unelevated secondary - hover. */
 .buttonUnelevatedSecondary:hover {
-    background-color: var(--secondary-hover);
+  background-color: var(--secondary-hover);
 }
 
 /* Button spacer. */
 /* Typically used by <ButtonCta/> in markdown - adds margin below button. */
 .buttonSpacer {
-    margin-bottom: 18px;
+  margin-bottom: 18px;
 }
