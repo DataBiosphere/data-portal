@@ -8,11 +8,11 @@
  */
 
 // Core dependencies
-import React from "react";
+import React from 'react'
 
 const ContextMetadataToggleRequiredFields = React.createContext({
-    showAllMetadata: true,
-    onHandleToggleRequiredFields: () => {}
-});
+  showAllMetadata: true,
+  onHandleToggleRequiredFields: () => {},
+})
 
-export default ContextMetadataToggleRequiredFields;
+export default ContextMetadataToggleRequiredFields

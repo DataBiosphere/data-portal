@@ -6,6 +6,5 @@
  */
 
 export const SurveyName = {
-  "2021_SPRING_MATRIX_UX": "2021 Spring Matrix UX"
-};
-
+  '2021_SPRING_MATRIX_UX': '2021 Spring Matrix UX',
+}

@@ -6,83 +6,74 @@
  */
 
 // App dependencies
-import {EnvironmentUrl} from "./environment-url.model";
+import { EnvironmentUrl } from './environment-url.model'
 
 // Template variables
-const GATSBY_ENV = process.env.GATSBY_ENV;
+const GATSBY_ENV = process.env.GATSBY_ENV
 
 /**
  * Return the name of the atlas for the current environment.
  */
 export function getAtlas() {
-
-    return process.env.GATSBY_ATLAS;
+  return process.env.GATSBY_ATLAS
 }
 
 /**
  * Return the name of the current environment
  */
 export function getCurrentEnvironment() {
-
-    return GATSBY_ENV;
+  return GATSBY_ENV
 }
 
 /**
  * Returns the current environment's url.
  */
 export function getCurrentEnvironmentURL() {
+  const currentEnvironment = getCurrentEnvironment().toUpperCase()
 
-    const currentEnvironment = getCurrentEnvironment().toUpperCase();
-
-    return EnvironmentUrl[currentEnvironment];
+  return EnvironmentUrl[currentEnvironment]
 }
 
 /**
  * Returns the default catalog for the current environment.
- * 
+ *
  * @returns {string}
  */
 export function getDefaultCatalog() {
-
-    return process.env.GATSBY_DEFAULT_CATALOG;
+  return process.env.GATSBY_DEFAULT_CATALOG
 }
 
 /**
  * Returns true if the current environment is local.
  */
 export function isLocal() {
-
-    return GATSBY_ENV === "LOCAL";
+  return GATSBY_ENV === 'LOCAL'
 }
 
 /**
  * Return true if the atlas for the current environment is LungMAP.
  */
 export function isLungMAP() {
-
-    return getAtlas() === "lungmap";
+  return getAtlas() === 'lungmap'
 }
 
 /**
  * Returns true if the current environment is production.
  */
 export function isProd() {
-
-    return GATSBY_ENV === "PROD";
+  return GATSBY_ENV === 'PROD'
 }
 
 /**
  * Returns true if the current environment is staging.
  */
 export function isStaging() {
-
-    return GATSBY_ENV === "STAGING";
+  return GATSBY_ENV === 'STAGING'
 }
 
 /**
  * Returns true if the current environment is either local or staging.
  */
 export function isTestEnvironment() {
-
-    return isLocal() || isStaging();
+  return isLocal() || isStaging()
 }

@@ -6,218 +6,264 @@
  */
 
 // Core dependencies
-import Link from 'gatsby-link';
-import React from 'react';
+import Link from 'gatsby-link'
+import React from 'react'
 
 // App dependencies
-import ClickHandler from '../clickHandler/clickHandler';
-import HeaderNavDropDown from '../headerNavDropDown/headerNavDropDown';
-import {HeaderQuery} from '../../hooks/header-query';
-import * as ReleaseService from '../../utils/release.service';
+import ClickHandler from '../clickHandler/clickHandler'
+import HeaderNavDropDown from '../headerNavDropDown/headerNavDropDown'
+import { HeaderQuery } from '../../hooks/header-query'
+import * as ReleaseService from '../../utils/release.service'
 
 // Images
-import headerLogo from '../../../images/logo/logo-hca.png';
+import headerLogo from '../../../images/logo/logo-hca.png'
 
 // Styles
-import fontStyles from '../../styles/fontsize.module.css';
-import globalStyles from '../../styles/global.module.css';
-import dropStyles from '../headerNavDropDown/headerNavDropDown.module.css';
-import compStyles from './header.module.css';
+import fontStyles from '../../styles/fontsize.module.css'
+import globalStyles from '../../styles/global.module.css'
+import dropStyles from '../headerNavDropDown/headerNavDropDown.module.css'
+import compStyles from './header.module.css'
 
-const classNames = require('classnames');
+const classNames = require('classnames')
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { menuNav: false, openNav: false }
+    this.toggleMenu = this.toggleMenu.bind(this)
+  }
 
-	constructor(props) {
-		super(props);
-		this.state = {menuNav: false, openNav: false};
-		this.toggleMenu = this.toggleMenu.bind(this);
-	}
+  componentDidMount() {
+    // Set up header menu style
+    this.setNavStyle()
 
-	componentDidMount() {
+    window.addEventListener('resize', this.setNavStyle)
+  }
 
-		// Set up header menu style
-		this.setNavStyle();
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.setNavStyle)
+  }
 
-		window.addEventListener('resize', this.setNavStyle);
-	}
+  shouldComponentUpdate(_, nextState) {
+    return this.state !== nextState
+  }
 
-	componentWillUnmount() {
+  getReleasesUrl = () => {
+    return `${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`
+  }
 
-		window.removeEventListener('resize', this.setNavStyle);
-	}
+  isActiveClassName = docPath => {
+    return docPath && docPath.includes('/releases/')
+  }
 
-	shouldComponentUpdate(_, nextState) {
+  setNavStyle = () => {
+    const { openNav } = this.state
+    const useMenuNav = document.body.getBoundingClientRect().width < 840
+    const closeMenuNav = !useMenuNav
 
-		return this.state !== nextState;
-	}
+    this.setState({ menuNav: useMenuNav })
 
-	getReleasesUrl = () => {
+    if (closeMenuNav && openNav) {
+      // Close the menu if resize occurs when menu is open and screen width is > 840
+      this.setState({ openNav: false })
+    }
+  }
 
-		return `${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`;
-	};
+  toggleMenu = () => {
+    const { menuNav, openNav } = this.state
 
-	isActiveClassName = (docPath) => {
+    if (menuNav) {
+      this.setState({ openNav: !openNav })
+      this.props.onHandleSiteScroll(openNav)
+    }
+  }
 
-		return docPath && docPath.includes('/releases/');
-	};
+  render() {
+    const { docPath, homePage, links } = this.props,
+      { menuNav, openNav } = this.state,
+      browserLink = process.env.GATSBY_EXPLORE_URL,
+      exploreDescription = 'Search for data in the HCA',
+      exploreLabel = 'Explore',
+      hideLinks = menuNav && !openNav,
+      releaseDescription =
+        'Explore, visualize, and interact with 24 annotated datasets',
+      releaseDocumentationUrl = '/releases/2020-mar',
+      releaseLabel = 'March 2020 Release',
+      releasesMenuActive = this.isActiveClassName(docPath),
+      releaseVisible = ReleaseService.isReleaseVisible()
 
-	setNavStyle = () => {
+    const Description = props => {
+      const { children } = props
 
-		const {openNav} = this.state;
-		const useMenuNav = document.body.getBoundingClientRect().width < 840;
-		const closeMenuNav = !useMenuNav;
+      return (
+        <span className={classNames(fontStyles.xxs, compStyles.xxs)}>
+          {children}
+        </span>
+      )
+    }
 
-		this.setState({menuNav: useMenuNav});
+    const ExternalLink = props => {
+      const { children, className, linkTo } = props
 
-		if ( closeMenuNav && openNav ) {
+      return (
+        <li className={className}>
+          <a href={linkTo} onClick={this.toggleMenu}>
+            {children}
+          </a>
+        </li>
+      )
+    }
 
-			// Close the menu if resize occurs when menu is open and screen width is > 840
-			this.setState({openNav: false})
-		}
-	};
+    const HeaderNavDisplay = props => {
+      const { description, label } = props,
+        { menuNav } = this.state
 
-	toggleMenu = () => {
+      return (
+        <>
+          <span className={classNames(fontStyles.xs, compStyles.xs)}>
+            {label}
+          </span>
+          {menuNav ? <Description>{description}</Description> : null}
+        </>
+      )
+    }
 
-		const {menuNav, openNav} = this.state;
+    const InternalLink = props => {
+      const { children, className, path } = props
 
-		if ( menuNav ) {
+      return (
+        <li className={className}>
+          <Link
+            activeClassName={compStyles.active}
+            partiallyActive={true}
+            to={path}
+            onClick={this.toggleMenu}
+          >
+            {children}
+          </Link>
+        </li>
+      )
+    }
 
-			this.setState({openNav: !openNav});
-            this.props.onHandleSiteScroll(openNav);
-		}
-	};
+    const Nav = props => {
+      const { nav } = props,
+        { description, headerName, name, path } = nav || {},
+        label = headerName ? headerName : name
 
-	render() {
-		const {docPath, homePage, links} = this.props,
-			{menuNav, openNav} = this.state,
-			browserLink = process.env.GATSBY_EXPLORE_URL,
-			exploreDescription = 'Search for data in the HCA',
-			exploreLabel = 'Explore',
-			hideLinks = menuNav && !openNav,
-			releaseDescription = 'Explore, visualize, and interact with 24 annotated datasets',
-			releaseDocumentationUrl = '/releases/2020-mar',
-			releaseLabel = 'March 2020 Release',
-			releasesMenuActive = this.isActiveClassName(docPath),
-			releaseVisible = ReleaseService.isReleaseVisible();
+      return (
+        <InternalLink path={path}>
+          <HeaderNavDisplay description={description} label={label} />
+        </InternalLink>
+      )
+    }
 
-		const Description = (props) => {
+    const NavExplore = () => {
+      return (
+        <ExternalLink linkTo={browserLink}>
+          <HeaderNavDisplay
+            description={exploreDescription}
+            label={exploreLabel}
+          />
+        </ExternalLink>
+      )
+    }
 
-			const {children} = props;
+    const NavRelease = () => {
+      const button = (
+          <HeaderNavDisplay
+            description={releaseDescription}
+            label={releaseLabel}
+          />
+        ),
+        menu = (
+          <ul>
+            <ExternalLink linkTo={this.getReleasesUrl()}>
+              <span
+                className={classNames(
+                  fontStyles.xs,
+                  compStyles.xs,
+                  dropStyles.item
+                )}
+              >
+                Datasets
+              </span>
+            </ExternalLink>
+            <InternalLink path={releaseDocumentationUrl}>
+              <span
+                className={classNames(
+                  fontStyles.xs,
+                  compStyles.xs,
+                  dropStyles.item
+                )}
+              >
+                Documentation
+              </span>
+            </InternalLink>
+          </ul>
+        ),
+        { openNav } = this.state
 
-			return (
-				<span className={classNames(fontStyles.xxs, compStyles.xxs)}>{children}</span>
-			)
-		};
+      return (
+        <HeaderNavDropDown
+          activeClassName={classNames({
+            [compStyles.active]: releasesMenuActive,
+          })}
+          button={button}
+          menu={menu}
+          stack={openNav}
+        />
+      )
+    }
 
-		const ExternalLink = (props) => {
-
-			const {children, className, linkTo} = props;
-
-			return (
-				<li className={className}>
-					<a href={linkTo} onClick={this.toggleMenu}>{children}</a>
-				</li>
-			)
-		};
-
-		const HeaderNavDisplay = (props) => {
-
-			const {description, label} = props,
-				{menuNav} = this.state;
-
-			return (
-				<>
-					<span className={classNames(fontStyles.xs, compStyles.xs)}>{label}</span>
-					{menuNav ? <Description>{description}</Description> : null}
-				</>
-			)
-		};
-
-		const InternalLink = (props) => {
-
-			const {children, className, path} = props;
-
-			return (
-				<li className={className}>
-					<Link activeClassName={compStyles.active}
-						  partiallyActive={true}
-						  to={path}
-						  onClick={this.toggleMenu}>{children}</Link>
-				</li>
-			)
-		};
-
-		const Nav = (props) => {
-
-			const {nav} = props,
-				{description, headerName, name, path} = nav || {},
-				label = headerName ? headerName : name;
-
-			return (
-				<InternalLink path={path}>
-					<HeaderNavDisplay description={description} label={label}/>
-				</InternalLink>
-			)
-		};
-
-		const NavExplore = () => {
-
-			return(
-				<ExternalLink linkTo={browserLink}>
-					<HeaderNavDisplay description={exploreDescription} label={exploreLabel}/>
-				</ExternalLink>
-			)
-		};
-
-		const NavRelease = () => {
-
-			const button = <HeaderNavDisplay description={releaseDescription} label={releaseLabel}/>,
-				menu = (
-							<ul>
-								<ExternalLink linkTo={this.getReleasesUrl()}>
-									<span className={classNames(fontStyles.xs, compStyles.xs, dropStyles.item)}>Datasets</span>
-								</ExternalLink>
-								<InternalLink path={releaseDocumentationUrl}>
-									<span className={classNames(fontStyles.xs, compStyles.xs, dropStyles.item)}>Documentation</span>
-								</InternalLink>
-							</ul>
-						),
-				{openNav} = this.state;
-
-			return (
-				<HeaderNavDropDown activeClassName={classNames({[compStyles.active]: releasesMenuActive})} button={button} menu={menu} stack={openNav}/>
-			)
-		};
-
-		return (
-			<div className={classNames(compStyles.navBar, {[compStyles.hcaHeader]: homePage})}>
-				<div className={classNames(globalStyles.wrapper, compStyles.headerWrapper)}>
-					<Link to='/' className={compStyles.logo}>
-						<img src={headerLogo} alt='HCA'/>
-					</Link>
-					<div className={classNames(compStyles.links, {[compStyles.small]: menuNav}, {[compStyles.hide]: hideLinks})}>
-						<NavExplore/>
-						{links.map((l, i) => <Nav key={i} nav={l}/>)}
-						{releaseVisible ? <NavRelease/> : null}
-					</div>
-					<ClickHandler className={classNames(compStyles.menuDropDown, fontStyles.s, {[compStyles.hide]: !menuNav})}
-								  clickAction={this.toggleMenu}
-								  tag={'div'}>Menu</ClickHandler>
-					<ClickHandler className={classNames(compStyles.overlay, {[compStyles.hide]: !openNav})}
-								  clickAction={this.toggleMenu}
-								  tag={'div'}/>
-				</div>
-			</div>
-		);
-	}
+    return (
+      <div
+        className={classNames(compStyles.navBar, {
+          [compStyles.hcaHeader]: homePage,
+        })}
+      >
+        <div
+          className={classNames(globalStyles.wrapper, compStyles.headerWrapper)}
+        >
+          <Link to="/" className={compStyles.logo}>
+            <img src={headerLogo} alt="HCA" />
+          </Link>
+          <div
+            className={classNames(
+              compStyles.links,
+              { [compStyles.small]: menuNav },
+              { [compStyles.hide]: hideLinks }
+            )}
+          >
+            <NavExplore />
+            {links.map((l, i) => (
+              <Nav key={i} nav={l} />
+            ))}
+            {releaseVisible ? <NavRelease /> : null}
+          </div>
+          <ClickHandler
+            className={classNames(compStyles.menuDropDown, fontStyles.s, {
+              [compStyles.hide]: !menuNav,
+            })}
+            clickAction={this.toggleMenu}
+            tag={'div'}
+          >
+            Menu
+          </ClickHandler>
+          <ClickHandler
+            className={classNames(compStyles.overlay, {
+              [compStyles.hide]: !openNav,
+            })}
+            clickAction={this.toggleMenu}
+            tag={'div'}
+          />
+        </div>
+      </div>
+    )
+  }
 }
 
-export default (props) => {
+export default props => {
+  const { docPath } = props
 
-	const {docPath} = props;
-
-	return (
-		<Header links={HeaderQuery()} docPath={docPath} {...props}/>
-	);
+  return <Header links={HeaderQuery()} docPath={docPath} {...props} />
 }

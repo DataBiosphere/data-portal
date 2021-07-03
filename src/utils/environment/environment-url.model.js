@@ -6,7 +6,7 @@
  */
 
 export const EnvironmentUrl = {
-    "LOCAL": "http://localhost:8000/",
-    "PROD": "https://data.humancellatlas.org/",
-    "STAGING": "https://dev.singlecell.gi.ucsc.edu/"
-};
+  LOCAL: 'http://localhost:8000/',
+  PROD: 'https://data.humancellatlas.org/',
+  STAGING: 'https://dev.singlecell.gi.ucsc.edu/',
+}

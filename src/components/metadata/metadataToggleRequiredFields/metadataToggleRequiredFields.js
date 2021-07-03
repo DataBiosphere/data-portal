@@ -6,25 +6,31 @@
  */
 
 // Core dependencies
-import React, {useContext} from "react";
+import React, { useContext } from 'react'
 
 // App dependencies
-import Checkbox from "../../checkbox/checkbox";
-import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
+import Checkbox from '../../checkbox/checkbox'
+import ContextMetadataDisplaying from '../contextMetadataDisplaying/contextMetadataDisplaying'
 
 // Styles
-import compStyles from "./metadataToggleRequiredFields.module.css";
+import compStyles from './metadataToggleRequiredFields.module.css'
 
 function MetadataToggleRequiredFields() {
+  const { showAllMetadata, onHandleToggleRequiredFields } = useContext(
+    ContextMetadataDisplaying
+  )
+  const label = 'Show required fields only'
 
-    const {showAllMetadata, onHandleToggleRequiredFields} = useContext(ContextMetadataDisplaying);
-    const label = "Show required fields only";
-
-    return (
-        <span className={compStyles.toggle}>
-            <Checkbox checked={!showAllMetadata} clickAction={onHandleToggleRequiredFields} label={label} value={"showMetadata"}/>
-        </span>
-    );
+  return (
+    <span className={compStyles.toggle}>
+      <Checkbox
+        checked={!showAllMetadata}
+        clickAction={onHandleToggleRequiredFields}
+        label={label}
+        value={'showMetadata'}
+      />
+    </span>
+  )
 }
 
-export default MetadataToggleRequiredFields;
+export default MetadataToggleRequiredFields

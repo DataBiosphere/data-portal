@@ -7,181 +7,189 @@
 @import '../../styles/vars.module.css';
 
 /* Nav bar container */
-.navBar, .hcaHeader {
-	background-color: var(--white);
-	border-bottom: 1px solid var(--gray-light);
-	height: 60px;
-	position: sticky;
-	top: 0;
-	z-index: 20;
+.navBar,
+.hcaHeader {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--gray-light);
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
 /* Header for all pages but the home page */
 .navBar:not(.hcaHeader) {
-	border-bottom: none;
-	background-color: var(--white-off);
+  border-bottom: none;
+  background-color: var(--white-off);
 }
 
 /* Wrapper */
 .headerWrapper {
-	height: inherit;
-	justify-content: space-between;
+  height: inherit;
+  justify-content: space-between;
 }
 
 /* Logo */
-a.logo, a.logo img {
-	align-self: center;
-	cursor: pointer;
-	height: 30px;
-	line-height: 0 !important;
-	margin-bottom: 0 !important; /* TODO review global */
+a.logo,
+a.logo img {
+  align-self: center;
+  cursor: pointer;
+  height: 30px;
+  line-height: 0 !important;
+  margin-bottom: 0 !important; /* TODO review global */
 }
 
 /* Links */
 /* Both views - links */
 .links {
-	display: flex;
-	position: absolute;
+  display: flex;
+  position: absolute;
 }
 
 /* Normal view - links */
 .links:not(.small) {
-	left: 182px; /* 16px wrapper padding, plus 176px menu width, minus 10px padding on first link */
+  left: 182px; /* 16px wrapper padding, plus 176px menu width, minus 10px padding on first link */
 }
 
 /* Menu view - links */
 .small {
-	align-items: flex-start;
-	background-color: var(--white);
-	border-bottom: 1px solid var(--gray-light);
-	flex-direction: column;
-	height: calc(100vh - 60px);
-	justify-content: flex-start;
-	left: 0;
-	overflow-y: auto;
-	padding: 12px 0;
-	right: 0;
-	top: 60px;
-	width: 100%;
-	z-index: 100;
+  align-items: flex-start;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--gray-light);
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  justify-content: flex-start;
+  left: 0;
+  overflow-y: auto;
+  padding: 12px 0;
+  right: 0;
+  top: 60px;
+  width: 100%;
+  z-index: 100;
 }
 
 /* List */
 /* Both views - list */
 .links li {
-	list-style: none;
-	margin: 0;
+  list-style: none;
+  margin: 0;
 }
 
 /* Menu view - list */
 .small li {
-	width: 100%;
+  width: 100%;
 }
 
 /* Link <a>, <button> */
 /* Both views - link */
-.links a, .links button {
-	display: flex;
+.links a,
+.links button {
+  display: flex;
 }
 
 /* Drop down button - link */
 .links button {
-	background-color: transparent;
-	border: none;
-	text-align: left;
+  background-color: transparent;
+  border: none;
+  text-align: left;
 }
 
 /* Normal view - drop down button */
 .links:not(.small) button {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 /* Drop down button - focus */
-.links button, .links button:focus {
-	outline: none;
+.links button,
+.links button:focus {
+  outline: none;
 }
 
 /* Normal view - link */
-.links:not(.small) a, .links:not(.small) button {
-	align-items: center;
-	color: var(--gray-dark);
-	font-size: 14px;
-	font-weight: 500;
-	height: 60px;
-	padding: 0 10px;
-	width: unset;
-	white-space: nowrap;
+.links:not(.small) a,
+.links:not(.small) button {
+  align-items: center;
+  color: var(--gray-dark);
+  font-size: 14px;
+  font-weight: 500;
+  height: 60px;
+  padding: 0 10px;
+  width: unset;
+  white-space: nowrap;
 }
 
 /* Menu view - link */
-.small a, .small button {
-	align-items: flex-start;
-	color: var(--black);
-	flex-direction: column;
-	padding: 12px 24px;
-	width: 100%;
+.small a,
+.small button {
+  align-items: flex-start;
+  color: var(--black);
+  flex-direction: column;
+  padding: 12px 24px;
+  width: 100%;
 }
 
 /* Link state - hover & active */
-.links a:hover, .links:not(.small) .active, .links button:hover span {
-	color: var(--black);
+.links a:hover,
+.links:not(.small) .active,
+.links button:hover span {
+  color: var(--black);
 }
 
 /* Label */
 /* Both views - label */
 .links .xs {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 /* Menu view - label */
 .small .xs {
-	margin: 0 0 4px;
+  margin: 0 0 4px;
 }
 
 /* Description */
 .links .xxs {
-	font-weight: 400;
-	letter-spacing: 1.2px;
-	margin: 0;
-	text-transform: none;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  margin: 0;
+  text-transform: none;
 }
 
 /* Overlay - menu open */
 .overlay {
-	background-color: rgba(255, 255, 255, 0.9);
-	bottom: 0;
-	content: "";
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 60px;
-	z-index: 99; /* Positioned below showLinks */
+  background-color: rgba(255, 255, 255, 0.9);
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 60px;
+  z-index: 99; /* Positioned below showLinks */
 }
 
 /* Menu */
 .menuDropDown {
-	align-items: center;
-	color: var(--black);
-	cursor: pointer;
-	display: flex;
-	font-weight: 500;
-	margin: 0;
+  align-items: center;
+  color: var(--black);
+  cursor: pointer;
+  display: flex;
+  font-weight: 500;
+  margin: 0;
 }
 
 /* Drop down menu icon */
 .menuDropDown::before {
-	color: var(--gray-dark);
-	content: "\E313";
-	font-family: "Material Icons";
-	font-size: 18px;
-	font-weight: 400;
-	margin: 0 4px;
-
+  color: var(--gray-dark);
+  content: '\E313';
+  font-family: 'Material Icons';
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 4px;
 }
 
 /* Hide */
-.hide, .links.hide {
-	display: none;
+.hide,
+.links.hide {
+  display: none;
 }
 
 /**
@@ -189,12 +197,11 @@ a.logo, a.logo img {
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 840px) {
-
-	/* Wrapper */
-	.headerWrapper {
-		justify-content: flex-start;
-		position: relative; /* Positions links - left aligned with content */
-	}
+  /* Wrapper */
+  .headerWrapper {
+    justify-content: flex-start;
+    position: relative; /* Positions links - left aligned with content */
+  }
 }
 
 /**
@@ -202,21 +209,21 @@ a.logo, a.logo img {
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1024px) {
+  /* Logo */
+  a.logo,
+  a.logo img {
+    height: 40px;
+  }
 
-	/* Logo */
-	a.logo, a.logo img {
-		height: 40px;
-	}
+  /* Normal view - links */
+  .links:not(.small) {
+    left: 294px; /* 16px wrapper padding, plus 290px menu width, minus 12px padding on first link */
+  }
 
-	/* Normal view - links */
-	.links:not(.small) {
-		left: 294px; /* 16px wrapper padding, plus 290px menu width, minus 12px padding on first link */
-	}
-
-	/* Normal view - link */
-	.links:not(.small) a {
-		padding: 0 12px;
-	}
+  /* Normal view - link */
+  .links:not(.small) a {
+    padding: 0 12px;
+  }
 }
 
 /**
@@ -224,12 +231,9 @@ a.logo, a.logo img {
  * HCA custom breakpoint
  */
 @media screen and (min-width: 1200px) {
-
-	/* Normal view - links */
-	.links:not(.small) {
-		left: 50%;
-		transform: translateX(-50%);
-	}
+  /* Normal view - links */
+  .links:not(.small) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
-
-

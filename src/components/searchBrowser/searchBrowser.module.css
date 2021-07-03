@@ -8,23 +8,23 @@
 
 /* Section */
 .searchBrowser {
-	background: url('../../../images/cell/searchBrowser.png') right / cover no-repeat;
-	padding: 56px 0;
+  background: url('../../../images/cell/searchBrowser.png') right / cover
+    no-repeat;
+  padding: 56px 0;
 }
 
 /* Section - inner */
 .searchBrowser .sectionInner {
-	align-items: center;
-	flex-direction: column; /* Overrides global flex direction row */
+  align-items: center;
+  flex-direction: column; /* Overrides global flex direction row */
 }
 
 /**
  * HCA specific breakpoint
  */
 @media screen and (min-width: 768px) {
-
-	/* Section - inner */
-	.searchBrowser .sectionInner {
-		flex-direction: row;
-	}
+  /* Section - inner */
+  .searchBrowser .sectionInner {
+    flex-direction: row;
+  }
 }

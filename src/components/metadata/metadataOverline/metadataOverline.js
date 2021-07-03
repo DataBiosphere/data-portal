@@ -6,18 +6,15 @@
  */
 
 // Core dependencies
-import React from "react";
+import React from 'react'
 
 // Styles
-import compStyles from "./metadataOverline.module.css";
+import compStyles from './metadataOverline.module.css'
 
 function MetadataOverline(props) {
+  const { children } = props
 
-    const {children} = props;
-
-    return (
-        <div className={compStyles.overline}>{children}</div>
-    )
+  return <div className={compStyles.overline}>{children}</div>
 }
 
-export default MetadataOverline;
+export default MetadataOverline

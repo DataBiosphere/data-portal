@@ -6,51 +6,49 @@
  */
 
 // Core dependencies
-import React, {useContext} from "react";
+import React, { useContext } from 'react'
 
 // App dependencies
-import ContextMetadataDisplaying from "../metadata/contextMetadataDisplaying/contextMetadataDisplaying";
-import TOCItem from "../tocItem/tocItem";
-import * as TOCService from "../../utils/toc.service";
+import ContextMetadataDisplaying from '../metadata/contextMetadataDisplaying/contextMetadataDisplaying'
+import TOCItem from '../tocItem/tocItem'
+import * as TOCService from '../../utils/toc.service'
 
 // Styles
-import compStyles from "./toc.module.css";
+import compStyles from './toc.module.css'
 
 class TOC extends React.Component {
+  componentDidMount() {
+    /* Handle show/hide TOC. */
+    this.onHandleUseTOC()
+  }
 
-    componentDidMount() {
+  onHandleUseTOC = () => {
+    const { useTOC } = this.props
 
-        /* Handle show/hide TOC. */
-        this.onHandleUseTOC();
-    }
+    this.props.onHandleUseTOC(useTOC)
+  }
 
-    onHandleUseTOC = () => {
-
-        const {useTOC} = this.props;
-
-        this.props.onHandleUseTOC(useTOC);
-    };
-
-    render() {
-        const {activeLocation, tocs} = this.props;
-        return (
-            <div className={compStyles.tocs}>
-                <ul>
-                    {tocs ? tocs.map((toc, t) => <TOCItem key={t} activeLocation={activeLocation} toc={toc}/>) : null}
-                </ul>
-            </div>
-        );
-    }
+  render() {
+    const { activeLocation, tocs } = this.props
+    return (
+      <div className={compStyles.tocs}>
+        <ul>
+          {tocs
+            ? tocs.map((toc, t) => (
+                <TOCItem key={t} activeLocation={activeLocation} toc={toc} />
+              ))
+            : null}
+        </ul>
+      </div>
+    )
+  }
 }
 
-export default (props) => {
+export default props => {
+  const { docPath } = props
+  const { showAllMetadata } = useContext(ContextMetadataDisplaying)
+  const tocs = TOCService.getTOCs(docPath, showAllMetadata)
+  const useTOC = tocs.length > 0
 
-    const {docPath} = props;
-    const {showAllMetadata} = useContext(ContextMetadataDisplaying);
-    const tocs = TOCService.getTOCs(docPath, showAllMetadata);
-    const useTOC = tocs.length > 0;
-
-    return (
-        <TOC tocs={tocs} useTOC={useTOC} {...props}/>
-    );
+  return <TOC tocs={tocs} useTOC={useTOC} {...props} />
 }

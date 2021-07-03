@@ -3,11 +3,10 @@
  */
 
 .lungmap {
-    --blue-background: #003662;
-    --blue-light: rgba(0, 108, 197, 0.06);
-    --blue-light38: rgba(0, 108, 197, 0.03);
-    --primary: #005295;
-    --secondary: #00A8BA;
-    --secondary-hover: #007E8A;
+  --blue-background: #003662;
+  --blue-light: rgba(0, 108, 197, 0.06);
+  --blue-light38: rgba(0, 108, 197, 0.03);
+  --primary: #005295;
+  --secondary: #00a8ba;
+  --secondary-hover: #007e8a;
 }
-

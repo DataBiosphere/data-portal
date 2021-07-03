@@ -6,36 +6,44 @@
  */
 
 // Core dependencies
-import React, {useState} from "react";
+import React, { useState } from 'react'
 
 // App dependencies
-import SupportRequestForm from "./supportRequestForm";
-import SupportRequestButton from "./supportRequestButton";
-import {GASource} from "../../utils/dp-gtm/ga-source.model";
+import SupportRequestForm from './supportRequestForm'
+import SupportRequestButton from './supportRequestButton'
+import { GASource } from '../../utils/dp-gtm/ga-source.model'
 
-const SupportRequest = ({active = false, source, onToggle}) => {
+const SupportRequest = ({ active = false, source, onToggle }) => {
+  const [supportRequestActive, setSupportRequestActive] = useState(active)
 
-    const [supportRequestActive, setSupportRequestActive] = useState(active);
+  React.useEffect(() => {
+    setSupportRequestActive(active)
+  }, [active])
 
-    React.useEffect(() => {
-        setSupportRequestActive(active);
-    }, [active]);
+  const onToggleSupportRequestForm = (active, source) => {
+    setSupportRequestActive(active)
+    onToggle(active, source)
+  }
 
-    const onToggleSupportRequestForm = (active, source) => {
-        setSupportRequestActive(active);
-        onToggle(active, source);
-    };
+  return (
+    <>
+      {supportRequestActive ? (
+        <SupportRequestForm
+          active={active}
+          source={source}
+          dismissFn={() =>
+            onToggleSupportRequestForm(false, GASource.SUPPORT_REQUEST_FORM)
+          }
+        />
+      ) : (
+        <SupportRequestButton
+          clickFn={() =>
+            onToggleSupportRequestForm(true, GASource.SUPPORT_REQUEST_BUTTON)
+          }
+        />
+      )}
+    </>
+  )
+}
 
-    return (
-        <>
-            {supportRequestActive ?
-                <SupportRequestForm active={active}
-                                    source={source}
-                                    dismissFn={() => onToggleSupportRequestForm(false, GASource.SUPPORT_REQUEST_FORM)}/> :
-                <SupportRequestButton clickFn={() => onToggleSupportRequestForm(true, GASource.SUPPORT_REQUEST_BUTTON)}/>
-                }
-        </>
-    );
-};
-
-export default SupportRequest;
+export default SupportRequest

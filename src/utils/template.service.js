@@ -14,19 +14,18 @@
  * @returns {string}
  */
 export function getPageTitle(htmlAst) {
+  if (!htmlAst) {
+    return ''
+  }
 
-    if ( !htmlAst ) {
-        return "";
-    }
+  // Find the top-level of the page
+  const h1 = htmlAst.children.find(child => child.tagName === 'h1')
+  if (!h1) {
+    return ''
+  }
 
-    // Find the top-level of the page
-    const h1 = htmlAst.children.find(child => child.tagName === "h1");
-    if ( !h1 ) {
-        return "";
-    }
-
-    // Return text node of h1
-    return h1.children.find(child => child.type === "text").value || "";
+  // Return text node of h1
+  return h1.children.find(child => child.type === 'text').value || ''
 }
 
 /**
@@ -36,8 +35,7 @@ export function getPageTitle(htmlAst) {
  * @returns {string}
  */
 export function getPageEditUrl(slug) {
-
-    return `https://github.com/HumanCellAtlas/data-portal/tree/staging/content${slug}.md`;
+  return `https://github.com/HumanCellAtlas/data-portal/tree/staging/content${slug}.md`
 }
 
 /**
@@ -49,17 +47,16 @@ export function getPageEditUrl(slug) {
  * @returns {boolean}
  */
 export function showEditPage(slug) {
-
-    switch(slug) {
-        case "/metadata/design-principles/rationale":
-            return false;
-        case "/metadata/design-principles/structure":
-            return false;
-        case "/metadata/explore/metadata-explore":
-            return false;
-        case "/metadata/search/metadata-search":
-            return false;
-        default:
-            return true;
-    }
+  switch (slug) {
+    case '/metadata/design-principles/rationale':
+      return false
+    case '/metadata/design-principles/structure':
+      return false
+    case '/metadata/explore/metadata-explore':
+      return false
+    case '/metadata/search/metadata-search':
+      return false
+    default:
+      return true
+  }
 }

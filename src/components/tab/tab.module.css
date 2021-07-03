@@ -4,89 +4,90 @@
  *
  * Style definitions specific to the HCA Data Portal tab component.
  */
-@import "../../styles/vars.module.css";
+@import '../../styles/vars.module.css';
 
 /* Tab. */
 .tab {
-    box-sizing: border-box;
-    cursor: pointer;
-    height: 30px;
-    margin: 0 16px;
-    position: relative; /* Horizontal scroll - last tab - RHS gutter */
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 30px;
+  margin: 0 16px;
+  position: relative; /* Horizontal scroll - last tab - RHS gutter */
 }
 
 /* Back tab. */
 .tab.back {
-    align-items: center;
-    color: var(--gray-dark);
-    display: flex;
+  align-items: center;
+  color: var(--gray-dark);
+  display: flex;
 }
 
 /* Back tab - icon. */
 .tab.back i {
-    font-size: 16px;
-    margin: 0 0 0 -4px;
+  font-size: 16px;
+  margin: 0 0 0 -4px;
 }
 
 /* Tab - link. */
 .tab a {
-    color: var(--gray-dark);
-    display: inline-block;
-    font-weight: 400;
-    line-height: 30px;
-    white-space: nowrap; /* Horizontal scroll */
+  color: var(--gray-dark);
+  display: inline-block;
+  font-weight: 400;
+  line-height: 30px;
+  white-space: nowrap; /* Horizontal scroll */
 }
 
 /* Active tab. */
 .tab.active {
-    border-bottom: 3px solid var(--secondary);
+  border-bottom: 3px solid var(--secondary);
 }
 
 .tab.active a {
-    color: var(--black);
+  color: var(--black);
 }
 
 /* Disabled tab. */
 .tab.disabled {
-    cursor: auto;
+  cursor: auto;
 }
 
 .tab.disabled a {
-    color: var(--gray-lightest);
+  color: var(--gray-lightest);
 }
 
 /* Hover tab. */
 .tab:not(.back):not(.active):hover > a {
-    color: var(--black);
+  color: var(--black);
 }
 
 /* Last tab - on horizontal scroll - mimics gutter for RHS. */
 .tab:last-of-type:after {
-    bottom: -3px;
-    height: 3px;
-    content: "";
-    position: absolute;
-    width: 16px; /* 16px tab padding */
+  bottom: -3px;
+  height: 3px;
+  content: '';
+  position: absolute;
+  width: 16px; /* 16px tab padding */
 }
 
 /* Secondary tab. */
 .tab.secondary {
-    height: 100%;
+  height: 100%;
 }
 
 /* Secondary tab - link. */
 .tab.secondary a {
-    color: var(--gray-dark);
-    font-size: 13px;
-    line-height: 44px;
+  color: var(--gray-dark);
+  font-size: 13px;
+  line-height: 44px;
 }
 
 /* Active secondary tab. */
 .tab.secondary.active {
-    border-bottom-width: 2px;
+  border-bottom-width: 2px;
 }
 
 /* Secondary tab - hover tab. */
-.tab.secondary.active a, .tab.secondary:not(.active):hover > a {
-    color: var(--gray-darkest);
+.tab.secondary.active a,
+.tab.secondary:not(.active):hover > a {
+  color: var(--gray-darkest);
 }

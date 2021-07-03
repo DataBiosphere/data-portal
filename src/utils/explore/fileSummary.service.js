@@ -2,144 +2,140 @@
  * Human Cell Atlas
  * https://www.humancellatlas.org/
  *
- * Service coordinating hitting file summary API end points and formatting the corresponding responses. 
- * 
+ * Service coordinating hitting file summary API end points and formatting the corresponding responses.
+ *
  * Run the following command locally to set your GATSBY_EXPLORE_URL:
  * export GATSBY_EXPLORE_URL=https://staging.data.humancellatlas.org/explore/
  */
 
 // App dependencies
-import * as EnvironmentService from "../environment/environment.service";
-import * as HttpService from '../http.service';
+import * as EnvironmentService from '../environment/environment.service'
+import * as HttpService from '../http.service'
 
-const FILE_SUMMARY_API_URL = process.env.GATSBY_FILE_SUMMARY_API_URL;
-const TERM_FACETS_API_URL = process.env.GATSBY_TERM_FACETS_API_URL;
+const FILE_SUMMARY_API_URL = process.env.GATSBY_FILE_SUMMARY_API_URL
+const TERM_FACETS_API_URL = process.env.GATSBY_TERM_FACETS_API_URL
 
 /**
  * Build the set of search terms from the specified set of term facets.
  */
 export function buildSearchTerms(termFacets) {
+  return termFacets.reduce(function(accum, termFacet) {
+    accum.push({
+      facetName: termFacet.facetName,
+      terms: buildFacetSearchTerms(termFacet.terms),
+    })
 
-    return termFacets.reduce(function(accum, termFacet) {
-
-        accum.push({
-            facetName: termFacet.facetName,
-            terms: buildFacetSearchTerms(termFacet.terms)
-        });
-
-        return accum;
-    }, []);
+    return accum
+  }, [])
 }
 
 /**
  * Execute request for counts and summaries.
  */
 export function fetchFileSummary() {
-
-    const url = buildExploreUrl(FILE_SUMMARY_API_URL);
-    return fetch(url)
-        .then(HttpService.checkResponseStatus)
-        .then(resp => resp.json())
-        .then(bindFileSummaryResponse);
+  const url = buildExploreUrl(FILE_SUMMARY_API_URL)
+  return fetch(url)
+    .then(HttpService.checkResponseStatus)
+    .then(resp => resp.json())
+    .then(bindFileSummaryResponse)
 }
 
 /**
  * Execute request for term facets.
  */
 export function fetchTermFacets() {
-    
-    const url = buildExploreUrl(TERM_FACETS_API_URL);
-    return fetch(url)
-        .then(HttpService.checkResponseStatus)
-        .then(resp => resp.json())
-        .then(bindTermFacetsResponse);
+  const url = buildExploreUrl(TERM_FACETS_API_URL)
+  return fetch(url)
+    .then(HttpService.checkResponseStatus)
+    .then(resp => resp.json())
+    .then(bindTermFacetsResponse)
 }
 
 /**
  * Format file summary into FE-friendly format.
  */
 function bindFileSummaryResponse(fileSummaryResponse) {
+  const cellCountSummaries = fileSummaryResponse.cellCountSummaries
+    .filter(isValidCellCountSummaries)
+    .map(nullCellCountSummaries)
+    .map(summary => {
+      return {
+        label: formatCellCountSummariesOrganTypeForDisplay(summary.organType),
+        count: summary.countOfDocsWithOrganType,
+        cellCount: summary.totalCellCountByOrgan,
+      }
+    })
 
-    const cellCountSummaries = fileSummaryResponse.cellCountSummaries
-        .filter(isValidCellCountSummaries)
-        .map(nullCellCountSummaries)
-        .map(summary => {
-
-            return {
-                label: formatCellCountSummariesOrganTypeForDisplay(summary.organType),
-                count: summary.countOfDocsWithOrganType,
-                cellCount: summary.totalCellCountByOrgan
-            }
-        });
-
-    // Bind response values to file summary view format
-    return {
-        cellCount: fileSummaryResponse.totalCellCount,
-        cellCountSummaries: cellCountSummaries,
-        donorCount: fileSummaryResponse.donorCount,
-        fileCount: fileSummaryResponse.fileCount,
-        fileFormatSummary: fileSummaryResponse.fileTypeSummaries.map((summary) => {
-            return {
-                label: summary.fileType,
-                count: summary.count
-            }
-        }),
-        labCount: fileSummaryResponse.labCount,
-        loaded: true,
-        organCount: fileSummaryResponse.organTypes.length,
-        organTypes: fileSummaryResponse.organTypes,
-        projectCount: fileSummaryResponse.projectCount,
-        totalCellCount: fileSummaryResponse.totalCellCount
-    }
+  // Bind response values to file summary view format
+  return {
+    cellCount: fileSummaryResponse.totalCellCount,
+    cellCountSummaries: cellCountSummaries,
+    donorCount: fileSummaryResponse.donorCount,
+    fileCount: fileSummaryResponse.fileCount,
+    fileFormatSummary: fileSummaryResponse.fileTypeSummaries.map(summary => {
+      return {
+        label: summary.fileType,
+        count: summary.count,
+      }
+    }),
+    labCount: fileSummaryResponse.labCount,
+    loaded: true,
+    organCount: fileSummaryResponse.organTypes.length,
+    organTypes: fileSummaryResponse.organTypes,
+    projectCount: fileSummaryResponse.projectCount,
+    totalCellCount: fileSummaryResponse.totalCellCount,
+  }
 }
 
 /**
  * Format term facets into FE-friendly format.
  */
 function bindTermFacetsResponse(termFacetsResponse) {
+  return Object.keys(termFacetsResponse.termFacets).reduce(function(
+    accum,
+    key
+  ) {
+    const facet = termFacetsResponse.termFacets[key]
+    accum.push({
+      facetName: key,
+      terms: facet.terms,
+    })
 
-    return Object.keys(termFacetsResponse.termFacets).reduce(function(accum, key) {
-
-        const facet = termFacetsResponse.termFacets[key];
-        accum.push({
-            facetName: key,
-            terms: facet.terms
-        });
-
-        return accum;
-    }, []);
+    return accum
+  },
+  [])
 }
 
 /**
  * Build the set of terms for facet.
  */
 function buildFacetSearchTerms(terms) {
-    
-    return terms.map(term => {
-        return {
-            term: term.term || "Unspecified",
-            count: term.count
-        };
-    });
+  return terms.map(term => {
+    return {
+      term: term.term || 'Unspecified',
+      count: term.count,
+    }
+  })
 }
 
 /**
  * Add default catalog.
  */
 function buildExploreUrl(baseUrl) {
+  const exploreUrl = new URL(baseUrl)
+  exploreUrl.searchParams.append(
+    'catalog',
+    EnvironmentService.getDefaultCatalog()
+  ) /* Add default catalog. */
 
-    const exploreUrl = new URL(baseUrl);
-    exploreUrl.searchParams.append("catalog", EnvironmentService.getDefaultCatalog()); /* Add default catalog. */
-
-    return exploreUrl;
+  return exploreUrl
 }
 
 /**
  * Format organ summary organ type for display; return the first value in the organ type array.
  */
 function formatCellCountSummariesOrganTypeForDisplay(organType) {
-
-    return (organType || [])[0];
+  return (organType || [])[0]
 }
 
 /**
@@ -147,22 +143,20 @@ function formatCellCountSummariesOrganTypeForDisplay(organType) {
  * for multiple labels when generating the SVG and associated stats).
  */
 function isValidCellCountSummaries(summary) {
-
-    // Organ type is only valid if it has a single value.
-    return (summary.organType || []).length === 1;
+  // Organ type is only valid if it has a single value.
+  return (summary.organType || []).length === 1
 }
 
 /**
  * Any cell count summary with a null organType value is converted to the value "unspecified".
  */
 function nullCellCountSummaries(summary) {
+  const organType = summary.organType
 
-    const organType = summary.organType;
+  // Change any null value to "unspecified"
+  if (!organType[0]) {
+    summary.organType = 'unspecified'
+  }
 
-    // Change any null value to "unspecified"
-    if ( !organType[0] ) {
-        summary.organType = "unspecified";
-    }
-
-    return summary;
+  return summary
 }

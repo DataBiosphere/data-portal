@@ -6,9 +6,9 @@
  */
 
 // Template variables
-const gatsbyEnv = process.env.GATSBY_ENV;
-const pathMetadataRationale = "/metadata/metadata-design/rationale";
-const pathMetadataStructure = "/metadata/metadata-structure/structure";
+const gatsbyEnv = process.env.GATSBY_ENV
+const pathMetadataRationale = '/metadata/metadata-design/rationale'
+const pathMetadataStructure = '/metadata/metadata-structure/structure'
 
 /**
  * Builds the post file path into a slug.
@@ -17,20 +17,19 @@ const pathMetadataStructure = "/metadata/metadata-structure/structure";
  * @returns {*}
  */
 const buildPostSlug = function buildPostSlug(filePath) {
+  /* Strip the file path's tailing "/". */
+  const slug = filePath.replace(/\/$/, '')
 
-    /* Strip the file path's tailing "/". */
-    const slug = filePath.replace(/\/$/, "");
-
-    /* Return the "markdown" slug. */
-    switch (slug) {
-        case "/rationale":
-            return pathMetadataRationale;
-        case "/structure":
-            return pathMetadataStructure;
-        default:
-            return slug;
-    }
-};
+  /* Return the "markdown" slug. */
+  switch (slug) {
+    case '/rationale':
+      return pathMetadataRationale
+    case '/structure':
+      return pathMetadataStructure
+    default:
+      return slug
+  }
+}
 
 /**
  * Returns true if the post node is enabled.
@@ -41,12 +40,12 @@ const buildPostSlug = function buildPostSlug(filePath) {
  * @constructor
  */
 const isPostNodeEnabled = function isPostNodeEnabled(draftExists) {
+  /* Post will not be enabled if draft mode is true and environment is "PROD". */
+  const postDraftInProdEnvironment =
+    gatsbyEnv === 'PROD' && draftExists === true
 
-    /* Post will not be enabled if draft mode is true and environment is "PROD". */
-    const postDraftInProdEnvironment = (gatsbyEnv === "PROD" && draftExists === true);
-
-    return !postDraftInProdEnvironment;
-};
+  return !postDraftInProdEnvironment
+}
 
 /**
  * Returns true if the post node is relevant to the site.
@@ -56,13 +55,12 @@ const isPostNodeEnabled = function isPostNodeEnabled(draftExists) {
  * @returns {boolean}
  */
 const isPostNodeFeatured = function isPostNodeFeatured(type) {
+  const contentFeatured = type === 'MarkdownRemark'
+  const metadataFeatured = type === 'MetadataSchema'
 
-    const contentFeatured = type === "MarkdownRemark";
-    const metadataFeatured = (type === "MetadataSchema");
+  return contentFeatured || metadataFeatured
+}
 
-    return contentFeatured || metadataFeatured;
-};
-
-module.exports.buildPostSlug = buildPostSlug;
-module.exports.isPostNodeEnabled = isPostNodeEnabled;
-module.exports.isPostNodeFeatured = isPostNodeFeatured;
+module.exports.buildPostSlug = buildPostSlug
+module.exports.isPostNodeEnabled = isPostNodeEnabled
+module.exports.isPostNodeFeatured = isPostNodeFeatured

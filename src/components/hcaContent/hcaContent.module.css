@@ -7,30 +7,29 @@
 
 /* Content */
 .hcaContent {
-    margin: 36px 0;
-    width: 100%;
+  margin: 36px 0;
+  width: 100%;
 }
 
 /* Inner content */
 .innerContainer {
-    margin: 0 auto;
-    width: 100%;
-    z-index: 2; /* Required for heading anchor - nav overlaps anchor position. */
+  margin: 0 auto;
+  width: 100%;
+  z-index: 2; /* Required for heading anchor - nav overlaps anchor position. */
 }
 
 /* Content - metadata - max width at 1000px. */
 /* Available for metadata content. */
 .metadataContent .innerContainer {
-    max-width: 1000px;
+  max-width: 1000px;
 }
 
 /**
  * HCA specific breakpoint
  */
 @media screen and (min-width: 768px) {
-
-    /* Inner content */
-    .innerContainer {
-        max-width:800px;
-    }
+  /* Inner content */
+  .innerContainer {
+    max-width: 800px;
+  }
 }

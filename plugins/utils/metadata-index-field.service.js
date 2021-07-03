@@ -15,27 +15,23 @@
  * @param propertyPaths
  */
 const getPropertyPaths = function getPropertyPaths(propertyPaths) {
+  if (propertyPaths && propertyPaths.length) {
+    return propertyPaths.reduce((acc, propertyPath) => {
+      /* Accumulate the original path. */
+      acc.push(propertyPath)
 
-    if ( propertyPaths && propertyPaths.length ) {
+      /* Accumulate any individual words within the path. */
+      /* Accumulate the individual words as a single word without the "_". */
+      /* e.g. "donor_organism" returns "donor" and "organism" and "donororganism". */
+      if (propertyPath.includes('_')) {
+        const propertyWords = propertyPath.split('_')
+        acc.push(...propertyWords)
+      }
 
-        return propertyPaths.reduce((acc, propertyPath) => {
-
-            /* Accumulate the original path. */
-            acc.push(propertyPath);
-
-            /* Accumulate any individual words within the path. */
-            /* Accumulate the individual words as a single word without the "_". */
-            /* e.g. "donor_organism" returns "donor" and "organism" and "donororganism". */
-            if ( propertyPath.includes("_") ) {
-
-                const propertyWords = propertyPath.split("_");
-                acc.push(...propertyWords);
-            }
-
-            return acc;
-        }, []);
-    }
-};
+      return acc
+    }, [])
+  }
+}
 
 /**
  * Returns the array, removing any value with a colon and replacing with an underscore.
@@ -48,35 +44,33 @@ const getPropertyPaths = function getPropertyPaths(propertyPaths) {
  * @param array
  * @returns {Array}
  */
-const parseArraySpecialCharValues = function parseArraySpecialCharValues(array) {
+const parseArraySpecialCharValues = function parseArraySpecialCharValues(
+  array
+) {
+  if (array && array.length) {
+    const setOfTerms = array.reduce((acc, value) => {
+      if (value) {
+        const term = value.replace(/:/g, '_')
+        acc.add(term)
 
-    if ( array && array.length ) {
+        /* Accumulate curie and identifier separately. */
+        const terms = term
+          .replace(/_/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim()
+          .split(' ')
 
-        const setOfTerms = array.reduce((acc, value) => {
+        terms.map(t => acc.add(t))
+      }
 
-            if ( value ) {
+      return acc
+    }, new Set())
 
-                const term = value.replace(/:/g, "_");
-                acc.add(term);
+    return [...setOfTerms]
+  }
 
-                /* Accumulate curie and identifier separately. */
-                const terms = term
-                    .replace(/_/g, " ")
-                    .replace(/\s+/g, " ")
-                    .trim()
-                    .split(" ");
-
-                terms.map(t => acc.add(t));
-            }
-
-            return acc;
-        }, new Set());
-
-        return [...setOfTerms];
-    }
-
-    return [];
-};
+  return []
+}
 
 /**
  * Returns the example as an array of examples or enumerated examples, removing any value with a colon and replacing with an underscore.
@@ -85,16 +79,17 @@ const parseArraySpecialCharValues = function parseArraySpecialCharValues(array) 
  * @returns {*}
  */
 const parsePropertyExample = function parsePropertyExample(example) {
+  if (example) {
+    const str = example.replace(
+      /(,|or |"|For example |Should be one of: |\.)/gi,
+      ''
+    )
+    const examples = str.split(' ')
+    return parseArraySpecialCharValues(examples)
+  }
 
-    if ( example ) {
-
-        const str = example.replace(/(,|or |"|For example |Should be one of: |\.)/gi, "");
-        const examples = str.split(" ");
-        return parseArraySpecialCharValues(examples);
-    }
-
-    return "";
-};
+  return ''
+}
 
 /**
  * Returns the string, removing any value with a colon and replacing with an underscore.
@@ -108,16 +103,14 @@ const parsePropertyExample = function parsePropertyExample(example) {
  * @returns {*}
  */
 const parseStrSpecialCharValues = function parseStrSpecialCharValues(str) {
+  if (str) {
+    return str.replace(/:/g, '_')
+  }
 
-    if ( str ) {
+  return ''
+}
 
-        return str.replace(/:/g, "_");
-    }
-
-    return "";
-};
-
-module.exports.getPropertyPaths = getPropertyPaths;
-module.exports.parseArraySpecialCharValues = parseArraySpecialCharValues;
-module.exports.parsePropertyExample = parsePropertyExample;
-module.exports.parseStrSpecialCharValues = parseStrSpecialCharValues;
+module.exports.getPropertyPaths = getPropertyPaths
+module.exports.parseArraySpecialCharValues = parseArraySpecialCharValues
+module.exports.parsePropertyExample = parsePropertyExample
+module.exports.parseStrSpecialCharValues = parseStrSpecialCharValues

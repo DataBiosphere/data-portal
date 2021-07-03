@@ -7,13 +7,13 @@
 
 /* Banner */
 .banner {
-	position: sticky;
-	bottom: 0;
-	z-index: 12; /* Positioned below header component */
+  position: sticky;
+  bottom: 0;
+  z-index: 12; /* Positioned below header component */
 }
 
 /* Banner positioned top */
 .banner.top {
-	bottom: unset;
-	top: 60px;
+  bottom: unset;
+  top: 60px;
 }

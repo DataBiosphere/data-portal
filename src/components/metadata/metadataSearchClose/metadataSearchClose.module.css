@@ -7,8 +7,8 @@
 
 /* Close search button. */
 .close {
-    position: absolute;
-    right: calc(var(--gutter-x) - 8px);
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  right: calc(var(--gutter-x) - 8px);
+  top: 50%;
+  transform: translateY(-50%);
 }

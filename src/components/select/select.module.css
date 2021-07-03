@@ -6,12 +6,12 @@
  */
 
 /* React select drop down */
-input[class*="dummy"] {
-    height: 34px !important; /* Reduce height to 34 to ensure total drop down size is 36 */
-    margin-bottom: 0 !important;
+input[class*='dummy'] {
+  height: 34px !important; /* Reduce height to 34 to ensure total drop down size is 36 */
+  margin-bottom: 0 !important;
 }
 
 /* React select drop down indicator */
-[class*="indicatorContainer"] {
-    padding: 0 8px !important;
+[class*='indicatorContainer'] {
+  padding: 0 8px !important;
 }

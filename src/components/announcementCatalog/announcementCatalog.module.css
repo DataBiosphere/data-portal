@@ -5,15 +5,15 @@
  * Style definitions specific to the HCA Data Portal announcement catalog component.
  */
 
-@import "../../styles/vars.module.css";
+@import '../../styles/vars.module.css';
 
 /* Catalog */
 .catalog {
-    text-align: center;
+  text-align: center;
 }
 
 /* Catalog - preview - separator. */
 .catalog > span:last-of-type > span {
-    color: var(--gray-medium);
-    padding: 0 8px;
+  color: var(--gray-medium);
+  padding: 0 8px;
 }

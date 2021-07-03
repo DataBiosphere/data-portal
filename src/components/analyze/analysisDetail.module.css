@@ -8,32 +8,32 @@
 
 /* Analyze list */
 .hcaAnalyzeDetail {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 /* Title, author container */
 .hcaAnalyzeDetail > div {
-	max-width: 540px;
+  max-width: 540px;
 }
 
 /* Heading. */
 .hcaAnalyzeDetail h1 {
-    font-size: 30px;
-    line-height: 36px;
-    margin: 0 0 18px;
+  font-size: 30px;
+  line-height: 36px;
+  margin: 0 0 18px;
 }
 
 /* Author */
 .hcaAnalyzeDetail .author {
-	color: var(--gray-darkest);
-	margin: -14px 0 24px;
+  color: var(--gray-darkest);
+  margin: -14px 0 24px;
 }
 
 /* Markdown */
 .hcaAnalyzeDetail + div {
-	margin-top: 24px;
+  margin-top: 24px;
 }
 
 /**
@@ -41,20 +41,19 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1024px) {
+  /* Analyze list */
+  .hcaAnalyzeDetail {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-	/* Analyze list */
-	.hcaAnalyzeDetail {
-		flex-direction: row;
-		justify-content: space-between;
-	}
+  /* Title, author container */
+  .hcaAnalyzeDetail > div {
+    margin-right: 16px;
+  }
 
-	/* Title, author container */
-	.hcaAnalyzeDetail > div {
-		margin-right: 16px;
-	}
-
-	/* Markdown */
-	.hcaAnalyzeDetail + div {
-		margin-top: 0;
-	}
+  /* Markdown */
+  .hcaAnalyzeDetail + div {
+    margin-top: 0;
+  }
 }

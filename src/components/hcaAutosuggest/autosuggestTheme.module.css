@@ -11,93 +11,94 @@
 
 /* Input container */
 .container {
-	position: relative; /* Positions suggestions container */
+  position: relative; /* Positions suggestions container */
 }
 
 /* Input - removes default IOS */
-input[type=text] {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+input[type='text'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 /* Input */
 .input {
-	background-color: var(--white);
-	border: none;
-	box-sizing: border-box;
-	border-radius: 2px;
-	color: var(--gray-search);
-	font-size: 16px;
-	font-weight: 400;
-	height: 50px;
-	line-height: 24px;
-	overflow: hidden;
-	padding: 0 16px;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	width: 100%;
+  background-color: var(--white);
+  border: none;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: var(--gray-search);
+  font-size: 16px;
+  font-weight: 400;
+  height: 50px;
+  line-height: 24px;
+  overflow: hidden;
+  padding: 0 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
 }
 
 /* Input placeholder */
-input::placeholder, input::-webkit-input-placeholder {
-	color: var(--gray-search);
-	opacity: 1;
+input::placeholder,
+input::-webkit-input-placeholder {
+  color: var(--gray-search);
+  opacity: 1;
 }
 
 /* Input focused */
 .inputFocused {
-	outline: none;
+  outline: none;
 }
 
 /* Suggestions container */
 .suggestionsContainerOpen {
-	background-color: var(--white);
-	border: none;
-	border-radius: 1px;
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06);
-	box-sizing: border-box;
-	max-height: 256px;
-	-ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar in IE unless actively scrolling. */
-	overflow-y: auto; /* Hide webkit scrollbar unless actively scrolling. */
-	padding: 8px 24px 12px 16px;
-	position: absolute;
-	top: 56px; /* 50px for select field + 6px below select field */
-	width: 100%;
-	z-index: 11 !important;
+  background-color: var(--white);
+  border: none;
+  border-radius: 1px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  max-height: 256px;
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar in IE unless actively scrolling. */
+  overflow-y: auto; /* Hide webkit scrollbar unless actively scrolling. */
+  padding: 8px 24px 12px 16px;
+  position: absolute;
+  top: 56px; /* 50px for select field + 6px below select field */
+  width: 100%;
+  z-index: 11 !important;
 }
 
 /* Suggestions list */
 .suggestionsList {
-	list-style: none;
-	margin: 0;
+  list-style: none;
+  margin: 0;
 }
 
 /* Section title */
 .sectionTitle {
-	color: var(--gray-medium);
-	font-family: "Montserrat", sans-serif;
-	font-size: 10px;
-	font-weight: 500;
-	height: unset; /* Override MD spec */
-	letter-spacing: 0.83px;
-	line-height: 20px;
-	padding: 4px 0;
+  color: var(--gray-medium);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  height: unset; /* Override MD spec */
+  letter-spacing: 0.83px;
+  line-height: 20px;
+  padding: 4px 0;
 }
 
 /* Suggestions */
 .suggestion {
-	cursor: pointer;
-	font-family: "Montserrat", sans-serif;
-	font-size: 14px;
-	letter-spacing: 0.43px;
-	line-height: 18px;
-	margin: 0;
-	min-height: 26px;
-	padding: 4px 0;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.43px;
+  line-height: 18px;
+  margin: 0;
+  min-height: 26px;
+  padding: 4px 0;
 }
 
 /* Suggestions hover */
 .suggestionHighlighted {
-	background-color: rgba(0, 0, 0, 0.03); /* TODO colour */
+  background-color: rgba(0, 0, 0, 0.03); /* TODO colour */
 }

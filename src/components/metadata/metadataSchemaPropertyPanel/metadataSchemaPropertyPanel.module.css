@@ -4,113 +4,112 @@
  *
  * Style definitions specific to the HCA Data Portal metadata schema property panel component.
  */
-@import "../../../styles/vars.module.css";
+@import '../../../styles/vars.module.css';
 
 /* Property. */
 .property {
-    --background-default: transparent;
-    align-items: stretch;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    scroll-margin-top: 84px;
+  --background-default: transparent;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  scroll-margin-top: 84px;
 }
 
 /* Border. */
 .property.border {
-    border-top: 1px solid var(--gray-lightest);
+  border-top: 1px solid var(--gray-lightest);
 }
 
 /* Hover. */
 .property.hover:hover {
-    background-color: var(--black1);
-    cursor: pointer;
+  background-color: var(--black1);
+  cursor: pointer;
 }
 
 /* Secondary. */
 .property.secondary {
-    --background-default: var(--blue-light38);
-    background-color: var(--blue-light38);
+  --background-default: var(--blue-light38);
+  background-color: var(--blue-light38);
 }
 
 /* Tertiary or more. */
 .property.tertiary {
-    --background-default: var(--black3);
-    background-color: var(--black3);
+  --background-default: var(--black3);
+  background-color: var(--black3);
 }
 
 /* Highlighter. */
 .property.highlighter {
-    animation: highlighter 10s ease-in 1;
+  animation: highlighter 10s ease-in 1;
 }
 
 /* Animation - highlighter. */
 @-webkit-keyframes highlighter {
-    0% {
-        background-color: var(--background-default);
-    }
-    75% {
-        background-color: var(--highlight);
-    }
-    100% {
-        background-color: var(--highlight);
-    }
+  0% {
+    background-color: var(--background-default);
+  }
+  75% {
+    background-color: var(--highlight);
+  }
+  100% {
+    background-color: var(--highlight);
+  }
 }
 
 /* Animation - highlighter. */
 @keyframes highlighter {
-    0% {
-        background-color: var(--highlight);
-    }
-    75% {
-        background-color: var(--highlight);
-    }
-    100% {
-        background-color: var(--background-default);
-    }
+  0% {
+    background-color: var(--highlight);
+  }
+  75% {
+    background-color: var(--highlight);
+  }
+  100% {
+    background-color: var(--background-default);
+  }
 }
 
 /* All columns. */
 .property > span {
-    display: flex;
-    flex-direction: column;
-    overflow-wrap: anywhere;
-    padding: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: anywhere;
+  padding: 12px;
 }
 
 /* Second column. */
 .property > span:nth-of-type(2) {
-    margin-top: -16px;
+  margin-top: -16px;
 }
 
 /* All columns - first level <span>. */
 .property > span > span {
-    margin-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 /* All columns - first level <span> - last child. */
 .property > span > span:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 /**
  * 1280px - Large tablet landscape, medium window
  */
 @media screen and (min-width: 1280px) {
+  /* Property. */
+  .property {
+    flex-direction: row;
+  }
 
-    /* Property. */
-    .property {
-        flex-direction: row;
-    }
+  /* First column. */
+  .property > span:first-of-type {
+    width: 35%;
+  }
 
-    /* First column. */
-    .property > span:first-of-type {
-        width: 35%;
-    }
-
-    /* Second column. */
-    .property > span:nth-of-type(2) {
-        flex: 1;
-        margin-top: 0;
-    }
+  /* Second column. */
+  .property > span:nth-of-type(2) {
+    flex: 1;
+    margin-top: 0;
+  }
 }
