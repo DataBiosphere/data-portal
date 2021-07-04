@@ -6,48 +6,48 @@
  */
 
 // Core dependencies
-import Cookies from 'js-cookie'
-import React from 'react'
+import Cookies from "js-cookie";
+import React from "react";
 
 // App dependencies
-import ClickHandler from '../clickHandler/clickHandler'
+import ClickHandler from "../clickHandler/clickHandler";
 
 // Styles
-import compStyles from './environment.module.css'
-import fontStyles from '../../styles/fontsize.module.css'
-import globalStyles from '../../styles/global.module.css'
+import compStyles from "./environment.module.css";
+import fontStyles from "../../styles/fontsize.module.css";
+import globalStyles from "../../styles/global.module.css";
 
-let classNames = require('classnames')
+let classNames = require("classnames");
 
 class Environment extends React.Component {
   constructor(props) {
-    super(props)
-    this.accept.bind(this)
-    this.state = { visible: false }
+    super(props);
+    this.accept.bind(this);
+    this.state = { visible: false };
   }
 
   componentDidMount() {
-    const { cookieName } = this.props
+    const { cookieName } = this.props;
 
     if (Cookies.get(cookieName) === undefined) {
-      this.setState({ visible: true })
+      this.setState({ visible: true });
     }
 
     if (Cookies.get(cookieName) === true) {
-      this.setState({ visible: false })
+      this.setState({ visible: false });
     }
   }
 
   accept = () => {
-    const { cookieName } = this.props
+    const { cookieName } = this.props;
 
-    Cookies.set(cookieName, true, { expires: new Date(2300, 1, 1) })
-    this.setState({ visible: false })
-  }
+    Cookies.set(cookieName, true, { expires: new Date(2300, 1, 1) });
+    this.setState({ visible: false });
+  };
 
   render() {
     if (!this.state.visible) {
-      return null
+      return null;
     }
 
     return (
@@ -72,15 +72,15 @@ class Environment extends React.Component {
               compStyles.narrow
             )}
             clickAction={() => this.accept()}
-            tag={'div'}
+            tag={"div"}
           >
             OK
           </ClickHandler>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Environment
-export { Cookies }
+export default Environment;
+export { Cookies };

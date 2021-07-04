@@ -6,32 +6,32 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // App dependencies
-import { MetadataSchemaQuery } from '../../../hooks/metadata-schema-query'
-import { MetadataSchemaPropertiesQuery } from '../../../hooks/metadata-schema-properties-query'
-import MetadataSearchInput from '../metadataSearchInput/metadataSearchInput'
-import MetadataSearchResults from '../metadataSearchResults/metadataSearchResults'
-import ProviderMetadataSearching from '../providerMetadataSearching/providerMetadataSearching'
-import * as MetadataSearchService from '../../../utils/metadata-search.service'
+import { MetadataSchemaQuery } from "../../../hooks/metadata-schema-query";
+import { MetadataSchemaPropertiesQuery } from "../../../hooks/metadata-schema-properties-query";
+import MetadataSearchInput from "../metadataSearchInput/metadataSearchInput";
+import MetadataSearchResults from "../metadataSearchResults/metadataSearchResults";
+import ProviderMetadataSearching from "../providerMetadataSearching/providerMetadataSearching";
+import * as MetadataSearchService from "../../../utils/metadata-search.service";
 
 // Styles
-import compStyles from './metadataSearch.module.css'
+import compStyles from "./metadataSearch.module.css";
 
 // Template variables
-const metadataIndexFileName = '/metadata-index.json'
-const lunrIndexRefField = 'id'
+const metadataIndexFileName = "/metadata-index.json";
+const lunrIndexRefField = "id";
 
 function MetadataSearch(props) {
-  const { onHandleSiteScroll } = props
-  const properties = MetadataSchemaPropertiesQuery()
-  const schemas = MetadataSchemaQuery()
+  const { onHandleSiteScroll } = props;
+  const properties = MetadataSchemaPropertiesQuery();
+  const schemas = MetadataSchemaQuery();
   const setOfProperties = MetadataSearchService.getSetOfProperties(
     properties,
     lunrIndexRefField
-  )
-  const setOfSearchGroups = MetadataSearchService.getSetOfSearchGroups()
+  );
+  const setOfSearchGroups = MetadataSearchService.getSetOfSearchGroups();
 
   return (
     <ProviderMetadataSearching
@@ -48,7 +48,7 @@ function MetadataSearch(props) {
         <MetadataSearchResults />
       </div>
     </ProviderMetadataSearching>
-  )
+  );
 }
 
-export default React.memo(MetadataSearch)
+export default React.memo(MetadataSearch);

@@ -6,24 +6,24 @@
  */
 
 // Core dependencies
-import Link from 'gatsby-link'
-import React from 'react'
+import Link from "gatsby-link";
+import React from "react";
 
 // Styles
-import compStyles from './footer-link.module.css'
-import fontStyles from '../../styles/fontsize.module.css'
+import compStyles from "./footer-link.module.css";
+import fontStyles from "../../styles/fontsize.module.css";
 
-let classNames = require('classnames')
+let classNames = require("classnames");
 
 class FooterLink extends React.Component {
   render() {
     const { link } = this.props,
-      { clickFn, name, path } = link || {}
+      { clickFn, name, path } = link || {};
     const footerLinkClassName = classNames(
       fontStyles.bgDark,
       compStyles.link,
       fontStyles.s
-    )
+    );
     return (
       <>
         {clickFn ? (
@@ -36,8 +36,8 @@ class FooterLink extends React.Component {
           </Link>
         )}
       </>
-    )
+    );
   }
 }
 
-export default FooterLink
+export default FooterLink;

@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-const path = require('path')
+const path = require("path");
 
 // App dependencies
 const {
@@ -16,65 +16,65 @@ const {
   getMetadataSchemas,
   getMetadataSchemaProperties,
   getSetOfMetadataEntities,
-  getSchemaFilePathsByRelativePath,
-} = require(path.resolve(__dirname, '../utils/metadata.service.js'))
+  getSchemaFilePathsByRelativePath
+} = require(path.resolve(__dirname, "../utils/metadata.service.js"));
 const {
   getCategorySchemas,
   getEntityCategories,
   getFieldTypeUsedBy,
-  getSchemaProperties,
+  getSchemaProperties
 } = require(path.resolve(
   __dirname,
-  '../utils/metadata-field-extension.service.js'
-))
+  "../utils/metadata-field-extension.service.js"
+));
 const { generateMetadataIndex } = require(path.resolve(
   __dirname,
-  '../utils/metadata-index.service.js'
-))
+  "../utils/metadata-index.service.js"
+));
 
 exports.sourceNodes = async ({
   actions,
   createNodeId,
-  createContentDigest,
+  createContentDigest
 }) => {
-  const { createNode } = actions
+  const { createNode } = actions;
 
   /* Get all metadata schema JSON. */
-  const schemaJSONByPath = await buildSchemaJSONByPath()
+  const schemaJSONByPath = await buildSchemaJSONByPath();
 
   /* Get all schema paths. */
   const schemaFilePathsByRelativePath = getSchemaFilePathsByRelativePath(
     schemaJSONByPath
-  )
-  const schemaFilePaths = [...schemaFilePathsByRelativePath.keys()]
+  );
+  const schemaFilePaths = [...schemaFilePathsByRelativePath.keys()];
 
   /* Get the set of metadata schema entities. */
-  const setOfMetadataEntities = getSetOfMetadataEntities(schemaFilePaths)
+  const setOfMetadataEntities = getSetOfMetadataEntities(schemaFilePaths);
 
   /* Build all metadata schema entities. */
-  const metadataEntities = getMetadataEntities(setOfMetadataEntities)
+  const metadataEntities = getMetadataEntities(setOfMetadataEntities);
 
   /* Build all metadata schema entity categories. */
   const metadataEntityCategories = getMetadataEntityCategories(
     schemaFilePaths,
     setOfMetadataEntities
-  )
+  );
 
   /* Build all metadata schema. */
   const metadataSchemas = getMetadataSchemas(
     schemaJSONByPath,
     schemaFilePathsByRelativePath
-  )
+  );
 
   /* Build all metadata schema properties. */
   const metadataSchemaProperties = getMetadataSchemaProperties(
     schemaJSONByPath,
     schemaFilePathsByRelativePath
-  )
+  );
 
   /* Create node - metadata entities. */
   metadataEntities.forEach(entity => {
-    const nodeContent = JSON.stringify(entity)
+    const nodeContent = JSON.stringify(entity);
 
     const nodeMeta = {
       id: createNodeId(entity.entityName),
@@ -84,18 +84,18 @@ exports.sourceNodes = async ({
         type: `MetadataEntity`,
         mediaType: `application/json`,
         content: nodeContent,
-        contentDigest: createContentDigest(entity),
-      },
-    }
+        contentDigest: createContentDigest(entity)
+      }
+    };
 
-    const node = Object.assign({}, entity, nodeMeta)
+    const node = Object.assign({}, entity, nodeMeta);
 
-    createNode(node)
-  })
+    createNode(node);
+  });
 
   /* Create node - metadata entity categories. */
   metadataEntityCategories.forEach(entityCategory => {
-    const nodeContent = JSON.stringify(entityCategory)
+    const nodeContent = JSON.stringify(entityCategory);
 
     const nodeMeta = {
       id: createNodeId(
@@ -107,18 +107,18 @@ exports.sourceNodes = async ({
         type: `MetadataEntityCategory`,
         mediaType: `application/json`,
         content: nodeContent,
-        contentDigest: createContentDigest(entityCategory),
-      },
-    }
+        contentDigest: createContentDigest(entityCategory)
+      }
+    };
 
-    const node = Object.assign({}, entityCategory, nodeMeta)
+    const node = Object.assign({}, entityCategory, nodeMeta);
 
-    createNode(node)
-  })
+    createNode(node);
+  });
 
   /* Create node - metadata schema. */
   metadataSchemas.forEach(schema => {
-    const nodeContent = JSON.stringify(schema)
+    const nodeContent = JSON.stringify(schema);
 
     const nodeMeta = {
       id: createNodeId(schema.relativePath),
@@ -128,18 +128,18 @@ exports.sourceNodes = async ({
         type: `MetadataSchema`,
         mediaType: `application/json`,
         content: nodeContent,
-        contentDigest: createContentDigest(schema),
-      },
-    }
+        contentDigest: createContentDigest(schema)
+      }
+    };
 
-    const node = Object.assign({}, schema, nodeMeta)
+    const node = Object.assign({}, schema, nodeMeta);
 
-    createNode(node)
-  })
+    createNode(node);
+  });
 
   /* Create node - metadata schema properties. */
   metadataSchemaProperties.forEach(schemaProperty => {
-    const nodeContent = JSON.stringify(schemaProperty)
+    const nodeContent = JSON.stringify(schemaProperty);
 
     const nodeMeta = {
       id: createNodeId(`${schemaProperty.schema}${schemaProperty.name}`),
@@ -149,82 +149,82 @@ exports.sourceNodes = async ({
         type: `MetadataSchemaProperty`,
         mediaType: `application/json`,
         content: nodeContent,
-        contentDigest: createContentDigest(schemaProperty),
-      },
-    }
+        contentDigest: createContentDigest(schemaProperty)
+      }
+    };
 
-    const node = Object.assign({}, schemaProperty, nodeMeta)
+    const node = Object.assign({}, schemaProperty, nodeMeta);
 
-    createNode(node)
-  })
-}
+    createNode(node);
+  });
+};
 
 exports.createSchemaCustomization = ({ actions }) => {
-  const { createFieldExtension, createTypes } = actions
+  const { createFieldExtension, createTypes } = actions;
 
   /* Create field "categories" of type MetadataEntityCategory. */
   /* For linking categories to their corresponding entity. */
   createFieldExtension({
-    name: 'categories',
+    name: "categories",
     extend(options, prevFieldConfig) {
       return {
         resolve(source, arg, context, info) {
           const categories = context.nodeModel.getAllNodes({
-            type: 'MetadataEntityCategory',
-          })
-          return getEntityCategories(categories, source)
-        },
-      }
-    },
-  })
+            type: "MetadataEntityCategory"
+          });
+          return getEntityCategories(categories, source);
+        }
+      };
+    }
+  });
 
   /* Create field "properties" of type MetadataSchemaProperty. */
   /* For linking properties to their corresponding schema. */
   createFieldExtension({
-    name: 'properties',
+    name: "properties",
     extend(options, prevFieldConfig) {
       return {
         resolve(source, arg, context, info) {
           const properties = context.nodeModel.getAllNodes({
-            type: 'MetadataSchemaProperty',
-          })
-          return getSchemaProperties(properties, source)
-        },
-      }
-    },
-  })
+            type: "MetadataSchemaProperty"
+          });
+          return getSchemaProperties(properties, source);
+        }
+      };
+    }
+  });
 
   /* Create field "schemas" of type MetadataSchema. */
   /* For linking schemas to their corresponding entity and category. */
   createFieldExtension({
-    name: 'schemas',
+    name: "schemas",
     extend(options, prevFieldConfig) {
       return {
         resolve(source, arg, context, info) {
           const schemas = context.nodeModel.getAllNodes({
-            type: 'MetadataSchema',
-          })
-          return getCategorySchemas(schemas, source)
-        },
-      }
-    },
-  })
+            type: "MetadataSchema"
+          });
+          return getCategorySchemas(schemas, source);
+        }
+      };
+    }
+  });
 
   /* Create field "usedByProperties" of type [UsedByProperties]. */
   /* Builds field that lists any properties that use the specified schema. */
   createFieldExtension({
-    name: 'usedByProperties',
+    name: "usedByProperties",
     extend(options, prevFieldConfig) {
       return {
         resolve(source, arg, context, info) {
           const metadataSchemaProperties = context.nodeModel.getAllNodes({
-            type: 'MetadataSchemaProperty',
-          })
-          return getFieldTypeUsedBy(metadataSchemaProperties, source)
-        },
-      }
-    },
-  })
+            type: "MetadataSchemaProperty"
+          });
+          return getFieldTypeUsedBy(metadataSchemaProperties, source);
+        }
+      };
+    }
+  });
 
   createTypes(`
     type Fields {
@@ -289,16 +289,16 @@ exports.createSchemaCustomization = ({ actions }) => {
         schema: MetadataSchema @link(by: "schemaName", from: "schema")
         type: String
         urlTo: String
-    }`)
-}
+    }`);
+};
 
 exports.onPostBootstrap = ({ getNodesByType }) => {
   /* Get the properties. */
-  const properties = getNodesByType('MetadataSchemaProperty')
+  const properties = getNodesByType("MetadataSchemaProperty");
 
   /* Get the schemas. */
-  const schemas = getNodesByType('MetadataSchema')
+  const schemas = getNodesByType("MetadataSchema");
 
   /* Generate the metadata search index. */
-  generateMetadataIndex(properties, schemas)
-}
+  generateMetadataIndex(properties, schemas);
+};

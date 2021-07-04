@@ -7,18 +7,18 @@
  */
 
 // Core dependencies
-import React, { useContext } from 'react'
+import React, { useContext } from "react";
 
 // App dependencies
-import Button from '../../button/button'
-import ContextMetadataSearch from '../contextMetadataSearch/contextMetadataSearch'
-import Icon from '../../icon/icon'
+import Button from "../../button/button";
+import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
+import Icon from "../../icon/icon";
 
 // Styles
-import compStyles from './metadataSearchClose.module.css'
+import compStyles from "./metadataSearchClose.module.css";
 
 function MetadataSearchClose() {
-  const { onHandleSearchClose } = useContext(ContextMetadataSearch)
+  const { onHandleSearchClose } = useContext(ContextMetadataSearch);
 
   return (
     <span className={compStyles.close}>
@@ -28,7 +28,7 @@ function MetadataSearchClose() {
         </Icon>
       </Button>
     </span>
-  )
+  );
 }
 
-export default MetadataSearchClose
+export default MetadataSearchClose;

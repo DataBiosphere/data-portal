@@ -6,47 +6,47 @@
  */
 
 // Core dependencies
-import { navigate } from 'gatsby'
-import React from 'react'
+import { navigate } from "gatsby";
+import React from "react";
 
 // Styles
-import fontStyles from '../../styles/fontsize.module.css'
-import compStyles from './tocItem.module.css'
+import fontStyles from "../../styles/fontsize.module.css";
+import compStyles from "./tocItem.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 class TOCItem extends React.Component {
   isTOCActive = () => {
-    const { activeLocation = {}, toc } = this.props
-    const { anchor, type } = toc
+    const { activeLocation = {}, toc } = this.props;
+    const { anchor, type } = toc;
 
     /* Handle case for markdown TOC. */
     if (/docs/.test(type)) {
-      return activeLocation.hash === anchor
+      return activeLocation.hash === anchor;
     } else {
-    /* Handle case for metadata TOC. */
-      const [toc0] = activeLocation.hash.split('-')
-      const [toc1] = anchor.split('-')
+      /* Handle case for metadata TOC. */
+      const [toc0] = activeLocation.hash.split("-");
+      const [toc1] = anchor.split("-");
 
-      return toc0 === toc1
+      return toc0 === toc1;
     }
-  }
+  };
 
   onTOCClicked = anchor => {
-    navigate(anchor)
-  }
+    navigate(anchor);
+  };
 
   render() {
-    const { toc } = this.props
-    const { anchor, depth, name } = toc
+    const { toc } = this.props;
+    const { anchor, depth, name } = toc;
     const classTOCLink = classNames(
       { [compStyles.depth3]: depth === 3 },
       fontStyles.xs
-    )
+    );
     const classTOCItem = classNames(
       { [compStyles.active]: this.isTOCActive() },
       compStyles.toc
-    )
+    );
     return (
       <li className={classTOCItem}>
         <button
@@ -57,8 +57,8 @@ class TOCItem extends React.Component {
           {name}
         </button>
       </li>
-    )
+    );
   }
 }
 
-export default TOCItem
+export default TOCItem;

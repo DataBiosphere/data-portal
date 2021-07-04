@@ -4,7 +4,7 @@
  *
  * Style definitions specific to HCA autosuggest component.
  */
-@import '../../styles/vars.module.css';
+@import "../../styles/vars.module.css";
 
 /* Search input - container */
 .search {

@@ -4,7 +4,7 @@
  *
  * Style definitions specific to the HCA Data Portal toggle button component.
  */
-@import '../../styles/vars.module.css';
+@import "../../styles/vars.module.css";
 
 /* Button */
 .toggle {
@@ -16,7 +16,7 @@
   color: var(--primary);
   display: inline-flex;
   flex-shrink: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 500;
   height: 32px;

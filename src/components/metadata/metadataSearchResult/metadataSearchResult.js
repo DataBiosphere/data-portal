@@ -6,18 +6,18 @@
  */
 
 // Core dependencies
-import React, { useContext, useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from "react";
 
 // App dependencies
-import ContextMetadataDisplaying from '../contextMetadataDisplaying/contextMetadataDisplaying'
-import ContextMetadataSearch from '../contextMetadataSearch/contextMetadataSearch'
-import MetadataSearchResultProperty from '../metadataSearchResultProperty/metadataSearchResultProperty'
-import MetadataSearchResultSchema from '../metadataSearchResultSchema/metadataSearchResultSchema'
+import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
+import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
+import MetadataSearchResultProperty from "../metadataSearchResultProperty/metadataSearchResultProperty";
+import MetadataSearchResultSchema from "../metadataSearchResultSchema/metadataSearchResultSchema";
 
 // Styles
-import compStyles from './metadataSearchResult.module.css'
+import compStyles from "./metadataSearchResult.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 function MetadataSearchResult(props) {
   const {
@@ -26,29 +26,29 @@ function MetadataSearchResult(props) {
       result,
       setActiveCounter,
       setActiveResult,
-      setActiveResultEl,
+      setActiveResultEl
     } = props,
-    { type } = result || {}
-  const { onHandleNavigationSearchHit } = useContext(ContextMetadataDisplaying)
-  const { inputValue } = useContext(ContextMetadataSearch)
-  const resultEl = useRef(null)
-  const showSchema = /schema/.test(type)
+    { type } = result || {};
+  const { onHandleNavigationSearchHit } = useContext(ContextMetadataDisplaying);
+  const { inputValue } = useContext(ContextMetadataSearch);
+  const resultEl = useRef(null);
+  const showSchema = /schema/.test(type);
 
   /* useEffect - componentDidUpdate - active. */
   /* Sets state active result and active result element. */
   /* Handles scrolling to maintain visibility of any active result. */
   useEffect(() => {
     if (active) {
-      setActiveResult(result)
-      setActiveResultEl(resultEl.current)
+      setActiveResult(result);
+      setActiveResultEl(resultEl.current);
     }
-  }, [active, result, setActiveResult, setActiveResultEl])
+  }, [active, result, setActiveResult, setActiveResultEl]);
 
   /* Classnames. */
   const classNamesResult = classNames(
     { [compStyles.active]: active },
     compStyles.result
-  )
+  );
 
   return (
     <div
@@ -56,7 +56,7 @@ function MetadataSearchResult(props) {
       onClick={() => onHandleNavigationSearchHit(result, inputValue)}
       onMouseMove={() => setActiveCounter(counter)}
       ref={resultEl}
-      role={'presentation'}
+      role={"presentation"}
     >
       {showSchema ? (
         <MetadataSearchResultSchema result={result} searchTerm={inputValue} />
@@ -64,7 +64,7 @@ function MetadataSearchResult(props) {
         <MetadataSearchResultProperty result={result} searchTerm={inputValue} />
       )}
     </div>
-  )
+  );
 }
 
-export default React.memo(MetadataSearchResult)
+export default React.memo(MetadataSearchResult);

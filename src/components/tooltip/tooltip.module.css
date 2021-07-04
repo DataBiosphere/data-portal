@@ -4,7 +4,7 @@
  *
  * Style definitions specific to the HCA Data Portal tooltip component.
  */
-@import '../../styles/vars.module.css';
+@import "../../styles/vars.module.css";
 
 /* Tooltip */
 .tooltip {
@@ -32,7 +32,7 @@
 }
 
 /* Tooltip target */
-[id='tooltip'] {
+[id="tooltip"] {
   cursor: pointer;
   line-height: inherit;
 }

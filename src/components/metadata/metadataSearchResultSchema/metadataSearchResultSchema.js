@@ -6,21 +6,21 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // App dependencies
-import Highlight from '../../highlight/highlight'
-import MetadataOverline from '../metadataOverline/metadataOverline'
-import MetadataSchemaPropertyWordWrapper from '../metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper'
+import Highlight from "../../highlight/highlight";
+import MetadataOverline from "../metadataOverline/metadataOverline";
+import MetadataSchemaPropertyWordWrapper from "../metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper";
 
 // Styles
-import fontStyles from '../../../styles/fontsize.module.css'
+import fontStyles from "../../../styles/fontsize.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 function MetadataSearchResultSchema(props) {
   const { result, searchTerm } = props,
-    { description, schemaName, title } = result || {}
+    { description, schemaName, title } = result || {};
 
   return (
     <>
@@ -39,7 +39,7 @@ function MetadataSearchResultSchema(props) {
       <span>
         <Highlight term={searchTerm}>
           <MetadataSchemaPropertyWordWrapper
-            font={'hcaCode'}
+            font={"hcaCode"}
             word={schemaName}
             wrap
           />
@@ -49,7 +49,7 @@ function MetadataSearchResultSchema(props) {
         </Highlight>
       </span>
     </>
-  )
+  );
 }
 
-export default MetadataSearchResultSchema
+export default MetadataSearchResultSchema;

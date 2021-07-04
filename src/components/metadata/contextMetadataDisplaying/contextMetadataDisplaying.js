@@ -9,15 +9,15 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 const ContextMetadataDisplaying = React.createContext({
   highlightActive: false,
-  highlightValue: '',
+  highlightValue: "",
   showAllMetadata: true,
   onHandleNavigationHit: () => {},
   onHandleNavigationSearchHit: () => {},
-  onHandleToggleRequiredFields: () => {},
-})
+  onHandleToggleRequiredFields: () => {}
+});
 
-export default ContextMetadataDisplaying
+export default ContextMetadataDisplaying;

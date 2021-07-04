@@ -6,16 +6,16 @@
  */
 
 // Core dependencies
-import Helmet from 'react-helmet'
-import React from 'react'
+import Helmet from "react-helmet";
+import React from "react";
 
 // App dependencies
-import * as EnvironmentService from '../../utils/environment/environment.service'
+import * as EnvironmentService from "../../utils/environment/environment.service";
 
 class PageHead extends React.Component {
   render() {
     const { pageTitle } = this.props,
-      title = pageTitle ? pageTitle : 'HCA Data Portal'
+      title = pageTitle ? pageTitle : "HCA Data Portal";
 
     return (
       <Helmet>
@@ -42,8 +42,8 @@ class PageHead extends React.Component {
         <link rel="stylesheet" href="https://use.typekit.net/qhb0geh.css" />
         <html lang="en" />
       </Helmet>
-    )
+    );
   }
 }
 
-export default PageHead
+export default PageHead;

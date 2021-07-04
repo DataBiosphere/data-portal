@@ -4,7 +4,7 @@
  *
  * Style definitions specific to the HCA Data Portal header component.
  */
-@import '../../styles/vars.module.css';
+@import "../../styles/vars.module.css";
 
 /* Nav bar container */
 .navBar,
@@ -158,7 +158,7 @@ a.logo img {
 .overlay {
   background-color: rgba(255, 255, 255, 0.9);
   bottom: 0;
-  content: '';
+  content: "";
   left: 0;
   position: fixed;
   right: 0;
@@ -179,8 +179,8 @@ a.logo img {
 /* Drop down menu icon */
 .menuDropDown::before {
   color: var(--gray-dark);
-  content: '\E313';
-  font-family: 'Material Icons';
+  content: "\E313";
+  font-family: "Material Icons";
   font-size: 18px;
   font-weight: 400;
   margin: 0 4px;

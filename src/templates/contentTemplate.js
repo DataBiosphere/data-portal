@@ -6,37 +6,37 @@
  */
 
 // Core dependencies
-import { graphql } from 'gatsby'
-import React from 'react'
+import { graphql } from "gatsby";
+import React from "react";
 
 // App dependencies
-import AnalysisDetail from '../components/analyze/analysisDetail'
-import Analyze from '../components/analyze/analyze'
-import Attributions from '../components/attributions/attributions'
-import Layout from '../components/layout'
-import Markdown from '../components/markdown/markdown'
-import ProviderMetadataDisplaying from '../components/metadata/providerMetadataDisplaying/providerMetadataDisplaying'
-import * as TemplateService from '../utils/template.service'
+import AnalysisDetail from "../components/analyze/analysisDetail";
+import Analyze from "../components/analyze/analyze";
+import Attributions from "../components/attributions/attributions";
+import Layout from "../components/layout";
+import Markdown from "../components/markdown/markdown";
+import ProviderMetadataDisplaying from "../components/metadata/providerMetadataDisplaying/providerMetadataDisplaying";
+import * as TemplateService from "../utils/template.service";
 
 // Styles
-import globalStyles from '../styles/global.module.css'
+import globalStyles from "../styles/global.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 // the data prop will be injected by the GraphQL query below.
 export default function Template({ data, location }) {
-  const { pathname, hash } = location
-  const { markdownRemark, sitePage } = data // data.markdownRemark holds our post data
+  const { pathname, hash } = location;
+  const { markdownRemark, sitePage } = data; // data.markdownRemark holds our post data
   const { frontmatter, htmlAst } = markdownRemark,
     { context } = sitePage,
     { nav } = context || {},
     { fields } = markdownRemark || {},
     { slug } = fields || {},
-    { componentName, description, linked, title } = frontmatter || {}
-  const showEditPage = TemplateService.showEditPage(slug)
-  const editPath = TemplateService.getPageEditUrl(slug)
-  const h1 = TemplateService.getPageTitle(htmlAst)
-  const pageTitle = h1 ? h1 : title
+    { componentName, description, linked, title } = frontmatter || {};
+  const showEditPage = TemplateService.showEditPage(slug);
+  const editPath = TemplateService.getPageEditUrl(slug);
+  const h1 = TemplateService.getPageTitle(htmlAst);
+  const pageTitle = h1 ? h1 : title;
 
   return (
     <ProviderMetadataDisplaying>
@@ -47,15 +47,15 @@ export default function Template({ data, location }) {
         nav={nav}
         pageTitle={pageTitle}
       >
-        {componentName === 'analysisDetail' ? (
+        {componentName === "analysisDetail" ? (
           <AnalysisDetail data={markdownRemark} />
         ) : (
           <Markdown>{htmlAst}</Markdown>
         )}
-        {linked && componentName === 'analyze' ? (
+        {linked && componentName === "analyze" ? (
           <Analyze linked={linked} />
         ) : null}
-        {componentName === 'attributions' ? <Attributions /> : null}
+        {componentName === "attributions" ? <Attributions /> : null}
         {showEditPage ? (
           <a
             className={classNames(
@@ -71,7 +71,7 @@ export default function Template({ data, location }) {
         ) : null}
       </Layout>
     </ProviderMetadataDisplaying>
-  )
+  );
 }
 
 // modified to find the page by id which is passed in as context
@@ -146,4 +146,4 @@ export const pageQuery = graphql`
       path
     }
   }
-`
+`;

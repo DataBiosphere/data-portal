@@ -14,18 +14,18 @@ svg.humanBody {
 }
 
 /* Hide organ */
-svg.humanBody [id^='path'] {
+svg.humanBody [id^="path"] {
   opacity: 0;
 }
 
 /* Show organ */
-svg.humanBody [id^='path'].active {
+svg.humanBody [id^="path"].active {
   opacity: 1;
 }
 
 /* Transition */
-svg.humanBody [id^='path'],
-svg.humanBody [id^='path'].active {
+svg.humanBody [id^="path"],
+svg.humanBody [id^="path"].active {
   transition: opacity 0.5s ease 0s;
 }
 

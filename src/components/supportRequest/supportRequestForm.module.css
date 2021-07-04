@@ -5,7 +5,7 @@
  * Style definitions specific to Zendesk support request form.
  */
 
-@import '../../styles/vars.module.css';
+@import "../../styles/vars.module.css";
 
 .supportRequest {
   background-color: white;
@@ -135,7 +135,7 @@
 .supportRequest .inputAttachmentDelete:before,
 .supportRequest .inputAttachmentDelete:after {
   background-color: var(--primary);
-  content: ' ';
+  content: " ";
   height: 2px;
   left: 10%;
   position: absolute;
@@ -175,7 +175,7 @@
 }
 
 .supportRequest .buttons button {
-  font-family: 'din-2014', sans-serif;
+  font-family: "din-2014", sans-serif;
   text-transform: uppercase;
   transition: background-color 500ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }

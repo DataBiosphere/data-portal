@@ -6,30 +6,30 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // Styles
-import compStyles from './button.module.css'
+import compStyles from "./button.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 function Button(props) {
-  const { children, clickAction, icon } = props
+  const { children, clickAction, icon } = props;
   const classNamesButton = classNames(compStyles.button, {
-    [compStyles.buttonIcon]: icon,
-  })
+    [compStyles.buttonIcon]: icon
+  });
 
   const onHandleClickAction = () => {
     if (clickAction) {
-      clickAction()
+      clickAction();
     }
-  }
+  };
 
   return (
     <button className={classNamesButton} onClick={() => onHandleClickAction()}>
       {children}
     </button>
-  )
+  );
 }
 
-export default Button
+export default Button;

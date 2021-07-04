@@ -4,7 +4,7 @@
  *
  * Style definitions specific to the HCA Data Portal TOC component.
  */
-@import '../../styles/vars.module.css';
+@import "../../styles/vars.module.css";
 
 /* TOCs */
 .tocs {

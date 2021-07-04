@@ -30,34 +30,34 @@
  */
 
 // Core dependencies
-import { Link } from 'gatsby'
-import React from 'react'
+import { Link } from "gatsby";
+import React from "react";
 
 // App dependencies
-import { Relationship } from '../../utils/anchor/relationship.model'
-import { Target } from '../../utils/anchor/target.model'
+import { Relationship } from "../../utils/anchor/relationship.model";
+import { Target } from "../../utils/anchor/target.model";
 
 // Styles
-import buttonStyles from '../button/button.module.css'
-import { SurveyName } from '../survey/survey-name'
-import * as DPGTMService from '../../utils/dp-gtm/dp-gtm.service'
+import buttonStyles from "../button/button.module.css";
+import { SurveyName } from "../survey/survey-name";
+import * as DPGTMService from "../../utils/dp-gtm/dp-gtm.service";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 function ButtonCta(props) {
-  const { children, href = '/', spacer = true, target = Target.SELF } = props
+  const { children, href = "/", spacer = true, target = Target.SELF } = props;
   const classNameButton = classNames(buttonStyles.buttonUnelevatedSecondary, {
-    [buttonStyles.buttonSpacer]: spacer,
-  })
-  const externalLink = target === Target.BLANK
+    [buttonStyles.buttonSpacer]: spacer
+  });
+  const externalLink = target === Target.BLANK;
 
   /**
    * Track user clicks on CTA.
    * TODO generalize to handle other CTA's.
    */
   const trackSurveyLaunch = () => {
-    DPGTMService.trackSurveyLaunch(SurveyName['2021_SPRING_MATRIX_UX'])
-  }
+    DPGTMService.trackSurveyLaunch(SurveyName["2021_SPRING_MATRIX_UX"]);
+  };
 
   return externalLink ? (
     <a
@@ -73,7 +73,7 @@ function ButtonCta(props) {
     <Link className={classNameButton} to={href}>
       {children}
     </Link>
-  )
+  );
 }
 
-export default ButtonCta
+export default ButtonCta;

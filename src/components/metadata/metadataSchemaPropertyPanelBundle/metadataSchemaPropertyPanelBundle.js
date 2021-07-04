@@ -7,22 +7,22 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 function MetadataSchemaPropertyPanelBundle(props) {
-  const { children, onHandleMouseEnter, onHandleMouseLeave } = props
-  const mouseEvents = onHandleMouseEnter || onHandleMouseLeave
-  const attributes = { ...(mouseEvents && { role: 'presentation' }) }
+  const { children, onHandleMouseEnter, onHandleMouseLeave } = props;
+  const mouseEvents = onHandleMouseEnter || onHandleMouseLeave;
+  const attributes = { ...(mouseEvents && { role: "presentation" }) };
   const events = {
     ...(onHandleMouseEnter && { onMouseEnter: onHandleMouseEnter }),
-    ...(onHandleMouseLeave && { onMouseLeave: onHandleMouseLeave }),
-  }
+    ...(onHandleMouseLeave && { onMouseLeave: onHandleMouseLeave })
+  };
 
   return (
     <span {...attributes} {...events}>
       {children}
     </span>
-  )
+  );
 }
 
-export default MetadataSchemaPropertyPanelBundle
+export default MetadataSchemaPropertyPanelBundle;

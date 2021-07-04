@@ -7,7 +7,7 @@
 /**
  * Core react-autosuggest theming API end points.
  */
-@import '../../styles/vars.module.css';
+@import "../../styles/vars.module.css";
 
 /* Input container */
 .container {
@@ -15,7 +15,7 @@
 }
 
 /* Input - removes default IOS */
-input[type='text'] {
+input[type="text"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -77,7 +77,7 @@ input::-webkit-input-placeholder {
 /* Section title */
 .sectionTitle {
   color: var(--gray-medium);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 10px;
   font-weight: 500;
   height: unset; /* Override MD spec */
@@ -89,7 +89,7 @@ input::-webkit-input-placeholder {
 /* Suggestions */
 .suggestion {
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   letter-spacing: 0.43px;
   line-height: 18px;

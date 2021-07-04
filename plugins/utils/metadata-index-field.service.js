@@ -18,20 +18,20 @@ const getPropertyPaths = function getPropertyPaths(propertyPaths) {
   if (propertyPaths && propertyPaths.length) {
     return propertyPaths.reduce((acc, propertyPath) => {
       /* Accumulate the original path. */
-      acc.push(propertyPath)
+      acc.push(propertyPath);
 
       /* Accumulate any individual words within the path. */
       /* Accumulate the individual words as a single word without the "_". */
       /* e.g. "donor_organism" returns "donor" and "organism" and "donororganism". */
-      if (propertyPath.includes('_')) {
-        const propertyWords = propertyPath.split('_')
-        acc.push(...propertyWords)
+      if (propertyPath.includes("_")) {
+        const propertyWords = propertyPath.split("_");
+        acc.push(...propertyWords);
       }
 
-      return acc
-    }, [])
+      return acc;
+    }, []);
   }
-}
+};
 
 /**
  * Returns the array, removing any value with a colon and replacing with an underscore.
@@ -50,27 +50,27 @@ const parseArraySpecialCharValues = function parseArraySpecialCharValues(
   if (array && array.length) {
     const setOfTerms = array.reduce((acc, value) => {
       if (value) {
-        const term = value.replace(/:/g, '_')
-        acc.add(term)
+        const term = value.replace(/:/g, "_");
+        acc.add(term);
 
         /* Accumulate curie and identifier separately. */
         const terms = term
-          .replace(/_/g, ' ')
-          .replace(/\s+/g, ' ')
+          .replace(/_/g, " ")
+          .replace(/\s+/g, " ")
           .trim()
-          .split(' ')
+          .split(" ");
 
-        terms.map(t => acc.add(t))
+        terms.map(t => acc.add(t));
       }
 
-      return acc
-    }, new Set())
+      return acc;
+    }, new Set());
 
-    return [...setOfTerms]
+    return [...setOfTerms];
   }
 
-  return []
-}
+  return [];
+};
 
 /**
  * Returns the example as an array of examples or enumerated examples, removing any value with a colon and replacing with an underscore.
@@ -82,14 +82,14 @@ const parsePropertyExample = function parsePropertyExample(example) {
   if (example) {
     const str = example.replace(
       /(,|or |"|For example |Should be one of: |\.)/gi,
-      ''
-    )
-    const examples = str.split(' ')
-    return parseArraySpecialCharValues(examples)
+      ""
+    );
+    const examples = str.split(" ");
+    return parseArraySpecialCharValues(examples);
   }
 
-  return ''
-}
+  return "";
+};
 
 /**
  * Returns the string, removing any value with a colon and replacing with an underscore.
@@ -104,13 +104,13 @@ const parsePropertyExample = function parsePropertyExample(example) {
  */
 const parseStrSpecialCharValues = function parseStrSpecialCharValues(str) {
   if (str) {
-    return str.replace(/:/g, '_')
+    return str.replace(/:/g, "_");
   }
 
-  return ''
-}
+  return "";
+};
 
-module.exports.getPropertyPaths = getPropertyPaths
-module.exports.parseArraySpecialCharValues = parseArraySpecialCharValues
-module.exports.parsePropertyExample = parsePropertyExample
-module.exports.parseStrSpecialCharValues = parseStrSpecialCharValues
+module.exports.getPropertyPaths = getPropertyPaths;
+module.exports.parseArraySpecialCharValues = parseArraySpecialCharValues;
+module.exports.parsePropertyExample = parsePropertyExample;
+module.exports.parseStrSpecialCharValues = parseStrSpecialCharValues;

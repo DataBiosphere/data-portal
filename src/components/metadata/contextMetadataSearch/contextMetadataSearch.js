@@ -7,16 +7,16 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 const ContextMetadataSearch = React.createContext({
   inputActive: false,
-  inputValue: '',
+  inputValue: "",
   results: [],
   showResultsPanel: false,
   onHandleSearch: () => {},
   onHandleSearchClose: () => {},
-  onHandleSearchOpen: () => {},
-})
+  onHandleSearchOpen: () => {}
+});
 
-export default ContextMetadataSearch
+export default ContextMetadataSearch;

@@ -4,7 +4,7 @@
  *
  * Style definitions specific to the HCA explore controls component.
  */
-@import '../../../src/styles/vars.module.css';
+@import "../../../src/styles/vars.module.css";
 
 /* Controls container */
 .controls {
@@ -44,7 +44,7 @@
 
 /* Metric label */
 .controls .label {
-  font-family: 'din-2014', sans-serif;
+  font-family: "din-2014", sans-serif;
   letter-spacing: 1.5px;
   line-height: 19px; /* Per specification */
   padding-top: 4px;

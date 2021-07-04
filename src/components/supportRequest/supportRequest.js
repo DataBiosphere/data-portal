@@ -6,24 +6,24 @@
  */
 
 // Core dependencies
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 // App dependencies
-import SupportRequestForm from './supportRequestForm'
-import SupportRequestButton from './supportRequestButton'
-import { GASource } from '../../utils/dp-gtm/ga-source.model'
+import SupportRequestForm from "./supportRequestForm";
+import SupportRequestButton from "./supportRequestButton";
+import { GASource } from "../../utils/dp-gtm/ga-source.model";
 
 const SupportRequest = ({ active = false, source, onToggle }) => {
-  const [supportRequestActive, setSupportRequestActive] = useState(active)
+  const [supportRequestActive, setSupportRequestActive] = useState(active);
 
   React.useEffect(() => {
-    setSupportRequestActive(active)
-  }, [active])
+    setSupportRequestActive(active);
+  }, [active]);
 
   const onToggleSupportRequestForm = (active, source) => {
-    setSupportRequestActive(active)
-    onToggle(active, source)
-  }
+    setSupportRequestActive(active);
+    onToggle(active, source);
+  };
 
   return (
     <>
@@ -43,7 +43,7 @@ const SupportRequest = ({ active = false, source, onToggle }) => {
         />
       )}
     </>
-  )
-}
+  );
+};
 
-export default SupportRequest
+export default SupportRequest;

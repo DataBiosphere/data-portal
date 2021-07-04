@@ -6,23 +6,23 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // App dependencies
-import Highlight from '../../highlight/highlight'
-import MetadataOverline from '../metadataOverline/metadataOverline'
-import MetadataRequired from '../metadataRequired/metadataRequired'
-import MetadataSchemaPropertyFieldDescription from '../metadataSchemaPropertyFieldDescription/metadataSchemaPropertyFieldDescription'
-import MetadataSchemaPropertyFieldExample from '../metadataSchemaPropertyFieldExample/metadataSchemaPropertyFieldExample'
-import MetadataSchemaPropertyFieldFriendlies from '../metadataSchemaPropertyFieldFriendlies/metadataSchemaPropertyFieldFriendlies'
-import MetadataSchemaPropertyFieldGraphRestriction from '../metadataSchemaPropertyFieldGraphRestriction/metadataSchemaPropertyFieldGraphRestriction'
-import MetadataSchemaPropertyWordWrapper from '../metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper'
+import Highlight from "../../highlight/highlight";
+import MetadataOverline from "../metadataOverline/metadataOverline";
+import MetadataRequired from "../metadataRequired/metadataRequired";
+import MetadataSchemaPropertyFieldDescription from "../metadataSchemaPropertyFieldDescription/metadataSchemaPropertyFieldDescription";
+import MetadataSchemaPropertyFieldExample from "../metadataSchemaPropertyFieldExample/metadataSchemaPropertyFieldExample";
+import MetadataSchemaPropertyFieldFriendlies from "../metadataSchemaPropertyFieldFriendlies/metadataSchemaPropertyFieldFriendlies";
+import MetadataSchemaPropertyFieldGraphRestriction from "../metadataSchemaPropertyFieldGraphRestriction/metadataSchemaPropertyFieldGraphRestriction";
+import MetadataSchemaPropertyWordWrapper from "../metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper";
 
 function MetadataSearchResultProperty(props) {
   const { result, searchTerm } = props,
     { propertyPath, _ref, showClasses, showExample, showOntologies } =
-      result || {}
-  const showPaths = !_ref
+      result || {};
+  const showPaths = !_ref;
 
   return (
     <>
@@ -42,7 +42,7 @@ function MetadataSearchResultProperty(props) {
         {showPaths ? (
           <Highlight term={searchTerm}>
             <MetadataSchemaPropertyWordWrapper
-              font={'hcaCode'}
+              font={"hcaCode"}
               word={propertyPath}
               wrap
             />
@@ -50,13 +50,13 @@ function MetadataSearchResultProperty(props) {
         ) : null}
         <Highlight term={searchTerm}>
           <MetadataSchemaPropertyFieldDescription
-            font={'xs'}
+            font={"xs"}
             property={result}
           />
         </Highlight>
         {showExample ? (
           <Highlight term={searchTerm}>
-            <MetadataSchemaPropertyFieldExample font={'xs'} property={result} />
+            <MetadataSchemaPropertyFieldExample font={"xs"} property={result} />
           </Highlight>
         ) : null}
         {showClasses || showOntologies ? (
@@ -69,7 +69,7 @@ function MetadataSearchResultProperty(props) {
         ) : null}
       </span>
     </>
-  )
+  );
 }
 
-export default MetadataSearchResultProperty
+export default MetadataSearchResultProperty;

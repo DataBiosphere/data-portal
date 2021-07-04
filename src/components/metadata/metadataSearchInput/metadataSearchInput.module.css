@@ -4,7 +4,7 @@
  *
  * Style definitions specific to the HCA Data Portal metadata search input component.
  */
-@import '../../../styles/vars.module.css';
+@import "../../../styles/vars.module.css";
 
 /* Search bar. */
 .searchBar {
@@ -31,7 +31,7 @@
 
 /* Input. */
 input,
-input[type='text'] {
+input[type="text"] {
   font-size: 16px; /* Required to prevent zoom on focus of <input> on mobile. */
   line-height: 32px;
 }
@@ -71,7 +71,7 @@ input[type='text'] {
 @media screen and (min-width: 768px) {
   /* Input. */
   input,
-  input[type='text'] {
+  input[type="text"] {
     font-size: 12px;
   }
 }

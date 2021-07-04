@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby";
 
 export const FooterQuery = () => {
   const { allSiteMapYaml } = useStaticQuery(
@@ -21,6 +21,6 @@ export const FooterQuery = () => {
         }
       }
     `
-  )
-  return allSiteMapYaml.edges.map(e => e.node)
-}
+  );
+  return allSiteMapYaml.edges.map(e => e.node);
+};

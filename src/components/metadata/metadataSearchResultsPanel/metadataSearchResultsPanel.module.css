@@ -4,7 +4,7 @@
  *
  * Style definitions specific to the HCA Data Portal metadata search results panel component.
  */
-@import '../../../styles/vars.module.css';
+@import "../../../styles/vars.module.css";
 
 /* Panel. */
 .panel {
@@ -20,7 +20,7 @@
 }
 
 /* Panel - label i.e. "schema" or "property". */
-.panel [id='label'] {
+.panel [id="label"] {
   margin: 0;
   padding: 16px var(--gutter-x) 4px;
 }

@@ -7,25 +7,25 @@
  */
 
 // Core dependencies
-import { navigate } from '@reach/router'
-import React from 'react'
+import { navigate } from "@reach/router";
+import React from "react";
 
 // Styles
-import compStyles from './internalLink.module.css'
+import compStyles from "./internalLink.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 function InternalLink(props) {
-  const { anchor, relative } = props
+  const { anchor, relative } = props;
 
   const onAnchorClicked = anchor => {
-    navigate(`#${anchor}`)
-  }
+    navigate(`#${anchor}`);
+  };
 
   return (
     <button
       className={classNames(compStyles.anchor, {
-        [compStyles.anchorRelative]: relative,
+        [compStyles.anchorRelative]: relative
       })}
       onClick={() => onAnchorClicked(anchor)}
       aria-label={anchor}
@@ -43,7 +43,7 @@ function InternalLink(props) {
         />
       </svg>
     </button>
-  )
+  );
 }
 
-export default InternalLink
+export default InternalLink;

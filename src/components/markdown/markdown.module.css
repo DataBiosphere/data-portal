@@ -17,7 +17,7 @@ h6 {
 
 /* Embedded video. */
 /* Embedded video wrapper. */
-.markdown div[class*='gatsby-resp-iframe-wrapper'] {
+.markdown div[class*="gatsby-resp-iframe-wrapper"] {
   padding-bottom: 316px !important; /* Padding equal to iframe max-height */
 }
 
@@ -38,29 +38,29 @@ h6 {
 }
 
 /* Code - inline and block */
-.markdown code[class*='language-'],
-.markdown pre[class*='language-'] {
+.markdown code[class*="language-"],
+.markdown pre[class*="language-"] {
   color: var(--black);
-  font-family: 'PT Mono', 'Montserrat', sans-serif;
+  font-family: "PT Mono", "Montserrat", sans-serif;
   font-size: 15px;
   white-space: pre-wrap; /* Allow line to wrap - responsive */
   word-break: break-all; /* Allow line to wrap - responsive */
 }
 
 /* Code - inline and block - background */
-.markdown pre[class*='language-'],
-.markdown :not(pre) > code[class*='language-'] {
+.markdown pre[class*="language-"],
+.markdown :not(pre) > code[class*="language-"] {
   background-color: var(--white-off);
   border-radius: 3px;
 }
 
 /* Code - inline */
-.markdown :not(pre) > code[class*='language-'] {
+.markdown :not(pre) > code[class*="language-"] {
   padding: 2px;
 }
 
 /* Code - block */
-.markdown pre[class*='language-'] {
+.markdown pre[class*="language-"] {
   margin: 0 0 18px;
   padding: 16px;
 }

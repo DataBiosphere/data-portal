@@ -7,15 +7,15 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // Styles
-import compStyles from './contentWrapper.module.css'
+import compStyles from "./contentWrapper.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 function ContentWrapper(props) {
-  const { children, marginLeft, marginRight } = props
+  const { children, marginLeft, marginRight } = props;
 
   return (
     <div
@@ -27,7 +27,7 @@ function ContentWrapper(props) {
     >
       {children}
     </div>
-  )
+  );
 }
 
-export default ContentWrapper
+export default ContentWrapper;

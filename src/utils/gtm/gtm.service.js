@@ -6,7 +6,7 @@
  */
 
 // App dependencies
-import { GADimension } from '../dp-gtm/ga-dimension.model'
+import { GADimension } from "../dp-gtm/ga-dimension.model";
 
 /**
  * Send custom event to GTM/GA.
@@ -18,7 +18,7 @@ import { GADimension } from '../dp-gtm/ga-dimension.model'
  */
 export function trackEvent(category, action, label, dimensions) {
   if (!isTrackingEnabled()) {
-    return
+    return;
   }
 
   const eventConfig = Object.assign(
@@ -26,12 +26,12 @@ export function trackEvent(category, action, label, dimensions) {
     {
       event: category,
       eventAction: action,
-      eventLabel: label,
+      eventLabel: label
     },
     dimensions
-  )
+  );
 
-  getDataLayer().push(eventConfig)
+  getDataLayer().push(eventConfig);
 }
 
 /**
@@ -40,7 +40,7 @@ export function trackEvent(category, action, label, dimensions) {
  * @returns {{}}
  */
 function getDataLayer() {
-  return window.dataLayer
+  return window.dataLayer;
 }
 
 /**
@@ -49,12 +49,12 @@ function getDataLayer() {
  * @returns {[key: string]: string}
  */
 function getDefaultDimensions() {
-  const defaultDimensions = {}
+  const defaultDimensions = {};
   for (let i in GADimension) {
-    defaultDimensions[GADimension[i]] = undefined
+    defaultDimensions[GADimension[i]] = undefined;
   }
 
-  return defaultDimensions
+  return defaultDimensions;
 }
 
 /**
@@ -63,5 +63,5 @@ function getDefaultDimensions() {
  * @returns {boolean}
  */
 function isTrackingEnabled() {
-  return !!getDataLayer()
+  return !!getDataLayer();
 }

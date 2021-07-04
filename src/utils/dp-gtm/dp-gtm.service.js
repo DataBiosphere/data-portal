@@ -6,11 +6,11 @@
  */
 
 // App dependencies
-import { GAAction } from './ga-action.model'
-import { GACategory } from './ga-category.model'
-import { GADimension } from './ga-dimension.model'
-import { GAEntityType } from './ga-entity-type.model'
-import * as GTMService from '../gtm/gtm.service'
+import { GAAction } from "./ga-action.model";
+import { GACategory } from "./ga-category.model";
+import { GADimension } from "./ga-dimension.model";
+import { GAEntityType } from "./ga-entity-type.model";
+import * as GTMService from "../gtm/gtm.service";
 
 /**
  * Create and send a GA tracking event generated from a click on a catalog from the announcement banner.
@@ -19,8 +19,8 @@ import * as GTMService from '../gtm/gtm.service'
  */
 export function trackCatalogViewed(catalog) {
   GTMService.trackEvent(GACategory.CATALOG, GAAction.VIEW_CATALOG, catalog, {
-    [GADimension.ENTITY_TYPE]: GAEntityType.CATALOG,
-  })
+    [GADimension.ENTITY_TYPE]: GAEntityType.CATALOG
+  });
 }
 
 /**
@@ -31,8 +31,8 @@ export function trackCatalogViewed(catalog) {
  */
 export function trackMetadataSearchInput(value, entityType) {
   GTMService.trackEvent(GACategory.SEARCH, GAAction.ENTER_TEXT, value, {
-    [GADimension.ENTITY_TYPE]: entityType,
-  })
+    [GADimension.ENTITY_TYPE]: entityType
+  });
 }
 
 /**
@@ -41,9 +41,9 @@ export function trackMetadataSearchInput(value, entityType) {
  * @param {GASource} source
  */
 export function trackSupportRequestCreated(source) {
-  GTMService.trackEvent(GACategory.SUPPORT_REQUEST, GAAction.CREATE, '', {
-    [GADimension.SOURCE]: source,
-  })
+  GTMService.trackEvent(GACategory.SUPPORT_REQUEST, GAAction.CREATE, "", {
+    [GADimension.SOURCE]: source
+  });
 }
 
 /**
@@ -53,7 +53,7 @@ export function trackSupportRequestCreated(source) {
  * @param {string} surveyName
  */
 export function trackSurveyLaunch(surveyName) {
-  GTMService.trackEvent(GACategory.SURVEY, GAAction.LAUNCH, surveyName, {})
+  GTMService.trackEvent(GACategory.SURVEY, GAAction.LAUNCH, surveyName, {});
 }
 
 /**
@@ -66,6 +66,6 @@ export function trackSurveyLaunch(surveyName) {
 export function trackMetadataSearchResultClick(value, searchTerm, entityType) {
   GTMService.trackEvent(GACategory.SEARCH, GAAction.CLICK, value, {
     [GADimension.ENTITY_TYPE]: entityType,
-    [GADimension.SEARCH_TERM]: searchTerm,
-  })
+    [GADimension.SEARCH_TERM]: searchTerm
+  });
 }

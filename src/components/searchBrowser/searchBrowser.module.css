@@ -4,11 +4,11 @@
  *
  * Style definitions specific to the search browser component.
  */
-@import '../../styles/vars.module.css';
+@import "../../styles/vars.module.css";
 
 /* Section */
 .searchBrowser {
-  background: url('../../../images/cell/searchBrowser.png') right / cover
+  background: url("../../../images/cell/searchBrowser.png") right / cover
     no-repeat;
   padding: 56px 0;
 }

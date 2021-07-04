@@ -6,10 +6,10 @@
  */
 
 // App dependencies
-import * as HttpService from '../utils/http.service'
+import * as HttpService from "../utils/http.service";
 
 const SYSTEM_HEALTH_CHECK_API_URL =
-  process.env.GATSBY_SYSTEM_HEALTH_CHECK_API_URL
+  process.env.GATSBY_SYSTEM_HEALTH_CHECK_API_URL;
 
 /**
  * Check current state of system.
@@ -18,7 +18,7 @@ export function healthCheck() {
   return fetch(SYSTEM_HEALTH_CHECK_API_URL)
     .then(HttpService.checkResponseStatus)
     .then(resp => resp.json())
-    .then(bindHealthCheckResponse)
+    .then(bindHealthCheckResponse);
 }
 
 /**
@@ -26,6 +26,6 @@ export function healthCheck() {
  */
 function bindHealthCheckResponse(response) {
   return {
-    healthy: response.up,
-  }
+    healthy: response.up
+  };
 }

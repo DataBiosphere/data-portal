@@ -4,7 +4,7 @@
  *
  * Style definitions specific to the HCA Data Portal tab component.
  */
-@import '../../styles/vars.module.css';
+@import "../../styles/vars.module.css";
 
 /* Tab. */
 .tab {
@@ -64,7 +64,7 @@
 .tab:last-of-type:after {
   bottom: -3px;
   height: 3px;
-  content: '';
+  content: "";
   position: absolute;
   width: 16px; /* 16px tab padding */
 }

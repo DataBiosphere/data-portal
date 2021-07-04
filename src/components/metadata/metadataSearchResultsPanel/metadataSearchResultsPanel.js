@@ -6,44 +6,44 @@
  */
 
 // Core dependencies
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 // Styles
-import compStyles from './metadataSearchResultsPanel.module.css'
+import compStyles from "./metadataSearchResultsPanel.module.css";
 
 function MetadataSearchResultsPanel(props) {
-  const { children } = props
-  const panelRef = useRef(null)
-  const [maxHeight, setMaxHeight] = useState(0)
+  const { children } = props;
+  const panelRef = useRef(null);
+  const [maxHeight, setMaxHeight] = useState(0);
 
   const getPanelMaxHeight = () => {
     /* Find the top position of the panel and calculate maximum possible display height. */
-    const panelY0 = panelRef.current.getBoundingClientRect().top
+    const panelY0 = panelRef.current.getBoundingClientRect().top;
     const panelHeight =
-      window.innerHeight - panelY0 + 1 /* 1px for top border. */
-    setMaxHeight(panelHeight)
-  }
+      window.innerHeight - panelY0 + 1; /* 1px for top border. */
+    setMaxHeight(panelHeight);
+  };
 
   const handleResize = useCallback(() => {
-    getPanelMaxHeight()
-  }, [])
+    getPanelMaxHeight();
+  }, []);
 
   /* useEffect - componentDidMount. */
   useEffect(() => {
-    getPanelMaxHeight()
-  }, [])
+    getPanelMaxHeight();
+  }, []);
 
   /* useEffect - componentDidMount/componentWillUnmount. */
   /* Event listeners - resize. */
   useEffect(() => {
     /* Add event listeners. */
-    window.addEventListener('resize', handleResize)
+    window.addEventListener("resize", handleResize);
 
     return () => {
       /* Remove event listeners. */
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [handleResize])
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
 
   return (
     <div
@@ -53,7 +53,7 @@ function MetadataSearchResultsPanel(props) {
     >
       {children}
     </div>
-  )
+  );
 }
 
-export default MetadataSearchResultsPanel
+export default MetadataSearchResultsPanel;

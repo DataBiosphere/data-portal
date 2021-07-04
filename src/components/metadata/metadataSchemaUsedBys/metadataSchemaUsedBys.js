@@ -6,20 +6,20 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // App dependencies
-import MetadataSchemaUsedBy from '../metadataSchemaUsedBy/metadataSchemaUsedBy'
+import MetadataSchemaUsedBy from "../metadataSchemaUsedBy/metadataSchemaUsedBy";
 
 // Styles
-import compStyles from './metadataSchemaUsedBys.module.css'
-import fontStyles from '../../../styles/fontsize.module.css'
+import compStyles from "./metadataSchemaUsedBys.module.css";
+import fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSchemaUsedBys(props) {
   const { schema } = props,
-    { entity, usedByProperties } = schema || {}
-  const showUsedBy = !/type/.test(entity)
-  const showUsedByProperties = usedByProperties.length > 0
+    { entity, usedByProperties } = schema || {};
+  const showUsedBy = !/type/.test(entity);
+  const showUsedByProperties = usedByProperties.length > 0;
 
   return showUsedBy ? (
     <>
@@ -39,7 +39,7 @@ function MetadataSchemaUsedBys(props) {
           ))
         : null}
     </>
-  ) : null
+  ) : null;
 }
 
-export default MetadataSchemaUsedBys
+export default MetadataSchemaUsedBys;

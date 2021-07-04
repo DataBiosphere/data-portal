@@ -6,104 +6,104 @@
  */
 
 // Core dependencies
-import Link from 'gatsby-link'
-import React from 'react'
+import Link from "gatsby-link";
+import React from "react";
 
 // App dependencies
-import ClickHandler from '../clickHandler/clickHandler'
-import HeaderNavDropDown from '../headerNavDropDown/headerNavDropDown'
-import { HeaderQuery } from '../../hooks/header-query'
-import * as ReleaseService from '../../utils/release.service'
+import ClickHandler from "../clickHandler/clickHandler";
+import HeaderNavDropDown from "../headerNavDropDown/headerNavDropDown";
+import { HeaderQuery } from "../../hooks/header-query";
+import * as ReleaseService from "../../utils/release.service";
 
 // Images
-import headerLogo from '../../../images/logo/logo-hca.png'
+import headerLogo from "../../../images/logo/logo-hca.png";
 
 // Styles
-import fontStyles from '../../styles/fontsize.module.css'
-import globalStyles from '../../styles/global.module.css'
-import dropStyles from '../headerNavDropDown/headerNavDropDown.module.css'
-import compStyles from './header.module.css'
+import fontStyles from "../../styles/fontsize.module.css";
+import globalStyles from "../../styles/global.module.css";
+import dropStyles from "../headerNavDropDown/headerNavDropDown.module.css";
+import compStyles from "./header.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 class Header extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = { menuNav: false, openNav: false }
-    this.toggleMenu = this.toggleMenu.bind(this)
+    super(props);
+    this.state = { menuNav: false, openNav: false };
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   componentDidMount() {
     // Set up header menu style
-    this.setNavStyle()
+    this.setNavStyle();
 
-    window.addEventListener('resize', this.setNavStyle)
+    window.addEventListener("resize", this.setNavStyle);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.setNavStyle)
+    window.removeEventListener("resize", this.setNavStyle);
   }
 
   shouldComponentUpdate(_, nextState) {
-    return this.state !== nextState
+    return this.state !== nextState;
   }
 
   getReleasesUrl = () => {
-    return `${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`
-  }
+    return `${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`;
+  };
 
   isActiveClassName = docPath => {
-    return docPath && docPath.includes('/releases/')
-  }
+    return docPath && docPath.includes("/releases/");
+  };
 
   setNavStyle = () => {
-    const { openNav } = this.state
-    const useMenuNav = document.body.getBoundingClientRect().width < 840
-    const closeMenuNav = !useMenuNav
+    const { openNav } = this.state;
+    const useMenuNav = document.body.getBoundingClientRect().width < 840;
+    const closeMenuNav = !useMenuNav;
 
-    this.setState({ menuNav: useMenuNav })
+    this.setState({ menuNav: useMenuNav });
 
     if (closeMenuNav && openNav) {
       // Close the menu if resize occurs when menu is open and screen width is > 840
-      this.setState({ openNav: false })
+      this.setState({ openNav: false });
     }
-  }
+  };
 
   toggleMenu = () => {
-    const { menuNav, openNav } = this.state
+    const { menuNav, openNav } = this.state;
 
     if (menuNav) {
-      this.setState({ openNav: !openNav })
-      this.props.onHandleSiteScroll(openNav)
+      this.setState({ openNav: !openNav });
+      this.props.onHandleSiteScroll(openNav);
     }
-  }
+  };
 
   render() {
     const { docPath, homePage, links } = this.props,
       { menuNav, openNav } = this.state,
       browserLink = process.env.GATSBY_EXPLORE_URL,
-      exploreDescription = 'Search for data in the HCA',
-      exploreLabel = 'Explore',
+      exploreDescription = "Search for data in the HCA",
+      exploreLabel = "Explore",
       hideLinks = menuNav && !openNav,
       releaseDescription =
-        'Explore, visualize, and interact with 24 annotated datasets',
-      releaseDocumentationUrl = '/releases/2020-mar',
-      releaseLabel = 'March 2020 Release',
+        "Explore, visualize, and interact with 24 annotated datasets",
+      releaseDocumentationUrl = "/releases/2020-mar",
+      releaseLabel = "March 2020 Release",
       releasesMenuActive = this.isActiveClassName(docPath),
-      releaseVisible = ReleaseService.isReleaseVisible()
+      releaseVisible = ReleaseService.isReleaseVisible();
 
     const Description = props => {
-      const { children } = props
+      const { children } = props;
 
       return (
         <span className={classNames(fontStyles.xxs, compStyles.xxs)}>
           {children}
         </span>
-      )
-    }
+      );
+    };
 
     const ExternalLink = props => {
-      const { children, className, linkTo } = props
+      const { children, className, linkTo } = props;
 
       return (
         <li className={className}>
@@ -111,12 +111,12 @@ class Header extends React.Component {
             {children}
           </a>
         </li>
-      )
-    }
+      );
+    };
 
     const HeaderNavDisplay = props => {
       const { description, label } = props,
-        { menuNav } = this.state
+        { menuNav } = this.state;
 
       return (
         <>
@@ -125,11 +125,11 @@ class Header extends React.Component {
           </span>
           {menuNav ? <Description>{description}</Description> : null}
         </>
-      )
-    }
+      );
+    };
 
     const InternalLink = props => {
-      const { children, className, path } = props
+      const { children, className, path } = props;
 
       return (
         <li className={className}>
@@ -142,20 +142,20 @@ class Header extends React.Component {
             {children}
           </Link>
         </li>
-      )
-    }
+      );
+    };
 
     const Nav = props => {
       const { nav } = props,
         { description, headerName, name, path } = nav || {},
-        label = headerName ? headerName : name
+        label = headerName ? headerName : name;
 
       return (
         <InternalLink path={path}>
           <HeaderNavDisplay description={description} label={label} />
         </InternalLink>
-      )
-    }
+      );
+    };
 
     const NavExplore = () => {
       return (
@@ -165,8 +165,8 @@ class Header extends React.Component {
             label={exploreLabel}
           />
         </ExternalLink>
-      )
-    }
+      );
+    };
 
     const NavRelease = () => {
       const button = (
@@ -201,24 +201,24 @@ class Header extends React.Component {
             </InternalLink>
           </ul>
         ),
-        { openNav } = this.state
+        { openNav } = this.state;
 
       return (
         <HeaderNavDropDown
           activeClassName={classNames({
-            [compStyles.active]: releasesMenuActive,
+            [compStyles.active]: releasesMenuActive
           })}
           button={button}
           menu={menu}
           stack={openNav}
         />
-      )
-    }
+      );
+    };
 
     return (
       <div
         className={classNames(compStyles.navBar, {
-          [compStyles.hcaHeader]: homePage,
+          [compStyles.hcaHeader]: homePage
         })}
       >
         <div
@@ -242,28 +242,28 @@ class Header extends React.Component {
           </div>
           <ClickHandler
             className={classNames(compStyles.menuDropDown, fontStyles.s, {
-              [compStyles.hide]: !menuNav,
+              [compStyles.hide]: !menuNav
             })}
             clickAction={this.toggleMenu}
-            tag={'div'}
+            tag={"div"}
           >
             Menu
           </ClickHandler>
           <ClickHandler
             className={classNames(compStyles.overlay, {
-              [compStyles.hide]: !openNav,
+              [compStyles.hide]: !openNav
             })}
             clickAction={this.toggleMenu}
-            tag={'div'}
+            tag={"div"}
           />
         </div>
       </div>
-    )
+    );
   }
 }
 
 export default props => {
-  const { docPath } = props
+  const { docPath } = props;
 
-  return <Header links={HeaderQuery()} docPath={docPath} {...props} />
-}
+  return <Header links={HeaderQuery()} docPath={docPath} {...props} />;
+};

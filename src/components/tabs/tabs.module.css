@@ -4,7 +4,7 @@
  *
  * Style definitions specific to the HCA Data Portal tabs component.
  */
-@import '../../styles/vars.module.css';
+@import "../../styles/vars.module.css";
 
 /* Tabs */
 .hcaTabs {
@@ -21,7 +21,7 @@
 /* Fade on horizontal scroll */
 .wrapper::after,
 .wrapper::before {
-  content: '';
+  content: "";
   height: 100%;
   position: absolute;
   top: 0;
