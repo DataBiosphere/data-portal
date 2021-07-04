@@ -7,30 +7,30 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // Styles
-import compStyles from './metadataSchemaPropertyWordWrapper.module.css'
-import fontStyles from '../../../styles/fontsize.module.css'
+import compStyles from "./metadataSchemaPropertyWordWrapper.module.css";
+import fontStyles from "../../../styles/fontsize.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 class MetadataSchemaPropertyWordWrapper extends React.Component {
   render() {
-    const { children, font, word, wrap } = this.props
-    const stackWords = word.split('.')
-    const wordDepth = stackWords.length - 1
+    const { children, font, word, wrap } = this.props;
+    const stackWords = word.split(".");
+    const wordDepth = stackWords.length - 1;
     const classNamesWordWrapper = classNames(
       { [fontStyles[font]]: !!font },
       { [compStyles.stack]: !wrap },
       { [compStyles.wrap]: wrap }
-    )
+    );
 
     const StackWord = props => {
-      const { children, counter, word, wordDepth } = props
-      const firstStack = counter === 0
-      const lastStack = counter === wordDepth
-      const wrapWords = word.split('_')
+      const { children, counter, word, wordDepth } = props;
+      const firstStack = counter === 0;
+      const lastStack = counter === wordDepth;
+      const wrapWords = word.split("_");
       return (
         <span className={compStyles.wrap}>
           {wrapWords.map((word, w) => (
@@ -38,13 +38,13 @@ class MetadataSchemaPropertyWordWrapper extends React.Component {
           ))}
           {lastStack ? children : null}
         </span>
-      )
-    }
+      );
+    };
 
     const WrapWord = props => {
-      const { counter, firstStack, word } = props
-      const showDot = counter === 0 && !firstStack
-      const showSeparator = counter !== 0
+      const { counter, firstStack, word } = props;
+      const showDot = counter === 0 && !firstStack;
+      const showSeparator = counter !== 0;
       return (
         <>
           {showDot ? <span>.</span> : null}
@@ -57,8 +57,8 @@ class MetadataSchemaPropertyWordWrapper extends React.Component {
             <span>{word}</span>
           )}
         </>
-      )
-    }
+      );
+    };
 
     return (
       <span className={classNamesWordWrapper}>
@@ -72,8 +72,8 @@ class MetadataSchemaPropertyWordWrapper extends React.Component {
           />
         ))}
       </span>
-    )
+    );
   }
 }
 
-export default MetadataSchemaPropertyWordWrapper
+export default MetadataSchemaPropertyWordWrapper;

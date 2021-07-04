@@ -6,83 +6,83 @@
  */
 
 // Core dependencies
-import Link from 'gatsby-link'
-import React from 'react'
+import Link from "gatsby-link";
+import React from "react";
 
 // App dependencies
-import ClickHandler from '../clickHandler/clickHandler'
-import MetadataOverline from '../metadata/metadataOverline/metadataOverline'
+import ClickHandler from "../clickHandler/clickHandler";
+import MetadataOverline from "../metadata/metadataOverline/metadataOverline";
 
 // Styles
-import compStyles from './nav.module.css'
-import fontStyles from '../../styles/fontsize.module.css'
+import compStyles from "./nav.module.css";
+import fontStyles from "../../styles/fontsize.module.css";
 
-let classNames = require('classnames')
+let classNames = require("classnames");
 
-let active
-let expanded
-let initialShowNav = false
-let tab
+let active;
+let expanded;
+let initialShowNav = false;
+let tab;
 
 class Nav extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = { showNav: initialShowNav }
-    this.toggleNav = this.toggleNav.bind(this)
+    super(props);
+    this.state = { showNav: initialShowNav };
+    this.toggleNav = this.toggleNav.bind(this);
   }
 
   componentDidMount() {
-    this.getTab()
+    this.getTab();
   }
 
   getNavClassName = nav => {
-    active = nav.active
+    active = nav.active;
     expanded =
       nav.sLinks && nav.sLinks.length > 0
         ? nav.active || nav.sLinks.some(sLink => sLink.active)
-        : false
+        : false;
 
     return classNames({
       [compStyles.expanded]: expanded,
-      [compStyles.selected]: active,
-    })
-  }
+      [compStyles.selected]: active
+    });
+  };
 
   getTab = () => {
-    const { tabKey } = this.props
+    const { tabKey } = this.props;
 
     if (tab !== tabKey) {
-      this.setState({ showNav: false })
-      tab = tabKey
+      this.setState({ showNav: false });
+      tab = tabKey;
     }
-  }
+  };
 
   isShowSideNav = () => {
-    const { links } = this.props
+    const { links } = this.props;
 
     if (links.length > 0) {
-      const [firstLink] = links
+      const [firstLink] = links;
 
       if (links.length > 1) {
-        return true
+        return true;
       }
 
-      return firstLink.sLinks && firstLink.sLinks.length > 0
+      return firstLink.sLinks && firstLink.sLinks.length > 0;
     }
 
-    return false
-  }
+    return false;
+  };
 
   toggleNav = () => {
     // Toggle the navigation open/closed
-    this.setState({ showNav: !this.state.showNav })
+    this.setState({ showNav: !this.state.showNav });
 
-    initialShowNav = !this.state.showNav
-  }
+    initialShowNav = !this.state.showNav;
+  };
 
   render() {
     const { label, links } = this.props,
-      { showNav } = this.state
+      { showNav } = this.state;
     return (
       <div className={compStyles.hcaNav}>
         {label ? (
@@ -119,7 +119,7 @@ class Nav extends React.Component {
             <ClickHandler
               className={compStyles.select}
               clickAction={this.toggleNav}
-              tag={'li'}
+              tag={"li"}
             >
               <span>Also in this section</span>
               <i className="material-icons">keyboard_arrow_down</i>
@@ -137,7 +137,7 @@ class Nav extends React.Component {
                           : this.toggleNav
                       }
                       key={i}
-                      tag={'li'}
+                      tag={"li"}
                     >
                       <Link to={pLink.path} className={fontStyles.navPrimary}>
                         {pLink.name}
@@ -150,7 +150,7 @@ class Nav extends React.Component {
                             className={this.getNavClassName(sLink)}
                             clickAction={this.toggleNav}
                             key={j}
-                            tag={'li'}
+                            tag={"li"}
                           >
                             <Link
                               className={fontStyles.navSecondary}
@@ -168,8 +168,8 @@ class Nav extends React.Component {
           </ul>
         ) : null}
       </div>
-    )
+    );
   }
 }
 
-export default Nav
+export default Nav;

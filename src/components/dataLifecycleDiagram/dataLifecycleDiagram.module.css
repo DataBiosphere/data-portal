@@ -19,11 +19,11 @@
 /* Default state - text, tooltip, tooltip symbol, card paragraph text, hover overlay */
 /* Active state - icon, any immediate groups e.g. 'substateAWS' */
 .dataLifecycle text,
-.dataLifecycle [id^='tooltip'],
-.dataLifecycle [id^='symbol'],
+.dataLifecycle [id^="tooltip"],
+.dataLifecycle [id^="symbol"],
 .dataLifecycle .dataLifecycleCard p,
-.dataLifecycle rect[id='hoverOverlay'],
-.dataLifecycle g[id^='icon/'],
+.dataLifecycle rect[id="hoverOverlay"],
+.dataLifecycle g[id^="icon/"],
 .dataLifecycle .active > g {
   pointer-events: none;
 }
@@ -31,7 +31,7 @@
 /* Pointer events 'all' */
 /* Default state - tooltip bounds */
 /* Active state - card */
-.dataLifecycle [id^='flowPath'] [id^='bounds'],
+.dataLifecycle [id^="flowPath"] [id^="bounds"],
 .dataLifecycle:hover .dataLifecycleCard {
   pointer-events: all;
 }
@@ -39,31 +39,31 @@
 /* Hide */
 /* Default state hide - icon, path, card, tooltip, hover overlay, containerValidation */
 /* Active state hide - rect 'container' */
-.dataLifecycle g[id^='icon/'],
-.dataLifecycle path[id^='path'],
+.dataLifecycle g[id^="icon/"],
+.dataLifecycle path[id^="path"],
 .dataLifecycle .dataLifecycleCard,
-.dataLifecycle [id^='flowPath'] [id^='tooltip'],
-.dataLifecycle rect[id='hoverOverlay'],
-.dataLifecycle .active > rect[id^='container'],
-.dataLifecycle rect[id='containerValidation'] {
+.dataLifecycle [id^="flowPath"] [id^="tooltip"],
+.dataLifecycle rect[id="hoverOverlay"],
+.dataLifecycle .active > rect[id^="container"],
+.dataLifecycle rect[id="containerValidation"] {
   opacity: 0;
 }
 
 /* Show */
 /* Active state show - icon, path, card, tooltip, hover overlay */
-.dataLifecycle .active g[id^='icon/'],
-.dataLifecycle .active path[id^='path'],
+.dataLifecycle .active g[id^="icon/"],
+.dataLifecycle .active path[id^="path"],
 .dataLifecycle.hover .dataLifecycleCard,
-.dataLifecycle [id^='flowPath'] .active [id^='tooltip'],
-.dataLifecycle.hover rect[id='hoverOverlay'] {
+.dataLifecycle [id^="flowPath"] .active [id^="tooltip"],
+.dataLifecycle.hover rect[id="hoverOverlay"] {
   opacity: 1;
 }
 
 /* Cursor 'pointer' */
 /* Default state - tooltip bounds */
 /* Active state - path */
-.dataLifecycle [id^='flowPath'] [id^='bounds'],
-.dataLifecycle .active path[id^='path'] {
+.dataLifecycle [id^="flowPath"] [id^="bounds"],
+.dataLifecycle .active path[id^="path"] {
   cursor: pointer;
 }
 
@@ -73,14 +73,14 @@
 }
 
 /* Active state - storage element 'AWS' and 'GCP' container */
-.dataLifecycle .active[id='stateStorage'] > g[id^='substate'] > rect {
+.dataLifecycle .active[id="stateStorage"] > g[id^="substate"] > rect {
   fill: #6db7dc;
 }
 
 /* Text 'font smoothing' - data curator, substates, flow paths */
-.dataLifecycle [id^='flowPath'] text,
-.dataLifecycle [id^='stateDataCurator'] text,
-.dataLifecycle [id^='substate'] text {
+.dataLifecycle [id^="flowPath"] text,
+.dataLifecycle [id^="stateDataCurator"] text,
+.dataLifecycle [id^="substate"] text {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -102,7 +102,7 @@
 /* Card font <p>, <a> */
 .dataLifecycle .dataLifecycleCard p,
 .dataLifecycle .dataLifecycleCard a {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   font-weight: 300;
   line-height: 16px;

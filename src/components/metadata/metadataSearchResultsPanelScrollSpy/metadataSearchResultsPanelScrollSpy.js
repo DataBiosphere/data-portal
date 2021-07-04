@@ -6,10 +6,10 @@
  */
 
 // Core dependencies
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
 function MetadataSearchResultsPanelScrollSpy(props) {
-  const { children, activeResultEl } = props
+  const { children, activeResultEl } = props;
 
   /* useEffect - componentDidUpdate - activeResultEl. */
   /* Handles scrolling to maintain visibility of any active result. */
@@ -17,24 +17,24 @@ function MetadataSearchResultsPanelScrollSpy(props) {
     if (activeResultEl) {
       const { offsetHeight, offsetParent, offsetTop } = activeResultEl,
         { lastElementChild } = offsetParent || {},
-        { clientHeight, scrollTop } = lastElementChild || 0
-      const abovePanelTop = offsetTop - scrollTop < 56
+        { clientHeight, scrollTop } = lastElementChild || 0;
+      const abovePanelTop = offsetTop - scrollTop < 56;
       const belowPanelBottom =
-        offsetTop + offsetHeight - scrollTop > clientHeight
+        offsetTop + offsetHeight - scrollTop > clientHeight;
 
       /* Keep to top view. */
       /* Note, scroll-margin-top added to classname "result". */
       /* Prevents result from scrolling to position under result panel hero. */
       if (abovePanelTop) {
-        activeResultEl.scrollIntoView({ block: 'start' })
+        activeResultEl.scrollIntoView({ block: "start" });
       } else if (belowPanelBottom) {
-      /* Keep to bottom view. */
-        activeResultEl.scrollIntoView({ block: 'end' })
+        /* Keep to bottom view. */
+        activeResultEl.scrollIntoView({ block: "end" });
       }
     }
-  }, [activeResultEl])
+  }, [activeResultEl]);
 
-  return children
+  return children;
 }
 
-export default MetadataSearchResultsPanelScrollSpy
+export default MetadataSearchResultsPanelScrollSpy;

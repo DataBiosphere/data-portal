@@ -4,7 +4,7 @@
  *
  * Style definitions specific to the HCA Data Portal nav component.
  */
-@import '../../styles/vars.module.css';
+@import "../../styles/vars.module.css";
 
 /* Navigation - label. */
 .hcaNav .label {
@@ -121,7 +121,7 @@
 .hcaSideNav > div > li.selected:before,
 .hcaSideNav > div ul li:before {
   background-color: var(--gray-lightest);
-  content: '';
+  content: "";
   height: 100%;
   left: -8px; /* 6px between nav bar and nav text, includes 2px border */
   position: absolute;

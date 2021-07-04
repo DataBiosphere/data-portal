@@ -6,48 +6,48 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // App dependencies
-import AnnouncementCatalog from './announcementCatalog/announcementCatalog'
-import Banner from './banner/banner'
-import * as EnvironmentService from '../utils/environment/environment.service'
-import Footer from './footer/footer'
-import Header from './header/header'
-import FooterLungMAP from './footer-lungmap/footer-lungmap'
-import HeaderLungMAP from './header-lungmap/header-lungmap'
-import HCAMain from './hcaMain/hcaMain'
-import PageHead from './pageHead/pageHead'
-import SEO from './seo/seo'
-import SupportRequest from './supportRequest/supportRequest'
+import AnnouncementCatalog from "./announcementCatalog/announcementCatalog";
+import Banner from "./banner/banner";
+import * as EnvironmentService from "../utils/environment/environment.service";
+import Footer from "./footer/footer";
+import Header from "./header/header";
+import FooterLungMAP from "./footer-lungmap/footer-lungmap";
+import HeaderLungMAP from "./header-lungmap/header-lungmap";
+import HCAMain from "./hcaMain/hcaMain";
+import PageHead from "./pageHead/pageHead";
+import SEO from "./seo/seo";
+import SupportRequest from "./supportRequest/supportRequest";
 
 // Styles
-import compStyles from './layout.module.css'
-import { GASource } from '../utils/dp-gtm/ga-source.model'
+import compStyles from "./layout.module.css";
+import { GASource } from "../utils/dp-gtm/ga-source.model";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
-require('katex/dist/katex.min.css')
+require("katex/dist/katex.min.css");
 
 class Layout extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       scrollable: true,
-      supportRequestActive: false,
-    }
+      supportRequestActive: false
+    };
   }
 
   onHandleSiteScroll = scrollable => {
-    this.setState({ scrollable: scrollable })
-  }
+    this.setState({ scrollable: scrollable });
+  };
 
   onToggleSupportRequestForm = (active, source) => {
     this.setState({
       supportRequestActive: active,
-      supportRequestSource: active ? source : null,
-    })
-  }
+      supportRequestSource: active ? source : null
+    });
+  };
 
   render() {
     const {
@@ -61,22 +61,22 @@ class Layout extends React.Component {
       metadataContent,
       nav,
       pageTitle,
-      sectionTitle,
-    } = this.props
+      sectionTitle
+    } = this.props;
     const {
       scrollable,
       supportRequestActive,
-      supportRequestSource,
-    } = this.state
-    const atlas = EnvironmentService.getAtlas()
-    const lungmap = EnvironmentService.isLungMAP()
+      supportRequestSource
+    } = this.state;
+    const atlas = EnvironmentService.getAtlas();
+    const lungmap = EnvironmentService.isLungMAP();
     return (
       <div className={atlas}>
         <PageHead pageTitle={pageTitle} />
         <SEO description={description} pageTitle={pageTitle} />
         <div
           className={classNames(compStyles.site, {
-            [compStyles.noScroll]: !scrollable,
+            [compStyles.noScroll]: !scrollable
           })}
         >
           {lungmap ? (
@@ -92,7 +92,7 @@ class Layout extends React.Component {
             />
           )}
           {lungmap ? null : <AnnouncementCatalog />}
-          <Banner position={'top'} healthy={healthy} />
+          <Banner position={"top"} healthy={healthy} />
           {homePage ? (
             children
           ) : (
@@ -117,7 +117,7 @@ class Layout extends React.Component {
               }
             />
           )}
-          <Banner position={'bottom'} />
+          <Banner position={"bottom"} />
           {lungmap ? (
             <FooterLungMAP />
           ) : (
@@ -130,8 +130,8 @@ class Layout extends React.Component {
           <div id="portal" />
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;

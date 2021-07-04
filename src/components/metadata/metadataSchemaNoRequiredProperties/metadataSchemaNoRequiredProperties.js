@@ -7,11 +7,11 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // Styles
-import compStyles from './metadataSchemaNoRequiredProperties.module.css'
-import fontStyles from '../../../styles/fontsize.module.css'
+import compStyles from "./metadataSchemaNoRequiredProperties.module.css";
+import fontStyles from "../../../styles/fontsize.module.css";
 
 class MetadataSchemaNoRequiredProperties extends React.Component {
   render() {
@@ -21,8 +21,8 @@ class MetadataSchemaNoRequiredProperties extends React.Component {
           There are no required properties for this module.
         </p>
       </span>
-    )
+    );
   }
 }
 
-export default MetadataSchemaNoRequiredProperties
+export default MetadataSchemaNoRequiredProperties;

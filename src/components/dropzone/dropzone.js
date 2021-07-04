@@ -6,9 +6,9 @@
  */
 
 // Core dependencies
-import React from 'react'
-import { useState } from 'react'
-import { useDropzone } from 'react-dropzone'
+import React from "react";
+import { useState } from "react";
+import { useDropzone } from "react-dropzone";
 
 const Dropzone = ({
   disabled = false,
@@ -21,7 +21,7 @@ const Dropzone = ({
   ...props
 }) => {
   // dropzone's built-in dragging status doesn't seem to work if there's anything rendered over the root div
-  const [dragging, setDragging] = useState(false)
+  const [dragging, setDragging] = useState(false);
 
   const { getRootProps, getInputProps, open: openUploader } = useDropzone({
     // Disable native files selection dialog - we'll handle this manually
@@ -30,26 +30,26 @@ const Dropzone = ({
     noKeyboard: true,
     disabled,
     onDragOver: (...args) => {
-      setDragging(true)
-      onDragOver && onDragOver(...args)
+      setDragging(true);
+      onDragOver && onDragOver(...args);
     },
     onDrop: (...args) => {
-      setDragging(false)
-      onDrop && onDrop(...args)
+      setDragging(false);
+      onDrop && onDrop(...args);
     },
     onDragLeave: (...args) => {
-      setDragging(false)
-      onDragLeave && onDragLeave(...args)
+      setDragging(false);
+      onDragLeave && onDragLeave(...args);
     },
-    ...props,
-  })
+    ...props
+  });
 
   return (
     <div {...getRootProps()} style={dragging ? activeStyle : {}}>
       <input {...getInputProps()} />
       {children({ dragging, openUploader })}
     </div>
-  )
-}
+  );
+};
 
-export default Dropzone
+export default Dropzone;

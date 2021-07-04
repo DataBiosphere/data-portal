@@ -17,9 +17,9 @@ const getCategorySchemas = function getCategorySchemas(schemas, category) {
     return (
       schema.entity === category.entity &&
       schema.category === category.categoryName
-    )
-  })
-}
+    );
+  });
+};
 
 /**
  * Returns the categories for the specified entity.
@@ -29,8 +29,8 @@ const getCategorySchemas = function getCategorySchemas(schemas, category) {
  */
 const getEntityCategories = function getEntityCategories(categories, entity) {
   /* Filter the categories for the specified entity. */
-  return categories.filter(category => category.entity === entity.entityName)
-}
+  return categories.filter(category => category.entity === entity.entityName);
+};
 
 /**
  * Returns the field usedByProperties comprising of any properties that refer to the specified schema.
@@ -47,7 +47,7 @@ const getFieldTypeUsedBy = function getFieldTypeUsedBy(
   schema
 ) {
   /* Grab the schema path. */
-  const schemaPath = schema.schemaPath
+  const schemaPath = schema.schemaPath;
 
   /* Filter the schema properties for any that refer to the schema path. */
   /* Return the corresponding property paths that refer to the schema path. */
@@ -61,12 +61,12 @@ const getFieldTypeUsedBy = function getFieldTypeUsedBy(
             /* rather only "cell_morphology.cell_size_unit". This will allow the user to navigate back to the module
             /* "cell_morphology" and then from here back to the type "cell_line". */
       if (property.primary) {
-        acc.push(property)
+        acc.push(property);
       }
 
-      return acc
-    }, [])
-}
+      return acc;
+    }, []);
+};
 
 /**
  * Returns the properties for the specified schema.
@@ -76,8 +76,8 @@ const getFieldTypeUsedBy = function getFieldTypeUsedBy(
  */
 const getSchemaProperties = function getSchemaProperties(properties, schema) {
   /* Filter the properties for the specified schema. */
-  return properties.filter(property => property.schema === schema.schemaName)
-}
+  return properties.filter(property => property.schema === schema.schemaName);
+};
 
 /**
  * Returns the type for the specified property.
@@ -88,13 +88,13 @@ const getSchemaProperties = function getSchemaProperties(properties, schema) {
  */
 function findType(types, property) {
   if (types) {
-    return types.find(type => type.name === property.type)
+    return types.find(type => type.name === property.type);
   }
 
-  return {}
+  return {};
 }
 
-module.exports.getCategorySchemas = getCategorySchemas
-module.exports.getEntityCategories = getEntityCategories
-module.exports.getFieldTypeUsedBy = getFieldTypeUsedBy
-module.exports.getSchemaProperties = getSchemaProperties
+module.exports.getCategorySchemas = getCategorySchemas;
+module.exports.getEntityCategories = getEntityCategories;
+module.exports.getFieldTypeUsedBy = getFieldTypeUsedBy;
+module.exports.getSchemaProperties = getSchemaProperties;

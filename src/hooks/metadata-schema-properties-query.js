@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby";
 
 export const MetadataSchemaPropertiesQuery = () => {
   const { allMetadataSchemaProperty } = useStaticQuery(
@@ -38,6 +38,6 @@ export const MetadataSchemaPropertiesQuery = () => {
         }
       }
     `
-  )
-  return allMetadataSchemaProperty.edges.map(n => n.node)
-}
+  );
+  return allMetadataSchemaProperty.edges.map(n => n.node);
+};

@@ -6,22 +6,22 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // Styles
-import fontStyles from '../../../styles/fontsize.module.css'
+import fontStyles from "../../../styles/fontsize.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 function MetadataSchemaPropertyFieldExample(props) {
   const { font, property } = props,
-    { example } = property
+    { example } = property;
 
   return (
     <span className={classNames({ [fontStyles[font]]: !!font })}>
       {example}
     </span>
-  )
+  );
 }
 
-export default MetadataSchemaPropertyFieldExample
+export default MetadataSchemaPropertyFieldExample;

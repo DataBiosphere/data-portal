@@ -6,86 +6,86 @@
  */
 
 // Core dependencies
-import Link from 'gatsby-link'
-import React from 'react'
+import Link from "gatsby-link";
+import React from "react";
 
 // App dependencies
-import ClickHandler from '../clickHandler/clickHandler'
+import ClickHandler from "../clickHandler/clickHandler";
 
 // Images
-import headerLogo from '../../../images/lungmap/logo/logo-lungmap.png'
+import headerLogo from "../../../images/lungmap/logo/logo-lungmap.png";
 
 // Styles
-import fontStyles from '../../styles/fontsize.module.css'
-import globalStyles from '../../styles/global.module.css'
-import compStyles from './header-lungmap.module.css'
+import fontStyles from "../../styles/fontsize.module.css";
+import globalStyles from "../../styles/global.module.css";
+import compStyles from "./header-lungmap.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 class HeaderLungMAP extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = { menuNav: false, openNav: false }
-    this.toggleMenu = this.toggleMenu.bind(this)
+    super(props);
+    this.state = { menuNav: false, openNav: false };
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   componentDidMount() {
     // Set up header menu style
-    this.setNavStyle()
+    this.setNavStyle();
 
-    window.addEventListener('resize', this.setNavStyle)
+    window.addEventListener("resize", this.setNavStyle);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.setNavStyle)
+    window.removeEventListener("resize", this.setNavStyle);
   }
 
   shouldComponentUpdate(_, nextState) {
-    return this.state !== nextState
+    return this.state !== nextState;
   }
 
   setNavStyle = () => {
-    const { openNav } = this.state
-    const useMenuNav = document.body.getBoundingClientRect().width < 840
-    const closeMenuNav = !useMenuNav
+    const { openNav } = this.state;
+    const useMenuNav = document.body.getBoundingClientRect().width < 840;
+    const closeMenuNav = !useMenuNav;
 
-    this.setState({ menuNav: useMenuNav })
+    this.setState({ menuNav: useMenuNav });
 
     if (closeMenuNav && openNav) {
       // Close the menu if resize occurs when menu is open and screen width is > 840
-      this.setState({ openNav: false })
+      this.setState({ openNav: false });
     }
-  }
+  };
 
   toggleMenu = () => {
-    const { menuNav, openNav } = this.state
+    const { menuNav, openNav } = this.state;
 
     if (menuNav) {
-      this.setState({ openNav: !openNav })
-      this.props.onHandleSiteScroll(openNav)
+      this.setState({ openNav: !openNav });
+      this.props.onHandleSiteScroll(openNav);
     }
-  }
+  };
 
   render() {
     const { homePage, links } = this.props,
       { menuNav, openNav } = this.state,
       browserLink = process.env.GATSBY_EXPLORE_URL,
-      exploreDescription = 'Search for data in LungMAP',
-      exploreLabel = 'Explore',
-      hideLinks = menuNav && !openNav
+      exploreDescription = "Search for data in LungMAP",
+      exploreLabel = "Explore",
+      hideLinks = menuNav && !openNav;
 
     const Description = props => {
-      const { children } = props
+      const { children } = props;
 
       return (
         <span className={classNames(fontStyles.xxs, compStyles.xxs)}>
           {children}
         </span>
-      )
-    }
+      );
+    };
 
     const ExternalLink = props => {
-      const { children, className, linkTo } = props
+      const { children, className, linkTo } = props;
 
       return (
         <li className={className}>
@@ -93,12 +93,12 @@ class HeaderLungMAP extends React.Component {
             {children}
           </a>
         </li>
-      )
-    }
+      );
+    };
 
     const HeaderNavDisplay = props => {
       const { description, label } = props,
-        { menuNav } = this.state
+        { menuNav } = this.state;
 
       return (
         <>
@@ -107,11 +107,11 @@ class HeaderLungMAP extends React.Component {
           </span>
           {menuNav ? <Description>{description}</Description> : null}
         </>
-      )
-    }
+      );
+    };
 
     const InternalLink = props => {
-      const { children, className, path } = props
+      const { children, className, path } = props;
 
       return (
         <li className={className}>
@@ -124,20 +124,20 @@ class HeaderLungMAP extends React.Component {
             {children}
           </Link>
         </li>
-      )
-    }
+      );
+    };
 
     const Nav = props => {
       const { nav } = props,
         { description, headerName, name, path } = nav || {},
-        label = headerName ? headerName : name
+        label = headerName ? headerName : name;
 
       return (
         <InternalLink path={path}>
           <HeaderNavDisplay description={description} label={label} />
         </InternalLink>
-      )
-    }
+      );
+    };
 
     const NavExplore = () => {
       return (
@@ -147,13 +147,13 @@ class HeaderLungMAP extends React.Component {
             label={exploreLabel}
           />
         </ExternalLink>
-      )
-    }
+      );
+    };
 
     return (
       <div
         className={classNames(compStyles.navBar, {
-          [compStyles.hcaHeader]: homePage,
+          [compStyles.hcaHeader]: homePage
         })}
       >
         <div
@@ -176,58 +176,58 @@ class HeaderLungMAP extends React.Component {
           </div>
           <ClickHandler
             className={classNames(compStyles.menuDropDown, fontStyles.s, {
-              [compStyles.hide]: !menuNav,
+              [compStyles.hide]: !menuNav
             })}
             clickAction={this.toggleMenu}
-            tag={'div'}
+            tag={"div"}
           >
             Menu
           </ClickHandler>
           <ClickHandler
             className={classNames(compStyles.overlay, {
-              [compStyles.hide]: !openNav,
+              [compStyles.hide]: !openNav
             })}
             clickAction={this.toggleMenu}
-            tag={'div'}
+            tag={"div"}
           />
         </div>
       </div>
-    )
+    );
   }
 }
 
 export default props => {
   const links = [
     {
-      description: 'Fields used to describe datasets in LungMAP',
+      description: "Fields used to describe datasets in LungMAP",
       headerName: null,
-      name: 'Metadata',
-      path: '/metadata',
+      name: "Metadata",
+      path: "/metadata",
       position: {
-        location: 'h',
-        order: 0,
-      },
+        location: "h",
+        order: 0
+      }
     },
     {
-      description: 'Pipelines',
+      description: "Pipelines",
       headerName: null,
-      name: 'Pipelines',
-      path: '/pipelines',
+      name: "Pipelines",
+      path: "/pipelines",
       position: {
-        location: 'h',
-        order: 1,
-      },
+        location: "h",
+        order: 1
+      }
     },
     {
-      description: 'APIs',
+      description: "APIs",
       headerName: null,
-      name: 'APIs',
-      path: '/apis',
+      name: "APIs",
+      path: "/apis",
       position: {
-        location: 'h',
-        order: 2,
-      },
-    },
-  ]
-  return <HeaderLungMAP links={links} {...props} />
-}
+        location: "h",
+        order: 2
+      }
+    }
+  ];
+  return <HeaderLungMAP links={links} {...props} />;
+};

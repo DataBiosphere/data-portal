@@ -7,27 +7,27 @@
 
 // Template variables
 const AllowListScoreCriteria = [
-  'description',
-  'example',
-  'classes',
-  'ontologies',
-  'schema',
-  'pathSegmentFirst',
-  'pathSegmentSecond',
-  'path',
-  'friendlyName',
-]
+  "description",
+  "example",
+  "classes",
+  "ontologies",
+  "schema",
+  "pathSegmentFirst",
+  "pathSegmentSecond",
+  "path",
+  "friendlyName"
+];
 const AllListScoreTypeEarlyBreakers = [
-  'pathSegmentSecondFullMatch',
-  'pathSegmentSecondSomeMatch',
-  'pathSomeMatch',
-  'friendlyNameFullMatch',
-]
-const DenyListScoreType = ['searchModel']
+  "pathSegmentSecondFullMatch",
+  "pathSegmentSecondSomeMatch",
+  "pathSomeMatch",
+  "friendlyNameFullMatch"
+];
+const DenyListScoreType = ["searchModel"];
 const DenyListScoreTypeProcesses = [
-  'pathSegmentFirstFullMatch',
-  'pathSegmentFirstSomeMatch',
-]
+  "pathSegmentFirstFullMatch",
+  "pathSegmentFirstSomeMatch"
+];
 
 /**
  * Returns search results - modelled, analyzed, scored, and filtered.
@@ -49,8 +49,8 @@ export function buildResults(
   inputValue
 ) {
   if (inputValue) {
-    const queryStr = onHandleSpecialChars(inputValue).toLowerCase()
-    const querySegmentDepth = getQuerySegmentDepth(queryStr)
+    const queryStr = onHandleSpecialChars(inputValue).toLowerCase();
+    const querySegmentDepth = getQuerySegmentDepth(queryStr);
 
     /* Filter the properties and schemas for any search hits. */
     const filteredProperties = filterEntities(
@@ -58,46 +58,46 @@ export function buildResults(
       setOfResults,
       resultKey,
       setOfProperties
-    )
+    );
     const filteredSchemas = filterEntities(
       schemas,
       setOfResults,
       resultKey,
       setOfProperties
-    )
+    );
 
     /* Build the search models. */
-    const searchModels = buildSearchModels(filteredSchemas, filteredProperties)
+    const searchModels = buildSearchModels(filteredSchemas, filteredProperties);
 
     /* Early exit. */
     if (searchModels.length === 0) {
-      return []
+      return [];
     }
 
     /* Grab the current length of query. */
-    const queryLength = queryStr.length
+    const queryLength = queryStr.length;
 
     /* Build the analyzed models. */
     const analyzedModels = buildAnalyzedModels(
       searchModels,
       queryStr,
       queryLength
-    )
+    );
 
     /* Build the set of search models by score type. */
     const setOfSearchModelsByScoreType = buildSetOfSearchModelsByScoreType(
       analyzedModels
-    )
+    );
 
     /* Filter and return search models. */
     return filterSearchModels(
       setOfSearchModelsByScoreType,
       querySegmentDepth,
       queryLength
-    )
+    );
   }
 
-  return []
+  return [];
 }
 
 /**
@@ -112,13 +112,13 @@ export function getSetOfProperties(entities, resultKey) {
   if (entities) {
     return entities.reduce((acc, entity) => {
       /* Add to set the entity. */
-      acc.add(entity[resultKey])
+      acc.add(entity[resultKey]);
 
-      return acc
-    }, new Set())
+      return acc;
+    }, new Set());
   }
 
-  return new Set()
+  return new Set();
 }
 
 /**
@@ -127,12 +127,12 @@ export function getSetOfProperties(entities, resultKey) {
  * @returns {Set}
  */
 export function getSetOfSearchGroups() {
-  const setOfSearchGroups = new Set()
+  const setOfSearchGroups = new Set();
 
   /* Add "input" to the set. */
-  setOfSearchGroups.add('input')
+  setOfSearchGroups.add("input");
 
-  return setOfSearchGroups
+  return setOfSearchGroups;
 }
 
 /**
@@ -147,13 +147,13 @@ export function getSetOfSearchGroups() {
 export function onHandleParseInputString(inputStr) {
   if (inputStr) {
     /* Handle case where input string includes ":". */
-    const searchStr = inputStr.trim().replace(/:/g, '_')
+    const searchStr = inputStr.trim().replace(/:/g, "_");
 
     /* Handle case where input string has other special characters. */
-    return onHandleSpecialChars(searchStr)
+    return onHandleSpecialChars(searchStr);
   }
 
-  return inputStr
+  return inputStr;
 }
 
 /**
@@ -166,11 +166,11 @@ export function onHandleParseInputString(inputStr) {
 export function onHandleSearchResultArrowDown(currentIndex, resultsDepth) {
   /* Increment down the list. */
   if (currentIndex < resultsDepth) {
-    return currentIndex + 1
+    return currentIndex + 1;
   }
 
   /* Return to start of list. */
-  return 0
+  return 0;
 }
 
 /**
@@ -183,11 +183,11 @@ export function onHandleSearchResultArrowDown(currentIndex, resultsDepth) {
 export function onHandleSearchResultArrowUp(currentIndex, resultsDepth) {
   /* Increment up the list. */
   if (currentIndex > 0) {
-    return currentIndex - 1
+    return currentIndex - 1;
   }
 
   /* Go to end of list. */
-  return resultsDepth
+  return resultsDepth;
 }
 
 /**
@@ -201,12 +201,12 @@ export function onHandleSearchResultArrowUp(currentIndex, resultsDepth) {
 export function onHandleSpecialChars(inputStr) {
   if (inputStr) {
     return inputStr
-      .replace(/[`~!@#$%^&*()|\-+=\\\]}{["';?/><,]/g, '')
-      .replace(/\s\s+/g, ' ')
-      .trim()
+      .replace(/[`~!@#$%^&*()|\-+=\\\]}{["';?/><,]/g, "")
+      .replace(/\s\s+/g, " ")
+      .trim();
   }
 
-  return inputStr
+  return inputStr;
 }
 
 /**
@@ -223,23 +223,23 @@ export function onHandleSpecialChars(inputStr) {
 function buildAnalyzedModel(searchModel, queryStr, queryLength) {
   return AllowListScoreCriteria.reduce((acc, modelKey) => {
     /* Create the keys. */
-    const fullMatchKey = `${modelKey}FullMatch`
-    const someMatchKey = `${modelKey}SomeMatch`
+    const fullMatchKey = `${modelKey}FullMatch`;
+    const someMatchKey = `${modelKey}SomeMatch`;
 
     const [fullMatchValue, someMatchValue] = getAnalyzedModelValues(
       searchModel,
       modelKey,
       queryStr,
       queryLength
-    )
+    );
 
     /* Assign values to associated key and return accumulator. */
-    const fullMatch = { [fullMatchKey]: fullMatchValue }
-    const someMatch = { [someMatchKey]: someMatchValue }
-    acc = Object.assign(acc, { ...fullMatch, ...someMatch })
+    const fullMatch = { [fullMatchKey]: fullMatchValue };
+    const someMatch = { [someMatchKey]: someMatchValue };
+    acc = Object.assign(acc, { ...fullMatch, ...someMatch });
 
-    return acc
-  }, {})
+    return acc;
+  }, {});
 }
 
 /**
@@ -258,13 +258,13 @@ function buildAnalyzedModels(searchModels, queryStr, queryLength) {
         searchModel,
         queryStr,
         queryLength
-      )
+      );
 
-      return Object.assign({ searchModel: searchModel }, analyzedModel)
-    })
+      return Object.assign({ searchModel: searchModel }, analyzedModel);
+    });
   }
 
-  return []
+  return [];
 }
 
 /**
@@ -284,17 +284,17 @@ function buildSearchModels(schemas, properties) {
         propertyPath,
         propertyPaths,
         schemaName,
-        title,
+        title
       } = result || {},
-      { classes, ontologies } = graphRestriction || {}
+      { classes, ontologies } = graphRestriction || {};
     const modelDescription = description
       ? description.toLowerCase()
-      : description
-    const modelExample = example ? example.toLowerCase() : example
-    const modelFriendly = title ? title.toLowerCase() : label.toLowerCase()
-    const modelPath = propertyPath ? propertyPath.toLowerCase() : propertyPath
-    const modelSchema = schemaName ? schemaName.toLowerCase() : schemaName
-    const [pathSegmentFirst, pathSegmentSecond] = propertyPaths || []
+      : description;
+    const modelExample = example ? example.toLowerCase() : example;
+    const modelFriendly = title ? title.toLowerCase() : label.toLowerCase();
+    const modelPath = propertyPath ? propertyPath.toLowerCase() : propertyPath;
+    const modelSchema = schemaName ? schemaName.toLowerCase() : schemaName;
+    const [pathSegmentFirst, pathSegmentSecond] = propertyPaths || [];
 
     return {
       description: modelDescription,
@@ -306,9 +306,9 @@ function buildSearchModels(schemas, properties) {
       path: modelPath,
       pathSegmentFirst: pathSegmentFirst,
       pathSegmentSecond: pathSegmentSecond,
-      schema: modelSchema,
-    }
-  })
+      schema: modelSchema
+    };
+  });
 }
 
 /**
@@ -319,7 +319,7 @@ function buildSearchModels(schemas, properties) {
  * @returns {Set.<T>}
  */
 function buildSetOfModels(model, setOfModels = new Set()) {
-  return setOfModels.add(model)
+  return setOfModels.add(model);
 }
 
 /**
@@ -329,22 +329,22 @@ function buildSetOfModels(model, setOfModels = new Set()) {
  * @returns {Set}
  */
 function buildSetOfScoreTypes(analyzedModels) {
-  const setOfScoreTypes = new Set()
+  const setOfScoreTypes = new Set();
 
   analyzedModels.forEach(analyzedModel => {
     /* Grab the model keys. */
-    const modelKeys = Object.keys(analyzedModel)
+    const modelKeys = Object.keys(analyzedModel);
 
     /* For each model key, add to the set. */
     /* Deny list excludes the search model. */
     modelKeys.forEach(modelKey => {
       if (!DenyListScoreType.includes(modelKey)) {
-        setOfScoreTypes.add(modelKey)
+        setOfScoreTypes.add(modelKey);
       }
-    })
-  })
+    });
+  });
 
-  return setOfScoreTypes
+  return setOfScoreTypes;
 }
 
 /**
@@ -354,35 +354,35 @@ function buildSetOfScoreTypes(analyzedModels) {
  * @returns {Map}
  */
 function buildSetOfSearchModelsByScoreType(analyzedModels) {
-  const setOfModelsByScoreType = new Map()
+  const setOfModelsByScoreType = new Map();
 
   if (analyzedModels.length > 0) {
     /* Build the complete set of score types and associated map object. */
-    const setOfScoreTypes = buildSetOfScoreTypes(analyzedModels)
-    ;[...setOfScoreTypes].forEach(scoreType =>
+    const setOfScoreTypes = buildSetOfScoreTypes(analyzedModels);
+    [...setOfScoreTypes].forEach(scoreType =>
       setOfModelsByScoreType.set(scoreType, new Set())
-    )
+    );
 
     /* For each model, add the model and any hits on score types to the map object. */
     analyzedModels.forEach(analyzedModel => {
-      const { searchModel } = analyzedModel
+      const { searchModel } = analyzedModel;
 
       /* Grab the score types. */
-      const scoreTypes = [...setOfModelsByScoreType.keys()]
+      const scoreTypes = [...setOfModelsByScoreType.keys()];
 
       scoreTypes.forEach(scoreType => {
         if (analyzedModel[scoreType]) {
-          const setOfModels = setOfModelsByScoreType.get(scoreType)
+          const setOfModels = setOfModelsByScoreType.get(scoreType);
           setOfModelsByScoreType.set(
             scoreType,
             buildSetOfModels(searchModel, setOfModels)
-          )
+          );
         }
-      })
-    })
+      });
+    });
   }
 
-  return setOfModelsByScoreType
+  return setOfModelsByScoreType;
 }
 
 /**
@@ -397,20 +397,20 @@ function buildSetOfSearchModelsByScoreType(analyzedModels) {
 function filterEntities(entities, setOfResults, resultKey, setOfEntities) {
   /* Set of results is empty. */
   if (setOfResults.size === 0) {
-    return []
+    return [];
   }
 
   /* Full set of entities are returned - results set is complete. */
   if (setOfEntities.size === setOfResults.size) {
-    return entities
+    return entities;
   }
 
   /* Filter entities - results set activated and returned hits from the search. */
   if (entities) {
-    return entities.filter(entity => setOfResults.has(entity[resultKey]))
+    return entities.filter(entity => setOfResults.has(entity[resultKey]));
   }
 
-  return []
+  return [];
 }
 
 /**
@@ -425,49 +425,49 @@ function filterSearchModels(
   querySegmentDepth,
   queryLength
 ) {
-  let setOfResultsByScoreType = new Map()
+  let setOfResultsByScoreType = new Map();
 
   if (setOfSearchModelsByScoreType.size > 0) {
     for (let [scoreType, setOfSearchModels] of setOfSearchModelsByScoreType) {
-      const setSizeSearchModels = setOfSearchModels.size
+      const setSizeSearchModels = setOfSearchModels.size;
 
       /* Early continue. */
       if (setSizeSearchModels === 0) {
-        continue
+        continue;
       }
 
       /* Grab the models. */
-      const models = setOfSearchModels.values()
+      const models = setOfSearchModels.values();
 
       /* Process each model to see if it should be included as a result. */
       for (const model of models) {
         /* Confirm score type should be processed. */
-        const processHits = isProcessHits(model, scoreType, querySegmentDepth)
+        const processHits = isProcessHits(model, scoreType, querySegmentDepth);
 
         /* Process score types. */
         if (processHits) {
           /* Register when a result has a hit in the score type "classes", "example" or "ontologies". */
           /* The boolean will determine whether the field is displayed in the search results. */
-          const resultHasClassesHit = scoreType.startsWith('classes')
-          const resultHasExampleHit = scoreType.startsWith('example')
-          const resultHasOntologiesHit = scoreType.startsWith('ontologies')
+          const resultHasClassesHit = scoreType.startsWith("classes");
+          const resultHasExampleHit = scoreType.startsWith("example");
+          const resultHasOntologiesHit = scoreType.startsWith("ontologies");
 
           /* Clone model and model hit. */
           /* Update clone with boolean. */
-          const modelClone = Object.assign({}, model)
-          const modelHitClone = Object.assign({}, model.hit)
+          const modelClone = Object.assign({}, model);
+          const modelHitClone = Object.assign({}, model.hit);
           Object.assign(modelHitClone, {
             showClasses: resultHasClassesHit,
             showExample: resultHasExampleHit,
-            showOntologies: resultHasOntologiesHit,
-          })
-          modelClone.hit = modelHitClone
+            showOntologies: resultHasOntologiesHit
+          });
+          modelClone.hit = modelHitClone;
 
           /* Switch the score type - if required. */
-          const sType = switchScoreType(scoreType)
+          const sType = switchScoreType(scoreType);
 
           /* Grab the set of results for the score type. */
-          const setOfResults = setOfResultsByScoreType.get(sType)
+          const setOfResults = setOfResultsByScoreType.get(sType);
 
           /* Add the result to the score type - if it hasn't already been added. */
           /* Bundle score types like "description" and "example" and "classes" etc. together. */
@@ -479,21 +479,21 @@ function filterSearchModels(
             setOfResultsByScoreType.set(
               sType,
               buildSetOfModels(modelClone, setOfResults)
-            )
+            );
           }
         }
       }
 
       /* Early break. */
       if (isEarlyBreak(scoreType, setOfResultsByScoreType, queryLength)) {
-        break
+        break;
       }
     }
   }
 
   return getDistinctResults(
     reorderSetOfResultsByScoreType(setOfResultsByScoreType)
-  )
+  );
 }
 
 /**
@@ -507,41 +507,41 @@ function filterSearchModels(
  */
 function getAnalyzedModelValues(searchModel, modelKey, queryStr, queryLength) {
   /* Initialize the full match and some match values. */
-  let fullMatchValue = false
-  let someMatchValue = false
+  let fullMatchValue = false;
+  let someMatchValue = false;
 
   /* Grab the model value to compare against. */
   /* Convert any string value to an array to streamline the process. */
-  let modelValue = searchModel[modelKey]
+  let modelValue = searchModel[modelKey];
 
-  if (typeof modelValue === 'string') {
-    modelValue = Array.from([modelValue])
+  if (typeof modelValue === "string") {
+    modelValue = Array.from([modelValue]);
   }
 
   if (Array.isArray(modelValue)) {
     fullMatchValue = modelValue.some(
       modelStr => modelStr.toLowerCase() === queryStr
-    )
+    );
 
     if (!fullMatchValue) {
       /* Look for "starts with" match value, if there is no full match. */
       someMatchValue = modelValue.some(modelStr =>
         modelStr.toLowerCase().startsWith(queryStr)
-      )
+      );
 
       if (!someMatchValue && queryLength > 1) {
         /* Only look for partial matches within the value, if there is no full match, or starts with match. */
         /* Bypass if query length is only one character. */
         someMatchValue = modelValue.some(modelStr => {
           /* Check query string, including query with more than a single word. */
-          const queries = queryStr.split(' ')
-          return queries.some(query => modelStr.toLowerCase().includes(query))
-        })
+          const queries = queryStr.split(" ");
+          return queries.some(query => modelStr.toLowerCase().includes(query));
+        });
       }
     }
   }
 
-  return [fullMatchValue, someMatchValue]
+  return [fullMatchValue, someMatchValue];
 }
 
 /**
@@ -556,26 +556,26 @@ function getAnalyzedModelValues(searchModel, modelKey, queryStr, queryLength) {
  */
 function getDistinctResults(setOfResultsByScoreType) {
   if (setOfResultsByScoreType.size > 0) {
-    const setOfResultsByIdentifier = new Map()
+    const setOfResultsByIdentifier = new Map();
 
-    ;[...setOfResultsByScoreType.values()].forEach(setOfResults => {
+    [...setOfResultsByScoreType.values()].forEach(setOfResults => {
       if (setOfResults) {
-        ;[...setOfResults].forEach(result => {
-          const { hit, path, schema } = result || {}
-          const resultIdentifier = schema || path
-          const resultExists = setOfResultsByIdentifier.has(resultIdentifier)
+        [...setOfResults].forEach(result => {
+          const { hit, path, schema } = result || {};
+          const resultIdentifier = schema || path;
+          const resultExists = setOfResultsByIdentifier.has(resultIdentifier);
 
           if (!resultExists) {
-            setOfResultsByIdentifier.set(resultIdentifier, hit)
+            setOfResultsByIdentifier.set(resultIdentifier, hit);
           }
-        })
+        });
       }
-    })
+    });
 
-    return [...setOfResultsByIdentifier.values()]
+    return [...setOfResultsByIdentifier.values()];
   }
 
-  return []
+  return [];
 }
 
 /**
@@ -585,11 +585,11 @@ function getDistinctResults(setOfResultsByScoreType) {
  * @returns {*}
  */
 function getQuerySegmentDepth(queryStr) {
-  if (queryStr.includes('.')) {
-    return queryStr.split('.').length
+  if (queryStr.includes(".")) {
+    return queryStr.split(".").length;
   }
 
-  return 0
+  return 0;
 }
 
 /**
@@ -609,12 +609,12 @@ function isEarlyBreak(scoreType, setOfResultsByScoreType, queryLength) {
   if (
     queryLength === 1 &&
     setOfResultsByScoreType.size > 0 &&
-    scoreType === 'schemaSomeMatch'
+    scoreType === "schemaSomeMatch"
   ) {
-    return true
+    return true;
   }
 
-  return AllListScoreTypeEarlyBreakers.includes(scoreType)
+  return AllListScoreTypeEarlyBreakers.includes(scoreType);
 }
 
 /**
@@ -627,30 +627,30 @@ function isEarlyBreak(scoreType, setOfResultsByScoreType, queryLength) {
  */
 function isProcessHits(model, scoreType, querySegmentDepth) {
   if (DenyListScoreTypeProcesses.includes(scoreType)) {
-    return false
+    return false;
   }
 
   /* Grab any variables required for processing score type. */
   const { hit, pathSegmentSecond } = model || {},
-    { propertyPaths } = hit || {}
-  const pathHasTwoSegments = propertyPaths && propertyPaths.length === 2
-  const pathDepth = propertyPaths ? propertyPaths.length : 0
-  const secondSegmentIsProvenance = /provenance/.test(pathSegmentSecond)
+    { propertyPaths } = hit || {};
+  const pathHasTwoSegments = propertyPaths && propertyPaths.length === 2;
+  const pathDepth = propertyPaths ? propertyPaths.length : 0;
+  const secondSegmentIsProvenance = /provenance/.test(pathSegmentSecond);
 
   /* Grab score types - for a/typical processing of each score type [group] of interest. */
-  const fullPathHit = scoreType === 'pathFullMatch'
-  const somePathHit = scoreType === 'pathSomeMatch'
-  const pathHit = fullPathHit || somePathHit
-  const fullSecondSegmentHit = scoreType === 'pathSegmentSecondFullMatch'
-  const someSecondSegmentHit = scoreType === 'pathSegmentSecondSomeMatch'
-  const secondSegmentHit = fullSecondSegmentHit || someSecondSegmentHit
+  const fullPathHit = scoreType === "pathFullMatch";
+  const somePathHit = scoreType === "pathSomeMatch";
+  const pathHit = fullPathHit || somePathHit;
+  const fullSecondSegmentHit = scoreType === "pathSegmentSecondFullMatch";
+  const someSecondSegmentHit = scoreType === "pathSegmentSecondSomeMatch";
+  const secondSegmentHit = fullSecondSegmentHit || someSecondSegmentHit;
 
   if (secondSegmentHit) {
-    return pathHasTwoSegments && !secondSegmentIsProvenance
+    return pathHasTwoSegments && !secondSegmentIsProvenance;
   } else if (pathHit) {
-    return pathDepth - querySegmentDepth === 0
+    return pathDepth - querySegmentDepth === 0;
   } else {
-    return true
+    return true;
   }
 }
 
@@ -664,21 +664,21 @@ function isProcessHits(model, scoreType, querySegmentDepth) {
 function isResultInScoreType(model, setOfModels, scoreType) {
   /* Only process score types "generalHit". */
   /* Other score types are not bundled up together and therefore will not have modified, cloned models. */
-  if (scoreType.startsWith('generalHit') && setOfModels) {
+  if (scoreType.startsWith("generalHit") && setOfModels) {
     const { hit, path } = model || {},
-      { type } = hit || {}
+      { type } = hit || {};
 
     /* Grab the model type. */
-    const propertyExists = /property/.test(type)
+    const propertyExists = /property/.test(type);
 
     /* If the model type is a property, check the property is not already in the set. */
     /* Schema models will not be duplicated; lunr indexing on schema is for description only. */
     if (propertyExists) {
-      return [...setOfModels].some(model => model.path === path)
+      return [...setOfModels].some(model => model.path === path);
     }
   }
 
-  return false
+  return false;
 }
 
 /**
@@ -692,18 +692,18 @@ function reorderSetOfResultsByScoreType(setOfResultsByScoreType) {
     /* Reorganise general hits to the end of the results. */
     /* Higher value hits are displayed first. */
     /* Grab the general hits. */
-    const setOfGeneralHitResults = setOfResultsByScoreType.get('generalHit')
+    const setOfGeneralHitResults = setOfResultsByScoreType.get("generalHit");
 
     /* Delete the general hits. */
-    setOfResultsByScoreType.delete('generalHit')
+    setOfResultsByScoreType.delete("generalHit");
 
     /* Only add the general hits back in, if they exist. */
     if (setOfGeneralHitResults) {
-      setOfResultsByScoreType.set('generalHit', setOfGeneralHitResults)
+      setOfResultsByScoreType.set("generalHit", setOfGeneralHitResults);
     }
   }
 
-  return setOfResultsByScoreType
+  return setOfResultsByScoreType;
 }
 
 /**
@@ -715,29 +715,29 @@ function reorderSetOfResultsByScoreType(setOfResultsByScoreType) {
  */
 function switchScoreType(scoreType) {
   switch (scoreType) {
-    case 'friendlyNameSomeMatch':
-      return 'generalHit'
-    case 'descriptionFullMatch':
-      return 'generalHit'
-    case 'descriptionSomeMatch':
-      return 'generalHit'
-    case 'exampleFullMatch':
-      return 'generalHit'
-    case 'exampleSomeMatch':
-      return 'generalHit'
-    case 'classesFullMatch':
-      return 'generalHit'
-    case 'classesSomeMatch':
-      return 'generalHit'
-    case 'ontologiesFullMatch':
-      return 'generalHit'
-    case 'ontologiesSomeMatch':
-      return 'generalHit'
-    case 'relationsFullMatch':
-      return 'generalHit'
-    case 'relationsSomeMatch':
-      return 'generalHit'
+    case "friendlyNameSomeMatch":
+      return "generalHit";
+    case "descriptionFullMatch":
+      return "generalHit";
+    case "descriptionSomeMatch":
+      return "generalHit";
+    case "exampleFullMatch":
+      return "generalHit";
+    case "exampleSomeMatch":
+      return "generalHit";
+    case "classesFullMatch":
+      return "generalHit";
+    case "classesSomeMatch":
+      return "generalHit";
+    case "ontologiesFullMatch":
+      return "generalHit";
+    case "ontologiesSomeMatch":
+      return "generalHit";
+    case "relationsFullMatch":
+      return "generalHit";
+    case "relationsSomeMatch":
+      return "generalHit";
     default:
-      return scoreType
+      return scoreType;
   }
 }

@@ -1,7 +1,7 @@
 /**
  * Global Styles
  */
-@import './vars.module.css';
+@import "./vars.module.css";
 
 :root {
   --gutter-x: 16px;
@@ -72,7 +72,7 @@
   border-radius: 2px;
   color: var(--blue-dark);
   display: inline-flex;
-  font-family: 'din-2014', sans-serif;
+  font-family: "din-2014", sans-serif;
   font-size: 16px;
   height: 50px;
   letter-spacing: 1.5px;

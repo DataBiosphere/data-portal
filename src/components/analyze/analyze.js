@@ -6,21 +6,21 @@
  */
 
 // Core dependencies
-import Link from 'gatsby-link'
-import React from 'react'
+import Link from "gatsby-link";
+import React from "react";
 
 // Styles
-import compStyles from './analyze.module.css'
-import fontStyles from '../../styles/fontsize.module.css'
+import compStyles from "./analyze.module.css";
+import fontStyles from "../../styles/fontsize.module.css";
 
 class Analyze extends React.Component {
   getMarkdownFileName = link => {
-    let path = link.childMarkdownRemark.fields.slug.split('/')
-    return '/' + path[1] + '/' + path[2] + '/' + path[4]
-  }
+    let path = link.childMarkdownRemark.fields.slug.split("/");
+    return "/" + path[1] + "/" + path[2] + "/" + path[4];
+  };
 
   render() {
-    const { linked } = this.props
+    const { linked } = this.props;
     return (
       <div>
         {linked.map((link, i) => (
@@ -43,8 +43,8 @@ class Analyze extends React.Component {
           </Link>
         ))}
       </div>
-    )
+    );
   }
 }
 
-export default Analyze
+export default Analyze;

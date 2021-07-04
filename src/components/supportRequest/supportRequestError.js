@@ -6,18 +6,18 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // App dependencies
-import compStyles from './supportRequestError.module.css'
+import compStyles from "./supportRequestError.module.css";
 
 // Class name helper
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 class SupportRequestError extends React.Component {
   render() {
     // Error is displayed either at top of form as an overall submit error, or above an individual form element.
-    const { children, field } = this.props
+    const { children, field } = this.props;
     return (
       <p
         className={classNames(
@@ -28,8 +28,8 @@ class SupportRequestError extends React.Component {
       >
         {children}
       </p>
-    )
+    );
   }
 }
 
-export default SupportRequestError
+export default SupportRequestError;

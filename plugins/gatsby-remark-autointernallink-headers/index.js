@@ -9,9 +9,9 @@
  */
 
 // Dependencies
-const slugs = require('github-slugger')()
-const toString = require('mdast-util-to-string')
-const visit = require('unist-util-visit')
+const slugs = require("github-slugger")();
+const toString = require("mdast-util-to-string");
+const visit = require("unist-util-visit");
 
 /**
  * Add attribute to the specified node if it doesn't already exist.
@@ -23,40 +23,40 @@ const visit = require('unist-util-visit')
  */
 function patch(context, key, value) {
   if (!context[key]) {
-    context[key] = value
+    context[key] = value;
   }
 
-  return context[key]
+  return context[key];
 }
 
 module.exports = ({ markdownNode, markdownAST }) => {
-  slugs.reset()
+  slugs.reset();
 
-  visit(markdownAST, 'heading', function(node) {
+  visit(markdownAST, "heading", function(node) {
     // If elements array exists, do not create links for heading types not included in array
-    const elements = node.elements
-    if (Array.isArray(elements) && !elements.includes('h' + node.depth)) {
-      return
+    const elements = node.elements;
+    if (Array.isArray(elements) && !elements.includes("h" + node.depth)) {
+      return;
     }
 
     // Calculate the slug for the heading
-    const slug = slugs.slug(toString(node), false)
+    const slug = slugs.slug(toString(node), false);
 
     // Add ID to heading tag
-    const data = patch(node, 'data', {})
-    patch(data, 'id', slug)
-    patch(data, 'htmlAttributes', {})
-    patch(data, 'hProperties', {})
-    patch(data.htmlAttributes, 'id', slug)
-    patch(data.hProperties, 'id', slug)
-    patch(data.hProperties, 'style', 'position:relative')
+    const data = patch(node, "data", {});
+    patch(data, "id", slug);
+    patch(data, "htmlAttributes", {});
+    patch(data, "hProperties", {});
+    patch(data.htmlAttributes, "id", slug);
+    patch(data.hProperties, "id", slug);
+    patch(data.hProperties, "style", "position:relative");
 
     // Add anchor as child to heading tag
     const anchorNode = {
-      type: 'html',
-      value: `<internal-link anchor="${slug}"/>`,
-    }
-    node.children.push(anchorNode)
-  })
-  return markdownAST
-}
+      type: "html",
+      value: `<internal-link anchor="${slug}"/>`
+    };
+    node.children.push(anchorNode);
+  });
+  return markdownAST;
+};

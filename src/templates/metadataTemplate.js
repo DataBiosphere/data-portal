@@ -6,19 +6,19 @@
  */
 
 // Core dependencies
-import { graphql } from 'gatsby'
-import React from 'react'
+import { graphql } from "gatsby";
+import React from "react";
 
 // App dependencies
-import Metadata from '../components/metadata/metadata'
-import ProviderMetadataDisplaying from '../components/metadata/providerMetadataDisplaying/providerMetadataDisplaying'
+import Metadata from "../components/metadata/metadata";
+import ProviderMetadataDisplaying from "../components/metadata/providerMetadataDisplaying/providerMetadataDisplaying";
 
 // the data prop will be injected by the GraphQL query below.
 export default function Template({ data, location }) {
   const { allMetadataEntity, sitePage } = data,
     { context } = sitePage || {},
-    { id: sitePageId, nav } = context || {}
-  const { pathname, hash } = location
+    { id: sitePageId, nav } = context || {};
+  const { pathname, hash } = location;
 
   return (
     <ProviderMetadataDisplaying>
@@ -29,7 +29,7 @@ export default function Template({ data, location }) {
         sitePageId={sitePageId}
       />
     </ProviderMetadataDisplaying>
-  )
+  );
 }
 
 // modified to find the page by id which is passed in as context
@@ -142,4 +142,4 @@ export const pageQuery = graphql`
       path
     }
   }
-`
+`;

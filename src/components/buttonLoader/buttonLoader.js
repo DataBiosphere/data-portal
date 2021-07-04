@@ -6,13 +6,13 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // Styles
-import compStyles from './buttonLoader.module.css'
+import compStyles from "./buttonLoader.module.css";
 
 const ButtonLoader = () => {
-  return <div className={compStyles.buttonLoader} />
-}
+  return <div className={compStyles.buttonLoader} />;
+};
 
-export default ButtonLoader
+export default ButtonLoader;

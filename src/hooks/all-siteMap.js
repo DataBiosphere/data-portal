@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby";
 
 export const AllSiteMap = () => {
   const { allSiteMapYaml } = useStaticQuery(
@@ -29,6 +29,6 @@ export const AllSiteMap = () => {
         }
       }
     `
-  )
-  return allSiteMapYaml.edges.map(e => e.node)
-}
+  );
+  return allSiteMapYaml.edges.map(e => e.node);
+};

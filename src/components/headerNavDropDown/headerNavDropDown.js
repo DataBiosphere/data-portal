@@ -6,56 +6,56 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // Styles
-import compStyles from './headerNavDropDown.module.css'
+import compStyles from "./headerNavDropDown.module.css";
 
-let classNames = require('classnames')
+let classNames = require("classnames");
 
 class HeaderNavDropDown extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = { openDropDown: false }
-    this.dropDown = React.createRef()
-    this.toggleDropDown = this.toggleDropDown.bind(this)
+    super(props);
+    this.state = { openDropDown: false };
+    this.dropDown = React.createRef();
+    this.toggleDropDown = this.toggleDropDown.bind(this);
   }
 
   componentDidMount() {
-    document.addEventListener('mousedown', this.handleClick, false)
+    document.addEventListener("mousedown", this.handleClick, false);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('mousedown', this.handleClick, false)
+    window.removeEventListener("mousedown", this.handleClick, false);
   }
 
   addDropDownClass = child => {
     const { stack } = this.props,
-      { openDropDown } = this.state
+      { openDropDown } = this.state;
 
     const className = classNames(
       compStyles.dropDownMenu,
       { [compStyles.show]: openDropDown },
       { [compStyles.stack]: stack }
-    )
-    const props = { className }
+    );
+    const props = { className };
 
-    return React.cloneElement(child, props)
-  }
+    return React.cloneElement(child, props);
+  };
 
   handleClick = e => {
     if (this.dropDown.current && !this.dropDown.current.contains(e.target)) {
-      this.setState({ openDropDown: false })
+      this.setState({ openDropDown: false });
     }
-  }
+  };
 
   toggleDropDown = () => {
-    this.setState({ openDropDown: !this.state.openDropDown })
-  }
+    this.setState({ openDropDown: !this.state.openDropDown });
+  };
 
   render() {
     const { activeClassName, button, menu } = this.props,
-      menuClone = menu ? this.addDropDownClass(menu) : null
+      menuClone = menu ? this.addDropDownClass(menu) : null;
     return (
       <li className={compStyles.dropDown} ref={this.dropDown}>
         <button className={activeClassName} onClick={this.toggleDropDown}>
@@ -63,8 +63,8 @@ class HeaderNavDropDown extends React.Component {
         </button>
         {menuClone}
       </li>
-    )
+    );
   }
 }
 
-export default HeaderNavDropDown
+export default HeaderNavDropDown;

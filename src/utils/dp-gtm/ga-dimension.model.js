@@ -6,7 +6,7 @@
  */
 
 export const GADimension = {
-  ENTITY_TYPE: 'entityType',
-  SEARCH_TERM: 'searchTerm',
-  SOURCE: 'source',
-}
+  ENTITY_TYPE: "entityType",
+  SEARCH_TERM: "searchTerm",
+  SOURCE: "source"
+};

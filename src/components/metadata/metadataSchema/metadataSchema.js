@@ -6,28 +6,28 @@
  */
 
 // Core dependencies
-import React, { useContext } from 'react'
+import React, { useContext } from "react";
 
 // App dependencies
-import ContextMetadataDisplaying from '../contextMetadataDisplaying/contextMetadataDisplaying'
-import MetadataSchemaNoRequiredProperties from '../metadataSchemaNoRequiredProperties/metadataSchemaNoRequiredProperties'
-import MetadataSchemaProperties from '../metadataSchemaProperties/metadataSchemaProperties'
-import MetadataSchemaUsedBys from '../metadataSchemaUsedBys/metadataSchemaUsedBys'
-import MetadataToggleRequiredFields from '../metadataToggleRequiredFields/metadataToggleRequiredFields'
+import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
+import MetadataSchemaNoRequiredProperties from "../metadataSchemaNoRequiredProperties/metadataSchemaNoRequiredProperties";
+import MetadataSchemaProperties from "../metadataSchemaProperties/metadataSchemaProperties";
+import MetadataSchemaUsedBys from "../metadataSchemaUsedBys/metadataSchemaUsedBys";
+import MetadataToggleRequiredFields from "../metadataToggleRequiredFields/metadataToggleRequiredFields";
 
 // Styles
-import compStyles from './metadataSchema.module.css'
-import fontStyles from '../../../styles/fontsize.module.css'
+import compStyles from "./metadataSchema.module.css";
+import fontStyles from "../../../styles/fontsize.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 function MetadataSchema(props) {
   const { schema } = props,
     { description, properties, schemaName, title, urlGitHub, urlTo } =
-      schema || {}
-  const { highlightValue } = useContext(ContextMetadataDisplaying)
-  const showHighlighter = highlightValue === urlTo
-  const showProperties = properties.length > 0
+      schema || {};
+  const { highlightValue } = useContext(ContextMetadataDisplaying);
+  const showHighlighter = highlightValue === urlTo;
+  const showProperties = properties.length > 0;
 
   return (
     <>
@@ -61,7 +61,7 @@ function MetadataSchema(props) {
       )}
       <MetadataSchemaUsedBys schema={schema} />
     </>
-  )
+  );
 }
 
-export default MetadataSchema
+export default MetadataSchema;

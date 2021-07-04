@@ -6,37 +6,37 @@
  */
 
 // Core dependencies
-import { Link } from 'gatsby'
-import React from 'react'
+import { Link } from "gatsby";
+import React from "react";
 
 // App dependencies
-import ExploreData from '../components/explore/exploreData'
-import Layout from '../components/layout'
-import SearchBrowser from '../components/searchBrowser/searchBrowser'
-import * as FileSummaryService from '../utils/explore/fileSummary.service'
-import * as ReleaseService from '../utils/release.service'
-import * as SystemService from '../utils/system.service'
-import * as numberFormatter from '../utils/number-format.service'
+import ExploreData from "../components/explore/exploreData";
+import Layout from "../components/layout";
+import SearchBrowser from "../components/searchBrowser/searchBrowser";
+import * as FileSummaryService from "../utils/explore/fileSummary.service";
+import * as ReleaseService from "../utils/release.service";
+import * as SystemService from "../utils/system.service";
+import * as numberFormatter from "../utils/number-format.service";
 
 // Styles
-import fontStyles from '../styles/fontsize.module.css'
-import globalStyles from '../styles/global.module.css'
-import compStyles from './index.module.css'
+import fontStyles from "../styles/fontsize.module.css";
+import globalStyles from "../styles/global.module.css";
+import compStyles from "./index.module.css";
 
 // Images
-import cells from '../../images/icon/metrics/cells.png'
-import donors from '../../images/icon/metrics/donors.png'
-import labs from '../../images/icon/metrics/labs.png'
-import organs from '../../images/icon/metrics/organs.png'
-import projects from '../../images/icon/metrics/projects.png'
-import arrow from '../../images/icon/portal/arrow.png'
-import labsContribute from '../../images/icon/portal/labsContribute.png'
-import pipelineProcessing from '../../images/icon/portal/pipelineProcessing.png'
-import searchCommunity from '../../images/icon/portal/searchCommunity.png'
-import searchData from '../../images/icon/portal/searchData.png'
-import go from '../../images/icon/release/arrow.png'
+import cells from "../../images/icon/metrics/cells.png";
+import donors from "../../images/icon/metrics/donors.png";
+import labs from "../../images/icon/metrics/labs.png";
+import organs from "../../images/icon/metrics/organs.png";
+import projects from "../../images/icon/metrics/projects.png";
+import arrow from "../../images/icon/portal/arrow.png";
+import labsContribute from "../../images/icon/portal/labsContribute.png";
+import pipelineProcessing from "../../images/icon/portal/pipelineProcessing.png";
+import searchCommunity from "../../images/icon/portal/searchCommunity.png";
+import searchData from "../../images/icon/portal/searchData.png";
+import go from "../../images/icon/release/arrow.png";
 
-let classNames = require('classnames')
+let classNames = require("classnames");
 
 class IndexPage extends React.Component {
   state = {
@@ -52,14 +52,14 @@ class IndexPage extends React.Component {
     projectCount: 0,
     searchTerms: null,
     termFacets: null,
-    totalCellCount: 0,
-  }
+    totalCellCount: 0
+  };
 
   /**
    * Check system status is OK then load up counts and summaries.
    */
   componentDidMount() {
-    this.initComponent()
+    this.initComponent();
   }
 
   /**
@@ -68,30 +68,30 @@ class IndexPage extends React.Component {
    * status, display warning banner.
    */
   initComponent = () => {
-    const fetchFileSummary = FileSummaryService.fetchFileSummary()
-    const fetchTermFacets = FileSummaryService.fetchTermFacets()
-    const fetchHealthCheck = SystemService.healthCheck()
+    const fetchFileSummary = FileSummaryService.fetchFileSummary();
+    const fetchTermFacets = FileSummaryService.fetchTermFacets();
+    const fetchHealthCheck = SystemService.healthCheck();
     Promise.all([fetchFileSummary, fetchTermFacets, fetchHealthCheck])
       .then(([fileSummary, termFacets, healthCheck]) => {
         this.setState({
           ...fileSummary,
           ...healthCheck,
           searchTerms: FileSummaryService.buildSearchTerms(termFacets),
-          termFacets,
-        })
+          termFacets
+        });
       })
       .catch(e => {
         this.setState({
-          healthy: false,
-        })
-      })
-  }
+          healthy: false
+        });
+      });
+  };
 
   render() {
-    const releaseVisible = ReleaseService.isReleaseVisible()
+    const releaseVisible = ReleaseService.isReleaseVisible();
     const description =
-      'Community generated, multi-omic, open data processed by uniform pipelines'
-    const pageTitle = 'Mapping the Human Body at the Cellular Level'
+      "Community generated, multi-omic, open data processed by uniform pipelines";
+    const pageTitle = "Mapping the Human Body at the Cellular Level";
     return (
       <Layout
         description={description}
@@ -108,7 +108,7 @@ class IndexPage extends React.Component {
               </h1>
               <h2 className={fontStyles.subhead}>
                 <span>
-                  Community generated,{' '}
+                  Community generated,{" "}
                   <span className={compStyles.noWrap}>multi-omic, </span>
                 </span>
                 <span>
@@ -121,7 +121,7 @@ class IndexPage extends React.Component {
           <section
             className={classNames({
               [compStyles.metricsBar]: true,
-              [compStyles.loading]: !this.state.loaded,
+              [compStyles.loading]: !this.state.loaded
             })}
           >
             <div
@@ -338,8 +338,8 @@ class IndexPage extends React.Component {
           </section>
         </main>
       </Layout>
-    )
+    );
   }
 }
 
-export default IndexPage
+export default IndexPage;

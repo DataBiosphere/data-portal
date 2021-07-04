@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby";
 
 export const TOCMetadataQuery = () => {
   const { allMetadataSchema } = useStaticQuery(
@@ -22,6 +22,6 @@ export const TOCMetadataQuery = () => {
         }
       }
     `
-  )
-  return allMetadataSchema.edges.map(n => n.node)
-}
+  );
+  return allMetadataSchema.edges.map(n => n.node);
+};

@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby";
 
 export const TOCPageQuery = () => {
   const { allMarkdownRemark } = useStaticQuery(
@@ -16,6 +16,6 @@ export const TOCPageQuery = () => {
         }
       }
     `
-  )
-  return allMarkdownRemark.edges.map(e => e.node)
-}
+  );
+  return allMarkdownRemark.edges.map(e => e.node);
+};

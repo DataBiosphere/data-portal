@@ -40,7 +40,7 @@
   /* Separator - ">>" */
   .overline > *:not(:last-of-type):after {
     align-self: center;
-    content: '>>';
+    content: ">>";
     margin: 0 4px;
   }
 }

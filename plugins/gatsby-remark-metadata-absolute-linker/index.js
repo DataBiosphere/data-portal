@@ -19,53 +19,53 @@
  */
 
 // Dependencies
-const visit = require('unist-util-visit')
+const visit = require("unist-util-visit");
 
 // Gatsby environment
-const GATSBY_ENV = process.env.GATSBY_ENV
+const GATSBY_ENV = process.env.GATSBY_ENV;
 
 // Environment to GitHub branch mapping
 const branchNameByEnvironment = {
-  LOCAL: 'staging',
-  DEV: 'develop',
-  INTEGRATION: 'integration',
-  STAGING: 'staging',
-  PROD: 'master',
-}
+  LOCAL: "staging",
+  DEV: "develop",
+  INTEGRATION: "integration",
+  STAGING: "staging",
+  PROD: "master"
+};
 
 // Fully qualified URL stem, to resources that fall into category 3 above.
-const branchName = branchNameByEnvironment[GATSBY_ENV]
-const fullyQualifiedStem = `https://github.com/HumanCellAtlas/metadata-schema/blob/${branchName}/docs/`
+const branchName = branchNameByEnvironment[GATSBY_ENV];
+const fullyQualifiedStem = `https://github.com/HumanCellAtlas/metadata-schema/blob/${branchName}/docs/`;
 
 // Paths of imported pages
 const importedPaths = [
-  '/metadata/design-principles/rationale',
-  '/metadata/design-principles/structure',
-]
+  "/metadata/design-principles/rationale",
+  "/metadata/design-principles/structure"
+];
 
 // Set of URL stems that indicate a link does not need to be transformed
-const ignoreStems = ['//', 'http', '#', 'rationale', 'structure']
+const ignoreStems = ["//", "http", "#", "rationale", "structure"];
 
 module.exports = ({ markdownNode, markdownAST }) => {
-  const path = ((markdownNode || {}).fields || {}).path
+  const path = ((markdownNode || {}).fields || {}).path;
 
   // Return the AST as is if this page isn't marked as one we want to update links on
   if (!path || importedPaths.indexOf(path) === -1) {
-    return markdownAST
+    return markdownAST;
   }
 
   // Otherwise, we need to update relative links to include the domain and possibly a path
-  visit(markdownAST, 'link', node => {
+  visit(markdownAST, "link", node => {
     if (!node.url) {
-      return
+      return;
     }
 
     // Prepend domain and path, if necessary (see plugin description in comment block at top)
-    const updateRequired = !ignoreStems.find(stem => node.url.startsWith(stem))
+    const updateRequired = !ignoreStems.find(stem => node.url.startsWith(stem));
     if (updateRequired) {
-      node.url = fullyQualifiedStem + node.url
+      node.url = fullyQualifiedStem + node.url;
     }
-  })
+  });
 
-  return markdownAST
-}
+  return markdownAST;
+};

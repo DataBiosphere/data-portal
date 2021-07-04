@@ -9,5 +9,5 @@ jobs:
     steps:
       - uses: DataBiosphere/azul-github-labeler-action@releases/v5
         with:
-          repo-token: '${{secrets.GITHUB_TOKEN}}'
+          repo-token: "${{secrets.GITHUB_TOKEN}}"
           label: canary

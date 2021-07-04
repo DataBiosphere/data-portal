@@ -7,42 +7,42 @@
  */
 
 // Core dependencies
-import Dropzone from '../dropzone/dropzone'
-import React from 'react'
-import validate from 'validate.js'
+import Dropzone from "../dropzone/dropzone";
+import React from "react";
+import validate from "validate.js";
 
 // App dependencies
-import AttachmentError from './attachmentError'
-import ButtonLoader from '../buttonLoader/buttonLoader'
-import Select from '../select/select'
-import SupportRequestError from './supportRequestError'
-import * as SupportRequestService from './supportRequest.service'
-import SupportRequestSubmitted from './supportRequestSubmitted'
-import * as DPGTMService from '../../utils/dp-gtm/dp-gtm.service'
+import AttachmentError from "./attachmentError";
+import ButtonLoader from "../buttonLoader/buttonLoader";
+import Select from "../select/select";
+import SupportRequestError from "./supportRequestError";
+import * as SupportRequestService from "./supportRequest.service";
+import SupportRequestSubmitted from "./supportRequestSubmitted";
+import * as DPGTMService from "../../utils/dp-gtm/dp-gtm.service";
 
 // Styles
-import globalStyles from '../../styles/global.module.css'
-import compStyles from './supportRequestForm.module.css'
+import globalStyles from "../../styles/global.module.css";
+import compStyles from "./supportRequestForm.module.css";
 
 // Class name helper
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 // Validation constraints
 const constraints = {
   email: { presence: { allowEmpty: false }, email: true },
   description: { presence: { allowEmpty: false } },
   name: { presence: { allowEmpty: false } },
-  subject: { presence: { allowEmpty: false } },
-}
+  subject: { presence: { allowEmpty: false } }
+};
 
 class SupportRequestForm extends React.Component {
   /**
    * @param props
    */
   constructor(props) {
-    super(props)
-    this.state = this.initForm()
-    this.requestRef = React.createRef()
+    super(props);
+    this.state = this.initForm();
+    this.requestRef = React.createRef();
   }
 
   /**
@@ -54,9 +54,9 @@ class SupportRequestForm extends React.Component {
    */
   buildInputClassnames = (errors, inputName) => {
     return {
-      [compStyles.inputError]: this.isInputError(errors, inputName),
-    }
-  }
+      [compStyles.inputError]: this.isInputError(errors, inputName)
+    };
+  };
 
   /**
    * Build support request model from form values.
@@ -68,9 +68,9 @@ class SupportRequestForm extends React.Component {
       email,
       name,
       subject,
-      type,
-    } = this.state
-    const requestedFromUrl = window.location.href
+      type
+    } = this.state;
+    const requestedFromUrl = window.location.href;
     return {
       attachmentToken,
       description,
@@ -78,30 +78,30 @@ class SupportRequestForm extends React.Component {
       name,
       requestedFromUrl,
       subject,
-      type,
-    }
-  }
+      type
+    };
+  };
 
   /**
    * Build initial form state.
    */
   initForm() {
     return {
-      attachmentName: '',
+      attachmentName: "",
       attachmentRejected: false, // Upload fails on drop of file
       attachmentRejections: [], // Failure reasons
-      attachmentToken: '',
+      attachmentToken: "",
       attachmentUploading: false,
-      description: '',
-      email: '',
-      name: '',
-      subject: '',
+      description: "",
+      email: "",
+      name: "",
+      subject: "",
       submitError: false,
       submitted: false,
       submitting: false,
       touched: {},
-      type: 'question',
-    }
+      type: "question"
+    };
   }
 
   /**
@@ -113,18 +113,18 @@ class SupportRequestForm extends React.Component {
    */
   isInputError = (errors, inputName) => {
     if (!errors) {
-      return false
+      return false;
     }
 
-    return this.state.touched[inputName] && errors[inputName]
-  }
+    return this.state.touched[inputName] && errors[inputName];
+  };
 
   /**
    * Delete attachment.
    */
   onAttachmentDeleted = () => {
-    this.setState({ attachmentToken: '' })
-  }
+    this.setState({ attachmentToken: "" });
+  };
 
   /**
    * Upload file to add as attachment to request.
@@ -136,23 +136,23 @@ class SupportRequestForm extends React.Component {
       this.setState({
         attachmentRejected: false,
         attachmentRejections: [],
-        attachmentUploading: true,
-      })
-      const response = await SupportRequestService.uploadAttachment(files[0])
-      const attachmentToken = response.token
-      const attachmentName = response.attachment.file_name
+        attachmentUploading: true
+      });
+      const response = await SupportRequestService.uploadAttachment(files[0]);
+      const attachmentToken = response.token;
+      const attachmentName = response.attachment.file_name;
       this.setState({
         attachmentToken,
         attachmentName,
-        attachmentUploading: false,
-      })
+        attachmentUploading: false
+      });
     } catch (error) {
       this.setState({
         attachmentRejected: true,
         attachmentRejections: [],
-        attachmentUploading: false,
-      })
-      console.log(error)
+        attachmentUploading: false
+      });
+      console.log(error);
     }
   }
 
@@ -161,12 +161,12 @@ class SupportRequestForm extends React.Component {
    */
   onAttachmentRejected = fileRejections => {
     // We can assume there is a single error as we are not doing multiple uploads
-    const rejection = fileRejections[0] || {}
+    const rejection = fileRejections[0] || {};
     this.setState({
       attachmentRejected: true,
-      attachmentRejections: rejection.errors,
-    })
-  }
+      attachmentRejections: rejection.errors
+    });
+  };
 
   /**
    * Indicate input field has been touched.
@@ -174,14 +174,14 @@ class SupportRequestForm extends React.Component {
    * @param event
    */
   onInputBlur = event => {
-    const target = event.target
+    const target = event.target;
     this.setState({
       touched: {
         ...this.state.touched,
-        [target.name]: true,
-      },
-    })
-  }
+        [target.name]: true
+      }
+    });
+  };
 
   /**
    * Bind input value to state.
@@ -189,14 +189,14 @@ class SupportRequestForm extends React.Component {
    * @param event
    */
   onInputChange = event => {
-    const target = event.target
-    const value = target.value
-    const name = target.name
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
 
     this.setState({
-      [name]: value,
-    })
-  }
+      [name]: value
+    });
+  };
 
   /**
    * Bind type drop down value to state on select of value.
@@ -205,46 +205,46 @@ class SupportRequestForm extends React.Component {
    */
   onTypeChange = selectedOption => {
     this.setState({
-      type: selectedOption.value,
-    })
-  }
+      type: selectedOption.value
+    });
+  };
 
   /**
    * Handle cancel of support request form.
    */
   onSupportRequestDismissed = () => {
-    const { dismissFn } = this.props
+    const { dismissFn } = this.props;
     if (dismissFn) {
-      dismissFn()
+      dismissFn();
     }
-  }
+  };
 
   /**
    * Handle submit of support request form.
    */
   onSupportRequestSubmitted = async () => {
-    const request = this.buildSupportRequest()
+    const request = this.buildSupportRequest();
     try {
       this.setState({
         submitError: false,
-        submitting: true,
-      })
-      await SupportRequestService.createSupportRequest(request)
+        submitting: true
+      });
+      await SupportRequestService.createSupportRequest(request);
       this.setState({
         submitting: false,
-        submitted: true,
-      })
-      this.requestRef.current.scrollTo(0, 0)
-      DPGTMService.trackSupportRequestCreated(this.props.source)
-      setTimeout(() => this.onSupportRequestDismissed(), 3000)
+        submitted: true
+      });
+      this.requestRef.current.scrollTo(0, 0);
+      DPGTMService.trackSupportRequestCreated(this.props.source);
+      setTimeout(() => this.onSupportRequestDismissed(), 3000);
     } catch (error) {
       this.setState({
         submitError: true,
-        submitting: false,
-      })
-      console.log(error)
+        submitting: false
+      });
+      console.log(error);
     }
-  }
+  };
 
   render() {
     const {
@@ -260,34 +260,34 @@ class SupportRequestForm extends React.Component {
       submitting,
       subject,
       type,
-      attachmentUploading,
-    } = this.state
+      attachmentUploading
+    } = this.state;
 
     // Set up select options, selected value and styles.
     const typeOptions = [
-      { value: 'question', label: 'Question' },
-      { value: 'bug', label: 'Bug' },
-      { value: 'feature_request', label: 'Feature Request' },
-    ]
+      { value: "question", label: "Question" },
+      { value: "bug", label: "Bug" },
+      { value: "feature_request", label: "Feature Request" }
+    ];
     const selectedTypeOption = typeOptions.filter(
       option => option.value === type
-    )
+    );
 
     // Active drag styles
     const draggingStyle = {
-      cursor: 'copy',
-    }
+      cursor: "copy"
+    };
 
     // Determine error state of form
-    const errors = validate(this.buildSupportRequest(), constraints)
+    const errors = validate(this.buildSupportRequest(), constraints);
 
     // Max file attachment
-    const maxAttachmentSize = 20 * 1024 * 1024
+    const maxAttachmentSize = 20 * 1024 * 1024;
 
     return (
       <div
         className={classNames(compStyles.supportRequest, {
-          [compStyles.submitted]: submitted,
+          [compStyles.submitted]: submitted
         })}
         ref={this.requestRef}
       >
@@ -316,7 +316,7 @@ class SupportRequestForm extends React.Component {
                 <input
                   className={classNames(
                     compStyles.inputSubject,
-                    this.buildInputClassnames(errors, 'subject')
+                    this.buildInputClassnames(errors, "subject")
                   )}
                   type="text"
                   name="subject"
@@ -327,7 +327,7 @@ class SupportRequestForm extends React.Component {
                 />
                 <textarea
                   className={classNames(
-                    this.buildInputClassnames(errors, 'description')
+                    this.buildInputClassnames(errors, "description")
                   )}
                   name="description"
                   placeholder="Enter a description"
@@ -353,7 +353,7 @@ class SupportRequestForm extends React.Component {
                 ) : (
                   <button
                     className={classNames(compStyles.inputAttachment, {
-                      [compStyles.inputAttachmentDragging]: dragging,
+                      [compStyles.inputAttachmentDragging]: dragging
                     })}
                     onClick={openUploader}
                   >
@@ -369,7 +369,7 @@ class SupportRequestForm extends React.Component {
                 <h3>Contact Details *</h3>
                 <input
                   className={classNames(
-                    this.buildInputClassnames(errors, 'name')
+                    this.buildInputClassnames(errors, "name")
                   )}
                   type="text"
                   name="name"
@@ -380,7 +380,7 @@ class SupportRequestForm extends React.Component {
                 />
                 <input
                   className={classNames(
-                    this.buildInputClassnames(errors, 'email')
+                    this.buildInputClassnames(errors, "email")
                   )}
                   type="text"
                   name="email"
@@ -412,7 +412,7 @@ class SupportRequestForm extends React.Component {
                     disabled={!!errors || submitting}
                     onClick={this.onSupportRequestSubmitted}
                   >
-                    {submitting ? <ButtonLoader /> : 'Send'}
+                    {submitting ? <ButtonLoader /> : "Send"}
                   </button>
                 </div>
               </div>
@@ -420,8 +420,8 @@ class SupportRequestForm extends React.Component {
           )}
         </Dropzone>
       </div>
-    )
+    );
   }
 }
 
-export default SupportRequestForm
+export default SupportRequestForm;

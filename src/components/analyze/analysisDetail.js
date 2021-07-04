@@ -6,24 +6,24 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // Styles
-import compStyles from './analysisDetail.module.css'
-import fontStyles from '../../styles/fontsize.module.css'
-import globalStyles from '../../styles/global.module.css'
+import compStyles from "./analysisDetail.module.css";
+import fontStyles from "../../styles/fontsize.module.css";
+import globalStyles from "../../styles/global.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 function AnalysisDetail(props) {
   const { data } = props,
     { frontmatter, html } = data,
-    { author, githubUrl, title } = frontmatter
+    { author, githubUrl, title } = frontmatter;
   const buttonClassNames = classNames(
     globalStyles.button,
     globalStyles.outline,
     globalStyles.primary
-  )
+  );
 
   return (
     <div>
@@ -47,7 +47,7 @@ function AnalysisDetail(props) {
       </div>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
-  )
+  );
 }
 
-export default AnalysisDetail
+export default AnalysisDetail;

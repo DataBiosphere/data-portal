@@ -5,7 +5,7 @@
  * Style definitions specific to the HCA Data Portal announcement catalog component.
  */
 
-@import '../../styles/vars.module.css';
+@import "../../styles/vars.module.css";
 
 /* Catalog */
 .catalog {

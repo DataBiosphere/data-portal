@@ -6,23 +6,23 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // App dependencies
-import compStyles from './supportRequestButton.module.css'
+import compStyles from "./supportRequestButton.module.css";
 
 const SupportRequestButton = ({ clickFn }) => {
   const onButtonClicked = () => {
     if (clickFn) {
-      clickFn()
+      clickFn();
     }
-  }
+  };
 
   return (
     <button className={compStyles.supportRequestBtn} onClick={onButtonClicked}>
       Feedback<span> &amp; Support</span>
     </button>
-  )
-}
+  );
+};
 
-export default SupportRequestButton
+export default SupportRequestButton;

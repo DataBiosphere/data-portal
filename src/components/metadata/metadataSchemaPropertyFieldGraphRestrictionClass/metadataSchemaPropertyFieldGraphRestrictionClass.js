@@ -6,14 +6,14 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // App dependencies
-import * as MetadataService from '../../../utils/metadata.service'
+import * as MetadataService from "../../../utils/metadata.service";
 
 function MetadataSchemaPropertyFieldGraphRestrictionClass(props) {
-  const { first, identifier, ontology, showLink } = props
-  const url = MetadataService.buildOntologyTermUrl(ontology, identifier)
+  const { first, identifier, ontology, showLink } = props;
+  const url = MetadataService.buildOntologyTermUrl(ontology, identifier);
 
   return (
     <>
@@ -26,7 +26,7 @@ function MetadataSchemaPropertyFieldGraphRestrictionClass(props) {
         <span>{identifier}</span>
       )}
     </>
-  )
+  );
 }
 
-export default MetadataSchemaPropertyFieldGraphRestrictionClass
+export default MetadataSchemaPropertyFieldGraphRestrictionClass;

@@ -6,11 +6,11 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // Core dependencies
-import Layout from '../components/layout'
+import Layout from "../components/layout";
 
-const Health = () => <Layout sectionTitle={'Health - OK'} />
+const Health = () => <Layout sectionTitle={"Health - OK"} />;
 
-export default Health
+export default Health;

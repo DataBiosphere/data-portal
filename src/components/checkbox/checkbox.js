@@ -6,21 +6,21 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // Styles
-import compStyles from './checkbox.module.css'
+import compStyles from "./checkbox.module.css";
 
-let classNames = require('classnames')
+let classNames = require("classnames");
 
 class Checkbox extends React.Component {
   render() {
-    const { checked, clickAction, count, disabled, label } = this.props
+    const { checked, clickAction, count, disabled, label } = this.props;
     const classNamesCheckbox = classNames(
       { [compStyles.active]: checked },
       compStyles.checkbox,
       { [compStyles.disabled]: disabled }
-    )
+    );
     return (
       <span
         className={classNamesCheckbox}
@@ -28,15 +28,15 @@ class Checkbox extends React.Component {
         role="presentation"
       >
         <span className={compStyles.check}>
-          <span className={classNames('material-icons', compStyles.icon)}>
+          <span className={classNames("material-icons", compStyles.icon)}>
             done
           </span>
         </span>
         <span className={compStyles.label}>{label}</span>
         {count ? <span className={compStyles.count}>{count}</span> : null}
       </span>
-    )
+    );
   }
 }
 
-export default Checkbox
+export default Checkbox;

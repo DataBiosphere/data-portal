@@ -10,8 +10,8 @@
  */
 export function checkResponseStatus(response) {
   if (!response.ok) {
-    throw response
+    throw response;
   }
 
-  return response
+  return response;
 }

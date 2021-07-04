@@ -7,20 +7,20 @@
  */
 
 // Core dependencies
-import Link from 'gatsby-link'
-import React from 'react'
+import Link from "gatsby-link";
+import React from "react";
 
 function MetadataSchemaPropertyFieldFromRef(props) {
   const { property } = props,
-    { primary, propertyFrom, propertyFromLink, referenceFrom } = property
-  const showPropertyFrom = !primary && propertyFrom && !referenceFrom
+    { primary, propertyFrom, propertyFromLink, referenceFrom } = property;
+  const showPropertyFrom = !primary && propertyFrom && !referenceFrom;
 
   return showPropertyFrom ? (
     <span>
       <span> from </span>
       <Link to={propertyFromLink}>{propertyFrom}</Link>
     </span>
-  ) : null
+  ) : null;
 }
 
-export default MetadataSchemaPropertyFieldFromRef
+export default MetadataSchemaPropertyFieldFromRef;

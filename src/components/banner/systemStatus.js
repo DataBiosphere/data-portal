@@ -6,14 +6,14 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // Styles
-import fontStyles from '../../styles/fontsize.module.css'
-import globalStyles from '../../styles/global.module.css'
-import compStyles from './systemStatus.module.css'
+import fontStyles from "../../styles/fontsize.module.css";
+import globalStyles from "../../styles/global.module.css";
+import compStyles from "./systemStatus.module.css";
 
-const classNames = require('classnames')
+const classNames = require("classnames");
 
 function SystemStatus() {
   return (
@@ -24,13 +24,13 @@ function SystemStatus() {
           compStyles.systemStatusWrapper
         )}
       >
-        <i className={classNames('material-icons', fontStyles.bgDark)}>
+        <i className={classNames("material-icons", fontStyles.bgDark)}>
           warning
         </i>
         <p className={classNames(fontStyles.s, fontStyles.bgDark)}>
           <span>
             One or more of the systems composing the HCA DCP is currently
-            unavailable.{' '}
+            unavailable.{" "}
           </span>
           <span>
             <span>Please try again later</span>
@@ -38,7 +38,7 @@ function SystemStatus() {
         </p>
       </div>
     </div>
-  )
+  );
 }
 
-export default SystemStatus
+export default SystemStatus;

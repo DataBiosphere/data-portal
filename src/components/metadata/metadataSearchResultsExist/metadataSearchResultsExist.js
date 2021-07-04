@@ -6,14 +6,14 @@
  */
 
 // Core dependencies
-import React from 'react'
+import React from "react";
 
 // App dependencies
-import MetadataSearchResult from '../metadataSearchResult/metadataSearchResult'
-import MetadataSearchResultsPanelKeyDownSpy from '../metadataSearchResultsPanelKeyDownSpy/metadataSearchResultsPanelKeyDownSpy'
+import MetadataSearchResult from "../metadataSearchResult/metadataSearchResult";
+import MetadataSearchResultsPanelKeyDownSpy from "../metadataSearchResultsPanelKeyDownSpy/metadataSearchResultsPanelKeyDownSpy";
 
 function MetadataSearchResultsExist(props) {
-  const { results } = props
+  const { results } = props;
 
   return (
     <MetadataSearchResultsPanelKeyDownSpy results={results}>
@@ -21,7 +21,7 @@ function MetadataSearchResultsExist(props) {
         <MetadataSearchResult key={r} counter={r} result={result} />
       ))}
     </MetadataSearchResultsPanelKeyDownSpy>
-  )
+  );
 }
 
-export default React.memo(MetadataSearchResultsExist)
+export default React.memo(MetadataSearchResultsExist);

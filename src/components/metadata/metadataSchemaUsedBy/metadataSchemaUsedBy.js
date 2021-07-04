@@ -6,20 +6,20 @@
  */
 
 // Core dependencies
-import React, { useContext } from 'react'
+import React, { useContext } from "react";
 
 // App dependencies
-import ContextMetadataDisplaying from '../contextMetadataDisplaying/contextMetadataDisplaying'
-import MetadataSchemaPropertyFieldDescription from '../metadataSchemaPropertyFieldDescription/metadataSchemaPropertyFieldDescription'
-import MetadataSchemaPropertyFieldFriendlies from '../metadataSchemaPropertyFieldFriendlies/metadataSchemaPropertyFieldFriendlies'
-import MetadataSchemaPropertyPanel from '../metadataSchemaPropertyPanel/metadataSchemaPropertyPanel'
-import MetadataSchemaPropertyPanelBundle from '../metadataSchemaPropertyPanelBundle/metadataSchemaPropertyPanelBundle'
-import MetadataSchemaPropertyWordWrapper from '../metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper'
+import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
+import MetadataSchemaPropertyFieldDescription from "../metadataSchemaPropertyFieldDescription/metadataSchemaPropertyFieldDescription";
+import MetadataSchemaPropertyFieldFriendlies from "../metadataSchemaPropertyFieldFriendlies/metadataSchemaPropertyFieldFriendlies";
+import MetadataSchemaPropertyPanel from "../metadataSchemaPropertyPanel/metadataSchemaPropertyPanel";
+import MetadataSchemaPropertyPanelBundle from "../metadataSchemaPropertyPanelBundle/metadataSchemaPropertyPanelBundle";
+import MetadataSchemaPropertyWordWrapper from "../metadataSchemaPropertyWordWrapper/metadataSchemaPropertyWordWrapper";
 
 function MetadataSchemaUsedBy(props) {
   const { property } = props,
-    { propertyPath } = property || {}
-  const { onHandleNavigationHit } = useContext(ContextMetadataDisplaying)
+    { propertyPath } = property || {};
+  const { onHandleNavigationHit } = useContext(ContextMetadataDisplaying);
 
   return (
     <MetadataSchemaPropertyPanel
@@ -31,17 +31,17 @@ function MetadataSchemaUsedBy(props) {
       </MetadataSchemaPropertyPanelBundle>
       <MetadataSchemaPropertyPanelBundle>
         <MetadataSchemaPropertyWordWrapper
-          font={'hcaCode'}
+          font={"hcaCode"}
           word={propertyPath}
           wrap
         />
         <MetadataSchemaPropertyFieldDescription
-          font={'xs'}
+          font={"xs"}
           property={property}
         />
       </MetadataSchemaPropertyPanelBundle>
     </MetadataSchemaPropertyPanel>
-  )
+  );
 }
 
-export default MetadataSchemaUsedBy
+export default MetadataSchemaUsedBy;

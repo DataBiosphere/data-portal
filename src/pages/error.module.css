@@ -7,7 +7,7 @@
 
 /* Cell background image */
 .cellImage {
-  background: url('../../images/cell/error.png') center / cover no-repeat;
+  background: url("../../images/cell/error.png") center / cover no-repeat;
   bottom: 0;
   left: 0;
   opacity: 0.6;

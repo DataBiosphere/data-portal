@@ -4,7 +4,7 @@
  *
  * Style definitions specific to the HCA Data Portal TOC item component.
  */
-@import '../../styles/vars.module.css';
+@import "../../styles/vars.module.css";
 
 /* TOC item */
 .toc {
@@ -46,7 +46,7 @@
 /* TOC bar */
 .toc:before {
   background-color: var(--gray-lightest);
-  content: '';
+  content: "";
   height: 100%;
   left: -8px;
   position: absolute;
