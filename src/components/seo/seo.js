@@ -15,13 +15,14 @@ import * as EnvironmentService from "../../utils/environment/environment.service
 class SEO extends React.Component {
   render() {
     const { description, pageTitle } = this.props,
-      title = pageTitle ? pageTitle : "HCA Data Portal",
+      defaultTitle = EnvironmentService.isLungMAP() ? "LungMAP Data Browser" : "HCA Data Portal",
+      title = pageTitle ? pageTitle : defaultTitle,
       siteURL = EnvironmentService.getCurrentEnvironmentURL(),
       twitterImgUrl = `${siteURL}images/hca-twitter.jpg`;
     return (
       <Helmet>
         <meta property="og:title" content={title} />
-        <meta property="og:site_name" content="HCA Data Portal" />
+        <meta property="og:site_name" content={defaultTitle} />
         <meta property="twitter:title" content={title} />
         {description
           ? [

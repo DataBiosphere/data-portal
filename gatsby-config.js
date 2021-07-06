@@ -22,11 +22,19 @@ let gtmEnvName = process.env.GATSBY_ENV_NAME;
 
 const lungmap = process.env.GATSBY_ATLAS === "lungmap";
 
-module.exports = {
-  siteMetadata: {
+const siteMetadata = lungmap ?
+  {
+    title: "LungMAP Data Browser",
+    siteUrl: "https://data-browser.lungmap.net"
+  } :
+  {
     title: "HCA Data Portal",
-    siteUrl: `https://data.humancellatlas.org/`
-  },
+    siteUrl: "https://data.humancellatlas.org/"
+
+  };
+
+module.exports = {
+  siteMetadata,
   plugins: [
     {
       resolve: `gatsby-plugin-google-tagmanager`,
