@@ -51,7 +51,7 @@ build_master:
     - export GATSBY_GTM_AUTH=xm3qglWPEFim7Lb4AxXnsA
     - export GATSBY_ENV_NAME=env-2
     - export GATSBY_ENV=PROD
-    - export GATSBY_DEFAULT_CATALOG=dcp6
+    - export GATSBY_DEFAULT_CATALOG=dcp7
     - export GATSBY_ATLAS=hca
     - gatsby build
   only:
