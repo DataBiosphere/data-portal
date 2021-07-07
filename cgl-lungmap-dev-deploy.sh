@@ -13,7 +13,10 @@ export GATSBY_ENV_NAME=env-149
 export GATSBY_ENV=STAGING
 export GATSBY_DEFAULT_CATALOG=lungmap
 export GATSBY_ATLAS=lungmap
+
+git clone git@github.com:HumanCellAtlas/metadata-schema.git _metadata-schema
 gatsby build
+rm -rf _metadata-schema
 
 
 export BUCKET=s3://data-browser.dev.lungmap.net/
