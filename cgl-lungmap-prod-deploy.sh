@@ -3,6 +3,7 @@
 gatsby clean
 
 export GATSBY_EXPLORE_URL=https://data-browser.lungmap.net/explore/
+export GATSBY_PORTAL_URL=https://data-browser.lungmap.net/
 export GATSBY_FILE_SUMMARY_API_URL=https://service.azul.data.humancellatlas.org/index/summary
 export GATSBY_TERM_FACETS_API_URL=https://service.azul.data.humancellatlas.org/index/projects
 export GATSBY_SYSTEM_HEALTH_CHECK_API_URL=https://service.azul.data.humancellatlas.org/health/progress
