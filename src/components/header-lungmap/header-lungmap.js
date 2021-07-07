@@ -209,16 +209,6 @@ export default props => {
       }
     },
     {
-      description: "Pipelines",
-      headerName: null,
-      name: "Pipelines",
-      path: "/pipelines",
-      position: {
-        location: "h",
-        order: 1
-      }
-    },
-    {
       description: "APIs",
       headerName: null,
       name: "APIs",
