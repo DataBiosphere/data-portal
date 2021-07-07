@@ -18,7 +18,8 @@ class SEO extends React.Component {
       defaultTitle = EnvironmentService.isLungMAP() ? "LungMAP Data Browser" : "HCA Data Portal",
       title = pageTitle ? pageTitle : defaultTitle,
       siteURL = EnvironmentService.getCurrentEnvironmentURL(),
-      twitterImgUrl = `${siteURL}images/hca-twitter.jpg`;
+      atlas = EnvironmentService.getAtlas(),
+      twitterImgUrl = `${siteURL}images/${atlas}-twitter.jpg`;
     return (
       <Helmet>
         <meta property="og:title" content={title} />
