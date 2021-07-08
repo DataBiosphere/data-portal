@@ -1,10 +1,10 @@
 ---
 date: "2021-05-18"
-title: HCA DCP Matrix UX Study - Spring 2021
+title:  DCP 2021 Matrix UX Study
 description: "The HCA DCP product team is recruiting volunteers to participate in a 15 - 20 minute virtual interview to help us understand how to improve the findability and reusability of the Data Portal project matrices."
 ---
 
-#DCP Matrix UX Study - Spring 2021
+# DCP 2021 Matrix UX Study
 
 The HCA DCP product team is recruiting volunteers to participate in a 15 - 20 minute virtual interview to help us understand how to improve the findability and reusability of the Data Portal project matrices.
 
