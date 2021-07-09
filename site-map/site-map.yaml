@@ -356,7 +356,7 @@
           key: "/community-update/ux-studies"
           path: "/community-updates/ux-studies/dcp-matrix-ux-study-spring-2021"
           secondaryLinks:
-            - name: "DCP Matrices  - Spring 2021"
+            - name: "DCP Matrices"
               key: "/community-update/community-update/dcp-matrix-ux-study-spring-2021"
               path: "/community-updates/ux-studies/dcp-matrix-ux-study-spring-2021"
 - name: "Releases"
