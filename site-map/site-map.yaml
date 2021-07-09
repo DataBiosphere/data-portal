@@ -133,7 +133,7 @@
     - name: "API Documentation"
       key: "api-documentation"
       primaryLinks:
-        - name: "HCA DCP APIs"
+        - name: "DCP APIs"
           key: "/apis/api-documentation/apis"
           path: "/apis"
           secondaryLinks:

@@ -1,6 +1,6 @@
 ---
 title: "DCP APIs"
-description: "Overview of the HCA DCP ingest and data access APIs."
+description: "Overview of the DCP APIs."
 ---
 # DCP APIs
 
