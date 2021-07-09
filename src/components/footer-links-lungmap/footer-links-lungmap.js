@@ -17,7 +17,7 @@ import compStyles from "./footer-links-lungmap.module.css";
 function FooterLinksLungMAP() {
   const link = {
     name: "Privacy",
-    path: "lungmap-privacy"
+    path: "/lungmap-privacy"
   };
   return (
     <div className={compStyles.links}>
