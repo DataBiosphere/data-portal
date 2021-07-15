@@ -1,0 +1,120 @@
+<style>
+  html {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  body {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .wrapper {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 16px;
+    width: 100%;
+  }
+
+  header {
+    background-color: #005295;
+    box-sizing: border-box;
+    height: 60px !important;
+    min-height: 60px;
+  }
+
+  header img {
+    height: 30px;
+    max-height: 40px;
+    padding: 15px 0;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+  }
+
+  main .title {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    padding-bottom: 24px;
+  }
+
+  main .section h1 {
+    font-family: "din-2014", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 76px;
+    margin: 0;
+  }
+
+  main section {
+    flex: 1;
+    min-height: 100%;
+    overflow: hidden;
+  }
+
+  main .content {
+    padding: 36px 0;
+    width: 100%;
+  }
+
+  main section p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+    margin: 0 0 18px;
+    max-width: 640px;
+  }
+
+  @media screen and (min-width: 400px) {
+    .wrapper {
+      padding: 0 30px;
+    }
+
+    main .section h1 {
+      font-size: 34px;
+    }
+  }
+</style>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>LungMAP</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://use.typekit.net/qhb0geh.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:300"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+      <img src="./logo-lungmap.png" alt="LungMAP" />
+      </div>
+    </header>
+    <main>
+      <div class="title">
+        <div class="wrapper section">
+          <h1>Browser Not Supported</h1>
+        </div>
+      </div>
+      <section>
+        <div class="wrapper">
+          <div class="content">
+            <p>
+              <span
+                >The LungMAP Data Portal supports recent versions of Chrome,
+                Firefox, Safari and Edge on MacOS, Windows and Linux.
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

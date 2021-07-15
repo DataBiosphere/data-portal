@@ -17,9 +17,18 @@ require("./src/styles/lungmap/vars-lungmap.css");
 // Determine site browser support
 const Bowser = require("bowser");
 
+// Determine environment is lungmap
+const lungmap = process.env.GATSBY_ATLAS === "lungmap";
+
 exports.onClientEntry = () => {
+  // Grab the pathname
+  const pathname = window.location.pathname;
+
   // Exit if path is static page for browser not supported
-  if (window.location.pathname === "/browser-not-supported.html") {
+  if (
+    pathname === "/browser-not-supported.html" ||
+    pathname === "/lungmap-browser-not-supported.html"
+  ) {
     return;
   }
 
@@ -36,6 +45,10 @@ exports.onClientEntry = () => {
 
   // Redirect to static "browser not supported" page, should browser be unsupported by the site.
   if (browserNotSupported) {
-    window.location.replace("/browser-not-supported.html");
+    if (lungmap) {
+      window.location.replace("/lungmap-browser-not-supported.html");
+    } else {
+      window.location.replace("/browser-not-supported.html");
+    }
   }
 };
