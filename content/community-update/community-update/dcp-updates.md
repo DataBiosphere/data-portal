@@ -6,6 +6,46 @@ description: "Latest updates for the HCA Data Coordination Platform (DCP)."
 
 # DCP Platform Updates
 
+## New managed access and Seed Network projects 
+
+#### July 23, 2021
+
+The DCP has added its first managed access project* (see project #1 below) with its accompanying contributor-generated matrix. While the raw data may be downloaded with the appropriate permissions, the cell-by-gene count matrices are available to the whole HCA community.
+
+Additionally, DCP now has the first project data from the [HCA Seed Networks](https://chanzuckerberg.com/science/programs-resources/single-cell-biology/seednetworks/)\*\*, which are further developing the Human Cell Atlas by combining the expertise of experimental scientists, software engineers, and physicians.
+
+#### Projects with new raw data and/or contributor-generated matrices:
+1. Nuclei multiplexing with barcoded antibodies for single-nucleus genomics*
+1. Single cell transcriptional and chromatin accessibility profiling redefine cellular heterogeneity in the adult human kidney**
+1. Stress-induced RNA–chromatin interactions promote endothelial dysfunction**
+1. A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells**
+1. Integrated scRNA-Seq Identifies Human Postnatal Thymus Seeding Progenitors and Regulatory Dynamics of Differentiating Immature Thymocytes
+1. Single-cell transcriptomic atlas of the human endometrium during the menstrual cycle.
+1. Single-cell reconstruction of follicular remodeling in the human adult ovary
+1. Single Cell RNA-Seq profiling human embryonic kidney cortex cells
+1. Dissecting the Global Dynamic Molecular Profiles of Human Fetal Kidney
+1. Development by Single-Cell RNA Sequencing
+1. Establishing Cerebral Organoids as Models of Human-Specific Brain Evolution
+1. Single-cell transcriptomics of the human retinal pigment epithelium and choroid in health and macular degeneration
+1. A single cell atlas of human teeth
+1. Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids
+1. Single-cell RNA sequencing of normal human kidney
+1. Single-cell transcriptomics reveals the landscape of intra-tumoral heterogeneity and transcriptional activities of ECs in CC
+1. Single-cell transcriptomics reveals unique features of human pancreatic islet cell subtypes
+1. Re-evaluation of human BDCA-2+ DC during acute sterile skin inflammation
+1. Molecular and functional heterogeneity of IL-10-producing CD4+ T cells
+1. Single-cell transcriptomes of the aging human skin reveal loss of fibroblast priming
+
+\* Managed access project, \*\* Seed Networks project
+
+#### Projects with new uniformly processed data:
+1. Single-cell analysis reveals congruence between kidney organoids and human fetal kidney
+1. A Cellular Anatomy of the Normal Adult Human Prostate and Prostatic Urethra
+1. The emergent landscape of the mouse gut endoderm at single-cell resolution
+1. Microglia Require CD4 T Cells to Complete the Fetal-to-Adult Transition
+1. High throughput error corrected Nanopore single cell transcriptome sequencing
+1. Colonic single epithelial cell census reveals goblet cell drivers of barrier breakdown in inflammatory bowel disease.
+
 
 ## Data Portal now contains data for 13.5 million cells 
 
