@@ -10,7 +10,13 @@ description: "Latest updates for the HCA Data Coordination Platform (DCP)."
 
 #### July 23, 2021
 
-The DCP has added its first managed access project* (see project #1 below) with its accompanying contributor-generated matrix. While the raw data may be downloaded with the appropriate permissions, the cell-by-gene count matrices are available to the whole HCA community.
+The DCP has added its first managed access project\*. Contributor-generated cell-by-gene count matrices and associated (non-personally identifiable) metadata are now available to the whole HCA community from within the DCP (see project #1 below). 
+
+Managed access raw data is available from the [Synapse database](https://www.synapse.org/#!Synapse:syn22213200) upon successful completion of a data use certificate. To find supplementary links to the managed access datasets in Synapse, navigate to the Project detail page in the Data Portal. 
+
+
+![](_images/Supplementary_links.png)
+
 
 Additionally, DCP now has the first project data from the [HCA Seed Networks](https://chanzuckerberg.com/science/programs-resources/single-cell-biology/seednetworks/)\*\*, which are further developing the Human Cell Atlas by combining the expertise of experimental scientists, software engineers, and physicians.
 
