@@ -21,36 +21,35 @@ Managed access raw data is available from the [Synapse database](https://www.syn
 Additionally, DCP now has the first project data from the [HCA Seed Networks](https://chanzuckerberg.com/science/programs-resources/single-cell-biology/seednetworks/)\*\*, which are further developing the Human Cell Atlas by combining the expertise of experimental scientists, software engineers, and physicians.
 
 #### Projects with new raw data and/or contributor-generated matrices:
-1. Nuclei multiplexing with barcoded antibodies for single-nucleus genomics*
-1. Single cell transcriptional and chromatin accessibility profiling redefine cellular heterogeneity in the adult human kidney**
-1. Stress-induced RNA–chromatin interactions promote endothelial dysfunction**
-1. A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells**
-1. Integrated scRNA-Seq Identifies Human Postnatal Thymus Seeding Progenitors and Regulatory Dynamics of Differentiating Immature Thymocytes
-1. Single-cell transcriptomic atlas of the human endometrium during the menstrual cycle.
-1. Single-cell reconstruction of follicular remodeling in the human adult ovary
-1. Single Cell RNA-Seq profiling human embryonic kidney cortex cells
-1. Dissecting the Global Dynamic Molecular Profiles of Human Fetal Kidney
-1. Development by Single-Cell RNA Sequencing
-1. Establishing Cerebral Organoids as Models of Human-Specific Brain Evolution
-1. Single-cell transcriptomics of the human retinal pigment epithelium and choroid in health and macular degeneration
-1. A single cell atlas of human teeth
-1. Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids
-1. Single-cell RNA sequencing of normal human kidney
-1. Single-cell transcriptomics reveals the landscape of intra-tumoral heterogeneity and transcriptional activities of ECs in CC
-1. Single-cell transcriptomics reveals unique features of human pancreatic islet cell subtypes
-1. Re-evaluation of human BDCA-2+ DC during acute sterile skin inflammation
-1. Molecular and functional heterogeneity of IL-10-producing CD4+ T cells
-1. Single-cell transcriptomes of the aging human skin reveal loss of fibroblast priming
+1. [Nuclei multiplexing with barcoded antibodies for single-nucleus genomics.](https://data.humancellatlas.org/explore/projects/dc1a41f6-9e09-42a6-959e-3be23db6da56)*
+1. [Single cell transcriptional and chromatin accessibility profiling redefine cellular heterogeneity in the adult human kidney](https://data.humancellatlas.org/explore/projects/2af52a13-65cb-4973-b513-39be38f2df3f)**
+1. [Stress-induced RNA–chromatin interactions promote endothelial dysfunction](https://data.humancellatlas.org/explore/projects/87d52a86-bdc7-440c-b84d-170f7dc346d9)**
+1. [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d)**
+1. [Integrated scRNA-Seq Identifies Human Postnatal Thymus Seeding Progenitors and Regulatory Dynamics of Differentiating Immature Thymocytes](https://data.humancellatlas.org/explore/projects/dbd836cf-bfc2-41f0-9834-41cc6c0b235a)
+1. [Single-cell transcriptomic atlas of the human endometrium during the menstrual cycle](https://data.humancellatlas.org/explore/projects/379ed69e-be05-48bc-af5e-a7fc589709bf)
+1. [Single-cell reconstruction of follicular remodeling in the human adult ovary](https://data.humancellatlas.org/explore/projects/faeedcb0-e046-4be7-b1ad-80a3eeabb066)
+1. [Single Cell RNA-Seq profiling human embryonic kidney cortex cells](https://data.humancellatlas.org/explore/projects/71436067-ac41-4ace-be1b-2fbcc2cb02fa)
+1. [Dissecting the Global Dynamic Molecular Profiles of Human Fetal Kidney Development by Single-Cell RNA Sequencing](https://data.humancellatlas.org/explore/projects/8a40ff19-e614-4c50-b23b-5c9e1d546bab)
+1. [Establishing Cerebral Organoids as Models of Human-Specific Brain Evolution](https://data.humancellatlas.org/explore/projects/3e329187-a9c4-48ec-90e3-cc45f7c2311c)
+1. [Single-cell transcriptomics of the human retinal pigment epithelium and choroid in health and macular degeneration](https://data.humancellatlas.org/explore/projects/7880637a-35a1-4047-b422-b5eac2a2a358)
+1. [A single cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d)
+1. [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635)
+1. [Single-cell RNA sequencing of normal human kidney](https://data.humancellatlas.org/explore/projects/2ef3655a-973d-4d69-9b41-21fa4041eed7)
+1. [Single-cell RNA-sequencing reveals the landscape of cervical cancer heterogeneity](https://data.humancellatlas.org/explore/projects/d012d476-8f8c-4ff3-89d6-ebbe22c1b5c1)
+1. [Single-cell transcriptomics reveals unique features of human pancreatic islet cell subtypes](https://data.humancellatlas.org/explore/projects/78b2406d-bff2-46fc-8b61-20690e602227)
+1. [Re-evaluation of human BDCA-2+ DC during acute sterile skin inflammation.](https://data.humancellatlas.org/explore/projects/67a3de09-45b9-49c3-a068-ff4665daa50e)
+1. [Molecular and functional heterogeneity of IL-10-producing CD4+ T cells.](https://data.humancellatlas.org/explore/projects/df88f39f-01a8-4b5b-92f4-3177d6c0f242)
+1. [Single-cell transcriptomes of the aging human skin reveal loss of fibroblast priming](https://data.humancellatlas.org/explore/projects/51f02950-ee25-4f4b-8d07-59aa99bb3498)
 
 \* Managed access project, \*\* Seed Networks project
 
 #### Projects with new uniformly processed data:
-1. Single-cell analysis reveals congruence between kidney organoids and human fetal kidney
-1. A Cellular Anatomy of the Normal Adult Human Prostate and Prostatic Urethra
-1. The emergent landscape of the mouse gut endoderm at single-cell resolution
-1. Microglia Require CD4 T Cells to Complete the Fetal-to-Adult Transition
-1. High throughput error corrected Nanopore single cell transcriptome sequencing
-1. Colonic single epithelial cell census reveals goblet cell drivers of barrier breakdown in inflammatory bowel disease.
+1. [Single-cell analysis reveals congruence between kidney organoids and human fetal kidney](https://data.humancellatlas.org/explore/projects/962bd805-eb89-4c54-bad2-008e497d1307)
+1. [A Cellular Anatomy of the Normal Adult Human Prostate and Prostatic Urethra](https://data.humancellatlas.org/explore/projects/53c53cd4-8127-4e12-bc7f-8fe1610a715c)
+1. [The emergent landscape of the mouse gut endoderm at single-cell resolution](https://data.humancellatlas.org/explore/projects/4e6f083b-5b9a-4393-9890-2a83da8188f1)
+1. [Microglia Require CD4 T Cells to Complete the Fetal-to-Adult Transition.](https://data.humancellatlas.org/explore/projects/e5d45579-1f5b-48c3-b568-320d93e7ca72)
+1. [High throughput error corrected Nanopore single cell transcriptome sequencing.](https://data.humancellatlas.org/explore/projects/0d4b87ea-6e9e-4569-82e4-1343e0e3259f)
+1. [Colonic single epithelial cell census reveals goblet cell drivers of barrier breakdown in inflammatory bowel disease.](https://data.humancellatlas.org/explore/projects/c893cb57-5c9f-4f26-9312-21b85be84313)
 
 
 ## Data Portal now contains data for 13.5 million cells 
