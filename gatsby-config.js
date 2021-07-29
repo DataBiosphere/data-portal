@@ -122,8 +122,9 @@ module.exports = {
             options: {
               components: [
                 "button-cta",
-                "internal-link",
                 "data-lifecycle-diagram",
+                "figure-styles",
+                "internal-link",
                 "link-to-browser",
                 "metadata-type-entity-schemas"
               ]
@@ -156,7 +157,8 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1000,
-              linkImagesToOriginal: false
+              linkImagesToOriginal: false,
+              wrapperStyle: "box-shadow: 0 12px 24px -4px rgb(0 0 0 / 14%), 0 8px 16px -8px rgb(0 0 0 / 24%), 0 -6px 16px -6px rgb(0 0 0 / 24%); margin-bottom: 48px; margin-top: 48px;"
             }
           },
           `gatsby-remark-images-medium-zoom`,

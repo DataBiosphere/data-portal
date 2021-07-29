@@ -8,6 +8,9 @@
 // Core dependencies
 import React from "react";
 
+// App dependencies
+import Markdown from "../markdown/markdown";
+
 // Styles
 import compStyles from "./analysisDetail.module.css";
 import fontStyles from "../../styles/fontsize.module.css";
@@ -17,7 +20,7 @@ const classNames = require("classnames");
 
 function AnalysisDetail(props) {
   const { data } = props,
-    { frontmatter, html } = data,
+    { frontmatter, htmlAst } = data,
     { author, githubUrl, title } = frontmatter;
   const buttonClassNames = classNames(
     globalStyles.button,
@@ -45,7 +48,7 @@ function AnalysisDetail(props) {
           </a>
         ) : null}
       </div>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Markdown>{htmlAst}</Markdown>
     </div>
   );
 }

@@ -12,7 +12,7 @@ componentName: "analysisDetail"
 
 [![Build Status](https://travis-ci.com/broadinstitute/infercnv.svg?branch=master )](https://travis-ci.com/broadinstitute/infercnv)
 
-[![InferCNV](../../_images/methods/infercnv_logo.png)](https://github.com/broadinstitute/infercnv)
+![InferCNV](../../_images/methods/infercnv_logo.png)
 
 [InferCNV](https://github.com/broadinstitute/infercnv) is used to explore tumor single cell RNA-Seq data to identify evidence for large-scale chromosomal copy number variations, such as gains or deletions of entire chromosomes or large segments of chromosomes. This is done by exploring expression intensity of genes across positions of the genome in comparison to a set of reference 'normal' cells. A heatmap is generated illustrating the relative expression intensities across each chromosome, and it often becomes readily apparent as to which regions of the genome are over-abundant or less-abundant as compared to normal cells.
 
@@ -20,7 +20,7 @@ InferCNV provides access to several residual expression filters to explore minim
 
 InferCNV is one component of the TrinityCTAT toolkit focused on leveraging the use of RNA-Seq to better understand cancer transcriptomes.
 
-[![inferCNV](../../_images/methods/infercnv_screenshot.png)](https://github.com/broadinstitute/infercnv)
+![inferCNV](../../_images/methods/infercnv_screenshot.png)
 
 ## Use
 

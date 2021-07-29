@@ -12,11 +12,11 @@ componentName: "analysisDetail"
 
 [![Build Status](https://travis-ci.org/pinellolab/STREAM.svg)](https://travis-ci.org/pinellolab/STREAM)
 
-[![STREAM](../../_images/methods/stream_logo.png)](http://stream.pinellolab.org/)
+![STREAM](../../_images/methods/stream_logo.png)
 
 [STREAM](https://bioconda.github.io/recipes/stream/README.html) is an interactive computational pipeline for reconstructing complex cellular developmental trajectories from sc-qPCR, scRNA-seq or scATAC-seq data.
 
-[![STREAM](../../_images/methods/stream_screenshot.png)](http://stream.pinellolab.org/)
+![STREAM](../../_images/methods/stream_screenshot.png)
 
 ## Usage
 

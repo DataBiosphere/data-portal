@@ -12,6 +12,7 @@ import rehypeReact from "rehype-react";
 // App dependencies
 import ButtonCta from "../button-cta/button-cta";
 import DataLifecycleDiagram from "../dataLifecycleDiagram/dataLifecycleDiagram";
+import FigureStyles from "../figure-styles/figure-styles";
 import InternalLink from "../internal-link/internalLink";
 import LinkToBrowser from "../linkToBrowser/linkToBrowser";
 import MetadataTypeEntitySchemas from "../metadata/metadataTypeEntitySchemas/metadataTypeEntitySchemas";
@@ -29,6 +30,7 @@ function Markdown(props) {
     components: {
       "button-cta": ButtonCta,
       "data-lifecycle-diagram": DataLifecycleDiagram,
+      "figure-styles": FigureStyles,
       "internal-link": InternalLink,
       "link-to-browser": LinkToBrowser,
       "metadata-type-entity-schemas": MetadataTypeEntitySchemas
