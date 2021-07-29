@@ -17,8 +17,11 @@ The Specimen's tab shows you how many specimens have been selected. It also give
 ## Preparing Data for Export
 After you identify a cohort of interest, you download the raw data, analysis files, and metadata by clicking the blue **Export Selected Data** icon on the right of the page.
 
+<figure-styles>
+
 ![Export Icon](../_images/Export_icon.png "Export Data")
 
+</figure-styles>
 
 This will open a new page giving you the option to:
  1) Download Selected Data Using "curl"

@@ -15,7 +15,7 @@ Cytoscape's core distribution provides a basic set of features for data integrat
 
 Apps may be developed by anyone using the Cytoscape open API based on Java™ technology and App community development is encouraged. Most of the Apps are freely available from Cytoscape App Store.  Cytoscape is being extended through apps and core features to search, extract, visualize, and analyze data from the Human Cell Atlas, with a focus on network and pathway analysis.
 
-[![Cytoscape](../../_images/portals/cytoscape.png)](http://www.cytoscape.org)
+![Cytoscape](../../_images/portals/cytoscape.png)
 
 ## Contact
 [Cytoscape Helpdesk](https://groups.google.com/forum/#!forum/cytoscape-helpdesk) ([cytoscape-helpdesk@googlegroups.com](mailto:cytoscape-helpdesk@googlegroups.com))

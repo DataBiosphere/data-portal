@@ -61,12 +61,20 @@ When you have found a data set of interest, click on the big blue *Export
 Selected Data* button at the top right of the page. You will see something like
 this:
 
+<figure-styles width="710">
+
 ![The *Export Selected Data* button](../../_images/terra-export_button.png)
+
+</figure-styles>
 
 Click on the *Export to Terra* button. You will then see a page like this where
 you can select what kind of data to export:
 
+<figure-styles shadowless=true>
+
 ![Page for choosing data to export](../../_images/terra-choose_files.png)
+
+</figure-styles>
 
 Again, choose anything that looks interesting.
 
@@ -79,7 +87,11 @@ Step two: importing data to Terra and finding a workflow in Dockstore
 Select a Terra workspace to import your selected data into. Once you have selected the
 workspace, you will see a page like this, showing the data you just exported:
 
+<figure-styles shadowless=true>
+
 ![Terra page showing exported data](../../_images/terra-exported_data.png)
+
+</figure-styles>
 
 Next, we find a workflow to run with the data we've just exported. For this
 tutorial, we are looking for *dockstore-wdl-workflow-md5sum*, which will
@@ -88,7 +100,11 @@ to import this workflow from Dockstore. To do that, click on the *Workflows*
 tab at the top of the page, then on the big square *Find a Workflow* button.
 It will look something like this:
 
+<figure-styles shadowless=true>
+
 ![Terra page showing workflows that can be added to workspace](../../_images/terra-workflows.png)
+
+</figure-styles>
 
 Click on the *Dockstore* link at the bottom of the pop-up. Dockstore is a
 workflow repository where we will find the workflow we want to run. Once
@@ -97,14 +113,22 @@ side of the page. Results should load instantly. Look for a workflow named
 `briandoconnor/dockstore-workflow-md5sum/dockstore-wdl-workflow-md5sum`.
 Once you find it, click on it. You will see this:
 
+<figure-styles shadowless=true>
+
 ![md5sum workflow on Dockstore](../../_images/terra-md5sum_dockstore.png)
+
+</figure-styles>
 
 Note the blue *Terra* button at the bottom left which will let us load this
 workflow in Terra. Click on the button and load the workflow into your
 workspace. Once you have, Terra will ask you to select an input to this
 workflow:
 
+<figure-styles shadowless=true>
+
 ![Terra input screen for md5sum workflow](../../_images/terra-md5sum_input.png)
+
+</figure-styles>
 
 Step three: running the workflow in Terra
 -----------------------------------------
@@ -127,7 +151,11 @@ deserve it.
 When you come back, refresh the page. Hopefully, your workflow will be done
 running. If it is, you will seem something like this:
 
+<figure-styles shadowless=true>
+
 ![Terra workflow done running](../../_images/terra-workflow_done.png)
+
+</figure-styles>
 
 Note the green checkmark in the *Status* column.
 

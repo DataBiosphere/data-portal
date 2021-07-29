@@ -13,7 +13,7 @@ componentName: "analysisDetail"
  
  Xena is built for performance, allowing you to dynamically view 1 million cells at a time. Xena downloads the latest HCA gene expression matrices available at [HCA Data Portal](/) and makes them available for visualization via our Visual Spreadsheet. 
 
-[![UCSC Xena single cell browser](../../_images/portals/ucsc-xena.png)](https://singlecell.xenahubs.net)
+![UCSC Xena single cell browser](../../_images/portals/ucsc-xena.png)
 
 Xena's Visual Spreadsheet is analogous to an office spreadsheet: it is a visual representation of a data grid where each column is a slice of genomic data (e.g. a gene or a set of genes' expression, inferred cell type, cell location), and each row is a single cell.
  

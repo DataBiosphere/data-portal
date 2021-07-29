@@ -14,7 +14,7 @@ componentName: "analysisDetail"
 
 igv.js is an embeddable interactive genome visualization component based on the desktop Integrative Genomics Viewer (IGV).
 
-[![ivg](../../_images/visualization/igv.png)](http://igv.org/web/release/2.2.0/examples/bam.html)
+![ivg](../../_images/visualization/igv.png)
 
 ## Install
 `npm install igv`

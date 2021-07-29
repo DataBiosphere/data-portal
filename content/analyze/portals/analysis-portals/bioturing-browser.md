@@ -11,7 +11,7 @@ componentName: "analysisDetail"
 
 [BioTuring Single Cell Browser](https://bioturing.com/product/bbrowser) combines modern data visualization techniques, statistical machine learning toolboxes, and a rich knowledge base to create a unique platform for single cell data analytics.
 
-[![BioTuring Single Cell Browser](../../_images/portals/bioturing-browser.png)](https://bioturing.com/product/bbrowser)
+![BioTuring Single Cell Browser](../../_images/portals/bioturing-browser.png)
 
 ## Contact
 Son Pham ([sonpham@bioturing.com](mailto:sonpham@bioturing.com))
