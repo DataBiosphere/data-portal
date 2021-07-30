@@ -20,7 +20,7 @@ Additionally, DCP now has the first project data from the [HCA Seed Networks](ht
 
 1. [Nuclei multiplexing with barcoded antibodies for single-nucleus genomics.](https://data.humancellatlas.org/explore/projects/dc1a41f6-9e09-42a6-959e-3be23db6da56)
 
-Managed access raw data is available from the [Synapse database](https://www.synapse.org/#!Synapse:syn22213200) upon successful completion of a data use certificate. To find supplementary links to the managed access datasets in Synapse, navigate to the [project detail page]((https://data.humancellatlas.org/explore/projects/dc1a41f6-9e09-42a6-959e-3be23db6da56)) in the Data Portal.
+Managed access raw data is available from the [Synapse database](https://www.synapse.org/#!Synapse:syn22213200) upon successful completion of a data use certificate. To find supplementary links to the managed access datasets in Synapse, navigate to the [project detail page](https://data.humancellatlas.org/explore/projects/dc1a41f6-9e09-42a6-959e-3be23db6da56) in the Data Portal.
 
 
 ![](_images/Supplementary_links.png)
