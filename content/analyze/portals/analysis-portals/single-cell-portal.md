@@ -15,7 +15,7 @@ componentName: "analysisDetail"
 3. centralizing downloadable data, visualizations, and analysis to enable reproducible analysis;
 4. providing easy and secure sharing mechanisms to support all stages of scientific inquiry.
 
-[![Single Cell Portal](../../_images/portals/single-cell-portal.png)](https://portals.broadinstitute.org/single_cell)
+![Single Cell Portal](../../_images/portals/single-cell-portal.png)
 
 ## Contact
 Single Cell Portal team ([scp-support@broadinstitute.zendesk.com](mailto:scp-support@broadinstitute.zendesk.com))
