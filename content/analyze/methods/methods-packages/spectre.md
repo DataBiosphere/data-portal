@@ -14,8 +14,13 @@ componentName: "analysisDetail"
 
 ## Overview
 
-[Spectre](https://immunedynamics.io/spectre/) is an R package and computational toolkit that enables comprehensive end-to-end integration, exploration, and analysis of high-dimensional cytometry or imaging data from different batches or experiments. Spectre streamlines the analytical stages of raw data pre-processing, batch alignment, data integration, clustering, dimensionality reduction, visualisation and population labelling, as well as quantitative and statistical analysis; with a simple, clear, and modular design of analysis workflows, that can be utilised by data and laboratory scientists. For users unfamiliar with using R, we also provide workflow instructions for replicating many of our analysis approaches in programs such as FlowJo.
+[Spectre](https://immunedynamics.io/spectre/) is an R package and computational toolkit that enables comprehensive end-to-end integration, exploration, and analysis of high-dimensional cytometry or imaging data from different batches or experiments.
 
+Spectre streamlines the analytical stages of raw data pre-processing, batch alignment, data integration, clustering, dimensionality reduction, visualization, and population labeling, as well as quantitative and statistical analysis; with a simple, clear, and modular design of analysis workflows, that can be utilized by data and laboratory scientists.
+
+For users unfamiliar with using R, we also provide workflow instructions for replicating many of our analysis approaches in programs such as FlowJo.
+
+## Docker URL
 [Method-ready Docker image URL](https://hub.docker.com/r/immunedynamics/spectre)
 
 ![Spectre](../../_images/methods/spectre.png)
@@ -24,11 +29,7 @@ componentName: "analysisDetail"
 
 Extensive command line usage in R or RStudio provided at https://immunedynamics.github.io/spectre/.
 
-## Validate
-
-```
-package.check()
-```
 
 ## Contact
 Thomas Ashhurst (<mailto:thomas.ashhurst@sydney.edu.au>)
+
