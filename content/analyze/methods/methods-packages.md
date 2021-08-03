@@ -10,6 +10,7 @@ linked:
     - ./methods-packages/phate.md
     - ./methods-packages/sc3.md
     - ./methods-packages/slingshot.md
+    - ./methods-packages/spectre.md
     - ./methods-packages/stream.md
 ---
 
