@@ -6,6 +6,43 @@ description: "Latest updates for the HCA Data Coordination Platform (DCP)."
 
 # DCP Platform Updates
 
+## DCP now contains data for 14 million estimated cells
+
+#### August 11, 2021
+
+#### New raw data
+
+The DCP has added raw data for the following 13 new projects:
+
+1. [AIDA pilot data](https://data.humancellatlas.org/explore/projects/f0f89c14-7460-4bab-9d42-22228a91f185)
+1. [Comparison of manual and two types of bioprinted kidney organoids by single cell RNA-seq.](https://data.humancellatlas.org/explore/projects/8787c238-89ef-4636-a57d-3167e8b54a80)
+1. [Developmental cell programs are co-opted in inflammatory skin disease.](https://data.humancellatlas.org/explore/projects/c5f46615-68de-4cf4-bbc2-a0ae10f08243)
+1. [Lineage-dependent gene expression programs influence the immune landscape of colorectal cancer.](https://data.humancellatlas.org/explore/projects/c715cd2f-dc7c-44a6-9cd5-b6a6d9f075ae)
+1. [Single-Cell RNA Sequencing Reveals Human iPS Cell-derived Alveolar Type 1 Cells in Alveolar Organoids](https://data.humancellatlas.org/explore/projects/dbcd4b1d-31bd-4eb5-94e1-50e8706fa192)
+1. [Single-cell RNA sequencing of human nasal swab from healthy donors](https://data.humancellatlas.org/explore/projects/414acced-eba0-440f-b721-befbc5642bef)
+1. [Single-cell transcriptional landscape of human embryonic limb development](https://data.humancellatlas.org/explore/projects/b176d756-62d8-4933-83a4-8b026380262f)
+1. [Single-cell transcriptome profiling of an adult human cell atlas of 15 major organs](https://data.humancellatlas.org/explore/projects/376a7f55-b876-4f60-9cf3-ed7bc83d5415)
+1. [Single-cell transcriptome profiling of the vaginal wall in women with severe anterior vaginal prolapse](https://data.humancellatlas.org/explore/projects/71eb5f6d-cee0-4297-b503-b1125909b8c7)
+1. [Single-cell transcriptomics of East-Asian pancreatic islets cells](https://data.humancellatlas.org/explore/projects/e77fed30-959d-4fad-bc15-a0a5a85c21d2)
+1. [The Developmental Heterogeneity of Human Natural Killer Cells Defined by Single-cell Transcriptome](https://data.humancellatlas.org/explore/projects/403c3e76-6814-4a2d-a580-5dd5de38c7ff)
+1. [The Immune Atlas of Human Deciduas With Unexplained Recurrent Pregnancy Loss](https://data.humancellatlas.org/explore/projects/3cfcdff5-dee1-4a7b-a591-c09c6e850b11)
+1. [Transcriptional analysis of cystic fibrosis airways at single-cell resolution reveals altered epithelial cell states and composition](https://data.humancellatlas.org/explore/projects/e526d91d-cf3a-44cb-80c5-fd7676b55a1d)
+
+#### New contributor data
+The following project has a new contributor-generated matrix file:
+
+1. [Molecular and functional heterogeneity of IL-10-producing CD4+ T cells.](https://data.humancellatlas.org/explore/projects/df88f39f-01a8-4b5b-92f4-3177d6c0f242)
+
+#### Browser updates
+* To enable easier discovery of normal tissues, we've modified the Specimen Disease search facet on the Explore page so that the "Normal" option is now at the top of the drop-down.
+
+![](_images/normal.png)
+
+* The File facet has a new Content Description column to enable searching for files by the type of data they contain. 
+
+![](_images/content.png)
+
+
 ## New managed access and Seed Network projects
 
 #### July 23, 2021
