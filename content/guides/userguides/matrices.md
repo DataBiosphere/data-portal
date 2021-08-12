@@ -61,7 +61,7 @@ The gene measures in project matrices vary based on the pipeline used for analys
 * Matrices produced with the Smart-seq2 pipeline will have TPMs and estimated counts. 
 * 10x matrices are minimally filtered by UMIs (only cells with 100 molecules or more are retained).
 
-Each project matrix also has metadata stored in the Loom file's global and column attributes, described in the table below. This metadata may be useful when exploring the data and linking it back to the additional Project metadata in the Data Manifest. 
+Each project matrix also has metadata stored in the Loom file's global attributes, described in the table below. In contrast to the other metadata, the input_id is stored in both the global and column attributes, as this is the ID used to link individual library preparations back to the Data Manifest. 
 
 Read more about each metadata field in the [Metadata Dictionary](/metadata/). 
 
