@@ -20,7 +20,6 @@ The DCP has added raw data for the following 13 new projects:
 1. [Lineage-dependent gene expression programs influence the immune landscape of colorectal cancer.](https://data.humancellatlas.org/explore/projects/c715cd2f-dc7c-44a6-9cd5-b6a6d9f075ae)
 1. [Single-Cell RNA Sequencing Reveals Human iPS Cell-derived Alveolar Type 1 Cells in Alveolar Organoids](https://data.humancellatlas.org/explore/projects/dbcd4b1d-31bd-4eb5-94e1-50e8706fa192)
 1. [Single-cell RNA sequencing of human nasal swab from healthy donors](https://data.humancellatlas.org/explore/projects/414acced-eba0-440f-b721-befbc5642bef)
-1. [Single-cell transcriptional landscape of human embryonic limb development](https://data.humancellatlas.org/explore/projects/b176d756-62d8-4933-83a4-8b026380262f)
 1. [Single-cell transcriptome profiling of an adult human cell atlas of 15 major organs](https://data.humancellatlas.org/explore/projects/376a7f55-b876-4f60-9cf3-ed7bc83d5415)
 1. [Single-cell transcriptome profiling of the vaginal wall in women with severe anterior vaginal prolapse](https://data.humancellatlas.org/explore/projects/71eb5f6d-cee0-4297-b503-b1125909b8c7)
 1. [Single-cell transcriptomics of East-Asian pancreatic islets cells](https://data.humancellatlas.org/explore/projects/e77fed30-959d-4fad-bc15-a0a5a85c21d2)
