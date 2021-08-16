@@ -13,7 +13,7 @@ The [Analysis Tools Registry](/analyze) lists portals, methods packages, and vis
 Submissions are contributed via GitHub - use these links to access the submission forms:
 
 [Portal submission](https://github.com/HumanCellAtlas/data-portal/issues/new/?template=submit-portal.md)\
-[Methods package submission](https://github.com/HumanCellAtlas/data-portalissues/new/?template=submit-method-package.md)\
+[Methods package submission](https://github.com/HumanCellAtlas/data-portal/issues/new/?template=submit-method-package.md)\
 [Visualization package submission](https://github.com/HumanCellAtlas/data-portal/issues/new/?template=submit-visualization-component-package.md)
 
 >The approximate time frame from submission to publication of a new portal is 2-4 weeks.
