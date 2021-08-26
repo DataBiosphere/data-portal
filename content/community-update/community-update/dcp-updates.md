@@ -8,11 +8,11 @@ description: "Latest updates for the HCA Data Coordination Platform (DCP)."
 
 ## DCP now contains data for 14 million estimated cells
 
-#### August 11, 2021
+#### August 25, 2021
 
-#### New raw data
+### New Raw Data
 
-The DCP has added raw data for the following 13 new projects:
+The DCP has added raw data for the following 12 new projects:
 
 1. [AIDA pilot data](https://data.humancellatlas.org/explore/projects/f0f89c14-7460-4bab-9d42-22228a91f185)
 1. [Comparison of manual and two types of bioprinted kidney organoids by single cell RNA-seq.](https://data.humancellatlas.org/explore/projects/8787c238-89ef-4636-a57d-3167e8b54a80)
@@ -27,22 +27,28 @@ The DCP has added raw data for the following 13 new projects:
 1. [The Immune Atlas of Human Deciduas With Unexplained Recurrent Pregnancy Loss](https://data.humancellatlas.org/explore/projects/3cfcdff5-dee1-4a7b-a591-c09c6e850b11)
 1. [Transcriptional analysis of cystic fibrosis airways at single-cell resolution reveals altered epithelial cell states and composition](https://data.humancellatlas.org/explore/projects/e526d91d-cf3a-44cb-80c5-fd7676b55a1d)
 
-#### New contributor data
-The following project has a new contributor-generated matrix file:
 
-1. [Molecular and functional heterogeneity of IL-10-producing CD4+ T cells.](https://data.humancellatlas.org/explore/projects/df88f39f-01a8-4b5b-92f4-3177d6c0f242)
 
-#### Browser updates
-* To enable easier discovery of normal tissues, we've modified the Specimen Disease search facet on the Explore page so that the "Normal" option is now at the top of the drop-down.
+### New Contributor Data
+The following projects have new contributor-generated matrix files:
 
+1. [Integrated single cell analysis of blood and cerebrospinal fluid leukocytes in multiple sclerosis.](https://data.humancellatlas.org/explore/projects/d3ac7c1b-5302-4804-b611-dad9f89c049d) 
+1. [Single-cell transcriptomes of the aging human skin reveal loss of fibroblast priming](https://data.humancellatlas.org/explore/projects/51f02950-ee25-4f4b-8d07-59aa99bb3498)
+
+### Browser Updates
+
+#### Selecting "Normal" Samples
+To enable easier discovery of normal tissues, we've modified the Specimen Disease search facet on the Explore page so that the "Normal" option is now at the top of the drop-down.
 ![](_images/normal.png)
 
-* The File facet has a new Content Description column to enable searching for files by the type of data they contain. 
 
+#### Selecting Files by "Content Description"
+The File facet has a new Content Description column to enable searching for files by the type of data they contain.
 ![](_images/content.png)
+ 
 
 
-## New managed access and Seed Network projects
+## New Managed Access and Seed Network projects
 
 #### July 23, 2021
 
