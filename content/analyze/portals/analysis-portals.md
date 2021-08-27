@@ -11,12 +11,12 @@ linked:
     - ./analysis-portals/cytoscape.md
     - ./analysis-portals/dnastack.md
     - ./analysis-portals/fastgenomics.md
+    - ./analysis-portals/genepattern-notebook-environment.md
     - ./analysis-portals/granatum-x.md
     - ./analysis-portals/hca-galaxy-instance.md
     - ./analysis-portals/omnibrowser.md
     - ./analysis-portals/single-cell-expression-atlas.md
     - ./analysis-portals/single-cell-portal.md
-    - ./analysis-portals/genepattern-notebook-environment.md
     - ./analysis-portals/ucsc-cell-browser.md
     - ./analysis-portals/ucsc-xena.md
 ---
