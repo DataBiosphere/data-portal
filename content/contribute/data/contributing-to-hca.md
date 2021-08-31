@@ -55,3 +55,34 @@ Learn more about what results will be available for different data types [here](
 > #### Start the Process
 > Start the HCA submission process by emailing\
 > [wrangler-team@data.humancellatlas.org](mailto:wrangler-team@data.humancellatlas.org).
+
+## Wrangler Office Hours
+
+If you have questions about data contribution, join the DCP Wranlger office hours on Zoom.
+
+**Date/time:** 
+
+- Every 3rd Wednesday of the month at 4 pm **(PT)**, starting September 15, 2021
+- Every 2nd Friday of the month at 10 AM **(UTC +1)** starting September 17, 2021
+
+**Zoom details:**
+
+Topic: DCP Wrangler Office Hours
+Time: This is a recurring meeting Meet anytime
+
+Join Zoom Meeting
+https://broadinstitute.zoom.us/j/84296281382?pwd=Ymo4djF1TkRuL1g5ZjRqRlZ3Q0g5Zz09
+
+Meeting ID: 842 9628 1382
+Passcode: contribute
+One tap mobile
++16465588656,,84296281382#,,,,*4015409680# US (New York)
++16468769923,,84296281382#,,,,*4015409680# US (New York)
+
+Dial by your location
+        +1 646 558 8656 US (New York)
+        +1 646 876 9923 US (New York)
+Meeting ID: 842 9628 1382
+Passcode: 4015409680
+Find your local number: https://broadinstitute.zoom.us/u/kd1itjb9pv
+
