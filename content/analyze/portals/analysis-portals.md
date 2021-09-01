@@ -17,6 +17,7 @@ linked:
     - ./analysis-portals/omnibrowser.md
     - ./analysis-portals/single-cell-expression-atlas.md
     - ./analysis-portals/single-cell-portal.md
+    - ./analysis-portals/terra.md
     - ./analysis-portals/ucsc-cell-browser.md
     - ./analysis-portals/ucsc-xena.md
 ---
