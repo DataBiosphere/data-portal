@@ -62,8 +62,8 @@ If you have questions about data contribution, join the DCP Wranlger office hour
 
 **Date/time:** 
 
-- Every 3rd Wednesday of the month at 4 pm **(PT)**, starting September 15, 2021
-- Every 2nd Friday of the month at 10 AM **(UTC +1)**, starting September 17, 2021
+- Every 3rd Wednesday of the month at 11 pm **(UTC)**, starting September 15, 2021
+- Every 2nd Friday of the month at 9 AM **(UTC)**, starting September 17, 2021
 
 **Zoom details:**
 
