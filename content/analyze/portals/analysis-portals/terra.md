@@ -9,7 +9,7 @@ githubUrl: ""
 componentName: "analysisDetail"
 ---
 
-[Terra](https://app.terra.bio/) is a scalable, open-source platform for biomedical researchers to access data, run analysis tools, and collaborate securely in the cloud. It powers important scientific projects including NHGRI’s AnVIL, NHLBI’s BioData Catalyst, Human Cell Atlas, the BRAIN Initiative Cell Census Network, and many others.
+[Terra](https://app.terra.bio/) is a scalable, open-source platform for biomedical researchers to access data, run analysis tools, and collaborate securely in the cloud. It powers important scientific projects including NHGRI’s AnVIL, NHLBI’s BioData Catalyst, the Human Cell Atlas Data Coordination Platform , the BRAIN Initiative Cell Census Network, and many others.
 
 Terra provides easy access to both open and access-controlled datasets hosted in cloud repositories. You can explore, analyze, and visualize data using Jupyter Notebooks, RStudio, RShinyApps, and Galaxy. You can also run your own bioinformatics workflows at scale or try community favorites. Secure workspaces allow you to easily share your work with collaborators.
 
