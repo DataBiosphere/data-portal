@@ -9,3 +9,4 @@ updates:
       interval: "daily"
     assignees:
       - "noopdog"
+    open-pull-requests-limit: 10
