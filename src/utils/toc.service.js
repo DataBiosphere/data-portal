@@ -61,9 +61,9 @@ function buildTOCsMarkdown(docPath) {
   /* Find the TOC query for the specified path. */
   const tocPage = tocQuery.find(page => page.fields.slug === docPath);
 
-  /* Filter for <h2> and <h3> headings. */
+  /* Filter for <h2> headings. */
   const headings = tocPage.htmlAst.children.filter(
-    child => child.tagName === "h2" || child.tagName === "h3"
+    child => child.tagName === "h2"
   );
 
   /* Return the TOC. */
