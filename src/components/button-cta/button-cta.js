@@ -64,7 +64,7 @@ function ButtonCta(props) {
       className={classNameButton}
       href={href}
       onClick={trackSurveyLaunch}
-      rel={Relationship.NOOPENER_NOREFERRER}
+      rel={Relationship.NOOPENER}
       target={target}
     >
       {children}

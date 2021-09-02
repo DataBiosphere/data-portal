@@ -16,6 +16,8 @@ import Attributions from "../components/attributions/attributions";
 import Layout from "../components/layout";
 import Markdown from "../components/markdown/markdown";
 import ProviderMetadataDisplaying from "../components/metadata/providerMetadataDisplaying/providerMetadataDisplaying";
+import {Relationship} from "../utils/anchor/relationship.model";
+import {Target} from "../utils/anchor/target.model";
 import * as TemplateService from "../utils/template.service";
 
 // Styles
@@ -63,8 +65,8 @@ export default function Template({ data, location }) {
               globalStyles.editContentSeparator
             )}
             href={editPath}
-            target="_blank"
-            rel="noopener noreferrer"
+            rel={Relationship.NOOPENER}
+            target={Target.BLANK}
           >
             Improve this page
           </a>

@@ -15,6 +15,10 @@
 // Core dependencies
 import React from "react";
 
+// App dependencies
+import {Relationship} from "../../utils/anchor/relationship.model";
+import {Target} from "../../utils/anchor/target.model";
+
 class LinkToBrowser extends React.Component {
   trimRelativeLink = () => {
     const { relativelink } = this.props;
@@ -31,8 +35,8 @@ class LinkToBrowser extends React.Component {
     return (
       <a
         href={`${process.env.GATSBY_EXPLORE_URL}${this.trimRelativeLink()}`}
-        target="_blank"
-        rel="noopener noreferrer"
+        rel={Relationship.NOOPENER}
+        target={Target.BLANK}
       >
         {children}
       </a>

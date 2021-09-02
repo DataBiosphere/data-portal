@@ -10,6 +10,8 @@ import React from "react";
 
 // App dependencies
 import Markdown from "../markdown/markdown";
+import {Relationship} from "../../utils/anchor/relationship.model";
+import {Target} from "../../utils/anchor/target.model";
 
 // Styles
 import compStyles from "./analysisDetail.module.css";
@@ -41,8 +43,8 @@ function AnalysisDetail(props) {
           <a
             className={buttonClassNames}
             href={githubUrl}
-            rel="noopener noreferrer"
-            target="_blank"
+            rel={Relationship.NOOPENER}
+            target={Target.BLANK}
           >
             View
           </a>

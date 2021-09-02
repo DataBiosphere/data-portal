@@ -14,6 +14,8 @@ import MetadataSchemaNoRequiredProperties from "../metadataSchemaNoRequiredPrope
 import MetadataSchemaProperties from "../metadataSchemaProperties/metadataSchemaProperties";
 import MetadataSchemaUsedBys from "../metadataSchemaUsedBys/metadataSchemaUsedBys";
 import MetadataToggleRequiredFields from "../metadataToggleRequiredFields/metadataToggleRequiredFields";
+import {Relationship} from "../../../utils/anchor/relationship.model";
+import {Target} from "../../../utils/anchor/target.model";
 
 // Styles
 import compStyles from "./metadataSchema.module.css";
@@ -46,8 +48,8 @@ function MetadataSchema(props) {
         <a
           className={fontStyles.s}
           href={urlGitHub}
-          rel="noopener noreferrer"
-          target="_blank"
+          rel={Relationship.NOOPENER}
+          target={Target.BLANK}
         >
           {schemaName}
         </a>
