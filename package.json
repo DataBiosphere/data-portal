@@ -30,7 +30,7 @@
     "gatsby-transformer-json": "^2.4.15",
     "gatsby-transformer-remark": "^2.16.1",
     "gatsby-transformer-yaml": "^2.4.15",
-    "js-cookie": "^2.2.1",
+    "js-cookie": "^3.0.1",
     "katex": "^0.10.0",
     "lunr": "^2.3.9",
     "normalize.css": "^8.0.1",
