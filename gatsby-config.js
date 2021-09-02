@@ -150,7 +150,7 @@ module.exports = {
             resolve: `gatsby-remark-external-links`,
             options: {
               target: "_blank",
-              rel: "nofollow"
+              rel: "noopener"
             }
           },
           {

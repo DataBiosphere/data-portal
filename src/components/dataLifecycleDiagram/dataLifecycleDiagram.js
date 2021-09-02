@@ -10,6 +10,8 @@ import React from "react";
 
 // App dependencies
 import DataLifecycle from "./dataLifecycleDiagram.svg";
+import {Relationship} from "../../utils/anchor/relationship.model";
+import {Target} from "../../utils/anchor/target.model";
 
 // Styles
 import compStyles from "./dataLifecycleDiagram.module.css";
@@ -336,8 +338,8 @@ class DataLifecycleDiagram extends React.Component {
               {dataLifecycle.link ? (
                 <a
                   href={dataLifecycle.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  rel={Relationship.NOOPENER}
+                  target={Target.BLANK}
                 >
                   Learn More
                 </a>

@@ -9,6 +9,8 @@
 import React from "react";
 
 // App dependencies
+import {Relationship} from "../../../utils/anchor/relationship.model";
+import {Target} from "../../../utils/anchor/target.model";
 import * as MetadataService from "../../../utils/metadata.service";
 
 function MetadataSchemaPropertyFieldGraphRestrictionClass(props) {
@@ -19,7 +21,7 @@ function MetadataSchemaPropertyFieldGraphRestrictionClass(props) {
     <>
       {first ? null : <span>, </span>}
       {showLink && url ? (
-        <a href={url} rel="noopener noreferrer" target="_blank">
+        <a href={url} rel={Relationship.NOOPENER} target={Target.BLANK}>
           {identifier}
         </a>
       ) : (
