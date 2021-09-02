@@ -47,7 +47,6 @@
     "react-typography": "^0.16.20",
     "rehype-react": "^4.0.1",
     "shallow-equal": "^1.2.1",
-    "snyk": "^1.696.0",
     "typography": "^0.16.21",
     "validate.js": "^0.13.1"
   },
