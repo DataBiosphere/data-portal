@@ -47,7 +47,6 @@
     "react-typography": "^0.16.20",
     "rehype-react": "^4.0.1",
     "shallow-equal": "^1.2.1",
-    "snyk": "^1.692.0",
     "typography": "^0.16.21",
     "validate.js": "^0.13.1"
   },
@@ -72,7 +71,7 @@
     "prettier": "1.19.1",
     "sockjs-client": "^1.5.2",
     "type-fest": "^0.13.1",
-    "typescript": "^4.3.5",
+    "typescript": "^4.4.2",
     "utf-8-validate": "^5.0.5",
     "webpack-plugin-serve": "^0.12.1"
   },
