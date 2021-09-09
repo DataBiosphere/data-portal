@@ -6,15 +6,15 @@
  */
 
 // Core dependencies
-import Link from "gatsby-link";
+import {Link} from "gatsby";
 import React from "react";
 
 // App dependencies
 import Layout from "../components/layout";
 
 // Styles
-import compStyles from "./error.module.css";
-import fontStyles from "../styles/fontsize.module.css";
+import * as compStyles from "./error.module.css";
+import * as fontStyles from "../styles/fontsize.module.css";
 
 function NotFoundPage() {
   return (

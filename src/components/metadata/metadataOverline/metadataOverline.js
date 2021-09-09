@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./metadataOverline.module.css";
+import * as compStyles from "./metadataOverline.module.css";
 
 function MetadataOverline(props) {
   const { children } = props;

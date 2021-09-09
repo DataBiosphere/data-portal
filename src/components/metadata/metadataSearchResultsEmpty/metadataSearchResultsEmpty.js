@@ -9,8 +9,8 @@
 import React from "react";
 
 // Styles
-import compStyles from "./metadataSearchResultsEmpty.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
+import * as compStyles from "./metadataSearchResultsEmpty.module.css";
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSearchResultsEmpty() {
   return (

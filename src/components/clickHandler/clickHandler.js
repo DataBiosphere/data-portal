@@ -9,10 +9,11 @@
 // Core dependencies
 import React from "react";
 
-// Styles
-import compStyles from "./clickHandler.module.css";
+// Class name helper
+import classNames from "classnames";
 
-let classNames = require("classnames");
+// Styles
+import * as compStyles from "./clickHandler.module.css";
 
 class ClickHandler extends React.Component {
   handleKeyDown = (e, clickAction) => {
@@ -29,7 +30,7 @@ class ClickHandler extends React.Component {
         className={classNames(className, compStyles.handler)}
         id={id}
         onClick={clickAction}
-        onKeyDown={e => this.handleKeyDown(e, clickAction)}
+        onKeyDown={(e) => this.handleKeyDown(e, clickAction)}
         role="button"
         tabIndex={0}
       >

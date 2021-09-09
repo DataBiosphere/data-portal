@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import compStyles from "./supportRequestButton.module.css";
+import * as compStyles from "./supportRequestButton.module.css";
 
 const SupportRequestButton = ({ clickFn }) => {
   const onButtonClicked = () => {

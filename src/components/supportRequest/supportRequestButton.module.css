@@ -5,8 +5,6 @@
  * Style definitions specific to displaying the "Support and Feedback" button.
  */
 
-@import "../../styles/vars.module.css";
-
 /* Support request button */
 .supportRequestBtn {
   background-color: var(--primary);

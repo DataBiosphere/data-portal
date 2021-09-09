@@ -13,7 +13,7 @@ import MetadataSchemaPropertyFieldGraphRestrictionClasses from "../metadataSchem
 import MetdataSchemaPropertyFieldGraphRestrictionOntologies from "../metadataSchemaPropertyFieldGraphRestrictionOntologies/metadataSchemaPropertyFieldGraphRestrictionOntologies";
 
 // Styles
-import fontStyles from "../../../styles/fontsize.module.css";
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSchemaPropertyFieldGraphRestriction(props) {
   const { property, showLink = true } = props,

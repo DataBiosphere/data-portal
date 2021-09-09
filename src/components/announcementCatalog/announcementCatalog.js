@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import React from "react";
 
 // App dependencies
@@ -14,7 +14,7 @@ import Announcement from "../announcement/announcement";
 import * as DPGTMService from "../../utils/dp-gtm/dp-gtm.service";
 
 // Styles
-import compStyles from "./announcementCatalog.module.css";
+import * as compStyles from "./announcementCatalog.module.css";
 
 function AnnouncementCatalog() {
   /**
@@ -22,7 +22,7 @@ function AnnouncementCatalog() {
    *
    * @param catalog
    */
-  const trackCatalogViewed = catalog => {
+  const trackCatalogViewed = (catalog) => {
     DPGTMService.trackCatalogViewed(catalog);
   };
 

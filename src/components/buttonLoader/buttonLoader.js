@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./buttonLoader.module.css";
+import * as compStyles from "./buttonLoader.module.css";
 
 const ButtonLoader = () => {
   return <div className={compStyles.buttonLoader} />;

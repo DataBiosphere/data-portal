@@ -13,7 +13,7 @@ import Checkbox from "../../checkbox/checkbox";
 import ContextMetadataDisplaying from "../contextMetadataDisplaying/contextMetadataDisplaying";
 
 // Styles
-import compStyles from "./metadataToggleRequiredFields.module.css";
+import * as compStyles from "./metadataToggleRequiredFields.module.css";
 
 function MetadataToggleRequiredFields() {
   const { showAllMetadata, onHandleToggleRequiredFields } = useContext(

@@ -14,11 +14,12 @@ import FooterLinks from "../footer-links/footer-links";
 // Images
 import footerLogo from "../../../images/logo/logo-hca-white.png";
 
-// Styles
-import compStyles from "./footer.module.css";
-import globalStyles from "../../styles/global.module.css";
+// Class name helper
+import classNames from "classnames";
 
-let classNames = require("classnames");
+// Styles
+import * as compStyles from "./footer.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 class Footer extends React.Component {
   render() {

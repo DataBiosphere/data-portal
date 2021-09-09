@@ -5,8 +5,6 @@
  * Style definitions specific to Zendesk support request form.
  */
 
-@import "../../styles/vars.module.css";
-
 .supportRequest {
   background-color: white;
   border-radius: 2px;

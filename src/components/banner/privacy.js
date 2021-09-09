@@ -6,20 +6,21 @@
  */
 
 // Core dependencies
+import { Link } from "gatsby";
 import Cookies from "js-cookie";
-import Link from "gatsby-link";
 import React from "react";
 
 // App dependencies
 import ClickHandler from "../clickHandler/clickHandler";
 import * as EnvironmentService from "../../utils/environment/environment.service";
 
-// Styles
-import compStyles from "./privacy.module.css";
-import fontStyles from "../../styles/fontsize.module.css";
-import globalStyles from "../../styles/global.module.css";
+// Class name helper
+import classNames from "classnames";
 
-let classNames = require("classnames");
+// Styles
+import * as compStyles from "./privacy.module.css";
+import * as fontStyles from "../../styles/fontsize.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 class Privacy extends React.Component {
   constructor(props) {

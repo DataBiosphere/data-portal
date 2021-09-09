@@ -22,16 +22,15 @@ let gtmEnvName = process.env.GATSBY_ENV_NAME;
 
 const lungmap = process.env.GATSBY_ATLAS === "lungmap";
 
-const siteMetadata = lungmap ?
-  {
-    title: "LungMAP Data Browser",
-    siteUrl: "https://data-browser.lungmap.net"
-  } :
-  {
-    title: "HCA Data Portal",
-    siteUrl: "https://data.humancellatlas.org/"
-
-  };
+const siteMetadata = lungmap
+  ? {
+      title: "LungMAP Data Browser",
+      siteUrl: "https://data-browser.lungmap.net",
+    }
+  : {
+      title: "HCA Data Portal",
+      siteUrl: "https://data.humancellatlas.org/",
+    };
 
 module.exports = {
   siteMetadata,
@@ -47,8 +46,8 @@ module.exports = {
 
         // Specify optional GTM environment details.
         gtmAuth: gtmAuth,
-        gtmPreview: gtmEnvName
-      }
+        gtmPreview: gtmEnvName,
+      },
     },
     `gatsby-plugin-react-svg`,
     `gatsby-plugin-sitemap`,
@@ -57,59 +56,44 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: contentPath,
-        name: "markdown-pages"
-      }
+        name: "markdown-pages",
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: metadataSchemaDocsPath,
-        name: "metadata-markdown-pages"
-      }
+        name: "metadata-markdown-pages",
+      },
     },
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: siteMapPath
-      }
+        path: siteMapPath,
+      },
     },
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        logo: lungmap
+        background_color: "#f4f7f9",
+        display: "standalone",
+        icon: lungmap
           ? "./images/lungmap/favicon/favicon.png"
           : "./images/favicon/favicon.png",
-
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          opengraph: false,
-          twitter: false,
-          yandex: false,
-          windows: false
-        }
-      }
-    },
-    {
-      resolve: "gatsby-plugin-react-css-modules",
-      options: {
-        filetypes: {
-          ".scss": { syntax: "postcss-scss" }
-        },
-        // Exclude global styles from the plugin
-        exclude: "/global/"
-      }
+        name: lungmap ? "LungMAP Data Browser" : "HCA Data Portal",
+        short_name: lungmap ? "LungMAP" : "HCA DP",
+        start_url: "/",
+        theme_color: lungmap ? "#005295" : "#1c7cc7",
+      },
     },
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
-        quality: 100
-      }
+        defaults: {
+          quality: 100,
+        },
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -126,16 +110,16 @@ module.exports = {
                 "figure-styles",
                 "internal-link",
                 "link-to-browser",
-                "metadata-type-entity-schemas"
-              ]
-            }
+                "metadata-type-entity-schemas",
+              ],
+            },
           },
           {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
               // don't copy linked markdown files but do the normal skipping of images so they can be handled by gatsby-remark-images
-              ignoreFileExtensions: ["png", "jpg", "jpeg", "bmp", "tiff", "md"]
-            }
+              ignoreFileExtensions: ["png", "jpg", "jpeg", "bmp", "tiff", "md"],
+            },
           },
           {
             resolve: `gatsby-remark-embed-video`,
@@ -143,23 +127,24 @@ module.exports = {
               ratio: 1.77, // Defaults to 16/9 = 1.77
               height: 316,
               width: 800,
-              related: false // Removes related videos from the end of an embedded YouTube video.
-            }
+              related: false, // Removes related videos from the end of an embedded YouTube video.
+            },
           },
           {
             resolve: `gatsby-remark-external-links`,
             options: {
               target: "_blank",
-              rel: "noopener"
-            }
+              rel: "noopener",
+            },
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1000,
               linkImagesToOriginal: false,
-              wrapperStyle: "box-shadow: 0 12px 24px -4px rgb(0 0 0 / 14%), 0 8px 16px -8px rgb(0 0 0 / 24%), 0 -6px 16px -6px rgb(0 0 0 / 24%); margin-bottom: 48px; margin-top: 48px;"
-            }
+              wrapperStyle:
+                "box-shadow: 0 12px 24px -4px rgb(0 0 0 / 14%), 0 8px 16px -8px rgb(0 0 0 / 24%), 0 -6px 16px -6px rgb(0 0 0 / 24%); margin-bottom: 48px; margin-top: 48px;",
+            },
           },
           `gatsby-remark-images-medium-zoom`,
           `gatsby-remark-katex`,
@@ -167,17 +152,17 @@ module.exports = {
           `gatsby-remark-responsive-iframe`,
           `gatsby-remark-metadata-absolute-linker`,
           `gatsby-remark-relative-linker`,
-          `gatsby-remark-autointernallink-headers`
-        ]
-      }
+          `gatsby-remark-autointernallink-headers`,
+        ],
+      },
     },
     // `gatsby-plugin-catch-links`,
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-typography",
       options: {
-        pathToConfigModule: "src/utils/typography.js"
-      }
-    }
-  ]
+        pathToConfigModule: "src/utils/typography.js",
+      },
+    },
+  ],
 };

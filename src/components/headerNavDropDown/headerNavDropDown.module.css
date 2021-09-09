@@ -5,8 +5,6 @@
  * Style definitions specific to the HCA Data Portal header nav drop down component.
  */
 
-@import "../../styles/vars.module.css";
-
 /* Drop down - container */
 .dropDown {
   position: relative; /* Positions menu */

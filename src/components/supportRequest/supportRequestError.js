@@ -8,11 +8,11 @@
 // Core dependencies
 import React from "react";
 
-// App dependencies
-import compStyles from "./supportRequestError.module.css";
-
 // Class name helper
-const classNames = require("classnames");
+import classNames from "classnames";
+
+// Styles
+import * as compStyles from "./supportRequestError.module.css";
 
 class SupportRequestError extends React.Component {
   render() {

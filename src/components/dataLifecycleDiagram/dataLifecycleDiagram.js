@@ -10,13 +10,14 @@ import React from "react";
 
 // App dependencies
 import DataLifecycle from "./dataLifecycleDiagram.svg";
-import {Relationship} from "../../utils/anchor/relationship.model";
-import {Target} from "../../utils/anchor/target.model";
+import { Relationship } from "../../utils/anchor/relationship.model";
+import { Target } from "../../utils/anchor/target.model";
+
+// Class name helper
+import classNames from "classnames";
 
 // Styles
-import compStyles from "./dataLifecycleDiagram.module.css";
-
-let classNames = require("classnames");
+import * as compStyles from "./dataLifecycleDiagram.module.css";
 
 class DataLifecycleDiagram extends React.Component {
   dataLifecycleStates = [
@@ -24,62 +25,56 @@ class DataLifecycleDiagram extends React.Component {
       name: "AnalysisPortals",
       cardHeight: 253,
       link: "/analyze",
-      text:
-        "From the Data Portal, we link to a large variety of community portals and method and visualization packages enabling you to perform the most up-to-date and diverse types of data analyses. Any HCA community developer can submit their analysis method to be listed on the HCA Data Portal."
+      text: "From the Data Portal, we link to a large variety of community portals and method and visualization packages enabling you to perform the most up-to-date and diverse types of data analyses. Any HCA community developer can submit their analysis method to be listed on the HCA Data Portal.",
     },
     {
       name: "MatrixService",
       cardHeight: 0,
       link: "/apis/api-documentation/matrix-service-api",
-      text: ""
+      text: "",
     },
     {
       name: "CLIDataAccess",
       cardHeight: 126,
       link: "",
-      text:
-        "The CLI (Command Line Interface) enables programmatic interaction with the Data Storage System for downloading data files."
+      text: "The CLI (Command Line Interface) enables programmatic interaction with the Data Storage System for downloading data files.",
     },
     {
       name: "HCADataStorage",
       cardHeight: 253,
       link: `${process.env.GATSBY_EXPLORE_URL}`,
-      text:
-        "The interactive Data Browser allows you to search, filter, and read about projects to select the data you want. You can then download the list of datasets as a data manifest or download an expression matrix of the data.  The datasets listed in the file manifest can be downloaded using the CLI."
+      text: "The interactive Data Browser allows you to search, filter, and read about projects to select the data you want. You can then download the list of datasets as a data manifest or download an expression matrix of the data.  The datasets listed in the file manifest can be downloaded using the CLI.",
     },
     {
       name: "Pipelines",
       cardHeight: 285,
       link: "/pipelines",
-      text:
-        "Data processing pipelines, approved by the HCA Analysis Working Group, process raw data from some single cell assays, producing matrices and QC metrics files. These pipelines identify genes, quantify transcripts, and assess data quality. Like raw data, processed data are put in the Data Storage System for access by the community."
+      text: "Data processing pipelines, approved by the HCA Analysis Working Group, process raw data from some single cell assays, producing matrices and QC metrics files. These pipelines identify genes, quantify transcripts, and assess data quality. Like raw data, processed data are put in the Data Storage System for access by the community.",
     },
     {
       name: "Storage",
       cardHeight: 190,
       link: "",
-      text:
-        "Validated raw data and metadata files are submitted to the Data Storage System. Storage is provided in both Amazon Web Services (AWS) and Google Cloud Platform (GCP) environments, and data can be accessed from either."
+      text: "Validated raw data and metadata files are submitted to the Data Storage System. Storage is provided in both Amazon Web Services (AWS) and Google Cloud Platform (GCP) environments, and data can be accessed from either.",
     },
     {
       name: "Validation",
       cardHeight: 0,
       link: "",
-      text: ""
+      text: "",
     },
     {
       name: "DataCurator",
       cardHeight: 190,
       link: "",
-      text:
-        "Submitters work with a Data Curator to upload the data and metadata and ensure it is well formatted and conforms to file format standards. Metadata is also validated as conforming to HCA metadata standards; errors are identified and corrected for re-uploading."
+      text: "Submitters work with a Data Curator to upload the data and metadata and ensure it is well formatted and conforms to file format standards. Metadata is also validated as conforming to HCA metadata standards; errors are identified and corrected for re-uploading.",
     },
     {
       name: "ResearchData",
       cardHeight: 78,
       link: "",
-      text: "Labs submit their single cell data and associated metadata."
-    }
+      text: "Labs submit their single cell data and associated metadata.",
+    },
   ];
 
   dataLifecycleFlowPaths = [
@@ -89,7 +84,7 @@ class DataLifecycleDiagram extends React.Component {
     "processedDataUploadProcessedData",
     "rawDataReceiveRawData",
     "rawDataSubmitData",
-    "metadataSubmitData"
+    "metadataSubmitData",
   ];
 
   hoverBounds = 20; // 10px top and 10px bottom or 10px left and 10px right of active element
@@ -111,7 +106,7 @@ class DataLifecycleDiagram extends React.Component {
     this.removeFlowPathInteractionAndAttributes();
   }
 
-  clearFlowPathActiveClassAndAttributes = flowPathEl => {
+  clearFlowPathActiveClassAndAttributes = (flowPathEl) => {
     return () => {
       // Remove class attributes
       flowPathEl.removeAttribute("class");
@@ -138,7 +133,7 @@ class DataLifecycleDiagram extends React.Component {
     };
   };
 
-  getCardStyles = state => {
+  getCardStyles = (state) => {
     // Get state button and its attributes
     let stateButtonEl = document.getElementById(`container${state.name}`);
     let stateButtonAttributes = stateButtonEl.attributes;
@@ -162,11 +157,11 @@ class DataLifecycleDiagram extends React.Component {
           : "0 4px 4px 4px",
       left: leftPos + "px",
       opacity: 1,
-      top: topPos + "px"
+      top: topPos + "px",
     };
   };
 
-  getCardContainerStyles = state => {
+  getCardContainerStyles = (state) => {
     // Get state container and its attributes
     let stateContainerEl = document.getElementById(`state${state.name}`);
     let stateContainerAttributes = stateContainerEl.attributes;
@@ -199,20 +194,20 @@ class DataLifecycleDiagram extends React.Component {
       left: leftPos + "px",
       top: topPos + "px",
       transform: cardContainerTranslate,
-      width: cardContainerWidth
+      width: cardContainerWidth,
     };
   };
 
-  moveElementToLast = stateEl => {
+  moveElementToLast = (stateEl) => {
     stateEl.parentNode.appendChild(stateEl);
   };
 
-  moveElementUp = stateEl => {
+  moveElementUp = (stateEl) => {
     stateEl.parentNode.insertBefore(stateEl, stateEl.previousElementSibling);
   };
 
   removeFlowPathInteractionAndAttributes = () => {
-    this.dataLifecycleFlowPaths.forEach(flowPath => {
+    this.dataLifecycleFlowPaths.forEach((flowPath) => {
       // Grab the corresponding flow path
       let flowPathContainerEl = document.getElementById(flowPath);
 
@@ -248,7 +243,7 @@ class DataLifecycleDiagram extends React.Component {
     });
   };
 
-  setFlowPathActiveClassAndAttributes = flowPathEl => {
+  setFlowPathActiveClassAndAttributes = (flowPathEl) => {
     return () => {
       // Add class attributes
       flowPathEl.setAttribute("class", compStyles.active);
@@ -261,7 +256,7 @@ class DataLifecycleDiagram extends React.Component {
       // Set hover state to true - for class 'hover'
       this.setState({
         hover: true,
-        dataLifecycle: this.dataLifecycleStates[i]
+        dataLifecycle: this.dataLifecycleStates[i],
       });
 
       // Move element down to last position of parent node
@@ -278,7 +273,7 @@ class DataLifecycleDiagram extends React.Component {
   };
 
   setFlowPathInteractionAndAttributes = () => {
-    this.dataLifecycleFlowPaths.forEach(flowPath => {
+    this.dataLifecycleFlowPaths.forEach((flowPath) => {
       // Grab the corresponding flow path
       let flowPathContainerEl = document.getElementById(flowPath);
 
@@ -321,7 +316,7 @@ class DataLifecycleDiagram extends React.Component {
     return (
       <div
         className={classNames(compStyles.dataLifecycle, {
-          [compStyles.hover]: this.state.hover
+          [compStyles.hover]: this.state.hover,
         })}
       >
         <DataLifecycle />

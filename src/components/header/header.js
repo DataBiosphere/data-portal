@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import React from "react";
 
 // App dependencies
@@ -18,13 +18,14 @@ import * as ReleaseService from "../../utils/release.service";
 // Images
 import headerLogo from "../../../images/logo/logo-hca.png";
 
-// Styles
-import fontStyles from "../../styles/fontsize.module.css";
-import globalStyles from "../../styles/global.module.css";
-import dropStyles from "../headerNavDropDown/headerNavDropDown.module.css";
-import compStyles from "./header.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./header.module.css";
+import * as dropStyles from "../headerNavDropDown/headerNavDropDown.module.css";
+import * as fontStyles from "../../styles/fontsize.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 class Header extends React.Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class Header extends React.Component {
     return `${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`;
   };
 
-  isActiveClassName = docPath => {
+  isActiveClassName = (docPath) => {
     return docPath && docPath.includes("/releases/");
   };
 
@@ -92,7 +93,7 @@ class Header extends React.Component {
       releasesMenuActive = this.isActiveClassName(docPath),
       releaseVisible = ReleaseService.isReleaseVisible();
 
-    const Description = props => {
+    const Description = (props) => {
       const { children } = props;
 
       return (
@@ -102,7 +103,7 @@ class Header extends React.Component {
       );
     };
 
-    const ExternalLink = props => {
+    const ExternalLink = (props) => {
       const { children, className, linkTo } = props;
 
       return (
@@ -114,7 +115,7 @@ class Header extends React.Component {
       );
     };
 
-    const HeaderNavDisplay = props => {
+    const HeaderNavDisplay = (props) => {
       const { description, label } = props,
         { menuNav } = this.state;
 
@@ -128,7 +129,7 @@ class Header extends React.Component {
       );
     };
 
-    const InternalLink = props => {
+    const InternalLink = (props) => {
       const { children, className, path } = props;
 
       return (
@@ -145,7 +146,7 @@ class Header extends React.Component {
       );
     };
 
-    const Nav = props => {
+    const Nav = (props) => {
       const { nav } = props,
         { description, headerName, name, path } = nav || {},
         label = headerName ? headerName : name;
@@ -206,7 +207,7 @@ class Header extends React.Component {
       return (
         <HeaderNavDropDown
           activeClassName={classNames({
-            [compStyles.active]: releasesMenuActive
+            [compStyles.active]: releasesMenuActive,
           })}
           button={button}
           menu={menu}
@@ -218,7 +219,7 @@ class Header extends React.Component {
     return (
       <div
         className={classNames(compStyles.navBar, {
-          [compStyles.hcaHeader]: homePage
+          [compStyles.hcaHeader]: homePage,
         })}
       >
         <div
@@ -242,7 +243,7 @@ class Header extends React.Component {
           </div>
           <ClickHandler
             className={classNames(compStyles.menuDropDown, fontStyles.s, {
-              [compStyles.hide]: !menuNav
+              [compStyles.hide]: !menuNav,
             })}
             clickAction={this.toggleMenu}
             tag={"div"}
@@ -251,7 +252,7 @@ class Header extends React.Component {
           </ClickHandler>
           <ClickHandler
             className={classNames(compStyles.overlay, {
-              [compStyles.hide]: !openNav
+              [compStyles.hide]: !openNav,
             })}
             clickAction={this.toggleMenu}
             tag={"div"}
@@ -262,7 +263,7 @@ class Header extends React.Component {
   }
 }
 
-export default props => {
+export default (props) => {
   const { docPath } = props;
 
   return <Header links={HeaderQuery()} docPath={docPath} {...props} />;

@@ -10,9 +10,9 @@ import React from "react";
 import RSelect from "react-select";
 
 // Styles
+// TODO review eslint.
 /* eslint-disable no-unused-vars */
-
-import compStyles from "./select.module.css"; // Must include styles here to override react-select element styles that aren't exposed through API
+import * as compStyles from "./select.module.css"; // Must include styles here to override react-select element styles that aren't exposed through API
 
 const Select = ({ isSearchable, name, onChange, options, value }) => {
   const styles = {

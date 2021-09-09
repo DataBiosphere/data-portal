@@ -7,7 +7,6 @@
 /**
  * Core react-autosuggest theming API end points.
  */
-@import "../../styles/vars.module.css";
 
 /* Input container */
 .container {

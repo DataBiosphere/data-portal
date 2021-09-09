@@ -13,7 +13,7 @@ import FooterLink from "../footer-link/footer-link";
 import { FooterQuery } from "../../hooks/footer-query";
 
 // Styles
-import compStyles from "./footer-links.module.css";
+import * as compStyles from "./footer-links.module.css";
 
 function FooterLinks(props) {
   const { onFeedbackClicked } = props;

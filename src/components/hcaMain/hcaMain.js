@@ -16,8 +16,8 @@ import Section from "../section/section";
 import Tabs from "../tabs/tabs";
 
 // Styles
-import compStyles from "./hcaMain.module.css";
-import globalStyles from "../../styles/global.module.css";
+import * as compStyles from "./hcaMain.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 function HCAMain(props) {
   const {

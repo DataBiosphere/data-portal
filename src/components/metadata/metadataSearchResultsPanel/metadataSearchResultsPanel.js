@@ -9,7 +9,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 // Styles
-import compStyles from "./metadataSearchResultsPanel.module.css";
+import * as compStyles from "./metadataSearchResultsPanel.module.css";
 
 function MetadataSearchResultsPanel(props) {
   const { children } = props;

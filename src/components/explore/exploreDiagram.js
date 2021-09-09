@@ -12,7 +12,7 @@ import React from "react";
 import HumanBodyDiagram from "./humanBodyDiagram.svg";
 
 // Styles
-import compStyles from "./exploreDiagram.module.css";
+import * as compStyles from "./exploreDiagram.module.css";
 
 class ExploreDiagram extends React.Component {
   constructor(props) {

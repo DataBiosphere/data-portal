@@ -12,8 +12,8 @@ import React from "react";
 import MetadataSchemaUsedBy from "../metadataSchemaUsedBy/metadataSchemaUsedBy";
 
 // Styles
-import compStyles from "./metadataSchemaUsedBys.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
+import * as compStyles from "./metadataSchemaUsedBys.module.css";
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSchemaUsedBys(props) {
   const { schema } = props,

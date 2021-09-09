@@ -20,10 +20,11 @@ import {Relationship} from "../utils/anchor/relationship.model";
 import {Target} from "../utils/anchor/target.model";
 import * as TemplateService from "../utils/template.service";
 
-// Styles
-import globalStyles from "../styles/global.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as globalStyles from "../styles/global.module.css";
 
 // the data prop will be injected by the GraphQL query below.
 export default function Template({ data, location }) {

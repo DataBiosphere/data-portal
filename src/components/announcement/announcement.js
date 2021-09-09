@@ -8,11 +8,12 @@
 // Core dependencies
 import React from "react";
 
-// Styles
-import compStyles from "./announcement.module.css";
-import fontStyles from "../../styles/fontsize.module.css";
+// Class name helper
+import classNames from "classnames";
 
-let classNames = require("classnames");
+// Styles
+import * as compStyles from "./announcement.module.css";
+import * as fontStyles from "../../styles/fontsize.module.css";
 
 class Announcement extends React.Component {
   render() {

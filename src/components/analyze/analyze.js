@@ -6,15 +6,15 @@
  */
 
 // Core dependencies
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import React from "react";
 
 // Styles
-import compStyles from "./analyze.module.css";
-import fontStyles from "../../styles/fontsize.module.css";
+import * as compStyles from "./analyze.module.css";
+import * as fontStyles from "../../styles/fontsize.module.css";
 
 class Analyze extends React.Component {
-  getMarkdownFileName = link => {
+  getMarkdownFileName = (link) => {
     let path = link.childMarkdownRemark.fields.slug.split("/");
     return "/" + path[1] + "/" + path[2] + "/" + path[4];
   };

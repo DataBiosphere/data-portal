@@ -4,7 +4,6 @@
  *
  * Style definitions specific to the HCA Data Portal system status component.
  */
-@import "../../styles/vars.module.css";
 
 /* System status */
 .systemStatus {

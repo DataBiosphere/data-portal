@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import React from "react";
 
 // App dependencies
@@ -15,12 +15,13 @@ import ClickHandler from "../clickHandler/clickHandler";
 // Images
 import headerLogo from "../../../images/lungmap/logo/logo-lungmap.png";
 
-// Styles
-import fontStyles from "../../styles/fontsize.module.css";
-import globalStyles from "../../styles/global.module.css";
-import compStyles from "./header-lungmap.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./header-lungmap.module.css";
+import * as fontStyles from "../../styles/fontsize.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 class HeaderLungMAP extends React.Component {
   constructor(props) {
@@ -74,7 +75,7 @@ class HeaderLungMAP extends React.Component {
       exploreLabel = "Explore",
       hideLinks = menuNav && !openNav;
 
-    const Description = props => {
+    const Description = (props) => {
       const { children } = props;
 
       return (
@@ -84,7 +85,7 @@ class HeaderLungMAP extends React.Component {
       );
     };
 
-    const ExternalLink = props => {
+    const ExternalLink = (props) => {
       const { children, className, linkTo } = props;
 
       return (
@@ -96,7 +97,7 @@ class HeaderLungMAP extends React.Component {
       );
     };
 
-    const HeaderNavDisplay = props => {
+    const HeaderNavDisplay = (props) => {
       const { description, label } = props,
         { menuNav } = this.state;
 
@@ -110,7 +111,7 @@ class HeaderLungMAP extends React.Component {
       );
     };
 
-    const InternalLink = props => {
+    const InternalLink = (props) => {
       const { children, className, path } = props;
 
       return (
@@ -127,7 +128,7 @@ class HeaderLungMAP extends React.Component {
       );
     };
 
-    const Nav = props => {
+    const Nav = (props) => {
       const { nav } = props,
         { description, headerName, name, path } = nav || {},
         label = headerName ? headerName : name;
@@ -153,7 +154,7 @@ class HeaderLungMAP extends React.Component {
     return (
       <div
         className={classNames(compStyles.navBar, {
-          [compStyles.hcaHeader]: homePage
+          [compStyles.hcaHeader]: homePage,
         })}
       >
         <div
@@ -176,7 +177,7 @@ class HeaderLungMAP extends React.Component {
           </div>
           <ClickHandler
             className={classNames(compStyles.menuDropDown, fontStyles.s, {
-              [compStyles.hide]: !menuNav
+              [compStyles.hide]: !menuNav,
             })}
             clickAction={this.toggleMenu}
             tag={"div"}
@@ -185,7 +186,7 @@ class HeaderLungMAP extends React.Component {
           </ClickHandler>
           <ClickHandler
             className={classNames(compStyles.overlay, {
-              [compStyles.hide]: !openNav
+              [compStyles.hide]: !openNav,
             })}
             clickAction={this.toggleMenu}
             tag={"div"}
@@ -196,7 +197,7 @@ class HeaderLungMAP extends React.Component {
   }
 }
 
-export default props => {
+export default (props) => {
   const links = [
     {
       description: "Fields used to describe datasets in LungMAP",
@@ -205,8 +206,8 @@ export default props => {
       path: "/metadata",
       position: {
         location: "h",
-        order: 0
-      }
+        order: 0,
+      },
     },
     {
       description: "APIs",
@@ -215,9 +216,9 @@ export default props => {
       path: "/apis",
       position: {
         location: "h",
-        order: 2
-      }
-    }
+        order: 2,
+      },
+    },
   ];
   return <HeaderLungMAP links={links} {...props} />;
 };

@@ -12,8 +12,8 @@ import React from "react";
 import Layout from "../components/layout";
 
 // Styles
-import compStyles from "./error.module.css";
-import fontStyles from "../styles/fontsize.module.css";
+import * as compStyles from "./error.module.css";
+import * as fontStyles from "../styles/fontsize.module.css";
 
 const ErrorPage = () => (
   <Layout sectionTitle={"Error"}>

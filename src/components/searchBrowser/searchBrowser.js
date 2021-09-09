@@ -9,18 +9,19 @@
 import React from "react";
 
 // App dependencies
-import * as stringFormatter from "../../../src/utils/string-format.service";
-import * as numberFormatter from "../../utils/number-format.service";
 import ClickHandler from "../clickHandler/clickHandler";
 import HCAAutosuggest from "../hcaAutosuggest/hcaAutosuggest";
+import * as stringFormatter from "../../../src/utils/string-format.service";
+import * as numberFormatter from "../../utils/number-format.service";
+
+// Class name helper
+import classNames from "classnames";
 
 // Styles
-import mainStyles from "../../pages/index.module.css";
-import fontStyles from "../../styles/fontsize.module.css";
-import globalStyles from "../../styles/global.module.css";
-import compStyles from "./searchBrowser.module.css";
-
-const classNames = require("classnames");
+import * as mainStyles from "../../pages/index.module.css";
+import * as compStyles from "./searchBrowser.module.css";
+import * as fontStyles from "../../styles/fontsize.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 // Facet search allow list
 const ACCEPT_SEARCH_FACETS = [

@@ -17,11 +17,12 @@ import MetadataToggleRequiredFields from "../metadataToggleRequiredFields/metada
 import {Relationship} from "../../../utils/anchor/relationship.model";
 import {Target} from "../../../utils/anchor/target.model";
 
-// Styles
-import compStyles from "./metadataSchema.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./metadataSchema.module.css";
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSchema(props) {
   const { schema } = props,

@@ -6,15 +6,17 @@
  */
 
 // Core dependencies
-import Autosuggest from "../reactAutosuggest/Autosuggest";
 import React from "react";
 
 // App dependencies
-import autosuggestTheme from "./autosuggestTheme.module.css";
-import compStyles from "./hcaAutosuggest.module.css";
+import Autosuggest from "../reactAutosuggest/Autosuggest";
+
+// Class name helper
+import classNames from "classnames";
 
 // Styles
-const classNames = require("classnames");
+import * as autosuggestTheme from "./autosuggestTheme.module.css";
+import * as compStyles from "./hcaAutosuggest.module.css";
 
 class HCAAutosuggest extends React.Component {
   constructor(props) {

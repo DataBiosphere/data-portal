@@ -4,7 +4,6 @@
  *
  * Style definitions specific to the HCA Data Portal home page.
  */
-@import "../../src/styles/vars.module.css";
 
 /**
  * Section
@@ -100,17 +99,17 @@
  */
 
 /* Margin - 32px */
-.main .module {
+.main .introContent {
   margin: 32px 0 0;
 }
 
 /* Margin - 56px */
-.main .module.spacer {
+.main .introContent.spacer {
   margin: 56px 0 0;
 }
 
 /* Margin - 0 */
-.main .module.zero {
+.main .introContent.zero {
   margin: 0;
 }
 

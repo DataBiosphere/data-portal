@@ -4,7 +4,6 @@
  *
  * Style definitions specific to the HCA Data Portal tooltip component.
  */
-@import "../../styles/vars.module.css";
 
 /* Tooltip */
 .tooltip {

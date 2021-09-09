@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./supportRequestSubmitted.module.css";
+import * as compStyles from "./supportRequestSubmitted.module.css";
 
 class SupportRequestSubmitted extends React.Component {
   render() {

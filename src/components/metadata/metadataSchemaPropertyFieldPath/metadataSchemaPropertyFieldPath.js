@@ -16,11 +16,12 @@ import Tooltip from "../../tooltip/tooltip";
 // Images
 import copyIcon from "../../../../images/icon/clipboard/copy.png";
 
-// Styles
-import compStyles from "./metadataSchemaPropertyFieldPath.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./metadataSchemaPropertyFieldPath.module.css";
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSchemaPropertyFieldPath(props) {
   const { active, property, wrap } = props,

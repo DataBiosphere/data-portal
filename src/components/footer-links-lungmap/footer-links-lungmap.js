@@ -12,7 +12,7 @@ import React from "react";
 import FooterLink from "../footer-link/footer-link";
 
 // Styles
-import compStyles from "./footer-links-lungmap.module.css";
+import * as compStyles from "./footer-links-lungmap.module.css";
 
 function FooterLinksLungMAP() {
   const link = {

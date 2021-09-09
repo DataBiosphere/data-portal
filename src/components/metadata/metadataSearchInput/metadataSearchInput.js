@@ -20,7 +20,7 @@ import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearc
 import MetadataSearchInputClear from "../metadataSearchInputClear/metadataSearchInputClear";
 
 // Styles
-import compStyles from "./metadataSearchInput.module.css";
+import * as compStyles from "./metadataSearchInput.module.css";
 
 function MetadataSearchInput() {
   const {

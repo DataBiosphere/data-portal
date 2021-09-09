@@ -14,7 +14,7 @@ import TOCItem from "../tocItem/tocItem";
 import * as TOCService from "../../utils/toc.service";
 
 // Styles
-import compStyles from "./toc.module.css";
+import * as compStyles from "./toc.module.css";
 
 class TOC extends React.Component {
   componentDidMount() {

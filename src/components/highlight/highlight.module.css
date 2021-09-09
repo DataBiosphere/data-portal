@@ -4,7 +4,6 @@
  *
  * Style definitions specific to the HCA Data Portal highlight component.
  */
-@import "../../styles/vars.module.css";
 
 /* Highlight. */
 .highlight mark {
