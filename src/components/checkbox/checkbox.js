@@ -8,10 +8,11 @@
 // Core dependencies
 import React from "react";
 
-// Styles
-import compStyles from "./checkbox.module.css";
+// Class name helper
+import classNames from "classnames";
 
-let classNames = require("classnames");
+// Styles
+import * as compStyles from "./checkbox.module.css";
 
 class Checkbox extends React.Component {
   render() {

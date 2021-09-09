@@ -6,12 +6,12 @@
  */
 
 // Core dependencies
-import Link from "gatsby-link";
+import {Link} from "gatsby";
 import React from "react";
 
 // Styles
-import compStyles from "./metadataTypeEntitySchema.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
+import * as compStyles from "./metadataTypeEntitySchema.module.css";
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataTypeEntitySchema(props) {
   const { schema } = props,

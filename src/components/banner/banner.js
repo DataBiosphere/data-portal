@@ -14,16 +14,17 @@ import Privacy from "./privacy";
 import SystemStatus from "./systemStatus";
 import * as EnvironmentService from "../../utils/environment/environment.service";
 
-// Styles
-import compStyles from "./banner.module.css";
+// Class name helper
+import classNames from "classnames";
 
-let classNames = require("classnames");
+// Styles
+import * as compStyles from "./banner.module.css";
 
 class Banner extends React.Component {
-  getBannerClassName = bannerPos => {
+  getBannerClassName = (bannerPos) => {
     return classNames({
       [compStyles.banner]: true,
-      [compStyles.top]: bannerPos === "top"
+      [compStyles.top]: bannerPos === "top",
     });
   };
 

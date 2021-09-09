@@ -9,10 +9,11 @@
 // Core dependencies
 import React from "react";
 
-// Styles
-import compStyles from "./contentWrapper.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./contentWrapper.module.css";
 
 function ContentWrapper(props) {
   const { children, marginLeft, marginRight } = props;

@@ -20,12 +20,12 @@ import * as SupportRequestService from "./supportRequest.service";
 import SupportRequestSubmitted from "./supportRequestSubmitted";
 import * as DPGTMService from "../../utils/dp-gtm/dp-gtm.service";
 
-// Styles
-import globalStyles from "../../styles/global.module.css";
-import compStyles from "./supportRequestForm.module.css";
-
 // Class name helper
-const classNames = require("classnames");
+import classNames from "classnames";
+
+// Styles
+import * as globalStyles from "../../styles/global.module.css";
+import * as compStyles from "./supportRequestForm.module.css";
 
 // Validation constraints
 const constraints = {

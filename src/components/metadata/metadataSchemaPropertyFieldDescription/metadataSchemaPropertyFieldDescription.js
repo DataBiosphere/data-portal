@@ -9,10 +9,11 @@
 import React from "react";
 import Linkify from "react-linkify";
 
-// Styles
-import fontStyles from "../../../styles/fontsize.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSchemaPropertyFieldDescription(props) {
   const { font, property } = props,

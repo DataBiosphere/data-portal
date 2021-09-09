@@ -5,8 +5,6 @@
  * Style definitions specific to displaying Zendesk support request errors.
  */
 
-@import "../../styles/vars.module.css";
-
 .supportRequestError {
   background-color: rgba(232, 170, 69, 0.06); /* --accent */
   border-radius: 2px;

@@ -8,12 +8,13 @@
 // Core dependencies
 import React from "react";
 
-// Styles
-import fontStyles from "../../styles/fontsize.module.css";
-import globalStyles from "../../styles/global.module.css";
-import compStyles from "./systemStatus.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as fontStyles from "../../styles/fontsize.module.css";
+import * as globalStyles from "../../styles/global.module.css";
+import * as compStyles from "./systemStatus.module.css";
 
 function SystemStatus() {
   return (

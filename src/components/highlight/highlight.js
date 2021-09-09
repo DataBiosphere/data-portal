@@ -14,13 +14,12 @@ import * as HighlightService from "../../utils/highlight.service";
 import * as MetadataSearchService from "../../utils/metadata-search.service";
 
 // Styles
-import compStyles from "./highlight.module.css";
+import * as compStyles from "./highlight.module.css";
 
 function Highlight(props) {
   const { children, term } = props;
   const highlightRef = useRef();
   const [termRegex, setTermRegex] = useState();
-  const markRegex = /<mark>(.*?)<\/mark>/gi;
 
   /* useEffect - componentDidUpdate - term. */
   /* Handles changes on term. */
@@ -39,12 +38,13 @@ function Highlight(props) {
   /* useEffect - componentDidUpdate - regex. */
   /* Handles changes on regex. */
   useEffect(() => {
+    const markRegex = /<mark>(.*?)<\/mark>/gi;
     /* Remove any existing marks. */
     HighlightService.removeMarks(highlightRef, markRegex);
 
     /* Add marks. */
     HighlightService.addMarks(highlightRef, termRegex);
-  }, [markRegex, termRegex]);
+  }, [termRegex]);
 
   return (
     <span className={compStyles.highlight} ref={highlightRef}>

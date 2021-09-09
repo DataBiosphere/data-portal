@@ -6,13 +6,14 @@
  */
 
 // Core dependencies
-import Link from "gatsby-link";
+import {Link} from "gatsby";
 import React from "react";
 
-// Styles
-import compStyles from "./tab.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./tab.module.css";
 
 class Tab extends React.Component {
   render() {

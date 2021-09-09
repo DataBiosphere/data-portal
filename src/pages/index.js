@@ -18,11 +18,6 @@ import * as ReleaseService from "../utils/release.service";
 import * as SystemService from "../utils/system.service";
 import * as numberFormatter from "../utils/number-format.service";
 
-// Styles
-import fontStyles from "../styles/fontsize.module.css";
-import globalStyles from "../styles/global.module.css";
-import compStyles from "./index.module.css";
-
 // Images
 import cells from "../../images/icon/metrics/cells.png";
 import donors from "../../images/icon/metrics/donors.png";
@@ -36,24 +31,34 @@ import searchCommunity from "../../images/icon/portal/searchCommunity.png";
 import searchData from "../../images/icon/portal/searchData.png";
 import go from "../../images/icon/release/arrow.png";
 
-let classNames = require("classnames");
+// Class name helper
+import classNames from "classnames";
+
+// Styles
+import * as compStyles from "./index.module.css";
+import * as fontStyles from "../styles/fontsize.module.css";
+import * as globalStyles from "../styles/global.module.css";
+import "../styles/vars.module.css";
 
 class IndexPage extends React.Component {
-  state = {
-    cellCount: 0,
-    cellCountSummaries: null,
-    donorCount: 0,
-    fileCount: 0,
-    fileFormatSummary: null,
-    healthy: true,
-    labCount: 0,
-    loaded: false,
-    organCount: 0,
-    projectCount: 0,
-    searchTerms: null,
-    termFacets: null,
-    totalCellCount: 0
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      cellCount: 0,
+      cellCountSummaries: null,
+      donorCount: 0,
+      fileCount: 0,
+      fileFormatSummary: null,
+      healthy: true,
+      labCount: 0,
+      loaded: false,
+      organCount: 0,
+      projectCount: 0,
+      searchTerms: null,
+      termFacets: null,
+      totalCellCount: 0,
+    };
+  }
 
   /**
    * Check system status is OK then load up counts and summaries.
@@ -77,12 +82,12 @@ class IndexPage extends React.Component {
           ...fileSummary,
           ...healthCheck,
           searchTerms: FileSummaryService.buildSearchTerms(termFacets),
-          termFacets
+          termFacets,
         });
       })
-      .catch(e => {
+      .catch((e) => {
         this.setState({
-          healthy: false
+          healthy: false,
         });
       });
   };
@@ -121,7 +126,7 @@ class IndexPage extends React.Component {
           <section
             className={classNames({
               [compStyles.metricsBar]: true,
-              [compStyles.loading]: !this.state.loaded
+              [compStyles.loading]: !this.state.loaded,
             })}
           >
             <div
@@ -200,7 +205,7 @@ class IndexPage extends React.Component {
                   <p className={fontStyles.introText}>
                     Explore, visualize, and interact with 23 annotated datasets
                   </p>
-                  <div className={compStyles.module}>
+                  <div className={compStyles.introContent}>
                     <a
                       href={`${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`}
                       className={classNames(
@@ -242,7 +247,10 @@ class IndexPage extends React.Component {
                 </p>
               </div>
               <div
-                className={classNames(compStyles.process, compStyles.module)}
+                className={classNames(
+                  compStyles.process,
+                  compStyles.introContent
+                )}
               >
                 <div className={compStyles.tile}>
                   <div className={compStyles.icon}>
@@ -320,7 +328,12 @@ class IndexPage extends React.Component {
               >
                 Stay up-to-date with the Human Cell Atlas
               </h4>
-              <div className={classNames(compStyles.module, compStyles.visit)}>
+              <div
+                className={classNames(
+                  compStyles.introContent,
+                  compStyles.visit
+                )}
+              >
                 <a
                   href="https://www.humancellatlas.org/join-hca/"
                   className={classNames(

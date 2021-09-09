@@ -12,12 +12,13 @@ import React from "react";
 // App dependencies
 import ClickHandler from "../clickHandler/clickHandler";
 
-// Styles
-import compStyles from "./environment.module.css";
-import fontStyles from "../../styles/fontsize.module.css";
-import globalStyles from "../../styles/global.module.css";
+// Class name helper
+import classNames from "classnames";
 
-let classNames = require("classnames");
+// Styles
+import * as compStyles from "./environment.module.css";
+import * as fontStyles from "../../styles/fontsize.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 class Environment extends React.Component {
   constructor(props) {

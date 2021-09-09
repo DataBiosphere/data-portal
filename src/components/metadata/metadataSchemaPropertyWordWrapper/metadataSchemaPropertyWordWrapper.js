@@ -9,11 +9,12 @@
 // Core dependencies
 import React from "react";
 
-// Styles
-import compStyles from "./metadataSchemaPropertyWordWrapper.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./metadataSchemaPropertyWordWrapper.module.css";
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 class MetadataSchemaPropertyWordWrapper extends React.Component {
   render() {

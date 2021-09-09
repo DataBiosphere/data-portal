@@ -10,15 +10,16 @@ import React from "react";
 
 // App dependencies
 import Markdown from "../markdown/markdown";
-import {Relationship} from "../../utils/anchor/relationship.model";
-import {Target} from "../../utils/anchor/target.model";
+import { Relationship } from "../../utils/anchor/relationship.model";
+import { Target } from "../../utils/anchor/target.model";
+
+// Class name helper
+import classNames from "classnames";
 
 // Styles
-import compStyles from "./analysisDetail.module.css";
-import fontStyles from "../../styles/fontsize.module.css";
-import globalStyles from "../../styles/global.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./analysisDetail.module.css";
+import * as fontStyles from "../../styles/fontsize.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 function AnalysisDetail(props) {
   const { data } = props,

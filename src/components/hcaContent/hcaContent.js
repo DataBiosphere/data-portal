@@ -14,10 +14,11 @@ import ContentWrapper from "../contentWrapper/contentWrapper";
 import Nav from "../nav/nav";
 import TOC from "../toc/toc";
 
-// Styles
-import compStyles from "./hcaContent.module.css";
+// Class name helper
+import classNames from "classnames";
 
-let classNames = require("classnames");
+// Styles
+import * as compStyles from "./hcaContent.module.css";
 
 class HCAContent extends React.Component {
   constructor(props) {

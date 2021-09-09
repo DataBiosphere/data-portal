@@ -10,8 +10,8 @@
 import React from "react";
 
 // Styles
-import compStyles from "./metadataSchemaNoRequiredProperties.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
+import * as compStyles from "./metadataSchemaNoRequiredProperties.module.css";
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 class MetadataSchemaNoRequiredProperties extends React.Component {
   render() {

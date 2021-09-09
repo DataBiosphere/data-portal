@@ -8,10 +8,11 @@
 // Core dependencies
 import React from "react";
 
-// Styles
-import fontStyles from "../../../styles/fontsize.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSchemaPropertyFieldExample(props) {
   const { font, property } = props,

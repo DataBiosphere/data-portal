@@ -15,7 +15,7 @@ import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearc
 import Icon from "../../icon/icon";
 
 // Styles
-import compStyles from "./metadataSearchClose.module.css";
+import * as compStyles from "./metadataSearchClose.module.css";
 
 function MetadataSearchClose() {
   const { onHandleSearchClose } = useContext(ContextMetadataSearch);

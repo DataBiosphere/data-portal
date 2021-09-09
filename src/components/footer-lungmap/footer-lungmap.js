@@ -14,11 +14,12 @@ import FooterLinksLungMAP from "../footer-links-lungmap/footer-links-lungmap";
 // Images
 import footerLogo from "../../../images/lungmap/logo/logo-lungmap.png";
 
-// Styles
-import compStyles from "./footer-lungmap.module.css";
-import globalStyles from "../../styles/global.module.css";
+// Class name helper
+import classNames from "classnames";
 
-let classNames = require("classnames");
+// Styles
+import * as compStyles from "./footer-lungmap.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 class FooterLungMAP extends React.Component {
   render() {

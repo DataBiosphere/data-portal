@@ -1,7 +1,6 @@
 /**
  * Global Styles
  */
-@import "./vars.module.css";
 
 :root {
   --gutter-x: 16px;

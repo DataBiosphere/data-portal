@@ -34,20 +34,21 @@ import { Link } from "gatsby";
 import React from "react";
 
 // App dependencies
+import { SurveyName } from "../survey/survey-name";
 import { Relationship } from "../../utils/anchor/relationship.model";
 import { Target } from "../../utils/anchor/target.model";
-
-// Styles
-import buttonStyles from "../button/button.module.css";
-import { SurveyName } from "../survey/survey-name";
 import * as DPGTMService from "../../utils/dp-gtm/dp-gtm.service";
 
-const classNames = require("classnames");
+// Class name helper
+import classNames from "classnames";
+
+// Styles
+import * as buttonStyles from "../button/button.module.css";
 
 function ButtonCta(props) {
   const { children, href = "/", spacer = true, target = Target.SELF } = props;
   const classNameButton = classNames(buttonStyles.buttonUnelevatedSecondary, {
-    [buttonStyles.buttonSpacer]: spacer
+    [buttonStyles.buttonSpacer]: spacer,
   });
   const externalLink = target === Target.BLANK;
 

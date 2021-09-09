@@ -12,8 +12,8 @@ import React from "react";
 import MetadataSearchClose from "../metadataSearchClose/metadataSearchClose";
 
 // Styles
-import compStyles from "./metadataSearchResultsPanelHeader.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
+import * as compStyles from "./metadataSearchResultsPanelHeader.module.css";
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSearchResultsPanelHeader(props) {
   const { children } = props;

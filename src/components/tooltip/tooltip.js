@@ -12,10 +12,11 @@ import ReactDOM from "react-dom";
 // App dependencies
 import * as TooltipService from "../../utils/tooltip.service";
 
-// Styles
-import compStyles from "./tooltip.module.css";
+// Class name helper
+import classNames from "classnames";
 
-let classNames = require("classnames");
+// Styles
+import * as compStyles from "./tooltip.module.css";
 
 class Tooltip extends React.Component {
   constructor(props) {

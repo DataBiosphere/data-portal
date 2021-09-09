@@ -13,10 +13,11 @@ import React from "react";
 import Button from "../../button/button";
 import Icon from "../../icon/icon";
 
-// Styles
-import compStyles from "./metadataSearchInputClear.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./metadataSearchInputClear.module.css";
 
 function MetadataSearchInputClear(props) {
   const { onHandleClearInput, showClear } = props;

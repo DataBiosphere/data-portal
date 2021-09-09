@@ -9,8 +9,8 @@
 import React, { useState } from "react";
 
 // App dependencies
-import SupportRequestForm from "./supportRequestForm";
 import SupportRequestButton from "./supportRequestButton";
+import SupportRequestForm from "./supportRequestForm";
 import { GASource } from "../../utils/dp-gtm/ga-source.model";
 
 const SupportRequest = ({ active = false, source, onToggle }) => {

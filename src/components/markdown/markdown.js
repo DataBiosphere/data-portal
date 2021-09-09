@@ -16,11 +16,11 @@ import FigureStyles from "../figure-styles/figure-styles";
 import InternalLink from "../internal-link/internalLink";
 import LinkToBrowser from "../linkToBrowser/linkToBrowser";
 import MetadataTypeEntitySchemas from "../metadata/metadataTypeEntitySchemas/metadataTypeEntitySchemas";
-
-// Styles
-import compStyles from "./markdown.module.css";
 import { SurveyName } from "../survey/survey-name";
 import * as DPGTMService from "../../utils/dp-gtm/dp-gtm.service";
+
+// Styles
+import * as compStyles from "./markdown.module.css";
 
 function Markdown(props) {
   const { children } = props;

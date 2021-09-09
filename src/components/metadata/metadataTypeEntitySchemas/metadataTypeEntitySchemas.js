@@ -14,7 +14,7 @@ import MetadataTypeEntitySchema from "../metadataTypeEntitySchema/metadataTypeEn
 import * as MetadataService from "../../../utils/metadata.service";
 
 // Styles
-import compStyles from "./metadataTypeEntitySchemas.module.css";
+import * as compStyles from "./metadataTypeEntitySchemas.module.css";
 
 function MetadataTypeEntitySchemas(props) {
   const { category } = props;

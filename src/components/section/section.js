@@ -9,9 +9,9 @@
 import React from "react";
 
 // Styles
-import compStyles from "./section.module.css";
-import fontStyles from "../../styles/fontsize.module.css";
-import globalStyles from "../../styles/global.module.css";
+import * as compStyles from "./section.module.css";
+import * as fontStyles from "../../styles/fontsize.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 class Section extends React.Component {
   render() {

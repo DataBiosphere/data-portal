@@ -9,11 +9,12 @@
 import { navigate } from "gatsby";
 import React from "react";
 
-// Styles
-import fontStyles from "../../styles/fontsize.module.css";
-import compStyles from "./tocItem.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as fontStyles from "../../styles/fontsize.module.css";
+import * as compStyles from "./tocItem.module.css";
 
 class TOCItem extends React.Component {
   isTOCActive = () => {

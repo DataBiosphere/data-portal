@@ -16,7 +16,7 @@ import MetadataSearchResultsPanel from "../metadataSearchResultsPanel/metadataSe
 import MetadataSearchResultsPanelHeader from "../metadataSearchResultsPanelHeader/metadataSearchResultsPanelHeader";
 
 // Styles
-import compStyles from "./metadataSearchResults.module.css";
+import * as compStyles from "./metadataSearchResults.module.css";
 
 function MetadataSearchResults() {
   const { results, showResultsPanel } = useContext(ContextMetadataSearch);

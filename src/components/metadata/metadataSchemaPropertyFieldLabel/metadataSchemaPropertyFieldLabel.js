@@ -8,11 +8,12 @@
 // Core dependencies
 import React from "react";
 
-// Styles
-import compStyles from "./metadataSchemaPropertyFieldLabel.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./metadataSchemaPropertyFieldLabel.module.css";
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSchemaPropertyFieldLabel(props) {
   const { children, property } = props,

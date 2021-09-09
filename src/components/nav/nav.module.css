@@ -4,7 +4,6 @@
  *
  * Style definitions specific to the HCA Data Portal nav component.
  */
-@import "../../styles/vars.module.css";
 
 /* Navigation - label. */
 .hcaNav .label {

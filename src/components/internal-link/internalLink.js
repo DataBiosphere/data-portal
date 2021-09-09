@@ -10,10 +10,11 @@
 import { navigate } from "@reach/router";
 import React from "react";
 
-// Styles
-import compStyles from "./internalLink.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./internalLink.module.css";
 
 function InternalLink(props) {
   const { anchor, relative } = props;

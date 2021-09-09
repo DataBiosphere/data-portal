@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./chip.module.css";
+import * as compStyles from "./chip.module.css";
 
 function Chip(props) {
   const { children } = props;

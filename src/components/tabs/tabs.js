@@ -11,11 +11,12 @@ import React from "react";
 // App dependencies
 import Tab from "../tab/tab";
 
-// Styles
-import globalStyles from "../../styles/global.module.css";
-import compStyles from "./tabs.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as globalStyles from "../../styles/global.module.css";
+import * as compStyles from "./tabs.module.css";
 
 class TabNav extends React.Component {
   render() {

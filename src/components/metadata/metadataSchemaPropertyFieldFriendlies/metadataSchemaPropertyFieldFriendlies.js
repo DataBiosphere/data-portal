@@ -12,11 +12,12 @@ import React from "react";
 // App dependencies
 import Highlight from "../../highlight/highlight";
 
-// Styles
-import compStyles from "./metadataSchemaPropertyFieldFriendlies.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./metadataSchemaPropertyFieldFriendlies.module.css";
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSchemaPropertyFieldFriendlies(props) {
   const { children, property, searchTerm } = props,

@@ -9,17 +9,18 @@
 import React from "react";
 
 // App dependencies
+import ClickHandler from "../clickHandler/clickHandler";
 import * as stringFormatter from "../../../src/utils/string-format.service";
 import * as numberFormatter from "../../../src/utils/number-format.service";
-import ClickHandler from "../clickHandler/clickHandler";
 
 // Images
 import arrow from "../../../images/icon/explore/arrow.png";
 
-// Styles
-import compStyles from "./exploreControls.module.css";
+// Class name helper
+import classNames from "classnames";
 
-let classNames = require("classnames");
+// Styles
+import * as compStyles from "./exploreControls.module.css";
 
 /* List of organ term names for display */
 /* Excludes "development samples", "gut", "female reproductive", "male reproductive" */

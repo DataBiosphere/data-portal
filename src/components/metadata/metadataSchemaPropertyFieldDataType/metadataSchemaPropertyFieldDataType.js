@@ -6,17 +6,18 @@
  */
 
 // Core dependencies
-import Link from "gatsby-link";
+import {Link} from "gatsby";
 import React from "react";
 
 // App dependencies
 import MetadataSchemaPropertyFieldFromRef from "../metadataSchemaPropertyFieldFromRef/metadataSchemaPropertyFieldFromRef";
 
-// Styles
-import compStyles from "./metadataSchemaPropertyFieldDataType.module.css";
-import fontStyles from "../../../styles/fontsize.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./metadataSchemaPropertyFieldDataType.module.css";
+import * as fontStyles from "../../../styles/fontsize.module.css";
 
 function MetadataSchemaPropertyFieldDataType(props) {
   const { property } = props,

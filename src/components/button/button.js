@@ -8,15 +8,16 @@
 // Core dependencies
 import React from "react";
 
-// Styles
-import compStyles from "./button.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./button.module.css";
 
 function Button(props) {
   const { children, clickAction, icon } = props;
   const classNamesButton = classNames(compStyles.button, {
-    [compStyles.buttonIcon]: icon
+    [compStyles.buttonIcon]: icon,
   });
 
   const onHandleClickAction = () => {

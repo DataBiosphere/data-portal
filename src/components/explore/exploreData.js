@@ -12,11 +12,12 @@ import React from "react";
 import ExploreControls from "./exploreControls";
 import ExploreDiagram from "./exploreDiagram";
 
-// Styles
-import mainStyles from "../../pages/index.module.css";
-import compStyles from "./exploreData.module.css";
+// Class name helper
+import classNames from "classnames";
 
-let classNames = require("classnames");
+// Styles
+import * as compStyles from "./exploreData.module.css";
+import { introContent, zero } from "../../pages/index.module.css";
 
 class ExploreData extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class ExploreData extends React.Component {
     this.state = { organ: "" };
   }
 
-  onActiveOrgan = event => {
+  onActiveOrgan = (event) => {
     this.setState({ organ: event });
   };
 
@@ -32,13 +33,7 @@ class ExploreData extends React.Component {
     const { cellCountSummaries, totalCellCount } = this.props,
       { organ } = this.state;
     return (
-      <div
-        className={classNames(
-          mainStyles.module,
-          mainStyles.zero,
-          compStyles.exploring
-        )}
-      >
+      <div className={classNames(introContent, zero, compStyles.exploring)}>
         <ExploreControls
           onActiveOrgan={this.onActiveOrgan.bind(this)}
           cellCountSummaries={cellCountSummaries}

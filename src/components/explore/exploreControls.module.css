@@ -4,7 +4,6 @@
  *
  * Style definitions specific to the HCA explore controls component.
  */
-@import "../../../src/styles/vars.module.css";
 
 /* Controls container */
 .controls {

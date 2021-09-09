@@ -14,10 +14,11 @@ import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearc
 import MetadataSearchResultProperty from "../metadataSearchResultProperty/metadataSearchResultProperty";
 import MetadataSearchResultSchema from "../metadataSearchResultSchema/metadataSearchResultSchema";
 
-// Styles
-import compStyles from "./metadataSearchResult.module.css";
+// Class name helper
+import classNames from "classnames";
 
-const classNames = require("classnames");
+// Styles
+import * as compStyles from "./metadataSearchResult.module.css";
 
 function MetadataSearchResult(props) {
   const {

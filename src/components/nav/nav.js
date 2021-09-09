@@ -6,19 +6,21 @@
  */
 
 // Core dependencies
-import Link from "gatsby-link";
+import {Link} from "gatsby";
 import React from "react";
 
 // App dependencies
 import ClickHandler from "../clickHandler/clickHandler";
 import MetadataOverline from "../metadata/metadataOverline/metadataOverline";
 
+// Class name helper
+import classNames from "classnames";
+
 // Styles
-import compStyles from "./nav.module.css";
-import fontStyles from "../../styles/fontsize.module.css";
+import * as compStyles from "./nav.module.css";
+import * as fontStyles from "../../styles/fontsize.module.css";
 
-let classNames = require("classnames");
-
+// Template variables
 let active;
 let expanded;
 let initialShowNav = false;

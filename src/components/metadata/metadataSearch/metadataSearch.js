@@ -17,7 +17,7 @@ import ProviderMetadataSearching from "../providerMetadataSearching/providerMeta
 import * as MetadataSearchService from "../../../utils/metadata-search.service";
 
 // Styles
-import compStyles from "./metadataSearch.module.css";
+import * as compStyles from "./metadataSearch.module.css";
 
 // Template variables
 const metadataIndexFileName = "/metadata-index.json";
