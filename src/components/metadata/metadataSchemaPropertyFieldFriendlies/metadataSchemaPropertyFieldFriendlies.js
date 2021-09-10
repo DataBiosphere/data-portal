@@ -25,7 +25,7 @@ function MetadataSchemaPropertyFieldFriendlies(props) {
   const showFriendlies = propertyFriendlies && propertyFriendlies.length > 0;
   const friendlyDepth = showFriendlies ? propertyFriendlies.length - 1 : 0;
 
-  const Friendly = props => {
+  const Friendly = (props) => {
     const { counter, friendly, friendlyDepth } = props;
     const lastFriendly = counter === friendlyDepth;
     const showArrow = !lastFriendly;

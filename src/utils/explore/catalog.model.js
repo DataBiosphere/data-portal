@@ -7,5 +7,5 @@
 
 export const Catalog = {
   DCP1: "dcp1",
-  DCP2: "dcp2"
+  DCP2: "dcp2",
 };

@@ -23,5 +23,5 @@ export const TOCMetadataQuery = () => {
       }
     `
   );
-  return allMetadataSchema.edges.map(n => n.node);
+  return allMetadataSchema.edges.map((n) => n.node);
 };

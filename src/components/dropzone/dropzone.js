@@ -23,7 +23,11 @@ const Dropzone = ({
   // dropzone's built-in dragging status doesn't seem to work if there's anything rendered over the root div
   const [dragging, setDragging] = useState(false);
 
-  const { getRootProps, getInputProps, open: openUploader } = useDropzone({
+  const {
+    getRootProps,
+    getInputProps,
+    open: openUploader,
+  } = useDropzone({
     // Disable native files selection dialog - we'll handle this manually
     noClick: true,
     // Disable space/enter to open native files selection dialog
@@ -41,7 +45,7 @@ const Dropzone = ({
       setDragging(false);
       onDragLeave && onDragLeave(...args);
     },
-    ...props
+    ...props,
   });
 
   return (

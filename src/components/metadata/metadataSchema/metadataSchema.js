@@ -14,8 +14,8 @@ import MetadataSchemaNoRequiredProperties from "../metadataSchemaNoRequiredPrope
 import MetadataSchemaProperties from "../metadataSchemaProperties/metadataSchemaProperties";
 import MetadataSchemaUsedBys from "../metadataSchemaUsedBys/metadataSchemaUsedBys";
 import MetadataToggleRequiredFields from "../metadataToggleRequiredFields/metadataToggleRequiredFields";
-import {Relationship} from "../../../utils/anchor/relationship.model";
-import {Target} from "../../../utils/anchor/target.model";
+import { Relationship } from "../../../utils/anchor/relationship.model";
+import { Target } from "../../../utils/anchor/target.model";
 
 // Class name helper
 import classNames from "classnames";

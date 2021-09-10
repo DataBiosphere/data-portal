@@ -19,13 +19,13 @@ export function getPageTitle(htmlAst) {
   }
 
   // Find the top-level of the page
-  const h1 = htmlAst.children.find(child => child.tagName === "h1");
+  const h1 = htmlAst.children.find((child) => child.tagName === "h1");
   if (!h1) {
     return "";
   }
 
   // Return text node of h1
-  return h1.children.find(child => child.type === "text").value || "";
+  return h1.children.find((child) => child.type === "text").value || "";
 }
 
 /**

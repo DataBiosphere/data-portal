@@ -16,8 +16,8 @@ import Attributions from "../components/attributions/attributions";
 import Layout from "../components/layout";
 import Markdown from "../components/markdown/markdown";
 import ProviderMetadataDisplaying from "../components/metadata/providerMetadataDisplaying/providerMetadataDisplaying";
-import {Relationship} from "../utils/anchor/relationship.model";
-import {Target} from "../utils/anchor/target.model";
+import { Relationship } from "../utils/anchor/relationship.model";
+import { Target } from "../utils/anchor/target.model";
 import * as TemplateService from "../utils/template.service";
 
 // Class name helper
@@ -79,7 +79,7 @@ export default function Template({ data, location }) {
 
 // modified to find the page by id which is passed in as context
 export const pageQuery = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html

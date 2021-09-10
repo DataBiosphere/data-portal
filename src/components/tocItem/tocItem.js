@@ -33,7 +33,7 @@ class TOCItem extends React.Component {
     }
   };
 
-  onTOCClicked = anchor => {
+  onTOCClicked = (anchor) => {
     navigate(anchor);
   };
 

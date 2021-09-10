@@ -17,7 +17,7 @@ export function convertCamelCasetoTitleCase(title) {
  * Convert sentence case to title case. Based off https://stackoverflow.com/a/196991.
  */
 export function convertSentenceCaseToTitleCase(title) {
-  return title.replace(/\w\S*/g, text => {
+  return title.replace(/\w\S*/g, (text) => {
     return text.charAt(0).toUpperCase() + text.substr(1).toLowerCase();
   });
 }

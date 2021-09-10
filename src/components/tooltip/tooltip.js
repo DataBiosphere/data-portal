@@ -45,7 +45,7 @@ class Tooltip extends React.Component {
   };
 
   showTooltip = () => {
-    return e => {
+    return (e) => {
       const tooltipPos = TooltipService.positionTooltip(
         e.currentTarget,
         this.tooltipRef

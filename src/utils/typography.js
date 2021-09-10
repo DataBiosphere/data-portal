@@ -24,8 +24,8 @@ const typography = new Typography({
   googleFonts: [
     {
       name: "Montserrat",
-      styles: ["300", "400", "500", "600", "700"]
-    }
+      styles: ["300", "400", "500", "600", "700"],
+    },
   ],
   includeNormalize: true,
   overrideStyles: ({ adjustFontSizeTo, scale }, options, styles) => {
@@ -36,104 +36,105 @@ const typography = new Typography({
     return {
       "body, html": {},
       body: {
-        letterSpacing: "0.2px"
+        letterSpacing: "0.2px",
       },
       "*, *:before, *:after": {
         mozBoxSizing: "border-box",
         webkitBoxSizing: "border-box",
-        boxSizing: "border-box"
+        boxSizing: "border-box",
       },
       p: {
         ...adjustFontSizeTo("15px"),
         lineHeight: "25px",
-        margin: "0 0 18px"
+        margin: "0 0 18px",
       },
       h1: {
         ...adjustFontSizeTo("34px"),
         lineHeight: "38px",
-        margin: "28px 0 6px"
+        margin: "28px 0 6px",
       },
       h2: {
         ...adjustFontSizeTo("24px"),
         lineHeight: "30px",
-        margin: "24px 0 8px"
+        margin: "24px 0 8px",
       },
       h3: {
         ...adjustFontSizeTo("18px"),
         lineHeight: "24px",
-        margin: "16px 0 10px"
+        margin: "16px 0 10px",
       },
       h4: {
         ...adjustFontSizeTo("16px"),
         lineHeight: "22px",
-        margin: "14px 0 16px"
+        margin: "14px 0 16px",
       },
       h5: {
         ...adjustFontSizeTo("16px"),
         lineHeight: "28px",
-        margin: "0 0 18px"
+        margin: "0 0 18px",
       },
       h6: {
         ...adjustFontSizeTo("14px"),
         lineHeight: "24px",
-        margin: "0 0 12px"
+        margin: "0 0 12px",
       },
       a: {
         color: primary,
         cursor: "pointer",
         font: "inherit",
-        textDecoration: "none"
+        textDecoration: "none",
       },
       "a:hover": {
-        color: "none"
+        color: "none",
       },
       "a:focus,a:active,a:hover": {
-        outline: 0
+        outline: 0,
       },
       blockquote: {
         backgroundColor: background,
         borderRadius: "3px",
         margin: "0 0 18px",
-        padding: "16px"
+        padding: "16px",
       },
-      "blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote h5, blockquote h6": {
-        margin: "0 0 8px"
-      },
+      "blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote h5, blockquote h6":
+        {
+          margin: "0 0 8px",
+        },
       "blockquote p": {
-        color: grayDark
+        color: grayDark,
       },
       "dd,dl,ol,ul": {
         margin: 0,
-        padding: 0
+        padding: 0,
       },
       "ol, ul": {
-        marginBottom: "24px"
+        marginBottom: "24px",
       },
       img: {
         border: 0,
-        marginBottom: 0
+        marginBottom: 0,
       },
       strong: {
-        fontWeight: "400"
+        fontWeight: "400",
       },
       "thead tr, tbody tr": {
-        borderBottom: "1px solid" + grayLight
+        borderBottom: "1px solid" + grayLight,
       },
       "thead tr th, tbody tr td": {
-        borderBottom: "none"
+        borderBottom: "none",
       },
       "thead th, tbody tr": {
         fontSize: "13px",
-        lineHeight: "18px"
+        lineHeight: "18px",
       },
       "thead th": {
-        fontWeight: 400
+        fontWeight: 400,
       },
       "tbody tr": {
-        fontWeight: 300
-      }
+        fontWeight: 300,
+      },
     };
-  }
+  },
 });
 
 export default typography;

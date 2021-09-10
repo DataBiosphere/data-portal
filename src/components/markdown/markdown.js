@@ -33,8 +33,8 @@ function Markdown(props) {
       "figure-styles": FigureStyles,
       "internal-link": InternalLink,
       "link-to-browser": LinkToBrowser,
-      "metadata-type-entity-schemas": MetadataTypeEntitySchemas
-    }
+      "metadata-type-entity-schemas": MetadataTypeEntitySchemas,
+    },
   }).Compiler;
 
   /**
@@ -47,15 +47,15 @@ function Markdown(props) {
     if (markdownNodes) {
       /* Grab only table elements that are direct descendants of the markdown. */
       const tableNodes = [...markdownNodes].filter(
-        node => node.nodeName === "TABLE"
+        (node) => node.nodeName === "TABLE"
       );
 
       /* For each table node, wrap within a container element. */
-      tableNodes.forEach(tableEl => insertTableOverflowNode(tableEl));
+      tableNodes.forEach((tableEl) => insertTableOverflowNode(tableEl));
     }
   }, []);
 
-  const insertTableOverflowNode = tableEl => {
+  const insertTableOverflowNode = (tableEl) => {
     /* Create the container with "tableContainer" class. */
     const containerEl = document.createElement("div");
     containerEl.classList.add(compStyles.tableContainer);
@@ -71,7 +71,7 @@ function Markdown(props) {
    * Track user clicks on survey link.
    * TODO generalize to handle tracking of other links.
    */
-  const trackSurveyLaunch = e => {
+  const trackSurveyLaunch = (e) => {
     const { target } = e;
     if (target.tagName === "A" && target.innerText === "survey") {
       DPGTMService.trackSurveyLaunch(SurveyName["2021_SPRING_MATRIX_UX"]);

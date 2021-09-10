@@ -17,5 +17,5 @@ export const TOCPageQuery = () => {
       }
     `
   );
-  return allMarkdownRemark.edges.map(e => e.node);
+  return allMarkdownRemark.edges.map((e) => e.node);
 };

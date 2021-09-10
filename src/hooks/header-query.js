@@ -24,5 +24,5 @@ export const HeaderQuery = () => {
       }
     `
   );
-  return allSiteMapYaml.edges.map(e => e.node);
+  return allSiteMapYaml.edges.map((e) => e.node);
 };

@@ -17,7 +17,7 @@ const SYSTEM_HEALTH_CHECK_API_URL =
 export function healthCheck() {
   return fetch(SYSTEM_HEALTH_CHECK_API_URL)
     .then(HttpService.checkResponseStatus)
-    .then(resp => resp.json())
+    .then((resp) => resp.json())
     .then(bindHealthCheckResponse);
 }
 
@@ -26,6 +26,6 @@ export function healthCheck() {
  */
 function bindHealthCheckResponse(response) {
   return {
-    healthy: response.up
+    healthy: response.up,
   };
 }

@@ -15,7 +15,9 @@ import * as EnvironmentService from "../../utils/environment/environment.service
 class SEO extends React.Component {
   render() {
     const { description, pageTitle } = this.props,
-      defaultTitle = EnvironmentService.isLungMAP() ? "LungMAP Data Browser" : "HCA Data Portal",
+      defaultTitle = EnvironmentService.isLungMAP()
+        ? "LungMAP Data Browser"
+        : "HCA Data Portal",
       title = pageTitle ? pageTitle : defaultTitle,
       siteURL = EnvironmentService.getCurrentEnvironmentURL(),
       atlas = EnvironmentService.getAtlas(),
@@ -46,7 +48,7 @@ class SEO extends React.Component {
                 name="twitter:image"
                 content={twitterImgUrl}
                 key="twitter:image"
-              />
+              />,
             ]
           : null}
         <meta name="twitter:card" content="summary" />

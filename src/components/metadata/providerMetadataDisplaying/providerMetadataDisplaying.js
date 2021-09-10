@@ -43,7 +43,7 @@ function ProviderMetadataDisplaying(props) {
     return () => clearTimeout(highlightTimerRef.current);
   }, []);
 
-  const onHandleNavigationHit = result => {
+  const onHandleNavigationHit = (result) => {
     const { primaryRequired, required, type, urlTo } = result || {};
     const toggleMetadata =
       !showAllMetadata &&
@@ -79,7 +79,7 @@ function ProviderMetadataDisplaying(props) {
   };
 
   const onHandleToggleRequiredFields = () => {
-    setShowAllMetadata(showAllMetadata => !showAllMetadata);
+    setShowAllMetadata((showAllMetadata) => !showAllMetadata);
   };
 
   const setLocalStorageValues = useCallback(() => {
@@ -121,7 +121,7 @@ function ProviderMetadataDisplaying(props) {
         showAllMetadata,
         onHandleNavigationHit,
         onHandleNavigationSearchHit,
-        onHandleToggleRequiredFields
+        onHandleToggleRequiredFields,
       }}
     >
       {children}

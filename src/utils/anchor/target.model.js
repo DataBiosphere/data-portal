@@ -7,5 +7,5 @@
 
 export const Target = {
   BLANK: "_blank",
-  SELF: "_self"
+  SELF: "_self",
 };

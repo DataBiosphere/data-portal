@@ -9,8 +9,8 @@
 import React from "react";
 
 // App dependencies
-import {Relationship} from "../../../utils/anchor/relationship.model";
-import {Target} from "../../../utils/anchor/target.model";
+import { Relationship } from "../../../utils/anchor/relationship.model";
+import { Target } from "../../../utils/anchor/target.model";
 import * as MetadataService from "../../../utils/metadata.service";
 
 function MetadataSchemaPropertyFieldGraphRestrictionClass(props) {

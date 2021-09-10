@@ -20,7 +20,7 @@ const buildMetadataNavMapByKey = function buildMetadataNavMapByKey(
   metadataSchema
 ) {
   return metadataSchema.edges
-    .map(n => n.node)
+    .map((n) => n.node)
     .reduce((acc, node) => {
       const { category, entity, fields, title } = node,
         { slug } = fields;
@@ -43,13 +43,13 @@ const buildMetadataLinksByEntity = function buildMetadataLinksByEntity(
 ) {
   /* Create an object key-value pair of entity and set of associated categories. */
   const setOfCategoriesByEntity = allMetadataEntity.edges
-    .map(n => n.node)
+    .map((n) => n.node)
     .reduce((acc, entity) => {
       const { categories, entityName } = entity;
 
       /* Grab the set of categories. */
       const setOfCategories = new Set(
-        categories.map(category => category.categoryName)
+        categories.map((category) => category.categoryName)
       );
 
       acc.set(entityName, setOfCategories);
@@ -60,7 +60,7 @@ const buildMetadataLinksByEntity = function buildMetadataLinksByEntity(
   /* Build the primary and secondary links for each entity's category. */
   return [...setOfCategoriesByEntity].reduce(
     (acc, [entity, setOfCategories]) => {
-      const categoryLinks = [...setOfCategories].map(category => {
+      const categoryLinks = [...setOfCategories].map((category) => {
         /* Find all related metadata posts i.e. schema from the same entity - they share the same primary link key. */
         const filteredMetadataPosts = filterMetadataPostsByEntityCategory(
           metadataEntityCategorySchemaTitleByKey,
@@ -90,7 +90,7 @@ const buildMetadataLinksByEntity = function buildMetadataLinksByEntity(
               active: false /* Let "active" be false, for now. */,
               key: metadataPostKey,
               name: schemaTitle,
-              path: metadataPostKey
+              path: metadataPostKey,
             };
           }
         );
@@ -101,7 +101,7 @@ const buildMetadataLinksByEntity = function buildMetadataLinksByEntity(
           key: primaryLinkKey,
           name: pLinkName,
           path: primaryLinkKey,
-          sLinks: secondaryLinks
+          sLinks: secondaryLinks,
         };
       });
 
@@ -125,18 +125,18 @@ const buildMetadataTabs = function buildMetadataTabs(
   metadataEntityCategorySchemaTitleByKey,
   allMetadataEntity
 ) {
-  const metadataEntities = allMetadataEntity.edges.map(n => n.node);
+  const metadataEntities = allMetadataEntity.edges.map((n) => n.node);
 
   /* Reorder entities - by predefined order. */
   /* This sets up the metadata tab order of display. */
-  const reorderedEntities = orderEntities.map(entity => {
+  const reorderedEntities = orderEntities.map((entity) => {
     return metadataEntities.find(
-      MetadataEntity => MetadataEntity.entityName === entity
+      (MetadataEntity) => MetadataEntity.entityName === entity
     );
   });
 
   /* Create an object key-value pair of entity and set of associated categories. */
-  return reorderedEntities.map(entity => {
+  return reorderedEntities.map((entity) => {
     const { entityName } = entity;
 
     /* Find the first metadata path for the specified entity. */
@@ -152,7 +152,7 @@ const buildMetadataTabs = function buildMetadataTabs(
       active: false /* Let "active" be false, for now. */,
       key: entityName,
       name: tabName,
-      path: tabPath
+      path: tabPath,
     };
   });
 };
@@ -224,9 +224,9 @@ const removeDenyListedPosts = function removeDenyListedPosts(
   siteMapYAML,
   denyListPostsByKey
 ) {
-  const siteMapNodes = siteMapYAML.edges.map(e => e.node);
+  const siteMapNodes = siteMapYAML.edges.map((e) => e.node);
 
-  return siteMapNodes.map(node => {
+  return siteMapNodes.map((node) => {
     /* Clone node. */
     const nodeClone = Object.assign({}, node);
 
@@ -290,7 +290,7 @@ function buildDummyMetadataDictionaryTab(metaLinksByEntity, active = false) {
     active: active,
     key: "/metadata/dictionary/",
     name: "Dictionary",
-    path: firstSchema.path
+    path: firstSchema.path,
   };
 }
 
@@ -321,18 +321,18 @@ function buildPostLinks(postSlug, postTab) {
     return [];
   }
 
-  return postTab.primaryLinks.map(pLink => {
+  return postTab.primaryLinks.map((pLink) => {
     let secondaryLinks;
 
     /* Secondary links. */
     if (pLink.secondaryLinks) {
-      secondaryLinks = pLink.secondaryLinks.map(sLink => {
+      secondaryLinks = pLink.secondaryLinks.map((sLink) => {
         /* Return built secondary links. */
         return {
           active: sLink.key === postSlug,
           key: sLink.key,
           name: sLink.name,
-          path: getSiteMapPath(sLink)
+          path: getSiteMapPath(sLink),
         };
       });
     }
@@ -343,7 +343,7 @@ function buildPostLinks(postSlug, postTab) {
       key: pLink.key,
       name: pLink.name,
       path: getSiteMapPath(pLink),
-      sLinks: secondaryLinks
+      sLinks: secondaryLinks,
     };
   });
 }
@@ -400,7 +400,7 @@ function buildPostMetadataNavigation(
     section: postSection,
     secondaryTabs: metadataTabs,
     tabKey: "dictionary",
-    tabs: postTabs
+    tabs: postTabs,
   };
 }
 
@@ -427,9 +427,8 @@ function buildPostNavigation(postSlug, postSiteMap, metaLinksByEntity) {
   /* Build dummy "Metadata Dictionary" tab. */
   if (sectionKey === "metadata") {
     /* Insert "Metadata Dictionary" tab to post tabs. */
-    const metadataDictionaryTab = buildDummyMetadataDictionaryTab(
-      metaLinksByEntity
-    );
+    const metadataDictionaryTab =
+      buildDummyMetadataDictionaryTab(metaLinksByEntity);
     postTabs.splice(1, 0, metadataDictionaryTab);
   }
 
@@ -451,7 +450,7 @@ function buildPostNavigation(postSlug, postSiteMap, metaLinksByEntity) {
     secondaryTabs: null /* Not required for markdown posts. */,
     section: postSection,
     tabKey: postTab.key,
-    tabs: postTabs
+    tabs: postTabs,
   };
 }
 
@@ -465,7 +464,7 @@ function buildPostSection(siteMap) {
   return {
     key: siteMap.key,
     name: siteMap.name,
-    path: getSiteMapPath(siteMap)
+    path: getSiteMapPath(siteMap),
   };
 }
 
@@ -486,7 +485,7 @@ function buildPostTabs(tabKey, siteMap) {
         active: tab.key === tabKey,
         key: tab.key,
         name: tab.name,
-        path: getSiteMapPath(firstPLink)
+        path: getSiteMapPath(firstPLink),
       };
 
       return acc.concat(postTab);
@@ -548,13 +547,13 @@ function getSiteMapPath(link) {
  * @param metaLinks
  */
 function getMetaLinksActiveState(postSlug, metaLinks) {
-  return metaLinks.map(pLink => {
+  return metaLinks.map((pLink) => {
     /* Primary links. */
     const pLinkClone = Object.assign({}, pLink);
 
     if (pLink.sLinks) {
       /* Secondary links. */
-      pLinkClone.sLinks = pLink.sLinks.map(sLink => {
+      pLinkClone.sLinks = pLink.sLinks.map((sLink) => {
         const sLinkClone = Object.assign({}, sLink);
 
         sLinkClone.active = sLink.key === postSlug;
@@ -574,7 +573,7 @@ function getMetaLinksActiveState(postSlug, metaLinks) {
  * @param entity
  */
 function getMetaTabsActiveState(metaTabs, entity) {
-  return metaTabs.map(tab => {
+  return metaTabs.map((tab) => {
     /* Clone tab. */
     const tabClone = Object.assign({}, tab);
 
@@ -603,7 +602,7 @@ function getPostSectionKey(slug) {
  * @returns {void | Array | T | *}
  */
 function getPostTab(tabKey, siteMap) {
-  return siteMap.tabs.find(tab => tab.key === tabKey);
+  return siteMap.tabs.find((tab) => tab.key === tabKey);
 }
 
 /**
@@ -628,7 +627,7 @@ function getPostSiteMapBySectionKey(sectionKey, postsSiteMap) {
     return {};
   }
 
-  return postsSiteMap.find(section => section.key === sectionKey);
+  return postsSiteMap.find((section) => section.key === sectionKey);
 }
 
 /**

@@ -12,7 +12,7 @@ import React, {
   useContext,
   useEffect,
   useRef,
-  useState
+  useState,
 } from "react";
 
 // App dependencies
@@ -27,7 +27,7 @@ function MetadataSearchInput() {
     inputActive,
     onHandleSearch,
     onHandleSearchClose,
-    onHandleSearchOpen
+    onHandleSearchOpen,
   } = useContext(ContextMetadataSearch);
   const currentLocation = useLocation();
   const delaySearchRef = useRef(0);
@@ -57,7 +57,7 @@ function MetadataSearchInput() {
   }, [onHandleSearch]);
 
   const onHandleKeyDown = useCallback(
-    keyEvent => {
+    (keyEvent) => {
       const { key } = keyEvent;
 
       /* Key arrow up - prevent default. */

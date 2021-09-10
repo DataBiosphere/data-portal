@@ -32,7 +32,7 @@ const constraints = {
   email: { presence: { allowEmpty: false }, email: true },
   description: { presence: { allowEmpty: false } },
   name: { presence: { allowEmpty: false } },
-  subject: { presence: { allowEmpty: false } }
+  subject: { presence: { allowEmpty: false } },
 };
 
 class SupportRequestForm extends React.Component {
@@ -54,7 +54,7 @@ class SupportRequestForm extends React.Component {
    */
   buildInputClassnames = (errors, inputName) => {
     return {
-      [compStyles.inputError]: this.isInputError(errors, inputName)
+      [compStyles.inputError]: this.isInputError(errors, inputName),
     };
   };
 
@@ -62,14 +62,8 @@ class SupportRequestForm extends React.Component {
    * Build support request model from form values.
    */
   buildSupportRequest = () => {
-    const {
-      attachmentToken,
-      description,
-      email,
-      name,
-      subject,
-      type
-    } = this.state;
+    const { attachmentToken, description, email, name, subject, type } =
+      this.state;
     const requestedFromUrl = window.location.href;
     return {
       attachmentToken,
@@ -78,7 +72,7 @@ class SupportRequestForm extends React.Component {
       name,
       requestedFromUrl,
       subject,
-      type
+      type,
     };
   };
 
@@ -100,7 +94,7 @@ class SupportRequestForm extends React.Component {
       submitted: false,
       submitting: false,
       touched: {},
-      type: "question"
+      type: "question",
     };
   }
 
@@ -136,7 +130,7 @@ class SupportRequestForm extends React.Component {
       this.setState({
         attachmentRejected: false,
         attachmentRejections: [],
-        attachmentUploading: true
+        attachmentUploading: true,
       });
       const response = await SupportRequestService.uploadAttachment(files[0]);
       const attachmentToken = response.token;
@@ -144,13 +138,13 @@ class SupportRequestForm extends React.Component {
       this.setState({
         attachmentToken,
         attachmentName,
-        attachmentUploading: false
+        attachmentUploading: false,
       });
     } catch (error) {
       this.setState({
         attachmentRejected: true,
         attachmentRejections: [],
-        attachmentUploading: false
+        attachmentUploading: false,
       });
       console.log(error);
     }
@@ -159,12 +153,12 @@ class SupportRequestForm extends React.Component {
   /**
    * Attachment has been rejected (on drop of file).
    */
-  onAttachmentRejected = fileRejections => {
+  onAttachmentRejected = (fileRejections) => {
     // We can assume there is a single error as we are not doing multiple uploads
     const rejection = fileRejections[0] || {};
     this.setState({
       attachmentRejected: true,
-      attachmentRejections: rejection.errors
+      attachmentRejections: rejection.errors,
     });
   };
 
@@ -173,13 +167,13 @@ class SupportRequestForm extends React.Component {
    *
    * @param event
    */
-  onInputBlur = event => {
+  onInputBlur = (event) => {
     const target = event.target;
     this.setState({
       touched: {
         ...this.state.touched,
-        [target.name]: true
-      }
+        [target.name]: true,
+      },
     });
   };
 
@@ -188,13 +182,13 @@ class SupportRequestForm extends React.Component {
    *
    * @param event
    */
-  onInputChange = event => {
+  onInputChange = (event) => {
     const target = event.target;
     const value = target.value;
     const name = target.name;
 
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -203,9 +197,9 @@ class SupportRequestForm extends React.Component {
    *
    * @param selectedOption
    */
-  onTypeChange = selectedOption => {
+  onTypeChange = (selectedOption) => {
     this.setState({
-      type: selectedOption.value
+      type: selectedOption.value,
     });
   };
 
@@ -227,12 +221,12 @@ class SupportRequestForm extends React.Component {
     try {
       this.setState({
         submitError: false,
-        submitting: true
+        submitting: true,
       });
       await SupportRequestService.createSupportRequest(request);
       this.setState({
         submitting: false,
-        submitted: true
+        submitted: true,
       });
       this.requestRef.current.scrollTo(0, 0);
       DPGTMService.trackSupportRequestCreated(this.props.source);
@@ -240,7 +234,7 @@ class SupportRequestForm extends React.Component {
     } catch (error) {
       this.setState({
         submitError: true,
-        submitting: false
+        submitting: false,
       });
       console.log(error);
     }
@@ -260,22 +254,22 @@ class SupportRequestForm extends React.Component {
       submitting,
       subject,
       type,
-      attachmentUploading
+      attachmentUploading,
     } = this.state;
 
     // Set up select options, selected value and styles.
     const typeOptions = [
       { value: "question", label: "Question" },
       { value: "bug", label: "Bug" },
-      { value: "feature_request", label: "Feature Request" }
+      { value: "feature_request", label: "Feature Request" },
     ];
     const selectedTypeOption = typeOptions.filter(
-      option => option.value === type
+      (option) => option.value === type
     );
 
     // Active drag styles
     const draggingStyle = {
-      cursor: "copy"
+      cursor: "copy",
     };
 
     // Determine error state of form
@@ -287,7 +281,7 @@ class SupportRequestForm extends React.Component {
     return (
       <div
         className={classNames(compStyles.supportRequest, {
-          [compStyles.submitted]: submitted
+          [compStyles.submitted]: submitted,
         })}
         ref={this.requestRef}
       >
@@ -296,7 +290,7 @@ class SupportRequestForm extends React.Component {
           disabled={!!attachmentToken}
           maxSize={maxAttachmentSize}
           multiple={false}
-          onDropAccepted={files => this.onAttachmentDropped(files)}
+          onDropAccepted={(files) => this.onAttachmentDropped(files)}
           onDropRejected={this.onAttachmentRejected}
         >
           {({ dragging, openUploader }) => (
@@ -353,7 +347,7 @@ class SupportRequestForm extends React.Component {
                 ) : (
                   <button
                     className={classNames(compStyles.inputAttachment, {
-                      [compStyles.inputAttachmentDragging]: dragging
+                      [compStyles.inputAttachmentDragging]: dragging,
                     })}
                     onClick={openUploader}
                   >

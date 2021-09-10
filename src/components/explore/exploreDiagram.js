@@ -24,7 +24,7 @@ class ExploreDiagram extends React.Component {
     this.setOrganAttributes();
   }
 
-  getOrganEl = organ => {
+  getOrganEl = (organ) => {
     // Note, svg organ element id stem should correspond with browser cell count summary label
     return organ ? document.querySelector(`[id^=path${organ}]`) : null; // Returns corresponding organ element when organ is specified
   };

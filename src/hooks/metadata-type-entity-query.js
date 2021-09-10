@@ -23,5 +23,5 @@ export const MetadataTypeEntityQuery = () => {
       }
     `
   );
-  return allMetadataEntity.edges.map(n => n.node)[0];
+  return allMetadataEntity.edges.map((n) => n.node)[0];
 };

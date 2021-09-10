@@ -26,19 +26,19 @@ class HCAAutosuggest extends React.Component {
       suggestions: [],
       suggestionsFound: false,
       touched: false,
-      value: ""
+      value: "",
     };
   }
 
-  escapeRegexCharacters = str => {
+  escapeRegexCharacters = (str) => {
     return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   };
 
-  getSectionSuggestions = section => {
+  getSectionSuggestions = (section) => {
     return section.terms;
   };
 
-  findMatchingSuggestions = value => {
+  findMatchingSuggestions = (value) => {
     const escapedValue = this.escapeRegexCharacters(value.trim());
     const regex = new RegExp(escapedValue, "i");
 
@@ -47,13 +47,15 @@ class HCAAutosuggest extends React.Component {
         return {
           facetName: section.facetName,
           facetDisplayName: section.facetDisplayName,
-          terms: section.terms.filter(term => regex.test(term.termDisplayName))
+          terms: section.terms.filter((term) =>
+            regex.test(term.termDisplayName)
+          ),
         };
       })
-      .filter(section => section.terms.length > 0);
+      .filter((section) => section.terms.length > 0);
   };
 
-  getSuggestionValue = suggestion => suggestion.termDisplayName;
+  getSuggestionValue = (suggestion) => suggestion.termDisplayName;
 
   onChange = (event, { newValue, method }) => {
     this.props.onSelected();
@@ -67,7 +69,7 @@ class HCAAutosuggest extends React.Component {
 
   onSuggestionsClearRequested = () => {
     this.setState({
-      suggestions: []
+      suggestions: [],
     });
   };
 
@@ -83,7 +85,7 @@ class HCAAutosuggest extends React.Component {
       suggestions: suggestions.length
         ? suggestions
         : this.props.autosuggestData,
-      touched: true
+      touched: true,
     });
 
     if (touched) {
@@ -106,9 +108,9 @@ class HCAAutosuggest extends React.Component {
     this.props.onEnter();
   };
 
-  renderSectionTitle = section => section.facetDisplayName;
+  renderSectionTitle = (section) => section.facetDisplayName;
 
-  renderSuggestion = suggestion => {
+  renderSuggestion = (suggestion) => {
     const { showCounts } = this.props;
     return (
       <div className={compStyles.hcaOption}>
@@ -129,13 +131,13 @@ class HCAAutosuggest extends React.Component {
       onBlur: this.props.onBlur,
       onChange: this.onChange,
       placeholder: this.props.placeholder,
-      value
+      value,
     };
 
     return (
       <div
         className={classNames(compStyles.search, {
-          [compStyles.error]: !suggestionsFound
+          [compStyles.error]: !suggestionsFound,
         })}
       >
         <Autosuggest

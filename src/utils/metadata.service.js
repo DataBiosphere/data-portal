@@ -8,20 +8,20 @@
 // Template variables
 const Ontology = {
   EFO: "EFO",
-  HCAO: "HCAO"
+  HCAO: "HCAO",
 };
 const OntologyLibraryURL = {
   DATA: "http://edamontology.org",
   EFO: "http://www.ebi.ac.uk/efo",
   FORMAT: "http://edamontology.org",
-  OBO: "http://purl.obolibrary.org/obo"
+  OBO: "http://purl.obolibrary.org/obo",
 };
 const OntologyTermIdentifier = {
   "EFO:0000399": "UBERON:0000105",
-  "MONDO:0000001": "EFO:0000408"
+  "MONDO:0000001": "EFO:0000408",
 };
 const OntologyTermOntology = {
-  "FBbi:00000241": "fbbi"
+  "FBbi:00000241": "fbbi",
 };
 
 /**
@@ -77,7 +77,7 @@ export function findMetadataTypeEntityCategory(
 ) {
   if (metadataTypeEntityCategories.categories) {
     return metadataTypeEntityCategories.categories.find(
-      metadataTypeCategory => metadataTypeCategory.categoryName === category
+      (metadataTypeCategory) => metadataTypeCategory.categoryName === category
     );
   }
 
@@ -94,8 +94,8 @@ export function findMetadataTypeEntityCategory(
 export function getMetadataCategory(sitePageId, allMetadataEntity) {
   const entity = getMetadataEntity(allMetadataEntity);
 
-  return entity.categories.find(category =>
-    category.schemas.find(schema => schema.id === sitePageId)
+  return entity.categories.find((category) =>
+    category.schemas.find((schema) => schema.id === sitePageId)
   );
 }
 
@@ -107,7 +107,7 @@ export function getMetadataCategory(sitePageId, allMetadataEntity) {
  */
 export function getMetadataEntity(allMetadataEntity) {
   /* Get the entity. */
-  return allMetadataEntity.edges.find(entity => entity.node).node;
+  return allMetadataEntity.edges.find((entity) => entity.node).node;
 }
 
 /**
@@ -120,7 +120,7 @@ export function getMetadataEntity(allMetadataEntity) {
  */
 export function getMetadataSchema(category, sitePageId, showAllMetadata) {
   /* Grab the schema. */
-  const schema = category.schemas.find(schema => schema.id === sitePageId);
+  const schema = category.schemas.find((schema) => schema.id === sitePageId);
 
   /* Early exit - return schema with all metadata properties unfiltered. */
   /* Toggle "Show required fields only" is unchecked. */
@@ -183,7 +183,7 @@ export function selectPreferredOntologyId(ontologies) {
 function filterMetadataSchemaProperties(properties) {
   /* Handle case when only required metadata properties are rendered. */
   if (properties) {
-    return properties.filter(property => {
+    return properties.filter((property) => {
       const { primaryRequired, required } = property || {};
 
       return primaryRequired && required;
