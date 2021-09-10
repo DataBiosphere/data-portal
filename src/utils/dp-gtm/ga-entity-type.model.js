@@ -7,5 +7,5 @@
 
 export const GAEntityType = {
   CATALOG: "Catalog",
-  METADATA: "Metadata"
+  METADATA: "Metadata",
 };

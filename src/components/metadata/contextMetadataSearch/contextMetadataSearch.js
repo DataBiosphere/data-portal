@@ -16,7 +16,7 @@ const ContextMetadataSearch = React.createContext({
   showResultsPanel: false,
   onHandleSearch: () => {},
   onHandleSearchClose: () => {},
-  onHandleSearchOpen: () => {}
+  onHandleSearchOpen: () => {},
 });
 
 export default ContextMetadataSearch;

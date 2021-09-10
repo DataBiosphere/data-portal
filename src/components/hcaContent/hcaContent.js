@@ -38,7 +38,7 @@ class HCAContent extends React.Component {
     return showTOC;
   };
 
-  onHandleUseTOC = event => {
+  onHandleUseTOC = (event) => {
     this.setState({ showTOC: event });
   };
 
@@ -50,12 +50,12 @@ class HCAContent extends React.Component {
       label,
       links,
       metadataContent,
-      tabKey
+      tabKey,
     } = this.props;
     const useToc = this.isUseToc();
     const useNav = this.isUseNav();
     const classNamesContent = classNames(compStyles.hcaContent, {
-      [compStyles.metadataContent]: metadataContent
+      [compStyles.metadataContent]: metadataContent,
     });
 
     return (

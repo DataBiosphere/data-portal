@@ -10,5 +10,5 @@ export const GAAction = {
   CREATE: "Create",
   ENTER_TEXT: "Enter Text",
   LAUNCH: "Launch",
-  VIEW_CATALOG: "View Catalog"
+  VIEW_CATALOG: "View Catalog",
 };

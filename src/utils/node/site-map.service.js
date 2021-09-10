@@ -20,7 +20,7 @@ const buildPostKeysByPath = function buildPostKeysByPath(
 ) {
   /* Build the site-map object. */
   return siteMapYAML.edges
-    .map(n => n.node)
+    .map((n) => n.node)
     .reduce((sectionAcc, section) => {
       const sectionTabs = section.tabs;
 
@@ -36,7 +36,7 @@ const buildPostKeysByPath = function buildPostKeysByPath(
             const secondaryLinks = pLink.secondaryLinks;
 
             if (secondaryLinks) {
-              secondaryLinks.forEach(sLink => {
+              secondaryLinks.forEach((sLink) => {
                 if (!postsByKeyDenyListed.has(sLink.key)) {
                   setPostKeyValuePair(primaryAcc, sLink);
                 }

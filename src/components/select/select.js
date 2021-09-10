@@ -16,7 +16,7 @@ import * as compStyles from "./select.module.css"; // Must include styles here t
 
 const Select = ({ isSearchable, name, onChange, options, value }) => {
   const styles = {
-    control: provided => ({
+    control: (provided) => ({
       ...provided,
       border: "1px solid #cccccc",
       boxShadow: "none",
@@ -24,13 +24,13 @@ const Select = ({ isSearchable, name, onChange, options, value }) => {
       minHeight: "34px",
       ":hover": {
         border: "1px solid #cccccc",
-        boxShadow: "none"
-      }
+        boxShadow: "none",
+      },
     }),
-    indicatorSeparator: provided => ({
+    indicatorSeparator: (provided) => ({
       ...provided,
       marginBottom: "4px",
-      marginTop: "4px"
+      marginTop: "4px",
     }),
     option: (provided, state) => ({
       ...provided,
@@ -39,18 +39,18 @@ const Select = ({ isSearchable, name, onChange, options, value }) => {
         : state.isFocused
         ? "#DAF0F6"
         : "#ffffff",
-      transition: "background-color 500ms cubic-bezier(0.25, 0.8, 0.25, 1);"
+      transition: "background-color 500ms cubic-bezier(0.25, 0.8, 0.25, 1);",
     }),
-    singleValue: provided => ({
+    singleValue: (provided) => ({
       ...provided,
       color: "#000000",
       marginLeft: "0",
-      marginRight: "0"
+      marginRight: "0",
     }),
-    valueContainer: provided => ({
+    valueContainer: (provided) => ({
       ...provided,
-      padding: "0 16px"
-    })
+      padding: "0 16px",
+    }),
   };
 
   return (

@@ -34,7 +34,7 @@ export default function Template({ data, location }) {
 
 // modified to find the page by id which is passed in as context
 export const pageQuery = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     allMetadataEntity(
       filter: {
         categories: {

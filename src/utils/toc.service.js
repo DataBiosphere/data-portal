@@ -46,7 +46,7 @@ function buildTOC(anchor, depth, name, required = true, tocType) {
     depth: depth,
     name: name,
     required: required,
-    type: tocType
+    type: tocType,
   };
 }
 
@@ -59,18 +59,20 @@ function buildTOCsMarkdown(docPath) {
   const tocQuery = TOCPageQuery();
 
   /* Find the TOC query for the specified path. */
-  const tocPage = tocQuery.find(page => page.fields.slug === docPath);
+  const tocPage = tocQuery.find((page) => page.fields.slug === docPath);
 
   /* Filter for <h2> headings. */
   const headings = tocPage.htmlAst.children.filter(
-    child => child.tagName === "h2"
+    (child) => child.tagName === "h2"
   );
 
   /* Return the TOC. */
-  return headings.map(heading => {
+  return headings.map((heading) => {
     const anchor = `${heading.properties.id}`;
     const tocDepth = Number(heading.tagName.charAt(1));
-    const tocName = heading.children.find(child => child.type === "text").value;
+    const tocName = heading.children.find(
+      (child) => child.type === "text"
+    ).value;
     const tocType = "docs";
 
     return buildTOC(anchor, tocDepth, tocName, false, tocType);
@@ -105,7 +107,7 @@ function buildTOCsMetadata(docPath, showAllMetadata) {
  * @returns {*}
  */
 function getMetadataSchema(schemas, docPath) {
-  return schemas.find(schema => schema.fields.slug === docPath);
+  return schemas.find((schema) => schema.fields.slug === docPath);
 }
 
 /**
@@ -114,7 +116,7 @@ function getMetadataSchema(schemas, docPath) {
  * @param tocProperties
  */
 function getMetadataTOC(tocProperties) {
-  return tocProperties.map(property => {
+  return tocProperties.map((property) => {
     const anchor = property.anchor;
     const tocDepth = 2;
     let tocName;
@@ -141,7 +143,7 @@ function getMetadataTOC(tocProperties) {
 function filterMetadataProperties(tocSchema, showAllMetadata) {
   /* Filter to include only the primary properties. */
   /* Filter if the show all metadata toggle is "required" only. */
-  return tocSchema.properties.filter(property => {
+  return tocSchema.properties.filter((property) => {
     const { primary, primaryRequired } = property || {};
 
     if (showAllMetadata) {

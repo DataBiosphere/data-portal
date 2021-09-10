@@ -34,7 +34,7 @@ let organTermList = [
   "pancreas",
   "heart",
   "immune system",
-  "skin of body"
+  "skin of body",
 ];
 
 class ExploreControls extends React.Component {
@@ -86,7 +86,7 @@ class ExploreControls extends React.Component {
     }
   };
 
-  getOrganDisplayLabel = organ => {
+  getOrganDisplayLabel = (organ) => {
     const displayLabel = this.translateOrganNameToDisplayLabel(organ); // Converts any organ to corresponding display label (if specified)
 
     return stringFormatter.convertSentenceCaseToTitleCase(displayLabel);
@@ -96,7 +96,7 @@ class ExploreControls extends React.Component {
     return document.querySelectorAll("[id^=organ]");
   };
 
-  getOrganFilter = organ => {
+  getOrganFilter = (organ) => {
     const { cellCountSummaries } = this.props;
 
     if (!cellCountSummaries || cellCountSummaries.length === 0) {
@@ -104,11 +104,11 @@ class ExploreControls extends React.Component {
     }
 
     return cellCountSummaries.filter(
-      cellCountSummary => cellCountSummary.label === organ
+      (cellCountSummary) => cellCountSummary.label === organ
     );
   };
 
-  getOrganId = organ => {
+  getOrganId = (organ) => {
     const idStem = stringFormatter
       .convertSentenceCaseToTitleCase(organ)
       .replace(/\s/g, "");
@@ -116,11 +116,11 @@ class ExploreControls extends React.Component {
     return `organ${idStem}`;
   };
 
-  getOrganIdStem = organId => {
+  getOrganIdStem = (organId) => {
     return organId.split("organ")[1]; // Reverts organ id to organ id stem
   };
 
-  isOrganSummarized = organ => {
+  isOrganSummarized = (organ) => {
     return this.getOrganFilter(organ).length > 0; // Returns true when the specified organ is listed in the summary
   };
 
@@ -128,13 +128,13 @@ class ExploreControls extends React.Component {
     const organEls = this.getOrganEls();
 
     // Remove event listener for mouse over and mouse out and click event of organ elements
-    organEls.forEach(organEl => {
+    organEls.forEach((organEl) => {
       organEl.removeEventListener("mouseenter", this.setOrganActive(organEl));
       organEl.removeEventListener("mouseleave", this.clearOrganActive());
     });
   };
 
-  setOrganActive = organEl => {
+  setOrganActive = (organEl) => {
     return () => {
       const organId = this.getOrganIdStem(organEl.getAttribute("id"));
       const organLabel = stringFormatter
@@ -151,17 +151,17 @@ class ExploreControls extends React.Component {
     const organEls = this.getOrganEls();
 
     // Add event listener for mouse over and mouse out and click event of organ elements
-    organEls.forEach(organEl => {
+    organEls.forEach((organEl) => {
       organEl.addEventListener("mouseenter", this.setOrganActive(organEl));
       organEl.addEventListener("mouseleave", this.clearOrganActive());
     });
   };
 
-  stringifyOrganFilter = term => {
+  stringifyOrganFilter = (term) => {
     return JSON.stringify([{ facetName: "specimenOrgan", terms: [term] }]);
   };
 
-  translateOrganNameToDisplayLabel = organName => {
+  translateOrganNameToDisplayLabel = (organName) => {
     switch (organName) {
       case "bone tissue":
         return "bone";
@@ -176,7 +176,7 @@ class ExploreControls extends React.Component {
     }
   };
 
-  visitExploreLink = organ => {
+  visitExploreLink = (organ) => {
     if (!this.isOrganSummarized(organ)) {
       return; // Corresponding organ is not summarised by cell count summary
     }
@@ -208,7 +208,7 @@ class ExploreControls extends React.Component {
             ? organTermList.map((organ, i) => (
                 <ClickHandler
                   className={classNames(compStyles.organ, {
-                    [compStyles.unspecified]: !this.isOrganSummarized(organ)
+                    [compStyles.unspecified]: !this.isOrganSummarized(organ),
                   })}
                   clickAction={() => this.visitExploreLink(organ)}
                   id={this.getOrganId(organ)}

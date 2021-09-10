@@ -23,11 +23,11 @@ function MetadataSchemaPropertyPanel(props) {
     identifier,
     onHandleClick,
     secondary,
-    tertiary
+    tertiary,
   } = props;
   const attributes = {
     ...(identifier && { id: identifier }),
-    ...(onHandleClick && { role: "presentation" })
+    ...(onHandleClick && { role: "presentation" }),
   };
   const classNamesPanel = classNames(
     { [compStyles.border]: border },

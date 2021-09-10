@@ -19,14 +19,14 @@ export function addMarks(highlightRef, regex) {
     const contentNodes = highlightRef.current.querySelectorAll("div, p, span");
 
     /* Filter nodes; keep only non-nested tags - where the childNode has no "tagName". */
-    const filteredNodes = [...contentNodes].filter(spanEl => {
+    const filteredNodes = [...contentNodes].filter((spanEl) => {
       const { childNodes } = spanEl;
       return childNodes.length === 1 && !childNodes[0].tagName;
     });
 
     /* Insert the <mark> tag around search terms. */
     if (filteredNodes) {
-      filteredNodes.forEach(node => {
+      filteredNodes.forEach((node) => {
         node.innerHTML = node.innerHTML.replace(regex, `<mark>$1</mark>`);
       });
     }
@@ -48,14 +48,14 @@ export function removeMarks(highlightRef, regex) {
       /* Grab a set of parent elements for all mark nodes. */
       const setOfParentElements = new Set();
 
-      markNodes.forEach(markNode => {
+      markNodes.forEach((markNode) => {
         setOfParentElements.add(markNode.parentElement);
       });
 
       /* For each parent element, replace the inner HTML with text content. */
       /* Removes any <mark> tags from the element, returning it to its original text content. */
       /* e.g. element inner HTML such as "The <mark>typ</mark>e of cell line." returns "The type of cell line.". */
-      [...setOfParentElements].forEach(parentNode => {
+      [...setOfParentElements].forEach((parentNode) => {
         parentNode.innerHTML = parentNode.textContent;
       });
     }

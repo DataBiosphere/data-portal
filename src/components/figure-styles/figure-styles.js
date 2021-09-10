@@ -37,7 +37,7 @@ import React, { useCallback, useEffect, useRef } from "react";
 function FigureStyles(props) {
   const { children, shadowless, width } = props;
   const refFigure = useRef(null);
-  const figureEl = children?.filter(child => child?.type); // Filter for React Elements.
+  const figureEl = children?.filter((child) => child?.type); // Filter for React Elements.
   const figureExists = figureEl && figureEl.length > 0;
 
   const getComponentStyles = useCallback(() => {
@@ -73,7 +73,7 @@ function FigureStyles(props) {
   };
 
   const getGatsbyRespImageWrapperStyles = useCallback(
-    el => {
+    (el) => {
       const wrapperStyles = el.getAttribute("style");
       const componentStyles = getComponentStyles();
 
@@ -99,7 +99,7 @@ function FigureStyles(props) {
   }, [mergeStyles]);
 
   return figureExists ? (
-    React.Children.map(figureEl, figEl =>
+    React.Children.map(figureEl, (figEl) =>
       React.cloneElement(figEl, { ref: refFigure })
     )
   ) : (

@@ -16,8 +16,8 @@
 import React from "react";
 
 // App dependencies
-import {Relationship} from "../../utils/anchor/relationship.model";
-import {Target} from "../../utils/anchor/target.model";
+import { Relationship } from "../../utils/anchor/relationship.model";
+import { Target } from "../../utils/anchor/target.model";
 
 class LinkToBrowser extends React.Component {
   trimRelativeLink = () => {

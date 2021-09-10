@@ -34,5 +34,5 @@ export const MetadataSchemaQuery = () => {
       }
     `
   );
-  return allMetadataSchema.edges.map(n => n.node);
+  return allMetadataSchema.edges.map((n) => n.node);
 };

@@ -19,10 +19,10 @@ const TERM_FACETS_API_URL = process.env.GATSBY_TERM_FACETS_API_URL;
  * Build the set of search terms from the specified set of term facets.
  */
 export function buildSearchTerms(termFacets) {
-  return termFacets.reduce(function(accum, termFacet) {
+  return termFacets.reduce(function (accum, termFacet) {
     accum.push({
       facetName: termFacet.facetName,
-      terms: buildFacetSearchTerms(termFacet.terms)
+      terms: buildFacetSearchTerms(termFacet.terms),
     });
 
     return accum;
@@ -36,7 +36,7 @@ export function fetchFileSummary() {
   const url = buildExploreUrl(FILE_SUMMARY_API_URL);
   return fetch(url)
     .then(HttpService.checkResponseStatus)
-    .then(resp => resp.json())
+    .then((resp) => resp.json())
     .then(bindFileSummaryResponse);
 }
 
@@ -47,7 +47,7 @@ export function fetchTermFacets() {
   const url = buildExploreUrl(TERM_FACETS_API_URL);
   return fetch(url)
     .then(HttpService.checkResponseStatus)
-    .then(resp => resp.json())
+    .then((resp) => resp.json())
     .then(bindTermFacetsResponse);
 }
 
@@ -58,11 +58,11 @@ function bindFileSummaryResponse(fileSummaryResponse) {
   const cellCountSummaries = fileSummaryResponse.cellCountSummaries
     .filter(isValidCellCountSummaries)
     .map(nullCellCountSummaries)
-    .map(summary => {
+    .map((summary) => {
       return {
         label: formatCellCountSummariesOrganTypeForDisplay(summary.organType),
         count: summary.countOfDocsWithOrganType,
-        cellCount: summary.totalCellCountByOrgan
+        cellCount: summary.totalCellCountByOrgan,
       };
     });
 
@@ -72,10 +72,10 @@ function bindFileSummaryResponse(fileSummaryResponse) {
     cellCountSummaries: cellCountSummaries,
     donorCount: fileSummaryResponse.donorCount,
     fileCount: fileSummaryResponse.fileCount,
-    fileFormatSummary: fileSummaryResponse.fileTypeSummaries.map(summary => {
+    fileFormatSummary: fileSummaryResponse.fileTypeSummaries.map((summary) => {
       return {
         label: summary.fileType,
-        count: summary.count
+        count: summary.count,
       };
     }),
     labCount: fileSummaryResponse.labCount,
@@ -83,7 +83,7 @@ function bindFileSummaryResponse(fileSummaryResponse) {
     organCount: fileSummaryResponse.organTypes.length,
     organTypes: fileSummaryResponse.organTypes,
     projectCount: fileSummaryResponse.projectCount,
-    totalCellCount: fileSummaryResponse.totalCellCount
+    totalCellCount: fileSummaryResponse.totalCellCount,
   };
 }
 
@@ -91,14 +91,14 @@ function bindFileSummaryResponse(fileSummaryResponse) {
  * Format term facets into FE-friendly format.
  */
 function bindTermFacetsResponse(termFacetsResponse) {
-  return Object.keys(termFacetsResponse.termFacets).reduce(function(
+  return Object.keys(termFacetsResponse.termFacets).reduce(function (
     accum,
     key
   ) {
     const facet = termFacetsResponse.termFacets[key];
     accum.push({
       facetName: key,
-      terms: facet.terms
+      terms: facet.terms,
     });
 
     return accum;
@@ -110,10 +110,10 @@ function bindTermFacetsResponse(termFacetsResponse) {
  * Build the set of terms for facet.
  */
 function buildFacetSearchTerms(terms) {
-  return terms.map(term => {
+  return terms.map((term) => {
     return {
       term: term.term || "Unspecified",
-      count: term.count
+      count: term.count,
     };
   });
 }

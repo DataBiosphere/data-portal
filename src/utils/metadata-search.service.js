@@ -15,18 +15,18 @@ const AllowListScoreCriteria = [
   "pathSegmentFirst",
   "pathSegmentSecond",
   "path",
-  "friendlyName"
+  "friendlyName",
 ];
 const AllListScoreTypeEarlyBreakers = [
   "pathSegmentSecondFullMatch",
   "pathSegmentSecondSomeMatch",
   "pathSomeMatch",
-  "friendlyNameFullMatch"
+  "friendlyNameFullMatch",
 ];
 const DenyListScoreType = ["searchModel"];
 const DenyListScoreTypeProcesses = [
   "pathSegmentFirstFullMatch",
-  "pathSegmentFirstSomeMatch"
+  "pathSegmentFirstSomeMatch",
 ];
 
 /**
@@ -85,9 +85,8 @@ export function buildResults(
     );
 
     /* Build the set of search models by score type. */
-    const setOfSearchModelsByScoreType = buildSetOfSearchModelsByScoreType(
-      analyzedModels
-    );
+    const setOfSearchModelsByScoreType =
+      buildSetOfSearchModelsByScoreType(analyzedModels);
 
     /* Filter and return search models. */
     return filterSearchModels(
@@ -252,7 +251,7 @@ function buildAnalyzedModel(searchModel, queryStr, queryLength) {
  */
 function buildAnalyzedModels(searchModels, queryStr, queryLength) {
   if (searchModels.length > 0) {
-    return searchModels.map(searchModel => {
+    return searchModels.map((searchModel) => {
       /* Build the analyzed model. */
       const analyzedModel = buildAnalyzedModel(
         searchModel,
@@ -275,7 +274,7 @@ function buildAnalyzedModels(searchModels, queryStr, queryLength) {
  * @param properties
  */
 function buildSearchModels(schemas, properties) {
-  return schemas.concat(properties).map(result => {
+  return schemas.concat(properties).map((result) => {
     const {
         description,
         example,
@@ -284,7 +283,7 @@ function buildSearchModels(schemas, properties) {
         propertyPath,
         propertyPaths,
         schemaName,
-        title
+        title,
       } = result || {},
       { classes, ontologies } = graphRestriction || {};
     const modelDescription = description
@@ -306,7 +305,7 @@ function buildSearchModels(schemas, properties) {
       path: modelPath,
       pathSegmentFirst: pathSegmentFirst,
       pathSegmentSecond: pathSegmentSecond,
-      schema: modelSchema
+      schema: modelSchema,
     };
   });
 }
@@ -331,13 +330,13 @@ function buildSetOfModels(model, setOfModels = new Set()) {
 function buildSetOfScoreTypes(analyzedModels) {
   const setOfScoreTypes = new Set();
 
-  analyzedModels.forEach(analyzedModel => {
+  analyzedModels.forEach((analyzedModel) => {
     /* Grab the model keys. */
     const modelKeys = Object.keys(analyzedModel);
 
     /* For each model key, add to the set. */
     /* Deny list excludes the search model. */
-    modelKeys.forEach(modelKey => {
+    modelKeys.forEach((modelKey) => {
       if (!DenyListScoreType.includes(modelKey)) {
         setOfScoreTypes.add(modelKey);
       }
@@ -359,18 +358,18 @@ function buildSetOfSearchModelsByScoreType(analyzedModels) {
   if (analyzedModels.length > 0) {
     /* Build the complete set of score types and associated map object. */
     const setOfScoreTypes = buildSetOfScoreTypes(analyzedModels);
-    [...setOfScoreTypes].forEach(scoreType =>
+    [...setOfScoreTypes].forEach((scoreType) =>
       setOfModelsByScoreType.set(scoreType, new Set())
     );
 
     /* For each model, add the model and any hits on score types to the map object. */
-    analyzedModels.forEach(analyzedModel => {
+    analyzedModels.forEach((analyzedModel) => {
       const { searchModel } = analyzedModel;
 
       /* Grab the score types. */
       const scoreTypes = [...setOfModelsByScoreType.keys()];
 
-      scoreTypes.forEach(scoreType => {
+      scoreTypes.forEach((scoreType) => {
         if (analyzedModel[scoreType]) {
           const setOfModels = setOfModelsByScoreType.get(scoreType);
           setOfModelsByScoreType.set(
@@ -407,7 +406,7 @@ function filterEntities(entities, setOfResults, resultKey, setOfEntities) {
 
   /* Filter entities - results set activated and returned hits from the search. */
   if (entities) {
-    return entities.filter(entity => setOfResults.has(entity[resultKey]));
+    return entities.filter((entity) => setOfResults.has(entity[resultKey]));
   }
 
   return [];
@@ -459,7 +458,7 @@ function filterSearchModels(
           Object.assign(modelHitClone, {
             showClasses: resultHasClassesHit,
             showExample: resultHasExampleHit,
-            showOntologies: resultHasOntologiesHit
+            showOntologies: resultHasOntologiesHit,
           });
           modelClone.hit = modelHitClone;
 
@@ -520,22 +519,24 @@ function getAnalyzedModelValues(searchModel, modelKey, queryStr, queryLength) {
 
   if (Array.isArray(modelValue)) {
     fullMatchValue = modelValue.some(
-      modelStr => modelStr.toLowerCase() === queryStr
+      (modelStr) => modelStr.toLowerCase() === queryStr
     );
 
     if (!fullMatchValue) {
       /* Look for "starts with" match value, if there is no full match. */
-      someMatchValue = modelValue.some(modelStr =>
+      someMatchValue = modelValue.some((modelStr) =>
         modelStr.toLowerCase().startsWith(queryStr)
       );
 
       if (!someMatchValue && queryLength > 1) {
         /* Only look for partial matches within the value, if there is no full match, or starts with match. */
         /* Bypass if query length is only one character. */
-        someMatchValue = modelValue.some(modelStr => {
+        someMatchValue = modelValue.some((modelStr) => {
           /* Check query string, including query with more than a single word. */
           const queries = queryStr.split(" ");
-          return queries.some(query => modelStr.toLowerCase().includes(query));
+          return queries.some((query) =>
+            modelStr.toLowerCase().includes(query)
+          );
         });
       }
     }
@@ -558,9 +559,9 @@ function getDistinctResults(setOfResultsByScoreType) {
   if (setOfResultsByScoreType.size > 0) {
     const setOfResultsByIdentifier = new Map();
 
-    [...setOfResultsByScoreType.values()].forEach(setOfResults => {
+    [...setOfResultsByScoreType.values()].forEach((setOfResults) => {
       if (setOfResults) {
-        [...setOfResults].forEach(result => {
+        [...setOfResults].forEach((result) => {
           const { hit, path, schema } = result || {};
           const resultIdentifier = schema || path;
           const resultExists = setOfResultsByIdentifier.has(resultIdentifier);
@@ -674,7 +675,7 @@ function isResultInScoreType(model, setOfModels, scoreType) {
     /* If the model type is a property, check the property is not already in the set. */
     /* Schema models will not be duplicated; lunr indexing on schema is for description only. */
     if (propertyExists) {
-      return [...setOfModels].some(model => model.path === path);
+      return [...setOfModels].some((model) => model.path === path);
     }
   }
 

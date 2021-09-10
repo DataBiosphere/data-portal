@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import React from "react";
 
 // Class name helper

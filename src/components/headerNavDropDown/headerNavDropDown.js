@@ -30,7 +30,7 @@ class HeaderNavDropDown extends React.Component {
     window.removeEventListener("mousedown", this.handleClick, false);
   }
 
-  addDropDownClass = child => {
+  addDropDownClass = (child) => {
     const { stack } = this.props,
       { openDropDown } = this.state;
 
@@ -44,7 +44,7 @@ class HeaderNavDropDown extends React.Component {
     return React.cloneElement(child, props);
   };
 
-  handleClick = e => {
+  handleClick = (e) => {
     if (this.dropDown.current && !this.dropDown.current.contains(e.target)) {
       this.setState({ openDropDown: false });
     }

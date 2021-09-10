@@ -39,5 +39,5 @@ export const MetadataSchemaPropertiesQuery = () => {
       }
     `
   );
-  return allMetadataSchemaProperty.edges.map(n => n.node);
+  return allMetadataSchemaProperty.edges.map((n) => n.node);
 };

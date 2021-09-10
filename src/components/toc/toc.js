@@ -44,7 +44,7 @@ class TOC extends React.Component {
   }
 }
 
-export default props => {
+export default (props) => {
   const { docPath } = props;
   const { showAllMetadata } = useContext(ContextMetadataDisplaying);
   const tocs = TOCService.getTOCs(docPath, showAllMetadata);

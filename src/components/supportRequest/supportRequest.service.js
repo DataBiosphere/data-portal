@@ -21,7 +21,7 @@ export async function createSupportRequest({
   name,
   requestedFromUrl,
   subject,
-  type
+  type,
 }) {
   return await fetchWithErrorRejection(
     `${ZENDESK_DOMAIN}/${ZENDESK_API_REQUESTS}`,
@@ -30,24 +30,24 @@ export async function createSupportRequest({
         request: {
           comment: {
             body: `${description}\n\n------------------\nSubmitted from: ${requestedFromUrl}`,
-            uploads: [attachmentToken]
+            uploads: [attachmentToken],
           },
           custom_fields: [
             { id: 360012782111, value: email },
             { id: 360007369412, value: description },
             { id: 360007369392, value: subject },
-            { id: 360012744452, value: type }
+            { id: 360012744452, value: type },
           ],
           requester: {
             email,
-            name
+            name,
           },
           subject,
-          ticket_form_id: 360000932232
-        }
+          ticket_form_id: 360000932232,
+        },
       }),
       headers: { "Content-Type": "application/json" },
-      method: "POST"
+      method: "POST",
     }
   );
 }
@@ -61,9 +61,9 @@ export async function uploadAttachment(file) {
     {
       body: file,
       headers: {
-        "Content-Type": "application/binary"
+        "Content-Type": "application/binary",
       },
-      method: "POST"
+      method: "POST",
     }
   );
 

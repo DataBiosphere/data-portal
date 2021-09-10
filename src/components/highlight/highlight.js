@@ -28,7 +28,7 @@ function Highlight(props) {
       const regex = MetadataSearchService.onHandleSpecialChars(term)
         .trim()
         .split(/[.|_\s]/g)
-        .filter(term => !!term)
+        .filter((term) => !!term)
         .join("|");
 
       setTermRegex(new RegExp(`(${regex})`, "gi"));

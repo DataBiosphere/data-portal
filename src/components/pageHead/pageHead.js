@@ -15,7 +15,9 @@ import * as EnvironmentService from "../../utils/environment/environment.service
 class PageHead extends React.Component {
   render() {
     const { pageTitle } = this.props,
-      defaultTitle = EnvironmentService.isLungMAP() ? "LungMAP Data Browser" : "HCA Data Portal",
+      defaultTitle = EnvironmentService.isLungMAP()
+        ? "LungMAP Data Browser"
+        : "HCA Data Portal",
       title = pageTitle ? pageTitle : defaultTitle;
 
     return (

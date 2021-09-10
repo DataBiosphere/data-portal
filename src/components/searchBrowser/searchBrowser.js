@@ -50,7 +50,7 @@ const ACCEPT_SEARCH_FACETS = [
   "specimenDisease",
   "specimenOrgan",
   "specimenOrganPart",
-  "workflow"
+  "workflow",
 ];
 
 // Facet display names
@@ -59,7 +59,7 @@ const FACET_DISPLAY_NAMES = {
   sampleEntityType: "sampleType",
   specimenOrgan: "organ",
   specimenOrganPart: "organPart",
-  workflow: "analysisProtocol"
+  workflow: "analysisProtocol",
 };
 
 class SearchBrowser extends React.Component {
@@ -68,7 +68,7 @@ class SearchBrowser extends React.Component {
     this.state = {
       disabled: false, // True if user has entered suggestion text that results in no hits
       selectedFacet: "",
-      selectedTerm: ""
+      selectedTerm: "",
     };
     this.onSelected = this.onSelected.bind(this);
   }
@@ -84,12 +84,12 @@ class SearchBrowser extends React.Component {
   buildExploreDataCategory = (facetName, facetDisplayName, terms) => {
     // Map terms
     const selectableTerms = terms
-      .filter(term => !!term.term)
-      .map(term => {
+      .filter((term) => !!term.term)
+      .map((term) => {
         return {
           termName: term.term,
           termDisplayName: term.term,
-          termCount: numberFormatter.format(term.count, 1)
+          termCount: numberFormatter.format(term.count, 1),
         };
       });
 
@@ -109,17 +109,16 @@ class SearchBrowser extends React.Component {
     // Return model for backing autosuggest
     return {
       facetName: facetName,
-      facetDisplayName: stringFormatter.convertCamelCasetoTitleCase(
-        facetDisplayName
-      ),
-      terms: selectableTerms
+      facetDisplayName:
+        stringFormatter.convertCamelCasetoTitleCase(facetDisplayName),
+      terms: selectableTerms,
     };
   };
 
   clearSelectedFacet = () => {
     this.setState({
       selectedFacet: "",
-      selectedTerm: ""
+      selectedTerm: "",
     });
   };
 
@@ -130,16 +129,16 @@ class SearchBrowser extends React.Component {
         facetName: "error",
         facetDisplayName:
           "Oops! We don’t have an exact match, it may be called by a different name. Scroll through the list to see what data we currently have available.",
-        terms: []
+        terms: [],
       });
 
       // Filter facets to allow list, map facet display name if necessary.
       const termFacets = this.listSelectableTermFacets(
         this.props.termFacets
-      ).map(facet => {
+      ).map((facet) => {
         return Object.assign({}, facet, {
           facetDisplayName:
-            FACET_DISPLAY_NAMES[facet.facetName] || facet.facetName
+            FACET_DISPLAY_NAMES[facet.facetName] || facet.facetName,
         });
       });
 
@@ -149,7 +148,7 @@ class SearchBrowser extends React.Component {
       });
 
       // Create category/option model for backing autosuggest
-      termFacets.forEach(termFacet => {
+      termFacets.forEach((termFacet) => {
         data.push(
           this.buildExploreDataCategory(
             termFacet.facetName,
@@ -182,7 +181,7 @@ class SearchBrowser extends React.Component {
       return classNames({
         [globalStyles.button]: true,
         [globalStyles.blue]: true,
-        [globalStyles.light]: true
+        [globalStyles.light]: true,
       });
     }
 
@@ -190,7 +189,7 @@ class SearchBrowser extends React.Component {
       [globalStyles.button]: true,
       [globalStyles.blue]: true,
       [globalStyles.light]: true,
-      [globalStyles.disabled]: true
+      [globalStyles.disabled]: true,
     });
   };
 
@@ -198,9 +197,9 @@ class SearchBrowser extends React.Component {
     return this.props.termFacets;
   };
 
-  listSelectableTermFacets = termFacets => {
+  listSelectableTermFacets = (termFacets) => {
     return termFacets.filter(
-      termFacet => ACCEPT_SEARCH_FACETS.indexOf(termFacet.facetName) >= 0
+      (termFacet) => ACCEPT_SEARCH_FACETS.indexOf(termFacet.facetName) >= 0
     );
   };
 
@@ -212,21 +211,21 @@ class SearchBrowser extends React.Component {
     this.visitExploreLink();
   };
 
-  onSelected = term => {
+  onSelected = (term) => {
     if (term) {
-      let facetName = this.getExploreData().filter(t =>
-        t.terms.find(f => f.termName === term)
+      let facetName = this.getExploreData().filter((t) =>
+        t.terms.find((f) => f.termName === term)
       );
       this.setState({
         selectedFacet: facetName[0].facetName,
-        selectedTerm: term
+        selectedTerm: term,
       });
     } else {
       this.clearSelectedFacet();
     }
   };
 
-  onSuggestionsFound = suggestionsFound => {
+  onSuggestionsFound = (suggestionsFound) => {
     this.setState({ disabled: !suggestionsFound });
   };
 
@@ -235,8 +234,8 @@ class SearchBrowser extends React.Component {
       const facetFilter = JSON.stringify([
         {
           facetName: this.state.selectedFacet,
-          terms: [this.state.selectedTerm]
-        }
+          terms: [this.state.selectedTerm],
+        },
       ]);
       const params = new URLSearchParams();
       params.set("filter", facetFilter);

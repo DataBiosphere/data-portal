@@ -15,7 +15,7 @@ function MetadataSchemaPropertyPanelBundle(props) {
   const attributes = { ...(mouseEvents && { role: "presentation" }) };
   const events = {
     ...(onHandleMouseEnter && { onMouseEnter: onHandleMouseEnter }),
-    ...(onHandleMouseLeave && { onMouseLeave: onHandleMouseLeave })
+    ...(onHandleMouseLeave && { onMouseLeave: onHandleMouseLeave }),
   };
 
   return (

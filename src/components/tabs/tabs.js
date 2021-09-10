@@ -22,7 +22,7 @@ class TabNav extends React.Component {
   render() {
     const { homeTab, secondary, tabs } = this.props;
     const classNamesTabs = classNames(compStyles.hcaTabs, {
-      [compStyles.secondary]: secondary
+      [compStyles.secondary]: secondary,
     });
     const classNamesWrappers = classNames(
       globalStyles.wrapper,

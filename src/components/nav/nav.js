@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import React from "react";
 
 // App dependencies
@@ -37,16 +37,16 @@ class Nav extends React.Component {
     this.getTab();
   }
 
-  getNavClassName = nav => {
+  getNavClassName = (nav) => {
     active = nav.active;
     expanded =
       nav.sLinks && nav.sLinks.length > 0
-        ? nav.active || nav.sLinks.some(sLink => sLink.active)
+        ? nav.active || nav.sLinks.some((sLink) => sLink.active)
         : false;
 
     return classNames({
       [compStyles.expanded]: expanded,
-      [compStyles.selected]: active
+      [compStyles.selected]: active,
     });
   };
 

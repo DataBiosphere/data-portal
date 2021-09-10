@@ -22,5 +22,5 @@ export const FooterQuery = () => {
       }
     `
   );
-  return allSiteMapYaml.edges.map(e => e.node);
+  return allSiteMapYaml.edges.map((e) => e.node);
 };

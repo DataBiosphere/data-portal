@@ -28,7 +28,7 @@ function HCAMain(props) {
       metadataContent,
       nav,
       onHandleSiteScroll,
-      sectionTitle
+      sectionTitle,
     } = props,
     { label, links, secondaryTabs, section, tabKey, tabs } = nav || {};
   const showMetadataSearch = docPath ? docPath.startsWith("/metadata") : false;

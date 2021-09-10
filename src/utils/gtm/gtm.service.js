@@ -26,7 +26,7 @@ export function trackEvent(category, action, label, dimensions) {
     {
       event: category,
       eventAction: action,
-      eventLabel: label
+      eventLabel: label,
     },
     dimensions
   );

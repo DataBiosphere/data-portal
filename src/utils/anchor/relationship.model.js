@@ -6,5 +6,5 @@
  */
 
 export const Relationship = {
-  NOOPENER: "noopener"
+  NOOPENER: "noopener",
 };

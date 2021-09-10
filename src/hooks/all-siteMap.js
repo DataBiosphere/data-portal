@@ -30,5 +30,5 @@ export const AllSiteMap = () => {
       }
     `
   );
-  return allSiteMapYaml.edges.map(e => e.node);
+  return allSiteMapYaml.edges.map((e) => e.node);
 };

@@ -9,7 +9,7 @@
 const path = require("path");
 const templatePath = {
   CONTENT: "src/templates/contentTemplate.js",
-  METADATA: "src/templates/metadataTemplate.js"
+  METADATA: "src/templates/metadataTemplate.js",
 };
 
 /**
@@ -51,7 +51,7 @@ const getPostTemplate = function getPostTemplate(templateName) {
  */
 const setOfPostsDenyListed = function setOfPostsDenyListed(markdownRemark) {
   return markdownRemark.edges
-    .map(e => e.node)
+    .map((e) => e.node)
     .reduce((acc, node) => {
       const { fields } = node,
         { enabled, slug } = fields;

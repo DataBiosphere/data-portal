@@ -24,7 +24,7 @@ function ProviderMetadataSearching(props) {
     schemas,
     setOfProperties,
     setOfSearchGroups,
-    onHandleSiteScroll
+    onHandleSiteScroll,
   } = props;
   const setOfResultsBySearchGroupsRef = useRef(new Map());
   const [metadataIndex, setMetadataIndex] = useState([]);
@@ -35,7 +35,7 @@ function ProviderMetadataSearching(props) {
     inputValue: "",
     lastSearchHit: "",
     query: "",
-    searchValue: ""
+    searchValue: "",
   });
   const [showResultsPanel, setShowResultsPanel] = useState(false);
   const { inputActive, inputValue, lastSearchHit, searchValue } = queries;
@@ -46,7 +46,7 @@ function ProviderMetadataSearching(props) {
       if (searchValue.includes(" ")) {
         const values = searchValue.split(" ");
 
-        return values.map(value => `+${value}*`).join(" ");
+        return values.map((value) => `+${value}*`).join(" ");
       }
 
       /* Singular search value. */
@@ -56,7 +56,7 @@ function ProviderMetadataSearching(props) {
     return "";
   }, [searchValue]);
 
-  const buildQuery = inputStr => {
+  const buildQuery = (inputStr) => {
     const selectedFacetTermsByFacet = new Map();
 
     if (inputStr) {
@@ -69,51 +69,57 @@ function ProviderMetadataSearching(props) {
 
   const fetchMetadataIndex = useCallback(() => {
     fetch(metadataIndexFileName)
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         const index = lunr.Index.load(res);
 
         setMetadataIndex(index);
         setMetadataIndexMounted(true);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err, "Error loading index");
       });
   }, [metadataIndexFileName]);
 
-  const findIntersectionSetOfResults = useCallback(soResultsBySearchGroups => {
-    const sortSetsOfResults = () => {
-      return [...soResultsBySearchGroups.values()].sort(function(set0, set1) {
-        if (set0.size > set1.size) {
-          return 1;
-        } else {
-          return -1;
-        }
-      });
-    };
+  const findIntersectionSetOfResults = useCallback(
+    (soResultsBySearchGroups) => {
+      const sortSetsOfResults = () => {
+        return [...soResultsBySearchGroups.values()].sort(function (
+          set0,
+          set1
+        ) {
+          if (set0.size > set1.size) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+      };
 
-    /* Sort the set of results by set size. */
-    const sortedSetsOfResults = sortSetsOfResults();
-    const firstSetOfResults = sortedSetsOfResults.shift();
+      /* Sort the set of results by set size. */
+      const sortedSetsOfResults = sortSetsOfResults();
+      const firstSetOfResults = sortedSetsOfResults.shift();
 
-    /* Find any intersecting sets of results. i.e. searching will be "AND" between input and other specified search groups. */
-    /* Create a new set of intersection results. */
-    /* i.e. filter through the smallest set to confirm results exist in all other search group sets. */
-    if (firstSetOfResults) {
-      return new Set(
-        [...firstSetOfResults].filter(result => {
-          return sortedSetsOfResults.every(sortedSetOfResults =>
-            sortedSetOfResults.has(result)
-          );
-        })
-      );
-    }
+      /* Find any intersecting sets of results. i.e. searching will be "AND" between input and other specified search groups. */
+      /* Create a new set of intersection results. */
+      /* i.e. filter through the smallest set to confirm results exist in all other search group sets. */
+      if (firstSetOfResults) {
+        return new Set(
+          [...firstSetOfResults].filter((result) => {
+            return sortedSetsOfResults.every((sortedSetOfResults) =>
+              sortedSetOfResults.has(result)
+            );
+          })
+        );
+      }
 
-    return new Set();
-  }, []);
+      return new Set();
+    },
+    []
+  );
 
   const getResults = useCallback(
-    soResults => {
+    (soResults) => {
       return MetadataSearchService.buildResults(
         schemas,
         properties,
@@ -127,11 +133,11 @@ function ProviderMetadataSearching(props) {
   );
 
   const getResultsByQuery = useCallback(
-    inputStr => {
+    (inputStr) => {
       const queryString = `${inputStr}`;
       const indexResults = metadataIndex.search(queryString);
 
-      return new Set(indexResults.map(result => result.ref));
+      return new Set(indexResults.map((result) => result.ref));
     },
     [metadataIndex]
   );
@@ -140,9 +146,8 @@ function ProviderMetadataSearching(props) {
     /* Continue with query if search value is valid. */
     if (searchValue) {
       /* Grab current set of results for the input. */
-      const setOfResultsBySearchGroup = setOfResultsBySearchGroupsRef.current.get(
-        "input"
-      );
+      const setOfResultsBySearchGroup =
+        setOfResultsBySearchGroupsRef.current.get("input");
 
       /* Continue with query if most recent "hit" was on the input. */
       if (lastSearchHit === "input" || !setOfResultsBySearchGroup) {
@@ -163,18 +168,18 @@ function ProviderMetadataSearching(props) {
     getResultsByQuery,
     lastSearchHit,
     searchValue,
-    setOfProperties
+    setOfProperties,
   ]);
 
   const getSetOfResults = useCallback(
-    soResultsBySearchGroups => {
+    (soResultsBySearchGroups) => {
       return findIntersectionSetOfResults(soResultsBySearchGroups);
     },
     [findIntersectionSetOfResults]
   );
 
   const getSetOfResultsBySearchGroup = useCallback(
-    searchGroup => {
+    (searchGroup) => {
       /* Return a set of results for the search group "input". */
       if (searchGroup === "input") {
         return getSetOfInputResults();
@@ -204,7 +209,7 @@ function ProviderMetadataSearching(props) {
     [inputActive, inputValue, setOfProperties]
   );
 
-  const onHandleSearch = inputStr => {
+  const onHandleSearch = (inputStr) => {
     /* Handles input value with other special characters - prevents lunr search error. */
     /* Includes handling of ":" for ontologies. */
     const searchStr = MetadataSearchService.onHandleParseInputString(inputStr);
@@ -215,12 +220,12 @@ function ProviderMetadataSearching(props) {
       const currentQuery = buildQuery(inputStr);
 
       /* Update inputValue, lastSearchHit, query and searchValue. */
-      setQueries(queries => ({
+      setQueries((queries) => ({
         ...queries,
         inputValue: inputStr,
         lastSearchHit: "input",
         query: currentQuery,
-        searchValue: searchStr
+        searchValue: searchStr,
       }));
 
       DPGTMService.trackMetadataSearchInput(inputStr, GAEntityType.METADATA);
@@ -232,13 +237,13 @@ function ProviderMetadataSearching(props) {
     onHandleSiteScroll(true);
 
     /* Clear queries and set inputActive to false. */
-    setQueries(queries => ({
+    setQueries((queries) => ({
       ...queries,
       inputActive: false,
       inputValue: "",
       lastSearchHit: "",
       query: "",
-      searchValue: ""
+      searchValue: "",
     }));
   };
 
@@ -247,7 +252,7 @@ function ProviderMetadataSearching(props) {
     onHandleSiteScroll(false);
 
     /* Set inputActive to true. */
-    setQueries(queries => ({ ...queries, inputActive: true }));
+    setQueries((queries) => ({ ...queries, inputActive: true }));
   };
 
   const generateResults = useCallback(() => {
@@ -271,7 +276,7 @@ function ProviderMetadataSearching(props) {
     getResults,
     getSetOfResults,
     getSetOfResultsBySearchGroups,
-    getShowResultsPanel
+    getShowResultsPanel,
   ]);
 
   /* useEffect - componentDidMount/componentWillUnmount. */
@@ -285,11 +290,8 @@ function ProviderMetadataSearching(props) {
   useEffect(() => {
     if (metadataIndexMounted) {
       /* Generate results. */
-      const [
-        _results,
-        _setOfResultsBySearchGroups,
-        _showResultsPanel
-      ] = generateResults();
+      const [_results, _setOfResultsBySearchGroups, _showResultsPanel] =
+        generateResults();
 
       /* Update state. */
       setOfResultsBySearchGroupsRef.current = _setOfResultsBySearchGroups;
@@ -307,7 +309,7 @@ function ProviderMetadataSearching(props) {
         showResultsPanel,
         onHandleSearch,
         onHandleSearchClose,
-        onHandleSearchOpen
+        onHandleSearchOpen,
       }}
     >
       {children}

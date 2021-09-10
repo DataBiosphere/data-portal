@@ -12,7 +12,7 @@ import React from "react";
 
 const ContextMetadataToggleRequiredFields = React.createContext({
   showAllMetadata: true,
-  onHandleToggleRequiredFields: () => {}
+  onHandleToggleRequiredFields: () => {},
 });
 
 export default ContextMetadataToggleRequiredFields;

@@ -27,7 +27,7 @@ function MetadataSearchResult(props) {
       result,
       setActiveCounter,
       setActiveResult,
-      setActiveResultEl
+      setActiveResultEl,
     } = props,
     { type } = result || {};
   const { onHandleNavigationSearchHit } = useContext(ContextMetadataDisplaying);

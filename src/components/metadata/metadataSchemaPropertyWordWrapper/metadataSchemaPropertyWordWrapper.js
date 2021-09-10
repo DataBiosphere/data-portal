@@ -27,7 +27,7 @@ class MetadataSchemaPropertyWordWrapper extends React.Component {
       { [compStyles.wrap]: wrap }
     );
 
-    const StackWord = props => {
+    const StackWord = (props) => {
       const { children, counter, word, wordDepth } = props;
       const firstStack = counter === 0;
       const lastStack = counter === wordDepth;
@@ -42,7 +42,7 @@ class MetadataSchemaPropertyWordWrapper extends React.Component {
       );
     };
 
-    const WrapWord = props => {
+    const WrapWord = (props) => {
       const { counter, firstStack, word } = props;
       const showDot = counter === 0 && !firstStack;
       const showSeparator = counter !== 0;

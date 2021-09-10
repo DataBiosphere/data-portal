@@ -78,10 +78,10 @@ function MetadataSearchResultsPanelKeyDownSpy(props) {
     inputValue,
     keyDownCode,
     resultsDepth,
-    onHandleNavigationSearchHit
+    onHandleNavigationSearchHit,
   ]);
 
-  const onHandleKeyDown = keyEvent => {
+  const onHandleKeyDown = (keyEvent) => {
     setKeyDownCode(keyEvent.code);
   };
 
@@ -92,7 +92,7 @@ function MetadataSearchResultsPanelKeyDownSpy(props) {
           active: c === activeCounter,
           setActiveCounter: setActiveCounter,
           setActiveResult: setActiveResult,
-          setActiveResultEl: setActiveResultEl
+          setActiveResultEl: setActiveResultEl,
         })
       )}
     </MetadataSearchResultsPanelScrollSpy>
