@@ -21,7 +21,9 @@ class SEO extends React.Component {
       title = pageTitle ? pageTitle : defaultTitle,
       siteURL = EnvironmentService.getCurrentEnvironmentURL(),
       atlas = EnvironmentService.getAtlas(),
-      twitterImgUrl = `${siteURL}images/${atlas}-twitter.jpg`;
+      twitterImgUrl = EnvironmentService.isLungMAP()
+        ? `${siteURL}images/${atlas}-twitter.jpg`
+        : "";
     return (
       <Helmet>
         <meta property="og:title" content={title} />
@@ -44,11 +46,13 @@ class SEO extends React.Component {
                 content={description}
                 key="og:description"
               />,
-              <meta
-                name="twitter:image"
-                content={twitterImgUrl}
-                key="twitter:image"
-              />,
+              twitterImgUrl ? (
+                <meta
+                  name="twitter:image"
+                  content={twitterImgUrl}
+                  key="twitter:image"
+                />
+              ) : null,
             ]
           : null}
         <meta name="twitter:card" content="summary" />
