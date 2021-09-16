@@ -33,9 +33,9 @@ test_trufflehog:
   before_script:
     - pip install trufflehog
   script:
-    - trufflehog --regex --rules trufflehog-rules.json --branch staging --entropy=False --max_depth 30 https://github.com/HumanCellAtlas/data-portal.git
+    - trufflehog --regex --rules trufflehog-rules.json --branch main --entropy=False --max_depth 30 https://github.com/HumanCellAtlas/data-portal.git
   except:
-    - master
+    - prod
 
 # Develop Build
 build_cgl-dev:
@@ -57,7 +57,7 @@ build_cgl-dev:
     - export GATSBY_ATLAS=hca
     - gatsby build
   only:
-    - staging
+    - main
 
 ########################################
 # Deploy Jobs
@@ -81,4 +81,4 @@ deploy_cgl-dev:
     - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id E3562WJBOLN8W8 --paths "/*"
   only:
-    - staging
+    - main

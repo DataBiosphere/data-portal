@@ -33,12 +33,12 @@ test_trufflehog:
   before_script:
     - pip install trufflehog
   script:
-    - trufflehog --regex --rules trufflehog-rules.json --branch master --entropy=False --max_depth 30 https://github.com/HumanCellAtlas/data-portal.git
+    - trufflehog --regex --rules trufflehog-rules.json --branch prod --entropy=False --max_depth 30 https://github.com/HumanCellAtlas/data-portal.git
   only:
-    - master
+    - prod
 
-# Develop Build
-build_master:
+# Prod Build
+build_prod:
   <<: *build_template
   environment:
     name: prod
@@ -56,7 +56,7 @@ build_master:
     - export GATSBY_ATLAS=hca
     - gatsby build
   only:
-    - master
+    - prod
 
 ########################################
 # Deploy Jobs
@@ -70,7 +70,7 @@ build_master:
     - pip install awscli
 
 # Prod Deploy
-deploy_master:
+deploy_prod:
   <<: *deploy_template
   environment:
     name: prod
@@ -80,4 +80,4 @@ deploy_master:
     - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id E1LYQC3LZXO7M3 --paths "/*"
   only:
-    - master
+    - prod

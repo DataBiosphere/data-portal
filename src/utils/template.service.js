@@ -35,7 +35,7 @@ export function getPageTitle(htmlAst) {
  * @returns {string}
  */
 export function getPageEditUrl(slug) {
-  return `https://github.com/HumanCellAtlas/data-portal/tree/staging/content${slug}.md`;
+  return `https://github.com/HumanCellAtlas/data-portal/tree/main/content${slug}.md`;
 }
 
 /**
