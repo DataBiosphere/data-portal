@@ -6,6 +6,37 @@ description: "Latest updates for the HCA Data Coordination Platform (DCP)."
 
 # DCP Platform Updates
 
+
+#### September 17, 2021:
+
+### New Raw Data
+
+The DCP has added raw data for the following 14 new projects:
+
+1. [A molecular single-cell lung atlas of lethal COVID-19](https://data.humancellatlas.org/explore/projects/d7845650-f6b1-4b1c-b2fe-c0795416ba7b)
+1. [Capturing human trophoblast development with naive pluripotent stem cells in vitro](https://data.humancellatlas.org/explore/projects/da2747fa-2921-42e0-afd4-39ef57b2b88b)
+1. [Comprehensive single-cell transcriptome analysis reveals heterogeneity in endometrioid adenocarcinoma tissues](https://data.humancellatlas.org/explore/projects/79b13a2a-9ca1-42a4-97bd-70208a11bea6)
+1. [Fate-mapping within human iPSC-derived kidney organoids reveals conserved mammalian nephron progenitor lineage relationships.](https://data.humancellatlas.org/explore/projects/b7259878-436c-4274-bfff-ca76f4cb7892)
+1. [Female human primordial germ cells display X-chromosome dosage compensation despite the absence of X-inactivation [Female]](https://data.humancellatlas.org/explore/projects/56e73ccb-7ae9-4fae-a738-acfb69936d7a)
+1. [Female human primordial germ cells display X-chromosome dosage compensation despite the absence of X-inactivation [Male]](https://data.humancellatlas.org/explore/projects/8dacb243-e918-4bd2-bb9a-aac6dc424161)
+1. [Plasticity of distal nephron epithelia from human kidney organoids enables the induction of ureteric tip and stalk.](https://data.humancellatlas.org/explore/projects/e57dc176-ab98-446b-90c2-89e0842152fd)
+1. [Resolving cellular and molecular diversity along the hippocampal anterior-to-posterior axis in humans](https://data.humancellatlas.org/explore/projects/34cba5e9-ecb1-4d81-bf08-48987cd63073)
+1. [Single Cell RNA Sequencing of Human Milk-Derived Cells Reveals Sub-Populations of Mammary Epithelial Cells with Molecular Signatures of Progenitor and Mature States: a Novel, Non-invasive Framework for Investigating Human Lactation Physiology](https://data.humancellatlas.org/explore/projects/8999b456-6fa6-438b-ab17-b62b1d8ec0c3)
+1. [Single Cell RNA-Seq profiling of human embryonic kidney outer and inner cortical cells and kidney organoid cells](https://data.humancellatlas.org/explore/projects/dd7f2436-0c56-4709-bd17-e526bba4cc15)
+1. [Single-Cell Map of Diverse Immune Phenotypes in the Breast Tumor Microenvironment.](https://data.humancellatlas.org/explore/projects/7c75f07c-608d-4c4a-a1b7-b13d11c0ad31)
+1. [Single-Cell RNA-Seq Analysis of cells from human urine](https://data.humancellatlas.org/explore/projects/4af795f7-3e1d-4341-b867-4ac0982b9efd)
+1. [Single-cell Transcriptome Analysis Reveals an Anomalous Epithelial Variation and Ectopic Inflammatory Response in Chronic Obstructive Pulmonary Disease](https://data.humancellatlas.org/explore/projects/ad04c8e7-9b7d-4cce-b8e9-01e31da10b94)
+1. [The effect of Mtb aggregation on monocyte-derived macrophage transcription profiles](https://data.humancellatlas.org/explore/projects/b9484e4e-dc40-4e38-9b85-4cecf5b8c068)
+
+### Updated Data
+
+The following projects have updated files:
+
+1. [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d) | Added files: 16 bam, 18 loom
+1. [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635) | Added files: 7 bam, 9 loom
+1. [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory.](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a) | Added files: 3 loom, 2 bam
+
+
 ## DCP now contains data for 14 million estimated cells
 
 #### August 25, 2021
