@@ -13,7 +13,7 @@
     "gatsby-plugin-react-helmet": "^4.13.0",
     "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sharp": "^3.13.0",
-    "gatsby-plugin-sitemap": "^4.9.0",
+    "gatsby-plugin-sitemap": "^4.10.0",
     "gatsby-plugin-typography": "^3.13.0",
     "gatsby-remark-component": "^1.1.3",
     "gatsby-remark-component-parent2div": "^1.2.3",
