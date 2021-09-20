@@ -24,7 +24,7 @@
     "gatsby-remark-images-medium-zoom": "^1.7.0",
     "gatsby-remark-katex": "^5.10.0",
     "gatsby-remark-prismjs": "^5.10.0",
-    "gatsby-remark-responsive-iframe": "^4.10.0",
+    "gatsby-remark-responsive-iframe": "^4.11.0",
     "gatsby-source-filesystem": "^3.13.0",
     "gatsby-transformer-json": "^3.13.0",
     "gatsby-transformer-remark": "^4.10.0",
