@@ -32,9 +32,9 @@ The DCP has added raw data for the following 14 new projects:
 
 The following 3 projects have updated files:
 
-1. [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d) | Added files: 16 BAMs, 18 Looms
-1. [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635) | Added files: 7 BAMs, 9 looms
-1. [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory.](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a) | Added files: 3 Looms, 2 BAMs
+1. [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d) 
+1. [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635) 
+1. [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory.](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a)
 
 
 
