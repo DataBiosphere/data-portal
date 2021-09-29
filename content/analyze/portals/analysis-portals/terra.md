@@ -1,12 +1,12 @@
 ---
-path: "/analyze/portals/analysis-portals/terra"
-date: "2021-09-01"
-title: "Terra"
-author: " Broad Institute, Microsoft, and Verily"
-description: "Terra is a secure, scalable, open-source platform for biomedical researchers to access data, run analysis tools and collaborate."
 appUrl: "https://app.terra.bio/"
-githubUrl: ""
+author: " Broad Institute, Microsoft, and Verily"
 componentName: "analysisDetail"
+date: "2021-09-01"
+description: "Terra is a secure, scalable, open-source platform for biomedical researchers to access data, run analysis tools and collaborate."
+githubUrl: ""
+path: "/analyze/portals/analysis-portals/terra"
+title: "Terra"
 ---
 
 [Terra](https://app.terra.bio/) is a scalable, open-source platform for biomedical researchers to access data, run analysis tools, and collaborate securely in the cloud. It powers important scientific projects including NHGRI’s AnVIL, NHLBI’s BioData Catalyst, the Human Cell Atlas Data Coordination Platform, the BRAIN Initiative Cell Census Network, and many others.
@@ -26,4 +26,5 @@ To learn more about Terra, visit [terra.bio](https://terra.bio/).
 ![Terra](../../_images/portals/terra.png)
 
 ## Contact
+
 Terra team (<mailto:support@terra.bio>)

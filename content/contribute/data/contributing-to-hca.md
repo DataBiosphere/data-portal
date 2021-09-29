@@ -1,8 +1,8 @@
 ---
-path: "/contribute/data/contributing-to-hca"
 date: "2018-05-03"
-title: "Overview"
 description: "Contribute to the HCA DCP - the Human Cell Atlas is built with the help of and for the benefit of the scientific community."
+path: "/contribute/data/contributing-to-hca"
+title: "Overview"
 ---
 
 # Help build the Human Cell Atlas - submit data
@@ -58,7 +58,7 @@ Learn more about what results will be available for different data types [here](
 
 ## Wrangler Office Hours
 
-If you have questions about data contribution, join the DCP Wranlger office hours on Zoom.
+If you have questions about data contribution, join the DCP Wrangler office hours on Zoom.
 
 ### Date / Time
 
@@ -88,6 +88,3 @@ Meeting ID: 842 9628 1382
 Passcode: 4015409680
 
 Find your local number: https://broadinstitute.zoom.us/u/kd1itjb9pv
-
-
-

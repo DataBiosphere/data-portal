@@ -1,7 +1,7 @@
 ---
 date: "2020-12-07"
-title: "What is the DCP 2.0 Data?"
 description: "The DCP 2.0 is a new data view enabling you to explore and access the new and reprocessed DCP data as soon as they become available."
+title: "What is the DCP 2.0 Data?"
 ---
 
 # What is the DCP 2.0 Data View?
@@ -16,6 +16,7 @@ The DCP 2.0 Data View enables you to explore and access the new contributor-gene
 
 The [DCP 1.0 Data View](https://data.humancellatlas.org/explore/projects?catalog=dcp1) lists all the original DCP (DCP 1.0) projects.
 From this view, you can:
+
 - Access raw data for DCP 1.0 projects
 - Access DCP 1.0 processed data generated with standardized pipelines (BAMs, etc.)
 - Download DCP 1.0 project matrices (in CSV, MTX, and Loom formats)
@@ -24,6 +25,7 @@ From this view, you can:
 
 The [DCP 2.0 Data View](https://data.humancellatlas.org/explore/projects) lists all DCP projects, including the 16 new DCP 2.0 projects.
 From this view, you can:
+
 - Download the new contributor-generated matrices for each project*
 - Access the raw data for all DCP projects; for DCP 1.0 projects, this raw data is the same as that in the DCP 1.0 view
 - Access data generated with updated DCP standardized pipelines**
@@ -38,12 +40,8 @@ Use the banner at the top of the Data Portal to switch between the two views:
 
 ![Data Preview](./_images/dcp2view.png "DCP 2.0")
 
-
 As we continue to (re)process old and new DCP projects, we will incrementally add the newly processed data and DCP-generated matrices to the DCP 2.0 Data View.
 
 Once processing is complete, we will retire the DCP 1.0 Data View.
 
 > To start exploring DCP data, see the [Exploring Projects guide](/guides).
-
-
-

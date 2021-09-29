@@ -1,12 +1,12 @@
 ---
-path: "/analyze/visualization/visualization-packages/anatomogram"
-date: "2018-05-03"
-title: "Expression Atlas Anatomogram"
-author: "Expression Atlas developers"
-githubUrl: "https://github.com/ebi-gene-expression-group/anatomogram"
 appUrl: "https://github.com/ebi-gene-expression-group/anatomogram"
-description: "Anatomogram component for Expression Atlas heatmap."
+author: "Expression Atlas developers"
 componentName: "analysisDetail"
+date: "2018-05-03"
+description: "Anatomogram component for Expression Atlas heatmap."
+githubUrl: "https://github.com/ebi-gene-expression-group/anatomogram"
+path: "/analyze/visualization/visualization-packages/anatomogram"
+title: "Expression Atlas Anatomogram"
 ---
 
 [![Build Status](https://travis-ci.org/ebi-gene-expression-group/anatomogram.svg?branch=master)](https://travis-ci.org/ebi-gene-expression-group/anatomogram)
@@ -17,7 +17,9 @@ Anatomogram is an interactive component to display an anatomical view of an orga
 ![Anatomogram](../../_images/visualization/anatomogram.png)
 
 ## Install
+
 `npm install anatomogram`
 
 ## Contact
+
 Irene Papatheodorou ([irenep@ebi.ac.uk](mailto:irenep@ebi.ac.uk))

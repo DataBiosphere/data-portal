@@ -1,9 +1,9 @@
 ---
-path: "/guides/userguides/exploring-projects"
 date: "2018-05-30"
-title: "Exploring Projects"
-draft: false
 description: "Overview of exploring projects in the HCA Data Browser."
+draft: false
+path: "/guides/userguides/exploring-projects"
+title: "Exploring Projects"
 ---
 
 # Exploring Projects
@@ -14,16 +14,14 @@ Projects are a basic unit of data organization in the Data Coordination Platform
 1. the [processes](/metadata/dictionary/process/analysis_process) and [protocols](/metadata/dictionary/protocol/aggregate_generation_protocol) used to collect and process the cells prior to sequencing
 1. the [sequencing](/metadata/dictionary/protocol/sequencing_protocol) methods used
 1. details about the [project](/metadata/dictionary/project/project) contributors and their institutions
- 
-This [Metadata](/metadata/dictionary/process/analysis_process) is included in the project's Metadata Manifest (TSV file). When the DCP [processes](/pipelines) the contributor's raw data with uniform pipelines, this processing information is also added to the Metadata Manifest.
 
+This [Metadata](/metadata/dictionary/process/analysis_process) is included in the project's Metadata Manifest (TSV file). When the DCP [processes](/pipelines) the contributor's raw data with uniform pipelines, this processing information is also added to the Metadata Manifest.
 
 ## Finding a Project of Interest
 
 The Data Portal Explore page lists all projects by title along with key project metadata. The project list is filterable by metadata values. 
 
 ![Browsing Projects in the Data Explorer](../_images/explore_dcp_2.png "Exploring Projects")
-
 
 ### Choosing the DCP 2.0 View or the DCP 1.0 View
 
@@ -85,7 +83,8 @@ Scroll to identify the relevant matrix and then select the download icon.
 DCP-generated matrices in the DCP 2.0 View are available in Loom format only (see the [Loom documentation](http://loompy.org/) for details on loading and viewing Loom files), whereas matrices in the DCP 1.0 View are available in MTX, CSV, Loom formats. 
 
 > **DCP 1.0 Matrix Deprecation Notice:** 
-The DCP is reprocessing DCP 1.0 data and will deprecate all DCP 1.0 matrices (MTX, CSV, and Loom files) once reprocessing is complete. All reprocessed and newly processed projects in the DCP 2.0 will have matrices in Loom format only. 
+>
+> The DCP is reprocessing DCP 1.0 data and will deprecate all DCP 1.0 matrices (MTX, CSV, and Loom files) once reprocessing is complete. All reprocessed and newly processed projects in the DCP 2.0 will have matrices in Loom format only. 
 
 The type of count available in the DCP-generated matrix depends on the pipeline used for data processing. DCP 2.0 matrices generated with Optimus (10x data) include raw counts whereas matrices generated with Smart-seq2 include TPMs and estimated counts. 
 
@@ -100,5 +99,3 @@ To download the contributor-generated matrix, select the **"Project Matrices"** 
 Scroll to the **Contributor-Generated Matrices** section and select the download icon.
 
 ![Contributor Matrices](../_images/contributor_matrices.png "Contributor Matrices")
-
-

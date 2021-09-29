@@ -1,7 +1,8 @@
 ---
-title: "DCP APIs"
 description: "Overview of the DCP APIs."
+title: "DCP APIs"
 ---
+
 # DCP APIs
 
 The Data Coordination Platform (DCP) provides APIs for programmatic access of data and metadata.

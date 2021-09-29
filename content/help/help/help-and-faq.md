@@ -1,8 +1,8 @@
 ---
-path: "/help/help/help-and-faq"
 date: "2018-05-03"
-title: "Get Help"
 description: "If you have questions or issues to report please email data-help@humancellatlas.org."
+path: "/help/help/help-and-faq"
+title: "Get Help"
 ---
 
 # Get Help
@@ -21,8 +21,7 @@ The HCA is a collaborative effort by an international group of scientists to cre
 
 The HCA data will eventually accept all types of single-cell data, but it currently contains single-cell and single-nuclei RNA-sequencing data from Smart-seq2 and 10x v2 and v3 assays. While we are focused on curating a collection of data from healthy human specimens, as we grow we are accepting data from a number of sources, including model organisms and organoids, and both healthy and diseased samples. Stay tuned, the HCA is constantly evolving!
 
-Currently, both Smart-seq2 and 10x processed data can be downloaded as expression or count matrices, respectively,  using the Data Browser or by navigating to the Porject page  
-
+Currently, both Smart-seq2 and 10x processed data can be downloaded as expression or count matrices, respectively, using the Data Browser or by navigating to the Project page.
 
 ### How do I get more details about projects, like protocols or publications?
 
@@ -30,7 +29,7 @@ You can learn more about each project by visiting the Projects tab in the *Explo
 
 ### Can I use this data for a publication?
 
-Yes, data from the HCA can be used for publication.  Learn more about our [data use agreement](/about/data-use-agreement).
+Yes, data from the HCA can be used for publication. Learn more about our [data use agreement](/about/data-use-agreement).
 
 ### How do I cite HCA data?
 
@@ -41,7 +40,6 @@ The URL for the HCA DCP *Data Portal*, https://data.humancellatlas.org/, can be 
 ### How do I access the data in the HCA?
 
 The user guides in the *Intro* section of the data portal contain detailed information about [how to access the data](/guides).
-
 
 ### How do I visualize or analyze the data in the HCA?
 
@@ -57,6 +55,4 @@ Visit the *Contact* page to learn how to collaborate with us and to reach us wit
 
 ### How can I reuse parts of the DCP?
 
-One of our goals is to make the HCA Data Coordination Platform code open and reusable to the community.  For now, contact us at data-help@humancellatlas.org with questions about reusing our code.  Stay tuned for more information about reusing code in the *Intro* section of the *Data Portal*.
-
-
+One of our goals is to make the HCA Data Coordination Platform code open and reusable to the community. For now, contact us at data-help@humancellatlas.org with questions about reusing our code. Stay tuned for more information about reusing code in the *Intro* section of the *Data Portal*.

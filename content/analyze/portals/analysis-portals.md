@@ -1,9 +1,7 @@
 ---
-path: "/analyze/portals/analysis-portals"
-date: "2018-05-03"
-title: "Analysis Portals"
-description: "Analysis portals providing a human-friendly UI in a web or native app to search and explore biological data."
 componentName: "analyze"
+date: "2018-05-03"
+description: "Analysis portals providing a human-friendly UI in a web or native app to search and explore biological data."
 linked:
     - ./analysis-portals/asap.md
     - ./analysis-portals/bioturing-browser.md
@@ -20,11 +18,13 @@ linked:
     - ./analysis-portals/terra.md
     - ./analysis-portals/ucsc-cell-browser.md
     - ./analysis-portals/ucsc-xena.md
+path: "/analyze/portals/analysis-portals"
+title: "Analysis Portals"
 ---
 
 # Analysis Portals
 
-Analysis portals listed below provide a human-friendly UI in a web or native app to search and explore biological data.  Portals sometimes include packages for analysis [methods](/analyze/methods) and biological [visualizations](/analyze/visualization), and integrate data from Human Cell Atlas.
+Analysis portals listed below provide a human-friendly UI in a web or native app to search and explore biological data. Portals sometimes include packages for analysis [methods](/analyze/methods) and biological [visualizations](/analyze/visualization), and integrate data from Human Cell Atlas.
 
 These solutions are built by third parties. This information is provided as a service to the community and does not constitute an endorsement by the HCA.
 

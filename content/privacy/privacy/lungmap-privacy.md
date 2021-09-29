@@ -5,7 +5,7 @@ path: "/privacy/privacy/lungmap-privacy"
 title: "Privacy"
 ---
 
-#Privacy Notice for LungMAP Data Browser Public Website
+# Privacy Notice for LungMAP Data Browser Public Website
 
 This Privacy Notice explains what personal data is collected by the specific service you are requesting, for what purposes, how it is processed, and how we keep it secure. Note that this service collects personal data directly provided by the user, and also collects personal data from users that are provided by other organizations.
 
@@ -13,18 +13,18 @@ This service is operated by the University of California, Santa Cruz in collabor
 
 The privacy statement of the University of California, Santa Cruz is listed below. Please see https://app.terra.bio/#privacy for the Broad Institute’s privacy statement.
 
-
-
 ## The University of California Statement of Privacy Practices
+
 General Data Protection Regulation LungMAP - Data Browser
 
 ### 1. Transparency Regarding the Use of Your Personal Data
 
-As part of our commitment to protecting your privacy, this statement is designed to provide you with information regarding how the LungMAP Data Browser, part of UCSC Genomics Institute, collects and processes the information you share when you use our website located at <https://data-browser.lungmap.net>, and each of its associated domains (together, the "Sites"), utilize the services of ours which include API, GUI, and CLI, or when you otherwise communicate with LungMAP Data Browser (“LungMAP Data Browser] Services”).
+As part of our commitment to protecting your privacy, this statement is designed to provide you with information regarding how the LungMAP Data Browser, part of UCSC Genomics Institute, collects and processes the information you share when you use our website located at <https://data-browser.lungmap.net>, and each of its associated domains (together, the "Sites"), utilize the services of ours which include API, GUI, and CLI, or when you otherwise communicate with LungMAP Data Browser (“LungMAP Data Browser Services”).
 
 This statement is applicable to individuals using LungMAP Data Browser Services who are located in the European Economic Area (“EEA”).
 
 ### 2. General Data Protection Regulation (“GDPR”)
+
 For purposes of the General Data Protection Regulation (“GDPR”), the data controller is the Regents of the University of California, with a location at 1156 High Street, Santa Cruz, CA 95064.
 
 ### 3. Your Personal Data We Use
@@ -137,12 +137,10 @@ UC may be obligated to retain your Personal Data as required by U.S. federal or 
 
 If you wish to exercise your rights, you can contact the UC Privacy Official identified below.
 
-You may choose not to visit or use UC Sites or participate in LungMAP Data Browser Services.  If you choose not to share your Personal Data with UC or UC-approved third parties for LungMAP Data Browser Services your site usage will not be tracked and you will not be able to log in to view controlled-access data. You will still be able to view and access open-access data.  You may choose to set your web browser to refuse cookies or to alert you when cookies are being sent.  If cookies are turned off the portal and browser will continue to function however Google Analytics tracking will not function.
+You may choose not to visit or use UC Sites or participate in LungMAP Data Browser Services. If you choose not to share your Personal Data with UC or UC-approved third parties for LungMAP Data Browser Services your site usage will not be tracked and you will not be able to log in to view controlled-access data. You will still be able to view and access open-access data. You may choose to set your web browser to refuse cookies or to alert you when cookies are being sent. If cookies are turned off the portal and browser will continue to function however Google Analytics tracking will not function.
 
 ### 11. Questions and Complaints; UC Privacy Official
 
 If you have questions or complaints about our treatment of your Personal Data, or about our privacy practices more generally, please feel free to contact the UCSC Privacy Official: <mailto:gdpr@ucsc.edu> or <mailto:privacy@ucsc.edu>.
 
-**Effective Date**:  This statement is effective as of 07/01/2021.
-
-
+**Effective Date**: This statement is effective as of 07/01/2021.

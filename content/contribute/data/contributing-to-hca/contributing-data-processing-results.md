@@ -1,14 +1,14 @@
 ---
-path: "/contribute/data/contributing-to-hca/contributing-data-processing-results"
 date: "2019-04-29"
-title: "Data Processing and Results"
 description: "Overview of processing of data submissions."
+path: "/contribute/data/contributing-to-hca/contributing-data-processing-results"
+title: "Data Processing and Results"
 ---
 
 # Data Processing and Results
 
 Once submitted to the Human Cell Atlas, your data will be processed and made available in multiple ways. 
- 
+
 ## Searchable in the HCA Data Browser
 
 Your raw data and metadata will be searchable in the <link-to-browser relativeLink="/projects">HCA Data Browser</link-to-browser> immediately after submission.
@@ -16,7 +16,6 @@ Your raw data and metadata will be searchable in the <link-to-browser relativeLi
 ## Processed by the Data Processing Pipelines
 
 Some submitted data will be processed by our standard [data processing pipelines](/pipelines). Currently, we have pipelines for processing human, single-cell and single-nuclei RNA-seq data produced by standard Smart-seq2 and 10X 3' v2 and v3 protocols. These pipelines will be automatically run immediately after submission, and the alignment, quantification, and quality control metric results will be made available in the HCA Data Browser alongside the raw data.
-
 
 ## Accessioned in Standard Archives
 

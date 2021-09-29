@@ -1,13 +1,13 @@
 ---
-path: "/analyze/portals/analysis-portals/omnibrowser"
-date: "2021-04-23"
-title: "OmniBrowser"
+appUrl: "https://omnibrowser.abiosciences.com/"
 author: "Analytical BioSciences Team"
+componentName: "analysisDetail"
+date: "2021-04-23"
 description: "OmniBrowser is a comprehensive curated single cell data compendium with visualization and analysis capabilities that further empower and innovate drug discovery and development."
 githubUrl: ""
-appUrl: "https://omnibrowser.abiosciences.com/"
+path: "/analyze/portals/analysis-portals/omnibrowser"
+title: "OmniBrowser"
 upstreamRegistryUrl: ""
-componentName: "analysisDetail"
 ---
 
 [OmniBrowser](https://omnibrowser.abiosciences.com/) is a web portal for scRNA-seq data exploration, supported by a spectrum of commonly used tools for data visualization and analysis. The OmniBrowserTM toolset is designed with a special attention to support biologists with limited programming and analytical bandwidth or depth.
@@ -19,4 +19,5 @@ Datasets are constantly updated on OmniBrowser in order to support the constantl
 ![OmniBrowser](../../_images/portals/omnibrowser.jpg)
 
 ## Contact
+
 Analytical BioSciences (<mailto:bd_china@abiosciences.com>)
