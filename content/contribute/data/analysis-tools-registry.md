@@ -1,15 +1,16 @@
 ---
-path: "/contribute/data/analysis-tools-registry"
 date: "2019-02-01"
-title: "Contributing to the Analysis Tools Registry"
 description: "The Analysis Tools Registry lists portals, methods packages, and visualization packages suitable for working with HCA DCP data."
+path: "/contribute/data/analysis-tools-registry"
+title: "Contributing to the Analysis Tools Registry"
 ---
 
 # Contributing to the Analysis Tools Registry
 
-The [Analysis Tools Registry](/analyze) lists portals, methods packages, and visualization packages.  Computational biologists submit packages for use by software engineers in portal development. [Analysis Tools Registry standards](/contribute/analysis-tools-registry/registry-standards) promote software best practices and help facilitate ease of package deployment by non-biologists (e.g. software engineers) and non-computational biologists.
+The [Analysis Tools Registry](/analyze) lists portals, methods packages, and visualization packages. Computational biologists submit packages for use by software engineers in portal development. [Analysis Tools Registry standards](/contribute/analysis-tools-registry/registry-standards) promote software best practices and help facilitate ease of package deployment by non-biologists (e.g. software engineers) and non-computational biologists.
 
 ## Submission Forms
+
 Submissions are contributed via GitHub - use these links to access the submission forms:
 
 [Portal submission](https://github.com/HumanCellAtlas/data-portal/issues/new/?template=submit-portal.md)\
@@ -25,6 +26,7 @@ Below, we provide details about the information requested in the methods and vis
 The package details pages provide software engineers with information (basic command line usage, code repository location, etc.) and resources (Docker image URL, contact name and email etc.) to support rapid incorporation of these packages into web portals.
 
 ### Required Submission Fields for Methods and Visualizations
+
 - Package title
     - Name of method or visualization
     - Each Methods Registry entry is associated with one container image. Methods Registry recommends authors provide one canonical package. However, some authors may wish to submit registry entries for different language implementations or minimal vs extended docker images; the package title should reflect the difference between such entries.
@@ -52,8 +54,9 @@ The package details pages provide software engineers with information (basic com
     - Example 2-3 sentence description: STREAM is an interactive computational pipeline for reconstructing complex cellular developmental trajectories from sc-qPCR, scRNA-seq or scATAC-seq data.
 
 ### Optional Fields for Methods and Visualizations
+
 - Build badge URL
-    - Packages should execute automated tests upon every push to their default branch (e.g. master) on GitHub using a continuous integration service.  Such services include [Travis CI](https://docs.travis-ci.com/user/tutorial/) or [Circle CI](https://circleci.com/docs/2.0/first-steps/), which report whether the package build passes its own tests.
+    - Packages should execute automated tests upon every push to their default branch (e.g. master) on GitHub using a continuous integration service. Such services include [Travis CI](https://docs.travis-ci.com/user/tutorial/) or [Circle CI](https://circleci.com/docs/2.0/first-steps/), which report whether the package build passes its own tests.
     - Example Build badge URL: https\://travis-ci.org/pinellolab/STREAM.svg
 - Coverage badge URL
     - Packages should measure the code coverage of their automated tests using services like [Coveralls](https://docs.coveralls.io/) or [Codecov](https://docs.codecov.io/docs), which report the percentage of lines of code, conditional branches, and other metrics covered by tests.
@@ -72,13 +75,13 @@ The package details pages provide software engineers with information (basic com
     - Example URL: http\://stream.pinellolab.org
 
 ### Method-Specific Required Fields
+
 - Method-ready Docker image:
     - Containerized images allow consistent deployment of packages by bundling OS requirements, necessary dependencies and configurations so portal developers can rapidly incorporate a package while bypassing the need to build unfamiliar software.
     - Images should be tagged with method version so the docker pull command requests a versioned image compatible with the example command line(s) and validation commands provided below.
     - Recommended container registries: [quay.io](https://docs.quay.io/solution/getting-started.html), [Docker Hub](https://docs.docker.com/docker-hub/)
     - Container [best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) and [gotchas](https://runnable.com/blog/9-common-dockerfile-mistakes)
     - Example Method-ready Docker image: `docker pull pinellolab/stream:0.3.2`
-
 - Language
     - Methods Registry recommends authors provide one canonical package but recognize that some packages are implemented in multiple languages. Language implementations should be submitted separately so docker images are kept small to minimize deployment costs.
     - Example Language: Python
@@ -111,7 +114,7 @@ The package details pages provide software engineers with information (basic com
 - Command(s) to validate installation
     - Please provide a call of the methodology using the test data to verify that the program ran to completion and the output is valid.
     - Command line calls should programmatically return zero if validation is successful and non-zero for validation failure.
-    - Validation may be a single command line (eg. --test parameter provided via CLI) or a series of commands that
+    - Validation may be a single command line (e.g. --test parameter provided via CLI) or a series of commands that
         - runs the method on the reference test data set 
         - compares the locally generated result with the reference output(s)
         - indicates whether the locally generated result is valid
@@ -119,12 +122,15 @@ The package details pages provide software engineers with information (basic com
     - Example Command to validate installation: docker run --entrypoint stream\_run\_test pinellolab/stream
 
 ### Visualization Component-Specific Optional Fields:
+
 - URL to implementation of this package in an active portal:
     - Please provide a URL to a simple page with a visualization demo.
     - In our examples we use “Mashups”, see example here https://github.com/eweitz/igv.js-react/blob/master/README.md#igvjs-in-react
 
 ## Packages Submitted in Collaboration with a Methodologist
-with separate maintenance of supporting scripts should provide parallel information for "methodologist" and "accessibility maintainer" for the following fields:
+
+With separate maintenance of supporting scripts should provide parallel information for "methodologist" and "accessibility maintainer" for the following fields:
+
 - Contact name
 - Contact email
 - Who to attribute
@@ -137,7 +143,9 @@ with separate maintenance of supporting scripts should provide parallel informat
 For such collaborative submissions the long description may be used to describe the relationship between the supporting scripts and the listed package.
 
 ## How to Update Your Package Entry
+
 Package information may be updated by creating a GitHub pull request:
+
 - From the package details page, click "Improve this page"
 - Edit the page content to reflect your updates
-- Start a pull request by clicking "Commit changes". Your edits will be committed to a new branch in github and queued for the Methods Registry Maintainer to push to production.
+- Start a pull request by clicking "Commit changes". Your edits will be committed to a new branch in GitHub and queued for the Methods Registry Maintainer to push to production.

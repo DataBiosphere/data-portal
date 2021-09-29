@@ -1,13 +1,13 @@
 ---
-path: "/analyze/methods/methods-packages/infer"
-date: "2019-03-26"
-title: "inferCNV"
+appUrl: "https://github.com/broadinstitute/infercnv"
 author: "Brian J. Haas, Christophe H. Georgescu, Maxwell P. Brown, Timothy L. Tickle, Livnat Jerby, Matan Hofree, Itay Tirosh, Aviv Regev"
+componentName: "analysisDetail"
+date: "2019-03-26"
 description: "InferCNV is used to explore tumor single cell RNA-Seq data to identify evidence for large-scale chromosomal copy number variations."
 githubUrl: "https://github.com/broadinstitute/infercnv"
-appUrl: "https://github.com/broadinstitute/infercnv"
+path: "/analyze/methods/methods-packages/infer"
+title: "inferCNV"
 upstreamRegistryUrl: "Submitted to bioconductor on 03/13/2019"
-componentName: "analysisDetail"
 ---
 
 [![Build Status](https://travis-ci.com/broadinstitute/infercnv.svg?branch=master )](https://travis-ci.com/broadinstitute/infercnv)
@@ -44,9 +44,8 @@ docker run -v ${PWD}:/data -w /data --rm -it singlecellportal/infercnv:0-99-5 /i
      --denoise
 ```
 
-
-
 ## Validate
+
 Run this command to confirm your container produces correct reference output: 
 
 ```
@@ -54,7 +53,9 @@ docker run -v ${PWD}:/data -w /data --rm -it singlecellportal/infercnv:0-99-5  R
 ```
 
 ## Integrate
+
 [Run inferCNV](https://github.com/broadinstitute/single_cell_portal/wiki/Running-inferCNV) in Single Cell Portal.
 
 ## Contact
+
 Christophe Georgescu ([cgeorges@broadinsitute.org](mailto:cgeorges@broadinsitute.org))

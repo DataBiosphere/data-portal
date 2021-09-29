@@ -1,8 +1,8 @@
 ---
-path: "/guides/userguides/data-lifecycle"
 date: "2018-05-03"
-title: "Data Lifecycle"
 description: "A description of the general process of data flow through the components of the DCP."
+path: "/guides/userguides/data-lifecycle"
+title: "Data Lifecycle"
 ---
 
 # Data Lifecycle
@@ -50,8 +50,9 @@ When raw data moves into the Data Store a notification is triggered and sent to 
 See the *Pipelines* Section for [detailed information](/pipelines) about the DCP Data Processing Pipelines; [guides for developing pipelines](/pipelines/pipeline-processing-development-guides) are also in *Pipelines*.
 
 ## Data Access by End Users
+
 Access to the Data Store is supported with REST API (and associated CLI) using the Data Store's Consumer API. In addition, we have developed a Data Browser, accessible from the *Explore* section, that enables extensive browsing of the data through this Data Portal. Data will also be accessible through tools and portals developed by the community.
 
 ## Data Use Policy
-For information regarding data sharing and data use, please see our [Data Release Policy](https://www.humancellatlas.org/data-release-policy/)
 
+For information regarding data sharing and data use, please see our [Data Release Policy](https://www.humancellatlas.org/data-release-policy/)

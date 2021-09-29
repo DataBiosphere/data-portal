@@ -1,8 +1,8 @@
 ---
-path: "/contribute/data/contributing-to-hca/contributing-expect-prepare"
 date: "2019-04-29"
-title: "Data Submission Process"
 description: "Overview of the HCA DCP data submission process."
+path: "/contribute/data/contributing-to-hca/contributing-expect-prepare"
+title: "Data Submission Process"
 ---
 
 # Data Submission Process
@@ -21,4 +21,3 @@ In order to process your cellular resolution data, we will request the following
 
 > Ready to contribute? Start the conversation by emailing\
 > [wrangler-team@data.humancellatlas.org](mailto:wrangler-team@data.humancellatlas.org).
-

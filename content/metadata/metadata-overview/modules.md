@@ -14,18 +14,19 @@ The use of modules helps to keep the HCA metadata schema both compact and self-c
 
 An overview of the different kinds of modules is given below. Please see the [metadata structure][metadata-structure] or [metadata design](/metadata/design) documentation for additional detail.
 
-
 ## Core Modules
+
 Every metadata type includes a single [core module][biomaterial-core] which defines the type’s super class. For example, all of the biomaterials (e.g. Cell Line, Cell Suspension, Donor Organism, etc. ) include the [Biomaterial Core][biomaterial-core] module. The Biomaterial Core module contributes Biomaterial ID, among other properties to each of these types.
 
 Similarly, all file types include the File Core module, all process types include the Process Core module and so on.
 
 ## Entity Modules
+
 [Entity modules][8] are the main, general class of module. Entity modules model concepts such as [Funder][funder], [Channel][channel], and [Probe][probe]. Entity modules are also used to represent the various ontologies used by the HCA metadata schema such as [Cell cycle ontology][cell-cycle-ontology] .
 
 ## System Modules
-[System modules][9] are created and populated by the Data Coordination Platform during data ingest and processing. For example, the main System module is [Provenance][provenance] which models an entity's Document ID, Submission Date, and Submitter ID among other fields. 
 
+[System modules][9] are created and populated by the Data Coordination Platform during data ingest and processing. For example, the main System module is [Provenance][provenance] which models an entity's Document ID, Submission Date, and Submitter ID among other fields. 
 
 [1]: /metadata/dictionary/biomaterial/specimen_from_organism
 [2]: /metadata/dictionary/process/process
@@ -44,4 +45,3 @@ Similarly, all file types include the File Core module, all process types includ
 [probe]: /metadata/dictionary/protocol/probe
 [provenance]: /metadata/dictionary/system/provenance
 [types]: /metadata
-

@@ -5,7 +5,7 @@ path: "/privacy/privacy/privacy"
 title: "Privacy"
 ---
 
-#Privacy Notice for Human Cell Atlas Data Portal Public Website
+# Privacy Notice for Human Cell Atlas Data Portal Public Website
 
 This Privacy Notice explains what personal data is collected by the specific service you are requesting, for what purposes, how it is processed, and how we keep it secure. Note that this service collects personal data directly provided by the user, and also collects personal data from users that is provided by other organizations.
 
@@ -13,18 +13,18 @@ This service is operated by the University of California, Santa Cruz in collabor
 
 The privacy statement of the University of California, Santa Cruz is listed below. Please see https://app.terra.bio/#privacy for the Broad Institute’s privacy statement. 
 
-
-
 ## The University of California Statement of Privacy Practices
- General Data Protection Regulation Human Cell Atlas (HCA) - Data Portal
+
+General Data Protection Regulation Human Cell Atlas (HCA) - Data Portal
 
 ### 1. Transparency Regarding the Use of Your Personal Data
 
-As part of our commitment to protecting your privacy, this statement is designed to provide you with information regarding how the HCA Data Portal, part of UCSC Genomics Institute, collects and processes the information you share when you use our website located at <https://data.humancellatlas.org>, and each of its associated domains (together, the "Sites"), utilize the services of ours which include API, GUI and CLI, or when you otherwise communicate with HCA Data Portal (“HCA Data Portal] Services”).
- 
- This statement is applicable to individuals using HCA Data Portal Services who are located in the European Economic Area (“EEA”).
+As part of our commitment to protecting your privacy, this statement is designed to provide you with information regarding how the HCA Data Portal, part of UCSC Genomics Institute, collects and processes the information you share when you use our website located at <https://data.humancellatlas.org>, and each of its associated domains (together, the "Sites"), utilize the services of ours which include API, GUI and CLI, or when you otherwise communicate with HCA Data Portal (“HCA Data Portal Services”).
+
+This statement is applicable to individuals using HCA Data Portal Services who are located in the European Economic Area (“EEA”).
 
 ### 2. General Data Protection Regulation (“GDPR”)
+
 For purposes of the General Data Protection Regulation (“GDPR”), the data controller is the Regents of the University of California, with a location at 1156 High Street, Santa Cruz, CA 95064.
 
 ### 3. Your Personal Data We Use
@@ -58,10 +58,10 @@ If users login to the service we also collect:
 We also collect more sensitive information about you, with your explicit consent, where the processing is necessary to meet a legal or regulatory obligation, the processing is in connection with UC establishing, exercising or defending legal claims, or is otherwise expressly permitted by GDPR. This sensitive information includes Aggregated transcriptomic and metadata, as well as individual-level transcriptomic and metadata [donor age, biological sex, disease, and sampled organ].
 
 **Log, Cookie and Device Data**: We also collect log data, which is information collected whenever you visit a website. This log data includes your Internet Protocol address, device type, operating system, browser type and some settings, unique device identifiers, crash data, the date and time of your request, and information about how you used the Service.
- 
- Depending on how you are accessing the Services, we may also use “cookies” (small text files stored by your computer when you visit our website) or similar technologies. We use Google Analytics. Google Analytics uses cookies to help track the users visit to the site. In addition to log and cookie data, we also collect information about the device you’re using to access the Services, including what type of device it is, what operating system you are using, device settings, unique device identifiers and crash data.
-  
- Whether we collect some or all of this information often depends on what type of device you are using and its settings. For example, different types of information are available depending on whether you are using a Mac or a PC, or an iPhone or Android phone. To learn more about what information your device makes available to us, please also check the policies of your device manufacturer or software provider.
+
+Depending on how you are accessing the Services, we may also use “cookies” (small text files stored by your computer when you visit our website) or similar technologies. We use Google Analytics. Google Analytics uses cookies to help track the users visit to the site. In addition to log and cookie data, we also collect information about the device you’re using to access the Services, including what type of device it is, what operating system you are using, device settings, unique device identifiers and crash data.
+
+Whether we collect some or all of this information often depends on what type of device you are using and its settings. For example, different types of information are available depending on whether you are using a Mac or a PC, or an iPhone or Android phone. To learn more about what information your device makes available to us, please also check the policies of your device manufacturer or software provider.
 
 **Information from Other Sources**: We do not obtain information about you from other sources and we do not combine that information with information we collect from you directly.
 
@@ -114,8 +114,8 @@ Automated decisions are defined as decisions about individuals that are based so
 HCA Data Portal does not make use of automated decisions or utilizes profiling for any purpose.
 
 In certain instances, UC may be required to obtain your consent to make automated decisions or profile. In these instances, UC will inform you of the automated decision-making or profiling, and will request that you affirmatively indicate that you consent to the intended use of your Personal Data for that purpose, prior to the automated decision-making or profiling.
- 
- Where automated decisions are made or profiling is used, affected persons will be given an opportunity to express their views on the automated decision in question and instructions on how such persons can object to, or opt-out of such processing.
+
+Where automated decisions are made or profiling is used, affected persons will be given an opportunity to express their views on the automated decision in question and instructions on how such persons can object to, or opt-out of such processing.
 
 We do not allow others to serve advertisements on our behalf across the Internet and to provide analytics services.
 
@@ -137,11 +137,10 @@ UC may be obligated to retain your Personal Data as required by U.S. federal or 
 
 If you wish to exercise your rights, you can contact the UC Privacy Official identified below.
 
-You may choose not to visit or use UC Sites or participate in HCA Data Portal Services.  If you choose not to share your Personal Data with UC or UC-approved third parties for HCA Data Portal Services your site usage will not be tracked and you will not be able to login to view controlled-access data. You will still be able to view and access open-access data..  You may choose to set your web browser to refuse cookies or to alert you when cookies are being sent.  If cookies are turned off the portal and browser will continue to function however Google Analytics tracking will not function.
+You may choose not to visit or use UC Sites or participate in HCA Data Portal Services. If you choose not to share your Personal Data with UC or UC-approved third parties for HCA Data Portal Services your site usage will not be tracked and you will not be able to login to view controlled-access data. You will still be able to view and access open-access data. You may choose to set your web browser to refuse cookies or to alert you when cookies are being sent. If cookies are turned off the portal and browser will continue to function however Google Analytics tracking will not function.
 
 ### 11. Questions and Complaints; UC Privacy Official
 
 If you have questions or complaints about our treatment of your Personal Data, or about our privacy practices more generally, please feel free to contact the UCSC Privacy Official: <mailto:gdpr@ucsc.edu> or <mailto:privacy@ucsc.edu>.
 
-**Effective Date**:  This statement is effective as of 09/14/2020.
-
+**Effective Date**: This statement is effective as of 09/14/2020.

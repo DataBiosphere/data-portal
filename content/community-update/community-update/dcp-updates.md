@@ -1,11 +1,10 @@
 ---
 date: "2020-12-07"
-title: DCP Updates
 description: "Latest updates for the HCA Data Coordination Platform (DCP)."
+title: DCP Updates
 ---
 
 # DCP Platform Updates
-
 
 #### September 17, 2021
 
@@ -36,9 +35,6 @@ The following 3 projects have updated files:
 1. [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635) 
 1. [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory.](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a)
 
-
-
-
 ## DCP now contains data for 14 million estimated cells
 
 #### August 25, 2021
@@ -60,9 +56,8 @@ The DCP has added raw data for the following 12 new projects:
 1. [The Immune Atlas of Human Deciduas With Unexplained Recurrent Pregnancy Loss](https://data.humancellatlas.org/explore/projects/3cfcdff5-dee1-4a7b-a591-c09c6e850b11)
 1. [Transcriptional analysis of cystic fibrosis airways at single-cell resolution reveals altered epithelial cell states and composition](https://data.humancellatlas.org/explore/projects/e526d91d-cf3a-44cb-80c5-fd7676b55a1d)
 
-
-
 ### New Contributor Data
+
 The following projects have new contributor-generated matrix files:
 
 1. [Integrated single cell analysis of blood and cerebrospinal fluid leukocytes in multiple sclerosis.](https://data.humancellatlas.org/explore/projects/d3ac7c1b-5302-4804-b611-dad9f89c049d) 
@@ -71,15 +66,16 @@ The following projects have new contributor-generated matrix files:
 ### Browser Updates
 
 #### Selecting "Normal" Samples
-To enable easier discovery of normal tissues, we've modified the Specimen Disease search facet on the Explore page so that the "Normal" option is now at the top of the drop-down.
-![](_images/normal.png)
 
+To enable easier discovery of normal tissues, we've modified the Specimen Disease search facet on the Explore page so that the "Normal" option is now at the top of the drop-down.
+
+![Selecting Normal Samples](_images/normal.png)
 
 #### Selecting Files by "Content Description"
-The File facet has a new Content Description column to enable searching for files by the type of data they contain.
-![](_images/content.png)
- 
 
+The File facet has a new Content Description column to enable searching for files by the type of data they contain.
+
+![Selecting Files](_images/content.png)
 
 ## New Managed Access and Seed Network projects
 
@@ -97,9 +93,7 @@ Additionally, DCP now has the first project data from the [HCA Seed Networks](ht
 
 Managed access raw data is available from the [Synapse database](https://www.synapse.org/#!Synapse:syn22213200) upon successful completion of a data use certificate. To find supplementary links to the managed access datasets in Synapse, navigate to the [project detail page](https://data.humancellatlas.org/explore/projects/dc1a41f6-9e09-42a6-959e-3be23db6da56) in the Data Portal.
 
-
-![](_images/Supplementary_links.png)
-
+![Supplementary Links](_images/Supplementary_links.png)
 
 ### HCA Seed Networks Projects
 
@@ -148,58 +142,52 @@ Managed access raw data is available from the [Synapse database](https://www.syn
 * Adipose tissue, blood, bone marrow, CSF, heart, kidney, lung, oral cavity, ovary, pancreas, prostate, skeletal muscle, testis, and umbilical vein
 * Disease states including COVID-19 infection, intracranial hypertension, multiple sclerosis, and renal cell carcinoma
 * Developmental stages including fetal, child, adolescent, and adult
-
 * Standardized data, including aligned BAMs and cell-by-gene count matrices (Loom format), are available for 8 additional projects with data derived from:
 * 10x v2 and v3 3’ sequencing technologies
 * Brain (superior parietal cortex, middle temporal gyrus, and temporal cortex), epididymis, immune tissue, cortex of the kidney organoid, lymph nodes, placenta (chorionic villus and decidua), spine, testis, and thymus
 * Disease states including Alzheimer disease and cognitive impairment with or without cerebellar ataxia
-
-
 * New Jupyter Notebook tutorials for analyzing standardized DCP matrix files are available in an [Intro-to-HCA-data-on-Terra](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra) workspace on the cloud-based platform Terra.
 * After registering, you can try the step-by-step instructions for importing HCA data and analyzing in common community tools such as Bioconductor, Cumulus, Pegasus, Scanpy, and Seurat.
 
 ## Raw sequencing data and contributor-generated matrices for 23 new projects available for download
+
 #### May 10, 2021
 
 * Data Portal now has data for 12.2 million cells, including new standardized analyses for 13 projects as well as raw sequencing data and contributor-generated matrices for 23 new projects.
-
-
 * The standardized data, including aligned BAMs and cell-by-gene count matrices (Loom format), are derived from:
 * Human and mouse
 * Single-cell and single-nucleus
 * 10x V2 and V3 3’ chemistry
 * Blood, brain (including substantia nigra, developing hippocampus, cortex, retina), liver, lung, mouth, skeletal muscle, skin, spleen, and developing thymus
 * Disease states including HIV, drug hypersensitivity syndrome, multiple sclerosis, and thoracic aortic aneurysm
-
-
 * The 23 new projects and contributor-generated matrices include data derived from:
 * Human and mouse
 * Smart-seq2, 10x V2 and V3 3’ chemistry, Drop-seq, and Fluidigm C1 sequencing methods
-* Blood, bone marrow, brain, cord blood, epididymis, fetal gonads, immune organ, kidney organoid, lymph nodes, pancreas,  skin, and trachea
+* Blood, bone marrow, brain, cord blood, epididymis, fetal gonads, immune organ, kidney organoid, lymph nodes, pancreas, skin, and trachea
 * Disease states including Alzheimer’s Disease, multiple sclerosis, autoimmune encephalitis, and type 2 diabetes
-
-
 * The Matrix Overview guide has been updated to include additional information on matrix [batch correction and normalization](/guides/consumer-vignettes/matrices#matrix-normalization-and-batch-correction).
 
 ## Raw data for 16 new projects now available
+
 #### April 12, 2021
 
 Raw sequencing data for 16 new projects are now available in the DCP [Data Browser](https://data.humancellatlas.org/explore/projects). These projects include single-cell data derived from:
+
 - Human and mouse
 - 10x 3’, 10x 5’, Smart-seq2 technologies
 - Small intestine, aorta, brain, skeletal muscle, blood, pancreas, tonsil, lung, skin, immune system, kidney, and eye
 - Airway basal stem cells exposed to SARS-CoV-2
 - Disease states, including Crohn’s Disease, aneurysm, Multiple Sclerosis, HIV, Type 2 Diabetes, and glioblastoma
 
-
 ## Processed data now available for 26 HCA 10x datasets
+
 #### April 02, 2021
 
 The [DCP 2.0 Preview](https://data.humancellatlas.org/explore/projects) now has standardized BAMs and count matrices (Loom file format) available for 26 HCA projects, including 15 new projects. These projects contain both human and mouse single-cell and single-nucleus data generated with 3’ 10x V2 and V3 sequencing technology. This data was processed using the latest version of the Optimus pipeline (see the [Optimus Overview](https://data.humancellatlas.org/pipelines/optimus-workflow)).
 
 In addition to individual sample count matrices, each newly processed project also has standardized, project-level DCP-generated matrices that are stratified by organ, species, and library construction method. These matrices are minimally filtered to include only cells with more than 100 UMIs. You can download the project-level DCP-generated Matrices from the Data Browser (see image below) or from the individual Project page (see the [Exploring Projects](https://data.humancellatlas.org/guides) guide)
 
-![](../../guides/_images/explore_dcp_2_matrices.png)
+![DCP Preview](../../guides/_images/explore_dcp_2_matrices.png)
 
 ### New raw data and Contributor-Generated Matrices
 
@@ -212,13 +200,14 @@ With the addition of these new data, the DCP now has 55 total projects with over
 All files (raw data, CGMs, and DCP-generated BAMs and matrices) can be downloaded following the instructions in the [Accessing HCA Data and Metadata](/guides/quick-start-guide) guide.
 Additionally, you can access matrix files programmatically using the new [Programmatic Download](https://colab.research.google.com/drive/1h14mbunsepfogcnG9VEF4FIGpuyGLA-P#scrollTo=jxk27LZk4373) guide.
 
-
 ## DCP 2.0 launches; new projects, contributor generated matrices and DCP 2.0 infrastructure
+
 #### December 11, 2020
 
 In the spirit of bringing HCA data to the community as quickly as possible, we are releasing the new DCP 2.0 data and infrastructure incrementally.
 
 This initial launch -- the first of several planned to roll out new functionality, pipelines, and data -- includes:
+
 * Raw data and standardized metadata for 5.8 million cells
 * Contributor-generated matrices, embeddings, and annotations for existing and **16 new DCP projects**
 * New DCP 2.0 infrastructure (details below)
@@ -226,6 +215,7 @@ This initial launch -- the first of several planned to roll out new functionalit
 ### What’s included in the new projects?
 
 The new projects include a mix of human and mouse data from a variety of organs including adipose tissue, heart, hindlimb, spleen skin, yolk sac, diaphragm, tongue, trachea, and more. These data encompass:
+
 * 143 donors
 * 248 specimens
 * estimated 1.3M additional cells
@@ -237,16 +227,13 @@ The new projects include a mix of human and mouse data from a variety of organs 
 Along with the new data view, we have updated DCP infrastructure by **retiring and replacing** the following features:
 
 * HCA Command Line Interface (CLI); data are now downloaded using curl commands (see the [Accessing HCA Data and Metadata guide](/guides/quick-start-guide))
-
-
 * HCA Matrix Service; DCP 1.0 project matrices remain available on the individual Project Matrices page (see the [Exploring Projects guide](/guides))
-
-
-* HCA Data Storage Service (DSS) and API;  data is now stored in the Terra Data Repo (TDR), an alternative storage and metadata management service that supports managed access
+* HCA Data Storage Service (DSS) and API; data is now stored in the Terra Data Repo (TDR), an alternative storage and metadata management service that supports managed access
 
 ### What’s Coming Next?
 
 Between now and the end of February look for:
+
 * Standardized analysis results (BAM and index files) made by the latest HCA 10x and SmartSeq-2 pipelines for all projects
 * DCP-generated count matrices stratified by species, library construction method, and organ for each project
 
@@ -256,8 +243,8 @@ Once processing is complete, we will retire DCP 1.0 View.
 
 ---
 
-
 ## Coming Soon - DCP 2.0
+
 #### October 9, 2020
 
 We are excited to announce the launch of the DCP 2.0 this fall. This has been a collaborative effort over the past 6 months to take on board the HCA community feedback and understand the unmet needs in order to align the goals of the DCP with the wider HCA community goals.
@@ -266,18 +253,12 @@ We have made significant changes, including GA4GH-compliance, more data—50% mo
 
 ## Changes Coming to Key Components
 
-
 To accomplish this, we will be making the following changes and migrations:
 
 * The current Data Storage Service (DSS) will be retired and we will migrate to the Terra Data Repo, which supports managed access, for storage and metadata management. Both Ingest and the Data Browser will access the Terra Data Repo via self-service APIs, making for minimal disruption to the HCA scientific community.
-
-
-* The matrix service API will be retired.  The per-project matrices that are most commonly used will be available in static form directly from the data browser.
-
+* The matrix service API will be retired. The per-project matrices that are most commonly used will be available in static form directly from the data browser.
 * As a higher-level replacement for the DSS API, the Data Browser API is being prepared for use by the wider developer community and will be officially documented and supported by the HCA DCP team.
-
-* The HCA-CLI will be retired and the Data Browser will provide a bulk download capability via curl (or similar) commands.  Because the internal organization of the data store is subject to change with upcoming work on the metadata, direct calls against it are discouraged in favor of the new Data Browser API.
-
+* The HCA-CLI will be retired and the Data Browser will provide a bulk download capability via curl (or similar) commands. Because the internal organization of the data store is subject to change with upcoming work on the metadata, direct calls against it are discouraged in favor of the new Data Browser API.
 
 ## Transition Path to DCP 2.0
 
@@ -290,7 +271,3 @@ We will continue to integrate third-party portals and applications into the HCA 
 Regards,
 
 The HCA DCP Team
-
-
-
-

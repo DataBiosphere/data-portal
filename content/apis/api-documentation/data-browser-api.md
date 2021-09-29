@@ -1,6 +1,6 @@
 ---
-title: "DCP Data Browser API"
 description: "An overview of the Azul Data Browser API."
+title: "DCP Data Browser API"
 ---
 
 # Data Browser API
@@ -15,17 +15,5 @@ For more information on the Data Browser API, see the [Data Browser API Specific
 
 ## API Usage Examples
 
-- **Project matrices download notebook**  - The [Downloading Project Matrices](https://github.com/DataBiosphere/azul/blob/develop/docs/download-project-matrices.ipynb) notebook demonstrates the process of making a request to the Azul [/index/projects](https://service.azul.data.humancellatlas.org/#/Index/get_index_projects__project_id_) endpoint for a single project and downloading all the project level matrix files contained within the response.
-
-
+- **Project matrices download notebook** - The [Downloading Project Matrices](https://github.com/DataBiosphere/azul/blob/develop/docs/download-project-matrices.ipynb) notebook demonstrates the process of making a request to the Azul [/index/projects](https://service.azul.data.humancellatlas.org/#/Index/get_index_projects__project_id_) endpoint for a single project and downloading all the project level matrix files contained within the response.
 - **Command-line tool** - The [Azul command-line tool](https://github.com/DataBiosphere/azul/blob/develop/docs/hca_file_downloader.py) demonstrates how to use the [Data Browser API](https://service.azul.data.humancellatlas.org/) to programmatically list and download project data matrices.
-
-
-
-
-
-
-
-
-
-

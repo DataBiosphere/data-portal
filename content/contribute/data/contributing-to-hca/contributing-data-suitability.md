@@ -1,8 +1,8 @@
 ---
-path: "/contribute/data/contributing-to-hca/contributing-data-suitability"
 date: "2019-04-29"
-title: "Data Suitability"
 description: "Criteria for assessing suitability of a dataset for HCA DCP."
+path: "/contribute/data/contributing-to-hca/contributing-data-suitability"
+title: "Data Suitability"
 ---
 
 # Data Suitability
