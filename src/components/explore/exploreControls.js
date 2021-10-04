@@ -221,12 +221,6 @@ class ExploreControls extends React.Component {
               ))
             : null}
         </div>
-        <a
-          href={process.env.GATSBY_EXPLORE_URL}
-          className={compStyles.moreOrgans}
-        >
-          View More Organs
-        </a>
       </div>
     );
   }

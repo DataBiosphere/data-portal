@@ -12,26 +12,23 @@
 }
 
 /* Text - Shared Styles */
-/* Metric label, organ text, view more organs */
+/* Metric label, organ text. */
 .controls .label,
-.controls .organ span,
-.controls .moreOrgans {
+.controls .organ span {
   font-size: 16px;
   font-weight: 500;
 }
 
 /* Text - line heights - 21px */
-/* Organ text, view more organs */
-.controls .organ span,
-.controls .moreOrgans {
+/* Organ text */
+.controls .organ span {
   line-height: 21px;
 }
 
 /* Color - Shared Styles - blue dark */
-/* Metric count, organ text, view more organs */
+/* Metric count, organ text */
 .controls .count,
-.controls .organ span,
-.controls .moreOrgans {
+.controls .organ span {
   color: var(--blue-dark);
 }
 
