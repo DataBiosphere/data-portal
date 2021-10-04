@@ -22,7 +22,6 @@ import * as numberFormatter from "../utils/number-format.service";
 import cells from "../../images/icon/metrics/cells.png";
 import donors from "../../images/icon/metrics/donors.png";
 import labs from "../../images/icon/metrics/labs.png";
-import organs from "../../images/icon/metrics/organs.png";
 import projects from "../../images/icon/metrics/projects.png";
 import arrow from "../../images/icon/portal/arrow.png";
 import labsContribute from "../../images/icon/portal/labsContribute.png";
@@ -145,17 +144,6 @@ class IndexPage extends React.Component {
                     {numberFormatter.formatCount(this.state.cellCount)}
                   </span>
                   <span className={compStyles.label}>Cells</span>
-                </div>
-              </div>
-              <div className={compStyles.metric}>
-                <span>
-                  <img src={organs} alt="Organs" />
-                </span>
-                <div>
-                  <span className={compStyles.count}>
-                    {numberFormatter.formatCount(this.state.organCount)}
-                  </span>
-                  <span className={compStyles.label}>Organs</span>
                 </div>
               </div>
               <div className={compStyles.metric}>
