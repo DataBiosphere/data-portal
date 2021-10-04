@@ -170,7 +170,7 @@ class SearchBrowser extends React.Component {
       if (windowWidth < 1024) {
         return "Filter projects by attribute";
       }
-      return "Filter projects by attribute e.g. organ, project title.";
+      return "Filter projects by attribute e.g. project title.";
     }
 
     return "Loading data...";
