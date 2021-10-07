@@ -62,7 +62,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@babel/plugin-transform-spread": "7.12.1",
+    "@babel/plugin-transform-spread": "7.15.8",
     "@types/webpack": "^5.28.0",
     "bufferutil": "^4.0.1",
     "core-js": "^3.17.3",
