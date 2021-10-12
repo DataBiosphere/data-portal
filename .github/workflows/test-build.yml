@@ -19,5 +19,4 @@ jobs:
       - run: |
           cd main
           npm ci
-          npm install --global gatsby-cli
-          source ./set-dev-env.sh && gatsby build --verbose
+          source ./set-dev-env.sh && npx gatsby build --verbose
