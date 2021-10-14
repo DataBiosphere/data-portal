@@ -6,7 +6,7 @@ title: DCP Updates
 
 # DCP Platform Updates
 
-#### October 06, 2021
+#### October 13, 2021
 
 ### Release Highlights
 
@@ -20,7 +20,7 @@ title: DCP Updates
 
 * A new HumanCellAtlas slack channel (#dcp-help) is available to help you troubleshoot Data Portal questions with both the Data Portal team and community and give you the latest updates on Data Portal events and data.
 
-### New Raw Data, Metadata, and Contributor-generated Matrices (12)
+### New Raw Data, Metadata, and Contributor-generated Matrices (14)
 
 1. [A Single-cell Transcriptomic Atlas of Human Intervertebral Disc](https://data.humancellatlas.org/explore/projects/602628d7-c038-48a8-aa97-ffbb2cb44c9d)
 1. [A human cell atlas of fetal gene expression.](https://data.humancellatlas.org/explore/projects/a9301beb-e9fa-42fe-b75c-84e8a460c733)
@@ -39,33 +39,32 @@ title: DCP Updates
 
 ### New DCP Analysis (2)
 
-1. [Census of Immune Cells](https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79) | Added files: 1 loom
-1. [Integrative computational analysis of the substantia nigra pars compacta and the locus coeruleus](https://data.humancellatlas.org/explore/projects/5b5f05b7-2482-468d-b76d-8f68c04a7a47) | Added files: 1 loom
+1. [Census of Immune Cells](https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79) 
+1. [Integrative computational analysis of the substantia nigra pars compacta and the locus coeruleus](https://data.humancellatlas.org/explore/projects/5b5f05b7-2482-468d-b76d-8f68c04a7a47)
 
 
-### Updated Metadata, Contributor-generated matrices, or DCP Analysis (21)
+### Updated Metadata, Contributor-generated matrices, or DCP Analysis (20q)
 
-1. [A single cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d) | Added files: 10 mtx.gz, 20 tsv.gz; Deleted files: 10 mtx.gz, 20 tsv.gz
-1. [Capturing human trophoblast development with naive pluripotent stem cells in vitro](https://data.humancellatlas.org/explore/projects/da2747fa-2921-42e0-afd4-39ef57b2b88b) | Added files: 8 tsv.gz, 4 mtx.gz; Deleted files: 4 mtx.gz, 8 tsv.gz
-1. [Dissecting the Global Dynamic Molecular Profiles of Human Fetal Kidney Development by Single-Cell RNA Sequencing](https://data.humancellatlas.org/explore/projects/8a40ff19-e614-4c50-b23b-5c9e1d546bab) | Added files: 70 txt.gz; Deleted files: 70 txt.gz
-1. [Female human primordial germ cells display X-chromosome dosage compensation despite the absence of X-inactivation [Female]](https://data.humancellatlas.org/explore/projects/56e73ccb-7ae9-4fae-a738-acfb69936d7a) | Added files: 5 tar.gz; Deleted files: 5 tar.gz
-1. [Female human primordial germ cells display X-chromosome dosage compensation despite the absence of X-inactivation [Male]](https://data.humancellatlas.org/explore/projects/8dacb243-e918-4bd2-bb9a-aac6dc424161) | Added files: 6 tar.gz; Deleted files: 6 tar.gz
-1. [Resolving cellular and molecular diversity along the hippocampal anterior-to-posterior axis in humans](https://data.humancellatlas.org/explore/projects/34cba5e9-ecb1-4d81-bf08-48987cd63073) | Added files: 1 csv.gz; Deleted files: 1 csv.gz
-1. [Single Cell RNA Sequencing of Human Milk-Derived Cells Reveals Sub-Populations of Mammary Epithelial Cells with Molecular Signatures of Progenitor and Mature States: a Novel, Non-invasive Framework for Investigating Human Lactation Physiology](https://data.humancellatlas.org/explore/projects/8999b456-6fa6-438b-ab17-b62b1d8ec0c3) | Added files: 2 tsv.gz, 1 mtx.gz; Deleted files: 1 mtx.gz, 2 tsv.gz
-1. [Single Cell RNA-Seq profiling human embryonic kidney cortex cells](https://data.humancellatlas.org/explore/projects/71436067-ac41-4ace-be1b-2fbcc2cb02fa) | Added files: 1 tsv; Deleted files: 1 tsv
-1. [Single Cell RNA-Seq profiling of human embryonic kidney outer and inner cortical cells and kidney organoid cells](https://data.humancellatlas.org/explore/projects/dd7f2436-0c56-4709-bd17-e526bba4cc15) | Added files: 8 tar.gz; Deleted files: 8 tar.gz
-1. [Single-Cell RNA Sequencing Reveals Human iPS Cell-derived Alveolar Type 1 Cells in Alveolar Organoids](https://data.humancellatlas.org/explore/projects/dbcd4b1d-31bd-4eb5-94e1-50e8706fa192) | Added files: 1 txt.gz; Deleted files: 1 txt.gz
-1. [Single-Cell RNA-Seq Analysis of cells from human urine](https://data.humancellatlas.org/explore/projects/4af795f7-3e1d-4341-b867-4ac0982b9efd) | Added files: 2 tsv.gz, 1 mtx.gz; Deleted files: 1 mtx.gz, 2 tsv.gz
-1. [Single-cell RNA sequencing of human nasal swab from healthy donors](https://data.humancellatlas.org/explore/projects/414acced-eba0-440f-b721-befbc5642bef) | Added files: 2 txt.gz; Deleted files: 2 txt.gz
-1. [Single-cell RNA-sequencing reveals the landscape of cervical cancer heterogeneity](https://data.humancellatlas.org/explore/projects/d012d476-8f8c-4ff3-89d6-ebbe22c1b5c1) | Added files: 4 tsv.gz, 2 mtx.gz; Deleted files: 2 mtx.gz, 4 tsv.gz
-1. [Single-cell Transcriptome Analysis Reveals an Anomalous Epithelial Variation and Ectopic Inflammatory Response in Chronic Obstructive Pulmonary Disease](https://data.humancellatlas.org/explore/projects/ad04c8e7-9b7d-4cce-b8e9-01e31da10b94) | Added files: 24 tsv.gz, 1 rds.gz, 12 mtx.gz; Deleted files: 1 rds.gz, 12 mtx.gz, 24 tsv.gz
-1. [Single-cell reconstruction of follicular remodeling in the human adult ovary](https://data.humancellatlas.org/explore/projects/faeedcb0-e046-4be7-b1ad-80a3eeabb066) | Added files: 31 h5; Deleted files: 31 h5
-1. [Single-cell transcriptomics of the human retinal pigment epithelium and choroid in health and macular degeneration](https://data.humancellatlas.org/explore/projects/7880637a-35a1-4047-b422-b5eac2a2a358) | Added files: 14 tsv.gz; Deleted files: 14 tsv.gz
-1. [Single-cell transcriptomics reveals unique features of human pancreatic islet cell subtypes](https://data.humancellatlas.org/explore/projects/78b2406d-bff2-46fc-8b61-20690e602227) | Added files: 144 tsv.gz; Deleted files: 144 tsv.gz
-1. [The Developmental Heterogeneity of Human Natural Killer Cells Defined by Single-cell Transcriptome](https://data.humancellatlas.org/explore/projects/403c3e76-6814-4a2d-a580-5dd5de38c7ff) | Added files: 18 tsv.gz, 9 mtx.gz; Deleted files: 18 tsv.gz, 9 mtx.gz
-1. [The Immune Atlas of Human Deciduas With Unexplained Recurrent Pregnancy Loss](https://data.humancellatlas.org/explore/projects/3cfcdff5-dee1-4a7b-a591-c09c6e850b11) | Added files: 4 tsv.gz, 2 mtx.gz; Deleted files: 2 mtx.gz, 4 tsv.gz
-1. [The effect of Mtb aggregation on monocyte-derived macrophage transcription profiles](https://data.humancellatlas.org/explore/projects/b9484e4e-dc40-4e38-9b85-4cecf5b8c068) | Added files: 2 txt.gz; Deleted files: 2 txt.gz
-1. [Single-cell analysis reveals congruence between kidney organoids and human fetal kidney](https://data.humancellatlas.org/explore/)
+1. [A single cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d) 
+1. [Capturing human trophoblast development with naive pluripotent stem cells in vitro](https://data.humancellatlas.org/explore/projects/da2747fa-2921-42e0-afd4-39ef57b2b88b) 
+1. [Dissecting the Global Dynamic Molecular Profiles of Human Fetal Kidney Development by Single-Cell RNA Sequencing](https://data.humancellatlas.org/explore/projects/8a40ff19-e614-4c50-b23b-5c9e1d546bab) 
+1. [Female human primordial germ cells display X-chromosome dosage compensation despite the absence of X-inactivation [Female]](https://data.humancellatlas.org/explore/projects/56e73ccb-7ae9-4fae-a738-acfb69936d7a) 
+1. [Female human primordial germ cells display X-chromosome dosage compensation despite the absence of X-inactivation [Male]](https://data.humancellatlas.org/explore/projects/8dacb243-e918-4bd2-bb9a-aac6dc424161)
+1. [Resolving cellular and molecular diversity along the hippocampal anterior-to-posterior axis in humans](https://data.humancellatlas.org/explore/projects/34cba5e9-ecb1-4d81-bf08-48987cd63073) 
+1. [Single Cell RNA Sequencing of Human Milk-Derived Cells Reveals Sub-Populations of Mammary Epithelial Cells with Molecular Signatures of Progenitor and Mature States: a Novel, Non-invasive Framework for Investigating Human Lactation Physiology](https://data.humancellatlas.org/explore/projects/8999b456-6fa6-438b-ab17-b62b1d8ec0c3) 
+1. [Single Cell RNA-Seq profiling human embryonic kidney cortex cells](https://data.humancellatlas.org/explore/projects/71436067-ac41-4ace-be1b-2fbcc2cb02fa) 
+1. [Single Cell RNA-Seq profiling of human embryonic kidney outer and inner cortical cells and kidney organoid cells](https://data.humancellatlas.org/explore/projects/dd7f2436-0c56-4709-bd17-e526bba4cc15) 
+1. [Single-Cell RNA Sequencing Reveals Human iPS Cell-derived Alveolar Type 1 Cells in Alveolar Organoids](https://data.humancellatlas.org/explore/projects/dbcd4b1d-31bd-4eb5-94e1-50e8706fa192) 
+1. [Single-Cell RNA-Seq Analysis of cells from human urine](https://data.humancellatlas.org/explore/projects/4af795f7-3e1d-4341-b867-4ac0982b9efd)
+1. [Single-cell RNA sequencing of human nasal swab from healthy donors](https://data.humancellatlas.org/explore/projects/414acced-eba0-440f-b721-befbc5642bef)
+1. [Single-cell RNA-sequencing reveals the landscape of cervical cancer heterogeneity](https://data.humancellatlas.org/explore/projects/d012d476-8f8c-4ff3-89d6-ebbe22c1b5c1)
+1. [Single-cell Transcriptome Analysis Reveals an Anomalous Epithelial Variation and Ectopic Inflammatory Response in Chronic Obstructive Pulmonary Disease](https://data.humancellatlas.org/explore/projects/ad04c8e7-9b7d-4cce-b8e9-01e31da10b94)
+1. [Single-cell reconstruction of follicular remodeling in the human adult ovary](https://data.humancellatlas.org/explore/projects/faeedcb0-e046-4be7-b1ad-80a3eeabb066)
+1. [Single-cell transcriptomics of the human retinal pigment epithelium and choroid in health and macular degeneration](https://data.humancellatlas.org/explore/projects/7880637a-35a1-4047-b422-b5eac2a2a358)
+1. [Single-cell transcriptomics reveals unique features of human pancreatic islet cell subtypes](https://data.humancellatlas.org/explore/projects/78b2406d-bff2-46fc-8b61-20690e602227)
+1. [The Developmental Heterogeneity of Human Natural Killer Cells Defined by Single-cell Transcriptome](https://data.humancellatlas.org/explore/projects/403c3e76-6814-4a2d-a580-5dd5de38c7ff)
+1. [The Immune Atlas of Human Deciduas With Unexplained Recurrent Pregnancy Loss](https://data.humancellatlas.org/explore/projects/3cfcdff5-dee1-4a7b-a591-c09c6e850b11)
+1. [The effect of Mtb aggregation on monocyte-derived macrophage transcription profiles](https://data.humancellatlas.org/explore/projects/b9484e4e-dc40-4e38-9b85-4cecf5b8c068)
 
 
 #### September 17, 2021
