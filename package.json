@@ -64,7 +64,7 @@
   "devDependencies": {
     "@babel/plugin-transform-spread": "7.12.1",
     "@types/webpack": "^5.28.0",
-    "bufferutil": "^4.0.1",
+    "bufferutil": "^4.0.5",
     "core-js": "^3.17.3",
     "gatsby-cli": "^3.13.0",
     "prettier": "^2.4.1",
