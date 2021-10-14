@@ -43,7 +43,7 @@ title: DCP Updates
 1. [Integrative computational analysis of the substantia nigra pars compacta and the locus coeruleus](https://data.humancellatlas.org/explore/projects/5b5f05b7-2482-468d-b76d-8f68c04a7a47)
 
 
-### Updated Metadata, Contributor-generated matrices, or DCP Analysis (20q)
+### Updated Metadata, Contributor-generated matrices, or DCP Analysis (20)
 
 1. [A single cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d) 
 1. [Capturing human trophoblast development with naive pluripotent stem cells in vitro](https://data.humancellatlas.org/explore/projects/da2747fa-2921-42e0-afd4-39ef57b2b88b) 
