@@ -36,6 +36,7 @@ test_trufflehog:
     - trufflehog --regex --rules trufflehog-rules.json --branch prod --entropy=False --max_depth 30 https://github.com/HumanCellAtlas/data-portal.git
   only:
     - prod
+    - lungmap-prod
 
 # Prod Build
 build_prod:
