@@ -11,9 +11,7 @@ import React from "react";
 
 // App dependencies
 import ClickHandler from "../clickHandler/clickHandler";
-import HeaderNavDropDown from "../headerNavDropDown/headerNavDropDown";
 import { HeaderQuery } from "../../hooks/header-query";
-import * as ReleaseService from "../../utils/release.service";
 
 // Images
 import headerLogo from "../../../images/logo/logo-hca.png";
@@ -23,7 +21,6 @@ import classNames from "classnames";
 
 // Styles
 import * as compStyles from "./header.module.css";
-import * as dropStyles from "../headerNavDropDown/headerNavDropDown.module.css";
 import * as fontStyles from "../../styles/fontsize.module.css";
 import * as globalStyles from "../../styles/global.module.css";
 
@@ -49,14 +46,6 @@ class Header extends React.Component {
     return this.state !== nextState;
   }
 
-  getReleasesUrl = () => {
-    return `${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`;
-  };
-
-  isActiveClassName = (docPath) => {
-    return docPath && docPath.includes("/releases/");
-  };
-
   setNavStyle = () => {
     const { openNav } = this.state;
     const useMenuNav = document.body.getBoundingClientRect().width < 840;
@@ -80,18 +69,12 @@ class Header extends React.Component {
   };
 
   render() {
-    const { docPath, homePage, links } = this.props,
+    const { homePage, links } = this.props,
       { menuNav, openNav } = this.state,
       browserLink = process.env.GATSBY_EXPLORE_URL,
       exploreDescription = "Search for data in the HCA",
       exploreLabel = "Explore",
-      hideLinks = menuNav && !openNav,
-      releaseDescription =
-        "Explore, visualize, and interact with 24 annotated datasets",
-      releaseDocumentationUrl = "/releases/2020-mar",
-      releaseLabel = "March 2020 Release",
-      releasesMenuActive = this.isActiveClassName(docPath),
-      releaseVisible = ReleaseService.isReleaseVisible();
+      hideLinks = menuNav && !openNav;
 
     const Description = (props) => {
       const { children } = props;
@@ -169,53 +152,6 @@ class Header extends React.Component {
       );
     };
 
-    const NavRelease = () => {
-      const button = (
-          <HeaderNavDisplay
-            description={releaseDescription}
-            label={releaseLabel}
-          />
-        ),
-        menu = (
-          <ul>
-            <ExternalLink linkTo={this.getReleasesUrl()}>
-              <span
-                className={classNames(
-                  fontStyles.xs,
-                  compStyles.xs,
-                  dropStyles.item
-                )}
-              >
-                Datasets
-              </span>
-            </ExternalLink>
-            <InternalLink path={releaseDocumentationUrl}>
-              <span
-                className={classNames(
-                  fontStyles.xs,
-                  compStyles.xs,
-                  dropStyles.item
-                )}
-              >
-                Documentation
-              </span>
-            </InternalLink>
-          </ul>
-        ),
-        { openNav } = this.state;
-
-      return (
-        <HeaderNavDropDown
-          activeClassName={classNames({
-            [compStyles.active]: releasesMenuActive,
-          })}
-          button={button}
-          menu={menu}
-          stack={openNav}
-        />
-      );
-    };
-
     return (
       <div
         className={classNames(compStyles.navBar, {
@@ -239,7 +175,6 @@ class Header extends React.Component {
             {links.map((l, i) => (
               <Nav key={i} nav={l} />
             ))}
-            {releaseVisible ? <NavRelease /> : null}
           </div>
           <ClickHandler
             className={classNames(compStyles.menuDropDown, fontStyles.s, {
