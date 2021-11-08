@@ -6,6 +6,29 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### November 8, 2021
+
+### Release Highlights
+* Contributor-generated matrices are available for the project CrossTissueReferenceMap which is associated with the Human Cell Atlas publication "".
+* New raw data has been added for the project "Defining human mesenchymal and epithelial heterogeneity in response to oral inflammatory disease," which is part of the Oral & Craniofacial Biological Network.
+* The first onychofibroblasts dataset has been added to the DCP as part of the project ["Single cell RNAseq of human nail unit defines RSPO4 onychofibroblasts and SPINK6 nail epithelium"](LINK).
+* New patch-seq data is available in the project ["Cryopreservation and post-thaw characterization of dissociated human islet cells"](LINK).
+* Content description is added to the matrix download page for CGMs and DCP matrices.
+* The submitted and last updated date are added to the projects list. We will make this sortable by this field in a future release.
+* New and updated projects for the latest DCP Platform release are now indicated next to the project name on the Explore page.
+
+     ![](./_images/updated_projects.png)
+
+
+
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (14)
+
+### New DCP Analysis (2)
+
+### Updated Metadata, raw data, Contributor-generated matrices, or DCP Analysis (20)
+
+
 #### October 13, 2021
 
 ### Release Highlights
