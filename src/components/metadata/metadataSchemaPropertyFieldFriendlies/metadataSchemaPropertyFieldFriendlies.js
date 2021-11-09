@@ -40,7 +40,7 @@ function MetadataSchemaPropertyFieldFriendlies(props) {
         ) : (
           <span>{friendly}</span>
         )}
-        {showArrow ? <span className={compStyles.arrow}>></span> : children}
+        {showArrow ? <span className={compStyles.arrow}>{">"}</span> : children}
       </span>
     );
   };

@@ -23,8 +23,8 @@ function FooterLinks(props) {
 
   return (
     <div className={compStyles.links}>
-      {links.map((link, l) => (
-        <FooterLink key={l} link={link} />
+      {links.map(({ clickFn, name, path }) => (
+        <FooterLink key={name} clickFn={clickFn} name={name} path={path} />
       ))}
     </div>
   );
