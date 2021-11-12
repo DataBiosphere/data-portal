@@ -6,27 +6,41 @@ title: DCP Updates
 
 # DCP Platform Updates
 
-#### November 8, 2021
+#### November 11, 2021
 
 ### Release Highlights
-* Contributor-generated matrices are available for the project CrossTissueReferenceMap which is associated with the Human Cell Atlas publication "".
-* New raw data has been added for the project "Defining human mesenchymal and epithelial heterogeneity in response to oral inflammatory disease," which is part of the Oral & Craniofacial Biological Network.
-* The first onychofibroblasts dataset has been added to the DCP as part of the project ["Single cell RNAseq of human nail unit defines RSPO4 onychofibroblasts and SPINK6 nail epithelium"](LINK).
-* New patch-seq data is available in the project ["Cryopreservation and post-thaw characterization of dissociated human islet cells"](LINK).
-* Content description is added to the matrix download page for CGMs and DCP matrices.
-* The submitted and last updated date are added to the projects list. We will make this sortable by this field in a future release.
-* New and updated projects for the latest DCP Platform release are now indicated next to the project name on the Explore page.
+* The DCP team has reanalyzed the first of the DCP 1.0 Smart-seq2 projects (["Single cell RNA sequencing of multiple myeloma II](https://data.humancellatlas.org/explore/projects/0c3b7785-f74d-4091-8616-a68757e4c2a8)). Cell-by-gene matrices are available on the project page and were produced with the latest [Smart-seq Multi-Sample pipeline](https://data.humancellatlas.org/pipelines/smart-seq2-workflow) for uniform analysis.  
+* Contributor-generated matrices are available for the project ["Single-nucleus cross-tissue molecular reference maps to decipher disease gene function."](https://data.humancellatlas.org/explore/projects/31887183-a72c-4308-9eac-c6140313f39c) which is associated with a Human Cell Atlas [preprint publication](https://www.biorxiv.org/content/10.1101/2021.07.19.452954v1).
+* New raw data has been added for the project ["Defining human mesenchymal and epithelial heterogeneity in response to oral inflammatory disease."](https://data.humancellatlas.org/explore/projects/783c9952-a4ae-4106-a6ce-56f20ce27f88) as part of the [HCA Oral & Craniofacial Biological Network](https://www.humancellatlas.org/biological-networks/).
+* The first onychofibroblasts dataset has been added to the DCP as part of the project ["Single cell RNAseq of human nail unit defines RSPO4 onychofibroblasts and SPINK6 nail epithelium"](https://data.humancellatlas.org/explore/projects/bd7104c9-a950-490e-9472-7d41c6b11c62).
+* New patch-seq data is available in the project ["Cryopreservation and post-thaw characterization of dissociated human islet cells"](https://data.humancellatlas.org/explore/projects/8559a8ed-5d8c-4fb6-bde8-ab639cebf03c).
+* A content description for contributor- and DCP-generated matrices is now available on each Data Portal project's matrix download page.
+* The submitted and last updated dates are added to the projects list and Data Portal Explore page. We will make this sortable by this field in a future release.
+* New and updated projects for the latest DCP Platform release are now indicated next to the project name on the Explore page (as shown below).
 
      ![](./_images/updated_projects.png)
 
-
-
-
 ### New Raw Data, Metadata, and Contributor-generated Matrices (14)
 
-### New DCP Analysis (2)
+1. [Cellular heterogeneity of human fallopian tubes in normal and hydrosalpinx disease states identified by scRNA-seq](https://data.humancellatlas.org/explore/projects/21ea8ddb-525f-4f1f-a820-31f0360399a2)
+1. [Cryopreservation and post-thaw characterization of dissociated human islet cells](https://data.humancellatlas.org/explore/projects/8559a8ed-5d8c-4fb6-bde8-ab639cebf03c)
+1. [Defining human mesenchymal and epithelial heterogeneity in response to oral inflammatory disease](https://data.humancellatlas.org/explore/projects/783c9952-a4ae-4106-a6ce-56f20ce27f88)
+1. [Differentiation of Human Intestinal Organoids with Endogenous Vascular Endothelial Cells](https://data.humancellatlas.org/explore/projects/5eafb94b-02d8-423e-81b8-3673da319ca0)
+1. [Healthy human kidney cell type single cell RNA-seq data](https://data.humancellatlas.org/explore/projects/94023a08-611d-4f22-a8c9-90956e091b2e)
+1. [Human photoreceptor cells from different macular subregions have distinct transcriptional profiles](https://data.humancellatlas.org/explore/projects/8bd2e5f6-9453-4b9b-9c56-59e3a40dc87e)
+1. [In Vitro and In Vivo Development of the Human Airway at Single-Cell Resolution](https://data.humancellatlas.org/explore/projects/b32a9915-c81b-4cbc-af53-3a66b5da3c9a)
+1. [Mapping Development of the Human Intestinal Niche at Single-Cell Resolution](https://data.humancellatlas.org/explore/projects/75dbbce9-0cde-489c-88a7-93e8f92914a3)
+1. [Mapping the temporal and spatial dynamics of the human endometrium in vivo and in vitro](https://data.humancellatlas.org/explore/projects/2b38025d-a5ea-4c0f-b22e-367824bcaf4c)
+1. [Pro-inflammatory T helper 17 directly harms oligodendrocytes in neuroinflammation](https://data.humancellatlas.org/explore/projects/ede2e0b4-6652-464f-abbc-0b2d964a25a0)
+1. [Single Cell RNAseq of primary pulmonary endothelial cells.](https://data.humancellatlas.org/explore/projects/d7b7beae-652b-4fc0-9bf2-bcda7c7115af)
+1. [Single cell RNAseq of human nail unit defines RSPO4 onychofibroblasts and SPINK6 nail epithelium](https://data.humancellatlas.org/explore/projects/bd7104c9-a950-490e-9472-7d41c6b11c62)
+1. [Single cell sequencing identifies novel sub-populations of breast cancer cells selected under hypoxia](https://data.humancellatlas.org/explore/projects/f6133d2a-9f3d-4ef9-9c19-c23d6c7e6cc0)
+1. [Single-nucleus cross-tissue molecular reference maps to decipher disease gene function.](https://data.humancellatlas.org/explore/projects/31887183-a72c-4308-9eac-c6140313f39c)
 
-### Updated Metadata, raw data, Contributor-generated matrices, or DCP Analysis (20)
+### Updated Metadata, Raw Data, Contributor-generated Matrices, or DCP Analysis (2)
+
+1. [AIDA pilot data](https://data.humancellatlas.org/explore/projects/f0f89c14-7460-4bab-9d42-22228a91f185)
+1. [Single cell RNA sequencing of multiple myeloma II](https://data.humancellatlas.org/explore/projects/0c3b7785-f74d-4091-8616-a68757e4c2a8)
 
 
 #### October 13, 2021
@@ -66,7 +80,7 @@ title: DCP Updates
 1. [Integrative computational analysis of the substantia nigra pars compacta and the locus coeruleus](https://data.humancellatlas.org/explore/projects/5b5f05b7-2482-468d-b76d-8f68c04a7a47)
 
 
-### Updated Metadata, Contributor-generated matrices, or DCP Analysis (20)
+### Updated Metadata, Contributor-generated Matrices, or DCP Analysis (20)
 
 1. [A single cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d) 
 1. [Capturing human trophoblast development with naive pluripotent stem cells in vitro](https://data.humancellatlas.org/explore/projects/da2747fa-2921-42e0-afd4-39ef57b2b88b) 
