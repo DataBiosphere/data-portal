@@ -9,7 +9,6 @@
 import React from "react";
 
 // App dependencies
-import AnnouncementCatalog from "./announcementCatalog/announcementCatalog";
 import Banner from "./banner/banner";
 import Footer from "./footer/footer";
 import FooterLungMAP from "./footer-lungmap/footer-lungmap";
@@ -90,7 +89,6 @@ class Layout extends React.Component {
               docPath={docPath}
             />
           )}
-          {lungmap ? null : <AnnouncementCatalog />}
           <Banner position={"top"} healthy={healthy} />
           {homePage ? (
             children
