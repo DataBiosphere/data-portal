@@ -5,6 +5,7 @@ description: "Analysis portals providing a human-friendly UI in a web or native 
 linked:
     - ./analysis-portals/asap.md
     - ./analysis-portals/bioturing-browser.md
+    - ./analysis-portals/cambridge-cell-atlas.md
     - ./analysis-portals/cellxgene.md
     - ./analysis-portals/cytoscape.md
     - ./analysis-portals/dnastack.md
