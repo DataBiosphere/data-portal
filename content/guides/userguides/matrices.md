@@ -21,10 +21,10 @@ Overall, three types of matrices are currently available for DCP 2.0 data:
 
 Each DCP 2.0 project that is processed with [uniform pipelines](/pipelines) has two types of DCP-generated matrices available for download:
 
-- [project-level matrices](#dcp-project-level-matrices) 
-- [library-level matrices](#dcp-library-level-matrices)
+- [project-level matrices](#dcp-project-level-matrix-overview) 
+- [library-level matrices](#dcp-library-level-matrix-overview)
 
-Both matrix types are in Loom file format, and contain standard [metrics](/pipelines/hca-pipelines/data-processing-pipelines/qc-metrics) and counts that are specific to the data processing pipeline used to generate the file. 
+Both matrix types are in Loom file format, and contain standard [metrics](/pipelines/qc-metrics) and counts that are specific to the data processing pipeline used to generate the file. 
 
 > For the most up-to-date information on counts and metrics, see the Matrix Overviews for the **[Smart-seq2 Pipeline](https://broadinstitute.github.io/warp/docs/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema)** and the **[Optimus Pipeline](https://broadinstitute.github.io/warp/docs/Pipelines/Optimus_Pipeline/Loom_schema) (10x data)**.
 
