@@ -346,8 +346,13 @@
           key: "/privacy/privacy/lungmap-privacy"
           path: "/lungmap-privacy"
 - name: "Community Updates"
+  description: "DCP Platform Updates"
   key: "community-update"
+  headerName: "Updates"
   path: "/coming-soon-DCP-2-with-support-for-controlled-access-data"
+  position:
+    location: "h"
+    order: 6
   tabs:
     - name: ""
       key: "community-update"
