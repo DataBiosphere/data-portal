@@ -349,7 +349,7 @@
   description: "DCP Platform Updates"
   key: "community-update"
   headerName: "Updates"
-  path: "/coming-soon-DCP-2-with-support-for-controlled-access-data"
+  path: "/dcp-updates"
   position:
     location: "h"
     order: 6
