@@ -1,0 +1,13 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA Data Portal toolbar row component.
+ */
+
+.toolbarRow {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}

@@ -1,0 +1,33 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA Data Portal search input component.
+ */
+
+/* Input. */
+.input {
+  composes: input from "../../metadata/metadataSearchInput/metadataSearchInput.module.css";
+  -webkit-appearance: none; /* Removes inner shadow on mobile. */
+  overflow: hidden;
+  padding: 0 38px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Lungmap specific style overrides. */
+.input.lungmap {
+  border-color: var(--white);
+  caret-color: var(--white);
+  color: var(--white);
+}
+
+/* Input focus. */
+.input.lungmap:focus {
+  border: 2px solid var(--white);
+}
+
+/* Input - placeholder. */
+.input.lungmap::placeholder {
+  color: var(--white);
+}

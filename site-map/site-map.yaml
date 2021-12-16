@@ -328,6 +328,16 @@
         - name: ""
           key: "/privacy/privacy/privacy"
           path: "/privacy"
+- name: "Search"
+  key: "search"
+  path: "/search"
+  tabs:
+    - name: ""
+      key: "search"
+      primaryLinks:
+        - name: ""
+          key: "/search/search"
+          path: "/search"
 - name: "Feedback"
   key: "feedback"
   path: "/feedback"

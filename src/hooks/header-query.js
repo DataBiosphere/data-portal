@@ -14,10 +14,6 @@ export const HeaderQuery = () => {
               headerName
               description
               path
-              position {
-                location
-                order
-              }
             }
           }
         }

@@ -16,6 +16,7 @@ import FigureStyles from "../figure-styles/figure-styles";
 import InternalLink from "../internal-link/internalLink";
 import LinkToBrowser from "../linkToBrowser/linkToBrowser";
 import MetadataTypeEntitySchemas from "../metadata/metadataTypeEntitySchemas/metadataTypeEntitySchemas";
+import SearchPortal from "../searchPortal/searchPortal";
 import { SurveyName } from "../survey/survey-name";
 import * as DPGTMService from "../../utils/dp-gtm/dp-gtm.service";
 
@@ -34,6 +35,7 @@ function Markdown(props) {
       "internal-link": InternalLink,
       "link-to-browser": LinkToBrowser,
       "metadata-type-entity-schemas": MetadataTypeEntitySchemas,
+      "search-portal": SearchPortal,
     },
   }).Compiler;
 

@@ -1,0 +1,14 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA Data Portal search input icon component.
+ */
+
+/* Input search icon wrapper. */
+.searchIcon {
+  display: inline-flex;
+  padding: 7px; /* Total icon size 38px. */
+  pointer-events: none;
+  position: absolute;
+}

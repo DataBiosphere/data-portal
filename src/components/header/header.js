@@ -6,192 +6,124 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import { Link } from "gatsby";
 import React from "react";
 
 // App dependencies
-import ClickHandler from "../clickHandler/clickHandler";
 import { HeaderQuery } from "../../hooks/header-query";
+import SearchBar from "../searchPortal/searchBar/searchBar";
+import SearchButton from "../searchPortal/searchButton/searchButton";
+import ToolbarNav from "./toolbarNav/toolbarNav";
+import ToolbarNavItems from "./toolbarNavItems/toolbarNavItems";
+import ToolbarRow from "./toolbarRow/toolbarRow";
+import ToolbarTools from "./toolbarTools/toolbarTools";
 
 // Images
 import headerLogo from "../../../images/logo/logo-hca.png";
 
-// Class name helper
-import classNames from "classnames";
-
 // Styles
-import * as compStyles from "./header.module.css";
-import * as fontStyles from "../../styles/fontsize.module.css";
-import * as globalStyles from "../../styles/global.module.css";
+import { hamburger, hcaHeader, hero, logo, wrapper } from "./header.module.css";
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { menuNav: false, openNav: false };
+    this.state = {
+      navOpen: false,
+      showHamburger: false,
+      searchBarOpen: false,
+    };
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.toggleSearchBar = this.toggleSearchBar.bind(this);
   }
 
   componentDidMount() {
-    // Set up header menu style
-    this.setNavStyle();
+    /* Init media query list. */
+    this.mediaQueryList = window.matchMedia("(max-width: 839px)");
 
-    window.addEventListener("resize", this.setNavStyle);
+    /* Init state showHamburger; set to true with small viewport. */
+    if (this.mediaQueryList.matches) {
+      this.setState({ showHamburger: true });
+    }
+    this.mediaQueryList.addEventListener("change", this.onChangeMedia);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.setNavStyle);
+    this.mediaQueryList.removeEventListener("change", this.onChangeMedia);
   }
 
-  shouldComponentUpdate(_, nextState) {
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
     return this.state !== nextState;
   }
 
-  setNavStyle = () => {
-    const { openNav } = this.state;
-    const useMenuNav = document.body.getBoundingClientRect().width < 840;
-    const closeMenuNav = !useMenuNav;
-
-    this.setState({ menuNav: useMenuNav });
-
-    if (closeMenuNav && openNav) {
-      // Close the menu if resize occurs when menu is open and screen width is > 840
-      this.setState({ openNav: false });
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    /* When there is a state change to showing the hamburger the site should always be scrollable. */
+    /* Resizing to larger viewport, the nav should remain open. */
+    /* Resizing to a smaller viewport the nav should be closed, until toggled open. */
+    if (prevState.showHamburger !== this.state.showHamburger) {
+      this.props.onHandleSiteScroll(true);
+      this.setState({ navOpen: !this.state.showHamburger });
     }
+  }
+
+  onChangeMedia = () => {
+    this.setState({ showHamburger: this.mediaQueryList.matches });
   };
 
   toggleMenu = () => {
-    const { menuNav, openNav } = this.state;
-
-    if (menuNav) {
-      this.setState({ openNav: !openNav });
-      this.props.onHandleSiteScroll(openNav);
+    if (this.state.showHamburger) {
+      this.setState({ navOpen: !this.state.navOpen });
+      this.props.onHandleSiteScroll(this.state.navOpen);
     }
   };
 
+  toggleSearchBar = (open) => {
+    this.setState({ searchBarOpen: open });
+  };
+
   render() {
-    const { homePage, links } = this.props,
-      { menuNav, openNav } = this.state,
-      browserLink = process.env.GATSBY_EXPLORE_URL,
-      exploreDescription = "Search for data in the HCA",
-      exploreLabel = "Explore",
-      hideLinks = menuNav && !openNav;
-
-    const Description = (props) => {
-      const { children } = props;
-
-      return (
-        <span className={classNames(fontStyles.xxs, compStyles.xxs)}>
-          {children}
-        </span>
-      );
+    const { homePage, navItems } = this.props;
+    const { navOpen, searchBarOpen, showHamburger } = this.state;
+    const explore = {
+      description: "Search for data in the HCA",
+      headerName: null,
+      name: "Explore",
+      path: process.env.GATSBY_EXPLORE_URL || "/",
     };
-
-    const ExternalLink = (props) => {
-      const { children, className, linkTo } = props;
-
-      return (
-        <li className={className}>
-          <a href={linkTo} onClick={this.toggleMenu}>
-            {children}
-          </a>
-        </li>
-      );
-    };
-
-    const HeaderNavDisplay = (props) => {
-      const { description, label } = props,
-        { menuNav } = this.state;
-
-      return (
-        <>
-          <span className={classNames(fontStyles.xs, compStyles.xs)}>
-            {label}
-          </span>
-          {menuNav ? <Description>{description}</Description> : null}
-        </>
-      );
-    };
-
-    const InternalLink = (props) => {
-      const { children, className, path } = props;
-
-      return (
-        <li className={className}>
-          <Link
-            activeClassName={compStyles.active}
-            partiallyActive={true}
-            to={path}
-            onClick={this.toggleMenu}
-          >
-            {children}
-          </Link>
-        </li>
-      );
-    };
-
-    const Nav = (props) => {
-      const { nav } = props,
-        { description, headerName, name, path } = nav || {},
-        label = headerName ? headerName : name;
-
-      return (
-        <InternalLink path={path}>
-          <HeaderNavDisplay description={description} label={label} />
-        </InternalLink>
-      );
-    };
-
-    const NavExplore = () => {
-      return (
-        <ExternalLink linkTo={browserLink}>
-          <HeaderNavDisplay
-            description={exploreDescription}
-            label={exploreLabel}
-          />
-        </ExternalLink>
-      );
-    };
+    const navLinks = [explore, ...navItems];
 
     return (
       <div
-        className={classNames(compStyles.navBar, {
-          [compStyles.hcaHeader]: homePage,
+        className={classNames(hcaHeader, {
+          [hero]: homePage,
         })}
       >
-        <div
-          className={classNames(globalStyles.wrapper, compStyles.headerWrapper)}
-        >
-          <Link to="/" className={compStyles.logo}>
-            <img src={headerLogo} alt="HCA" />
-          </Link>
-          <div
-            className={classNames(
-              compStyles.links,
-              { [compStyles.small]: menuNav },
-              { [compStyles.hide]: hideLinks }
-            )}
-          >
-            <NavExplore />
-            {links.map((l, i) => (
-              <Nav key={i} nav={l} />
-            ))}
-          </div>
-          <ClickHandler
-            className={classNames(compStyles.menuDropDown, fontStyles.s, {
-              [compStyles.hide]: !menuNav,
-            })}
-            clickAction={this.toggleMenu}
-            tag={"div"}
-          >
-            Menu
-          </ClickHandler>
-          <ClickHandler
-            className={classNames(compStyles.overlay, {
-              [compStyles.hide]: !openNav,
-            })}
-            clickAction={this.toggleMenu}
-            tag={"div"}
-          />
+        <div className={wrapper}>
+          <ToolbarRow>
+            <Link className={logo} to="/">
+              <img alt="HCA" src={headerLogo} />
+            </Link>
+            <ToolbarTools>
+              <SearchButton toggleSearchBar={this.toggleSearchBar} />
+              <SearchBar
+                searchBarOpen={searchBarOpen}
+                toggleSearchBar={this.toggleSearchBar}
+              />
+              <button className={hamburger} onClick={this.toggleMenu}>
+                Menu
+              </button>
+            </ToolbarTools>
+          </ToolbarRow>
+          {(navOpen || !showHamburger) && (
+            <ToolbarRow>
+              <ToolbarNav>
+                <ToolbarNavItems
+                  navItems={navLinks}
+                  toggleMenu={this.toggleMenu}
+                />
+              </ToolbarNav>
+            </ToolbarRow>
+          )}
         </div>
       </div>
     );
@@ -199,7 +131,5 @@ class Header extends React.Component {
 }
 
 export default (props) => {
-  const { docPath } = props;
-
-  return <Header links={HeaderQuery()} docPath={docPath} {...props} />;
+  return <Header navItems={HeaderQuery()} {...props} />;
 };

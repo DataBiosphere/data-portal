@@ -1,0 +1,28 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA Data Portal css transition react-transition-group fade in / out.
+ */
+
+/* Enter. */
+.opacityEnter {
+  opacity: 0;
+}
+
+/* Enter active. */
+.opacityEnterActive {
+  opacity: 1;
+  transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Exit. */
+.opacityExit {
+  opacity: 1;
+}
+
+/* Exit active. */
+.opacityExitActive {
+  opacity: 0;
+  transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}

@@ -1,0 +1,48 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA Data Portal search result component.
+ */
+
+/* Snippet. */
+.snippet {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0 8px;
+}
+
+/* Snippet - first. */
+.snippet:first-of-type {
+  padding-top: 0;
+}
+
+/* Snippet - all. */
+.snippet * {
+  margin: 0;
+}
+
+/* Title. */
+.snippet h4 {
+  color: inherit;
+  display: inline-block;
+  line-height: 24px;
+}
+
+/* URL. */
+.snippet .url {
+  color: var(--gray-darkest);
+  font-size: 12px;
+  padding: 0;
+}
+
+/**
+ * 480px - Large handset portrait, extra small window
+ */
+@media screen and (min-width: 480px) {
+  /* Snippet. */
+  .snippet {
+    flex-direction: row;
+  }
+}

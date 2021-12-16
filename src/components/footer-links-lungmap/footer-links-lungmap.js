@@ -21,7 +21,7 @@ function FooterLinksLungMAP() {
   };
   return (
     <div className={compStyles.links}>
-      <FooterLink key="Privacy" link={link} />
+      <FooterLink key="Privacy" name={link.name} path={link.path} />
     </div>
   );
 }

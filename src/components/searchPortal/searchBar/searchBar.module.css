@@ -1,0 +1,70 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA Data Portal search bar component.
+ */
+
+/* Search bar. */
+.searchBar {
+  display: none;
+}
+
+/* Search bar - active. */
+.searchBar.active {
+  align-items: center;
+  background-color: var(--white);
+  display: flex;
+  height: 64px;
+  left: 0;
+  padding: 0 16px;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+/* Lungmap active. */
+.searchBar.lungmap.active {
+  background-color: var(--primary);
+  height: 60px;
+}
+
+/**
+ * Small Window
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 600px) {
+  /* Search bar. */
+  .searchBar {
+    border-radius: 3px; /* Matches input. */
+    display: flex;
+    flex: 1;
+    width: 200px;
+  }
+
+  /* Search bar - active. */
+  .searchBar.active {
+    height: unset;
+    left: unset;
+    padding: unset;
+    position: relative;
+    top: unset;
+    width: 200px;
+  }
+
+  /* Lungmap active. */
+  .searchBar.lungmap.active {
+    background-color: transparent;
+  }
+}
+
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 768px) {
+  /* Search bar. */
+  .searchBar,
+  .searchBar.active {
+    width: 300px;
+  }
+}
