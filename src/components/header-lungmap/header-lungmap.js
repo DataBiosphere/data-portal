@@ -6,219 +6,140 @@
  */
 
 // Core dependencies
-import { Link } from "gatsby";
 import React from "react";
 
 // App dependencies
-import ClickHandler from "../clickHandler/clickHandler";
+import ToolbarNav from "../header/toolbarNav/toolbarNav";
+import ToolbarNavItems from "../header/toolbarNavItems/toolbarNavItems";
+import ToolbarRow from "../header/toolbarRow/toolbarRow";
+import ToolbarTools from "../header/toolbarTools/toolbarTools";
+import SearchBar from "../searchPortal/searchBar/searchBar";
+import SearchButton from "../searchPortal/searchButton/searchButton";
 
 // Images
 import headerLogo from "../../../images/lungmap/logo/logo-lungmap.png";
 
-// Class name helper
-import classNames from "classnames";
-
 // Styles
-import * as compStyles from "./header-lungmap.module.css";
-import * as fontStyles from "../../styles/fontsize.module.css";
-import * as globalStyles from "../../styles/global.module.css";
+import {
+  hamburger,
+  logo,
+  lungmapHeader,
+  wrapper,
+} from "./header-lungmap.module.css";
 
 class HeaderLungMAP extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { menuNav: false, openNav: false };
+    this.state = {
+      navOpen: false,
+      showHamburger: false,
+      searchBarOpen: false,
+    };
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.toggleSearchBar = this.toggleSearchBar.bind(this);
   }
 
   componentDidMount() {
-    // Set up header menu style
-    this.setNavStyle();
+    /* Init media query list. */
+    this.mediaQueryList = window.matchMedia("(max-width: 839px)");
 
-    window.addEventListener("resize", this.setNavStyle);
+    /* Init state showHamburger; set to true with small viewport. */
+    if (this.mediaQueryList.matches) {
+      this.setState({ showHamburger: true });
+    }
+    this.mediaQueryList.addEventListener("change", this.onChangeMedia);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.setNavStyle);
+    this.mediaQueryList.removeEventListener("change", this.onChangeMedia);
   }
 
-  shouldComponentUpdate(_, nextState) {
+  shouldComponentUpdate(prevState, nextState, nextContext) {
     return this.state !== nextState;
   }
 
-  setNavStyle = () => {
-    const { openNav } = this.state;
-    const useMenuNav = document.body.getBoundingClientRect().width < 840;
-    const closeMenuNav = !useMenuNav;
-
-    this.setState({ menuNav: useMenuNav });
-
-    if (closeMenuNav && openNav) {
-      // Close the menu if resize occurs when menu is open and screen width is > 840
-      this.setState({ openNav: false });
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    /* When there is a state change to showing the hamburger the site should always be scrollable. */
+    /* Resizing to larger viewport, the nav should remain open. */
+    /* Resizing to a smaller viewport the nav should be closed, until toggled open. */
+    if (prevState.showHamburger !== this.state.showHamburger) {
+      this.props.onHandleSiteScroll(true);
+      this.setState({ navOpen: !this.state.showHamburger });
     }
+  }
+
+  onChangeMedia = () => {
+    this.setState({ showHamburger: this.mediaQueryList.matches });
   };
 
   toggleMenu = () => {
-    const { menuNav, openNav } = this.state;
-
-    if (menuNav) {
-      this.setState({ openNav: !openNav });
-      this.props.onHandleSiteScroll(openNav);
+    if (this.state.showHamburger) {
+      this.setState({ navOpen: !this.state.navOpen });
+      this.props.onHandleSiteScroll(this.state.navOpen);
     }
   };
 
+  toggleSearchBar = (open) => {
+    this.setState({ searchBarOpen: open });
+  };
+
   render() {
-    const { homePage, links } = this.props,
-      { menuNav, openNav } = this.state,
-      browserLink = process.env.GATSBY_EXPLORE_URL,
-      exploreDescription = "Search for data in LungMAP",
-      exploreLabel = "Explore",
-      hideLinks = menuNav && !openNav;
-
-    const Description = (props) => {
-      const { children } = props;
-
-      return (
-        <span className={classNames(fontStyles.xxs, compStyles.xxs)}>
-          {children}
-        </span>
-      );
-    };
-
-    const ExternalLink = (props) => {
-      const { children, className, linkTo } = props;
-
-      return (
-        <li className={className}>
-          <a href={linkTo} onClick={this.toggleMenu}>
-            {children}
-          </a>
-        </li>
-      );
-    };
-
-    const HeaderNavDisplay = (props) => {
-      const { description, label } = props,
-        { menuNav } = this.state;
-
-      return (
-        <>
-          <span className={classNames(fontStyles.xs, compStyles.xs)}>
-            {label}
-          </span>
-          {menuNav ? <Description>{description}</Description> : null}
-        </>
-      );
-    };
-
-    const InternalLink = (props) => {
-      const { children, className, path } = props;
-
-      return (
-        <li className={className}>
-          <Link
-            activeClassName={compStyles.active}
-            partiallyActive={true}
-            to={path}
-            onClick={this.toggleMenu}
-          >
-            {children}
-          </Link>
-        </li>
-      );
-    };
-
-    const Nav = (props) => {
-      const { nav } = props,
-        { description, headerName, name, path } = nav || {},
-        label = headerName ? headerName : name;
-
-      return (
-        <InternalLink path={path}>
-          <HeaderNavDisplay description={description} label={label} />
-        </InternalLink>
-      );
-    };
-
-    const NavExplore = () => {
-      return (
-        <ExternalLink linkTo={browserLink}>
-          <HeaderNavDisplay
-            description={exploreDescription}
-            label={exploreLabel}
-          />
-        </ExternalLink>
-      );
-    };
+    const { navOpen, searchBarOpen, showHamburger } = this.state;
+    const navItems = [
+      {
+        description: "Search for data in LungMAP",
+        headerName: null,
+        name: "Explore",
+        path: process.env.GATSBY_EXPLORE_URL || "/",
+      },
+      {
+        description: "Fields used to describe datasets in LungMAP",
+        headerName: null,
+        name: "Metadata",
+        path: "/metadata",
+      },
+      {
+        description: "APIs",
+        headerName: null,
+        name: "APIs",
+        path: "/apis",
+      },
+    ];
 
     return (
-      <div
-        className={classNames(compStyles.navBar, {
-          [compStyles.hcaHeader]: homePage,
-        })}
-      >
-        <div
-          className={classNames(globalStyles.wrapper, compStyles.headerWrapper)}
-        >
-          <a href="https://lungmap.net/" className={compStyles.logo}>
-            <img src={headerLogo} alt="LungMAP" />
-          </a>
-          <div
-            className={classNames(
-              compStyles.links,
-              { [compStyles.small]: menuNav },
-              { [compStyles.hide]: hideLinks }
-            )}
-          >
-            <NavExplore />
-            {links.map((l, i) => (
-              <Nav key={i} nav={l} />
-            ))}
-          </div>
-          <ClickHandler
-            className={classNames(compStyles.menuDropDown, fontStyles.s, {
-              [compStyles.hide]: !menuNav,
-            })}
-            clickAction={this.toggleMenu}
-            tag={"div"}
-          >
-            Menu
-          </ClickHandler>
-          <ClickHandler
-            className={classNames(compStyles.overlay, {
-              [compStyles.hide]: !openNav,
-            })}
-            clickAction={this.toggleMenu}
-            tag={"div"}
-          />
+      <div className={lungmapHeader}>
+        <div className={wrapper}>
+          <ToolbarRow>
+            <a className={logo} href="https://lungmap.net/">
+              <img alt="LungMAP" src={headerLogo} />
+            </a>
+            <ToolbarTools>
+              <SearchButton lungmap toggleSearchBar={this.toggleSearchBar} />
+              <SearchBar
+                lungmap
+                searchBarOpen={searchBarOpen}
+                toggleSearchBar={this.toggleSearchBar}
+              />
+              <button className={hamburger} onClick={this.toggleMenu}>
+                Menu
+              </button>
+            </ToolbarTools>
+          </ToolbarRow>
+          {(navOpen || !showHamburger) && (
+            <ToolbarRow>
+              <ToolbarNav>
+                <ToolbarNavItems
+                  lungmap
+                  navItems={navItems}
+                  toggleMenu={this.toggleMenu}
+                />
+              </ToolbarNav>
+            </ToolbarRow>
+          )}
         </div>
       </div>
     );
   }
 }
 
-export default (props) => {
-  const links = [
-    {
-      description: "Fields used to describe datasets in LungMAP",
-      headerName: null,
-      name: "Metadata",
-      path: "/metadata",
-      position: {
-        location: "h",
-        order: 0,
-      },
-    },
-    {
-      description: "APIs",
-      headerName: null,
-      name: "APIs",
-      path: "/apis",
-      position: {
-        location: "h",
-        order: 2,
-      },
-    },
-  ];
-  return <HeaderLungMAP links={links} {...props} />;
-};
+export default HeaderLungMAP;

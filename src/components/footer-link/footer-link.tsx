@@ -9,12 +9,8 @@
 import { Link } from "gatsby";
 import React from "react";
 
-// Class name helper
-import classNames from "classnames";
-
 // Styles
 import { button, link as footerLink } from "./footer-link.module.css";
-import { bgDark, s } from "../../styles/fontsize.module.css";
 
 interface Props {
   clickFn?: () => {};
@@ -32,7 +28,7 @@ class FooterLink extends React.Component<Props> {
             {name}
           </button>
         ) : (
-          <Link to={path} className={classNames(bgDark, footerLink, s)}>
+          <Link to={path} className={footerLink}>
             {name}
           </Link>
         )}

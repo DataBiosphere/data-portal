@@ -111,6 +111,7 @@ module.exports = {
                 "internal-link",
                 "link-to-browser",
                 "metadata-type-entity-schemas",
+                "search-portal",
               ],
             },
           },

@@ -17,3 +17,14 @@
   bottom: unset;
   top: 60px;
 }
+
+/**
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 840px) {
+  /* Banner positioned top */
+  .banner.top {
+    top: 104px;
+  }
+}

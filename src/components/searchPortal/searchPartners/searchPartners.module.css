@@ -1,0 +1,36 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA Data Portal search partners component.
+ */
+
+/* Search partners. */
+.partners {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  list-style: none;
+  -ms-overflow-style: none; /* Hide scrollbar in IE, Edge. */
+  margin: 0 0 32px 0 !important; /* Overrides markdown <ul> margin. */
+  overflow-x: auto; /* Scroll - hide webkit scrollbar unless actively scrolling. */
+  padding: 0;
+}
+
+/* Scrollbar hidden - Safari and Chrome. */
+.partners::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+/**
+ * 840px - Large handset portrait, small handset landscape, extra small window.
+ */
+@media screen and (min-width: 840px) {
+  /* Search partners. */
+  .partners {
+    border-bottom: 1px solid var(--gray-pale);
+    flex-direction: row;
+  }
+}

@@ -8,32 +8,44 @@
 
 // Core dependencies
 import React from "react";
+import { CSSTransition } from "react-transition-group";
 
 // App dependencies
 import Button from "../../button/button";
 import Icon from "../../icon/icon";
-
-// Class name helper
-import classNames from "classnames";
+import Color from "../../ui/color/color";
 
 // Styles
-import * as compStyles from "./metadataSearchInputClear.module.css";
+import { searchClear } from "./metadataSearchInputClear.module.css";
+import {
+  opacityEnter,
+  opacityEnterActive,
+  opacityExit,
+  opacityExitActive,
+} from "../../ui/transition/opacity.module.css";
 
 function MetadataSearchInputClear(props) {
   const { onHandleClearInput, showClear } = props;
-  const classNamesInputClear = classNames(
-    { [compStyles.active]: showClear },
-    compStyles.clear
-  );
+  const classNamesTransition = {
+    enter: opacityEnter,
+    enterActive: opacityEnterActive,
+    exit: opacityExit,
+    exitActive: opacityExitActive,
+  };
 
   return (
-    <span className={classNamesInputClear}>
-      <Button clickAction={onHandleClearInput} icon>
-        <Icon button fontSize={20} showHover={true} showIcon={showClear}>
-          close
-        </Icon>
-      </Button>
-    </span>
+    <CSSTransition
+      classNames={classNamesTransition}
+      in={showClear}
+      timeout={400}
+      unmountOnExit
+    >
+      <span className={searchClear}>
+        <Button color={Color.GRAY_LIGHT} onClick={() => onHandleClearInput()}>
+          <Icon fontSize={20}>close</Icon>
+        </Button>
+      </span>
+    </CSSTransition>
   );
 }
 

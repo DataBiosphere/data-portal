@@ -1,0 +1,35 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA Data Portal search partner component.
+ */
+
+/* Partner. */
+.partner {
+  color: var(--gray-dark);
+  margin: 0 !important; /* Overrides markdown <li> margin. */
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Partner - hover. */
+.partner:hover {
+  color: var(--black);
+}
+
+/* Active partner. */
+.partner.active {
+  color: var(--black);
+}
+
+/* Active partner. */
+.partner.active::before {
+  border-bottom: 2px solid var(--secondary);
+  bottom: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  transition: opacity 0.25s ease;
+  width: 100%;
+}

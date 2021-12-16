@@ -1,0 +1,28 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA Data Portal search button component.
+ */
+
+/* Search button. */
+.searchButton {
+  display: flex;
+  margin-left: auto;
+}
+
+/* Button. */
+.searchButton button {
+  padding: 8px;
+}
+
+/**
+ * Small Window
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 600px) {
+  /* Search button. */
+  .searchButton {
+    display: none;
+  }
+}

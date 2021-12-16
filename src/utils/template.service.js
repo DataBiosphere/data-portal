@@ -56,6 +56,8 @@ export function showEditPage(slug) {
       return false;
     case "/metadata/search/metadata-search":
       return false;
+    case "/search/search":
+      return false;
     default:
       return true;
   }

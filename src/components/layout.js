@@ -78,15 +78,11 @@ class Layout extends React.Component {
           })}
         >
           {lungmap ? (
-            <HeaderLungMAP
-              onHandleSiteScroll={this.onHandleSiteScroll}
-              homePage={homePage}
-            />
+            <HeaderLungMAP onHandleSiteScroll={this.onHandleSiteScroll} />
           ) : (
             <Header
-              onHandleSiteScroll={this.onHandleSiteScroll}
               homePage={homePage}
-              docPath={docPath}
+              onHandleSiteScroll={this.onHandleSiteScroll}
             />
           )}
           <Banner position={"top"} healthy={healthy} />

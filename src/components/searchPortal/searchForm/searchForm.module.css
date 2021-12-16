@@ -1,0 +1,13 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA Data Portal search form component.
+ */
+
+/* Form. */
+.form {
+  margin: 0;
+  position: relative; /* Positions search icon and clear button. */
+  width: 100%; /* Takes up all available width. */
+}

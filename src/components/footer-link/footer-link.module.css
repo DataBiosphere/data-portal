@@ -7,8 +7,10 @@
 
 /* Footer link */
 .link {
+  composes: s from "../../styles/fontsize.module.css";
+  color: var(--white);
   font-weight: 500;
-  margin: 0 16px;
+  margin: 0;
   text-transform: capitalize;
 }
 
@@ -20,6 +22,6 @@
   cursor: pointer;
   font-weight: 500;
   line-height: 24px; /* Match link */
-  margin: 0 16px;
+  margin: 0;
   padding: 0;
 }

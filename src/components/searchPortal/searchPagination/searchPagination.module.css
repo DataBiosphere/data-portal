@@ -1,0 +1,32 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA Data Portal search pagination component.
+ */
+
+/* Pagination. */
+.pagination {
+  align-items: center;
+  display: flex;
+  gap: 32px;
+  margin-top: 16px;
+}
+
+/* Page (next / previous). */
+.nextPage,
+.previousPage {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+/* Text. */
+.nextPage > span,
+.previousPage > span {
+  color: var(--gray-dark);
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+}
