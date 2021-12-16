@@ -3,6 +3,7 @@ componentName: "analyze"
 date: "2018-05-03"
 description: "Methods packages for performing analyses involving computational biology approaches for analyzing single-cell data."
 linked:
+    - ./methods-packages/cumulus.md
     - ./methods-packages/infer.md
     - ./methods-packages/magic.md
     - ./methods-packages/phate.md
