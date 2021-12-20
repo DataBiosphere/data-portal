@@ -6,6 +6,23 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### December 20, 2021
+
+### Release Highlights
+* The Teichmann lab's ["Cambridge Cell Atlas"](https://data.humancellatlas.org/analyze/portals/cambridge-cell-atlas) is now listed in Data Portal's "Analysis Portals" section.
+* The Li lab's [Cumulus](https://data.humancellatlas.org/analyze/methods/cumulus) software is now listed in the Data Portal's "Methods Packages" section.
+* * The Data Portal now has a link to the Updates page at the top of the portal.
+![](./_images/updates-page.png)
+* The Data Portal has new managed access projects: ["Hypertension delays viral clearance and exacerbates airway hyperinflammation in patients with COVID-19"](LINK) and ["CD27hiCD38hi plasmablasts are activated B cells of mixed origin with distinct function"](LINK).
+* Multiple projects have new uniform matrices generated with the updated Optimus pipeline that includes STARsolo software: 
+	* ["Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory."](LINK)
+	* ["A Single Cell Atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells"](LINK)
+	* ["Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids"](LINK)
+* New projects have data generated with multiple sequencing modalities (i.e. CITE-seq, 10x 3', and scATAC):
+	* ["Sampling time-dependent artifacts in single-cell genomics studies"](LINK)
+	* ["Blood and immune cell development in human fetal bone marrow and in Down syndrome"](LINK)
+ 
+
 #### November 11, 2021
 
 ### Release Highlights
