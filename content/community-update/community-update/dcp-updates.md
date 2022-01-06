@@ -10,7 +10,9 @@ title: DCP Updates
 
 ### Release Highlights
 * The Teichmann lab's [Cambridge Cell Atlas](https://data.humancellatlas.org/analyze/portals/cambridge-cell-atlas) is now listed in Data Portal's Analysis Portals section.
+
 * The Li lab's [Cumulus](https://data.humancellatlas.org/analyze/methods/cumulus) software is now listed in the Data Portal's Methods Packages section.
+
 * * The Data Portal now has a link to the Updates page at the top of the portal.
 
 ![](./_images/updates-page.png)
@@ -18,10 +20,12 @@ title: DCP Updates
 * The Data Portal has new managed access projects: 
    * [Hypertension delays viral clearance and exacerbates airway hyperinflammation in patients with COVID-19](https://data.humancellatlas.org/explore/projects/769a08d1-b8a4-4f1e-95f7-6071a9827555).
    * [CD27hiCD38hi plasmablasts are activated B cells of mixed origin with distinct function](https://data.humancellatlas.org/explore/projects/74493e98-44fc-48b0-a58f-cc7e77268b59).
+
 * Multiple projects have new uniform matrices generated with the updated Optimus pipeline that includes STARsolo software: 
 	* [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory.](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a).
 	* [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d).
 	* [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635).
+	
 * New projects have data generated with multiple sequencing modalities (i.e. CITE-seq, 10x 3', and scATAC):
 	* [Sampling time-dependent artifacts in single-cell genomics studies](https://data.humancellatlas.org/explore/projects/5b328561-4a97-40ac-b7ad-6a90fc59d374).
 	* [Blood and immune cell development in human fetal bone marrow and in Down syndrome](https://data.humancellatlas.org/explore/projects/04ad400c-58cb-40a5-bc2b-2279e13a910b).
