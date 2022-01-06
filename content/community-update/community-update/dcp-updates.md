@@ -49,7 +49,7 @@ title: DCP Updates
 1. [Single-cell sequencing unveils distinct immune microenvironment in human chronic pancreatitis](https://data.humancellatlas.org/explore/projects/c5ca43aa-3b2b-4216-8eb3-f57adcbc99a1)
 1. [Using single-nucleus RNA-sequencing to interrogate transcriptomic profiles of archived human pancreatic islets](https://data.humancellatlas.org/explore/projects/a991ef15-4d4a-4b80-a93e-c538b4b54127)
 
-## Updated Metadata, Raw Data, Contributor-generated Matrices, or DCP Analysis (7):
+### Updated Metadata, Raw Data, Contributor-generated Matrices, or DCP Analysis (7):
 1. [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d)
 1. [AIDA pilot data](https://data.humancellatlas.org/explore/projects/f0f89c14-7460-4bab-9d42-22228a91f185)
 1. [Distinct microbial and immune niches of the human colon](https://data.humancellatlas.org/explore/projects/83f5188e-3bf7-4956-9544-cea4f8997756) 
