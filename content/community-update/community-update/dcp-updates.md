@@ -9,19 +9,55 @@ title: DCP Updates
 #### December 20, 2021
 
 ### Release Highlights
-* The Teichmann lab's ["Cambridge Cell Atlas"](https://data.humancellatlas.org/analyze/portals/cambridge-cell-atlas) is now listed in Data Portal's "Analysis Portals" section.
-* The Li lab's [Cumulus](https://data.humancellatlas.org/analyze/methods/cumulus) software is now listed in the Data Portal's "Methods Packages" section.
+* The Teichmann lab's [Cambridge Cell Atlas](https://data.humancellatlas.org/analyze/portals/cambridge-cell-atlas) is now listed in Data Portal's Analysis Portals section.
+* The Li lab's [Cumulus](https://data.humancellatlas.org/analyze/methods/cumulus) software is now listed in the Data Portal's Methods Packages section.
 * * The Data Portal now has a link to the Updates page at the top of the portal.
+
 ![](./_images/updates-page.png)
-* The Data Portal has new managed access projects: ["Hypertension delays viral clearance and exacerbates airway hyperinflammation in patients with COVID-19"](LINK) and ["CD27hiCD38hi plasmablasts are activated B cells of mixed origin with distinct function"](LINK).
+
+* The Data Portal has new managed access projects: 
+   * [Hypertension delays viral clearance and exacerbates airway hyperinflammation in patients with COVID-19](https://data.humancellatlas.org/explore/projects/769a08d1-b8a4-4f1e-95f7-6071a9827555).
+   * [CD27hiCD38hi plasmablasts are activated B cells of mixed origin with distinct function](https://data.humancellatlas.org/explore/projects/74493e98-44fc-48b0-a58f-cc7e77268b59).
 * Multiple projects have new uniform matrices generated with the updated Optimus pipeline that includes STARsolo software: 
-	* ["Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory."](LINK)
-	* ["A Single Cell Atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells"](LINK)
-	* ["Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids"](LINK)
+	* [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory.](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a).
+	* [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d).
+	* [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635).
 * New projects have data generated with multiple sequencing modalities (i.e. CITE-seq, 10x 3', and scATAC):
-	* ["Sampling time-dependent artifacts in single-cell genomics studies"](LINK)
-	* ["Blood and immune cell development in human fetal bone marrow and in Down syndrome"](LINK)
+	* [Sampling time-dependent artifacts in single-cell genomics studies](https://data.humancellatlas.org/explore/projects/5b328561-4a97-40ac-b7ad-6a90fc59d374).
+	* [Blood and immune cell development in human fetal bone marrow and in Down syndrome](https://data.humancellatlas.org/explore/projects/04ad400c-58cb-40a5-bc2b-2279e13a910b).
  
+### Raw Data, Metadata, and Contributor-generated Matrices (21):
+1. [A Single-Cell Atlas of the Human Healthy Airways.](https://data.humancellatlas.org/explore/projects/ef1e3497-515e-4bbe-8d4c-10161854b699)
+1. [A comprehensive single cell transcriptional landscape of human hematopoietic progenitors](https://data.humancellatlas.org/explore/projects/5116c081-8be7-49c5-8ce0-73b887328aa9)
+1. [A single-cell atlas of chromatin accessibility in the human genome](https://data.humancellatlas.org/explore/projects/c31fa434-c9ed-4263-a9b6-d9ffb9d44005)
+1. [An organoid and multi-organ developmental cell atlas reveals multilineage fate specification in the human intestine](https://data.humancellatlas.org/explore/projects/8ab8726d-81b9-4bd2-acc2-4d50bee786b4)
+1. [Blood and immune cell development in human fetal bone marrow and in Down syndrome](https://data.humancellatlas.org/explore/projects/04ad400c-58cb-40a5-bc2b-2279e13a910b)
+1. [CD27hiCD38hi plasmablasts are activated B cells of mixed origin with distinct function](https://data.humancellatlas.org/explore/projects/74493e98-44fc-48b0-a58f-cc7e77268b59)
+1. [Co-evolution of tumor and immune cells during progression of multiple myeloma.](https://data.humancellatlas.org/explore/projects/2ad191cd-bd7a-409b-9bd1-e72b5e4cce81)
+1. [Extreme heterogeneity of influenza virus infection in single cells](https://data.humancellatlas.org/explore/projects/5bb1f67e-2ff0-4848-bbcf-17d133f0fd2d)
+1. [Hypertension delays viral clearance and exacerbates airway hyperinflammation in patients with COVID-19](https://data.humancellatlas.org/explore/projects/769a08d1-b8a4-4f1e-95f7-6071a9827555)
+1. [Identification of distinct synovial fibroblast subsets associated with pain and progression of knee osteoarthritis using single-cell RNA sequencing](https://data.humancellatlas.org/explore/projects/54aaa409-dc28-48c5-be26-d368b4a5d5c6)
+1. [Integrative analysis of cell state changes in lung fibrosis with peripheral protein biomarkers](https://data.humancellatlas.org/explore/projects/2f676143-80c2-4bc6-b7b4-2613fe0fadf0)
+1. [Kidney organoid reproducibility across multiple human iPSC lines and diminished off target cells after transplantation revealed by single cell transcriptomics](https://data.humancellatlas.org/explore/projects/a60803bb-f7db-45cf-b529-95436152a801)
+1. [Modeling Hepatoblastoma: Identification of Distinct Tumor Cell Populations and Key Genetic Mechanisms through Single Cell Sequencing (scRNA-seq)](https://data.humancellatlas.org/explore/projects/2084526b-a66f-4c40-bb89-6fd162f2eb38)
+1. [SARS‐CoV‐2 receptor ACE2 and TMPRSS2 are primarily expressed in bronchial transient secretory cells](https://data.humancellatlas.org/explore/projects/58028aa8-0ed2-49ca-b60f-15e2ed5989d5)
+1. [Sampling time-dependent artifacts in single-cell genomics studies](https://data.humancellatlas.org/explore/projects/5b328561-4a97-40ac-b7ad-6a90fc59d374)
+1. [Single-Cell Transcriptomic Analysis of Human Lung Provides Insights into the Pathobiology of Pulmonary Fibrosis.](https://data.humancellatlas.org/explore/projects/daf9d982-7ce6-43f6-ab51-272577290606)
+1. [Single-cell ATAC sequencing reveals the mechanism of human breast cancer metastasis](https://data.humancellatlas.org/explore/projects/38e44dd0-c3df-418e-9256-d0824748901f)
+1. [Single-cell RNA sequencing of human femoral head in vivo](https://data.humancellatlas.org/explore/projects/68df3629-d2d2-4eed-b0ab-a10e0f019b88)
+1. [Single-cell RNA sequencing of peripheral blood reveals immune cell signatures in Alzheimer's disease](https://data.humancellatlas.org/explore/projects/591af954-cdcd-4839-96d3-a0d1b1e885ac)
+1. [Single-cell sequencing unveils distinct immune microenvironment in human chronic pancreatitis](https://data.humancellatlas.org/explore/projects/c5ca43aa-3b2b-4216-8eb3-f57adcbc99a1)
+1. [Using single-nucleus RNA-sequencing to interrogate transcriptomic profiles of archived human pancreatic islets](https://data.humancellatlas.org/explore/projects/a991ef15-4d4a-4b80-a93e-c538b4b54127)
+
+## Updated Metadata, Raw Data, Contributor-generated Matrices, or DCP Analysis (7):
+1. [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d)
+1. [AIDA pilot data](https://data.humancellatlas.org/explore/projects/f0f89c14-7460-4bab-9d42-22228a91f185)
+1. [Distinct microbial and immune niches of the human colon](https://data.humancellatlas.org/explore/projects/83f5188e-3bf7-4956-9544-cea4f8997756) 
+1. [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635)
+1. [Single-cell RNA-seq analysis  throughout a 125-day differentiation protocol that converted H1 human embryonic stem cells to a variety of ventrally-derived cell types.](https://data.humancellatlas.org/explore/projects/2043c65a-1cf8-4828-a656-9e247d4e64f1) 
+1. [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory.](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a)
+1. [Stress-induced RNA–chromatin interactions promote endothelial dysfunction](https://data.humancellatlas.org/explore/projects/87d52a86-bdc7-440c-b84d-170f7dc346d9) 
+
 
 #### November 11, 2021
 
