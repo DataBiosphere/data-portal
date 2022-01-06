@@ -53,7 +53,7 @@ build_prod:
     - export GATSBY_GTM_AUTH=xm3qglWPEFim7Lb4AxXnsA
     - export GATSBY_ENV_NAME=env-2
     - export GATSBY_ENV=PROD
-    - export GATSBY_DEFAULT_CATALOG=dcp11
+    - export GATSBY_DEFAULT_CATALOG=dcp12
     - export GATSBY_ATLAS=hca
     - gatsby build
   only:
