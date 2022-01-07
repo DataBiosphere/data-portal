@@ -22,7 +22,7 @@ title: DCP Updates
    * [CD27hiCD38hi plasmablasts are activated B cells of mixed origin with distinct function](https://data.humancellatlas.org/explore/projects/74493e98-44fc-48b0-a58f-cc7e77268b59).
 
 * Three projects have new uniform matrices generated with the updated Optimus pipeline that includes STARsolo software: 
-	* [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory.](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a).
+	* [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a).
 	* [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d).
 	* [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635).
 
@@ -30,8 +30,8 @@ title: DCP Updates
 	* [Sampling time-dependent artifacts in single-cell genomics studies](https://data.humancellatlas.org/explore/projects/5b328561-4a97-40ac-b7ad-6a90fc59d374).
 	* [Blood and immune cell development in human fetal bone marrow and in Down syndrome](https://data.humancellatlas.org/explore/projects/04ad400c-58cb-40a5-bc2b-2279e13a910b).
  
-### Raw Data, Metadata, and Contributor-generated Matrices (21):
-1. [A Single-Cell Atlas of the Human Healthy Airways.](https://data.humancellatlas.org/explore/projects/ef1e3497-515e-4bbe-8d4c-10161854b699)
+### New Raw Data, Metadata, and Contributor-generated Matrices (21):
+1. [A Single-Cell Atlas of the Human Healthy Airways](https://data.humancellatlas.org/explore/projects/ef1e3497-515e-4bbe-8d4c-10161854b699)
 1. [A comprehensive single cell transcriptional landscape of human hematopoietic progenitors](https://data.humancellatlas.org/explore/projects/5116c081-8be7-49c5-8ce0-73b887328aa9)
 1. [A single-cell atlas of chromatin accessibility in the human genome](https://data.humancellatlas.org/explore/projects/c31fa434-c9ed-4263-a9b6-d9ffb9d44005)
 1. [An organoid and multi-organ developmental cell atlas reveals multilineage fate specification in the human intestine](https://data.humancellatlas.org/explore/projects/8ab8726d-81b9-4bd2-acc2-4d50bee786b4)
