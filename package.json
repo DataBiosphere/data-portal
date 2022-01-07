@@ -33,7 +33,7 @@
     "katex": "^0.13.24",
     "lunr": "^2.3.9",
     "normalize.css": "^8.0.1",
-    "prismjs": "^1.25.0",
+    "prismjs": "^1.26.0",
     "prop-types": "^15.6.2",
     "react": "^17.0.2",
     "react-autowhatever": "^10.2.1",
