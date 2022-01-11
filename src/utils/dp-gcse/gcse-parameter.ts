@@ -7,7 +7,6 @@
 
 enum GCSEParameter {
   ID = "cx",
-  KEY = "key",
   QUERY = "q",
   SAFE = "safe",
   START = "start",

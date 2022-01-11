@@ -32,10 +32,9 @@ export function getGCSERequestURL(
 
   const searchQuery = partner ? `${query} more:${partner}` : query;
   const paramGCSEId = `${GCSEParameter.ID}=${searchEngineId}`;
-  const paramGCSEKey = `${GCSEParameter.KEY}=${process.env.GATSBY_GCSE_KEY}`;
   const paramQuery = `${GCSEParameter.QUERY}=${searchQuery}`;
   const paramSafe = `${GCSEParameter.SAFE}=active`;
   const paramStart = `${GCSEParameter.START}=${start}`;
-  const parameters = `${paramGCSEKey}&${paramGCSEId}&${paramQuery}&${paramSafe}&${paramStart}`;
+  const parameters = `${paramGCSEId}&${paramQuery}&${paramSafe}&${paramStart}`;
   return `${portalUrl}/customsearch/v1?${encodeURI(parameters)}`;
 }
