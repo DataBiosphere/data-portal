@@ -29,7 +29,7 @@ const Config: SiteConfig = {
     searchConfig: {
       partners: [
         { active: true, label: "All Results", value: "" },
-        { active: false, label: "Projects", value: "dp-only" },
+        { active: false, label: "Projects", value: "projects-only" },
       ],
       searchEngineId: process.env.GATSBY_ATLAS,
     },
