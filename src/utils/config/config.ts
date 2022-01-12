@@ -29,7 +29,9 @@ const Config: SiteConfig = {
     searchConfig: {
       partners: [
         { active: true, label: "All Results", value: "" },
-        { active: false, label: "Projects", value: "projects-only" },
+        { active: false, label: "Projects", value: "projects" },
+        { active: false, label: "Pipeline Docs", value: "pipelines" },
+        { active: false, label: "Metadata Schema", value: "metadata" },
       ],
       searchEngineId: process.env.GATSBY_ATLAS,
     },
