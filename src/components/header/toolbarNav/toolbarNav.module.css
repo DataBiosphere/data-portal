@@ -28,7 +28,7 @@
     display: flex;
     gap: 0 20px;
     height: 44px;
-    justify-content: center;
+    justify-content: flex-start;
     left: unset;
     padding: 0;
     position: relative;

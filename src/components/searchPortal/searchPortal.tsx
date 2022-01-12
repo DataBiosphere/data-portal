@@ -103,10 +103,7 @@ export default function SearchPortal(): JSX.Element | null {
       fetch(GCSERequestURL)
         .then((res) => res.json())
         .then((res) => {
-          setGCSEResponse((GCSEResponse) => ({
-            ...GCSEResponse,
-            ...res,
-          }));
+          setGCSEResponse({ ...res });
           setSearchParams((prevSearchParams) => ({
             ...prevSearchParams,
             searchError: false,
@@ -179,7 +176,7 @@ export default function SearchPortal(): JSX.Element | null {
     );
   }
   if (searchTerms) {
-    if (searchResponses.length > 0) {
+    if (searchResponses && searchResponses.length > 0) {
       /* Return search results. */
       return (
         <>
