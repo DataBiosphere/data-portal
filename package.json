@@ -83,7 +83,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "gatsby-cli": "^3.13.0",
+    "gatsby-cli": "^4.5.0",
     "prettier": "^2.4.1",
     "sockjs-client": "^1.5.2",
     "type-fest": "^2.5.4",
