@@ -67,7 +67,7 @@ When you have found a data set of interest, use the following steps:
 	![](../../_images/terra-import.png) 
 
 ### Step two: finding a workflow in Dockstore
-A workflow is simply a set of steps you want to use to transform or analyze your data, often written as a script in a language like Python or R. Terra integrates with scripts written in a particular workflow language called the Workflow Description Language (WDL).  
+A workflow is simply a set of steps you want to use to transform or analyze your data, often written as a script in a language like Python or R. Terra integrates with scripts written in a particular workflow language called the [Workflow Description Language (WDL)](https://openwdl.org/).  
 
 We can find WDL workflows that use our analysis tools of interest from public repositories like [Dockstore](https://dockstore.org/), a platform for bioscience tools and workflows that use Docker containers. For more information about how to use the Dockstore, see the [Dockstore documentation](https://docs.dockstore.org/en/develop/).
 
