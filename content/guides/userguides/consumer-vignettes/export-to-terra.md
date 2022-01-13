@@ -29,7 +29,7 @@ In addition to running the tutorial below, registering for Terra allows you to a
 * [Intro-to-HCA-data-on-Terra workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra) for exporting HCA data and analyzing it with community tools like [Seurat](https://satijalab.org/seurat/index.html), [Scanpy](https://scanpy-tutorials.readthedocs.io/en/latest/index.html), [Cumulus](https://cumulus.readthedocs.io/en/latest/index.html), and [Pegasus](https://pegasus.readthedocs.io/en/stable/#). 
 
 ### Video demonstration of importing HCA data to a Terra workspace
-Prior to trying the tutorial, you might want to watch this very brief [video demonstration](https://www.youtube.com/watch?v=G3N2i3NjsfY) of importing HCA data into Terra and using the Intro-to-HCA-data-on-Terra workspace. This video is additionally available in this [Terra blog](https://terra.bio/discover-how-to-use-human-cell-atlas-data-in-terra/) about the workspace.
+Prior to trying the tutorial, you might want to watch this very brief [video demonstration](https://www.youtube.com/watch?v=G3N2i3NjsfY) of importing HCA data into Terra and using the Intro-to-HCA-data-on-Terra workspace. This video is additionally available in this [Terra blog post](https://terra.bio/discover-how-to-use-human-cell-atlas-data-in-terra/) about the workspace.
 
 
 ## Tutorial — Automated processing of HCA BAM files in Terra 
