@@ -75,7 +75,7 @@ We'll use Dockstore in this tutorial to find a workflow to run on the data we've
 
 We will need to import this workflow from Dockstore using the following steps: 
 
-1. Select on the *Workflows* page at the top of the workspace.
+1. Select the *Workflows* page at the top of the workspace.
 1. Click the *Find a Workflow* card.
 	<figure-styles shadowless=true>
 
