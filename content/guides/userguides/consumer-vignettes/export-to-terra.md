@@ -13,7 +13,7 @@ In this tutorial, you will learn how to send search results from the HCA Data Ex
 
 ## Before starting
 
-Before trying the tutorial, complete the steps below:
+Before trying this tutorial, complete the steps below:
 1. Read the [Accessing HCA Data and Metadata](../quick-start-guide) guide to learn how to find HCA data in the Data Explorer.
 1. Visit [Terra Support](https://support.terra.bio/hc/en-us) to learn how to [register for a Terra account](https://support.terra.bio/hc/en-us/articles/360028235911).
 1. Download the [Google Chrome browser](https://support.terra.bio/hc/en-us/articles/360028235911) which is recommended when using Terra.
