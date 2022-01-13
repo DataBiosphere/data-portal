@@ -7,7 +7,7 @@ title: "Exporting HCA Data to Terra"
 ---
 
 # Analyzing HCA Data in Terra
-[Terra](https://app.terra.bio/) is a scalable cloud platform for biomedical research that offers the ability to use data, tools, and workflows to do interactive analysis in the cloud.
+[Terra](https://app.terra.bio/) is a scalable cloud platform for biomedical research that offers the ability to use data, tools, and workflows to perform interactive analysis in the cloud.
 
 In this tutorial, you will learn how to send search results from the HCA Data Explorer to Terra and how to run a basic workflow with that data.
 
