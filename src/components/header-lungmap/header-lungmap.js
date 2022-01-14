@@ -12,20 +12,17 @@ import React from "react";
 import ToolbarNav from "../header/toolbarNav/toolbarNav";
 import ToolbarNavItems from "../header/toolbarNavItems/toolbarNavItems";
 import ToolbarRow from "../header/toolbarRow/toolbarRow";
+import ToolbarSocials from "../header/toolbarSocials/toolbarSocials";
 import ToolbarTools from "../header/toolbarTools/toolbarTools";
 import SearchBar from "../searchPortal/searchBar/searchBar";
 import SearchButton from "../searchPortal/searchButton/searchButton";
+import Config from "../../utils/config/config";
 
 // Images
 import headerLogo from "../../../images/lungmap/logo/logo-lungmap.png";
 
 // Styles
-import {
-  hamburger,
-  logo,
-  lungmapHeader,
-  wrapper,
-} from "./header-lungmap.module.css";
+import { hamburger, logo, lungmapHeader } from "./header-lungmap.module.css";
 
 class HeaderLungMAP extends React.Component {
   constructor(props) {
@@ -105,38 +102,38 @@ class HeaderLungMAP extends React.Component {
         path: "/apis",
       },
     ];
+    const socials = Config.lungmap.socials;
 
     return (
       <div className={lungmapHeader}>
-        <div className={wrapper}>
+        <ToolbarRow>
+          <a className={logo} href="https://lungmap.net/">
+            <img alt="LungMAP" src={headerLogo} />
+          </a>
+          <ToolbarTools>
+            <SearchButton lungmap toggleSearchBar={this.toggleSearchBar} />
+            <SearchBar
+              lungmap
+              searchBarOpen={searchBarOpen}
+              toggleSearchBar={this.toggleSearchBar}
+            />
+            {!showHamburger && socials && <ToolbarSocials socials={socials} />}
+            <button className={hamburger} onClick={this.toggleMenu}>
+              Menu
+            </button>
+          </ToolbarTools>
+        </ToolbarRow>
+        {(navOpen || !showHamburger) && (
           <ToolbarRow>
-            <a className={logo} href="https://lungmap.net/">
-              <img alt="LungMAP" src={headerLogo} />
-            </a>
-            <ToolbarTools>
-              <SearchButton lungmap toggleSearchBar={this.toggleSearchBar} />
-              <SearchBar
+            <ToolbarNav>
+              <ToolbarNavItems
                 lungmap
-                searchBarOpen={searchBarOpen}
-                toggleSearchBar={this.toggleSearchBar}
+                navItems={navItems}
+                toggleMenu={this.toggleMenu}
               />
-              <button className={hamburger} onClick={this.toggleMenu}>
-                Menu
-              </button>
-            </ToolbarTools>
+            </ToolbarNav>
           </ToolbarRow>
-          {(navOpen || !showHamburger) && (
-            <ToolbarRow>
-              <ToolbarNav>
-                <ToolbarNavItems
-                  lungmap
-                  navItems={navItems}
-                  toggleMenu={this.toggleMenu}
-                />
-              </ToolbarNav>
-            </ToolbarRow>
-          )}
-        </div>
+        )}
       </div>
     );
   }

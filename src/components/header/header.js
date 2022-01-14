@@ -17,13 +17,15 @@ import SearchButton from "../searchPortal/searchButton/searchButton";
 import ToolbarNav from "./toolbarNav/toolbarNav";
 import ToolbarNavItems from "./toolbarNavItems/toolbarNavItems";
 import ToolbarRow from "./toolbarRow/toolbarRow";
+import ToolbarSocials from "./toolbarSocials/toolbarSocials";
 import ToolbarTools from "./toolbarTools/toolbarTools";
+import Config from "../../utils/config/config";
 
 // Images
 import headerLogo from "../../../images/logo/logo-hca.png";
 
 // Styles
-import { hamburger, hcaHeader, hero, logo, wrapper } from "./header.module.css";
+import { hamburger, hcaHeader, hero, logo } from "./header.module.css";
 
 class Header extends React.Component {
   constructor(props) {
@@ -91,6 +93,7 @@ class Header extends React.Component {
       path: process.env.GATSBY_EXPLORE_URL || "/",
     };
     const navLinks = [explore, ...navItems];
+    const socials = Config.hca.socials;
 
     return (
       <div
@@ -98,33 +101,33 @@ class Header extends React.Component {
           [hero]: homePage,
         })}
       >
-        <div className={wrapper}>
+        <ToolbarRow>
+          <Link className={logo} to="/">
+            <img alt="HCA" src={headerLogo} />
+          </Link>
+          <ToolbarTools>
+            <SearchButton toggleSearchBar={this.toggleSearchBar} />
+            <SearchBar
+              searchBarOpen={searchBarOpen}
+              toggleSearchBar={this.toggleSearchBar}
+            />
+            {!showHamburger && socials && <ToolbarSocials socials={socials} />}
+            <button className={hamburger} onClick={this.toggleMenu}>
+              Menu
+            </button>
+          </ToolbarTools>
+        </ToolbarRow>
+        {(navOpen || !showHamburger) && (
           <ToolbarRow>
-            <Link className={logo} to="/">
-              <img alt="HCA" src={headerLogo} />
-            </Link>
-            <ToolbarTools>
-              <SearchButton toggleSearchBar={this.toggleSearchBar} />
-              <SearchBar
-                searchBarOpen={searchBarOpen}
-                toggleSearchBar={this.toggleSearchBar}
+            <ToolbarNav>
+              <ToolbarNavItems
+                navItems={navLinks}
+                toggleMenu={this.toggleMenu}
               />
-              <button className={hamburger} onClick={this.toggleMenu}>
-                Menu
-              </button>
-            </ToolbarTools>
+              {showHamburger && socials && <ToolbarSocials socials={socials} />}
+            </ToolbarNav>
           </ToolbarRow>
-          {(navOpen || !showHamburger) && (
-            <ToolbarRow>
-              <ToolbarNav>
-                <ToolbarNavItems
-                  navItems={navLinks}
-                  toggleMenu={this.toggleMenu}
-                />
-              </ToolbarNav>
-            </ToolbarRow>
-          )}
-        </div>
+        )}
       </div>
     );
   }

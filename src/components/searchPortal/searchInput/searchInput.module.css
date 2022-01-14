@@ -8,6 +8,7 @@
 /* Input. */
 .input {
   composes: input from "../../metadata/metadataSearchInput/metadataSearchInput.module.css";
+  border-color: var(--blue-darkest);
   -webkit-appearance: none; /* Removes inner shadow on mobile. */
   overflow: hidden;
   padding: 0 38px;
@@ -17,17 +18,13 @@
 
 /* Lungmap specific style overrides. */
 .input.lungmap {
+  background-color: var(--white);
   border-color: var(--white);
-  caret-color: var(--white);
-  color: var(--white);
-}
-
-/* Input focus. */
-.input.lungmap:focus {
-  border: 2px solid var(--white);
+  caret-color: var(--secondary);
+  color: var(--primary);
 }
 
 /* Input - placeholder. */
 .input.lungmap::placeholder {
-  color: var(--white);
+  color: var(--primary)
 }

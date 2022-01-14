@@ -13,11 +13,6 @@
   z-index: 20;
 }
 
-/* Wrapper */
-.wrapper {
-  padding: 0 var(--gutter-x);
-}
-
 /* Logo */
 .logo {
   composes: logo from "../header/header.module.css";

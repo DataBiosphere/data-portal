@@ -32,7 +32,7 @@ export default function SearchInputClear({
   lungmap,
   showClearButton,
 }: Props): JSX.Element {
-  const iconColor = lungmap ? Color.WHITE : Color.GRAY_LIGHT;
+  const iconColor = lungmap ? Color.GRAY_LIGHT : Color.GRAY_LIGHT;
   const classNamesTransition = {
     enter: opacityEnter,
     enterActive: opacityEnterActive,

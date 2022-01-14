@@ -21,7 +21,7 @@ interface Props {
 }
 
 export default function SearchInputIcon({ lungmap }: Props): JSX.Element {
-  const iconColor = lungmap ? Color.WHITE : Color.GRAY_LIGHT;
+  const iconColor = lungmap ? Color.PRIMARY : Color.GRAY_LIGHT;
   return (
     <span className={searchIcon}>
       <Icon color={iconColor}>search</Icon>
