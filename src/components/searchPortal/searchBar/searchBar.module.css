@@ -7,13 +7,13 @@
 
 /* Search bar. */
 .searchBar {
+  background-color: var(--white);
   display: none;
 }
 
 /* Search bar - active. */
 .searchBar.active {
   align-items: center;
-  background-color: var(--white);
   display: flex;
   height: 64px;
   left: 0;
@@ -65,6 +65,18 @@
   /* Search bar. */
   .searchBar,
   .searchBar.active {
-    width: 300px;
+    width: 260px;
+  }
+}
+
+/**
+ * Medium +
+ * HCA custom breakpoint
+ */
+@media screen and (min-width: 1200px) {
+  /* Search bar. */
+  .searchBar,
+  .searchBar.active {
+    width: 344px;
   }
 }

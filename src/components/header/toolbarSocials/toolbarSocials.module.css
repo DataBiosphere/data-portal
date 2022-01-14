@@ -1,0 +1,24 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA Data Portal toolbar socials component.
+ */
+
+.socials {
+  align-items: center;
+  display: flex;
+  gap: 0 8px;
+  padding: 12px;
+}
+
+/**
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 840px) {
+  .socials {
+    margin-right: -8px;
+    padding: 0;
+  }
+}
