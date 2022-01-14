@@ -46,25 +46,24 @@ Using the Data Explorer, select some data that you are interested in. Choose any
 
 When you have found a data set of interest, use the following steps:
 1. Click on the big blue *Export Selected Data* icon at the top right of the page. 
-1. Click on the *Analyze in Terra* icon at the bottom.
+2. Click on the *Analyze in Terra* icon at the bottom.
 
-	![](../../_images/analyze-in-terra-export.png)
+    ![](../../_images/analyze-in-terra-export.png)
 
-1. Click on the species you want to analyze.
-1. Select the files you want to export by clicking the checkbox next to the file type.
-1. Select the download format (the terra.pfb option is in development).
-1. Click the *Request Link* icon.
+3. Click on the species you want to analyze.
+4. Select the files you want to export by clicking the checkbox next to the file type.
+5. Select the download format (the terra.pfb option is in development).
+6. Click the *Request Link* icon.
 	
-	You'll be redirected to a Data Portal page containing an export link.
+    You'll be redirected to a Data Portal page containing an export link.
 
-1. Click the workspace URL link.
+7. Click the workspace URL link.
 	
-	You'll be redirected to the Terra import page.
+    You'll be redirected to the Terra import page.
 
-1. If you've already created a Terra workspace, select workspace by choosing an existing workspace or choose "Start with a new workspace."
+8. If you've already created a Terra workspace, select workspace by choosing an existing workspace or choose "Start with a new workspace."
 
-
-	![](../../_images/terra-import.png) 
+    ![](../../_images/terra-import.png) 
 
 ### Step two: finding a workflow in Dockstore
 A workflow is simply a set of steps you want to use to transform or analyze your data, often written as a script in a language like Python or R. Terra integrates with scripts written in a particular workflow language called the [Workflow Description Language (WDL)](https://openwdl.org/).  
@@ -78,9 +77,7 @@ We will need to import this workflow from Dockstore using the following steps:
 1. Select the *Workflows* page at the top of the workspace.
 1. Click the *Find a Workflow* card.
 	<figure-styles shadowless=true>
-
 	![Terra page showing workflows that can be added to workspace](../../_images/terra-workflows.png)
-
 	</figure-styles>
 
 1. Click on the *Dockstore* link at the bottom of the pop-up. 
@@ -92,11 +89,8 @@ We will need to import this workflow from Dockstore using the following steps:
 1. Click on the workflow. 
 	
 	<figure-styles shadowless=true>
-
 	![md5sum workflow on Dockstore](../../_images/terra-md5sum_dockstore.png)
-
 	</figure-styles>
-
 
 1. Click on the *Terra* option in the "Launch with" box on the lower left of the page.
 
@@ -120,9 +114,7 @@ To set up the workflow, do the following:
 1. Select "Ok."
 1. From the Inputs section at the bottom of the workflow setup page, click on the attribute field for the *inputFile* variable.
 	<figure-styles shadowless=true>
-
 	![Terra input screen for md5sum workflow](../../_images/terra-md5sum_input.png)
-
 	</figure-styles>
 
 1. Select the DRS URL attribute (something like `this.__bam__file_drs_uri`). 
