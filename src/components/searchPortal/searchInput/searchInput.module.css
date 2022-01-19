@@ -11,7 +11,7 @@
   border-color: var(--blue-darkest);
   -webkit-appearance: none; /* Removes inner shadow on mobile. */
   overflow: hidden;
-  padding: 0 38px;
+  padding: 0 76px 0 38px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }

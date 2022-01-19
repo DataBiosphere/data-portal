@@ -8,7 +8,7 @@
 /* Input search icon wrapper. */
 .searchIcon {
   display: inline-flex;
-  padding: 7px; /* Total icon size 38px. */
+  padding: 9px; /* Total icon size 38px. */
   pointer-events: none;
   position: absolute;
 }

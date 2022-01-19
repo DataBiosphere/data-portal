@@ -1,0 +1,45 @@
+/*
+ * Human Cell Atlas
+ * https://www.humancellatlas.org/
+ *
+ * Style definitions specific to HCA Data Portal search form actions component.
+ */
+
+/* Actions. */
+.actions {
+  align-items: center;
+  display: flex;
+  position: absolute; /* Positions actions. */
+  right: 0;
+  top: 0;
+}
+
+/* Apply button. */
+.apply {
+  composes: s from "../../../styles/fontsize.module.css";
+  align-items: center;
+  background-color: var(--blue-light);
+  border: 1px solid var(--white);
+  border-radius: 3px;
+  color: var(--gray-medium);
+  display: flex;
+  font-weight: 600;
+  height: 36px;
+  justify-content: center;
+  letter-spacing: 0.21px;
+  margin: 1px;
+  width: 36px;
+}
+
+/* Lungmap specific style overrides. */
+/* Apply button. */
+.actions.lungmap .apply {
+  background-color: var(--secondary);
+  border: none;
+  border-radius: 2px;
+  color: var(--white);
+}
+
+.actions.lungmap .apply:hover {
+  background-color: var(--secondary-hover);
+}
