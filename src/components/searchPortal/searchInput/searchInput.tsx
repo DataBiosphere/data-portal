@@ -17,7 +17,7 @@ import React, {
 
 // App dependencies
 import { ToggleSearchBarFn } from "../searchBar/searchBar";
-import SearchInputClear from "../searchInputClear/searchInputClear";
+import SearchFormActions from "../searchFormActions/searchFormActions";
 import SearchInputIcon from "../searchInputIcon/searchInputIcon";
 
 // Styles
@@ -55,7 +55,10 @@ export default function SearchInput({
   );
 
   /**
-   * On focus event (blur), if the clear button was clicked:
+   * On focus event (blur):
+   * If the submit button was clicked:
+   * - return (allows event to bubble to form).
+   * If the clear button was clicked:
    * - the input value is cleared, and
    * - the input element will re-focus.
    * Otherwise, the blur event will proceed as expected and the search bar is closed.
@@ -68,10 +71,19 @@ export default function SearchInput({
   ): void => {
     const { currentTarget, relatedTarget } = focusEvent;
     const { parentNode: formEl } = currentTarget;
-    const clearButtonClicked = formEl?.contains(relatedTarget);
+    const actionButtonsClicked = formEl?.contains(relatedTarget);
 
-    if (clearButtonClicked) {
-      /* Clear value and maintain <input> focus. */
+    /* Action buttons. */
+    if (actionButtonsClicked) {
+      const submitButtonClicked =
+        relatedTarget?.getAttribute("type") === "submit";
+
+      /* Submit button. */
+      if (submitButtonClicked) {
+        return;
+      }
+
+      /* Clear button. */
       if (refInput.current) {
         setInputValue("");
         refInput.current.value = "";
@@ -123,7 +135,7 @@ export default function SearchInput({
         spellCheck="false"
         type="text"
       />
-      <SearchInputClear lungmap={lungmap} showClearButton={showClearButton} />
+      <SearchFormActions lungmap={lungmap} showClearButton={showClearButton} />
     </>
   );
 }

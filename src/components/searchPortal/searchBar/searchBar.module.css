@@ -59,9 +59,10 @@
 }
 
 /**
- * HCA specific breakpoint
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   /* Search bar. */
   .searchBar,
   .searchBar.active {

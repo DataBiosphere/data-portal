@@ -24,7 +24,9 @@ export default function SearchInputIcon({ lungmap }: Props): JSX.Element {
   const iconColor = lungmap ? Color.PRIMARY : Color.GRAY_LIGHT;
   return (
     <span className={searchIcon}>
-      <Icon color={iconColor}>search</Icon>
+      <Icon color={iconColor} fontSize={20}>
+        search
+      </Icon>
     </span>
   );
 }

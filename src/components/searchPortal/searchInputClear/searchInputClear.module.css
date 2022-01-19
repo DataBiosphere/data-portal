@@ -9,7 +9,4 @@
 .searchClear {
   display: inline-flex;
   padding: 9px; /* Total icon size 38px. */
-  position: absolute;
-  right: 0;
-  top: 0;
 }
