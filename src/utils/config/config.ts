@@ -40,6 +40,7 @@ const Config: SiteConfig = {
       partners: [
         { active: true, label: "All Results", value: "" },
         { active: false, label: "Projects", value: "projects" },
+        { active: false, label: "Guides", value: "guides" },
         { active: false, label: "Pipeline Docs", value: "pipelines" },
         { active: false, label: "Metadata Schema", value: "metadata" },
       ],
@@ -67,7 +68,9 @@ const Config: SiteConfig = {
     searchConfig: {
       partners: [
         { active: true, label: "All Results", value: "" },
-        { active: false, label: "Projects", value: "lungmap-only" },
+        { active: false, label: "Projects", value: "projects" },
+        { active: false, label: "Pipelines", value: "pipelines" },
+        { active: false, label: "Metadata", value: "metadata" },
       ],
       searchEngineId: process.env.GATSBY_ATLAS,
     },
