@@ -88,8 +88,7 @@ We will need to import this workflow from Dockstore using the following steps:
 
 1. Click on the workflow. 
 	
-	<figure-styles shadowless=true>
-	![md5sum workflow on Dockstore](../../_images/terra-md5sum_dockstore.png)
+	<figure-styles shadowless=true>![md5sum workflow on Dockstore](../../_images/terra-md5sum_dockstore.png)
 	</figure-styles>
 
 1. Click on the *Terra* option in the "Launch with" box on the lower left of the page.
