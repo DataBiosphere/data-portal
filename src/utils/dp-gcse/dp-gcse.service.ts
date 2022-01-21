@@ -36,5 +36,5 @@ export function getGCSERequestURL(
   const paramSafe = `${GCSEParameter.SAFE}=active`;
   const paramStart = `${GCSEParameter.START}=${start}`;
   const parameters = `${paramGCSEId}&${paramQuery}&${paramSafe}&${paramStart}`;
-  return `${portalUrl}/customsearch/v1?${encodeURI(parameters)}`;
+  return `${portalUrl}customsearch/v1?${encodeURI(parameters)}`;
 }

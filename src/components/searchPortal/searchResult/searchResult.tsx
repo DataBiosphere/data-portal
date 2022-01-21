@@ -10,11 +10,14 @@ import React from "react";
 
 // Styles
 import {
+  description,
+  domain,
   snippet as resultSnippet,
   url as resultUrl,
 } from "./searchResult.module.css";
 
 export interface SearchResponse {
+  displayLink: string;
   link: string;
   formattedUrl: string;
   snippet: string;
@@ -27,16 +30,17 @@ interface Props {
 }
 
 export default function SearchResult({ result }: Props): JSX.Element {
-  const { link, formattedUrl, snippet, title } = result;
+  const { displayLink, link, formattedUrl, snippet, title } = result;
 
   return (
     <div className={resultSnippet}>
       <span>
         <a href={link} rel="noopener">
+          <p className={domain}>{displayLink}</p>
           <p className={resultUrl}>{formattedUrl}</p>
           <h4>{title}</h4>
         </a>
-        <p>{snippet}</p>
+        <p className={description}>{snippet}</p>
       </span>
     </div>
   );

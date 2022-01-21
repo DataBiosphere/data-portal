@@ -30,11 +30,22 @@
   line-height: 24px;
 }
 
-/* URL. */
+/* Domain, URL. */
+.snippet .domain,
 .snippet .url {
   color: var(--gray-darkest);
   font-size: 12px;
   padding: 0;
+}
+
+/* URL. */
+.snippet .url {
+  display: none;
+}
+
+/* Description. */
+.description {
+  word-break: break-word;
 }
 
 /**
@@ -44,5 +55,20 @@
   /* Snippet. */
   .snippet {
     flex-direction: row;
+  }
+}
+
+/**
+ * HCA specific breakpoint
+ */
+@media screen and (min-width: 768px) {
+  /* Domain, URL. */
+  .snippet .domain {
+    display: none;
+  }
+
+  /* URL. */
+  .snippet .url {
+    display: block;
   }
 }
