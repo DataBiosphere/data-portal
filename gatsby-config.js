@@ -29,7 +29,7 @@ const siteMetadata = lungmap
     }
   : {
       title: "HCA Data Portal",
-      siteUrl: "https://data.humancellatlas.org/",
+      siteUrl: "https://data.humancellatlas.org",
     };
 
 module.exports = {
