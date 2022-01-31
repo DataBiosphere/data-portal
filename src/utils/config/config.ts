@@ -68,7 +68,6 @@ const Config: SiteConfig = {
     searchConfig: {
       partners: [
         { active: true, label: "All Results", value: "" },
-        { active: false, label: "Projects", value: "projects" },
         { active: false, label: "Pipelines", value: "pipelines" },
         { active: false, label: "Metadata", value: "metadata" },
       ],
