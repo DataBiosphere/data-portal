@@ -204,14 +204,24 @@ exports.createPages = async ({ graphql, actions }) => {
           metaLinksByEntity
         );
 
-        createPage({
-          path: path,
-          component: postComponent,
-          context: {
-            id: id,
-            nav: postNav
-          }
-        });
+        let includePage;
+
+        if (process.env.GATSBY_ATLAS === "lungmap") {
+          includePage = /^\/apis(?:\/|$)|^\/metadata(?:\/|$)|^\/lungmap-privacy$/.test(path);
+        } else {
+          includePage = path !== "/lungmap-privacy";
+        }
+
+        if (includePage) {
+          createPage({
+            path: path,
+            component: postComponent,
+            context: {
+              id: id,
+              nav: postNav
+            }
+          });
+        }
       }
     });
 
