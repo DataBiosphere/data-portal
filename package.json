@@ -89,7 +89,7 @@
     "gatsby-cli": "^3.14.2",
     "prettier": "^2.5.1",
     "sockjs-client": "^1.5.2",
-    "type-fest": "^2.11.1",
+    "type-fest": "^2.11.2",
     "typescript": "^4.5.5",
     "typescript-plugin-css-modules": "^3.4.0",
     "utf-8-validate": "^5.0.8",
