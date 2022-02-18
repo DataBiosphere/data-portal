@@ -9,7 +9,7 @@ title: DCP Updates
 #### January 24, 2022
 
 ### Release Highlights
-* We've created a new [slack channel](https://humancellatlas.slack.com/archives/C02TM2SDVM2) for the DCP community! Join the channel for announcements, updates, help, and an opportunity to connect with other users of the DCP.
+* We've created a new [slack channel](https://humancellatlas.slack.com/archives/C02TM2SDVM2) for the DCP community! Join the channel, say hello, and follow for the latest announcements, updates, and opportunities to connect with fellow DCP users.
 
 * The Data Portal header has been updated to include new features:
 	* A global search bar that allows users to search across Projects, Guides, Pipeline Docs, and Metadata Schema.
