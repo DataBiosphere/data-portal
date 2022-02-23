@@ -9,7 +9,17 @@ title: "Get Help"
 
 If you have questions or issues to report please email [data-help@humancellatlas.org](mailto:data-help@humancellatlas.org).
 
-## FAQs
+## Join the Data Portal slack community
+The Data Portal is a community-driven effort.
+
+We use the Human Cell Atlas Slack workspace to communicate events, highlight new data, and help participants find answers to their Data Portal questions.
+
+To join the conversation:
+1. Register for the [HCA slack here](https://humancellatlas.slack.com/join/shared_invite/zt-8xpzlu3k-P9M6bKwAJNx~YI_ACLdrFg#/).
+2. Add the  **#dcp-users** channel and say hello.
+
+
+# FAQs
 
 ## Data availability and use guidelines
 
