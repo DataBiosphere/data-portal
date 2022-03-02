@@ -65,10 +65,12 @@ function bindFileSummaryResponse(fileSummaryResponse) {
         cellCount: summary.totalCellCountByOrgan,
       };
     });
+  
+  const totalCellCount = calculateSummaryTotalCellCount(fileSummaryResponse);
 
   // Bind response values to file summary view format
   return {
-    cellCount: fileSummaryResponse.totalCellCount,
+    cellCount: totalCellCount,
     cellCountSummaries: cellCountSummaries,
     donorCount: fileSummaryResponse.donorCount,
     fileCount: fileSummaryResponse.fileCount,
@@ -83,7 +85,7 @@ function bindFileSummaryResponse(fileSummaryResponse) {
     organCount: fileSummaryResponse.organTypes.length,
     organTypes: fileSummaryResponse.organTypes,
     projectCount: fileSummaryResponse.projectCount,
-    totalCellCount: calculateSummaryTotalCellCount(fileSummaryResponse),
+    totalCellCount
   };
 }
 
