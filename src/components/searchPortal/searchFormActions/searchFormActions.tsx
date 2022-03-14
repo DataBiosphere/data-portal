@@ -12,7 +12,9 @@ import { CSSTransition } from "react-transition-group";
 
 // App dependencies
 import Button from "../../button/button";
-import SearchInputClear from "../searchInputClear/searchInputClear";
+import SearchInputClear, {
+  OnClearInputFn,
+} from "../searchInputClear/searchInputClear";
 
 // Styles
 import {
@@ -29,11 +31,13 @@ import {
 
 interface Props {
   lungmap: boolean;
+  onClearInput: OnClearInputFn;
   showClearButton: boolean;
 }
 
 export default function SearchFormActions({
   lungmap,
+  onClearInput,
   showClearButton,
 }: Props): JSX.Element {
   const classNamesTransition = {
@@ -49,8 +53,11 @@ export default function SearchFormActions({
       timeout={400}
       unmountOnExit
     >
-      <div className={classNames(actions, { [darkTheme]: lungmap })}>
-        <SearchInputClear lungmap={lungmap} />
+      <div
+        className={classNames(actions, { [darkTheme]: lungmap })}
+        tabIndex={-1}
+      >
+        <SearchInputClear lungmap={lungmap} onClearInput={onClearInput} />
         <Button type="submit">
           <span className={apply}>Go</span>
         </Button>
