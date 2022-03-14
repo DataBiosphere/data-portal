@@ -48,6 +48,7 @@ export default function SearchInput({
     if (refInput.current) {
       setInputValue("");
       refInput.current.value = "";
+      refInput.current.focus(); // required; maintains focus for firefox
     }
   };
 
