@@ -41,6 +41,17 @@ export default function SearchInput({
   const showClearButton = !!inputValue && searchBarOpen;
 
   /**
+   * Clears input.
+   */
+  const onClearInput = (): void => {
+    /* Clear button. */
+    if (refInput.current) {
+      setInputValue("");
+      refInput.current.value = "";
+    }
+  };
+
+  /**
    * On keydown event "escape", the input element will blur.
    */
   const onHandleKeyDown = useCallback(
@@ -73,20 +84,9 @@ export default function SearchInput({
     const { parentNode: formEl } = currentTarget;
     const actionButtonsClicked = formEl?.contains(relatedTarget);
 
-    /* Action buttons. */
+    /* Action button is clicked (clear or submit) - maintain focus. */
     if (actionButtonsClicked) {
-      const submitButtonClicked =
-        relatedTarget?.getAttribute("type") === "submit";
-
-      /* Submit button. */
-      if (submitButtonClicked) {
-        return;
-      }
-
-      /* Clear button. */
       if (refInput.current) {
-        setInputValue("");
-        refInput.current.value = "";
         refInput.current.focus();
       }
     } else {
@@ -135,7 +135,11 @@ export default function SearchInput({
         spellCheck="false"
         type="text"
       />
-      <SearchFormActions lungmap={lungmap} showClearButton={showClearButton} />
+      <SearchFormActions
+        lungmap={lungmap}
+        onClearInput={onClearInput}
+        showClearButton={showClearButton}
+      />
     </>
   );
 }

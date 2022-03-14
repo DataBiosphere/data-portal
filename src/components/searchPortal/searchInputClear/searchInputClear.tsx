@@ -16,15 +16,21 @@ import Color from "../../ui/color/color";
 // Styles
 import { searchClear } from "./searchInputClear.module.css";
 
+export type OnClearInputFn = () => void;
+
 interface Props {
   lungmap: boolean;
+  onClearInput: OnClearInputFn;
 }
 
-export default function SearchInputClear({ lungmap }: Props): JSX.Element {
+export default function SearchInputClear({
+  lungmap,
+  onClearInput,
+}: Props): JSX.Element {
   const iconColor = lungmap ? Color.GRAY_LIGHT : Color.GRAY_LIGHT;
   return (
     <span className={searchClear}>
-      <Button color={iconColor} type="button">
+      <Button color={iconColor} type="button" onClick={onClearInput}>
         <Icon fontSize={20}>close</Icon>
       </Button>
     </span>
