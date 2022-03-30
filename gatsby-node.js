@@ -207,7 +207,7 @@ exports.createPages = async ({ graphql, actions }) => {
         let includePage;
 
         if (process.env.GATSBY_ATLAS === "lungmap") {
-          includePage = /^\/apis(?:\/|$)|^\/metadata(?:\/|$)|^\/lungmap-privacy$/.test(path);
+          includePage = /^\/apis(?:\/|$)|^\/metadata(?:\/|$)|^\/lungmap-privacy|^\/search$/.test(path);
         } else {
           includePage = path !== "/lungmap-privacy";
         }
