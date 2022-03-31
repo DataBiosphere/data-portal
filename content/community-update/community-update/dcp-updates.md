@@ -6,7 +6,7 @@ title: DCP Updates
 
 # DCP Platform Updates
 
-#### February 28, 2022
+#### March 30, 2022
 
 ### Release Highlights
 
