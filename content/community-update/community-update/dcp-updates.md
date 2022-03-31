@@ -6,6 +6,37 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### February 28, 2022
+
+### Release Highlights
+
+* A new managed access project, [A cellular census of human lungs identifies novel cell states in health and in asthma](https://data.humancellatlas.org/explore/projects/c0518445-3b3b-49c6-b8fc-c41daa4eacba), is available in the Browser.
+
+* A new COVID-19 dataset has been added to the DCP as part of the project [Single-cell RNA sequencing of urinary cells reveals distinct cellular diversity in COVID-19-associated AKI](https://data.humancellatlas.org/explore/projects/c6a50b2a-3dfd-4ca8-9b48-3e682f568a25).
+
+* New data from across the globe has been added to the DCP, including datasets from Africa, Asia, and Europe.
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (11):
+1. [A cellular census of human lungs identifies novel cell states in health and in asthma](https://data.humancellatlas.org/explore/projects/c0518445-3b3b-49c6-b8fc-c41daa4eacba)
+1. [A single cell atlas of human cornea that defines its development, limbal progenitor cells and their interactions with the immune cells](https://data.humancellatlas.org/explore/projects/6ac8e777-f9a0-4288-b5b0-446e8eba3078)
+1. [Conserved cell types with divergent features in human versus mouse cortex](https://data.humancellatlas.org/explore/projects/165dea71-a95a-44e1-88cd-b2d9ad68bb1e)
+1. [Modelling the impact of decidual senescence on embryo implantation in human endometrial assembloids](https://data.humancellatlas.org/explore/projects/91af6e2f-65f2-44ec-98e0-ba4e98db22c8)
+1. [Molecular Architecture of the Mouse Nervous System](https://data.humancellatlas.org/explore/projects/2c041c26-f75a-495f-ab36-a076f89d422a)
+1. [Single-cell RNA sequencing of urinary cells reveals distinct cellular diversity in COVID-19-associated AKI](https://data.humancellatlas.org/explore/projects/c6a50b2a-3dfd-4ca8-9b48-3e682f568a25)
+1. [Single-cell RNA-sequencing reveals pervasive but highly cell type-specific genetic ancestry effects on the response to viral infection](https://data.humancellatlas.org/explore/projects/c211fd49-d980-4ba1-8c6a-c24254a3cb52)
+1. [Single-cell analysis of human B cell maturation predicts how antibody class switching shapes selection dynamics](https://data.humancellatlas.org/explore/projects/24d0dbbc-54eb-4904-8141-934d26f1c936)
+1. [Single-cell profiling of human subventricular zone progenitors identifies SFRP1 as a target for stimulating progenitor activation](https://data.humancellatlas.org/explore/projects/3cdaf942-f8ad-42e8-a77b-4efedb9ea7b6)
+1. [Spatially distinct reprogramming of the tumor microenvironment based on tumor invasion in diffuse-type gastric cancers](https://data.humancellatlas.org/explore/projects/f29b124a-8597-4862-ae98-ff3a0fd9033e)
+1. [Microglia Require CD4 T Cells to Complete the Fetal-to-Adult Transition](https://data.humancellatlas.org/explore/projects/e5d45579-1f5b-48c3-b568-320d93e7ca72) 
+
+### Updated Raw Data, Metadata, Contributor-generated Matrices (6):
+1. [Assessing the relevance of organoids to model inter-individual variation](https://data.humancellatlas.org/explore/projects/005d611a-14d5-4fbf-846e-571a1f874f70)
+1. [Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19](https://data.humancellatlas.org/explore/projects/95f07e6e-6a73-4e1b-a880-c83996b3aa5c)
+1. [Integrative computational analysis of the substantia nigra pars compacta and the locus coeruleus](https://data.humancellatlas.org/explore/projects/5b5f05b7-2482-468d-b76d-8f68c04a7a47)
+1. [Single-cell RNA-Seq of human hepatocyte-derived liver progenitor-like cells](https://data.humancellatlas.org/explore/projects/074a9f88-729a-455d-bca5-0ce80edf0cea)
+1. [The Developmental Heterogeneity of Human Natural Killer Cells Defined by Single-cell Transcriptome](https://data.humancellatlas.org/explore/projects/403c3e76-6814-4a2d-a580-5dd5de38c7ff)
+1. [The cellular immune response to COVID-19 deciphered by single cell multi-omics across three UK centres](https://data.humancellatlas.org/explore/projects/b963bd4b-4bc1-4404-8425-69d74bc636b8)
+
 #### January 24, 2022
 
 ### Release Highlights
