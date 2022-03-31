@@ -14,7 +14,7 @@ title: DCP Updates
 
 * A new COVID-19 dataset has been added to the DCP as part of the project [Single-cell RNA sequencing of urinary cells reveals distinct cellular diversity in COVID-19-associated AKI](https://data.humancellatlas.org/explore/projects/c6a50b2a-3dfd-4ca8-9b48-3e682f568a25).
 
-* New data from across the globe has been added to the DCP, including datasets from Africa, Asia, and Europe.
+* New raw data derived from populations in Africa, Asia, and Europe are now available.
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (11):
 1. [A cellular census of human lungs identifies novel cell states in health and in asthma](https://data.humancellatlas.org/explore/projects/c0518445-3b3b-49c6-b8fc-c41daa4eacba)
