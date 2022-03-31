@@ -37,7 +37,7 @@ title: DCP Updates
 1. [The Developmental Heterogeneity of Human Natural Killer Cells Defined by Single-cell Transcriptome](https://data.humancellatlas.org/explore/projects/403c3e76-6814-4a2d-a580-5dd5de38c7ff)
 1. [The cellular immune response to COVID-19 deciphered by single cell multi-omics across three UK centres](https://data.humancellatlas.org/explore/projects/b963bd4b-4bc1-4404-8425-69d74bc636b8)
 
-#### January 24, 2022
+#### February 14, 2022
 
 ### Release Highlights
 * We've created a new [slack channel](https://humancellatlas.slack.com/archives/C02TM2SDVM2) for the DCP community! Join the channel, say hello, and follow for the latest announcements, updates, and opportunities to connect with fellow DCP users.
