@@ -45,7 +45,7 @@
     "react-select": "^4.3.1",
     "react-transition-group": "^4.4.2",
     "react-typography": "^0.16.20",
-    "rehype-react": "^7.0.4",
+    "rehype-react": "^7.1.1",
     "shallow-equal": "^1.2.1",
     "typography": "^0.16.21",
     "validate.js": "^0.13.1"
