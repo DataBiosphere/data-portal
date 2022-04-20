@@ -17,7 +17,7 @@ title: DCP Updates
    * [Spatiotemporal Analysis of Human Intestinal Development at Single Cell Resolution - scRNA-Seq](https://data.humancellatlas.org/explore/projects/fa3f460f-4fb9-4ced-b548-8ba6a8ecae3f)
    * [Cells of the human intestinal tract mapped across space and time](https://data.humancellatlas.org/explore/projects/fde199d2-a841-4ed1-aa65-b9e0af8969b1)
 
-* Two new research projects include data from mice that traveled to space:
+* Two new research projects include data from mice that traveled to International Space Station:
    * [Single cell transcriptional profiling of spleens from mice flown on Rodent Research Reference Mission-2](https://data.humancellatlas.org/explore/projects/aff9c3cd-6b84-4fc2-abf2-b9c0b3038277)
    * [Single cell transcriptional profiling of peripheral blood mononuclear cells (PBMCs) from mice flown on Rodent Research Reference Mission-2 (RRRM-2)](https://data.humancellatlas.org/explore/projects/a2a2f324-cf24-409e-a859-deaee871269c)
 
