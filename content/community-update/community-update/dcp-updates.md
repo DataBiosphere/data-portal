@@ -6,6 +6,56 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### April 20, 2022
+
+### Release Highlights
+* Multiple projects now include DOI information in the metadata and project page:
+   * [Mapping the temporal and spatial dynamics of the human endometrium in vivo and in vitro](https://data.humancellatlas.org/explore/projects/2b38025d-a5ea-4c0f-b22e-367824bcaf4c)
+   * [Single-cell analysis reveals the continuum of human lympho-myeloid progenitor cells](https://data.humancellatlas.org/explore/projects/1ce3b3dc-02f2-44a8-96da-d6d107b27a76)
+
+* New raw imaging data is available for the projects:
+   * [Spatiotemporal Analysis of Human Intestinal Development at Single Cell Resolution - scRNA-Seq](https://data.humancellatlas.org/explore/projects/fa3f460f-4fb9-4ced-b548-8ba6a8ecae3f)
+   * [Cells of the human intestinal tract mapped across space and time](https://data.humancellatlas.org/explore/projects/fde199d2-a841-4ed1-aa65-b9e0af8969b1)
+
+* Two new research projects include data from mice that traveled to space:
+   * [Single cell transcriptional profiling of spleens from mice flown on Rodent Research Reference Mission-2](https://data.humancellatlas.org/explore/projects/aff9c3cd-6b84-4fc2-abf2-b9c0b3038277)
+   * [Single cell transcriptional profiling of peripheral blood mononuclear cells (PBMCs) from mice flown on Rodent Research Reference Mission-2 (RRRM-2)](https://data.humancellatlas.org/explore/projects/a2a2f324-cf24-409e-a859-deaee871269c)
+
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (19):
+1. [A proximal-to-distal survey of healthy adult human small intestine and colon epithelium by single-cell transcriptomics](https://data.humancellatlas.org/explore/projects/73769e0a-5fcd-41f4-9083-41ae08bfa4c1)
+1. [A single-cell transcriptome atlas of human early embryogenesis](https://data.humancellatlas.org/explore/projects/e255b1c6-1143-4fa6-83a8-528f15b41038)
+1. [A spatial multi-omics atlas of the human lung reveals a novel immune cell survival niche](https://data.humancellatlas.org/explore/projects/957261f7-2bd6-4358-a6ed-24ee080d5cfc)
+1. [Cells of the human intestinal tract mapped across space and time](https://data.humancellatlas.org/explore/projects/fde199d2-a841-4ed1-aa65-b9e0af8969b1)
+1. [Construction of a single-cell transcriptomic atlas of 58,243 liver cells from 4 donors and 4 recipient liver transplasnt patients to investigate early allograft dysfunction (EAD).](https://data.humancellatlas.org/explore/projects/c7c54245-548b-4d4f-b15e-0d7e238ae6c8)
+1. [Improving fibroblast characterization using single-cell RNA sequencing: an optimized tissue disaggregation and data processing pipeline.](https://data.humancellatlas.org/explore/projects/0562d2ae-0b8a-459e-bbc0-6357108e5da9)
+1. [Integrated single-cell transcriptomics and epigenomics reveals strong germinal center–associated etiology of autoimmune risk loci](https://data.humancellatlas.org/explore/projects/65d7a168-4d62-4bc0-8324-4e742aa62de6)
+1. [Low-coverage single-cell mRNA sequencing reveals cellular heterogeneity and activated signaling pathways in developing cerebral cortex.](https://data.humancellatlas.org/explore/projects/45c2c853-d06f-4879-957e-f1366fb5d423)
+1. [Molecular signatures of inflammatory profile and B-cell function in SFTS patients](https://data.humancellatlas.org/explore/projects/40ca2a03-ec0f-471f-a834-948199495fe7)
+1. [Retinal ganglion cell-specific genetic regulation in primary open angle glaucoma](https://data.humancellatlas.org/explore/projects/77780d56-03c0-481f-aade-2038490cef9f)
+1. [Single cell RNA-seq of HeLa CCL2](https://data.humancellatlas.org/explore/projects/18d4aae2-8363-4e00-8eeb-b9e568402cf8)
+1. [Single cell transcriptional profiling of peripheral blood mononuclear cells (PBMCs) from mice flown on Rodent Research Reference Mission-2 (RRRM-2)](https://data.humancellatlas.org/explore/projects/a2a2f324-cf24-409e-a859-deaee871269c)
+1. [Single cell transcriptional profiling of spleens from mice flown on Rodent Research Reference Mission-2](https://data.humancellatlas.org/explore/projects/aff9c3cd-6b84-4fc2-abf2-b9c0b3038277)
+1. [Single cell transcriptome atlases of the developing mouse and human spinal cord.](https://data.humancellatlas.org/explore/projects/6621c827-b57a-4268-bc80-df4049140193)
+1. [Single-cell RNA sequencing identifies cell type-specific cis-eQTLs and co-expression QTLs](https://data.humancellatlas.org/explore/projects/40272c3b-4697-4bd4-ba3f-82fa96b9bf71)
+1. [Single-cell RNA-Seq reveals a developmental atlas of human prefrontal cortex](https://data.humancellatlas.org/explore/projects/a815c84b-8999-433f-958e-422c0720e00d)
+1. [Single-nucleus RNA-seq in the post-mortem brain in major depressive disorder.](https://data.humancellatlas.org/explore/projects/0777b9ef-91f3-468b-9dea-db477437aa1a)
+1. [Single-nucleus transcriptomic profiles of glial cells in human dorsal root ganglion and spinal cord](https://data.humancellatlas.org/explore/projects/aefb9192-43fc-46d7-a4c1-29597f7ef61b)
+1. [Spatiotemporal Analysis of Human Intestinal Development at Single Cell Resolution - scRNA-Seq](https://data.humancellatlas.org/explore/projects/fa3f460f-4fb9-4ced-b548-8ba6a8ecae3f)
+
+### Updated Raw Data, Metadata, Contributor-generated Matrices (10):
+1. [Blood and immune development in human fetal bone marrow and Down syndrome](https://data.humancellatlas.org/explore/projects/04ad400c-58cb-40a5-bc2b-2279e13a910b) 
+1. [Nuclei multiplexing with barcoded antibodies for single-nucleus genomics.](https://data.humancellatlas.org/explore/projects/dc1a41f6-9e09-42a6-959e-3be23db6da56)
+1. [A cell atlas of human thymic development defines T cell repertoire formation](https://data.humancellatlas.org/explore/projects/c1810dbc-16d2-45c3-b45e-3e675f88d87b)
+1. [A comprehensive single cell transcriptional landscape of human hematopoietic progenitors](https://data.humancellatlas.org/explore/projects/5116c081-8be7-49c5-8ce0-73b887328aa9)
+1. [A single cell atlas of human cornea that defines its development, limbal progenitor cells and their interactions with the immune cells.](https://data.humancellatlas.org/explore/projects/6ac8e777-f9a0-4288-b5b0-446e8eba3078)
+1. [Decoding human fetal liver haematopoiesis](https://data.humancellatlas.org/explore/projects/f2fe82f0-4454-4d84-b416-a885f3121e59)
+1. [Mapping the temporal and spatial dynamics of the human endometrium in vivo and in vitro](https://data.humancellatlas.org/explore/projects/2b38025d-a5ea-4c0f-b22e-367824bcaf4c)
+1. [Modelling the impact of decidual senescence on embryo implantation in human endometrial assembloids.](https://data.humancellatlas.org/explore/projects/91af6e2f-65f2-44ec-98e0-ba4e98db22c8)
+1. [Single-Cell Transcriptomic Profiling of Human Dental Pulp in Sound and Carious Teeth: A Pilot Study](https://data.humancellatlas.org/explore/projects/6f89a7f3-8d4a-4344-aa4f-eccfe7e91076)
+1. [Single-cell analysis reveals the continuum of human lympho-myeloid progenitor cells](https://data.humancellatlas.org/explore/projects/1ce3b3dc-02f2-44a8-96da-d6d107b27a76)
+
+
 #### March 30, 2022
 
 ### Release Highlights
