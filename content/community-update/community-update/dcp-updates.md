@@ -20,6 +20,8 @@ title: DCP Updates
 * Two new research projects include data from mice that traveled to International Space Station:
    * [Single cell transcriptional profiling of spleens from mice flown on Rodent Research Reference Mission-2](https://data.humancellatlas.org/explore/projects/aff9c3cd-6b84-4fc2-abf2-b9c0b3038277)
    * [Single cell transcriptional profiling of peripheral blood mononuclear cells (PBMCs) from mice flown on Rodent Research Reference Mission-2 (RRRM-2)](https://data.humancellatlas.org/explore/projects/a2a2f324-cf24-409e-a859-deaee871269c)
+   
+* A new project that is part of an official HCA publication is now available: [A proximal-to-distal survey of healthy adult human small intestine and colon epithelium by single-cell transcriptomics](https://data.humancellatlas.org/explore/projects/73769e0a-5fcd-41f4-9083-41ae08bfa4c1)
 
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (19):
