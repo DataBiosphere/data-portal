@@ -72,7 +72,7 @@
     "@types/react-transition-group": "^4.4.4",
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
-    "@typescript-eslint/parser": "^5.13.0",
+    "@typescript-eslint/parser": "^5.22.0",
     "bufferutil": "^4.0.6",
     "core-js": "^3.21.1",
     "eslint": "^8.10.0",
