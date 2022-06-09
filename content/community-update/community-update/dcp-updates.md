@@ -6,6 +6,39 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### June 9, 2022
+
+
+### Release Highlights
+* Contributions of spatial transcriptomic data (like 10x Visium) continue to climb; for example, see the project [Transcriptome-scale spatial gene expression in the human dorsolateral prefrontal cortex](https://data.humancellatlas.org/explore/projects/7b393e4d-65bc-4c03-b402-aae769299329).
+
+* New raw data and contributor matrices shed light on disease processes; see the project "[Single-Cell Transcriptomics of Human Substantia Nigra in Parkinson's Disease](https://data.humancellatlas.org/explore/projects/16cd6791-2adb-4d0f-8222-0184dada6456)" for a cellular atlas of the human substantia nigra in health and Parkinson’s Disease. 
+
+* Multi-modal data provides a more complete understanding of cellular function. The new project [Spatial proteogenomics reveals distinct and evolutionarily-conserved hepatic macrophage niches](https://data.humancellatlas.org/explore/projects/425c2759-db66-4c93-a358-a562c069b1f1) combines the power of Visium and CITE-seq.
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (13)
+1. [A Human Liver Cell Atlas reveals Heterogeneity and Epithelial Progenitors](https://data.humancellatlas.org/explore/projects/94e4ee09-9b4b-410a-84dc-a751ad36d0df)
+1. [A single-cell atlas of breast cancer cell lines to study tumour heterogeneity and drug response](https://data.humancellatlas.org/explore/projects/6663070f-fd8b-41a9-a479-2d1e07afa201)
+1. [CITE-seq of in vitro control and memory-like human NK cells](https://data.humancellatlas.org/explore/projects/2253ae59-4cc5-4bd2-b44e-ecb6d3fd7646)
+1. [Combinatorial transcription factor profiles predict mature and functional human islet α and β cells](https://data.humancellatlas.org/explore/projects/daa371e8-1ec3-43ef-924f-896d901eab6f)
+1. [RNA-Seq from human innate lymphoid cells (ILCs) transitional populations.](https://data.humancellatlas.org/explore/projects/f4d011ce-d1f5-48a4-ab61-ae14176e3a6e)
+1. [SARS-CoV-2 receptor ACE2 is an interferon-stimulated gene in human airway epithelial cells and is detected in specific cell subsets across tissues.](https://data.humancellatlas.org/explore/projects/0b299140-25b5-4861-a69f-7651ff3f46cf)
+1. [Single Cell RNA-seq reveals ectopic and aberrant lung resident cell populations in Idiopathic Pulmonary Fibrosis](https://data.humancellatlas.org/explore/projects/c16a754f-5da3-46ed-8c1e-6426af2ef625)
+1. [Single-Cell Transcriptomics of Human Substantia Nigra in Parkinson's Disease](https://data.humancellatlas.org/explore/projects/16cd6791-2adb-4d0f-8222-0184dada6456)
+1. [Single-cell analysis of gastric pre-cancerous and cancer lesions reveals cell lineage diversity and intratumoral heterogeneity](https://data.humancellatlas.org/explore/projects/18e58437-76b7-4021-8ede-3f0b443fa915)
+1. [Skin single cell universe identifies IL-1B/IL23A co-producing CD14+ type 3 dendritic cells in psoriasis](https://data.humancellatlas.org/explore/projects/b733dc1b-1d55-45e3-8036-7eab0821742c)
+1. [Spatial multi-omic map of human myocardial infarction](https://data.humancellatlas.org/explore/projects/e9f36305-d857-44a3-93f0-df4e6007dc97)
+1. [Spatial proteogenomics reveals distinct and evolutionarily-conserved hepatic macrophage niches](https://data.humancellatlas.org/explore/projects/425c2759-db66-4c93-a358-a562c069b1f1)
+1. [Transcriptome-scale spatial gene expression in the human dorsolateral prefrontal cortex](https://data.humancellatlas.org/explore/projects/7b393e4d-65bc-4c03-b402-aae769299329)
+
+### Updated Raw Data, Metadata, Contributor-generated Matrices
+1. [Single-cell analysis of human B cell maturation predicts how antibody class switching shapes selection dynamics](https://data.humancellatlas.org/explore/projects/24d0dbbc-54eb-4904-8141-934d26f1c936)
+1. [Improving fibroblast characterization using single-cell RNA sequencing: an optimized tissue disaggregation and data processing pipeline.](https://data.humancellatlas.org/explore/projects/0562d2ae-0b8a-459e-bbc0-6357108e5da9)
+1. [Single-cell RNA Sequencing of human microglia from post mortem Alzheimers Disease CNS tissue.](https://data.humancellatlas.org/explore/projects/b51f49b4-0d2e-4cbd-bbd5-04cd171fc2fa)
+1. [Single-cell profiling of human subventricular zone progenitors identifies SFRP1 as a target for stimulating progenitor activation](https://data.humancellatlas.org/explore/projects/3cdaf942-f8ad-42e8-a77b-4efedb9ea7b6)
+
+
+
 #### April 20, 2022
 
 ### Release Highlights
