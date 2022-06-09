@@ -7,12 +7,12 @@ description: "SC3 is an unsupervised clustering method for scRNA-seq data."
 githubUrl: "https://github.com/hemberg-lab/SC3"
 path: "/analyze/methods/methods-packages/sc3"
 title: "Single-cell consensus clustering (SC3)"
-upstreamRegistryUrl: "http://bioconductor.org/packages/SC3"
+upstreamRegistryUrl: "https://bioconductor.org/packages/SC3"
 ---
 
-[![Build Status](http://www.bioconductor.org/shields/build/release/bioc/SC3.svg)](https://git.bioconductor.org/packages/SC3)
+[![Build Status](https://www.bioconductor.org/shields/build/release/bioc/SC3.svg)](https://git.bioconductor.org/packages/SC3)
 
-[SC3](http://bioconductor.org/packages/SC3) is an unsupervised clustering method for scRNA-seq data. SC3 also estimates the number of clusters and it provides features to aid the biological interpretation of the clusters. [sc3-scripts](https://anaconda.org/bioconda/sc3-scripts) provides a set of simple wrappers with robust argument parsing for individual components of the SC3 package.
+[SC3](https://bioconductor.org/packages/SC3) is an unsupervised clustering method for scRNA-seq data. SC3 also estimates the number of clusters and it provides features to aid the biological interpretation of the clusters. [sc3-scripts](https://anaconda.org/bioconda/sc3-scripts) provides a set of simple wrappers with robust argument parsing for individual components of the SC3 package.
 
 ## Use
 
