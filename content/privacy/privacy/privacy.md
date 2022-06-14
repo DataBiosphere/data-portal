@@ -49,7 +49,7 @@ Depending on how you are accessing the Services, we may also use “cookies” (
 Whether we collect some or all of this information often depends on what type of device you are using and its settings. For example, different types of information are available depending on whether you are using a Mac or a PC, or an iPhone or Android phone. To learn more about what information your device makes available to us, please also check the policies of your device manufacturer or software provider.
 
 Information from Other Sources: We do not obtain information about you from other sources and we do not combine that information with information we collect from you directly.
-We do not obtain more sensitive information about you, with your explicit consent, where the processing is necessary to meet a legal or regulatory obligation, the processing is in connection with HCA establishing, exercising or defending legal claims, or is otherwise expressly permitted by GDPR.
+We also obtain more sensitive information about you, with your explicit consent, where the processing is necessary to meet a legal or regulatory obligation, the processing is in connection with HCA establishing, exercising or defending legal claims, or is otherwise expressly permitted by GDPR.
 
 ### 2. How We Use Your Personal Data and the Lawful Basis for Such Processing
 
