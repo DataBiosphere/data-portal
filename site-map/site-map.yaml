@@ -68,7 +68,7 @@
               path: "/analyze/portals/hca-galaxy-instance"
             - name: "OmniBrowser"
               key: "/analyze/portals/analysis-portals/omnibrowser"
-              path: "/analyze/methods/omnibrowser"
+              path: "/analyze/portals/omnibrowser"
             - name: "Single Cell Expression Atlas"
               key: "/analyze/portals/analysis-portals/single-cell-expression-atlas"
               path: "/analyze/portals/single-cell-expression-atlas"
