@@ -21,4 +21,4 @@ Datasets are constantly updated on OmniBrowser™ in order to support the consta
 
 ## Contact
 
-Abiosciences (<mailto:bd_china@abiosciences.com>)
+Abiosciences (<bd_china@abiosciences.com>)
