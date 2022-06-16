@@ -109,7 +109,7 @@ We may be obligated to retain your Personal Data as required by U.S. federal or 
 
 If you wish to exercise your rights, you can contact the HCA Data Portal contact identified below.
 
-You may choose not to visit or use or participate in HCA Data Portal Services. If you choose not to share your Personal Data with us or HCA Data Portal third parties for HCA Data Portal Services your site usage will not be tracked and you will not be able to login to view controlled-access data. You will still be able to view and access open-access data. You may choose to set your web browser to refuse cookies or to alert you when cookies are being sent. If cookies are turned off the portal and browser will continue to function however Google Analytics tracking will not function.
+You may choose not to visit or use or participate in HCA Data Portal Services. If you choose not to share your Personal Data with us or HCA Data Portal third parties for HCA Data Portal Services your site usage will not be tracked and you will not be able to login to view controlled-access data. You will still be able to view and access open-access data. You may choose to set your web browser to refuse cookies or to alert you when cookies are being sent. If cookies are turned off the portal and browser will continue to function; however Google Analytics tracking will not function.
 
 ### 8. Questions and Complaints
 
