@@ -68,7 +68,7 @@ The TSV file is named after the project and includes the date and time the file 
 CD4+ cytotoxic T lymphocytes 2019-07-19 19.09.tsv
 ```
 
-A partial example of a TSV file is listed below:
+A partial example of a TSV file is shown below:
 
 ![Partial Metadata tsv](../_images/metadata_tsv.png "TSV File")
 
