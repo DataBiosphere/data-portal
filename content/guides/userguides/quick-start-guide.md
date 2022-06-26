@@ -11,7 +11,7 @@ This section briefly reviews how to find and download cross-project data and ass
 
 ## Finding Data
 
-The **Explore** section of the Data Portal provides an interactive data browser. You can design a unique cohort, or data subset, by selecting various facets in the Browser's Organ, Method, Donor, Specimen sections. 
+The **Explore** section of the Data Portal provides an interactive data browser. You can design a unique cohort, or data subset, by selecting various facets in the Browser's Donor, Tissue Type, Specimen, Method, and Files sections. 
 
 The Specimen's tab shows you how many specimens have been selected. It also gives an estimate of the size of the data set if the entire list were downloaded.
 
@@ -39,7 +39,7 @@ To download the raw and processed data:
 
    ![Export Data](../_images/Export_selected_data.png "Export Selected Data")
 
-2. Select the files to include in the download- the download dialog box gives you the option to further refine the types of files
+2. Select the files to include in the download—the download dialog box gives you the option to further refine the types of files
 
     ![Select Files](../_images/select_file_types.png "Select Files")
 
