@@ -1,6 +1,6 @@
 ---
 appUrl: "https://www.synecosys.cn"
-author: "B Liang, L Shi, WY Wang, JJ Chang, Y Lu, H Hou, GJ Wu, YC He, YH Fei, XG Zhang, JJ Wang, MM Wang, Y Zhang, J Ye, JN Liu, Y Guo, SS Chen, JC Duan, J Fan"
+author: "Singleron Technologies"
 componentName: "analysisDetail"
 date: "2022-06-22"
 description: "SynEcoSys is a multifunctional platform for single-cell transcriptomic data analysis, visualization, and exploration. SynEcoSys curates both clinical and research orientated data to regard disease related cells and genes."
