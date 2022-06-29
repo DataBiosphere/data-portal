@@ -6,6 +6,62 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### June 29, 2022
+
+
+### Release Highlights
+* New data is available from research groups in Japan, China, and South Korea:
+    * [scRNA-seq experiments on human foreskin fibroblasts, foreskin fibroblasts induced directly to retina pigment epithelium, and induced pluripotent stem cell derived retina pigment epithelium.](https://data.humancellatlas.org/explore/projects/4f17edf6-e9f0-42af-a54a-f02fdca76ade) 
+    * [Single-cell RNA-seq of bone marrow cells from aplastic anemia patient and healthy donor](https://data.humancellatlas.org/explore/projects/e993adcd-d4ba-4f88-9a05-d1c05bdf0c45)
+    * [Memory-like natural killer cells facilitate effector functions of daratumumab in multiple myeloma](https://data.humancellatlas.org/explore/projects/2eb4f5f8-42a5-4368-aa2d-337bacb96197)
+
+* There are now seven 10x Visium spatial transcriptomic projects available in the Data Browser. See the most recent one: [A human fetal lung cell atlas uncovers proximal-distal gradients of differentiation and key regulators of epithelial fates](https://data.humancellatlas.org/explore/projects/2fe3c60b-ac1a-4c61-9b59-f6556c0fce63). 
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (11)
+1. [A human fetal lung cell atlas uncovers proximal-distal gradients of differentiation and key regulators of epithelial fates](https://data.humancellatlas.org/explore/projects/2fe3c60b-ac1a-4c61-9b59-f6556c0fce63)
+1. [A single-cell and single-nucleus RNA-seq toolbox for fresh and frozen human tumors.](https://data.humancellatlas.org/explore/projects/a62dae2e-cd69-4d5c-b5f8-4f7e8abdbafa)
+1. [Decoding Human Megakaryocyte Development](https://data.humancellatlas.org/explore/projects/a9f5323a-ce71-471c-9caf-04cc118fd1d7)
+1. [Memory-like natural killer cells facilitate effector functions of daratumumab in multiple myeloma](https://data.humancellatlas.org/explore/projects/2eb4f5f8-42a5-4368-aa2d-337bacb96197)
+1. [Profiling of transcribed cis-regulatory elements in single cells.](https://data.humancellatlas.org/explore/projects/34da2c5f-8011-48af-a7fd-ad2f56ec10f4)
+1. [Single-cell RNA-seq of bone marrow cells from aplastic anemia patient and healthy donor](https://data.humancellatlas.org/explore/projects/e993adcd-d4ba-4f88-9a05-d1c05bdf0c45)
+1. [Single-cell RNA-seq to decipher the subpopulations of human decidual leukocytes in normal and RSA pregnancies](https://data.humancellatlas.org/explore/projects/c302fe54-d22d-451f-a130-e24df3d6afca)
+1. [Single-cell deciphering of human fetal innate lymphoid cell development](https://data.humancellatlas.org/explore/projects/fccd3f50-cde2-47bf-8972-a293b5928aea)
+1. [Single-cell sequencing unveils the heterogeneity of nonimmune cells in chronic apical periodontitis](https://data.humancellatlas.org/explore/projects/d138a114-7df5-4f7d-9ff1-f79dfd2d428f)
+1. [The Human and Mouse Enteric Nervous System at Single-Cell Resolution.](https://data.humancellatlas.org/explore/projects/7be05025-9972-493a-856f-3342a8d1b183)
+1. [scRNA-seq experiments on human foreskin fibroblasts, foreskin fibroblasts induced directly to retina pigment epithelium, and induced pluripotent stem cell derived retina pigment epithelium.](https://data.humancellatlas.org/explore/projects/4f17edf6-e9f0-42af-a54a-f02fdca76ade) 
+
+### Updated Metadata (28)
+
+1. [Assessing the relevance of organoids to model inter-individual variation](https://data.humancellatlas.org/explore/projects/005d611a-14d5-4fbf-846e-571a1f874f70) 
+1. [A single cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d)
+1. [Blood and immune development in human fetal bone marrow and Down syndrome](https://data.humancellatlas.org/explore/projects/04ad400c-58cb-40a5-bc2b-2279e13a910b)
+1. [Capturing human trophoblast development with naive pluripotent stem cells in vitro](https://data.humancellatlas.org/explore/projects/da2747fa-2921-42e0-afd4-39ef57b2b88b)
+1. [Dissecting the Global Dynamic Molecular Profiles of Human Fetal Kidney Development by Single-Cell RNA Sequencing](https://data.humancellatlas.org/explore/projects/8a40ff19-e614-4c50-b23b-5c9e1d546bab)
+1. [Extreme heterogeneity of influenza virus infection in single cells](https://data.humancellatlas.org/explore/projects/5bb1f67e-2ff0-4848-bbcf-17d133f0fd2d)
+1. [Human photoreceptor cells from different macular subregions have distinct transcriptional profiles](https://data.humancellatlas.org/explore/projects/8bd2e5f6-9453-4b9b-9c56-59e3a40dc87e)
+1. [Integrative computational analysis of the substantia nigra pars compacta and the locus coeruleus](https://data.humancellatlas.org/explore/projects/5b5f05b7-2482-468d-b76d-8f68c04a7a47)
+1. [Population-scale single-cell RNA-seq profiling across dopaminergic neuron differentiation.](https://data.humancellatlas.org/explore/projects/20f37aaf-caa1-40e6-9123-be6ce8feb2d6)
+1. [Single Cell RNA Sequencing of Human Milk-Derived Cells Reveals Sub-Populations of Mammary Epithelial Cells with Molecular Signatures of Progenitor and Mature States: a Novel, Non-invasive Framework for Investigating Human Lactation Physiology](https://data.humancellatlas.org/explore/projects/8999b456-6fa6-438b-ab17-b62b1d8ec0c3)
+1. [Single Cell RNA-Seq profiling human embryonic kidney cortex cells](https://data.humancellatlas.org/explore/projects/71436067-ac41-4ace-be1b-2fbcc2cb02fa)
+1. [Single cell RNA-seq of HeLa CCL2](https://data.humancellatlas.org/explore/projects/18d4aae2-8363-4e00-8eeb-b9e568402cf8)
+1. [Single cell RNAseq of human nail unit defines RSPO4 onychofibroblasts and SPINK6 nail epithelium](https://data.humancellatlas.org/explore/projects/bd7104c9-a950-490e-9472-7d41c6b11c62)
+1. [Single cell sequencing identifies novel sub-populations of breast cancer cells selected under hypoxia](https://data.humancellatlas.org/explore/projects/f6133d2a-9f3d-4ef9-9c19-c23d6c7e6cc0)
+1. [Single cell transcriptional profiling of peripheral blood mononuclear cells (PBMCs) from mice flown on Rodent Research Reference Mission-2 (RRRM-2)](https://data.humancellatlas.org/explore/projects/a2a2f324-cf24-409e-a859-deaee871269c)
+1. [Single cell transcriptional profiling of spleens from mice flown on Rodent Research Reference Mission-2](https://data.humancellatlas.org/explore/projects/aff9c3cd-6b84-4fc2-abf2-b9c0b3038277)
+1. [Single-Cell RNA Sequencing Reveals Human iPS Cell-derived Alveolar Type 1 Cells in Alveolar Organoids](https://data.humancellatlas.org/explore/projects/dbcd4b1d-31bd-4eb5-94e1-50e8706fa192)
+1. [Single-Cell Transcriptomic Profiling of Human Dental Pulp in Sound and Carious Teeth: A Pilot Study](https://data.humancellatlas.org/explore/projects/6f89a7f3-8d4a-4344-aa4f-eccfe7e91076)
+1. [Single-cell Transcriptome Analysis Reveals an Anomalous Epithelial Variation and Ectopic Inflammatory Response in Chronic Obstructive Pulmonary Disease](https://data.humancellatlas.org/explore/projects/ad04c8e7-9b7d-4cce-b8e9-01e31da10b94)
+1. [Single-cell transcriptome profiling of an adult human cell atlas of 15 major organs](https://data.humancellatlas.org/explore/projects/376a7f55-b876-4f60-9cf3-ed7bc83d5415)
+1. [Single-cell transcriptomics of normal pancreas, intraductal papillary mucinous neoplasm, and pancreatic adenosquamous carcinoma reveals the heterogeneous progression of pancreatic ductal and stromal cells](https://data.humancellatlas.org/explore/projects/3c27d2dd-b180-4b2b-bf05-e2e418393fd1)
+1. [Single-cell transcriptomics of the human retinal pigment epithelium and choroid in health and macular degeneration](https://data.humancellatlas.org/explore/projects/7880637a-35a1-4047-b422-b5eac2a2a358)
+1. [Single-cell transcriptomics reveals unique features of human pancreatic islet cell subtypes](https://data.humancellatlas.org/explore/projects/78b2406d-bff2-46fc-8b61-20690e602227)
+1. [Spatial multi-omic map of human myocardial infarction](https://data.humancellatlas.org/explore/projects/e9f36305-d857-44a3-93f0-df4e6007dc97)
+1. [Spatial proteogenomics reveals distinct and evolutionarily-conserved hepatic macrophage niches](https://data.humancellatlas.org/explore/projects/425c2759-db66-4c93-a358-a562c069b1f1)
+1. [Spatially distinct reprogramming of the tumor microenvironment based on tumor invasion in diffuse-type gastric cancers](https://data.humancellatlas.org/explore/projects/f29b124a-8597-4862-ae98-ff3a0fd9033e)
+1. [The Immune Atlas of Human Deciduas With Unexplained Recurrent Pregnancy Loss](https://data.humancellatlas.org/explore/projects/3cfcdff5-dee1-4a7b-a591-c09c6e850b11)
+1. [The effect of Mtb aggregation on monocyte-derived macrophage transcription profiles](https://data.humancellatlas.org/explore/projects/b9484e4e-dc40-4e38-9b85-4cecf5b8c068)
+
+
 #### June 9, 2022
 
 
@@ -31,7 +87,7 @@ title: DCP Updates
 1. [Spatial proteogenomics reveals distinct and evolutionarily-conserved hepatic macrophage niches](https://data.humancellatlas.org/explore/projects/425c2759-db66-4c93-a358-a562c069b1f1)
 1. [Transcriptome-scale spatial gene expression in the human dorsolateral prefrontal cortex](https://data.humancellatlas.org/explore/projects/7b393e4d-65bc-4c03-b402-aae769299329)
 
-### Updated Raw Data, Metadata, Contributor-generated Matrices
+### Updated Raw Data, Metadata, Contributor-generated Matrices (4)
 1. [Single-cell analysis of human B cell maturation predicts how antibody class switching shapes selection dynamics](https://data.humancellatlas.org/explore/projects/24d0dbbc-54eb-4904-8141-934d26f1c936)
 1. [Improving fibroblast characterization using single-cell RNA sequencing: an optimized tissue disaggregation and data processing pipeline.](https://data.humancellatlas.org/explore/projects/0562d2ae-0b8a-459e-bbc0-6357108e5da9)
 1. [Single-cell RNA Sequencing of human microglia from post mortem Alzheimers Disease CNS tissue.](https://data.humancellatlas.org/explore/projects/b51f49b4-0d2e-4cbd-bbd5-04cd171fc2fa)
