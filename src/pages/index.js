@@ -91,7 +91,7 @@ class IndexPage extends React.Component {
 
   render() {
     const description =
-      "Community generated, multi-omic, open data processed by uniform pipelines";
+      "Community generated, multi-omic, open data";
     const pageTitle = "Mapping the Human Body at the Cellular Level";
     return (
       <Layout
@@ -110,11 +110,7 @@ class IndexPage extends React.Component {
               <h2 className={fontStyles.subhead}>
                 <span>
                   Community generated,{" "}
-                  <span className={compStyles.noWrap}>multi-omic, </span>
-                </span>
-                <span>
-                  <span>open data processed by </span>
-                  <span className={compStyles.noWrap}>uniform pipelines</span>
+                  <span className={compStyles.noWrap}>multi-omic, open data</span>
                 </span>
               </h2>
             </div>
