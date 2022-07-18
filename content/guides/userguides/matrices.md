@@ -5,13 +5,13 @@ path: "/guides/userguides/matrices"
 title: "Matrices"
 ---
 
-# DCP 2.0 Data Matrix Overview
+# DCP Data Matrix Overview
 
 Cell-by-gene matrices (commonly referred to as "count matrices" or "expression matrices") are files that contain a measure of gene expression for every gene in every cell in your single-cell sample(s). These matrices can be used for downstream analyses like filtering, clustering, differential expression testing, and annotating cell types. 
 
-This overview describes the Data Coordination Platform (DCP) 2.0 matrix types, how to download them, and how to link them back to the HCA metadata.
+This overview describes the Data Coordination Platform (DCP) matrix types, how to download them, and how to link them back to the HCA metadata.
 
-Overall, three types of matrices are currently available for DCP 2.0 data: 
+Overall, three types of matrices are currently available for DCP data: 
 
 - DCP-generated matrices (Loom file format) for projects 
 - DCP-generated matrices (Loom file format) for individual library preparations within a project
@@ -19,7 +19,7 @@ Overall, three types of matrices are currently available for DCP 2.0 data:
 
 ## DCP-Generated Matrices
 
-Each DCP 2.0 project that is processed with [uniform pipelines](/pipelines) has two types of DCP-generated matrices available for download:
+Each DCP project that is processed with [uniform pipelines](/pipelines) has two types of DCP-generated matrices available for download:
 
 - [project-level matrices](#dcp-project-level-matrix-overview) 
 - [library-level matrices](#dcp-library-level-matrix-overview)
@@ -105,7 +105,7 @@ You can also download all matrices (including library-level matrices) using a cu
 
 ## Linking DCP-Generated Matrices to the Data Manifest (Metadata)
 
-DCP 2.0 project-level matrices only contain some of the available project metadata (species, organs, library methods, etc.). However, there are several metadata facets in the Metadata Manifest, such as disease state or donor information, that you might want to link back to the DCP-generated cell-by-gene matrix.
+DCP project-level matrices only contain some of the available project metadata (species, organs, library methods, etc.). However, there are several metadata facets in the Metadata Manifest, such as disease state or donor information, that you might want to link back to the DCP-generated cell-by-gene matrix.
 
 To link a metadata field in the Metadata Manifest back to an individual sample in a DCP- generated matrix, use the matrix `input_id` field. This field includes all the values for the metadata `sequencing_process.provenance.document_id`, the ID used to demarcate each library preparation. 
 
