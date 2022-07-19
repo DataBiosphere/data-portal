@@ -6,6 +6,30 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### July 19, 2022
+
+
+### Release Highlights
+* New combined 10x Visium and single-cell RNA sequencing data derived from human ureter tissue is available in the project [Ureter single-cell and spatial mapping reveal cell types, architecture, and signaling networks](https://data.humancellatlas.org/explore/projects/9833669b-d694-4b93-a3d0-6b6f9dbcfc10) with combined 10x Visium and single-cell RNA sequencing data from human uteral tissue. 
+
+*
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (6)
+1. [Lineage recording in human cerebral organoids.](https://data.humancellatlas.org/explore/projects/c4e11369-78d4-4d29-ba8e-b67907c4c65c)
+1. [Single Cell, Single Nucleus and Spatial RNA Sequencing of the Human Liver Identifies Hepatic Stellate Cell and Cholangiocyte Heterogeneity](https://data.humancellatlas.org/explore/projects/8a666b76-daaf-4b1f-9414-e4807a1d1e8b)
+1. [Single-cell RNA-seq reveals cell type-specific molecular and genetic associations to lupus](https://data.humancellatlas.org/explore/projects/9fc0064b-84ce-40a5-a768-e6eb3d364ee0)
+1. [Single-cell meta-analysis of SARS-CoV-2 entry genes across tissues and demographics.](https://data.humancellatlas.org/explore/projects/a27dd619-25ad-46a0-ae0c-5c4940a1139b)
+1. [The local and systemic response to SARS-CoV-2 infection in children and adults](https://data.humancellatlas.org/explore/projects/1538d572-bcb7-426b-8d2c-84f3a7f87bb0)
+1. [Ureter single-cell and spatial mapping reveal cell types, architecture, and signaling networks](https://data.humancellatlas.org/explore/projects/9833669b-d694-4b93-a3d0-6b6f9dbcfc10)
+
+### Updated Metadata (4)
+1. [A single-cell and single-nucleus RNA-seq toolbox for fresh and frozen human tumors.](https://data.humancellatlas.org/explore/projects/a62dae2e-cd69-4d5c-b5f8-4f7e8abdbafa)
+1. [Defining the Activated Fibroblast Population in Lung Fibrosis Using Single Cell Sequencing.](https://data.humancellatlas.org/explore/projects/b4a7d12f-6c2f-40a3-9e35-9756997857e3)
+1. [Single-cell RNA Sequencing of human microglia from post mortem Alzheimers Disease CNS tissue.](https://data.humancellatlas.org/explore/projects/b51f49b4-0d2e-4cbd-bbd5-04cd171fc2fa)
+1. [Spatial multi-omic map of human myocardial infarction](https://data.humancellatlas.org/explore/projects/e9f36305-d857-44a3-93f0-df4e6007dc97)
+
+
+
 #### June 29, 2022
 
 
