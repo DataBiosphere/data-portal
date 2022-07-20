@@ -10,9 +10,12 @@ title: DCP Updates
 
 
 ### Release Highlights
-* New combined 10x Visium and single-cell RNA sequencing data derived from human ureter tissue is available in the project [Ureter single-cell and spatial mapping reveal cell types, architecture, and signaling networks](https://data.humancellatlas.org/explore/projects/9833669b-d694-4b93-a3d0-6b6f9dbcfc10) with combined 10x Visium and single-cell RNA sequencing data from human uteral tissue. 
+* New combined 10x Visium and single-cell RNA sequencing data derived from human ureter tissue are available in the project [Ureter single-cell and spatial mapping reveal cell types, architecture, and signaling networks](https://data.humancellatlas.org/explore/projects/9833669b-d694-4b93-a3d0-6b6f9dbcfc10). 
 
-*
+* Multiple new projects feature data related to SARS-CoV-2 infection:
+   * [Single-cell meta-analysis of SARS-CoV-2 entry genes across tissues and demographics.](https://data.humancellatlas.org/explore/projects/a27dd619-25ad-46a0-ae0c-5c4940a1139b)
+   * [The local and systemic response to SARS-CoV-2 infection in children and adults](https://data.humancellatlas.org/explore/projects/1538d572-bcb7-426b-8d2c-84f3a7f87bb0)
+
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (6)
 1. [Lineage recording in human cerebral organoids.](https://data.humancellatlas.org/explore/projects/c4e11369-78d4-4d29-ba8e-b67907c4c65c)
