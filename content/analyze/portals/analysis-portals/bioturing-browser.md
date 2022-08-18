@@ -21,5 +21,5 @@ In addition to providing a portal for public single-cell data, BBrowser is also 
 
 ## Contact
 
-BioTuring Team (<mailto:support@bioturing.com>)
+BioTuring Team (<support@bioturing.com>)
 

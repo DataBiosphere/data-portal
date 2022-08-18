@@ -32,4 +32,4 @@ Extensive command line usage in R or RStudio provided at https://immunedynamics.
 
 ## Contact
 
-Thomas Ashhurst (<mailto:thomas.ashhurst@sydney.edu.au>)
+Thomas Ashhurst (<thomas.ashhurst@sydney.edu.au>)
