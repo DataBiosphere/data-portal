@@ -27,4 +27,4 @@ To learn more about Terra, visit [terra.bio](https://terra.bio/).
 
 ## Contact
 
-Terra team (<mailto:support@terra.bio>)
+Terra team (<support@terra.bio>)

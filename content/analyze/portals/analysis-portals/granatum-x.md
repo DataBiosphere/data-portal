@@ -60,4 +60,4 @@ All builds are deployed via Docker Hub at <https://hub.docker.com/u/granatumx>.
 
 ## Contact
 
-GranatumX Development Team (<mailto:lana.garmire.group@gmail.com>)
+GranatumX Development Team (<lana.garmire.group@gmail.com>)

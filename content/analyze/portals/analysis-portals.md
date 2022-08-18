@@ -4,6 +4,7 @@ date: "2018-05-03"
 description: "Analysis portals providing a human-friendly UI in a web or native app to search and explore biological data."
 linked:
     - ./analysis-portals/asap.md
+    - ./analysis-portals/bioconductor.md
     - ./analysis-portals/bioturing-browser.md
     - ./analysis-portals/cambridge-cell-atlas.md
     - ./analysis-portals/cellxgene.md
