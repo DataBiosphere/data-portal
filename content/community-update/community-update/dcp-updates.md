@@ -6,6 +6,70 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### August 23, 2022
+
+### Release Highlights
+
+* There are two new managed access projects available in the Browser:
+    * [The immune cell atlas of human neuroblastoma](https://data.humancellatlas.org/explore/projects/8f630e0f-6bf9-4a04-9754-02533152a954)
+    * [Refining Colorectal Cancer Classification and Clinical Stratification Through a Single-Cell Atlas](https://data.humancellatlas.org/explore/projects/4d9d56e4-610d-4748-b57d-f8315e3f53a3)
+   
+* A new COVID-19 dataset has been added to the DCP as part of the project [Longitudinal Multi-omics Analyses Identify Responses of Megakaryocytes, Erythroid Cells, and Plasmablasts as Hallmarks of Severe COVID-19](https://data.humancellatlas.org/explore/projects/ec6476ee-2949-41f3-947b-8eef41d6d3ac).
+
+* New raw data derived from populations in Asia and Australia are now available.
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (9)
+1. [CD90 marks a mesenchymal program in human thymic epithelial cells in vitro and in vivo](https://data.humancellatlas.org/explore/projects/a1312f9a-01ef-40a7-89bf-9091ca76a03a)
+1. [Cross-Species Single-Cell Analysis of Pancreatic Ductal Adenocarcinoma Reveals Antigen-Presenting Cancer-Associated Fibroblasts](https://data.humancellatlas.org/explore/projects/da9d6f24-3bdf-4eaa-9e3f-f47ce2a65b36)
+1. [Highly Parallel Genome-wide Expression Profiling of Individual Cells Using Nanoliter Droplets](https://data.humancellatlas.org/explore/projects/3c9d586e-bd26-4b46-8690-3faaa18ccf38)
+1. [Longitudinal Multi-omics Analyses Identify Responses of Megakaryocytes, Erythroid Cells, and Plasmablasts as Hallmarks of Severe COVID-19](https://data.humancellatlas.org/explore/projects/ec6476ee-2949-41f3-947b-8eef41d6d3ac)
+1. [Reconstitution of a functional human thymus by postnatal stromal progenitor cells and natural whole-organ scaffolds](https://data.humancellatlas.org/explore/projects/3e92c74d-256c-40cd-9273-16f155da8342)
+1. [Refining Colorectal Cancer Classification and Clinical Stratification Through a Single-Cell Atlas](https://data.humancellatlas.org/explore/projects/4d9d56e4-610d-4748-b57d-f8315e3f53a3)
+1. [Single Cell Transcriptomics Reveals Cell Type Specific Diversification in Human Heart Failure](https://data.humancellatlas.org/explore/projects/135f7f5c-4a85-4bcf-9f7c-4f035ff1e428)
+1. [Single-cell Transcriptome Atlas of the Human Corpus Cavernosum](https://data.humancellatlas.org/explore/projects/5b910a43-7fb5-4ea7-b9d6-43dbd1bf2776)
+1. [The immune cell atlas of human neuroblastoma](https://data.humancellatlas.org/explore/projects/8f630e0f-6bf9-4a04-9754-02533152a954)
+
+### Updated Metadata (39)
+1. [A Human Liver Cell Atlas reveals Heterogeneity and Epithelial Progenitors](https://data.humancellatlas.org/explore/projects/94e4ee09-9b4b-410a-84dc-a751ad36d0df)
+1. [A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure](https://data.humancellatlas.org/explore/projects/f86f1ab4-1fbb-4510-ae35-3ffd752d4dfc)
+1. [A cellular census of human lungs identifies novel cell states in health and in asthma](https://data.humancellatlas.org/explore/projects/c0518445-3b3b-49c6-b8fc-c41daa4eacba)
+1. [A single cell atlas of human cornea that defines its development, limbal progenitor cells and their interactions with the immune cells](https://data.humancellatlas.org/explore/projects/6ac8e777-f9a0-4288-b5b0-446e8eba3078)
+1. [A single-cell and single-nucleus RNA-seq toolbox for fresh and frozen human tumors](https://data.humancellatlas.org/explore/projects/a62dae2e-cd69-4d5c-b5f8-4f7e8abdbafa)
+1. [A spatial multi-omics atlas of the human lung reveals a novel immune cell survival niche](https://data.humancellatlas.org/explore/projects/957261f7-2bd6-4358-a6ed-24ee080d5cfc)
+1. [Assessing the relevance of organoids to model inter-individual variation](https://data.humancellatlas.org/explore/projects/005d611a-14d5-4fbf-846e-571a1f874f70)
+1. [Blood and immune development in human fetal bone marrow and Down syndrome](https://data.humancellatlas.org/explore/projects/04ad400c-58cb-40a5-bc2b-2279e13a910b)
+1. [Construction of a single-cell transcriptomic atlas of 58,243 liver cells from 4 donors and 4 recipient liver transplasnt patients to investigate early allograft dysfunction (EAD)](https://data.humancellatlas.org/explore/projects/c7c54245-548b-4d4f-b15e-0d7e238ae6c8)
+1. [Decoding Human Megakaryocyte Development](https://data.humancellatlas.org/explore/projects/a9f5323a-ce71-471c-9caf-04cc118fd1d7)
+1. [Developmental cell programs are co-opted in inflammatory skin disease](https://data.humancellatlas.org/explore/projects/c5f46615-68de-4cf4-bbc2-a0ae10f08243)
+1. [Human cerebral organoids recapitulate gene expression programs of fetal neocortex development](https://data.humancellatlas.org/explore/projects/d2111fac-3fc4-4f42-9b6d-32cd6a828267)
+1. [Improving fibroblast characterization using single-cell RNA sequencing: an optimized tissue disaggregation and data processing pipeline](https://data.humancellatlas.org/explore/projects/0562d2ae-0b8a-459e-bbc0-6357108e5da9)
+1. [Integrated single cell analysis of blood and cerebrospinal fluid leukocytes in multiple sclerosis](https://data.humancellatlas.org/explore/projects/d3ac7c1b-5302-4804-b611-dad9f89c049d)
+1. [Integrative analysis of cell state changes in lung fibrosis with peripheral protein biomarkers](https://data.humancellatlas.org/explore/projects/2f676143-80c2-4bc6-b7b4-2613fe0fadf0)
+1. [Integrative computational analysis of the substantia nigra pars compacta and the locus coeruleus](https://data.humancellatlas.org/explore/projects/5b5f05b7-2482-468d-b76d-8f68c04a7a47)
+1. [Low-coverage single-cell mRNA sequencing reveals cellular heterogeneity and activated signaling pathways in developing cerebral cortex](https://data.humancellatlas.org/explore/projects/45c2c853-d06f-4879-957e-f1366fb5d423)
+1. [Modelling the impact of decidual senescence on embryo implantation in human endometrial assembloids](https://data.humancellatlas.org/explore/projects/91af6e2f-65f2-44ec-98e0-ba4e98db22c8)
+1. [Molecular Architecture of the Mouse Nervous System](https://data.humancellatlas.org/explore/projects/2c041c26-f75a-495f-ab36-a076f89d422a)
+1. [Molecular and functional heterogeneity of IL-10-producing CD4+ T cells](https://data.humancellatlas.org/explore/projects/df88f39f-01a8-4b5b-92f4-3177d6c0f242)
+1. [Population-scale single-cell RNA-seq profiling across dopaminergic neuron differentiation](https://data.humancellatlas.org/explore/projects/20f37aaf-caa1-40e6-9123-be6ce8feb2d6)
+1. [Profiling of transcribed cis-regulatory elements in single cells](https://data.humancellatlas.org/explore/projects/34da2c5f-8011-48af-a7fd-ad2f56ec10f4)
+1. [SARS-CoV-2 receptor ACE2 is an interferon-stimulated gene in human airway epithelial cells and is detected in specific cell subsets across tissues](https://data.humancellatlas.org/explore/projects/0b299140-25b5-4861-a69f-7651ff3f46cf)
+1. [Sampling time-dependent artifacts in single-cell genomics studies](https://data.humancellatlas.org/explore/projects/5b328561-4a97-40ac-b7ad-6a90fc59d374)
+1. [Single Cell RNA-seq reveals ectopic and aberrant lung resident cell populations in Idiopathic Pulmonary Fibrosis](https://data.humancellatlas.org/explore/projects/c16a754f-5da3-46ed-8c1e-6426af2ef625)
+1. [Single Cell RNAseq of primary pulmonary endothelial cells](https://data.humancellatlas.org/explore/projects/d7b7beae-652b-4fc0-9bf2-bcda7c7115af)
+1. [Single-Cell Transcriptomic Analysis of Human Lung Provides Insights into the Pathobiology of Pulmonary Fibrosis](https://data.humancellatlas.org/explore/projects/daf9d982-7ce6-43f6-ab51-272577290606)
+1. [Single-Cell Transcriptomics Uncovers Zonation of Function in the Mesenchyme during Liver Fibrosis](https://data.humancellatlas.org/explore/projects/d71c76d3-3670-4774-a9cf-034249d37c60)
+1. [Single-cell RNA sequencing identifies cell type-specific cis-eQTLs and co-expression QTLs](https://data.humancellatlas.org/explore/projects/40272c3b-4697-4bd4-ba3f-82fa96b9bf71)
+1. [Single-cell RNA-Seq of human hepatocyte-derived liver progenitor-like cells](https://data.humancellatlas.org/explore/projects/074a9f88-729a-455d-bca5-0ce80edf0cea)
+1. [Single-cell RNA-sequencing reveals profibrotic roles of distinct epithelial and mesenchymal lineages in pulmonary fibrosis](https://data.humancellatlas.org/explore/projects/c1a9a93d-d9de-4e65-9619-a9cec1052eaa)
+1. [Single-cell analysis of human B cell maturation predicts how antibody class switching shapes selection dynamics](https://data.humancellatlas.org/explore/projects/24d0dbbc-54eb-4904-8141-934d26f1c936)
+1. [Single-cell transcriptomes of the aging human skin reveal loss of fibroblast priming](https://data.humancellatlas.org/explore/projects/51f02950-ee25-4f4b-8d07-59aa99bb3498)
+1. [Single-nucleus RNA-seq in the post-mortem brain in major depressive disorder](https://data.humancellatlas.org/explore/projects/0777b9ef-91f3-468b-9dea-db477437aa1a)
+1. [Spatial and single-cell transcriptional profiling identifies functionally distinct human dermal fibroblast subpopulations](https://data.humancellatlas.org/explore/projects/05657a59-9f9d-4bb9-b77b-24be13aa5cea)
+1. [Spatial multi-omic map of human myocardial infarction](https://data.humancellatlas.org/explore/projects/e9f36305-d857-44a3-93f0-df4e6007dc97)
+1. [Spatial proteogenomics reveals distinct and evolutionarily-conserved hepatic macrophage niches](https://data.humancellatlas.org/explore/projects/425c2759-db66-4c93-a358-a562c069b1f1)
+1. [The Human and Mouse Enteric Nervous System at Single-Cell Resolution](https://data.humancellatlas.org/explore/projects/7be05025-9972-493a-856f-3342a8d1b183)
+1. [Transcriptional analysis of cystic fibrosis airways at single-cell resolution reveals altered epithelial cell states and composition](https://data.humancellatlas.org/explore/projects/e526d91d-cf3a-44cb-80c5-fd7676b55a1d)
+
 #### July 19, 2022
 
 
