@@ -44,10 +44,13 @@ class Banner extends React.Component {
           ) : null
         ) : null}
         {this.props.position === "top" && this.isTestEnvironment() ? (
-          <Environment cookieName="environmentAccepted" message={testMessage} />
+          <Environment
+            localStorageName="environmentAccepted"
+            message={testMessage}
+          />
         ) : null}
         {this.props.position === "bottom" ? (
-          <Privacy cookieName="privacyAccepted" />
+          <Privacy localStorageName="privacyAccepted" />
         ) : null}
       </div>
     );

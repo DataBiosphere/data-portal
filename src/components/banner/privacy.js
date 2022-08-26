@@ -7,7 +7,6 @@
 
 // Core dependencies
 import { Link } from "gatsby";
-import Cookies from "js-cookie";
 import React from "react";
 
 // App dependencies
@@ -30,21 +29,21 @@ class Privacy extends React.Component {
   }
 
   componentDidMount() {
-    const { cookieName } = this.props;
+    const { localStorageName } = this.props;
 
-    if (Cookies.get(cookieName) === undefined) {
+    if (localStorage.getItem(localStorageName) === null) {
       this.setState({ visible: true });
     }
 
-    if (Cookies.get(cookieName) === true) {
+    if (localStorage.getItem(localStorageName) === "T") {
       this.setState({ visible: false });
     }
   }
 
   accept = () => {
-    const { cookieName } = this.props;
+    const { localStorageName } = this.props;
 
-    Cookies.set(cookieName, true, { expires: new Date(2300, 1, 1) });
+    localStorage.setItem(localStorageName, "T");
     this.setState({ visible: false });
   };
 
@@ -89,4 +88,3 @@ class Privacy extends React.Component {
 }
 
 export default Privacy;
-export { Cookies };
