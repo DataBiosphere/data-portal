@@ -96,7 +96,7 @@ exports.createPages = async ({ graphql, actions }) => {
             categories {
               categoryName
             }
-            entityName
+            entity
           }
         }
       }

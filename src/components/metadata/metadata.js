@@ -15,10 +15,9 @@ import MetadataSchema from "./metadataSchema/metadataSchema";
 import * as MetadataService from "../../utils/metadata.service";
 
 function Metadata(props) {
-  const { activeLocation, entities, nav, sitePageId } = props;
+  const { activeLocation, entity, nav, sitePageId } = props;
   const { showAllMetadata } = useContext(ContextMetadataDisplaying);
-  const entity = MetadataService.getMetadataEntity(entities);
-  const category = MetadataService.getMetadataCategory(sitePageId, entities);
+  const category = MetadataService.getMetadataCategory(sitePageId, entity);
   const schema = MetadataService.getMetadataSchema(
     category,
     sitePageId,

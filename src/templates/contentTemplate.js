@@ -27,12 +27,11 @@ import classNames from "classnames";
 import * as globalStyles from "../styles/global.module.css";
 
 // the data prop will be injected by the GraphQL query below.
-export default function Template({ data, location }) {
+export default function Template({ data, location, pageContext }) {
   const { pathname, hash } = location;
-  const { markdownRemark, sitePage } = data; // data.markdownRemark holds our post data
+  const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, htmlAst } = markdownRemark,
-    { context } = sitePage,
-    { nav } = context || {},
+    { nav } = pageContext || {},
     { fields } = markdownRemark || {},
     { slug } = fields || {},
     { componentName, description, linked, title } = frontmatter || {};
@@ -77,7 +76,6 @@ export default function Template({ data, location }) {
   );
 }
 
-// modified to find the page by id which is passed in as context
 export const pageQuery = graphql`
   query ($id: String!) {
     markdownRemark(id: { eq: $id }) {
@@ -114,39 +112,6 @@ export const pageQuery = graphql`
         subTitle
         title
       }
-    }
-    sitePage(context: { id: { eq: $id } }) {
-      context {
-        id
-        nav {
-          label
-          section {
-            key
-            name
-            path
-          }
-          tabKey
-          tabs {
-            active
-            key
-            name
-            path
-          }
-          links {
-            active
-            key
-            name
-            path
-            sLinks {
-              active
-              key
-              name
-              path
-            }
-          }
-        }
-      }
-      path
     }
   }
 `;
