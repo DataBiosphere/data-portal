@@ -12,19 +12,23 @@ import React from "react";
 // App dependencies
 import Metadata from "../components/metadata/metadata";
 import ProviderMetadataDisplaying from "../components/metadata/providerMetadataDisplaying/providerMetadataDisplaying";
+import * as MetadataService from "../utils/metadata.service";
 
 // the data prop will be injected by the GraphQL query below.
-export default function Template({ data, location }) {
-  const { allMetadataEntity, sitePage } = data,
-    { context } = sitePage || {},
-    { id: sitePageId, nav } = context || {};
+export default function Template({ data, location, pageContext }) {
+  const { allMetadataEntity } = data,
+    { id: sitePageId, nav } = pageContext || {};
   const { pathname, hash } = location;
+  const metadataEntity = MetadataService.getMetadataEntity(
+    allMetadataEntity,
+    sitePageId
+  );
 
   return (
     <ProviderMetadataDisplaying>
       <Metadata
         activeLocation={{ pathname, hash }}
-        entities={allMetadataEntity}
+        entity={metadataEntity}
         nav={nav}
         sitePageId={sitePageId}
       />
@@ -34,17 +38,11 @@ export default function Template({ data, location }) {
 
 // modified to find the page by id which is passed in as context
 export const pageQuery = graphql`
-  query ($id: String!) {
-    allMetadataEntity(
-      filter: {
-        categories: {
-          elemMatch: { schemas: { elemMatch: { id: { eq: $id } } } }
-        }
-      }
-    ) {
+  query {
+    allMetadataEntity {
       edges {
         node {
-          entityName
+          entity
           categories {
             categoryName
             schemas {
@@ -102,44 +100,6 @@ export const pageQuery = graphql`
           }
         }
       }
-    }
-    sitePage(context: { id: { eq: $id } }) {
-      context {
-        id
-        nav {
-          label
-          secondaryTabs {
-            active
-            key
-            name
-            path
-          }
-          section {
-            key
-            name
-            path
-          }
-          tabs {
-            active
-            key
-            name
-            path
-          }
-          links {
-            active
-            key
-            name
-            path
-            sLinks {
-              active
-              key
-              name
-              path
-            }
-          }
-        }
-      }
-      path
     }
   }
 `;

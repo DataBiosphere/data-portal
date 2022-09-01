@@ -4,7 +4,7 @@ export const MetadataTypeEntityQuery = () => {
   const { allMetadataEntity } = useStaticQuery(
     graphql`
       query MetadataTypeEntityQuery {
-        allMetadataEntity(filter: { entityName: { eq: "type" } }) {
+        allMetadataEntity(filter: { entity: { eq: "type" } }) {
           edges {
             node {
               categories {
@@ -16,7 +16,7 @@ export const MetadataTypeEntityQuery = () => {
                   urlTo
                 }
               }
-              entityName
+              entity
             }
           }
         }

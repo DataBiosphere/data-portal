@@ -16,13 +16,13 @@ const {
   getMetadataSchemas,
   getMetadataSchemaProperties,
   getSetOfMetadataEntities,
-  getSchemaFilePathsByRelativePath
+  getSchemaFilePathsByRelativePath,
 } = require(path.resolve(__dirname, "../utils/metadata.service.js"));
 const {
   getCategorySchemas,
   getEntityCategories,
   getFieldTypeUsedBy,
-  getSchemaProperties
+  getSchemaProperties,
 } = require(path.resolve(
   __dirname,
   "../utils/metadata-field-extension.service.js"
@@ -35,7 +35,7 @@ const { generateMetadataIndex } = require(path.resolve(
 exports.sourceNodes = async ({
   actions,
   createNodeId,
-  createContentDigest
+  createContentDigest,
 }) => {
   const { createNode } = actions;
 
@@ -43,9 +43,8 @@ exports.sourceNodes = async ({
   const schemaJSONByPath = await buildSchemaJSONByPath();
 
   /* Get all schema paths. */
-  const schemaFilePathsByRelativePath = getSchemaFilePathsByRelativePath(
-    schemaJSONByPath
-  );
+  const schemaFilePathsByRelativePath =
+    getSchemaFilePathsByRelativePath(schemaJSONByPath);
   const schemaFilePaths = [...schemaFilePathsByRelativePath.keys()];
 
   /* Get the set of metadata schema entities. */
@@ -73,19 +72,19 @@ exports.sourceNodes = async ({
   );
 
   /* Create node - metadata entities. */
-  metadataEntities.forEach(entity => {
+  metadataEntities.forEach((entity) => {
     const nodeContent = JSON.stringify(entity);
 
     const nodeMeta = {
-      id: createNodeId(entity.entityName),
+      id: createNodeId(entity.entity),
       parent: null,
       children: [],
       internal: {
         type: `MetadataEntity`,
         mediaType: `application/json`,
         content: nodeContent,
-        contentDigest: createContentDigest(entity)
-      }
+        contentDigest: createContentDigest(entity),
+      },
     };
 
     const node = Object.assign({}, entity, nodeMeta);
@@ -94,7 +93,7 @@ exports.sourceNodes = async ({
   });
 
   /* Create node - metadata entity categories. */
-  metadataEntityCategories.forEach(entityCategory => {
+  metadataEntityCategories.forEach((entityCategory) => {
     const nodeContent = JSON.stringify(entityCategory);
 
     const nodeMeta = {
@@ -107,8 +106,8 @@ exports.sourceNodes = async ({
         type: `MetadataEntityCategory`,
         mediaType: `application/json`,
         content: nodeContent,
-        contentDigest: createContentDigest(entityCategory)
-      }
+        contentDigest: createContentDigest(entityCategory),
+      },
     };
 
     const node = Object.assign({}, entityCategory, nodeMeta);
@@ -117,7 +116,7 @@ exports.sourceNodes = async ({
   });
 
   /* Create node - metadata schema. */
-  metadataSchemas.forEach(schema => {
+  metadataSchemas.forEach((schema) => {
     const nodeContent = JSON.stringify(schema);
 
     const nodeMeta = {
@@ -128,8 +127,8 @@ exports.sourceNodes = async ({
         type: `MetadataSchema`,
         mediaType: `application/json`,
         content: nodeContent,
-        contentDigest: createContentDigest(schema)
-      }
+        contentDigest: createContentDigest(schema),
+      },
     };
 
     const node = Object.assign({}, schema, nodeMeta);
@@ -138,7 +137,7 @@ exports.sourceNodes = async ({
   });
 
   /* Create node - metadata schema properties. */
-  metadataSchemaProperties.forEach(schemaProperty => {
+  metadataSchemaProperties.forEach((schemaProperty) => {
     const nodeContent = JSON.stringify(schemaProperty);
 
     const nodeMeta = {
@@ -149,8 +148,8 @@ exports.sourceNodes = async ({
         type: `MetadataSchemaProperty`,
         mediaType: `application/json`,
         content: nodeContent,
-        contentDigest: createContentDigest(schemaProperty)
-      }
+        contentDigest: createContentDigest(schemaProperty),
+      },
     };
 
     const node = Object.assign({}, schemaProperty, nodeMeta);
@@ -166,64 +165,64 @@ exports.createSchemaCustomization = ({ actions }) => {
   /* For linking categories to their corresponding entity. */
   createFieldExtension({
     name: "categories",
-    extend(options, prevFieldConfig) {
+    extend() {
       return {
-        resolve(source, arg, context, info) {
-          const categories = context.nodeModel.getAllNodes({
-            type: "MetadataEntityCategory"
+        async resolve(source, arg, context, info) {
+          const { entries } = await context.nodeModel.findAll({
+            type: "MetadataEntityCategory",
           });
-          return getEntityCategories(categories, source);
-        }
+          return getEntityCategories([...entries], source);
+        },
       };
-    }
+    },
   });
 
   /* Create field "properties" of type MetadataSchemaProperty. */
   /* For linking properties to their corresponding schema. */
   createFieldExtension({
     name: "properties",
-    extend(options, prevFieldConfig) {
+    extend() {
       return {
-        resolve(source, arg, context, info) {
-          const properties = context.nodeModel.getAllNodes({
-            type: "MetadataSchemaProperty"
+        async resolve(source, arg, context, info) {
+          const { entries } = await context.nodeModel.findAll({
+            type: "MetadataSchemaProperty",
           });
-          return getSchemaProperties(properties, source);
-        }
+          return getSchemaProperties([...entries], source);
+        },
       };
-    }
+    },
   });
 
   /* Create field "schemas" of type MetadataSchema. */
   /* For linking schemas to their corresponding entity and category. */
   createFieldExtension({
     name: "schemas",
-    extend(options, prevFieldConfig) {
+    extend() {
       return {
-        resolve(source, arg, context, info) {
-          const schemas = context.nodeModel.getAllNodes({
-            type: "MetadataSchema"
+        async resolve(source, arg, context, info) {
+          const { entries } = await context.nodeModel.findAll({
+            type: "MetadataSchema",
           });
-          return getCategorySchemas(schemas, source);
-        }
+          return getCategorySchemas([...entries], source);
+        },
       };
-    }
+    },
   });
 
   /* Create field "usedByProperties" of type [UsedByProperties]. */
   /* Builds field that lists any properties that use the specified schema. */
   createFieldExtension({
     name: "usedByProperties",
-    extend(options, prevFieldConfig) {
+    extend() {
       return {
-        resolve(source, arg, context, info) {
-          const metadataSchemaProperties = context.nodeModel.getAllNodes({
-            type: "MetadataSchemaProperty"
+        async resolve(source, arg, context, info) {
+          const { entries } = await context.nodeModel.findAll({
+            type: "MetadataSchemaProperty",
           });
-          return getFieldTypeUsedBy(metadataSchemaProperties, source);
-        }
+          return getFieldTypeUsedBy([...entries], source);
+        },
       };
-    }
+    },
   });
 
   createTypes(`
@@ -239,13 +238,13 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type MetadataEntity implements Node @dontInfer {
         id: ID!
-        entityName: String!
+        entity: String!
         categories: [MetadataEntityCategory] @categories
     }
     type MetadataEntityCategory implements Node @dontInfer {
         id: ID!
         categoryName: String
-        entity: MetadataEntity @link(by: "entityName", from: "entity")
+        entity: MetadataEntity @link(by: "entity" from: "entity")
         schemas: [MetadataSchema] @schemas
     }
     type MetadataSchema implements Node @dontInfer {
