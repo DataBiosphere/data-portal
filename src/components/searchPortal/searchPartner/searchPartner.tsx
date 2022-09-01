@@ -7,7 +7,7 @@
 
 // Core dependencies
 import classNames from "classnames"; // Class name helper
-import { navigate } from "@reach/router";
+import { navigate } from "gatsby";
 import React from "react";
 
 // App dependencies
