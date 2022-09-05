@@ -6,11 +6,10 @@
  */
 
 // Core dependencies
-import { useLocation, WindowLocation } from "@reach/router";
+import { useLocation } from "@reach/router";
 import React, { useEffect, useState } from "react";
 
 // App dependencies
-import { SearchLocation } from "./common/entities";
 import { partitionSearchParams } from "./common/utils";
 import { PORTAL_URL } from "../../config/hca/config";
 import { SITE, useConfig } from "../../hooks/useConfig";
@@ -56,14 +55,14 @@ export default function SearchPortal(): JSX.Element | null {
     searchTerms: "",
   }));
   /* Grab the search config. */
-  const portalUrl = PORTAL_URL; // TODO maybe do not thread this through.
+  const portalUrl = PORTAL_URL;
   const site = isLungMAP() ? SITE.LUNGMAP : SITE.HCA;
   const currentConfig = useConfig(site);
   const searchConfig = currentConfig.search;
   const { partners, searchEngineId, searchPath } = searchConfig;
   /* Grab the current location and current search params. */
-  const { search, state } = useLocation() as SearchLocation;
-  const [newTerms, newPartner, newPage] = partitionSearchParams(search, state); // TODO newPage is unused.
+  const { search } = useLocation();
+  const [newTerms, newPartner] = partitionSearchParams(search);
   const { queries: query, items: searchResponses } = GCSEResponse || {};
   const showNextPagination = Boolean(query?.nextPage?.length);
   const showPrevPagination = Boolean(query?.previousPage?.length);
@@ -150,9 +149,7 @@ export default function SearchPortal(): JSX.Element | null {
 
   /**
    * Update state variables search terms or search partners.
-   * Executes with any changes to:
-   * - terms, or
-   * - partner.
+   * Executes with any changes to terms or partner.
    */
   useEffect(() => {
     /* Set state searchParams with updated search terms and/or partner. */
@@ -160,6 +157,7 @@ export default function SearchPortal(): JSX.Element | null {
       return {
         ...prevSearchParams,
         searchLoading: true,
+        searchPage: 1,
         searchPartner: newPartner,
         searchTerms: newTerms,
       };

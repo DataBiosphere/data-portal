@@ -17,12 +17,4 @@ export interface Search {
   searchPath: string;
 }
 
-export interface SearchLocation extends WindowLocation {
-  state: SearchLocationState;
-}
-
-export interface SearchLocationState {
-  searchPage: number;
-}
-
-export type UrlSearchParams = [string, string, number];
+export type UrlSearchParams = [string, string];
