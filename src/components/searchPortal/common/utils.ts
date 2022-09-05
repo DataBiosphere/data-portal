@@ -1,6 +1,6 @@
 import { navigate } from "gatsby";
 import { FormEvent } from "react";
-import { SearchLocationState, UrlSearchParams } from "./entities";
+import { UrlSearchParams } from "./entities";
 
 /**
  * Builds site search url with corresponding search string and search partner params.
@@ -66,20 +66,14 @@ export function onSubmitSiteSearch(
 }
 
 /**
- * Returns the url search params search term, search partner and page from current location.
+ * Returns the url search params search term and search partner from current location.
  * @param search - Location search.
- * @param state - Location state.
- * @returns Tuple containing search term, search partner and search page.
+ * @returns Tuple containing search term and search partner.
  */
-export function partitionSearchParams(
-  search: string,
-  state?: SearchLocationState
-): UrlSearchParams {
-  /* Grab search input value for search pages from current location. */
-  const newSearchPage = state?.searchPage || 1;
+export function partitionSearchParams(search: string): UrlSearchParams {
   /* Get the search params from the current URL search params. */
   const params = new URLSearchParams(search);
   const newTerms = params.get("q") || "";
   const newPartner = params.get("partner") || "";
-  return [newTerms, newPartner, newSearchPage];
+  return [newTerms, newPartner];
 }
