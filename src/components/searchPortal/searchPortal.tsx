@@ -10,17 +10,17 @@ import { useLocation, WindowLocation } from "@reach/router";
 import React, { useEffect, useState } from "react";
 
 // App dependencies
+import { SearchLocation } from "./common/entities";
+import { partitionSearchParams } from "./common/utils";
+import { PORTAL_URL } from "../../config/hca/config";
+import { SITE, useConfig } from "../../hooks/useConfig";
 import SearchPagination from "./searchPagination/searchPagination";
-import { Partner } from "./searchPartner/searchPartner";
 import SearchPartners from "./searchPartners/searchPartners";
 import SearchProgressIndicator from "./searchProgressIndicator/searchProgressIndicator";
 import { SearchResponse } from "./searchResult/searchResult";
 import SearchResults from "./searchResults/searchResults";
-import Config, { SearchConfig } from "../../utils/config/config";
 import { getGCSERequestURL } from "../../utils/dp-gcse/dp-gcse.service";
 import { isLungMAP } from "../../utils/environment/environment.service";
-
-export type UrlSearchParams = [string, string, number];
 
 interface GCSEQuery {
   nextPage: any[];
@@ -35,15 +35,7 @@ export interface GCSERequest {
 
 interface GCSEResponse {
   items: SearchResponse[];
-  queries: GCSEQuery;
-}
-
-export interface SearchLocation extends WindowLocation {
-  state: SearchLocationState;
-}
-
-interface SearchLocationState {
-  searchPage: number;
+  queries: GCSEQuery; // "queries" from GCSE response is an object...
 }
 
 export interface SearchParameters {
@@ -55,30 +47,45 @@ export interface SearchParameters {
 }
 
 export default function SearchPortal(): JSX.Element | null {
-  const lungmap = isLungMAP();
-  const currentLocation = useLocation() as SearchLocation;
-  const portalUrl = Config.portalUrl;
-  const [newTerms, newPartner, newPage] = getSearchParams(currentLocation);
-  const currentSearchURL = `${currentLocation.pathname}${currentLocation.search}`;
-  const [GCSEResponse, setGCSEResponse] = useState<GCSEResponse>(() =>
-    initGCSEResponse()
-  );
-  const [searchParams, setSearchParams] = useState<SearchParameters>(() =>
-    initSearchPortalParameters(newTerms, newPartner)
-  );
-  const searchConfig: SearchConfig = lungmap
-    ? Config.lungmap.searchConfig
-    : Config.hca.searchConfig;
-  const searchEngineId = searchConfig.searchEngineId;
-  const [partners, setPartners] = useState<Partner[]>(() =>
-    initPartners(searchConfig.partners, newPartner)
-  );
-  const { queries: GCSEQuery, items: searchResponses } = GCSEResponse;
-  const showNextPagination = Boolean(GCSEQuery?.nextPage?.length);
-  const showPrevPagination = Boolean(GCSEQuery?.previousPage?.length);
+  const [GCSEResponse, setGCSEResponse] = useState<GCSEResponse>();
+  const [searchParams, setSearchParams] = useState<SearchParameters>(() => ({
+    searchError: false,
+    searchLoading: false,
+    searchPage: 1,
+    searchPartner: "",
+    searchTerms: "",
+  }));
+  /* Grab the search config. */
+  const portalUrl = PORTAL_URL; // TODO maybe do not thread this through.
+  const site = isLungMAP() ? SITE.LUNGMAP : SITE.HCA;
+  const currentConfig = useConfig(site);
+  const searchConfig = currentConfig.search;
+  const { partners, searchEngineId, searchPath } = searchConfig;
+  /* Grab the current location and current search params. */
+  const { search, state } = useLocation() as SearchLocation;
+  const [newTerms, newPartner, newPage] = partitionSearchParams(search, state); // TODO newPage is unused.
+  const { queries: query, items: searchResponses } = GCSEResponse || {};
+  const showNextPagination = Boolean(query?.nextPage?.length);
+  const showPrevPagination = Boolean(query?.previousPage?.length);
   const showPagination = showNextPagination || showPrevPagination;
   const { searchError, searchLoading, searchPage, searchPartner, searchTerms } =
     searchParams;
+
+  /**
+   * Updates search page.
+   * @param pageIncrement - Position or negative increment of the current page index.
+   */
+  const onSiteSearchPageRequest = (pageIncrement: number): void => {
+    /* Update start with page request (page 1, 11, 21 etc). */
+    setSearchParams((prevSiteSearch: SearchParameters) => {
+      const nextIndex = prevSiteSearch.searchPage + pageIncrement * 10;
+      return {
+        ...prevSiteSearch,
+        searchLoading: true,
+        searchPage: nextIndex,
+      };
+    });
+  };
 
   /**
    * Fetches GCSE results when searchLoading is true and search terms are defined.
@@ -142,11 +149,10 @@ export default function SearchPortal(): JSX.Element | null {
   ]);
 
   /**
-   * Update state variables searchParams and partners.
+   * Update state variables search terms or search partners.
    * Executes with any changes to:
-   * - terms,
-   * - partner, or
-   * - page.
+   * - terms, or
+   * - partner.
    */
   useEffect(() => {
     /* Set state searchParams with updated search terms and/or partner. */
@@ -154,23 +160,22 @@ export default function SearchPortal(): JSX.Element | null {
       return {
         ...prevSearchParams,
         searchLoading: true,
-        searchPage: newPage,
         searchPartner: newPartner,
         searchTerms: newTerms,
       };
     });
-
-    /* Set state partners with updated selected partner. */
-    setPartners((prevPartners) =>
-      updatePartners([...prevPartners], newPartner)
-    );
-  }, [newTerms, newPartner, newPage]);
+  }, [newTerms, newPartner]);
 
   if (searchLoading) {
     /* Return progress indicator. */
     return (
       <>
-        <SearchPartners partners={partners} searchTerms={searchTerms} />
+        <SearchPartners
+          partners={partners}
+          searchPath={searchPath}
+          searchTerms={searchTerms}
+          selectedPartner={searchPartner}
+        />
         <SearchProgressIndicator />
       </>
     );
@@ -180,14 +185,18 @@ export default function SearchPortal(): JSX.Element | null {
       /* Return search results. */
       return (
         <>
-          <SearchPartners partners={partners} searchTerms={searchTerms} />
+          <SearchPartners
+            partners={partners}
+            searchPath={searchPath}
+            searchTerms={searchTerms}
+            selectedPartner={searchPartner}
+          />
           <SearchResults results={searchResponses} searchTerms={searchTerms} />
           {showPagination ? (
             <SearchPagination
-              currentPage={newPage}
-              currentSearchURL={currentSearchURL}
               showNextPagination={showNextPagination}
               showPrevPagination={showPrevPagination}
+              siteSearchPageRequestFn={onSiteSearchPageRequest}
             />
           ) : null}
         </>
@@ -196,7 +205,12 @@ export default function SearchPortal(): JSX.Element | null {
     /* No search results for the search term. */
     return (
       <>
-        <SearchPartners partners={partners} searchTerms={searchTerms} />
+        <SearchPartners
+          partners={partners}
+          searchPath={searchPath}
+          searchTerms={searchTerms}
+          selectedPartner={searchPartner}
+        />
         <p>No results.</p>
       </>
     );
@@ -205,118 +219,15 @@ export default function SearchPortal(): JSX.Element | null {
     /* Search error - search term is not defined. */
     return (
       <>
-        <SearchPartners partners={partners} searchTerms={searchTerms} />
+        <SearchPartners
+          partners={partners}
+          searchPath={searchPath}
+          searchTerms={searchTerms}
+          selectedPartner={searchPartner}
+        />
         <p>Please enter a query in the search box.</p>
       </>
     );
   }
   return null;
-}
-
-/**
- * Returns the new search url with updated search params.
- * @param newTerms
- * @param newPartner
- */
-export function buildSearchPortalUrl(
-  newTerms: string,
-  newPartner: string
-): string {
-  /* Set the search params. */
-  const params = new URLSearchParams();
-  params.set("q", newTerms);
-
-  /* Set the selected partner params. */
-  if (newPartner) {
-    params.set("partner", newPartner);
-  }
-
-  /* Return url with params. */
-  return `/search?${params.toString()}`;
-}
-
-/**
- * Returns search parameters "newTerms" and "newPartner" and "newPage" from current location.
- * @param currentLocation
- */
-export function getSearchParams(
-  currentLocation: SearchLocation
-): UrlSearchParams {
-  /* Grab search input value for search pages from current location. */
-  const { search } = currentLocation || {};
-  const searchPage = currentLocation.state?.searchPage || 1;
-  /* Get the search params from the current URL search params. */
-  const params = new URLSearchParams(search);
-  const newTerms = params.get("q") || "";
-  const newPartner = params.get("partner") || "";
-  return [newTerms, newPartner, searchPage];
-}
-
-/**
- * Init GCSE response api.
- */
-function initGCSEResponse(): GCSEResponse {
-  return {
-    items: [],
-    queries: {
-      nextPage: [],
-      previousPage: [],
-      request: [
-        {
-          searchTerms: "",
-          startIndex: 1,
-        },
-      ],
-    },
-  };
-}
-
-/**
- * Inits partners and updates the selected partner derived from current location.
- * @param partners
- * @param newPartner
- */
-function initPartners(partners: Partner[], newPartner: string): Partner[] {
-  return updatePartners(partners, newPartner);
-}
-
-/**
- * Inits state searchParams with new search term and search partner values derived from current location.
- * @param newTerms
- * @param newPartner
- */
-function initSearchPortalParameters(
-  newTerms: string,
-  newPartner: string
-): SearchParameters {
-  /* Update searchTerms with the new term and partner .*/
-  /* Reset all other search props, e.g. set searchLoading to true. */
-  let searchLoading = false;
-  if (newTerms) {
-    searchLoading = true;
-  }
-
-  return {
-    searchError: false,
-    searchLoading: searchLoading,
-    searchPage: 1,
-    searchPartner: newPartner,
-    searchTerms: newTerms,
-  };
-}
-
-/**
- * Updates partners where selected partner "active" status is true.
- * @param partners
- * @param selectedPartner
- */
-function updatePartners(
-  partners: Partner[],
-  selectedPartner: string
-): Partner[] {
-  return partners.map((partner) => {
-    const active = partner.value === selectedPartner;
-    Object.assign(partner, { active: active });
-    return partner;
-  });
 }

@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import React from "react";
 
 // App dependencies
@@ -14,10 +15,11 @@ import Footer from "./footer/footer";
 import FooterLungMAP from "./footer-lungmap/footer-lungmap";
 import HCAMain from "./hcaMain/hcaMain";
 import Header from "./header/header";
-import HeaderLungMAP from "./header-lungmap/header-lungmap";
+import { SITE, useConfig } from "../hooks/useConfig";
 import PageHead from "./pageHead/pageHead";
 import SEO from "./seo/seo";
 import SupportRequest from "./supportRequest/supportRequest";
+import { getAppTheme } from "../theme/theme";
 import { GASource } from "../utils/dp-gtm/ga-source.model";
 import * as EnvironmentService from "../utils/environment/environment.service";
 
@@ -68,61 +70,62 @@ class Layout extends React.Component {
       this.state;
     const atlas = EnvironmentService.getAtlas();
     const lungmap = EnvironmentService.isLungMAP();
+    const site = lungmap ? SITE.LUNGMAP : SITE.HCA;
+    const currentConfig = useConfig(site);
     return (
-      <div className={atlas}>
-        <PageHead pageTitle={pageTitle} />
-        <SEO description={description} pageTitle={pageTitle} />
-        <div
-          className={classNames(compStyles.site, {
-            [compStyles.noScroll]: !scrollable,
-          })}
-        >
-          {lungmap ? (
-            <HeaderLungMAP onHandleSiteScroll={this.onHandleSiteScroll} />
-          ) : (
+      <ThemeProvider theme={getAppTheme(currentConfig.theme)}>
+        <CssBaseline />
+        <div className={atlas}>
+          <PageHead pageTitle={pageTitle} />
+          <SEO description={description} pageTitle={pageTitle} />
+          <div
+            className={classNames(compStyles.site, {
+              [compStyles.noScroll]: !scrollable,
+            })}
+          >
             <Header
-              homePage={homePage}
-              onHandleSiteScroll={this.onHandleSiteScroll}
+              header={currentConfig.layout.header}
+              searchPath={currentConfig.search.searchPath}
             />
-          )}
-          <Banner position={"top"} healthy={healthy} />
-          {homePage ? (
-            children
-          ) : (
-            <HCAMain
-              activeLocation={activeLocation}
-              docPath={docPath}
-              homeTab={homeTab}
-              metadataContent={metadataContent}
-              nav={nav}
-              onHandleSiteScroll={this.onHandleSiteScroll}
-              sectionTitle={sectionTitle}
-            >
-              {children}
-            </HCAMain>
-          )}
-          {lungmap ? null : (
-            <SupportRequest
-              active={supportRequestActive}
-              source={supportRequestSource}
-              onToggle={(active, source) =>
-                this.onToggleSupportRequestForm(active, source)
-              }
-            />
-          )}
-          <Banner position={"bottom"} />
-          {lungmap ? (
-            <FooterLungMAP />
-          ) : (
-            <Footer
-              onFeedbackClicked={() =>
-                this.onToggleSupportRequestForm(true, GASource.FOOTER)
-              }
-            />
-          )}
-          <div id="portal" />
+            <Banner position={"top"} healthy={healthy} />
+            {homePage ? (
+              children
+            ) : (
+              <HCAMain
+                activeLocation={activeLocation}
+                docPath={docPath}
+                homeTab={homeTab}
+                metadataContent={metadataContent}
+                nav={nav}
+                onHandleSiteScroll={this.onHandleSiteScroll}
+                sectionTitle={sectionTitle}
+              >
+                {children}
+              </HCAMain>
+            )}
+            {lungmap ? null : (
+              <SupportRequest
+                active={supportRequestActive}
+                source={supportRequestSource}
+                onToggle={(active, source) =>
+                  this.onToggleSupportRequestForm(active, source)
+                }
+              />
+            )}
+            <Banner position={"bottom"} />
+            {lungmap ? (
+              <FooterLungMAP />
+            ) : (
+              <Footer
+                onFeedbackClicked={() =>
+                  this.onToggleSupportRequestForm(true, GASource.FOOTER)
+                }
+              />
+            )}
+            <div id="portal" />
+          </div>
         </div>
-      </div>
+      </ThemeProvider>
     );
   }
 }
