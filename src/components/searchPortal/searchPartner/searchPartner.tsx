@@ -7,54 +7,61 @@
 
 // Core dependencies
 import classNames from "classnames"; // Class name helper
-import { navigate } from "gatsby";
 import React from "react";
 
 // App dependencies
 import Button from "../../button/button";
-import { buildSearchPortalUrl } from "../searchPortal";
+import { Partner } from "../common/entities";
+import { onSelectSiteSearchPartner } from "../common/utils";
 
 // Styles
-import {
-  active as activePartner,
-  partner as searchPartner,
-} from "./searchPartner.module.css";
+import { active, partner as searchPartner } from "./searchPartner.module.css";
 
-export interface Partner {
-  active: boolean;
-  label: string;
-  value: string;
-}
+type UpdateSelectedPartnerFn = (selectedPartner: string) => void;
 
 interface Props {
   partner: Partner;
+  searchPath: string;
   searchTerms: string;
+  selectedPartner: string;
+  updateSelectedPartnerFn: UpdateSelectedPartnerFn;
 }
 
 export default function SearchPartner({
   partner,
+  searchPath,
   searchTerms,
+  selectedPartner,
+  updateSelectedPartnerFn,
 }: Props): JSX.Element {
-  const { active, label, value } = partner;
+  const { label, value } = partner;
+  const classNamesPartner = classNames(
+    { [active]: selectedPartner === value },
+    searchPartner
+  );
+
+  /**
+   * Updates search partner with selected partner.
+   * @param searchStr - Current search term.
+   * @param searchPathname - Search pathname.
+   * @param searchPartner - Selected search partner.
+   */
+  const updateSiteSearchPartner = (
+    searchStr: string,
+    searchPathname: string,
+    searchPartner: string
+  ) => {
+    updateSelectedPartnerFn(searchPartner);
+    onSelectSiteSearchPartner(searchStr, searchPathname, searchPartner);
+  };
 
   return (
-    <li className={classNames({ [activePartner]: active }, searchPartner)}>
-      <Button onClick={() => onSelectSearchPartner(searchTerms, value)}>
+    <li className={classNamesPartner}>
+      <Button
+        onClick={() => updateSiteSearchPartner(searchTerms, searchPath, value)}
+      >
         {label}
       </Button>
     </li>
   );
-}
-
-/**
- * Updates session history with new search params.
- * @param searchTerms
- * @param searchPartner
- */
-function onSelectSearchPartner(
-  searchTerms: string,
-  searchPartner: string
-): void {
-  const href = buildSearchPortalUrl(searchTerms, searchPartner);
-  navigate(href, { state: { searchPage: 1 } });
 }
