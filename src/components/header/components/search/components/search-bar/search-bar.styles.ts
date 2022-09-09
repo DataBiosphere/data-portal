@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import { Dialog, Input } from "@mui/material";
 
 export const SearchBar = styled(Dialog)`
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
   width: 100%;
 `;
 

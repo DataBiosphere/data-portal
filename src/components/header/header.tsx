@@ -103,7 +103,7 @@ export default function Header({ header, searchPath }: Props): JSX.Element {
             </Typography>
           )}
           {/* Nav links */}
-          <NavLinks center links={navLinks} />
+          <NavLinks links={navLinks} />
           {/* Socials */}
           <Socials
             buttonSize={desktop ? "small" : "xlarge"}
