@@ -7,7 +7,7 @@ import { BREAKPOINT } from "../hooks/useBreakpointHelper";
  */
 export const breakpointMobile = 0;
 export const breakpointTablet = 768; // Tablet.
-export const breakpointDesktop = 1440; // Desktop.
+export const breakpointDesktop = 1280; // Desktop.
 
 /**
  * Custom colors
