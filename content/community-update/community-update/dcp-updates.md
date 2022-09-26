@@ -10,7 +10,7 @@ title: DCP Updates
 
 ### Release Highlights
 
-* We've reached the 20th release of the DCP with data from over 30 million cells! Thank you to the HCA community and all of the contributors that helped us reach this milestone!
+* The Data Portal now hosts over 30 million cells! Thank you to the HCA community and all of the contributors that helped us reach this milestone!
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (12)
 
