@@ -6,6 +6,35 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### September 26, 2022
+
+### Release Highlights
+
+* We've reached the 20th release of the DCP with data from over 30 million cells! Thank you to the HCA community and all of the contributors that helped us reach this milestone!
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (12)
+
+1. [A Single-Cell Characterization of Human Post-implantation Embryos Cultured In Vitro Delineates Morphogenesis in Primary Syncytialization](https://data.humancellatlas.org/explore/projects/9ac53858-606a-4b89-af49-804ccedaa660)
+1. [A Single-Cell Transcriptomic Atlas of Human Skin Aging](https://data.humancellatlas.org/explore/projects/923d3231-7295-4184-b3f6-c3082766a8c7)
+1. [A human breast atlas integrating single-cell proteomics and transcriptomics](https://data.humancellatlas.org/explore/projects/9b876d31-0739-4e96-9846-f76e6a427279)
+1. [Defining Transcriptional Signatures of Human Hair Follicle Cell States](https://data.humancellatlas.org/explore/projects/8b9cb6ae-6a43-4e47-b9fb-3df7aeec941f)
+1. [Expansion of Fcγ Receptor IIIa-Positive Macrophages, Ficolin 1-Positive Monocyte-Derived Dendritic Cells, and Plasmacytoid Dendritic Cells Associated With Severe Skin Disease in Systemic Sclerosis](https://data.humancellatlas.org/explore/projects/7f351a4c-d24c-4fcd-9040-f79071b097d0)
+1. [Mapping the developing human immune system across organs](https://data.humancellatlas.org/explore/projects/fcaa53cd-ba57-4bfe-af9c-eaa958f95c1a)
+1. [Robust temporal map of human in vitro myelopoiesis using single-cell genomics](https://data.humancellatlas.org/explore/projects/ac289b77-fb12-4a6b-ad43-c0721c698e70)
+1. [Single cell transcriptomics of human epidermis identifies basal stem cell transition states](https://data.humancellatlas.org/explore/projects/66d7d92a-d6c5-492c-815b-f81c7c93c984)
+1. [Single nucleus RNA-sequencing defines unexpected diversity of cholinergic neuron types in the adult mouse spinal cord](https://data.humancellatlas.org/explore/projects/a7c66eb1-4a4e-4f6c-9e30-ad2a485f8301)
+1. [Single-Cell RNA Sequencing Maps Endothelial Metabolic Plasticity in Pathological Angiogenesis](https://data.humancellatlas.org/explore/projects/4c73d1e4-bad2-4a22-a0ba-55abbdbdcc3d)
+1. [Single-cell transcriptomic and proteomic analysis of Parkinson’s disease brains](https://data.humancellatlas.org/explore/projects/9a23ac2d-93dd-4bac-9bb8-040e6426db9d)
+1. [The myogenesis program drives clonal selection and drug resistance in rhabdomyosarcoma](https://data.humancellatlas.org/explore/projects/74e2ef9d-7c9f-418c-b281-7fb38f3b1571)
+
+### Updated Metadata (5)
+
+1. [Single-cell RNA-Seq reveals a developmental atlas of human prefrontal cortex](https://data.humancellatlas.org/explore/projects/a815c84b-8999-433f-958e-422c0720e00d)
+1. [Profiling of transcribed cis-regulatory elements in single cells](https://data.humancellatlas.org/explore/projects/34da2c5f-8011-48af-a7fd-ad2f56ec10f4)
+1. [Single-Cell Transcriptomic Analysis of Human Lung Provides Insights into the Pathobiology of Pulmonary Fibrosis](https://data.humancellatlas.org/explore/projects/daf9d982-7ce6-43f6-ab51-272577290606)
+1. [Spatial multi-omic map of human myocardial infarction](https://data.humancellatlas.org/explore/projects/e9f36305-d857-44a3-93f0-df4e6007dc97)
+1. [Spatial proteogenomics reveals distinct and evolutionarily-conserved hepatic macrophage niches](https://data.humancellatlas.org/explore/projects/425c2759-db66-4c93-a358-a562c069b1f1)
+
 #### August 23, 2022
 
 ### Release Highlights
