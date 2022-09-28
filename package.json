@@ -32,7 +32,7 @@
     "gatsby-source-filesystem": "^4.22.0",
     "gatsby-transformer-json": "^4.22.0",
     "gatsby-transformer-remark": "^5.22.0",
-    "gatsby-transformer-yaml": "^4.22.0",
+    "gatsby-transformer-yaml": "^4.24.0",
     "katex": "^0.16.2",
     "lunr": "^2.3.9",
     "normalize.css": "^8.0.1",
