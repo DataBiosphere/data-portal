@@ -26,7 +26,7 @@
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-images": "^6.22.0",
     "gatsby-remark-images-medium-zoom": "^1.7.0",
-    "gatsby-remark-katex": "^6.22.0",
+    "gatsby-remark-katex": "^6.24.0",
     "gatsby-remark-prismjs": "^6.22.0",
     "gatsby-remark-responsive-iframe": "^5.22.0",
     "gatsby-source-filesystem": "^4.22.0",
