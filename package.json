@@ -10,7 +10,7 @@
     "@mui/material": "^5.10.3",
     "bowser": "^2.9.0",
     "classnames": "^2.3.1",
-    "gatsby": "^4.22.0",
+    "gatsby": "^4.24.1",
     "gatsby-plugin-catch-links": "^4.22.0",
     "gatsby-plugin-google-tagmanager": "^4.22.0",
     "gatsby-plugin-manifest": "^4.22.0",
