@@ -76,7 +76,7 @@
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
-    "bufferutil": "^4.0.6",
+    "bufferutil": "^4.0.7",
     "core-js": "^3.25.0",
     "eslint": "^8.23.0",
     "eslint-config-airbnb": "^19.0.4",
