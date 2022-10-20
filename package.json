@@ -45,7 +45,7 @@
     "react-dropzone": "^14.2.2",
     "react-helmet": "^6.1.0",
     "react-linkify": "^1.0.0-alpha",
-    "react-select": "^5.4.0",
+    "react-select": "^5.5.4",
     "react-transition-group": "^4.4.5",
     "react-typography": "^0.16.20",
     "rehype-react": "^7.1.1",
