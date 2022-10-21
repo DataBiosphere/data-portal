@@ -9,9 +9,9 @@ title: DCP Updates
 #### October 19, 2022
 
 ### Release Highlights
-* New COVID-19 data is available in the project ["COVID-19 tissue atlases reveal SARS-CoV-2 pathology and cellular targets."](https://data.humancellatlas.org/explore/projects/61515820-5bb8-45d0-8d12-f0850222ecf0)
+* New COVID-19 data is available in the project [COVID-19 tissue atlases reveal SARS-CoV-2 pathology and cellular targets](https://data.humancellatlas.org/explore/projects/61515820-5bb8-45d0-8d12-f0850222ecf0).
 
-* The new project ["Genome-Wide DNA Hypermethylation in the Wound-Edge of Chronic Wound Patients Opposes Closure by Impairing Epithelial to Mesenchymal Transition"](https://data.humancellatlas.org/explore/projects/34ec845b-cd7a-4c43-99e4-d2932d5d85bb) combines spatial transcriptomic data with methylome data. 
+* The new project [Genome-Wide DNA Hypermethylation in the Wound-Edge of Chronic Wound Patients Opposes Closure by Impairing Epithelial to Mesenchymal Transition](https://data.humancellatlas.org/explore/projects/34ec845b-cd7a-4c43-99e4-d2932d5d85bb) combines spatial transcriptomic data with methylome data. 
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (5)
 1. [COVID-19 tissue atlases reveal SARS-CoV-2 pathology and cellular targets](https://data.humancellatlas.org/explore/projects/61515820-5bb8-45d0-8d12-f0850222ecf0)
@@ -205,7 +205,7 @@ title: DCP Updates
 ### Release Highlights
 * Contributions of spatial transcriptomic data (like 10x Visium) continue to climb; for example, see the project [Transcriptome-scale spatial gene expression in the human dorsolateral prefrontal cortex](https://data.humancellatlas.org/explore/projects/7b393e4d-65bc-4c03-b402-aae769299329).
 
-* New raw data and contributor matrices shed light on disease processes; see the project "[Single-Cell Transcriptomics of Human Substantia Nigra in Parkinson's Disease](https://data.humancellatlas.org/explore/projects/16cd6791-2adb-4d0f-8222-0184dada6456)" for a cellular atlas of the human substantia nigra in health and Parkinson’s Disease. 
+* New raw data and contributor matrices shed light on disease processes; see the project [Single-Cell Transcriptomics of Human Substantia Nigra in Parkinson's Disease](https://data.humancellatlas.org/explore/projects/16cd6791-2adb-4d0f-8222-0184dada6456) for a cellular atlas of the human substantia nigra in health and Parkinson’s Disease. 
 
 * Multi-modal data provides a more complete understanding of cellular function. The new project [Spatial proteogenomics reveals distinct and evolutionarily-conserved hepatic macrophage niches](https://data.humancellatlas.org/explore/projects/425c2759-db66-4c93-a358-a562c069b1f1) combines the power of Visium and CITE-seq.
 
@@ -434,11 +434,11 @@ title: DCP Updates
 #### November 11, 2021
 
 ### Release Highlights
-* The DCP team has reanalyzed the first of the DCP 1.0 Smart-seq2 projects (["Single cell RNA sequencing of multiple myeloma II](https://data.humancellatlas.org/explore/projects/0c3b7785-f74d-4091-8616-a68757e4c2a8)). Cell-by-gene matrices are available on the project page and were produced with the latest [Smart-seq Multi-Sample pipeline](https://data.humancellatlas.org/pipelines/smart-seq2-workflow) for uniform analysis.  
-* Contributor-generated matrices are available for the project ["Single-nucleus cross-tissue molecular reference maps to decipher disease gene function."](https://data.humancellatlas.org/explore/projects/31887183-a72c-4308-9eac-c6140313f39c) which is associated with a Human Cell Atlas [preprint publication](https://www.biorxiv.org/content/10.1101/2021.07.19.452954v1).
-* New raw data has been added for the project ["Defining human mesenchymal and epithelial heterogeneity in response to oral inflammatory disease."](https://data.humancellatlas.org/explore/projects/783c9952-a4ae-4106-a6ce-56f20ce27f88) as part of the [HCA Oral & Craniofacial Biological Network](https://www.humancellatlas.org/biological-networks/).
-* The first onychofibroblasts dataset has been added to the DCP as part of the project ["Single cell RNAseq of human nail unit defines RSPO4 onychofibroblasts and SPINK6 nail epithelium"](https://data.humancellatlas.org/explore/projects/bd7104c9-a950-490e-9472-7d41c6b11c62).
-* New patch-seq data is available in the project ["Cryopreservation and post-thaw characterization of dissociated human islet cells"](https://data.humancellatlas.org/explore/projects/8559a8ed-5d8c-4fb6-bde8-ab639cebf03c).
+* The DCP team has reanalyzed the first of the DCP 1.0 Smart-seq2 projects ([Single cell RNA sequencing of multiple myeloma II](https://data.humancellatlas.org/explore/projects/0c3b7785-f74d-4091-8616-a68757e4c2a8)). Cell-by-gene matrices are available on the project page and were produced with the latest [Smart-seq Multi-Sample pipeline](https://data.humancellatlas.org/pipelines/smart-seq2-workflow) for uniform analysis.  
+* Contributor-generated matrices are available for the project [Single-nucleus cross-tissue molecular reference maps to decipher disease gene function.](https://data.humancellatlas.org/explore/projects/31887183-a72c-4308-9eac-c6140313f39c) which is associated with a Human Cell Atlas [preprint publication](https://www.biorxiv.org/content/10.1101/2021.07.19.452954v1).
+* New raw data has been added for the project [Defining human mesenchymal and epithelial heterogeneity in response to oral inflammatory disease.](https://data.humancellatlas.org/explore/projects/783c9952-a4ae-4106-a6ce-56f20ce27f88) as part of the [HCA Oral & Craniofacial Biological Network](https://www.humancellatlas.org/biological-networks/).
+* The first onychofibroblasts dataset has been added to the DCP as part of the project [Single cell RNAseq of human nail unit defines RSPO4 onychofibroblasts and SPINK6 nail epithelium](https://data.humancellatlas.org/explore/projects/bd7104c9-a950-490e-9472-7d41c6b11c62).
+* New patch-seq data is available in the project [Cryopreservation and post-thaw characterization of dissociated human islet cells](https://data.humancellatlas.org/explore/projects/8559a8ed-5d8c-4fb6-bde8-ab639cebf03c).
 * A content description for contributor- and DCP-generated matrices is now available on each Data Portal project's matrix download page.
 * The submitted and last updated dates are added to the projects list and Data Portal Explore page. We will make this sortable by this field in a future release.
 * New and updated projects for the latest DCP Platform release are now indicated next to the project name on the Explore page (as shown below).
@@ -476,7 +476,7 @@ title: DCP Updates
 
 ![new file downloads](_images/download_files.png)
 
-* The projects "[A human cell atlas of fetal gene expression](https://data.humancellatlas.org/explore/projects/a9301beb-e9fa-42fe-b75c-84e8a460c733)", "[Single-cell atlas of early human brain development highlights heterogeneity of human neuroepithelial cells and early radial glia](https://data.humancellatlas.org/explore/projects/ef1d9888-fa86-47a4-bb72-0ab0f20f7004)", and "[COVID-19 severity correlates with airway epithelium-immune cell interactions identified by single-cell analysis](https://data.humancellatlas.org/explore/projects/7ac8822c-4ef0-4194-adf0-74290611b1c6)" contain new managed-access data.
+* The projects [A human cell atlas of fetal gene expression](https://data.humancellatlas.org/explore/projects/a9301beb-e9fa-42fe-b75c-84e8a460c733), [Single-cell atlas of early human brain development highlights heterogeneity of human neuroepithelial cells and early radial glia](https://data.humancellatlas.org/explore/projects/ef1d9888-fa86-47a4-bb72-0ab0f20f7004), and [COVID-19 severity correlates with airway epithelium-immune cell interactions identified by single-cell analysis](https://data.humancellatlas.org/explore/projects/7ac8822c-4ef0-4194-adf0-74290611b1c6) contain new managed-access data.
 
 * The Data Portal team has corrected linking issues associated with the project [A single cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d).
 
