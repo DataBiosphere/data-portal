@@ -287,7 +287,7 @@ title: DCP Updates
 
 * The new project [Genome-Wide DNA Hypermethylation in the Wound-Edge of Chronic Wound Patients Opposes Closure by Impairing Epithelial to Mesenchymal Transition](https://data.humancellatlas.org/explore/projects/34ec845b-cd7a-4c43-99e4-d2932d5d85bb) combines spatial transcriptomic data with methylome data. 
 
-### New Raw Data, Metadata, and Contributor-generated Matrices (5)
+### New Raw Data, Metadata, and Contributor-generated Matrices (4)
 1. [COVID-19 tissue atlases reveal SARS-CoV-2 pathology and cellular targets](https://data.humancellatlas.org/explore/projects/61515820-5bb8-45d0-8d12-f0850222ecf0)
 2. [Differential dynamics of response at single cell resolution following CAR-T therapy in refractory B-cell lymphoma](https://data.humancellatlas.org/explore/projects/c0d82ef2-1504-4ef0-9e5e-d8a13e45fdec)
 3. [Genome-Wide DNA Hypermethylation in the Wound-Edge of Chronic Wound Patients Opposes Closure by Impairing Epithelial to Mesenchymal Transition](https://data.humancellatlas.org/explore/projects/34ec845b-cd7a-4c43-99e4-d2932d5d85bb)
