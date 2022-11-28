@@ -9,7 +9,7 @@ title: DCP Updates
 
 ### Release Highlights
 * New single-cell transcriptomic data is available for adult mouse spinal cord; see the project [Single-cell transcriptomic analysis of the adult mouse spinal cord reveals molecular diversity of autonomic and skeletal motor neurons](https://data.humancellatlas.org/explore/projects/9e3370a0-144a-49a9-9e92-6f6a9290125a).
-* Single-cell data derived from peritoneal and ovarian lesions in participants with endometriosis is available in the project [Single cell analysis of endometriosis reveals a coordinated transcriptional program driving immunotolerance and angiogenesis across eutopic and ectopic tissues](https://data.humancellatlas.org/explore/projects/2b81ecc4-6ee0-438f-8c5b-c10b2464069e).
+* Single-cell data derived from peritoneal and ovarian lesions of participants with endometriosis is available in the project [Single cell analysis of endometriosis reveals a coordinated transcriptional program driving immunotolerance and angiogenesis across eutopic and ectopic tissues](https://data.humancellatlas.org/explore/projects/2b81ecc4-6ee0-438f-8c5b-c10b2464069e).
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (10)
 
