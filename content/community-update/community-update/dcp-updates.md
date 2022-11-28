@@ -15,7 +15,7 @@ title: DCP Updates
 
 1. [Cell atlas of the human ocular anterior segment: Tissue-specific and shared cell types](https://data.humancellatlas.org/explore/projects/16e99159-78bc-44aa-b479-55a5e903bf50)
 1. [Dissecting the cellular specificity of smoking effects and reconstructing lineages in the human airway epithelium](https://data.humancellatlas.org/explore/projects/34c9a62c-a610-4e31-b343-8fb7be676f8c)
-1. [SARS-CoV-2 infection of the oral cavity and saliva.](https://data.humancellatlas.org/explore/projects/dcbb50d1-9acf-4f70-9fda-b1f63a948c49)
+1. [SARS-CoV-2 infection of the oral cavity and saliva](https://data.humancellatlas.org/explore/projects/dcbb50d1-9acf-4f70-9fda-b1f63a948c49)
 1. [Single cell RNA-seq analysis of adult and paediatric IDH-wildtype Glioblastomas](https://data.humancellatlas.org/explore/projects/e4b18cd2-8f15-490d-b9f1-d118aa067dc3)
 1. [Single cell analysis of endometriosis reveals a coordinated transcriptional program driving immunotolerance and angiogenesis across eutopic and ectopic tissues](https://data.humancellatlas.org/explore/projects/2b81ecc4-6ee0-438f-8c5b-c10b2464069e)
 1. [Single-Cell Lymphocyte Heterogeneity in Advanced Cutaneous T-cell Lymphoma Skin Tumors](https://data.humancellatlas.org/explore/projects/990d251f-6dab-4a98-a2b6-6cfe7e4708b9)
