@@ -88,26 +88,30 @@ export function findMetadataTypeEntityCategory(
  * Returns the metadata category.
  *
  * @param sitePageId
- * @param allMetadataEntity
+ * @param entity
  * @returns {void | Array | T | *}
  */
-export function getMetadataCategory(sitePageId, allMetadataEntity) {
-  const entity = getMetadataEntity(allMetadataEntity);
-
+export function getMetadataCategory(sitePageId, entity) {
   return entity.categories.find((category) =>
     category.schemas.find((schema) => schema.id === sitePageId)
   );
 }
 
 /**
- * Returns the metadata entity.
- *
+ * Returns the metadata entity for the specified page id.
  * @param allMetadataEntity
- * @returns {T}
+ * @param sitePageId
+ * @returns {*}
  */
-export function getMetadataEntity(allMetadataEntity) {
+export function getMetadataEntity(allMetadataEntity, sitePageId) {
   /* Get the entity. */
-  return allMetadataEntity.edges.find((entity) => entity.node).node;
+  return allMetadataEntity.edges
+    .map((node) => node.node)
+    .find((entity) => {
+      return entity.categories.some((category) => {
+        return category.schemas.some((schema) => schema.id === sitePageId);
+      });
+    });
 }
 
 /**

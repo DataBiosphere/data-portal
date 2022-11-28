@@ -1,18 +1,18 @@
 ---
-path: "/analyze/methods/methods-packages/sc3"
-date: "2019-02-28"
-title: "Single-cell consensus clustering (SC3)"
+appUrl: "http://bioconductor.org/packages/SC3"
 author: "Martin Hemberg (SC3), Gene Expression Team (sc3-scripts)"
+componentName: "analysisDetail"
+date: "2019-02-28"
 description: "SC3 is an unsupervised clustering method for scRNA-seq data."
 githubUrl: "https://github.com/hemberg-lab/SC3"
-appUrl: "http://bioconductor.org/packages/SC3"
-upstreamRegistryUrl: "http://bioconductor.org/packages/SC3"
-componentName: "analysisDetail"
+path: "/analyze/methods/methods-packages/sc3"
+title: "Single-cell consensus clustering (SC3)"
+upstreamRegistryUrl: "https://bioconductor.org/packages/SC3"
 ---
 
-[![Build Status](http://www.bioconductor.org/shields/build/release/bioc/SC3.svg)](https://git.bioconductor.org/packages/SC3)
+[![Build Status](https://www.bioconductor.org/shields/build/release/bioc/SC3.svg)](https://git.bioconductor.org/packages/SC3)
 
-[SC3](http://bioconductor.org/packages/SC3) is an unsupervised clustering method for scRNA-seq data. SC3 also estimates the number of clusters and it provides features to aid the biological interpretation of the clusters. [sc3-scripts](https://anaconda.org/bioconda/sc3-scripts) provides a set of simple wrappers with robust argument parsing for individual components of the SC3 package.
+[SC3](https://bioconductor.org/packages/SC3) is an unsupervised clustering method for scRNA-seq data. SC3 also estimates the number of clusters and it provides features to aid the biological interpretation of the clusters. [sc3-scripts](https://anaconda.org/bioconda/sc3-scripts) provides a set of simple wrappers with robust argument parsing for individual components of the SC3 package.
 
 ## Use
 
@@ -31,6 +31,7 @@ docker run -v ${PWD}:/data -w /data --rm quay.io/biocontainers/bioconductor-sc3-
 ```
 
 ## Validate
+
 Run this command to confirm your container produces correct reference output:
 
 ```
@@ -40,5 +41,6 @@ docker run -v ${PWD}:/data -w /data --rm quay.io/biocontainers/bioconductor-sc3-
 ```
 
 ## Contact
+
 Martin Hemberg, SC3 ([mh26@sanger.ac.uk](mailto:mh26@sanger.ac.uk))\
 Gene Expression Team, sc3-scripts ([gene-expression@ebi.ac.uk](mailto:gene-expression@ebi.ac.uk))

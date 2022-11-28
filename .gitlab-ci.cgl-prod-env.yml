@@ -33,12 +33,13 @@ test_trufflehog:
   before_script:
     - pip install trufflehog
   script:
-    - trufflehog --regex --rules trufflehog-rules.json --branch master --entropy=False --max_depth 30 https://github.com/HumanCellAtlas/data-portal.git
+    - trufflehog --regex --rules trufflehog-rules.json --branch prod --entropy=False --max_depth 30 https://github.com/HumanCellAtlas/data-portal.git
   only:
-    - master
+    - prod
+    - lungmap-prod
 
-# Develop Build
-build_master:
+# Prod Build
+build_prod:
   <<: *build_template
   environment:
     name: prod
@@ -52,11 +53,31 @@ build_master:
     - export GATSBY_GTM_AUTH=xm3qglWPEFim7Lb4AxXnsA
     - export GATSBY_ENV_NAME=env-2
     - export GATSBY_ENV=PROD
-    - export GATSBY_DEFAULT_CATALOG=dcp8
+    - export GATSBY_DEFAULT_CATALOG=dcp21
     - export GATSBY_ATLAS=hca
     - gatsby build
   only:
-    - master
+    - prod
+
+build_lungmap-prod:
+  <<: *build_template
+  environment:
+    name: lungmap-prod
+  script:
+    - export GATSBY_EXPLORE_URL=https://data-browser.lungmap.net/explore/
+    - export GATSBY_FILE_SUMMARY_API_URL=https://service.azul.data.humancellatlas.org/index/summary
+    - export GATSBY_PORTAL_URL=https://data-browser.lungmap.net/
+    - export GATSBY_TERM_FACETS_API_URL=https://service.azul.data.humancellatlas.org/index/projects
+    - export GATSBY_SYSTEM_HEALTH_CHECK_API_URL=https://service.azul.data.humancellatlas.org/health/progress
+    - export GATSBY_GTM_ID=GTM-M2J5NTJ
+    - export GATSBY_GTM_AUTH=WB1d2Aoi1q3GOmQMSGMsZA
+    - export GATSBY_ENV_NAME=env-150
+    - export GATSBY_ENV=PROD
+    - export export GATSBY_DEFAULT_CATALOG=lungmap
+    - export GATSBY_ATLAS=lungmap
+    - gatsby build
+  only:
+    - lungmap-prod
 
 ########################################
 # Deploy Jobs
@@ -69,8 +90,8 @@ build_master:
   before_script:
     - pip install awscli
 
-# Prod Deploy
-deploy_master:
+# HCA Prod Deploy
+deploy_prod:
   <<: *deploy_template
   environment:
     name: prod
@@ -80,4 +101,17 @@ deploy_master:
     - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id E1LYQC3LZXO7M3 --paths "/*"
   only:
-    - master
+    - prod
+
+# Lungmap Prod Deploy
+deploy_lungmap-prod:
+  <<: *deploy_template
+  environment:
+    name: lungmap-prod
+  script:
+    - export BUCKET=s3://data-browser.lungmap.net/
+    - if [ "$MAINTENANCE" = "true" ];then export SRCDIR=maintenance/; else export SRCDIR=public/; fi
+    - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
+    - aws cloudfront create-invalidation --distribution-id E22L661MUAMMTD --paths "/*"
+  only:
+    - lungmap-prod

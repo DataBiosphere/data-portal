@@ -35,7 +35,7 @@ export function getPageTitle(htmlAst) {
  * @returns {string}
  */
 export function getPageEditUrl(slug) {
-  return `https://github.com/HumanCellAtlas/data-portal/tree/staging/content${slug}.md`;
+  return `https://github.com/HumanCellAtlas/data-portal/tree/main/content${slug}.md`;
 }
 
 /**
@@ -55,6 +55,8 @@ export function showEditPage(slug) {
     case "/metadata/explore/metadata-explore":
       return false;
     case "/metadata/search/metadata-search":
+      return false;
+    case "/search/search":
       return false;
     default:
       return true;

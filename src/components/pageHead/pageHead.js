@@ -31,16 +31,8 @@ class PageHead extends React.Component {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
         <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@300;400;500;600;700&family=PT+Mono&family=Source+Code+Pro:wght@300;400&display=swap"
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=PT+Mono"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400"
         />
         <link rel="stylesheet" href="https://use.typekit.net/qhb0geh.css" />
         <html lang="en" />

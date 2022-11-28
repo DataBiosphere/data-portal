@@ -23,7 +23,7 @@ export function getCurrentEnvironment() {
 }
 
 /**
- * Returns the current environment's (poral) URL.
+ * Returns the current environment's (portal) URL.
  */
 export function getCurrentEnvironmentURL() {
   return process.env.GATSBY_PORTAL_URL;

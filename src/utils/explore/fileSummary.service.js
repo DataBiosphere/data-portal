@@ -65,10 +65,12 @@ function bindFileSummaryResponse(fileSummaryResponse) {
         cellCount: summary.totalCellCountByOrgan,
       };
     });
+  
+  const totalCellCount = calculateSummaryTotalCellCount(fileSummaryResponse);
 
   // Bind response values to file summary view format
   return {
-    cellCount: fileSummaryResponse.totalCellCount,
+    cellCount: totalCellCount,
     cellCountSummaries: cellCountSummaries,
     donorCount: fileSummaryResponse.donorCount,
     fileCount: fileSummaryResponse.fileCount,
@@ -83,7 +85,7 @@ function bindFileSummaryResponse(fileSummaryResponse) {
     organCount: fileSummaryResponse.organTypes.length,
     organTypes: fileSummaryResponse.organTypes,
     projectCount: fileSummaryResponse.projectCount,
-    totalCellCount: fileSummaryResponse.totalCellCount,
+    totalCellCount
   };
 }
 
@@ -129,6 +131,21 @@ function buildExploreUrl(baseUrl) {
   ); /* Add default catalog. */
 
   return exploreUrl;
+}
+
+/**
+ * Calculate the summary total cell count using the projects and estimatedCellCount values returned in the response.
+ */
+function calculateSummaryTotalCellCount(fileSummaryResponse) {
+  return (fileSummaryResponse.projects ?? []).reduce((accum, {cellSuspensions, projects}) => {
+    if ( projects && (projects.estimatedCellCount || projects.estimatedCellCount === 0) ) {
+      accum += projects.estimatedCellCount;
+    }
+    else if ( cellSuspensions && (cellSuspensions.totalCells || cellSuspensions.totalCells === 0) ) {
+      accum += cellSuspensions.totalCells;
+    }
+    return accum;
+  }, 0);
 }
 
 /**

@@ -1,8 +1,8 @@
 ---
-path: "/document/creating-content/overview"
 date: "2018-05-30"
-title: "Overview"
 description: "Overview of how to create content in the HCA Data Portal."
+path: "/document/creating-content/overview"
+title: "Overview"
 ---
 
 # Overview
@@ -17,12 +17,13 @@ In addition to generating static pages optimized for download, the Data Portal w
 
 # Content
 
-The site content is written in [markdown](https://en.wikipedia.org/wiki/Markdown) and stored in the `/content` directory of the [Data Portal Content Repository](https://github.com/HumanCellAtlas/data-portal-content) in Github.
+The site content is written in [markdown](https://en.wikipedia.org/wiki/Markdown) and stored in the `/content` directory of the [Data Portal Content Repository](https://github.com/HumanCellAtlas/data-portal-content) in GitHub.
 
 # Site Organization
 
 ## Sections
-The site is layed out in a 4 level hierarchy with the top level sections being:
+
+The site is laid out in a 4 level hierarchy with the top level sections being:
 
 1. Explore (links to the Data Browser)
 1. Analyze 
@@ -30,33 +31,18 @@ The site is layed out in a 4 level hierarchy with the top level sections being:
 1. Learn
 1. About 
 
-
 ## Sub Sections
 
 Each section may have zero to 3 sub sections.
 
-
 ## Left Nav Level 1
 
-Each sub section may have a left hand nav of 0 or more documents.
+Each sub section may have a left-hand nav of 0 or more documents.
 
 ## Left Nav Level 2
+
 Each top level left nav document may have 0 or more child documents.
 
 #Site Map
+
 The site-map is controlled by a site-map.yaml file in the Data Portal Repository. This file is a json file that defines the structure of website. Reach out on the [Content Team Slack Channel](https://slack.com/app_redirect?channel=CA53K2C3A&team=T2EQJFTMJ) for help getting modifications made to the site map.
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-

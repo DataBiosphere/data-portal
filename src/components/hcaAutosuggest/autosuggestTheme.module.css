@@ -14,7 +14,7 @@
 }
 
 /* Input - removes default IOS */
-input[type="text"] {
+.input[type="text"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -39,8 +39,8 @@ input[type="text"] {
 }
 
 /* Input placeholder */
-input::placeholder,
-input::-webkit-input-placeholder {
+.input::placeholder,
+.input::-webkit-input-placeholder {
   color: var(--gray-search);
   opacity: 1;
 }

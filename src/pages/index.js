@@ -14,7 +14,6 @@ import ExploreData from "../components/explore/exploreData";
 import Layout from "../components/layout";
 import SearchBrowser from "../components/searchBrowser/searchBrowser";
 import * as FileSummaryService from "../utils/explore/fileSummary.service";
-import * as ReleaseService from "../utils/release.service";
 import * as SystemService from "../utils/system.service";
 import * as numberFormatter from "../utils/number-format.service";
 
@@ -22,14 +21,12 @@ import * as numberFormatter from "../utils/number-format.service";
 import cells from "../../images/icon/metrics/cells.png";
 import donors from "../../images/icon/metrics/donors.png";
 import labs from "../../images/icon/metrics/labs.png";
-import organs from "../../images/icon/metrics/organs.png";
 import projects from "../../images/icon/metrics/projects.png";
 import arrow from "../../images/icon/portal/arrow.png";
 import labsContribute from "../../images/icon/portal/labsContribute.png";
 import pipelineProcessing from "../../images/icon/portal/pipelineProcessing.png";
 import searchCommunity from "../../images/icon/portal/searchCommunity.png";
 import searchData from "../../images/icon/portal/searchData.png";
-import go from "../../images/icon/release/arrow.png";
 
 // Class name helper
 import classNames from "classnames";
@@ -93,9 +90,8 @@ class IndexPage extends React.Component {
   };
 
   render() {
-    const releaseVisible = ReleaseService.isReleaseVisible();
     const description =
-      "Community generated, multi-omic, open data processed by uniform pipelines";
+      "Community generated, multi-omic, open data";
     const pageTitle = "Mapping the Human Body at the Cellular Level";
     return (
       <Layout
@@ -114,11 +110,7 @@ class IndexPage extends React.Component {
               <h2 className={fontStyles.subhead}>
                 <span>
                   Community generated,{" "}
-                  <span className={compStyles.noWrap}>multi-omic, </span>
-                </span>
-                <span>
-                  <span>open data processed by </span>
-                  <span className={compStyles.noWrap}>uniform pipelines</span>
+                  <span className={compStyles.noWrap}>multi-omic, open data</span>
                 </span>
               </h2>
             </div>
@@ -145,17 +137,6 @@ class IndexPage extends React.Component {
                     {numberFormatter.formatCount(this.state.cellCount)}
                   </span>
                   <span className={compStyles.label}>Cells</span>
-                </div>
-              </div>
-              <div className={compStyles.metric}>
-                <span>
-                  <img src={organs} alt="Organs" />
-                </span>
-                <div>
-                  <span className={compStyles.count}>
-                    {numberFormatter.formatCount(this.state.organCount)}
-                  </span>
-                  <span className={compStyles.label}>Organs</span>
                 </div>
               </div>
               <div className={compStyles.metric}>
@@ -193,36 +174,6 @@ class IndexPage extends React.Component {
               </div>
             </div>
           </section>
-          {releaseVisible ? (
-            <section className={compStyles.release}>
-              <div
-                className={classNames(compStyles.sectionInner, compStyles.s)}
-              >
-                <div className={compStyles.intro}>
-                  <h4 className={fontStyles.introTitle}>
-                    March 2020 Data Release
-                  </h4>
-                  <p className={fontStyles.introText}>
-                    Explore, visualize, and interact with 23 annotated datasets
-                  </p>
-                  <div className={compStyles.introContent}>
-                    <a
-                      href={`${process.env.GATSBY_EXPLORE_URL}releases/2020-mar`}
-                      className={classNames(
-                        globalStyles.button,
-                        globalStyles.blue,
-                        globalStyles.light,
-                        compStyles.latest
-                      )}
-                    >
-                      <span>View the March 2020 Release</span>
-                      <img className={compStyles.go} src={go} alt="arrow" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </section>
-          ) : null}
           <SearchBrowser termFacets={this.state.searchTerms} />
           <section className={compStyles.anatogram}>
             <div className={classNames(compStyles.sectionInner, compStyles.m)}>

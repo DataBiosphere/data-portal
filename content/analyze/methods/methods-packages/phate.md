@@ -1,13 +1,13 @@
 ---
-path: "/analyze/methods/methods-packages/phate"
-date: "2019-01-23"
-title: "Potential of Heat-diffusion for Affinity-based Transition Embedding (PHATE)"
+appUrl: "https://pypi.org/project/phate/"
 author: "Kevin Moon, David van Dijk, Scott Gigante, Smita Krishnaswamy"
+componentName: "analysisDetail"
+date: "2019-01-23"
 description: "PHATE is a tool for visualizing high dimensional single-cell data with natural progressions or trajectories."
 githubUrl: "https://github.com/KrishnaswamyLab/PHATE/"
-appUrl: "https://pypi.org/project/phate/"
+path: "/analyze/methods/methods-packages/phate"
+title: "Potential of Heat-diffusion for Affinity-based Transition Embedding (PHATE)"
 upstreamRegistryUrl: "https://pypi.org/project/phate/"
-componentName: "analysisDetail"
 ---
 
 [![Build Status](https://travis-ci.com/KrishnaswamyLab/PHATE.svg?branch=master)](https://travis-ci.com/KrishnaswamyLab/PHATE#)
@@ -26,8 +26,8 @@ Here we download a csv file containing raw scRNA-seq counts, preprocess it by fi
 docker run -v ${PWD}:/data --rm scottgigante/phate:release-1.1 --filename https://github.com/KrishnaswamyLab/MAGIC/raw/master/data/HMLE_TGFb_day_8_10.csv.gz --min-library-size 2000 --normalize --transform sqrt --knn 5 --decay 15 --output /data/phate_output.csv
 ```
 
-
 ## Validate
+
 Run this command to confirm your container produces correct reference output:
 
 ```
@@ -35,4 +35,5 @@ docker run --rm scottgigante/phate:release-1.1 --validate
 ```
 
 ## Contact
+
 Scott Gigante ([scott.gigante@yale.edu](mailto:scott.gigante@yale.edu))

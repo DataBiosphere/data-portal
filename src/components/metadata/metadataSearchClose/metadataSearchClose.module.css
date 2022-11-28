@@ -5,8 +5,9 @@
  * Style definitions specific to the HCA Data Portal metadata search close button wrapper component.
  */
 
-/* Close search button. */
-.close {
+/* Search close. */
+.searchClose {
+  display: inline-flex;
   position: absolute;
   right: calc(var(--gutter-x) - 8px);
   top: 50%;

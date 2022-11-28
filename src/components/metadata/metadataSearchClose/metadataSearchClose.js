@@ -13,19 +13,18 @@ import React, { useContext } from "react";
 import Button from "../../button/button";
 import ContextMetadataSearch from "../contextMetadataSearch/contextMetadataSearch";
 import Icon from "../../icon/icon";
+import Color from "../../ui/color/color";
 
 // Styles
-import * as compStyles from "./metadataSearchClose.module.css";
+import { searchClose } from "./metadataSearchClose.module.css";
 
 function MetadataSearchClose() {
   const { onHandleSearchClose } = useContext(ContextMetadataSearch);
 
   return (
-    <span className={compStyles.close}>
-      <Button clickAction={onHandleSearchClose} icon>
-        <Icon button showHover={true} showIcon={true}>
-          close
-        </Icon>
+    <span className={searchClose}>
+      <Button color={Color.GRAY_LIGHT} onClick={() => onHandleSearchClose()}>
+        <Icon>close</Icon>
       </Button>
     </span>
   );

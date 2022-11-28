@@ -1,8 +1,8 @@
 ---
-path: "/contribute/data/contributing-vignettes"
 date: "2019-02-21"
-title: "Contributing Vignettes"
 description: "The HCA maintains a repository of Data Consumer Vignettes containing Python scripts, Jupyter notebooks and code snippets showing how to access and use the HCA data and metadata."
+path: "/contribute/data/contributing-vignettes"
+title: "Contributing Vignettes"
 ---
 
 # Contributing Vignettes

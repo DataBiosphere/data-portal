@@ -29,7 +29,7 @@ const getCategorySchemas = function getCategorySchemas(schemas, category) {
  */
 const getEntityCategories = function getEntityCategories(categories, entity) {
   /* Filter the categories for the specified entity. */
-  return categories.filter(category => category.entity === entity.entityName);
+  return categories.filter(category => category.entity === entity.entity);
 };
 
 /**

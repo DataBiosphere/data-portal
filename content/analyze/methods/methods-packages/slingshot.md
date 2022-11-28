@@ -1,13 +1,13 @@
 ---
-path: "/analyze/methods/methods-packages/slingshot"
-date: "2018-09-10"
-title: "Slingshot"
+appUrl: "http://bioconductor.org/packages/slingshot"
 author: "Kelly Street, Davide Risso, Diya Das, Sandrine Dudoit, Koen Van den Berge, and Robrecht Cannoodt"
+componentName: "analysisDetail"
+date: "2018-09-10"
 description: "Slingshot provides functions for inferring continuous, branching lineage structures in low-dimensional data."
 githubUrl: "https://github.com/kstreet13/slingshot"
-appUrl: "http://bioconductor.org/packages/slingshot"
+path: "/analyze/methods/methods-packages/slingshot"
+title: "Slingshot"
 upstreamRegistryUrl: "http://bioconductor.org/packages/slingshot"
-componentName: "analysisDetail"
 ---
 
 [![Build Status](https://travis-ci.org/kstreet13/slingshot.svg?branch=master)](https://travis-ci.org/kstreet13/slingshot)
@@ -46,6 +46,7 @@ docker run -v ${PWD}:/data -w /data --rm -it quay.io/kstreet13/slingshot-docker:
 ```
 
 ## Validate
+
 Run this command to confirm your container produces correct reference output: 
 
 ```
@@ -53,4 +54,5 @@ docker run -v ${PWD}:/data -w /data --rm -it quay.io/kstreet13/slingshot-docker:
 ```
 
 ## Contact
+
 Kelly Street ([street.kelly@gmail.com](mailto:street.kelly@gmail.com))

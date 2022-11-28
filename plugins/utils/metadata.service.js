@@ -188,11 +188,11 @@ const getSetOfMetadataEntities = function getSetOfMetadataEntities(
  * Builds up the entity into a FE-compatible model.
  *
  * @param entity
- * @returns {{entityName: *}}
+ * @returns {{entity: *}}
  */
 function buildFEModelEntity(entity) {
   return {
-    entityName: entity
+    entity: entity
   };
 }
 
@@ -203,7 +203,7 @@ function buildFEModelEntity(entity) {
  *
  * @param entity
  * @param category
- * @returns {{categoryName: string, entityName: *}}
+ * @returns {{categoryName: string, entity: *}}
  */
 function buildFEModelEntityCategory(entity, category = "") {
   return {

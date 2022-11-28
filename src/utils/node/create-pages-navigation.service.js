@@ -45,7 +45,7 @@ const buildMetadataLinksByEntity = function buildMetadataLinksByEntity(
   const setOfCategoriesByEntity = allMetadataEntity.edges
     .map((n) => n.node)
     .reduce((acc, entity) => {
-      const { categories, entityName } = entity;
+      const { categories, entity: entityName } = entity;
 
       /* Grab the set of categories. */
       const setOfCategories = new Set(
@@ -131,13 +131,13 @@ const buildMetadataTabs = function buildMetadataTabs(
   /* This sets up the metadata tab order of display. */
   const reorderedEntities = orderEntities.map((entity) => {
     return metadataEntities.find(
-      (MetadataEntity) => MetadataEntity.entityName === entity
+      (MetadataEntity) => MetadataEntity.entity === entity
     );
   });
 
   /* Create an object key-value pair of entity and set of associated categories. */
   return reorderedEntities.map((entity) => {
-    const { entityName } = entity;
+    const { entity: entityName } = entity;
 
     /* Find the first metadata path for the specified entity. */
     const tabPath = findMetadataTabPathByEntity(
@@ -521,7 +521,7 @@ function findMetadataTabPathByEntity(
   entityName
 ) {
   const [metadataPostKey] = [...metadataEntityCategorySchemaTitleByKey].find(
-    ([metadataPostKey, entityCategorySchemaTitle]) => {
+    ([, entityCategorySchemaTitle]) => {
       const [schemaEntity, ,] = entityCategorySchemaTitle;
       return schemaEntity === entityName;
     }
@@ -631,9 +631,6 @@ function getPostSiteMapBySectionKey(sectionKey, postsSiteMap) {
 }
 
 /**
-<<<<<<< HEAD
- * Returns the post keys by path for the specified key.
-=======
  * Returns the metadata object key-value pair comprising of metadata slug and
  * a string array of schema entity, category and schema title, filtered by entity and category.
  * Filters all schemas that belong to the specified entity.
@@ -650,7 +647,7 @@ function filterMetadataPostsByEntityCategory(
 ) {
   return new Map(
     [...metadataEntityCategorySchemaTitleByKey].filter(
-      ([metadataPostKey, entityCategorySchemaTitle]) => {
+      ([, entityCategorySchemaTitle]) => {
         const [schemaEntity, schemaCategory] = entityCategorySchemaTitle;
 
         return schemaEntity === entity && schemaCategory === category;
