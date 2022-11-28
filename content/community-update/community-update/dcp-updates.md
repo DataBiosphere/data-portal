@@ -26,7 +26,7 @@ title: DCP Updates
 
 ### Updated Metadata (3)
 1. [A spatial multi-omics atlas of the human lung reveals a novel immune cell survival niche](https://data.humancellatlas.org/explore/projects/957261f7-2bd6-4358-a6ed-24ee080d5cfc)
-1. Cellular heterogeneity of human fallopian tubes in normal and hydrosalpinx disease states identified by scRNA-seq](https://data.humancellatlas.org/explore/projects/21ea8ddb-525f-4f1f-a820-31f0360399a2)
+1. [Cellular heterogeneity of human fallopian tubes in normal and hydrosalpinx disease states identified by scRNA-seq](https://data.humancellatlas.org/explore/projects/21ea8ddb-525f-4f1f-a820-31f0360399a2)
 1. [A single-cell reference map of transcriptional states for human blood and tissue T cell activation](https://data.humancellatlas.org/explore/projects/4a95101c-9ffc-4f30-a809-f04518a23803)
 
 #### October 19, 2022
