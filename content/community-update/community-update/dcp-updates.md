@@ -6,6 +6,30 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### November 28, 2022
+
+### Release Highlights
+* New single-cell transcriptomic data is available for adult mouse spinal cord; see the project [Single-cell transcriptomic analysis of the adult mouse spinal cord reveals molecular diversity of autonomic and skeletal motor neurons](https://data.humancellatlas.org/explore/projects/9e3370a0-144a-49a9-9e92-6f6a9290125a).
+* Single-cell data derived from peritoneal and ovarian lesions of participants with endometriosis is available in the project [Single cell analysis of endometriosis reveals a coordinated transcriptional program driving immunotolerance and angiogenesis across eutopic and ectopic tissues](https://data.humancellatlas.org/explore/projects/2b81ecc4-6ee0-438f-8c5b-c10b2464069e).
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (10)
+
+1. [Cell atlas of the human ocular anterior segment: Tissue-specific and shared cell types](https://data.humancellatlas.org/explore/projects/16e99159-78bc-44aa-b479-55a5e903bf50)
+1. [Dissecting the cellular specificity of smoking effects and reconstructing lineages in the human airway epithelium](https://data.humancellatlas.org/explore/projects/34c9a62c-a610-4e31-b343-8fb7be676f8c)
+1. [SARS-CoV-2 infection of the oral cavity and saliva](https://data.humancellatlas.org/explore/projects/dcbb50d1-9acf-4f70-9fda-b1f63a948c49)
+1. [Single cell RNA-seq analysis of adult and paediatric IDH-wildtype Glioblastomas](https://data.humancellatlas.org/explore/projects/e4b18cd2-8f15-490d-b9f1-d118aa067dc3)
+1. [Single cell analysis of endometriosis reveals a coordinated transcriptional program driving immunotolerance and angiogenesis across eutopic and ectopic tissues](https://data.humancellatlas.org/explore/projects/2b81ecc4-6ee0-438f-8c5b-c10b2464069e)
+1. [Single-Cell Lymphocyte Heterogeneity in Advanced Cutaneous T-cell Lymphoma Skin Tumors](https://data.humancellatlas.org/explore/projects/990d251f-6dab-4a98-a2b6-6cfe7e4708b9)
+1. [Single-cell atlas of diverse immune populations in the advanced biliary tract cancer microenvironment](https://data.humancellatlas.org/explore/projects/28371655-60ba-449e-a303-5859b29ead65)
+1. [Single-cell transcriptomic analyses provide insights into the developmental origins of neuroblastoma](https://data.humancellatlas.org/explore/projects/c8e6c5d9-fcde-4845-bead-ff96999e3051)
+1. [Single-cell transcriptomic analysis of the adult mouse spinal cord reveals molecular diversity of autonomic and skeletal motor neurons](https://data.humancellatlas.org/explore/projects/9e3370a0-144a-49a9-9e92-6f6a9290125a)
+1. [The regulatory landscapes of human ovarian ageing](https://data.humancellatlas.org/explore/projects/0d4aaaac-02c3-44c4-8ae0-4465f97f83ed)
+
+### Updated Metadata (3)
+1. [A spatial multi-omics atlas of the human lung reveals a novel immune cell survival niche](https://data.humancellatlas.org/explore/projects/957261f7-2bd6-4358-a6ed-24ee080d5cfc)
+1. [Cellular heterogeneity of human fallopian tubes in normal and hydrosalpinx disease states identified by scRNA-seq](https://data.humancellatlas.org/explore/projects/21ea8ddb-525f-4f1f-a820-31f0360399a2)
+1. [A single-cell reference map of transcriptional states for human blood and tissue T cell activation](https://data.humancellatlas.org/explore/projects/4a95101c-9ffc-4f30-a809-f04518a23803)
+
 #### October 19, 2022
 
 ### Release Highlights
