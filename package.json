@@ -47,7 +47,7 @@
     "react-linkify": "^1.0.0-alpha",
     "react-select": "^5.4.0",
     "react-transition-group": "^4.4.5",
-    "react-typography": "^0.16.20",
+    "react-typography": "^0.16.23",
     "rehype-react": "^7.1.1",
     "shallow-equal": "^1.2.1",
     "typography": "^0.16.21",
