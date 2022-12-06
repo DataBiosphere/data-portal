@@ -7,7 +7,7 @@
     "@emotion/styled": "^11.10.4",
     "@fastly/performance-observer-polyfill": "^2.0.0",
     "@mui/icons-material": "^5.10.3",
-    "@mui/material": "^5.10.3",
+    "@mui/material": "^5.10.17",
     "bowser": "^2.9.0",
     "classnames": "^2.3.1",
     "gatsby": "^4.22.0",
