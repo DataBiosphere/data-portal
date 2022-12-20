@@ -26,7 +26,7 @@ title: DCP Updates
 9. [Single-nuclei profiling of aged skeletal muscle](https://data.humancellatlas.org/explore/projects/fc381e70-df1b-407d-8131-52ab523270bd)
 10. [Single-nucleus transcriptomic atlas of spinal cord neuron in human](https://data.humancellatlas.org/explore/projects/1ebe8c34-454e-4c28-bd71-3a3e8b127be4)
 
-### Updated Metadata (6)
+### Updated Raw Data and Metadata (6)
 
 1. [A single cell immune cell atlas of human hematopoietic system](https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79)
 2. [Fate-mapping within human iPSC-derived kidney organoids reveals conserved mammalian nephron progenitor lineage relationships](https://data.humancellatlas.org/explore/projects/b7259878-436c-4274-bfff-ca76f4cb7892)
