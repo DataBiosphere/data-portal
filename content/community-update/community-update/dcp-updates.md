@@ -6,6 +6,35 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### December 20, 2022
+
+### Release Highlights
+
+* Contributors have added new donors, data, and metadata to what was previously the prototype data set "Census of Immune cells"; the updated project, ["A single cell immune cell atlas of human hematopoietic system,"](https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79) now has over 1,453,784 analyzed cells.
+* New data is available from researchers in China; see the project ["Immune cell profiling of preeclamptic pregnant and postpartum women by single-cell RNA sequencing."](https://data.humancellatlas.org/explore/projects/ea9eec5a-4fc2-4c58-94d0-2fcb598732bc) 
+
+### Raw Data, Metadata, and Contributor-generated Matrices (10)
+
+1. [A Single-Cell Transcriptome Atlas of Glia Diversity in the Human Hippocampus across the Lifespan and in Alzheimer’s Disease](https://data.humancellatlas.org/explore/projects/258c5e15-d125-4f2d-8b4c-e3122548ec9b)
+2. [A single-cell transcriptomic atlas of the human ciliary body](https://data.humancellatlas.org/explore/projects/07518430-7031-4bdf-a3ce-1bf0917a1923)
+3. [HCA seed network precise tumor-nephrectomy samples](https://data.humancellatlas.org/explore/projects/29ed827b-c539-4f4c-bb6b-ce8f9173dfb7)
+4. [Immune cell profiling of preeclamptic pregnant and postpartum women by single-cell RNA sequencing](https://data.humancellatlas.org/explore/projects/ea9eec5a-4fc2-4c58-94d0-2fcb598732bc)
+5. [Massively Parallel Single Nucleus Transcriptional Profiling Defines Spinal Cord Neurons and Their Activity during Behavior](https://data.humancellatlas.org/explore/projects/cdc2d270-6c99-4142-8883-9bd95c041d05)
+6. [Single cell transcriptomics reveals spatial and temporal dynamics of gene expression in the developing mouse spinal cord](https://data.humancellatlas.org/explore/projects/48b198ef-3d59-4e57-900f-df54c2435669)
+7. [Single-cell analysis of the cellular heterogeneity and interactions in the injured mouse spinal cord](https://data.humancellatlas.org/explore/projects/e6773550-c1a6-4949-8643-1a3154cf2670)
+8. [Single-cell dissection of the human brain vasculature](https://data.humancellatlas.org/explore/projects/79351583-b212-44ba-b473-731bdcddb407)
+9. [Single-nuclei profiling of aged skeletal muscle](https://data.humancellatlas.org/explore/projects/fc381e70-df1b-407d-8131-52ab523270bd)
+10. [Single-nucleus transcriptomic atlas of spinal cord neuron in human](https://data.humancellatlas.org/explore/projects/1ebe8c34-454e-4c28-bd71-3a3e8b127be4)
+
+### Updated Raw Data and Metadata (6)
+
+1. [A single cell immune cell atlas of human hematopoietic system](https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79)
+2. [Fate-mapping within human iPSC-derived kidney organoids reveals conserved mammalian nephron progenitor lineage relationships](https://data.humancellatlas.org/explore/projects/b7259878-436c-4274-bfff-ca76f4cb7892)
+3. [Kidney micro-organoids in suspension culture as a scalable source of human pluripotent stem cell-derived kidney cells](https://data.humancellatlas.org/explore/projects/e0c74c7a-20a4-4505-9cf1-38dcdd23011b)
+4. [RNA-Seq from human innate lymphoid cells (ILCs) transitional populations](https://data.humancellatlas.org/explore/projects/f4d011ce-d1f5-48a4-ab61-ae14176e3a6e)
+5. [Genome-Wide DNA Hypermethylation in the Wound-Edge of Chronic Wound Patients Opposes Closure by Impairing Epithelial to Mesenchymal Transition](https://data.humancellatlas.org/explore/projects/34ec845b-cd7a-4c43-99e4-d2932d5d85bb)
+6. [Single-cell analysis of Crohn’s disease lesions identifies a pathogenic cellular module associated with resistance to anti-TNF therapy](https://data.humancellatlas.org/explore/projects/504e0cee-1688-40fa-b936-361c4a831f87)
+
 #### November 28, 2022
 
 ### Release Highlights
@@ -459,7 +488,7 @@ title: DCP Updates
 
 ### Release Highlights
 * The DCP team has reanalyzed the first of the DCP 1.0 Smart-seq2 projects ([Single cell RNA sequencing of multiple myeloma II](https://data.humancellatlas.org/explore/projects/0c3b7785-f74d-4091-8616-a68757e4c2a8)). Cell-by-gene matrices are available on the project page and were produced with the latest [Smart-seq Multi-Sample pipeline](https://data.humancellatlas.org/pipelines/smart-seq2-workflow) for uniform analysis.  
-* Contributor-generated matrices are available for the project [Single-nucleus cross-tissue molecular reference maps to decipher disease gene function.](https://data.humancellatlas.org/explore/projects/31887183-a72c-4308-9eac-c6140313f39c) which is associated with a Human Cell Atlas [preprint publication](https://www.biorxiv.org/content/10.1101/2021.07.19.452954v1).
+* Contributor-generated matrices are available for the project [Single-nucleus cross-tissue molecular reference maps to decipher disease gene function](https://data.humancellatlas.org/explore/projects/31887183-a72c-4308-9eac-c6140313f39c) which is associated with a Human Cell Atlas [preprint publication](https://www.biorxiv.org/content/10.1101/2021.07.19.452954v1).
 * New raw data has been added for the project [Defining human mesenchymal and epithelial heterogeneity in response to oral inflammatory disease.](https://data.humancellatlas.org/explore/projects/783c9952-a4ae-4106-a6ce-56f20ce27f88) as part of the [HCA Oral & Craniofacial Biological Network](https://www.humancellatlas.org/biological-networks/).
 * The first onychofibroblasts dataset has been added to the DCP as part of the project [Single cell RNAseq of human nail unit defines RSPO4 onychofibroblasts and SPINK6 nail epithelium](https://data.humancellatlas.org/explore/projects/bd7104c9-a950-490e-9472-7d41c6b11c62).
 * New patch-seq data is available in the project [Cryopreservation and post-thaw characterization of dissociated human islet cells](https://data.humancellatlas.org/explore/projects/8559a8ed-5d8c-4fb6-bde8-ab639cebf03c).
