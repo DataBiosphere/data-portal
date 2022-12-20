@@ -11,7 +11,7 @@ title: DCP Updates
 ### Release Highlights
 
 * Contributors have added new donors, data, and metadata to what was previously the prototype data set "Census of Immune cells"; the updated project, ["A single cell immune cell atlas of human hematopoietic system,"](https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79) now has over 1,453,784 analyzed cells.
-* New data is available from researchers in China; see the project ["Immune cell profiling of preeclamptic pregnant and postpartum women by single-cell RNA sequencing"](https://data.humancellatlas.org/explore/projects/ea9eec5a-4fc2-4c58-94d0-2fcb598732bc). 
+* New data is available from researchers in China; see the project ["Immune cell profiling of preeclamptic pregnant and postpartum women by single-cell RNA sequencing."](https://data.humancellatlas.org/explore/projects/ea9eec5a-4fc2-4c58-94d0-2fcb598732bc) 
 
 ### Raw Data, Metadata, and Contributor-generated Matrices (10)
 
@@ -29,9 +29,9 @@ title: DCP Updates
 ### Updated Metadata (6)
 
 1. [A single cell immune cell atlas of human hematopoietic system](https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79)
-2. [Fate-mapping within human iPSC-derived kidney organoids reveals conserved mammalian nephron progenitor lineage relationships.](https://data.humancellatlas.org/explore/projects/b7259878-436c-4274-bfff-ca76f4cb7892)
-3. [Kidney micro-organoids in suspension culture as a scalable source of human pluripotent stem cell-derived kidney cells.](https://data.humancellatlas.org/explore/projects/e0c74c7a-20a4-4505-9cf1-38dcdd23011b)
-4. [RNA-Seq from human innate lymphoid cells (ILCs) transitional populations.](https://data.humancellatlas.org/explore/projects/f4d011ce-d1f5-48a4-ab61-ae14176e3a6e)
+2. [Fate-mapping within human iPSC-derived kidney organoids reveals conserved mammalian nephron progenitor lineage relationships](https://data.humancellatlas.org/explore/projects/b7259878-436c-4274-bfff-ca76f4cb7892)
+3. [Kidney micro-organoids in suspension culture as a scalable source of human pluripotent stem cell-derived kidney cells](https://data.humancellatlas.org/explore/projects/e0c74c7a-20a4-4505-9cf1-38dcdd23011b)
+4. [RNA-Seq from human innate lymphoid cells (ILCs) transitional populations](https://data.humancellatlas.org/explore/projects/f4d011ce-d1f5-48a4-ab61-ae14176e3a6e)
 5. [Genome-Wide DNA Hypermethylation in the Wound-Edge of Chronic Wound Patients Opposes Closure by Impairing Epithelial to Mesenchymal Transition](https://data.humancellatlas.org/explore/projects/34ec845b-cd7a-4c43-99e4-d2932d5d85bb)
 6. [Single-cell analysis of Crohn’s disease lesions identifies a pathogenic cellular module associated with resistance to anti-TNF therapy](https://data.humancellatlas.org/explore/projects/504e0cee-1688-40fa-b936-361c4a831f87)
 
