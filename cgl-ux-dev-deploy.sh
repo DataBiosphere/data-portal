@@ -16,7 +16,7 @@ export GATSBY_ATLAS=hca
 gatsby build
 
 
-export BUCKET=s3://ux-dev.singlecell.gi.ucsc.edu/
+export BUCKET=s3://cc-dev.singlecell.gi.ucsc.edu/
 export SRCDIR=public/
-aws s3 sync --acl public-read $SRCDIR $BUCKET --delete --profile ucsc-cgl
-aws cloudfront create-invalidation --distribution-id E3FFK49Z7TQ60R --paths "/*" --profile ucsc-cgl
+aws s3 sync  $SRCDIR $BUCKET --delete --profile ucsc-cgl
+aws cloudfront create-invalidation --distribution-id E25SUK9P6E5T4Q --paths "/*" --profile ucsc-cgl
