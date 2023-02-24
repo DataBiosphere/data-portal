@@ -6,6 +6,20 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### February 24, 2023
+
+### Release Highlights
+
+* Thanks to feedback from members of the HCA community, we’ve added two new metadata fields, Genome version and Patch version, to projects in the Data Portal! Check out the field descriptions in the [Metadata Dictionary](https://data.humancellatlas.org/metadata/dictionary/file/analysis_file#genome_assembly_version) to learn more or start exploring HCA projects in the [Data Portal](https://data.humancellatlas.org/explore/projects)!
+
+### Raw Data, Metadata, and Contributor-generated Matrices (<number-of-projects>)
+
+1. [<title>](<link>)
+
+### Updated Raw Data and Metadata (<number-of-projects>)
+
+1. [<title>](<link>)
+
 #### December 20, 2022
 
 ### Release Highlights
