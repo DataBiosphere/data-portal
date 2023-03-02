@@ -14,7 +14,7 @@ title: DCP Updates
 
 * New data is available from researchers in Australia; see the project ["Human prefrontal cortex gene regulatory dynamics from gestation to adulthood at single-cell resolution."](https://data.humancellatlas.org/explore/projects/77dedd59-1376-4887-9bca-dc42b56d5b7a)
 
-* A new project that is part of an official HCA publication is now available: [Comprehensive cell atlas of the first-trimester developing human brain.](https://data.humancellatlas.org/explore/projects/cbd2911f-252b-4428-abde-69e270aefdfc)
+* A new project that is part of an official HCA publication is now available: ["Comprehensive cell atlas of the first-trimester developing human brain."](https://data.humancellatlas.org/explore/projects/cbd2911f-252b-4428-abde-69e270aefdfc)
 
 * New projects are available from the Blood and Kidney Biological Networks.
     
