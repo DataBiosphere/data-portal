@@ -12,13 +12,32 @@ title: DCP Updates
 
 * Thanks to feedback from members of the HCA community, we’ve added two new metadata fields, Genome version and Patch version, to projects in the Data Portal! Check out the field descriptions in the [Metadata Dictionary](https://data.humancellatlas.org/metadata/dictionary/file/analysis_file#genome_assembly_version) to learn more or start exploring HCA projects in the [Data Portal](https://data.humancellatlas.org/explore/projects)!
 
-### Raw Data, Metadata, and Contributor-generated Matrices (<number-of-projects>)
+* New data is available from researchers in Australia; see the project ["Human prefrontal cortex gene regulatory dynamics from gestation to adulthood at single-cell resolution."](https://data.humancellatlas.org/explore/projects/77dedd59-1376-4887-9bca-dc42b56d5b7a)
 
-1. [<title>](<link>)
+* A new project that is part of an official HCA publication is now available: [Comprehensive cell atlas of the first-trimester developing human brain.](https://data.humancellatlas.org/explore/projects/cbd2911f-252b-4428-abde-69e270aefdfc)
 
-### Updated Raw Data and Metadata (<number-of-projects>)
+* New projects are available from the Blood and Kidney Biological Networks.
+    
 
-1. [<title>](<link>)
+### New Raw Data, Metadata, and Contributor-generated Matrices (11)
+
+1. [A blood atlas of COVID-19 defines hallmarks of disease severity and specificity](https://data.humancellatlas.org/explore/projects/cdabcf0b-7602-4abf-9afb-3b410e545703)
+2. [Comprehensive cell atlas of the first-trimester developing human brain](https://data.humancellatlas.org/explore/projects/cbd2911f-252b-4428-abde-69e270aefdfc)
+3. [Human prefrontal cortex gene regulatory dynamics from gestation to adulthood at single-cell resolution](https://data.humancellatlas.org/explore/projects/77dedd59-1376-4887-9bca-dc42b56d5b7a)
+4. [Integrated analysis of multimodal single-cell data](https://data.humancellatlas.org/explore/projects/3ce9ae94-c469-419a-9637-5d138a4e642f)
+5. [Severe COVID-19 Is Marked by a Dysregulated Myeloid Cell Compartment](https://data.humancellatlas.org/explore/projects/cd9d6360-ce38-4321-97df-f13c79e3cb84)
+6. [Single-cell Transcriptome Atlas of Testis Aging](https://data.humancellatlas.org/explore/projects/e88714c2-2e78-49da-8146-5a60b50628b4)
+7. [Single-cell eQTL mapping identifies cell type-specific genetic control of autoimmune disease](https://data.humancellatlas.org/explore/projects/f2078d5f-2e7d-4844-8552-f7c41a231e52)
+8. [Single-cell protein activity analysis identifies recurrence-associated renal tumor macrophages](https://data.humancellatlas.org/explore/projects/95d058bc-9cec-4c88-8d2c-05b4a45bf24f)
+9. [Single-cell sequencing links multiregional immune landscapes and tissue-resident T cells in ccRCC to tumor topology and therapy efficacy](https://data.humancellatlas.org/explore/projects/12f32054-8f18-4dae-8959-bfce7e3108e7)
+10. [The single cell atlas of human endometrial stromal cells](https://data.humancellatlas.org/explore/projects/6e60a555-fd95-4aa2-8e29-3ec2ef01a580)
+11. [Vento-tormo: Single cell profiling of COVID-19 patients: an international data resource from multiple tissues](https://data.humancellatlas.org/explore/projects/2d4d89f2-ebeb-467c-ae60-a3efc5e8d4ba)
+
+### Updated Raw Data and Metadata (3)
+
+1. [A spatially resolved atlas of the human lung characterizes a gland-associated immune niche](https://data.humancellatlas.org/explore/projects/957261f7-2bd6-4358-a6ed-24ee080d5cfc)
+2. [Plasticity of distal nephron epithelia from human kidney organoids enables the induction of ureteric tip and stalk](https://data.humancellatlas.org/explore/projects/e57dc176-ab98-446b-90c2-89e0842152fd)
+3. [Comparison of manual and two types of bioprinted kidney organoids by single cell RNA-seq](https://data.humancellatlas.org/explore/projects/8787c238-89ef-4636-a57d-3167e8b54a80)
 
 #### December 20, 2022
 
