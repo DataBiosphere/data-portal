@@ -20,5 +20,5 @@ rm -rf _metadata-schema
 
 export BUCKET=s3://data-browser.lungmap.net/
 export SRCDIR=public/
-aws s3 sync --acl public-read $SRCDIR $BUCKET --delete --profile platform-hca-prod
+aws s3 sync $SRCDIR $BUCKET --delete --profile platform-hca-prod
 aws cloudfront create-invalidation --distribution-id E22L661MUAMMTD --paths "/*" --profile platform-hca-prod

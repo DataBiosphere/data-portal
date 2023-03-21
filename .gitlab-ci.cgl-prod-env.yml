@@ -98,7 +98,7 @@ deploy_prod:
   script:
     - export BUCKET=s3://org-humancellatlas-data-portal-dcp2-prod/
     - if [ "$MAINTENANCE" = "true" ];then export SRCDIR=maintenance/; else export SRCDIR=public/; fi
-    - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
+    - aws s3 sync $SRCDIR $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id E1LYQC3LZXO7M3 --paths "/*"
   only:
     - prod
@@ -111,7 +111,7 @@ deploy_lungmap-prod:
   script:
     - export BUCKET=s3://data-browser.lungmap.net/
     - if [ "$MAINTENANCE" = "true" ];then export SRCDIR=maintenance/; else export SRCDIR=public/; fi
-    - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
+    - aws s3 sync $SRCDIR $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id E22L661MUAMMTD --paths "/*"
   only:
     - lungmap-prod

@@ -16,5 +16,5 @@ gatsby build
 
 export BUCKET=s3://dev.singlecell.gi.ucsc.edu/
 export SRCDIR=public/
-aws s3 sync --acl public-read $SRCDIR $BUCKET --delete --profile ucsc-cgl
+aws s3 sync $SRCDIR $BUCKET --delete --profile ucsc-cgl
 aws cloudfront create-invalidation --distribution-id E3562WJBOLN8W8 --paths "/*" --profile ucsc-cgl
