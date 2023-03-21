@@ -123,7 +123,7 @@ deploy_cgl-dev:
   script:
     - export BUCKET=s3://dev.singlecell.gi.ucsc.edu/
     - if [ "$MAINTENANCE" = "true" ];then export SRCDIR=maintenance/; else export SRCDIR=public/; fi
-    - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
+    - aws s3 sync  $SRCDIR $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id E3562WJBOLN8W8 --paths "/*"
   only:
     - main
@@ -136,7 +136,7 @@ deploy_lungmap-dev:
   script:
     - export BUCKET=s3://data-browser.dev.lungmap.net/
     - if [ "$MAINTENANCE" = "true" ];then export SRCDIR=maintenance/; else export SRCDIR=public/; fi
-    - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
+    - aws s3 sync $SRCDIR $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id E21CJFOUWO9Q7X --paths "/*"
   only:
     - lungmap-main
@@ -149,7 +149,7 @@ deploy_ux-dev:
   script:
     - export BUCKET=s3://ux-dev.singlecell.gi.ucsc.edu/
     - if [ "$MAINTENANCE" = "true" ];then export SRCDIR=maintenance/; else export SRCDIR=public/; fi
-    - aws s3 sync --acl public-read $SRCDIR $BUCKET --delete
+    - aws s3 sync $SRCDIR $BUCKET --delete
     - aws cloudfront create-invalidation --distribution-id E3FFK49Z7TQ60R --paths "/*"
   only:
     - ux-dev

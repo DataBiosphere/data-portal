@@ -21,5 +21,5 @@ rm -rf _metadata-schema
 
 export BUCKET=s3://data-browser.dev.lungmap.net/
 export SRCDIR=public/
-aws s3 sync --acl public-read $SRCDIR $BUCKET --delete --profile ucsc-cgl
+aws s3 sync $SRCDIR $BUCKET --delete --profile ucsc-cgl
 aws cloudfront create-invalidation --distribution-id E21CJFOUWO9Q7X --paths "/*" --profile ucsc-cgl
