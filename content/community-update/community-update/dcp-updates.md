@@ -13,7 +13,7 @@ title: DCP Updates
 * A full project metadata spreadsheet is now available for several projects in the Data Portal. You can download the spreadsheet from the Metadata page for any project where it is available by selecting the download icon under Metadata.
 ![](./_images/metadata-spreadsheet-download.png)
 
-* A new managed access project, [Spatially organized multicellular immune hubs in human colorectal cancer](https://data.humancellatlas.org/explore/projects/6f03e4ad-9305-4bfa-a5b6-929ffb1d94bd), is available in the Data Portal.
+* A new managed access project, ["Spatially organized multicellular immune hubs in human colorectal cancer"](https://data.humancellatlas.org/explore/projects/6f03e4ad-9305-4bfa-a5b6-929ffb1d94bd), is available in the Data Portal.
 
 * New projects are available from the Blood, Gut, and Kidney Biological Networks.
 
