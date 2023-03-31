@@ -6,6 +6,31 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### March 31, 2023
+
+### Release Highlights
+
+* A full project metadata spreadsheet is now available for several projects in the Data Portal. You can download the spreadsheet from the Metadata page for any project where it is available by selecting the download icon under Metadata.
+![](./_images/metadata-spreadsheet-download.png)
+
+* A new managed access project, ["Spatially organized multicellular immune hubs in human colorectal cancer"](https://data.humancellatlas.org/explore/projects/6f03e4ad-9305-4bfa-a5b6-929ffb1d94bd), is available in the Data Portal.
+
+* New projects are available from the Blood, Gut, and Kidney Biological Networks.
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (10)
+
+1. [Detection of infiltrating fibroblasts by single-cell transcriptomics in human kidney allografts](https://data.humancellatlas.org/explore/projects/6e522b93-9b70-4f0c-9990-b9cff721251b)
+2. [Harnessing Expressed Single Nucleotide Variation and Single Cell RNA Sequencing To Define Immune Cell Chimerism in the Rejecting Kidney Transplant](https://data.humancellatlas.org/explore/projects/4ef86852-aca0-4a91-8522-9968e0e54dbe)
+3. [Heterogeneity and clonal relationships of adaptive immune cells in ulcerative colitis revealed by single-cell analyses](https://data.humancellatlas.org/explore/projects/23509202-1e3c-4959-8a45-9c5b642a1066)
+4. [Single-Cell RNA Sequencing in Multiple Pathologic Types of Renal Cell Carcinoma Revealed Novel Potential Tumor-Specific Markers](https://data.humancellatlas.org/explore/projects/ee166275-f63a-4864-8155-4df86c9de679)
+5. [Single-cell multiomics revealed the dynamics of antigen presentation, immune response and T cell activation in the COVID-19 positive and recovered individuals](https://data.humancellatlas.org/explore/projects/be010abc-fb68-4581-b61f-7dd7c3d7b044)
+6. [Single-cell transcriptomes from human kidneys reveal the cellular identity of renal tumors](https://data.humancellatlas.org/explore/projects/d8ae869c-39c2-4cdd-b3fc-2d0d8f60e7b8)
+7. [Spatially organized multicellular immune hubs in human colorectal cancer](https://data.humancellatlas.org/explore/projects/6f03e4ad-9305-4bfa-a5b6-929ffb1d94bd)
+8. [Time-resolved systems immunology reveals a late juncture linked to fatal COVID-19](https://data.humancellatlas.org/explore/projects/ae62bb31-55ca-4127-b0fb-b1771a604645)
+9. [Transcriptional changes in the mammary gland during lactation revealed by single cell sequencing of cells from human milk](https://data.humancellatlas.org/explore/projects/e956e66a-ac8e-483a-963a-0f92c7e5abfb)
+10. [Ulcerative colitis is characterized by a plasmablast-skewed humoral response associated with disease activity](https://data.humancellatlas.org/explore/projects/1688d7cc-6f5c-49ef-b353-e308b61d4e4c)
+
+
 #### February 24, 2023
 
 ### Release Highlights
