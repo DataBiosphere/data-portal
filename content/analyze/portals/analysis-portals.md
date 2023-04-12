@@ -15,6 +15,7 @@ linked:
     - ./analysis-portals/granatum-x.md
     - ./analysis-portals/hca-galaxy-instance.md
     - ./analysis-portals/omnibrowser.md
+    - ./analysis-portals/polly-by-elucidata.md
     - ./analysis-portals/single-cell-expression-atlas.md
     - ./analysis-portals/single-cell-portal.md
     - ./analysis-portals/synecosys.md
