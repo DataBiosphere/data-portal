@@ -5,7 +5,7 @@ componentName: "analysisDetail"
 date: "2023-04-12"
 description: "Polly is a data-ops platform that provides access to 50,000 curated Bulk & Single Cell RNA-Seq Data, facilitating rapid detection of drug targets and biomarkers across diseases."
 githubUrl: ""
-path: "/analyze/portals/analysis-portals/polly"
+path: "/analyze/portals/analysis-portals/polly-by-elucidata"
 title: "Polly by Elucidata"
 ---
 
