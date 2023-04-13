@@ -128,7 +128,7 @@ class IndexPage extends React.Component {
                 compStyles.metrics
               )}
             >
-              <div className={compStyles.metric}>
+              <div className={compStyles.metric} data-test-id="metric">
                 <span>
                   <img src={cells} alt="cells" />
                 </span>
@@ -139,7 +139,7 @@ class IndexPage extends React.Component {
                   <span className={compStyles.label}>Cells</span>
                 </div>
               </div>
-              <div className={compStyles.metric}>
+              <div className={compStyles.metric} data-test-id="metric">
                 <span>
                   <img src={donors} alt="Donors" />
                 </span>
@@ -150,7 +150,7 @@ class IndexPage extends React.Component {
                   <span className={compStyles.label}>Donors</span>
                 </div>
               </div>
-              <div className={compStyles.metric}>
+              <div className={compStyles.metric} data-test-id="metric">
                 <span>
                   <img src={projects} alt="Projects" />
                 </span>
@@ -161,7 +161,7 @@ class IndexPage extends React.Component {
                   <span className={compStyles.label}>Projects</span>
                 </div>
               </div>
-              <div className={compStyles.metric}>
+              <div className={compStyles.metric} data-test-id="metric">
                 <span>
                   <img src={labs} alt="Labs" />
                 </span>
