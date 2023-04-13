@@ -203,7 +203,7 @@ class IndexPage extends React.Component {
                   compStyles.introContent
                 )}
               >
-                <div className={compStyles.tile}>
+                <div className={compStyles.tile} data-test-id="tile">
                   <div className={compStyles.icon}>
                     <img src={labsContribute} alt="Labs Contribute" />
                   </div>
@@ -215,7 +215,7 @@ class IndexPage extends React.Component {
                 <div className={compStyles.arrow}>
                   <img src={arrow} alt="Arrow" />
                 </div>
-                <div className={compStyles.tile}>
+                <div className={compStyles.tile} data-test-id="tile">
                   <div className={compStyles.icon}>
                     <img
                       src={pipelineProcessing}
@@ -232,7 +232,7 @@ class IndexPage extends React.Component {
                 <div className={compStyles.arrow}>
                   <img src={arrow} alt="Arrow" />
                 </div>
-                <div className={compStyles.tile}>
+                <div className={compStyles.tile} data-test-id="tile">
                   <div className={compStyles.icon}>
                     <img src={searchData} alt="Search Data" />
                   </div>
@@ -244,7 +244,7 @@ class IndexPage extends React.Component {
                 <div className={compStyles.arrow}>
                   <img src={arrow} alt="Arrow" />
                 </div>
-                <div className={compStyles.tile}>
+                <div className={compStyles.tile} data-test-id="tile">
                   <div className={compStyles.icon}>
                     <img
                       src={searchCommunity}
