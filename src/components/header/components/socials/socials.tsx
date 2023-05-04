@@ -24,7 +24,7 @@ export default function Socials({
   sx,
 }: Props): JSX.Element {
   return (
-    <Box display="flex" sx={[...(Array.isArray(sx) ? sx : [sx])]}>
+    <Box data-test-id="socials" display="flex" sx={[...(Array.isArray(sx) ? sx : [sx])]}>
       {socials.map(({ type, url }) => (
         <IconButtonElType
           key={type}

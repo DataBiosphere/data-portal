@@ -30,8 +30,8 @@ const organMap = [
   {label:"Skin"}
 ]
 
-test.beforeEach(async ({ page }) => {
-  await page.goto("/");
+test.beforeEach(async ({ baseURL, page }) => {
+  await page.goto(baseURL);
 });
 
 test.describe("home page", () => {
@@ -47,7 +47,7 @@ test.describe("home page", () => {
   });
 });
 
-test.describe("metrics", () => {
+test.describe("home page metrics", () => {
   test("metrics have a count and a label", async ({ page }) => {
     const metricEls = page.locator("data-test-id=metric");
     await expect(metricEls).toHaveCount(4);
@@ -64,7 +64,7 @@ test.describe("metrics", () => {
   });
 });
 
-test.describe("tiles", () => {
+test.describe("home page `What is the HCA Data Portal?`", () => {
   test("tiles have label and path", async ({ page }) => {
     const tileEls = page.locator("data-test-id=tile");
     await expect(tileEls).toHaveCount(4);
