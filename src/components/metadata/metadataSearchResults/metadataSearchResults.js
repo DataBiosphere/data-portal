@@ -28,7 +28,7 @@ function MetadataSearchResults() {
       <MetadataSearchResultsPanelHeader>
         {panelHeroText}
       </MetadataSearchResultsPanelHeader>
-      <div className={compStyles.results}>
+      <div className={compStyles.results} data-testid="metadata-search-results">
         {resultsExist ? (
           <MetadataSearchResultsExist results={results} />
         ) : (

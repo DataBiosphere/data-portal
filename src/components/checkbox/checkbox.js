@@ -25,6 +25,7 @@ class Checkbox extends React.Component {
     return (
       <span
         className={classNamesCheckbox}
+        data-testid="show-required-fields"
         onClick={clickAction}
         role="presentation"
       >

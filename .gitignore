@@ -22,3 +22,8 @@ site/style-bundle.js
 
 # Metadata search index
 static/metadata-index.json
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
