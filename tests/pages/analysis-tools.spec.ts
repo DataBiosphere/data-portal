@@ -1,66 +1,52 @@
 import { test, expect } from "@playwright/test";
-
-const prodHost = "https://data.humancellatlas.org/";
-const htmlTitle = "Analysis Portals";
-const pageTitle = "Analysis Portals";
-const leftNavigation = [
-    {name: "Analysis Portals", path: "/analyze"}
-];
-const tabs = [
-    {name: "Analysis Portals", path: "/analyze"}
-];
+import {
+  PAGE_HEADING,
+  PAGE_NAVIGATION_COUNT,
+  PAGE_NAVIGATIONS,
+  PAGE_TAB_COUNT,
+  PAGE_TABS,
+  PAGE_TITLE,
+  PAGE_PATH,
+} from "../common/pages/analysisTools";
+import {
+  testPageFirstNavigationHasTextAndRoute,
+  testPageHasHeading,
+  testPageNavigationIsVisible,
+  testPageOutlineIsVisible,
+  testPageTabsAreVisible,
+  testPageTabsHaveTextAndRoute,
+} from "../common/pages/utils";
 
 test.beforeEach(async ({ page }) => {
-    await page.goto("/analyze");
+  await page.goto(PAGE_PATH);
 });
 
 test.describe("analysis tools", () => {
-    test("page title is 'analysis portals'", async ({ page }) => {
-        const titleEl = page.locator("head title");
-        await expect(titleEl).toHaveText(htmlTitle);
-    });
+  test("page has title", async ({ page }) => {
+    await expect(page).toHaveTitle(PAGE_TITLE);
+  });
 
-    test("home page has hero title", async ({ page }) => {
-        const titleEl = page.locator("h1");
-        await expect(titleEl).toHaveText(pageTitle);
-    });  
-});
+  test("page has heading", async ({ page }) => {
+    await testPageHasHeading(page, PAGE_HEADING);
+  });
 
-test.describe("left navigation", () => {
-    test("left naviagtion is visible, first item have text and url, and url on click", async ({ page }) => {
-        const liEls = page.locator("[data-test-id=left-nav] li");
-        await expect(liEls).toHaveCount(17);
-        for (let i = 0; i < 0; ++i) {
-            const liEl = liEls.nth(i);
-            const liPseudoEl = liEl.locator(":before");
-            const buttonEl = liEl.locator("button");
-            await expect(buttonEl).toHaveText(leftNavigation[i].name);
-            await buttonEl.click();
-            const backgroundColor = await liPseudoEl.evaluate((e) => {
-                return window.getComputedStyle(e).getPropertyValue("backgroundColor")
-            })
-            expect(backgroundColor).toBe("rgb(28, 124, 199)");
-            expect(page.url()).toBe(`/analyze#${leftNavigation[i].path}`);
-        }
-    });
-});
+  test("navigation is visible", async ({ page }) => {
+    await testPageNavigationIsVisible(page, PAGE_NAVIGATION_COUNT);
+  });
 
-test.describe("right navigation", () => {
-    test("right navigation is not visible", async ({ page }) => {
-        const rightNavEls = page.locator("data-test-id=right-nav");
-        await expect(rightNavEls).toHaveCount(0);
-    });
-});
+  test("first navigation has text and route", async ({ page }) => {
+    await testPageFirstNavigationHasTextAndRoute(page, PAGE_NAVIGATIONS);
+  });
 
-test.describe("tabs", () => {
-    test("all tabs are visible, text and links are working", async ({ page }) => {
-        const anchorEls = page.locator("[data-test-id=tabs] a");
-        await expect(anchorEls).toHaveCount(3);
-        for (let i = 0; i < 0; ++i) {
-            const anchorEl = anchorEls.nth(i);
-            const anchorHref = await anchorEl.getAttribute("href");
-            await expect(anchorEl).toHaveText(tabs[i].name);
-            expect(anchorHref).toEqual(tabs[i].path);
-        }
-    });
+  test("outline is not visible", async ({ page }) => {
+    await testPageOutlineIsVisible(page, 0);
+  });
+
+  test("tabs are visible", async ({ page }) => {
+    await testPageTabsAreVisible(page, PAGE_TAB_COUNT);
+  });
+
+  test("tabs have text and route", async ({ page }) => {
+    await testPageTabsHaveTextAndRoute(page, PAGE_TABS);
+  });
 });

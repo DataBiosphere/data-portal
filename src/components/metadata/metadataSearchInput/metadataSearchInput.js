@@ -134,6 +134,7 @@ function MetadataSearchInput() {
       <span className={compStyles.searchBar}>
         <input
           className={compStyles.input}
+          data-testid="metadata-search"
           placeholder={"Search all metadata"}
           ref={inputRef}
           type="text"

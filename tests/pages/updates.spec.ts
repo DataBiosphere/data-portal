@@ -1,59 +1,53 @@
 import { test, expect } from "@playwright/test";
-
-const htmlTitle = "DCP Platform Updates";
-const pageTitle = "DCP Platform Updates";
-const leftNavigation = [
-    {name: "DCP Platform Updates", path: "/dcp-updates"}
-];
-const rightNavigation = [
-    {hash: "dcp-now-contains-data-for-14-million-estimated-cells", name:"DCP now contains data for 14 million estimated cells"}
-];
+import {
+  PAGE_HEADING,
+  PAGE_NAVIGATION_COUNT,
+  PAGE_NAVIGATIONS,
+  PAGE_OUTLINE_COUNT,
+  PAGE_OUTLINES,
+  PAGE_TITLE,
+  PAGE_PATH,
+  PAGE_TAB_COUNT,
+} from "../common/pages/updates";
+import {
+  testPageFirstNavigationHasTextAndRoute,
+  testPageFirstOutlineHasTextAndRoute,
+  testPageHasHeading,
+  testPageNavigationIsVisible,
+  testPageOutlineIsVisible,
+  testPageTabsAreVisible,
+} from "../common/pages/utils";
 
 test.beforeEach(async ({ page }) => {
-    await page.goto("/dcp-updates");
+  await page.goto(PAGE_PATH);
 });
 
 test.describe("updates", () => {
-    test("page title is 'dcp platform updates'", async ({ page }) => {
-        const titleEl = page.locator("head title");
-        await expect(titleEl).toHaveText(htmlTitle);
-    });
+  test("page has title", async ({ page }) => {
+    await expect(page).toHaveTitle(PAGE_TITLE);
+  });
 
-    test("home page has hero title", async ({ page }) => {
-        const titleEl = page.locator("h1");
-        await expect(titleEl).toHaveText(pageTitle);
-    });
-});
+  test("page has heading", async ({ page }) => {
+    await testPageHasHeading(page, PAGE_HEADING);
+  });
 
-test.describe("left navigation", () => {
-    test("left navigation is visible and first item have text and url", async ({ page }) => {
-        const liEls = page.locator("[data-test-id=left-nav] li");
-        await expect(liEls).toHaveCount(4);
-        for (let i = 0; i < 0; ++i) {
-            const liEl = liEls.nth(i);
-            const anchorEl = liEl.locator("a"); // a tag
-            const anchorHref = anchorEl.getAttribute("href");
-            await expect(anchorEl).toHaveText(leftNavigation[i].name);
-            expect(anchorHref).toEqual(leftNavigation[i].path);
-        }
-    });
-});
+  test("navigation is visible", async ({ page }) => {
+    await testPageNavigationIsVisible(page, PAGE_NAVIGATION_COUNT);
+  });
 
-test.describe("right navigation", () => {
-    test("right navigation is visible, first item have text and url, and url on click", async ({ page }) => {
-        const liEls = page.locator("[data-test-id=right-nav] li");
-        await expect(liEls).toHaveCount(10);
-        for (let i = 0; i < 0; ++i) {
-            const liEl = liEls.nth(i);
-            const liPseudoEl = liEl.locator(":before");
-            const buttonEl = liEl.locator("button");
-            await expect(buttonEl).toHaveText(rightNavigation[i].name);
-            await buttonEl.click();
-            const backgroundColor = await liPseudoEl.evaluate((e) => {
-                return window.getComputedStyle(e).getPropertyValue("backgroundColor")
-            })
-            expect(backgroundColor).toBe("rgb(28, 124, 199)");
-            expect(page.url()).toBe(`/dcp-updates#${rightNavigation[i].hash}`);
-        }
-    });
+  test("first navigation has text and route", async ({ page }) => {
+    await testPageFirstNavigationHasTextAndRoute(page, PAGE_NAVIGATIONS);
+  });
+
+  test("outline is visible", async ({ page }) => {
+    await testPageOutlineIsVisible(page, PAGE_OUTLINE_COUNT);
+  });
+
+  test("outline has text and route", async ({ page }) => {
+    await testPageFirstOutlineHasTextAndRoute(page, PAGE_OUTLINES);
+  });
+
+  test("tabs are not visible", async ({ page }) => {
+    await testPageTabsAreVisible(page, PAGE_TAB_COUNT);
+  });
 });

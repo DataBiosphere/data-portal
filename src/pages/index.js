@@ -90,8 +90,7 @@ class IndexPage extends React.Component {
   };
 
   render() {
-    const description =
-      "Community generated, multi-omic, open data";
+    const description = "Community generated, multi-omic, open data";
     const pageTitle = "Mapping the Human Body at the Cellular Level";
     return (
       <Layout
@@ -110,7 +109,9 @@ class IndexPage extends React.Component {
               <h2 className={fontStyles.subhead}>
                 <span>
                   Community generated,{" "}
-                  <span className={compStyles.noWrap}>multi-omic, open data</span>
+                  <span className={compStyles.noWrap}>
+                    multi-omic, open data
+                  </span>
                 </span>
               </h2>
             </div>
@@ -128,7 +129,7 @@ class IndexPage extends React.Component {
                 compStyles.metrics
               )}
             >
-              <div className={compStyles.metric} data-test-id="metric">
+              <div className={compStyles.metric} data-testid="metric">
                 <span>
                   <img src={cells} alt="cells" />
                 </span>
@@ -139,7 +140,7 @@ class IndexPage extends React.Component {
                   <span className={compStyles.label}>Cells</span>
                 </div>
               </div>
-              <div className={compStyles.metric} data-test-id="metric">
+              <div className={compStyles.metric} data-testid="metric">
                 <span>
                   <img src={donors} alt="Donors" />
                 </span>
@@ -150,7 +151,7 @@ class IndexPage extends React.Component {
                   <span className={compStyles.label}>Donors</span>
                 </div>
               </div>
-              <div className={compStyles.metric} data-test-id="metric">
+              <div className={compStyles.metric} data-testid="metric">
                 <span>
                   <img src={projects} alt="Projects" />
                 </span>
@@ -161,7 +162,7 @@ class IndexPage extends React.Component {
                   <span className={compStyles.label}>Projects</span>
                 </div>
               </div>
-              <div className={compStyles.metric} data-test-id="metric">
+              <div className={compStyles.metric} data-testid="metric">
                 <span>
                   <img src={labs} alt="Labs" />
                 </span>
@@ -203,7 +204,7 @@ class IndexPage extends React.Component {
                   compStyles.introContent
                 )}
               >
-                <div className={compStyles.tile} data-test-id="tile">
+                <div className={compStyles.tile} data-testid="tile">
                   <div className={compStyles.icon}>
                     <img src={labsContribute} alt="Labs Contribute" />
                   </div>
@@ -215,7 +216,7 @@ class IndexPage extends React.Component {
                 <div className={compStyles.arrow}>
                   <img src={arrow} alt="Arrow" />
                 </div>
-                <div className={compStyles.tile} data-test-id="tile">
+                <div className={compStyles.tile} data-testid="tile">
                   <div className={compStyles.icon}>
                     <img
                       src={pipelineProcessing}
@@ -232,7 +233,7 @@ class IndexPage extends React.Component {
                 <div className={compStyles.arrow}>
                   <img src={arrow} alt="Arrow" />
                 </div>
-                <div className={compStyles.tile} data-test-id="tile">
+                <div className={compStyles.tile} data-testid="tile">
                   <div className={compStyles.icon}>
                     <img src={searchData} alt="Search Data" />
                   </div>
@@ -244,7 +245,7 @@ class IndexPage extends React.Component {
                 <div className={compStyles.arrow}>
                   <img src={arrow} alt="Arrow" />
                 </div>
-                <div className={compStyles.tile} data-test-id="tile">
+                <div className={compStyles.tile} data-testid="tile">
                   <div className={compStyles.icon}>
                     <img
                       src={searchCommunity}

@@ -14,7 +14,7 @@ export default function NavLinks({
 }: Props): JSX.Element {
   return (
     <Box
-      data-test-id="nav-links"
+      data-testid="navigation"
       display="flex"
       flex={1}
       flexDirection={{ desktop: "row", mobile: "column" }}
