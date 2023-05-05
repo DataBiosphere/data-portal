@@ -21,7 +21,7 @@ import {
   SEARCH_RESULT_PATH,
   SEARCH_RESULTS,
   SEARCH_STRING,
-} from "../common/pages/metadata-search";
+} from "../common/metadata-search/constants";
 
 test.beforeEach(async ({ page }) => {
   await page.goto(PAGE_PATH);
@@ -82,6 +82,7 @@ test.describe("select first search result", () => {
   test("resultant metadata page shows all fields", async ({ page }) => {
     await page.goto(SEARCH_RESULT_PATH);
     await page.waitForURL("**" + SEARCH_RESULT_PATH);
+    await page.context().clearCookies();
     const showAllFieldsEl = page.getByTestId(TEST_ID_SHOW_REQUIRED_FIELDS);
     const checkboxEl = showAllFieldsEl.locator("> span").first();
     await expect(checkboxEl).toHaveCSS("background-color", PRIMARY_RGB);
@@ -94,6 +95,7 @@ test.describe("select first search result", () => {
   }) => {
     await page.goto(SEARCH_RESULT_PATH);
     await page.waitForURL("**" + SEARCH_RESULT_PATH);
+    await page.context().clearCookies();
     await page.getByTestId(TEST_ID_SHOW_REQUIRED_FIELDS).click();
     await testPageOutlineIsVisible(page, PAGE_OUTLINE_COUNT);
   });
@@ -103,6 +105,7 @@ test.describe("select first search result", () => {
   }) => {
     await page.goto(SEARCH_RESULT_PATH);
     await page.waitForURL("**" + SEARCH_RESULT_PATH);
+    await page.context().clearCookies();
     await page.getByTestId(TEST_ID_SHOW_REQUIRED_FIELDS).click();
     await testPageFirstOutlineHasTextAndRoute(page, PAGE_OUTLINES);
   });
