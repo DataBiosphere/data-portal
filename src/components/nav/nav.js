@@ -94,7 +94,7 @@ class Nav extends React.Component {
             </MetadataOverline>
           </div>
         ) : null}
-        <ul className={compStyles.hcaSideNav}>
+        <ul className={compStyles.hcaSideNav} data-testid="page-navigation">
           {links.map((pLink, i) => (
             <div key={i}>
               <li className={this.getNavClassName(pLink)} key={i}>

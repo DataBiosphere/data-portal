@@ -32,7 +32,7 @@ class TOC extends React.Component {
     const { activeLocation, tocs } = this.props;
     return (
       <div className={compStyles.tocs}>
-        <ul>
+        <ul data-testid="page-outline">
           {tocs
             ? tocs.map((toc, t) => (
                 <TOCItem key={t} activeLocation={activeLocation} toc={toc} />

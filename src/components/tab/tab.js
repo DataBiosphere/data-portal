@@ -26,7 +26,7 @@ class Tab extends React.Component {
       compStyles.tab
     );
     return path ? (
-      <div className={classNamesTab}>
+      <div className={classNamesTab} data-testid={name ? "tab" : undefined}>
         {back ? <i className="material-icons">keyboard_arrow_left</i> : null}
         <Link to={path}>{name}</Link>
       </div>
