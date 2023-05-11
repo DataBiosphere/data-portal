@@ -6,6 +6,23 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### May 11, 2023
+
+### Release Highlights
+
+* A new project, ["Mucosal Profiling of Pediatric-Onset Colitis and IBD Reveals Common Pathogenics and Therapeutic Pathways"](https://data.humancellatlas.org/explore/projects/f3825dfe-990a-431f-b971-9c26d39840db), is available from the Gut Biological Network.
+* 
+### New Raw Data, Metadata, and Contributor-generated Matrices (3)
+
+1. [A Partial Picture of the Single-Cell Transcriptomics of Human IgA Nephropathy](https://data.humancellatlas.org/explore/projects/c5b475f2-76b3-4a8e-8465-f3b69828fec3)
+2. [Mucosal Profiling of Pediatric-Onset Colitis and IBD Reveals Common Pathogenics and Therapeutic Pathways](https://data.humancellatlas.org/explore/projects/f3825dfe-990a-431f-b971-9c26d39840db)
+3. [Single-Cell Atlas of Lineage States, Tumor Microenvironment, and Subtype-Specific Expression Programs in Gastric Cancer](https://data.humancellatlas.org/explore/projects/c281ab63-7b7d-4bdf-b761-9b1baaa18f82)
+
+### Updated Raw Data and Metadata (2)
+
+1. [Severe COVID-19 Is Marked by a Dysregulated Myeloid Cell Compartment](https://data.humancellatlas.org/explore/projects/cd9d6360-ce38-4321-97df-f13c79e3cb84)
+2. [Vento-tormo: Single cell profiling of COVID-19 patients: an international data resource from multiple tissues](https://data.humancellatlas.org/explore/projects/2d4d89f2-ebeb-467c-ae60-a3efc5e8d4ba)
+
 #### March 31, 2023
 
 ### Release Highlights
@@ -29,7 +46,6 @@ title: DCP Updates
 8. [Time-resolved systems immunology reveals a late juncture linked to fatal COVID-19](https://data.humancellatlas.org/explore/projects/ae62bb31-55ca-4127-b0fb-b1771a604645)
 9. [Transcriptional changes in the mammary gland during lactation revealed by single cell sequencing of cells from human milk](https://data.humancellatlas.org/explore/projects/e956e66a-ac8e-483a-963a-0f92c7e5abfb)
 10. [Ulcerative colitis is characterized by a plasmablast-skewed humoral response associated with disease activity](https://data.humancellatlas.org/explore/projects/1688d7cc-6f5c-49ef-b353-e308b61d4e4c)
-
 
 #### February 24, 2023
 
