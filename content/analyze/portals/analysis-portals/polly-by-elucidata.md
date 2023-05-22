@@ -9,7 +9,7 @@ path: "/analyze/portals/analysis-portals/polly-by-elucidata"
 title: "Polly by Elucidata"
 ---
 
-[Polly](https://www.elucidata.io/platform/features) is a biomedical data platform for life sciences R&D, primarily delivering bulk RNA-seq and single-cell data, along with 24 other data types. It delivers **155 TB of FAIR and ML-ready biomedical data from ~30 different (primarily public) sources** to customers.
+[Polly]([https://www.elucidata.io/platform/features](https://bit.ly/3WvgjqF)) is a biomedical data platform for life sciences R&D, primarily delivering bulk RNA-seq and single-cell data, along with 24 other data types. It delivers **155 TB of FAIR and ML-ready biomedical data from ~30 different (primarily public) sources** to customers.
 
 Polly takes care of data ingestion, transformation, and storage. Therefore, researchers can focus on insight derivation via **data analysis, visualization instead of data wrangling and engineering**. It is easy to incorporate Polly into your existing data infrastructure because we offer integrations to your existing data storage units as well as **analysis/visualization, and computational tools**.
 
