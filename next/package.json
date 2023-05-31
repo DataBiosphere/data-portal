@@ -9,16 +9,37 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^12.3.4",
+    "@clevercanary/data-explorer-ui": "0.21.0",
+    "@emotion/react": "11.10.4",
+    "@emotion/styled": "11.10.4",
+    "@mui/icons-material": "5.8.0",
+    "@mui/material": "5.8.1",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^9.0.0",
+    "next": "12.3.1",
+    "next-optimized-images": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^13.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@types/node": "20.2.3",
     "@types/react": "17.0.2",
     "@types/react-dom": "17.0.2",
-    "eslint": "8.41.0",
-    "eslint-config-next": "13.4.3",
+    "eslint": "^8.33.0",
+    "eslint-config-next": "^13.1.6",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-jsdoc": "^39.7.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-sonarjs": "^0.18.0",
+    "eslint-plugin-sort-destructure-keys": "^1.4.0",
+    "eslint-plugin-typescript-sort-keys": "^2.1.0",
+    "prettier": "^2.8.3",
+    "prettier-plugin-organize-imports": "^3.2.2",
     "typescript": "5.0.4"
   }
 }
