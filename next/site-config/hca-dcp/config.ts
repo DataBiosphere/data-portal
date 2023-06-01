@@ -1,6 +1,6 @@
 import { SiteConfig } from "@clevercanary/data-explorer-ui/lib/config/entities";
-import header from "./header";
 import footer from "./footer";
+import header from "./header";
 
 const config: SiteConfig = {
   browserURL: "",

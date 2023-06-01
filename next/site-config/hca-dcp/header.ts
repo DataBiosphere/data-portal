@@ -1,6 +1,6 @@
+import { ELEMENT_ALIGNMENT } from "@clevercanary/data-explorer-ui/lib/common/entities";
 import { HeaderProps } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/header";
 import logoHca from "images/logoHca.png";
-import { ELEMENT_ALIGNMENT } from "@clevercanary/data-explorer-ui/lib/common/entities";
 import { BROWSER_URL, LOGO_ALT, socials } from "./constants";
 
 const header: HeaderProps = {
@@ -10,11 +10,11 @@ const header: HeaderProps = {
   navLinks: [
     {
       label: "Explore",
-      url: '/',
+      url: "/",
     },
     {
-      label: 'BioNetworks',
-      url: '/bio-networks'
+      label: "BioNetworks",
+      url: "/bio-networks",
     },
     {
       label: "Guides",

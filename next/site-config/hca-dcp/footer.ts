@@ -1,6 +1,6 @@
 import { FooterProps } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Footer/footer";
-import { BROWSER_URL, LOGO, socials } from "./constants";
 import logoHumanCellAtlas from "images/logoHumanCellAtlas.png";
+import { BROWSER_URL, LOGO, socials } from "./constants";
 
 const footer: FooterProps = {
   feedbackForm: false, // TODO feedback form
