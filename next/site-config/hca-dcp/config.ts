@@ -17,7 +17,7 @@ const config: SiteConfig = {
   themeOptions: {
     palette: {
       primary: {
-        dark: "#003E76",
+        dark: "#005EA9",
         main: "#035C94",
       },
     },
