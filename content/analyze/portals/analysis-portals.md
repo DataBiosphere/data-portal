@@ -7,6 +7,7 @@ linked:
     - ./analysis-portals/bioconductor.md
     - ./analysis-portals/bioturing-browser.md
     - ./analysis-portals/cambridge-cell-atlas.md
+    - ./analysis-portals/cellenics.md
     - ./analysis-portals/cellxgene.md
     - ./analysis-portals/cytoscape.md
     - ./analysis-portals/dnastack.md
