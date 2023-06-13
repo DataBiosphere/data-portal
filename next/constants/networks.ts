@@ -21,7 +21,7 @@ import { NetworkKey } from "./../@types/network";
 
 export const NETWORKS: Network[] = [
   {
-    name: "Adipose",
+    name: "Adipose Network",
     path: "adipose",
     descriptionKey: "adipose",
     contact: {
@@ -38,7 +38,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Breast",
+    name: "Breast Network",
     path: "breast",
     descriptionKey: "breast",
     contact: {
@@ -58,7 +58,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Development",
+    name: "Development Network",
     path: "development",
     descriptionKey: "development",
     contact: {
@@ -81,7 +81,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Eye",
+    name: "Eye Network",
     path: "eye",
     descriptionKey: "eye",
     contact: {
@@ -98,7 +98,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Genetic Diversity",
+    name: "Genetic Diversity Network",
     path: "genetic-diversity",
     descriptionKey: "genetic-diversity",
     contact: {
@@ -118,7 +118,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Gut",
+    name: "Gut Network",
     path: "gut",
     descriptionKey: "gut",
     contact: {
@@ -144,7 +144,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Heart",
+    name: "Heart Network",
     path: "heart",
     descriptionKey: "heart",
     contact: {
@@ -164,7 +164,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Immune",
+    name: "Immune Network",
     path: "immune",
     descriptionKey: "immune",
     contact: {
@@ -184,7 +184,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Kidney",
+    name: "Kidney Network",
     path: "kidney",
     descriptionKey: "kidney",
     contact: {
@@ -204,7 +204,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Liver",
+    name: "Liver Network",
     path: "liver",
     descriptionKey: "liver",
     contact: {
@@ -221,7 +221,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Lung",
+    name: "Lung Network",
     path: "lung",
     descriptionKey: "lung",
     contact: {
@@ -244,7 +244,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Musculoskeletal",
+    name: "Musculoskeletal Network",
     path: "musculoskeletal",
     descriptionKey: "musculoskeletal",
     contact: {
@@ -267,7 +267,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Nervous System",
+    name: "Nervous System Network",
     path: "nervous-system",
     descriptionKey: "nervous-system",
     contact: {
@@ -284,7 +284,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Oral and craniofacial",
+    name: "Oral and craniofacial Networks",
     path: "oral",
     descriptionKey: "oral",
     contact: {
@@ -301,7 +301,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Organoid",
+    name: "Organoid Network",
     path: "organoid",
     descriptionKey: "organoid",
     contact: {
@@ -318,7 +318,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Pancreas",
+    name: "Pancreas Network",
     path: "pancreas",
     descriptionKey: "pancreas",
     contact: {
@@ -341,7 +341,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Reproduction",
+    name: "Reproduction Network",
     path: "reproduction",
     descriptionKey: "reproduction",
     contact: {
@@ -364,7 +364,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
   },
   {
-    name: "Skin",
+    name: "Skin Network",
     path: "skin",
     descriptionKey: "skin",
     contact: {
