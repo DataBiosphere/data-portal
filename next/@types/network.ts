@@ -27,6 +27,10 @@ export interface Network {
   path: string;
 }
 
+export type NetworkParam = {
+  network: Network;
+};
+
 export type NetworkKey =
   | "adipose"
   | "breast"

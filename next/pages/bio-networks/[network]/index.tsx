@@ -1,34 +1,13 @@
-import { NETWORKS } from "constants/networks";
-import {
-  GetStaticPaths,
-  GetStaticProps,
-  GetStaticPropsContext,
-  InferGetStaticPropsType,
-} from "next";
-import { Network } from "../../../@types/network";
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import { NetworkParam } from "../../../@types/network";
 import { NetworkProvider } from "../../../contexts/networkContext";
+import * as networkPages from "../../../utils/networkPages";
 import { NetworkDetailOverview } from "../../../views/NetworkDetailView/NetworkDetailOverview/networkDetailOverview";
 
-export type NetworkParam = {
-  network: Network;
-};
+export const getStaticPaths: GetStaticPaths = networkPages.getStaticPaths;
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: NETWORKS.map((network) => ({ params: { network: network.path } })),
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps<NetworkParam> = async (
-  context: GetStaticPropsContext
-) => {
-  const { network: networkParam } = context.params ?? {};
-
-  const network = NETWORKS.find(({ path }) => path === networkParam)!;
-
-  return { props: { network } };
-};
+export const getStaticProps: GetStaticProps<NetworkParam> =
+  networkPages.getStaticProps;
 
 export const Page = ({
   network,
