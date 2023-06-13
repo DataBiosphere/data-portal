@@ -1,8 +1,8 @@
-import { LogoProps } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/components/Logo/logo";
 import {
   SOCIAL,
   Social,
 } from "@clevercanary/data-explorer-ui/lib/components/common/Socials/socials";
+import { LogoProps } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/components/Logo/logo";
 import logoHca from "images/logoHca.png";
 
 export const BROWSER_URL = "https://dev.singlecell.gi.ucsc.edu";

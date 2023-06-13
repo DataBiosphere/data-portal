@@ -1,15 +1,15 @@
 import { NETWORKS } from "constants/networks";
-import { NetworkProvider } from "contexts/networkContext";
 import {
   GetStaticPaths,
   GetStaticProps,
   GetStaticPropsContext,
   InferGetStaticPropsType,
 } from "next";
-import { NetworkDetailOverview } from "views/NetworkDetailView/NetworkDetailOverview/networkDetailOverview";
 import { Network } from "../../../@types/network";
+import { NetworkProvider } from "../../../contexts/networkContext";
+import { NetworkDetailOverview } from "../../../views/NetworkDetailView/NetworkDetailOverview/networkDetailOverview";
 
-type NetworkParam = {
+export type NetworkParam = {
   network: Network;
 };
 
@@ -35,7 +35,7 @@ export const Page = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <NetworkProvider value={network}>
-      <NetworkDetailOverview />;
+      <NetworkDetailOverview />
     </NetworkProvider>
   );
 };
