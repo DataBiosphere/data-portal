@@ -1,0 +1,14 @@
+import { CollapsableSection } from "@clevercanary/data-explorer-ui/lib/components/common/Section/components/CollapsableSection/collapsableSection";
+import { Typography } from "@mui/material";
+import { useAtlasContent } from "contexts/atlasContext";
+import React from "react";
+
+export const AtlasDetailMainColumn = () => {
+  const { Description, Inclusion } = useAtlasContent();
+
+  return (
+    <CollapsableSection title="Atlas Description">
+      <Typography></Typography>
+    </CollapsableSection>
+  );
+};

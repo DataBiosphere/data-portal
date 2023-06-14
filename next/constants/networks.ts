@@ -1,23 +1,25 @@
-import { Network } from "../@types/network";
-import AdiposeDescription from "../mdx/adipose.mdx";
-import BreastDescription from "../mdx/breast.mdx";
-import DevelopmentDescription from "../mdx/development.mdx";
-import EyeDescription from "../mdx/eye.mdx";
-import GeneticDiversityDescription from "../mdx/genetic-diversity.mdx";
-import GutDescription from "../mdx/gut.mdx";
-import HeartDescription from "../mdx/heart.mdx";
-import ImmuneDescription from "../mdx/immune.mdx";
-import KidneyDescription from "../mdx/kidney.mdx";
-import LiverDescription from "../mdx/liver.mdx";
-import LungDescription from "../mdx/lung.mdx";
-import MusculoskeletalDescription from "../mdx/musculoskeletal.mdx";
-import NervousSystemDescription from "../mdx/nervous-system.mdx";
-import OralDescription from "../mdx/oral.mdx";
-import OrganoidDescription from "../mdx/organoid.mdx";
-import PancreasDescription from "../mdx/pancreas.mdx";
-import ReproductionDescription from "../mdx/reproduction.mdx";
-import SkinDescription from "../mdx/skin.mdx";
+import { AtlasKey, AtlasModule, MDXComponent, Network } from "../@types/network";
+import AdiposeDescription from "../mdx/adipose/description.mdx";
+import BreastDescription from "../mdx/breast/description.mdx";
+import DevelopmentDescription from "../mdx/development/description.mdx";
+import EyeDescription from "../mdx/eye/description.mdx";
+import GeneticDiversityDescription from "../mdx/genetic-diversity/description.mdx";
+import GutDescription from "../mdx/gut/description.mdx";
+import HeartDescription from "../mdx/heart/description.mdx";
+import ImmuneDescription from "../mdx/immune/description.mdx";
+import KidneyDescription from "../mdx/kidney/description.mdx";
+import LiverDescription from "../mdx/liver/description.mdx";
+import LungDescription from "../mdx/lung/description.mdx";
+import MusculoskeletalDescription from "../mdx/musculoskeletal/description.mdx";
+import NervousSystemDescription from "../mdx/nervous-system/description.mdx";
+import OralDescription from "../mdx/oral/description.mdx";
+import OrganoidDescription from "../mdx/organoid/description.mdx";
+import PancreasDescription from "../mdx/pancreas/description.mdx";
+import ReproductionDescription from "../mdx/reproduction/description.mdx";
+import SkinDescription from "../mdx/skin/description.mdx";
+import * as adiposeAtlases from '../mdx/adipose/atlases';
 import { NetworkKey } from "./../@types/network";
+import { MDXRemoteProps } from "next-mdx-remote";
 
 export const NETWORKS: Network[] = [
   {
@@ -35,7 +37,22 @@ export const NETWORKS: Network[] = [
         fullName: "Susanne Mandrup",
       },
     ],
-    atlases: [],
+    atlases: [
+      {
+        key: 'blood-v1',
+        path: 'blood-v1',
+        coordinators: [],
+        analysisPortals: [],
+        datasets: [],
+        publications: [],
+        name: 'Blood',
+        updatedAt: 'June 27, 2022',
+        version: 'v1',
+        contact: {
+          email: "adipose@humancellatlas.org",
+        },
+      }
+    ],
   },
   {
     name: "Breast Network",
@@ -385,7 +402,7 @@ export const NETWORKS: Network[] = [
   },
 ];
 
-export const DESCRIPTION_COMPONENTS: { [key in NetworkKey]: any } = {
+export const DESCRIPTION_COMPONENTS: { [key in NetworkKey]: MDXComponent } = {
   adipose: AdiposeDescription,
   "genetic-diversity": GeneticDiversityDescription,
   "nervous-system": NervousSystemDescription,
@@ -405,3 +422,7 @@ export const DESCRIPTION_COMPONENTS: { [key in NetworkKey]: any } = {
   reproduction: ReproductionDescription,
   skin: SkinDescription,
 };
+
+export const ATLASES: { [key in AtlasKey]: AtlasModule } = {
+  'blood-v1': adiposeAtlases
+}
