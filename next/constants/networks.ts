@@ -1,4 +1,10 @@
-import { AtlasKey, AtlasModule, MDXComponent, Network } from "../@types/network";
+import {
+  AtlasKey,
+  AtlasModule,
+  MDXComponent,
+  Network,
+} from "../@types/network";
+import * as adiposeAtlases from "../mdx/adipose/atlases";
 import AdiposeDescription from "../mdx/adipose/description.mdx";
 import BreastDescription from "../mdx/breast/description.mdx";
 import DevelopmentDescription from "../mdx/development/description.mdx";
@@ -17,9 +23,7 @@ import OrganoidDescription from "../mdx/organoid/description.mdx";
 import PancreasDescription from "../mdx/pancreas/description.mdx";
 import ReproductionDescription from "../mdx/reproduction/description.mdx";
 import SkinDescription from "../mdx/skin/description.mdx";
-import * as adiposeAtlases from '../mdx/adipose/atlases';
 import { NetworkKey } from "./../@types/network";
-import { MDXRemoteProps } from "next-mdx-remote";
 
 export const NETWORKS: Network[] = [
   {
@@ -37,7 +41,7 @@ export const NETWORKS: Network[] = [
         fullName: "Susanne Mandrup",
       },
     ],
-    atlases: []
+    atlases: [],
   },
   {
     name: "Breast Network",
@@ -185,23 +189,23 @@ export const NETWORKS: Network[] = [
     ],
     atlases: [
       {
-        key: 'blood-v1',
-        path: 'blood-v1',
+        key: "blood-v1",
+        path: "blood-v1",
         coordinators: [
           {
-            fullName: 'TBD'
-          }
+            fullName: "TBD",
+          },
         ],
         analysisPortals: [],
         datasets: [],
         publications: [],
-        name: 'Blood',
-        updatedAt: 'June 27, 2022',
-        version: 'v1',
+        name: "Blood",
+        updatedAt: "June 27, 2022",
+        version: "v1",
         contact: {
           email: "adipose@humancellatlas.org",
         },
-      }
+      },
     ],
   },
   {
@@ -428,5 +432,5 @@ export const DESCRIPTION_COMPONENTS: { [key in NetworkKey]: MDXComponent } = {
 };
 
 export const ATLASES: { [key in AtlasKey]: AtlasModule } = {
-  'blood-v1': adiposeAtlases
-}
+  "blood-v1": adiposeAtlases,
+};
