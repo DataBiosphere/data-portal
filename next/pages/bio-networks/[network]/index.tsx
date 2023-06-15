@@ -11,7 +11,7 @@ export const getStaticProps: GetStaticProps<NetworkParam> =
 
 export const Page = ({
   network,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <NetworkProvider value={network}>
       <NetworkDetailOverview />

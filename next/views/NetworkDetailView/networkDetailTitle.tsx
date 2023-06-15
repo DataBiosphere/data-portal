@@ -3,7 +3,7 @@ import { NETWORKS_ROUTE } from "constants/routes";
 import React, { useMemo } from "react";
 import { useNetwork } from "../../contexts/networkContext";
 
-export const NetworkDetailTitle = () => {
+export const NetworkDetailTitle = (): JSX.Element => {
   const { name, path } = useNetwork();
 
   const breadcrumbs = useMemo(
@@ -17,7 +17,7 @@ export const NetworkDetailTitle = () => {
         text: name,
       },
     ],
-    [path]
+    [name, path]
   );
 
   return <BackPageHero title={name} breadcrumbs={breadcrumbs} />;

@@ -7,7 +7,7 @@ import {
   useNetworkDescription,
 } from "../../../contexts/networkContext";
 
-export const NetworkDetailMainColumn = () => {
+export const NetworkDetailMainColumn = (): JSX.Element => {
   const { atlases, path } = useNetwork();
   const DescriptionComponent = useNetworkDescription();
 

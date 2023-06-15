@@ -26,17 +26,17 @@ const TABS = [
   },
 ];
 
-export const AtlasDetailTabs = () => {
+export const AtlasDetailTabs = (): JSX.Element => {
   const router = useRouter();
   const {
-    network: { path: networkPath },
     atlas: { path: atlasPath },
+    network: { path: networkPath },
   } = useAtlas();
 
-  const handleTabChanged = (value: TabValue) => {
+  const handleTabChanged = (value: TabValue): void => {
     router.push({
       pathname: value,
-      query: { network: networkPath, atlas: atlasPath },
+      query: { atlas: atlasPath, network: networkPath },
     });
   };
 

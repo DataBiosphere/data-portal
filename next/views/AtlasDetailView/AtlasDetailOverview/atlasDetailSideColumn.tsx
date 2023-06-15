@@ -2,10 +2,10 @@ import { CoordinatorsSection } from "components/CoordinatorsSection/coordinators
 import { useAtlas } from "contexts/atlasContext";
 import React from "react";
 
-export const AtlasDetailSideColumn = () => {
+export const AtlasDetailSideColumn = (): JSX.Element => {
   const {
     atlas: { coordinators: atlasCoordinators },
-    network: { coordinators: networkCoordinators, contact: networkContact },
+    network: { contact: networkContact, coordinators: networkCoordinators },
   } = useAtlas();
 
   const atlasCoordinatorsNames = atlasCoordinators.map(

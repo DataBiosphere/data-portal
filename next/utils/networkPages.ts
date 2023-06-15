@@ -1,11 +1,11 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import { NetworkParam } from "../@types/network";
+import { Network, NetworkParam } from "../@types/network";
 import { NETWORKS } from "../constants/networks";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: NETWORKS.map((network) => ({ params: { network: network.path } })),
     fallback: false,
+    paths: NETWORKS.map((network) => ({ params: { network: network.path } })),
   };
 };
 
@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps<NetworkParam> = async (
 ) => {
   const { network: networkParam } = context.params ?? {};
 
-  const network = NETWORKS.find(({ path }) => path === networkParam)!;
+  const network = NETWORKS.find(({ path }) => path === networkParam) as Network;
 
   return { props: { network } };
 };
