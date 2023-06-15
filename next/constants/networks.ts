@@ -37,22 +37,7 @@ export const NETWORKS: Network[] = [
         fullName: "Susanne Mandrup",
       },
     ],
-    atlases: [
-      {
-        key: 'blood-v1',
-        path: 'blood-v1',
-        coordinators: [],
-        analysisPortals: [],
-        datasets: [],
-        publications: [],
-        name: 'Blood',
-        updatedAt: 'June 27, 2022',
-        version: 'v1',
-        contact: {
-          email: "adipose@humancellatlas.org",
-        },
-      }
-    ],
+    atlases: []
   },
   {
     name: "Breast Network",
@@ -198,7 +183,26 @@ export const NETWORKS: Network[] = [
         fullName: "Chloe Villani",
       },
     ],
-    atlases: [],
+    atlases: [
+      {
+        key: 'blood-v1',
+        path: 'blood-v1',
+        coordinators: [
+          {
+            fullName: 'TBD'
+          }
+        ],
+        analysisPortals: [],
+        datasets: [],
+        publications: [],
+        name: 'Blood',
+        updatedAt: 'June 27, 2022',
+        version: 'v1',
+        contact: {
+          email: "adipose@humancellatlas.org",
+        },
+      }
+    ],
   },
   {
     name: "Kidney Network",

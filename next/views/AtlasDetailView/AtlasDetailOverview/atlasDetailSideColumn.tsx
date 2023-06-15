@@ -1,20 +1,32 @@
-import { CollapsableSection } from "@clevercanary/data-explorer-ui/lib/components/common/Section/components/CollapsableSection/collapsableSection";
-import { Link as EmailLink, Typography } from "@mui/material";
-import { useNetwork } from "contexts/networkContext";
-import Link from "next/link";
+import { CoordinatorsSection } from "components/CoordinatorsSection/coordinatorsSection";
+import { useAtlas } from "contexts/atlasContext";
 import React from "react";
 
 export const AtlasDetailSideColumn = () => {
-  const { coordinators, contact } = useNetwork();
+  const {
+    atlas: { coordinators: atlasCoordinators },
+    network: { coordinators: networkCoordinators, contact: networkContact },
+  } = useAtlas();
+
+  const atlasCoordinatorsNames = atlasCoordinators.map(
+    ({ fullName }) => fullName
+  );
+
+  const networkCoordinatorsNames = networkCoordinators.map(
+    ({ fullName }) => fullName
+  );
 
   return (
-    <CollapsableSection title="Atlas Coordinators">
-      {coordinators.map((coodinator) => (
-        <Typography key={coodinator.fullName}>{coodinator.fullName}</Typography>
-      ))}
-      <Link href={`mailto:${contact.email}`} passHref>
-        <EmailLink>{contact.email}</EmailLink>
-      </Link>
-    </CollapsableSection>
+    <>
+      <CoordinatorsSection
+        title="Network Coordinators"
+        email={networkContact.email}
+        coordinators={networkCoordinatorsNames}
+      />
+      <CoordinatorsSection
+        title="Atlas Coordinators"
+        coordinators={atlasCoordinatorsNames}
+      />
+    </>
   );
 };

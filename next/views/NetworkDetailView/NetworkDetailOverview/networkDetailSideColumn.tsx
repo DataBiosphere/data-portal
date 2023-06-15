@@ -1,20 +1,17 @@
-import { CollapsableSection } from "@clevercanary/data-explorer-ui/lib/components/common/Section/components/CollapsableSection/collapsableSection";
-import { Link as EmailLink, Typography } from "@mui/material";
+import { CoordinatorsSection } from "components/CoordinatorsSection/coordinatorsSection";
 import { useNetwork } from "contexts/networkContext";
-import Link from "next/link";
 import React from "react";
 
 export const NetworkDetailSideColumn = () => {
   const { coordinators, contact } = useNetwork();
 
+  const coordinatorsNames = coordinators.map(({ fullName }) => fullName);
+
   return (
-    <CollapsableSection title="Network Coordinators">
-      {coordinators.map((coodinator) => (
-        <Typography key={coodinator.fullName}>{coodinator.fullName}</Typography>
-      ))}
-      <Link href={`mailto:${contact.email}`} passHref>
-        <EmailLink>{contact.email}</EmailLink>
-      </Link>
-    </CollapsableSection>
+    <CoordinatorsSection
+      title="Network Coordinators"
+      email={contact.email}
+      coordinators={coordinatorsNames}
+    />
   );
 };

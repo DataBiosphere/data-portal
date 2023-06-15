@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import React from "react";
 import { AtlasContext } from "../../../../@types/network";
 import * as atlasPages from "../../../../utils/atlasPages";
-import { NetworkDetailDatasets } from "../../../../views/NetworkDetailView/NetworkDetailDatasets/networkDetailDatasets";
+import { AtlasDetailOverview } from "../../../../views/AtlasDetailView/AtlasDetailOverview/atlasDetailOverview";
 
 export const getStaticPaths: GetStaticPaths = atlasPages.getStaticPaths;
 
@@ -16,7 +16,7 @@ const Page = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <AtlasProvider value={{ network, atlas }}>
-      <NetworkDetailDatasets />
+      <AtlasDetailOverview />
     </AtlasProvider>
   );
 };

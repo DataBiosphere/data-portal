@@ -2,9 +2,9 @@ import { CollapsableSection } from "@clevercanary/data-explorer-ui/lib/component
 import { Typography } from "@mui/material";
 import React from "react";
 
-export const AtlasDetailSideColumn = () => {
+export const AtlasDetailMainColumn = () => {
   return (
-    <CollapsableSection title="Atlas Coordinators">
+    <CollapsableSection title="Publications">
       <Typography>TODO</Typography>
     </CollapsableSection>
   );

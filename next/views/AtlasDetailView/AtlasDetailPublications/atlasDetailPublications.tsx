@@ -5,7 +5,7 @@ import { AtlasDetailTitle } from "../atlasDetailTitle";
 import { AtlasDetailMainColumn } from "./atlasDetailMainColumn";
 import { AtlasDetailSideColumn } from "./atlasDetailSideColumn";
 
-export const AtlasDetailOverview = () => {
+export const AtlasDetailPublications = () => {
   return (
     <Detail
       isDetailOverview
