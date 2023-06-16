@@ -11,11 +11,11 @@ export const getStaticProps: GetStaticProps<AtlasContext> =
   atlasPages.getStaticProps;
 
 const Page = ({
-  network,
   atlas,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  network,
+}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <AtlasProvider value={{ network, atlas }}>
+    <AtlasProvider value={{ atlas, network }}>
       <AtlasDetailDatasets />
     </AtlasProvider>
   );

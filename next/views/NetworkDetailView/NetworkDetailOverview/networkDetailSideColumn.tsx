@@ -2,8 +2,8 @@ import { CoordinatorsSection } from "components/CoordinatorsSection/coordinators
 import { useNetwork } from "contexts/networkContext";
 import React from "react";
 
-export const NetworkDetailSideColumn = () => {
-  const { coordinators, contact } = useNetwork();
+export const NetworkDetailSideColumn = (): JSX.Element => {
+  const { contact, coordinators } = useNetwork();
 
   const coordinatorsNames = coordinators.map(({ fullName }) => fullName);
 

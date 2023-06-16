@@ -1,3 +1,5 @@
+import { MDXProps } from "mdx/types";
+
 export interface Coordinator {
   fullName: string;
 }
@@ -14,19 +16,19 @@ export type Dataset = string; //TBD
 
 export type Publication = string; //TBD
 
-export type MDXComponent = (props: any) => JSX.Element;
+export type MDXComponent = (props: MDXProps) => JSX.Element;
 
 export interface Atlas {
+  analysisPortals: AnalysisPortal[];
+  contact: Contact;
+  coordinators: Coordinator[];
   datasets: Dataset[];
-  path: string;
+  key: AtlasKey;
   name: string;
+  path: string;
   publications: Publication[];
   updatedAt: string;
   version: string;
-  coordinators: Coordinator[];
-  key: AtlasKey;
-  contact: Contact;
-  analysisPortals: AnalysisPortal[];
 }
 
 export interface Network {
@@ -43,8 +45,8 @@ export type NetworkParam = {
 };
 
 export interface AtlasContext {
-  network: Network;
   atlas: Atlas;
+  network: Network;
 }
 
 export interface AtlasModule {

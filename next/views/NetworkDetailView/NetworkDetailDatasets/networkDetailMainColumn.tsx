@@ -2,7 +2,7 @@ import { CollapsableSection } from "@clevercanary/data-explorer-ui/lib/component
 import { Typography } from "@mui/material";
 import React from "react";
 
-export const NetworkDetailMainColumn = () => {
+export const NetworkDetailMainColumn = (): JSX.Element => {
   return (
     <CollapsableSection title="Datasets">
       <Typography>TODO</Typography>

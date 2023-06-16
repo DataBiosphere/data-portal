@@ -3,8 +3,8 @@ import { NETWORKS_ROUTE } from "constants/routes";
 import { useAtlas } from "contexts/atlasContext";
 import React, { useMemo } from "react";
 
-export const AtlasDetailTitle = () => {
-  const { network, atlas } = useAtlas();
+export const AtlasDetailTitle = (): JSX.Element => {
+  const { atlas, network } = useAtlas();
   const { name: networkName, path: networkPath } = network;
   const { name: atlasName, path: atlasPath } = atlas;
 
@@ -23,7 +23,7 @@ export const AtlasDetailTitle = () => {
         text: atlasPath,
       },
     ],
-    [networkName, networkPath, atlasName, atlasPath]
+    [networkName, networkPath, atlasPath]
   );
 
   return <BackPageHero title={atlasName} breadcrumbs={breadcrumbs} />;

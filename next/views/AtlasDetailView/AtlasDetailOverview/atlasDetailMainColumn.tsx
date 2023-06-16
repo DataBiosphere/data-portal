@@ -2,7 +2,7 @@ import { CollapsableSection } from "@clevercanary/data-explorer-ui/lib/component
 import { useAtlasContent } from "contexts/atlasContext";
 import React from "react";
 
-export const AtlasDetailMainColumn = () => {
+export const AtlasDetailMainColumn = (): JSX.Element => {
   const { Description, Inclusion } = useAtlasContent();
 
   return (

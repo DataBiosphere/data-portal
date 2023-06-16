@@ -10,7 +10,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";
 import { config } from "../config/config";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const { layout, themeOptions } = config();
   const theme = createAppTheme(themeOptions);
   return (

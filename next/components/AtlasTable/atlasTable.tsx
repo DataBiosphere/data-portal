@@ -6,8 +6,8 @@ import React from "react";
 import { Atlas } from "../../@types/network";
 
 interface AtlasTableProps {
-  networkPath: string;
   atlases: Atlas[];
+  networkPath: string;
 }
 
 export const AtlasTable = ({
@@ -24,7 +24,6 @@ export const AtlasTable = ({
       }}
       columns={[
         {
-          id: "name",
           cell: ({ row }) => (
             <Link
               url={`${NETWORKS_ROUTE}/${networkPath}/${row.original.path}`}
@@ -32,30 +31,31 @@ export const AtlasTable = ({
             />
           ),
           header: "Atlas name",
+          id: "name",
           meta: {
             width: { max: "1fr", min: "200px" },
           },
         },
         {
-          id: "tissue",
           cell: () => <Typography>TBD</Typography>,
           header: "Tissue",
+          id: "tissue",
           meta: {
             width: { max: "1fr", min: "200px" },
           },
         },
         {
-          id: "disease",
           cell: () => <Typography>TBD</Typography>,
           header: "Disease",
+          id: "disease",
           meta: {
             width: { max: "1fr", min: "200px" },
           },
         },
         {
-          id: "count",
           cell: () => <Typography>TBD</Typography>,
           header: "Cell Count Est.",
+          id: "count",
           meta: {
             width: { max: "1fr", min: "200px" },
           },

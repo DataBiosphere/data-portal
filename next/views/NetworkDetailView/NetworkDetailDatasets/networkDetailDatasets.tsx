@@ -5,7 +5,7 @@ import { NetworkDetailTitle } from "../networkDetailTitle";
 import { NetworkDetailMainColumn } from "./networkDetailMainColumn";
 import { NetworkDetailSideColumn } from "./networkDetailSideColumn";
 
-export const NetworkDetailDatasets = () => {
+export const NetworkDetailDatasets = (): JSX.Element => {
   return (
     <Detail
       isDetailOverview
