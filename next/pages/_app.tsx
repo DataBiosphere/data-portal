@@ -8,10 +8,10 @@ import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";
-import config from "../site-config/hca-dcp/config";
+import { config } from "../config/config";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const { themeOptions, layout } = config;
+  const { layout, themeOptions } = config();
   const theme = createAppTheme(themeOptions);
   return (
     <EmotionThemeProvider theme={theme}>

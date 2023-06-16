@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "./scripts/dev.sh data-portal && next dev",
+    "build-dev:data-portal": "scripts/common-build.sh data-portal dev && next build && next export -o out && npm run postbuild",
+    "build-prod:data-portal": "./scripts/common-build.sh data-portal prod && next build && next export -o out && npm run postbuild",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "check-format": "prettier --check .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postbuild": "next-sitemap --config next-sitemap.config.mjs"
   },
   "dependencies": {
     "@clevercanary/data-explorer-ui": "0.21.0",
@@ -44,6 +47,7 @@
     "eslint-plugin-sonarjs": "^0.13.0",
     "eslint-plugin-sort-destructure-keys": "^1.4.0",
     "eslint-plugin-typescript-sort-keys": "^2.1.0",
+    "next-sitemap": "^4.0.7",
     "prettier": "2.7.1",
     "prettier-plugin-organize-imports": "^3.0.3",
     "typescript": "4.6.4"
