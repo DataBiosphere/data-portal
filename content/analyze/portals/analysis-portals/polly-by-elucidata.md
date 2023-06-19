@@ -37,6 +37,7 @@ It has enabled the detection of multiple validated drug targets across immunolog
 <figure-styles shadowless=true>
 
 ![Polly](../../_images/portals/polly.png)
+<img src="../../_images/portals/polly.png" width=50px height=50px / >  
 
 </figure-styles>
 
