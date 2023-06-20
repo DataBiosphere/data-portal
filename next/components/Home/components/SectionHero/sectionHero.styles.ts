@@ -6,7 +6,7 @@ import {
 import styled from "@emotion/styled";
 
 export const SectionHero = styled.section`
-  background: url("/cell.png") no-repeat;
+  background: url("/bio-networks/home/cell.png") no-repeat;
   background-position-x: center;
   background-size: cover;
   color: ${({ theme }) => theme.palette.common.white};
