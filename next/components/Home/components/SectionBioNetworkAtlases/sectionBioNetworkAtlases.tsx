@@ -4,7 +4,7 @@ import { TEXT_BODY_LARGE_500 } from "@clevercanary/data-explorer-ui/lib/theme/co
 import { Typography } from "@mui/material";
 import { NETWORKS, NETWORK_ICONS } from "../../../../constants/networks";
 import { NETWORKS_ROUTE } from "../../../../constants/routes";
-import { Section, SectionHeadline } from "../Section/section.styles";
+import { Section, SectionHead } from "../Section/section.styles";
 import {
   BioNetworkAtlas,
   BioNetworkAtlases,
@@ -15,9 +15,7 @@ export const SectionBioNetworkAtlases = (): JSX.Element => {
   return (
     <Section>
       <SectionContent>
-        <SectionHeadline>
-          <h2>Explore BioNework Atlases</h2>
-        </SectionHeadline>
+        <SectionHead>Explore BioNework Atlases</SectionHead>
         <BioNetworkAtlases>
           {NETWORKS.map(({ key, name, path }) => (
             <Link

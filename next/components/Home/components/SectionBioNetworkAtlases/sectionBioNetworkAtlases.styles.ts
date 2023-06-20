@@ -1,11 +1,10 @@
 import styled from "@emotion/styled";
-import { SectionContent as Content } from "../Section/section.styles";
 
-export const SectionContent = styled(Content)`
-  display: grid;
-  gap: 32px;
-  justify-items: stretch;
-  margin: 56px 0 88px;
+export const SectionContent = styled.div`
+  box-sizing: content-box;
+  margin: 0 auto;
+  max-width: 1232px;
+  padding: 56px 16px 88px;
 `;
 
 export const BioNetworkAtlases = styled.div`
@@ -14,9 +13,7 @@ export const BioNetworkAtlases = styled.div`
   grid-auto-flow: column;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  justify-self: center;
-  max-width: 1232px;
-  width: 100%;
+  margin-top: 32px;
 `;
 
 export const BioNetworkAtlas = styled.span`

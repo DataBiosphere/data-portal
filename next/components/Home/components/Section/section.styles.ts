@@ -5,17 +5,9 @@ export const Section = styled.section`
   width: 100%;
 `;
 
-export const SectionContent = styled.div`
-  padding: 0 16px;
-`;
-
-export const SectionHeadline = styled.div`
+export const SectionHead = styled.h2`
+  ${textHeadingLarge};
   margin: 0 auto;
   max-width: 816px;
   text-align: center;
-
-  h2 {
-    ${textHeadingLarge};
-    margin: 0;
-  }
 `;
