@@ -1,5 +1,5 @@
+import "@clevercanary/data-explorer-ui";
 import { AppLayout } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
-import { ContentLayout } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/contentLayout";
 import { Footer } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Footer/footer";
 import { Header } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/header";
 import { Main } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Main/main.styles";
@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <AppLayout>
           <Header {...layout.header} />
           <Main>
-            <ContentLayout content={<Component {...pageProps} />} />
+            <Component {...pageProps} />
           </Main>
           <Footer {...layout.footer} />
         </AppLayout>
