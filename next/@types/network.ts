@@ -33,7 +33,7 @@ export interface Network {
   atlases: Atlas[];
   contact: Contact;
   coordinators: Coordinator[];
-  descriptionKey: NetworkKey;
+  key: NetworkKey;
   name: string;
   path: string;
 }
