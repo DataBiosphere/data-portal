@@ -11,7 +11,7 @@ export const useNetwork = (): Network => {
 };
 
 export const useNetworkDescription = (): ElementType => {
-  const { descriptionKey } = useNetwork();
+  const { key } = useNetwork();
 
-  return DESCRIPTION_COMPONENTS[descriptionKey];
+  return DESCRIPTION_COMPONENTS[key];
 };

@@ -19,13 +19,31 @@ import OrganoidDescription from "../content/organoid/description.mdx";
 import PancreasDescription from "../content/pancreas/description.mdx";
 import ReproductionDescription from "../content/reproduction/description.mdx";
 import SkinDescription from "../content/skin/description.mdx";
+import adiposeIcon from "../public/bio-networks/icons/adipose.png";
+import breastIcon from "../public/bio-networks/icons/breast.png";
+import developmentIcon from "../public/bio-networks/icons/development.png";
+import eyeIcon from "../public/bio-networks/icons/eye.png";
+import geneticDiversityIcon from "../public/bio-networks/icons/genetic-diversity.png";
+import gutIcon from "../public/bio-networks/icons/gut.png";
+import heartIcon from "../public/bio-networks/icons/heart.png";
+import immuneIcon from "../public/bio-networks/icons/immune.png";
+import kidneyIcon from "../public/bio-networks/icons/kidney.png";
+import liverIcon from "../public/bio-networks/icons/liver.png";
+import lungIcon from "../public/bio-networks/icons/lung.png";
+import musculoskeletalIcon from "../public/bio-networks/icons/musculoskeletal.png";
+import nervousSystemIcon from "../public/bio-networks/icons/nervous-system.png";
+import oralIcon from "../public/bio-networks/icons/oral-and-craniofacial.png";
+import organoidIcon from "../public/bio-networks/icons/organoid.png";
+import pancreasIcon from "../public/bio-networks/icons/pancreas.png";
+import reproductionIcon from "../public/bio-networks/icons/reproduction.png";
+import skinIcon from "../public/bio-networks/icons/skin.png";
 
 export const NETWORKS: Network[] = [
   {
     atlases: [],
     contact: { email: "adipose@humancellatlas.org" },
     coordinators: [{ fullName: "Evan Rosen" }, { fullName: "Susanne Mandrup" }],
-    descriptionKey: "adipose",
+    key: "adipose",
     name: "Adipose Network",
     path: "adipose",
   },
@@ -37,7 +55,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Nicholas Navin" },
       { fullName: "Walid Khaled" },
     ],
-    descriptionKey: "breast",
+    key: "breast",
     name: "Breast Network",
     path: "breast",
   },
@@ -50,7 +68,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Sten Linnarsson" },
       { fullName: "Deanne Taylor" },
     ],
-    descriptionKey: "development",
+    key: "development",
     name: "Development Network",
     path: "development",
   },
@@ -58,7 +76,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
     contact: { email: "eye@humancellatlas.org" },
     coordinators: [{ fullName: "Rui Chen" }, { fullName: "Ayellet Segrè" }],
-    descriptionKey: "eye",
+    key: "eye",
     name: "Eye Network",
     path: "eye",
   },
@@ -70,7 +88,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Sarah Tishkoff" },
       { fullName: "Jimmie Ye" },
     ],
-    descriptionKey: "genetic-diversity",
+    key: "genetic-diversity",
     name: "Genetic Diversity Network",
     path: "genetic-diversity",
   },
@@ -84,7 +102,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Ramnik Xavier" },
       { fullName: "Matthias Zilbauer" },
     ],
-    descriptionKey: "gut",
+    key: "gut",
     name: "Gut Network",
     path: "gut",
   },
@@ -96,7 +114,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Norbert Hubner" },
       { fullName: "Michela Noseda" },
     ],
-    descriptionKey: "heart",
+    key: "heart",
     name: "Heart Network",
     path: "heart",
   },
@@ -121,7 +139,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Tom Taghon" },
       { fullName: "Chloe Villani" },
     ],
-    descriptionKey: "immune",
+    key: "immune",
     name: "Immune Network",
     path: "immune",
   },
@@ -133,7 +151,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Anna Greka" },
       { fullName: "Matthias Kretzler" },
     ],
-    descriptionKey: "kidney",
+    key: "kidney",
     name: "Kidney Network",
     path: "kidney",
   },
@@ -141,7 +159,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
     contact: { email: "liver@humancellatlas.org" },
     coordinators: [{ fullName: "Gary Bader" }, { fullName: "Alan Mullen" }],
-    descriptionKey: "liver",
+    key: "liver",
     name: "Liver Network",
     path: "liver",
   },
@@ -154,7 +172,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Martijn Nawijn" },
       { fullName: "Jay Rajagopal" },
     ],
-    descriptionKey: "lung",
+    key: "lung",
     name: "Lung Network",
     path: "lung",
   },
@@ -167,7 +185,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Adam Cribbs" },
       { fullName: "Farshid Guilak" },
     ],
-    descriptionKey: "musculoskeletal",
+    key: "musculoskeletal",
     name: "Musculoskeletal Network",
     path: "musculoskeletal",
   },
@@ -175,7 +193,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
     contact: { email: "nervous@humancellatlas.org" },
     coordinators: [{ fullName: "Ed Lein" }, { fullName: "Sten Linnarsson" }],
-    descriptionKey: "nervous-system",
+    key: "nervous-system",
     name: "Nervous System Network",
     path: "nervous-system",
   },
@@ -183,7 +201,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
     contact: { email: "oral@humancellatlas.org" },
     coordinators: [{ fullName: "Kevin Byrd" }, { fullName: "Ines Sequeira" }],
-    descriptionKey: "oral",
+    key: "oral",
     name: "Oral and craniofacial Networks",
     path: "oral",
   },
@@ -194,7 +212,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Christoph Bock" },
       { fullName: "Barbara Treutlein" },
     ],
-    descriptionKey: "organoid",
+    key: "organoid",
     name: "Organoid Network",
     path: "organoid",
   },
@@ -207,7 +225,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Roland Eils" },
       { fullName: "Diane Saunders" },
     ],
-    descriptionKey: "pancreas",
+    key: "pancreas",
     name: "Pancreas Network",
     path: "pancreas",
   },
@@ -220,7 +238,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Ariella Shikanov" },
       { fullName: "Roser Vento" },
     ],
-    descriptionKey: "reproduction",
+    key: "reproduction",
     name: "Reproduction Network",
     path: "reproduction",
   },
@@ -232,7 +250,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Maksim Plikus" },
       { fullName: "Fiona Watt" },
     ],
-    descriptionKey: "skin",
+    key: "skin",
     name: "Skin Network",
     path: "skin",
   },
@@ -257,6 +275,27 @@ export const DESCRIPTION_COMPONENTS: { [key in NetworkKey]: ElementType } = {
   pancreas: PancreasDescription,
   reproduction: ReproductionDescription,
   skin: SkinDescription,
+};
+
+export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
+  adipose: adiposeIcon,
+  breast: breastIcon,
+  development: developmentIcon,
+  eye: eyeIcon,
+  "genetic-diversity": geneticDiversityIcon,
+  gut: gutIcon,
+  heart: heartIcon,
+  immune: immuneIcon,
+  kidney: kidneyIcon,
+  liver: liverIcon,
+  lung: lungIcon,
+  musculoskeletal: musculoskeletalIcon,
+  "nervous-system": nervousSystemIcon,
+  oral: oralIcon,
+  organoid: organoidIcon,
+  pancreas: pancreasIcon,
+  reproduction: reproductionIcon,
+  skin: skinIcon,
 };
 
 export const ATLASES: { [key in AtlasKey]: AtlasModule } = {
