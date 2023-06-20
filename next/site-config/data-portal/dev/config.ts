@@ -9,6 +9,11 @@ const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
 export const LOGO_ALT = "Human Cell Atlas Data Coordination Platform";
 
 const config: SiteConfig = {
+  analytics: {
+    gtmAuth: "eQWri5eLUCDkm5SvLIv8eQ", // GTM environment-specific
+    gtmId: "GTM-M2J5NTJ",
+    gtmPreview: "env-186",
+  },
   browserURL: "",
   dataSource: {
     url: "",
