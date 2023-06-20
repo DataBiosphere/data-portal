@@ -1,4 +1,4 @@
-import { MDXProps } from "mdx/types";
+import { ElementType } from "react";
 
 export interface Coordinator {
   fullName: string;
@@ -15,8 +15,6 @@ export interface AnalysisPortal {
 export type Dataset = string; //TBD
 
 export type Publication = string; //TBD
-
-export type MDXComponent = (props: MDXProps) => JSX.Element;
 
 export interface Atlas {
   analysisPortals: AnalysisPortal[];
@@ -50,8 +48,8 @@ export interface AtlasContext {
 }
 
 export interface AtlasModule {
-  Description: MDXComponent;
-  Inclusion: MDXComponent;
+  Description: ElementType;
+  Inclusion: ElementType;
 }
 
 export type NetworkKey =

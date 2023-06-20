@@ -1,29 +1,24 @@
-import {
-  AtlasKey,
-  AtlasModule,
-  MDXComponent,
-  Network,
-} from "../@types/network";
-import * as adiposeAtlases from "../mdx/adipose/atlases";
-import AdiposeDescription from "../mdx/adipose/description.mdx";
-import BreastDescription from "../mdx/breast/description.mdx";
-import DevelopmentDescription from "../mdx/development/description.mdx";
-import EyeDescription from "../mdx/eye/description.mdx";
-import GeneticDiversityDescription from "../mdx/genetic-diversity/description.mdx";
-import GutDescription from "../mdx/gut/description.mdx";
-import HeartDescription from "../mdx/heart/description.mdx";
-import ImmuneDescription from "../mdx/immune/description.mdx";
-import KidneyDescription from "../mdx/kidney/description.mdx";
-import LiverDescription from "../mdx/liver/description.mdx";
-import LungDescription from "../mdx/lung/description.mdx";
-import MusculoskeletalDescription from "../mdx/musculoskeletal/description.mdx";
-import NervousSystemDescription from "../mdx/nervous-system/description.mdx";
-import OralDescription from "../mdx/oral/description.mdx";
-import OrganoidDescription from "../mdx/organoid/description.mdx";
-import PancreasDescription from "../mdx/pancreas/description.mdx";
-import ReproductionDescription from "../mdx/reproduction/description.mdx";
-import SkinDescription from "../mdx/skin/description.mdx";
-import { NetworkKey } from "./../@types/network";
+import { ElementType } from "react";
+import { AtlasKey, AtlasModule, Network, NetworkKey } from "../@types/network";
+import * as adiposeAtlases from "../content/adipose/atlases";
+import AdiposeDescription from "../content/adipose/description.mdx";
+import BreastDescription from "../content/breast/description.mdx";
+import DevelopmentDescription from "../content/development/description.mdx";
+import EyeDescription from "../content/eye/description.mdx";
+import GeneticDiversityDescription from "../content/genetic-diversity/description.mdx";
+import GutDescription from "../content/gut/description.mdx";
+import HeartDescription from "../content/heart/description.mdx";
+import ImmuneDescription from "../content/immune/description.mdx";
+import KidneyDescription from "../content/kidney/description.mdx";
+import LiverDescription from "../content/liver/description.mdx";
+import LungDescription from "../content/lung/description.mdx";
+import MusculoskeletalDescription from "../content/musculoskeletal/description.mdx";
+import NervousSystemDescription from "../content/nervous-system/description.mdx";
+import OralDescription from "../content/oral/description.mdx";
+import OrganoidDescription from "../content/organoid/description.mdx";
+import PancreasDescription from "../content/pancreas/description.mdx";
+import ReproductionDescription from "../content/reproduction/description.mdx";
+import SkinDescription from "../content/skin/description.mdx";
 
 export const NETWORKS: Network[] = [
   {
@@ -243,7 +238,7 @@ export const NETWORKS: Network[] = [
   },
 ];
 
-export const DESCRIPTION_COMPONENTS: { [key in NetworkKey]: MDXComponent } = {
+export const DESCRIPTION_COMPONENTS: { [key in NetworkKey]: ElementType } = {
   adipose: AdiposeDescription,
   breast: BreastDescription,
   development: DevelopmentDescription,
