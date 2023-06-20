@@ -8,6 +8,7 @@ import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";
+import { Head } from "../components/common/Head/head";
 import { config } from "../config/config";
 import { mergeAppTheme } from "../theme/theme";
 
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <EmotionThemeProvider theme={appTheme}>
       <ThemeProvider theme={appTheme}>
+        <Head />
         <CssBaseline />
         <AppLayout>
           <Header {...layout.header} />
