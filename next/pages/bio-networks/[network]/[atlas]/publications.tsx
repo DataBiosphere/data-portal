@@ -1,8 +1,12 @@
+import { Detail } from "@clevercanary/data-explorer-ui/lib/components/Detail/detail";
 import { AtlasProvider } from "contexts/atlasContext";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import React from "react";
-import { AtlasDetailPublications } from "views/AtlasDetailView/AtlasDetailPublications/atlasDetailPublications";
 import { AtlasContext } from "../../../../@types/network";
+import { Hero } from "../../../../components/Atlas/components/common/Hero/hero";
+import { Tabs } from "../../../../components/Atlas/components/common/Tabs/tabs";
+import { MainColumn } from "../../../../components/Atlas/components/Publications/components/MainColumn/mainColumn";
+import { SideColumn } from "../../../../components/Atlas/components/Publications/components/SideColumn/sideColumn";
 import * as atlasPages from "../../../../utils/atlasPages";
 
 export const getStaticPaths: GetStaticPaths = atlasPages.getStaticPaths;
@@ -16,7 +20,12 @@ const Page = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <AtlasProvider value={{ atlas, network }}>
-      <AtlasDetailPublications />
+      <Detail
+        mainColumn={<MainColumn />}
+        sideColumn={<SideColumn />}
+        Tabs={<Tabs />}
+        top={<Hero />}
+      />
     </AtlasProvider>
   );
 };

@@ -9,13 +9,15 @@ import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";
 import { config } from "../config/config";
+import { mergeAppTheme } from "../theme/theme";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const { layout, themeOptions } = config();
-  const theme = createAppTheme(themeOptions);
+  const defaultTheme = createAppTheme(themeOptions);
+  const appTheme = mergeAppTheme(defaultTheme);
   return (
-    <EmotionThemeProvider theme={theme}>
-      <ThemeProvider theme={theme}>
+    <EmotionThemeProvider theme={appTheme}>
+      <ThemeProvider theme={appTheme}>
         <CssBaseline />
         <AppLayout>
           <Header {...layout.header} />
