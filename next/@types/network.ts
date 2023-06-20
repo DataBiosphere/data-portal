@@ -1,3 +1,4 @@
+import { ProjectResponse } from "apis/azul/hca-dcp/common/entities";
 import { MDXProps } from "mdx/types";
 
 export interface Coordinator {
@@ -31,21 +32,30 @@ export interface Atlas {
   version: string;
 }
 
+export type DatasetQueryOrgan = string;
+
 export interface Network {
   atlases: Atlas[];
   contact: Contact;
   coordinators: Coordinator[];
+  datasetQueryOrgans: DatasetQueryOrgan[];
   descriptionKey: NetworkKey;
   name: string;
   path: string;
 }
 
 export type NetworkParam = {
+  datasets: ProjectResponse[];
   network: Network;
 };
 
 export interface AtlasContext {
   atlas: Atlas;
+  network: Network;
+}
+
+export interface NetworkContext {
+  datasets: ProjectResponse[];
   network: Network;
 }
 

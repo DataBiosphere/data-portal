@@ -1,5 +1,5 @@
-import { SiteConfig } from "@clevercanary/data-explorer-ui/lib/config/entities";
 import { ELEMENT_ALIGNMENT } from "@clevercanary/data-explorer-ui/lib/common/entities";
+import { SiteConfig } from "@clevercanary/data-explorer-ui/lib/config/entities";
 import logoHca from "images/logoHca.png";
 import logoHumanCellAtlas from "images/logoHumanCellAtlas.png";
 import { socials } from "./constants";
@@ -10,7 +10,7 @@ export const LOGO_ALT = "Human Cell Atlas Data Coordination Platform";
 const config: SiteConfig = {
   browserURL: "",
   dataSource: {
-    url: "",
+    url: "https://service.azul.data.humancellatlas.org/index",
   },
   entities: [],
   explorerTitle: "",

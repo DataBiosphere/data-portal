@@ -8,7 +8,9 @@ import {
 } from "../../../contexts/networkContext";
 
 export const NetworkDetailMainColumn = (): JSX.Element => {
-  const { atlases, path } = useNetwork();
+  const {
+    network: { atlases, path },
+  } = useNetwork();
   const DescriptionComponent = useNetworkDescription();
 
   return (
