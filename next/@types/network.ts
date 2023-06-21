@@ -1,5 +1,5 @@
 import { ProjectResponse } from "apis/azul/hca-dcp/common/entities";
-import { MDXProps } from "mdx/types";
+import { ElementType } from "react";
 
 export interface Coordinator {
   fullName: string;
@@ -16,8 +16,6 @@ export interface AnalysisPortal {
 export type Dataset = string; //TBD
 
 export type Publication = string; //TBD
-
-export type MDXComponent = (props: MDXProps) => JSX.Element;
 
 export interface Atlas {
   analysisPortals: AnalysisPortal[];
@@ -39,7 +37,7 @@ export interface Network {
   contact: Contact;
   coordinators: Coordinator[];
   datasetQueryOrgans: DatasetQueryOrgan[];
-  descriptionKey: NetworkKey;
+  key: NetworkKey;
   name: string;
   path: string;
 }
@@ -60,8 +58,8 @@ export interface NetworkContext {
 }
 
 export interface AtlasModule {
-  Description: MDXComponent;
-  Inclusion: MDXComponent;
+  Description: ElementType;
+  Inclusion: ElementType;
 }
 
 export type NetworkKey =

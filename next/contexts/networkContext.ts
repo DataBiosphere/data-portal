@@ -1,9 +1,6 @@
 import { DESCRIPTION_COMPONENTS, NETWORKS } from "constants/networks";
-import { createContext, useContext } from "react";
-import {
-  MDXComponent,
-  NetworkContext as NetworkContextType,
-} from "../@types/network";
+import { createContext, ElementType, useContext } from "react";
+import { NetworkContext as NetworkContextType } from "../@types/network";
 
 export const NetworkContext = createContext<NetworkContextType>({
   datasets: [],
@@ -16,10 +13,10 @@ export const useNetwork = (): NetworkContextType => {
   return useContext(NetworkContext);
 };
 
-export const useNetworkDescription = (): MDXComponent => {
+export const useNetworkDescription = (): ElementType => {
   const {
-    network: { descriptionKey },
+    network: { key },
   } = useNetwork();
 
-  return DESCRIPTION_COMPONENTS[descriptionKey];
+  return DESCRIPTION_COMPONENTS[key];
 };
