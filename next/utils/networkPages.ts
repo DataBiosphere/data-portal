@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps<NetworkParam> = async (
   const { network: networkParam } = context.params ?? {};
 
   const network = NETWORKS.find(({ path }) => path === networkParam) as Network;
-  const datasets = [];
+  const projects = [];
 
   if (network.datasetQueryOrgans.length > 0) {
     const result = await fetchEntitiesFromQuery(
@@ -29,8 +29,8 @@ export const getStaticProps: GetStaticProps<NetworkParam> = async (
       filterSpecimenOrgan(network.datasetQueryOrgans),
       undefined
     );
-    datasets.push(...result.hits);
+    projects.push(...result.hits);
   }
 
-  return { props: { datasets, network } };
+  return { props: { network, projects } };
 };

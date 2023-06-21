@@ -14,11 +14,11 @@ export const getStaticProps: GetStaticProps<NetworkParam> =
   networkPages.getStaticProps;
 
 const Page = ({
-  datasets,
   network,
+  projects,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <NetworkProvider value={{ datasets, network }}>
+    <NetworkProvider value={{ network, projects }}>
       <Detail mainColumn={<MainColumn />} Tabs={<Tabs />} top={<Hero />} />
     </NetworkProvider>
   );

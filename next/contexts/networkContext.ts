@@ -3,8 +3,8 @@ import { createContext, ElementType, useContext } from "react";
 import { NetworkContext as NetworkContextType } from "../@types/network";
 
 export const NetworkContext = createContext<NetworkContextType>({
-  datasets: [],
   network: NETWORKS[0],
+  projects: [],
 });
 
 export const NetworkProvider = NetworkContext.Provider;
@@ -14,9 +14,8 @@ export const useNetwork = (): NetworkContextType => {
 };
 
 export const useNetworkDescription = (): ElementType => {
-  const {
-    network: { key },
-  } = useNetwork();
+  const { network } = useNetwork();
+  const { key } = network;
 
   return DESCRIPTION_COMPONENTS[key];
 };

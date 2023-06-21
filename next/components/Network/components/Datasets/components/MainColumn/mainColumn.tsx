@@ -1,16 +1,9 @@
-import { FluidPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import React from "react";
-import { DetailViewTable } from "../../../../../common/Table/table.styles";
+import { useNetwork } from "../../../../../../contexts/networkContext";
+import { ProjectsTable } from "./projectsTable";
 
 export const MainColumn = (): JSX.Element => {
-  return (
-    <DetailViewTable
-      columns={[]}
-      gridTemplateColumns="minmax(522px, 1fr) repeat(4, minmax(124px, 1fr)) max-content" // TODO review gridTemplateColumns.
-      items={[]}
-      noResultsTitle={"No Datasets"}
-      Paper={FluidPaper}
-      tools={null}
-    />
-  );
+  const { network, projects } = useNetwork();
+  const { path } = network;
+  return <ProjectsTable networkPath={path} projects={projects} />;
 };
