@@ -13,7 +13,7 @@ export interface AnalysisPortal {
   name: string;
 }
 
-export type Dataset = string; //TBD
+export type Dataset = string;
 
 export type Publication = string; //TBD
 
@@ -47,9 +47,8 @@ export type NetworkParam = {
   projects: ProjectsEntityResponse[];
 };
 
-export interface AtlasContext {
+export interface AtlasContext extends NetworkContext {
   atlas: Atlas;
-  network: Network;
 }
 
 export interface NetworkContext {

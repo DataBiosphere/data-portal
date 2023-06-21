@@ -11,3 +11,14 @@ export const filterSpecimenOrgan = (value: string[]): AzulListParams => {
     ]),
   };
 };
+
+export const filterProjectId = (value: string[]): AzulListParams => {
+  return {
+    filters: transformFilters([
+      {
+        categoryKey: "projectId",
+        value,
+      },
+    ]),
+  };
+};
