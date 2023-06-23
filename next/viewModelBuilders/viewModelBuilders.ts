@@ -1,7 +1,8 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { ProjectResponse } from "apis/azul/hca-dcp/common/entities";
-import { Atlas } from "../@types/network";
+import { Atlas, Network } from "../@types/network";
 import * as C from "../components";
+import { NETWORK_ICONS } from "../constants/networks";
 import { NETWORKS_ROUTE } from "../constants/routes";
 
 /**
@@ -36,6 +37,53 @@ export function getProjectsTableColumns(
     getProjectsDiseaseDonorColumnDef(),
     getProjectsCellCountColumnDef(),
   ];
+}
+
+/**
+ * Returns the table column definition model for the networks table.
+ * @returns networks table column definition.
+ */
+export function getNetworksTableColumns(): ColumnDef<Network>[] {
+  return [getNetworkTitleColumnDef(), getNetworkAtlasesColumnDef()];
+}
+
+/**
+ * Returns network title column def.
+ * @returns atlas name column def.
+ */
+function getNetworkTitleColumnDef(): ColumnDef<Network> {
+  return {
+    accessorKey: "networkName",
+    cell: ({ row }) =>
+      C.KeyValuePairs({
+        keyValuePairs: new Map([
+          [
+            C.StaticImage({
+              alt: row.original.name,
+              src: NETWORK_ICONS[row.original.key],
+            }),
+            C.Link({
+              label: row.original.name.replace(/(\sNetwork.*)/gi, ""),
+              url: `${NETWORKS_ROUTE}/${row.original.path}`,
+            }),
+          ],
+        ]),
+      }),
+
+    header: "Biological Network",
+  };
+}
+
+/**
+ * Returns network atlases column def.
+ * @returns tissue column def.
+ */
+function getNetworkAtlasesColumnDef(): ColumnDef<Network> {
+  return {
+    accessorKey: "atlases",
+    cell: ({ row }) => C.Cell({ value: row.original.atlases.length }),
+    header: "Atlases",
+  };
 }
 
 /**

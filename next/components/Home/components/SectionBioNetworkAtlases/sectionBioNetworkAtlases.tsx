@@ -2,8 +2,9 @@ import { StaticImage } from "@clevercanary/data-explorer-ui/lib/components/commo
 import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
 import { TEXT_BODY_LARGE_500 } from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
-import { NETWORKS, NETWORK_ICONS } from "../../../../constants/networks";
+import { NETWORK_ICONS } from "../../../../constants/networks";
 import { NETWORKS_ROUTE } from "../../../../constants/routes";
+import { useNetworkList } from "../../../../hooks/useNetworkList";
 import { Section, SectionHead } from "../Section/section.styles";
 import {
   BioNetworkAtlas,
@@ -12,12 +13,13 @@ import {
 } from "./sectionBioNetworkAtlases.styles";
 
 export const SectionBioNetworkAtlases = (): JSX.Element => {
+  const networks = useNetworkList();
   return (
     <Section>
       <SectionContent>
         <SectionHead>Explore BioNework Atlases</SectionHead>
         <BioNetworkAtlases>
-          {NETWORKS.map(({ key, name, path }) => (
+          {networks.map(({ key, name, path }) => (
             <Link
               key={key}
               label={
