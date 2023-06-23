@@ -2,8 +2,8 @@ import { fetchEntitiesFromQuery } from "@clevercanary/data-explorer-ui/lib/entit
 import { filterSpecimenOrgan } from "apis/azul/hca-dcp/common/filters";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { Network, NetworkParam } from "../@types/network";
+import { config } from "../config/config";
 import { NETWORKS } from "../constants/networks";
-import { config } from "./../config/config";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -29,8 +29,7 @@ export const getStaticProps: GetStaticProps<NetworkParam> = async (
       filterSpecimenOrgan(network.datasetQueryOrgans),
       undefined
     );
-    const projects = result.hits.map((item) => item.projects[0]);
-    projectsResponses.push(...projects);
+    projectsResponses.push(...result.hits);
   }
 
   return { props: { network, projectsResponses } };

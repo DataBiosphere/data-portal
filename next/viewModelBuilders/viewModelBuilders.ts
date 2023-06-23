@@ -1,6 +1,7 @@
 import { ColumnDef } from "@tanstack/react-table";
-import { ProjectResponse } from "apis/azul/hca-dcp/common/entities";
 import { Atlas } from "../@types/network";
+import { ProjectsResponse } from "../apis/azul/hca-dcp/common/responses";
+import { processEntityValue } from "../apis/azul/hca-dcp/common/utils";
 import * as C from "../components";
 import { NETWORKS_ROUTE } from "../constants/routes";
 
@@ -27,7 +28,7 @@ export function getAtlasesTableColumns(
  */
 export function getProjectsTableColumns(
   networkPath: string
-): ColumnDef<ProjectResponse>[] {
+): ColumnDef<ProjectsResponse>[] {
   return [
     getProjectTitleColumnDef(networkPath),
     getProjectsSpeciesColumnDef(),
@@ -45,7 +46,7 @@ export function getProjectsTableColumns(
  */
 function getProjectTitleColumnDef(
   networkPath: string
-): ColumnDef<ProjectResponse> {
+): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "projectTitle",
     cell: ({ row }) => C.Link(buildProjectTitle(networkPath, row.original)),
@@ -114,9 +115,12 @@ function getAtlasesTissueColumnDef(): ColumnDef<Atlas> {
  */
 function getProjectTitleUrl(
   networkPath: string,
-  projectsResponse: ProjectResponse
+  projectsResponse: ProjectsResponse
 ): string {
-  return `/${networkPath}/datasets/${projectsResponse.projectId}`;
+  return `/${networkPath}/datasets/${processEntityValue(
+    projectsResponse.projects,
+    "projectId"
+  )}`;
 }
 
 /**
@@ -127,10 +131,10 @@ function getProjectTitleUrl(
  */
 export const buildProjectTitle = (
   networkPath: string,
-  projectsResponse: ProjectResponse
+  projectsResponse: ProjectsResponse
 ): React.ComponentProps<typeof C.Link> => {
   return {
-    label: projectsResponse.projectTitle,
+    label: processEntityValue(projectsResponse.projects, "projectTitle"),
     url: getProjectTitleUrl(networkPath, projectsResponse),
   };
 };
@@ -139,7 +143,7 @@ export const buildProjectTitle = (
  * Returns projects cell count column def.
  * @returns cell count column def.
  */
-function getProjectsCellCountColumnDef(): ColumnDef<ProjectResponse> {
+function getProjectsCellCountColumnDef(): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "count",
     cell: "Project-TBD",
@@ -151,7 +155,7 @@ function getProjectsCellCountColumnDef(): ColumnDef<ProjectResponse> {
  * Returns projects species column def.
  * @returns species column def.
  */
-function getProjectsSpeciesColumnDef(): ColumnDef<ProjectResponse> {
+function getProjectsSpeciesColumnDef(): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "species",
     cell: "TBD",
@@ -163,7 +167,7 @@ function getProjectsSpeciesColumnDef(): ColumnDef<ProjectResponse> {
  * Returns projects method column def.
  * @returns method column def.
  */
-function getProjectsMethodColumnDef(): ColumnDef<ProjectResponse> {
+function getProjectsMethodColumnDef(): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "method",
     cell: "TBD",
@@ -175,7 +179,7 @@ function getProjectsMethodColumnDef(): ColumnDef<ProjectResponse> {
  * Returns projects anatomical entity column def.
  * @returns anatomical entity column def.
  */
-function getProjectsAnatomicalEntityColumnDef(): ColumnDef<ProjectResponse> {
+function getProjectsAnatomicalEntityColumnDef(): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "anatomicalEntity",
     cell: "TBD",
@@ -187,7 +191,7 @@ function getProjectsAnatomicalEntityColumnDef(): ColumnDef<ProjectResponse> {
  * Returns projects disease donor column def.
  * @returns disease donor column def.
  */
-function getProjectsDiseaseDonorColumnDef(): ColumnDef<ProjectResponse> {
+function getProjectsDiseaseDonorColumnDef(): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "diseaseDonor",
     cell: "TBD",
