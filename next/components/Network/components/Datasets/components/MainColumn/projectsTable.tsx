@@ -1,12 +1,12 @@
 import { FluidPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import React from "react";
-import { ProjectsEntityResponse } from "../../../../../../apis/azul/hca-dcp/common/entities";
+import { ProjectResponse } from "../../../../../../apis/azul/hca-dcp/common/entities";
 import { getProjectsTableColumns } from "../../../../../../viewModelBuilders/viewModelBuilders";
 import { DetailViewTable } from "../../../../../common/Table/table.styles";
 
 interface ProjectsTableProps {
   networkPath: string;
-  projects: ProjectsEntityResponse[];
+  projects: ProjectResponse[];
 }
 
 export const ProjectsTable = ({
@@ -15,7 +15,7 @@ export const ProjectsTable = ({
 }: ProjectsTableProps): JSX.Element => {
   return (
     <DetailViewTable
-      columns={getProjectsTableColumns(networkPath) as any}
+      columns={getProjectsTableColumns(networkPath)}
       gridTemplateColumns="minmax(522px, 1fr) repeat(4, minmax(124px, 1fr)) max-content" // TODO review gridTemplateColumns.
       items={projects}
       noResultsTitle={"No projects"}

@@ -1,5 +1,5 @@
 import { ElementType } from "react";
-import { ProjectsEntityResponse } from "../apis/azul/hca-dcp/common/entities";
+import { ProjectResponse } from "../apis/azul/hca-dcp/common/entities";
 
 export interface Coordinator {
   fullName: string;
@@ -44,7 +44,7 @@ export interface Network {
 
 export type NetworkParam = {
   network: Network;
-  projects: ProjectsEntityResponse[];
+  projectsResponses: ProjectResponse[];
 };
 
 export interface AtlasContext {
@@ -54,7 +54,7 @@ export interface AtlasContext {
 
 export interface NetworkContext {
   network: Network;
-  projects: ProjectsEntityResponse[];
+  projectsResponses: ProjectResponse[];
 }
 
 export interface AtlasModule {
