@@ -32,4 +32,4 @@ export const DetailViewTable = styled(DXDetailViewTable)`
       padding: 20px;
     }
   }
-`;
+` as typeof DXDetailViewTable;

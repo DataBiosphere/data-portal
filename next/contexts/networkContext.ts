@@ -4,7 +4,7 @@ import { NetworkContext as NetworkContextType } from "../@types/network";
 
 export const NetworkContext = createContext<NetworkContextType>({
   network: NETWORKS[0],
-  projects: [],
+  projectsResponses: [],
 });
 
 export const NetworkProvider = NetworkContext.Provider;

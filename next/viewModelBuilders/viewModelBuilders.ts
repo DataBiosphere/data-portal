@@ -1,7 +1,5 @@
 import { ColumnDef } from "@tanstack/react-table";
-import { ProjectsEntityResponse } from "apis/azul/hca-dcp/common/entities";
-import { processEntityValue } from "apis/azul/hca-dcp/common/utils";
-import { HCA_DCP_CATEGORY_KEY } from "constants/category";
+import { ProjectResponse } from "apis/azul/hca-dcp/common/entities";
 import { Atlas } from "../@types/network";
 import * as C from "../components";
 import { NETWORKS_ROUTE } from "../constants/routes";
@@ -25,11 +23,11 @@ export function getAtlasesTableColumns(
 /**
  * Returns the table column definition model for the projects table.
  * @param networkPath - Network path.
- * @returns projecst table column definition.
+ * @returns projects table column definition.
  */
 export function getProjectsTableColumns(
   networkPath: string
-): ColumnDef<ProjectsEntityResponse>[] {
+): ColumnDef<ProjectResponse>[] {
   return [
     getProjectTitleColumnDef(networkPath),
     getProjectsSpeciesColumnDef(),
@@ -47,7 +45,7 @@ export function getProjectsTableColumns(
  */
 function getProjectTitleColumnDef(
   networkPath: string
-): ColumnDef<ProjectsEntityResponse> {
+): ColumnDef<ProjectResponse> {
   return {
     accessorKey: "projectTitle",
     cell: ({ row }) => C.Link(buildProjectTitle(networkPath, row.original)),
@@ -116,12 +114,9 @@ function getAtlasesTissueColumnDef(): ColumnDef<Atlas> {
  */
 function getProjectTitleUrl(
   networkPath: string,
-  projectsResponse: ProjectsEntityResponse
+  projectsResponse: ProjectResponse
 ): string {
-  return `/${networkPath}/datasets/${processEntityValue(
-    projectsResponse.projects,
-    "projectId"
-  )}`;
+  return `/${networkPath}/datasets/${projectsResponse.projectId}`;
 }
 
 /**
@@ -132,22 +127,19 @@ function getProjectTitleUrl(
  */
 export const buildProjectTitle = (
   networkPath: string,
-  projectsResponse: ProjectsEntityResponse
+  projectsResponse: ProjectResponse
 ): React.ComponentProps<typeof C.Link> => {
   return {
-    label: processEntityValue(
-      projectsResponse.projects,
-      HCA_DCP_CATEGORY_KEY.PROJECT_TITLE
-    ),
+    label: projectsResponse.projectTitle,
     url: getProjectTitleUrl(networkPath, projectsResponse),
   };
 };
 
 /**
- * Returns projecst cell count column def.
+ * Returns projects cell count column def.
  * @returns cell count column def.
  */
-function getProjectsCellCountColumnDef(): ColumnDef<ProjectsEntityResponse> {
+function getProjectsCellCountColumnDef(): ColumnDef<ProjectResponse> {
   return {
     accessorKey: "count",
     cell: "Project-TBD",
@@ -156,10 +148,10 @@ function getProjectsCellCountColumnDef(): ColumnDef<ProjectsEntityResponse> {
 }
 
 /**
- * Returns projecst species column def.
+ * Returns projects species column def.
  * @returns species column def.
  */
-function getProjectsSpeciesColumnDef(): ColumnDef<ProjectsEntityResponse> {
+function getProjectsSpeciesColumnDef(): ColumnDef<ProjectResponse> {
   return {
     accessorKey: "species",
     cell: "TBD",
@@ -168,10 +160,10 @@ function getProjectsSpeciesColumnDef(): ColumnDef<ProjectsEntityResponse> {
 }
 
 /**
- * Returns projecst method column def.
+ * Returns projects method column def.
  * @returns method column def.
  */
-function getProjectsMethodColumnDef(): ColumnDef<ProjectsEntityResponse> {
+function getProjectsMethodColumnDef(): ColumnDef<ProjectResponse> {
   return {
     accessorKey: "method",
     cell: "TBD",
@@ -180,10 +172,10 @@ function getProjectsMethodColumnDef(): ColumnDef<ProjectsEntityResponse> {
 }
 
 /**
- * Returns projecst anatomical entity column def.
+ * Returns projects anatomical entity column def.
  * @returns anatomical entity column def.
  */
-function getProjectsAnatomicalEntityColumnDef(): ColumnDef<ProjectsEntityResponse> {
+function getProjectsAnatomicalEntityColumnDef(): ColumnDef<ProjectResponse> {
   return {
     accessorKey: "anatomicalEntity",
     cell: "TBD",
@@ -192,10 +184,10 @@ function getProjectsAnatomicalEntityColumnDef(): ColumnDef<ProjectsEntityRespons
 }
 
 /**
- * Returns projecst disease donor column def.
+ * Returns projects disease donor column def.
  * @returns disease donor column def.
  */
-function getProjectsDiseaseDonorColumnDef(): ColumnDef<ProjectsEntityResponse> {
+function getProjectsDiseaseDonorColumnDef(): ColumnDef<ProjectResponse> {
   return {
     accessorKey: "diseaseDonor",
     cell: "TBD",
