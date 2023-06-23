@@ -1,9 +1,12 @@
+import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import { ColumnDef } from "@tanstack/react-table";
 import { Atlas, Network } from "../@types/network";
 import { ProjectsResponse } from "../apis/azul/hca-dcp/common/responses";
 import { processEntityValue } from "../apis/azul/hca-dcp/common/utils";
 import * as C from "../components";
 import { NETWORKS_ROUTE } from "../constants/routes";
+
+const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
 
 /**
  * Returns the table column definition model for the atlases table.
@@ -161,7 +164,7 @@ function getProjectTitleUrl(
   networkPath: string,
   projectsResponse: ProjectsResponse
 ): string {
-  return `/${networkPath}/datasets/${processEntityValue(
+  return `${PORTAL_URL}/explore/projects/${processEntityValue(
     projectsResponse.projects,
     "projectId"
   )}`;
@@ -179,6 +182,7 @@ export const buildProjectTitle = (
 ): React.ComponentProps<typeof C.Link> => {
   return {
     label: processEntityValue(projectsResponse.projects, "projectTitle"),
+    target: ANCHOR_TARGET.SELF,
     url: getProjectTitleUrl(networkPath, projectsResponse),
   };
 };

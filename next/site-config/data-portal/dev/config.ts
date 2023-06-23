@@ -26,8 +26,8 @@ const config: SiteConfig = {
       logos: [
         {
           alt: LOGO_ALT,
-          link: PORTAL_URL,
           height: 38,
+          link: PORTAL_URL,
           src: logoHumanCellAtlas,
         },
       ],
@@ -53,7 +53,7 @@ const config: SiteConfig = {
     },
     header: {
       authenticationEnabled: false,
-      logo: { alt: LOGO_ALT, link: PORTAL_URL, src: logoHca, height: 32 },
+      logo: { alt: LOGO_ALT, height: 32, link: PORTAL_URL, src: logoHca },
       navAlignment: ELEMENT_ALIGNMENT.LEFT,
       navLinks: [
         {
