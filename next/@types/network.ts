@@ -47,9 +47,8 @@ export type NetworkParam = {
   projectsResponses: ProjectsResponse[];
 };
 
-export interface AtlasContext {
+export interface AtlasContext extends NetworkContext {
   atlas: Atlas;
-  network: Network;
 }
 
 export interface NetworkContext {

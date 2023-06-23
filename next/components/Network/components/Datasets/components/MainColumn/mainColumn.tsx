@@ -10,9 +10,9 @@ export const MainColumn = (): JSX.Element => {
   return (
     <DetailViewTable
       columns={getProjectsTableColumns(path)}
-      gridTemplateColumns="minmax(522px, 1fr) repeat(4, minmax(124px, 1fr)) max-content" // TODO review gridTemplateColumns.
+      gridTemplateColumns="minmax(500px, 1fr) repeat(4, minmax(148px, 1fr)) max-content"
       items={projectsResponses}
-      noResultsTitle={"No projects"}
+      noResultsTitle={"No Datasets"}
       Paper={FluidPaper}
       tools={null}
     />
