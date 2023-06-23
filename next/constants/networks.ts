@@ -131,7 +131,11 @@ export const NETWORKS: Network[] = [
         analysisPortals: [],
         contact: { email: "adipose@humancellatlas.org" },
         coordinators: [{ fullName: "TBD" }],
-        datasets: [],
+        datasets: [
+          "74b6d569-3b11-42ef-b6b1-a0454522b4a0",
+          "7027adc6-c9c9-46f3-84ee-9badc3a4f53b",
+          "94e4ee09-9b4b-410a-84dc-a751ad36d0df",
+        ],
         key: "blood-v1",
         name: "Blood",
         path: "blood-v1",
