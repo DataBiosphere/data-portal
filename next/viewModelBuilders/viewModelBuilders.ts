@@ -1,5 +1,5 @@
 import { ColumnDef } from "@tanstack/react-table";
-import { Atlas } from "../@types/network";
+import { Atlas, Network } from "../@types/network";
 import { ProjectsResponse } from "../apis/azul/hca-dcp/common/responses";
 import { processEntityValue } from "../apis/azul/hca-dcp/common/utils";
 import * as C from "../components";
@@ -19,6 +19,50 @@ export function getAtlasesTableColumns(
     getAtlasesDiseaseColumnDef(),
     getAtlasesCellCountColumnDef(),
   ];
+}
+
+/**
+ * Returns the bio network name, without the suffix "Network".
+ * @param name - Bio network name.
+ * @returns name of the bio network.
+ */
+export function getBioNetworkName(name: string): string {
+  return name.replace(/(\sNetwork.*)/gi, "");
+}
+
+/**
+ * Returns the table column definition model for the bio networks table.
+ * @returns bio networks table column definition.
+ */
+export function getBioNetworksTableColumns(): ColumnDef<Network>[] {
+  return [
+    getBioNetworksNetworkNameColumnDef(),
+    getBioNetworksAtlasesColumnDef(),
+  ];
+}
+
+/**
+ * Returns bio network name column def.
+ * @returns network name column def.
+ */
+function getBioNetworksNetworkNameColumnDef(): ColumnDef<Network> {
+  return {
+    accessorKey: "networkName",
+    cell: ({ row }) => C.BioNetworkCell({ network: row.original }),
+    header: "Biological Network",
+  };
+}
+
+/**
+ * Returns bio network atlases column def.
+ * @returns atlases column def.
+ */
+function getBioNetworksAtlasesColumnDef(): ColumnDef<Network> {
+  return {
+    accessorKey: "atlases",
+    cell: ({ row }) => C.Cell({ value: row.original.atlases.length }),
+    header: "Atlases",
+  };
 }
 
 /**

@@ -32,7 +32,9 @@ export const MainColumn = (): JSX.Element => {
         <Section>
           <SectionContent>
             <SectionTitle title="Network Description" />
-            <Description />
+            <div>
+              <Description />
+            </div>
           </SectionContent>
         </Section>
       </FluidPaper>
