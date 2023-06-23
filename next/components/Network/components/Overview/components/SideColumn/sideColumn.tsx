@@ -4,10 +4,11 @@ import { useNetwork } from "../../../../../../contexts/networkContext";
 import { Coordinators } from "../../../../../common/Section/components/Coordinators/coordinators";
 
 export const SideColumn = (): JSX.Element => {
+  const { network } = useNetwork();
   const {
     contact: { email },
     coordinators,
-  } = useNetwork();
+  } = network;
   return (
     <Sections>
       {/* Network Coordinators */}

@@ -22,7 +22,8 @@ import { getAtlasesTableColumns } from "../../../../../../viewModelBuilders/view
 import { Table, TableToolbar } from "../../../../../common/Table/table.styles";
 
 export const MainColumn = (): JSX.Element => {
-  const { atlases, path: networkPath } = useNetwork();
+  const { network } = useNetwork();
+  const { atlases, path: networkPath } = network;
   const Description = useNetworkDescription();
   return (
     <>

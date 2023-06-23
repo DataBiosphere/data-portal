@@ -15,9 +15,10 @@ export const getStaticProps: GetStaticProps<NetworkParam> =
 
 const Page = ({
   network,
+  projectsResponses,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <NetworkProvider value={network}>
+    <NetworkProvider value={{ network, projectsResponses }}>
       <Detail mainColumn={<MainColumn />} Tabs={<Tabs />} top={<Hero />} />
     </NetworkProvider>
   );

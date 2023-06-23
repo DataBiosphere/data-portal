@@ -20,7 +20,8 @@ const TABS = [
 
 export const Tabs = (): JSX.Element => {
   const router = useRouter();
-  const { path } = useNetwork();
+  const { network } = useNetwork();
+  const { path } = network;
 
   const handleTabChanged = (value: TabValue): void => {
     router.push({

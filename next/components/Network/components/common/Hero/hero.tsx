@@ -4,7 +4,8 @@ import { useNetwork } from "contexts/networkContext";
 import React, { useMemo } from "react";
 
 export const Hero = (): JSX.Element => {
-  const { name, path } = useNetwork();
+  const { network } = useNetwork();
+  const { name, path } = network;
 
   const breadcrumbs = useMemo(
     () => [

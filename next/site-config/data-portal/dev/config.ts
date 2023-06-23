@@ -16,7 +16,7 @@ const config: SiteConfig = {
   },
   browserURL: "",
   dataSource: {
-    url: "",
+    url: "https://service.azul.data.humancellatlas.org/index",
   },
   entities: [],
   explorerTitle: "",
