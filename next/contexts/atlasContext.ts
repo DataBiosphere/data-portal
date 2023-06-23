@@ -12,7 +12,7 @@ const DEFAULT_ATLAS = DEFAULT_NETWORK.atlases[0];
 export const AtlasContext = createContext<AtlasContextType>({
   atlas: DEFAULT_ATLAS,
   network: DEFAULT_NETWORK,
-  projects: [],
+  projectsResponses: [],
 });
 
 export const AtlasProvider = AtlasContext.Provider;

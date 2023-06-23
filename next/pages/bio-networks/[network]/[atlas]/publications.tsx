@@ -17,10 +17,10 @@ export const getStaticProps: GetStaticProps<AtlasContext> =
 const Page = ({
   atlas,
   network,
-  projects,
+  projectsResponses,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <AtlasProvider value={{ atlas, network, projects }}>
+    <AtlasProvider value={{ atlas, network, projectsResponses }}>
       <Detail
         mainColumn={<MainColumn />}
         sideColumn={<SideColumn />}

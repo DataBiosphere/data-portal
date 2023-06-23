@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps<AtlasContext> = async (
   const atlas = network.atlases.find(
     ({ path }) => path === atlasParam
   ) as Atlas;
-  const projects = [];
+  const projectsResponses = [];
 
   if (atlas.datasets.length > 0) {
     const result = await fetchEntitiesFromQuery(
@@ -46,8 +46,9 @@ export const getStaticProps: GetStaticProps<AtlasContext> = async (
       filterProjectId(atlas.datasets),
       undefined
     );
-    projects.push(...result.hits);
+    const projects = result.hits.map((item) => item.projects[0]);
+    projectsResponses.push(...projects);
   }
 
-  return { props: { atlas, network, projects } };
+  return { props: { atlas, network, projectsResponses } };
 };

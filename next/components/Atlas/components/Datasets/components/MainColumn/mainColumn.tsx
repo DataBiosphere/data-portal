@@ -1,10 +1,21 @@
+import { FluidPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import React from "react";
 import { useAtlas } from "../../../../../../contexts/atlasContext";
-import { ProjectsTable } from "../../../../../Network/components/Datasets/components/MainColumn/projectsTable";
+import { getProjectsTableColumns } from "../../../../../../viewModelBuilders/viewModelBuilders";
+import { DetailViewTable } from "../../../../../common/Table/table.styles";
 
 export const MainColumn = (): JSX.Element => {
-  const { network, projects } = useAtlas();
+  const { network, projectsResponses } = useAtlas();
   const { path } = network;
 
-  return <ProjectsTable networkPath={path} projects={projects} />;
+  return (
+    <DetailViewTable
+      columns={getProjectsTableColumns(path)}
+      gridTemplateColumns="minmax(522px, 1fr) repeat(4, minmax(124px, 1fr)) max-content" // TODO review gridTemplateColumns.
+      items={projectsResponses}
+      noResultsTitle={"No projects"}
+      Paper={FluidPaper}
+      tools={null}
+    />
+  );
 };
