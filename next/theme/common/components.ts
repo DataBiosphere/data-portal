@@ -9,9 +9,12 @@ import { Components, Theme } from "@mui/material";
 export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
   return {
     styleOverrides: {
+      body: {
+        ...theme.typography[TEXT_BODY_400_2_LINES],
+      },
       p: {
         ...theme.typography[TEXT_BODY_400_2_LINES],
-        marginBottom: 16,
+        marginBottom: 8,
       },
     },
   };

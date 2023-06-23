@@ -2,9 +2,9 @@ import { Detail } from "@clevercanary/data-explorer-ui/lib/components/Detail/det
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import React from "react";
 import { NetworkParam } from "../../../@types/network";
-import { Hero } from "../../../components/Network/components/common/Hero/hero";
-import { Tabs } from "../../../components/Network/components/common/Tabs/tabs";
-import { MainColumn } from "../../../components/Network/components/Datasets/components/MainColumn/mainColumn";
+import { Hero } from "../../../components/BioNetworks/Network/components/common/Hero/hero";
+import { Tabs } from "../../../components/BioNetworks/Network/components/common/Tabs/tabs";
+import { MainColumn } from "../../../components/BioNetworks/Network/components/Datasets/components/MainColumn/mainColumn";
 import { NetworkProvider } from "../../../contexts/networkContext";
 import * as networkPages from "../../../utils/networkPages";
 

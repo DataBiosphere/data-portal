@@ -13,7 +13,7 @@ export interface AnalysisPortal {
   name: string;
 }
 
-export type Dataset = string; //TBD
+export type Dataset = string;
 
 export type Publication = string; //TBD
 
