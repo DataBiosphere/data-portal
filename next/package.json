@@ -15,7 +15,7 @@
     "prepare": "cd .. && husky install next/.husky"
   },
   "dependencies": {
-    "@clevercanary/data-explorer-ui": "0.26.0",
+    "@clevercanary/data-explorer-ui": "0.27.1",
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
     "@mdx-js/loader": "^2.3.0",
