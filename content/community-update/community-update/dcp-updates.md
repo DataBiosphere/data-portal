@@ -6,6 +6,40 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### June 26, 2023
+
+### Release Highlights
+
+* New projects are available from the Blood, Eye, Gut, Kidney, Lung, and Skin Biological Networks.
+
+* A new managed access project, ["A multi-omic single-cell landscape of human gynecologic malignancies"](https://data.humancellatlas.org/explore/projects/9746f4e0-d3b2-4543-89b3-10288162851b), is available in the Data Portal.
+
+* A project previously removed from the Data Portal has been re-imported and is available for download:
+	
+	* [Single-cell analysis of the cellular heterogeneity and interactions in the injured mouse spinal cord](https://data.humancellatlas.org/explore/projects/e6773550-c1a6-4949-8643-1a3154cf2670)
+	
+### New Raw Data, Metadata, and Contributor-generated Matrices (14)
+
+1. [A multi-omic single-cell landscape of human gynecologic malignancies](https://data.humancellatlas.org/explore/projects/9746f4e0-d3b2-4543-89b3-10288162851b)
+2. [A multi-omics atlas of the human retina at single-cell resolution](https://data.humancellatlas.org/explore/projects/c3354786-c17c-4e53-b4d7-c7afbed5b208)
+3. [A single-cell regulatory map of postnatal lung alveologenesis in humans and mice](https://data.humancellatlas.org/explore/projects/92afaa56-d501-481e-a027-dddd72212ba8)
+4. [Airspace Macrophages and Monocytes Exist in Transcriptionally Distinct Subsets in Healthy Adults](https://data.humancellatlas.org/explore/projects/272b7602-66cd-4b02-a86b-2b7c9c51a9ea)
+5. [Characterization of altered molecular mechanisms in Parkinson's disease through cell type-resolved multiomics analyses](https://data.humancellatlas.org/explore/projects/57a2c2de-b0d4-465a-be53-a41e59e75fab)
+6. [Dynamic changes in human single cell transcriptional signatures during fatal sepsis](https://data.humancellatlas.org/explore/projects/8b954fb2-bccb-44c5-84e3-9f91e9189c40)
+7. [Human melanocyte development and melanoma dedifferentiation at single-cell resolution](https://data.humancellatlas.org/explore/projects/a4f154f8-5cc9-40b5-b8d7-af90afce8a8f)
+8. [Immune signatures underlying post-acute COVID-19 lung sequelae](https://data.humancellatlas.org/explore/projects/fae72d89-4ac4-4aab-9b93-574775e168d4)
+9. [Impaired local intrinsic immunity to SARS-CoV-2 infection in severe COVID-19](https://data.humancellatlas.org/explore/projects/111d272b-c25a-49ac-9b25-e062b70d66e0)
+10. [Single cell transcriptomic analysis of the immune cell compartment in the human small intestine and in Celiac disease](https://data.humancellatlas.org/explore/projects/77423e58-0fbb-495a-9ec2-bd9a8010f21d)
+11. [Single cell transcriptomics identifies focal segmental glomerulosclerosis remission endothelial biomarker](https://data.humancellatlas.org/explore/projects/29b54165-34ee-4da5-b257-b4c1f7343656)
+12. [Single-cell analysis of the cellular heterogeneity and interactions in the injured mouse spinal cord](https://data.humancellatlas.org/explore/projects/e6773550-c1a6-4949-8643-1a3154cf2670)
+13. [Spatially resolved human kidney multi-omics single cell atlas highlights the key role of the fibrotic microenvironment in kidney disease progression](https://data.humancellatlas.org/explore/projects/e925633f-abd9-486a-81c6-1a6a66891d23)
+14. [The landscape of immune dysregulation in Crohn's disease revealed through single-cell transcriptomic profiling in the ileum and colon](https://data.humancellatlas.org/explore/projects/cae461de-ecbd-482f-a5d4-11d607fc12ba)
+
+### Updated Raw Data and Metadata (2)
+
+1. [A single cell atlas of the human proximal epididymis reveals cell-type specific functions and distinct roles for CFTR](https://data.humancellatlas.org/explore/projects/842605c7-375a-47c5-9e2c-a71c2c00fcad)
+2. [Time-resolved systems immunology reveals a late juncture linked to fatal COVID-19](https://data.humancellatlas.org/explore/projects/ae62bb31-55ca-4127-b0fb-b1771a604645)
+
 #### June 13, 2023
 
 ### Release Highlights
