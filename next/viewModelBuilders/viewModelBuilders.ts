@@ -312,6 +312,15 @@ function getLibraryConstructionMethodColumnDef(): ColumnDef<ProjectsResponse> {
  */
 function getNetworkSummary(network: Network): Record<string, number> {
   const atlases = rollUpAtlases(network.atlases);
+  if (atlases.length === 0) {
+    return {
+      atlases: 0,
+      cells: 0,
+      diseases: 0,
+      projects: 0,
+      tissues: 0,
+    };
+  }
   return {
     atlases: atlases.length,
     cells: processAggregatedNumberEntityValue(atlases, "cellCount"),
