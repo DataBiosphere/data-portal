@@ -9,22 +9,23 @@ import {
   NETWORK_DATASETS_PATTERN,
 } from "../../../../../../constants/routes";
 import { useNetwork } from "../../../../../../contexts/networkContext";
-
-const TABS = [
-  {
-    label: "Overview",
-    value: NETWORKS_PATTERN,
-  },
-  {
-    label: "Datasets",
-    value: NETWORK_DATASETS_PATTERN,
-  },
-];
+import { getBioNetworkName } from "../../../../../../viewModelBuilders/viewModelBuilders";
 
 export const Tabs = (): JSX.Element => {
   const router = useRouter();
   const { network } = useNetwork();
-  const { path } = network;
+  const { name, path } = network;
+
+  const TABS = [
+    {
+      label: "Overview",
+      value: NETWORKS_PATTERN,
+    },
+    {
+      label: `${getBioNetworkName(name)} Datasets`,
+      value: NETWORK_DATASETS_PATTERN,
+    },
+  ];
 
   const handleTabChanged = (value: TabValue): void => {
     router.push({

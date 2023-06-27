@@ -1,12 +1,121 @@
+import { LABEL } from "@clevercanary/data-explorer-ui/lib/apis/azul/common/entities";
+import { KeyValues } from "@clevercanary/data-explorer-ui/lib/components/common/KeyValuePairs/keyValuePairs";
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import { ColumnDef } from "@tanstack/react-table";
-import { Atlas, Network } from "../@types/network";
+import {
+  Atlas,
+  AtlasesRow,
+  AtlasRow,
+  IntegratedAtlasRow,
+  Network,
+} from "../@types/network";
+import { ProjectResponse } from "../apis/azul/hca-dcp/common/entities";
 import { ProjectsResponse } from "../apis/azul/hca-dcp/common/responses";
-import { processEntityValue } from "../apis/azul/hca-dcp/common/utils";
+import {
+  processAggregatedNumberEntityValue,
+  processAggregatedOrArrayValue,
+  processEntityValue,
+} from "../apis/azul/hca-dcp/common/utils";
 import * as C from "../components";
 import { NETWORKS_ROUTE } from "../constants/routes";
 
 const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
+
+/**
+ * Merges two arrays of values and returns a list of distinct values.
+ * @param values01 - Distinct list of values.
+ * @param values02 - Additional list of values to be concatenated.
+ * @returns List of distinct values.
+ */
+export function accumulateValues(
+  values01 = [] as string[],
+  values02: string[]
+): string[] {
+  const concatenatedValues = values01.concat(values02).sort();
+  const setOfAccumulatedValues = new Set(concatenatedValues);
+  return [...setOfAccumulatedValues];
+}
+
+/**
+ * Calculate the estimated cell count from the given projects response.
+ * Returns the estimated cell count, if any, otherwise the totalCell value from cellSuspensions.
+ * @param projectsResponse - Response model return from projects API.
+ * @returns estimated cell count.
+ */
+function calculateEstimatedCellCount(
+  projectsResponse: ProjectsResponse
+): number | null {
+  const estimatedCellCount =
+    getProjectResponse(projectsResponse).estimatedCellCount;
+  // If there's an estimated cell count for the project, return it as the cell count.
+  if (estimatedCellCount) {
+    return estimatedCellCount;
+  }
+  // Otherwise, return the cell suspension total count.
+  return rollUpTotalCells(projectsResponse);
+}
+
+/**
+ * Returns atlases actions column def.
+ * @returns actions column def.
+ */
+function getAtlasesActionsColumnDef(): ColumnDef<IntegratedAtlasRow> {
+  return {
+    accessorKey: "actions",
+    cell: ({ row }) =>
+      C.ButtonPrimary({
+        children: "CELLxGENE",
+        href: row.original.cxgURL,
+        size: "small",
+        target: ANCHOR_TARGET.BLANK,
+      }),
+    header: "",
+  };
+}
+
+/**
+ * Returns atlases atlas name column def.
+ * @param networkPath - Network path.
+ * @returns atlas name column def.
+ */
+function getAtlasesAtlasNameColumnDef(
+  networkPath: string
+): ColumnDef<AtlasesRow> {
+  return {
+    accessorKey: "atlasName",
+    cell: ({ row }) =>
+      C.Link({
+        label: row.original.atlasName,
+        url: `${NETWORKS_ROUTE}/${networkPath}/${row.original.path}`,
+      }),
+    header: "Atlas Name",
+  };
+}
+
+/**
+ * Returns atlases cell count column def.
+ * @returns cell count column def.
+ */
+function getAtlasesCellCountColumnDef<T extends AtlasRow>(): ColumnDef<T> {
+  return {
+    accessorKey: "cellCount",
+    cell: ({ row }) => row.original.cellCount.toLocaleString(),
+    header: "Cell Count Est.",
+  };
+}
+
+/**
+ * Returns atlases disease column def.
+ * @returns disease column def.
+ */
+function getAtlasesDiseaseColumnDef<T extends AtlasRow>(): ColumnDef<T> {
+  return {
+    accessorKey: "disease",
+    cell: ({ row }) =>
+      C.NTagCell({ label: "diseases", values: row.original.disease }),
+    header: "Disease",
+  };
+}
 
 /**
  * Returns the table column definition model for the atlases table.
@@ -15,7 +124,7 @@ const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
  */
 export function getAtlasesTableColumns(
   networkPath: string
-): ColumnDef<Atlas>[] {
+): ColumnDef<AtlasesRow>[] {
   return [
     getAtlasesAtlasNameColumnDef(networkPath),
     getAtlasesTissueColumnDef(),
@@ -25,35 +134,25 @@ export function getAtlasesTableColumns(
 }
 
 /**
+ * Returns atlases tissue column def.
+ * @returns tissue column def.
+ */
+function getAtlasesTissueColumnDef<T extends AtlasRow>(): ColumnDef<T> {
+  return {
+    accessorKey: "tissue",
+    cell: ({ row }) =>
+      C.NTagCell({ label: "tissues", values: row.original.tissue }),
+    header: "Tissue",
+  };
+}
+
+/**
  * Returns the bio network name, without the suffix "Network".
  * @param name - Bio network name.
  * @returns name of the bio network.
  */
 export function getBioNetworkName(name: string): string {
   return name.replace(/(\sNetwork.*)/gi, "");
-}
-
-/**
- * Returns the table column definition model for the bio networks table.
- * @returns bio networks table column definition.
- */
-export function getBioNetworksTableColumns(): ColumnDef<Network>[] {
-  return [
-    getBioNetworksNetworkNameColumnDef(),
-    getBioNetworksAtlasesColumnDef(),
-  ];
-}
-
-/**
- * Returns bio network name column def.
- * @returns network name column def.
- */
-function getBioNetworksNetworkNameColumnDef(): ColumnDef<Network> {
-  return {
-    accessorKey: "networkName",
-    cell: ({ row }) => C.BioNetworkCell({ network: row.original }),
-    header: "Biological Network",
-  };
 }
 
 /**
@@ -69,6 +168,187 @@ function getBioNetworksAtlasesColumnDef(): ColumnDef<Network> {
 }
 
 /**
+ * Returns bio network name column def.
+ * @returns network name column def.
+ */
+function getBioNetworksNetworkNameColumnDef(): ColumnDef<Network> {
+  return {
+    accessorKey: "networkName",
+    cell: ({ row }) => C.BioNetworkCell({ network: row.original }),
+    header: "Biological Network",
+  };
+}
+
+/**
+ * Returns the table column definition model for the bio networks table.
+ * @returns bio networks table column definition.
+ */
+export function getBioNetworksTableColumns(): ColumnDef<Network>[] {
+  return [
+    getBioNetworksNetworkNameColumnDef(),
+    getBioNetworksAtlasesColumnDef(),
+  ];
+}
+
+/**
+ * Returns donor disease column def.
+ * @returns donor disease column def.
+ */
+function getDonorDiseaseColumnDef(): ColumnDef<ProjectsResponse> {
+  return {
+    accessorKey: "disease",
+    cell: ({ row }) =>
+      C.NTagCell({
+        label: "diseases",
+        values: processAggregatedOrArrayValue(
+          row.original.donorOrganisms,
+          "disease"
+        ),
+      }),
+    header: "Disease (Donor)",
+  };
+}
+
+/**
+ * Returns formatted estimated cell count from the given projects response.
+ * @param projectsResponse - Response model return from projects API.
+ * @param formatFn - Function to format count (optional, e.g. formatCountSize, default is locale string).
+ * @returns formatted estimated cell count.
+ */
+export function getEstimatedCellCount(
+  projectsResponse: ProjectsResponse,
+  formatFn?: (value: number) => string
+): string {
+  const estimatedCellCount = calculateEstimatedCellCount(projectsResponse);
+  if (!estimatedCellCount) {
+    return LABEL.UNSPECIFIED;
+  }
+  if (formatFn) {
+    return formatFn(estimatedCellCount);
+  }
+  return estimatedCellCount.toLocaleString();
+}
+
+/**
+ * Returns estimate cell count column def.
+ * @returns estimate cell count column def.
+ */
+function getEstimateCellCountColumnDef(): ColumnDef<ProjectsResponse> {
+  return {
+    accessorKey: "estimatedCellCount",
+    cell: ({ row }) => C.Cell({ value: getEstimatedCellCount(row.original) }),
+    header: "Cell Count Est.",
+  };
+}
+
+/**
+ * Returns genus species column def.
+ * @returns genus species column def.
+ */
+function getGenusSpeciesColumnDef(): ColumnDef<ProjectsResponse> {
+  return {
+    accessorKey: "genusSpecies",
+    cell: ({ row }) =>
+      C.NTagCell({
+        label: "species",
+        values: processAggregatedOrArrayValue(
+          row.original.donorOrganisms,
+          "genusSpecies"
+        ),
+      }),
+    header: "Species",
+  };
+}
+
+/**
+ * Returns integrated atlases atlas name column def.
+ * @returns atlas name column def.
+ */
+function getIntegratedAtlasesAtlasNameColumnDef(): ColumnDef<IntegratedAtlasRow> {
+  return {
+    accessorKey: "name",
+    cell: ({ row }) => C.Cell({ value: row.original.name }),
+    header: "Atlas Name",
+  };
+}
+
+/**
+ * Returns the table column definition model for the integrated atlases table.
+ * @returns integrated atlases table column definition.
+ */
+export function getIntegratedAtlasesTableColumns(): ColumnDef<IntegratedAtlasRow>[] {
+  return [
+    getIntegratedAtlasesAtlasNameColumnDef(),
+    getAtlasesTissueColumnDef(),
+    getAtlasesDiseaseColumnDef(),
+    getAtlasesCellCountColumnDef(),
+    getAtlasesActionsColumnDef(),
+  ];
+}
+
+/**
+ * Returns library construction method column def.
+ * @returns library construction method column def.
+ */
+function getLibraryConstructionMethodColumnDef(): ColumnDef<ProjectsResponse> {
+  return {
+    accessorKey: "libraryConstructionApproach",
+    cell: ({ row }) =>
+      C.NTagCell({
+        label: "library construction methods",
+        values: processAggregatedOrArrayValue(
+          row.original.protocols,
+          "libraryConstructionApproach"
+        ),
+      }),
+    header: "Method",
+  };
+}
+
+/**
+ * Returns the network summary.
+ * @param network - Network.
+ * @returns network summary.
+ */
+function getNetworkSummary(network: Network): Record<string, number> {
+  const atlases = rollUpAtlases(network.atlases);
+  return {
+    atlases: atlases.length,
+    cells: processAggregatedNumberEntityValue(atlases, "cellCount"),
+    diseases: processAggregatedOrArrayValue(atlases, "disease").length,
+    projects: processAggregatedOrArrayValue(network.atlases, "datasets").length,
+    tissues: processAggregatedOrArrayValue(atlases, "tissue").length,
+  };
+}
+
+/**
+ * Returns the key value pairs for the network summary key value pairs component.
+ * @param network - Network.
+ * @returns key value pairs for the key value pairs component.
+ */
+export function getNetworkSummaryKeyValuePairs(network: Network): KeyValues {
+  const summary = getNetworkSummary(network);
+  const keyValues: KeyValues = new Map();
+  keyValues.set("Atlases", summary.atlases.toLocaleString());
+  keyValues.set("Projects", summary.projects.toLocaleString());
+  keyValues.set("Diseases", summary.diseases.toLocaleString());
+  keyValues.set("Tissues", summary.tissues.toLocaleString());
+  keyValues.set("Est. Cells", summary.cells.toLocaleString());
+  return keyValues;
+}
+
+/**
+ * Returns the project value from the projects API response.
+ * @param projectsResponse - Response returned from projects API response.
+ * @returns The core project value from the API response.
+ */
+export function getProjectResponse(
+  projectsResponse: ProjectsResponse
+): ProjectResponse {
+  return projectsResponse.projects[0];
+}
+
+/**
  * Returns the table column definition model for the projects table.
  * @param networkPath - Network path.
  * @returns projects table column definition.
@@ -78,79 +358,31 @@ export function getProjectsTableColumns(
 ): ColumnDef<ProjectsResponse>[] {
   return [
     getProjectTitleColumnDef(networkPath),
-    getProjectsSpeciesColumnDef(),
-    getProjectsMethodColumnDef(),
-    getProjectsAnatomicalEntityColumnDef(),
-    getProjectsDiseaseDonorColumnDef(),
-    getProjectsCellCountColumnDef(),
+    getGenusSpeciesColumnDef(),
+    getLibraryConstructionMethodColumnDef(),
+    getSpecimenOrganColumnDef(),
+    getDonorDiseaseColumnDef(),
+    getEstimateCellCountColumnDef(),
   ];
 }
 
 /**
- * Returns atlases atlas name column def.
+ * Returns project title column def.
  * @param networkPath - Network path.
- * @returns atlas name column def.
+ * @returns project title column def.
  */
 function getProjectTitleColumnDef(
   networkPath: string
 ): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "projectTitle",
-    cell: ({ row }) => C.Link(buildProjectTitle(networkPath, row.original)),
-    header: "Project Title",
-  };
-}
-
-/**
- * Returns atlases atlas name column def.
- * @param networkPath - Network path.
- * @returns atlas name column def.
- */
-function getAtlasesAtlasNameColumnDef(networkPath: string): ColumnDef<Atlas> {
-  return {
-    accessorKey: "name",
     cell: ({ row }) =>
       C.Link({
-        label: row.original.name,
-        url: `${NETWORKS_ROUTE}/${networkPath}/${row.original.path}`,
+        label: processEntityValue(row.original.projects, "projectTitle"),
+        target: ANCHOR_TARGET.SELF,
+        url: getProjectTitleUrl(networkPath, row.original),
       }),
-    header: "Atlas name",
-  };
-}
-
-/**
- * Returns atlases cell count column def.
- * @returns cell count column def.
- */
-function getAtlasesCellCountColumnDef(): ColumnDef<Atlas> {
-  return {
-    accessorKey: "count",
-    cell: "TBD",
-    header: "Cell Count Est.",
-  };
-}
-
-/**
- * Returns atlases disease column def.
- * @returns disease column def.
- */
-function getAtlasesDiseaseColumnDef(): ColumnDef<Atlas> {
-  return {
-    accessorKey: "disease",
-    cell: () => C.NTagCell({ label: "diseases", values: ["TBD"] }),
-    header: "Disease",
-  };
-}
-
-/**
- * Returns atlases tissue column def.
- * @returns tissue column def.
- */
-function getAtlasesTissueColumnDef(): ColumnDef<Atlas> {
-  return {
-    accessorKey: "tissue",
-    cell: () => C.NTagCell({ label: "tissues", values: ["TBD"] }),
-    header: "Tissue",
+    header: "Project Title",
   };
 }
 
@@ -171,78 +403,86 @@ function getProjectTitleUrl(
 }
 
 /**
- * Build props for the project title Link component from the given entity response.
- * @param networkPath - Network path.
- * @param projectsResponse - Response model return from the entity response API.
- * @returns model to be used as props for the project title Link component.
- */
-export const buildProjectTitle = (
-  networkPath: string,
-  projectsResponse: ProjectsResponse
-): React.ComponentProps<typeof C.Link> => {
-  return {
-    label: processEntityValue(projectsResponse.projects, "projectTitle"),
-    target: ANCHOR_TARGET.SELF,
-    url: getProjectTitleUrl(networkPath, projectsResponse),
-  };
-};
-
-/**
- * Returns projects cell count column def.
- * @returns cell count column def.
- */
-function getProjectsCellCountColumnDef(): ColumnDef<ProjectsResponse> {
-  return {
-    accessorKey: "count",
-    cell: "Project-TBD",
-    header: "Cell Count Est.",
-  };
-}
-
-/**
- * Returns projects species column def.
- * @returns species column def.
- */
-function getProjectsSpeciesColumnDef(): ColumnDef<ProjectsResponse> {
-  return {
-    accessorKey: "species",
-    cell: "TBD",
-    header: "Species",
-  };
-}
-
-/**
- * Returns projects method column def.
- * @returns method column def.
- */
-function getProjectsMethodColumnDef(): ColumnDef<ProjectsResponse> {
-  return {
-    accessorKey: "method",
-    cell: "TBD",
-    header: "Method",
-  };
-}
-
-/**
- * Returns projects anatomical entity column def.
+ * Returns specimen organ "Anatomical Entity" column def.
  * @returns anatomical entity column def.
  */
-function getProjectsAnatomicalEntityColumnDef(): ColumnDef<ProjectsResponse> {
+function getSpecimenOrganColumnDef(): ColumnDef<ProjectsResponse> {
   return {
-    accessorKey: "anatomicalEntity",
-    cell: "TBD",
+    accessorKey: "organ",
+    cell: ({ row }) =>
+      C.NTagCell({
+        label: "anatomical entities",
+        values: processAggregatedOrArrayValue(row.original.specimens, "organ"),
+      }),
     header: "Anatomical Entity",
   };
 }
 
 /**
- * Returns projects disease donor column def.
- * @returns disease donor column def.
+ * Initialize atlases row.
+ * @returns initialized atlases row.
  */
-function getProjectsDiseaseDonorColumnDef(): ColumnDef<ProjectsResponse> {
+function initAtlasRow(): AtlasesRow {
   return {
-    accessorKey: "diseaseDonor",
-    cell: "TBD",
-    header: "Disease (Donor)",
+    assay: [],
+    atlasName: "",
+    cellCount: 0,
+    disease: [],
+    organism: [],
+    path: "",
+    tissue: [],
   };
+}
+
+/**
+ * Rolls up integrated atlases for each atlas.
+ * @param atlases - Atlases.
+ * @returns rolled up atlases.
+ */
+export function rollUpAtlases(atlases: Atlas[]): AtlasesRow[] {
+  const rolledUpAtlasMap: Map<string, AtlasesRow> = new Map();
+  for (const { integratedAtlases, name, path } of atlases) {
+    rolledUpAtlasMap.set(name, {
+      ...initAtlasRow(),
+      atlasName: name,
+      path,
+    });
+    if (rolledUpAtlasMap.has(name)) {
+      const rolledUpAtlas = rolledUpAtlasMap.get(name) as AtlasesRow;
+      for (const {
+        assay,
+        cellCount,
+        disease,
+        organism,
+        tissue,
+      } of integratedAtlases) {
+        rolledUpAtlas.assay = accumulateValues(rolledUpAtlas.assay, assay);
+        rolledUpAtlas.cellCount += cellCount;
+        rolledUpAtlas.disease = accumulateValues(
+          rolledUpAtlas.disease,
+          disease
+        );
+        rolledUpAtlas.organism = accumulateValues(
+          rolledUpAtlas.organism,
+          organism
+        );
+        rolledUpAtlas.tissue = accumulateValues(rolledUpAtlas.tissue, tissue);
+      }
+    }
+  }
+  return [...rolledUpAtlasMap].map(([, atlasRow]) => atlasRow);
+}
+
+/**
+ * Returns the aggregated total cells from cellSuspensions for the given entity response.
+ * @param entityResponse - Response model return from entity API.
+ * @returns total cells from cellSuspensions.
+ */
+function rollUpTotalCells(entityResponse: ProjectsResponse): number | null {
+  return entityResponse.cellSuspensions.reduce((acc, { totalCells }) => {
+    if (totalCells) {
+      acc = (acc ?? 0) + totalCells;
+    }
+    return acc;
+  }, null as null | number);
 }

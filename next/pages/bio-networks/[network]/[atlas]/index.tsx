@@ -22,7 +22,6 @@ const Page = ({
   return (
     <AtlasProvider value={{ atlas, network, projectsResponses }}>
       <Detail
-        isDetailOverview
         mainColumn={<MainColumn />}
         sideColumn={<SideColumn />}
         Tabs={<Tabs />}

@@ -15,13 +15,17 @@ export interface AnalysisPortal {
 
 export type Dataset = string;
 
-export type Publication = string; //TBD
+export interface Publication {
+  doi: string;
+  label: string;
+}
 
 export interface Atlas {
   analysisPortals: AnalysisPortal[];
   contact: Contact;
   coordinators: Coordinator[];
   datasets: Dataset[];
+  integratedAtlases: IntegratedAtlas[];
   key: AtlasKey;
   name: string;
   path: string;
@@ -30,7 +34,28 @@ export interface Atlas {
   version: string;
 }
 
+export interface AtlasesRow extends AtlasRow {
+  atlasName: string;
+  path: string;
+}
+
+export type AtlasRow = Omit<IntegratedAtlas, "cxgId" | "cxgURL" | "name">;
+
+export type IntegratedAtlasRow = AtlasRow &
+  Pick<IntegratedAtlas, "cxgId" | "cxgURL" | "name">;
+
 export type DatasetQueryOrgan = string;
+
+export interface IntegratedAtlas {
+  assay: string[];
+  cellCount: number;
+  cxgId: string;
+  cxgURL: string;
+  disease: string[];
+  name: string;
+  organism: string[];
+  tissue: string[];
+}
 
 export interface Network {
   atlases: Atlas[];
@@ -81,4 +106,4 @@ export type NetworkKey =
   | "reproduction"
   | "skin";
 
-export type AtlasKey = "blood-v1";
+export type AtlasKey = "lung-v1.0";

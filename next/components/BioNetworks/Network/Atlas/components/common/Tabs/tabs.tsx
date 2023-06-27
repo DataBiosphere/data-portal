@@ -5,7 +5,6 @@ import {
 import {
   NETWORKS_ATLAS_PATTERN,
   NETWORK_ATLAS_DATASETS_PATTERN,
-  NETWORK_ATLAS_PUBLICATIONS_PATTERN,
 } from "constants/routes";
 import { useAtlas } from "contexts/atlasContext";
 import { useRouter } from "next/router";
@@ -17,12 +16,8 @@ const TABS = [
     value: NETWORKS_ATLAS_PATTERN,
   },
   {
-    label: "Datasets",
+    label: "Source Datasets",
     value: NETWORK_ATLAS_DATASETS_PATTERN,
-  },
-  {
-    label: "Publications",
-    value: NETWORK_ATLAS_PUBLICATIONS_PATTERN,
   },
 ];
 
