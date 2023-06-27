@@ -1,6 +1,5 @@
 import { ElementType } from "react";
 import { AtlasKey, AtlasModule, Network, NetworkKey } from "../@types/network";
-import * as adiposeAtlases from "../content/adipose/atlases";
 import AdiposeDescription from "../content/adipose/description.mdx";
 import BreastDescription from "../content/breast/description.mdx";
 import DevelopmentDescription from "../content/development/description.mdx";
@@ -11,6 +10,7 @@ import HeartDescription from "../content/heart/description.mdx";
 import ImmuneDescription from "../content/immune/description.mdx";
 import KidneyDescription from "../content/kidney/description.mdx";
 import LiverDescription from "../content/liver/description.mdx";
+import * as lungAtlases from "../content/lung/atlases";
 import LungDescription from "../content/lung/description.mdx";
 import MusculoskeletalDescription from "../content/musculoskeletal/description.mdx";
 import NervousSystemDescription from "../content/nervous-system/description.mdx";
@@ -167,24 +167,7 @@ export const NETWORKS: Network[] = [
     path: "heart",
   },
   {
-    atlases: [
-      {
-        analysisPortals: [],
-        contact: { email: "adipose@humancellatlas.org" },
-        coordinators: [{ fullName: "TBD" }],
-        datasets: [
-          "74b6d569-3b11-42ef-b6b1-a0454522b4a0",
-          "7027adc6-c9c9-46f3-84ee-9badc3a4f53b",
-          "94e4ee09-9b4b-410a-84dc-a751ad36d0df",
-        ],
-        key: "blood-v1",
-        name: "Blood",
-        path: "blood-v1",
-        publications: [],
-        updatedAt: "June 27, 2022",
-        version: "v1",
-      },
-    ],
+    atlases: [],
     contact: { email: "immune@humancellatlas.org" },
     coordinators: [
       { fullName: "Nir Hacohen" },
@@ -243,7 +226,120 @@ export const NETWORKS: Network[] = [
     path: "liver",
   },
   {
-    atlases: [],
+    atlases: [
+      {
+        analysisPortals: [],
+        contact: { email: "malte.luecken@helmholtz-muenchen.de" },
+        coordinators: [{ fullName: "Malte D. Luecken" }],
+        datasets: [
+          "01aacb68-4076-4fd9-9eb9-aba0f48c1b5a",
+          // "08fb10df-32e5-456c-9882-e33fcd49077a",
+          "111d272b-c25a-49ac-9b25-e062b70d66e0",
+          "1538d572-bcb7-426b-8d2c-84f3a7f87bb0",
+          "1c4cbdd4-33e3-4ded-ab43-5958de817123",
+          // "1eba4d0b-2d15-4ba7-bb3c-d4654dd94519",
+          "272b7602-66cd-4b02-a86b-2b7c9c51a9ea",
+          // "2c4647ba-c814-4158-8ea9-6889930e4dfe",
+          "2f676143-80c2-4bc6-b7b4-2613fe0fadf0",
+          // "326b36bd-0975-475f-983b-56ddb8f73a4d",
+          "34c9a62c-a610-4e31-b343-8fb7be676f8c",
+          // "453d7ee2-319f-496c-9862-99d397870b63",
+          "457d0bfe-79e4-43f1-be5d-83bf080d809e",
+          "4a95101c-9ffc-4f30-a809-f04518a23803",
+          // "54c91ebc-78a2-4616-87c7-7dcedb19903a",
+          "58028aa8-0ed2-49ca-b60f-15e2ed5989d5",
+          "5a54c617-0eed-486e-8c1a-8a8041fc1729",
+          "61515820-5bb8-45d0-8d12-f0850222ecf0",
+          "65cbfea5-5c54-4255-a1d0-14549a86a5c1",
+          // "7bc1f14b-5e64-4c7f-86b0-23596b97e2aa",
+          "92892ab2-1334-4b1c-9761-14f5a73548ea",
+          "92afaa56-d501-481e-a027-dddd72212ba8",
+          "957261f7-2bd6-4358-a6ed-24ee080d5cfc",
+          "b208466a-6fb0-4385-8cfb-8e03ff6b939e",
+          "b91c623b-1945-4727-b167-0a93027b0d3f",
+          "bc5512cc-9544-4aa4-8b75-8af445ee2257",
+          "c0518445-3b3b-49c6-b8fc-c41daa4eacba",
+          "c16a754f-5da3-46ed-8c1e-6426af2ef625",
+          "c1a9a93d-d9de-4e65-9619-a9cec1052eaa",
+          "c4077b3c-5c98-4d26-a614-246d12c2e5d7",
+          // "d8d2419a-ea4b-49fa-8cae-e87d597d2031",
+          "daf9d982-7ce6-43f6-ab51-272577290606",
+          // "e456c042-f6b6-4cec-a338-1a8ef80bd779",
+          "e526d91d-cf3a-44cb-80c5-fd7676b55a1d",
+          "e5fe8274-3769-4d7d-aa35-6d33c226ab43",
+          "ef1e3497-515e-4bbe-8d4c-10161854b699",
+          "fae72d89-4ac4-4aab-9b93-574775e168d4",
+        ],
+        integratedAtlases: [
+          {
+            assay: [
+              "10x 3' transcription profiling",
+              "10x 3' v1",
+              "10x 3' v2",
+              "10x 3' v3",
+              "10x 5' transcription profiling",
+              "10x 5' v1",
+              "10x 5' v2",
+              "Drop-seq",
+              "Seq-Well",
+            ],
+            cellCount: 2282447,
+            cxgId: "e0d8ec00-7f44-4de5-b37e-baf1e7759c33",
+            cxgURL:
+              "https://cellxgene.cziscience.com/e/9f222629-9e39-47d0-b83f-e08d610c7479.cxg/",
+            disease: [
+              "normal",
+              "chronic obstructive pulmonary disease",
+              "chronic rhinitis",
+              "COVID-19",
+              "cystic fibrosis",
+              "hypersensitivity pneumonitis",
+              "interstitial lung disease",
+              "lung adenocarcinoma",
+              "lung large cell carcinoma",
+              "lymphangioleiomyomatosis",
+              "non-specific interstitial pneumonia",
+              "pleomorphic carcinoma",
+              "pneumonia",
+              "pulmonary fibrosis",
+              "pulmonary sarcoidosis",
+              "squamous cell lung carcinoma",
+            ],
+            name: "An integrated cell atlas of the human lung in health and disease (full)",
+            organism: ["Homo sapiens"],
+            tissue: ["lung", "lung parenchyma", "nose", "respiratory airway"],
+          },
+          {
+            assay: [
+              "10x 3' v1",
+              "10x 3' v2",
+              "10x 3' v3",
+              "10x 5' v1",
+              "10x 5' v2",
+            ],
+            cellCount: 584944,
+            cxgId: "4e08dac3-2ecb-4906-a7a9-21c980c97e61",
+            cxgURL:
+              "https://cellxgene.cziscience.com/e/066943a2-fdac-4b29-b348-40cede398e4e.cxg/",
+            disease: ["normal"],
+            name: "An integrated cell atlas of the human lung in health and disease (core)",
+            organism: ["Homo sapiens"],
+            tissue: ["lung parenchyma", "nose", "respiratory airway"],
+          },
+        ],
+        key: "lung-v1.0",
+        name: "The integrated Human Lung Cell Atlas (HCLA) v1.0",
+        path: "lung-v1.0",
+        publications: [
+          {
+            doi: "https://doi.org/10.1038/s41591-023-02327-2",
+            label: "Sikkema et al. (2023) Nat Med",
+          },
+        ],
+        updatedAt: "",
+        version: "v1",
+      },
+    ],
     contact: { email: "lung@humancellatlas.org" },
     coordinators: [
       { fullName: "Pascal Barbry" },
@@ -465,5 +561,5 @@ export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
 };
 
 export const ATLASES: { [key in AtlasKey]: AtlasModule } = {
-  "blood-v1": adiposeAtlases,
+  "lung-v1.0": lungAtlases,
 };

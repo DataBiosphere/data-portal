@@ -18,7 +18,10 @@ import {
   useNetwork,
   useNetworkDescription,
 } from "../../../../../../../contexts/networkContext";
-import { getAtlasesTableColumns } from "../../../../../../../viewModelBuilders/viewModelBuilders";
+import {
+  getAtlasesTableColumns,
+  rollUpAtlases,
+} from "../../../../../../../viewModelBuilders/viewModelBuilders";
 import {
   Table,
   TableToolbar,
@@ -51,7 +54,7 @@ export const MainColumn = (): JSX.Element => {
             <Table
               columns={getAtlasesTableColumns(networkPath)}
               gridTemplateColumns="minmax(388px, 1fr) repeat(2, minmax(124px, 1fr)) max-content"
-              items={atlases}
+              items={rollUpAtlases(atlases)}
             />
           ) : (
             <GridPaperSection>

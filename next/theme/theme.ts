@@ -9,6 +9,7 @@ import * as C from "./common/components";
 export function mergeAppTheme(theme: Theme): Theme {
   return createTheme(theme, {
     components: {
+      MuiButton: C.MuiButton(theme),
       MuiCssBaseline: C.MuiCssBaseline(theme),
     },
   });

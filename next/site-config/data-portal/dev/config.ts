@@ -16,6 +16,13 @@ const config: SiteConfig = {
   },
   browserURL: "",
   dataSource: {
+    defaultDetailParams: {
+      catalog: "dcp29",
+    },
+    defaultListParams: {
+      catalog: "dcp29",
+      size: "200",
+    },
     url: "https://service.azul.data.humancellatlas.org/index",
   },
   entities: [],
