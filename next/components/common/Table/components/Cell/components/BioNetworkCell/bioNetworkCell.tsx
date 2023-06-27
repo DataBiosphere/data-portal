@@ -16,7 +16,7 @@ export const BioNetworkCell = ({
   const { key, name, path } = network;
   return (
     <Cell>
-      <StaticImage alt={name} height={32} src={NETWORK_ICONS[key]} />
+      <StaticImage alt={name} height={24} src={NETWORK_ICONS[key]} />
       <Link label={getBioNetworkName(name)} url={`${NETWORKS_ROUTE}/${path}`} />
     </Cell>
   );

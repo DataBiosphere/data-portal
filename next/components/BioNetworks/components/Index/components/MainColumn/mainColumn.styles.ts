@@ -12,10 +12,10 @@ export const DetailViewTable = styled(DXDetailViewTable)`
   }
 
   td {
-    padding: 14px 16px; // TODO resolve top and bottom padding when network icon updated.
+    padding: 18px 16px;
 
     ${({ theme }) => theme.breakpoints.up(TABLET)} {
-      padding: 14px 20px;
+      padding: 18px 20px;
     }
   }
 ` as typeof DXDetailViewTable;

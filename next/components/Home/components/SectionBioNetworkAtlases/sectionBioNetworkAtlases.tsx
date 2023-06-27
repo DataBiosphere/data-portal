@@ -25,7 +25,11 @@ export const SectionBioNetworkAtlases = (): JSX.Element => {
               key={key}
               label={
                 <BioNetworkAtlas>
-                  <StaticImage alt={name} src={NETWORK_ICONS[key]} />
+                  <StaticImage
+                    alt={name}
+                    height={36}
+                    src={NETWORK_ICONS[key]}
+                  />
                   <Typography variant={TEXT_BODY_LARGE_500}>
                     {getBioNetworkName(name)}
                   </Typography>
