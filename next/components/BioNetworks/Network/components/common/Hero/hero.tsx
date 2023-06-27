@@ -2,10 +2,11 @@ import { BackPageHero } from "@clevercanary/data-explorer-ui/lib/components/Layo
 import React, { useMemo } from "react";
 import { NETWORKS_ROUTE } from "../../../../../../constants/routes";
 import { useNetwork } from "../../../../../../contexts/networkContext";
+import { HeroTitle } from "../../../../../common/Hero/components/Title/components/HeroTitle/heroTitle";
 
 export const Hero = (): JSX.Element => {
   const { network } = useNetwork();
-  const { name, path } = network;
+  const { key, name, path } = network;
 
   const breadcrumbs = useMemo(
     () => [
@@ -21,5 +22,10 @@ export const Hero = (): JSX.Element => {
     [name, path]
   );
 
-  return <BackPageHero title={name} breadcrumbs={breadcrumbs} />;
+  return (
+    <BackPageHero
+      title={<HeroTitle networkKey={key} title={name} />}
+      breadcrumbs={breadcrumbs}
+    />
+  );
 };

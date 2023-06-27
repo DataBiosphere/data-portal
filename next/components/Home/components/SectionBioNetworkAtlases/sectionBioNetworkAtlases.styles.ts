@@ -20,11 +20,10 @@ export const BioNetworkAtlas = styled.span`
   align-items: center;
   display: flex;
   gap: 0 8px;
-  padding: 14px 0;
+  padding: 20px 0;
 
   img {
     flex: none;
-    height: 48px;
     margin: 0;
   }
 
