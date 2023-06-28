@@ -18,11 +18,11 @@ export const Tabs = (): JSX.Element => {
 
   const TABS = [
     {
-      label: "Overview",
+      label: "Network Overview",
       value: NETWORKS_PATTERN,
     },
     {
-      label: `${getBioNetworkName(name)} Datasets`,
+      label: `HCA ${getBioNetworkName(name)} Datasets`,
       value: NETWORK_DATASETS_PATTERN,
     },
   ];

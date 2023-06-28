@@ -1,5 +1,8 @@
 import { alpha08 } from "@clevercanary/data-explorer-ui/lib/theme/common/palette";
-import { TEXT_BODY_400_2_LINES } from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
+import {
+  TEXT_BODY_400_2_LINES,
+  TEXT_BODY_LARGE_500,
+} from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
 import { Components, Theme } from "@mui/material";
 
 /**
@@ -45,6 +48,10 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
     styleOverrides: {
       body: {
         ...theme.typography[TEXT_BODY_400_2_LINES],
+      },
+      h3: {
+        ...theme.typography[TEXT_BODY_LARGE_500],
+        margin: "0 0 8px",
       },
       p: {
         ...theme.typography[TEXT_BODY_400_2_LINES],

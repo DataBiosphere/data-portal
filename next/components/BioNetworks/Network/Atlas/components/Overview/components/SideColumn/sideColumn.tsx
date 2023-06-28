@@ -3,10 +3,12 @@ import { useAtlas } from "contexts/atlasContext";
 import React from "react";
 import { Coordinators } from "../../../../../../../common/Section/components/Coordinators/coordinators";
 import { Publications } from "../../../../../../../common/Section/components/Publications/publications";
+import { References } from "../../../../../../../common/Section/components/References/references";
 
 export const SideColumn = (): JSX.Element => {
   const {
     atlas: {
+      code,
       contact: atlasContact,
       coordinators: atlasCoordinators,
       publications,
@@ -17,11 +19,13 @@ export const SideColumn = (): JSX.Element => {
     <Sections>
       {/* Publications */}
       <Publications publications={publications} />
+      {/* Code */}
+      {code && <References links={code} title="Code" />}
       {/* Atlas Coordinators */}
       <Coordinators
         coordinators={atlasCoordinators}
         email={atlasContact.email}
-        title={"Atlas Coordinators"}
+        title={"Integration Lead"}
       />
       {/* Network Coordinators */}
       <Coordinators
