@@ -1,4 +1,4 @@
-import Description from "./v1.0/lung/description.mdx";
-import Inclusion from "./v1.0/lung/inclusion.mdx";
+import Description from "./hlca/v1.0/description.mdx";
+import Inclusion from "./hlca/v1.0/inclusion.mdx";
 
 export { Description, Inclusion };

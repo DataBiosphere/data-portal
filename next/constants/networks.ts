@@ -229,6 +229,12 @@ export const NETWORKS: Network[] = [
     atlases: [
       {
         analysisPortals: [],
+        code: [
+          {
+            label: "https://github.com/LungCellAtlas/HLCA",
+            url: "https://github.com/LungCellAtlas/HLCA",
+          },
+        ],
         contact: { email: "malte.luecken@helmholtz-muenchen.de" },
         coordinators: [{ fullName: "Malte D. Luecken" }],
         datasets: [
@@ -327,15 +333,16 @@ export const NETWORKS: Network[] = [
             tissue: ["lung parenchyma", "nose", "respiratory airway"],
           },
         ],
-        key: "lung-v1.0",
-        name: "The integrated Human Lung Cell Atlas (HCLA) v1.0",
-        path: "lung-v1.0",
+        key: "hlca-v1.0",
+        name: "The integrated Human Lung Cell Atlas (HLCA) v1.0",
+        path: "hlca-v1_0",
         publications: [
           {
             doi: "https://doi.org/10.1038/s41591-023-02327-2",
             label: "Sikkema et al. (2023) Nat Med",
           },
         ],
+        summaryCellCount: 2400000,
         updatedAt: "",
         version: "v1",
       },
@@ -437,7 +444,7 @@ export const NETWORKS: Network[] = [
       "tonsil",
     ],
     key: "oral",
-    name: "Oral and craniofacial Networks",
+    name: "Oral and Craniofacial Networks",
     path: "oral",
   },
   {
@@ -561,5 +568,5 @@ export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
 };
 
 export const ATLASES: { [key in AtlasKey]: AtlasModule } = {
-  "lung-v1.0": lungAtlases,
+  "hlca-v1.0": lungAtlases,
 };

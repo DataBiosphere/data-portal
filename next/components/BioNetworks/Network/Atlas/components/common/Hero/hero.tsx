@@ -6,7 +6,7 @@ import React, { useMemo } from "react";
 export const Hero = (): JSX.Element => {
   const { atlas, network } = useAtlas();
   const { name: networkName, path: networkPath } = network;
-  const { name: atlasName, path: atlasPath } = atlas;
+  const { key: atlasKey, name: atlasName, path: atlasPath } = atlas;
 
   const breadcrumbs = useMemo(
     () => [
@@ -20,10 +20,10 @@ export const Hero = (): JSX.Element => {
       },
       {
         path: NETWORKS_ROUTE + "/" + networkPath + "/" + atlasPath,
-        text: atlasPath,
+        text: atlasKey,
       },
     ],
-    [networkName, networkPath, atlasPath]
+    [atlasKey, atlasPath, networkName, networkPath]
   );
 
   return <BackPageHero title={atlasName} breadcrumbs={breadcrumbs} />;

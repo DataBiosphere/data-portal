@@ -43,7 +43,7 @@ export const MainColumn = (): JSX.Element => {
         <GridPaper>
           <TableToolbar>
             <Typography variant={TEXT_BODY_LARGE_500}>
-              Integrated Atlases
+              Component Atlases
             </Typography>
           </TableToolbar>
           {integratedAtlases.length > 0 ? (

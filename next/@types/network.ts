@@ -1,3 +1,4 @@
+import { LinkProps } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
 import { ElementType } from "react";
 import { ProjectsResponse } from "../apis/azul/hca-dcp/common/responses";
 
@@ -22,6 +23,7 @@ export interface Publication {
 
 export interface Atlas {
   analysisPortals: AnalysisPortal[];
+  code?: Pick<LinkProps, "label" | "url">[];
   contact: Contact;
   coordinators: Coordinator[];
   datasets: Dataset[];
@@ -30,6 +32,7 @@ export interface Atlas {
   name: string;
   path: string;
   publications: Publication[];
+  summaryCellCount?: number;
   updatedAt: string;
   version: string;
 }
@@ -37,6 +40,7 @@ export interface Atlas {
 export interface AtlasesRow extends AtlasRow {
   atlasName: string;
   path: string;
+  summaryCellCount?: number;
 }
 
 export type AtlasRow = Omit<IntegratedAtlas, "cxgId" | "cxgURL" | "name">;
@@ -106,4 +110,4 @@ export type NetworkKey =
   | "reproduction"
   | "skin";
 
-export type AtlasKey = "lung-v1.0";
+export type AtlasKey = "hlca-v1.0";

@@ -1,5 +1,6 @@
 import { LABEL } from "@clevercanary/data-explorer-ui/lib/apis/azul/common/entities";
 import { KeyValues } from "@clevercanary/data-explorer-ui/lib/components/common/KeyValuePairs/keyValuePairs";
+import { MetadataValue } from "@clevercanary/data-explorer-ui/lib/components/Index/components/NTagCell/nTagCell";
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import { ColumnDef } from "@tanstack/react-table";
 import {
@@ -17,7 +18,10 @@ import {
   processEntityValue,
 } from "../apis/azul/hca-dcp/common/utils";
 import * as C from "../components";
+import { MetadataValueTuple } from "../components/common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
 import { NETWORKS_ROUTE } from "../constants/routes";
+import { formatCountSize } from "../utils/formatCountSize";
+import { DISEASE } from "./entities";
 
 const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
 
@@ -69,7 +73,20 @@ function getAtlasesActionsColumnDef(): ColumnDef<IntegratedAtlasRow> {
         size: "small",
         target: ANCHOR_TARGET.BLANK,
       }),
-    header: "",
+    header: "Explore",
+  };
+}
+
+/**
+ * Returns atlases assay column def.
+ * @returns assay column def.
+ */
+function getAtlasesAssayColumnDef<T extends AtlasRow>(): ColumnDef<T> {
+  return {
+    accessorKey: "assay",
+    cell: ({ row }) =>
+      C.NTagCell({ label: "assays", values: row.original.assay }),
+    header: "Assay",
   };
 }
 
@@ -99,8 +116,8 @@ function getAtlasesAtlasNameColumnDef(
 function getAtlasesCellCountColumnDef<T extends AtlasRow>(): ColumnDef<T> {
   return {
     accessorKey: "cellCount",
-    cell: ({ row }) => row.original.cellCount.toLocaleString(),
-    header: "Cell Count Est.",
+    cell: ({ row }) => formatCountSize(row.original.cellCount),
+    header: "Cells",
   };
 }
 
@@ -112,7 +129,13 @@ function getAtlasesDiseaseColumnDef<T extends AtlasRow>(): ColumnDef<T> {
   return {
     accessorKey: "disease",
     cell: ({ row }) =>
-      C.NTagCell({ label: "diseases", values: row.original.disease }),
+      C.PinnedNTagCell({
+        label: "diseases",
+        values: partitionMetadataValues(
+          [...row.original.disease],
+          [DISEASE.NORMAL]
+        ),
+      }),
     header: "Disease",
   };
 }
@@ -127,6 +150,7 @@ export function getAtlasesTableColumns(
 ): ColumnDef<AtlasesRow>[] {
   return [
     getAtlasesAtlasNameColumnDef(networkPath),
+    getAtlasesAssayColumnDef(),
     getAtlasesTissueColumnDef(),
     getAtlasesDiseaseColumnDef(),
     getAtlasesCellCountColumnDef(),
@@ -198,11 +222,11 @@ function getDonorDiseaseColumnDef(): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "disease",
     cell: ({ row }) =>
-      C.NTagCell({
+      C.PinnedNTagCell({
         label: "diseases",
-        values: processAggregatedOrArrayValue(
-          row.original.donorOrganisms,
-          "disease"
+        values: partitionMetadataValues(
+          processAggregatedOrArrayValue(row.original.donorOrganisms, "disease"),
+          [DISEASE.NORMAL]
         ),
       }),
     header: "Disease (Donor)",
@@ -317,15 +341,16 @@ function getNetworkSummary(network: Network): Record<string, number> {
       atlases: 0,
       cells: 0,
       diseases: 0,
-      projects: 0,
       tissues: 0,
     };
   }
   return {
+    assays: processAggregatedOrArrayValue(atlases, "assay").length,
     atlases: atlases.length,
     cells: processAggregatedNumberEntityValue(atlases, "cellCount"),
-    diseases: processAggregatedOrArrayValue(atlases, "disease").length,
-    projects: processAggregatedOrArrayValue(network.atlases, "datasets").length,
+    diseases: processDiseaseSummary(
+      processAggregatedOrArrayValue(atlases, "disease")
+    ).length,
     tissues: processAggregatedOrArrayValue(atlases, "tissue").length,
   };
 }
@@ -339,10 +364,10 @@ export function getNetworkSummaryKeyValuePairs(network: Network): KeyValues {
   const summary = getNetworkSummary(network);
   const keyValues: KeyValues = new Map();
   keyValues.set("Atlases", summary.atlases.toLocaleString());
-  keyValues.set("Projects", summary.projects.toLocaleString());
+  keyValues.set("Assays", summary.assays.toLocaleString());
   keyValues.set("Diseases", summary.diseases.toLocaleString());
   keyValues.set("Tissues", summary.tissues.toLocaleString());
-  keyValues.set("Est. Cells", summary.cells.toLocaleString());
+  keyValues.set("Cells", formatCountSize(summary.cells));
   return keyValues;
 }
 
@@ -444,13 +469,43 @@ function initAtlasRow(): AtlasesRow {
 }
 
 /**
+ * Returns metadata values partitioned into pinned values and non-pinned values.
+ * @param values - Values to partition.
+ * @param pinned - Values to pin.
+ * @returns metadata tuple containing pinned values and non-pinned values.
+ */
+function partitionMetadataValues(
+  values: MetadataValue[],
+  pinned: MetadataValue[]
+): MetadataValueTuple {
+  const partitionedValues: MetadataValueTuple = [[], []];
+  return values.reduce((acc, value) => {
+    if (pinned.includes(value)) {
+      acc[0].push(value);
+    } else {
+      acc[1].push(value);
+    }
+    return acc;
+  }, partitionedValues);
+}
+
+/**
+ * Returns the summary of diseases with "normal" filtered.
+ * @param diseases - Diseases.
+ * @returns a summary of diseases.
+ */
+function processDiseaseSummary(diseases: string[]): string[] {
+  return diseases.filter((disease) => disease !== DISEASE.NORMAL);
+}
+
+/**
  * Rolls up integrated atlases for each atlas.
  * @param atlases - Atlases.
  * @returns rolled up atlases.
  */
 export function rollUpAtlases(atlases: Atlas[]): AtlasesRow[] {
   const rolledUpAtlasMap: Map<string, AtlasesRow> = new Map();
-  for (const { integratedAtlases, name, path } of atlases) {
+  for (const { integratedAtlases, name, path, summaryCellCount } of atlases) {
     rolledUpAtlasMap.set(name, {
       ...initAtlasRow(),
       atlasName: name,
@@ -476,6 +531,10 @@ export function rollUpAtlases(atlases: Atlas[]): AtlasesRow[] {
           organism
         );
         rolledUpAtlas.tissue = accumulateValues(rolledUpAtlas.tissue, tissue);
+      }
+      // If summary cell count is available, use that instead of rolling up cell count.
+      if (summaryCellCount) {
+        rolledUpAtlas.cellCount = summaryCellCount;
       }
     }
   }

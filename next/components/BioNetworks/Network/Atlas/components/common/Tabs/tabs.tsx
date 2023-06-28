@@ -12,7 +12,7 @@ import React from "react";
 
 const TABS = [
   {
-    label: "Overview",
+    label: "Atlas Overview",
     value: NETWORKS_ATLAS_PATTERN,
   },
   {

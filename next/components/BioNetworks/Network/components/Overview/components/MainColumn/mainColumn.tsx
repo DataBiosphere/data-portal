@@ -53,7 +53,7 @@ export const MainColumn = (): JSX.Element => {
           {atlases.length > 0 ? (
             <Table
               columns={getAtlasesTableColumns(networkPath)}
-              gridTemplateColumns="minmax(388px, 1fr) repeat(2, minmax(124px, 1fr)) max-content"
+              gridTemplateColumns="minmax(264px, 1fr) repeat(3, minmax(124px, 1fr)) max-content"
               items={rollUpAtlases(atlases)}
             />
           ) : (
