@@ -338,6 +338,7 @@ function getNetworkSummary(network: Network): Record<string, number> {
   const atlases = rollUpAtlases(network.atlases);
   if (atlases.length === 0) {
     return {
+      assays: 0,
       atlases: 0,
       cells: 0,
       diseases: 0,
