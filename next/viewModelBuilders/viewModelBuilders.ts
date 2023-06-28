@@ -150,9 +150,9 @@ export function getAtlasesTableColumns(
 ): ColumnDef<AtlasesRow>[] {
   return [
     getAtlasesAtlasNameColumnDef(networkPath),
-    getAtlasesAssayColumnDef(),
     getAtlasesTissueColumnDef(),
     getAtlasesDiseaseColumnDef(),
+    getAtlasesAssayColumnDef(),
     getAtlasesCellCountColumnDef(),
   ];
 }
@@ -338,7 +338,6 @@ function getNetworkSummary(network: Network): Record<string, number> {
   const atlases = rollUpAtlases(network.atlases);
   if (atlases.length === 0) {
     return {
-      assays: 0,
       atlases: 0,
       cells: 0,
       diseases: 0,
@@ -346,7 +345,6 @@ function getNetworkSummary(network: Network): Record<string, number> {
     };
   }
   return {
-    assays: processAggregatedOrArrayValue(atlases, "assay").length,
     atlases: atlases.length,
     cells: processAggregatedNumberEntityValue(atlases, "cellCount"),
     diseases: processDiseaseSummary(
@@ -365,7 +363,6 @@ export function getNetworkSummaryKeyValuePairs(network: Network): KeyValues {
   const summary = getNetworkSummary(network);
   const keyValues: KeyValues = new Map();
   keyValues.set("Atlases", summary.atlases.toLocaleString());
-  keyValues.set("Assays", summary.assays.toLocaleString());
   keyValues.set("Diseases", summary.diseases.toLocaleString());
   keyValues.set("Tissues", summary.tissues.toLocaleString());
   keyValues.set("Cells", formatCountSize(summary.cells));
