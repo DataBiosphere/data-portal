@@ -6,6 +6,39 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### July 27, 2023
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (21)
+1. [Single-cell multiomic profiling of human lungs reveals cell-type-specific and age-dynamic control of SARS-CoV2 host genes](https://data.humancellatlas.org/explore/projects/01aacb68-4076-4fd9-9eb9-aba0f48c1b5a)
+2. [Single-cell genomics improves the discovery of risk variants and genes of cardiac traits](https://data.humancellatlas.org/explore/projects/0d737cce-1c1c-493a-8e2e-b00143bccc12)
+3. [Dissecting the treatment-naive ecosystem of human melanoma brain metastasis](https://data.humancellatlas.org/explore/projects/0efecd20-2b52-4e4f-96c5-9b4b94158713)
+4. [Collagen-producing lung cell atlas identifies multiple subsets with distinct localization and relevance to fibrosis](https://data.humancellatlas.org/explore/projects/1c4cbdd4-33e3-4ded-ab43-5958de817123)
+5. [Village in a dish: a model system for population-scale hiPSC studies](https://data.humancellatlas.org/explore/projects/2973a42c-f810-4812-9a23-5bbc9644588d)
+6. [Single-Cell Transcriptomics Reveal Immune Mechanisms of the Onset and Progression of IgA Nephropathy](https://data.humancellatlas.org/explore/projects/2caedc30-c816-4b99-a237-b9f3b458c8e5)
+7. [The immune cell landscape in kidneys of patients with lupus nephritis](https://data.humancellatlas.org/explore/projects/2d559a6e-7cd9-432f-9f6e-0e4df03b0888)
+8. [Multimodal single cell sequencing of human diabetic kidney disease implicates chromatin accessibility and genetic background in disease progression](https://data.humancellatlas.org/explore/projects/3d49e5e5-976f-44cb-b6b9-079016c31c56)
+9. [Single-cell analysis reveals fibroblast heterogeneity and myofibroblasts in systemic sclerosis-associated interstitial lung disease](https://data.humancellatlas.org/explore/projects/457d0bfe-79e4-43f1-be5d-83bf080d809e)
+10. [Lung transplantation for patients with severe COVID-19](https://data.humancellatlas.org/explore/projects/5a54c617-0eed-486e-8c1a-8a8041fc1729)
+11. [COVID-19 immune features revealed by a large-scale single-cell transcriptome atlas](https://data.humancellatlas.org/explore/projects/5f607e50-ba22-4598-b1e9-f3d9d7a35dcc)
+12. [Single-Cell Transcriptomic Analysis Identifies a Unique Pulmonary Lymphangioleiomyomatosis Cell](https://data.humancellatlas.org/explore/projects/65cbfea5-5c54-4255-a1d0-14549a86a5c1)
+13. [Marked regional glial heterogeneity in the human white matter of the central nervous system](https://data.humancellatlas.org/explore/projects/73011a86-4755-48ac-9f70-a28903b4ad77)
+14. [Discriminating mild from critical COVID-19 by innate and adaptive immune single-cell profiling of bronchoalveolar lavages](https://data.humancellatlas.org/explore/projects/92892ab2-1334-4b1c-9761-14f5a73548ea)
+15. [A single cell atlas of the human liver tumor microenvironment](https://data.humancellatlas.org/explore/projects/9f17ed7d-9325-4723-a120-b00e48db20c0)
+16. [Single-cell analysis of human non-small cell lung cancer lesions refines tumor classification and patient stratification](https://data.humancellatlas.org/explore/projects/b208466a-6fb0-4385-8cfb-8e03ff6b939e)
+17. [Circuits between infected macrophages and T cells in SARS-CoV-2 pneumonia](https://data.humancellatlas.org/explore/projects/b91c623b-1945-4727-b167-0a93027b0d3f)
+18. [Regenerative lineages and immune-mediated pruning in lung cancer metastasis](https://data.humancellatlas.org/explore/projects/bc5512cc-9544-4aa4-8b75-8af445ee2257)
+19. [Single cell landscape of mesenchymal and endothelial cells in healthy human liver](https://data.humancellatlas.org/explore/projects/cea413af-79b3-4f11-8b48-383fe9a65fbe)
+20. [Differential cell composition and split epidermal differentiation in human palm, sole, and hip skin](https://data.humancellatlas.org/explore/projects/da74b507-60ee-4dd1-bd02-807bb051a337)
+21. [Human distal lung maps and lineage hierarchies reveal a bipotent progenitor](https://data.humancellatlas.org/explore/projects/e5fe8274-3769-4d7d-aa35-6d33c226ab43)
+
+
+### Updated Raw Data and Metadata (4)
+1. [Cell atlas of the human ocular anterior segment: Tissue-specific and shared cell types](https://data.humancellatlas.org/explore/projects/16e99159-78bc-44aa-b479-55a5e903bf50)
+2. [COVID-19 tissue atlases reveal SARS-CoV-2 pathology and cellular targets](https://data.humancellatlas.org/explore/projects/61515820-5bb8-45d0-8d12-f0850222ecf0)
+3. [A multi-omics atlas of the human retina at single-cell resolution](https://data.humancellatlas.org/explore/projects/9c20a245-f2c0-43ae-82c9-2232ec6b594f)
+4. [AIDA](https://data.humancellatlas.org/explore/projects/f0f89c14-7460-4bab-9d42-22228a91f185)
+
+
 #### June 26, 2023
 
 ### Release Highlights
