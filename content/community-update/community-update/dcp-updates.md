@@ -16,7 +16,7 @@ title: DCP Updates
 4. [Single-cell atlas of bronchoalveolar lavage from preschool cystic fibrosis reveals new cell phenotypes](https://data.humancellatlas.org/explore/projects/1eba4d0b-2d15-4ba7-bb3c-d4654dd94519)
 5. [Single-cell sequencing of human midbrain reveals glial activation and a Parkinson-specific neuronal state](https://data.humancellatlas.org/explore/projects/739ef78a-ba5d-4487-a013-9982db66d222)
 
-### Updated Raw Data and Metadata
+### Updated Raw Data and Metadata (23)
 
 1. [A Cellular Atlas of Pitx2-Dependent Cardiac Development](https://data.humancellatlas.org/explore/projects/7027adc6-c9c9-46f3-84ee-9badc3a4f53b)
 2. [A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure](https://data.humancellatlas.org/explore/projects/f86f1ab4-1fbb-4510-ae35-3ffd752d4dfc)
