@@ -6,6 +6,44 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### August 28, 2023
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (5)
+ 
+1. [Cellular development and evolution of the mammalian cerebellum](https://data.humancellatlas.org/explore/projects/279f1766-3319-4e3c-9f99-6fb59ba9b3e5)
+2. [Dysregulated lung stroma drives emphysema exacerbation by potentiating resident lymphocytes to suppress an epithelial stem cell reservoir](https://data.humancellatlas.org/explore/projects/f7b46477-0f2a-4bff-a9b7-719e000499a3)
+3. [Mapping single-cell transcriptomes in the intra-tumoral and associated territories of kidney cancer](https://data.humancellatlas.org/explore/projects/8f1f653d-3ea1-4d8e-b4a7-b97dc852c2b1)
+4. [Single-cell atlas of bronchoalveolar lavage from preschool cystic fibrosis reveals new cell phenotypes](https://data.humancellatlas.org/explore/projects/1eba4d0b-2d15-4ba7-bb3c-d4654dd94519)
+5. [Single-cell sequencing of human midbrain reveals glial activation and a Parkinson-specific neuronal state](https://data.humancellatlas.org/explore/projects/739ef78a-ba5d-4487-a013-9982db66d222)
+
+### Updated Raw Data and Metadata
+
+1. [A Cellular Atlas of Pitx2-Dependent Cardiac Development](https://data.humancellatlas.org/explore/projects/7027adc6-c9c9-46f3-84ee-9badc3a4f53b)
+2. [A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure](https://data.humancellatlas.org/explore/projects/f86f1ab4-1fbb-4510-ae35-3ffd752d4dfc)
+3. [A human single cell atlas of the substantia nigra reveals novel cell specific pathways associated with the genetic risk of Parkinson’s disease and neuropsychiatric disorders](https://data.humancellatlas.org/explore/projects/996120f9-e84f-409f-a01e-732ab58ca8b9)
+4. [A single-cell survey of the human first-trimester placenta and decidua](https://data.humancellatlas.org/explore/projects/1cd1f41f-f81a-486b-a05b-66ec60f81dcf)
+5. [CD27hiCD38hi plasmablasts are activated B cells of mixed origin with distinct function](https://data.humancellatlas.org/explore/projects/74493e98-44fc-48b0-a58f-cc7e77268b59)
+6. [Colonic single epithelial cell census reveals goblet cell drivers of barrier breakdown in inflammatory bowel disease](https://data.humancellatlas.org/explore/projects/c893cb57-5c9f-4f26-9312-21b85be84313)
+7. [Defining human mesenchymal and epithelial heterogeneity in response to oral inflammatory disease](https://data.humancellatlas.org/explore/projects/783c9952-a4ae-4106-a6ce-56f20ce27f88)
+8. [Defining the Activated Fibroblast Population in Lung Fibrosis Using Single Cell Sequencing](https://data.humancellatlas.org/explore/projects/b4a7d12f-6c2f-40a3-9e35-9756997857e3)
+9. [Dissecting the clonal nature of allelic expression in somatic cells by single-cell RNA-seq](https://data.humancellatlas.org/explore/projects/ccef38d7-aa92-4010-9621-c4c7b1182647)
+10. [Dissecting the protein and transcriptional responses of human immune cells to T cell and monocyte specific activation](https://data.humancellatlas.org/explore/projects/efea6426-510a-4b60-9a19-277e52bfa815)
+11. [GM-CSF-producing T helper cells: a distinct subset of T helper cells](https://data.humancellatlas.org/explore/projects/41fb1734-a121-4616-95c7-3b732c9433c7)
+12. [Massively parallel single-cell RNA-seq analysis of 26,677 pancreatic islets cells from both healthy and type II diabetic (T2D) donors](https://data.humancellatlas.org/explore/projects/1c6a960d-52ac-44ea-b728-a59c7ab9dc8e)
+13. [Single cell RNA-sequencing of human tonsil Innate lymphoid cells (ILCs)](https://data.humancellatlas.org/explore/projects/520afa10-f9d2-4e93-ab7a-26c4c863ce18)
+14. [Single cell analysis of human fetal liver captures the transcriptional profile of hepatobiliary hybrid progenitors](https://data.humancellatlas.org/explore/projects/23587fb3-1a4a-4f58-ad74-cc9a4cb4c254)
+15. [Single-cell RNA sequencing reveals the heterogeneity of liver-resident immune cells in human](https://data.humancellatlas.org/explore/projects/559bb888-7829-41f2-ace5-2c05c7eb81e9)
+16. [Single-cell Transcriptome Analysis Reveals Dynamic Cell Populations and Differential Gene Expression Patterns in Control and Aneurysmal Human Aortic Tissue](https://data.humancellatlas.org/explore/projects/07073c12-8006-4710-a00b-23abdb814904)
+17. [Single-cell transcriptomes of the aging human skin reveal loss of fibroblast priming](https://data.humancellatlas.org/explore/projects/51f02950-ee25-4f4b-8d07-59aa99bb3498)
+18. [Single-nucleus cross-tissue molecular reference maps to decipher disease gene function](https://data.humancellatlas.org/explore/projects/31887183-a72c-4308-9eac-c6140313f39c)
+19. [Transcriptomic and clonal characterization of T cells in the human central nervous system](https://data.humancellatlas.org/explore/projects/d3a4ceac-4d66-4984-9704-2570c0647a56)
+20. [A single-cell reference map of transcriptional states for human blood and tissue T cell activation](https://data.humancellatlas.org/explore/projects/4a95101c-9ffc-4f30-a809-f04518a23803)
+21. [A single-cell regulatory map of postnatal lung alveologenesis in humans and mice](https://data.humancellatlas.org/explore/projects/92afaa56-d501-481e-a027-dddd72212ba8)
+22. [Single-cell analysis of human non-small cell lung cancer lesions refines tumor classification and patient stratification](https://data.humancellatlas.org/explore/projects/b208466a-6fb0-4385-8cfb-8e03ff6b939e)
+23. [Single-cell transcriptomes from human kidneys reveal the cellular identity of renal tumors](https://data.humancellatlas.org/explore/projects/d8ae869c-39c2-4cdd-b3fc-2d0d8f60e7b8)
+
+
+
 #### July 27, 2023
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (21)
