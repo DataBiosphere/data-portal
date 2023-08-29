@@ -17,10 +17,10 @@ const config: SiteConfig = {
   browserURL: "",
   dataSource: {
     defaultDetailParams: {
-      catalog: "dcp29",
+      catalog: "dcp30",
     },
     defaultListParams: {
-      catalog: "dcp29",
+      catalog: "dcp30",
       size: "200",
     },
     url: "https://service.azul.data.humancellatlas.org/index",
