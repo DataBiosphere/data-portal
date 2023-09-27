@@ -6,6 +6,32 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### September 27, 2023
+
+### Release Highlights
+
+* New projects are available from the Brain and Lung Biological Networks.
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (8)
+ 
+1. [A molecular cell atlas of the human lung from single-cell RNA sequencing](https://data.humancellatlas.org/explore/projects/6936da41-3692-46bb-bca1-cd0f507991e9)
+2. [Allergic inflammatory memory in human respiratory epithelial progenitor cells](https://data.humancellatlas.org/explore/projects/326b36bd-0975-475f-983b-56ddb8f73a4d)
+3. [Integrative single-cell analysis of transcriptional and epigenetic states in the human adult brain](https://data.humancellatlas.org/explore/projects/e374c1cf-73fd-4a7a-8669-79dc41714984)
+4. [Molecular characterization of selectively vulnerable neurons in Alzheimer's disease](https://data.humancellatlas.org/explore/projects/7dcffc32-7c82-4396-9a4f-88b5579bfe8a)
+5. [Phenotype molding of stromal cells in the lung tumor microenvironment](https://data.humancellatlas.org/explore/projects/453d7ee2-319f-496c-9862-99d397870b63)
+6. [Single-cell RNA sequencing reveals the effects of chemotherapy on human pancreatic adenocarcinoma and its tumor microenvironment](https://data.humancellatlas.org/explore/projects/7f9766ff-bb12-4279-b340-78d140bdd7ba)
+7. [Single-nucleus transcriptome analysis of human brain immune response in patients with severe COVID-19](https://data.humancellatlas.org/explore/projects/0911cc04-06d6-4ffc-8318-b90b0039e8ad)
+8. [The ZIP8/SIRT1 axis regulates alveolar progenitor cell renewal in aging and idiopathic pulmonary fibrosis](https://data.humancellatlas.org/explore/projects/e456c042-f6b6-4cec-a338-1a8ef80bd779)
+
+### Updated Raw Data and Metadata (5)
+
+1. [Reconstitution of a functional human thymus by postnatal stromal progenitor cells and natural whole-organ scaffolds](https://data.humancellatlas.org/explore/projects/3e92c74d-256c-40cd-9273-16f155da8342)
+2. [The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy](https://data.humancellatlas.org/explore/projects/577c946d-6de5-4b55-a854-cd3fde40bff2)
+3. [A multi-omic single-cell landscape of human gynecologic malignancies](https://data.humancellatlas.org/explore/projects/9746f4e0-d3b2-4543-89b3-10288162851b)
+4. [Discriminating mild from critical COVID-19 by innate and adaptive immune single-cell profiling of bronchoalveolar lavages](https://data.humancellatlas.org/explore/projects/92892ab2-1334-4b1c-9761-14f5a73548ea)
+5. [Harnessing Expressed Single Nucleotide Variation and Single Cell RNA Sequencing To Define Immune Cell Chimerism in the Rejecting Kidney Transplant](https://data.humancellatlas.org/explore/projects/4ef86852-aca0-4a91-8522-9968e0e54dbe)
+
+
 #### August 28, 2023
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (5)
