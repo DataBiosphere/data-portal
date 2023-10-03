@@ -1,4 +1,5 @@
 import { FluidPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
+import { BackPageContentSingleColumn } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/BackPage/backPageView.styles";
 import React from "react";
 import { AtlasDatasetsDescription } from "../../../../../../../../content";
 import { useAtlas } from "../../../../../../../../contexts/atlasContext";
@@ -10,7 +11,7 @@ export const MainColumn = (): JSX.Element => {
   const { network, projectsResponses } = useAtlas();
   const { path } = network;
   return (
-    <>
+    <BackPageContentSingleColumn>
       {/* Atlas Datasets Description */}
       <FluidPaper>
         <MDXSection>
@@ -26,6 +27,6 @@ export const MainColumn = (): JSX.Element => {
         Paper={FluidPaper}
         tools={null}
       />
-    </>
+    </BackPageContentSingleColumn>
   );
 };
