@@ -1,4 +1,5 @@
 import { FluidPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
+import { BackPageContentSingleColumn } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/BackPage/backPageView.styles";
 import React from "react";
 import { DatasetsDescription } from "../../../../../../../content";
 import { useNetwork } from "../../../../../../../contexts/networkContext";
@@ -10,7 +11,7 @@ export const MainColumn = (): JSX.Element => {
   const { network, projectsResponses } = useNetwork();
   const { path } = network;
   return (
-    <>
+    <BackPageContentSingleColumn>
       {/* Network Datasets Description */}
       <FluidPaper>
         <MDXSection>
@@ -26,6 +27,6 @@ export const MainColumn = (): JSX.Element => {
         Paper={FluidPaper}
         tools={null}
       />
-    </>
+    </BackPageContentSingleColumn>
   );
 };

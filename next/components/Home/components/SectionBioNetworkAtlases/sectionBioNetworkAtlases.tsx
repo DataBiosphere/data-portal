@@ -18,7 +18,7 @@ export const SectionBioNetworkAtlases = (): JSX.Element => {
   return (
     <Section>
       <SectionContent>
-        <SectionHead>Explore BioNework Atlases</SectionHead>
+        <SectionHead>Explore BioNetwork Atlases</SectionHead>
         <BioNetworkAtlases>
           {networks.map(({ key, name, path }) => (
             <Link
