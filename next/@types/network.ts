@@ -1,3 +1,4 @@
+import { StaticImageProps } from "@clevercanary/data-explorer-ui/lib/components/common/StaticImage/staticImage";
 import { LinkProps } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
 import { ElementType } from "react";
 import { ProjectsResponse } from "../apis/azul/hca-dcp/common/responses";
@@ -10,8 +11,18 @@ export interface Contact {
   email: string;
 }
 
+/**
+ * Set of analysis portals.
+ */
+export enum ANALYSIS_PORTAL {
+  CELLXGENE = "CELLXGENE",
+}
+
 export interface AnalysisPortal {
+  icon: StaticImageProps["src"];
+  label: string;
   name: string;
+  url: string;
 }
 
 export type Dataset = string;
@@ -45,14 +56,20 @@ export interface AtlasesRow extends AtlasRow {
 
 export type AtlasRow = Omit<IntegratedAtlas, "cxgId" | "cxgURL" | "name">;
 
+export type CXGDownloadURL = {
+  h5ad: string;
+  rds?: string;
+};
+
 export type IntegratedAtlasRow = AtlasRow &
-  Pick<IntegratedAtlas, "cxgId" | "cxgURL" | "name">;
+  Pick<IntegratedAtlas, "cxgDownloadURL" | "cxgId" | "cxgURL" | "name">;
 
 export type DatasetQueryOrgan = string;
 
 export interface IntegratedAtlas {
   assay: string[];
   cellCount: number;
+  cxgDownloadURL: CXGDownloadURL;
   cxgId: string;
   cxgURL: string;
   disease: string[];

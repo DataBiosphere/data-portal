@@ -60,3 +60,38 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
     },
   };
 };
+
+/**
+ * MuiIconButton Component
+ * @param theme - Theme.
+ * @returns MuiIconButton component theme styles.
+ */
+export const MuiIconButton = (theme: Theme): Components["MuiIconButton"] => {
+  return {
+    styleOverrides: {
+      colorPrimary: {
+        backgroundColor: theme.palette.primary.main,
+        boxShadow: `0 1px 0 0 ${theme.palette.primary.dark}`,
+        color: theme.palette.common.white,
+        // eslint-disable-next-line sort-keys -- disabling key order for readability
+        "&:hover": {
+          backgroundColor: theme.palette.primary.dark,
+        },
+        // eslint-disable-next-line sort-keys -- disabling key order for readability
+        "&:active": {
+          backgroundColor: theme.palette.primary.dark,
+          boxShadow: "none",
+        },
+        // eslint-disable-next-line sort-keys -- disabling key order for readability
+        "&.Mui-disabled": {
+          backgroundColor: theme.palette.primary.main,
+          color: theme.palette.common.white,
+          opacity: 0.5,
+        },
+      },
+      sizeMedium: {
+        padding: "6px 8px",
+      },
+    },
+  };
+};

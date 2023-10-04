@@ -11,6 +11,7 @@ export function mergeAppTheme(theme: Theme): Theme {
     components: {
       MuiButton: C.MuiButton(theme),
       MuiCssBaseline: C.MuiCssBaseline(theme),
+      MuiIconButton: C.MuiIconButton(theme),
     },
   });
 }

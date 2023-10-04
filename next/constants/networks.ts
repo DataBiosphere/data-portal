@@ -37,6 +37,7 @@ import organoidIcon from "../public/bio-networks/icons/organoid.png";
 import pancreasIcon from "../public/bio-networks/icons/pancreas.png";
 import reproductionIcon from "../public/bio-networks/icons/reproduction.png";
 import skinIcon from "../public/bio-networks/icons/skin.png";
+import { CELLXGENE } from "./analysisPortals";
 
 export const NETWORKS: Network[] = [
   {
@@ -228,7 +229,12 @@ export const NETWORKS: Network[] = [
   {
     atlases: [
       {
-        analysisPortals: [],
+        analysisPortals: [
+          {
+            ...CELLXGENE,
+            url: "https://cellxgene.cziscience.com/collections/8a072d7c-99cb-4112-83e3-6061165dd491",
+          },
+        ],
         code: [
           {
             label: "https://github.com/LungCellAtlas/HLCA",
@@ -290,6 +296,9 @@ export const NETWORKS: Network[] = [
               "Seq-Well",
             ],
             cellCount: 2282447,
+            cxgDownloadURL: {
+              h5ad: "https://datasets.cellxgene.cziscience.com/6ef3eb6d-479a-414f-b40e-c5ba015f9cc2.h5ad",
+            },
             cxgId: "e0d8ec00-7f44-4de5-b37e-baf1e7759c33",
             cxgURL:
               "https://cellxgene.cziscience.com/e/9f222629-9e39-47d0-b83f-e08d610c7479.cxg/",
@@ -315,23 +324,23 @@ export const NETWORKS: Network[] = [
             organism: ["Homo sapiens"],
             tissue: ["lung", "lung parenchyma", "nose", "respiratory airway"],
           },
-          {
-            assay: [
-              "10x 3' v1",
-              "10x 3' v2",
-              "10x 3' v3",
-              "10x 5' v1",
-              "10x 5' v2",
-            ],
-            cellCount: 584944,
-            cxgId: "4e08dac3-2ecb-4906-a7a9-21c980c97e61",
-            cxgURL:
-              "https://cellxgene.cziscience.com/e/066943a2-fdac-4b29-b348-40cede398e4e.cxg/",
-            disease: ["normal"],
-            name: "An integrated cell atlas of the human lung in health and disease (core)",
-            organism: ["Homo sapiens"],
-            tissue: ["lung parenchyma", "nose", "respiratory airway"],
-          },
+          // {
+          //   assay: [
+          //     "10x 3' v1",
+          //     "10x 3' v2",
+          //     "10x 3' v3",
+          //     "10x 5' v1",
+          //     "10x 5' v2",
+          //   ],
+          //   cellCount: 584944,
+          //   cxgId: "4e08dac3-2ecb-4906-a7a9-21c980c97e61",
+          //   cxgURL:
+          //     "https://cellxgene.cziscience.com/e/066943a2-fdac-4b29-b348-40cede398e4e.cxg/",
+          //   disease: ["normal"],
+          //   name: "An integrated cell atlas of the human lung in health and disease (core)",
+          //   organism: ["Homo sapiens"],
+          //   tissue: ["lung parenchyma", "nose", "respiratory airway"],
+          // },
         ],
         key: "hlca-v1.0",
         name: "The integrated Human Lung Cell Atlas (HLCA) v1.0",

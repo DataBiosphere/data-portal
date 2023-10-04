@@ -19,6 +19,7 @@ import {
 } from "../apis/azul/hca-dcp/common/utils";
 import * as C from "../components";
 import { MetadataValueTuple } from "../components/common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
+import { CELLXGENE } from "../constants/analysisPortals";
 import { NETWORKS_ROUTE } from "../constants/routes";
 import { formatCountSize } from "../utils/formatCountSize";
 import { DISEASE } from "./entities";
@@ -60,6 +61,23 @@ function calculateEstimatedCellCount(
 }
 
 /**
+ * Returns the key value pairs for the atlas analysis portals key value pairs component.
+ * @param atlas - Atlas.
+ * @returns key value pairs for the key value pairs component.
+ */
+export function getAtlasAnalysisPortals(atlas: Atlas): KeyValues {
+  const { analysisPortals } = atlas;
+  const keyValues: KeyValues = new Map();
+  for (const { icon, label, url } of analysisPortals) {
+    keyValues.set(
+      C.StaticImage({ alt: label, src: icon }),
+      C.Link({ label, url })
+    );
+  }
+  return keyValues;
+}
+
+/**
  * Returns atlases actions column def.
  * @returns actions column def.
  */
@@ -67,13 +85,8 @@ function getAtlasesActionsColumnDef(): ColumnDef<IntegratedAtlasRow> {
   return {
     accessorKey: "actions",
     cell: ({ row }) =>
-      C.ButtonPrimary({
-        children: "CELLxGENE",
-        href: row.original.cxgURL,
-        size: "small",
-        target: ANCHOR_TARGET.BLANK,
-      }),
-    header: "Explore",
+      C.CXGDownloadCell({ url: row.original.cxgDownloadURL.h5ad }),
+    header: "CELLxGENE download",
   };
 }
 
@@ -137,6 +150,21 @@ function getAtlasesDiseaseColumnDef<T extends AtlasRow>(): ColumnDef<T> {
         ),
       }),
     header: "Disease",
+  };
+}
+
+/**
+ * Returns atlases explore column def.
+ * @returns explore column def.
+ */
+function getAtlasesExploreColumnDef<
+  T extends IntegratedAtlasRow
+>(): ColumnDef<T> {
+  return {
+    accessorKey: "explore",
+    cell: ({ row }) =>
+      C.IconLink({ height: 20, url: row.original.cxgURL, ...CELLXGENE }),
+    header: "Explore",
   };
 }
 
@@ -306,6 +334,7 @@ export function getIntegratedAtlasesTableColumns(): ColumnDef<IntegratedAtlasRow
     getAtlasesTissueColumnDef(),
     getAtlasesDiseaseColumnDef(),
     getAtlasesCellCountColumnDef(),
+    getAtlasesExploreColumnDef(),
     getAtlasesActionsColumnDef(),
   ];
 }
@@ -459,6 +488,7 @@ function initAtlasRow(): AtlasesRow {
     assay: [],
     atlasName: "",
     cellCount: 0,
+    cxgDownloadURL: { h5ad: "" },
     disease: [],
     organism: [],
     path: "",

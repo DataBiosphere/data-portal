@@ -1,22 +1,28 @@
 import { Sections } from "@clevercanary/data-explorer-ui/lib/components/common/Sections/sections";
 import { useAtlas } from "contexts/atlasContext";
 import React from "react";
+import { AnalysisPortals } from "../../../../../../../common/Section/components/AnalysisPortals/analysisPortals";
+import { BiologicalNetwork } from "../../../../../../../common/Section/components/BiologicalNetwork/biologicalNetwork";
 import { Coordinators } from "../../../../../../../common/Section/components/Coordinators/coordinators";
 import { Publications } from "../../../../../../../common/Section/components/Publications/publications";
 import { References } from "../../../../../../../common/Section/components/References/references";
 
 export const SideColumn = (): JSX.Element => {
+  const { atlas, network } = useAtlas();
   const {
-    atlas: {
-      code,
-      contact: atlasContact,
-      coordinators: atlasCoordinators,
-      publications,
-    },
-    network: { contact: networkContact, coordinators: networkCoordinators },
-  } = useAtlas();
+    code,
+    contact: atlasContact,
+    coordinators: atlasCoordinators,
+    publications,
+  } = atlas;
+  const { contact: networkContact, coordinators: networkCoordinators } =
+    network;
   return (
     <Sections>
+      {/* Biological Network */}
+      <BiologicalNetwork network={network} />
+      {/* Analysis Portals */}
+      <AnalysisPortals atlas={atlas} />
       {/* Publications */}
       <Publications publications={publications} />
       {/* Code */}
