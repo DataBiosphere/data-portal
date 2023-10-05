@@ -411,14 +411,11 @@ export function getProjectResponse(
 
 /**
  * Returns the table column definition model for the projects table.
- * @param networkPath - Network path.
  * @returns projects table column definition.
  */
-export function getProjectsTableColumns(
-  networkPath: string
-): ColumnDef<ProjectsResponse>[] {
+export function getProjectsTableColumns(): ColumnDef<ProjectsResponse>[] {
   return [
-    getProjectTitleColumnDef(networkPath),
+    getProjectTitleColumnDef(),
     getGenusSpeciesColumnDef(),
     getLibraryConstructionMethodColumnDef(),
     getSpecimenOrganColumnDef(),
@@ -429,38 +426,38 @@ export function getProjectsTableColumns(
 
 /**
  * Returns project title column def.
- * @param networkPath - Network path.
  * @returns project title column def.
  */
-function getProjectTitleColumnDef(
-  networkPath: string
-): ColumnDef<ProjectsResponse> {
+function getProjectTitleColumnDef(): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "projectTitle",
     cell: ({ row }) =>
       C.Link({
         label: processEntityValue(row.original.projects, "projectTitle"),
-        target: ANCHOR_TARGET.SELF,
-        url: getProjectTitleUrl(networkPath, row.original),
+        target: ANCHOR_TARGET.BLANK,
+        url: getProjectTitleUrl(row.original),
       }),
     header: "Project Title",
   };
 }
 
 /**
- * Returns the project detailed page url.
- * @param networkPath - Network path.
+ * Returns the project detailed page url, or publication DOI URL if project is sourced externally.
  * @param projectsResponse - Response model return from entity API.
- * @returns project detail page url.
+ * @returns project url.
  */
-function getProjectTitleUrl(
-  networkPath: string,
-  projectsResponse: ProjectsResponse
-): string {
-  return `${PORTAL_URL}/explore/projects/${processEntityValue(
-    projectsResponse.projects,
-    "projectId"
-  )}`;
+function getProjectTitleUrl(projectsResponse: ProjectsResponse): string {
+  const projectId = processEntityValue(projectsResponse.projects, "projectId");
+  // Project is sourced from HCA.
+  if (projectId) {
+    return `${PORTAL_URL}/explore/projects/${processEntityValue(
+      projectsResponse.projects,
+      "projectId"
+    )}`;
+  }
+  // Project is sourced externally.
+  const project = getProjectResponse(projectsResponse);
+  return project.publications[0]?.publicationUrl || "";
 }
 
 /**

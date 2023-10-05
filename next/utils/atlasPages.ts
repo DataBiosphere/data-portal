@@ -1,8 +1,11 @@
+import { COLLATOR_CASE_INSENSITIVE } from "@clevercanary/data-explorer-ui/lib/common/constants";
 import { fetchEntitiesFromQuery } from "@clevercanary/data-explorer-ui/lib/entity/api/service";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { Atlas, AtlasContext, Network } from "../@types/network";
 import { filterProjectId } from "../apis/azul/hca-dcp/common/filters";
+import { ProjectsResponse } from "../apis/azul/hca-dcp/common/responses";
+import { processEntityValue } from "../apis/azul/hca-dcp/common/utils";
 import { config } from "../config/config";
 import { NETWORKS } from "../constants/networks";
 
@@ -47,7 +50,25 @@ export const getStaticProps: GetStaticProps<AtlasContext> = async (
       undefined
     );
     projectsResponses.push(...result.hits);
+    const datasets = atlas.externalDatasets;
+    if (datasets) {
+      projectsResponses.push(...datasets);
+      projectsResponses.sort(sortDatasets);
+    }
   }
 
   return { props: { atlas, network, projectsResponses } };
 };
+
+/**
+ * Sort datasets by project title, ascending.
+ * @param d0 - First dataset to compare.
+ * @param d1 - Second dataset to compare.
+ * @returns Number indicating sort precedence of d0 vs d1.
+ */
+function sortDatasets(d0: ProjectsResponse, d1: ProjectsResponse): number {
+  return COLLATOR_CASE_INSENSITIVE.compare(
+    processEntityValue(d0.projects, "projectTitle"),
+    processEntityValue(d1.projects, "projectTitle")
+  );
+}

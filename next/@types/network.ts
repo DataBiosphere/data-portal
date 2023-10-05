@@ -38,6 +38,7 @@ export interface Atlas {
   contact: Contact;
   coordinators: Coordinator[];
   datasets: Dataset[];
+  externalDatasets: ProjectsResponse[];
   integratedAtlases: IntegratedAtlas[];
   key: AtlasKey;
   name: string;

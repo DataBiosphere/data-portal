@@ -8,8 +8,7 @@ import { MDXSection } from "../../../../../../common/Section/section.styles";
 import { DetailViewTable } from "../../../../../../common/Table/table.styles";
 
 export const MainColumn = (): JSX.Element => {
-  const { network, projectsResponses } = useNetwork();
-  const { path } = network;
+  const { projectsResponses } = useNetwork();
   return (
     <BackPageContentSingleColumn>
       {/* Network Datasets Description */}
@@ -20,7 +19,7 @@ export const MainColumn = (): JSX.Element => {
       </FluidPaper>
       {/* Network Datasets */}
       <DetailViewTable
-        columns={getProjectsTableColumns(path)}
+        columns={getProjectsTableColumns()}
         gridTemplateColumns="minmax(484px, 1fr) repeat(4, minmax(152px, 1fr)) max-content"
         items={projectsResponses}
         noResultsTitle={"No Datasets"}
