@@ -5,7 +5,7 @@ import logoHumanCellAtlas from "images/logoHumanCellAtlas.png";
 import { socials } from "./constants";
 import { themeOptions } from "./themeOptions";
 
-const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
+export const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
 export const LOGO_ALT = "Human Cell Atlas Data Coordination Platform";
 
 const config: SiteConfig = {

@@ -2,7 +2,6 @@
  * Type that is a union of all keys of T that have a type of string or null.
  */
 import { LABEL } from "@clevercanary/data-explorer-ui/lib/apis/azul/common/entities";
-import { ProjectsResponse } from "./responses";
 
 /**
  * Type of possible boolean values returned in an aggregated value from Azul.
@@ -263,11 +262,3 @@ function processNullElements(values: StringOrNullArray): string[] {
 
   return filteredValues;
 }
-
-/**
- * Returns the project identifier for the given projects response.
- * @param projectsResponse - Response model return from projects API.
- * @returns project identifier.
- */
-export const getProjectId = (projectsResponse: ProjectsResponse): string =>
-  projectsResponse.projects[0].projectId;

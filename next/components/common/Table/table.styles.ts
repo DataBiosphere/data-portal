@@ -15,10 +15,10 @@ export const TableToolbar = styled(DXTableToolbar)`
 export const Table = styled(DXTable)`
   td,
   th {
-    padding: 20px 16px;
+    padding: 14px 16px;
 
     ${({ theme }) => theme.breakpoints.up(TABLET)} {
-      padding: 20px;
+      padding: 14px 20px;
     }
   }
 ` as typeof DXTable;
