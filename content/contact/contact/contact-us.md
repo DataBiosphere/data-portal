@@ -29,7 +29,7 @@ answers to their Data Portal questions.
 
 To join the conversation:
 
-1. Request an invitation to the [HCA slack](mailto:hca@humancellatlas.org).
+1. Request an invitation to the HCA Slack from <hca@humancellatlas.com>.
 2. Add the  **#dcp-users** channel and say hello.
 
 ## Contribute to the HCA

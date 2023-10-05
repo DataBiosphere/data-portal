@@ -10,7 +10,8 @@ title: "Join the Discussion"
 The Human Cell Atlas is a community-driven effort. There are many opportunities to get involved.
 
 We use a Slack workspace to coordinate our efforts as we build the HCA Data Portal. This is an open group, and we
-welcome community members who want to be learn more about the project. [Email us here](mailto:hca@humancellatlas.org).
+welcome community members who want to be learn more about the project. Request an invitation to the HCA Slack
+from <hca@humancellatlas.com>.
 
 Some channels to explore:
 
