@@ -6,6 +6,7 @@ linked:
     - ./methods-packages/cumulus.md
     - ./methods-packages/infer.md
     - ./methods-packages/magic.md
+    - ./methods-packages/matilda.md
     - ./methods-packages/phate.md
     - ./methods-packages/sc3.md
     - ./methods-packages/slingshot.md
