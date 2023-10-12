@@ -21,10 +21,9 @@ import * as C from "../components";
 import { MetadataValueTuple } from "../components/common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
 import { CELLXGENE } from "../constants/analysisPortals";
 import { NETWORKS_ROUTE } from "../constants/routes";
+import { PORTAL_URL } from "../site-config/data-portal/dev/config";
 import { formatCountSize } from "../utils/formatCountSize";
 import { DISEASE } from "./entities";
-
-const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
 
 /**
  * Merges two arrays of values and returns a list of distinct values.
@@ -58,23 +57,6 @@ function calculateEstimatedCellCount(
   }
   // Otherwise, return the cell suspension total count.
   return rollUpTotalCells(projectsResponse);
-}
-
-/**
- * Returns the key value pairs for the atlas analysis portals key value pairs component.
- * @param atlas - Atlas.
- * @returns key value pairs for the key value pairs component.
- */
-export function getAtlasAnalysisPortals(atlas: Atlas): KeyValues {
-  const { analysisPortals } = atlas;
-  const keyValues: KeyValues = new Map();
-  for (const { icon, label, url } of analysisPortals) {
-    keyValues.set(
-      C.StaticImage({ alt: label, src: icon }),
-      C.Link({ label, url })
-    );
-  }
-  return keyValues;
 }
 
 /**

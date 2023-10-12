@@ -1,7 +1,6 @@
 import { Sections } from "@clevercanary/data-explorer-ui/lib/components/common/Sections/sections";
 import { useAtlas } from "contexts/atlasContext";
 import React from "react";
-import { AnalysisPortals } from "../../../../../../../common/Section/components/AnalysisPortals/analysisPortals";
 import { BiologicalNetwork } from "../../../../../../../common/Section/components/BiologicalNetwork/biologicalNetwork";
 import { Coordinators } from "../../../../../../../common/Section/components/Coordinators/coordinators";
 import { Publications } from "../../../../../../../common/Section/components/Publications/publications";
@@ -21,8 +20,6 @@ export const SideColumn = (): JSX.Element => {
     <Sections>
       {/* Biological Network */}
       <BiologicalNetwork network={network} />
-      {/* Analysis Portals */}
-      <AnalysisPortals atlas={atlas} />
       {/* Publications */}
       <Publications publications={publications} />
       {/* Code */}
