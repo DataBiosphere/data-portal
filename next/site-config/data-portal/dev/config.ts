@@ -29,7 +29,6 @@ const config: SiteConfig = {
   explorerTitle: "",
   layout: {
     footer: {
-      feedbackForm: false, // TODO feedback form
       logos: [
         {
           alt: LOGO_ALT,
