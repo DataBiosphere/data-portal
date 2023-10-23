@@ -127,8 +127,10 @@ export function mapIntegratedAtlas(cxgDataset: CXGDataset): IntegratedAtlas {
  * @returns unique list of values.
  */
 function processArrayValue<T>(values: T[], key: keyof T): string[] {
-  const setOfValues = new Set(values.map((value) => value[key]));
-  return processNullElements(sort([...setOfValues] as unknown as string[]));
+  const setOfValues = new Set(
+    values.map((value) => value[key] as unknown as string)
+  );
+  return processNullElements(sort([...setOfValues]));
 }
 
 /**
