@@ -2,11 +2,14 @@ import { ELEMENT_ALIGNMENT } from "@clevercanary/data-explorer-ui/lib/common/ent
 import { SiteConfig } from "@clevercanary/data-explorer-ui/lib/config/entities";
 import logoHca from "images/logoHca.png";
 import logoHumanCellAtlas from "images/logoHumanCellAtlas.png";
+import * as C from "../../../components/index";
 import { socials } from "./constants";
 import { themeOptions } from "./themeOptions";
 
+const APP_TITLE = "HCA Data Portal";
+export const HCA_DATA_COORDINATION_PLATFORM =
+  "Human Cell Atlas Data Coordination Platform";
 export const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
-export const LOGO_ALT = "Human Cell Atlas Data Coordination Platform";
 
 const config: SiteConfig = {
   analytics: {
@@ -14,6 +17,7 @@ const config: SiteConfig = {
     gtmId: "GTM-M2J5NTJ",
     gtmPreview: "env-186",
   },
+  appTitle: APP_TITLE,
   browserURL: "",
   dataSource: {
     defaultDetailParams: {
@@ -31,7 +35,7 @@ const config: SiteConfig = {
     footer: {
       logos: [
         {
-          alt: LOGO_ALT,
+          alt: HCA_DATA_COORDINATION_PLATFORM,
           height: 38,
           link: PORTAL_URL,
           src: logoHumanCellAtlas,
@@ -58,8 +62,13 @@ const config: SiteConfig = {
       socials,
     },
     header: {
+      Logo: C.Logo({
+        alt: HCA_DATA_COORDINATION_PLATFORM,
+        height: 32,
+        link: PORTAL_URL,
+        src: logoHca,
+      }),
       authenticationEnabled: false,
-      logo: { alt: LOGO_ALT, height: 32, link: PORTAL_URL, src: logoHca },
       navAlignment: ELEMENT_ALIGNMENT.LEFT,
       navLinks: [
         {

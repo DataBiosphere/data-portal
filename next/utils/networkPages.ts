@@ -4,6 +4,7 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { Network, NetworkParam } from "../@types/network";
 import { config } from "../config/config";
 import { NETWORKS } from "../constants/networks";
+import { processNetwork } from "./network";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -32,5 +33,15 @@ export const getStaticProps: GetStaticProps<NetworkParam> = async (
     projectsResponses.push(...result.hits);
   }
 
-  return { props: { network, projectsResponses } };
+  const cxgResponse = await fetch(
+    "https://api.cellxgene.cziscience.com/dp/v1/datasets/index"
+  );
+  const cxgDatasets = await cxgResponse.json();
+
+  return {
+    props: {
+      network: processNetwork(network, cxgDatasets),
+      projectsResponses,
+    },
+  };
 };

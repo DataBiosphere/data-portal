@@ -22,7 +22,7 @@ export const MainColumn = (): JSX.Element => {
         columns={getProjectsTableColumns()}
         gridTemplateColumns="minmax(484px, 1fr) repeat(4, minmax(152px, 1fr)) max-content"
         items={projectsResponses}
-        noResultsTitle={"No Datasets"}
+        noResultsTitle={"No Source Datasets"}
         Paper={FluidPaper}
         tools={null}
       />

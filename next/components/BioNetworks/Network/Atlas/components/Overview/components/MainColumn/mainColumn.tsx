@@ -16,10 +16,13 @@ import { Typography } from "@mui/material";
 import { useAtlas, useAtlasContent } from "contexts/atlasContext";
 import React from "react";
 import { getIntegratedAtlasesTableColumns } from "../../../../../../../../viewModelBuilders/viewModelBuilders";
+import { EllipsisContent } from "../../../../../../../common/EllipsisContent/ellipsisContent";
 import {
   Table,
   TableToolbar,
 } from "../../../../../../../common/Table/table.styles";
+
+const MAX_LINE_COUNT = 4;
 
 export const MainColumn = (): JSX.Element => {
   const { Description } = useAtlasContent();
@@ -32,9 +35,9 @@ export const MainColumn = (): JSX.Element => {
         <Section>
           <SectionContent>
             <SectionTitle title="Atlas Description" />
-            <div>
+            <EllipsisContent maxLineCount={MAX_LINE_COUNT}>
               <Description />
-            </div>
+            </EllipsisContent>
           </SectionContent>
         </Section>
       </FluidPaper>
