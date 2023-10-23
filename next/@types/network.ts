@@ -33,10 +33,10 @@ export interface Publication {
 }
 
 export interface Atlas {
-  analysisPortals: AnalysisPortal[];
   code?: Pick<LinkProps, "label" | "url">[];
   contact: Contact;
   coordinators: Coordinator[];
+  cxgId: string;
   datasets: Dataset[];
   externalDatasets: ProjectsResponse[];
   integratedAtlases: IntegratedAtlas[];
@@ -57,10 +57,48 @@ export interface AtlasesRow extends AtlasRow {
 
 export type AtlasRow = Omit<IntegratedAtlas, "cxgId" | "cxgURL" | "name">;
 
+export interface CXGAssay {
+  label: string;
+}
+
+export interface CXGDataset {
+  assay: CXGAssay[];
+  cell_count: number;
+  collection_id: string;
+  dataset_assets: CXGDatasetAsset[];
+  dataset_deployments: CXGDatasetDeployment[];
+  disease: CXGDisease[];
+  id: string;
+  name: string;
+  organism: CXGOrganism[];
+  tissue: CXGTissue[];
+}
+
+export interface CXGDatasetAsset {
+  dataset_id: string;
+  filetype: "H5AD" | "RDS";
+}
+
+export interface CXGDatasetDeployment {
+  url: string;
+}
+
+export interface CXGDisease {
+  label: string;
+}
+
 export type CXGDownloadURL = {
-  h5ad: string;
-  rds?: string;
+  h5ad: string | null;
+  rds: string | null;
 };
+
+export interface CXGOrganism {
+  label: string;
+}
+
+export interface CXGTissue {
+  label: string;
+}
 
 export type IntegratedAtlasRow = AtlasRow &
   Pick<IntegratedAtlas, "cxgDownloadURL" | "cxgId" | "cxgURL" | "name">;
@@ -128,4 +166,4 @@ export type NetworkKey =
   | "reproduction"
   | "skin";
 
-export type AtlasKey = "hlca-v1.0";
+export type AtlasKey = "hbca-v1.0" | "hcca-v1.0" | "hlca-v1.0";

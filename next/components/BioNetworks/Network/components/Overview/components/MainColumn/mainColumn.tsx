@@ -22,10 +22,13 @@ import {
   getAtlasesTableColumns,
   rollUpAtlases,
 } from "../../../../../../../viewModelBuilders/viewModelBuilders";
+import { EllipsisContent } from "../../../../../../common/EllipsisContent/ellipsisContent";
 import {
   Table,
   TableToolbar,
 } from "../../../../../../common/Table/table.styles";
+
+const MAX_LINE_COUNT = 4;
 
 export const MainColumn = (): JSX.Element => {
   const { network } = useNetwork();
@@ -38,9 +41,9 @@ export const MainColumn = (): JSX.Element => {
         <Section>
           <SectionContent>
             <SectionTitle title="Network Description" />
-            <div>
+            <EllipsisContent maxLineCount={MAX_LINE_COUNT}>
               <Description />
-            </div>
+            </EllipsisContent>
           </SectionContent>
         </Section>
       </FluidPaper>
@@ -54,7 +57,7 @@ export const MainColumn = (): JSX.Element => {
             <Table
               columns={getAtlasesTableColumns(networkPath)}
               gridTemplateColumns="minmax(264px, 1fr) repeat(3, minmax(124px, 1fr)) max-content"
-              items={rollUpAtlases(atlases)}
+              items={rollUpAtlases(atlases, true)}
             />
           ) : (
             <GridPaperSection>

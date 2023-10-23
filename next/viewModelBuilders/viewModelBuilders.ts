@@ -67,7 +67,9 @@ function getAtlasesActionsColumnDef(): ColumnDef<IntegratedAtlasRow> {
   return {
     accessorKey: "actions",
     cell: ({ row }) =>
-      C.CXGDownloadCell({ url: row.original.cxgDownloadURL.h5ad }),
+      C.CXGDownloadCell({
+        cxgDownloadURL: row.original.cxgDownloadURL,
+      }),
     header: "CELLxGENE download",
   };
 }
@@ -346,7 +348,7 @@ function getLibraryConstructionMethodColumnDef(): ColumnDef<ProjectsResponse> {
  * @returns network summary.
  */
 function getNetworkSummary(network: Network): Record<string, number> {
-  const atlases = rollUpAtlases(network.atlases);
+  const atlases = rollUpAtlases(network.atlases, false);
   if (atlases.length === 0) {
     return {
       atlases: 0,
@@ -467,7 +469,7 @@ function initAtlasRow(): AtlasesRow {
     assay: [],
     atlasName: "",
     cellCount: 0,
-    cxgDownloadURL: { h5ad: "" },
+    cxgDownloadURL: { h5ad: null, rds: null },
     disease: [],
     organism: [],
     path: "",
@@ -506,11 +508,35 @@ function processDiseaseSummary(diseases: string[]): string[] {
 }
 
 /**
+ * Returns the rolled up atlas sanitized with "Unspecified", if assay, disease, organism or tissue are empty.
+ * @param rolledUpAtlas - Rolled up atlas.
+ * @returns rolled up atlas sanitized with "Unspecified".
+ */
+function processRolledUpAtlas(rolledUpAtlas: AtlasesRow): void {
+  if (rolledUpAtlas.assay.length === 0) {
+    rolledUpAtlas.assay = [LABEL.UNSPECIFIED];
+  }
+  if (rolledUpAtlas.disease.length === 0) {
+    rolledUpAtlas.disease = [LABEL.UNSPECIFIED];
+  }
+  if (rolledUpAtlas.organism.length === 0) {
+    rolledUpAtlas.organism = [LABEL.UNSPECIFIED];
+  }
+  if (rolledUpAtlas.tissue.length === 0) {
+    rolledUpAtlas.tissue = [LABEL.UNSPECIFIED];
+  }
+}
+
+/**
  * Rolls up integrated atlases for each atlas.
  * @param atlases - Atlases.
+ * @param shouldSanitize - Flag to sanitize the rolled up atlases.
  * @returns rolled up atlases.
  */
-export function rollUpAtlases(atlases: Atlas[]): AtlasesRow[] {
+export function rollUpAtlases(
+  atlases: Atlas[],
+  shouldSanitize: boolean
+): AtlasesRow[] {
   const rolledUpAtlasMap: Map<string, AtlasesRow> = new Map();
   for (const { integratedAtlases, name, path, summaryCellCount } of atlases) {
     rolledUpAtlasMap.set(name, {
@@ -542,6 +568,11 @@ export function rollUpAtlases(atlases: Atlas[]): AtlasesRow[] {
       // If summary cell count is available, use that instead of rolling up cell count.
       if (summaryCellCount) {
         rolledUpAtlas.cellCount = summaryCellCount;
+      }
+      // Sanitize the rolled up atlas values for display.
+      // Omit for summary counts.
+      if (shouldSanitize) {
+        processRolledUpAtlas(rolledUpAtlas);
       }
     }
   }

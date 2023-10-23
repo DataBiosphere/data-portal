@@ -10,9 +10,11 @@ import HeartDescription from "../content/heart/description.mdx";
 import ImmuneDescription from "../content/immune/description.mdx";
 import KidneyDescription from "../content/kidney/description.mdx";
 import LiverDescription from "../content/liver/description.mdx";
-import * as lungAtlases from "../content/lung/atlases";
+import * as hlca from "../content/lung/atlases/hlca";
 import LungDescription from "../content/lung/description.mdx";
 import MusculoskeletalDescription from "../content/musculoskeletal/description.mdx";
+import * as hbca from "../content/nervous-system/atlases/hbca";
+import * as hcca from "../content/nervous-system/atlases/hcca";
 import NervousSystemDescription from "../content/nervous-system/description.mdx";
 import OralDescription from "../content/oral/description.mdx";
 import OrganoidDescription from "../content/organoid/description.mdx";
@@ -37,7 +39,6 @@ import organoidIcon from "../public/bio-networks/icons/organoid.png";
 import pancreasIcon from "../public/bio-networks/icons/pancreas.png";
 import reproductionIcon from "../public/bio-networks/icons/reproduction.png";
 import skinIcon from "../public/bio-networks/icons/skin.png";
-import { CELLXGENE } from "./analysisPortals";
 import { DATASETS } from "./datasets";
 
 export const NETWORKS: Network[] = [
@@ -230,12 +231,6 @@ export const NETWORKS: Network[] = [
   {
     atlases: [
       {
-        analysisPortals: [
-          {
-            ...CELLXGENE,
-            url: "https://cellxgene.cziscience.com/collections/8a072d7c-99cb-4112-83e3-6061165dd491",
-          },
-        ],
         code: [
           {
             label: "https://github.com/LungCellAtlas/HLCA",
@@ -244,6 +239,7 @@ export const NETWORKS: Network[] = [
         ],
         contact: { email: "malte.luecken@helmholtz-muenchen.de" },
         coordinators: [{ fullName: "Malte D. Luecken" }],
+        cxgId: "6f6d381a-7701-4781-935c-db10d30de293",
         datasets: [
           "01aacb68-4076-4fd9-9eb9-aba0f48c1b5a",
           // "08fb10df-32e5-456c-9882-e33fcd49077a", // unavailable.
@@ -285,66 +281,7 @@ export const NETWORKS: Network[] = [
           // "fae72d89-4ac4-4aab-9b93-574775e168d4", // not currently listed as lung atlas dataset.
         ],
         externalDatasets: DATASETS.lung,
-        integratedAtlases: [
-          {
-            assay: [
-              "10x 3' transcription profiling",
-              "10x 3' v1",
-              "10x 3' v2",
-              "10x 3' v3",
-              "10x 5' transcription profiling",
-              "10x 5' v1",
-              "10x 5' v2",
-              "Drop-seq",
-              "Seq-Well",
-            ],
-            cellCount: 2282447,
-            cxgDownloadURL: {
-              h5ad: "https://datasets.cellxgene.cziscience.com/6ef3eb6d-479a-414f-b40e-c5ba015f9cc2.h5ad",
-            },
-            cxgId: "e0d8ec00-7f44-4de5-b37e-baf1e7759c33",
-            cxgURL:
-              "https://cellxgene.cziscience.com/e/9f222629-9e39-47d0-b83f-e08d610c7479.cxg/",
-            disease: [
-              "normal",
-              "chronic obstructive pulmonary disease",
-              "chronic rhinitis",
-              "COVID-19",
-              "cystic fibrosis",
-              "hypersensitivity pneumonitis",
-              "interstitial lung disease",
-              "lung adenocarcinoma",
-              "lung large cell carcinoma",
-              "lymphangioleiomyomatosis",
-              "non-specific interstitial pneumonia",
-              "pleomorphic carcinoma",
-              "pneumonia",
-              "pulmonary fibrosis",
-              "pulmonary sarcoidosis",
-              "squamous cell lung carcinoma",
-            ],
-            name: "An integrated cell atlas of the human lung in health and disease (full)",
-            organism: ["Homo sapiens"],
-            tissue: ["lung", "lung parenchyma", "nose", "respiratory airway"],
-          },
-          // {
-          //   assay: [
-          //     "10x 3' v1",
-          //     "10x 3' v2",
-          //     "10x 3' v3",
-          //     "10x 5' v1",
-          //     "10x 5' v2",
-          //   ],
-          //   cellCount: 584944,
-          //   cxgId: "4e08dac3-2ecb-4906-a7a9-21c980c97e61",
-          //   cxgURL:
-          //     "https://cellxgene.cziscience.com/e/066943a2-fdac-4b29-b348-40cede398e4e.cxg/",
-          //   disease: ["normal"],
-          //   name: "An integrated cell atlas of the human lung in health and disease (core)",
-          //   organism: ["Homo sapiens"],
-          //   tissue: ["lung parenchyma", "nose", "respiratory airway"],
-          // },
-        ],
+        integratedAtlases: [],
         key: "hlca-v1.0",
         name: "The integrated Human Lung Cell Atlas (HLCA) v1.0",
         path: "hlca-v1_0",
@@ -414,7 +351,50 @@ export const NETWORKS: Network[] = [
     path: "musculoskeletal",
   },
   {
-    atlases: [],
+    atlases: [
+      {
+        code: [
+          {
+            label: "https://github.com/linnarsson-lab/adult-human-brain",
+            url: "https://github.com/linnarsson-lab/adult-human-brain",
+          },
+        ],
+        contact: { email: "kimberly.siletti@ki.se" },
+        coordinators: [{ fullName: "Kimberly Siletti" }],
+        cxgId: "283d65eb-dd53-496d-adb7-7570c7caa443",
+        datasets: [],
+        externalDatasets: [],
+        integratedAtlases: [],
+        key: "hbca-v1.0",
+        name: "Human Brain Cell Atlas v1.0",
+        path: "hbca-v1_0",
+        publications: [
+          {
+            doi: "https://doi.org/10.1126/science.add7046",
+            label: "Siletti et al. (2023) Science",
+          },
+        ],
+        summaryCellCount: 2480956, // First CXG dataset cell count.
+        updatedAt: "",
+        version: "v1",
+      },
+      {
+        code: [],
+        contact: { email: "nervous@humancellatlas.org" },
+        coordinators: [],
+        cxgId: "",
+        datasets: [],
+        externalDatasets: [],
+        integratedAtlases: [],
+        key: "hcca-v1.0",
+        name: "Human Cortical Cell Atlas v1.0",
+        path: "hcca-v1_0",
+        publications: [],
+        summaryCellCount: 0,
+        updatedAt: "",
+        version: "v1",
+      },
+    ],
     contact: { email: "nervous@humancellatlas.org" },
     coordinators: [{ fullName: "Ed Lein" }, { fullName: "Sten Linnarsson" }],
     datasetQueryOrgans: [
@@ -580,5 +560,7 @@ export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
 };
 
 export const ATLASES: { [key in AtlasKey]: AtlasModule } = {
-  "hlca-v1.0": lungAtlases,
+  "hbca-v1.0": hbca,
+  "hcca-v1.0": hcca,
+  "hlca-v1.0": hlca,
 };

@@ -2,19 +2,22 @@ import { DownloadIcon } from "@clevercanary/data-explorer-ui/lib/components/comm
 import { IconButton } from "@clevercanary/data-explorer-ui/lib/components/common/IconButton/iconButton";
 import { Box } from "@mui/material";
 import { useRef } from "react";
+import { CXGDownloadURL } from "../../../../../../../@types/network";
 
 export interface CXGDownloadCellProps {
-  url: string;
+  cxgDownloadURL: CXGDownloadURL;
 }
 
-export const CXGDownloadCell = ({ url }: CXGDownloadCellProps): JSX.Element => {
+export const CXGDownloadCell = ({
+  cxgDownloadURL,
+}: CXGDownloadCellProps): JSX.Element => {
   const downloadRef = useRef<HTMLAnchorElement>(null);
 
   // File download.
   const onDownload = (): void => {
     const downloadEl = downloadRef.current;
-    if (downloadEl) {
-      downloadEl.href = url;
+    if (downloadEl && cxgDownloadURL.h5ad) {
+      downloadEl.href = cxgDownloadURL.h5ad;
       downloadEl.click();
     }
   };

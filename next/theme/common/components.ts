@@ -53,9 +53,24 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
         ...theme.typography[TEXT_BODY_LARGE_500],
         margin: "0 0 8px",
       },
+      li: {
+        margin: "4px 0",
+        // eslint-disable-next-line sort-keys -- disabling key order for readability
+        "&:last-child": {
+          marginBottom: 0,
+        },
+      },
+      ol: {
+        margin: 0,
+        paddingLeft: 24,
+      },
       p: {
         ...theme.typography[TEXT_BODY_400_2_LINES],
         marginBottom: 8,
+      },
+      ul: {
+        margin: 0,
+        paddingLeft: 24,
       },
     },
   };
