@@ -1,7 +1,7 @@
 import { alpha08 } from "@clevercanary/data-explorer-ui/lib/theme/common/palette";
 import {
   TEXT_BODY_400_2_LINES,
-  TEXT_BODY_LARGE_500,
+  TEXT_BODY_500,
   TEXT_BODY_SMALL_500,
 } from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
 import { Components, Theme } from "@mui/material";
@@ -55,12 +55,12 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
         fontSize: 14,
       },
       h3: {
-        ...theme.typography[TEXT_BODY_LARGE_500],
+        ...theme.typography[TEXT_BODY_500],
         margin: "0 0 8px",
       },
       h4: {
         ...theme.typography[TEXT_BODY_SMALL_500],
-        margin: "12px 0 8px",
+        margin: "0 0 8px",
       },
       li: {
         margin: "4px 0",
