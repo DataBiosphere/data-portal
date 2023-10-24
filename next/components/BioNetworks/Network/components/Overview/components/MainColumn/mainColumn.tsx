@@ -4,14 +4,10 @@ import {
 } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import { SectionTitle } from "@clevercanary/data-explorer-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
 import {
-  GridPaperSection,
   Section,
   SectionContent,
 } from "@clevercanary/data-explorer-ui/lib/components/common/Section/section.styles";
-import {
-  TEXT_BODY_400,
-  TEXT_BODY_LARGE_500,
-} from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
+import { TEXT_BODY_LARGE_500 } from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import React from "react";
 import {
@@ -27,6 +23,7 @@ import {
   Table,
   TableToolbar,
 } from "../../../../../../common/Table/table.styles";
+import { NetworkAtlasesEmpty } from "./components/NetworkAtlasesEmpty/networkAtlasesEmpty";
 
 const MAX_LINE_COUNT = 4;
 
@@ -48,24 +45,22 @@ export const MainColumn = (): JSX.Element => {
         </Section>
       </FluidPaper>
       {/* Atlases Table */}
-      <FluidPaper>
-        <GridPaper>
-          <TableToolbar>
-            <Typography variant={TEXT_BODY_LARGE_500}>Atlases</Typography>
-          </TableToolbar>
-          {atlases.length > 0 ? (
+      {atlases.length > 0 ? (
+        <FluidPaper>
+          <GridPaper>
+            <TableToolbar>
+              <Typography variant={TEXT_BODY_LARGE_500}>Atlases</Typography>
+            </TableToolbar>
             <Table
               columns={getAtlasesTableColumns(networkPath)}
               gridTemplateColumns="minmax(264px, 1fr) repeat(3, minmax(124px, 1fr)) max-content"
               items={rollUpAtlases(atlases, true)}
             />
-          ) : (
-            <GridPaperSection>
-              <Typography variant={TEXT_BODY_400}>None</Typography>
-            </GridPaperSection>
-          )}
-        </GridPaper>
-      </FluidPaper>
+          </GridPaper>
+        </FluidPaper>
+      ) : (
+        <NetworkAtlasesEmpty network={network} />
+      )}
     </>
   );
 };
