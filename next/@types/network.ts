@@ -119,6 +119,7 @@ export interface IntegratedAtlas {
 
 export interface Network {
   atlases: Atlas[];
+  BICCNPublications?: string[];
   contact: Contact;
   coordinators: Coordinator[];
   datasetQueryOrgans: DatasetQueryOrgan[];
@@ -144,6 +145,11 @@ export interface NetworkContext {
 export interface AtlasModule {
   Description: ElementType;
   Inclusion: ElementType;
+}
+
+export interface NetworkModule {
+  Description: ElementType;
+  Publication?: ElementType;
 }
 
 export type NetworkKey =
