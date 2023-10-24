@@ -1,26 +1,31 @@
-import { ElementType } from "react";
-import { AtlasKey, AtlasModule, Network, NetworkKey } from "../@types/network";
-import AdiposeDescription from "../content/adipose/description.mdx";
-import BreastDescription from "../content/breast/description.mdx";
-import DevelopmentDescription from "../content/development/description.mdx";
-import EyeDescription from "../content/eye/description.mdx";
-import GeneticDiversityDescription from "../content/genetic-diversity/description.mdx";
-import GutDescription from "../content/gut/description.mdx";
-import HeartDescription from "../content/heart/description.mdx";
-import ImmuneDescription from "../content/immune/description.mdx";
-import KidneyDescription from "../content/kidney/description.mdx";
-import LiverDescription from "../content/liver/description.mdx";
+import {
+  AtlasKey,
+  AtlasModule,
+  Network,
+  NetworkKey,
+  NetworkModule,
+} from "../@types/network";
+import * as adiposeContent from "../content/adipose";
+import * as breastContent from "../content/breast";
+import * as developmentContent from "../content/development";
+import * as eyeContent from "../content/eye";
+import * as geneticDiversityContent from "../content/genetic-diversity";
+import * as gutContent from "../content/gut";
+import * as heartContent from "../content/heart";
+import * as immuneContent from "../content/immune";
+import * as kidneyContent from "../content/kidney";
+import * as liverContent from "../content/liver";
+import * as lungContent from "../content/lung";
 import * as hlca from "../content/lung/atlases/hlca";
-import LungDescription from "../content/lung/description.mdx";
-import MusculoskeletalDescription from "../content/musculoskeletal/description.mdx";
+import * as musculoskeletalContent from "../content/musculoskeletal";
+import * as nervousSystemContent from "../content/nervous-system";
 import * as hbca from "../content/nervous-system/atlases/hbca";
 import * as hcca from "../content/nervous-system/atlases/hcca";
-import NervousSystemDescription from "../content/nervous-system/description.mdx";
-import OralDescription from "../content/oral/description.mdx";
-import OrganoidDescription from "../content/organoid/description.mdx";
-import PancreasDescription from "../content/pancreas/description.mdx";
-import ReproductionDescription from "../content/reproduction/description.mdx";
-import SkinDescription from "../content/skin/description.mdx";
+import * as oralContent from "../content/oral";
+import * as organoidContent from "../content/organoid";
+import * as pancreasContent from "../content/pancreas";
+import * as reproductionContent from "../content/reproduction";
+import * as skinContent from "../content/skin";
 import adiposeIcon from "../public/bio-networks/icons/adipose.png";
 import breastIcon from "../public/bio-networks/icons/breast.png";
 import developmentIcon from "../public/bio-networks/icons/development.png";
@@ -351,6 +356,7 @@ export const NETWORKS: Network[] = [
     path: "musculoskeletal",
   },
   {
+    BICCNPublications: ["https://www.science.org/doi/10.1126/science.add7046"], // TODO add BICCN publications - DOI is a placeholder only.
     atlases: [
       {
         code: [
@@ -517,25 +523,27 @@ export const NETWORKS: Network[] = [
   },
 ];
 
-export const DESCRIPTION_COMPONENTS: { [key in NetworkKey]: ElementType } = {
-  adipose: AdiposeDescription,
-  breast: BreastDescription,
-  development: DevelopmentDescription,
-  eye: EyeDescription,
-  "genetic-diversity": GeneticDiversityDescription,
-  gut: GutDescription,
-  heart: HeartDescription,
-  immune: ImmuneDescription,
-  kidney: KidneyDescription,
-  liver: LiverDescription,
-  lung: LungDescription,
-  musculoskeletal: MusculoskeletalDescription,
-  "nervous-system": NervousSystemDescription,
-  oral: OralDescription,
-  organoid: OrganoidDescription,
-  pancreas: PancreasDescription,
-  reproduction: ReproductionDescription,
-  skin: SkinDescription,
+export const NETWORK_CONTENT: {
+  [key in NetworkKey]: NetworkModule;
+} = {
+  adipose: adiposeContent,
+  breast: breastContent,
+  development: developmentContent,
+  eye: eyeContent,
+  "genetic-diversity": geneticDiversityContent,
+  gut: gutContent,
+  heart: heartContent,
+  immune: immuneContent,
+  kidney: kidneyContent,
+  liver: liverContent,
+  lung: lungContent,
+  musculoskeletal: musculoskeletalContent,
+  "nervous-system": nervousSystemContent,
+  oral: oralContent,
+  organoid: organoidContent,
+  pancreas: pancreasContent,
+  reproduction: reproductionContent,
+  skin: skinContent,
 };
 
 export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
@@ -559,7 +567,7 @@ export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
   skin: skinIcon,
 };
 
-export const ATLASES: { [key in AtlasKey]: AtlasModule } = {
+export const ATLAS_CONTENT: { [key in AtlasKey]: AtlasModule } = {
   "hbca-v1.0": hbca,
   "hcca-v1.0": hcca,
   "hlca-v1.0": hlca,

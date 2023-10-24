@@ -1,6 +1,9 @@
-import { DESCRIPTION_COMPONENTS, NETWORKS } from "constants/networks";
-import { createContext, ElementType, useContext } from "react";
-import { NetworkContext as NetworkContextType } from "../@types/network";
+import { NETWORKS, NETWORK_CONTENT } from "constants/networks";
+import { createContext, useContext } from "react";
+import {
+  NetworkContext as NetworkContextType,
+  NetworkModule,
+} from "../@types/network";
 
 export const NetworkContext = createContext<NetworkContextType>({
   network: NETWORKS[0],
@@ -13,9 +16,8 @@ export const useNetwork = (): NetworkContextType => {
   return useContext(NetworkContext);
 };
 
-export const useNetworkDescription = (): ElementType => {
+export const useNetworkContent = (): NetworkModule => {
   const { network } = useNetwork();
   const { key } = network;
-
-  return DESCRIPTION_COMPONENTS[key];
+  return NETWORK_CONTENT[key];
 };

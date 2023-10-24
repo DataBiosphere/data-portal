@@ -16,7 +16,7 @@ import { Typography } from "@mui/material";
 import React from "react";
 import {
   useNetwork,
-  useNetworkDescription,
+  useNetworkContent,
 } from "../../../../../../../contexts/networkContext";
 import {
   getAtlasesTableColumns,
@@ -33,7 +33,7 @@ const MAX_LINE_COUNT = 4;
 export const MainColumn = (): JSX.Element => {
   const { network } = useNetwork();
   const { atlases, path: networkPath } = network;
-  const Description = useNetworkDescription();
+  const { Description } = useNetworkContent();
   return (
     <>
       {/* Network Description */}
