@@ -53,7 +53,7 @@ export const MainColumn = (): JSX.Element => {
             </TableToolbar>
             <Table
               columns={getAtlasesTableColumns(networkPath)}
-              gridTemplateColumns="minmax(264px, 1fr) repeat(3, minmax(124px, 1fr)) max-content"
+              gridTemplateColumns="minmax(256px, 1fr) repeat(3, minmax(124px, 1fr)) max-content"
               items={rollUpAtlases(atlases, true)}
             />
           </GridPaper>

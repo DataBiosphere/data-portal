@@ -68,7 +68,8 @@ function getAtlasesActionsColumnDef(): ColumnDef<IntegratedAtlasRow> {
     accessorKey: "actions",
     cell: ({ row }) =>
       C.CXGDownloadCell({
-        cxgDownloadURL: row.original.cxgDownloadURL,
+        datasetAssets: row.original.datasetAssets,
+        title: row.original.name,
       }),
     header: "CELLxGENE download",
   };
@@ -469,7 +470,7 @@ function initAtlasRow(): AtlasesRow {
     assay: [],
     atlasName: "",
     cellCount: 0,
-    cxgDownloadURL: { h5ad: null, rds: null },
+    datasetAssets: [],
     disease: [],
     organism: [],
     path: "",
