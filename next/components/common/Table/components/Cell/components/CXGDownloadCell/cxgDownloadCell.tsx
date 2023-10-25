@@ -1,36 +1,34 @@
 import { DownloadIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/DownloadIcon/downloadIcon";
 import { IconButton } from "@clevercanary/data-explorer-ui/lib/components/common/IconButton/iconButton";
-import { Box } from "@mui/material";
-import { useRef } from "react";
-import { CXGDownloadURL } from "../../../../../../../@types/network";
+import { useState } from "react";
+import { DatasetAsset } from "../../../../../../../@types/network";
+import { CXGDownloadDialog } from "./components/CXGDownloadDialog/cxgDownloadDialog";
 
 export interface CXGDownloadCellProps {
-  cxgDownloadURL: CXGDownloadURL;
+  datasetAssets: DatasetAsset[];
+  title: string;
 }
 
 export const CXGDownloadCell = ({
-  cxgDownloadURL,
+  datasetAssets,
+  title,
 }: CXGDownloadCellProps): JSX.Element => {
-  const downloadRef = useRef<HTMLAnchorElement>(null);
-
-  // File download.
-  const onDownload = (): void => {
-    const downloadEl = downloadRef.current;
-    if (downloadEl && cxgDownloadURL.h5ad) {
-      downloadEl.href = cxgDownloadURL.h5ad;
-      downloadEl.click();
-    }
-  };
-
+  const [open, setOpen] = useState<boolean>(false);
   return (
     <>
       <IconButton
         color="primary"
+        disabled={datasetAssets.length === 0}
         Icon={DownloadIcon}
-        onClick={onDownload}
+        onClick={(): void => setOpen(true)}
         size="medium"
       />
-      <Box component="a" download ref={downloadRef} sx={{ display: "none" }} />
+      <CXGDownloadDialog
+        datasetAssets={datasetAssets}
+        onClose={(): void => setOpen(false)}
+        open={open}
+        title={title}
+      />
     </>
   );
 };

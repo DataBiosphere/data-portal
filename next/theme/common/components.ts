@@ -50,10 +50,6 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
       body: {
         ...theme.typography[TEXT_BODY_400_2_LINES],
       },
-      code: {
-        backgroundColor: theme.palette.smoke.light,
-        fontSize: 14,
-      },
       h3: {
         ...theme.typography[TEXT_BODY_LARGE_500],
         margin: "0 0 8px",
@@ -76,6 +72,10 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
       p: {
         ...theme.typography[TEXT_BODY_400_2_LINES],
         marginBottom: 8,
+      },
+      "p code": {
+        backgroundColor: theme.palette.smoke.light,
+        fontSize: "inherit",
       },
       ul: {
         margin: 0,

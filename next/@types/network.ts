@@ -75,22 +75,24 @@ export interface CXGDataset {
 }
 
 export interface CXGDatasetAsset {
-  dataset_id: string;
-  filetype: "H5AD" | "RDS";
+  dataset_id: string; // Dataset ID.
+  filename: string;
+  filetype: CXG_DATASET_FILE_TYPE;
+  id: string; // Asset ID.
 }
 
 export interface CXGDatasetDeployment {
   url: string;
 }
 
+export enum CXG_DATASET_FILE_TYPE {
+  H5AD = "H5AD",
+  RDS = "RDS",
+}
+
 export interface CXGDisease {
   label: string;
 }
-
-export type CXGDownloadURL = {
-  h5ad: string | null;
-  rds: string | null;
-};
 
 export interface CXGOrganism {
   label: string;
@@ -101,16 +103,24 @@ export interface CXGTissue {
 }
 
 export type IntegratedAtlasRow = AtlasRow &
-  Pick<IntegratedAtlas, "cxgDownloadURL" | "cxgId" | "cxgURL" | "name">;
+  Pick<IntegratedAtlas, "cxgId" | "cxgURL" | "datasetAssets" | "name">;
+
+export interface DatasetAsset {
+  assetId: string;
+  datasetId: string;
+  downloadURL: string;
+  fileName: string;
+  fileType: CXG_DATASET_FILE_TYPE;
+}
 
 export type DatasetQueryOrgan = string;
 
 export interface IntegratedAtlas {
   assay: string[];
   cellCount: number;
-  cxgDownloadURL: CXGDownloadURL;
   cxgId: string;
   cxgURL: string;
+  datasetAssets: DatasetAsset[];
   disease: string[];
   name: string;
   organism: string[];

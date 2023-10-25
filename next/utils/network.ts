@@ -2,7 +2,8 @@ import {
   Atlas,
   CXGDataset,
   CXGDatasetAsset,
-  CXGDownloadURL,
+  CXG_DATASET_FILE_TYPE,
+  DatasetAsset,
   IntegratedAtlas,
   Network,
 } from "../@types/network";
@@ -11,23 +12,25 @@ import {
   processNullElements,
 } from "../apis/azul/hca-dcp/common/utils";
 
-export enum CXG_DATASET_FILE_TYPE {
-  H5AD = "H5AD",
-  RDS = "RDS",
-}
-
 /**
- * Builds the CellXGene H5AD and RDS download URLs for the given dataset.
- * @param cxgDataset - CellXGene dataset.
- * @returns CellXGene H5AD and RDS download URLs.
+ * Returns the H5AD and RDS dataset assets for the given CellXGene dataset assets.
+ * @param cxgDatasetAssets - CellXGene dataset assets.
+ * @returns H5AD and RDS dataset assets.
  */
-function buildCXGDownloadURL(cxgDataset: CXGDataset): CXGDownloadURL {
-  const H5ADAsset = findCXGDatasetAsset(cxgDataset, CXG_DATASET_FILE_TYPE.H5AD);
-  const RDSAsset = findCXGDatasetAsset(cxgDataset, CXG_DATASET_FILE_TYPE.RDS);
-  return {
-    h5ad: getDownloadURL(H5ADAsset),
-    rds: getDownloadURL(RDSAsset),
-  };
+function buildDatasetAssets(
+  cxgDatasetAssets: CXGDatasetAsset[]
+): DatasetAsset[] {
+  return cxgDatasetAssets
+    .filter(filterCXGDatasetAsset)
+    .map((cxgDatasetAsset) => {
+      return {
+        assetId: cxgDatasetAsset.id,
+        datasetId: cxgDatasetAsset.dataset_id,
+        downloadURL: getDownloadURL(cxgDatasetAsset),
+        fileName: cxgDatasetAsset.filename,
+        fileType: cxgDatasetAsset.filetype,
+      };
+    });
 }
 
 /**
@@ -44,17 +47,14 @@ function filterCXGDataset(
 }
 
 /**
- * Returns the dataset asset with the given file type.
- * @param cxgDataset - CellXGene dataset.
- * @param fileType - File type.
- * @returns dataset asset with the given file type.
+ * Returns true if the dataset asset's filetype is H5AD or RDS.
+ * @param cxgDatasetAsset - CellXGene dataset asset.
+ * @returns true if the dataset asset's filetype is H5AD or RDS.
  */
-function findCXGDatasetAsset(
-  cxgDataset: CXGDataset,
-  fileType: CXG_DATASET_FILE_TYPE
-): CXGDatasetAsset | undefined {
-  return cxgDataset.dataset_assets.find(
-    ({ filetype }) => filetype === fileType
+function filterCXGDatasetAsset(cxgDatasetAsset: CXGDatasetAsset): boolean {
+  return (
+    cxgDatasetAsset.filetype === CXG_DATASET_FILE_TYPE.H5AD ||
+    cxgDatasetAsset.filetype === CXG_DATASET_FILE_TYPE.RDS
   );
 }
 
@@ -63,10 +63,7 @@ function findCXGDatasetAsset(
  * @param cxgDatasetAsset - CellXGene dataset asset.
  * @returns dataset URL.
  */
-function getDownloadURL(cxgDatasetAsset?: CXGDatasetAsset): string | null {
-  if (!cxgDatasetAsset) {
-    return null;
-  }
+function getDownloadURL(cxgDatasetAsset: CXGDatasetAsset): string {
   const { dataset_id, filetype } = cxgDatasetAsset;
   return `https://datasets.cellxgene.cziscience.com/${dataset_id}.${filetype.toLowerCase()}`;
 }
@@ -110,9 +107,9 @@ export function mapIntegratedAtlas(cxgDataset: CXGDataset): IntegratedAtlas {
   return {
     assay: processArrayValue(cxgDataset.assay, "label"),
     cellCount: cxgDataset.cell_count,
-    cxgDownloadURL: buildCXGDownloadURL(cxgDataset),
     cxgId: cxgDataset.collection_id,
     cxgURL: processEntityValue(cxgDataset.dataset_deployments, "url"),
+    datasetAssets: buildDatasetAssets(cxgDataset.dataset_assets),
     disease: processArrayValue(cxgDataset.disease, "label"),
     name: cxgDataset.name,
     organism: processArrayValue(cxgDataset.organism, "label"),
