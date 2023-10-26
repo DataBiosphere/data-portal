@@ -1,6 +1,8 @@
 import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
 import {
   inkMain,
+  smokeDark,
+  smokeLight,
   smokeMain,
   white,
 } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
@@ -38,6 +40,12 @@ export const BioNetworkAtlas = styled.span`
   gap: 0 8px;
   height: 64px;
   padding: 8px;
+  transition: all 300ms ease-out;
+
+  &:hover {
+    background-color: ${smokeLight};
+    border: 1px solid ${smokeDark};
+  }
 
   img {
     box-sizing: content-box;
