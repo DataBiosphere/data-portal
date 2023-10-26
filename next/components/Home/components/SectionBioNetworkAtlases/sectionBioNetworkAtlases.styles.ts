@@ -40,7 +40,6 @@ export const BioNetworkAtlas = styled.span`
   gap: 0 8px;
   height: 64px;
   padding: 8px;
-  transition: all 300ms ease-out;
 
   &:hover {
     background-color: ${smokeLight};
