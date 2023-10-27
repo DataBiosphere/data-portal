@@ -1,6 +1,6 @@
 import { DetailViewTable as DXDetailViewTable } from "@clevercanary/data-explorer-ui/lib/components/Detail/components/DetailViewTable/detailViewTable";
 import { Table as DXTable } from "@clevercanary/data-explorer-ui/lib/components/Detail/components/Table/table";
-import { TableToolbar as DXTableToolbar } from "@clevercanary/data-explorer-ui/lib/components/Table/table.styles";
+import { TableToolbar as DXTableToolbar } from "@clevercanary/data-explorer-ui/lib/components/Table/components/TableToolbar/tableToolbar.styles";
 import { TABLET } from "@clevercanary/data-explorer-ui/lib/theme/common/breakpoints";
 import styled from "@emotion/styled";
 
