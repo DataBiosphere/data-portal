@@ -37,6 +37,14 @@ const nextConfig = {
       process.cwd(),
       "node_modules/react-dom"
     );
+    config.resolve.alias["react-dropzone"] = path.resolve(
+      process.cwd(),
+      "node_modules/react-dropzone"
+    );
+    config.resolve.alias["validate.js"] = path.resolve(
+      process.cwd(),
+      "node_modules/validate.js"
+    );
     return config;
   },
 };
