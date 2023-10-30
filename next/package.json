@@ -12,7 +12,8 @@
     "check-format": "prettier --check .",
     "format": "prettier --write .",
     "postbuild": "next-sitemap --config next-sitemap.config.mjs",
-    "prepare": "cd .. && husky install next/.husky"
+    "prepare": "cd .. && husky install next/.husky",
+    "get-biccn-publications": "node ./scripts/get-biccn-publications.mjs"
   },
   "dependencies": {
     "@clevercanary/data-explorer-ui": "0.52.0",
@@ -50,6 +51,7 @@
     "eslint-plugin-sonarjs": "^0.13.0",
     "eslint-plugin-sort-destructure-keys": "^1.4.0",
     "eslint-plugin-typescript-sort-keys": "^2.1.0",
+    "got": "^13.0.0",
     "husky": "^8.0.3",
     "next-sitemap": "^4.0.7",
     "prettier": "2.7.1",

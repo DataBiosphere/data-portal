@@ -63,7 +63,7 @@
   "overrides": [
     {
       "files": "**",
-      "excludedFiles": "*.styles.ts?(x)",
+      "excludedFiles": "@(*.styles.ts?(x)|*.mjs)",
       "rules": {
         "@typescript-eslint/explicit-function-return-type": "error"
       }

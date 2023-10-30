@@ -183,3 +183,10 @@ export type NetworkKey =
   | "skin";
 
 export type AtlasKey = "hbca-v1.0" | "hcca-v1.0" | "hlca-v1.0";
+
+export interface PublicationDetails {
+  authors: string[];
+  journal: string;
+  title: string;
+  year: number;
+}
