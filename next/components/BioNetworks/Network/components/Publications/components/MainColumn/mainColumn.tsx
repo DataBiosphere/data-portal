@@ -19,11 +19,6 @@ import {
   PublicationDetails,
 } from "./mainColumn.styles";
 
-const TITLE =
-  "Transcriptomic diversity of cell types across the adult human brain"; // TODO placeholder only.
-const SUB_TITLE =
-  "Kimberly Siletti, Rebecca Hodge, Alejandro Mossi Albiach, Ka Wai Lee, Song-Lin Ding, Lijuan Hu, Peter Lönnerberg, Trygve Bakken, Tamara Casper, Michael Clark, Nick Dee, Jessica Gloe, C. Dirk Keene, Julie Nyhus, Herman Tung, Anna Marie Yanny, Ernest Arenas, Ed S. Lein, Sten Linnarsson"; // TODO placeholder only.
-
 export const MainColumn = (): JSX.Element => {
   const { network } = useNetwork();
   const { Publication } = useNetworkContent();
@@ -38,39 +33,74 @@ export const MainColumn = (): JSX.Element => {
         </FluidPaper>
       )}
       {BICCNPublications?.length &&
-        BICCNPublications.map((publication) => (
-          <Card key={publication.doi} component={FluidPaper}>
-            <GridSection>
-              <CardActionArea cardUrl={`https://doi.org/${publication.doi}`}>
-                <CardSection>
-                  <CardContent>
-                    <CardTitle>{TITLE}</CardTitle>
-                    <CardSecondaryTitle>{SUB_TITLE}</CardSecondaryTitle>
-                  </CardContent>
-                </CardSection>
-              </CardActionArea>
-              <CardSideArea>
-                <CardSection>
-                  <PublicationDetails>
-                    <PublicationDetail
-                      label={"Catalog"}
-                      links={[
-                        { label: "Project", url: "/" },
-                        { label: "Project", url: "/" },
-                      ]}
-                      nTagLabel={"projects"}
-                    />
-                    <PublicationDetail
-                      label={"Data"}
-                      links={[{ label: "Nemo", url: "/" }]}
-                      nTagLabel={"sources"}
-                    />
-                  </PublicationDetails>
-                </CardSection>
-              </CardSideArea>
-            </GridSection>
-          </Card>
-        ))}
+        BICCNPublications.map((publication) => {
+          return (
+            <Card key={publication.doi} component={FluidPaper}>
+              <GridSection>
+                <CardActionArea cardUrl={`https://doi.org/${publication.doi}`}>
+                  <CardSection>
+                    <CardContent>
+                      <CardTitle>{publication.title}</CardTitle>
+                      <CardSecondaryTitle>
+                        {publication.authors.join(", ")}. ({publication.year}).{" "}
+                        {publication.title}. {publication.journal}. DOI:{" "}
+                        {publication.doi}
+                      </CardSecondaryTitle>
+                    </CardContent>
+                  </CardSection>
+                </CardActionArea>
+                <CardSideArea>
+                  <CardSection>
+                    <PublicationDetails>
+                      {publication.catalog && (
+                        <PublicationDetail
+                          label={"Catalog"}
+                          links={publication.catalog}
+                          nTagLabel={"projects"}
+                        />
+                      )}
+                      {publication.data && (
+                        <PublicationDetail
+                          label={"Data"}
+                          links={publication.data}
+                          nTagLabel={"sources"}
+                        />
+                      )}
+                      {publication.portal && (
+                        <PublicationDetail
+                          label={"Portal"}
+                          links={publication.portal}
+                          nTagLabel={"portals"}
+                        />
+                      )}
+                      {publication.code && (
+                        <PublicationDetail
+                          label={"Code"}
+                          links={publication.code}
+                          nTagLabel={"repositories"}
+                        />
+                      )}
+                      {publication.tools && (
+                        <PublicationDetail
+                          label={"Tools"}
+                          links={publication.tools}
+                          nTagLabel={"tools"}
+                        />
+                      )}
+                      {publication.protocols && (
+                        <PublicationDetail
+                          label={"Protocols"}
+                          links={publication.protocols}
+                          nTagLabel={"protocols"}
+                        />
+                      )}
+                    </PublicationDetails>
+                  </CardSection>
+                </CardSideArea>
+              </GridSection>
+            </Card>
+          );
+        })}
     </BackPageContentSingleColumn>
   );
 };

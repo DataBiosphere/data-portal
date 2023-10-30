@@ -185,13 +185,17 @@ export type NetworkKey =
 export type AtlasKey = "hbca-v1.0" | "hcca-v1.0" | "hlca-v1.0";
 
 export interface BICCNPublication {
+  authors: string[];
   catalog?: BICCNPublicationLink[];
   code?: BICCNPublicationLink[];
   data?: BICCNPublicationLink[];
   doi: string;
+  journal: string;
   portal?: BICCNPublicationLink[];
   protocols?: BICCNPublicationLink[];
+  title: string;
   tools?: BICCNPublicationLink[];
+  year: number;
 }
 
 export interface BICCNPublicationLink {
@@ -199,9 +203,13 @@ export interface BICCNPublicationLink {
   url: string;
 }
 
-export interface PublicationDetails {
-  authors: string[];
-  journal: string;
-  title: string;
-  year: number;
+export interface CrossrefWork {
+  author: ({ family: string; given: string } | { name: string })[];
+  "container-title": string[];
+  institution?: { name: string }[];
+  published: {
+    "date-parts": [[number, number, number]];
+  };
+  "short-container-title": string[];
+  title: string[];
 }
