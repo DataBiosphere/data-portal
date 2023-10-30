@@ -129,7 +129,7 @@ export interface IntegratedAtlas {
 
 export interface Network {
   atlases: Atlas[];
-  BICCNPublications?: string[];
+  BICCNPublications?: BICCNPublication[];
   contact: Contact;
   coordinators: Coordinator[];
   datasetQueryOrgans: DatasetQueryOrgan[];
@@ -183,3 +183,33 @@ export type NetworkKey =
   | "skin";
 
 export type AtlasKey = "hbca-v1.0" | "hcca-v1.0" | "hlca-v1.0";
+
+export interface BICCNPublication {
+  authors: string[];
+  catalog?: BICCNPublicationLink[];
+  code?: BICCNPublicationLink[];
+  data?: BICCNPublicationLink[];
+  doi: string;
+  journal: string;
+  portal?: BICCNPublicationLink[];
+  protocols?: BICCNPublicationLink[];
+  title: string;
+  tools?: BICCNPublicationLink[];
+  year: number;
+}
+
+export interface BICCNPublicationLink {
+  label: string;
+  url: string;
+}
+
+export interface CrossrefWork {
+  author: ({ family: string; given: string } | { name: string })[];
+  "container-title": string[];
+  institution?: { name: string }[];
+  published: {
+    "date-parts": [[number, number, number]];
+  };
+  "short-container-title": string[];
+  title: string[];
+}

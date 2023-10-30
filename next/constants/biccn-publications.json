@@ -1,0 +1,1511 @@
+{
+  "NERVOUS_SYSTEM": [
+    {
+      "catalog": [
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/3XNMGDZAHJR0CGM2Z5V/summary"
+        }
+      ],
+      "category": "Adult Human Single Cell Atlas",
+      "code": [
+        {
+          "label": "Analysis and figures",
+          "url": "https://dx.doi.org/10.5281/zenodo.7561827"
+        }
+      ],
+      "data": [
+        {
+          "label": "NeMO directory",
+          "url": "http://data.nemoarchive.org/biccn/grant/u01_lein/linnarsson/transcriptome/sncell/10x_v3/human/raw/"
+        }
+      ],
+      "doi": "10.1126/science.add7046",
+      "protocols": [
+        {
+          "label": "Single nucleus RNAseq",
+          "url": "https://dx.doi.org/10.17504/protocols.io.eq2lyrdpgx9k/v2"
+        },
+        {
+          "label": "Postmortem brain processing",
+          "url": "https://dx.doi.org/10.17504/protocols.io.bf4ajqse"
+        },
+        {
+          "label": "Isolation of Nuclei",
+          "url": "https://dx.doi.org/10.17504/protocols.io.y6rfzd6"
+        }
+      ],
+      "tools": [
+        {
+          "label": "cellxgene",
+          "url": "https://cellxgene.cziscience.com/collections/283d65eb-dd53-496d-adb7-7570c7caa443"
+        }
+      ],
+      "authors": [
+        "Kimberly Siletti",
+        "Rebecca Hodge",
+        "Alejandro Mossi Albiach",
+        "Ka Wai Lee",
+        "Song-Lin Ding",
+        "Lijuan Hu",
+        "Peter Lönnerberg",
+        "Trygve Bakken",
+        "Tamara Casper",
+        "Michael Clark",
+        "Nick Dee",
+        "Jessica Gloe",
+        "Daniel Hirschstein",
+        "Nadiya V. Shapovalova",
+        "C. Dirk Keene",
+        "Julie Nyhus",
+        "Herman Tung",
+        "Anna Marie Yanny",
+        "Ernest Arenas",
+        "Ed S. Lein",
+        "Sten Linnarsson"
+      ],
+      "journal": "Science",
+      "year": 2023,
+      "title": "Transcriptomic diversity of cell types across the adult human brain"
+    },
+    {
+      "catalog": [
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/LR2KKXNF5VN3LH1AW78/summary"
+        }
+      ],
+      "category": "Adult Human Single Cell Atlas",
+      "code": [
+        {
+          "label": "snATACutils",
+          "url": "https://github.com/yal054/snATACutils"
+        },
+        {
+          "label": "SnapATAC",
+          "url": "https://github.com/r3fang/SnapATAC"
+        },
+        {
+          "label": "epiformer deep learning",
+          "url": "https://github.com/yal054/epiformer"
+        }
+      ],
+      "data": [
+        {
+          "label": "nemo:dat-d6r90fb",
+          "url": "https://assets.nemoarchive.org/dat-d6r90fb"
+        }
+      ],
+      "doi": "10.1126/science.adf7044",
+      "tools": [
+        {
+          "label": "CATlas viewer",
+          "url": "http://catlas.org/"
+        }
+      ],
+      "authors": [
+        "Yang Eric Li",
+        "Sebastian Preissl",
+        "Michael Miller",
+        "Nicholas D. Johnson",
+        "Zihan Wang",
+        "Henry Jiao",
+        "Chenxu Zhu",
+        "Zhaoning Wang",
+        "Yang Xie",
+        "Olivier Poirion",
+        "Colin Kern",
+        "Antonio Pinto-Duarte",
+        "Wei Tian",
+        "Kimberly Siletti",
+        "Nora Emerson",
+        "Julia Osteen",
+        "Jacinta Lucero",
+        "Lin Lin",
+        "Qian Yang",
+        "Quan Zhu",
+        "Nathan Zemke",
+        "Sarah Espinoza",
+        "Anna Marie Yanny",
+        "Julie Nyhus",
+        "Nick Dee",
+        "Tamara Casper",
+        "Nadiya Shapovalova",
+        "Daniel Hirschstein",
+        "Rebecca D. Hodge",
+        "Sten Linnarsson",
+        "Trygve Bakken",
+        "Boaz Levi",
+        "C. Dirk Keene",
+        "Jingbo Shang",
+        "Ed Lein",
+        "Allen Wang",
+        "M. Margarita Behrens",
+        "Joseph R. Ecker",
+        "Bing Ren"
+      ],
+      "journal": "Science",
+      "year": 2023,
+      "title": "A comparative atlas of single-cell chromatin accessibility in the human brain"
+    },
+    {
+      "catalog": [
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/WX7CGKE3I2ILINMFSHD/summary"
+        },
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/WU1TPZPRRLUUE2LUO70/summary"
+        },
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/74D4C75RU9C3GT7LORI/summary"
+        }
+      ],
+      "category": "Adult Human Single Cell Atlas",
+      "code": [
+        {
+          "label": "Mapping pipeline",
+          "url": "https://hq-1.gitbook.io/mc/"
+        },
+        {
+          "label": "Human Brain Atlas Code",
+          "url": "https://github.com/jksr/human-brain-atlas-code"
+        },
+        {
+          "label": "scHiCluster",
+          "url": "https://zhoujt1994.github.io/scHiCluster/hba/intro.html"
+        }
+      ],
+      "data": [
+        {
+          "label": "nemo:dat-jx4eu3g",
+          "url": "https://assets.nemoarchive.org/dat-jx4eu3g"
+        },
+        {
+          "label": "GEO:GSE215353",
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE215353"
+        }
+      ],
+      "doi": "10.1126/science.adf5357",
+      "protocols": [
+        {
+          "label": "3dg dual assay",
+          "url": "https://labs.icahn.mssm.edu/roussos-lab/3dg_dual_assay/"
+        }
+      ],
+      "tools": [
+        {
+          "label": "neomorph",
+          "url": "http://neomorph.salk.edu/hba/"
+        },
+        {
+          "label": "cellxgene",
+          "url": "https://cellxgene.cziscience.com/collections/fdebfda9-bb9a-4b4b-97e5-651097ea07b0"
+        }
+      ],
+      "authors": [
+        "Wei Tian",
+        "Jingtian Zhou",
+        "Anna Bartlett",
+        "Qiurui Zeng",
+        "Hanqing Liu",
+        "Rosa G. Castanon",
+        "Mia Kenworthy",
+        "Jordan Altshul",
+        "Cynthia Valadon",
+        "Andrew Aldridge",
+        "Joseph R. Nery",
+        "Huaming Chen",
+        "Jiaying Xu",
+        "Nicholas D. Johnson",
+        "Jacinta Lucero",
+        "Julia K. Osteen",
+        "Nora Emerson",
+        "Jon Rink",
+        "Jasper Lee",
+        "Yang E. Li",
+        "Kimberly Siletti",
+        "Michelle Liem",
+        "Naomi Claffey",
+        "Carolyn O’Connor",
+        "Anna Marie Yanny",
+        "Julie Nyhus",
+        "Nick Dee",
+        "Tamara Casper",
+        "Nadiya Shapovalova",
+        "Daniel Hirschstein",
+        "Song-Lin Ding",
+        "Rebecca Hodge",
+        "Boaz P. Levi",
+        "C. Dirk Keene",
+        "Sten Linnarsson",
+        "Ed Lein",
+        "Bing Ren",
+        "M. Margarita Behrens",
+        "Joseph R. Ecker"
+      ],
+      "journal": "Science",
+      "year": 2023,
+      "title": "Single-cell DNA methylation and 3D genome architecture in the human brain"
+    },
+    {
+      "catalog": [
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/S1PZCMVDSO4DW77I8SZ/summary"
+        },
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/3XNMGDZAHJR0CGM2Z5V/summary"
+        },
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/HPAW0I2JNX5P35OPOPL/summary"
+        },
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/M3KONFBCWW5CH7QFLFV/summary"
+        },
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/8G5ACH74WSK2R5DET0Z/summary"
+        },
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/SQIUKQ8N4CXIEA1X2WP/summary"
+        }
+      ],
+      "category": "Adult Human Single Cell Atlas",
+      "code": [
+        {
+          "label": "Github analysis code",
+          "url": "https://github.com/AllenInstitute/human_cross_areal"
+        }
+      ],
+      "data": [
+        {
+          "label": "nemo:dat-rg2rc5m",
+          "url": "https://assets.nemoarchive.org/dat-rg2rc5m"
+        },
+        {
+          "label": "nemo:dat-swzf4kc",
+          "url": "https://assets.nemoarchive.org/dat-swzf4kc"
+        },
+        {
+          "label": "cellxgene",
+          "url": "https://cellxgene.cziscience.com/collections/d17249d2-0e6e-4500-abb8-e6c93fa1ac6f"
+        }
+      ],
+      "doi": "10.1126/science.adf6812",
+      "portal": [
+        {
+          "label": "Allen Brain Map",
+          "url": "https://portal.brain-map.org/atlases-and-data/rnaseq/human-mtg-smart-seq"
+        }
+      ],
+      "authors": [
+        "Nikolas L. Jorstad",
+        "Jennie Close",
+        "Nelson Johansen",
+        "Anna Marie Yanny",
+        "Eliza R. Barkan",
+        "Kyle J. Travaglini",
+        "Darren Bertagnolli",
+        "Jazmin Campos",
+        "Tamara Casper",
+        "Kirsten Crichton",
+        "Nick Dee",
+        "Song-Lin Ding",
+        "Emily Gelfand",
+        "Jeff Goldy",
+        "Daniel Hirschstein",
+        "Katelyn Kiick",
+        "Matthew Kroll",
+        "Michael Kunst",
+        "Kanan Lathia",
+        "Brian Long",
+        "Naomi Martin",
+        "Delissa McMillen",
+        "Trangthanh Pham",
+        "Christine Rimorin",
+        "Augustin Ruiz",
+        "Nadiya Shapovalova",
+        "Soraya Shehata",
+        "Kimberly Siletti",
+        "Saroja Somasundaram",
+        "Josef Sulc",
+        "Michael Tieu",
+        "Amy Torkelson",
+        "Herman Tung",
+        "Edward M. Callaway",
+        "Patrick R. Hof",
+        "C. Dirk Keene",
+        "Boaz P. Levi",
+        "Sten Linnarsson",
+        "Partha P. Mitra",
+        "Kimberly Smith",
+        "Rebecca D. Hodge",
+        "Trygve E. Bakken",
+        "Ed S Lein"
+      ],
+      "journal": "Science",
+      "year": 2023,
+      "title": "Transcriptomic cytoarchitecture reveals principles of human neocortex organization"
+    },
+    {
+      "catalog": [
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/Z4KJ7FC4QZWPP8TV4OK"
+        }
+      ],
+      "category": "Adult Human Single Cell Atlas",
+      "code": [
+        {
+          "label": "Github analysis code",
+          "url": "https://github.com/AllenInstitute/human_variation"
+        }
+      ],
+      "data": [
+        {
+          "label": "cellxgene",
+          "url": "https://cellxgene.cziscience.com/collections/35928d1c-36fc-4f93-9a8d-0b921ab41745"
+        }
+      ],
+      "doi": "10.1126/science.adf2359",
+      "authors": [
+        "Nelson Johansen",
+        "Saroja Somasundaram",
+        "Kyle J. Travaglini",
+        "Anna Marie Yanny",
+        "Maya Shumyatcher",
+        "Tamara Casper",
+        "Charles Cobbs",
+        "Nick Dee",
+        "Richard Ellenbogen",
+        "Manuel Ferreira",
+        "Jeff Goldy",
+        "Junitta Guzman",
+        "Ryder Gwinn",
+        "Daniel Hirschstein",
+        "Nikolas L. Jorstad",
+        "C. Dirk Keene",
+        "Andrew Ko",
+        "Boaz P. Levi",
+        "Jeffrey G. Ojemann",
+        "Thanh Pham",
+        "Nadiya Shapovalova",
+        "Daniel Silbergeld",
+        "Josef Sulc",
+        "Amy Torkelson",
+        "Herman Tung",
+        "Kimberly Smith",
+        "Ed S. Lein",
+        "Trygve E. Bakken",
+        "Rebecca D. Hodge",
+        "Jeremy A. Miller"
+      ],
+      "journal": "Science",
+      "year": 2023,
+      "title": "Interindividual variation in human cortical cell type abundance and expression"
+    },
+    {
+      "catalog": [
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/ALXROAXRSNTLNBG40Y2/summary"
+        }
+      ],
+      "category": "Adult Human Single Cell Atlas",
+      "data": [
+        {
+          "label": "dandiset/000026",
+          "url": "https://gui.dandiarchive.org/#/dandiset/000026"
+        }
+      ],
+      "doi": "10.1126/sciadv.adg3844",
+      "protocols": [
+        {
+          "label": "MRI",
+          "url": "https://www.protocols.io/view/high-resolution-ex-vivo-structural-mri-imaging-amp-q26g7823qlwz/v1"
+        },
+        {
+          "label": "Optical Histology",
+          "url": "https://www.protocols.io/view/serial-sectioning-optical-histology-cell-census-ne-j8nlk4rb6g5r/v1"
+        },
+        {
+          "label": "Tissue clearing",
+          "url": "https://www.protocols.io/view/short-a-human-brain-tissue-clearing-and-labeling-p-kxygxp6nkl8j/v1"
+        },
+        {
+          "label": "Stereology",
+          "url": "https://www.protocols.io/view/stereologic-cell-population-estimates-in-cleared-h-4r3l273dqg1y/v1"
+        }
+      ],
+      "authors": [
+        "Irene Costantini",
+        "Leah Morgan",
+        "Jiarui Yang",
+        "Yael Balbastre",
+        "Divya Varadarajan",
+        "Luca Pesce",
+        "Marina Scardigli",
+        "Giacomo Mazzamuto",
+        "Vladislav Gavryusev",
+        "Filippo Maria Castelli",
+        "Matteo Roffilli",
+        "Ludovico Silvestri",
+        "Jessie Laffey",
+        "Sophia Raia",
+        "Merina Varghese",
+        "Bridget Wicinski",
+        "Shuaibin Chang",
+        "Ichun Anderson Chen",
+        "Hui Wang",
+        "Devani Cordero",
+        "Matthew Vera",
+        "Jackson Nolan",
+        "Kimberly Nestor",
+        "Jocelyn Mora",
+        "Juan Eugenio Iglesias",
+        "Erendira Garcia Pallares",
+        "Kathryn Evancic",
+        "Jean C. Augustinack",
+        "Morgan Fogarty",
+        "Adrian V. Dalca",
+        "Matthew P. Frosch",
+        "Caroline Magnain",
+        "Robert Frost",
+        "Andre van der Kouwe",
+        "Shih-Chi Chen",
+        "David A. Boas",
+        "Francesco Saverio Pavone",
+        "Bruce Fischl",
+        "Patrick R. Hof"
+      ],
+      "journal": "Science Advances",
+      "year": 2023,
+      "title": "A cellular resolution atlas of Broca’s area"
+    },
+    {
+      "catalog": [
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/BL4U7YHNH2VUQBI5L2Q/summary"
+        },
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/GU886D4KCSZGK93SS6H/summary"
+        },
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/5O3GAQDWZK5ZM3IMWWB/summary"
+        }
+      ],
+      "category": "Adult Non-Human Primate Single Cell Atlas",
+      "data": [
+        {
+          "label": "NeMO ",
+          "url": "https://data.nemoarchive.org/biccn/grant/u01_feng/mccarroll/transcriptome/sncell"
+        },
+        {
+          "label": "BIL",
+          "url": "https://doi.org/10.35077/g.609"
+        }
+      ],
+      "doi": "10.1126/sciadv.adk3986",
+      "authors": [
+        "Fenna M. Krienen",
+        "Kirsten M. Levandowski",
+        "Heather Zaniewski",
+        "Ricardo C.H. del Rosario",
+        "Margaret E. Schroeder",
+        "Melissa Goldman",
+        "Martin Wienisch",
+        "Alyssa Lutservitz",
+        "Victoria F. Beja-Glasser",
+        "Cindy Chen",
+        "Qiangge Zhang",
+        "Ken Y. Chan",
+        "Katelyn X. Li",
+        "Jitendra Sharma",
+        "Dana McCormack",
+        "Tay Won Shin",
+        "Andrew Harrahill",
+        "Eric Nyase",
+        "Gagandeep Mudhar",
+        "Abigail Mauermann",
+        "Alec Wysoker",
+        "James Nemesh",
+        "Seva Kashin",
+        "Josselyn Vergara",
+        "Gabriele Chelini",
+        "Jordane Dimidschstein",
+        "Sabina Berretta",
+        "Benjamin E. Deverman",
+        "Ed Boyden",
+        "Steven A. McCarroll",
+        "Guoping Feng"
+      ],
+      "journal": "Science Advances",
+      "year": 2023,
+      "title": "A marmoset brain cell census reveals regional specialization of cellular identities"
+    },
+    {
+      "category": "Adult Non-Human Primate Single Cell Atlas",
+      "code": [
+        {
+          "label": "sci-RNA-seq3 demultiplex",
+          "url": "https://github.com/bbi-lab/bbi-dmux"
+        },
+        {
+          "label": "sci-ATAC-seq3 demultiplex",
+          "url": "https://github.com/bbi-lab/bbi-sciatac-demux"
+        },
+        {
+          "label": "sci-RNA-seq3 preprocess",
+          "url": "https://github.com/bbi-lab/bbi-sci"
+        },
+        {
+          "label": "sci-ATAC-seq3 preprocess",
+          "url": "https://github.com/bbi-lab/bbi-sciatac-analyze"
+        },
+        {
+          "label": "analysis",
+          "url": "https://github.com/CayoBiobankResearchUnit/macaque-brain-atlas"
+        }
+      ],
+      "data": [
+        {
+          "label": "nemo:dat-rtmm5q2",
+          "url": "https://assets.nemoarchive.org/dat-rtmm5q2"
+        },
+        {
+          "label": "cellxgene",
+          "url": "https://cellxgene.cziscience.com/collections/8c4bcf0d-b4df-45c7-888c-74fb0013e9e7"
+        }
+      ],
+      "doi": "10.1126/sciadv.adh1914",
+      "authors": [
+        "Kenneth L. Chiou",
+        "Xingfan Huang",
+        "Martin O. Bohlen",
+        "Sébastien Tremblay",
+        "Alex R. DeCasien",
+        "Diana R. O’Day",
+        "Cailyn H. Spurrell",
+        "Aishwarya A. Gogate",
+        "Trisha M. Zintel",
+        "Madeline G. Andrews",
+        "Melween I. Martínez",
+        "Lea M. Starita",
+        "Michael J. Montague",
+        "Michael L. Platt",
+        "Jay Shendure",
+        "Noah Snyder-Mackler",
+        "Cayo Biobank Research Unit"
+      ],
+      "journal": "Science Advances",
+      "year": 2023,
+      "title": "A single-cell multi-omic atlas spanning the adult rhesus macaque brain"
+    },
+    {
+      "catalog": [
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/M3KONFBCWW5CH7QFLFV/summary"
+        },
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/8G5ACH74WSK2R5DET0Z/summary"
+        }
+      ],
+      "category": "Comparative Single Cell Cell Analyses",
+      "code": [
+        {
+          "label": "Github analysis code",
+          "url": "https://github.com/AllenInstitute/Great_Ape_MTG"
+        }
+      ],
+      "data": [
+        {
+          "label": "nemo:dat-net1412",
+          "url": "https://assets.nemoarchive.org/dat-net1412"
+        },
+        {
+          "label": "nemo:dat-swzf4kc",
+          "url": "https://assets.nemoarchive.org/dat-swzf4kc"
+        }
+      ],
+      "doi": "10.1126/science.ade9516",
+      "tools": [
+        {
+          "label": "Cytosplore Viewer",
+          "url": "https://viewer.cytosplore.org/"
+        }
+      ],
+      "authors": [
+        "Nikolas L. Jorstad",
+        "Janet H. T. Song",
+        "David Exposito-Alonso",
+        "Hamsini Suresh",
+        "Nathan Castro-Pacheco",
+        "Fenna M. Krienen",
+        "Anna Marie Yanny",
+        "Jennie Close",
+        "Emily Gelfand",
+        "Brian Long",
+        "Stephanie C. Seeman",
+        "Kyle J. Travaglini",
+        "Soumyadeep Basu",
+        "Marc Beaudin",
+        "Darren Bertagnolli",
+        "Megan Crow",
+        "Song-Lin Ding",
+        "Jeroen Eggermont",
+        "Alexandra Glandon",
+        "Jeff Goldy",
+        "Katelyn Kiick",
+        "Thomas Kroes",
+        "Delissa McMillen",
+        "Trangthanh Pham",
+        "Christine Rimorin",
+        "Kimberly Siletti",
+        "Saroja Somasundaram",
+        "Michael Tieu",
+        "Amy Torkelson",
+        "Guoping Feng",
+        "William D. Hopkins",
+        "Thomas Höllt",
+        "C. Dirk Keene",
+        "Sten Linnarsson",
+        "Steven A. McCarroll",
+        "Boudewijn P. Lelieveldt",
+        "Chet C. Sherwood",
+        "Kimberly Smith",
+        "Christopher A. Walsh",
+        "Alexander Dobin",
+        "Jesse Gillis",
+        "Ed S. Lein",
+        "Rebecca D. Hodge",
+        "Trygve E. Bakken"
+      ],
+      "journal": "Science",
+      "year": 2023,
+      "title": "Comparative transcriptomics reveals human-specific cortical features"
+    },
+    {
+      "category": "Human and NHP Brain Development Single Cell Analyses",
+      "data": [
+        {
+          "label": "GEO:GSE204684",
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE204684"
+        },
+        {
+          "label": "cellxgene",
+          "url": "https://cellxgene.cziscience.com/collections/ceb895f4-ff9f-403a-b7c3-187a9657ac2c"
+        }
+      ],
+      "doi": "10.1126/sciadv.adg3754",
+      "protocols": [
+        {
+          "label": "3dg dual assay",
+          "url": "https://labs.icahn.mssm.edu/roussos-lab/3dg_dual_assay/"
+        }
+      ],
+      "tools": [
+        {
+          "label": "UCSC Genome Browser",
+          "url": "http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr19%3A35900492%2D35912218&hgsid=1652940796_hzm9xB0mmqeUreAtoNsAK5xLijfO"
+        },
+        {
+          "label": "Single Cell Portal:SCP1859",
+          "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP1859/multi-omic-profiling-of-the-developing-human-cerebral-cortex-at-the-single-cell-level#study-visualize"
+        }
+      ],
+      "authors": [
+        "Kaiyi Zhu",
+        "Jaroslav Bendl",
+        "Samir Rahman",
+        "James M. Vicari",
+        "Claire Coleman",
+        "Tereza Clarence",
+        "Ovaun Latouche",
+        "Nadejda M. Tsankova",
+        "Aiqun Li",
+        "Kristen J. Brennand",
+        "Donghoon Lee",
+        "Guo-Cheng Yuan",
+        "John F. Fullard",
+        "Panos Roussos"
+      ],
+      "journal": "Science Advances",
+      "year": 2023,
+      "title": "Multi-omic profiling of the developing human cerebral cortex at the single-cell level"
+    },
+    {
+      "category": "Human and NHP Brain Development Single Cell Analyses",
+      "code": [
+        {
+          "label": "R scripts gene networks",
+          "url": "https://github.com/seth-ament/cb-dev"
+        }
+      ],
+      "doi": "10.1126/scitranslmed.ade1283",
+      "tools": [
+        {
+          "label": "NeMO Analytics: 522872b1",
+          "url": "https://nemoanalytics.org/p?s=522872b1"
+        }
+      ],
+      "authors": [
+        "Seth A. Ament",
+        "Marcia Cortes-Gutierrez",
+        "Brian R. Herb",
+        "Evelina Mocci",
+        "Carlo Colantuoni",
+        "Margaret M. McCarthy"
+      ],
+      "journal": "Science Translational Medicine",
+      "year": 2023,
+      "title": "A single-cell genomic atlas for maturation of the human cerebellum during early childhood"
+    },
+    {
+      "category": "Human and NHP Brain Development Single Cell Analyses",
+      "code": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/linnarsson-lab/developing-human-brain/"
+        }
+      ],
+      "data": [
+        {
+          "label": "EGA: EGAD00001006049",
+          "url": "https://ega-archive.org/datasets/EGAD00001006049"
+        }
+      ],
+      "doi": "10.1126/science.adf1226",
+      "tools": [
+        {
+          "label": "cellxgene",
+          "url": "https://cellxgene.cziscience.com/collections/4d8fed08-2d6d-4692-b5ea-464f1d072077"
+        },
+        {
+          "label": "Human Cell Atlas",
+          "url": "https://hdca-sweden.scilifelab.se/tissues-overview/brain/"
+        }
+      ],
+      "authors": [
+        "Emelie Braun",
+        "Miri Danan-Gotthold",
+        "Lars E. Borm",
+        "Ka Wai Lee",
+        "Elin Vinsland",
+        "Peter Lönnerberg",
+        "Lijuan Hu",
+        "Xiaofei Li",
+        "Xiaoling He",
+        "Žaneta Andrusivová",
+        "Joakim Lundeberg",
+        "Roger A. Barker",
+        "Ernest Arenas",
+        "Erik Sundström",
+        "Sten Linnarsson"
+      ],
+      "journal": "Science",
+      "year": 2023,
+      "title": "Comprehensive cell atlas of the first-trimester developing human brain"
+    },
+    {
+      "category": "Human and NHP Brain Development Single Cell Analyses",
+      "data": [
+        {
+          "label": "UCSC Cell Browser",
+          "url": "http://cells.ucsc.edu/?ds=dev-thal"
+        },
+        {
+          "label": "Dryad",
+          "url": "https://doi.org/10.5061/dryad.98sf7m0q1"
+        }
+      ],
+      "doi": "10.1126/science.adf9941",
+      "authors": [
+        "Chang N. Kim",
+        "David Shin",
+        "Albert Wang",
+        "Tomasz J. Nowakowski"
+      ],
+      "journal": "Science",
+      "year": 2023,
+      "title": "Spatiotemporal molecular dynamics of the developing human thalamus"
+    },
+    {
+      "catalog": [
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/3XNMGDZAHJR0CGM2Z5V/summary"
+        },
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/E3TEC0QYTQLI9M78VF0/summary"
+        }
+      ],
+      "category": "Human and NHP Brain Development Single Cell Analyses",
+      "data": [
+        {
+          "label": "nemo:dat-917e9vs",
+          "url": "https://assets.nemoarchive.org/dat-917e9vs"
+        }
+      ],
+      "doi": "10.1101/2021.07.20.453090",
+      "tools": [
+        {
+          "label": "NeMO Analytics: a856c14e",
+          "url": "https://nemoanalytics.org/p?l=a856c14e&g=gad2"
+        }
+      ],
+      "authors": [
+        "Brian R. Herb",
+        "Hannah J. Glover",
+        "Aparna Bhaduri",
+        "Carlo Colantuoni",
+        "Tracy L. Bale",
+        "Kimberly Siletti",
+        "Sten Linnarsson",
+        "Rebecca Hodge",
+        "Ed Lein",
+        "Arnold R. Kriegstein",
+        "Claudia A. Doege",
+        "Seth A. Ament"
+      ],
+      "journal": "bioRxiv",
+      "year": 2021,
+      "title": "Single-cell genomics reveals region-specific developmental trajectories underlying neuronal diversity in the human hypothalamus"
+    },
+    {
+      "category": "Human and NHP Brain Development Single Cell Analyses",
+      "code": [
+        {
+          "label": "Zenodo",
+          "url": "https://zenodo.org/record/7245297"
+        }
+      ],
+      "data": [
+        {
+          "label": "nemo:dat-3ah9h9x",
+          "url": "https://assets.nemoarchive.org/dat-3ah9h9x"
+        },
+        {
+          "label": "cellxgene",
+          "url": "https://cellxgene.cziscience.com/collections/bacccb91-066d-4453-b70e-59de0b4598cd"
+        },
+        {
+          "label": "UCSC Cell Browser",
+          "url": "https://human-cortical-dev.cells.ucsc.edu/"
+        }
+      ],
+      "doi": "10.1126/science.adf0834",
+      "authors": [
+        "Dmitry Velmeshev",
+        "Yonatan Perez",
+        "Zihan Yan",
+        "Jonathan E. Valencia",
+        "David R. Castaneda-Castellanos",
+        "Li Wang",
+        "Lucas Schirmer",
+        "Simone Mayer",
+        "Brittney Wick",
+        "Shaohui Wang",
+        "Tomasz Jan Nowakowski",
+        "Mercedes Paredes",
+        "Eric J. Huang",
+        "Arnold R. Kriegstein"
+      ],
+      "journal": "Science",
+      "year": 2023,
+      "title": "Single-cell analysis of prenatal and postnatal human cortical development"
+    },
+    {
+      "category": "Human and NHP Brain Development Single Cell Analyses",
+      "code": [
+        {
+          "label": "Github",
+          "url": "https://github.com/sestanlab/Macaque_corticogenesis_scRNA-seq"
+        }
+      ],
+      "data": [
+        {
+          "label": "nemo:dat-fjx1jbr",
+          "url": "https://assets.nemoarchive.org/dat-fjx1jbr"
+        },
+        {
+          "label": "GEO:GSE226451",
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE226451"
+        },
+        {
+          "label": "GEO:GSE225482",
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE225482"
+        }
+      ],
+      "doi": "10.1126/science.adf3786",
+      "tools": [
+        {
+          "label": "Viewer",
+          "url": "http://resources.sestanlab.org/devmacaquebrain/"
+        }
+      ],
+      "authors": [
+        "Nicola Micali",
+        "Shaojie Ma",
+        "Mingfeng Li",
+        "Suel-Kee Kim",
+        "Xoel Mato-Blanco",
+        "Suvimal Kumar Sindhu",
+        "Jon I. Arellano",
+        "Tianliuyun Gao",
+        "Mikihito Shibata",
+        "Kevin T. Gobeske",
+        "Alvaro Duque",
+        "Gabriel Santpere",
+        "Nenad Sestan",
+        "Pasko Rakic"
+      ],
+      "journal": "Science",
+      "year": 2023,
+      "title": "Molecular programs of regional specification and neural stem cell fate progression in macaque telencephalon"
+    },
+    {
+      "catalog": [
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/97XR43ZTYJ2CQED8YA6/summary"
+        }
+      ],
+      "category": "Human Neuronal Cell Type Functional and Anatomical Analysis and Modeling",
+      "code": [
+        {
+          "label": "GitHub (Materials)",
+          "url": "https://github.com/AllenInstitute/human_patchseq_gaba"
+        },
+        {
+          "label": "GitHub (Patch-seq)",
+          "url": "https://github.com/AllenInstitute/patchseqtools"
+        },
+        {
+          "label": "GitHub (Electrophysiology)",
+          "url": "https://github.com/alleninstitute/ipfx"
+        },
+        {
+          "label": "GitHub (Morphology)",
+          "url": "https://github.com/AllenInstitute/neuron_morphology"
+        },
+        {
+          "label": "GitHub (Transcriptomics)",
+          "url": "https://github.com/AllenInstitute/scrattch/"
+        }
+      ],
+      "data": [
+        {
+          "label": "BIL",
+          "url": "https://doi.org/10.35077/g.892"
+        }
+      ],
+      "doi": "10.1126/science.adf6484",
+      "authors": [
+        "Brian R. Lee",
+        "Rachel Dalley",
+        "Jeremy A. Miller",
+        "Thomas Chartrand",
+        "Jennie Close",
+        "Rusty Mann",
+        "Alice Mukora",
+        "Lindsay Ng",
+        "Lauren Alfiler",
+        "Katherine Baker",
+        "Darren Bertagnolli",
+        "Krissy Brouner",
+        "Tamara Casper",
+        "Eva Csajbok",
+        "Nicholas Donadio",
+        "Stan L.W. Driessens",
+        "Tom Egdorf",
+        "Rachel Enstrom",
+        "Anna A. Galakhova",
+        "Amanda Gary",
+        "Emily Gelfand",
+        "Jeff Goldy",
+        "Kristen Hadley",
+        "Tim S. Heistek",
+        "Dijon Hill",
+        "Wen-Hsien Hou",
+        "Nelson Johansen",
+        "Nik Jorstad",
+        "Lisa Kim",
+        "Agnes Katalin Kocsis",
+        "Lauren Kruse",
+        "Michael Kunst",
+        "Gabriela León",
+        "Brian Long",
+        "Matthew Mallory",
+        "Michelle Maxwell",
+        "Medea McGraw",
+        "Delissa McMillen",
+        "Erica J. Melief",
+        "Gabor Molnar",
+        "Marty T. Mortrud",
+        "Dakota Newman",
+        "Julie Nyhus",
+        "Ximena Opitz-Araya",
+        "Attila Ozsvár",
+        "Trangthanh Pham",
+        "Alice Pom",
+        "Lydia Potekhina",
+        "Ram Rajanbabu",
+        "Augustin Ruiz",
+        "Susan M. Sunkin",
+        "Ildikó Szöts",
+        "Naz Taskin",
+        "Bargavi Thyagarajan",
+        "Michael Tieu",
+        "Jessica Trinh",
+        "Sara Vargas",
+        "David Vumbaco",
+        "Femke Waleboer",
+        "Sarah Walling-Bell",
+        "Natalie Weed",
+        "Grace Williams",
+        "Julia Wilson",
+        "Shenqin Yao",
+        "Thomas Zhou",
+        "Pál Barzó",
+        "Trygve Bakken",
+        "Charles Cobbs",
+        "Nick Dee",
+        "Richard G. Ellenbogen",
+        "Luke Esposito",
+        "Manuel Ferreira",
+        "Nathan W. Gouwens",
+        "Benjamin Grannan",
+        "Ryder P. Gwinn",
+        "Jason S. Hauptman",
+        "Rebecca Hodge",
+        "Tim Jarsky",
+        "C. Dirk Keene",
+        "Andrew L. Ko",
+        "Anders Rosendal Korshoej",
+        "Boaz P. Levi",
+        "Kaare Meier",
+        "Jeffrey G. Ojemann",
+        "Anoop Patel",
+        "Jacob Ruzevick",
+        "Daniel L. Silbergeld",
+        "Kimberly Smith",
+        "Jens Christian Sørensen",
+        "Jack Waters",
+        "Hongkui Zeng",
+        "Jim Berg",
+        "Marco Capogna",
+        "Natalia A. Goriounova",
+        "Brian Kalmbach",
+        "Christiaan P.J. de Kock",
+        "Huib D. Mansvelder",
+        "Staci A. Sorensen",
+        "Gabor Tamas",
+        "Ed S. Lein",
+        "Jonathan T. Ting"
+      ],
+      "journal": "Science",
+      "year": 2023,
+      "title": "Signature morphoelectric properties of diverse GABAergic interneurons in the human neocortex"
+    },
+    {
+      "catalog": [
+        {
+          "label": "Project",
+          "url": "http://knowledge.brain-map.org/data/97XR43ZTYJ2CQED8YA6"
+        },
+        {
+          "label": "Project",
+          "url": "http://knowledge.brain-map.org/data/1HEYEW7GMUKWIQW37BO"
+        }
+      ],
+      "category": "Human Neuronal Cell Type Functional and Anatomical Analysis and Modeling",
+      "data": [
+        {
+          "label": "Human Collections",
+          "url": "https://knowledge.brain-map.org/data/97XR43ZTYJ2CQED8YA6/collections"
+        },
+        {
+          "label": "Mouse Collections",
+          "url": "https://knowledge.brain-map.org/data/1HEYEW7GMUKWIQW37BO/collections"
+        }
+      ],
+      "doi": "10.1126/science.adf0805",
+      "tools": [
+        {
+          "label": "analysis code",
+          "url": "http://github.com/AllenInstitute/patchseq_human_L1"
+        },
+        {
+          "label": "ipfx (electrophysiology)",
+          "url": "http://github.com/AllenInstitute/ipfx"
+        },
+        {
+          "label": "neuron morphology",
+          "url": "http://github.com/AllenInstitute/neuron_morphology"
+        },
+        {
+          "label": "skeleton keys (morphology)",
+          "url": "http://github.com/AllenInstitute/skeleton_keys"
+        },
+        {
+          "label": "transcriptomics",
+          "url": "http://github.com/AllenInstitute/scrattch/"
+        }
+      ],
+      "authors": [
+        "Thomas Chartrand",
+        "Rachel Dalley",
+        "Jennie Close",
+        "Natalia A. Goriounova",
+        "Brian R. Lee",
+        "Rusty Mann",
+        "Jeremy A. Miller",
+        "Gabor Molnar",
+        "Alice Mukora",
+        "Lauren Alfiler",
+        "Katherine Baker",
+        "Trygve E. Bakken",
+        "Jim Berg",
+        "Darren Bertagnolli",
+        "Thomas Braun",
+        "Krissy Brouner",
+        "Tamara Casper",
+        "Eva Adrienn Csajbok",
+        "Nick Dee",
+        "Tom Egdorf",
+        "Rachel Enstrom",
+        "Anna A. Galakhova",
+        "Amanda Gary",
+        "Emily Gelfand",
+        "Jeff Goldy",
+        "Kristen Hadley",
+        "Tim S. Heistek",
+        "DiJon Hill",
+        "Nik Jorstad",
+        "Lisa Kim",
+        "Agnes Katalin Kocsis",
+        "Lauren Kruse",
+        "Michael Kunst",
+        "Gabriela Leon",
+        "Brian Long",
+        "Matthew Mallory",
+        "Medea McGraw",
+        "Delissa McMillen",
+        "Erica J. Melief",
+        "Norbert Mihut",
+        "Lindsay Ng",
+        "Julie Nyhus",
+        "Gáspár Oláh",
+        "Attila Ozsvár",
+        "Victoria Omstead",
+        "Zoltan Peterfi",
+        "Alice Pom",
+        "Lydia Potekhina",
+        "Ramkumar Rajanbabu",
+        "Marton Rozsa",
+        "Augustin Ruiz",
+        "Joanna Sandle",
+        "Susan M. Sunkin",
+        "Ildiko Szots",
+        "Michael Tieu",
+        "Martin Toth",
+        "Jessica Trinh",
+        "Sara Vargas",
+        "David Vumbaco",
+        "Grace Williams",
+        "Julia Wilson",
+        "Zizhen Yao",
+        "Pal Barzo",
+        "Charles Cobbs",
+        "Richard G. Ellenbogen",
+        "Luke Esposito",
+        "Manuel Ferreira",
+        "Nathan W. Gouwens",
+        "Benjamin Grannan",
+        "Ryder P. Gwinn",
+        "Jason S. Hauptman",
+        "Tim Jarsky",
+        "C. Dirk Keene",
+        "Andrew L. Ko",
+        "Christof Koch",
+        "Jeffrey G. Ojemann",
+        "Anoop Patel",
+        "Jacob Ruzevick",
+        "Daniel L. Silbergeld",
+        "Kimberly Smith",
+        "Staci A. Sorensen",
+        "Bosiljka Tasic",
+        "Jonathan T. Ting",
+        "Jack Waters",
+        "Christiaan P.J. de Kock",
+        "Huib D. Mansvelder",
+        "Gabor Tamas",
+        "Hongkui Zeng",
+        "Brian Kalmbach",
+        "Ed S. Lein"
+      ],
+      "journal": "Science",
+      "year": 2023,
+      "title": "Morphoelectric and transcriptomic divergence of the layer 1 interneuron repertoire in human versus mouse neocortex"
+    },
+    {
+      "category": "Human Neuronal Cell Type Functional and Anatomical Analysis and Modeling",
+      "doi": "10.1126/sciadv.adf3771",
+      "authors": [
+        "Xiaofeng Han",
+        "Shuxia Guo",
+        "Nan Ji",
+        "Tian Li",
+        "Jian Liu",
+        "Xiangqiao Ye",
+        "Yi Wang",
+        "Zhixi Yun",
+        "Feng Xiong",
+        "Jing Rong",
+        "Di Liu",
+        "Hui Ma",
+        "Yujin Wang",
+        "Yue Huang",
+        "Peng Zhang",
+        "Wenhao Wu",
+        "Liya Ding",
+        "Michael Hawrylycz",
+        "Ed Lein",
+        "Giorgio A. Ascoli",
+        "Wei Xie",
+        "Lijuan Liu",
+        "Liwei Zhang",
+        "Hanchuan Peng"
+      ],
+      "journal": "Science Advances",
+      "year": 2023,
+      "title": "Whole human-brain mapping of single cortical neurons for profiling morphological diversity and stereotypy"
+    },
+    {
+      "catalog": [
+        {
+          "label": "Project",
+          "url": "https://knowledge.brain-map.org/data/P8U9GO0CSN6VVZBUSIF/summary"
+        }
+      ],
+      "category": "Human Neuronal Cell Type Functional and Anatomical Analysis and Modeling",
+      "code": [
+        {
+          "label": "SPIM stictching",
+          "url": "https://github.com/chunglabmit/spimstitch"
+        },
+        {
+          "label": "UNSLICE",
+          "url": "https://github.com/chunglabmit/unslice"
+        },
+        {
+          "label": "Multi-round alignment",
+          "url": "https://github.com/chunglabmit/multiround-alignment-ui"
+        }
+      ],
+      "data": [
+        {
+          "label": "DANDI:000108",
+          "url": "https://dandiarchive.org/dandiset/000108/draft"
+        },
+        {
+          "label": "DANDI dashboard",
+          "url": "https://biccn.github.io/Quarterly_Submission_Receipts/000108-dashboard.html"
+        }
+      ],
+      "doi": "10.1101/2022.03.13.484171",
+      "tools": [
+        {
+          "label": "Chung Lab Neuroglancer",
+          "url": "https://leviathan-chunglab.mit.edu/dandi/"
+        }
+      ],
+      "authors": [
+        "Juhyuk Park",
+        "Ji Wang",
+        "Webster Guan",
+        "Lars A. Gjesteby",
+        "Dylan Pollack",
+        "Lee Kamentsky",
+        "Nicholas B. Evans",
+        "Jeff Stirman",
+        "Xinyi Gu",
+        "Chuanxi Zhao",
+        "Slayton Marx",
+        "Minyoung E. Kim",
+        "Seo Woo Choi",
+        "Michael Snyder",
+        "David Chavez",
+        "Clover Su-Arcaro",
+        "Yuxuan Tian",
+        "Chang Sin Park",
+        "Qiangge Zhang",
+        "Dae Hee Yun",
+        "Mira Moukheiber",
+        "Guoping Feng",
+        "X. William Yang",
+        "C. Dirk Keene",
+        "Patrick R. Hof",
+        "Satrajit S. Ghosh",
+        "Matthew P. Frosch",
+        "Laura J. Brattain",
+        "Kwanghun Chung"
+      ],
+      "journal": "bioRxiv",
+      "year": 2022,
+      "title": "Integrated platform for multi-scale molecular imaging and phenotyping of the human brain"
+    },
+    {
+      "category": "Human Neuronal Cell Type Functional and Anatomical Analysis and Modeling",
+      "doi": "10.1126/sciadv.ade4511",
+      "authors": [
+        "Márton Rózsa",
+        "Martin Tóth",
+        "Gáspár Oláh",
+        "Judith Baka",
+        "Rajmund Lákovics",
+        "Pál Barzó",
+        "Gábor Tamás"
+      ],
+      "journal": "Science Advances",
+      "year": 2023,
+      "title": "Temporal disparity of action potentials triggered in axon initial segments and distal axons in the neocortex"
+    },
+    {
+      "category": "Human Neuronal Cell Type Functional and Anatomical Analysis and Modeling",
+      "data": [
+        {
+          "label": "DataverseNL",
+          "url": "https://doi.org/10.34894/TONOHA"
+        },
+        {
+          "label": "Synaptic Physiology Coarse Matrix",
+          "url": "https://brain-map.org/explore/connectivity/synaptic-physiology"
+        }
+      ],
+      "doi": "10.1126/sciadv.ade3300",
+      "tools": [
+        {
+          "label": "Allen Cell Types Database",
+          "url": "https://celltypes.brain-map.org/"
+        }
+      ],
+      "authors": [
+        "René Wilbers",
+        "Verjinia D. Metodieva",
+        "Sarah Duverdin",
+        "Djai B. Heyer",
+        "Anna A. Galakhova",
+        "Eline J. Mertens",
+        "Tamara D. Versluis",
+        "Johannes C. Baayen",
+        "Sander Idema",
+        "David P. Noske",
+        "Niels Verburg",
+        "Ronald B. Willemse",
+        "Philip C. de Witt Hamer",
+        "Maarten H. P. Kole",
+        "Christiaan P. J. de Kock",
+        "Huibert D. Mansvelder",
+        "Natalia A. Goriounova"
+      ],
+      "journal": "Science Advances",
+      "year": 2023,
+      "title": "Human voltage-gated Na\n            <sup>+</sup>\n            and K\n            <sup>+</sup>\n            channel properties underlie sustained fast AP signaling"
+    },
+    {
+      "category": "Human Neuronal Cell Type Functional and Anatomical Analysis and Modeling",
+      "data": [
+        {
+          "label": "DataverseNL",
+          "url": "https://doi.org/10.34894/L5J0SD"
+        }
+      ],
+      "doi": "10.1126/sciadv.adf0708",
+      "tools": [
+        {
+          "label": "Allen Cell Types Database",
+          "url": "http://celltypes.brain-map.org/data"
+        }
+      ],
+      "authors": [
+        "René Wilbers",
+        "Anna A. Galakhova",
+        "Stan L.W. Driessens",
+        "Tim S. Heistek",
+        "Verjinia D. Metodieva",
+        "Jim Hagemann",
+        "Djai B. Heyer",
+        "Eline J. Mertens",
+        "Suixin Deng",
+        "Sander Idema",
+        "Philip C. de Witt Hamer",
+        "David P. Noske",
+        "Paul van Schie",
+        "Ivar Kommers",
+        "Guoming Luan",
+        "Tianfu Li",
+        "Yousheng Shu",
+        "Christiaan P.J. de Kock",
+        "Huibert D. Mansvelder",
+        "Natalia A. Goriounova"
+      ],
+      "journal": "Science Advances",
+      "year": 2023,
+      "title": "Structural and functional specializations of human fast-spiking neurons support fast cortical signaling"
+    },
+    {
+      "category": "Human Neuronal Cell Type Functional and Anatomical Analysis and Modeling",
+      "code": [
+        {
+          "label": "MIES",
+          "url": "https://github.com/AllenInstitute/MIES"
+        },
+        {
+          "label": "Morphys",
+          "url": "https://github.com/INF-Rene/Morphys"
+        }
+      ],
+      "doi": "10.1101/2023.10.05.561029",
+      "authors": [
+        "Eline J. Mertens",
+        "Yoni Leibner",
+        "Jean Pie",
+        "Anna A. Galakhova",
+        "Femke Waleboer",
+        "Julia Meijer",
+        "Tim S. Heistek",
+        "René Wilbers",
+        "Djai Heyer",
+        "Natalia A. Goriounova",
+        "Sander Idema",
+        "Matthijs B. Verhoog",
+        "Brian E. Kalmbach",
+        "Brian R. Lee",
+        "Ryder P. Gwinn",
+        "Ed S. Lein",
+        "Eleonora Aronica",
+        "Jonathan Ting",
+        "Huibert D. Mansvelder",
+        "Idan Segev",
+        "Christiaan P.J. de Kock"
+      ],
+      "journal": "bioRxiv",
+      "year": 2023,
+      "title": "Morpho-electric and computational properties of three types of human hippocampal CA1 pyramidal neurons"
+    }
+  ]
+}

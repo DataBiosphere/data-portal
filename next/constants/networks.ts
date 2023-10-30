@@ -44,6 +44,7 @@ import organoidIcon from "../public/bio-networks/icons/organoid.png";
 import pancreasIcon from "../public/bio-networks/icons/pancreas.png";
 import reproductionIcon from "../public/bio-networks/icons/reproduction.png";
 import skinIcon from "../public/bio-networks/icons/skin.png";
+import BICCN_PUBLICATIONS from "./biccn-publications.json";
 import { DATASETS } from "./datasets";
 
 export const NETWORKS: Network[] = [
@@ -356,7 +357,7 @@ export const NETWORKS: Network[] = [
     path: "musculoskeletal",
   },
   {
-    BICCNPublications: ["https://www.science.org/doi/10.1126/science.add7046"], // TODO add BICCN publications - DOI is a placeholder only.
+    BICCNPublications: BICCN_PUBLICATIONS.NERVOUS_SYSTEM,
     atlases: [
       {
         code: [
