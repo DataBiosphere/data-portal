@@ -39,9 +39,9 @@ export const MainColumn = (): JSX.Element => {
       )}
       {BICCNPublications?.length &&
         BICCNPublications.map((publication) => (
-          <Card key={publication} component={FluidPaper}>
+          <Card key={publication.doi} component={FluidPaper}>
             <GridSection>
-              <CardActionArea cardUrl={publication}>
+              <CardActionArea cardUrl={`https://doi.org/${publication.doi}`}>
                 <CardSection>
                   <CardContent>
                     <CardTitle>{TITLE}</CardTitle>
