@@ -6,6 +6,32 @@ title: DCP Updates
 
 # DCP Platform Updates
 
+#### October 31, 2023
+
+### Release Highlights
+
+* A new project that is part of an official HCA publication is now available: ["Single nucleus transcriptome and chromatin accessibility of postmortem human pituitaries reveal diverse stem cell regulatory mechanisms"](https://data.humancellatlas.org/explore/projects/48f60534-ba4e-45bc-aa5b-6d3a6c45962e)
+
+* New projects are available from the Brain Biological Network.
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (7)
+ 
+1. [A single-cell atlas of entorhinal cortex from individuals with Alzheimer's disease reveals cell-type-specific gene expression regulation](https://data.humancellatlas.org/explore/projects/dcc28fb3-7bab-48ce-bc4b-684c00e133ce)
+2. [Dysregulation of brain and choroid plexus cell types in severe COVID-19](https://data.humancellatlas.org/explore/projects/72ff4818-5692-4bbc-8886-e47763531023)
+3. [Molecular and cellular evolution of the primate dorsolateral prefrontal cortex](https://data.humancellatlas.org/explore/projects/421bc6cd-bbb4-4398-ac60-a32ea94f02ae)
+4. [Single nucleus transcriptome and chromatin accessibility of postmortem human pituitaries reveal diverse stem cell regulatory mechanisms](https://data.humancellatlas.org/explore/projects/48f60534-ba4e-45bc-aa5b-6d3a6c45962e)
+5. [Single-Cell Transcriptome and Downstream Analyses of Human Stomach Reveal the Cell Diversity and Developmental Features of Gastric and Metaplastic Mucosae](https://data.humancellatlas.org/explore/projects/cfece4d2-f18d-44ad-a46a-42bbcb5cb3b7)
+6. [Single-cell and single-nucleus RNA-seq uncovers shared and distinct axes of variation in dorsal LGN neurons in mice, non-human primates, and humans](https://data.humancellatlas.org/explore/projects/bfaedc29-fe84-4e72-a461-75dc8aabbd1b)
+7. [Single-cell genomic profiling of human dopamine neurons identifies a population that selectively degenerates in Parkinson's disease](https://data.humancellatlas.org/explore/projects/c412be53-cf95-47c7-980c-c0a0caa2d3a0)
+
+### Updated Raw Data and Metadata (5)
+
+1. [A Cellular Anatomy of the Normal Adult Human Prostate and Prostatic Urethra](https://data.humancellatlas.org/explore/projects/53c53cd4-8127-4e12-bc7f-8fe1610a715c)
+2. [Joint profiling of chromatin accessibility and gene expression in thousands of single cells](https://data.humancellatlas.org/explore/projects/0792db34-8047-4e62-802c-9177c9cd8e28)
+3. [Re-evaluation of human BDCA-2+ DC during acute sterile skin inflammation](https://data.humancellatlas.org/explore/projects/67a3de09-45b9-49c3-a068-ff4665daa50e)
+4. [Single-cell transcriptome profiling of an adult human cell atlas of 15 major organs](https://data.humancellatlas.org/explore/projects/376a7f55-b876-4f60-9cf3-ed7bc83d5415)
+5. [Single-cell transcriptomics uncovers distinct molecular signatures of stem cells in chronic myeloid leukemia](https://data.humancellatlas.org/explore/projects/2a72a4e5-66b2-405a-bb7c-1e463e8febb0)
+
 #### September 27, 2023
 
 ### Release Highlights
