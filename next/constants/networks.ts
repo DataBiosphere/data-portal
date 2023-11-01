@@ -386,18 +386,28 @@ export const NETWORKS: Network[] = [
         version: "v1",
       },
       {
-        code: [],
-        contact: { email: "nervous@humancellatlas.org" },
-        coordinators: [],
-        cxgId: "",
+        code: [
+          {
+            label: "https://github.com/AllenInstitute/human_cross_areal",
+            url: "https://github.com/AllenInstitute/human_cross_areal",
+          },
+        ],
+        contact: { email: "trygveb@alleninstitute.org" },
+        coordinators: [{ fullName: "Trygve Bakken" }],
+        cxgId: "d17249d2-0e6e-4500-abb8-e6c93fa1ac6f",
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],
         key: "hcca-v1.0",
         name: "Human Cortical Cell Atlas v1.0",
         path: "hcca-v1_0",
-        publications: [],
-        summaryCellCount: 0,
+        publications: [
+          {
+            doi: "https://doi.org/10.1126/science.adf6812",
+            label: "Jorstad et al. (2023) Science",
+          },
+        ],
+        summaryCellCount: 638941, // First CXG dataset cell count.
         updatedAt: "",
         version: "v1",
       },
