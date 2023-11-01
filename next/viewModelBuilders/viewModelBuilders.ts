@@ -71,7 +71,7 @@ function getAtlasesActionsColumnDef(): ColumnDef<IntegratedAtlasRow> {
         datasetAssets: row.original.datasetAssets,
         title: row.original.name,
       }),
-    header: "CELLxGENE download",
+    header: "Download",
   };
 }
 
