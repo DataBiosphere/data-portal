@@ -1,4 +1,5 @@
 import { ELEMENT_ALIGNMENT } from "@clevercanary/data-explorer-ui/lib/common/entities";
+import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import { SiteConfig } from "@clevercanary/data-explorer-ui/lib/config/entities";
 import logoHca from "images/logoHca.png";
 import logoHumanCellAtlas from "images/logoHumanCellAtlas.png";
@@ -73,6 +74,7 @@ const config: SiteConfig = {
       navLinks: [
         {
           label: "Explore",
+          target: ANCHOR_TARGET.BLANK,
           url: `${PORTAL_URL}/explore`,
         },
         {
