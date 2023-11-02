@@ -21,7 +21,6 @@ import * as C from "../components";
 import { MetadataValueTuple } from "../components/common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
 import { CELLXGENE } from "../constants/analysisPortals";
 import { NETWORKS_ROUTE } from "../constants/routes";
-import { PORTAL_URL } from "../site-config/data-portal/dev/config";
 import { formatCountSize } from "../utils/formatCountSize";
 import { DISEASE } from "./entities";
 
@@ -396,11 +395,14 @@ export function getProjectResponse(
 
 /**
  * Returns the table column definition model for the projects table.
+ * @param browserURL - Browser URL.
  * @returns projects table column definition.
  */
-export function getProjectsTableColumns(): ColumnDef<ProjectsResponse>[] {
+export function getProjectsTableColumns(
+  browserURL: string
+): ColumnDef<ProjectsResponse>[] {
   return [
-    getProjectTitleColumnDef(),
+    getProjectTitleColumnDef(browserURL),
     getGenusSpeciesColumnDef(),
     getLibraryConstructionMethodColumnDef(),
     getSpecimenOrganColumnDef(),
@@ -411,16 +413,19 @@ export function getProjectsTableColumns(): ColumnDef<ProjectsResponse>[] {
 
 /**
  * Returns project title column def.
+ * @param browserURL - Browser URL.
  * @returns project title column def.
  */
-function getProjectTitleColumnDef(): ColumnDef<ProjectsResponse> {
+function getProjectTitleColumnDef(
+  browserURL: string
+): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "projectTitle",
     cell: ({ row }) =>
       C.Link({
         label: processEntityValue(row.original.projects, "projectTitle"),
         target: ANCHOR_TARGET.BLANK,
-        url: getProjectTitleUrl(row.original),
+        url: getProjectTitleUrl(row.original, browserURL),
       }),
     header: "Project Title",
   };
@@ -429,13 +434,17 @@ function getProjectTitleColumnDef(): ColumnDef<ProjectsResponse> {
 /**
  * Returns the project detailed page url, or publication DOI URL if project is sourced externally.
  * @param projectsResponse - Response model return from entity API.
+ * @param browserURL - Browser URL.
  * @returns project url.
  */
-function getProjectTitleUrl(projectsResponse: ProjectsResponse): string {
+function getProjectTitleUrl(
+  projectsResponse: ProjectsResponse,
+  browserURL: string
+): string {
   const projectId = processEntityValue(projectsResponse.projects, "projectId");
   // Project is sourced from HCA.
   if (projectId) {
-    return `${PORTAL_URL}/explore/projects/${processEntityValue(
+    return `${browserURL}/projects/${processEntityValue(
       projectsResponse.projects,
       "projectId"
     )}`;

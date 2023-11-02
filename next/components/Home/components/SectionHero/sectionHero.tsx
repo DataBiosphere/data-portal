@@ -1,6 +1,7 @@
 import { ButtonSecondary } from "@clevercanary/data-explorer-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
 import { ButtonSecondaryOutline } from "@clevercanary/data-explorer-ui/lib/components/common/Button/components/ButtonSecondaryOutline/buttonSecondaryOutline";
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
+import { useConfig } from "../../../../hooks/useConfig";
 import { PORTAL_URL } from "../../../../site-config/data-portal/dev/config";
 import { SummaryCounts } from "./components/SummaryCounts/summaryCounts";
 import {
@@ -12,8 +13,11 @@ import {
 } from "./sectionHero.styles";
 
 export const SectionHero = (): JSX.Element => {
+  const {
+    config: { browserURL },
+  } = useConfig();
   const onExplore = (): void => {
-    window.open(`${PORTAL_URL}/explore`, ANCHOR_TARGET.BLANK);
+    window.open(browserURL, ANCHOR_TARGET.BLANK);
   };
   return (
     <Hero>

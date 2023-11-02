@@ -1,4 +1,6 @@
 import { StaticImage } from "@clevercanary/data-explorer-ui/lib/components/common/StaticImage/staticImage";
+import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
+import { useConfig } from "../../../../hooks/useConfig";
 import { PORTAL_URL } from "../../../../site-config/data-portal/dev/config";
 import {
   Section,
@@ -14,9 +16,12 @@ import {
 } from "./sectionWhatIsTheHCAPortal.styles";
 
 export const SectionWhatIsTheHCAPortal = (): JSX.Element => {
+  const {
+    config: { browserURL },
+  } = useConfig();
   // Opens a new window with the given URL.
-  const onTileClick = (url: string): void => {
-    window.open(url, "_self");
+  const onTileClick = (url: string, target = ANCHOR_TARGET.SELF): void => {
+    window.open(url, target);
   };
   return (
     <Section>
@@ -46,7 +51,9 @@ export const SectionWhatIsTheHCAPortal = (): JSX.Element => {
             </TileText>
             <TileLink>Learn About Pipelines</TileLink>
           </Tile>
-          <Tile onClick={(): void => onTileClick(`${PORTAL_URL}/explore`)}>
+          <Tile
+            onClick={(): void => onTileClick(browserURL, ANCHOR_TARGET.BLANK)}
+          >
             <StaticImage
               alt="search-data"
               src="/bio-networks/home/search-data.svg"

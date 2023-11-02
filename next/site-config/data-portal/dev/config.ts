@@ -8,6 +8,7 @@ import { socials } from "./constants";
 import { themeOptions } from "./themeOptions";
 
 const APP_TITLE = "HCA Data Portal";
+const BROWSER_URL = "https://explore.data.humancellatlas.dev.clevercanary.com";
 export const HCA_DATA_COORDINATION_PLATFORM =
   "Human Cell Atlas Data Coordination Platform";
 export const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
@@ -19,7 +20,7 @@ const config: SiteConfig = {
     gtmPreview: "env-186",
   },
   appTitle: APP_TITLE,
-  browserURL: "",
+  browserURL: BROWSER_URL,
   dataSource: {
     defaultDetailParams: {
       catalog: "dcp32",
@@ -75,7 +76,7 @@ const config: SiteConfig = {
         {
           label: "Explore",
           target: ANCHOR_TARGET.BLANK,
-          url: `${PORTAL_URL}/explore`,
+          url: BROWSER_URL,
         },
         {
           label: "BioNetworks",
