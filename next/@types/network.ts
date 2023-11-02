@@ -133,6 +133,7 @@ export interface Network {
   contact: Contact;
   coordinators: Coordinator[];
   datasetQueryOrgans: DatasetQueryOrgan[];
+  datasetURL?: string;
   key: NetworkKey;
   name: string;
   path: string;

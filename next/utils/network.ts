@@ -11,6 +11,7 @@ import {
   processEntityValue,
   processNullElements,
 } from "../apis/azul/hca-dcp/common/utils";
+import { config } from "../config/config";
 
 /**
  * Returns the H5AD and RDS dataset assets for the given CellXGene dataset assets.
@@ -31,6 +32,21 @@ function buildDatasetAssets(
         fileType: cxgDatasetAsset.filetype,
       };
     });
+}
+
+/**
+ * Builds the URL for the dataset with filter values for the specimen organ category.
+ * @param network - Network.
+ * @returns dataset URL.
+ */
+export function buildDatasetURL(network: Network): string {
+  const { browserURL } = config();
+  const datasetURL = new URL(`${browserURL}/projects`);
+  const filters = [
+    { categoryKey: "specimenOrgan", value: network.datasetQueryOrgans },
+  ];
+  datasetURL.searchParams.set("filter", JSON.stringify(filters));
+  return datasetURL.href;
 }
 
 /**
@@ -95,7 +111,8 @@ export function processNetwork(
       .map(mapIntegratedAtlas);
     return { ...atlas, integratedAtlases };
   });
-  return { ...network, atlases };
+  const datasetURL = buildDatasetURL(network);
+  return { ...network, atlases, datasetURL };
 }
 
 /**
