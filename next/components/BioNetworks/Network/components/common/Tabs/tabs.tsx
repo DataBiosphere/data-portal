@@ -43,16 +43,18 @@ export const Tabs = (): JSX.Element => {
  * @returns network tabs.
  */
 function buildTabs(network: Network): Tab[] {
-  const { BICCNPublications, name } = network;
+  const { atlases, BICCNPublications, name } = network;
   const tabs = [];
   tabs.push({
     label: "Network Overview",
     value: NETWORKS_PATTERN,
   });
-  tabs.push({
-    label: `HCA ${getBioNetworkName(name)} Datasets`,
-    value: NETWORK_DATASETS_PATTERN,
-  });
+  if (atlases.length === 0) {
+    tabs.push({
+      label: `HCA ${getBioNetworkName(name)} Datasets`,
+      value: NETWORK_DATASETS_PATTERN,
+    });
+  }
   if (BICCNPublications && BICCNPublications.length > 0) {
     tabs.push({
       icon: (

@@ -12,13 +12,16 @@ export const MainColumn = (): JSX.Element => {
   const {
     config: { browserURL },
   } = useConfig();
-  const { projectsResponses } = useAtlas();
+  const { network, projectsResponses } = useAtlas();
   return (
     <BackPageContentSingleColumn>
       {/* Atlas Datasets Description */}
       <FluidPaper>
         <MDXSection>
-          <AtlasDatasetsDescription />
+          <AtlasDatasetsDescription
+            networkName={network.name.toLowerCase()}
+            datasetURL={network.datasetURL}
+          />
         </MDXSection>
       </FluidPaper>
       {/* Atlas Datasets */}
