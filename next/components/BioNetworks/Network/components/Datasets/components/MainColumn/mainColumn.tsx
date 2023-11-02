@@ -3,11 +3,15 @@ import { BackPageContentSingleColumn } from "@clevercanary/data-explorer-ui/lib/
 import React from "react";
 import { DatasetsDescription } from "../../../../../../../content";
 import { useNetwork } from "../../../../../../../contexts/networkContext";
+import { useConfig } from "../../../../../../../hooks/useConfig";
 import { getProjectsTableColumns } from "../../../../../../../viewModelBuilders/viewModelBuilders";
 import { MDXSection } from "../../../../../../common/Section/section.styles";
 import { DetailViewTable } from "../../../../../../common/Table/table.styles";
 
 export const MainColumn = (): JSX.Element => {
+  const {
+    config: { browserURL },
+  } = useConfig();
   const { projectsResponses } = useNetwork();
   return (
     <BackPageContentSingleColumn>
@@ -19,7 +23,7 @@ export const MainColumn = (): JSX.Element => {
       </FluidPaper>
       {/* Network Datasets */}
       <DetailViewTable
-        columns={getProjectsTableColumns()}
+        columns={getProjectsTableColumns(browserURL)}
         gridTemplateColumns="minmax(484px, 1fr) repeat(4, minmax(152px, 1fr)) max-content"
         items={projectsResponses}
         noResultsTitle={"No Datasets"}

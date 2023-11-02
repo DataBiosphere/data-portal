@@ -11,6 +11,7 @@ import type { AppProps } from "next/app";
 import { Head } from "../components/common/Head/head";
 import { AppFooter } from "../components/Layout/components/Footer/footer.styles";
 import { config } from "../config/config";
+import { ConfigProvider } from "../providers/config";
 import { mergeAppTheme } from "../theme/theme";
 
 export type NextPageWithMain = NextPage & {
@@ -25,21 +26,24 @@ export type AppPropsWithMain = AppProps & {
 function MyApp({ Component, pageProps }: AppPropsWithMain): JSX.Element {
   const Footer = Component.Footer || AppFooter;
   const Main = Component.Main || DXMain;
-  const { layout, themeOptions } = config();
+  const appConfig = config();
+  const { layout, themeOptions } = appConfig;
   const defaultTheme = createAppTheme(themeOptions);
   const appTheme = mergeAppTheme(defaultTheme);
   return (
     <EmotionThemeProvider theme={appTheme}>
       <ThemeProvider theme={appTheme}>
-        <Head />
-        <CssBaseline />
-        <AppLayout>
-          <Header {...layout.header} />
-          <Main>
-            <Component {...pageProps} />
-          </Main>
-          <Footer {...layout.footer} />
-        </AppLayout>
+        <ConfigProvider config={appConfig}>
+          <Head />
+          <CssBaseline />
+          <AppLayout>
+            <Header {...layout.header} />
+            <Main>
+              <Component {...pageProps} />
+            </Main>
+            <Footer {...layout.footer} />
+          </AppLayout>
+        </ConfigProvider>
       </ThemeProvider>
     </EmotionThemeProvider>
   );
