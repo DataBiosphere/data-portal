@@ -1,106 +1,99 @@
-import { CardContent } from "@clevercanary/data-explorer-ui/lib/components/common/Card/card.styles";
-import { CardActionArea } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardActionArea/cardActionArea";
-import { CardTitle } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { FluidPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
-import { BackPageContentSingleColumn } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/BackPage/backPageView.styles";
-import React from "react";
+import React, { Fragment } from "react";
+import { BICCNPublication } from "../../../../../../../@types/network";
 import {
   useNetwork,
   useNetworkContent,
 } from "../../../../../../../contexts/networkContext";
 import { MDXSection } from "../../../../../../common/Section/section.styles";
-import { PublicationDetail } from "./components/PublicationDetail/publicationDetail";
+import { Outline } from "./components/Outline/outline";
+import { Publication } from "./components/Publication/publication";
 import {
-  Card,
-  CardSecondaryTitle,
-  CardSection,
-  CardSideArea,
-  GridSection,
-  PublicationDetails,
+  BackPageContentSingleColumn,
+  Category,
+  Publications,
 } from "./mainColumn.styles";
 
 export const MainColumn = (): JSX.Element => {
   const { network } = useNetwork();
-  const { Publication } = useNetworkContent();
+  const { Publication: Overview } = useNetworkContent();
   const { BICCNPublications } = network;
+  const publicationsByCategory = getPublicationsByCategory(BICCNPublications);
+  const categoryIdByCategory = getCategoryIdByCategory(publicationsByCategory);
   return (
     <BackPageContentSingleColumn>
-      {Publication && (
-        <FluidPaper>
-          <MDXSection>
-            <Publication />
-          </MDXSection>
-        </FluidPaper>
-      )}
-      {BICCNPublications?.length &&
-        BICCNPublications.map((publication) => {
-          return (
-            <Card key={publication.doi} component={FluidPaper}>
-              <GridSection>
-                <CardActionArea cardUrl={`https://doi.org/${publication.doi}`}>
-                  <CardSection>
-                    <CardContent>
-                      <CardTitle>{publication.title}</CardTitle>
-                      <CardSecondaryTitle>
-                        {publication.authors.join(", ")}. ({publication.year}).{" "}
-                        {publication.title}. {publication.journal}. DOI:{" "}
-                        {publication.doi}
-                      </CardSecondaryTitle>
-                    </CardContent>
-                  </CardSection>
-                </CardActionArea>
-                <CardSideArea>
-                  <CardSection>
-                    <PublicationDetails>
-                      {publication.catalog && (
-                        <PublicationDetail
-                          label={"Catalog"}
-                          links={publication.catalog}
-                          nTagLabel={"projects"}
-                        />
-                      )}
-                      {publication.data && (
-                        <PublicationDetail
-                          label={"Data"}
-                          links={publication.data}
-                          nTagLabel={"sources"}
-                        />
-                      )}
-                      {publication.portal && (
-                        <PublicationDetail
-                          label={"Portal"}
-                          links={publication.portal}
-                          nTagLabel={"portals"}
-                        />
-                      )}
-                      {publication.code && (
-                        <PublicationDetail
-                          label={"Code"}
-                          links={publication.code}
-                          nTagLabel={"repositories"}
-                        />
-                      )}
-                      {publication.tools && (
-                        <PublicationDetail
-                          label={"Tools"}
-                          links={publication.tools}
-                          nTagLabel={"tools"}
-                        />
-                      )}
-                      {publication.protocols && (
-                        <PublicationDetail
-                          label={"Protocols"}
-                          links={publication.protocols}
-                          nTagLabel={"protocols"}
-                        />
-                      )}
-                    </PublicationDetails>
-                  </CardSection>
-                </CardSideArea>
-              </GridSection>
-            </Card>
-          );
-        })}
+      <Publications>
+        {Overview && (
+          <FluidPaper>
+            <MDXSection>
+              <Overview />
+            </MDXSection>
+          </FluidPaper>
+        )}
+        {publicationsByCategory.size &&
+          [...publicationsByCategory].map(([category, publications]) => {
+            return (
+              <Fragment key={category}>
+                <Category id={categoryIdByCategory.get(category)}>
+                  {category}
+                </Category>
+                {publications.map((publication) => (
+                  <Publication
+                    key={publication.doi}
+                    publication={publication}
+                  />
+                ))}
+              </Fragment>
+            );
+          })}
+      </Publications>
+      <Outline categoryIdByCategory={categoryIdByCategory} />
     </BackPageContentSingleColumn>
   );
 };
+
+/**
+ * Returns category id for the given category.
+ * @param category - Category.
+ * @returns category id.
+ */
+function generateCategoryId(category: string): string {
+  return category.toLowerCase().replace(/\W/g, "-");
+}
+
+/**
+ * Returns map of category to category id.
+ * @param publicationsByCategory - Map of publication category to publications.
+ * @returns map of category to category id.
+ */
+function getCategoryIdByCategory(
+  publicationsByCategory: Map<string, BICCNPublication[]>
+): Map<string, string> {
+  const categoryIdByCategory = new Map<string, string>();
+  for (const [category] of publicationsByCategory) {
+    categoryIdByCategory.set(category, generateCategoryId(category));
+  }
+  return categoryIdByCategory;
+}
+
+/**
+ * Returns map of publication category to publications.
+ * @param publications - BICCN Publications.
+ * @returns map of publication category to publications.
+ */
+function getPublicationsByCategory(
+  publications: BICCNPublication[] = []
+): Map<string, BICCNPublication[]> {
+  const publicationsByCategory = new Map<string, BICCNPublication[]>();
+  for (const publication of publications) {
+    const { category } = publication;
+    if (!category) {
+      continue;
+    }
+    if (!publicationsByCategory.has(category)) {
+      publicationsByCategory.set(category, []);
+    }
+    publicationsByCategory.get(category)?.push(publication);
+  }
+  return publicationsByCategory;
+}

@@ -188,6 +188,7 @@ export type AtlasKey = "hbca-v1.0" | "hcca-v1.0" | "hlca-v1.0";
 export interface BICCNPublication {
   authors: string[];
   catalog?: BICCNPublicationLink[];
+  category?: string;
   code?: BICCNPublicationLink[];
   data?: BICCNPublicationLink[];
   doi: string;
