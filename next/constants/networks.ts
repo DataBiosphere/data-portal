@@ -16,11 +16,11 @@ import * as immuneContent from "../content/immune";
 import * as kidneyContent from "../content/kidney";
 import * as liverContent from "../content/liver";
 import * as lungContent from "../content/lung";
-import * as hlca from "../content/lung/atlases/hlca";
+import * as atlasLung from "../content/lung/atlases/lung";
 import * as musculoskeletalContent from "../content/musculoskeletal";
 import * as nervousSystemContent from "../content/nervous-system";
-import * as hbca from "../content/nervous-system/atlases/hbca";
-import * as hcca from "../content/nervous-system/atlases/hcca";
+import * as altasBrain from "../content/nervous-system/atlases/brain";
+import * as atlasCortex from "../content/nervous-system/atlases/cortex";
 import * as oralContent from "../content/oral";
 import * as organoidContent from "../content/organoid";
 import * as pancreasContent from "../content/pancreas";
@@ -579,7 +579,7 @@ export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
 };
 
 export const ATLAS_CONTENT: { [key in AtlasKey]: AtlasModule } = {
-  "brain-v1-0": hbca,
-  "cortex-v1-0": hcca,
-  "lung-v1-0": hlca,
+  "brain-v1-0": altasBrain,
+  "cortex-v1-0": atlasCortex,
+  "lung-v1-0": atlasLung,
 };
