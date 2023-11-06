@@ -100,7 +100,7 @@ function getAtlasesAtlasNameColumnDef(
     cell: ({ row }) =>
       C.Link({
         label: row.original.atlasName,
-        url: `${NETWORKS_ROUTE}/${networkPath}/${row.original.path}`,
+        url: `${NETWORKS_ROUTE}/${networkPath}/atlases/${row.original.path}`,
       }),
     header: "Atlas Name",
   };

@@ -183,7 +183,7 @@ export type NetworkKey =
   | "reproduction"
   | "skin";
 
-export type AtlasKey = "hbca-v1.0" | "hcca-v1.0" | "hlca-v1.0";
+export type AtlasKey = "brain-v1-0" | "cortex-v1-0" | "lung-v1-0";
 
 export interface BICCNPublication {
   authors: string[];

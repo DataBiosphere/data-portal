@@ -288,9 +288,9 @@ export const NETWORKS: Network[] = [
         ],
         externalDatasets: DATASETS.lung,
         integratedAtlases: [],
-        key: "hlca-v1.0",
+        key: "lung-v1-0",
         name: "The integrated Human Lung Cell Atlas (HLCA) v1.0",
-        path: "hlca-v1_0",
+        path: "lung-v1-0",
         publications: [
           {
             doi: "https://doi.org/10.1038/s41591-023-02327-2",
@@ -372,9 +372,9 @@ export const NETWORKS: Network[] = [
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],
-        key: "hbca-v1.0",
+        key: "brain-v1-0",
         name: "Human Brain Cell Atlas v1.0",
-        path: "hbca-v1_0",
+        path: "brain-v1-0",
         publications: [
           {
             doi: "https://doi.org/10.1126/science.add7046",
@@ -398,9 +398,9 @@ export const NETWORKS: Network[] = [
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],
-        key: "hcca-v1.0",
+        key: "cortex-v1-0",
         name: "Human Cortical Cell Atlas v1.0",
-        path: "hcca-v1_0",
+        path: "cortex-v1-0",
         publications: [
           {
             doi: "https://doi.org/10.1126/science.adf6812",
@@ -579,7 +579,7 @@ export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
 };
 
 export const ATLAS_CONTENT: { [key in AtlasKey]: AtlasModule } = {
-  "hbca-v1.0": hbca,
-  "hcca-v1.0": hcca,
-  "hlca-v1.0": hlca,
+  "brain-v1-0": hbca,
+  "cortex-v1-0": hcca,
+  "lung-v1-0": hlca,
 };
