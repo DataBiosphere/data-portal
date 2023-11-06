@@ -39,8 +39,9 @@ const config: SiteConfig = {
         {
           alt: HCA_DATA_COORDINATION_PLATFORM,
           height: 38,
-          link: PORTAL_URL,
+          link: "https://www.humancellatlas.org/",
           src: logoHumanCellAtlas,
+          target: ANCHOR_TARGET.BLANK,
         },
       ],
       navLinks: [
