@@ -44,6 +44,7 @@ export interface Atlas {
   name: string;
   path: string;
   publications: Publication[];
+  subTitle?: string;
   summaryCellCount?: number;
   updatedAt: string;
   version: string;
