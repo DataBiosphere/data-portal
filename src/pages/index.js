@@ -16,6 +16,7 @@ import SearchBrowser from "../components/searchBrowser/searchBrowser";
 import * as FileSummaryService from "../utils/explore/fileSummary.service";
 import * as SystemService from "../utils/system.service";
 import * as numberFormatter from "../utils/number-format.service";
+import { Target } from "../utils/anchor/target.model";
 
 // Images
 import cells from "../../images/icon/metrics/cells.png";
@@ -239,7 +240,12 @@ class IndexPage extends React.Component {
                   </div>
                   <div className={compStyles.text}>
                     <p>Anyone can find data to download or use for analysis</p>
-                    <a href={process.env.GATSBY_EXPLORE_URL}>Start Searching</a>
+                    <a
+                      href={process.env.GATSBY_EXPLORE_URL}
+                      target={Target.BLANK}
+                    >
+                      Start Searching
+                    </a>
                   </div>
                 </div>
                 <div className={compStyles.arrow}>
@@ -294,6 +300,7 @@ class IndexPage extends React.Component {
                     globalStyles.light,
                     globalStyles.register
                   )}
+                  target={Target.BLANK}
                 >
                   <span>Join the </span>
                   <span>HCA Register of Interest</span>

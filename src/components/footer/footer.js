@@ -10,6 +10,7 @@ import React from "react";
 
 // App dependencies
 import FooterLinks from "../footer-links/footer-links";
+import { Target } from "../../utils/anchor/target.model";
 
 // Images
 import footerLogo from "../../../images/logo/logo-hca-white.png";
@@ -31,7 +32,11 @@ class Footer extends React.Component {
     return (
       <div className={compStyles.footer}>
         <div className={wrapperClassName}>
-          <a href="https://www.humancellatlas.org/" className={compStyles.logo}>
+          <a
+            href="https://www.humancellatlas.org/"
+            className={compStyles.logo}
+            target={Target.BLANK}
+          >
             <i className="material-icons">chevron_left</i>
             <img src={footerLogo} alt="Human Cell Atlas" />
           </a>

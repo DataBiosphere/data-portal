@@ -8,6 +8,15 @@ interface Props {
   links: NavLinkItem[];
 }
 
+/**
+ * Returns true if the given link is an internal link.
+ * @param link - Link.
+ * @returns true if the given link is an internal link.
+ */
+export function isClientSideNavigation(link: string): boolean {
+  return /^\/(?!\/)/.test(link);
+}
+
 export default function NavLinks({
   center = false,
   links,
@@ -25,10 +34,14 @@ export default function NavLinks({
       }}
       marginLeft={{ desktop: center ? undefined : 6, mobile: undefined }}
     >
-      {links.map(({ label, url }) => (
+      {links.map(({ label, target = "_self", url }) => (
         <Button
           key={url}
-          onClick={() => navigate(url)}
+          onClick={() =>
+            isClientSideNavigation(url)
+              ? navigate(url)
+              : window.open(url, target)
+          }
           sx={{
             justifyContent: { desktop: "unset", mobile: "flex-start" },
           }}

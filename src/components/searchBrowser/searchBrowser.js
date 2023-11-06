@@ -13,6 +13,7 @@ import ClickHandler from "../clickHandler/clickHandler";
 import HCAAutosuggest from "../hcaAutosuggest/hcaAutosuggest";
 import * as stringFormatter from "../../../src/utils/string-format.service";
 import * as numberFormatter from "../../utils/number-format.service";
+import { Target } from "../../utils/anchor/target.model";
 
 // Class name helper
 import classNames from "classnames";
@@ -239,9 +240,10 @@ class SearchBrowser extends React.Component {
       ]);
       const params = new URLSearchParams();
       params.set("filter", facetFilter);
-      window.location.href = `${
-        process.env.GATSBY_EXPLORE_URL
-      }projects?${params.toString()}`;
+      window.open(
+        `${process.env.GATSBY_EXPLORE_URL}projects?${params.toString()}`,
+        Target.BLANK
+      );
     }
   };
 
