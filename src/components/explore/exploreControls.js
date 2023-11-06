@@ -12,6 +12,7 @@ import React from "react";
 import ClickHandler from "../clickHandler/clickHandler";
 import * as stringFormatter from "../../../src/utils/string-format.service";
 import * as numberFormatter from "../../../src/utils/number-format.service";
+import { Target } from "../../utils/anchor/target.model";
 
 // Images
 import arrow from "../../../images/icon/explore/arrow.png";
@@ -186,9 +187,10 @@ class ExploreControls extends React.Component {
 
     const params = new URLSearchParams();
     params.set("filter", stringifyOrganFilter);
-    window.location.href = `${
-      process.env.GATSBY_EXPLORE_URL
-    }projects?${params.toString()}`;
+    window.open(
+      `${process.env.GATSBY_EXPLORE_URL}projects?${params.toString()}`,
+      Target.BLANK
+    );
   };
 
   render() {

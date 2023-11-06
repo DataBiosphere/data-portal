@@ -1,6 +1,7 @@
 import { SiteConfig } from "../entities";
 import logoHCA from "../../../images/hca/logoHCA.png";
 import { breakpointTablet } from "../../theme/theme";
+import { Target } from "../../utils/anchor/target.model";
 
 // Template variables
 export const BROWSER_URL = process.env.GATSBY_EXPLORE_URL;
@@ -21,6 +22,7 @@ const config: SiteConfig = {
       navLinks: [
         {
           label: "Explore",
+          target: Target.BLANK,
           url: `${BROWSER_URL}${PROJECTS_URL}`,
         },
         {

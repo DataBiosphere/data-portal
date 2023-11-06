@@ -1,6 +1,7 @@
 import { SiteConfig } from "../entities";
 import logoLungmap from "../../../images/lungmap/logoLungmap.png";
 import { BROWSER_URL, PROJECTS_URL } from "../hca/config";
+import { Target } from "../../utils/anchor/target.model";
 
 const config: SiteConfig = {
   layout: {
@@ -15,6 +16,7 @@ const config: SiteConfig = {
       navLinks: [
         {
           label: "Explore",
+          target: Target.BLANK,
           url: `${BROWSER_URL}${PROJECTS_URL}`,
         },
         {

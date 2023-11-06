@@ -28,5 +28,6 @@ export interface Logo {
  */
 export interface NavLinkItem {
   label: string;
+  target?: string;
   url: string;
 }
