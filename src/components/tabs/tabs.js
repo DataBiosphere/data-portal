@@ -9,6 +9,7 @@
 import React from "react";
 
 // App dependencies
+import { PORTAL_URL } from "../../config/hca/config";
 import Tab from "../tab/tab";
 
 // Class name helper
@@ -38,7 +39,10 @@ class TabNav extends React.Component {
                 <Tab key={t} secondary={secondary} tab={tab} />
               ))
             ) : homeTab ? (
-              <Tab back tab={{ active: false, name: "Home", path: "/" }} />
+              <Tab
+                back
+                tab={{ active: false, name: "Home", path: PORTAL_URL }}
+              />
             ) : null}
           </div>
         </div>

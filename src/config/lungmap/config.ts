@@ -10,7 +10,7 @@ const config: SiteConfig = {
       logo: {
         alt: "LungMAP Data Browser",
         height: 32,
-        link: "/",
+        link: `${BROWSER_URL}${PROJECTS_URL}`,
         src: logoLungmap,
       },
       navLinks: [

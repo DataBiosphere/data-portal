@@ -11,6 +11,8 @@ import React from "react";
 
 // App dependencies
 import Layout from "../components/layout";
+import { PORTAL_URL } from "../config/hca/config";
+import { Target } from "../utils/anchor/target.model";
 
 // Styles
 import * as compStyles from "./error.module.css";
@@ -26,7 +28,9 @@ function NotFoundPage() {
       </p>
       <p className={fontStyles.m}>Here are some helpful links instead:</p>
       <p>
-        <Link to="/">Home Page</Link>
+        <a href={PORTAL_URL} target={Target.SELF}>
+          Home Page
+        </a>
       </p>
       <p>
         <Link to="/contact">Contact</Link>
