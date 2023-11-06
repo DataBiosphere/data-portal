@@ -1,6 +1,6 @@
-import anvilConfig from "../config/hca/config";
+import hcaConfig from "../config/hca/config";
 import { SiteConfig } from "../config/entities";
-import ncpiConfig from "../config/lungmap/config";
+import lungmapConfig from "../config/lungmap/config";
 
 export enum SITE {
   HCA = "HCA",
@@ -8,8 +8,8 @@ export enum SITE {
 }
 
 const CONFIGS = {
-  HCA: anvilConfig,
-  LUNGMAP: ncpiConfig,
+  HCA: hcaConfig,
+  LUNGMAP: lungmapConfig,
 };
 
 export const useConfig = (site: SITE): SiteConfig => {

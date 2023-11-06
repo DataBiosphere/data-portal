@@ -28,7 +28,7 @@ class Tab extends React.Component {
     return path ? (
       <div className={classNamesTab} data-testid={name ? "tab" : undefined}>
         {back ? <i className="material-icons">keyboard_arrow_left</i> : null}
-        <Link to={path}>{name}</Link>
+        {back ? <a href={path}>{name}</a> : <Link to={path}>{name}</Link>}
       </div>
     ) : null;
   }
