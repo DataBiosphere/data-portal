@@ -19,7 +19,15 @@ export const DATASETS = {
       ["TODO"],
       ["10X 5' v1", "v2"],
       ["TODO"],
-      "Jain_Misharin_2021"
+      "Expansion of profibrotic monocyte-derived alveolar macrophages in patients with persistent respiratory symptoms and radiographic abnormalities after COVID-19",
+      {
+        doi: "10.1101/2023.07.30.551145",
+        officialHcaPublication: null,
+        publicationTitle:
+          "Expansion of profibrotic monocyte-derived alveolar macrophages in patients with persistent respiratory symptoms and radiographic abnormalities after COVID-19",
+        publicationUrl:
+          "https://www.biorxiv.org/content/10.1101/2023.07.30.551145v1",
+      }
     ),
     // Study name: Lafyatis_Rojas_2019.
     buildDataset(
