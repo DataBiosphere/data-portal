@@ -16,11 +16,11 @@ import * as immuneContent from "../content/immune";
 import * as kidneyContent from "../content/kidney";
 import * as liverContent from "../content/liver";
 import * as lungContent from "../content/lung";
-import * as hlca from "../content/lung/atlases/hlca";
+import * as atlasLung from "../content/lung/atlases/lung";
 import * as musculoskeletalContent from "../content/musculoskeletal";
 import * as nervousSystemContent from "../content/nervous-system";
-import * as hbca from "../content/nervous-system/atlases/hbca";
-import * as hcca from "../content/nervous-system/atlases/hcca";
+import * as altasBrain from "../content/nervous-system/atlases/brain";
+import * as atlasCortex from "../content/nervous-system/atlases/cortex";
 import * as oralContent from "../content/oral";
 import * as organoidContent from "../content/organoid";
 import * as pancreasContent from "../content/pancreas";
@@ -288,9 +288,9 @@ export const NETWORKS: Network[] = [
         ],
         externalDatasets: DATASETS.lung,
         integratedAtlases: [],
-        key: "hlca-v1.0",
+        key: "lung-v1-0",
         name: "The integrated Human Lung Cell Atlas (HLCA) v1.0",
-        path: "hlca-v1_0",
+        path: "lung-v1-0",
         publications: [
           {
             doi: "https://doi.org/10.1038/s41591-023-02327-2",
@@ -372,9 +372,9 @@ export const NETWORKS: Network[] = [
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],
-        key: "hbca-v1.0",
+        key: "brain-v1-0",
         name: "Human Brain Cell Atlas v1.0",
-        path: "hbca-v1_0",
+        path: "brain-v1-0",
         publications: [
           {
             doi: "https://doi.org/10.1126/science.add7046",
@@ -398,9 +398,9 @@ export const NETWORKS: Network[] = [
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],
-        key: "hcca-v1.0",
+        key: "cortex-v1-0",
         name: "Human Cortical Cell Atlas v1.0",
-        path: "hcca-v1_0",
+        path: "cortex-v1-0",
         publications: [
           {
             doi: "https://doi.org/10.1126/science.adf6812",
@@ -579,7 +579,7 @@ export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
 };
 
 export const ATLAS_CONTENT: { [key in AtlasKey]: AtlasModule } = {
-  "hbca-v1.0": hbca,
-  "hcca-v1.0": hcca,
-  "hlca-v1.0": hlca,
+  "brain-v1-0": altasBrain,
+  "cortex-v1-0": atlasCortex,
+  "lung-v1-0": atlasLung,
 };

@@ -1,12 +1,12 @@
 import { Detail } from "@clevercanary/data-explorer-ui/lib/components/Detail/detail";
-import { AtlasProvider } from "contexts/atlasContext";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import React from "react";
-import { AtlasContext } from "../../../../@types/network";
-import { Hero } from "../../../../components/BioNetworks/Network/Atlas/components/common/Hero/hero";
-import { Tabs } from "../../../../components/BioNetworks/Network/Atlas/components/common/Tabs/tabs";
-import { MainColumn } from "../../../../components/BioNetworks/Network/Atlas/components/Datasets/components/MainColumn/mainColumn";
-import * as atlasPages from "../../../../utils/atlasPages";
+import { AtlasContext } from "../../../../../@types/network";
+import { Hero } from "../../../../../components/BioNetworks/Network/Atlas/components/common/Hero/hero";
+import { Tabs } from "../../../../../components/BioNetworks/Network/Atlas/components/common/Tabs/tabs";
+import { MainColumn } from "../../../../../components/BioNetworks/Network/Atlas/components/Datasets/components/MainColumn/mainColumn";
+import { AtlasProvider } from "../../../../../contexts/atlasContext";
+import * as atlasPages from "../../../../../utils/atlasPages";
 
 export const getStaticPaths: GetStaticPaths = atlasPages.getStaticPaths;
 
