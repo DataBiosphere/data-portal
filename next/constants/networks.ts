@@ -381,6 +381,8 @@ export const NETWORKS: Network[] = [
             label: "Siletti et al. (2023) Science",
           },
         ],
+        subTitle:
+          "A first draft atlas of human brain transcriptomic cell types",
         summaryCellCount: 2480956, // First CXG dataset cell count.
         updatedAt: "",
         version: "v1",
@@ -407,6 +409,8 @@ export const NETWORKS: Network[] = [
             label: "Jorstad et al. (2023) Science",
           },
         ],
+        subTitle:
+          "A highly detailed atlas of cellular diversity and variation across the neocortex",
         summaryCellCount: 638941, // First CXG dataset cell count.
         updatedAt: "",
         version: "v1",
