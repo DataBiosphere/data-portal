@@ -103,6 +103,9 @@
           key: "/analyze/methods/methods-packages"
           path: "/analyze/methods"
           secondaryLinks:
+            - name: "Cepo"
+              key: "/analyze/methods/methods-packages/cepo"
+              path: "/analyze/methods/cepo"
             - name: "CiteFuse"
               key: "/analyze/methods/methods-packages/citefuse"
               path: "/analyze/methods/citefuse"
