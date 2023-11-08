@@ -2,7 +2,7 @@ import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Lin
 import { SiteConfig } from "@clevercanary/data-explorer-ui/lib/config/entities";
 import devConfig, { PORTAL_URL } from "../dev/config";
 
-const BROWSER_URL = "https://explore.data.humancellatlas.prod.clevercanary.com";
+const BROWSER_URL = "https://explore.data.humancellatlas.org";
 
 const config: SiteConfig = {
   ...devConfig,
