@@ -103,6 +103,9 @@
           key: "/analyze/methods/methods-packages"
           path: "/analyze/methods"
           secondaryLinks:
+            - name: "CiteFuse"
+              key: "/analyze/methods/methods-packages/citefuse"
+              path: "/analyze/methods/citefuse"
             - name: "Cumulus"
               key: "/analyze/methods/methods-packages/cumulus"
               path: "/analyze/methods/cumulus"
