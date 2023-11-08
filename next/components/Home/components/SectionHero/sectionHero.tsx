@@ -25,9 +25,7 @@ export const SectionHero = (): JSX.Element => {
         <Head>
           <span>Explore the datasets</span> <span>of the Human Cell Atlas</span>
         </Head>
-        <Subhead>
-          Community generated, multi-omic, open and managed access data
-        </Subhead>
+        <Subhead>Community generated, multi-omic, open data</Subhead>
         <CTAs>
           <ButtonSecondary onClick={onExplore}>Explore Data</ButtonSecondary>
           <ButtonSecondaryOutline href={`${PORTAL_URL}/contribute`}>
