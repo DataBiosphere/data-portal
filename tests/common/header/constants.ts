@@ -6,7 +6,6 @@ export const NAVIGATIONS = [
   { path: "guides", name: "Guides" },
   { path: "metadata", name: "Metadata" },
   { path: "pipelines", name: "Pipelines" },
-  { path: "analyze", name: "Analysis Tools" },
   { path: "contribute", name: "Contribute" },
   { path: "apis", name: "APIs", description: "APIs" },
   { path: "dcp-updates", name: "Updates" },

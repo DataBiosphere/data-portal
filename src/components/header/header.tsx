@@ -70,7 +70,14 @@ export default function Header({ header, searchPath }: Props): JSX.Element {
 
   return (
     <AppBar elevation={1} position="sticky">
-      <Toolbar sx={{ gap: 4, height: HEADER_HEIGHT }} variant="dense">
+      <Toolbar
+        sx={{
+          gap: 4,
+          height: HEADER_HEIGHT,
+          justifyContent: { desktop: "unset", mobile: "space-between" },
+        }}
+        variant="dense"
+      >
         {/* Logo */}
         <HeaderLogo logo={logo} />
         <Content

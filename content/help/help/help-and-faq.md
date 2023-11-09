@@ -72,8 +72,7 @@ about [how to access the data](/guides).
 
 Single-cell sequencing analysis methods are constantly changing, and there are many tools for visualizing or analyzing
 the data in the HCA. Popular tools for analyzing single-cell RNA-seq data include Seurat (R) and ScanPy (Python),though
-many other excellent tools exist. We offer a list of community-built analysis applications in the *Analyze* section on
-the *Data Portal*.
+many other excellent tools exist.
 
 ### How do I make my tool compatible with HCA data and add it to the HCA Data Portal?
 

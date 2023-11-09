@@ -28,11 +28,6 @@ export const HOMEPAGE_TILES = [
     name: "Start Searching",
     description: "Anyone can find data to download or use for analysis",
   },
-  {
-    path: "/analyze",
-    name: "Explore applications",
-    description: "Find community analysis tools and applications",
-  },
 ];
 export const HOMEPAGE_TILE_COUNT = HOMEPAGE_TILES.length;
 export const PAGE_TITLE = "Mapping the Human Body at the Cellular Level";
