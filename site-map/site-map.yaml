@@ -8,7 +8,7 @@
     - name: ""
       key: "platform"
       primaryLinks:
-        - name: "About the DCP"
+        - name: "About the HCA Data Portal"
           key: "/about/platform/dcp"
           path: "/about"
         - name: "About the HCA"
@@ -31,7 +31,7 @@
     - name: "API Documentation"
       key: "api-documentation"
       primaryLinks:
-        - name: "DCP APIs"
+        - name: "HCA Data Portal APIs"
           key: "/apis/api-documentation/apis"
           path: "/apis"
           secondaryLinks:
@@ -212,7 +212,7 @@
           key: "/privacy/privacy/lungmap-privacy"
           path: "/lungmap-privacy"
 - name: "Community Updates"
-  description: "DCP Platform Updates"
+  description: "HCA Data Portal Platform Updates"
   key: "community-update"
   headerName: "Updates"
   path: "/dcp-updates"
@@ -223,7 +223,7 @@
     - name: ""
       key: "community-update"
       primaryLinks:
-        - name: "DCP Platform Updates"
+        - name: "HCA Data Portal Platform Updates"
           key: "/community-update/community-update/dcp-updates"
           path: "/dcp-updates"
 - name: "Releases"

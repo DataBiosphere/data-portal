@@ -9,8 +9,6 @@ import { themeOptions } from "./themeOptions";
 
 const APP_TITLE = "HCA Data Portal";
 const BROWSER_URL = "https://explore.data.humancellatlas.dev.clevercanary.com";
-export const HCA_DATA_COORDINATION_PLATFORM =
-  "Human Cell Atlas Data Coordination Platform";
 export const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
 
 const config: SiteConfig = {
@@ -37,7 +35,7 @@ const config: SiteConfig = {
     footer: {
       logos: [
         {
-          alt: HCA_DATA_COORDINATION_PLATFORM,
+          alt: APP_TITLE,
           height: 38,
           link: "https://www.humancellatlas.org/",
           src: logoHumanCellAtlas,
@@ -66,7 +64,7 @@ const config: SiteConfig = {
     },
     header: {
       Logo: C.Logo({
-        alt: HCA_DATA_COORDINATION_PLATFORM,
+        alt: APP_TITLE,
         height: 32,
         link: PORTAL_URL,
         src: logoHca,

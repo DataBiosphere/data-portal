@@ -1,7 +1,7 @@
-export const PAGE_HEADING = "DCP APIs";
+export const PAGE_HEADING = "HCA Data Portal APIs";
 export const PAGE_NAVIGATIONS = [
   {
-    name: "DCP APIs",
+    name: "HCA Data Portal APIs",
     path: "/apis",
   },
 ];
@@ -13,4 +13,4 @@ export const PAGE_OUTLINE_COUNT = PAGE_OUTLINES.length;
 export const PAGE_PATH = "/apis";
 export const PAGE_TABS = [{ name: "API Documentation", path: "/apis" }];
 export const PAGE_TAB_COUNT = PAGE_TABS.length;
-export const PAGE_TITLE = "DCP APIs";
+export const PAGE_TITLE = "HCA Data Portal APIs";

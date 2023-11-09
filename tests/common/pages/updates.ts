@@ -1,15 +1,15 @@
-export const PAGE_HEADING = "DCP Platform Updates";
+export const PAGE_HEADING = "HCA Data Portal Platform Updates";
 export const PAGE_NAVIGATIONS = [
   {
-    name: "DCP Platform Updates",
+    name: "HCA Data Portal Platform Updates",
     path: "/dcp-updates",
   },
 ];
-export const PAGE_NAVIGATION_COUNT = 4;
+export const PAGE_NAVIGATION_COUNT = 1;
 export const PAGE_OUTLINES = [
   {
-    hash: "#dcp-now-contains-data-for-14-million-estimated-cells",
-    name: "DCP now contains data for 14 million estimated cells",
+    hash: "#hca-data-portal-now-contains-data-for-14-million-estimated-cells",
+    name: "HCA Data Portal now contains data for 14 million estimated cells",
   },
   {
     hash: "#new-managed-access-and-seed-network-projects",
@@ -32,18 +32,24 @@ export const PAGE_OUTLINES = [
     name: "Processed data now available for 26 HCA 10x datasets",
   },
   {
-    hash: "#dcp-20-launches-new-projects-contributor-generated-matrices-and-dcp-20-infrastructure",
-    name: "DCP 2.0 launches; new projects, contributor generated matrices and DCP 2.0 infrastructure",
+    hash: "#hca-data-portal-20-launches-new-projects-contributor-generated-matrices-and-hca-data-portal-20-infrastructure",
+    name: "HCA Data Portal 2.0 launches; new projects, contributor generated matrices and HCA Data Portal 2.0 infrastructure",
   },
-  { hash: "#coming-soon---dcp-20", name: "Coming Soon - DCP 2.0" },
+  {
+    hash: "#coming-soon---hca-data-portal-20",
+    name: "Coming Soon - HCA Data Portal 2.0",
+  },
   {
     hash: "#changes-coming-to-key-components",
     name: "Changes Coming to Key Components",
   },
-  { hash: "#transition-path-to-dcp-20", name: "Transition Path to DCP 2.0" },
+  {
+    hash: "#transition-path-to-hca-data-portal-20",
+    name: "Transition Path to HCA Data Portal 2.0",
+  },
 ];
 export const PAGE_OUTLINE_COUNT = PAGE_OUTLINES.length;
 export const PAGE_PATH = "/dcp-updates";
 export const PAGE_TABS = [];
 export const PAGE_TAB_COUNT = PAGE_TABS.length;
-export const PAGE_TITLE = "DCP Platform Updates";
+export const PAGE_TITLE = "HCA Data Portal Platform Updates";
