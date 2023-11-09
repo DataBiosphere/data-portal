@@ -27,7 +27,7 @@ const config: SiteConfig = {
         },
         {
           label: "BioNetworks",
-          url: `${PORTAL_URL}/bio-networks`,
+          url: `${PORTAL_URL}bio-networks`,
         },
         {
           label: "Guides",
