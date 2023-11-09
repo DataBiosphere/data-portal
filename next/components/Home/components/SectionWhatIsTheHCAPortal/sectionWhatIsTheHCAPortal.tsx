@@ -63,14 +63,6 @@ export const SectionWhatIsTheHCAPortal = (): JSX.Element => {
             </TileText>
             <TileLink>Start Searching</TileLink>
           </Tile>
-          <Tile onClick={(): void => onTileClick(`${PORTAL_URL}/analyze`)}>
-            <StaticImage
-              alt="search-community"
-              src="/bio-networks/home/search-community.svg"
-            />
-            <TileText>Find community analysis tools and applications</TileText>
-            <TileLink>Explore Applications</TileLink>
-          </Tile>
         </Tiles>
       </SectionContent>
     </Section>

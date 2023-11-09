@@ -34,10 +34,6 @@ const config: SiteConfig = {
           url: `${PORTAL_URL}/pipelines`,
         },
         {
-          label: "Analysis Tools",
-          url: `${PORTAL_URL}/analyze`,
-        },
-        {
           label: "Contribute",
           url: `${PORTAL_URL}/contribute`,
         },
