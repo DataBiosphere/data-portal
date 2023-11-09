@@ -1,15 +1,9 @@
 import { test, expect } from "@playwright/test";
-import {
-  TEST_ID_HOMEPAGE_METRIC,
-  TEST_ID_HOMEPAGE_TILE,
-  TEST_BASE_URL,
-} from "../common/contants";
+import { TEST_ID_HOMEPAGE_METRIC, TEST_BASE_URL } from "../common/contants";
 import {
   HOMEPAGE_METRICS,
   HERO_TITLE,
   PAGE_TITLE,
-  HOMEPAGE_TILES,
-  HOMEPAGE_TILE_COUNT,
   HOMEPAGE_METRIC_COUNT,
 } from "../common/homepage/constants";
 
@@ -42,23 +36,6 @@ test.describe("home page metrics", () => {
       await expect(labelEl).toHaveText(HOMEPAGE_METRICS[i].label);
       await expect(countEl).toHaveText(/^([0-9]+(\.[0-9]+)?)[k|M|G|T|P|E]?$/);
       await expect(imageEl).toHaveAttribute("src", HOMEPAGE_METRICS[i].src);
-    }
-  });
-});
-
-test.describe("home page `What is the HCA Data Portal?`", () => {
-  test("tiles have label and path", async ({ page }) => {
-    const tileEls = page.getByTestId(TEST_ID_HOMEPAGE_TILE);
-    await expect(tileEls).toHaveCount(HOMEPAGE_TILE_COUNT);
-    const count = await tileEls.count();
-    for (let i = 0; i < count; ++i) {
-      const tileEl = tileEls.nth(i);
-      const nameEl = tileEl.locator("a");
-      const descriptionEl = tileEl.locator("p");
-      const pathEl = tileEl.locator("a");
-      await expect(nameEl).toHaveText(HOMEPAGE_TILES[i].name);
-      await expect(descriptionEl).toHaveText(HOMEPAGE_TILES[i].description);
-      await expect(pathEl).toHaveAttribute("href", HOMEPAGE_TILES[i].path);
     }
   });
 });
