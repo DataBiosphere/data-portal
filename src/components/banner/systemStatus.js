@@ -30,8 +30,8 @@ function SystemStatus() {
         </i>
         <p className={classNames(fontStyles.s, fontStyles.bgDark)}>
           <span>
-            One or more of the systems composing the HCA DCP is currently
-            unavailable.{" "}
+            One or more of the systems composing the HCA Data Portal is
+            currently unavailable.{" "}
           </span>
           <span>
             <span>Please try again later</span>

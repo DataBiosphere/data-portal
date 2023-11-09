@@ -14,7 +14,7 @@ const config: SiteConfig = {
     header: {
       authenticationEnabled: false,
       logo: {
-        alt: "Human Cell Atlas Data Coordination Platform",
+        alt: "HCA Data Portal",
         height: 32,
         link: `${PORTAL_URL}`,
         src: logoHCA,

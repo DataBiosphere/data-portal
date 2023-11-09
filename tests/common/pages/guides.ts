@@ -14,8 +14,8 @@ export const PAGE_OUTLINES = [
     name: "Downloading Project Metadata",
   },
   {
-    hash: "#downloading-project-dcp-generated-matrices",
-    name: "Downloading Project DCP-Generated Matrices",
+    hash: "#downloading-project-hca-data-portal-generated-matrices",
+    name: "Downloading Project HCA Data Portal-Generated Matrices",
   },
   {
     hash: "#downloading-project-contributor-generated-matrices",
