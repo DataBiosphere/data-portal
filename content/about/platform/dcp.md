@@ -13,8 +13,6 @@ data that scientists need to store, standardize and interpret.
 To help coordinate this data collection and processing, the HCA established the **Data Coordination Platform (DCP), a
 public, cloud-based platform where scientists can share, organise and interrogate single-cell data**.
 
-<img alt="Data Flow" src="../_images/Data_flow.png" width="750">
-
 The platform was developed and is operated by a dedicated team of scientists, engineers and bioinformaticians from the
 European Bioinformatics Institute (EBI), the Broad Institute (Broad), the Chan Zuckerberg Initiative (CZI) and the
 University of California, Santa Cruz (UCSC).
