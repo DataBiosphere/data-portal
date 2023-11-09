@@ -2,7 +2,7 @@ export const PAGE_HEADING = "Help build the Human Cell Atlas - submit data";
 export const PAGE_NAVIGATIONS = [
   { name: "Contributing Data", path: "/contribute" },
 ];
-export const PAGE_NAVIGATION_COUNT = 5;
+export const PAGE_NAVIGATION_COUNT = 4;
 export const PAGE_OUTLINES = [
   { hash: "#data-suitability", name: "Data Suitability" },
   { hash: "#data-submission-process", name: "Data Submission Process" },

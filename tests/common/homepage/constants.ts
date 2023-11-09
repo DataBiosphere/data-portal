@@ -12,17 +12,4 @@ export const HOMEPAGE_METRICS = [
   { label: "Labs", src: "/static/labs-de2fc3bb5af210b0a78f7757a8ba5bda.png" },
 ];
 export const HOMEPAGE_METRIC_COUNT = HOMEPAGE_METRICS.length;
-export const HOMEPAGE_TILES = [
-  {
-    path: "/contribute",
-    name: "Learn about contributing",
-    description: "Labs contribute single-cell data",
-  },
-  {
-    path: "https://dev.singlecell.gi.ucsc.edu/explore/",
-    name: "Start Searching",
-    description: "Anyone can find data to download or use for analysis",
-  },
-];
-export const HOMEPAGE_TILE_COUNT = HOMEPAGE_TILES.length;
 export const PAGE_TITLE = "Mapping the Human Body at the Cellular Level";
