@@ -41,7 +41,6 @@ const config: SiteConfig = {
   search: {
     partners: [
       { label: "All Results", value: "" },
-      { label: "Pipelines", value: "pipelines" },
       { label: "Metadata", value: "metadata" },
     ],
     searchEngineId: process.env.GATSBY_ATLAS,

@@ -7,7 +7,8 @@ title: "Overview"
 
 # Help build the Human Cell Atlas - submit data
 
-The Human Cell Atlas is built with the help of and for the benefit of the scientific community. Our team welcomes contributions of raw data at cellular resolution, as long as it is consented for open access to the public.
+The Human Cell Atlas is built with the help of and for the benefit of the scientific community. Our team welcomes
+contributions of raw data at cellular resolution, as long as it is consented for open access to the public.
 
 ## Data Suitability
 
@@ -25,7 +26,8 @@ Learn more about the data suitability criteria [here](/contribute/contributing-d
 
 ## Data Submission Process
 
-Once you are ready to submit your data, you will be supported by the Human Cell Atlas data wranglers. We currently use spreadsheets to collect metadata and a command-line tool to transfer the data files to our cloud infrastructure. 
+Once you are ready to submit your data, you will be supported by the Human Cell Atlas data wranglers. We currently use
+spreadsheets to collect metadata and a command-line tool to transfer the data files to our cloud infrastructure.
 
 ![contribute](../_images/contribute.png)
 
@@ -37,20 +39,22 @@ In order to process your cellular resolution data, we will request the following
 - Summary of project and team information
 - Confirmation that data is consented for open access
 
-Learn more about what to expect and how to prepare for the data submission process [here](/contribute/contributing-expect-prepare).
+Learn more about what to expect and how to prepare for the data submission
+process [here](/contribute/contributing-expect-prepare).
 
 > Ready to contribute? Start the conversation by emailing\
 > [wrangler-team@data.humancellatlas.org](mailto:wrangler-team@data.humancellatlas.org).
 
 ## Data Processing and Results
 
-Once submitted to the Human Cell Atlas, the data will be: 
- 
-- Processed by the [Data processing pipelines](/pipelines) to produce alignment, quantification and quality control metrics results
+Once submitted to the Human Cell Atlas, the data will be:
+
+- Processed by the Data processing pipelines to produce alignment, quantification and quality control metrics results
 - Searchable in the <link-to-browser relativeLink="/projects">HCA Data Browser</link-to-browser>
 - Accessioned in standard archives
 
-Learn more about what results will be available for different data types [here](/contribute/contributing-data-processing-results).
+Learn more about what results will be available for different data
+types [here](/contribute/contributing-data-processing-results).
 
 > #### Start the Process
 > Start the HCA submission process by emailing\

@@ -34,10 +34,6 @@ const config: SiteConfig = {
           url: "/metadata",
         },
         {
-          label: "Pipelines",
-          url: "/pipelines",
-        },
-        {
           label: "Contribute",
           url: "/contribute",
         },
@@ -73,7 +69,6 @@ const config: SiteConfig = {
       { label: "All Results", value: "" },
       { label: "Projects", value: "projects" },
       { label: "Guides", value: "guides" },
-      { label: "Pipeline Docs", value: "pipelines" },
       { label: "Metadata Schema", value: "metadata" },
     ],
     searchEngineId: process.env.GATSBY_ATLAS,

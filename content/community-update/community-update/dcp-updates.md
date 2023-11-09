@@ -690,7 +690,7 @@ title: DCP Updates
   users.
 
 * The Data Portal header has been updated to include new features:
-    * A global search bar that allows users to search across Projects, Guides, Pipeline Docs, and Metadata Schema.
+    * A global search bar that allows users to search across Projects, Guides and Metadata Schema.
     * Direct links to the HCA Twitter, GitHub repository, and slack channel.
 
 ![](./_images/searchbar-communication-updates.png)
@@ -811,8 +811,7 @@ title: DCP Updates
 * The DCP team has reanalyzed the first of the DCP 1.0 Smart-seq2
   projects ([Single cell RNA sequencing of multiple myeloma II](https://data.humancellatlas.org/explore/projects/0c3b7785-f74d-4091-8616-a68757e4c2a8)).
   Cell-by-gene matrices are available on the project page and were produced with the
-  latest [Smart-seq Multi-Sample pipeline](https://data.humancellatlas.org/pipelines/smart-seq2-workflow) for uniform
-  analysis.
+  latest Smart-seq Multi-Sample pipeline for uniform analysis.
 * Contributor-generated matrices are available for the
   project [Single-nucleus cross-tissue molecular reference maps to decipher disease gene function](https://data.humancellatlas.org/explore/projects/31887183-a72c-4308-9eac-c6140313f39c)
   which is associated with a Human Cell
@@ -1121,8 +1120,7 @@ from:
 The [DCP 2.0 Preview](https://data.humancellatlas.org/explore/projects) now has standardized BAMs and count matrices (
 Loom file format) available for 26 HCA projects, including 15 new projects. These projects contain both human and mouse
 single-cell and single-nucleus data generated with 3' 10x V2 and V3 sequencing technology. This data was processed using
-the latest version of the Optimus pipeline (see
-the [Optimus Overview](https://data.humancellatlas.org/pipelines/optimus-workflow)).
+the latest version of the Optimus pipeline.
 
 In addition to individual sample count matrices, each newly processed project also has standardized, project-level
 DCP-generated matrices that are stratified by organ, species, and library construction method. These matrices are
