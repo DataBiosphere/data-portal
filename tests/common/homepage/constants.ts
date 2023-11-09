@@ -19,11 +19,6 @@ export const HOMEPAGE_TILES = [
     description: "Labs contribute single-cell data",
   },
   {
-    path: "/pipelines",
-    name: "Learn about Pipelines",
-    description: "We process and quality-check the data with our pipelines",
-  },
-  {
     path: "https://dev.singlecell.gi.ucsc.edu/explore/",
     name: "Start Searching",
     description: "Anyone can find data to download or use for analysis",

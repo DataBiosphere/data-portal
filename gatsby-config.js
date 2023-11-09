@@ -106,7 +106,6 @@ module.exports = {
             options: {
               components: [
                 "button-cta",
-                "data-lifecycle-diagram",
                 "figure-styles",
                 "internal-link",
                 "link-to-browser",

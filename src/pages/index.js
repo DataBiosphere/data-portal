@@ -6,7 +6,6 @@
  */
 
 // Core dependencies
-import { Link } from "gatsby";
 import React from "react";
 
 // App dependencies
@@ -23,10 +22,6 @@ import cells from "../../images/icon/metrics/cells.png";
 import donors from "../../images/icon/metrics/donors.png";
 import labs from "../../images/icon/metrics/labs.png";
 import projects from "../../images/icon/metrics/projects.png";
-import arrow from "../../images/icon/portal/arrow.png";
-import labsContribute from "../../images/icon/portal/labsContribute.png";
-import pipelineProcessing from "../../images/icon/portal/pipelineProcessing.png";
-import searchData from "../../images/icon/portal/searchData.png";
 
 // Class name helper
 import classNames from "classnames";
@@ -186,75 +181,6 @@ class IndexPage extends React.Component {
               />
             </div>
           </section>
-          <section className={compStyles.portal}>
-            <div className={classNames(compStyles.sectionInner, compStyles.s)}>
-              <div className={compStyles.intro}>
-                <h4 className={fontStyles.introTitle}>
-                  What is the HCA Data Portal?
-                </h4>
-                <p className={fontStyles.introText}>
-                  The HCA Data Portal stores and provides single-cell data
-                  contributed by labs around the world. Anyone can contribute
-                  data, find data, or access community tools and applications.
-                </p>
-              </div>
-              <div
-                className={classNames(
-                  compStyles.process,
-                  compStyles.introContent
-                )}
-              >
-                <div className={compStyles.tile} data-testid="tile">
-                  <div className={compStyles.icon}>
-                    <img src={labsContribute} alt="Labs Contribute" />
-                  </div>
-                  <div className={compStyles.text}>
-                    <p>Labs contribute single-cell data</p>
-                    <Link to="/contribute">Learn about contributing</Link>
-                  </div>
-                </div>
-                <div className={compStyles.arrow}>
-                  <img src={arrow} alt="Arrow" />
-                </div>
-                <div className={compStyles.tile} data-testid="tile">
-                  <div className={compStyles.icon}>
-                    <img
-                      src={pipelineProcessing}
-                      alt="Process through Pipelines"
-                    />
-                  </div>
-                  <div className={compStyles.text}>
-                    <p>
-                      We process and quality-check the data with our pipelines
-                    </p>
-                    <Link to="/pipelines">Learn about Pipelines</Link>
-                  </div>
-                </div>
-                <div className={compStyles.arrow}>
-                  <img src={arrow} alt="Arrow" />
-                </div>
-                <div className={compStyles.tile} data-testid="tile">
-                  <div className={compStyles.icon}>
-                    <img src={searchData} alt="Search Data" />
-                  </div>
-                  <div className={compStyles.text}>
-                    <p>Anyone can find data to download or use for analysis</p>
-                    <a
-                      href={process.env.GATSBY_EXPLORE_URL}
-                      target={Target.BLANK}
-                    >
-                      Start Searching
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          {/*<section className={compStyles.lifecycle}>*/}
-          {/*<div className={classNames(compStyles.sectionInner, compStyles.s, compStyles.intro)}>*/}
-          {/*<p>Aliquam eros ante, ornare in hendrerit at, faucibus at eros. Morbi gravida augue in nunc pulvinar hendrerit. Cras et lobortis leo, a placerat risus <Link to="/guides/data-lifecycle">learn about Data Lifecycle.</Link></p>*/}
-          {/*</div>*/}
-          {/*</section>*/}
           <section className={compStyles.contact}>
             <div className={classNames(compStyles.sectionInner, compStyles.s)}>
               <h4

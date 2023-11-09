@@ -2,7 +2,6 @@ import { SectionDivider } from "../../components/Home/components/Section/section
 import { SectionBioNetworkAtlases } from "../../components/Home/components/SectionBioNetworkAtlases/sectionBioNetworkAtlases";
 import { SectionHero } from "../../components/Home/components/SectionHero/sectionHero";
 import { SectionStayUpToDate } from "../../components/Home/components/SectionStayUpToDate/sectionStayUpToDate";
-import { SectionWhatIsTheHCAPortal } from "../../components/Home/components/SectionWhatIsTheHCAPortal/sectionWhatIsTheHCAPortal";
 
 export const HomeView = (): JSX.Element => {
   return (
@@ -10,7 +9,6 @@ export const HomeView = (): JSX.Element => {
       <SectionHero />
       <SectionBioNetworkAtlases />
       <SectionDivider />
-      <SectionWhatIsTheHCAPortal />
       <SectionStayUpToDate />
     </>
   );
