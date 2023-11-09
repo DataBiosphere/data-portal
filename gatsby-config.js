@@ -142,6 +142,7 @@ module.exports = {
             options: {
               maxWidth: 1000,
               linkImagesToOriginal: false,
+              quality: 100,
               wrapperStyle:
                 "box-shadow: 0 12px 24px -4px rgb(0 0 0 / 14%), 0 8px 16px -8px rgb(0 0 0 / 24%), 0 -6px 16px -6px rgb(0 0 0 / 24%); margin-bottom: 48px; margin-top: 48px;",
             },

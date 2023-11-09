@@ -230,7 +230,7 @@ title: DCP Updates
 * A full project metadata spreadsheet is now available for several projects in the Data Portal. You can download the
   spreadsheet from the Metadata page for any project where it is available by selecting the download icon under
   Metadata.
-  ![](./_images/metadata-spreadsheet-download.png)
+  ![Download Metadata](./_images/download-metadata.png)
 
 * A new managed access
   project, ["Spatially organized multicellular immune hubs in human colorectal cancer"](https://data.humancellatlas.org/explore/projects/6f03e4ad-9305-4bfa-a5b6-929ffb1d94bd),
@@ -693,7 +693,7 @@ title: DCP Updates
     * A global search bar that allows users to search across Projects, Guides and Metadata Schema.
     * Direct links to the HCA Twitter, GitHub repository, and slack channel.
 
-![](./_images/searchbar-communication-updates.png)
+![Header](./_images/data-portal-header.png)
 
 * There are three new managed access projects available in the Browser:
     * [Spatial and single-cell transcriptional landscape of human cerebellar development](https://data.humancellatlas.org/explore/projects/85a9263b-0887-48ed-ab1a-ddfa773727b6).
@@ -753,8 +753,6 @@ title: DCP Updates
 
 * The Data Portal header has been updated with a new link to the Updates page so that viewers can readily follow release
   notes and other community announcements.
-
-![](./_images/updates-page.png)
 
 * There are two new managed access projects available in the Browser:
     * [Hypertension delays viral clearance and exacerbates airway hyperinflammation in patients with COVID-19](https://data.humancellatlas.org/explore/projects/769a08d1-b8a4-4f1e-95f7-6071a9827555).
@@ -862,7 +860,7 @@ title: DCP Updates
   or export them to the cloud-based bioinformatics platform [Terra](https://app.terra.bio) by selecting the download
   next to the new "Terra Workspace" icon.
 
-![new file downloads](_images/download_files.png)
+![Project Downloads](_images/project-downloads.png)
 
 * The
   projects [A human cell atlas of fetal gene expression](https://data.humancellatlas.org/explore/projects/a9301beb-e9fa-42fe-b75c-84e8a460c733), [Single-cell atlas of early human brain development highlights heterogeneity of human neuroepithelial cells and early radial glia](https://data.humancellatlas.org/explore/projects/ef1d9888-fa86-47a4-bb72-0ab0f20f7004),
@@ -1016,7 +1014,7 @@ navigate to
 the [project detail page](https://data.humancellatlas.org/explore/projects/dc1a41f6-9e09-42a6-959e-3be23db6da56) in the
 Data Portal.
 
-![Supplementary Links](_images/Supplementary_links.png)
+![Supplementary Links](./_images/supplementary-links.png)
 
 ### HCA Seed Networks Projects
 
