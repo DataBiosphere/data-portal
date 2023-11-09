@@ -1,6 +1,6 @@
 ---
 date: "2020-03-31"
-description: "The March 2020 Data Release includes datasets from all human DCP projects that have been processed using the DCP's standardized pipelines (Optimus or Smart-seq2)."
+description: "The March 2020 Data Release includes datasets from all human HCA Data Portal projects that have been processed using the HCA Data Portal's standardized pipelines (Optimus or Smart-seq2)."
 draft: true
 path: "/releases/documentation/2020-mar/overview"
 title: "Overview"
@@ -11,7 +11,9 @@ title: "Overview"
 ## Release Datasets
 
 The <link-to-browser relativelink="/releases/2020-mar">March 2020 Data Release</link-to-browser> includes datasets from
-all human DCP projects that have been processed using the DCP's standardized pipelines Optimus or Smart-seq2.
+all human HCA Data Portal projects that have been processed using the HCA Data Portal's standardized pipelines Optimus
+or
+Smart-seq2.
 
 Projects were stratified into individual datasets by organ, developmental stage, and sequencing technology, and were
 further processed using [Cumulus](https://cumulus.readthedocs.io/en/latest/cumulus.html#), a tool for cell clustering,
@@ -27,6 +29,7 @@ for [working with release files](/releases/2020-mar/working-with-release-files.m
 
 ## Release Feedback
 
-The HCA DCP is actively seeking feedback for improving the utility of the March 2020 Release data, the documentation and
+The HCA Data Portal is actively seeking feedback for improving the utility of the March 2020 Release data, the
+documentation and
 the overall Release presentation. Please see our March 2020 Release [feedback](/releases/2020-mar/feedback.md) page for
-information on how to contact the HCA DCP team with questions, concerns, or ways we can improve.
+information on how to contact the HCA Data Portal team with questions, concerns, or ways we can improve.

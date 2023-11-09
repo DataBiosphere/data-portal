@@ -8,7 +8,7 @@ title: "Exploring Projects"
 
 # Exploring Projects
 
-Projects are a basic unit of data organization in the Data Coordination Platform (DCP). Project contributors contribute
+Projects are a basic unit of data organization in the HCA Data Portal. Project contributors contribute
 raw sequencing and associated [files](/metadata/dictionary/file/sequence_file) along with rich metadata describing:
 
 1. the [origin and type of the cells](/metadata/dictionary/biomaterial/cell_line) used in the project
@@ -19,7 +19,8 @@ raw sequencing and associated [files](/metadata/dictionary/file/sequence_file) a
 1. details about the [project](/metadata/dictionary/project/project) contributors and their institutions
 
 This [Metadata](/metadata/dictionary/process/analysis_process) is included in the project's Metadata Manifest (TSV
-file). When the DCP processes the contributor's raw data with uniform pipelines, this processing information is also
+file). When the HCA Data Portal processes the contributor's raw data with uniform pipelines, this processing information
+is also
 added to the Metadata Manifest.
 
 ## Finding a Project of Interest
@@ -43,12 +44,13 @@ The project information page contains:
 1. project details such as species, organ, and library construction method
 1. counts of input
 1. a link to the project metadata download
-1. a link to the project DCP-generated count matrix download (if available)
+1. a link to the project HCA Data Portal-generated count matrix download (if available)
 1. a link to the project contributor-generated matrix (if available)
 
 ## Downloading Project Metadata
 
-For each project, the DCP maintains a project-specific TSV file containing the full project metadata. The TSV contains a
+For each project, the HCA Data Portal maintains a project-specific TSV file containing the full project metadata. The
+TSV contains a
 row for each file in the project and columns for each metadata property. Meanings of the metadata properties are listed
 in the [Metadata Dictionary](/metadata).
 
@@ -72,9 +74,11 @@ A partial example of a TSV file is shown below:
 
 ![Partial Metadata tsv](../_images/metadata_tsv.png "TSV File")
 
-## Downloading Project DCP-Generated Matrices
+## Downloading Project HCA Data Portal-Generated Matrices
 
-Each project processed with DCP pipelines has DCP-generated matrices. To download Project matrices, navigate to the
+Each project processed with HCA Data Portal pipelines has HCA Data Portal-generated matrices. To download Project
+matrices, navigate
+to the
 Project Information page and select the **"Project Matrices"** tab to the left.
 
 Scroll to identify the relevant matrix and then select the download icon.

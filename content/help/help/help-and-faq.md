@@ -29,7 +29,7 @@ To join the conversation:
 ### What is the Human Cell Atlas?
 
 The HCA is a collaborative effort by an international group of scientists to create a comprehensive reference map of all
-the cells in the human body. The HCA *Data Portal* and Data Coordination Platform was built in partnership with the Chan
+the cells in the human body. The *HCA Data Portal* was built in partnership with the Chan
 Zuckerberg Initiative and continues to be developed by scientists and technologists at EMBL-EBI, the Broad Institute,
 and UC Santa Cruz. [Learn more about the HCA project here](https://www.humancellatlas.org/).
 
@@ -57,7 +57,7 @@ our [data use agreement](/about/data-use-agreement).
 
 ### How do I cite HCA data?
 
-The URL for the HCA DCP *Data Portal*, https://data.humancellatlas.org/, can be used as the citation for data obtained
+The URL for the *HCA Data Portal*, https://data.humancellatlas.org/, can be used as the citation for data obtained
 from the HCA. Alternatively, you can cite: Regev A., et al. 2017. The Human Cell Atlas. Elife. Dec 5;6. pii: e27041.
 doi: 10.7554/eLife.27041.
 
@@ -83,8 +83,8 @@ processing pipelines to the HCA. You can learn more about how to do this in the 
 
 Visit the *Contact* page to learn how to collaborate with us and to reach us with your feedback.
 
-### How can I reuse parts of the DCP?
+### How can I reuse parts of the HCA Data Portal?
 
-One of our goals is to make the HCA Data Coordination Platform code open and reusable to the community. For now, contact
+One of our goals is to make the HCA Data Portal code open and reusable to the community. For now, contact
 us at data-help@humancellatlas.org with questions about reusing our code. Stay tuned for more information about reusing
 code in the *Intro* section of the *Data Portal*.
