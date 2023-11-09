@@ -9,24 +9,25 @@ title: "Accessing Metadata via TDR"
 
 The [Terra Data Repository](https://support.terra.bio/hc/en-us/sections/4407099323675-Terra-Data-Repository)
 (TDR) offers a complete and authoritative source for the metadata made
-available by the DCP Data Browser. This guide will walk you through the
+available by the HCA Data Portal Data Browser. This guide will walk you through the
 process of accessing metadata stored within TDR.
 
 For detailed information regarding the structure of the data within TDR, see the
 [Terra Data Repository schema](https://github.com/HumanCellAtlas/dcp2/blob/main/docs/dcp2_system_design.rst#terra-data-repository-schema).
 
-
 ## Finding a Catalog's Sources
 
-Each project in the DCP Data Browser belongs to a catalog. Each catalog consists
+Each project in the HCA Data Portal Data Browser belongs to a catalog. Each catalog consists
 of one or more sources, and each source is composed of properties. These
 properties include the name of the Google Cloud project and the name of the TDR snapshot.
 
-A catalog's sources can be viewed via the [Data Browser API](https://data.humancellatlas.org/apis/api-documentation/data-browser-api)
+A catalog's sources can be viewed via
+the [Data Browser API](https://data.humancellatlas.org/apis/api-documentation/data-browser-api)
 `/index/catalogs` endpoint.
 
 Using `curl` to make the request, and `jq` to parse the response, the first step
 is to identify the current default catalog.
+
 ```
 $ curl -s https://service.azul.data.humancellatlas.org/index/catalogs | jq '.default_catalog'
 "dcp11"
@@ -50,14 +51,14 @@ can be extracted from the source following the syntax below.
 "tdr:{PROJECT_NAME}:snapshot/{SNAPSHOT_NAME}:{prefix}"
 ```
 
-
 ## Running BigQuery SQL Queries
 
-Access to the metadata in TDR can be accomplished using [Google BigQuery](https://cloud.google.com/bigquery/docs/introduction).
+Access to the metadata in TDR can be accomplished
+using [Google BigQuery](https://cloud.google.com/bigquery/docs/introduction).
 Queries can be run via the Cloud Console or by using the command-line tool `bq`.
+
 - [Using the Cloud Console](https://cloud.google.com/bigquery/docs/bigquery-web-ui)
 - [Using the bq command-line tool](https://cloud.google.com/bigquery/docs/bq-command-line-tool)
-
 
 ## Example queries
 
@@ -66,7 +67,7 @@ prior to use:
 
 - `{GC_PROJECT}`: The name of the Google Cloud project.
 - `{SNAPSHOT}`: The name of the snapshot.
-- `{PROJECT_ID}`: The ID of a project in the DCP Data Browser.
+- `{PROJECT_ID}`: The ID of a project in the HCA Data Portal Data Browser.
 
 To query for all subgraphs (links) in one project:
 
@@ -79,7 +80,7 @@ WHERE project_id = '{PROJECT_ID}'
 To query for all specimen from organism(*) entities in one project:
 
 (*) Note: This query can be adapted for other types of biomaterials such as cell
-suspensions or donor organisms by replacing the values of the table name 
+suspensions or donor organisms by replacing the values of the table name
 `specimen_from_organism` and ID field `specimen_from_organism_id`.
 
 ```

@@ -1,13 +1,14 @@
 ---
 date: "2019-04-29"
-description: "Overview of the HCA DCP data submission process."
+description: "Overview of the HCA Data Portal data submission process."
 path: "/contribute/data/contributing-to-hca/contributing-expect-prepare"
 title: "Data Submission Process"
 ---
 
 # Data Submission Process
 
-Once you are ready to submit your data, you will be supported by the Human Cell Atlas data wranglers. We currently use spreadsheets to collect metadata and a command-line tool to transfer the data files to our cloud infrastructure. 
+Once you are ready to submit your data, you will be supported by the Human Cell Atlas data wranglers. We currently use
+spreadsheets to collect metadata and a command-line tool to transfer the data files to our cloud infrastructure.
 
 ![contribute](../../_images/contribute.png)
 

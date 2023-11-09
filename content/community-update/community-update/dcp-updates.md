@@ -1,10 +1,10 @@
 ---
 date: "2020-12-07"
-description: "Latest updates for the HCA Data Coordination Platform (DCP)."
-title: DCP Updates
+description: "Latest updates for the HCA Data Portal."
+title: HCA Data Portal Updates
 ---
 
-# DCP Platform Updates
+# HCA Data Portal Platform Updates
 
 #### October 31, 2023
 
@@ -410,7 +410,7 @@ title: DCP Updates
     * [The immune cell atlas of human neuroblastoma](https://data.humancellatlas.org/explore/projects/8f630e0f-6bf9-4a04-9754-02533152a954)
     * [Refining Colorectal Cancer Classification and Clinical Stratification Through a Single-Cell Atlas](https://data.humancellatlas.org/explore/projects/4d9d56e4-610d-4748-b57d-f8315e3f53a3)
 
-* A new COVID-19 dataset has been added to the DCP as part of the
+* A new COVID-19 dataset has been added to the HCA Data Portal as part of the
   project [Longitudinal Multi-omics Analyses Identify Responses of Megakaryocytes, Erythroid Cells, and Plasmablasts as Hallmarks of Severe COVID-19](https://data.humancellatlas.org/explore/projects/ec6476ee-2949-41f3-947b-8eef41d6d3ac).
 
 * New raw data derived from populations in Asia and Australia are now available.
@@ -653,7 +653,7 @@ title: DCP Updates
   project, [A cellular census of human lungs identifies novel cell states in health and in asthma](https://data.humancellatlas.org/explore/projects/c0518445-3b3b-49c6-b8fc-c41daa4eacba),
   is available in the Browser.
 
-* A new COVID-19 dataset has been added to the DCP as part of the
+* A new COVID-19 dataset has been added to the HCA Data Portal as part of the
   project [Single-cell RNA sequencing of urinary cells reveals distinct cellular diversity in COVID-19-associated AKI](https://data.humancellatlas.org/explore/projects/c6a50b2a-3dfd-4ca8-9b48-3e682f568a25).
 
 * New raw data derived from populations in Africa, Asia, and Europe are now available.
@@ -685,9 +685,9 @@ title: DCP Updates
 
 ### Release Highlights
 
-* We've created a new [slack channel](https://humancellatlas.slack.com/archives/C02TM2SDVM2) for the DCP community! Join
-  the channel, say hello, and follow for the latest announcements, updates, and opportunities to connect with fellow DCP
-  users.
+* We've created a new [slack channel](https://humancellatlas.slack.com/archives/C02TM2SDVM2) for the HCA Data Portal
+  community! Join the channel, say hello, and follow for the latest announcements, updates, and opportunities to connect
+  with fellow HCA Data Portal users.
 
 * The Data Portal header has been updated to include new features:
     * A global search bar that allows users to search across Projects, Guides and Metadata Schema.
@@ -700,13 +700,14 @@ title: DCP Updates
     * [Intra- and Inter-cellular Rewiring of the Human Colon during Ulcerative Colitis](https://data.humancellatlas.org/explore/projects/cd61771b-661a-4e19-b269-6e5d95350de6).
     * [The Tabula Sapiens: a single cell transcriptomic atlas of multiple organs from individual human donors](https://data.humancellatlas.org/explore/projects/10201832-7c73-4033-9b65-3ef13d81656a).
 
-* The first dataset of iPSC-derived tenocytes has been added to the DCP as part of the
+* The first dataset of iPSC-derived tenocytes has been added to the HCA Data Portal as part of the
   project [Single cell RNAseq analysis of the developmental trajectory of iPSC-derived tenocytes](https://data.humancellatlas.org/explore/projects/78d7805b-fdc8-472b-8058-d92cf886f7a4).
 
-* A new dataset generated using Fluidigm C1 sequencing has been added to the DCP as part of the
+* A new dataset generated using Fluidigm C1 sequencing has been added to the HCA Data Portal as part of the
   project [Pseudo-temporal ordering of individual cells reveals regulators of differentiation](https://data.humancellatlas.org/explore/projects/1eb69a39-b5b2-41ec-afae-5fe37f272756).
 
-* New data from across the globe has been added to the DCP, including datasets from Japan, China, and Thailand.
+* New data from across the globe has been added to the HCA Data Portal, including datasets from Japan, China, and
+  Thailand.
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (14):
 
@@ -725,7 +726,7 @@ title: DCP Updates
 1. [Spatial and single-cell transcriptional landscape of human cerebellar development](https://data.humancellatlas.org/explore/projects/85a9263b-0887-48ed-ab1a-ddfa773727b6)
 1. [The Tabula Sapiens: a single cell transcriptomic atlas of multiple organs from individual human donors](https://data.humancellatlas.org/explore/projects/10201832-7c73-4033-9b65-3ef13d81656a)
 
-### New DCP Analysis (19):
+### New HCA Data Portal Analysis (19):
 
 1. [Cryopreservation and post-thaw characterization of dissociated human islet cells](https://data.humancellatlas.org/explore/projects/8559a8ed-5d8c-4fb6-bde8-ab639cebf03c)
 1. [Dissecting the clonal nature of allelic expression in somatic cells by single-cell RNA-seq](https://data.humancellatlas.org/explore/projects/ccef38d7-aa92-4010-9621-c4c7b1182647)
@@ -792,7 +793,7 @@ title: DCP Updates
 1. [Single-cell sequencing unveils distinct immune microenvironment in human chronic pancreatitis](https://data.humancellatlas.org/explore/projects/c5ca43aa-3b2b-4216-8eb3-f57adcbc99a1)
 1. [Using single-nucleus RNA-sequencing to interrogate transcriptomic profiles of archived human pancreatic islets](https://data.humancellatlas.org/explore/projects/a991ef15-4d4a-4b80-a93e-c538b4b54127)
 
-### Updated Metadata, Raw Data, Contributor-generated Matrices, or DCP Analysis (7):
+### Updated Metadata, Raw Data, Contributor-generated Matrices, or HCA Data Portal Analysis (7):
 
 1. [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d)
 1. [AIDA pilot data](https://data.humancellatlas.org/explore/projects/f0f89c14-7460-4bab-9d42-22228a91f185)
@@ -806,7 +807,7 @@ title: DCP Updates
 
 ### Release Highlights
 
-* The DCP team has reanalyzed the first of the DCP 1.0 Smart-seq2
+* The HCA Data Portal team has reanalyzed the first of the HCA Data Portal 1.0 Smart-seq2
   projects ([Single cell RNA sequencing of multiple myeloma II](https://data.humancellatlas.org/explore/projects/0c3b7785-f74d-4091-8616-a68757e4c2a8)).
   Cell-by-gene matrices are available on the project page and were produced with the
   latest Smart-seq Multi-Sample pipeline for uniform analysis.
@@ -817,15 +818,17 @@ title: DCP Updates
 * New raw data has been added for the
   project [Defining human mesenchymal and epithelial heterogeneity in response to oral inflammatory disease.](https://data.humancellatlas.org/explore/projects/783c9952-a4ae-4106-a6ce-56f20ce27f88)
   as part of the [HCA Oral & Craniofacial Biological Network](https://www.humancellatlas.org/biological-networks/).
-* The first onychofibroblasts dataset has been added to the DCP as part of the
+* The first onychofibroblasts dataset has been added to the HCA Data Portal as part of the
   project [Single cell RNAseq of human nail unit defines RSPO4 onychofibroblasts and SPINK6 nail epithelium](https://data.humancellatlas.org/explore/projects/bd7104c9-a950-490e-9472-7d41c6b11c62).
 * New patch-seq data is available in the
   project [Cryopreservation and post-thaw characterization of dissociated human islet cells](https://data.humancellatlas.org/explore/projects/8559a8ed-5d8c-4fb6-bde8-ab639cebf03c).
-* A content description for contributor- and DCP-generated matrices is now available on each Data Portal project's
+* A content description for contributor- and HCA Data Portal-generated matrices is now available on each Data Portal
+  project's
   matrix download page.
 * The submitted and last updated dates are added to the projects list and Data Portal Explore page. We will make this
   sortable by this field in a future release.
-* New and updated projects for the latest DCP Platform release are now indicated next to the project name on the Explore
+* New and updated projects for the latest HCA Data Portal Platform release are now indicated next to the project name on
+  the Explore
   page (as shown below).
 
   ![](./_images/updated_projects.png)
@@ -847,7 +850,7 @@ title: DCP Updates
 1. [Single cell sequencing identifies novel sub-populations of breast cancer cells selected under hypoxia](https://data.humancellatlas.org/explore/projects/f6133d2a-9f3d-4ef9-9c19-c23d6c7e6cc0)
 1. [Single-nucleus cross-tissue molecular reference maps to decipher disease gene function](https://data.humancellatlas.org/explore/projects/31887183-a72c-4308-9eac-c6140313f39c)
 
-### Updated Metadata, Raw Data, Contributor-generated Matrices, or DCP Analysis (2)
+### Updated Metadata, Raw Data, Contributor-generated Matrices, or HCA Data Portal Analysis (2)
 
 1. [AIDA pilot data](https://data.humancellatlas.org/explore/projects/f0f89c14-7460-4bab-9d42-22228a91f185)
 1. [Single cell RNA sequencing of multiple myeloma II](https://data.humancellatlas.org/explore/projects/0c3b7785-f74d-4091-8616-a68757e4c2a8)
@@ -890,12 +893,12 @@ title: DCP Updates
 1. [Single-cell atlas of human oral mucosa reveals a stromal-neutrophil axis in tissue immunity regulation](https://data.humancellatlas.org/explore/projects/50151324-f3ed-4358-98af-ec352a940a61)
 1. [Single-cell transcriptomics of normal pancreas, intraductal papillary mucinous neoplasm, and pancreatic adenosquamous carcinoma reveals the heterogeneous progression of pancreatic ductal and stromal cells](https://data.humancellatlas.org/explore/projects/3c27d2dd-b180-4b2b-bf05-e2e418393fd1)
 
-### New DCP Analysis (2)
+### New HCA Data Portal Analysis (2)
 
 1. [Census of Immune Cells](https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79)
 1. [Integrative computational analysis of the substantia nigra pars compacta and the locus coeruleus](https://data.humancellatlas.org/explore/projects/5b5f05b7-2482-468d-b76d-8f68c04a7a47)
 
-### Updated Metadata, Contributor-generated Matrices, or DCP Analysis (20)
+### Updated Metadata, Contributor-generated Matrices, or HCA Data Portal Analysis (20)
 
 1. [A single cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d)
 1. [Capturing human trophoblast development with naive pluripotent stem cells in vitro](https://data.humancellatlas.org/explore/projects/da2747fa-2921-42e0-afd4-39ef57b2b88b)
@@ -922,7 +925,7 @@ title: DCP Updates
 
 ### New Raw Data
 
-The DCP has added raw data for the following 14 new projects:
+The HCA Data Portal has added raw data for the following 14 new projects:
 
 1. [A molecular single-cell lung atlas of lethal COVID-19](https://data.humancellatlas.org/explore/projects/d7845650-f6b1-4b1c-b2fe-c0795416ba7b)
 1. [Capturing human trophoblast development with naive pluripotent stem cells in vitro](https://data.humancellatlas.org/explore/projects/da2747fa-2921-42e0-afd4-39ef57b2b88b)
@@ -947,13 +950,13 @@ The following 3 projects have updated files:
 1. [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635)
 1. [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a)
 
-## DCP now contains data for 14 million estimated cells
+## HCA Data Portal now contains data for 14 million estimated cells
 
 #### August 25, 2021
 
 ### New Raw Data
 
-The DCP has added raw data for the following 12 new projects:
+The HCA Data Portal has added raw data for the following 12 new projects:
 
 1. [AIDA pilot data](https://data.humancellatlas.org/explore/projects/f0f89c14-7460-4bab-9d42-22228a91f185)
 1. [Comparison of manual and two types of bioprinted kidney organoids by single cell RNA-seq](https://data.humancellatlas.org/explore/projects/8787c238-89ef-4636-a57d-3167e8b54a80)
@@ -994,12 +997,12 @@ The File facet has a new Content Description column to enable searching for file
 
 #### July 23, 2021
 
-The DCP has added its first managed access project.
+The HCA Data Portal has added its first managed access project.
 
 Contributor-generated cell-by-gene count matrices and associated non-personally identifiable metadata are now available
-to the whole HCA community from within the DCP.
+to the whole HCA community from within the HCA Data Portal.
 
-Additionally, DCP now has the first project data from
+Additionally, the HCA Data Portal now has the first project data from
 the [HCA Seed Networks](https://chanzuckerberg.com/science/programs-resources/single-cell-biology/seednetworks/), which
 are further developing the Human Cell Atlas by combining the expertise of experimental scientists, software engineers,
 and physicians.
@@ -1069,7 +1072,7 @@ Data Portal.
 * Brain (superior parietal cortex, middle temporal gyrus, and temporal cortex), epididymis, immune tissue, cortex of the
   kidney organoid, lymph nodes, placenta (chorionic villus and decidua), spine, testis, and thymus
 * Disease states including Alzheimer disease and cognitive impairment with or without cerebellar ataxia
-* New Jupyter Notebook tutorials for analyzing standardized DCP matrix files are available in
+* New Jupyter Notebook tutorials for analyzing standardized HCA Data Portal matrix files are available in
   an [Intro-to-HCA-data-on-Terra](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra)
   workspace on the cloud-based platform Terra.
 * After registering, you can try the step-by-step instructions for importing HCA data and analyzing in common community
@@ -1102,7 +1105,8 @@ Data Portal.
 #### April 12, 2021
 
 Raw sequencing data for 16 new projects are now available in the
-DCP [Data Browser](https://data.humancellatlas.org/explore/projects). These projects include single-cell data derived
+HCA Data Portal [Data Browser](https://data.humancellatlas.org/explore/projects). These projects include single-cell
+data derived
 from:
 
 - Human and mouse
@@ -1115,51 +1119,58 @@ from:
 
 #### April 02, 2021
 
-The [DCP 2.0 Preview](https://data.humancellatlas.org/explore/projects) now has standardized BAMs and count matrices (
+The [HCA Data Portal 2.0 Preview](https://data.humancellatlas.org/explore/projects) now has standardized BAMs and count
+matrices (
 Loom file format) available for 26 HCA projects, including 15 new projects. These projects contain both human and mouse
 single-cell and single-nucleus data generated with 3' 10x V2 and V3 sequencing technology. This data was processed using
 the latest version of the Optimus pipeline.
 
 In addition to individual sample count matrices, each newly processed project also has standardized, project-level
-DCP-generated matrices that are stratified by organ, species, and library construction method. These matrices are
-minimally filtered to include only cells with more than 100 UMIs. You can download the project-level DCP-generated
+HCA Data Portal-generated matrices that are stratified by organ, species, and library construction method. These
+matrices are
+minimally filtered to include only cells with more than 100 UMIs. You can download the project-level HCA Data Portal
+generated
 Matrices from the Data Browser (see image below) or from the individual Project page (see
 the [Exploring Projects](https://data.humancellatlas.org/guides) guide)
 
-![DCP Preview](../../guides/_images/explore_dcp_2_matrices.png)
+![HCA Data Portal Preview](../../guides/_images/explore_dcp_2_matrices.png)
 
 ### New raw data and Contributor-Generated Matrices
 
 Raw sequence files and contributor-generated matrices (CGMs) for an additional 11 new projects are available for
-download from the [DCP 2.0 Preview](https://data.humancellatlas.org/explore/projects). These projects include human
+download from the [HCA Data Portal 2.0 Preview](https://data.humancellatlas.org/explore/projects). These projects
+include human
 adult, embryonic, and fetal data derived from 10 organs - brain, blood, bone marrow, colon, thymus, pancreas, placenta,
 mouth, liver, and spleen. Most projects employed 10x sequencing technology, but some additionally used cite-seq and
 drop-seq.
 
-With the addition of these new data, the DCP now has 55 total projects with over 7 million cells derived from 40 organs
+With the addition of these new data, the HCA Data Portal now has 55 total projects with over 7 million cells derived
+from 40 organs
 and 580 donors. We are grateful for the contributions and continued support of the 179 global labs who made this data
 available.
 
 ### Download new data using updated guides
 
-All files (raw data, CGMs, and DCP-generated BAMs and matrices) can be downloaded following the instructions in
+All files (raw data, CGMs, and HCA Data Portal-generated BAMs and matrices) can be downloaded following the instructions
+in
 the [Accessing HCA Data and Metadata](/guides/quick-start-guide) guide.
 Additionally, you can access matrix files programmatically using the
 new [Programmatic Download](https://colab.research.google.com/drive/1h14mbunsepfogcnG9VEF4FIGpuyGLA-P#scrollTo=jxk27LZk4373)
 guide.
 
-## DCP 2.0 launches; new projects, contributor generated matrices and DCP 2.0 infrastructure
+## HCA Data Portal 2.0 launches; new projects, contributor generated matrices and HCA Data Portal 2.0 infrastructure
 
 #### December 11, 2020
 
-In the spirit of bringing HCA data to the community as quickly as possible, we are releasing the new DCP 2.0 data and
+In the spirit of bringing HCA data to the community as quickly as possible, we are releasing the new HCA Data Portal 2.0
+data and
 infrastructure incrementally.
 
 This initial launch -- the first of several planned to roll out new functionality, pipelines, and data -- includes:
 
 * Raw data and standardized metadata for 5.8 million cells
-* Contributor-generated matrices, embeddings, and annotations for existing and **16 new DCP projects**
-* New DCP 2.0 infrastructure (details below)
+* Contributor-generated matrices, embeddings, and annotations for existing and **16 new HCA Data Portal projects**
+* New HCA Data Portal 2.0 infrastructure (details below)
 
 ### What's included in the new projects?
 
@@ -1170,15 +1181,14 @@ hindlimb, spleen skin, yolk sac, diaphragm, tongue, trachea, and more. These dat
 * 248 specimens
 * estimated 1.3M additional cells
 
-> View the new projects using the **[DCP 2.0 Data Preview](/what-is-the-dcp-20-data-preview)**
+### What's included in the HCA Data Portal 2.0 infrastructure updates?
 
-### What's included in the DCP 2.0 infrastructure updates?
-
-Along with the new data view, we have updated DCP infrastructure by **retiring and replacing** the following features:
+Along with the new data view, we have updated HCA Data Portal infrastructure by **retiring and replacing** the following
+features:
 
 * HCA Command Line Interface (CLI); data are now downloaded using curl commands (see
   the [Accessing HCA Data and Metadata guide](/guides/quick-start-guide))
-* HCA Matrix Service; DCP 1.0 project matrices remain available on the individual Project Matrices page (see
+* HCA Matrix Service; HCA Data Portal 1.0 project matrices remain available on the individual Project Matrices page (see
   the [Exploring Projects guide](/guides))
 * HCA Data Storage Service (DSS) and API; data is now stored in the Terra Data Repo (TDR), an alternative storage and
   metadata management service that supports managed access
@@ -1189,21 +1199,24 @@ Between now and the end of February look for:
 
 * Standardized analysis results (BAM and index files) made by the latest HCA 10x and SmartSeq-2 pipelines for all
   projects
-* DCP-generated count matrices stratified by species, library construction method, and organ for each project
+* HCA Data Portal-generated count matrices stratified by species, library construction method, and organ for each
+  project
 
 After these standardized analyses are complete, we will begin releasing new projects and analyses on a monthly basis. We
 are also working towards incorporating controlled-access projects.
 
-Once processing is complete, we will retire DCP 1.0 View.
+Once processing is complete, we will retire HCA Data Portal 1.0 View.
 
 ---
 
-## Coming Soon - DCP 2.0
+## Coming Soon - HCA Data Portal 2.0
 
 #### October 9, 2020
 
-We are excited to announce the launch of the DCP 2.0 this fall. This has been a collaborative effort over the past 6
-months to take on board the HCA community feedback and understand the unmet needs in order to align the goals of the DCP
+We are excited to announce the launch of the HCA Data Portal 2.0 this fall. This has been a collaborative effort over
+the past 6
+months to take on board the HCA community feedback and understand the unmet needs in order to align the goals of the HCA
+Data Portal
 with the wider HCA community goals.
 
 We have made significant changes, including GA4GH-compliance, more data—50% more than previously—and, where available,
@@ -1219,23 +1232,25 @@ To accomplish this, we will be making the following changes and migrations:
 * The matrix service API will be retired. The per-project matrices that are most commonly used will be available in
   static form directly from the data browser.
 * As a higher-level replacement for the DSS API, the Data Browser API is being prepared for use by the wider developer
-  community and will be officially documented and supported by the HCA DCP team.
+  community and will be officially documented and supported by the HCA Data Portal team.
 * The HCA-CLI will be retired and the Data Browser will provide a bulk download capability via curl (or similar)
   commands. Because the internal organization of the data store is subject to change with upcoming work on the metadata,
   direct calls against it are discouraged in favor of the new Data Browser API.
 
-## Transition Path to DCP 2.0
+## Transition Path to HCA Data Portal 2.0
 
-More information about the transition to DCP 2.0 will be announced in the coming weeks and we will endeavor to make this
+More information about the transition to HCA Data Portal 2.0 will be announced in the coming weeks and we will endeavor
+to make this
 transition as seamless as possible to the HCA research and developer communities.
 
-> To enable a smooth transition, the DCP 1 data browser, APIs and data will remain available until January 1, 2021.
+> To enable a smooth transition, the HCA Data Portal 1 data browser, APIs and data will remain available until January
+> 1, 2021.
 
 We will continue to integrate third-party portals and applications into the HCA ecosystem by linking from and
 integrating directly into the HCA Data Browser.
 
 Regards,
 
-The HCA DCP Team
+The HCA Data Portal Team
 
 

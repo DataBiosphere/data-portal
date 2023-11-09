@@ -1,6 +1,6 @@
 ---
 date: "2018-05-03"
-description: "Data Use Agreement for the HCA DCP."
+description: "Data Use Agreement for the HCA Data Portal."
 path: "/about/platform/data-use-agreement"
 subTitle: ""
 title: "Data Use Agreement"
@@ -9,7 +9,12 @@ title: "Data Use Agreement"
 # Data Use Agreement
 
 ## Dataset License
-Each dataset in this release is licensed under a [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). This is the license for these datasets and the license for other HCA data in the future may differ.
+
+Each dataset in this release is licensed under
+a [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+This is the license for these datasets and the license for other HCA data in the future may differ.
 
 ## Data Use Policy
-For information regarding data sharing and data use, please see our [Data Release Policy](https://www.humancellatlas.org/data-release-policy/)
+
+For information regarding data sharing and data use, please see
+our [Data Release Policy](https://www.humancellatlas.org/data-release-policy/)

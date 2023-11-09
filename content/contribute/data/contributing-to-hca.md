@@ -1,6 +1,6 @@
 ---
 date: "2018-05-03"
-description: "Contribute to the HCA DCP - the Human Cell Atlas is built with the help of and for the benefit of the scientific community."
+description: "Contribute to the HCA Data Portal - the Human Cell Atlas is built with the help of and for the benefit of the scientific community."
 path: "/contribute/data/contributing-to-hca"
 title: "Overview"
 ---

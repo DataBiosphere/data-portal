@@ -1,12 +1,13 @@
 ---
-description: "Overview of the DCP APIs."
-title: "DCP APIs"
+description: "Overview of the HCA Data Portal APIs."
+title: "HCA Data Portal APIs"
 ---
 
-# DCP APIs
+# HCA Data Portal APIs
 
-The Data Coordination Platform (DCP) provides APIs for programmatic access of data and metadata.
+The HCA Data Portal provides APIs for programmatic access of data and metadata.
 
 ## Data Browser API
 
-The [Data Browser API](/apis/api-documentation/data-browser-api) ia a REST web service for querying metadata associated with both experimental and analysis data.
+The [Data Browser API](/apis/api-documentation/data-browser-api) ia a REST web service for querying metadata associated
+with both experimental and analysis data.
