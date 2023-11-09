@@ -34,6 +34,4 @@ To join the conversation:
 
 ## Contribute to the HCA
 
-If you have data that you’d like to add to the HCA, visit this page to learn more about contributing data. If you’d like
-to contribute an analysis or visualization application,
-email [data-help@humancellatlas.org](mailto:data-help@humancellatlas.org). 
+If you have data that you’d like to add to the HCA, visit this page to learn more about contributing data.

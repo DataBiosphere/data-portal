@@ -38,10 +38,6 @@ const config: SiteConfig = {
           url: "/pipelines",
         },
         {
-          label: "Analysis Tools",
-          url: "/analyze",
-        },
-        {
           label: "Contribute",
           url: "/contribute",
         },

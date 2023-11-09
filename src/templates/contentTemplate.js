@@ -10,8 +10,6 @@ import { graphql } from "gatsby";
 import React from "react";
 
 // App dependencies
-import AnalysisDetail from "../components/analyze/analysisDetail";
-import Analyze from "../components/analyze/analyze";
 import Attributions from "../components/attributions/attributions";
 import Layout from "../components/layout";
 import Markdown from "../components/markdown/markdown";
@@ -34,7 +32,7 @@ export default function Template({ data, location, pageContext }) {
     { nav } = pageContext || {},
     { fields } = markdownRemark || {},
     { slug } = fields || {},
-    { componentName, description, linked, title } = frontmatter || {};
+    { componentName, description, title } = frontmatter || {};
   const showEditPage = TemplateService.showEditPage(slug);
   const editPath = TemplateService.getPageEditUrl(slug);
   const h1 = TemplateService.getPageTitle(htmlAst);
@@ -49,14 +47,7 @@ export default function Template({ data, location, pageContext }) {
         nav={nav}
         pageTitle={pageTitle}
       >
-        {componentName === "analysisDetail" ? (
-          <AnalysisDetail data={markdownRemark} />
-        ) : (
-          <Markdown>{htmlAst}</Markdown>
-        )}
-        {linked && componentName === "analyze" ? (
-          <Analyze linked={linked} />
-        ) : null}
+        <Markdown>{htmlAst}</Markdown>
         {componentName === "attributions" ? <Attributions /> : null}
         {showEditPage ? (
           <a
@@ -86,28 +77,9 @@ export const pageQuery = graphql`
         slug
       }
       frontmatter {
-        appUrl
-        author
         componentName
         date(formatString: "MMMM DD, YYYY")
         description
-        githubUrl
-        linked {
-          childMarkdownRemark {
-            fields {
-              slug
-            }
-            frontmatter {
-              author
-              description
-              githubUrl
-              path
-              subTitle
-              title
-            }
-            html
-          }
-        }
         path
         subTitle
         title

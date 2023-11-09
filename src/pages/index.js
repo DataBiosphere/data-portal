@@ -26,7 +26,6 @@ import projects from "../../images/icon/metrics/projects.png";
 import arrow from "../../images/icon/portal/arrow.png";
 import labsContribute from "../../images/icon/portal/labsContribute.png";
 import pipelineProcessing from "../../images/icon/portal/pipelineProcessing.png";
-import searchCommunity from "../../images/icon/portal/searchCommunity.png";
 import searchData from "../../images/icon/portal/searchData.png";
 
 // Class name helper
@@ -246,25 +245,6 @@ class IndexPage extends React.Component {
                     >
                       Start Searching
                     </a>
-                  </div>
-                </div>
-                <div className={compStyles.arrow}>
-                  <img src={arrow} alt="Arrow" />
-                </div>
-                <div className={compStyles.tile} data-testid="tile">
-                  <div className={compStyles.icon}>
-                    <img
-                      src={searchCommunity}
-                      alt="Find Community Analysis Tools"
-                    />
-                  </div>
-                  <div className={compStyles.text}>
-                    <p className={compStyles.s}>
-                      Find community analysis tools and applications
-                    </p>
-                    <Link to="/analyze" className={compStyles.s}>
-                      Explore applications
-                    </Link>
                   </div>
                 </div>
               </div>

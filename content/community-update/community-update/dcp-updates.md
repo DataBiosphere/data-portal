@@ -10,12 +10,13 @@ title: DCP Updates
 
 ### Release Highlights
 
-* A new project that is part of an official HCA publication is now available: ["Single nucleus transcriptome and chromatin accessibility of postmortem human pituitaries reveal diverse stem cell regulatory mechanisms"](https://data.humancellatlas.org/explore/projects/48f60534-ba4e-45bc-aa5b-6d3a6c45962e)
+* A new project that is part of an official HCA publication is now
+  available: ["Single nucleus transcriptome and chromatin accessibility of postmortem human pituitaries reveal diverse stem cell regulatory mechanisms"](https://data.humancellatlas.org/explore/projects/48f60534-ba4e-45bc-aa5b-6d3a6c45962e)
 
 * New projects are available from the Brain Biological Network.
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (7)
- 
+
 1. [A single-cell atlas of entorhinal cortex from individuals with Alzheimer's disease reveals cell-type-specific gene expression regulation](https://data.humancellatlas.org/explore/projects/dcc28fb3-7bab-48ce-bc4b-684c00e133ce)
 2. [Dysregulation of brain and choroid plexus cell types in severe COVID-19](https://data.humancellatlas.org/explore/projects/72ff4818-5692-4bbc-8886-e47763531023)
 3. [Molecular and cellular evolution of the primate dorsolateral prefrontal cortex](https://data.humancellatlas.org/explore/projects/421bc6cd-bbb4-4398-ac60-a32ea94f02ae)
@@ -39,7 +40,7 @@ title: DCP Updates
 * New projects are available from the Brain and Lung Biological Networks.
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (8)
- 
+
 1. [A molecular cell atlas of the human lung from single-cell RNA sequencing](https://data.humancellatlas.org/explore/projects/6936da41-3692-46bb-bca1-cd0f507991e9)
 2. [Allergic inflammatory memory in human respiratory epithelial progenitor cells](https://data.humancellatlas.org/explore/projects/326b36bd-0975-475f-983b-56ddb8f73a4d)
 3. [Integrative single-cell analysis of transcriptional and epigenetic states in the human adult brain](https://data.humancellatlas.org/explore/projects/e374c1cf-73fd-4a7a-8669-79dc41714984)
@@ -57,11 +58,10 @@ title: DCP Updates
 4. [Discriminating mild from critical COVID-19 by innate and adaptive immune single-cell profiling of bronchoalveolar lavages](https://data.humancellatlas.org/explore/projects/92892ab2-1334-4b1c-9761-14f5a73548ea)
 5. [Harnessing Expressed Single Nucleotide Variation and Single Cell RNA Sequencing To Define Immune Cell Chimerism in the Rejecting Kidney Transplant](https://data.humancellatlas.org/explore/projects/4ef86852-aca0-4a91-8522-9968e0e54dbe)
 
-
 #### August 28, 2023
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (5)
- 
+
 1. [Cellular development and evolution of the mammalian cerebellum](https://data.humancellatlas.org/explore/projects/279f1766-3319-4e3c-9f99-6fb59ba9b3e5)
 2. [Dysregulated lung stroma drives emphysema exacerbation by potentiating resident lymphocytes to suppress an epithelial stem cell reservoir](https://data.humancellatlas.org/explore/projects/f7b46477-0f2a-4bff-a9b7-719e000499a3)
 3. [Mapping single-cell transcriptomes in the intra-tumoral and associated territories of kidney cancer](https://data.humancellatlas.org/explore/projects/8f1f653d-3ea1-4d8e-b4a7-b97dc852c2b1)
@@ -94,11 +94,10 @@ title: DCP Updates
 22. [Single-cell analysis of human non-small cell lung cancer lesions refines tumor classification and patient stratification](https://data.humancellatlas.org/explore/projects/b208466a-6fb0-4385-8cfb-8e03ff6b939e)
 23. [Single-cell transcriptomes from human kidneys reveal the cellular identity of renal tumors](https://data.humancellatlas.org/explore/projects/d8ae869c-39c2-4cdd-b3fc-2d0d8f60e7b8)
 
-
-
 #### July 27, 2023
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (21)
+
 1. [Single-cell multiomic profiling of human lungs reveals cell-type-specific and age-dynamic control of SARS-CoV2 host genes](https://data.humancellatlas.org/explore/projects/01aacb68-4076-4fd9-9eb9-aba0f48c1b5a)
 2. [Single-cell genomics improves the discovery of risk variants and genes of cardiac traits](https://data.humancellatlas.org/explore/projects/0d737cce-1c1c-493a-8e2e-b00143bccc12)
 3. [Dissecting the treatment-naive ecosystem of human melanoma brain metastasis](https://data.humancellatlas.org/explore/projects/0efecd20-2b52-4e4f-96c5-9b4b94158713)
@@ -121,13 +120,12 @@ title: DCP Updates
 20. [Differential cell composition and split epidermal differentiation in human palm, sole, and hip skin](https://data.humancellatlas.org/explore/projects/da74b507-60ee-4dd1-bd02-807bb051a337)
 21. [Human distal lung maps and lineage hierarchies reveal a bipotent progenitor](https://data.humancellatlas.org/explore/projects/e5fe8274-3769-4d7d-aa35-6d33c226ab43)
 
-
 ### Updated Raw Data and Metadata (4)
+
 1. [Cell atlas of the human ocular anterior segment: Tissue-specific and shared cell types](https://data.humancellatlas.org/explore/projects/16e99159-78bc-44aa-b479-55a5e903bf50)
 2. [COVID-19 tissue atlases reveal SARS-CoV-2 pathology and cellular targets](https://data.humancellatlas.org/explore/projects/61515820-5bb8-45d0-8d12-f0850222ecf0)
 3. [A multi-omics atlas of the human retina at single-cell resolution](https://data.humancellatlas.org/explore/projects/9c20a245-f2c0-43ae-82c9-2232ec6b594f)
 4. [AIDA](https://data.humancellatlas.org/explore/projects/f0f89c14-7460-4bab-9d42-22228a91f185)
-
 
 #### June 26, 2023
 
@@ -135,12 +133,14 @@ title: DCP Updates
 
 * New projects are available from the Blood, Eye, Gut, Kidney, Lung, and Skin Biological Networks.
 
-* A new managed access project, ["A multi-omic single-cell landscape of human gynecologic malignancies"](https://data.humancellatlas.org/explore/projects/9746f4e0-d3b2-4543-89b3-10288162851b), is available in the Data Portal.
+* A new managed access
+  project, ["A multi-omic single-cell landscape of human gynecologic malignancies"](https://data.humancellatlas.org/explore/projects/9746f4e0-d3b2-4543-89b3-10288162851b),
+  is available in the Data Portal.
 
 * A project previously removed from the Data Portal has been re-imported and is available for download:
-	
-	* [Single-cell analysis of the cellular heterogeneity and interactions in the injured mouse spinal cord](https://data.humancellatlas.org/explore/projects/e6773550-c1a6-4949-8643-1a3154cf2670)
-	
+
+    * [Single-cell analysis of the cellular heterogeneity and interactions in the injured mouse spinal cord](https://data.humancellatlas.org/explore/projects/e6773550-c1a6-4949-8643-1a3154cf2670)
+
 ### New Raw Data, Metadata, and Contributor-generated Matrices (14)
 
 1. [A multi-omic single-cell landscape of human gynecologic malignancies](https://data.humancellatlas.org/explore/projects/9746f4e0-d3b2-4543-89b3-10288162851b)
@@ -169,13 +169,14 @@ title: DCP Updates
 
 * New projects are available from the Eye, Gut, and Kidney Biological Networks.
 
-* Several projects were removed from the Data Portal while metadata is being updated. They will be added to the portal again during an upcoming release.
+* Several projects were removed from the Data Portal while metadata is being updated. They will be added to the portal
+  again during an upcoming release.
 
-	* COVID-19 tissue atlases reveal SARS-CoV-2 pathology and cellular targets 
-	  (UUID: 61515820-5bb8-45d0-8d12-f0850222ecf0)
+    * COVID-19 tissue atlases reveal SARS-CoV-2 pathology and cellular targets
+      (UUID: 61515820-5bb8-45d0-8d12-f0850222ecf0)
 
-	* Single-cell analysis of the cellular heterogeneity and interactions in the injured mouse spinal cord 
-	  (UUID: e6773550-c1a6-4949-8643-1a3154cf2670)
+    * Single-cell analysis of the cellular heterogeneity and interactions in the injured mouse spinal cord
+      (UUID: e6773550-c1a6-4949-8643-1a3154cf2670)
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (16)
 
@@ -203,13 +204,13 @@ title: DCP Updates
 3. [A single-cell transcriptomic atlas of the human ciliary body](https://data.humancellatlas.org/explore/projects/07518430-7031-4bdf-a3ce-1bf0917a1923)
 4. [Integrated analysis of multimodal single-cell data](https://data.humancellatlas.org/explore/projects/3ce9ae94-c469-419a-9637-5d138a4e642f)
 
-
-
 #### May 11, 2023
 
 ### Release Highlights
 
-* A new project, ["Mucosal Profiling of Pediatric-Onset Colitis and IBD Reveals Common Pathogenics and Therapeutic Pathways"](https://data.humancellatlas.org/explore/projects/f3825dfe-990a-431f-b971-9c26d39840db), is available from the Gut Biological Network.
+* A new
+  project, ["Mucosal Profiling of Pediatric-Onset Colitis and IBD Reveals Common Pathogenics and Therapeutic Pathways"](https://data.humancellatlas.org/explore/projects/f3825dfe-990a-431f-b971-9c26d39840db),
+  is available from the Gut Biological Network.
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (3)
 
@@ -226,10 +227,14 @@ title: DCP Updates
 
 ### Release Highlights
 
-* A full project metadata spreadsheet is now available for several projects in the Data Portal. You can download the spreadsheet from the Metadata page for any project where it is available by selecting the download icon under Metadata.
-![](./_images/metadata-spreadsheet-download.png)
+* A full project metadata spreadsheet is now available for several projects in the Data Portal. You can download the
+  spreadsheet from the Metadata page for any project where it is available by selecting the download icon under
+  Metadata.
+  ![](./_images/metadata-spreadsheet-download.png)
 
-* A new managed access project, ["Spatially organized multicellular immune hubs in human colorectal cancer"](https://data.humancellatlas.org/explore/projects/6f03e4ad-9305-4bfa-a5b6-929ffb1d94bd), is available in the Data Portal.
+* A new managed access
+  project, ["Spatially organized multicellular immune hubs in human colorectal cancer"](https://data.humancellatlas.org/explore/projects/6f03e4ad-9305-4bfa-a5b6-929ffb1d94bd),
+  is available in the Data Portal.
 
 * New projects are available from the Blood, Gut, and Kidney Biological Networks.
 
@@ -250,14 +255,18 @@ title: DCP Updates
 
 ### Release Highlights
 
-* Thanks to feedback from members of the HCA community, we’ve added two new metadata fields, Genome version and Patch version, to projects in the Data Portal! Check out the field descriptions in the [Metadata Dictionary](https://data.humancellatlas.org/metadata/dictionary/file/analysis_file#genome_assembly_version) to learn more or start exploring HCA projects in the [Data Portal](https://data.humancellatlas.org/explore/projects)!
+* Thanks to feedback from members of the HCA community, we’ve added two new metadata fields, Genome version and Patch
+  version, to projects in the Data Portal! Check out the field descriptions in
+  the [Metadata Dictionary](https://data.humancellatlas.org/metadata/dictionary/file/analysis_file#genome_assembly_version)
+  to learn more or start exploring HCA projects in the [Data Portal](https://data.humancellatlas.org/explore/projects)!
 
-* New data is available from researchers in Australia; see the project ["Human prefrontal cortex gene regulatory dynamics from gestation to adulthood at single-cell resolution."](https://data.humancellatlas.org/explore/projects/77dedd59-1376-4887-9bca-dc42b56d5b7a)
+* New data is available from researchers in Australia; see the
+  project ["Human prefrontal cortex gene regulatory dynamics from gestation to adulthood at single-cell resolution."](https://data.humancellatlas.org/explore/projects/77dedd59-1376-4887-9bca-dc42b56d5b7a)
 
-* A new project that is part of an official HCA publication is now available: ["Comprehensive cell atlas of the first-trimester developing human brain."](https://data.humancellatlas.org/explore/projects/cbd2911f-252b-4428-abde-69e270aefdfc)
+* A new project that is part of an official HCA publication is now
+  available: ["Comprehensive cell atlas of the first-trimester developing human brain."](https://data.humancellatlas.org/explore/projects/cbd2911f-252b-4428-abde-69e270aefdfc)
 
 * New projects are available from the Blood and Kidney Biological Networks.
-    
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (11)
 
@@ -283,8 +292,12 @@ title: DCP Updates
 
 ### Release Highlights
 
-* Contributors have added new donors, data, and metadata to what was previously the prototype data set "Census of Immune cells"; the updated project, ["A single cell immune cell atlas of human hematopoietic system,"](https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79) now has over 1,453,784 analyzed cells.
-* New data is available from researchers in China; see the project ["Immune cell profiling of preeclamptic pregnant and postpartum women by single-cell RNA sequencing."](https://data.humancellatlas.org/explore/projects/ea9eec5a-4fc2-4c58-94d0-2fcb598732bc) 
+* Contributors have added new donors, data, and metadata to what was previously the prototype data set "Census of Immune
+  cells"; the updated
+  project, ["A single cell immune cell atlas of human hematopoietic system,"](https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79)
+  now has over 1,453,784 analyzed cells.
+* New data is available from researchers in China; see the
+  project ["Immune cell profiling of preeclamptic pregnant and postpartum women by single-cell RNA sequencing."](https://data.humancellatlas.org/explore/projects/ea9eec5a-4fc2-4c58-94d0-2fcb598732bc)
 
 ### Raw Data, Metadata, and Contributor-generated Matrices (10)
 
@@ -311,8 +324,11 @@ title: DCP Updates
 #### November 28, 2022
 
 ### Release Highlights
-* New single-cell transcriptomic data is available for adult mouse spinal cord; see the project [Single-cell transcriptomic analysis of the adult mouse spinal cord reveals molecular diversity of autonomic and skeletal motor neurons](https://data.humancellatlas.org/explore/projects/9e3370a0-144a-49a9-9e92-6f6a9290125a).
-* Single-cell data derived from peritoneal and ovarian lesions of participants with endometriosis is available in the project [Single cell analysis of endometriosis reveals a coordinated transcriptional program driving immunotolerance and angiogenesis across eutopic and ectopic tissues](https://data.humancellatlas.org/explore/projects/2b81ecc4-6ee0-438f-8c5b-c10b2464069e).
+
+* New single-cell transcriptomic data is available for adult mouse spinal cord; see the
+  project [Single-cell transcriptomic analysis of the adult mouse spinal cord reveals molecular diversity of autonomic and skeletal motor neurons](https://data.humancellatlas.org/explore/projects/9e3370a0-144a-49a9-9e92-6f6a9290125a).
+* Single-cell data derived from peritoneal and ovarian lesions of participants with endometriosis is available in the
+  project [Single cell analysis of endometriosis reveals a coordinated transcriptional program driving immunotolerance and angiogenesis across eutopic and ectopic tissues](https://data.humancellatlas.org/explore/projects/2b81ecc4-6ee0-438f-8c5b-c10b2464069e).
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (10)
 
@@ -328,6 +344,7 @@ title: DCP Updates
 1. [The regulatory landscapes of human ovarian ageing](https://data.humancellatlas.org/explore/projects/0d4aaaac-02c3-44c4-8ae0-4465f97f83ed)
 
 ### Updated Metadata (3)
+
 1. [A spatial multi-omics atlas of the human lung reveals a novel immune cell survival niche](https://data.humancellatlas.org/explore/projects/957261f7-2bd6-4358-a6ed-24ee080d5cfc)
 1. [Cellular heterogeneity of human fallopian tubes in normal and hydrosalpinx disease states identified by scRNA-seq](https://data.humancellatlas.org/explore/projects/21ea8ddb-525f-4f1f-a820-31f0360399a2)
 1. [A single-cell reference map of transcriptional states for human blood and tissue T cell activation](https://data.humancellatlas.org/explore/projects/4a95101c-9ffc-4f30-a809-f04518a23803)
@@ -335,17 +352,23 @@ title: DCP Updates
 #### October 19, 2022
 
 ### Release Highlights
-* New COVID-19 data is available in the project [COVID-19 tissue atlases reveal SARS-CoV-2 pathology and cellular targets](https://data.humancellatlas.org/explore/projects/61515820-5bb8-45d0-8d12-f0850222ecf0).
 
-* The new project [Genome-Wide DNA Hypermethylation in the Wound-Edge of Chronic Wound Patients Opposes Closure by Impairing Epithelial to Mesenchymal Transition](https://data.humancellatlas.org/explore/projects/34ec845b-cd7a-4c43-99e4-d2932d5d85bb) combines spatial transcriptomic data with methylome data. 
+* New COVID-19 data is available in the
+  project [COVID-19 tissue atlases reveal SARS-CoV-2 pathology and cellular targets](https://data.humancellatlas.org/explore/projects/61515820-5bb8-45d0-8d12-f0850222ecf0).
+
+* The new
+  project [Genome-Wide DNA Hypermethylation in the Wound-Edge of Chronic Wound Patients Opposes Closure by Impairing Epithelial to Mesenchymal Transition](https://data.humancellatlas.org/explore/projects/34ec845b-cd7a-4c43-99e4-d2932d5d85bb)
+  combines spatial transcriptomic data with methylome data.
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (4)
+
 1. [COVID-19 tissue atlases reveal SARS-CoV-2 pathology and cellular targets](https://data.humancellatlas.org/explore/projects/61515820-5bb8-45d0-8d12-f0850222ecf0)
 2. [Differential dynamics of response at single cell resolution following CAR-T therapy in refractory B-cell lymphoma](https://data.humancellatlas.org/explore/projects/c0d82ef2-1504-4ef0-9e5e-d8a13e45fdec)
 3. [Genome-Wide DNA Hypermethylation in the Wound-Edge of Chronic Wound Patients Opposes Closure by Impairing Epithelial to Mesenchymal Transition](https://data.humancellatlas.org/explore/projects/34ec845b-cd7a-4c43-99e4-d2932d5d85bb)
 4. [Single-cell analysis of childhood leukemia reveals a link between developmental states and ribosomal protein expression as a source of intra-individual heterogeneity](https://data.humancellatlas.org/explore/projects/1fa8b11f-56fa-45a6-a777-6af70e17a6b3)
 
 ### Updated Metadata (2)
+
 1. [Expansion of Fcγ Receptor IIIa-Positive Macrophages, Ficolin 1-Positive Monocyte-Derived Dendritic Cells, and Plasmacytoid Dendritic Cells Associated With Severe Skin Disease in Systemic Sclerosis](https://data.humancellatlas.org/explore/projects/7f351a4c-d24c-4fcd-9040-f79071b097d0)
 2. [A single-cell and single-nucleus RNA-seq toolbox for fresh and frozen human tumors](https://data.humancellatlas.org/explore/projects/a62dae2e-cd69-4d5c-b5f8-4f7e8abdbafa)
 
@@ -353,7 +376,8 @@ title: DCP Updates
 
 ### Release Highlights
 
-* The Data Portal now hosts over 30 million cells! Thank you to the HCA community and all of the contributors that helped us reach this milestone!
+* The Data Portal now hosts over 30 million cells! Thank you to the HCA community and all of the contributors that
+  helped us reach this milestone!
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (12)
 
@@ -385,12 +409,14 @@ title: DCP Updates
 * There are two new managed access projects available in the Browser:
     * [The immune cell atlas of human neuroblastoma](https://data.humancellatlas.org/explore/projects/8f630e0f-6bf9-4a04-9754-02533152a954)
     * [Refining Colorectal Cancer Classification and Clinical Stratification Through a Single-Cell Atlas](https://data.humancellatlas.org/explore/projects/4d9d56e4-610d-4748-b57d-f8315e3f53a3)
-   
-* A new COVID-19 dataset has been added to the DCP as part of the project [Longitudinal Multi-omics Analyses Identify Responses of Megakaryocytes, Erythroid Cells, and Plasmablasts as Hallmarks of Severe COVID-19](https://data.humancellatlas.org/explore/projects/ec6476ee-2949-41f3-947b-8eef41d6d3ac).
+
+* A new COVID-19 dataset has been added to the DCP as part of the
+  project [Longitudinal Multi-omics Analyses Identify Responses of Megakaryocytes, Erythroid Cells, and Plasmablasts as Hallmarks of Severe COVID-19](https://data.humancellatlas.org/explore/projects/ec6476ee-2949-41f3-947b-8eef41d6d3ac).
 
 * New raw data derived from populations in Asia and Australia are now available.
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (9)
+
 1. [CD90 marks a mesenchymal program in human thymic epithelial cells in vitro and in vivo](https://data.humancellatlas.org/explore/projects/a1312f9a-01ef-40a7-89bf-9091ca76a03a)
 1. [Cross-Species Single-Cell Analysis of Pancreatic Ductal Adenocarcinoma Reveals Antigen-Presenting Cancer-Associated Fibroblasts](https://data.humancellatlas.org/explore/projects/da9d6f24-3bdf-4eaa-9e3f-f47ce2a65b36)
 1. [Highly Parallel Genome-wide Expression Profiling of Individual Cells Using Nanoliter Droplets](https://data.humancellatlas.org/explore/projects/3c9d586e-bd26-4b46-8690-3faaa18ccf38)
@@ -402,6 +428,7 @@ title: DCP Updates
 1. [The immune cell atlas of human neuroblastoma](https://data.humancellatlas.org/explore/projects/8f630e0f-6bf9-4a04-9754-02533152a954)
 
 ### Updated Metadata (39)
+
 1. [A Human Liver Cell Atlas reveals Heterogeneity and Epithelial Progenitors](https://data.humancellatlas.org/explore/projects/94e4ee09-9b4b-410a-84dc-a751ad36d0df)
 1. [A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure](https://data.humancellatlas.org/explore/projects/f86f1ab4-1fbb-4510-ae35-3ffd752d4dfc)
 1. [A cellular census of human lungs identifies novel cell states in health and in asthma](https://data.humancellatlas.org/explore/projects/c0518445-3b3b-49c6-b8fc-c41daa4eacba)
@@ -444,16 +471,17 @@ title: DCP Updates
 
 #### July 19, 2022
 
-
 ### Release Highlights
-* New combined 10x Visium and single-cell RNA sequencing data derived from human ureter tissue are available in the project [Ureter single-cell and spatial mapping reveal cell types, architecture, and signaling networks](https://data.humancellatlas.org/explore/projects/9833669b-d694-4b93-a3d0-6b6f9dbcfc10). 
+
+* New combined 10x Visium and single-cell RNA sequencing data derived from human ureter tissue are available in the
+  project [Ureter single-cell and spatial mapping reveal cell types, architecture, and signaling networks](https://data.humancellatlas.org/explore/projects/9833669b-d694-4b93-a3d0-6b6f9dbcfc10).
 
 * Multiple new projects feature data related to SARS-CoV-2 infection:
-   * [Single-cell meta-analysis of SARS-CoV-2 entry genes across tissues and demographics](https://data.humancellatlas.org/explore/projects/a27dd619-25ad-46a0-ae0c-5c4940a1139b)
-   * [The local and systemic response to SARS-CoV-2 infection in children and adults](https://data.humancellatlas.org/explore/projects/1538d572-bcb7-426b-8d2c-84f3a7f87bb0)
-
+    * [Single-cell meta-analysis of SARS-CoV-2 entry genes across tissues and demographics](https://data.humancellatlas.org/explore/projects/a27dd619-25ad-46a0-ae0c-5c4940a1139b)
+    * [The local and systemic response to SARS-CoV-2 infection in children and adults](https://data.humancellatlas.org/explore/projects/1538d572-bcb7-426b-8d2c-84f3a7f87bb0)
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (6)
+
 1. [Lineage recording in human cerebral organoids](https://data.humancellatlas.org/explore/projects/c4e11369-78d4-4d29-ba8e-b67907c4c65c)
 1. [Single Cell, Single Nucleus and Spatial RNA Sequencing of the Human Liver Identifies Hepatic Stellate Cell and Cholangiocyte Heterogeneity](https://data.humancellatlas.org/explore/projects/8a666b76-daaf-4b1f-9414-e4807a1d1e8b)
 1. [Single-cell RNA-seq reveals cell type-specific molecular and genetic associations to lupus](https://data.humancellatlas.org/explore/projects/9fc0064b-84ce-40a5-a768-e6eb3d364ee0)
@@ -462,25 +490,26 @@ title: DCP Updates
 1. [Ureter single-cell and spatial mapping reveal cell types, architecture, and signaling networks](https://data.humancellatlas.org/explore/projects/9833669b-d694-4b93-a3d0-6b6f9dbcfc10)
 
 ### Updated Metadata (4)
+
 1. [A single-cell and single-nucleus RNA-seq toolbox for fresh and frozen human tumors](https://data.humancellatlas.org/explore/projects/a62dae2e-cd69-4d5c-b5f8-4f7e8abdbafa)
 1. [Defining the Activated Fibroblast Population in Lung Fibrosis Using Single Cell Sequencing](https://data.humancellatlas.org/explore/projects/b4a7d12f-6c2f-40a3-9e35-9756997857e3)
 1. [Single-cell RNA Sequencing of human microglia from post mortem Alzheimers Disease CNS tissue](https://data.humancellatlas.org/explore/projects/b51f49b4-0d2e-4cbd-bbd5-04cd171fc2fa)
 1. [Spatial multi-omic map of human myocardial infarction](https://data.humancellatlas.org/explore/projects/e9f36305-d857-44a3-93f0-df4e6007dc97)
 
-
-
 #### June 29, 2022
 
-
 ### Release Highlights
+
 * New data is available from research groups in Japan, China, and South Korea:
-    * [scRNA-seq experiments on human foreskin fibroblasts, foreskin fibroblasts induced directly to retina pigment epithelium, and induced pluripotent stem cell derived retina pigment epithelium](https://data.humancellatlas.org/explore/projects/4f17edf6-e9f0-42af-a54a-f02fdca76ade) 
+    * [scRNA-seq experiments on human foreskin fibroblasts, foreskin fibroblasts induced directly to retina pigment epithelium, and induced pluripotent stem cell derived retina pigment epithelium](https://data.humancellatlas.org/explore/projects/4f17edf6-e9f0-42af-a54a-f02fdca76ade)
     * [Single-cell RNA-seq of bone marrow cells from aplastic anemia patient and healthy donor](https://data.humancellatlas.org/explore/projects/e993adcd-d4ba-4f88-9a05-d1c05bdf0c45)
     * [Memory-like natural killer cells facilitate effector functions of daratumumab in multiple myeloma](https://data.humancellatlas.org/explore/projects/2eb4f5f8-42a5-4368-aa2d-337bacb96197)
 
-* There are now seven 10x Visium spatial transcriptomic projects available in the Data Browser. See the most recent one: [A human fetal lung cell atlas uncovers proximal-distal gradients of differentiation and key regulators of epithelial fates](https://data.humancellatlas.org/explore/projects/2fe3c60b-ac1a-4c61-9b59-f6556c0fce63). 
+* There are now seven 10x Visium spatial transcriptomic projects available in the Data Browser. See the most recent
+  one: [A human fetal lung cell atlas uncovers proximal-distal gradients of differentiation and key regulators of epithelial fates](https://data.humancellatlas.org/explore/projects/2fe3c60b-ac1a-4c61-9b59-f6556c0fce63).
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (11)
+
 1. [A human fetal lung cell atlas uncovers proximal-distal gradients of differentiation and key regulators of epithelial fates](https://data.humancellatlas.org/explore/projects/2fe3c60b-ac1a-4c61-9b59-f6556c0fce63)
 1. [A single-cell and single-nucleus RNA-seq toolbox for fresh and frozen human tumors](https://data.humancellatlas.org/explore/projects/a62dae2e-cd69-4d5c-b5f8-4f7e8abdbafa)
 1. [Decoding Human Megakaryocyte Development](https://data.humancellatlas.org/explore/projects/a9f5323a-ce71-471c-9caf-04cc118fd1d7)
@@ -491,11 +520,11 @@ title: DCP Updates
 1. [Single-cell deciphering of human fetal innate lymphoid cell development](https://data.humancellatlas.org/explore/projects/fccd3f50-cde2-47bf-8972-a293b5928aea)
 1. [Single-cell sequencing unveils the heterogeneity of nonimmune cells in chronic apical periodontitis](https://data.humancellatlas.org/explore/projects/d138a114-7df5-4f7d-9ff1-f79dfd2d428f)
 1. [The Human and Mouse Enteric Nervous System at Single-Cell Resolution](https://data.humancellatlas.org/explore/projects/7be05025-9972-493a-856f-3342a8d1b183)
-1. [scRNA-seq experiments on human foreskin fibroblasts, foreskin fibroblasts induced directly to retina pigment epithelium, and induced pluripotent stem cell derived retina pigment epithelium](https://data.humancellatlas.org/explore/projects/4f17edf6-e9f0-42af-a54a-f02fdca76ade) 
+1. [scRNA-seq experiments on human foreskin fibroblasts, foreskin fibroblasts induced directly to retina pigment epithelium, and induced pluripotent stem cell derived retina pigment epithelium](https://data.humancellatlas.org/explore/projects/4f17edf6-e9f0-42af-a54a-f02fdca76ade)
 
 ### Updated Metadata (28)
 
-1. [Assessing the relevance of organoids to model inter-individual variation](https://data.humancellatlas.org/explore/projects/005d611a-14d5-4fbf-846e-571a1f874f70) 
+1. [Assessing the relevance of organoids to model inter-individual variation](https://data.humancellatlas.org/explore/projects/005d611a-14d5-4fbf-846e-571a1f874f70)
 1. [A single cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d)
 1. [Blood and immune development in human fetal bone marrow and Down syndrome](https://data.humancellatlas.org/explore/projects/04ad400c-58cb-40a5-bc2b-2279e13a910b)
 1. [Capturing human trophoblast development with naive pluripotent stem cells in vitro](https://data.humancellatlas.org/explore/projects/da2747fa-2921-42e0-afd4-39ef57b2b88b)
@@ -524,18 +553,23 @@ title: DCP Updates
 1. [The Immune Atlas of Human Deciduas With Unexplained Recurrent Pregnancy Loss](https://data.humancellatlas.org/explore/projects/3cfcdff5-dee1-4a7b-a591-c09c6e850b11)
 1. [The effect of Mtb aggregation on monocyte-derived macrophage transcription profiles](https://data.humancellatlas.org/explore/projects/b9484e4e-dc40-4e38-9b85-4cecf5b8c068)
 
-
 #### June 9, 2022
 
-
 ### Release Highlights
-* Contributions of spatial transcriptomic data (like 10x Visium) continue to climb; for example, see the project [Transcriptome-scale spatial gene expression in the human dorsolateral prefrontal cortex](https://data.humancellatlas.org/explore/projects/7b393e4d-65bc-4c03-b402-aae769299329).
 
-* New raw data and contributor matrices shed light on disease processes; see the project [Single-Cell Transcriptomics of Human Substantia Nigra in Parkinson's Disease](https://data.humancellatlas.org/explore/projects/16cd6791-2adb-4d0f-8222-0184dada6456) for a cellular atlas of the human substantia nigra in health and Parkinson’s Disease. 
+* Contributions of spatial transcriptomic data (like 10x Visium) continue to climb; for example, see the
+  project [Transcriptome-scale spatial gene expression in the human dorsolateral prefrontal cortex](https://data.humancellatlas.org/explore/projects/7b393e4d-65bc-4c03-b402-aae769299329).
 
-* Multi-modal data provides a more complete understanding of cellular function. The new project [Spatial proteogenomics reveals distinct and evolutionarily-conserved hepatic macrophage niches](https://data.humancellatlas.org/explore/projects/425c2759-db66-4c93-a358-a562c069b1f1) combines the power of Visium and CITE-seq.
+* New raw data and contributor matrices shed light on disease processes; see the
+  project [Single-Cell Transcriptomics of Human Substantia Nigra in Parkinson's Disease](https://data.humancellatlas.org/explore/projects/16cd6791-2adb-4d0f-8222-0184dada6456)
+  for a cellular atlas of the human substantia nigra in health and Parkinson’s Disease.
+
+* Multi-modal data provides a more complete understanding of cellular function. The new
+  project [Spatial proteogenomics reveals distinct and evolutionarily-conserved hepatic macrophage niches](https://data.humancellatlas.org/explore/projects/425c2759-db66-4c93-a358-a562c069b1f1)
+  combines the power of Visium and CITE-seq.
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (13)
+
 1. [A Human Liver Cell Atlas reveals Heterogeneity and Epithelial Progenitors](https://data.humancellatlas.org/explore/projects/94e4ee09-9b4b-410a-84dc-a751ad36d0df)
 1. [A single-cell atlas of breast cancer cell lines to study tumour heterogeneity and drug response](https://data.humancellatlas.org/explore/projects/6663070f-fd8b-41a9-a479-2d1e07afa201)
 1. [CITE-seq of in vitro control and memory-like human NK cells](https://data.humancellatlas.org/explore/projects/2253ae59-4cc5-4bd2-b44e-ecb6d3fd7646)
@@ -551,32 +585,33 @@ title: DCP Updates
 1. [Transcriptome-scale spatial gene expression in the human dorsolateral prefrontal cortex](https://data.humancellatlas.org/explore/projects/7b393e4d-65bc-4c03-b402-aae769299329)
 
 ### Updated Raw Data, Metadata, Contributor-generated Matrices (4)
+
 1. [Single-cell analysis of human B cell maturation predicts how antibody class switching shapes selection dynamics](https://data.humancellatlas.org/explore/projects/24d0dbbc-54eb-4904-8141-934d26f1c936)
 1. [Improving fibroblast characterization using single-cell RNA sequencing: an optimized tissue disaggregation and data processing pipeline](https://data.humancellatlas.org/explore/projects/0562d2ae-0b8a-459e-bbc0-6357108e5da9)
 1. [Single-cell RNA Sequencing of human microglia from post mortem Alzheimers Disease CNS tissue](https://data.humancellatlas.org/explore/projects/b51f49b4-0d2e-4cbd-bbd5-04cd171fc2fa)
 1. [Single-cell profiling of human subventricular zone progenitors identifies SFRP1 as a target for stimulating progenitor activation](https://data.humancellatlas.org/explore/projects/3cdaf942-f8ad-42e8-a77b-4efedb9ea7b6)
 
-
-
 #### April 20, 2022
 
 ### Release Highlights
+
 * Multiple projects now include DOI information in the metadata and project page:
-   * [Mapping the temporal and spatial dynamics of the human endometrium in vivo and in vitro](https://data.humancellatlas.org/explore/projects/2b38025d-a5ea-4c0f-b22e-367824bcaf4c)
-   * [Single-cell analysis reveals the continuum of human lympho-myeloid progenitor cells](https://data.humancellatlas.org/explore/projects/1ce3b3dc-02f2-44a8-96da-d6d107b27a76)
+    * [Mapping the temporal and spatial dynamics of the human endometrium in vivo and in vitro](https://data.humancellatlas.org/explore/projects/2b38025d-a5ea-4c0f-b22e-367824bcaf4c)
+    * [Single-cell analysis reveals the continuum of human lympho-myeloid progenitor cells](https://data.humancellatlas.org/explore/projects/1ce3b3dc-02f2-44a8-96da-d6d107b27a76)
 
 * New raw imaging data is available for the projects:
-   * [Spatiotemporal Analysis of Human Intestinal Development at Single Cell Resolution - scRNA-Seq](https://data.humancellatlas.org/explore/projects/fa3f460f-4fb9-4ced-b548-8ba6a8ecae3f)
-   * [Cells of the human intestinal tract mapped across space and time](https://data.humancellatlas.org/explore/projects/fde199d2-a841-4ed1-aa65-b9e0af8969b1)
+    * [Spatiotemporal Analysis of Human Intestinal Development at Single Cell Resolution - scRNA-Seq](https://data.humancellatlas.org/explore/projects/fa3f460f-4fb9-4ced-b548-8ba6a8ecae3f)
+    * [Cells of the human intestinal tract mapped across space and time](https://data.humancellatlas.org/explore/projects/fde199d2-a841-4ed1-aa65-b9e0af8969b1)
 
 * Two new research projects include data from mice that traveled to the International Space Station:
-   * [Single cell transcriptional profiling of spleens from mice flown on Rodent Research Reference Mission-2](https://data.humancellatlas.org/explore/projects/aff9c3cd-6b84-4fc2-abf2-b9c0b3038277)
-   * [Single cell transcriptional profiling of peripheral blood mononuclear cells (PBMCs) from mice flown on Rodent Research Reference Mission-2 (RRRM-2)](https://data.humancellatlas.org/explore/projects/a2a2f324-cf24-409e-a859-deaee871269c)
-   
-* A new project that is part of an official HCA publication is now available: [A proximal-to-distal survey of healthy adult human small intestine and colon epithelium by single-cell transcriptomics](https://data.humancellatlas.org/explore/projects/73769e0a-5fcd-41f4-9083-41ae08bfa4c1)
+    * [Single cell transcriptional profiling of spleens from mice flown on Rodent Research Reference Mission-2](https://data.humancellatlas.org/explore/projects/aff9c3cd-6b84-4fc2-abf2-b9c0b3038277)
+    * [Single cell transcriptional profiling of peripheral blood mononuclear cells (PBMCs) from mice flown on Rodent Research Reference Mission-2 (RRRM-2)](https://data.humancellatlas.org/explore/projects/a2a2f324-cf24-409e-a859-deaee871269c)
 
+* A new project that is part of an official HCA publication is now
+  available: [A proximal-to-distal survey of healthy adult human small intestine and colon epithelium by single-cell transcriptomics](https://data.humancellatlas.org/explore/projects/73769e0a-5fcd-41f4-9083-41ae08bfa4c1)
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (19):
+
 1. [A proximal-to-distal survey of healthy adult human small intestine and colon epithelium by single-cell transcriptomics](https://data.humancellatlas.org/explore/projects/73769e0a-5fcd-41f4-9083-41ae08bfa4c1)
 1. [A single-cell transcriptome atlas of human early embryogenesis](https://data.humancellatlas.org/explore/projects/e255b1c6-1143-4fa6-83a8-528f15b41038)
 1. [A spatial multi-omics atlas of the human lung reveals a novel immune cell survival niche](https://data.humancellatlas.org/explore/projects/957261f7-2bd6-4358-a6ed-24ee080d5cfc)
@@ -598,7 +633,8 @@ title: DCP Updates
 1. [Spatiotemporal Analysis of Human Intestinal Development at Single Cell Resolution - scRNA-Seq](https://data.humancellatlas.org/explore/projects/fa3f460f-4fb9-4ced-b548-8ba6a8ecae3f)
 
 ### Updated Raw Data, Metadata, Contributor-generated Matrices (10):
-1. [Blood and immune development in human fetal bone marrow and Down syndrome](https://data.humancellatlas.org/explore/projects/04ad400c-58cb-40a5-bc2b-2279e13a910b) 
+
+1. [Blood and immune development in human fetal bone marrow and Down syndrome](https://data.humancellatlas.org/explore/projects/04ad400c-58cb-40a5-bc2b-2279e13a910b)
 1. [Nuclei multiplexing with barcoded antibodies for single-nucleus genomics](https://data.humancellatlas.org/explore/projects/dc1a41f6-9e09-42a6-959e-3be23db6da56)
 1. [A cell atlas of human thymic development defines T cell repertoire formation](https://data.humancellatlas.org/explore/projects/c1810dbc-16d2-45c3-b45e-3e675f88d87b)
 1. [A comprehensive single cell transcriptional landscape of human hematopoietic progenitors](https://data.humancellatlas.org/explore/projects/5116c081-8be7-49c5-8ce0-73b887328aa9)
@@ -609,18 +645,21 @@ title: DCP Updates
 1. [Single-Cell Transcriptomic Profiling of Human Dental Pulp in Sound and Carious Teeth: A Pilot Study](https://data.humancellatlas.org/explore/projects/6f89a7f3-8d4a-4344-aa4f-eccfe7e91076)
 1. [Single-cell analysis reveals the continuum of human lympho-myeloid progenitor cells](https://data.humancellatlas.org/explore/projects/1ce3b3dc-02f2-44a8-96da-d6d107b27a76)
 
-
 #### March 30, 2022
 
 ### Release Highlights
 
-* A new managed access project, [A cellular census of human lungs identifies novel cell states in health and in asthma](https://data.humancellatlas.org/explore/projects/c0518445-3b3b-49c6-b8fc-c41daa4eacba), is available in the Browser.
+* A new managed access
+  project, [A cellular census of human lungs identifies novel cell states in health and in asthma](https://data.humancellatlas.org/explore/projects/c0518445-3b3b-49c6-b8fc-c41daa4eacba),
+  is available in the Browser.
 
-* A new COVID-19 dataset has been added to the DCP as part of the project [Single-cell RNA sequencing of urinary cells reveals distinct cellular diversity in COVID-19-associated AKI](https://data.humancellatlas.org/explore/projects/c6a50b2a-3dfd-4ca8-9b48-3e682f568a25).
+* A new COVID-19 dataset has been added to the DCP as part of the
+  project [Single-cell RNA sequencing of urinary cells reveals distinct cellular diversity in COVID-19-associated AKI](https://data.humancellatlas.org/explore/projects/c6a50b2a-3dfd-4ca8-9b48-3e682f568a25).
 
 * New raw data derived from populations in Africa, Asia, and Europe are now available.
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (11):
+
 1. [A cellular census of human lungs identifies novel cell states in health and in asthma](https://data.humancellatlas.org/explore/projects/c0518445-3b3b-49c6-b8fc-c41daa4eacba)
 1. [A single cell atlas of human cornea that defines its development, limbal progenitor cells and their interactions with the immune cells](https://data.humancellatlas.org/explore/projects/6ac8e777-f9a0-4288-b5b0-446e8eba3078)
 1. [Conserved cell types with divergent features in human versus mouse cortex](https://data.humancellatlas.org/explore/projects/165dea71-a95a-44e1-88cd-b2d9ad68bb1e)
@@ -631,9 +670,10 @@ title: DCP Updates
 1. [Single-cell analysis of human B cell maturation predicts how antibody class switching shapes selection dynamics](https://data.humancellatlas.org/explore/projects/24d0dbbc-54eb-4904-8141-934d26f1c936)
 1. [Single-cell profiling of human subventricular zone progenitors identifies SFRP1 as a target for stimulating progenitor activation](https://data.humancellatlas.org/explore/projects/3cdaf942-f8ad-42e8-a77b-4efedb9ea7b6)
 1. [Spatially distinct reprogramming of the tumor microenvironment based on tumor invasion in diffuse-type gastric cancers](https://data.humancellatlas.org/explore/projects/f29b124a-8597-4862-ae98-ff3a0fd9033e)
-1. [Microglia Require CD4 T Cells to Complete the Fetal-to-Adult Transition](https://data.humancellatlas.org/explore/projects/e5d45579-1f5b-48c3-b568-320d93e7ca72) 
+1. [Microglia Require CD4 T Cells to Complete the Fetal-to-Adult Transition](https://data.humancellatlas.org/explore/projects/e5d45579-1f5b-48c3-b568-320d93e7ca72)
 
 ### Updated Raw Data, Metadata, Contributor-generated Matrices (6):
+
 1. [Assessing the relevance of organoids to model inter-individual variation](https://data.humancellatlas.org/explore/projects/005d611a-14d5-4fbf-846e-571a1f874f70)
 1. [Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19](https://data.humancellatlas.org/explore/projects/95f07e6e-6a73-4e1b-a880-c83996b3aa5c)
 1. [Integrative computational analysis of the substantia nigra pars compacta and the locus coeruleus](https://data.humancellatlas.org/explore/projects/5b5f05b7-2482-468d-b76d-8f68c04a7a47)
@@ -644,26 +684,32 @@ title: DCP Updates
 #### February 14, 2022
 
 ### Release Highlights
-* We've created a new [slack channel](https://humancellatlas.slack.com/archives/C02TM2SDVM2) for the DCP community! Join the channel, say hello, and follow for the latest announcements, updates, and opportunities to connect with fellow DCP users.
+
+* We've created a new [slack channel](https://humancellatlas.slack.com/archives/C02TM2SDVM2) for the DCP community! Join
+  the channel, say hello, and follow for the latest announcements, updates, and opportunities to connect with fellow DCP
+  users.
 
 * The Data Portal header has been updated to include new features:
-   * A global search bar that allows users to search across Projects, Guides, Pipeline Docs, and Metadata Schema.
-   * Direct links to the HCA Twitter, GitHub repository, and slack channel.
+    * A global search bar that allows users to search across Projects, Guides, Pipeline Docs, and Metadata Schema.
+    * Direct links to the HCA Twitter, GitHub repository, and slack channel.
 
 ![](./_images/searchbar-communication-updates.png)
 
 * There are three new managed access projects available in the Browser:
-   * [Spatial and single-cell transcriptional landscape of human cerebellar development](https://data.humancellatlas.org/explore/projects/85a9263b-0887-48ed-ab1a-ddfa773727b6).
-   * [Intra- and Inter-cellular Rewiring of the Human Colon during Ulcerative Colitis](https://data.humancellatlas.org/explore/projects/cd61771b-661a-4e19-b269-6e5d95350de6).
-   * [The Tabula Sapiens: a single cell transcriptomic atlas of multiple organs from individual human donors](https://data.humancellatlas.org/explore/projects/10201832-7c73-4033-9b65-3ef13d81656a).
-   
-* The first dataset of iPSC-derived tenocytes has been added to the DCP as part of the project [Single cell RNAseq analysis of the developmental trajectory of iPSC-derived tenocytes](https://data.humancellatlas.org/explore/projects/78d7805b-fdc8-472b-8058-d92cf886f7a4).
+    * [Spatial and single-cell transcriptional landscape of human cerebellar development](https://data.humancellatlas.org/explore/projects/85a9263b-0887-48ed-ab1a-ddfa773727b6).
+    * [Intra- and Inter-cellular Rewiring of the Human Colon during Ulcerative Colitis](https://data.humancellatlas.org/explore/projects/cd61771b-661a-4e19-b269-6e5d95350de6).
+    * [The Tabula Sapiens: a single cell transcriptomic atlas of multiple organs from individual human donors](https://data.humancellatlas.org/explore/projects/10201832-7c73-4033-9b65-3ef13d81656a).
 
-* A new dataset generated using Fluidigm C1 sequencing has been added to the DCP as part of the project [Pseudo-temporal ordering of individual cells reveals regulators of differentiation](https://data.humancellatlas.org/explore/projects/1eb69a39-b5b2-41ec-afae-5fe37f272756).
+* The first dataset of iPSC-derived tenocytes has been added to the DCP as part of the
+  project [Single cell RNAseq analysis of the developmental trajectory of iPSC-derived tenocytes](https://data.humancellatlas.org/explore/projects/78d7805b-fdc8-472b-8058-d92cf886f7a4).
+
+* A new dataset generated using Fluidigm C1 sequencing has been added to the DCP as part of the
+  project [Pseudo-temporal ordering of individual cells reveals regulators of differentiation](https://data.humancellatlas.org/explore/projects/1eb69a39-b5b2-41ec-afae-5fe37f272756).
 
 * New data from across the globe has been added to the DCP, including datasets from Japan, China, and Thailand.
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (14):
+
 1. [A multi-omics atlas of the human retina at single-cell resolution](https://data.humancellatlas.org/explore/projects/9c20a245-f2c0-43ae-82c9-2232ec6b594f)
 1. [Cell Types of the Human Retina and Its Organoids at Single-Cell Resolution](https://data.humancellatlas.org/explore/projects/1dddae6e-3753-48af-b20e-fa22abad125d)
 1. [Dissecting transcriptional and chromatin accessibility heterogeneity of proliferating cone precursors in human retinoblastoma tumours by single cell sequencing](https://data.humancellatlas.org/explore/projects/d6225aee-8f0e-4b20-a20c-682509a9ea14)
@@ -680,51 +726,52 @@ title: DCP Updates
 1. [The Tabula Sapiens: a single cell transcriptomic atlas of multiple organs from individual human donors](https://data.humancellatlas.org/explore/projects/10201832-7c73-4033-9b65-3ef13d81656a)
 
 ### New DCP Analysis (19):
-1. [Cryopreservation and post-thaw characterization of dissociated human islet cells](https://data.humancellatlas.org/explore/projects/8559a8ed-5d8c-4fb6-bde8-ab639cebf03c) 
-1. [Dissecting the clonal nature of allelic expression in somatic cells by single-cell RNA-seq](https://data.humancellatlas.org/explore/projects/ccef38d7-aa92-4010-9621-c4c7b1182647) 
-1. [Melanoma infiltration of stromal and immune cells](https://data.humancellatlas.org/explore/projects/8c3c290d-dfff-4553-8868-54ce45f4ba7f) 
-1. [Re-evaluation of human BDCA-2+ DC during acute sterile skin inflammation](https://data.humancellatlas.org/explore/projects/67a3de09-45b9-49c3-a068-ff4665daa50e) 
-1. [Single cell RNA-seq of human pancreatic endocrine cells from Juvenile, adult control and type 2 diabetic donors](https://data.humancellatlas.org/explore/projects/99101928-d9b1-4aaf-b759-e97958ac7403) 
-1. [Single cell RNA-sequencing of human tonsil Innate lymphoid cells (ILCs)](https://data.humancellatlas.org/explore/projects/520afa10-f9d2-4e93-ab7a-26c4c863ce18) 
-1. [Single cell analysis of human fetal liver captures the transcriptional profile of hepatobiliary hybrid progenitors](https://data.humancellatlas.org/explore/projects/23587fb3-1a4a-4f58-ad74-cc9a4cb4c254) 
-1. [Single cell sequencing identifies novel sub-populations of breast cancer cells selected under hypoxia](https://data.humancellatlas.org/explore/projects/f6133d2a-9f3d-4ef9-9c19-c23d6c7e6cc0) 
-1. [Single-Cell RNAseq analysis of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma](https://data.humancellatlas.org/explore/projects/2d846095-8a33-4f3c-97d4-585bafac13b4) 
+
+1. [Cryopreservation and post-thaw characterization of dissociated human islet cells](https://data.humancellatlas.org/explore/projects/8559a8ed-5d8c-4fb6-bde8-ab639cebf03c)
+1. [Dissecting the clonal nature of allelic expression in somatic cells by single-cell RNA-seq](https://data.humancellatlas.org/explore/projects/ccef38d7-aa92-4010-9621-c4c7b1182647)
+1. [Melanoma infiltration of stromal and immune cells](https://data.humancellatlas.org/explore/projects/8c3c290d-dfff-4553-8868-54ce45f4ba7f)
+1. [Re-evaluation of human BDCA-2+ DC during acute sterile skin inflammation](https://data.humancellatlas.org/explore/projects/67a3de09-45b9-49c3-a068-ff4665daa50e)
+1. [Single cell RNA-seq of human pancreatic endocrine cells from Juvenile, adult control and type 2 diabetic donors](https://data.humancellatlas.org/explore/projects/99101928-d9b1-4aaf-b759-e97958ac7403)
+1. [Single cell RNA-sequencing of human tonsil Innate lymphoid cells (ILCs)](https://data.humancellatlas.org/explore/projects/520afa10-f9d2-4e93-ab7a-26c4c863ce18)
+1. [Single cell analysis of human fetal liver captures the transcriptional profile of hepatobiliary hybrid progenitors](https://data.humancellatlas.org/explore/projects/23587fb3-1a4a-4f58-ad74-cc9a4cb4c254)
+1. [Single cell sequencing identifies novel sub-populations of breast cancer cells selected under hypoxia](https://data.humancellatlas.org/explore/projects/f6133d2a-9f3d-4ef9-9c19-c23d6c7e6cc0)
+1. [Single-Cell RNAseq analysis of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma](https://data.humancellatlas.org/explore/projects/2d846095-8a33-4f3c-97d4-585bafac13b4)
 1. [Single-Cell Transcriptomics Reveals a Population of Dormant Neural Stem Cells that Become Activated upon Brain Injury](https://data.humancellatlas.org/explore/projects/e8808cc8-4ca0-4096-80f2-bba73600cba6)
-1. [Single-cell RNA-seq reveals heterogeneity within human pre-cDCs](https://data.humancellatlas.org/explore/projects/05be4f37-4506-429b-b112-506444507d62) 
-1. [Single-cell analysis reveals the continuum of human lympho-myeloid progenitor cells](https://data.humancellatlas.org/explore/projects/1ce3b3dc-02f2-44a8-96da-d6d107b27a76) 
+1. [Single-cell RNA-seq reveals heterogeneity within human pre-cDCs](https://data.humancellatlas.org/explore/projects/05be4f37-4506-429b-b112-506444507d62)
+1. [Single-cell analysis reveals the continuum of human lympho-myeloid progenitor cells](https://data.humancellatlas.org/explore/projects/1ce3b3dc-02f2-44a8-96da-d6d107b27a76)
 1. [Single-cell omics reveal human mononuclear phagocyte heterogeneity and inflammatory DC in health and disease](https://data.humancellatlas.org/explore/projects/ccd1f1ba-74ce-469b-9fc9-f6faea623358)
 1. [Single-cell transcriptomics reveals unique features of human pancreatic islet cell subtypes](https://data.humancellatlas.org/explore/projects/78b2406d-bff2-46fc-8b61-20690e602227)
 1. [Single-cell transcriptomics uncovers distinct molecular signatures of stem cells in chronic myeloid leukemia](https://data.humancellatlas.org/explore/projects/2a72a4e5-66b2-405a-bb7c-1e463e8febb0)
-1. [Spatial and single-cell transcriptional profiling identifies functionally distinct human dermal fibroblast subpopulations](https://data.humancellatlas.org/explore/projects/05657a59-9f9d-4bb9-b77b-24be13aa5cea) 
-1. [Systematic comparative analysis of single cell RNA-sequencing methods](https://data.humancellatlas.org/explore/projects/88ec040b-8705-4f77-8f41-f81e57632f7d) 
+1. [Spatial and single-cell transcriptional profiling identifies functionally distinct human dermal fibroblast subpopulations](https://data.humancellatlas.org/explore/projects/05657a59-9f9d-4bb9-b77b-24be13aa5cea)
+1. [Systematic comparative analysis of single cell RNA-sequencing methods](https://data.humancellatlas.org/explore/projects/88ec040b-8705-4f77-8f41-f81e57632f7d)
 1. [Tracing pluripotency of human early embryos and embryonic stem cells by single cell RNA-seq](https://data.humancellatlas.org/explore/projects/3a694703-3084-4ece-9abe-d935fd5f6748)
-1. [Transcriptomes of 1,529 individual cells from 88 human preimplantation embryos](https://data.humancellatlas.org/explore/projects/03c6fce7-789e-4e78-a27a-664d562bb738) 
+1. [Transcriptomes of 1,529 individual cells from 88 human preimplantation embryos](https://data.humancellatlas.org/explore/projects/03c6fce7-789e-4e78-a27a-664d562bb738)
 
 #### December 20, 2021
 
 ### Release Highlights
-* The Data Portal links to new portals and tools:
-   * The Analysis Portal's section now includes the Teichmann lab's [Cambridge Cell Atlas](https://data.humancellatlas.org/analyze/portals/cambridge-cell-atlas).
-   * The Methods Packages section now lists the Li lab's [Cumulus](https://data.humancellatlas.org/analyze/methods/cumulus) software.
 
-* The Data Portal header has been updated with a new link to the Updates page so that viewers can readily follow release notes and other community announcements.
+* The Data Portal header has been updated with a new link to the Updates page so that viewers can readily follow release
+  notes and other community announcements.
 
 ![](./_images/updates-page.png)
 
-* There are two new managed access projects available in the Browser: 
-   * [Hypertension delays viral clearance and exacerbates airway hyperinflammation in patients with COVID-19](https://data.humancellatlas.org/explore/projects/769a08d1-b8a4-4f1e-95f7-6071a9827555).
-   * [CD27hiCD38hi plasmablasts are activated B cells of mixed origin with distinct function](https://data.humancellatlas.org/explore/projects/74493e98-44fc-48b0-a58f-cc7e77268b59).
+* There are two new managed access projects available in the Browser:
+    * [Hypertension delays viral clearance and exacerbates airway hyperinflammation in patients with COVID-19](https://data.humancellatlas.org/explore/projects/769a08d1-b8a4-4f1e-95f7-6071a9827555).
+    * [CD27hiCD38hi plasmablasts are activated B cells of mixed origin with distinct function](https://data.humancellatlas.org/explore/projects/74493e98-44fc-48b0-a58f-cc7e77268b59).
 
-* Three projects have new uniform matrices generated with the updated Optimus pipeline that includes STARsolo software: 
-   * [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a).
-   * [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d).
-   * [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635).
+* Three projects have new uniform matrices generated with the updated Optimus pipeline that includes STARsolo software:
+    * [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a).
+    * [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d).
+    * [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635).
 
-* Several new projects also include data generated with multiple sequencing modalities (i.e. CITE-seq, 10x 3', and scATAC):
-   * [Sampling time-dependent artifacts in single-cell genomics studies](https://data.humancellatlas.org/explore/projects/5b328561-4a97-40ac-b7ad-6a90fc59d374).
-   * [Blood and immune cell development in human fetal bone marrow and in Down syndrome](https://data.humancellatlas.org/explore/projects/04ad400c-58cb-40a5-bc2b-2279e13a910b).
- 
+* Several new projects also include data generated with multiple sequencing modalities (i.e. CITE-seq, 10x 3', and
+  scATAC):
+    * [Sampling time-dependent artifacts in single-cell genomics studies](https://data.humancellatlas.org/explore/projects/5b328561-4a97-40ac-b7ad-6a90fc59d374).
+    * [Blood and immune cell development in human fetal bone marrow and in Down syndrome](https://data.humancellatlas.org/explore/projects/04ad400c-58cb-40a5-bc2b-2279e13a910b).
+
 ### New Raw Data, Metadata, and Contributor-generated Matrices (21):
+
 1. [A Single-Cell Atlas of the Human Healthy Airways](https://data.humancellatlas.org/explore/projects/ef1e3497-515e-4bbe-8d4c-10161854b699)
 1. [A comprehensive single cell transcriptional landscape of human hematopoietic progenitors](https://data.humancellatlas.org/explore/projects/5116c081-8be7-49c5-8ce0-73b887328aa9)
 1. [A single-cell atlas of chromatin accessibility in the human genome](https://data.humancellatlas.org/explore/projects/c31fa434-c9ed-4263-a9b6-d9ffb9d44005)
@@ -748,28 +795,43 @@ title: DCP Updates
 1. [Using single-nucleus RNA-sequencing to interrogate transcriptomic profiles of archived human pancreatic islets](https://data.humancellatlas.org/explore/projects/a991ef15-4d4a-4b80-a93e-c538b4b54127)
 
 ### Updated Metadata, Raw Data, Contributor-generated Matrices, or DCP Analysis (7):
+
 1. [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d)
 1. [AIDA pilot data](https://data.humancellatlas.org/explore/projects/f0f89c14-7460-4bab-9d42-22228a91f185)
-1. [Distinct microbial and immune niches of the human colon](https://data.humancellatlas.org/explore/projects/83f5188e-3bf7-4956-9544-cea4f8997756) 
+1. [Distinct microbial and immune niches of the human colon](https://data.humancellatlas.org/explore/projects/83f5188e-3bf7-4956-9544-cea4f8997756)
 1. [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635)
-1. [Single-cell RNA-seq analysis  throughout a 125-day differentiation protocol that converted H1 human embryonic stem cells to a variety of ventrally-derived cell types](https://data.humancellatlas.org/explore/projects/2043c65a-1cf8-4828-a656-9e247d4e64f1) 
+1. [Single-cell RNA-seq analysis  throughout a 125-day differentiation protocol that converted H1 human embryonic stem cells to a variety of ventrally-derived cell types](https://data.humancellatlas.org/explore/projects/2043c65a-1cf8-4828-a656-9e247d4e64f1)
 1. [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a)
-1. [Stress-induced RNA–chromatin interactions promote endothelial dysfunction](https://data.humancellatlas.org/explore/projects/87d52a86-bdc7-440c-b84d-170f7dc346d9) 
-
+1. [Stress-induced RNA–chromatin interactions promote endothelial dysfunction](https://data.humancellatlas.org/explore/projects/87d52a86-bdc7-440c-b84d-170f7dc346d9)
 
 #### November 11, 2021
 
 ### Release Highlights
-* The DCP team has reanalyzed the first of the DCP 1.0 Smart-seq2 projects ([Single cell RNA sequencing of multiple myeloma II](https://data.humancellatlas.org/explore/projects/0c3b7785-f74d-4091-8616-a68757e4c2a8)). Cell-by-gene matrices are available on the project page and were produced with the latest [Smart-seq Multi-Sample pipeline](https://data.humancellatlas.org/pipelines/smart-seq2-workflow) for uniform analysis.  
-* Contributor-generated matrices are available for the project [Single-nucleus cross-tissue molecular reference maps to decipher disease gene function](https://data.humancellatlas.org/explore/projects/31887183-a72c-4308-9eac-c6140313f39c) which is associated with a Human Cell Atlas [preprint publication](https://www.biorxiv.org/content/10.1101/2021.07.19.452954v1).
-* New raw data has been added for the project [Defining human mesenchymal and epithelial heterogeneity in response to oral inflammatory disease.](https://data.humancellatlas.org/explore/projects/783c9952-a4ae-4106-a6ce-56f20ce27f88) as part of the [HCA Oral & Craniofacial Biological Network](https://www.humancellatlas.org/biological-networks/).
-* The first onychofibroblasts dataset has been added to the DCP as part of the project [Single cell RNAseq of human nail unit defines RSPO4 onychofibroblasts and SPINK6 nail epithelium](https://data.humancellatlas.org/explore/projects/bd7104c9-a950-490e-9472-7d41c6b11c62).
-* New patch-seq data is available in the project [Cryopreservation and post-thaw characterization of dissociated human islet cells](https://data.humancellatlas.org/explore/projects/8559a8ed-5d8c-4fb6-bde8-ab639cebf03c).
-* A content description for contributor- and DCP-generated matrices is now available on each Data Portal project's matrix download page.
-* The submitted and last updated dates are added to the projects list and Data Portal Explore page. We will make this sortable by this field in a future release.
-* New and updated projects for the latest DCP Platform release are now indicated next to the project name on the Explore page (as shown below).
 
-     ![](./_images/updated_projects.png)
+* The DCP team has reanalyzed the first of the DCP 1.0 Smart-seq2
+  projects ([Single cell RNA sequencing of multiple myeloma II](https://data.humancellatlas.org/explore/projects/0c3b7785-f74d-4091-8616-a68757e4c2a8)).
+  Cell-by-gene matrices are available on the project page and were produced with the
+  latest [Smart-seq Multi-Sample pipeline](https://data.humancellatlas.org/pipelines/smart-seq2-workflow) for uniform
+  analysis.
+* Contributor-generated matrices are available for the
+  project [Single-nucleus cross-tissue molecular reference maps to decipher disease gene function](https://data.humancellatlas.org/explore/projects/31887183-a72c-4308-9eac-c6140313f39c)
+  which is associated with a Human Cell
+  Atlas [preprint publication](https://www.biorxiv.org/content/10.1101/2021.07.19.452954v1).
+* New raw data has been added for the
+  project [Defining human mesenchymal and epithelial heterogeneity in response to oral inflammatory disease.](https://data.humancellatlas.org/explore/projects/783c9952-a4ae-4106-a6ce-56f20ce27f88)
+  as part of the [HCA Oral & Craniofacial Biological Network](https://www.humancellatlas.org/biological-networks/).
+* The first onychofibroblasts dataset has been added to the DCP as part of the
+  project [Single cell RNAseq of human nail unit defines RSPO4 onychofibroblasts and SPINK6 nail epithelium](https://data.humancellatlas.org/explore/projects/bd7104c9-a950-490e-9472-7d41c6b11c62).
+* New patch-seq data is available in the
+  project [Cryopreservation and post-thaw characterization of dissociated human islet cells](https://data.humancellatlas.org/explore/projects/8559a8ed-5d8c-4fb6-bde8-ab639cebf03c).
+* A content description for contributor- and DCP-generated matrices is now available on each Data Portal project's
+  matrix download page.
+* The submitted and last updated dates are added to the projects list and Data Portal Explore page. We will make this
+  sortable by this field in a future release.
+* New and updated projects for the latest DCP Platform release are now indicated next to the project name on the Explore
+  page (as shown below).
+
+  ![](./_images/updated_projects.png)
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (14)
 
@@ -793,20 +855,26 @@ title: DCP Updates
 1. [AIDA pilot data](https://data.humancellatlas.org/explore/projects/f0f89c14-7460-4bab-9d42-22228a91f185)
 1. [Single cell RNA sequencing of multiple myeloma II](https://data.humancellatlas.org/explore/projects/0c3b7785-f74d-4091-8616-a68757e4c2a8)
 
-
 #### October 13, 2021
 
 ### Release Highlights
 
-* Project downloads are now available from the project page. Download the files directly to your local machine via curl or export them to the cloud-based bioinformatics platform [Terra](https://app.terra.bio) by selecting the download next to the new "Terra Workspace" icon. 
+* Project downloads are now available from the project page. Download the files directly to your local machine via curl
+  or export them to the cloud-based bioinformatics platform [Terra](https://app.terra.bio) by selecting the download
+  next to the new "Terra Workspace" icon.
 
 ![new file downloads](_images/download_files.png)
 
-* The projects [A human cell atlas of fetal gene expression](https://data.humancellatlas.org/explore/projects/a9301beb-e9fa-42fe-b75c-84e8a460c733), [Single-cell atlas of early human brain development highlights heterogeneity of human neuroepithelial cells and early radial glia](https://data.humancellatlas.org/explore/projects/ef1d9888-fa86-47a4-bb72-0ab0f20f7004), and [COVID-19 severity correlates with airway epithelium-immune cell interactions identified by single-cell analysis](https://data.humancellatlas.org/explore/projects/7ac8822c-4ef0-4194-adf0-74290611b1c6) contain new managed-access data.
+* The
+  projects [A human cell atlas of fetal gene expression](https://data.humancellatlas.org/explore/projects/a9301beb-e9fa-42fe-b75c-84e8a460c733), [Single-cell atlas of early human brain development highlights heterogeneity of human neuroepithelial cells and early radial glia](https://data.humancellatlas.org/explore/projects/ef1d9888-fa86-47a4-bb72-0ab0f20f7004),
+  and [COVID-19 severity correlates with airway epithelium-immune cell interactions identified by single-cell analysis](https://data.humancellatlas.org/explore/projects/7ac8822c-4ef0-4194-adf0-74290611b1c6)
+  contain new managed-access data.
 
-* The Data Portal team has corrected linking issues associated with the project [A single cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d).
+* The Data Portal team has corrected linking issues associated with the
+  project [A single cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d).
 
-* A new HumanCellAtlas slack channel (#dcp-help) is available to help you troubleshoot Data Portal questions with both the Data Portal team and community and give you the latest updates on Data Portal events and data.
+* A new HumanCellAtlas slack channel (#dcp-help) is available to help you troubleshoot Data Portal questions with both
+  the Data Portal team and community and give you the latest updates on Data Portal events and data.
 
 ### New Raw Data, Metadata, and Contributor-generated Matrices (14)
 
@@ -827,22 +895,21 @@ title: DCP Updates
 
 ### New DCP Analysis (2)
 
-1. [Census of Immune Cells](https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79) 
+1. [Census of Immune Cells](https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79)
 1. [Integrative computational analysis of the substantia nigra pars compacta and the locus coeruleus](https://data.humancellatlas.org/explore/projects/5b5f05b7-2482-468d-b76d-8f68c04a7a47)
-
 
 ### Updated Metadata, Contributor-generated Matrices, or DCP Analysis (20)
 
-1. [A single cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d) 
-1. [Capturing human trophoblast development with naive pluripotent stem cells in vitro](https://data.humancellatlas.org/explore/projects/da2747fa-2921-42e0-afd4-39ef57b2b88b) 
-1. [Dissecting the Global Dynamic Molecular Profiles of Human Fetal Kidney Development by Single-Cell RNA Sequencing](https://data.humancellatlas.org/explore/projects/8a40ff19-e614-4c50-b23b-5c9e1d546bab) 
-1. [Female human primordial germ cells display X-chromosome dosage compensation despite the absence of X-inactivation [Female]](https://data.humancellatlas.org/explore/projects/56e73ccb-7ae9-4fae-a738-acfb69936d7a) 
+1. [A single cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d)
+1. [Capturing human trophoblast development with naive pluripotent stem cells in vitro](https://data.humancellatlas.org/explore/projects/da2747fa-2921-42e0-afd4-39ef57b2b88b)
+1. [Dissecting the Global Dynamic Molecular Profiles of Human Fetal Kidney Development by Single-Cell RNA Sequencing](https://data.humancellatlas.org/explore/projects/8a40ff19-e614-4c50-b23b-5c9e1d546bab)
+1. [Female human primordial germ cells display X-chromosome dosage compensation despite the absence of X-inactivation [Female]](https://data.humancellatlas.org/explore/projects/56e73ccb-7ae9-4fae-a738-acfb69936d7a)
 1. [Female human primordial germ cells display X-chromosome dosage compensation despite the absence of X-inactivation [Male]](https://data.humancellatlas.org/explore/projects/8dacb243-e918-4bd2-bb9a-aac6dc424161)
-1. [Resolving cellular and molecular diversity along the hippocampal anterior-to-posterior axis in humans](https://data.humancellatlas.org/explore/projects/34cba5e9-ecb1-4d81-bf08-48987cd63073) 
-1. [Single Cell RNA Sequencing of Human Milk-Derived Cells Reveals Sub-Populations of Mammary Epithelial Cells with Molecular Signatures of Progenitor and Mature States: a Novel, Non-invasive Framework for Investigating Human Lactation Physiology](https://data.humancellatlas.org/explore/projects/8999b456-6fa6-438b-ab17-b62b1d8ec0c3) 
-1. [Single Cell RNA-Seq profiling human embryonic kidney cortex cells](https://data.humancellatlas.org/explore/projects/71436067-ac41-4ace-be1b-2fbcc2cb02fa) 
-1. [Single Cell RNA-Seq profiling of human embryonic kidney outer and inner cortical cells and kidney organoid cells](https://data.humancellatlas.org/explore/projects/dd7f2436-0c56-4709-bd17-e526bba4cc15) 
-1. [Single-Cell RNA Sequencing Reveals Human iPS Cell-derived Alveolar Type 1 Cells in Alveolar Organoids](https://data.humancellatlas.org/explore/projects/dbcd4b1d-31bd-4eb5-94e1-50e8706fa192) 
+1. [Resolving cellular and molecular diversity along the hippocampal anterior-to-posterior axis in humans](https://data.humancellatlas.org/explore/projects/34cba5e9-ecb1-4d81-bf08-48987cd63073)
+1. [Single Cell RNA Sequencing of Human Milk-Derived Cells Reveals Sub-Populations of Mammary Epithelial Cells with Molecular Signatures of Progenitor and Mature States: a Novel, Non-invasive Framework for Investigating Human Lactation Physiology](https://data.humancellatlas.org/explore/projects/8999b456-6fa6-438b-ab17-b62b1d8ec0c3)
+1. [Single Cell RNA-Seq profiling human embryonic kidney cortex cells](https://data.humancellatlas.org/explore/projects/71436067-ac41-4ace-be1b-2fbcc2cb02fa)
+1. [Single Cell RNA-Seq profiling of human embryonic kidney outer and inner cortical cells and kidney organoid cells](https://data.humancellatlas.org/explore/projects/dd7f2436-0c56-4709-bd17-e526bba4cc15)
+1. [Single-Cell RNA Sequencing Reveals Human iPS Cell-derived Alveolar Type 1 Cells in Alveolar Organoids](https://data.humancellatlas.org/explore/projects/dbcd4b1d-31bd-4eb5-94e1-50e8706fa192)
 1. [Single-Cell RNA-Seq Analysis of cells from human urine](https://data.humancellatlas.org/explore/projects/4af795f7-3e1d-4341-b867-4ac0982b9efd)
 1. [Single-cell RNA sequencing of human nasal swab from healthy donors](https://data.humancellatlas.org/explore/projects/414acced-eba0-440f-b721-befbc5642bef)
 1. [Single-cell RNA-sequencing reveals the landscape of cervical cancer heterogeneity](https://data.humancellatlas.org/explore/projects/d012d476-8f8c-4ff3-89d6-ebbe22c1b5c1)
@@ -853,7 +920,6 @@ title: DCP Updates
 1. [The Developmental Heterogeneity of Human Natural Killer Cells Defined by Single-cell Transcriptome](https://data.humancellatlas.org/explore/projects/403c3e76-6814-4a2d-a580-5dd5de38c7ff)
 1. [The Immune Atlas of Human Deciduas With Unexplained Recurrent Pregnancy Loss](https://data.humancellatlas.org/explore/projects/3cfcdff5-dee1-4a7b-a591-c09c6e850b11)
 1. [The effect of Mtb aggregation on monocyte-derived macrophage transcription profiles](https://data.humancellatlas.org/explore/projects/b9484e4e-dc40-4e38-9b85-4cecf5b8c068)
-
 
 #### September 17, 2021
 
@@ -880,8 +946,8 @@ The DCP has added raw data for the following 14 new projects:
 
 The following 3 projects have updated files:
 
-1. [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d) 
-1. [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635) 
+1. [A single-cell atlas of the healthy breast tissues reveals clinically relevant clusters of breast epithelial cells](https://data.humancellatlas.org/explore/projects/a004b150-1c36-4af6-9bbd-070c06dbc17d)
+1. [Single cell RNA-Seq of E18.5 developing mouse kidney and human kidney organoids](https://data.humancellatlas.org/explore/projects/7b947aa2-43a7-4082-afff-222a3e3a4635)
 1. [Single-cell transcriptomics uncovers human corneal limbal stem cells and their differentiation trajectory](https://data.humancellatlas.org/explore/projects/24c654a5-caa5-440a-8f02-582921f2db4a)
 
 ## DCP now contains data for 14 million estimated cells
@@ -909,14 +975,15 @@ The DCP has added raw data for the following 12 new projects:
 
 The following projects have new contributor-generated matrix files:
 
-1. [Integrated single cell analysis of blood and cerebrospinal fluid leukocytes in multiple sclerosis](https://data.humancellatlas.org/explore/projects/d3ac7c1b-5302-4804-b611-dad9f89c049d) 
+1. [Integrated single cell analysis of blood and cerebrospinal fluid leukocytes in multiple sclerosis](https://data.humancellatlas.org/explore/projects/d3ac7c1b-5302-4804-b611-dad9f89c049d)
 1. [Single-cell transcriptomes of the aging human skin reveal loss of fibroblast priming](https://data.humancellatlas.org/explore/projects/51f02950-ee25-4f4b-8d07-59aa99bb3498)
 
 ### Browser Updates
 
 #### Selecting "Normal" Samples
 
-To enable easier discovery of normal tissues, we've modified the Specimen Disease search facet on the Explore page so that the "Normal" option is now at the top of the drop-down.
+To enable easier discovery of normal tissues, we've modified the Specimen Disease search facet on the Explore page so
+that the "Normal" option is now at the top of the drop-down.
 
 ![Selecting Normal Samples](_images/normal.png)
 
@@ -932,15 +999,23 @@ The File facet has a new Content Description column to enable searching for file
 
 The DCP has added its first managed access project.
 
-Contributor-generated cell-by-gene count matrices and associated non-personally identifiable metadata are now available to the whole HCA community from within the DCP.
+Contributor-generated cell-by-gene count matrices and associated non-personally identifiable metadata are now available
+to the whole HCA community from within the DCP.
 
-Additionally, DCP now has the first project data from the [HCA Seed Networks](https://chanzuckerberg.com/science/programs-resources/single-cell-biology/seednetworks/), which are further developing the Human Cell Atlas by combining the expertise of experimental scientists, software engineers, and physicians.
+Additionally, DCP now has the first project data from
+the [HCA Seed Networks](https://chanzuckerberg.com/science/programs-resources/single-cell-biology/seednetworks/), which
+are further developing the Human Cell Atlas by combining the expertise of experimental scientists, software engineers,
+and physicians.
 
 ### Managed Access Projects
 
 1. [Nuclei multiplexing with barcoded antibodies for single-nucleus genomics](https://data.humancellatlas.org/explore/projects/dc1a41f6-9e09-42a6-959e-3be23db6da56)
 
-Managed access raw data is available from the [Synapse database](https://www.synapse.org/#!Synapse:syn22213200) upon successful completion of a data use certificate. To find supplementary links to the managed access datasets in Synapse, navigate to the [project detail page](https://data.humancellatlas.org/explore/projects/dc1a41f6-9e09-42a6-959e-3be23db6da56) in the Data Portal.
+Managed access raw data is available from the [Synapse database](https://www.synapse.org/#!Synapse:syn22213200) upon
+successful completion of a data use certificate. To find supplementary links to the managed access datasets in Synapse,
+navigate to
+the [project detail page](https://data.humancellatlas.org/explore/projects/dc1a41f6-9e09-42a6-959e-3be23db6da56) in the
+Data Portal.
 
 ![Supplementary Links](_images/Supplementary_links.png)
 
@@ -970,7 +1045,6 @@ Managed access raw data is available from the [Synapse database](https://www.syn
 1. [Molecular and functional heterogeneity of IL-10-producing CD4+ T cells](https://data.humancellatlas.org/explore/projects/df88f39f-01a8-4b5b-92f4-3177d6c0f242)
 1. [Single-cell transcriptomes of the aging human skin reveal loss of fibroblast priming](https://data.humancellatlas.org/explore/projects/51f02950-ee25-4f4b-8d07-59aa99bb3498)
 
-
 #### Projects with new uniformly processed data:
 
 1. [Single-cell analysis reveals congruence between kidney organoids and human fetal kidney](https://data.humancellatlas.org/explore/projects/962bd805-eb89-4c54-bad2-008e497d1307)
@@ -980,47 +1054,59 @@ Managed access raw data is available from the [Synapse database](https://www.syn
 1. [High throughput error corrected Nanopore single cell transcriptome sequencing](https://data.humancellatlas.org/explore/projects/0d4b87ea-6e9e-4569-82e4-1343e0e3259f)
 1. [Colonic single epithelial cell census reveals goblet cell drivers of barrier breakdown in inflammatory bowel disease](https://data.humancellatlas.org/explore/projects/c893cb57-5c9f-4f26-9312-21b85be84313)
 
-
 ## Data Portal now contains data for 13.5 million cells
 
 #### June 16, 2021
 
-* Raw data and contributor-generated matrices are available for 15 new projects. These single-cell data are derived from:
+* Raw data and contributor-generated matrices are available for 15 new projects. These single-cell data are derived
+  from:
 * Single-cell and single-nucleus
 * 10x 3' v2 and v3 3' and 10x 5' chemistry, Fluidigm C1, Smart-seq2, and sci-CAR ATAC sequencing technologies
-* Adipose tissue, blood, bone marrow, CSF, heart, kidney, lung, oral cavity, ovary, pancreas, prostate, skeletal muscle, testis, and umbilical vein
+* Adipose tissue, blood, bone marrow, CSF, heart, kidney, lung, oral cavity, ovary, pancreas, prostate, skeletal muscle,
+  testis, and umbilical vein
 * Disease states including COVID-19 infection, intracranial hypertension, multiple sclerosis, and renal cell carcinoma
 * Developmental stages including fetal, child, adolescent, and adult
-* Standardized data, including aligned BAMs and cell-by-gene count matrices (Loom format), are available for 8 additional projects with data derived from:
+* Standardized data, including aligned BAMs and cell-by-gene count matrices (Loom format), are available for 8
+  additional projects with data derived from:
 * 10x v2 and v3 3' sequencing technologies
-* Brain (superior parietal cortex, middle temporal gyrus, and temporal cortex), epididymis, immune tissue, cortex of the kidney organoid, lymph nodes, placenta (chorionic villus and decidua), spine, testis, and thymus
+* Brain (superior parietal cortex, middle temporal gyrus, and temporal cortex), epididymis, immune tissue, cortex of the
+  kidney organoid, lymph nodes, placenta (chorionic villus and decidua), spine, testis, and thymus
 * Disease states including Alzheimer disease and cognitive impairment with or without cerebellar ataxia
-* New Jupyter Notebook tutorials for analyzing standardized DCP matrix files are available in an [Intro-to-HCA-data-on-Terra](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra) workspace on the cloud-based platform Terra.
-* After registering, you can try the step-by-step instructions for importing HCA data and analyzing in common community tools such as Bioconductor, Cumulus, Pegasus, Scanpy, and Seurat.
+* New Jupyter Notebook tutorials for analyzing standardized DCP matrix files are available in
+  an [Intro-to-HCA-data-on-Terra](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra)
+  workspace on the cloud-based platform Terra.
+* After registering, you can try the step-by-step instructions for importing HCA data and analyzing in common community
+  tools such as Bioconductor, Cumulus, Pegasus, Scanpy, and Seurat.
 
 ## Raw sequencing data and contributor-generated matrices for 23 new projects available for download
 
 #### May 10, 2021
 
-* Data Portal now has data for 12.2 million cells, including new standardized analyses for 13 projects as well as raw sequencing data and contributor-generated matrices for 23 new projects.
+* Data Portal now has data for 12.2 million cells, including new standardized analyses for 13 projects as well as raw
+  sequencing data and contributor-generated matrices for 23 new projects.
 * The standardized data, including aligned BAMs and cell-by-gene count matrices (Loom format), are derived from:
 * Human and mouse
 * Single-cell and single-nucleus
 * 10x V2 and V3 3' chemistry
-* Blood, brain (including substantia nigra, developing hippocampus, cortex, retina), liver, lung, mouth, skeletal muscle, skin, spleen, and developing thymus
+* Blood, brain (including substantia nigra, developing hippocampus, cortex, retina), liver, lung, mouth, skeletal
+  muscle, skin, spleen, and developing thymus
 * Disease states including HIV, drug hypersensitivity syndrome, multiple sclerosis, and thoracic aortic aneurysm
 * The 23 new projects and contributor-generated matrices include data derived from:
 * Human and mouse
 * Smart-seq2, 10x V2 and V3 3' chemistry, Drop-seq, and Fluidigm C1 sequencing methods
-* Blood, bone marrow, brain, cord blood, epididymis, fetal gonads, immune organ, kidney organoid, lymph nodes, pancreas, skin, and trachea
+* Blood, bone marrow, brain, cord blood, epididymis, fetal gonads, immune organ, kidney organoid, lymph nodes, pancreas,
+  skin, and trachea
 * Disease states including Alzheimer's Disease, multiple sclerosis, autoimmune encephalitis, and type 2 diabetes
-* The Matrix Overview guide has been updated to include additional information on matrix [batch correction and normalization](/guides/consumer-vignettes/matrices#matrix-normalization-and-batch-correction).
+* The Matrix Overview guide has been updated to include additional information on
+  matrix [batch correction and normalization](/guides/consumer-vignettes/matrices#matrix-normalization-and-batch-correction).
 
 ## Raw data for 16 new projects now available
 
 #### April 12, 2021
 
-Raw sequencing data for 16 new projects are now available in the DCP [Data Browser](https://data.humancellatlas.org/explore/projects). These projects include single-cell data derived from:
+Raw sequencing data for 16 new projects are now available in the
+DCP [Data Browser](https://data.humancellatlas.org/explore/projects). These projects include single-cell data derived
+from:
 
 - Human and mouse
 - 10x 3’, 10x 5’, Smart-seq2 technologies
@@ -1032,28 +1118,46 @@ Raw sequencing data for 16 new projects are now available in the DCP [Data Brows
 
 #### April 02, 2021
 
-The [DCP 2.0 Preview](https://data.humancellatlas.org/explore/projects) now has standardized BAMs and count matrices (Loom file format) available for 26 HCA projects, including 15 new projects. These projects contain both human and mouse single-cell and single-nucleus data generated with 3' 10x V2 and V3 sequencing technology. This data was processed using the latest version of the Optimus pipeline (see the [Optimus Overview](https://data.humancellatlas.org/pipelines/optimus-workflow)).
+The [DCP 2.0 Preview](https://data.humancellatlas.org/explore/projects) now has standardized BAMs and count matrices (
+Loom file format) available for 26 HCA projects, including 15 new projects. These projects contain both human and mouse
+single-cell and single-nucleus data generated with 3' 10x V2 and V3 sequencing technology. This data was processed using
+the latest version of the Optimus pipeline (see
+the [Optimus Overview](https://data.humancellatlas.org/pipelines/optimus-workflow)).
 
-In addition to individual sample count matrices, each newly processed project also has standardized, project-level DCP-generated matrices that are stratified by organ, species, and library construction method. These matrices are minimally filtered to include only cells with more than 100 UMIs. You can download the project-level DCP-generated Matrices from the Data Browser (see image below) or from the individual Project page (see the [Exploring Projects](https://data.humancellatlas.org/guides) guide)
+In addition to individual sample count matrices, each newly processed project also has standardized, project-level
+DCP-generated matrices that are stratified by organ, species, and library construction method. These matrices are
+minimally filtered to include only cells with more than 100 UMIs. You can download the project-level DCP-generated
+Matrices from the Data Browser (see image below) or from the individual Project page (see
+the [Exploring Projects](https://data.humancellatlas.org/guides) guide)
 
 ![DCP Preview](../../guides/_images/explore_dcp_2_matrices.png)
 
 ### New raw data and Contributor-Generated Matrices
 
-Raw sequence files and contributor-generated matrices (CGMs) for an additional 11 new projects are available for download from the [DCP 2.0 Preview](https://data.humancellatlas.org/explore/projects). These projects include human adult, embryonic, and fetal data derived from 10 organs - brain, blood, bone marrow, colon, thymus, pancreas, placenta, mouth, liver, and spleen. Most projects employed 10x sequencing technology, but some additionally used cite-seq and drop-seq.
+Raw sequence files and contributor-generated matrices (CGMs) for an additional 11 new projects are available for
+download from the [DCP 2.0 Preview](https://data.humancellatlas.org/explore/projects). These projects include human
+adult, embryonic, and fetal data derived from 10 organs - brain, blood, bone marrow, colon, thymus, pancreas, placenta,
+mouth, liver, and spleen. Most projects employed 10x sequencing technology, but some additionally used cite-seq and
+drop-seq.
 
-With the addition of these new data, the DCP now has 55 total projects with over 7 million cells derived from 40 organs and 580 donors. We are grateful for the contributions and continued support of the 179 global labs who made this data available.
+With the addition of these new data, the DCP now has 55 total projects with over 7 million cells derived from 40 organs
+and 580 donors. We are grateful for the contributions and continued support of the 179 global labs who made this data
+available.
 
 ### Download new data using updated guides
 
-All files (raw data, CGMs, and DCP-generated BAMs and matrices) can be downloaded following the instructions in the [Accessing HCA Data and Metadata](/guides/quick-start-guide) guide.
-Additionally, you can access matrix files programmatically using the new [Programmatic Download](https://colab.research.google.com/drive/1h14mbunsepfogcnG9VEF4FIGpuyGLA-P#scrollTo=jxk27LZk4373) guide.
+All files (raw data, CGMs, and DCP-generated BAMs and matrices) can be downloaded following the instructions in
+the [Accessing HCA Data and Metadata](/guides/quick-start-guide) guide.
+Additionally, you can access matrix files programmatically using the
+new [Programmatic Download](https://colab.research.google.com/drive/1h14mbunsepfogcnG9VEF4FIGpuyGLA-P#scrollTo=jxk27LZk4373)
+guide.
 
 ## DCP 2.0 launches; new projects, contributor generated matrices and DCP 2.0 infrastructure
 
 #### December 11, 2020
 
-In the spirit of bringing HCA data to the community as quickly as possible, we are releasing the new DCP 2.0 data and infrastructure incrementally.
+In the spirit of bringing HCA data to the community as quickly as possible, we are releasing the new DCP 2.0 data and
+infrastructure incrementally.
 
 This initial launch -- the first of several planned to roll out new functionality, pipelines, and data -- includes:
 
@@ -1063,7 +1167,8 @@ This initial launch -- the first of several planned to roll out new functionalit
 
 ### What's included in the new projects?
 
-The new projects include a mix of human and mouse data from a variety of organs including adipose tissue, heart, hindlimb, spleen skin, yolk sac, diaphragm, tongue, trachea, and more. These data encompass:
+The new projects include a mix of human and mouse data from a variety of organs including adipose tissue, heart,
+hindlimb, spleen skin, yolk sac, diaphragm, tongue, trachea, and more. These data encompass:
 
 * 143 donors
 * 248 specimens
@@ -1075,18 +1180,23 @@ The new projects include a mix of human and mouse data from a variety of organs 
 
 Along with the new data view, we have updated DCP infrastructure by **retiring and replacing** the following features:
 
-* HCA Command Line Interface (CLI); data are now downloaded using curl commands (see the [Accessing HCA Data and Metadata guide](/guides/quick-start-guide))
-* HCA Matrix Service; DCP 1.0 project matrices remain available on the individual Project Matrices page (see the [Exploring Projects guide](/guides))
-* HCA Data Storage Service (DSS) and API; data is now stored in the Terra Data Repo (TDR), an alternative storage and metadata management service that supports managed access
+* HCA Command Line Interface (CLI); data are now downloaded using curl commands (see
+  the [Accessing HCA Data and Metadata guide](/guides/quick-start-guide))
+* HCA Matrix Service; DCP 1.0 project matrices remain available on the individual Project Matrices page (see
+  the [Exploring Projects guide](/guides))
+* HCA Data Storage Service (DSS) and API; data is now stored in the Terra Data Repo (TDR), an alternative storage and
+  metadata management service that supports managed access
 
 ### What's Coming Next?
 
 Between now and the end of February look for:
 
-* Standardized analysis results (BAM and index files) made by the latest HCA 10x and SmartSeq-2 pipelines for all projects
+* Standardized analysis results (BAM and index files) made by the latest HCA 10x and SmartSeq-2 pipelines for all
+  projects
 * DCP-generated count matrices stratified by species, library construction method, and organ for each project
 
-After these standardized analyses are complete, we will begin releasing new projects and analyses on a monthly basis. We are also working towards incorporating controlled-access projects.
+After these standardized analyses are complete, we will begin releasing new projects and analyses on a monthly basis. We
+are also working towards incorporating controlled-access projects.
 
 Once processing is complete, we will retire DCP 1.0 View.
 
@@ -1096,26 +1206,37 @@ Once processing is complete, we will retire DCP 1.0 View.
 
 #### October 9, 2020
 
-We are excited to announce the launch of the DCP 2.0 this fall. This has been a collaborative effort over the past 6 months to take on board the HCA community feedback and understand the unmet needs in order to align the goals of the DCP with the wider HCA community goals.
+We are excited to announce the launch of the DCP 2.0 this fall. This has been a collaborative effort over the past 6
+months to take on board the HCA community feedback and understand the unmet needs in order to align the goals of the DCP
+with the wider HCA community goals.
 
-We have made significant changes, including GA4GH-compliance, more data—50% more than previously—and, where available, contributor-generated count matrices, embeddings, and cell type annotations.
+We have made significant changes, including GA4GH-compliance, more data—50% more than previously—and, where available,
+contributor-generated count matrices, embeddings, and cell type annotations.
 
 ## Changes Coming to Key Components
 
 To accomplish this, we will be making the following changes and migrations:
 
-* The current Data Storage Service (DSS) will be retired and we will migrate to the Terra Data Repo, which supports managed access, for storage and metadata management. Both Ingest and the Data Browser will access the Terra Data Repo via self-service APIs, making for minimal disruption to the HCA scientific community.
-* The matrix service API will be retired. The per-project matrices that are most commonly used will be available in static form directly from the data browser.
-* As a higher-level replacement for the DSS API, the Data Browser API is being prepared for use by the wider developer community and will be officially documented and supported by the HCA DCP team.
-* The HCA-CLI will be retired and the Data Browser will provide a bulk download capability via curl (or similar) commands. Because the internal organization of the data store is subject to change with upcoming work on the metadata, direct calls against it are discouraged in favor of the new Data Browser API.
+* The current Data Storage Service (DSS) will be retired and we will migrate to the Terra Data Repo, which supports
+  managed access, for storage and metadata management. Both Ingest and the Data Browser will access the Terra Data Repo
+  via self-service APIs, making for minimal disruption to the HCA scientific community.
+* The matrix service API will be retired. The per-project matrices that are most commonly used will be available in
+  static form directly from the data browser.
+* As a higher-level replacement for the DSS API, the Data Browser API is being prepared for use by the wider developer
+  community and will be officially documented and supported by the HCA DCP team.
+* The HCA-CLI will be retired and the Data Browser will provide a bulk download capability via curl (or similar)
+  commands. Because the internal organization of the data store is subject to change with upcoming work on the metadata,
+  direct calls against it are discouraged in favor of the new Data Browser API.
 
 ## Transition Path to DCP 2.0
 
-More information about the transition to DCP 2.0 will be announced in the coming weeks and we will endeavor to make this transition as seamless as possible to the HCA research and developer communities.
+More information about the transition to DCP 2.0 will be announced in the coming weeks and we will endeavor to make this
+transition as seamless as possible to the HCA research and developer communities.
 
 > To enable a smooth transition, the DCP 1 data browser, APIs and data will remain available until January 1, 2021.
 
-We will continue to integrate third-party portals and applications into the HCA ecosystem by linking from and integrating directly into the HCA Data Browser.
+We will continue to integrate third-party portals and applications into the HCA ecosystem by linking from and
+integrating directly into the HCA Data Browser.
 
 Regards,
 
