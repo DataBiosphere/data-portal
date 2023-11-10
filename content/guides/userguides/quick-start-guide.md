@@ -75,4 +75,6 @@ To download the metadata from the **Export Selected Data** page:
 
 When selecting file types for the metadata manifest, note that the listed **File Sizes** are for the actual data files and not for the manifest itself. 
 
+![File Manifest](../_images/file_manifest.png "File Manifest")
+
 The format of the manifest file (TSV) is a simple tab-separated text file, with the first line representing the header title for each column. It is OK to remove rows for unwanted files but the header row must remain, and the columns should remain the same.
