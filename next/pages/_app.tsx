@@ -8,6 +8,8 @@ import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
+import { useEffect } from "react";
+import TagManager from "react-gtm-module";
 import { Head } from "../components/common/Head/head";
 import { AppFooter } from "../components/Layout/components/Footer/footer.styles";
 import { config } from "../config/config";
@@ -27,9 +29,18 @@ function MyApp({ Component, pageProps }: AppPropsWithMain): JSX.Element {
   const Footer = Component.Footer || AppFooter;
   const Main = Component.Main || DXMain;
   const appConfig = config();
-  const { layout, themeOptions } = appConfig;
+  const { analytics, layout, themeOptions } = appConfig;
+  const { gtmAuth, gtmId, gtmPreview } = analytics || {};
   const defaultTheme = createAppTheme(themeOptions);
   const appTheme = mergeAppTheme(defaultTheme);
+
+  // Initialize Google Tag Manager.
+  useEffect(() => {
+    if (gtmId) {
+      TagManager.initialize({ auth: gtmAuth, gtmId, preview: gtmPreview });
+    }
+  }, [gtmAuth, gtmId, gtmPreview]);
+
   return (
     <EmotionThemeProvider theme={appTheme}>
       <ThemeProvider theme={appTheme}>
