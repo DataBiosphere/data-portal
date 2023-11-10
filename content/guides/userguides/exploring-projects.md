@@ -28,7 +28,7 @@ added to the Metadata Manifest.
 The Data Portal Explore page lists all projects by title along with key project metadata. The project list is filterable
 by metadata values.
 
-![Browsing Projects in the Data Explorer](../_images/explore_dcp_2.png "Exploring Projects")
+![Browsing Projects in the Data Explorer](../_images/explore_dcp.png)
 
 ## Viewing Project Details
 
@@ -67,7 +67,7 @@ Metadata file sizes vary across projects but will generally be between 1 and 100
 The TSV file is named after the project and includes the date and time the file was created. For example:
 
 ``` 
-CD4+ cytotoxic T lymphocytes 2019-07-19 19.09.tsv
+ProstateCellAtlas 2023-11-09 08.10.tsv
 ```
 
 A partial example of a TSV file is shown below:

@@ -129,11 +129,10 @@ the contributors listed in the Project page Contact section.
 
 ## Downloading Matrices
 
-HCA Data Portal-generated project-level matrices and contributor-generated matrices may be downloaded from the "
-Matrices" column of
-the HCA Data Portal Data Browser (see image below) or alternatively, from the individual Project page.
+DCP-generated project-level matrices and contributor-generated matrices may be downloaded from the individual Project
+page.
 
-![Browsing Projects in the Data Explorer](../_images/explore_dcp_2_matrices.png "Exploring Projects")
+![Project Matrices Filenames](../_images/project_matrix_name.png "Matrix Name")
 
 You can also download all matrices (including library-level matrices) using a curl command as described in
 the [Accessing HCA Data and Metadata](../quick-start-guide) guide, or export matrices
