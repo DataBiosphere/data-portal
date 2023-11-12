@@ -26,7 +26,7 @@ const config: SiteConfig = {
           url: `${BROWSER_URL}${PROJECTS_URL}`,
         },
         {
-          label: "BioNetworks",
+          label: "HCABioNetworks",
           url: `${PORTAL_URL}bio-networks`,
         },
         {

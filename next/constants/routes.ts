@@ -1,4 +1,4 @@
-export const NETWORKS_ROUTE = "/bio-networks";
+export const NETWORKS_ROUTE = "/hca-bio-networks";
 export const NETWORKS_PATTERN = NETWORKS_ROUTE + "/[network]";
 export const NETWORKS_ATLAS_PATTERN =
   NETWORKS_PATTERN + "/atlases" + "/[atlas]";

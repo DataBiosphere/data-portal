@@ -61,7 +61,7 @@ function buildTabs(network: Network): Tab[] {
         <StaticImage
           alt="BICCN"
           height={20}
-          src="/bio-networks/network/biccn.png"
+          src="/hca-bio-networks/network/biccn.png"
         />
       ),
       label: "BICCN Publications",
