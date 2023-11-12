@@ -1,5 +1,5 @@
 import { AnalysisPortal, ANALYSIS_PORTAL } from "../@types/network";
-import cellxgeneIcon from "../public/bio-networks/network/atlas/icons/cellxgene.svg";
+import cellxgeneIcon from "../public/hca-bio-networks/network/atlas/icons/cellxgene.svg";
 
 /**
  * Cell By Gene analysis portal.

@@ -4,9 +4,13 @@ export const Head = (): JSX.Element => {
   return (
     <NextHead key="page-head">
       <title>HCA Data Portal</title>
-      <link href="/bio-networks/favicons/favicon.ico" rel="icon" sizes="any" />
       <link
-        href="/bio-networks/favicons/favicon-16x16.png"
+        href="/hca-bio-networks/favicons/favicon.ico"
+        rel="icon"
+        sizes="any"
+      />
+      <link
+        href="/hca-bio-networks/favicons/favicon-16x16.png"
         rel="icon"
         sizes="16x16"
         type="image/png"
@@ -18,12 +22,12 @@ export const Head = (): JSX.Element => {
         type="image/png"
       />
       <link
-        href="/bio-networks/favicons/apple-touch-icon.png"
+        href="/hca-bio-networks/favicons/apple-touch-icon.png"
         rel="apple-touch-icon"
         sizes="180x180"
         type="image/png"
       />
-      <link href="/bio-networks/favicons/site.webmanifest" rel="manifest" />
+      <link href="/hca-bio-networks/favicons/site.webmanifest" rel="manifest" />
     </NextHead>
   );
 };
