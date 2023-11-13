@@ -73,7 +73,7 @@ const config: SiteConfig = {
       navAlignment: ELEMENT_ALIGNMENT.LEFT,
       navLinks: [
         {
-          label: "Explore",
+          label: "Datasets",
           target: ANCHOR_TARGET.BLANK,
           url: BROWSER_URL,
         },
