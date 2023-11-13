@@ -15,7 +15,7 @@ gatsby clean
 
 export GATSBY_EXPLORE_URL=https://explore.data.humancellatlas.prod.clevercanary.com/
 export GATSBY_FILE_SUMMARY_API_URL=https://service.azul.data.humancellatlas.org/index/summary
-export GATSBY_PORTAL_URL=https://data.humancellatlas.prod.clevercanary.com/
+export GATSBY_PORTAL_URL=https://data.humancellatlas.org/
 export GATSBY_TERM_FACETS_API_URL=https://service.azul.data.humancellatlas.org/index/projects
 export GATSBY_SYSTEM_HEALTH_CHECK_API_URL=https://service.azul.data.humancellatlas.org/health/progress
 export GATSBY_GTM_ID=GTM-M2J5NTJ
