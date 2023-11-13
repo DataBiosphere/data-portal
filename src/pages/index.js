@@ -199,7 +199,7 @@ class IndexPage extends React.Component {
                 )}
               >
                 <a
-                  href="https://www.humancellatlas.org/join-hca/"
+                  href="https://www.humancellatlas.org/register"
                   className={classNames(
                     globalStyles.button,
                     globalStyles.blue,
