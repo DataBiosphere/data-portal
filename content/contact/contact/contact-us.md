@@ -17,8 +17,8 @@ at [data-help@humancellatlas.org](mailto:data-help@humancellatlas.org) to ask qu
 
 ## Register with the HCA
 
-Register with the Human Cell Atlas to find collaborators and stay up-to-date about news and
-events. [Register with the HCA](https://www.humancellatlas.org/join-hca).
+[Register with the Human Cell Atlas](https://www.humancellatlas.org/register) to find collaborators and stay up-to-date
+about news and events.
 
 ## Join the Data Portal slack community
 

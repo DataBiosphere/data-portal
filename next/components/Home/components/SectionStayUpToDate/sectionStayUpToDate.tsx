@@ -12,7 +12,7 @@ export const SectionStayUpToDate = (): JSX.Element => {
       <SectionContent>
         <SectionHead>Stay up-to-date with the human cell atlas</SectionHead>
         <CTAs>
-          <ButtonSecondary href="https://www.humancellatlas.org/join-hca/">
+          <ButtonSecondary href="https://www.humancellatlas.org/register/">
             Join The HCA Register Of Interest
           </ButtonSecondary>
         </CTAs>
