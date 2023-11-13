@@ -21,7 +21,7 @@ const config: SiteConfig = {
       },
       navLinks: [
         {
-          label: "Explore",
+          label: "Datasets",
           target: Target.BLANK,
           url: `${BROWSER_URL}${PROJECTS_URL}`,
         },

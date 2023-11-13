@@ -13,7 +13,7 @@ const config: SiteConfig = {
       ...devConfig.layout.header,
       navLinks: [
         {
-          label: "Explore",
+          label: "Datasets",
           target: ANCHOR_TARGET.BLANK,
           url: BROWSER_URL,
         },
