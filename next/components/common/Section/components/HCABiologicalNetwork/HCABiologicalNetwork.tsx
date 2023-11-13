@@ -4,19 +4,19 @@ import React from "react";
 import { Network } from "../../../../../@types/network";
 import { NETWORK_ICONS } from "../../../../../constants/networks";
 import { NETWORKS_ROUTE } from "../../../../../constants/routes";
-import { IconLink } from "./biologicalNetwork.styles";
+import { IconLink } from "./HCABiologicalNetwork.styles";
 
-export interface GridPaperSectionProps {
+export interface HCABiologicalNetworkProps {
   network: Network;
 }
 
-export const BiologicalNetwork = ({
+export const HCABiologicalNetwork = ({
   network,
-}: GridPaperSectionProps): JSX.Element => {
+}: HCABiologicalNetworkProps): JSX.Element => {
   const { key, name: label, path } = network;
   return (
     <GridPaperSection>
-      <SectionTitle title="Biological Network" />
+      <SectionTitle title="HCA Biological Network" />
       <IconLink
         icon={NETWORK_ICONS[key]}
         label={label}
