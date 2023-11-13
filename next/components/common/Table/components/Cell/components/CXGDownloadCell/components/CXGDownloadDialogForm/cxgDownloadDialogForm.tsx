@@ -31,7 +31,7 @@ export const CxgDownloadDialogForm = ({
     CXG_DATASET_FILE_TYPE.H5AD
   );
   const datasetAsset = getSelectedDatasetAsset(datasetAssets, fileFormat);
-  const cURL = getCURLCommand(datasetAsset);
+  const downloadURL = datasetAsset?.downloadURL;
 
   // Callback fired when file format radio button is selected.
   const onRadioChange = (value: CXG_DATASET_FILE_TYPE): void => {
@@ -51,27 +51,17 @@ export const CxgDownloadDialogForm = ({
         <DialogContentSection title="Download details">
           <CXGDownloadCaption />
         </DialogContentSection>
-        {cURL && <Code code={cURL} />}
+        {downloadURL && <Code code={downloadURL} />}
       </DialogContent>
       <DialogActions>
-        <ButtonPrimary href={datasetAsset?.downloadURL}>Download</ButtonPrimary>
+        <ButtonPrimary disabled={!downloadURL} href={downloadURL}>
+          Download
+        </ButtonPrimary>
         <ButtonSecondary onClick={onClose}>Cancel</ButtonSecondary>
       </DialogActions>
     </>
   );
 };
-
-/**
- * Returns the cURL command for the given dataset asset.
- * @param datasetAsset - Dataset asset.
- * @returns cURL command.
- */
-function getCURLCommand(datasetAsset?: DatasetAsset): string | undefined {
-  if (!datasetAsset) {
-    return;
-  }
-  return `curl -o ${datasetAsset.fileName} "${datasetAsset.downloadURL}"`;
-}
 
 /**
  * Returns the dataset asset for the given file format.
