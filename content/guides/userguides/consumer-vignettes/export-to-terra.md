@@ -25,7 +25,7 @@ Before trying this tutorial, complete the steps below:
 1. Download the [Google Chrome browser](https://www.google.com/chrome/) which is recommended when using Terra.
 
 For additional details about analyzing data in the cloud with Terra, see
-the[ Terra Support guides](https://support.terra.bio/hc/en-us/sections/360006866192).
+the [Terra Support guides](https://support.terra.bio/hc/en-us/sections/360006866192).
 
 ### HCA data-related tutorial workspaces
 
