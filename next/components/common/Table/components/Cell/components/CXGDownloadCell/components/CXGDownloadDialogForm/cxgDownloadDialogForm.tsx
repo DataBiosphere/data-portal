@@ -10,9 +10,7 @@ import {
   DialogActions,
   DialogContent,
 } from "../../../../../Actions/components/Dialog/dialog.styles";
-import { CXGDownloadCaption } from "./components/CXGDownloadCaption/cxgDownloadCaption";
 import { CXGDownloadRadio } from "./components/CXGDownloadRadio/cxgDownloadRadio";
-import { Code } from "./cxgDownloadDialogForm.styles";
 
 type onCloseFn = () => void;
 
@@ -48,10 +46,10 @@ export const CxgDownloadDialogForm = ({
           onRadioChange={onRadioChange}
           title="Data format"
         />
-        <DialogContentSection title="Download details">
-          <CXGDownloadCaption />
-        </DialogContentSection>
-        {downloadURL && <Code code={downloadURL} />}
+        {/*<DialogContentSection title="Download details">*/}
+        {/*  <CXGDownloadCaption />*/}
+        {/*</DialogContentSection>*/}
+        {/*{downloadURL && <Code code={downloadURL} />}*/}
       </DialogContent>
       <DialogActions>
         <ButtonPrimary disabled={!downloadURL} href={downloadURL}>
