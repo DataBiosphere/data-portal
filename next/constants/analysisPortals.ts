@@ -6,6 +6,6 @@ import cellxgeneIcon from "../public/hca-bio-networks/network/atlas/icons/cellxg
  */
 export const CELLXGENE: Omit<AnalysisPortal, "url"> = {
   icon: cellxgeneIcon,
-  label: "Cellxgene",
+  label: "CELLxGENE",
   name: ANALYSIS_PORTAL.CELLXGENE,
 };
