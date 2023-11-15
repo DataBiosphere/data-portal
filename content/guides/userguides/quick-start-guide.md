@@ -63,7 +63,7 @@ This metadata, also called a "Data Manifest" is in TSV file format and lists all
 
 To download the metadata from the **Export Selected Data** page:
 
-1. Under **Download a File Manifest with Metadata for the Selected Data** and select **Request File Manifest**
+1. Under **Download a File Manifest with Metadata for the Selected Data**, select **Request File Manifest**
 
     ![Export Manifest](../_images/Export_selected_manifest.png "Export Manifest")
 
