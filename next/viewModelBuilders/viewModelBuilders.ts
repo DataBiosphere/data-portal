@@ -319,7 +319,7 @@ export function getIntegratedAtlasesTableColumns(): ColumnDef<IntegratedAtlasRow
     getAtlasesDiseaseColumnDef(),
     getAtlasesCellCountColumnDef(),
     getAtlasesExploreColumnDef(),
-    getAtlasesActionsColumnDef(),
+    // getAtlasesActionsColumnDef(),
   ];
 }
 
