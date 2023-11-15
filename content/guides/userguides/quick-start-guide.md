@@ -29,7 +29,7 @@ This will open a new page giving you the option to:
 
 1) Download Study Data and Metadata (Curl Command)
 2) Download a File Manifest with Metadata for the Selected Data
-3) Export Study Data and Metadata to Terra Workspace
+3) Export Study Data and Metadata to a Terra Workspace
 
 ## Downloading Data with a Curl Command
 
