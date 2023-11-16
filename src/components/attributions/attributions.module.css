@@ -7,13 +7,14 @@
 
 /* Attributions */
 .attributions {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
 }
 
 /* Icon */
 .attributions .mosaic {
   height: 40px;
-  margin: 4px 0;
-  padding-right: 8px;
+  margin: 0;
 }
