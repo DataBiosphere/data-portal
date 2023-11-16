@@ -19,10 +19,9 @@ class Attributions extends React.Component {
     return (
       <div className={compStyles.attributions}>
         <img className={compStyles.mosaic} src={favicon} alt="Mosaic" />
-        <p>
-          The mosaic circle is a trademark of the Human Cell Atlas consortium,
-          registered by Broad Institute and used with permission.
-        </p>
+        <span>
+          The mosaic ball is a trademark of the Human Cell Atlas consortium.
+        </span>
       </div>
     );
   }
