@@ -1,6 +1,6 @@
 ---
 date: "2023-11-14"
-description: "Overview describing how to access HCA atlas data in the HCA Data Explorer
+description: "Overview describing how to access HCA atlas data in the HCA Data Explorer"
 path: "/guides/userguides/accessing-atlases"
 title: "Exploring Biological Network and Atlas Data"
 ---
