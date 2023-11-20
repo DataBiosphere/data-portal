@@ -20,7 +20,7 @@ export const SectionBioNetworkAtlases = (): JSX.Element => {
   return (
     <Section>
       <SectionContent>
-        <SectionHead>HCA BioNetwork Atlases</SectionHead>
+        <SectionHead>HCA Biological Network Atlases</SectionHead>
         <BioNetworkAtlases>
           {networks.map(({ atlases, key, name, path }) => (
             <BioNetworkAtlas

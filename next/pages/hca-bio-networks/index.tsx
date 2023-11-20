@@ -7,7 +7,7 @@ const Page = (): JSX.Element => {
   return (
     <Detail
       mainColumn={<MainColumn />}
-      top={<BackPageHero title="HCA Biological Networks" />}
+      top={<BackPageHero title="HCA Biological Network Atlases" />}
     />
   );
 };

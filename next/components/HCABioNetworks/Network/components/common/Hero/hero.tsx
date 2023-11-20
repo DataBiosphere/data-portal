@@ -12,7 +12,7 @@ export const Hero = (): JSX.Element => {
     () => [
       {
         path: NETWORKS_ROUTE,
-        text: "HCA Biological Networks",
+        text: "HCA Biological Network Atlases",
       },
       {
         path: NETWORKS_ROUTE + "/" + path,

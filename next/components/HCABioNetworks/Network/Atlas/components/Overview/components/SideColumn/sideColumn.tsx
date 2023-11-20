@@ -18,7 +18,7 @@ export const SideColumn = (): JSX.Element => {
     network;
   return (
     <Sections>
-      {/* HCA Biological Network */}
+      {/* HCA Biological Network Atlases */}
       <HCABiologicalNetwork network={network} />
       {/* Publications */}
       <Publications publications={publications} />
