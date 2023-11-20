@@ -9,8 +9,8 @@
 import React from "react";
 
 // App dependencies
+import { CookieBanner } from "./cookie-banner";
 import Environment from "./environment";
-import Privacy from "./privacy";
 import SystemStatus from "./systemStatus";
 import * as EnvironmentService from "../../utils/environment/environment.service";
 
@@ -49,9 +49,7 @@ class Banner extends React.Component {
             message={testMessage}
           />
         ) : null}
-        {this.props.position === "bottom" ? (
-          <Privacy localStorageName="privacyAccepted" />
-        ) : null}
+        {this.props.position === "bottom" ? <CookieBanner /> : null}
       </div>
     );
   }

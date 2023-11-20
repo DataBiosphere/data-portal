@@ -11,6 +11,7 @@ import type { AppProps } from "next/app";
 import { useEffect } from "react";
 import TagManager from "react-gtm-module";
 import { Head } from "../components/common/Head/head";
+import { CookieBanner } from "../components/Home/components/Banner/components/CookieBanner/cookieBanner";
 import { AppFooter } from "../components/Layout/components/Footer/footer.styles";
 import { config } from "../config/config";
 import { ConfigProvider } from "../providers/config";
@@ -51,6 +52,7 @@ function MyApp({ Component, pageProps }: AppPropsWithMain): JSX.Element {
             <Header {...layout.header} />
             <Main>
               <Component {...pageProps} />
+              <CookieBanner />
             </Main>
             <Footer {...layout.footer} />
           </AppLayout>
