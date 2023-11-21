@@ -16,7 +16,7 @@ The process that was actually executed follows a specific **protocol** (e.g. a [
 together make up the overall [project][6] (e.g. Understanding cell types in the human heart).
 
 An overview of each of current HCA metadata schema types is given below. Please see
-the [metadata structure](/metadata/structure) or [metadata design](/metadata/design) documentation for additional
+the [metadata structure](/metadata/structure) or [metadata design](/metadata/rationale) documentation for additional
 details and examples of how the schema is structured.
 
 ## Biomaterials

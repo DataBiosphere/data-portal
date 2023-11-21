@@ -16,7 +16,7 @@ The use of modules helps to keep the HCA metadata schema both compact and self-c
 representing a given concept to be defined once and then reused wherever it is needed.
 
 An overview of the different kinds of modules is given below. Please see the [metadata structure][metadata-structure]
-or [metadata design](/metadata/design) documentation for additional detail.
+or [metadata design](/metadata/rationale) documentation for additional detail.
 
 ## Core Modules
 
