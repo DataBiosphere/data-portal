@@ -16,7 +16,7 @@ export const HCABiologicalNetwork = ({
   const { key, name: label, path } = network;
   return (
     <GridPaperSection>
-      <SectionTitle title="HCA Biological Network" />
+      <SectionTitle title="HCA Biological Network Atlases" />
       <IconLink
         icon={NETWORK_ICONS[key]}
         label={label}

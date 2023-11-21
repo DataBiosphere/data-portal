@@ -211,7 +211,7 @@ function getBioNetworksNetworkNameColumnDef(): ColumnDef<Network> {
   return {
     accessorKey: "networkName",
     cell: ({ row }) => C.BioNetworkCell({ network: row.original }),
-    header: "HCA Biological Network",
+    header: "HCA Biological Network Atlas",
   };
 }
 
