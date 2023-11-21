@@ -11,13 +11,13 @@ This section briefly reviews how to find and download cross-project data and ass
 
 ## Finding Data
 
-The **Explore** section of the Data Portal provides an interactive data browser. You can design a unique cohort, or data subset, by selecting various facets in the Browser's Donor, Tissue Type, Specimen, Method, and Files sections. 
+The **Datasets** section of the Data Portal provides an interactive Data Explorer. You can design a unique cohort, or data subset, by selecting various facets in the Data Explorer's Filters on the left side of the page. 
 
-The Specimen's tab shows you how many specimens have been selected. It also gives an estimate of the size of the data set if the entire list were downloaded.
+The Samples tab shows you have many samples have been selected, while the Files tab shows you how many files have been selected.
 
 ## Preparing Data for Export
 
-After you identify a cohort of interest, you download the raw data, analysis files, and metadata by clicking the blue **Export Selected Data** icon on the right of the page.
+After you identify a cohort of interest, you can download the raw data, analysis files, and metadata by clicking **Export** on the top right of the page.
 
 <figure-styles>
 
@@ -27,15 +27,15 @@ After you identify a cohort of interest, you download the raw data, analysis fil
 
 This will open a new page giving you the option to:
 
-1) Download Selected Data Using "curl"
+1) Download Study Data and Metadata (Curl Command)
 2) Download a File Manifest with Metadata for the Selected Data
-3) Export to Terra 
+3) Export Study Data and Metadata to a Terra Workspace
 
 ## Downloading Data with a Curl Command
 
 To download the raw and processed data: 
 
-1. Go to **Download Selected Data Using 'curl'** and select **Start**
+1. Under **Download Study Data and Metadata (Curl Command)**, select **Request curl Command**
 
    ![Export Data](../_images/Export_selected_data.png "Export Selected Data")
 
@@ -51,7 +51,7 @@ To download the raw and processed data:
     
     Paste this curl command in your local or cloud-based terminal to download the data. 
     
-    After downloading the data files, return to the **Export Selected Data** page using the back icon to download the metadata (see step-by-step instructions below).
+    After downloading the data files, return to the **Export Selected Data** page using the page breadcrumbs to download the metadata (see step-by-step instructions below).
     
     ![Back icon](../_images/back_icon.png "back icon")
 
@@ -63,7 +63,7 @@ This metadata, also called a "Data Manifest" is in TSV file format and lists all
 
 To download the metadata from the **Export Selected Data** page:
 
-1. Go to **Download a File Manifest with Metadata for the Selected Data** and select **Start**
+1. Under **Download a File Manifest with Metadata for the Selected Data**, select **Request File Manifest**
 
     ![Export Manifest](../_images/Export_selected_manifest.png "Export Manifest")
 

@@ -33,9 +33,7 @@ download:
 Both matrix types are in Loom file format, and contain standard metrics and counts that are
 specific to the data processing pipeline used to generate the file.
 
-> For the most up-to-date information on counts and metrics, see the Matrix Overviews for the *
-*[Smart-seq2 Pipeline](https://broadinstitute.github.io/warp/docs/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema)
-** and the **[Optimus Pipeline](https://broadinstitute.github.io/warp/docs/Pipelines/Optimus_Pipeline/Loom_schema) (10x
+> For the most up-to-date information on counts and metrics, see the Matrix Overviews for the **[Smart-seq2 Pipeline](https://broadinstitute.github.io/warp/docs/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema)** and the **[Optimus Pipeline](https://broadinstitute.github.io/warp/docs/Pipelines/Optimus_Pipeline/Loom_schema) (10x
 data)**.
 
 HCA Data Portal-generated Loom matrices have three types of attributes containing metadata and metrics:
@@ -51,10 +49,7 @@ Loom files are compatible with multiple downstream community tools,
 including [Seurat](https://satijalab.org/seurat/index.html), [Scanpy](https://scanpy-tutorials.readthedocs.io/en/latest/index.html), [Cumulus](https://cumulus.readthedocs.io/en/latest/index.html),
 and [Pegasus](https://pegasus.readthedocs.io/en/stable/#).
 
-> Step-by-step Jupyter Notebook tutorials for analyzing Loom matrices with community tools are available in the
-> cloud-based platform [Terra](https://app.terra.bio/). After registering, get started by navigating to
->
-the [Intro-to-HCA-data-on-Terra workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra).
+> Step-by-step Jupyter Notebook tutorials for analyzing Loom matrices with community tools are available in the cloud-based platform [Terra](https://app.terra.bio/). After registering, get started by navigating to the [Intro-to-HCA-data-on-Terra workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra).
 
 #### HCA Data Portal-Generated Matrix Filenames
 
@@ -103,8 +98,7 @@ More information about HCA Data Portal post-processing for the project-level mat
 Overview for
 the [Optimus Pipeline](https://broadinstitute.github.io/warp/docs/Pipelines/Optimus_Pipeline/Loom_schema#hca-data-coordination-platform-matrix-processing)
 and
-the [Smart-seq2 Pipeline](https://broadinstitute.github.io/warp/docs/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema#table-2-column-attributes-cell-metrics) (
-in development).
+the [Smart-seq2 Pipeline](https://broadinstitute.github.io/warp/docs/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema#table-2-column-attributes-cell-metrics).
 
 #### HCA Data Portal Library-Level Matrix Overview
 
