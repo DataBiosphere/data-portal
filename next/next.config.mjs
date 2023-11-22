@@ -25,6 +25,10 @@ const nextConfig = {
       process.cwd(),
       "node_modules/@mui/material"
     );
+    config.resolve.alias["isomorphic-dompurify"] = path.resolve(
+      process.cwd(),
+      "node_modules/isomorphic-dompurify"
+    );
     config.resolve.alias["next"] = path.resolve(
       process.cwd(),
       "node_modules/next"
