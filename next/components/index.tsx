@@ -1,4 +1,11 @@
+export { DiscourseIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/DiscourseIcon/discourseIcon";
 export { DownloadIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/DownloadIcon/downloadIcon";
+export { FacebookIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/FacebookIcon/facebookIcon";
+export { GitHubIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/GitHubIcon/gitHubIcon";
+export { LinkedInIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/LinkedInIcon/linkedInIcon";
+export { SlackIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/SlackIcon/slackIcon";
+export { XIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/XIcon/xIcon";
+export { YouTubeIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/YouTubeIcon/youTubeIcon";
 export { Grid } from "@clevercanary/data-explorer-ui/lib/components/common/Grid/grid";
 export { IconButton } from "@clevercanary/data-explorer-ui/lib/components/common/IconButton/iconButton";
 export { StaticImage } from "@clevercanary/data-explorer-ui/lib/components/common/StaticImage/staticImage";

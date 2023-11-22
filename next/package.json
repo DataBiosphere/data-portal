@@ -16,7 +16,7 @@
     "complete-biccn-publications": "esrun ./scripts/complete-biccn-publications.ts"
   },
   "dependencies": {
-    "@clevercanary/data-explorer-ui": "0.52.0",
+    "@clevercanary/data-explorer-ui": "0.56.0",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@mdx-js/loader": "^2.3.0",
@@ -25,6 +25,7 @@
     "@mui/material": "5.14.1",
     "@next/mdx": "^13.4.5",
     "@tanstack/react-table": "8.5.11",
+    "@types/uuid": "^8.3.4",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^9.0.0",
@@ -33,7 +34,8 @@
     "next-optimized-images": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-gtm-module": "^2.0.11"
+    "react-gtm-module": "^2.0.11",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@digitak/esrun": "^3.2.25",

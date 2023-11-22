@@ -2,6 +2,7 @@ import { SiteConfig } from "../entities";
 import logoHCA from "../../../images/hca/logoHCA.png";
 import { breakpointTablet } from "../../theme/theme";
 import { Target } from "../../utils/anchor/target.model";
+import { socialMedia } from "./socialMedia";
 
 // Template variables
 export const BROWSER_URL = process.env.GATSBY_EXPLORE_URL;
@@ -52,20 +53,7 @@ const config: SiteConfig = {
       ],
       searchEnabled: true,
       slogan: undefined,
-      socials: [
-        {
-          type: "twitter",
-          url: "https://twitter.com/humancellatlas",
-        },
-        {
-          type: "github",
-          url: "https://github.com/HumanCellAtlas",
-        },
-        {
-          type: "slack",
-          url: "https://humancellatlas.slack.com/archives/C02TM2SDVM2",
-        },
-      ],
+      socialMedia: socialMedia,
     },
   },
   search: {

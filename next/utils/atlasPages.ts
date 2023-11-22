@@ -48,6 +48,7 @@ export const getStaticProps: GetStaticProps<AtlasContext> = async (
     const result = await fetchEntitiesFromQuery(
       `${url}/projects`,
       filterProjectId(atlas.datasets),
+      undefined,
       undefined
     );
     projectsResponses.push(...result.hits);
