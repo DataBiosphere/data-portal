@@ -37,7 +37,7 @@
       ],
       "tools": [
         {
-          "label": "cellxgene",
+          "label": "CZ CELLxGENE",
           "url": "https://cellxgene.cziscience.com/collections/283d65eb-dd53-496d-adb7-7570c7caa443"
         }
       ],
@@ -201,7 +201,7 @@
           "url": "http://neomorph.salk.edu/hba/"
         },
         {
-          "label": "cellxgene",
+          "label": "CZ CELLxGENE",
           "url": "https://cellxgene.cziscience.com/collections/fdebfda9-bb9a-4b4b-97e5-651097ea07b0"
         }
       ],
@@ -294,7 +294,7 @@
           "url": "https://assets.nemoarchive.org/dat-swzf4kc"
         },
         {
-          "label": "cellxgene",
+          "label": "CZ CELLxGENE",
           "url": "https://cellxgene.cziscience.com/collections/d17249d2-0e6e-4500-abb8-e6c93fa1ac6f"
         }
       ],
@@ -370,7 +370,7 @@
       ],
       "data": [
         {
-          "label": "cellxgene",
+          "label": "CZ CELLxGENE",
           "url": "https://cellxgene.cziscience.com/collections/35928d1c-36fc-4f93-9a8d-0b921ab41745"
         }
       ],
@@ -583,7 +583,7 @@
           "url": "https://assets.nemoarchive.org/dat-rtmm5q2"
         },
         {
-          "label": "cellxgene",
+          "label": "CZ CELLxGENE",
           "url": "https://cellxgene.cziscience.com/collections/8c4bcf0d-b4df-45c7-888c-74fb0013e9e7"
         }
       ],
@@ -704,7 +704,7 @@
           "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE204684"
         },
         {
-          "label": "cellxgene",
+          "label": "CZ CELLxGENE",
           "url": "https://cellxgene.cziscience.com/collections/ceb895f4-ff9f-403a-b7c3-187a9657ac2c"
         }
       ],
@@ -789,7 +789,7 @@
       "doi": "10.1126/science.adf1226",
       "tools": [
         {
-          "label": "cellxgene",
+          "label": "CZ CELLxGENE",
           "url": "https://cellxgene.cziscience.com/collections/4d8fed08-2d6d-4692-b5ea-464f1d072077"
         },
         {
@@ -898,7 +898,7 @@
           "url": "https://assets.nemoarchive.org/dat-3ah9h9x"
         },
         {
-          "label": "cellxgene",
+          "label": "CZ CELLxGENE",
           "url": "https://cellxgene.cziscience.com/collections/bacccb91-066d-4453-b70e-59de0b4598cd"
         },
         {

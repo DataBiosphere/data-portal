@@ -1,11 +1,11 @@
 import { AnalysisPortal, ANALYSIS_PORTAL } from "../@types/network";
-import cellxgeneIcon from "../public/hca-bio-networks/network/atlas/icons/cellxgene.svg";
+import cxgIcon from "../public/hca-bio-networks/network/atlas/icons/cxg.png";
 
 /**
  * Cell By Gene analysis portal.
  */
-export const CELLXGENE: Omit<AnalysisPortal, "url"> = {
-  icon: cellxgeneIcon,
-  label: "CELLxGENE",
-  name: ANALYSIS_PORTAL.CELLXGENE,
+export const CZ_CELLXGENE: Omit<AnalysisPortal, "url"> = {
+  icon: cxgIcon,
+  label: "CZ CELLxGENE",
+  name: ANALYSIS_PORTAL.CZ_CELLXGENE,
 };

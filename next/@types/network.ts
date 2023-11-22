@@ -15,7 +15,7 @@ export interface Contact {
  * Set of analysis portals.
  */
 export enum ANALYSIS_PORTAL {
-  CELLXGENE = "CELLXGENE",
+  CZ_CELLXGENE = "CZ_CELLXGENE",
 }
 
 export interface AnalysisPortal {

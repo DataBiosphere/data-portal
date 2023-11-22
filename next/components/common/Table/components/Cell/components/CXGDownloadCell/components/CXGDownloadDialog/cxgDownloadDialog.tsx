@@ -23,7 +23,7 @@ export const CXGDownloadDialog = ({
 }: CXGDownloadDialogProps): JSX.Element => {
   return (
     <Dialog fullWidth maxWidth={false} onClose={onClose} open={open}>
-      <DialogTitle title="Download from CELLxGENE" onClose={onClose} />
+      <DialogTitle title="Download from CZ CELLxGENE" onClose={onClose} />
       <DialogForm
         datasetAssets={datasetAssets}
         onClose={onClose}

@@ -14,8 +14,8 @@ import {
 import { config } from "../config/config";
 
 /**
- * Returns the H5AD and RDS dataset assets for the given CellXGene dataset assets.
- * @param cxgDatasetAssets - CellXGene dataset assets.
+ * Returns the H5AD and RDS dataset assets for the given CELLxGENE dataset assets.
+ * @param cxgDatasetAssets - CELLxGENE dataset assets.
  * @returns H5AD and RDS dataset assets.
  */
 function buildDatasetAssets(
@@ -51,7 +51,7 @@ export function buildDatasetURL(network: Network): string {
 
 /**
  * Returns true if the dataset's collection_id matches the given collection ID.
- * @param cxgDataset - CellXGene dataset.
+ * @param cxgDataset - CELLxGENE dataset.
  * @param collectionId - Collection ID.
  * @returns true if the dataset's collection_id matches the given collection ID.
  */
@@ -64,7 +64,7 @@ function filterCXGDataset(
 
 /**
  * Returns true if the dataset asset's filetype is H5AD or RDS.
- * @param cxgDatasetAsset - CellXGene dataset asset.
+ * @param cxgDatasetAsset - CELLxGENE dataset asset.
  * @returns true if the dataset asset's filetype is H5AD or RDS.
  */
 function filterCXGDatasetAsset(cxgDatasetAsset: CXGDatasetAsset): boolean {
@@ -76,7 +76,7 @@ function filterCXGDatasetAsset(cxgDatasetAsset: CXGDatasetAsset): boolean {
 
 /**
  * Returns the dataset URL for the given dataset asset.
- * @param cxgDatasetAsset - CellXGene dataset asset.
+ * @param cxgDatasetAsset - CELLxGENE dataset asset.
  * @returns dataset URL.
  */
 function getDownloadURL(cxgDatasetAsset: CXGDatasetAsset): string {
@@ -85,9 +85,9 @@ function getDownloadURL(cxgDatasetAsset: CXGDatasetAsset): string {
 }
 
 /**
- * Processes the given atlas with the given CellXGene dataset responses.
+ * Processes the given atlas with the given CELLxGENE dataset responses.
  * @param atlas - Atlas.
- * @param cxgDatasets - CellXGene dataset responses.
+ * @param cxgDatasets - CELLxGENE dataset responses.
  * @returns atlas with integrated atlases.
  */
 export function processAtlas(atlas: Atlas, cxgDatasets: CXGDataset[]): Atlas {
@@ -96,9 +96,9 @@ export function processAtlas(atlas: Atlas, cxgDatasets: CXGDataset[]): Atlas {
 }
 
 /**
- * Processes the given network with the given CellXGene dataset responses.
+ * Processes the given network with the given CELLxGENE dataset responses.
  * @param network - Network.
- * @param cxgDatasets - CellXGene dataset responses.
+ * @param cxgDatasets - CELLxGENE dataset responses.
  * @returns network with integrated atlases.
  */
 export function processNetwork(
@@ -116,8 +116,8 @@ export function processNetwork(
 }
 
 /**
- * Maps the given CellXGene dataset to an integrated atlas.
- * @param cxgDataset - CellXGene dataset.
+ * Maps the given CELLxGENE dataset to an integrated atlas.
+ * @param cxgDataset - CELLxGENE dataset.
  * @returns integrated atlas.
  */
 export function mapIntegratedAtlas(cxgDataset: CXGDataset): IntegratedAtlas {
