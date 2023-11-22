@@ -19,7 +19,7 @@ import {
 } from "../apis/azul/hca-dcp/common/utils";
 import * as C from "../components";
 import { MetadataValueTuple } from "../components/common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
-import { CELLXGENE } from "../constants/analysisPortals";
+import { CZ_CELLXGENE } from "../constants/analysisPortals";
 import { NETWORKS_ROUTE } from "../constants/routes";
 import { formatCountSize } from "../utils/formatCountSize";
 import { DISEASE } from "./entities";
@@ -147,7 +147,7 @@ function getAtlasesExploreColumnDef<
   return {
     accessorKey: "explore",
     cell: ({ row }) =>
-      C.IconLink({ height: 20, url: row.original.cxgURL, ...CELLXGENE }),
+      C.IconLink({ height: 20, url: row.original.cxgURL, ...CZ_CELLXGENE }),
     header: "Explore",
   };
 }

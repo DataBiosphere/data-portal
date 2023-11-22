@@ -7,11 +7,17 @@ title: "Exploring Biological Network and Atlas Data"
 
 # Exploring Biological Network and Atlas Data
 
-The [HCA Biological Networks](https://www.humancellatlas.org/biological-networks/) are members of the Human Cell Atlas community who are creating comprehensive reference maps of human cells from specific tissues, organs, organ systems, or other biological areas as part of the greater effort of building a human cell atlas. In this guide, you will learn how to find, explore, and download data that is associated with each Biological Network and Atlas from the HCA Data Explorer. 
+The [HCA Biological Networks](https://www.humancellatlas.org/biological-networks/) are members of the Human Cell Atlas
+community who are creating comprehensive reference maps of human cells from specific tissues, organs, organ systems, or
+other biological areas as part of the greater effort of building a human cell atlas. In this guide, you will learn how
+to find, explore, and download data that is associated with each Biological Network and Atlas from the HCA Data
+Explorer.
 
 ## Finding and Exploring Biological Network Data
 
-The HCA Data Portal [HCA BioNetworks page](https://data.humancellatlas.org/hca-bio-networks) lists all of the HCA Biological Networks along with the number of atlases that are associated with each. Some Biological Networks may have multiple atlases that are different versions of a single atlas or atlases dedicated to different tissues of interest.
+The HCA Data Portal [HCA BioNetworks page](https://data.humancellatlas.org/hca-bio-networks) lists all of the HCA
+Biological Networks along with the number of atlases that are associated with each. Some Biological Networks may have
+multiple atlases that are different versions of a single atlas or atlases dedicated to different tissues of interest.
 
 Selecting a Biological Network takes you to its overview page.
 
@@ -21,9 +27,12 @@ On the Biological Network Overview page, you will find:
 
 - A description of the Biological Network
 - Contact information for the coordinators of the Biological Network
-- Information about the atlases associated with the Biological Network, including the name, tissues, and diseases that are included, and the estimated cell count
+- Information about the atlases associated with the Biological Network, including the name, tissues, and diseases that
+  are included, and the estimated cell count
 
-If the atlases for a Biological Network are still in development, the Biological Network Overview page will have a **Datasets** tab where you can browse HCA projects that contain data from tissues of interest for that Biological Network.
+If the atlases for a Biological Network are still in development, the Biological Network Overview page will have a *
+*Datasets** tab where you can browse HCA projects that contain data from tissues of interest for that Biological
+Network.
 
 ![HCA Adipose Datasets](../_images/hca-adipose-datasets.png "HCA Adipose Datasets")
 
@@ -37,7 +46,8 @@ The atlas Overview page contains:
 - The Biological Network, publication, and code associated with the atlas
 - Contact information for the Integration Lead of the atlas
 - Contact information for the Biological Network Coordinators
-- A list of component atlases including the name, tissues, diseases, estimated cell count, and options to explore the data using CellxGene or by downloading the data
+- A list of component atlases including the name, tissues, diseases, estimated cell count, and options to explore the
+  data using CZ CELLxGENE or by downloading the data
 
 To see all projects in an atlas, select the **Source Datasets** tab on the atlas’s Overview page.
 
@@ -45,4 +55,6 @@ To see all projects in an atlas, select the **Source Datasets** tab on the atlas
 
 ## Downloading Project Metadata and Matrices
 
-By selecting a project title on the list of datasets associated with a Biological Network or atlas, you can find project information and links to download project metadata and matrices. See [Exploring Projects](https://data.humancellatlas.org/guides#exploring-projects) to learn more.
+By selecting a project title on the list of datasets associated with a Biological Network or atlas, you can find project
+information and links to download project metadata and matrices.
+See [Exploring Projects](https://data.humancellatlas.org/guides#exploring-projects) to learn more.
