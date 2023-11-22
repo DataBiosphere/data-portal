@@ -1,3 +1,4 @@
+import { EllipsisContent } from "@clevercanary/data-explorer-ui/lib/components/common/EllipsisContent/ellipsisContent";
 import {
   FluidPaper,
   GridPaper,
@@ -18,7 +19,6 @@ import {
   getAtlasesTableColumns,
   rollUpAtlases,
 } from "../../../../../../../viewModelBuilders/viewModelBuilders";
-import { EllipsisContent } from "../../../../../../common/EllipsisContent/ellipsisContent";
 import {
   Table,
   TableToolbar,
