@@ -28,6 +28,7 @@ export const getStaticProps: GetStaticProps<NetworkParam> = async (
     const result = await fetchEntitiesFromQuery(
       `${url}/projects`,
       filterSpecimenOrgan(network.datasetQueryOrgans),
+      undefined,
       undefined
     );
     projectsResponses.push(...result.hits);

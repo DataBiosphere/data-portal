@@ -4,7 +4,7 @@ import { SiteConfig } from "@clevercanary/data-explorer-ui/lib/config/entities";
 import logoHca from "images/logoHca.png";
 import logoHumanCellAtlas from "images/logoHumanCellAtlas.png";
 import * as C from "../../../components/index";
-import { socials } from "./constants";
+import { socialMedia } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
 
 const APP_TITLE = "HCA Data Portal";
@@ -33,15 +33,13 @@ const config: SiteConfig = {
   explorerTitle: "",
   layout: {
     footer: {
-      logos: [
-        {
-          alt: APP_TITLE,
-          height: 38,
-          link: "https://www.humancellatlas.org/",
-          src: logoHumanCellAtlas,
-          target: ANCHOR_TARGET.BLANK,
-        },
-      ],
+      Branding: C.Logo({
+        alt: APP_TITLE,
+        height: 38,
+        link: "https://www.humancellatlas.org/",
+        src: logoHumanCellAtlas,
+        target: ANCHOR_TARGET.BLANK,
+      }),
       navLinks: [
         {
           label: "About",
@@ -60,7 +58,7 @@ const config: SiteConfig = {
           url: `${PORTAL_URL}/contact`,
         },
       ],
-      socials,
+      socials: socialMedia.socials,
     },
     header: {
       Logo: C.Logo({
@@ -104,7 +102,7 @@ const config: SiteConfig = {
       ],
       searchEnabled: true,
       searchURL: `${PORTAL_URL}/search`,
-      socials,
+      socialMedia: socialMedia,
     },
   },
   redirectRootToPath: "/",

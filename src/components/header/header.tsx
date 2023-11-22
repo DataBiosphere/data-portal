@@ -31,7 +31,7 @@ export default function Header({ header, searchPath }: Props): JSX.Element {
     navLinks,
     searchEnabled,
     slogan,
-    socials,
+    socialMedia,
   } = header;
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState<boolean>(false);
@@ -114,7 +114,7 @@ export default function Header({ header, searchPath }: Props): JSX.Element {
           {/* Socials */}
           <Socials
             buttonSize={desktop ? "small" : "xlarge"}
-            socials={socials}
+            socials={socialMedia.socials}
             sx={{
               gap: desktop ? 2 : 4,
               px: desktop ? undefined : 4,

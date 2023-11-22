@@ -41,6 +41,10 @@ const nextConfig = {
       process.cwd(),
       "node_modules/react-dropzone"
     );
+    config.resolve.alias["uuid"] = path.resolve(
+      process.cwd(),
+      "node_modules/uuid"
+    );
     config.resolve.alias["validate.js"] = path.resolve(
       process.cwd(),
       "node_modules/validate.js"

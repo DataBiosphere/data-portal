@@ -1,4 +1,5 @@
 import { Social } from "../components/socials/socials";
+import { ReactNode } from "react";
 
 /**
  * Model of header to be used as props for the Header component.
@@ -9,7 +10,7 @@ export interface Header {
   navLinks: NavLinkItem[];
   searchEnabled: boolean;
   slogan?: string;
-  socials: Social[];
+  socialMedia: SocialMedia;
 }
 
 /**
@@ -30,4 +31,9 @@ export interface NavLinkItem {
   label: string;
   target?: string;
   url: string;
+}
+
+export interface SocialMedia {
+  label: ReactNode;
+  socials: Social[];
 }
