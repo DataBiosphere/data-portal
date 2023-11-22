@@ -1,3 +1,4 @@
+import { EllipsisContent } from "@clevercanary/data-explorer-ui/lib/components/common/EllipsisContent/ellipsisContent";
 import {
   FluidPaper,
   GridPaper,
@@ -16,7 +17,6 @@ import { Typography } from "@mui/material";
 import { useAtlas, useAtlasContent } from "contexts/atlasContext";
 import React from "react";
 import { getIntegratedAtlasesTableColumns } from "../../../../../../../../viewModelBuilders/viewModelBuilders";
-import { EllipsisContent } from "../../../../../../../common/EllipsisContent/ellipsisContent";
 import {
   Table,
   TableToolbar,
