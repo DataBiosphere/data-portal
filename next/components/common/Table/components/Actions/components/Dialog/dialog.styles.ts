@@ -17,7 +17,8 @@ export const DialogTitle = styled(DXDialogTitle)`
 `;
 
 export const DialogContent = styled(MDialogContent)`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 `;
 

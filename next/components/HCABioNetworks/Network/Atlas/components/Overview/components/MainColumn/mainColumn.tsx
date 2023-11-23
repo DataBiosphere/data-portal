@@ -47,7 +47,7 @@ export const MainColumn = (): JSX.Element => {
           {integratedAtlases.length > 0 ? (
             <Table
               columns={getIntegratedAtlasesTableColumns()}
-              gridTemplateColumns="minmax(248px, 1fr) minmax(112px, 0.6fr) minmax(120px, 0.6fr) max-content auto"
+              gridTemplateColumns="minmax(220px, 1fr) minmax(112px, 0.6fr) minmax(120px, 0.6fr) max-content max-content auto"
               items={integratedAtlases}
             />
           ) : (
