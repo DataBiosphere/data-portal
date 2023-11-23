@@ -1,3 +1,4 @@
+import { HEADER_HEIGHT } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/common/constants";
 import {
   mediaTabletDown,
   mediaTabletUp,
@@ -44,6 +45,8 @@ export const Tabs = styled(MTabs)`
     max-width: 242px;
     order: unset;
     padding: 0;
+    position: sticky;
+    top: calc(${HEADER_HEIGHT}px + 32px);
 
     .MuiTabs-indicator {
       display: block;
