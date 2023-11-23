@@ -3,7 +3,10 @@ export const NAVIGATIONS = [
     path: "https://dev.singlecell.gi.ucsc.edu/explore/projects",
     name: "Datasets",
   },
-  { path: "hca-bio-networks", name: "HCA BioNetworks" },
+  {
+    path: "https://dev.singlecell.gi.ucsc.edu/hca-bio-networks",
+    name: "HCA BioNetworks",
+  },
   { path: "guides", name: "Guides" },
   { path: "metadata", name: "Metadata" },
   { path: "contribute", name: "Contribute" },
