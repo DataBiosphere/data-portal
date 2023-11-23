@@ -1,4 +1,3 @@
-import { EllipsisContent } from "@clevercanary/data-explorer-ui/lib/components/common/EllipsisContent/ellipsisContent";
 import {
   FluidPaper,
   GridPaper,
@@ -22,8 +21,6 @@ import {
   TableToolbar,
 } from "../../../../../../../common/Table/table.styles";
 
-const MAX_LINE_COUNT = 4;
-
 export const MainColumn = (): JSX.Element => {
   const { Description } = useAtlasContent();
   const { atlas } = useAtlas();
@@ -35,9 +32,7 @@ export const MainColumn = (): JSX.Element => {
         <Section>
           <SectionContent>
             <SectionTitle title="Atlas Description" />
-            <EllipsisContent maxLineCount={MAX_LINE_COUNT}>
-              <Description />
-            </EllipsisContent>
+            <Description />
           </SectionContent>
         </Section>
       </FluidPaper>
