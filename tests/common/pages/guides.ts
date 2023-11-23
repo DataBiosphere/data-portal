@@ -2,7 +2,7 @@ export const PAGE_HEADING = "Exploring Projects";
 export const PAGE_NAVIGATIONS = [
   { name: "Exploring Projects", path: "/guides" },
 ];
-export const PAGE_NAVIGATION_COUNT = 5;
+export const PAGE_NAVIGATION_COUNT = 6;
 export const PAGE_OUTLINES = [
   {
     hash: "#finding-a-project-of-interest",

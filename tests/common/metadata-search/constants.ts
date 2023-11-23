@@ -4,7 +4,7 @@ export const PAGE_NAVIGATIONS = [
     path: "/metadata/dictionary/biomaterial/cell_morphology",
   },
 ];
-export const PAGE_NAVIGATION_COUNT = 30;
+export const PAGE_NAVIGATION_COUNT = 32;
 export const PAGE_OUTLINES = [
   { hash: "#ontology", name: "Cell cycle ontology ID" },
   { hash: "#ontology_label", name: "Cell cycle ontology label" },

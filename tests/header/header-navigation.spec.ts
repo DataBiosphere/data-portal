@@ -13,21 +13,33 @@ test.describe("header navigation", () => {
     await expect(buttonEls).toHaveCount(NAVIGATION_COUNT);
   });
 
-  test("`explore` button has label and route", async ({ page }) => {
+  test("`explore` button has label and route", async ({ page, context }) => {
     const navEl = page.getByTestId(TEST_ID_HEADER_NAVIGATION);
     const buttonEls = navEl.locator("button");
     const buttonEl = buttonEls.first(); // explore button
     await expect(buttonEl).toHaveText(NAVIGATIONS[0].name);
-    // await buttonEl.click();
-    // await page.waitForLoadState("networkidle");
-    // expect(page.url()).toBe(NAVIGATIONS[0].path);
+    const pagePromise = context.waitForEvent('page');
+    await buttonEl.click();
+    const newPage = await pagePromise;
+    await newPage.waitForLoadState("networkidle");
+    expect(newPage.url()).toBe(NAVIGATIONS[0].path);
+  });
+
+  test("`hca-bio-networks` button has label and route", async ({ page }) => {
+    const navEl = page.getByTestId(TEST_ID_HEADER_NAVIGATION);
+    const buttonEls = navEl.locator("button");
+    const buttonEl = buttonEls.nth(1); // hca-bio-networks button
+    await expect(buttonEl).toHaveText(NAVIGATIONS[1].name);
+    await buttonEl.click();
+    await page.waitForLoadState("networkidle");
+    expect(page.url()).toBe(NAVIGATIONS[1].path);
   });
 
   test("navigation buttons have label and route", async ({ baseURL, page }) => {
     const navEl = page.getByTestId(TEST_ID_HEADER_NAVIGATION);
     const buttonEls = navEl.locator("button");
     const count = await buttonEls.count();
-    for (let i = 1; i < count; ++i) {
+    for (let i = 2; i < count; ++i) {
       const buttonEl = buttonEls.nth(i); // button
       await expect(buttonEl).toHaveText(NAVIGATIONS[i].name);
       await buttonEl.click();
