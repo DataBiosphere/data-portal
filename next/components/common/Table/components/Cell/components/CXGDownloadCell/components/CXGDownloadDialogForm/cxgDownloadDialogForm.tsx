@@ -51,7 +51,9 @@ export const CxgDownloadDialogForm = ({
         />
         <DialogContentSection title="Download details">
           <CXGDownloadFileSize datasetAsset={datasetAsset} />
-          <CXGDownloadCaption />
+          <CXGDownloadCaption
+            isRDS={fileFormat === CXG_DATASET_FILE_TYPE.RDS}
+          />
         </DialogContentSection>
         {downloadURL && <Code code={downloadURL} />}
       </DialogContent>
