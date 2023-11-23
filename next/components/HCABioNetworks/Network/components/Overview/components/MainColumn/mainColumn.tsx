@@ -1,4 +1,3 @@
-import { EllipsisContent } from "@clevercanary/data-explorer-ui/lib/components/common/EllipsisContent/ellipsisContent";
 import {
   FluidPaper,
   GridPaper,
@@ -25,8 +24,6 @@ import {
 } from "../../../../../../common/Table/table.styles";
 import { NetworkAtlasesEmpty } from "./components/NetworkAtlasesEmpty/networkAtlasesEmpty";
 
-const MAX_LINE_COUNT = 4;
-
 export const MainColumn = (): JSX.Element => {
   const { network } = useNetwork();
   const { atlases, path: networkPath } = network;
@@ -38,9 +35,7 @@ export const MainColumn = (): JSX.Element => {
         <Section>
           <SectionContent>
             <SectionTitle title="Network Description" />
-            <EllipsisContent maxLineCount={MAX_LINE_COUNT}>
-              <Description />
-            </EllipsisContent>
+            <Description />
           </SectionContent>
         </Section>
       </FluidPaper>
