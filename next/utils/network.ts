@@ -7,10 +7,7 @@ import {
   IntegratedAtlas,
   Network,
 } from "../@types/network";
-import {
-  processEntityValue,
-  processNullElements,
-} from "../apis/azul/hca-dcp/common/utils";
+import { processNullElements } from "../apis/azul/hca-dcp/common/utils";
 import { config } from "../config/config";
 
 /**
@@ -25,10 +22,8 @@ function buildDatasetAssets(
     .filter(filterCXGDatasetAsset)
     .map((cxgDatasetAsset) => {
       return {
-        assetId: cxgDatasetAsset.id,
-        datasetId: cxgDatasetAsset.dataset_id,
-        downloadURL: getDownloadURL(cxgDatasetAsset),
-        fileName: cxgDatasetAsset.filename,
+        downloadURL: cxgDatasetAsset.url,
+        fileSize: cxgDatasetAsset.filesize,
         fileType: cxgDatasetAsset.filetype,
       };
     });
@@ -75,16 +70,6 @@ function filterCXGDatasetAsset(cxgDatasetAsset: CXGDatasetAsset): boolean {
 }
 
 /**
- * Returns the dataset URL for the given dataset asset.
- * @param cxgDatasetAsset - CELLxGENE dataset asset.
- * @returns dataset URL.
- */
-function getDownloadURL(cxgDatasetAsset: CXGDatasetAsset): string {
-  const { dataset_id, filetype } = cxgDatasetAsset;
-  return `https://datasets.cellxgene.cziscience.com/${dataset_id}.${filetype.toLowerCase()}`;
-}
-
-/**
  * Processes the given atlas with the given CELLxGENE dataset responses.
  * @param atlas - Atlas.
  * @param cxgDatasets - CELLxGENE dataset responses.
@@ -125,10 +110,10 @@ export function mapIntegratedAtlas(cxgDataset: CXGDataset): IntegratedAtlas {
     assay: processArrayValue(cxgDataset.assay, "label"),
     cellCount: cxgDataset.cell_count,
     cxgId: cxgDataset.collection_id,
-    cxgURL: processEntityValue(cxgDataset.dataset_deployments, "url"),
-    datasetAssets: buildDatasetAssets(cxgDataset.dataset_assets),
+    cxgURL: cxgDataset.explorer_url,
+    datasetAssets: buildDatasetAssets(cxgDataset.assets),
     disease: processArrayValue(cxgDataset.disease, "label"),
-    name: cxgDataset.name,
+    name: cxgDataset.title,
     organism: processArrayValue(cxgDataset.organism, "label"),
     tissue: processArrayValue(cxgDataset.tissue, "label"),
   };

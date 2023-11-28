@@ -64,25 +64,20 @@ export interface CXGAssay {
 
 export interface CXGDataset {
   assay: CXGAssay[];
+  assets: CXGDatasetAsset[];
   cell_count: number;
   collection_id: string;
-  dataset_assets: CXGDatasetAsset[];
-  dataset_deployments: CXGDatasetDeployment[];
+  dataset_id: string;
   disease: CXGDisease[];
-  id: string;
-  name: string;
+  explorer_url: string;
   organism: CXGOrganism[];
   tissue: CXGTissue[];
+  title: string;
 }
 
 export interface CXGDatasetAsset {
-  dataset_id: string; // Dataset ID.
-  filename: string;
+  filesize: number;
   filetype: CXG_DATASET_FILE_TYPE;
-  id: string; // Asset ID.
-}
-
-export interface CXGDatasetDeployment {
   url: string;
 }
 
@@ -107,10 +102,8 @@ export type IntegratedAtlasRow = AtlasRow &
   Pick<IntegratedAtlas, "cxgId" | "cxgURL" | "datasetAssets" | "name">;
 
 export interface DatasetAsset {
-  assetId: string;
-  datasetId: string;
   downloadURL: string;
-  fileName: string;
+  fileSize: number;
   fileType: CXG_DATASET_FILE_TYPE;
 }
 

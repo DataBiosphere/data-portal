@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps<NetworkParam> = async (
   }
 
   const cxgResponse = await fetch(
-    "https://api.cellxgene.cziscience.com/dp/v1/datasets/index"
+    "https://api.cellxgene.cziscience.com/curation/v1/datasets"
   );
   const cxgDatasets = await cxgResponse.json();
 
