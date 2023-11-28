@@ -6,22 +6,22 @@ export const SummaryCounts = (): JSX.Element => {
     <Metrics>
       <Metric>
         <Divider flexItem orientation="vertical" variant="middle" />
-        <Count>50.1M</Count>
+        <Count>52.5M</Count>
         <Label>Cells</Label>
       </Metric>
       <Metric>
         <Divider flexItem orientation="vertical" variant="middle" />
-        <Count>7.7k</Count>
+        <Count>7.9k</Count>
         <Label>Donors</Label>
       </Metric>
       <Metric>
         <Divider flexItem orientation="vertical" variant="middle" />
-        <Count>405</Count>
+        <Count>413</Count>
         <Label>Projects</Label>
       </Metric>
       <Metric>
         <Divider flexItem orientation="vertical" variant="middle" />
-        <Count>671</Count>
+        <Count>685</Count>
         <Label>Labs</Label>
       </Metric>
     </Metrics>
