@@ -62,10 +62,12 @@ export const getStaticProps: GetStaticProps<AtlasContext> = async (
   const cxgDatasets = [];
   if (atlas.cxgId) {
     const response = await fetch(
-      `https://api.cellxgene.cziscience.com/dp/v1/collections/${atlas.cxgId}`
+      `https://api.cellxgene.cziscience.com/curation/v1/collections/${atlas.cxgId}`
     );
     const cxgCollection = await response.json();
-    cxgDatasets.push(...cxgCollection.datasets);
+    cxgDatasets.push(
+      ...mapDatasets(cxgCollection.datasets, cxgCollection.collection_id)
+    );
     cxgDatasets.sort(sortCXGDatasets);
   }
 
@@ -77,6 +79,19 @@ export const getStaticProps: GetStaticProps<AtlasContext> = async (
     },
   };
 };
+
+/**
+ * Returns CELLxGENE datasets with the corresponding collection ID.
+ * @param cxgDatasets - CELLxGENE dataset responses.
+ * @param collection_id - Collection ID.
+ * @returns CELLxGENE datasets.
+ */
+function mapDatasets(
+  cxgDatasets: Omit<CXGDataset, "collection_id">[],
+  collection_id: string
+): CXGDataset[] {
+  return cxgDatasets.map((cxgDataset) => ({ ...cxgDataset, collection_id }));
+}
 
 /**
  * Sort datasets by cell count, descending.
