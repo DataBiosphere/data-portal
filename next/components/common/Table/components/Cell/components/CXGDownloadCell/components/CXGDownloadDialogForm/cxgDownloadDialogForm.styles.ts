@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 
 export const Code = styled(DXCode)`
   border: 1px solid ${({ theme }) => theme.palette.info.light};
+  flex: none;
   margin: -4px 0 0 0;
   max-height: 72px;
   overflow: hidden;
