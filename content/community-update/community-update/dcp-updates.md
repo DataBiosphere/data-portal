@@ -6,6 +6,31 @@ title: HCA Data Portal Updates
 
 # HCA Data Portal Platform Updates
 
+#### December 4, 2023
+
+### Release Highlights
+
+* A [redesigned HCA Data Portal](https://data.humancellatlas.org/) is live, featuring the first atlases from the Lung and Nervous System Biological Networks. The new portal contains a page for each HCA Biological Network, as well as a new guide, [Exploring Biological Network and Atlas Data](https://data.humancellatlas.org/guides/accessing-atlases).
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (8)
+
+1. [A spatially resolved single-cell genomic atlas of the adult human breast](https://data.humancellatlas.org/explore/projects/1ffa2223-28a6-4133-a5a4-badd00faf4bc)
+2. [An Optimized Tissue Dissociation Protocol for Single-Cell RNA Sequencing Analysis of Fresh and Cultured Human Skin Biopsies](https://data.humancellatlas.org/explore/projects/849ed38c-5917-43c4-a8f9-0782241cf10c)
+3. [Classification of human chronic inflammatory skin disease based on single-cell immune profiling](https://data.humancellatlas.org/explore/projects/5bd01deb-01ee-4611-8efd-cf0ec5f56ac4)
+4. [Crosstalk of astrocyte, microglia, and neuronal subtypes correlates to Alzheimer’s disease pathology](https://data.humancellatlas.org/explore/projects/c7a7fde7-aa8c-4ef0-9424-612b7cd2cdb4)
+5. [Neuronal defects in a human cellular model of 22q11.2 deletion syndrome](https://data.humancellatlas.org/explore/projects/645b20c9-5ed0-4500-86b5-7aef770d010a)
+6. [Single cell transcriptional zonation of human psoriasis skin identifies an alternative immunoregulatory axis conducted by skin resident cells](https://data.humancellatlas.org/explore/projects/91674dcf-8641-40e6-978d-c1706feffba8)
+7. [Transcriptomic analysis of the ocular posterior segment completes a cell atlas of the human eye](https://data.humancellatlas.org/explore/projects/1c5eaabf-075b-4b7a-a9e6-07792c2034b3)
+8. [αβγδ T cells play a vital role in fetal human skin development and immunity](https://data.humancellatlas.org/explore/projects/cc35f94e-e93b-4dbd-a08c-702978d9046f)
+
+### Updated Raw Data and Metadata (4)
+
+1. [Cell atlas of the human ocular anterior segment: Tissue-specific and shared cell types](https://data.humancellatlas.org/explore/projects/16e99159-78bc-44aa-b479-55a5e903bf50)
+2. [Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19](https://data.humancellatlas.org/explore/projects/95f07e6e-6a73-4e1b-a880-c83996b3aa5c)
+3. [Harnessing Expressed Single Nucleotide Variation and Single Cell RNA Sequencing To Define Immune Cell Chimerism in the Rejecting Kidney Transplant](https://data.humancellatlas.org/explore/projects/4ef86852-aca0-4a91-8522-9968e0e54dbe)
+4. [Single-cell RNA sequencing reveals the effects of chemotherapy on human pancreatic adenocarcinoma and its tumor microenvironment](https://data.humancellatlas.org/explore/projects/7f9766ff-bb12-4279-b340-78d140bdd7ba)
+
+
 #### October 31, 2023
 
 ### Release Highlights
