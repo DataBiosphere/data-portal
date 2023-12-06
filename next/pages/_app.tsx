@@ -1,7 +1,8 @@
 import "@clevercanary/data-explorer-ui";
 import { AppLayout } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
 import { Header } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/header";
-import { Main as DXMain } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Main/main.styles";
+import { Main as DXMain } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Main/main";
+import { LayoutStateProvider } from "@clevercanary/data-explorer-ui/lib/providers/layoutState";
 import { createAppTheme } from "@clevercanary/data-explorer-ui/lib/theme/theme";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
@@ -17,16 +18,16 @@ import { config } from "../config/config";
 import { ConfigProvider } from "../providers/config";
 import { mergeAppTheme } from "../theme/theme";
 
-export type NextPageWithMain = NextPage & {
+export type NextPageWithComponent = NextPage & {
   Footer?: typeof AppFooter;
   Main?: typeof DXMain;
 };
 
-export type AppPropsWithMain = AppProps & {
-  Component: NextPageWithMain;
+export type AppPropsWithComponent = AppProps & {
+  Component: NextPageWithComponent;
 };
 
-function MyApp({ Component, pageProps }: AppPropsWithMain): JSX.Element {
+function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const Footer = Component.Footer || AppFooter;
   const Main = Component.Main || DXMain;
   const appConfig = config();
@@ -48,14 +49,16 @@ function MyApp({ Component, pageProps }: AppPropsWithMain): JSX.Element {
         <ConfigProvider config={appConfig}>
           <Head />
           <CssBaseline />
-          <AppLayout>
-            <Header {...layout.header} />
-            <Main>
-              <Component {...pageProps} />
-              <CookieBanner />
-            </Main>
-            <Footer {...layout.footer} />
-          </AppLayout>
+          <LayoutStateProvider>
+            <AppLayout>
+              <Header {...layout.header} />
+              <Main>
+                <Component {...pageProps} />
+                <CookieBanner />
+              </Main>
+              <Footer {...layout.footer} />
+            </AppLayout>
+          </LayoutStateProvider>
         </ConfigProvider>
       </ThemeProvider>
     </EmotionThemeProvider>
