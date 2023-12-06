@@ -1,3 +1,4 @@
+import { useLayoutState } from "@clevercanary/data-explorer-ui/lib/hooks/useLayoutState";
 import { useRouter } from "next/router";
 import React, { SyntheticEvent, useState } from "react";
 import { Tab, Tabs, TabTitle } from "./outline.styles";
@@ -13,6 +14,9 @@ export interface OutlineProps {
 export const Outline = ({
   categoryIdByCategory,
 }: OutlineProps): JSX.Element => {
+  const {
+    layoutState: { headerHeight },
+  } = useLayoutState();
   const { asPath } = useRouter();
   const [activeCategory, setActiveCategory] = useState<string>(
     initActiveCategory(asPath)
@@ -28,6 +32,7 @@ export const Outline = ({
 
   return (
     <Tabs
+      headerHeight={headerHeight}
       indicatorColor={
         activeCategory === TAB_VALUE.DEFAULT ? "transparent" : "primary"
       }
