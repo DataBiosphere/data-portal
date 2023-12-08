@@ -22,6 +22,7 @@ import {
   Table,
   TableToolbar,
 } from "../../../../../../common/Table/table.styles";
+import { SectionText } from "../../../../../components/Section/section.styles";
 import { NetworkAtlasesEmpty } from "./components/NetworkAtlasesEmpty/networkAtlasesEmpty";
 
 export const MainColumn = (): JSX.Element => {
@@ -35,7 +36,9 @@ export const MainColumn = (): JSX.Element => {
         <Section>
           <SectionContent>
             <SectionTitle title="Network Description" />
-            <Description />
+            <SectionText>
+              <Description />
+            </SectionText>
           </SectionContent>
         </Section>
       </FluidPaper>
