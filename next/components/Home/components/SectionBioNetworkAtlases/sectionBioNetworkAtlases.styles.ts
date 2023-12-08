@@ -6,6 +6,7 @@ import {
   smokeMain,
   white,
 } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
+import { primaryMain } from "@clevercanary/data-explorer-ui/lib/theme/common/palette";
 import styled from "@emotion/styled";
 
 export const SectionContent = styled.div`
@@ -64,7 +65,7 @@ export const BioNetworkAtlas = styled.span`
 
 export const Badge = styled.div`
   align-items: center;
-  background-color: ${({ theme }) => theme.palette.primary.main};
+  background-color: ${primaryMain};
   border-radius: 10px;
   color: ${white};
   display: flex;
@@ -74,5 +75,5 @@ export const Badge = styled.div`
   justify-content: center;
   line-height: 20px;
   min-width: 20px;
-  padding: 0 4px;
+  padding: 0 6px;
 `;
