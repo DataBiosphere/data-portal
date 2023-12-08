@@ -20,6 +20,7 @@ import {
   Table,
   TableToolbar,
 } from "../../../../../../../common/Table/table.styles";
+import { SectionText } from "../../../../../../components/Section/section.styles";
 
 export const MainColumn = (): JSX.Element => {
   const { Description } = useAtlasContent();
@@ -32,7 +33,9 @@ export const MainColumn = (): JSX.Element => {
         <Section>
           <SectionContent>
             <SectionTitle title="Atlas Description" />
-            <Description />
+            <SectionText>
+              <Description />
+            </SectionText>
           </SectionContent>
         </Section>
       </FluidPaper>
