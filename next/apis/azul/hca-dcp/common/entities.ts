@@ -7,6 +7,15 @@ export interface AccessionResponse {
 }
 
 /**
+ * Model of cell count summary from index/summary API endpoints.
+ */
+export interface CellCountSummary {
+  countOfDocsWithOrganType: number;
+  organType: string[];
+  totalCellCountByOrgan: number;
+}
+
+/**
  * Model of contributor value in the response from index/projects API endpoint.
  */
 export interface ContributorResponse {
@@ -16,6 +25,16 @@ export interface ContributorResponse {
   institution: string;
   laboratory?: string | null;
   projectRole?: string | null;
+}
+
+/**
+ * Model of file type summary from index/summary API endpoints.
+ */
+export interface FileTypeSummary {
+  count: number;
+  format: string;
+  matrixCellCount: number;
+  totalSize: number;
 }
 
 /**
@@ -48,6 +67,14 @@ export type ProjectResponseMatrices = { [key: string]: unknown };
  */
 export interface ProjectsEntityResponse {
   projects: ProjectResponse[];
+}
+
+/**
+ * Model of project summary in the response from /index/summary API endpoint.
+ */
+export interface ProjectSummary {
+  cellSuspensions: { totalCells: number };
+  projects: { estimatedCellCount: number };
 }
 
 /**
