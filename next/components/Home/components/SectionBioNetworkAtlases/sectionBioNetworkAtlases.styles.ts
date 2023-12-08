@@ -65,13 +65,14 @@ export const BioNetworkAtlas = styled.span`
 export const Badge = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.palette.primary.main};
-  border-radius: 50%;
+  border-radius: 10px;
   color: ${white};
   display: flex;
+  flex: none;
   font-size: 11px;
   font-weight: 700;
-  height: 20px;
   justify-content: center;
   line-height: 20px;
-  width: 20px;
+  min-width: 20px;
+  padding: 0 4px;
 `;
