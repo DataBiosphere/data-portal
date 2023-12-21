@@ -25,6 +25,10 @@ const nextConfig = {
       process.cwd(),
       "node_modules/@mui/material"
     );
+    config.resolve.alias["react-dropzone"] = path.resolve(
+      process.cwd(),
+      "node_modules/react-dropzone"
+    );
     config.resolve.alias["isomorphic-dompurify"] = path.resolve(
       process.cwd(),
       "node_modules/isomorphic-dompurify"

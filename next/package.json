@@ -16,7 +16,7 @@
     "complete-biccn-publications": "esrun ./scripts/complete-biccn-publications.ts"
   },
   "dependencies": {
-    "@clevercanary/data-explorer-ui": "62.0.0",
+    "@clevercanary/data-explorer-ui": "64.0.0",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@mdx-js/loader": "^2.3.0",
@@ -34,8 +34,10 @@
     "next-optimized-images": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-dropzone": "^14.2.3",
     "react-gtm-module": "^2.0.11",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "validate.js": "^0.13.1"
   },
   "devDependencies": {
     "@digitak/esrun": "^3.2.25",
