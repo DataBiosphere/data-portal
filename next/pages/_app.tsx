@@ -1,5 +1,6 @@
 import "@clevercanary/data-explorer-ui";
 import { AppLayout } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
+import { Floating } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Floating/floating";
 import { Header } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/header";
 import { Main as DXMain } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Main/main";
 import { LayoutStateProvider } from "@clevercanary/data-explorer-ui/lib/providers/layoutState";
@@ -12,7 +13,6 @@ import type { AppProps } from "next/app";
 import { useEffect } from "react";
 import TagManager from "react-gtm-module";
 import { Head } from "../components/common/Head/head";
-import { CookieBanner } from "../components/Home/components/Banner/components/CookieBanner/cookieBanner";
 import { AppFooter } from "../components/Layout/components/Footer/footer.styles";
 import { config } from "../config/config";
 import { ConfigProvider } from "../providers/config";
@@ -32,6 +32,7 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const Main = Component.Main || DXMain;
   const appConfig = config();
   const { analytics, layout, themeOptions } = appConfig;
+  const { floating, footer, header } = layout || {};
   const { gtmAuth, gtmId, gtmPreview } = analytics || {};
   const defaultTheme = createAppTheme(themeOptions);
   const appTheme = mergeAppTheme(defaultTheme);
@@ -51,12 +52,12 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
           <CssBaseline />
           <LayoutStateProvider>
             <AppLayout>
-              <Header {...layout.header} />
+              <Header {...header} />
               <Main>
                 <Component {...pageProps} />
-                <CookieBanner />
+                <Floating {...floating} />
               </Main>
-              <Footer {...layout.footer} />
+              <Footer {...footer} />
             </AppLayout>
           </LayoutStateProvider>
         </ConfigProvider>

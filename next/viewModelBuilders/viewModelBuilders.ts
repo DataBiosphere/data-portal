@@ -40,6 +40,28 @@ export function accumulateValues(
 }
 
 /**
+ * Build props for CookieBanner component.
+ * @returns model to be used as props for the CookieBanner component.
+ */
+export const buildCookieBanner = (): React.ComponentProps<
+  typeof C.CookieBanner
+> => {
+  return {
+    localStorageKey: "privacy-accepted",
+    message:
+      "This website uses cookies for security and analytics purposes. By using this site, you agree to these uses.",
+    secondaryAction: C.ButtonOutline({
+      children: "Learn More",
+      onClick: () =>
+        window.open(
+          "https://data.humancellatlas.org/privacy",
+          ANCHOR_TARGET.BLANK
+        ),
+    }),
+  };
+};
+
+/**
  * Calculate the estimated cell count from the given projects response.
  * Returns the estimated cell count, if any, otherwise the totalCell value from cellSuspensions.
  * @param projectsResponse - Response model return from projects API.

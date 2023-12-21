@@ -4,6 +4,7 @@ import { SiteConfig } from "@clevercanary/data-explorer-ui/lib/config/entities";
 import logoHca from "images/logoHca.png";
 import logoHumanCellAtlas from "images/logoHumanCellAtlas.png";
 import * as C from "../../../components/index";
+import { floating } from "./layout/floating";
 import { socialMedia } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
 
@@ -31,6 +32,7 @@ const config: SiteConfig = {
   entities: [],
   explorerTitle: "",
   layout: {
+    floating,
     footer: {
       Branding: C.Logo({
         alt: APP_TITLE,
