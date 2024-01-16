@@ -6,6 +6,64 @@ title: HCA Data Portal Updates
 
 # HCA Data Portal Platform Updates
 
+#### January 16, 2023
+
+### Release Highlights
+
+* New projects are available from the Heart, Lung, Pancreas, and Skin Biological Networks.
+
+* A new managed access
+  project, ["Single-cell analysis reveals innate lymphoid cell lineage infidelity in atopic dermatitis"](https://data.humancellatlas.org/explore/projects/415eb773-cadb-43d1-ab89-7d160d5cfc7d),
+  is available in the Data Portal.
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (15)
+
+1. [A Single-Cell Transcriptome Atlas of the Human Pancreas](https://data.humancellatlas.org/explore/projects/894ae6ac-5b48-41a8-a72f-315a9b60a62e)
+2. [Identification of neural oscillations and epileptiform changes in human brain organoids](https://data.humancellatlas.org/explore/projects/da77bd06-43ae-4012-a774-e4d62797df51)
+3. [Multi-scale spatial mapping of cell populations across anatomical sites in healthy human skin and basal cell carcinoma](https://data.humancellatlas.org/explore/projects/e49e556a-da5a-442a-b45c-8691b457623e)
+4. [Proliferating SPP1/MERTK-expressing macrophages in idiopathic pulmonary fibrosis](https://data.humancellatlas.org/explore/projects/6735ff73-1a04-422e-b500-730202e46f8a)
+5. [Single Cell Multiome Atlas of the Human Fetal Retina](https://data.humancellatlas.org/explore/projects/581de139-461f-4875-b408-56453a9082c7)
+6. [Single-cell RNA sequencing reveals markers of disease progression in primary cutaneous T-cell lymphoma](https://data.humancellatlas.org/explore/projects/6874b7eb-3445-47ec-8773-75141430e169)
+7. [Single-cell analysis reveals innate lymphoid cell lineage infidelity in atopic dermatitis](https://data.humancellatlas.org/explore/projects/415eb773-cadb-43d1-ab89-7d160d5cfc7d)
+8. [Single-cell landscape of bronchoalveolar immune cells in patients with COVID-19](https://data.humancellatlas.org/explore/projects/08fb10df-32e5-456c-9882-e33fcd49077a)
+9. [Single-cell transcriptomics combined with interstitial fluid proteomics defines cell type-specific immune regulation in atopic dermatitis](https://data.humancellatlas.org/explore/projects/1dd552a5-eb4f-4b92-8088-7224bcbd0629)
+10. [Single-cell transcriptomics provides insights into hypertrophic cardiomyopathy](https://data.humancellatlas.org/explore/projects/10a845f7-0361-46fa-92a3-2a36483136b1)
+11. [Single-cell transcriptomics reveals distinct effector profiles of infiltrating T cells in lupus skin and kidney](https://data.humancellatlas.org/explore/projects/cbd3d276-9f24-4af9-8381-b11f6cdbdc4b)
+12. [Single-nucleus profiling of human dilated and hypertrophic cardiomyopathy](https://data.humancellatlas.org/explore/projects/85c0d6fa-f117-4d76-b01a-5d5e8f5f9188)
+13. [Spatially resolved multiomics of human cardiac niches](https://data.humancellatlas.org/explore/projects/925f9a4c-cac0-444a-ad2c-612656ab3a85)
+14. [The serine proteases dipeptidyl-peptidase 4 and urokinase are key molecules in human and mouse scar formation](https://data.humancellatlas.org/explore/projects/222a92d5-277b-489c-aad8-a680d1fd2b12)
+15. [Transcriptional and Cellular Diversity of the Human Heart](https://data.humancellatlas.org/explore/projects/2184e63d-82d8-4ab2-839e-e93f8395f568)
+
+### Updated Raw Data and Metadata (26)
+
+1. [Ischaemic sensitivity of human tissue by single cell RNA seq](https://data.humancellatlas.org/explore/projects/c4077b3c-5c98-4d26-a614-246d12c2e5d7)
+2. [A Single-Cell Atlas of the Human Healthy Airways](https://data.humancellatlas.org/explore/projects/ef1e3497-515e-4bbe-8d4c-10161854b699)
+3. [A cellular census of human lungs identifies novel cell states in health and in asthma](https://data.humancellatlas.org/explore/projects/c0518445-3b3b-49c6-b8fc-c41daa4eacba)
+4. [A single-cell transcriptome atlas of the adult human retina](https://data.humancellatlas.org/explore/projects/8185730f-4113-40d3-9cc3-929271784c2b)
+5. [A spatially resolved atlas of the human lung characterizes a gland-associated immune niche](https://data.humancellatlas.org/explore/projects/957261f7-2bd6-4358-a6ed-24ee080d5cfc)
+6. [Airspace Macrophages and Monocytes Exist in Transcriptionally Distinct Subsets in Healthy Adults](https://data.humancellatlas.org/explore/projects/272b7602-66cd-4b02-a86b-2b7c9c51a9ea)
+7. [An Optimized Tissue Dissociation Protocol for Single-Cell RNA Sequencing Analysis of Fresh and Cultured Human Skin Biopsies](https://data.humancellatlas.org/explore/projects/849ed38c-5917-43c4-a8f9-0782241cf10c)
+8. [Cryopreservation and post-thaw characterization of dissociated human islet cells](https://data.humancellatlas.org/explore/projects/8559a8ed-5d8c-4fb6-bde8-ab639cebf03c)
+9. [Dissecting the cellular specificity of smoking effects and reconstructing lineages in the human airway epithelium](https://data.humancellatlas.org/explore/projects/34c9a62c-a610-4e31-b343-8fb7be676f8c)
+10. [Human prefrontal cortex gene regulatory dynamics from gestation to adulthood at single-cell resolution](https://data.humancellatlas.org/explore/projects/77dedd59-1376-4887-9bca-dc42b56d5b7a)
+11. [Identification of a unique subset of tissue-resident memory CD4+ T cells in Crohn’s disease](https://data.humancellatlas.org/explore/projects/c844538b-8854-4a95-bd01-aacbaf86d97f)
+12. [Integrative analysis of cell state changes in lung fibrosis with peripheral protein biomarkers](https://data.humancellatlas.org/explore/projects/2f676143-80c2-4bc6-b7b4-2613fe0fadf0)
+13. [Pro-inflammatory T helper 17 directly harms oligodendrocytes in neuroinflammation](https://data.humancellatlas.org/explore/projects/ede2e0b4-6652-464f-abbc-0b2d964a25a0)
+14. [SARS‐CoV‐2 receptor ACE2 and TMPRSS2 are primarily expressed in bronchial transient secretory cells](https://data.humancellatlas.org/explore/projects/58028aa8-0ed2-49ca-b60f-15e2ed5989d5)
+15. [Single Cell RNA-seq reveals ectopic and aberrant lung resident cell populations in Idiopathic Pulmonary Fibrosis](https://data.humancellatlas.org/explore/projects/c16a754f-5da3-46ed-8c1e-6426af2ef625)
+16. [Single-Cell Transcriptome and Downstream Analyses of Human Stomach Reveal the Cell Diversity and Developmental Features of Gastric and Metaplastic Mucosae](https://data.humancellatlas.org/explore/projects/cfece4d2-f18d-44ad-a46a-42bbcb5cb3b7)
+17. [Single-Cell Transcriptomic Analysis Identifies a Unique Pulmonary Lymphangioleiomyomatosis Cell](https://data.humancellatlas.org/explore/projects/65cbfea5-5c54-4255-a1d0-14549a86a5c1)
+18. [Single-Cell Transcriptomic Analysis of Human Lung Provides Insights into the Pathobiology of Pulmonary Fibrosis](https://data.humancellatlas.org/explore/projects/daf9d982-7ce6-43f6-ab51-272577290606)
+19. [Single-cell RNA-sequencing reveals profibrotic roles of distinct epithelial and mesenchymal lineages in pulmonary fibrosis](https://data.humancellatlas.org/explore/projects/c1a9a93d-d9de-4e65-9619-a9cec1052eaa)
+20. [Single-cell Transcriptome Atlas of the Human Corpus Cavernosum](https://data.humancellatlas.org/explore/projects/5b910a43-7fb5-4ea7-b9d6-43dbd1bf2776)
+21. [Single-cell and single-nucleus RNA-seq uncovers shared and distinct axes of variation in dorsal LGN neurons in mice, non-human primates, and humans](https://data.humancellatlas.org/explore/projects/bfaedc29-fe84-4e72-a461-75dc8aabbd1b)
+22. [Single-cell transcriptomics reveals unique features of human pancreatic islet cell subtypes](https://data.humancellatlas.org/explore/projects/78b2406d-bff2-46fc-8b61-20690e602227)
+23. [Spatio-temporal immune zonation of the human kidney](https://data.humancellatlas.org/explore/projects/abe1a013-af7a-45ed-8c26-f3793c24a1f4)
+24. [The Immune Atlas of Human Deciduas With Unexplained Recurrent Pregnancy Loss](https://data.humancellatlas.org/explore/projects/3cfcdff5-dee1-4a7b-a591-c09c6e850b11)
+25. [The local and systemic response to SARS-CoV-2 infection in children and adults](https://data.humancellatlas.org/explore/projects/1538d572-bcb7-426b-8d2c-84f3a7f87bb0)
+26. [Transcriptional analysis of cystic fibrosis airways at single-cell resolution reveals altered epithelial cell states and composition](https://data.humancellatlas.org/explore/projects/e526d91d-cf3a-44cb-80c5-fd7676b55a1d)
+
+
 #### December 4, 2023
 
 ### Release Highlights
