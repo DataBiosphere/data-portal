@@ -2,6 +2,7 @@ import { buildDataset } from "../utils/datasets";
 
 const HOMO_SAPIENS = "Homo sapiens";
 const NORMAL = "normal";
+const TODO = "TODO";
 
 export const DATASETS = {
   adipose: [],
@@ -12,17 +13,17 @@ export const DATASETS = {
     buildDataset(
       [NORMAL],
       1699879,
-      ["TODO"],
+      [TODO],
       ["10x 3' v3"],
-      ["TODO"],
+      [TODO],
       "Rui Chen (Baylor College of Medicine)"
     ),
     buildDataset(
       [NORMAL],
       6061,
-      ["TODO"],
+      [TODO],
       ["10x 3'"],
-      ["TODO"],
+      [TODO],
       "Molecular characterization of foveal versus peripheral human retina by single-cell RNA sequencing",
       {
         doi: "10.1016/j.exer.2019.05.001",
@@ -36,9 +37,9 @@ export const DATASETS = {
     buildDataset(
       [NORMAL],
       354776,
-      ["TODO"],
+      [TODO],
       ["10x ATAC"],
-      ["TODO"],
+      [TODO],
       "Rui Chen (Baylor College of Medicine)"
     ),
   ],
@@ -53,9 +54,9 @@ export const DATASETS = {
     buildDataset(
       [NORMAL],
       45557,
-      ["TODO"],
+      [TODO],
       ["10X 5' v1", "v2"],
-      ["TODO"],
+      [TODO],
       "Expansion of profibrotic monocyte-derived alveolar macrophages in patients with persistent respiratory symptoms and radiographic abnormalities after COVID-19",
       {
         doi: "10.1101/2023.07.30.551145",
@@ -70,36 +71,36 @@ export const DATASETS = {
     buildDataset(
       ["IPF"],
       100211,
-      ["TODO"],
+      [TODO],
       ["10X 3' v3"],
-      ["TODO"],
+      [TODO],
       "Barbry_unpubl"
     ),
     // Study name:Duong_lungMAP_unpubl.
     buildDataset(
       [NORMAL],
       53904,
-      ["TODO"],
+      [TODO],
       ["10X 3' v3"],
-      ["TODO"],
+      [TODO],
       "Duong_lungMAP_unpubl"
     ),
     // Study name: Schiller_2021.
     buildDataset(
       ["Cancer (non-cancerous tissue used for samples)"],
       35984,
-      ["TODO"],
+      [TODO],
       ["10X 3' v3"],
-      ["TODO"],
+      [TODO],
       "Schiller_2021"
     ),
     // Study name: Schultze_unpubl.
     buildDataset(
       ["Cancer (non-cancerous tissue used for samples)"],
       8016,
-      ["TODO"],
+      [TODO],
       ["Seq-Well"],
-      ["TODO"],
+      [TODO],
       "Schultze_unpubl"
     ),
   ],
