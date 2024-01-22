@@ -1,6 +1,7 @@
 import { buildDataset } from "../utils/datasets";
 
 const HOMO_SAPIENS = "Homo sapiens";
+const NORMAL = "normal";
 
 export const DATASETS = {
   adipose: [],
@@ -9,7 +10,7 @@ export const DATASETS = {
   eye: [
     // Rui Chen (Baylor College of Medicine).
     buildDataset(
-      ["normal"],
+      [NORMAL],
       1699879,
       ["TODO"],
       ["10x 3' v3"],
@@ -17,7 +18,7 @@ export const DATASETS = {
       "Rui Chen (Baylor College of Medicine)"
     ),
     buildDataset(
-      ["normal"],
+      [NORMAL],
       6061,
       ["TODO"],
       ["10x 3'"],
@@ -33,7 +34,7 @@ export const DATASETS = {
     ),
     // Rui Chen (Baylor College of Medicine).
     buildDataset(
-      ["normal"],
+      [NORMAL],
       354776,
       ["TODO"],
       ["10x ATAC"],
@@ -50,7 +51,7 @@ export const DATASETS = {
   lung: [
     // Study name: Jain_Misharin_2021.
     buildDataset(
-      ["normal"],
+      [NORMAL],
       45557,
       ["TODO"],
       ["10X 5' v1", "v2"],
@@ -76,7 +77,7 @@ export const DATASETS = {
     ),
     // Study name:Duong_lungMAP_unpubl.
     buildDataset(
-      ["normal"],
+      [NORMAL],
       53904,
       ["TODO"],
       ["10X 3' v3"],
