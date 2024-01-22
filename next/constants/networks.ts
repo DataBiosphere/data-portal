@@ -9,6 +9,7 @@ import * as adiposeContent from "../content/adipose";
 import * as breastContent from "../content/breast";
 import * as developmentContent from "../content/development";
 import * as eyeContent from "../content/eye";
+import * as altasRetina from "../content/eye/atlases/retina";
 import * as geneticDiversityContent from "../content/genetic-diversity";
 import * as gutContent from "../content/gut";
 import * as heartContent from "../content/heart";
@@ -94,7 +95,37 @@ export const NETWORKS: Network[] = [
     path: "development",
   },
   {
-    atlases: [],
+    atlases: [
+      {
+        contact: { email: "eye@humancellatlas.org" },
+        coordinators: [{ fullName: "Rui Chen" }, { fullName: "Ayellet Segrè" }],
+        cxgId: "4c6eaf5c-6d57-4c76-b1e9-60df8c655f1e",
+        datasets: [
+          "e090445c-6971-4212-bc5f-ae4ec3914102",
+          "1dddae6e-3753-48af-b20e-fa22abad125d",
+          "30dc3964-1135-4b56-b393-ce2dcbc6e379",
+          "8185730f-4113-40d3-9cc3-929271784c2b",
+          "07d5987e-7f9e-4f34-b0fb-a185a35504f5",
+          // "4bec484d-ca7a-47b4-8d48-8830e06ad6db", // TODO(cc) sourced from Bionetworks coverage
+          // "4f4f0193-ede8-4a82-8cb0-7a0a22f06e63", // TODO(cc) sourced from Bionetworks coverage
+          // "c3354786-c17c-4e53-b4d7-c7afbed5b208", // TODO(cc) sourced from Bionetworks coverage
+        ],
+        externalDatasets: DATASETS.eye,
+        integratedAtlases: [],
+        key: "retina-v1-0",
+        name: "Single-cell atlas of the human retina v1.0",
+        path: "retina-v1-0",
+        publications: [
+          {
+            doi: "https://doi.org/10.1101/2023.11.07.566105",
+            label: "Li et al. (2023) bioRxiv",
+          },
+        ],
+        summaryCellCount: 1800000,
+        updatedAt: "",
+        version: "v1",
+      },
+    ],
     contact: { email: "eye@humancellatlas.org" },
     coordinators: [{ fullName: "Rui Chen" }, { fullName: "Ayellet Segrè" }],
     datasetQueryOrgans: ["eye", "left eye", "retina", "right eye"],
@@ -587,4 +618,5 @@ export const ATLAS_CONTENT: { [key in AtlasKey]: AtlasModule } = {
   "brain-v1-0": altasBrain,
   "cortex-v1-0": atlasCortex,
   "lung-v1-0": atlasLung,
+  "retina-v1-0": altasRetina,
 };
