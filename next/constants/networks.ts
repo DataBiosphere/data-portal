@@ -248,7 +248,7 @@ export const NETWORKS: Network[] = [
         cxgId: "6f6d381a-7701-4781-935c-db10d30de293",
         datasets: [
           "01aacb68-4076-4fd9-9eb9-aba0f48c1b5a",
-          // "08fb10df-32e5-456c-9882-e33fcd49077a", // unavailable.
+          "08fb10df-32e5-456c-9882-e33fcd49077a",
           // "111d272b-c25a-49ac-9b25-e062b70d66e0", // not currently listed as lung atlas dataset.
           "1538d572-bcb7-426b-8d2c-84f3a7f87bb0",
           "1c4cbdd4-33e3-4ded-ab43-5958de817123",
@@ -285,6 +285,7 @@ export const NETWORKS: Network[] = [
           "e5fe8274-3769-4d7d-aa35-6d33c226ab43",
           "ef1e3497-515e-4bbe-8d4c-10161854b699",
           // "fae72d89-4ac4-4aab-9b93-574775e168d4", // not currently listed as lung atlas dataset.
+          "6735ff73-1a04-422e-b500-730202e46f8a",
         ],
         externalDatasets: DATASETS.lung,
         integratedAtlases: [],
