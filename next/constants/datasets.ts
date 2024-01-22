@@ -1,10 +1,46 @@
 import { buildDataset } from "../utils/datasets";
 
+const HOMO_SAPIENS = "Homo sapiens";
+
 export const DATASETS = {
   adipose: [],
   breast: [],
   development: [],
-  eye: [],
+  eye: [
+    // Rui Chen (Baylor College of Medicine).
+    buildDataset(
+      ["normal"],
+      1699879,
+      [HOMO_SAPIENS],
+      ["10x 3' v3"],
+      ["TODO"],
+      "Rui Chen (Baylor College of Medicine)"
+    ),
+    buildDataset(
+      ["normal"],
+      6061,
+      [HOMO_SAPIENS],
+      ["10x 3'"],
+      ["TODO"],
+      "Molecular characterization of foveal versus peripheral human retina by single-cell RNA sequencing",
+      {
+        doi: "10.1016/j.exer.2019.05.001",
+        officialHcaPublication: null,
+        publicationTitle:
+          "Molecular characterization of foveal versus peripheral human retina by single-cell RNA sequencing",
+        publicationUrl: "https://pubmed.ncbi.nlm.nih.gov/31075224/",
+      }
+    ),
+    // Rui Chen (Baylor College of Medicine).
+    buildDataset(
+      ["normal"],
+      354776,
+      [HOMO_SAPIENS],
+      ["10x ATAC"],
+      ["TODO"],
+      "Rui Chen (Baylor College of Medicine)"
+    ),
+  ],
   "genetic-diversity": [],
   gut: [],
   heart: [],
@@ -14,7 +50,7 @@ export const DATASETS = {
   lung: [
     // Study name: Jain_Misharin_2021.
     buildDataset(
-      ["Normal"],
+      ["normal"],
       45557,
       ["TODO"],
       ["10X 5' v1", "v2"],
@@ -40,7 +76,7 @@ export const DATASETS = {
     ),
     // Study name:Duong_lungMAP_unpubl.
     buildDataset(
-      ["Normal"],
+      ["normal"],
       53904,
       ["TODO"],
       ["10X 3' v3"],
