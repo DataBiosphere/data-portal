@@ -11,7 +11,7 @@ export const DATASETS = {
     buildDataset(
       ["normal"],
       1699879,
-      [HOMO_SAPIENS],
+      ["TODO"],
       ["10x 3' v3"],
       ["TODO"],
       "Rui Chen (Baylor College of Medicine)"
@@ -19,7 +19,7 @@ export const DATASETS = {
     buildDataset(
       ["normal"],
       6061,
-      [HOMO_SAPIENS],
+      ["TODO"],
       ["10x 3'"],
       ["TODO"],
       "Molecular characterization of foveal versus peripheral human retina by single-cell RNA sequencing",
@@ -35,7 +35,7 @@ export const DATASETS = {
     buildDataset(
       ["normal"],
       354776,
-      [HOMO_SAPIENS],
+      ["TODO"],
       ["10x ATAC"],
       ["TODO"],
       "Rui Chen (Baylor College of Medicine)"
