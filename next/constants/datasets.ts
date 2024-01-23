@@ -17,15 +17,6 @@ export const DATASETS = {
       [TODO],
       "Rui Chen (Baylor College of Medicine)"
     ),
-    // Rui Chen (Baylor College of Medicine).
-    buildDataset(
-      [NORMAL],
-      354776,
-      [TODO],
-      ["10x ATAC"],
-      [TODO],
-      "Rui Chen (Baylor College of Medicine)"
-    ),
     buildDataset(
       [NORMAL],
       18191,

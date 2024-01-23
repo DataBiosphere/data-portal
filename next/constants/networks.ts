@@ -46,6 +46,7 @@ import pancreasIcon from "../public/hca-bio-networks/icons/pancreas.png";
 import reproductionIcon from "../public/hca-bio-networks/icons/reproduction.png";
 import skinIcon from "../public/hca-bio-networks/icons/skin.png";
 import BICCN_PUBLICATIONS from "./biccn-publications.json";
+import { COMPONENT_ATLASES } from "./componentAtlases";
 import { DATASETS } from "./datasets";
 
 export const NETWORKS: Network[] = [
@@ -103,6 +104,7 @@ export const NETWORKS: Network[] = [
             url: "https://github.com/RCHENLAB/HRCA_reproducibility",
           },
         ],
+        componentAtlases: COMPONENT_ATLASES.eye,
         contact: { email: "eye@humancellatlas.org" },
         coordinators: [{ fullName: "Rui Chen" }],
         cxgId: "4c6eaf5c-6d57-4c76-b1e9-60df8c655f1e",
