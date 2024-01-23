@@ -88,18 +88,23 @@ export const NETWORKS: Network[] = [
   {
     atlases: [
       {
+        code: [
+          {
+            label: "https://github.com/RCHENLAB/HRCA_reproducibility",
+            url: "https://github.com/RCHENLAB/HRCA_reproducibility",
+          },
+        ],
         contact: { email: "eye@humancellatlas.org" },
-        coordinators: [{ fullName: "Rui Chen" }, { fullName: "Ayellet Segrè" }],
+        coordinators: [{ fullName: "Rui Chen" }],
         cxgId: "4c6eaf5c-6d57-4c76-b1e9-60df8c655f1e",
         datasets: [
-          "e090445c-6971-4212-bc5f-ae4ec3914102",
-          "1dddae6e-3753-48af-b20e-fa22abad125d",
-          "30dc3964-1135-4b56-b393-ce2dcbc6e379",
-          "8185730f-4113-40d3-9cc3-929271784c2b",
-          "07d5987e-7f9e-4f34-b0fb-a185a35504f5",
-          // "4bec484d-ca7a-47b4-8d48-8830e06ad6db", // TODO(cc) sourced from Bionetworks coverage
-          // "4f4f0193-ede8-4a82-8cb0-7a0a22f06e63", // TODO(cc) sourced from Bionetworks coverage
-          // "c3354786-c17c-4e53-b4d7-c7afbed5b208", // TODO(cc) sourced from Bionetworks coverage
+          "9c20a245-f2c0-43ae-82c9-2232ec6b594f", // Liang, ..., Chen.
+          "1dddae6e-3753-48af-b20e-fa22abad125d", // Cowan, ..., Roska.
+          "e090445c-6971-4212-bc5f-ae4ec3914102", // Orozco, ..., Hackney.
+          "30dc3964-1135-4b56-b393-ce2dcbc6e379", // Yan, ..., Sanes.
+          "8185730f-4113-40d3-9cc3-929271784c2b", // Lukowski, ..., Wong.
+          "07d5987e-7f9e-4f34-b0fb-a185a35504f5", // Menon, ..., Hafler.
+          "4bec484d-ca7a-47b4-8d48-8830e06ad6db", // Voigt, ..., Scheetz.
         ],
         externalDatasets: DATASETS.eye,
         integratedAtlases: [],
