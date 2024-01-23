@@ -30,6 +30,7 @@ import * as pancreasContent from "../content/pancreas";
 import * as reproductionContent from "../content/reproduction";
 import * as skinContent from "../content/skin";
 import BICCN_PUBLICATIONS from "./biccn-publications.json";
+import { COMPONENT_ATLASES } from "./componentAtlases";
 import { DATASETS } from "./datasets";
 
 const BRAIN_V1_0 = "brain-v1-0";
@@ -94,6 +95,7 @@ export const NETWORKS: Network[] = [
             url: "https://github.com/RCHENLAB/HRCA_reproducibility",
           },
         ],
+        componentAtlases: COMPONENT_ATLASES.eye,
         contact: { email: "eye@humancellatlas.org" },
         coordinators: [{ fullName: "Rui Chen" }],
         cxgId: "4c6eaf5c-6d57-4c76-b1e9-60df8c655f1e",

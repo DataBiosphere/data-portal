@@ -16,6 +16,7 @@ export interface Contact {
  */
 export enum ANALYSIS_PORTAL {
   CZ_CELLXGENE = "CZ_CELLXGENE",
+  UCSC_CELL_BROWSER = "CELL_BROWSER",
 }
 
 export interface AnalysisPortal {
@@ -34,8 +35,10 @@ export interface Publication {
 
 export interface Atlas {
   code?: Pick<LinkProps, "label" | "url">[];
+  componentAtlases?: IntegratedAtlas[]; // "external" integrated atlases.
   contact: Contact;
   coordinators: Coordinator[];
+  cxgDataPortal?: Pick<LinkProps, "label" | "url">[];
   cxgId: string;
   datasets: Dataset[];
   externalDatasets: ProjectsResponse[];
@@ -56,7 +59,7 @@ export interface AtlasesRow extends AtlasRow {
   summaryCellCount?: number;
 }
 
-export type AtlasRow = Omit<IntegratedAtlas, "cxgId" | "cxgURL" | "name">;
+export type AtlasRow = Omit<IntegratedAtlas, "name">;
 
 export interface CXGAssay {
   label: string;
@@ -99,7 +102,7 @@ export interface CXGTissue {
 }
 
 export type IntegratedAtlasRow = AtlasRow &
-  Pick<IntegratedAtlas, "cxgId" | "cxgURL" | "datasetAssets" | "name">;
+  Pick<IntegratedAtlas, "datasetAssets" | "name">;
 
 export interface DatasetAsset {
   downloadURL: string;
@@ -110,10 +113,9 @@ export interface DatasetAsset {
 export type DatasetQueryOrgan = string;
 
 export interface IntegratedAtlas {
+  analysisPortals: AnalysisPortal[];
   assay: string[];
   cellCount: number;
-  cxgId: string;
-  cxgURL: string;
   datasetAssets: DatasetAsset[];
   disease: string[];
   name: string;

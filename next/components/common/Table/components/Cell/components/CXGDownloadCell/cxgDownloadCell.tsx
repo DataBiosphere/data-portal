@@ -16,13 +16,15 @@ export const CXGDownloadCell = ({
   const [open, setOpen] = useState<boolean>(false);
   return (
     <>
-      <IconButton
-        color="primary"
-        disabled={datasetAssets.length === 0}
-        Icon={DownloadIcon}
-        onClick={(): void => setOpen(true)}
-        size="medium"
-      />
+      {datasetAssets.length > 0 && (
+        <IconButton
+          color="primary"
+          disabled={datasetAssets.length === 0}
+          Icon={DownloadIcon}
+          onClick={(): void => setOpen(true)}
+          size="medium"
+        />
+      )}
       <CXGDownloadDialog
         datasetAssets={datasetAssets}
         onClose={(): void => setOpen(false)}

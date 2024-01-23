@@ -22,7 +22,6 @@ import {
 } from "../apis/azul/hca-dcp/common/utils";
 import * as C from "../components";
 import { MetadataValueTuple } from "../components/common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
-import { CZ_CELLXGENE } from "../constants/analysisPortals";
 import { NETWORKS_ROUTE } from "../constants/routes";
 import { formatCountSize } from "../utils/formatCountSize";
 import { DISEASE } from "./entities";
@@ -173,7 +172,7 @@ function getAtlasesExploreColumnDef<
   return {
     accessorKey: "explore",
     cell: ({ row }) =>
-      C.IconLink({ height: 20, url: row.original.cxgURL, ...CZ_CELLXGENE }),
+      C.AnalysisPortalCell({ analysisPortals: row.original.analysisPortals }),
     header: "Explore",
   };
 }
@@ -503,6 +502,7 @@ function getSpecimenOrganColumnDef(): ColumnDef<ProjectsResponse> {
  */
 function initAtlasRow(): AtlasesRow {
   return {
+    analysisPortals: [],
     assay: [],
     atlasName: "",
     cellCount: 0,
