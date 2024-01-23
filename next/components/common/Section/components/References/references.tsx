@@ -1,11 +1,11 @@
 import { SectionTitle } from "@databiosphere/findable-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
-import { GridPaperSection } from "@databiosphere/findable-ui/lib/components/common/Section/section.styles";
 import {
   Link,
   LinkProps,
 } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import React from "react";
 import { SectionContent } from "../../section.styles";
+import { Section } from "./references.styles";
 
 export interface ReferencesProps {
   links: Pick<LinkProps, "label" | "url">[];
@@ -14,7 +14,7 @@ export interface ReferencesProps {
 
 export const References = ({ links, title }: ReferencesProps): JSX.Element => {
   return (
-    <GridPaperSection>
+    <Section>
       <SectionContent>
         <SectionTitle title={title} />
         {links.length > 0
@@ -23,6 +23,6 @@ export const References = ({ links, title }: ReferencesProps): JSX.Element => {
             ))
           : "None"}
       </SectionContent>
-    </GridPaperSection>
+    </Section>
   );
 };
