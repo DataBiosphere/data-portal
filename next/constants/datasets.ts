@@ -1,6 +1,5 @@
 import { buildDataset } from "../utils/datasets";
 
-const HOMO_SAPIENS = "Homo sapiens";
 const NORMAL = "normal";
 const TODO = "TODO";
 
@@ -17,21 +16,6 @@ export const DATASETS = {
       ["10x 3' v3"],
       [TODO],
       "Rui Chen (Baylor College of Medicine)"
-    ),
-    buildDataset(
-      [NORMAL],
-      6061,
-      [TODO],
-      ["10x 3'"],
-      [TODO],
-      "Molecular characterization of foveal versus peripheral human retina by single-cell RNA sequencing",
-      {
-        doi: "10.1016/j.exer.2019.05.001",
-        officialHcaPublication: null,
-        publicationTitle:
-          "Molecular characterization of foveal versus peripheral human retina by single-cell RNA sequencing",
-        publicationUrl: "https://pubmed.ncbi.nlm.nih.gov/31075224/",
-      }
     ),
     // Rui Chen (Baylor College of Medicine).
     buildDataset(
