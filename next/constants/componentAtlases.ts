@@ -11,7 +11,12 @@ export const COMPONENT_ATLASES: Record<NetworkKey, IntegratedAtlasRow[]> = {
   development: [],
   eye: [
     buildAtlas(
-      [{ url: "https://cells.ucsc.edu/?ds=retina+atac", ...UCSC_CELL_BROWSER }],
+      [
+        {
+          url: "https://cells.ucsc.edu/?ds=retina+hrca+atac",
+          ...UCSC_CELL_BROWSER,
+        },
+      ],
       ["10x ATAC"],
       354776,
       [NORMAL],
