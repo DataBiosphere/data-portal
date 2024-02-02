@@ -13,7 +13,8 @@
     "format": "prettier --write .",
     "postbuild": "next-sitemap --config next-sitemap.config.mjs",
     "prepare": "cd .. && husky install next/.husky",
-    "complete-biccn-publications": "esrun ./scripts/complete-biccn-publications.ts"
+    "complete-biccn-publications": "esrun ./scripts/complete-biccn-publications.ts",
+    "get-cellxgene-projects": "esrun ./scripts/get-cellxgene-projects.ts"
   },
   "dependencies": {
     "@clevercanary/data-explorer-ui": "64.0.0",
