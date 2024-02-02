@@ -24,7 +24,7 @@ async function getCellxGeneProjects(): Promise<void> {
   for (const collection of collections) {
     for (const { link_url } of collection.links) {
       const match =
-        /^https:\/\/data.humancellatlas.org\/explore\/projects\/([^/?#]+)/.exec(
+        /^https:\/\/(?:explore\.)?data\.humancellatlas\.org(?:\/explore)?\/projects\/([^/?#]+)/.exec(
           link_url
         );
       if (match)
