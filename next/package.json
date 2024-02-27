@@ -17,7 +17,7 @@
     "get-cellxgene-projects": "esrun ./scripts/get-cellxgene-projects.ts"
   },
   "dependencies": {
-    "@clevercanary/data-explorer-ui": "64.0.0",
+    "@clevercanary/data-explorer-ui": "^67.0.0",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@mdx-js/loader": "^2.3.0",
@@ -30,11 +30,11 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^9.0.0",
     "isomorphic-dompurify": "^0.24.0",
-    "next": "12.3.1",
+    "next": "^14.1.0",
     "next-mdx-remote": "^4.4.1",
     "next-optimized-images": "^2.6.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-gtm-module": "^2.0.11",
     "uuid": "^8.3.2",
@@ -51,10 +51,10 @@
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "5.30.5",
     "eslint": "8.19.0",
-    "eslint-config-next": "12.2.0",
+    "eslint-config-next": "^14.1.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-jsdoc": "^39.3.3",
+    "eslint-plugin-jsdoc": "^48.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-sonarjs": "^0.13.0",
@@ -63,8 +63,8 @@
     "got": "^13.0.0",
     "husky": "^8.0.3",
     "next-sitemap": "^4.0.7",
-    "prettier": "2.7.1",
-    "prettier-plugin-organize-imports": "^3.0.3",
+    "prettier": "^2.8.3",
+    "prettier-plugin-organize-imports": "^3.2.2",
     "typescript": "4.6.4"
   }
 }
