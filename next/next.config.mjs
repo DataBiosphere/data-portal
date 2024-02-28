@@ -7,6 +7,7 @@ const nextConfig = {
   images: {
     disableStaticImages: true,
   },
+  output: "export",
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Add the alias for the peer dependency
     config.resolve.alias["@emotion/react"] = path.resolve(
