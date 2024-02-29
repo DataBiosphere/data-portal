@@ -1,6 +1,10 @@
 import { fetchEntitiesFromQuery } from "@clevercanary/data-explorer-ui/lib/entity/api/service";
 import { filterSpecimenOrgan } from "apis/azul/hca-dcp/common/filters";
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import {
+  GetStaticPaths,
+  GetStaticPropsContext,
+  GetStaticPropsResult,
+} from "next";
 import { Network, NetworkParam } from "../@types/network";
 import { config } from "../config/config";
 import { NETWORKS } from "../constants/networks";
@@ -13,9 +17,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<NetworkParam> = async (
-  context: GetStaticPropsContext
-) => {
+export interface StaticProps extends NetworkParam {
+  pageTitle: string;
+}
+
+export async function getContentStaticProps(
+  context: GetStaticPropsContext,
+  tabName: string
+): Promise<GetStaticPropsResult<StaticProps>> {
   const {
     dataSource: { url },
   } = config();
@@ -42,7 +51,8 @@ export const getStaticProps: GetStaticProps<NetworkParam> = async (
   return {
     props: {
       network: processNetwork(network, cxgDatasets),
+      pageTitle: `${network.name} - ${tabName}`,
       projectsResponses,
     },
   };
-};
+}
