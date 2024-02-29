@@ -9,7 +9,6 @@ export const Head = ({ appTitle, pageTitle }: HeadProps): JSX.Element => {
   const title = pageTitle ? `${pageTitle} - ${appTitle}` : appTitle;
   return (
     <NextHead key="page-head">
-      <title>HCA Data Portal</title>
       <link
         href="/hca-bio-networks/favicons/favicon.ico"
         rel="icon"
