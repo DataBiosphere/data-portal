@@ -1,6 +1,12 @@
 import NextHead from "next/head";
 
-export const Head = (): JSX.Element => {
+export interface HeadProps {
+  appTitle: string;
+  pageTitle?: string;
+}
+
+export const Head = ({ appTitle, pageTitle }: HeadProps): JSX.Element => {
+  const title = pageTitle ? `${pageTitle} - ${appTitle}` : appTitle;
   return (
     <NextHead key="page-head">
       <title>HCA Data Portal</title>
@@ -28,6 +34,7 @@ export const Head = (): JSX.Element => {
         type="image/png"
       />
       <link href="/hca-bio-networks/favicons/site.webmanifest" rel="manifest" />
+      <title>{title}</title>
     </NextHead>
   );
 };

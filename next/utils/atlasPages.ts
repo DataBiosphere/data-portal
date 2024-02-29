@@ -1,6 +1,10 @@
 import { COLLATOR_CASE_INSENSITIVE } from "@clevercanary/data-explorer-ui/lib/common/constants";
 import { fetchEntitiesFromQuery } from "@clevercanary/data-explorer-ui/lib/entity/api/service";
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import {
+  GetStaticPaths,
+  GetStaticPropsContext,
+  GetStaticPropsResult,
+} from "next";
 import { ParsedUrlQuery } from "querystring";
 import { Atlas, AtlasContext, CXGDataset, Network } from "../@types/network";
 import { filterProjectId } from "../apis/azul/hca-dcp/common/filters";
@@ -10,13 +14,17 @@ import { config } from "../config/config";
 import { NETWORKS } from "../constants/networks";
 import { processAtlas, processNetwork } from "./network";
 
-interface AtlasPageParam extends ParsedUrlQuery {
+interface StaticPaths extends ParsedUrlQuery {
   atlas: string;
   network: string;
 }
 
-export const getStaticPaths: GetStaticPaths<AtlasPageParam> = async () => {
-  const paths: Array<{ params: AtlasPageParam }> = [];
+export interface StaticProps extends AtlasContext {
+  pageTitle: string;
+}
+
+export const getStaticPaths: GetStaticPaths<StaticPaths> = async () => {
+  const paths: Array<{ params: StaticPaths }> = [];
 
   NETWORKS.forEach((network) => {
     network.atlases.forEach((atlas) => {
@@ -30,9 +38,10 @@ export const getStaticPaths: GetStaticPaths<AtlasPageParam> = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<AtlasContext> = async (
-  context: GetStaticPropsContext
-) => {
+export async function getContentStaticProps(
+  context: GetStaticPropsContext,
+  tabName: string
+): Promise<GetStaticPropsResult<StaticProps>> {
   const {
     dataSource: { url },
   } = config();
@@ -75,10 +84,11 @@ export const getStaticProps: GetStaticProps<AtlasContext> = async (
     props: {
       atlas: processAtlas(atlas, cxgDatasets),
       network: processNetwork(network, cxgDatasets),
+      pageTitle: `${atlas.name} - ${tabName}`,
       projectsResponses,
     },
   };
-};
+}
 
 /**
  * Returns CELLxGENE datasets with the corresponding collection ID.

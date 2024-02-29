@@ -18,6 +18,10 @@ import { config } from "../config/config";
 import { ConfigProvider } from "../providers/config";
 import { mergeAppTheme } from "../theme/theme";
 
+interface PageProps {
+  pageTitle?: string;
+}
+
 export type NextPageWithComponent = NextPage & {
   Footer?: typeof AppFooter;
   Main?: typeof DXMain;
@@ -25,15 +29,17 @@ export type NextPageWithComponent = NextPage & {
 
 export type AppPropsWithComponent = AppProps & {
   Component: NextPageWithComponent;
+  pageProps: PageProps;
 };
 
 function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const Footer = Component.Footer || AppFooter;
   const Main = Component.Main || DXMain;
   const appConfig = config();
-  const { analytics, layout, themeOptions } = appConfig;
+  const { analytics, appTitle, layout, themeOptions } = appConfig;
   const { floating, footer, header } = layout || {};
   const { gtmAuth, gtmId, gtmPreview } = analytics || {};
+  const { pageTitle } = pageProps;
   const defaultTheme = createAppTheme(themeOptions);
   const appTheme = mergeAppTheme(defaultTheme);
 
@@ -48,7 +54,7 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
     <EmotionThemeProvider theme={appTheme}>
       <ThemeProvider theme={appTheme}>
         <ConfigProvider config={appConfig}>
-          <Head />
+          <Head appTitle={appTitle} pageTitle={pageTitle} />
           <CssBaseline />
           <LayoutStateProvider>
             <AppLayout>
