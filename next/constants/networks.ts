@@ -9,6 +9,7 @@ import * as adiposeContent from "../content/adipose";
 import * as breastContent from "../content/breast";
 import * as developmentContent from "../content/development";
 import * as eyeContent from "../content/eye";
+import * as altasRetina from "../content/eye/atlases/retina";
 import * as geneticDiversityContent from "../content/genetic-diversity";
 import * as gutContent from "../content/gut";
 import * as heartContent from "../content/heart";
@@ -45,6 +46,7 @@ import pancreasIcon from "../public/hca-bio-networks/icons/pancreas.png";
 import reproductionIcon from "../public/hca-bio-networks/icons/reproduction.png";
 import skinIcon from "../public/hca-bio-networks/icons/skin.png";
 import BICCN_PUBLICATIONS from "./biccn-publications.json";
+import { COMPONENT_ATLASES } from "./componentAtlases";
 import { DATASETS } from "./datasets";
 
 export const NETWORKS: Network[] = [
@@ -94,7 +96,43 @@ export const NETWORKS: Network[] = [
     path: "development",
   },
   {
-    atlases: [],
+    atlases: [
+      {
+        code: [
+          {
+            label: "https://github.com/RCHENLAB/HRCA_reproducibility",
+            url: "https://github.com/RCHENLAB/HRCA_reproducibility",
+          },
+        ],
+        componentAtlases: COMPONENT_ATLASES.eye,
+        contact: { email: "eye@humancellatlas.org" },
+        coordinators: [{ fullName: "Rui Chen" }],
+        cxgId: "4c6eaf5c-6d57-4c76-b1e9-60df8c655f1e",
+        datasets: [
+          "9c20a245-f2c0-43ae-82c9-2232ec6b594f", // Liang, ..., Chen.
+          "1dddae6e-3753-48af-b20e-fa22abad125d", // Cowan, ..., Roska.
+          "e090445c-6971-4212-bc5f-ae4ec3914102", // Orozco, ..., Hackney.
+          "30dc3964-1135-4b56-b393-ce2dcbc6e379", // Yan, ..., Sanes.
+          "8185730f-4113-40d3-9cc3-929271784c2b", // Lukowski, ..., Wong.
+          "07d5987e-7f9e-4f34-b0fb-a185a35504f5", // Menon, ..., Hafler.
+          "4bec484d-ca7a-47b4-8d48-8830e06ad6db", // Voigt, ..., Scheetz.
+        ],
+        externalDatasets: DATASETS.eye,
+        integratedAtlases: [],
+        key: "retina-v1-0",
+        name: "Single-cell atlas of the human retina v1.0",
+        path: "retina-v1-0",
+        publications: [
+          {
+            doi: "https://doi.org/10.1101/2023.11.07.566105",
+            label: "Li et al. (2023) bioRxiv",
+          },
+        ],
+        summaryCellCount: 1800000,
+        updatedAt: "",
+        version: "v1",
+      },
+    ],
     contact: { email: "eye@humancellatlas.org" },
     coordinators: [{ fullName: "Rui Chen" }, { fullName: "Ayellet Segrè" }],
     datasetQueryOrgans: ["eye", "left eye", "retina", "right eye"],
@@ -587,4 +625,5 @@ export const ATLAS_CONTENT: { [key in AtlasKey]: AtlasModule } = {
   "brain-v1-0": altasBrain,
   "cortex-v1-0": atlasCortex,
   "lung-v1-0": atlasLung,
+  "retina-v1-0": altasRetina,
 };
