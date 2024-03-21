@@ -6,6 +6,46 @@ title: HCA Data Portal Updates
 
 # HCA Data Portal Platform Updates
 
+#### March 20, 2024
+
+### Release Highlights
+
+* New projects are available from the Eye, Heart, Lung, and Pancreas Biological Networks.
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (11)
+
+1. [Cell type-specific and disease-associated eQTL in the human lung](https://explore.data.humancellatlas.org/projects/7bc1f14b-5e64-4c7f-86b0-23596b97e2aa)
+2. [A Single-Cell Transcriptome Atlas of the Human Pancreas](https://explore.data.humancellatlas.org/projects/894ae6ac-5b48-41a8-a72f-315a9b60a62e)
+3. [Single-nucleus RNA sequencing of human pancreatic islets identifies novel gene sets and distinguishes β-cell subpopulations with dynamic transcriptome profiles](https://explore.data.humancellatlas.org/projects/17cf943b-e247-454f-908b-da58665fcc56)
+4. [Pseudotime Ordering of Single Human β-Cells Reveals States of Insulin Production and Unfolded Protein Response](https://explore.data.humancellatlas.org/projects/27e2e0ae-5971-4927-aac1-19e81804097b)
+5. [A human cell atlas of the pressure-induced hypertrophic heart](https://explore.data.humancellatlas.org/projects/902dc043-7091-445c-9442-d72e163b9879)
+6. [Single-cell atlas of healthy human blood unveils age-related loss of NKG2C+GZMB-CD8+ memory T cells and accumulation of type 2 memory T cells](https://explore.data.humancellatlas.org/projects/896f377c-8e88-463e-82b0-b2a5409d6fe4)
+7. [Integrated multiomic characterization of congenital heart disease](https://explore.data.humancellatlas.org/projects/c9e83418-a9f0-4ed1-ab4f-56d9513417bf)
+8. [Single Nucleus RNA-sequencing Reveals Altered Intercellular Communication and Dendritic Cell Activation in Nonobstructive Hypertrophic Cardiomyopathy](https://explore.data.humancellatlas.org/projects/e1fda217-7ee1-4c1a-adfa-648279dafac6)
+9. [Single-nucleus RNA sequencing in ischemic cardiomyopathy reveals common transcriptional profile underlying end-stage heart failure](https://explore.data.humancellatlas.org/projects/c6ef0270-eafc-43bd-8097-c10020a03cfc)
+10. [Cell-specific cis-regulatory elements and mechanisms of non-coding genetic disease in human retina and retinal organoids](https://explore.data.humancellatlas.org/projects/aebc99a3-3151-482a-9709-da6802617763)
+11. [Generation of human islet cell type-specific identity genesets](https://explore.data.humancellatlas.org/projects/7a8d45f1-353b-4508-8e89-65a96785b167)
+
+### Updated Raw Data and Metadata (15)
+
+1. [Spatial multi-omic map of human myocardial infarction](https://explore.data.humancellatlas.org/projects/e9f36305-d857-44a3-93f0-df4e6007dc97)
+2. [Single cell transcriptional profiling of peripheral blood mononuclear cells (PBMCs) from mice flown on Rodent Research Reference Mission-2 (RRRM-2)](https://explore.data.humancellatlas.org/projects/a2a2f324-cf24-409e-a859-deaee871269c)
+3. [GM-CSF-producing T helper cells: a distinct subset of T helper cells](https://explore.data.humancellatlas.org/projects/41fb1734-a121-4616-95c7-3b732c9433c7)
+4. [Single-cell transcriptomic and proteomic analysis of Parkinson’s disease brains](https://explore.data.humancellatlas.org/projects/9a23ac2d-93dd-4bac-9bb8-040e6426db9d)
+5. [Single-cell RNA-seq to decipher the subpopulations of human decidual leukocytes in normal and RSA pregnancies](https://explore.data.humancellatlas.org/projects/c302fe54-d22d-451f-a130-e24df3d6afca)
+6. [Retinal ganglion cell-specific genetic regulation in primary open angle glaucoma](https://explore.data.humancellatlas.org/projects/77780d56-03c0-481f-aade-2038490cef9f)
+7. [A single-cell transcriptome atlas of human early embryogenesis](https://explore.data.humancellatlas.org/projects/e255b1c6-1143-4fa6-83a8-528f15b41038)
+8. [Single cell transcriptional profiling of spleens from mice flown on Rodent Research Reference Mission-2](https://explore.data.humancellatlas.org/projects/aff9c3cd-6b84-4fc2-abf2-b9c0b3038277)
+9. [Spatial multiomics map of trophoblast development in early pregnancy](https://explore.data.humancellatlas.org/projects/aecfd908-674c-4d4e-b36e-0c1ceab02245)
+10. [Single-cell RNA sequencing of normal human kidney](https://explore.data.humancellatlas.org/projects/2ef3655a-973d-4d69-9b41-21fa4041eed7)
+11. [Cell Types of the Human Retina and Its Organoids at Single-Cell Resolution](https://explore.data.humancellatlas.org/projects/1dddae6e-3753-48af-b20e-fa22abad125d)
+12. [Single-cell multiome of the human retina and deep learning nominate causal variants in complex eye diseases](https://explore.data.humancellatlas.org/projects/4f4f0193-ede8-4a82-8cb0-7a0a22f06e63)
+13. [Ischaemic sensitivity of human tissue by single cell RNA seq](https://explore.data.humancellatlas.org/projects/c4077b3c-5c98-4d26-a614-246d12c2e5d7)
+14. [Proliferating SPP1/MERTK-expressing macrophages in idiopathic pulmonary fibrosis](https://explore.data.humancellatlas.org/projects/6735ff73-1a04-422e-b500-730202e46f8a)
+15. [Single-cell RNA-Seq Investigation of Foveal and Peripheral Expression in the Human Retina](https://explore.data.humancellatlas.org/projects/4bec484d-ca7a-47b4-8d48-8830e06ad6db)
+
+
+
 #### January 16, 2023
 
 ### Release Highlights
