@@ -22,7 +22,7 @@ export GATSBY_GTM_ID=GTM-M2J5NTJ
 export GATSBY_GTM_AUTH=xm3qglWPEFim7Lb4AxXnsA
 export GATSBY_ENV_NAME=env-2
 export GATSBY_ENV=PROD
-export GATSBY_DEFAULT_CATALOG=dcp35
+export GATSBY_DEFAULT_CATALOG=dcp36
 export GATSBY_ATLAS=hca
 gatsby build
 
