@@ -6,6 +6,28 @@ title: HCA Data Portal Updates
 
 # HCA Data Portal Platform Updates
 
+#### May 9, 2024
+
+### Release Highlights
+
+* New projects are available from the Heart, Oral & Craniofacial, and Skin Biological Networks.
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (9)
+1. [Anatomically distinct fibroblast subsets determine skin autoimmune patterns](https://data.humancellatlas.org/explore/projects/69324a96-a68a-4514-bbb4-f8f3ea4bd0f1)
+2. [Defining cardiac functional recovery in end-stage heart failure at single-cell resolution](https://data.humancellatlas.org/explore/projects/c0fecf0b-af86-41b8-ba82-d5fd81b7542a)
+3. [Distinct fibroblast progenitor subpopulation expedites regenerative mucosal healing by immunomodulation](https://data.humancellatlas.org/explore/projects/6836c1e4-906b-4c34-a11c-cb025167896d)
+4. [Salivary ZG16B expression loss follows exocrine gland dysfunction related to oral chronic graft-versus-host disease](https://data.humancellatlas.org/explore/projects/60109425-a6e6-4be1-a3bc-15de680317d4)
+5. [Single cell and lineage tracing studies reveal the impact of CD34+ cells on myocardial fibrosis during heart failure](https://data.humancellatlas.org/explore/projects/86fe0a0c-88b3-4a3e-94a1-6f9feadc401e)
+6. [Single cell atlas of the human retina](https://data.humancellatlas.org/explore/projects/4bcc16b5-7a47-45bb-b9c0-be9d5336df2d)
+7. [Single-cell multiomics of the human retina reveals hierarchical transcription factor collaboration in mediating cell type-specific effects of genetic variants on gene regulation](https://data.humancellatlas.org/explore/projects/2079bb2e-676e-4bbf-8c68-f9c6459edcbb)
+8. [Single-cell transcriptomic analysis of gingivo-buccal oral cancer reveals two dominant cellular programs](https://data.humancellatlas.org/explore/projects/46a7e4bf-0474-4a8f-8d18-43afcde90491)
+9. [Transcriptomic Mapping of Human Parotid Gland at Single-Cell Resolution](https://data.humancellatlas.org/explore/projects/750b455a-e3cf-4721-9581-8609a6c9d561)
+
+### Updated Raw Data and Metadata (3)
+1. [A cellular census of human lungs identifies novel cell states in health and in asthma](https://data.humancellatlas.org/explore/projects/c0518445-3b3b-49c6-b8fc-c41daa4eacba)
+2. [A human cell atlas of the pressure-induced hypertrophic heart](https://data.humancellatlas.org/explore/projects/902dc043-7091-445c-9442-d72e163b9879)
+3. [Cell-specific cis-regulatory elements and mechanisms of non-coding genetic disease in human retina and retinal organoids](https://data.humancellatlas.org/explore/projects/aebc99a3-3151-482a-9709-da6802617763)
+
 #### April 8, 2024
 
 ### Release Highlights
