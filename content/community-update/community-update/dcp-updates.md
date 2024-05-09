@@ -10,6 +10,8 @@ title: HCA Data Portal Updates
 
 ### Release Highlights
 
+* New projects are available from the Eye, Heart, and Pancreas Biological Networks.
+
 ### New Raw Data, Metadata, and Contributor-generated Matrices (4)
 1. [A transcriptional cross species map of pancreatic islet cells](https://data.humancellatlas.org/explore/projects/28dd1438-8f40-40d0-8e53-ee3301b66218)
 2. [Cardiac cell type-specific gene regulatory programs and disease risk association](https://data.humancellatlas.org/explore/projects/87f519b4-8862-41f9-acff-75e823e0e430)
