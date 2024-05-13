@@ -119,11 +119,10 @@ export const NETWORKS: Network[] = [
     atlases: [],
     contact: { email: "gut@humancellatlas.org" },
     coordinators: [
-      { fullName: "Alison Simmons" },
       { fullName: "Mike Snyder" },
-      { fullName: "Keith Wilson" },
       { fullName: "Ramnik Xavier" },
       { fullName: "Matthias Zilbauer" },
+      { fullName: "Jose Ordovas-Montanes" },
     ],
     datasetQueryOrgans: [
       "abdomen",
@@ -306,7 +305,6 @@ export const NETWORKS: Network[] = [
     contact: { email: "lung@humancellatlas.org" },
     coordinators: [
       { fullName: "Pascal Barbry" },
-      { fullName: "Alexander Misharin" },
       { fullName: "Martijn Nawijn" },
       { fullName: "Jay Rajagopal" },
     ],
@@ -329,7 +327,6 @@ export const NETWORKS: Network[] = [
       { fullName: "Sarah Snelling" },
       { fullName: "Mathew Baldwin" },
       { fullName: "Adam Cribbs" },
-      { fullName: "Farshid Guilak" },
     ],
     datasetQueryOrgans: [
       "bone element",
@@ -480,7 +477,6 @@ export const NETWORKS: Network[] = [
       { fullName: "Marcela Brissova" },
       { fullName: "Françoise Carlotti" },
       { fullName: "Roland Eils" },
-      { fullName: "Diane Saunders" },
     ],
     datasetQueryOrgans: ["pancreas"],
     key: "pancreas",
