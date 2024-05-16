@@ -1,4 +1,4 @@
-import { BackPageHero } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/BackPage/components/BackPageHero/backPageHero";
+import { BackPageHero } from "@databiosphere/findable-ui/lib/components/Layout/components/BackPage/components/BackPageHero/backPageHero";
 import React, { useMemo } from "react";
 import { NETWORKS_ROUTE } from "../../../../../../constants/routes";
 import { useNetwork } from "../../../../../../contexts/networkContext";

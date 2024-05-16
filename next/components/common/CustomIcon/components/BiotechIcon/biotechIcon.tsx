@@ -1,4 +1,4 @@
-import { CustomSVGIconProps } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/common/entities";
+import { CustomSVGIconProps } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/common/entities";
 import { SvgIcon } from "@mui/material";
 import React from "react";
 

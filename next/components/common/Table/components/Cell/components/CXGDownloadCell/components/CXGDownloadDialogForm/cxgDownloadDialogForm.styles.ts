@@ -1,4 +1,4 @@
-import { Code as DXCode } from "@clevercanary/data-explorer-ui/lib/components/common/Code/code";
+import { Code as DXCode } from "@databiosphere/findable-ui/lib/components/common/Code/code";
 import styled from "@emotion/styled";
 
 export const Code = styled(DXCode)`

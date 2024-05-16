@@ -1,5 +1,5 @@
-import { Detail } from "@clevercanary/data-explorer-ui/lib/components/Detail/detail";
-import { BackPageHero } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/BackPage/components/BackPageHero/backPageHero";
+import { Detail } from "@databiosphere/findable-ui/lib/components/Detail/detail";
+import { BackPageHero } from "@databiosphere/findable-ui/lib/components/Layout/components/BackPage/components/BackPageHero/backPageHero";
 import { GetStaticProps } from "next";
 import React from "react";
 import { MainColumn } from "../../components/HCABioNetworks/components/Index/components/MainColumn/mainColumn";

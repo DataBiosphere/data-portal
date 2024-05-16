@@ -1,4 +1,4 @@
-import { FluidPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
+import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import React, { Fragment } from "react";
 import { BICCNPublication } from "../../../../../../../@types/network";
 import {

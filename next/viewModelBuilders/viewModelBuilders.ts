@@ -1,7 +1,7 @@
-import { LABEL } from "@clevercanary/data-explorer-ui/lib/apis/azul/common/entities";
-import { KeyValues } from "@clevercanary/data-explorer-ui/lib/components/common/KeyValuePairs/keyValuePairs";
-import { MetadataValue } from "@clevercanary/data-explorer-ui/lib/components/Index/components/NTagCell/nTagCell";
-import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
+import { LABEL } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
+import { KeyValues } from "@databiosphere/findable-ui/lib/components/common/KeyValuePairs/keyValuePairs";
+import { MetadataValue } from "@databiosphere/findable-ui/lib/components/Index/components/NTagCell/nTagCell";
+import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { ColumnDef } from "@tanstack/react-table";
 import {
   Atlas,

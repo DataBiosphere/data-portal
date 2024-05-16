@@ -1,8 +1,8 @@
 import {
   StaticImage,
   StaticImageProps,
-} from "@clevercanary/data-explorer-ui/lib/components/common/StaticImage/staticImage";
-import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
+} from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { Stack } from "./iconLink.styles";
 
 export interface IconLinkProps {

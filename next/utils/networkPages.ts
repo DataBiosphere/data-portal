@@ -1,4 +1,4 @@
-import { fetchEntitiesFromQuery } from "@clevercanary/data-explorer-ui/lib/entity/api/service";
+import { fetchEntitiesFromQuery } from "@databiosphere/findable-ui/lib/entity/api/service";
 import { filterSpecimenOrgan } from "apis/azul/hca-dcp/common/filters";
 import {
   GetStaticPaths,

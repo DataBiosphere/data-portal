@@ -1,5 +1,5 @@
-import { StaticImage } from "@clevercanary/data-explorer-ui/lib/components/common/StaticImage/staticImage";
-import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
+import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { Network } from "../../../../../../../@types/network";
 import { NETWORK_ICONS } from "../../../../../../../constants/networks";
 import { NETWORKS_ROUTE } from "../../../../../../../constants/routes";

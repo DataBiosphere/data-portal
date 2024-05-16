@@ -1,5 +1,5 @@
-import { setConfig } from "@clevercanary/data-explorer-ui/lib/config/config";
-import { SiteConfig } from "@clevercanary/data-explorer-ui/lib/config/entities";
+import { setConfig } from "@databiosphere/findable-ui/lib/config/config";
+import { SiteConfig } from "@databiosphere/findable-ui/lib/config/entities";
 import dataPortalDev from "../site-config/data-portal/dev/config";
 import dataPortalProd from "../site-config/data-portal/prod/config";
 

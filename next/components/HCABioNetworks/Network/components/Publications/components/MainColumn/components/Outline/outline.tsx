@@ -1,4 +1,4 @@
-import { useLayoutState } from "@clevercanary/data-explorer-ui/lib/hooks/useLayoutState";
+import { useLayoutState } from "@databiosphere/findable-ui/lib/hooks/useLayoutState";
 import { useRouter } from "next/router";
 import React, { SyntheticEvent, useState } from "react";
 import { Tab, Tabs, TabTitle } from "./outline.styles";

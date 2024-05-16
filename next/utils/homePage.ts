@@ -1,5 +1,5 @@
-import { APIEndpoints } from "@clevercanary/data-explorer-ui/lib/apis/azul/common/entities";
-import { fetchSummaryFromURL } from "@clevercanary/data-explorer-ui/lib/entity/api/service";
+import { APIEndpoints } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
+import { fetchSummaryFromURL } from "@databiosphere/findable-ui/lib/entity/api/service";
 import { GetStaticProps } from "next";
 import { config } from "../config/config";
 import { Summary } from "../contexts/summaryContext";

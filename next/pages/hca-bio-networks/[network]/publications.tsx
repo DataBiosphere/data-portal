@@ -1,4 +1,4 @@
-import { Detail } from "@clevercanary/data-explorer-ui/lib/components/Detail/detail";
+import { Detail } from "@databiosphere/findable-ui/lib/components/Detail/detail";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import React from "react";
 import { NetworkParam } from "../../../@types/network";

@@ -1,5 +1,5 @@
-import { SectionTitle } from "@clevercanary/data-explorer-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
-import { GridPaperSection } from "@clevercanary/data-explorer-ui/lib/components/common/Section/section.styles";
+import { SectionTitle } from "@databiosphere/findable-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
+import { GridPaperSection } from "@databiosphere/findable-ui/lib/components/common/Section/section.styles";
 import React from "react";
 import { Network } from "../../../../../@types/network";
 import { NETWORK_ICONS } from "../../../../../constants/networks";

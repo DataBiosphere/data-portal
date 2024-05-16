@@ -1,5 +1,5 @@
-import { COLLATOR_CASE_INSENSITIVE } from "@clevercanary/data-explorer-ui/lib/common/constants";
-import { fetchEntitiesFromQuery } from "@clevercanary/data-explorer-ui/lib/entity/api/service";
+import { COLLATOR_CASE_INSENSITIVE } from "@databiosphere/findable-ui/lib/common/constants";
+import { fetchEntitiesFromQuery } from "@databiosphere/findable-ui/lib/entity/api/service";
 import {
   GetStaticPaths,
   GetStaticPropsContext,

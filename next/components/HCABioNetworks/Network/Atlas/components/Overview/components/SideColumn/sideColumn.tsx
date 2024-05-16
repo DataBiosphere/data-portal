@@ -1,4 +1,4 @@
-import { Sections } from "@clevercanary/data-explorer-ui/lib/components/common/Sections/sections";
+import { Sections } from "@databiosphere/findable-ui/lib/components/common/Sections/sections";
 import { useAtlas } from "contexts/atlasContext";
 import React, { Fragment } from "react";
 import { Coordinators } from "../../../../../../../common/Section/components/Coordinators/coordinators";

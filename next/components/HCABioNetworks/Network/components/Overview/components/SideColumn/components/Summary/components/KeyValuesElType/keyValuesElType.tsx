@@ -1,4 +1,4 @@
-import { Grid } from "@clevercanary/data-explorer-ui/lib/components/common/Grid/grid";
+import { Grid } from "@databiosphere/findable-ui/lib/components/common/Grid/grid";
 import React, { ReactNode } from "react";
 
 export interface KeyValuesElTypeProps {

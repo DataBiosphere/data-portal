@@ -1,4 +1,4 @@
-import { formatCountSize } from "@clevercanary/data-explorer-ui/lib/utils/formatCountSize";
+import { formatCountSize } from "@databiosphere/findable-ui/lib/utils/formatCountSize";
 import { Divider } from "@mui/material";
 import { useSummary } from "../../../../../../contexts/summaryContext";
 import { Count, Label, Metric, Metrics } from "./summaryCounts.styles";

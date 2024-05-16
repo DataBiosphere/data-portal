@@ -1,5 +1,5 @@
-import { StaticImage } from "@clevercanary/data-explorer-ui/lib/components/common/StaticImage/staticImage";
-import { TEXT_BODY_LARGE_500 } from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
+import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
+import { TEXT_BODY_LARGE_500 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Tooltip, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import { NETWORK_ICONS } from "../../../../constants/networks";

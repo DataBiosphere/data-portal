@@ -1,4 +1,4 @@
-import { Stack as DXStack } from "@clevercanary/data-explorer-ui/lib/components/common/Stack/stack";
+import { Stack as DXStack } from "@databiosphere/findable-ui/lib/components/common/Stack/stack";
 import styled from "@emotion/styled";
 
 export const Stack = styled(DXStack)`

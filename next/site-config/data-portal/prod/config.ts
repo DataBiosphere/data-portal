@@ -1,5 +1,5 @@
-import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
-import { SiteConfig } from "@clevercanary/data-explorer-ui/lib/config/entities";
+import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { SiteConfig } from "@databiosphere/findable-ui/lib/config/entities";
 import devConfig, { PORTAL_URL } from "../dev/config";
 
 const BROWSER_URL = "https://explore.data.humancellatlas.org";

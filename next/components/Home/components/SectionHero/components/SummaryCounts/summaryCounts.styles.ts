@@ -1,9 +1,9 @@
-import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
-import { white } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
+import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { white } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import {
   textBodyLarge400,
   textHeadingLarge,
-} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 
 export const Metrics = styled.div`

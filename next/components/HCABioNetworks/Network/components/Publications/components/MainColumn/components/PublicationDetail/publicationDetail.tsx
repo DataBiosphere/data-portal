@@ -1,7 +1,7 @@
 import {
   Link,
   LinkProps,
-} from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
+} from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { Chip, Tooltip } from "@mui/material";
 import React from "react";
 import { Links } from "./publicationDetail.styles";

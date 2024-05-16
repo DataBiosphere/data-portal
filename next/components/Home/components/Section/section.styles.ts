@@ -1,8 +1,8 @@
-import { inkLight } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
+import { inkLight } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import {
   textHeadingLarge,
   textUppercase500,
-} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import { Divider } from "@mui/material";
 
