@@ -1,9 +1,9 @@
-import { alpha08 } from "@clevercanary/data-explorer-ui/lib/theme/common/palette";
+import { alpha08 } from "@databiosphere/findable-ui/lib/theme/common/palette";
 import {
   TEXT_BODY_400_2_LINES,
   TEXT_BODY_500,
   TEXT_BODY_LARGE_500,
-} from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
+} from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Components, Theme } from "@mui/material";
 
 /**

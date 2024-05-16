@@ -1,8 +1,8 @@
-import { CardContent } from "@clevercanary/data-explorer-ui/lib/components/common/Card/card.styles";
-import { CardActionArea } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardActionArea/cardActionArea";
-import { CardTitle } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardTitle/cardTitle";
-import { Markdown } from "@clevercanary/data-explorer-ui/lib/components/common/Markdown/markdown";
-import { FluidPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
+import { CardContent } from "@databiosphere/findable-ui/lib/components/common/Card/card.styles";
+import { CardActionArea } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardActionArea/cardActionArea";
+import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
+import { Markdown } from "@databiosphere/findable-ui/lib/components/common/Markdown/markdown";
+import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import React from "react";
 import { BICCNPublication } from "../../../../../../../../../@types/network";
 import { PublicationDetail } from "../PublicationDetail/publicationDetail";

@@ -1,5 +1,5 @@
-import { DownloadIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/DownloadIcon/downloadIcon";
-import { IconButton } from "@clevercanary/data-explorer-ui/lib/components/common/IconButton/iconButton";
+import { DownloadIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/DownloadIcon/downloadIcon";
+import { IconButton } from "@databiosphere/findable-ui/lib/components/common/IconButton/iconButton";
 import { useState } from "react";
 import { DatasetAsset } from "../../../../../../../@types/network";
 import { CXGDownloadDialog } from "./components/CXGDownloadDialog/cxgDownloadDialog";

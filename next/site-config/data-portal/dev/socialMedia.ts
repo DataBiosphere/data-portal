@@ -1,4 +1,4 @@
-import { SocialMedia } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/common/entities";
+import { SocialMedia } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import * as C from "../../../components/index";
 
 const FACEBOOK_URL = "https://www.facebook.com/humancellatlas";

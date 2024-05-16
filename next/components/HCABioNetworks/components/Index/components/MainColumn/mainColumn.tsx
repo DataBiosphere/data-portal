@@ -1,5 +1,5 @@
-import { FluidPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
-import { BackPageContentSingleColumn } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/BackPage/backPageView.styles";
+import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
+import { BackPageContentSingleColumn } from "@databiosphere/findable-ui/lib/components/Layout/components/BackPage/backPageView.styles";
 import React from "react";
 import { useNetworkList } from "../../../../../../hooks/useNetworkList";
 import { getBioNetworksTableColumns } from "../../../../../../viewModelBuilders/viewModelBuilders";

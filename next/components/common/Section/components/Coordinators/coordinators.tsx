@@ -1,6 +1,6 @@
-import { SectionTitle } from "@clevercanary/data-explorer-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
-import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
-import { TEXT_BODY_500 } from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
+import { SectionTitle } from "@databiosphere/findable-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { TEXT_BODY_500 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import React from "react";
 import { Coordinator } from "../../../../../@types/network";

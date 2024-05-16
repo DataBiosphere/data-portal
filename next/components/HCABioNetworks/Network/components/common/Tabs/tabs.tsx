@@ -1,9 +1,9 @@
-import { StaticImage } from "@clevercanary/data-explorer-ui/lib/components/common/StaticImage/staticImage";
+import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import {
   Tab,
   Tabs as DXTabs,
   TabValue,
-} from "@clevercanary/data-explorer-ui/lib/components/common/Tabs/tabs";
+} from "@databiosphere/findable-ui/lib/components/common/Tabs/tabs";
 import { useRouter } from "next/router";
 import React from "react";
 import { Network } from "../../../../../../@types/network";

@@ -1,4 +1,4 @@
-import { Button } from "@clevercanary/data-explorer-ui/lib/components/common/Button/button";
+import { Button } from "@databiosphere/findable-ui/lib/components/common/Button/button";
 import React from "react";
 
 export const ButtonPrimary = ({

@@ -1,7 +1,7 @@
 import {
   Tabs as DXTabs,
   TabValue,
-} from "@clevercanary/data-explorer-ui/lib/components/common/Tabs/tabs";
+} from "@databiosphere/findable-ui/lib/components/common/Tabs/tabs";
 import {
   NETWORKS_ATLAS_PATTERN,
   NETWORK_ATLAS_DATASETS_PATTERN,

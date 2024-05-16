@@ -1,12 +1,12 @@
-import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
+import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import {
   inkMain,
   smokeDark,
   smokeLight,
   smokeMain,
   white,
-} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
-import { primaryMain } from "@clevercanary/data-explorer-ui/lib/theme/common/palette";
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
+import { primaryMain } from "@databiosphere/findable-ui/lib/theme/common/palette";
 import styled from "@emotion/styled";
 
 export const SectionContent = styled.div`

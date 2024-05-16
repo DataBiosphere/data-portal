@@ -1,4 +1,4 @@
-import { white } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
+import { white } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import styled from "@emotion/styled";
 import { Section } from "../Section/section.styles";
 

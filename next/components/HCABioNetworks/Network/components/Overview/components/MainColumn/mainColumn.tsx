@@ -1,13 +1,13 @@
 import {
   FluidPaper,
   GridPaper,
-} from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
-import { SectionTitle } from "@clevercanary/data-explorer-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
+} from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
+import { SectionTitle } from "@databiosphere/findable-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
 import {
   Section,
   SectionContent,
-} from "@clevercanary/data-explorer-ui/lib/components/common/Section/section.styles";
-import { TEXT_BODY_LARGE_500 } from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
+} from "@databiosphere/findable-ui/lib/components/common/Section/section.styles";
+import { TEXT_BODY_LARGE_500 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import React from "react";
 import {

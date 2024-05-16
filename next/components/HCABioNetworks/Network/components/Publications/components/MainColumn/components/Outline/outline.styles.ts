@@ -1,17 +1,17 @@
 import {
   mediaTabletDown,
   mediaTabletUp,
-} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import {
   inkLight,
   smokeMain,
-} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import {
   textBody400,
   textBody500,
   textUppercase500,
-} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
-import { primaryMain } from "@clevercanary/data-explorer-ui/lib/theme/common/palette";
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
+import { primaryMain } from "@databiosphere/findable-ui/lib/theme/common/palette";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Tab as MTab, Tabs as MTabs } from "@mui/material";

@@ -1,5 +1,5 @@
-import { GridPaperSection } from "@clevercanary/data-explorer-ui/lib/components/common/Section/section.styles";
-import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
+import { GridPaperSection } from "@databiosphere/findable-ui/lib/components/common/Section/section.styles";
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import React from "react";
 
 const DATA_RELEASE_POLICY_URL =

@@ -1,7 +1,7 @@
-import { BackPageContentSingleColumn as DXBackPageContentSingleColumn } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/BackPage/backPageView.styles";
-import { HEADER_HEIGHT } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/common/constants";
-import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
-import { textHeadingSmall } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
+import { BackPageContentSingleColumn as DXBackPageContentSingleColumn } from "@databiosphere/findable-ui/lib/components/Layout/components/BackPage/backPageView.styles";
+import { HEADER_HEIGHT } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/constants";
+import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { textHeadingSmall } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 
 export const BackPageContentSingleColumn = styled(

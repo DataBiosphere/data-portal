@@ -1,6 +1,6 @@
-import { SectionTitle } from "@clevercanary/data-explorer-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
-import { GridPaperSection } from "@clevercanary/data-explorer-ui/lib/components/common/Section/section.styles";
-import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
+import { SectionTitle } from "@databiosphere/findable-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
+import { GridPaperSection } from "@databiosphere/findable-ui/lib/components/common/Section/section.styles";
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import React from "react";
 import { Publication } from "../../../../../@types/network";
 import { SectionContent } from "../../section.styles";

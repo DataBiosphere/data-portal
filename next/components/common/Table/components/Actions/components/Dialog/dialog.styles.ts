@@ -1,4 +1,4 @@
-import { DialogTitle as DXDialogTitle } from "@clevercanary/data-explorer-ui/lib/components/common/Dialog/components/DialogTitle/dialogTitle";
+import { DialogTitle as DXDialogTitle } from "@databiosphere/findable-ui/lib/components/common/Dialog/components/DialogTitle/dialogTitle";
 import styled from "@emotion/styled";
 import {
   Dialog as MDialog,

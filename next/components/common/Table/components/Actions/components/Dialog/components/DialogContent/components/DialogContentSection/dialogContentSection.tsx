@@ -1,8 +1,8 @@
-import { Grid } from "@clevercanary/data-explorer-ui/lib/components/common/Grid/grid";
+import { Grid } from "@databiosphere/findable-ui/lib/components/common/Grid/grid";
 import {
   TEXT_BODY_400_2_LINES,
   TEXT_BODY_LARGE_500,
-} from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
+} from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import React, { ReactNode } from "react";
 

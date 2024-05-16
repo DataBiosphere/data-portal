@@ -1,7 +1,7 @@
 import {
   MetadataValue,
   NTagCell,
-} from "@clevercanary/data-explorer-ui/lib/components/Index/components/NTagCell/nTagCell";
+} from "@databiosphere/findable-ui/lib/components/Index/components/NTagCell/nTagCell";
 import React from "react";
 import { PinnedNTagCell as Cell } from "./pinnedNTagCell.styles";
 

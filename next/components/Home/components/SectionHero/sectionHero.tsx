@@ -1,6 +1,6 @@
-import { ButtonSecondary } from "@clevercanary/data-explorer-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
-import { ButtonSecondaryOutline } from "@clevercanary/data-explorer-ui/lib/components/common/Button/components/ButtonSecondaryOutline/buttonSecondaryOutline";
-import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
+import { ButtonSecondary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
+import { ButtonSecondaryOutline } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondaryOutline/buttonSecondaryOutline";
+import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { useConfig } from "../../../../hooks/useConfig";
 import { PORTAL_URL } from "../../../../site-config/data-portal/dev/config";
 import { SummaryCounts } from "./components/SummaryCounts/summaryCounts";

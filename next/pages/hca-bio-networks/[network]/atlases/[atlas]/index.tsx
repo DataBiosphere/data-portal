@@ -1,4 +1,4 @@
-import { Detail } from "@clevercanary/data-explorer-ui/lib/components/Detail/detail";
+import { Detail } from "@databiosphere/findable-ui/lib/components/Detail/detail";
 import {
   GetStaticPaths,
   GetStaticProps,

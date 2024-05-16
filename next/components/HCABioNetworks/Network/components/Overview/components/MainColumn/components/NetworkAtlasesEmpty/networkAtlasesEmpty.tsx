@@ -1,11 +1,11 @@
-import { FluidPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
-import { SectionTitle } from "@clevercanary/data-explorer-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
+import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
+import { SectionTitle } from "@databiosphere/findable-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
 import {
   PRIORITY,
   StatusIcon,
-} from "@clevercanary/data-explorer-ui/lib/components/common/StatusIcon/statusIcon";
-import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
-import { TEXT_BODY_400_2_LINES } from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
+} from "@databiosphere/findable-ui/lib/components/common/StatusIcon/statusIcon";
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { TEXT_BODY_400_2_LINES } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import React from "react";
 import { Network } from "../../../../../../../../../@types/network";

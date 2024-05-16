@@ -1,10 +1,10 @@
-import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
-import { white } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
-import { textBodyLarge400 } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
+import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { white } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
+import { textBodyLarge400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import {
   alpha32,
   alpha64,
-} from "@clevercanary/data-explorer-ui/lib/theme/common/palette";
+} from "@databiosphere/findable-ui/lib/theme/common/palette";
 import styled from "@emotion/styled";
 
 export const SectionHero = styled.section`

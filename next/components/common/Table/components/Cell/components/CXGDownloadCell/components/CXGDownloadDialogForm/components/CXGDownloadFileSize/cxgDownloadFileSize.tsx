@@ -1,4 +1,4 @@
-import { formatFileSize } from "@clevercanary/data-explorer-ui/lib/utils/formatFileSize";
+import { formatFileSize } from "@databiosphere/findable-ui/lib/utils/formatFileSize";
 import React, { Fragment } from "react";
 import { DatasetAsset } from "../../../../../../../../../../../@types/network";
 import { FileSize } from "./cxgDownloadFileSize.styles";

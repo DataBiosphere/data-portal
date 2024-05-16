@@ -1,4 +1,4 @@
-import { TEXT_HEADING_SMALL } from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
+import { TEXT_HEADING_SMALL } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import React, { ReactNode } from "react";
 
