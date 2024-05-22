@@ -1,4 +1,4 @@
-import { LinkProps } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
+import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import {
   AnalysisPortal,
   Atlas,
