@@ -17,21 +17,6 @@ export const DATASETS = {
       [TODO],
       "Rui Chen (Baylor College of Medicine)"
     ),
-    buildDataset(
-      [NORMAL],
-      18191,
-      [TODO],
-      ["10x ATAC"],
-      [TODO],
-      "Cell-specific cis-regulatory elements and mechanisms of non-coding genetic disease in human retina and retinal organoids",
-      {
-        doi: "10.1016/j.devcel.2022.02.018",
-        officialHcaPublication: null,
-        publicationTitle:
-          "Cell-specific cis-regulatory elements and mechanisms of non-coding genetic disease in human retina and retinal organoids",
-        publicationUrl: "https://doi.org/10.1016/j.devcel.2022.02.018",
-      }
-    ),
   ],
   "genetic-diversity": [],
   gut: [],
