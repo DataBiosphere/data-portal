@@ -25,7 +25,7 @@ const config: SiteConfig = {
       size: "100",
     },
     defaultParams: {
-      catalog: "dcp37",
+      catalog: "dcp38",
     },
     url: "https://service.azul.data.humancellatlas.org/index",
   },
