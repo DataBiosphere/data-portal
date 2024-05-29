@@ -6,6 +6,20 @@ title: HCA Data Portal Updates
 
 # HCA Data Portal Platform Updates
 
+#### May 29, 2024
+
+### Release Highlights
+
+* New projects are available from the Oral & Craniofacial and Pancreas Biological Networks.
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (5)
+1. [High-Resolution Transcriptomic Landscape of the Human Submandibular Gland](https://data.humancellatlas.org/explore/projects/ccc3b786-1da0-427f-a45f-76306d6143b6)
+2. [Multimodal mapping of the tumor and peripheral blood immune landscape in human pancreatic cancer](https://data.humancellatlas.org/explore/projects/bcdf233f-9246-4c0c-9843-0514120b7e3a)
+3. [Single-cell multi-omics analysis of human pancreatic islets reveals novel cellular states in type 1 diabetes](https://data.humancellatlas.org/explore/projects/daef3fda-2620-45ae-a3f7-1613814a35bf)
+4. [Single-nucleus RNA sequencing and spatial transcriptomics decode cell type-specific drivers underlying IBM pathogenesis](https://data.humancellatlas.org/explore/projects/d5c91e92-2e7f-473d-8cf3-ab03bbae21c2)
+5. [Spatial transcriptomic profiling of human retinoblastoma](https://data.humancellatlas.org/explore/projects/1662accf-0e0c-48c4-9314-5aba063f2220)
+
+
 #### May 9, 2024
 
 ### Release Highlights
