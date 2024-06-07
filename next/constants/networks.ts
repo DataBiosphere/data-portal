@@ -307,6 +307,7 @@ export const NETWORKS: Network[] = [
       { fullName: "Pascal Barbry" },
       { fullName: "Martijn Nawijn" },
       { fullName: "Jay Rajagopal" },
+      { fullName: "Nicholas Banovich" },
     ],
     datasetQueryOrgans: [
       "bronchus",
