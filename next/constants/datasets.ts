@@ -1,10 +1,23 @@
 import { buildDataset } from "../utils/datasets";
 
+const NORMAL = "normal";
+const TODO = "TODO";
+
 export const DATASETS = {
   adipose: [],
   breast: [],
   development: [],
-  eye: [],
+  eye: [
+    // Rui Chen (Baylor College of Medicine).
+    buildDataset(
+      [NORMAL],
+      1699879,
+      [TODO],
+      ["10x 3' v3"],
+      [TODO],
+      "Rui Chen (Baylor College of Medicine)"
+    ),
+  ],
   "genetic-diversity": [],
   gut: [],
   heart: [],
@@ -14,11 +27,11 @@ export const DATASETS = {
   lung: [
     // Study name: Jain_Misharin_2021.
     buildDataset(
-      ["Normal"],
+      [NORMAL],
       45557,
-      ["TODO"],
+      [TODO],
       ["10X 5' v1", "v2"],
-      ["TODO"],
+      [TODO],
       "Expansion of profibrotic monocyte-derived alveolar macrophages in patients with persistent respiratory symptoms and radiographic abnormalities after COVID-19",
       {
         doi: "10.1101/2023.07.30.551145",
@@ -33,36 +46,36 @@ export const DATASETS = {
     buildDataset(
       ["IPF"],
       100211,
-      ["TODO"],
+      [TODO],
       ["10X 3' v3"],
-      ["TODO"],
+      [TODO],
       "Barbry_unpubl"
     ),
     // Study name:Duong_lungMAP_unpubl.
     buildDataset(
-      ["Normal"],
+      [NORMAL],
       53904,
-      ["TODO"],
+      [TODO],
       ["10X 3' v3"],
-      ["TODO"],
+      [TODO],
       "Duong_lungMAP_unpubl"
     ),
     // Study name: Schiller_2021.
     buildDataset(
       ["Cancer (non-cancerous tissue used for samples)"],
       35984,
-      ["TODO"],
+      [TODO],
       ["10X 3' v3"],
-      ["TODO"],
+      [TODO],
       "Schiller_2021"
     ),
     // Study name: Schultze_unpubl.
     buildDataset(
       ["Cancer (non-cancerous tissue used for samples)"],
       8016,
-      ["TODO"],
+      [TODO],
       ["Seq-Well"],
-      ["TODO"],
+      [TODO],
       "Schultze_unpubl"
     ),
   ],
