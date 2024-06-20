@@ -43,10 +43,16 @@ export async function getContentStaticProps(
     projectsResponses.push(...result.hits);
   }
 
-  const cxgResponse = await fetch(
-    "https://api.cellxgene.cziscience.com/curation/v1/datasets"
-  );
-  const cxgDatasets = await cxgResponse.json();
+  // Fetch CELLxGENE datasets for the network atlases.
+  const cxgDatasets = [];
+  // Skip the fetch if the network has no atlases.
+  if (network.atlases.length > 0) {
+    const cxgResponse = await fetch(
+      "https://api.cellxgene.cziscience.com/curation/v1/datasets"
+    );
+    const data = await cxgResponse.json();
+    cxgDatasets.push(...data);
+  }
 
   return {
     props: {
