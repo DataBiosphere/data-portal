@@ -43,4 +43,33 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  contribute: {
+    nodes: [
+      {
+        key: NAVIGATION_KEY.CONTRIBUTE,
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
+        navigation: [
+          { label: "Contributing Data", url: ROUTES.CONTRIBUTE },
+          {
+            label: "Data Suitability",
+            url: `${ROUTES.CONTRIBUTE}/contributing-data-suitability`,
+          },
+          {
+            label: "Data Submission Process",
+            url: `${ROUTES.CONTRIBUTE}/contributing-expect-prepare`,
+          },
+          {
+            label: "Data Processing and Results",
+            url: `${ROUTES.CONTRIBUTE}/contributing-data-processing-results`,
+          },
+        ],
+        slugs: [
+          NAVIGATION_KEY.CONTRIBUTE,
+          "contributing-data-suitability",
+          "contributing-expect-prepare",
+          "contributing-data-processing-results",
+        ],
+      },
+    ],
+  },
 };
