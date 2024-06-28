@@ -15,8 +15,16 @@ export const navigation: NavigationConfig = {
             label: "Exploring Biological Network and Atlas Data",
             url: `${ROUTES.GUIDES}/accessing-atlases`,
           },
+          {
+            label: "Accessing HCA Data and Metadata",
+            url: `${ROUTES.GUIDES}/quick-start-guide`,
+          },
         ],
-        slugs: [NAVIGATION_KEY.GUIDES, "accessing-atlases"],
+        slugs: [
+          NAVIGATION_KEY.GUIDES,
+          "accessing-atlases",
+          "quick-start-guide",
+        ],
       },
     ],
   },
