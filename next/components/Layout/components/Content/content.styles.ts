@@ -26,4 +26,9 @@ export const Content = styled.div<Props>`
   h3 {
     scroll-margin-top: ${({ headerHeight }) => headerHeight + 32}px;
   }
+
+  img {
+    margin: 16px 0;
+    max-width: 100%;
+  }
 `;
