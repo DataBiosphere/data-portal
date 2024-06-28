@@ -23,12 +23,17 @@ export const navigation: NavigationConfig = {
             label: "Exporting HCA Data to Terra",
             url: `${ROUTES.GUIDES}/consumer-vignettes/export-to-terra`,
           },
+          {
+            label: "Exploring Project Matrices",
+            url: `${ROUTES.GUIDES}/consumer-vignettes/matrices`,
+          },
         ],
         slugs: [
           NAVIGATION_KEY.GUIDES,
           "accessing-atlases",
           "quick-start-guide",
           "export-to-terra",
+          "matrices",
         ],
       },
     ],
