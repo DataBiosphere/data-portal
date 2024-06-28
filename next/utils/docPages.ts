@@ -39,7 +39,7 @@ export async function getDocsStaticProps(
       notFound: true,
     };
   }
-  const navigationConfig = getNavigationConfig([dir, ...slug]);
+  const navigationConfig = getNavigationConfig(slug);
   const outline: OutlineItem[] = [];
   const mdxSource = await serialize(content, {
     mdxOptions: {
