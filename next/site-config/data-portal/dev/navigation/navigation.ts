@@ -19,11 +19,16 @@ export const navigation: NavigationConfig = {
             label: "Accessing HCA Data and Metadata",
             url: `${ROUTES.GUIDES}/quick-start-guide`,
           },
+          {
+            label: "Exporting HCA Data to Terra",
+            url: `${ROUTES.GUIDES}/consumer-vignettes/export-to-terra`,
+          },
         ],
         slugs: [
           NAVIGATION_KEY.GUIDES,
           "accessing-atlases",
           "quick-start-guide",
+          "export-to-terra",
         ],
       },
     ],
