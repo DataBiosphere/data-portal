@@ -27,6 +27,10 @@ export const navigation: NavigationConfig = {
             label: "Exploring Project Matrices",
             url: `${ROUTES.GUIDES}/consumer-vignettes/matrices`,
           },
+          {
+            label: "Accessing Metadata via TDR",
+            url: `${ROUTES.GUIDES}/accessing-metadata-via-tdr`,
+          },
         ],
         slugs: [
           NAVIGATION_KEY.GUIDES,
@@ -34,6 +38,7 @@ export const navigation: NavigationConfig = {
           "quick-start-guide",
           "export-to-terra",
           "matrices",
+          "accessing-metadata-via-tdr",
         ],
       },
     ],
