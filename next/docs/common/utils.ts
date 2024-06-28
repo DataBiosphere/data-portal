@@ -10,7 +10,6 @@ import {
   SlugByFilePaths,
 } from "../../site-config/data-portal/dev/navigation/entities";
 import { navigation as navigationConfig } from "../../site-config/data-portal/dev/navigation/navigation";
-import { DOC_SITE_FOLDER_NAME } from "./constants";
 
 /**
  * Filters out headings (H1, and H3-H6) from the outline.
@@ -27,7 +26,7 @@ export function filterOutline(outline: OutlineItem): boolean {
  * @returns path to the directory.
  */
 export function getDocsDirectory(dir: string): string {
-  return pathTool.join(process.cwd(), DOC_SITE_FOLDER_NAME, dir);
+  return pathTool.join(process.cwd(), dir);
 }
 
 /**
