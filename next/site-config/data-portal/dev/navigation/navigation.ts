@@ -4,6 +4,35 @@ import { NavigationConfig, NAVIGATION_KEY } from "./entities";
 
 // Site map for the MDX pages used to generate the navigation.
 export const navigation: NavigationConfig = {
+  about: {
+    nodes: [
+      {
+        key: NAVIGATION_KEY.ABOUT,
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
+        navigation: [
+          { label: "About the HCA Data Portal", url: ROUTES.ABOUT },
+          {
+            label: "About the HCA",
+            url: `${ROUTES.ABOUT}/hca`,
+          },
+          {
+            label: "Attributions",
+            url: `${ROUTES.ABOUT}/attributions`,
+          },
+          {
+            label: "Data Use Agreement",
+            url: `${ROUTES.ABOUT}/data-use-agreement`,
+          },
+        ],
+        slugs: [
+          NAVIGATION_KEY.ABOUT,
+          "hca",
+          "attributions",
+          "data-use-agreement",
+        ],
+      },
+    ],
+  },
   apis: {
     nodes: [
       {
@@ -49,6 +78,18 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  "dcp-updates": {
+    nodes: [
+      {
+        key: NAVIGATION_KEY.UPDATES,
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
+        navigation: [
+          { label: "HCA Data Portal Platform Updates", url: ROUTES.UPDATES },
+        ],
+        slugs: [NAVIGATION_KEY.UPDATES],
+      },
+    ],
+  },
   guides: {
     nodes: [
       {
@@ -85,18 +126,6 @@ export const navigation: NavigationConfig = {
           "matrices",
           "accessing-metadata-via-tdr",
         ],
-      },
-    ],
-  },
-  "dcp-updates": {
-    nodes: [
-      {
-        key: NAVIGATION_KEY.UPDATES,
-        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
-        navigation: [
-          { label: "HCA Data Portal Platform Updates", url: ROUTES.UPDATES },
-        ],
-        slugs: [NAVIGATION_KEY.UPDATES],
       },
     ],
   },
