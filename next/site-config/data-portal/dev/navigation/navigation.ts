@@ -129,4 +129,14 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  privacy: {
+    nodes: [
+      {
+        key: NAVIGATION_KEY.PRIVACY,
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
+        navigation: [{ label: "", url: ROUTES.PRIVACY }],
+        slugs: [NAVIGATION_KEY.PRIVACY],
+      },
+    ],
+  },
 };
