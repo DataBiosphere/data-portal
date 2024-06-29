@@ -8,8 +8,9 @@ export interface NavigationEntry {
 }
 
 export enum NAVIGATION_KEY {
-  GUIDES = "guides",
+  APIS = "apis",
   CONTRIBUTE = "contribute",
+  GUIDES = "guides",
 }
 
 export interface NavigationNode {

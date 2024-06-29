@@ -1,4 +1,5 @@
 export const ROUTES = {
-  GUIDES: "/guides",
+  APIS: "/apis",
   CONTRIBUTE: "/contribute",
+  GUIDES: "/guides",
 };
