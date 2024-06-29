@@ -11,6 +11,7 @@ export enum NAVIGATION_KEY {
   APIS = "apis",
   CONTRIBUTE = "contribute",
   GUIDES = "guides",
+  UPDATES = "dcp-updates",
 }
 
 export interface NavigationNode {

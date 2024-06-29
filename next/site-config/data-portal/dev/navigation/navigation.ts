@@ -88,4 +88,16 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  "dcp-updates": {
+    nodes: [
+      {
+        key: NAVIGATION_KEY.UPDATES,
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
+        navigation: [
+          { label: "HCA Data Portal Platform Updates", url: ROUTES.UPDATES },
+        ],
+        slugs: [NAVIGATION_KEY.UPDATES],
+      },
+    ],
+  },
 };
