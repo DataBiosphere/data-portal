@@ -49,6 +49,22 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  contact: {
+    nodes: [
+      {
+        key: NAVIGATION_KEY.CONTACT,
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
+        navigation: [
+          { label: "Contact Us", url: ROUTES.CONTACT },
+          {
+            label: "Join the Discussion",
+            url: `${ROUTES.CONTACT}/join-the-discussion`,
+          },
+        ],
+        slugs: [NAVIGATION_KEY.CONTACT, "join-the-discussion"],
+      },
+    ],
+  },
   contribute: {
     nodes: [
       {
