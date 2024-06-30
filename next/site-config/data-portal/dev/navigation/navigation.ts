@@ -129,6 +129,16 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  help: {
+    nodes: [
+      {
+        key: NAVIGATION_KEY.HELP,
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
+        navigation: [{ label: "Help & FAQ", url: ROUTES.HELP }],
+        slugs: [NAVIGATION_KEY.HELP],
+      },
+    ],
+  },
   privacy: {
     nodes: [
       {
