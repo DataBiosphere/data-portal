@@ -6,6 +6,69 @@ title: HCA Data Portal Updates
 
 # HCA Data Portal Platform Updates
 
+#### August 5, 2024
+
+### Release Highlights
+
+* New projects that are part of official HCA publications are now
+  available: 
+    * ["Human SARS-CoV-2 challenge resolves local and systemic response dynamics"](https://data.humancellatlas.org/explore/projects/16dc40f9-2c13-42e3-8cdf-251e95bfc043)
+    * ["Dandelion uses the single-cell adaptive immune receptor repertoire to explore lymphocyte developmental origins"](https://explore.data.humancellatlas.org/projects/a83b7f45-bfb1-4c6a-97e9-8e3370065cc1)
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (3)
+1. [Dandelion uses the single-cell adaptive immune receptor repertoire to explore lymphocyte developmental origins](https://data.humancellatlas.org/explore/projects/a83b7f45-bfb1-4c6a-97e9-8e3370065cc1)
+2. [Dynamic scRNA-seq of live human pancreatic slices reveals functional endocrine cell neogenesis through an intermediate ducto-acinar stage](https://data.humancellatlas.org/explore/projects/86fd2521-c501-4e41-841c-06d79277bb7c)
+3. [Human SARS-CoV-2 challenge resolves local and systemic response dynamics](https://data.humancellatlas.org/explore/projects/16dc40f9-2c13-42e3-8cdf-251e95bfc043)
+
+### Updated Raw Data and Metadata (3)
+1. [A single-cell atlas of human teeth](https://data.humancellatlas.org/explore/projects/d3446f0c-30f3-4a12-b7c3-6af877c7bb2d)
+2. [Single-Cell Transcriptomics of the Human Endocrine Pancreas](https://data.humancellatlas.org/explore/projects/99101928-d9b1-4aaf-b759-e97958ac7403)
+3. [Single-cell RNA-seq reveals ectopic and aberrant lung-resident cell populations in idiopathic pulmonary fibrosis](https://data.humancellatlas.org/explore/projects/c16a754f-5da3-46ed-8c1e-6426af2ef625)
+4. [Single-cell multi-omics analysis of the immune response in COVID-19](https://data.humancellatlas.org/explore/projects/b963bd4b-4bc1-4404-8425-69d74bc636b8)
+5. [Single-cell transcriptomes identify human islet cell signatures and reveal cell-type–specific expression changes in type 2 diabetes](https://data.humancellatlas.org/explore/projects/c6ad8f9b-d26a-4811-b2ba-93d487978446)
+6. [Anomalous Epithelial Variations and Ectopic Inflammatory Response in Chronic Obstructive Pulmonary Disease](https://data.humancellatlas.org/explore/projects/ad04c8e7-9b7d-4cce-b8e9-01e31da10b94)
+7. [Comparative Analysis and Refinement of Human PSC-Derived Kidney Organoid Differentiation with Single-Cell Transcriptomics](https://data.humancellatlas.org/explore/projects/16ed4ad8-7319-46b2-8859-6fe1c1d73a82)
+8. [Genetic ancestry effects on the response to viral infection are pervasive but cell type specific](https://data.humancellatlas.org/explore/projects/c211fd49-d980-4ba1-8c6a-c24254a3cb52)
+9. [Human oral mucosa cell atlas reveals a stromal-neutrophil axis regulating tissue immunity](https://data.humancellatlas.org/explore/projects/50151324-f3ed-4358-98af-ec352a940a61)
+10. [Local and systemic responses to SARS-CoV-2 infection in children and adults](https://data.humancellatlas.org/explore/projects/1538d572-bcb7-426b-8d2c-84f3a7f87bb0)
+11. [Molecular characterization of foveal versus peripheral human retina by single-cell RNA sequencing](https://data.humancellatlas.org/explore/projects/4bec484d-ca7a-47b4-8d48-8830e06ad6db)
+12. [Organoid single-cell genomic atlas uncovers human-specific features of brain development](https://data.humancellatlas.org/explore/projects/005d611a-14d5-4fbf-846e-571a1f874f70)
+13. [Pathogen-induced tissue-resident memory T H 17 (T RM 17) cells amplify autoimmune kidney disease](https://data.humancellatlas.org/explore/projects/dc0b65b0-7713-46f0-a339-0b03ea786046)
+14. [Resolving the intertwining of inflammation and fibrosis in human heart failure at single-cell level](https://data.humancellatlas.org/explore/projects/065e6c13-ad6b-46a3-8075-c3137eb03068)
+15. [Single cell RNA sequencing of human liver reveals distinct intrahepatic macrophage populations](https://data.humancellatlas.org/explore/projects/4d6f6c96-2a83-43d8-8fe1-0f53bffd4674)
+16. [Single cell profiling of COVID-19 patients: an international data resource from multiple tissues](https://data.humancellatlas.org/explore/projects/2d4d89f2-ebeb-467c-ae60-a3efc5e8d4ba)
+17. [Single-Cell Analysis of Human Pancreas Reveals Transcriptional Signatures of Aging and Somatic Mutation Patterns](https://data.humancellatlas.org/explore/projects/cddab57b-6868-4be4-806f-395ed9dd635a)
+18. [Single-Cell Heterogeneity Analysis and CRISPR Screen Identify Key β-Cell-Specific Disease Genes](https://data.humancellatlas.org/explore/projects/1c6a960d-52ac-44ea-b728-a59c7ab9dc8e)
+19. [Single-Cell Transcriptome Profiling of Human Pancreatic Islets in Health and Type 2 Diabetes](https://data.humancellatlas.org/explore/projects/ae71be1d-ddd8-4feb-9bed-24c3ddb6e1ad)
+20. [Single-Cell Transcriptomics of a Human Kidney Allograft Biopsy Specimen Defines a Diverse Inflammatory Response](https://data.humancellatlas.org/explore/projects/027c51c6-0719-469f-a7f5-640fe57cbece)
+21. [Single-cell RNA sequencing identifies celltype-specific cis-eQTLs and co-expression QTLs](https://data.humancellatlas.org/explore/projects/40272c3b-4697-4bd4-ba3f-82fa96b9bf71)
+22. [Single-cell RNA sequencing reveals profibrotic roles of distinct epithelial and mesenchymal lineages in pulmonary fibrosis](https://data.humancellatlas.org/explore/projects/c1a9a93d-d9de-4e65-9619-a9cec1052eaa)
+23. [Single-cell sequencing unveils distinct immune microenvironments with CCR6-CCL20 crosstalk in human chronic pancreatitis](https://data.humancellatlas.org/explore/projects/c5ca43aa-3b2b-4216-8eb3-f57adcbc99a1)
+24. [Single-cell transcriptomes of the human skin reveal age-related loss of fibroblast priming](https://data.humancellatlas.org/explore/projects/51f02950-ee25-4f4b-8d07-59aa99bb3498)
+25. [Single-cell transcriptomics reveals cell-type-specific diversification in human heart failure](https://data.humancellatlas.org/explore/projects/135f7f5c-4a85-4bcf-9f7c-4f035ff1e428)
+26. [Single-nucleus cross-tissue molecular reference maps toward understanding disease gene function](https://data.humancellatlas.org/explore/projects/31887183-a72c-4308-9eac-c6140313f39c)
+27. [Spatial proteogenomics reveals distinct and evolutionarily conserved hepatic macrophage niches](https://data.humancellatlas.org/explore/projects/425c2759-db66-4c93-a358-a562c069b1f1)
+28. [The Tabula Sapiens: A multiple-organ, single-cell transcriptomic atlas of humans](https://data.humancellatlas.org/explore/projects/10201832-7c73-4033-9b65-3ef13d81656a)
+29. [The single-cell transcriptomic landscape of early human diabetic nephropathy](https://data.humancellatlas.org/explore/projects/577c946d-6de5-4b55-a854-cd3fde40bff2)
+30. [scRNA-seq assessment of the human lung, spleen, and esophagus tissue stability after cold preservation](https://data.humancellatlas.org/explore/projects/c4077b3c-5c98-4d26-a614-246d12c2e5d7)
+
+
+#### June 28, 2024
+
+### Release Highlights
+
+* A new project is available from the Oral & Craniofacial Biological Network.
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (2)
+1. [An Atlas of Cells in the Human Tonsil](https://data.humancellatlas.org/explore/projects/0cc58d0b-1734-4e1d-9113-b32e52f75e36)
+2. [Single nucleus and spatial transcriptomic profiling of human healthy hamstring tendon](https://data.humancellatlas.org/explore/projects/838d4660-3d62-4b08-b32d-dc5cbd93919d)
+
+### Updated Raw Data and Metadata (3)
+1. [Recruited macrophages elicit atrial fibrillation](https://data.humancellatlas.org/explore/projects/9483c664-d546-4b30-9ba3-efbdbf9290b4)
+2. [Single-cell eQTL mapping identifies cell type-specific genetic control of autoimmune disease](https://data.humancellatlas.org/explore/projects/f2078d5f-2e7d-4844-8552-f7c41a231e52)
+3. [Single-cell transcriptomics of human T cells reveals tissue and activation signatures in health and disease](https://data.humancellatlas.org/explore/projects/4a95101c-9ffc-4f30-a809-f04518a23803)
+
+
 #### May 29, 2024
 
 ### Release Highlights
