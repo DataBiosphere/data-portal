@@ -6,6 +6,22 @@ title: HCA Data Portal Updates
 
 # HCA Data Portal Platform Updates
 
+#### June 28, 2024
+
+### Release Highlights
+
+* A new project is available from the Oral & Craniofacial Biological Network.
+
+### New Raw Data, Metadata, and Contributor-generated Matrices (2)
+1. [An Atlas of Cells in the Human Tonsil](https://data.humancellatlas.org/explore/projects/0cc58d0b-1734-4e1d-9113-b32e52f75e36)
+2. [Single nucleus and spatial transcriptomic profiling of human healthy hamstring tendon](https://data.humancellatlas.org/explore/projects/838d4660-3d62-4b08-b32d-dc5cbd93919d)
+
+### Updated Raw Data and Metadata (3)
+1. [Recruited macrophages elicit atrial fibrillation](https://data.humancellatlas.org/explore/projects/9483c664-d546-4b30-9ba3-efbdbf9290b4)
+2. [Single-cell eQTL mapping identifies cell type-specific genetic control of autoimmune disease](https://data.humancellatlas.org/explore/projects/f2078d5f-2e7d-4844-8552-f7c41a231e52)
+3. [Single-cell transcriptomics of human T cells reveals tissue and activation signatures in health and disease](https://data.humancellatlas.org/explore/projects/4a95101c-9ffc-4f30-a809-f04518a23803)
+
+
 #### May 29, 2024
 
 ### Release Highlights
