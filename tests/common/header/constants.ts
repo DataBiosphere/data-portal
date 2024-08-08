@@ -9,7 +9,6 @@ export const NAVIGATIONS = [
   },
   { path: "guides", name: "Guides" },
   { path: "metadata", name: "Metadata" },
-  { path: "contribute", name: "Contribute" },
   { path: "apis", name: "APIs", description: "APIs" },
   { path: "dcp-updates", name: "Updates" },
 ];

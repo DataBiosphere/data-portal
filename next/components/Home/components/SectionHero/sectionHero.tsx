@@ -1,8 +1,6 @@
 import { ButtonSecondary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
-import { ButtonSecondaryOutline } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondaryOutline/buttonSecondaryOutline";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { useConfig } from "../../../../hooks/useConfig";
-import { PORTAL_URL } from "../../../../site-config/data-portal/dev/config";
 import { SummaryCounts } from "./components/SummaryCounts/summaryCounts";
 import {
   CTAs,
@@ -28,9 +26,6 @@ export const SectionHero = (): JSX.Element => {
         <Subhead>Community generated, multi-omic, open data</Subhead>
         <CTAs>
           <ButtonSecondary onClick={onExplore}>Explore Data</ButtonSecondary>
-          <ButtonSecondaryOutline href={`${PORTAL_URL}/contribute`}>
-            Contribute Data
-          </ButtonSecondaryOutline>
         </CTAs>
       </Headline>
       <SummaryCounts />
