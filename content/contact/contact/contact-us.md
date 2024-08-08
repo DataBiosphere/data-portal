@@ -31,7 +31,3 @@ To join the conversation:
 
 1. Request an invitation to the HCA Slack from <hca@humancellatlas.com>.
 2. Add the  **#dcp-users** channel and say hello.
-
-## Contribute to the HCA
-
-If you have data that you’d like to add to the HCA, visit this page to learn more about contributing data.

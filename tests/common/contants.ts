@@ -4,7 +4,6 @@ export const PRIMARY_RGB = "rgb(28, 124, 199)";
 export const TEST_ID_HEADER_NAVIGATION = "navigation";
 export const TEST_ID_HEADER_SOCIALS = "socials";
 export const TEST_ID_HOMEPAGE_METRIC = "metric";
-export const TEST_ID_HOMEPAGE_TILE = "tile";
 export const TEST_ID_METADATA_SEARCH_INPUT = "metadata-search";
 export const TEST_ID_METADATA_SEARCH_RESULTS = "metadata-search-results";
 export const TEST_ID_PAGE_NAVIGATION = "page-navigation";

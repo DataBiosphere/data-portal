@@ -72,30 +72,6 @@
           key: "/document/creating-content/creating-a-new-page"
         - name: "Style Guide"
           key: "/document/creating-content/content-style-guide"
-- name: "Contribute"
-  description: "Submit your data to the HCA"
-  key: "contribute"
-  path: "/contribute"
-  position:
-    location: "h"
-    order: 4
-  tabs:
-    - name: ""
-      key: "data"
-      primaryLinks:
-        - name: "Contributing Data"
-          key: "/contribute/data/contributing-to-hca"
-          path: "/contribute"
-          secondaryLinks:
-            - name: "Data Suitability"
-              key: "/contribute/data/contributing-to-hca/contributing-data-suitability"
-              path: "/contribute/contributing-data-suitability"
-            - name: "Data Submission Process"
-              key: "/contribute/data/contributing-to-hca/contributing-expect-prepare"
-              path: "/contribute/contributing-expect-prepare"
-            - name: "Data Processing and Results"
-              key: "/contribute/data/contributing-to-hca/contributing-data-processing-results"
-              path: "/contribute/contributing-data-processing-results"
 - name: "Guides"
   description: "Find user guides and how-to’s here"
   key: "guides"

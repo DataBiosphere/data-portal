@@ -39,10 +39,6 @@ const config: SiteConfig = {
           url: "/metadata",
         },
         {
-          label: "Contribute",
-          url: "/contribute",
-        },
-        {
           label: "APIs",
           url: "/apis",
         },

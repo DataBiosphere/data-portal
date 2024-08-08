@@ -89,10 +89,6 @@ const config: SiteConfig = {
           url: `${PORTAL_URL}/metadata`,
         },
         {
-          label: "Contribute",
-          url: `${PORTAL_URL}/contribute`,
-        },
-        {
           label: "APIs",
           url: `${PORTAL_URL}/apis`,
         },

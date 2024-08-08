@@ -30,10 +30,12 @@ of the [Data Portal Content Repository](https://github.com/HumanCellAtlas/data-p
 
 The site is laid out in a 4 level hierarchy with the top level sections being:
 
-1. Explore (links to the Data Browser)
-1. Contribute
-1. Learn
-1. About
+1. Datasets
+1. HCA BioNetworks
+1. Guides
+1. Metadata
+1. APIs
+1. Updates
 
 ## Sub Sections
 
