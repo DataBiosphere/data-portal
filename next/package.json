@@ -17,7 +17,7 @@
     "get-cellxgene-projects": "esrun ./scripts/get-cellxgene-projects.ts"
   },
   "dependencies": {
-    "@databiosphere/findable-ui": "2.0.1",
+    "@databiosphere/findable-ui": "9.0.0",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@mdx-js/loader": "^3.0.1",
@@ -25,7 +25,7 @@
     "@mui/icons-material": "5.14.1",
     "@mui/material": "5.14.1",
     "@next/mdx": "^14.1.0",
-    "@tanstack/react-table": "8.5.11",
+    "@tanstack/react-table": "^8.19.2",
     "@types/mdx": "^2.0.11",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",

@@ -16,10 +16,7 @@ import { Typography } from "@mui/material";
 import { useAtlas, useAtlasContent } from "contexts/atlasContext";
 import React from "react";
 import { getIntegratedAtlasesTableColumns } from "../../../../../../../../viewModelBuilders/viewModelBuilders";
-import {
-  Table,
-  TableToolbar,
-} from "../../../../../../../common/Table/table.styles";
+import { Table, Toolbar } from "../../../../../../../common/Table/table.styles";
 import { SectionText } from "../../../../../../components/Section/section.styles";
 
 export const MainColumn = (): JSX.Element => {
@@ -42,11 +39,11 @@ export const MainColumn = (): JSX.Element => {
       {/* Atlases Table */}
       <FluidPaper>
         <GridPaper>
-          <TableToolbar>
+          <Toolbar variant="table">
             <Typography variant={TEXT_BODY_LARGE_500}>
               Component Atlases
             </Typography>
-          </TableToolbar>
+          </Toolbar>
           {integratedAtlases.length > 0 ? (
             <Table
               columns={getIntegratedAtlasesTableColumns()}

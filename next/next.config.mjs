@@ -2,12 +2,19 @@ import nextMDX from "@next/mdx";
 import withOptimizedImages from "next-optimized-images";
 import path from "path";
 
+const ESM_PACKAGES = [
+  "axios",
+  "@databiosphere/findable-ui",
+  "@tanstack/react-table",
+];
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
     disableStaticImages: true,
   },
   output: "export",
+  transpilePackages: [...ESM_PACKAGES],
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Add the alias for the peer dependency
     config.resolve.alias["@emotion/react"] = path.resolve(
