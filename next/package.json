@@ -17,7 +17,7 @@
     "get-cellxgene-projects": "esrun ./scripts/get-cellxgene-projects.ts"
   },
   "dependencies": {
-    "@databiosphere/findable-ui": "9.0.0",
+    "@databiosphere/findable-ui": "9.1.0",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@mdx-js/loader": "^3.0.1",
