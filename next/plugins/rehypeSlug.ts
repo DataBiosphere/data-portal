@@ -1,6 +1,6 @@
 import { Plugin } from "unified";
 import { visit } from "unist-util-visit";
-import { slugifyHeading } from "./common/utils";
+import { generateUniqueId, slugifyHeading } from "./common/utils";
 import { getHeadingTextValue } from "./remarkHeadings";
 
 /**
@@ -9,10 +9,12 @@ import { getHeadingTextValue } from "./remarkHeadings";
  */
 export function rehypeSlug(): Plugin {
   return (tree) => {
+    const setOfIds = new Set<string>();
     visit(tree, "element", (node) => {
       if (/^h[1-6]$/.test(node.tagName)) {
         const headingText = getHeadingTextValue(node.children);
-        const id = slugifyHeading(headingText);
+        const headingSlug = slugifyHeading(headingText);
+        const id = generateUniqueId(setOfIds, headingSlug);
         // Add the ID to the heading element.
         node.properties.id = id;
         node.properties.style = "position: relative;";

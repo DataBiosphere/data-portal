@@ -104,6 +104,10 @@ export function getNavigationConfig(
           // Although the first slug's key is a match, continue if the slug has more than one element.
           continue;
         }
+        // Return the layout styles; navigation (and therefore hero) are undefined.
+        if (!navigation) {
+          return { layoutStyle };
+        }
         const pagePath = `/${slug.join("/")}`;
         const activeURL = getActiveURL(pagePath, navigation);
         if (activeURL) {
