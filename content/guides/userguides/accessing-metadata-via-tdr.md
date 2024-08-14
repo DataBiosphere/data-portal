@@ -1,7 +1,6 @@
 ---
 date: "2021-12-25"
 description: "Overview of accessing project metadata via the Terra Data Repository (TDR)."
-draft: false
 title: "Accessing Metadata via TDR"
 ---
 

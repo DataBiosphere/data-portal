@@ -16,6 +16,7 @@ import { Head } from "../components/common/Head/head";
 import { AppFooter } from "../components/Layout/components/Footer/footer.styles";
 import { config } from "../config/config";
 import { ConfigProvider } from "../providers/config";
+import { SiteConfig } from "../site-config/common/entities";
 import { mergeAppTheme } from "../theme/theme";
 
 interface PageProps {
@@ -35,7 +36,7 @@ export type AppPropsWithComponent = AppProps & {
 function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const Footer = Component.Footer || AppFooter;
   const Main = Component.Main || DXMain;
-  const appConfig = config();
+  const appConfig = config() as SiteConfig;
   const { analytics, appTitle, layout, themeOptions } = appConfig;
   const { floating, footer, header } = layout || {};
   const { gtmAuth, gtmId, gtmPreview } = analytics || {};

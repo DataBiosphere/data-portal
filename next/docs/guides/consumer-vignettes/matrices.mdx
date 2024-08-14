@@ -1,7 +1,6 @@
 ---
 date: "2020-11-13"
 description: "An overview of the available matrices"
-path: "/guides/userguides/matrices"
 title: "Matrices"
 ---
 
@@ -21,12 +20,19 @@ Overall, three types of matrices are currently available for HCA Data Portal dat
 
 Each HCA Data Portal project that is processed with uniform pipelines has two types of HCA Data Portal-generated matrices available for download:
 
-- [project-level matrices](/guides/consumer-vignettes/matrices#dcp-project-level-matrix-overview)
-- [library-level matrices](/guides/consumer-vignettes/matrices#dcp-library-level-matrix-overview)
+- [project-level matrices](/guides/consumer-vignettes/matrices#hca-data-portal-project-level-matrix-overview)
+- [library-level matrices](/guides/consumer-vignettes/matrices#hca-data-portal-library-level-matrix-overview)
 
 Both matrix types are in Loom file format, and contain standard metrics and counts that are specific to the data processing pipeline used to generate the file.
 
-> For the most up-to-date information on counts and metrics, see the Matrix Overviews for the **[Smart-seq2 Pipeline](https://broadinstitute.github.io/warp/docs/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema)** and the **[Optimus Pipeline](https://broadinstitute.github.io/warp/docs/Pipelines/Optimus_Pipeline/Loom_schema) (10x data)**.
+<Alert icon={false} severity="info">
+  For the most up-to-date information on counts and metrics, see the Matrix
+  Overviews for the **[Smart-seq2
+  Pipeline](https://broadinstitute.github.io/warp/docs/Pipelines/Smart-seq2_Multi_Sample_Pipeline/Loom_schema)**
+  and the **[Optimus
+  Pipeline](https://broadinstitute.github.io/warp/docs/Pipelines/Optimus_Pipeline/Loom_schema)
+  (10x data)**.
+</Alert>
 
 HCA Data Portal-generated Loom matrices have three types of attributes containing metadata and metrics:
 
@@ -38,20 +44,22 @@ For more information on working with Loom attributes and format, see the [Loom d
 
 Loom files are compatible with multiple downstream community tools, including [Seurat](https://satijalab.org/seurat/index.html), [Scanpy](https://scanpy-tutorials.readthedocs.io/en/latest/index.html), [Cumulus](https://cumulus.readthedocs.io/en/latest/index.html), and [Pegasus](https://pegasus.readthedocs.io/en/stable/#).
 
-> Step-by-step Jupyter Notebook tutorials for analyzing Loom matrices with community tools are available in the cloud-based platform [Terra](https://app.terra.bio/). After registering, get started by navigating to the [Intro-to-HCA-data-on-Terra workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra).
+<Alert icon={false} severity="info">
+  Step-by-step Jupyter Notebook tutorials for analyzing Loom matrices with
+  community tools are available in the cloud-based platform
+  [Terra](https://app.terra.bio/). After registering, get started by navigating
+  to the [Intro-to-HCA-data-on-Terra
+  workspace](https://app.terra.bio/#workspaces/featured-workspaces-hca/Intro-to-HCA-data-on-Terra).
+</Alert>
 
 #### HCA Data Portal-Generated Matrix Filenames
 
 Both project matrices and library-level matrices have unique filenames.
 
 - Project matrices have filenames in the format `<project_description>-<species>-<tissue>-<sequencing_method>`.
-
-  - Example: the project-level matrix for "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" has the filename `sc-landscape-human-liver-10XV2.loom`.
-
+- Example: the project-level matrix for "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" has the filename `sc-landscape-human-liver-10XV2.loom`.
   ![Project Matrices Filenames](/hca-bio-networks/guides/project_matrix_name.png)
-
-- Library-level matrices have filenames matching the numerical ID in the HCA metadata
-  field `sequencing_process.provenance.document_id`.
+- Library-level matrices have filenames matching the numerical ID in the HCA metadata field `sequencing_process.provenance.document_id`.
 
 #### HCA Data Portal Project-Level Matrix Overview
 
@@ -67,10 +75,10 @@ The gene measures in project matrices vary based on the pipeline used for analys
 
 Each project matrix also has metadata stored in the Loom file's global attributes, described in the table below. In contrast to the other metadata, the input_id is stored in both the global and column attributes, as this is the ID used to link individual library preparations back to the Data Manifest.
 
-Read more about each metadata field in the [Metadata Dictionary](/metadata/).
+Read more about each metadata field in the [Metadata Dictionary](/metadata).
 
 | Metadata Attribute Name in HCA Data Portal-Generated Matrix  | Metadata Description                                                   |
-| ------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| :----------------------------------------------------------- | :--------------------------------------------------------------------- |
 | `donor_organism.genus_species`                               | Species information; human or mouse                                    |
 | `library_preparation_protocol.library_construction_approach` | Technology used for library preparation, i.e 10x or Smart-seq2         |
 | `specimen_from_organism.organ`                               | Organ                                                                  |

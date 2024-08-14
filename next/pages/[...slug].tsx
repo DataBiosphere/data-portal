@@ -16,7 +16,7 @@ import { MDX_COMPONENTS } from "../docs/common/constants";
 import { generatePaths } from "../docs/common/utils";
 import { getDocsStaticProps, PageProps } from "../utils/docPages";
 
-const CONFLICTING_STATIC_PATHS = ["events", "news"];
+const CONFLICTING_STATIC_PATHS: string[] = ["hca-bio-networks"];
 const DOCS_DIR = "/docs";
 
 const Page = ({
