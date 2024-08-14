@@ -16,6 +16,27 @@ interface Props {
   headerHeight: number;
 }
 
+const code = (props: ThemeProps) => css`
+  li code,
+  p code,
+  td code {
+    background-color: ${smokeLight(props)};
+    font-size: inherit;
+  }
+`;
+
+const codeBlock = (props: ThemeProps) => css`
+  pre {
+    background-color: ${smokeLight(props)};
+    padding: 4px;
+    margin: 16px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+`;
+
 const footnotes = (props: ThemeProps) => css`
   section[data-footnotes] {
     border-top: 1px solid ${smokeMain(props)};
@@ -25,6 +46,15 @@ const footnotes = (props: ThemeProps) => css`
     h2[id="footnotes"] {
       display: none;
     }
+  }
+`;
+
+const image = (props: ThemeProps) => css`
+  img {
+    border: 1px solid ${smokeMain(props)};
+    border-radius: 6px;
+    margin: 16px 0;
+    max-width: 100%;
   }
 `;
 
@@ -128,13 +158,6 @@ export const Content = styled.div<Props>`
     margin-top: 16px;
   }
 
-  img {
-    border: 1px solid ${smokeMain};
-    border-radius: 6px;
-    margin: 16px 0;
-    max-width: 100%;
-  }
-
   ol + p,
   ul + p {
     margin-top: 16px;
@@ -152,24 +175,10 @@ export const Content = styled.div<Props>`
     }
   }
 
-  li code,
-  p code,
-  td code {
-    background-color: ${smokeLight};
-    font-size: inherit;
-  }
-
-  pre {
-    background-color: ${smokeLight};
-    padding: 4px;
-    margin: 16px 0;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
+  ${code};
+  ${codeBlock};
   ${footnotes};
+  ${image};
   ${muiAlert};
   ${muiButtonContainedPrimary};
 `;
