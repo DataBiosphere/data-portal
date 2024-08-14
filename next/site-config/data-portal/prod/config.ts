@@ -1,45 +1,11 @@
-import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import { SiteConfig } from "@databiosphere/findable-ui/lib/config/entities";
-import devConfig, { PORTAL_URL } from "../dev/config";
+import { SiteConfig } from "../../common/entities";
+import { makeConfig } from "../dev/config";
 
-const BROWSER_URL = "https://explore.data.humancellatlas.org";
+const EXPLORER_URL = "https://explore.data.humancellatlas.org";
+const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
 
 const config: SiteConfig = {
-  ...devConfig,
-  browserURL: BROWSER_URL,
-  layout: {
-    ...devConfig.layout,
-    header: {
-      ...devConfig.layout.header,
-      navLinks: [
-        {
-          label: "Datasets",
-          target: ANCHOR_TARGET.BLANK,
-          url: BROWSER_URL,
-        },
-        {
-          label: "HCA BioNetworks",
-          url: "/hca-bio-networks",
-        },
-        {
-          label: "Guides",
-          url: `${PORTAL_URL}/guides`,
-        },
-        {
-          label: "Metadata",
-          url: `${PORTAL_URL}/metadata`,
-        },
-        {
-          label: "APIs",
-          url: `${PORTAL_URL}/apis`,
-        },
-        {
-          label: "Updates",
-          url: `${PORTAL_URL}/dcp-updates`,
-        },
-      ],
-    },
-  },
+  ...makeConfig(EXPLORER_URL, PORTAL_URL),
 };
 
 // Update gtmAuth for the prod environment lookup.
