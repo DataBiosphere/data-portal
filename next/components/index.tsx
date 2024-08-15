@@ -1,4 +1,7 @@
+export { Alert } from "@databiosphere/findable-ui/lib/components/common/Alert/alert";
+export { AnchorLink } from "@databiosphere/findable-ui/lib/components/common/AnchorLink/anchorLink";
 export { CookieBanner } from "@databiosphere/findable-ui/lib/components/common/Banner/components/CookieBanner/cookieBanner";
+export { CallToActionButton } from "@databiosphere/findable-ui/lib/components/common/Button/components/CallToActionButton/callToActionButton";
 export { DiscourseIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/DiscourseIcon/discourseIcon";
 export { DownloadIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/DownloadIcon/downloadIcon";
 export { FacebookIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/FacebookIcon/facebookIcon";
@@ -15,9 +18,12 @@ export { NTagCell } from "@databiosphere/findable-ui/lib/components/Index/compon
 export { Logo } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Logo/logo";
 export { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 export { SupportRequest } from "@databiosphere/findable-ui/lib/components/Support/components/SupportRequest/supportRequest";
+export { ContentView } from "@databiosphere/findable-ui/lib/views/ContentView/contentView";
 export { ButtonOutline } from "./common/Button/components/ButtonOutline/buttonOutline";
 export { ButtonPrimary } from "./common/Button/components/ButtonPrimary/buttonPrimary";
+export { Figure } from "./common/Figure/figure";
 export { IconLink } from "./common/IconLink/iconLink";
 export { PinnedNTagCell } from "./common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
 export { BioNetworkCell } from "./common/Table/components/Cell/components/BioNetworkCell/bioNetworkCell";
 export { CXGDownloadCell } from "./common/Table/components/Cell/components/CXGDownloadCell/cxgDownloadCell";
+export { Content } from "./Layout/components/Content/content";
