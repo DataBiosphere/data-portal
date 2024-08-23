@@ -418,7 +418,8 @@ export const NETWORKS: Network[] = [
     contact: { email: "nervous@humancellatlas.org" },
     coordinators: [
       { fullName: "Ed Lein" },
-      { fullName: "Evan Macosko and Mike Hawrylycz" },
+      { fullName: "Evan Macosko" },
+      { fullName: "Mike Hawrylycz" },
     ],
     datasetQueryOrgans: [
       "adrenal gland",
