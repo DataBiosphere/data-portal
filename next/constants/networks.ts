@@ -178,7 +178,7 @@ export const NETWORKS: Network[] = [
     atlases: [],
     contact: { email: "immune@humancellatlas.org" },
     coordinators: [
-      { fullName: "Nir Hacohen" },
+      { fullName: "Gary Reynolds" },
       { fullName: "Tom Taghon" },
       { fullName: "Chloe Villani" },
     ],
@@ -416,7 +416,11 @@ export const NETWORKS: Network[] = [
       },
     ],
     contact: { email: "nervous@humancellatlas.org" },
-    coordinators: [{ fullName: "Ed Lein" }, { fullName: "Sten Linnarsson" }],
+    coordinators: [
+      { fullName: "Ed Lein" },
+      { fullName: "Evan Macosko" },
+      { fullName: "Mike Hawrylycz" },
+    ],
     datasetQueryOrgans: [
       "adrenal gland",
       "brain",
