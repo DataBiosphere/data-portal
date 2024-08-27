@@ -5,6 +5,7 @@ import { Table } from "../../components/Layout/components/Content/components/Tab
 export const MDX_COMPONENTS = {
   Alert: C.Alert,
   AnchorLink: C.AnchorLink,
+  Attributions: C.Attributions,
   CallToActionButton: C.CallToActionButton,
   Figure: C.Figure,
   Link: C.Link,
