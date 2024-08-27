@@ -3,6 +3,7 @@ import { APIS } from "./apis";
 import { DCP_UPDATES } from "./dcpUpdates";
 import { NavigationConfig } from "./entities";
 import { GUIDES } from "./guides";
+import { PRIVACY } from "./privacy";
 
 // Site map for the MDX pages used to generate the navigation.
 export const navigation: NavigationConfig = {
@@ -10,4 +11,5 @@ export const navigation: NavigationConfig = {
   apis: APIS,
   "dcp-updates": DCP_UPDATES,
   guides: GUIDES,
+  privacy: PRIVACY,
 };

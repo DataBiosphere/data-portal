@@ -115,6 +115,7 @@ export function getNavigationConfig(
           return { layoutStyle, navigation: navItems };
         }
       }
+      return { layoutStyle };
     }
   }
 }
