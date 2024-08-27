@@ -21,7 +21,6 @@ export const SOCIALS = {
 };
 
 export const socialMedia: SocialMedia = {
-  label: "Follow HCA",
   socials: [
     {
       ...SOCIALS.GITHUB,

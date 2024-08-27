@@ -220,7 +220,7 @@ export function getBioNetworkName(name: string): string {
 function getBioNetworksAtlasesColumnDef(): ColumnDef<Network> {
   return {
     accessorKey: "atlases",
-    cell: ({ row }) => C.Cell({ value: row.original.atlases.length }),
+    cell: ({ row }) => C.BasicCell({ value: row.original.atlases.length }),
     header: "Atlases",
   };
 }
@@ -294,7 +294,8 @@ export function getEstimatedCellCount(
 function getEstimateCellCountColumnDef(): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "estimatedCellCount",
-    cell: ({ row }) => C.Cell({ value: getEstimatedCellCount(row.original) }),
+    cell: ({ row }) =>
+      C.BasicCell({ value: getEstimatedCellCount(row.original) }),
     header: "Cell Count Est.",
   };
 }
@@ -325,7 +326,7 @@ function getGenusSpeciesColumnDef(): ColumnDef<ProjectsResponse> {
 function getIntegratedAtlasesAtlasNameColumnDef(): ColumnDef<IntegratedAtlasRow> {
   return {
     accessorKey: "name",
-    cell: ({ row }) => C.Cell({ value: row.original.name }),
+    cell: ({ row }) => C.BasicCell({ value: row.original.name }),
     header: "Atlas Name",
   };
 }

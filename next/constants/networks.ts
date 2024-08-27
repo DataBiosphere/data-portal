@@ -26,24 +26,6 @@ import * as organoidContent from "../content/organoid";
 import * as pancreasContent from "../content/pancreas";
 import * as reproductionContent from "../content/reproduction";
 import * as skinContent from "../content/skin";
-import adiposeIcon from "../public/hca-bio-networks/icons/adipose.png";
-import breastIcon from "../public/hca-bio-networks/icons/breast.png";
-import developmentIcon from "../public/hca-bio-networks/icons/development.png";
-import eyeIcon from "../public/hca-bio-networks/icons/eye.png";
-import geneticDiversityIcon from "../public/hca-bio-networks/icons/genetic-diversity.png";
-import gutIcon from "../public/hca-bio-networks/icons/gut.png";
-import heartIcon from "../public/hca-bio-networks/icons/heart.png";
-import immuneIcon from "../public/hca-bio-networks/icons/immune.png";
-import kidneyIcon from "../public/hca-bio-networks/icons/kidney.png";
-import liverIcon from "../public/hca-bio-networks/icons/liver.png";
-import lungIcon from "../public/hca-bio-networks/icons/lung.png";
-import musculoskeletalIcon from "../public/hca-bio-networks/icons/musculoskeletal.png";
-import nervousSystemIcon from "../public/hca-bio-networks/icons/nervous-system.png";
-import oralIcon from "../public/hca-bio-networks/icons/oral-and-craniofacial.png";
-import organoidIcon from "../public/hca-bio-networks/icons/organoid.png";
-import pancreasIcon from "../public/hca-bio-networks/icons/pancreas.png";
-import reproductionIcon from "../public/hca-bio-networks/icons/reproduction.png";
-import skinIcon from "../public/hca-bio-networks/icons/skin.png";
 import BICCN_PUBLICATIONS from "./biccn-publications.json";
 import { DATASETS } from "./datasets";
 
@@ -564,24 +546,24 @@ export const NETWORK_CONTENT: {
 };
 
 export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
-  adipose: adiposeIcon,
-  breast: breastIcon,
-  development: developmentIcon,
-  eye: eyeIcon,
-  "genetic-diversity": geneticDiversityIcon,
-  gut: gutIcon,
-  heart: heartIcon,
-  immune: immuneIcon,
-  kidney: kidneyIcon,
-  liver: liverIcon,
-  lung: lungIcon,
-  musculoskeletal: musculoskeletalIcon,
-  "nervous-system": nervousSystemIcon,
-  oral: oralIcon,
-  organoid: organoidIcon,
-  pancreas: pancreasIcon,
-  reproduction: reproductionIcon,
-  skin: skinIcon,
+  adipose: "/hca-bio-networks/icons/adipose.png",
+  breast: "/hca-bio-networks/icons/breast.png",
+  development: "/hca-bio-networks/icons/development.png",
+  eye: "/hca-bio-networks/icons/eye.png",
+  "genetic-diversity": "/hca-bio-networks/icons/genetic-diversity.png",
+  gut: "/hca-bio-networks/icons/gut.png",
+  heart: "/hca-bio-networks/icons/heart.png",
+  immune: "/hca-bio-networks/icons/immune.png",
+  kidney: "/hca-bio-networks/icons/kidney.png",
+  liver: "/hca-bio-networks/icons/liver.png",
+  lung: "/hca-bio-networks/icons/lung.png",
+  musculoskeletal: "/hca-bio-networks/icons/musculoskeletal.png",
+  "nervous-system": "/hca-bio-networks/icons/nervous-system.png",
+  oral: "/hca-bio-networks/icons/oral-and-craniofacial.png",
+  organoid: "/hca-bio-networks/icons/organoid.png",
+  pancreas: "/hca-bio-networks/icons/pancreas.png",
+  reproduction: "/hca-bio-networks/icons/reproduction.png",
+  skin: "/hca-bio-networks/icons/skin.png",
 };
 
 export const ATLAS_CONTENT: { [key in AtlasKey]: AtlasModule } = {
