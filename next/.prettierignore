@@ -13,3 +13,6 @@ build
 
 # dependencies
 node_modules
+
+# MDX
+*.mdx

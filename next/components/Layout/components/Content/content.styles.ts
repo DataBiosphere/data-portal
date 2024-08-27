@@ -167,12 +167,17 @@ export const Content = styled.div<Props>`
     list-style-type: lower-roman;
   }
 
-  p {
+  > p {
     &:last-child {
       img {
         margin-bottom: 0;
       }
     }
+  }
+
+  hr {
+    border: 0.5px solid ${smokeMain};
+    margin: 32px 0;
   }
 
   ${code};
