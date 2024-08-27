@@ -19,6 +19,7 @@ export { Logo } from "@databiosphere/findable-ui/lib/components/Layout/component
 export { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 export { SupportRequest } from "@databiosphere/findable-ui/lib/components/Support/components/SupportRequest/supportRequest";
 export { ContentView } from "@databiosphere/findable-ui/lib/views/ContentView/contentView";
+export { Attributions } from "./About/components/Attributions/attributions";
 export { ButtonOutline } from "./common/Button/components/ButtonOutline/buttonOutline";
 export { ButtonPrimary } from "./common/Button/components/ButtonPrimary/buttonPrimary";
 export { Figure } from "./common/Figure/figure";
