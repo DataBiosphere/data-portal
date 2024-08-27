@@ -9,6 +9,7 @@ export interface NavigationEntry {
 
 export enum NAVIGATION_KEY {
   APIS = "apis",
+  DCP_UPDATES = "dcp-updates",
   GUIDES = "guides",
 }
 
