@@ -1,5 +1,6 @@
 import { ABOUT } from "./about";
 import { APIS } from "./apis";
+import { CONTACT } from "./contact";
 import { DCP_UPDATES } from "./dcpUpdates";
 import { NavigationConfig } from "./entities";
 import { GUIDES } from "./guides";
@@ -10,6 +11,7 @@ import { PRIVACY } from "./privacy";
 export const navigation: NavigationConfig = {
   about: ABOUT,
   apis: APIS,
+  contact: CONTACT,
   "dcp-updates": DCP_UPDATES,
   guides: GUIDES,
   help: HELP,
