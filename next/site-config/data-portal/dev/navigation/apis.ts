@@ -6,7 +6,7 @@ const NODE_KEYS: Record<string, NavigationNode["key"]> = {
   APIS: "apis",
 };
 
-const PATH_SEGMENTS = { APIS: "apis", API_DOCUMENTATION: "api-documentation" };
+const PATH_SEGMENTS = { API_DOCUMENTATION: "api-documentation", APIS: "apis" };
 
 export const APIS: NavigationEntry = {
   nodes: [

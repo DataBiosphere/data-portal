@@ -6,7 +6,10 @@ const NODE_KEYS: Record<string, NavigationNode["key"]> = {
   CONTACT: "contact",
 };
 
-const PATH_SEGMENTS = { CONTACT: "contact" };
+const PATH_SEGMENTS = {
+  CONTACT: "contact",
+  JOIN_THE_DISCUSSION: "join-the-discussion",
+};
 
 export const CONTACT: NavigationEntry = {
   nodes: [
@@ -17,10 +20,10 @@ export const CONTACT: NavigationEntry = {
         { label: "Contact Us", url: ROUTES.CONTACT },
         {
           label: "Join the Discussion",
-          url: `${ROUTES.CONTACT}/join-the-discussion`,
+          url: `${ROUTES.CONTACT}/${PATH_SEGMENTS.JOIN_THE_DISCUSSION}`,
         },
       ],
-      slugs: [PATH_SEGMENTS.CONTACT, "join-the-discussion"],
+      slugs: [PATH_SEGMENTS.CONTACT, PATH_SEGMENTS.JOIN_THE_DISCUSSION],
     },
   ],
 };
