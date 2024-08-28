@@ -3,24 +3,27 @@ import { ROUTES } from "../../../../routes/constants";
 import { NavigationEntry, NavigationNode } from "./entities";
 
 const NODE_KEYS: Record<string, NavigationNode["key"]> = {
-  APIS: "apis",
+  CONTACT: "contact",
 };
 
-const PATH_SEGMENTS = { API_DOCUMENTATION: "api-documentation", APIS: "apis" };
+const PATH_SEGMENTS = {
+  CONTACT: "contact",
+  JOIN_THE_DISCUSSION: "join-the-discussion",
+};
 
-export const APIS: NavigationEntry = {
+export const CONTACT: NavigationEntry = {
   nodes: [
     {
-      key: NODE_KEYS.APIS,
+      key: NODE_KEYS.CONTACT,
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
-        { label: "HCA Data Portal APIs", url: ROUTES.APIS },
+        { label: "Contact Us", url: ROUTES.CONTACT },
         {
-          label: "Data Browser API",
-          url: `${ROUTES.APIS}/${PATH_SEGMENTS.API_DOCUMENTATION}/data-browser-api`,
+          label: "Join the Discussion",
+          url: `${ROUTES.CONTACT}/${PATH_SEGMENTS.JOIN_THE_DISCUSSION}`,
         },
       ],
-      slugs: [PATH_SEGMENTS.API_DOCUMENTATION, PATH_SEGMENTS.APIS],
+      slugs: [PATH_SEGMENTS.CONTACT, PATH_SEGMENTS.JOIN_THE_DISCUSSION],
     },
   ],
 };
