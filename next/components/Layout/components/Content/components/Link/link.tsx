@@ -1,7 +1,7 @@
 import { TypographyWordBreak } from "@databiosphere/findable-ui/lib/components/common/Typography/TypographyWordBreak/TypographyWordBreak";
 import { Link as DXLink } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { replaceParameters } from "@databiosphere/findable-ui/lib/utils/replaceParameters";
 import { PARAMETERS } from "../../../../../../common/constants";
-import { replaceParameters } from "../../../../../../common/utils";
 import { useConfig } from "../../../../../../hooks/useConfig";
 
 /**
@@ -19,11 +19,13 @@ export const Link = ({
   return (
     <DXLink
       label={<TypographyWordBreak>{children}</TypographyWordBreak>}
-      url={replaceParameters(href, {
-        ...PARAMETERS,
-        browserURL,
-        portalURL,
-      })}
+      url={encodeURI(
+        replaceParameters(decodeURI(href), {
+          ...PARAMETERS,
+          browserURL,
+          portalURL,
+        })
+      )}
       {...linkProps}
     />
   );

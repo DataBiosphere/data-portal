@@ -13,11 +13,11 @@ export { YouTubeIcon } from "@databiosphere/findable-ui/lib/components/common/Cu
 export { Grid } from "@databiosphere/findable-ui/lib/components/common/Grid/grid";
 export { IconButton } from "@databiosphere/findable-ui/lib/components/common/IconButton/iconButton";
 export { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
-export { Cell } from "@databiosphere/findable-ui/lib/components/Index/components/Cell/cell";
-export { NTagCell } from "@databiosphere/findable-ui/lib/components/Index/components/NTagCell/nTagCell";
 export { Logo } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Logo/logo";
 export { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 export { SupportRequest } from "@databiosphere/findable-ui/lib/components/Support/components/SupportRequest/supportRequest";
+export { BasicCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/BasicCell/basicCell";
+export { NTagCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
 export { ContentView } from "@databiosphere/findable-ui/lib/views/ContentView/contentView";
 export { Attributions } from "./About/components/Attributions/attributions";
 export { ButtonOutline } from "./common/Button/components/ButtonOutline/buttonOutline";

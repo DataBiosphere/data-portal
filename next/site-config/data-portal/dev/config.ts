@@ -1,8 +1,7 @@
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import logoHca from "images/logoHca.png";
-import logoHumanCellAtlas from "images/logoHumanCellAtlas.png";
 import * as C from "../../../components/index";
 import { ROUTES } from "../../../routes/constants";
+import { VISIBLE } from "../../common/constants";
 import { SiteConfig } from "../../common/entities";
 import { floating } from "./layout/floating";
 import { socialMedia, SOCIALS } from "./socialMedia";
@@ -46,7 +45,7 @@ export function makeConfig(
           alt: APP_TITLE,
           height: 38,
           link: "https://www.humancellatlas.org",
-          src: logoHumanCellAtlas,
+          src: "/hca-bio-networks/logos/logoHumanCellAtlas.png",
           target: ANCHOR_TARGET.BLANK,
         }),
         navLinks: [
@@ -75,7 +74,7 @@ export function makeConfig(
           alt: APP_TITLE,
           height: 32,
           link: portalUrl,
-          src: logoHca,
+          src: "/hca-bio-networks/logos/logoHca.png",
         }),
         navigation: [
           [
@@ -125,7 +124,7 @@ export function makeConfig(
                 },
               ],
               url: "",
-              visible: { lg: false, sm: false, xs: false },
+              visible: VISIBLE.BETWEEN_SM_AND_LG,
             },
           ],
           undefined,
