@@ -8,7 +8,7 @@ import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
 
 const APP_TITLE = "HCA Data Portal";
-const CATALOG = "dcp40";
+const CATALOG = "dcp41";
 const DATA_URL = "https://service.azul.data.humancellatlas.org";
 const EXPLORER_URL = "https://explore.data.humancellatlas.dev.clevercanary.com";
 const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
