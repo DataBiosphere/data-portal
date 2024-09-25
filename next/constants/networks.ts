@@ -16,18 +16,23 @@ import * as immuneContent from "../content/immune";
 import * as kidneyContent from "../content/kidney";
 import * as liverContent from "../content/liver";
 import * as lungContent from "../content/lung";
-import * as atlasLung from "../content/lung/atlases/lung";
+import * as lungNetworkLungAtlas from "../content/lung/atlases/lung";
 import * as musculoskeletalContent from "../content/musculoskeletal";
 import * as nervousSystemContent from "../content/nervous-system";
-import * as altasBrain from "../content/nervous-system/atlases/brain";
-import * as atlasCortex from "../content/nervous-system/atlases/cortex";
+import * as nervousSystemNetworkBrainAtlas from "../content/nervous-system/atlases/brain";
+import * as nervousSystemNetworkCortexAtlas from "../content/nervous-system/atlases/cortex";
 import * as oralContent from "../content/oral";
 import * as organoidContent from "../content/organoid";
+import * as organoidNetworkBrainNetwork from "../content/organoid/atlases/brain";
 import * as pancreasContent from "../content/pancreas";
 import * as reproductionContent from "../content/reproduction";
 import * as skinContent from "../content/skin";
 import BICCN_PUBLICATIONS from "./biccn-publications.json";
 import { DATASETS } from "./datasets";
+
+const BRAIN_V1_0 = "brain-v1-0";
+const CORTEX_V1_0 = "cortex-v1-0";
+const LUNG_V1_0 = "lung-v1-0";
 
 export const NETWORKS: Network[] = [
   {
@@ -270,9 +275,9 @@ export const NETWORKS: Network[] = [
         ],
         externalDatasets: DATASETS.lung,
         integratedAtlases: [],
-        key: "lung-v1-0",
+        key: LUNG_V1_0,
         name: "The integrated Human Lung Cell Atlas (HLCA) v1.0",
-        path: "lung-v1-0",
+        path: LUNG_V1_0,
         publications: [
           {
             doi: "https://doi.org/10.1038/s41591-023-02327-2",
@@ -353,9 +358,9 @@ export const NETWORKS: Network[] = [
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],
-        key: "brain-v1-0",
+        key: BRAIN_V1_0,
         name: "Human Brain Cell Atlas v1.0",
-        path: "brain-v1-0",
+        path: BRAIN_V1_0,
         publications: [
           {
             doi: "https://doi.org/10.1126/science.add7046",
@@ -381,9 +386,9 @@ export const NETWORKS: Network[] = [
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],
-        key: "cortex-v1-0",
+        key: CORTEX_V1_0,
         name: "Human Cortical Cell Atlas v1.0",
-        path: "cortex-v1-0",
+        path: CORTEX_V1_0,
         publications: [
           {
             doi: "https://doi.org/10.1126/science.adf6812",
@@ -446,7 +451,51 @@ export const NETWORKS: Network[] = [
     path: "oral",
   },
   {
-    atlases: [],
+    atlases: [
+      {
+        code: [
+          {
+            label: "https://github.com/theislab/neural_organoid_atlas",
+            url: "https://github.com/theislab/neural_organoid_atlas",
+          },
+          {
+            label: "https://devsystemslab.github.io/HNOCA-tools",
+            url: "https://devsystemslab.github.io/HNOCA-tools",
+          },
+        ],
+        contact: { email: "barbara.treutlein@bsse.ethz.ch" },
+        coordinators: [
+          { fullName: "Barbara Treutlein" },
+          { fullName: "Gray Camp" },
+          { fullName: "Fabian Theis" },
+          { fullName: "Zhisong He" },
+          { fullName: "Leander Dony" },
+          { fullName: "Jonas Fleck" },
+        ],
+        cxgId: "de379e5f-52d0-498c-9801-0f850823c847",
+        datasets: [
+          "c4e11369-78d4-4d29-ba8e-b67907c4c65c",
+          "005d611a-14d5-4fbf-846e-571a1f874f70",
+          "645b20c9-5ed0-4500-86b5-7aef770d010a",
+          "da77bd06-43ae-4012-a774-e4d62797df51",
+        ],
+        externalDatasets: DATASETS["organoid-brain"],
+        integratedAtlases: [],
+        key: BRAIN_V1_0,
+        name: "An integrated transcriptomic cell atlas of human neural organoids v1.0",
+        path: BRAIN_V1_0,
+        publications: [
+          {
+            doi: "https://doi.org/10.1101/2023.10.05.561097",
+            label: "He et al. (2023) bioRxiv",
+          },
+        ],
+        subTitle: "", // TODO(cc) sub title.
+        summaryCellCount: 1767674, // First CXG dataset cell count TODO(cc) taken from dataset "The Human Neural Organoid Atlas".
+        updatedAt: "",
+        version: "v1",
+      },
+    ],
     contact: { email: "organoids@humancellatlas.org" },
     coordinators: [
       { fullName: "Christoph Bock" },
@@ -566,8 +615,17 @@ export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
   skin: "/hca-bio-networks/icons/skin.png",
 };
 
-export const ATLAS_CONTENT: { [key in AtlasKey]: AtlasModule } = {
-  "brain-v1-0": altasBrain,
-  "cortex-v1-0": atlasCortex,
-  "lung-v1-0": atlasLung,
+export const NETWORK_ATLAS_CONTENT: Partial<
+  Record<NetworkKey, { [key in AtlasKey]?: AtlasModule }>
+> = {
+  lung: {
+    [LUNG_V1_0]: lungNetworkLungAtlas,
+  },
+  "nervous-system": {
+    [BRAIN_V1_0]: nervousSystemNetworkBrainAtlas,
+    [CORTEX_V1_0]: nervousSystemNetworkCortexAtlas,
+  },
+  organoid: {
+    [BRAIN_V1_0]: organoidNetworkBrainNetwork,
+  },
 };

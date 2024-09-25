@@ -20,7 +20,7 @@ import { Table, Toolbar } from "../../../../../../../common/Table/table.styles";
 import { SectionText } from "../../../../../../components/Section/section.styles";
 
 export const MainColumn = (): JSX.Element => {
-  const { Description } = useAtlasContent();
+  const { Description } = useAtlasContent() || {};
   const { atlas } = useAtlas();
   const { integratedAtlases } = atlas;
   return (
@@ -31,7 +31,11 @@ export const MainColumn = (): JSX.Element => {
           <SectionContent>
             <SectionTitle title="Atlas Description" />
             <SectionText>
-              <Description />
+              {Description ? (
+                <Description />
+              ) : (
+                "No atlas description available."
+              )}
             </SectionText>
           </SectionContent>
         </Section>

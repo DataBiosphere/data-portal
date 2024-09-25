@@ -149,7 +149,7 @@ export interface NetworkContext {
 
 export interface AtlasModule {
   Description: ElementType;
-  Inclusion: ElementType;
+  Inclusion?: ElementType;
 }
 
 export interface NetworkModule {
