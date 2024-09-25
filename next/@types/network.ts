@@ -177,7 +177,11 @@ export type NetworkKey =
   | "reproduction"
   | "skin";
 
-export type AtlasKey = "brain-v1-0" | "cortex-v1-0" | "lung-v1-0";
+export type AtlasKey =
+  | "brain-v1-0"
+  | "cortex-v1-0"
+  | "endoderm-v1-0"
+  | "lung-v1-0";
 
 export interface BICCNPublication {
   authors: string[];
