@@ -51,19 +51,19 @@ export function makeConfig(
         navLinks: [
           {
             label: "About",
-            url: `${portalUrl}${ROUTES.ABOUT}`,
+            url: ROUTES.ABOUT,
           },
           {
             label: "Help",
-            url: `${portalUrl}${ROUTES.HELP}`,
+            url: ROUTES.HELP,
           },
           {
             label: "Privacy",
-            url: `${portalUrl}${ROUTES.PRIVACY}`,
+            url: ROUTES.PRIVACY,
           },
           {
             label: "Contact",
-            url: `${portalUrl}${ROUTES.CONTACT}`,
+            url: ROUTES.CONTACT,
           },
         ],
         socials: socialMedia.socials,
@@ -73,7 +73,7 @@ export function makeConfig(
         logo: C.Logo({
           alt: APP_TITLE,
           height: 32,
-          link: portalUrl,
+          link: "/",
           src: "/hca-bio-networks/logos/logoHca.png",
         }),
         navigation: [
@@ -89,19 +89,19 @@ export function makeConfig(
             },
             {
               label: "Guides",
-              url: `${portalUrl}${ROUTES.GUIDES}`,
+              url: ROUTES.GUIDES,
             },
             {
               label: "Metadata",
-              url: `${portalUrl}${ROUTES.METADATA}`,
+              url: ROUTES.METADATA,
             },
             {
               label: "APIs",
-              url: `${portalUrl}${ROUTES.APIS}`,
+              url: ROUTES.APIS,
             },
             {
               label: "Updates",
-              url: `${portalUrl}${ROUTES.DCP_UPDATES}`,
+              url: ROUTES.DCP_UPDATES,
             },
             {
               label: "Follow HCA",
