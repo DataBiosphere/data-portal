@@ -4,8 +4,7 @@ import React from "react";
 
 const DATA_RELEASE_POLICY_URL =
   "https://www.humancellatlas.org/data-release-policy";
-const DATA_USE_AGREEMENT_URL =
-  "https://data.humancellatlas.org/about/data-use-agreement";
+const DATA_USE_AGREEMENT_URL = "/about/data-use-agreement";
 const CREATIVE_COMMONS_LICENSE_URL =
   "https://creativecommons.org/licenses/by/4.0";
 
