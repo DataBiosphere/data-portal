@@ -14,6 +14,7 @@ export enum NAVIGATION_KEY {
   DCP_UPDATES = "dcp-updates",
   GUIDES = "guides",
   HELP = "help",
+  METADATA = "metadata",
   PRIVACY = "privacy",
 }
 
