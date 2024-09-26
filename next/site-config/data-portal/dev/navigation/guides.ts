@@ -22,7 +22,10 @@ export const GUIDES: NavigationEntry = {
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
         { label: "Exploring Projects", url: ROUTES.GUIDES },
-        {label: "Requesting Access to Controlled HCA Data", url: `${ROUTES.GUIDES}/${PATH_SEGMENTS.ACCESSING_HCA}`},
+        {
+          label: "Requesting Access to Controlled HCA Data",
+          url: `${ROUTES.GUIDES}/${PATH_SEGMENTS.ACCESSING_HCA}`,
+        },
         {
           label: "Exploring Biological Network and Atlas Data",
           url: `${ROUTES.GUIDES}/${PATH_SEGMENTS.ACCESSING_ATLASES}`,
@@ -46,6 +49,7 @@ export const GUIDES: NavigationEntry = {
       ],
       slugs: [
         PATH_SEGMENTS.ACCESSING_ATLASES,
+        PATH_SEGMENTS.ACCESSING_HCA,
         PATH_SEGMENTS.ACCESSING_METADATA_VIA_TDR,
         PATH_SEGMENTS.CONSUMER_VIGNETTES,
         PATH_SEGMENTS.GUIDES,
