@@ -5,6 +5,7 @@ import { VISIBLE } from "../../common/constants";
 import { SiteConfig } from "../../common/entities";
 import { buildMenuItems } from "./common/utils";
 import { floating } from "./layout/floating";
+import { APIS } from "./navigation/apis";
 import { GUIDES } from "./navigation/guides";
 import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
@@ -100,6 +101,7 @@ export function makeConfig(
             },
             {
               label: "APIs",
+              menuItems: buildMenuItems(APIS),
               url: ROUTES.APIS,
             },
             {
