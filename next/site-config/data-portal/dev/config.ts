@@ -131,7 +131,7 @@ export function makeConfig(
           undefined,
         ],
         searchEnabled: true,
-        searchURL: `${portalUrl}${ROUTES.SEARCH}`,
+        searchURL: ROUTES.SEARCH,
         socialMedia: socialMedia,
       },
     },
