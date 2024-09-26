@@ -6,8 +6,6 @@ const NODE_KEYS: Record<string, NavigationNode["key"]> = {
   DCP_UPDATES: "dcp-updates",
 };
 
-const PATH_SEGMENTS = { DCP_UPDATES: "dcp-updates" };
-
 export const DCP_UPDATES: NavigationEntry = {
   nodes: [
     {
@@ -16,7 +14,7 @@ export const DCP_UPDATES: NavigationEntry = {
       navigation: [
         { label: "HCA Data Portal Platform Updates", url: ROUTES.DCP_UPDATES },
       ],
-      slugs: [PATH_SEGMENTS.DCP_UPDATES],
+      slugs: [],
     },
   ],
 };
