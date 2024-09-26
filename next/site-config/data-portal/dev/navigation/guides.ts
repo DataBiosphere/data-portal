@@ -8,11 +8,12 @@ const NODE_KEYS: Record<string, NavigationNode["key"]> = {
 
 const PATH_SEGMENTS = {
   ACCESSING_ATLASES: "accessing-atlases",
-  ACCESSING_HCA: "accessing-hca",
   ACCESSING_METADATA_VIA_TDR: "accessing-metadata-via-tdr",
   CONSUMER_VIGNETTES: "consumer-vignettes",
   GUIDES: "guides",
   QUICK_START_GUIDE: "quick-start-guide",
+  REQUESTING_ACCESS_TO_CONTROLLED_ACCESS_DATA:
+    "requesting-access-to-controlled-access-data",
 };
 
 export const GUIDES: NavigationEntry = {
@@ -23,8 +24,8 @@ export const GUIDES: NavigationEntry = {
       navigation: [
         { label: "Exploring Projects", url: ROUTES.GUIDES },
         {
-          label: "Requesting Access to Controlled HCA Data",
-          url: `${ROUTES.GUIDES}/${PATH_SEGMENTS.ACCESSING_HCA}`,
+          label: "Requesting Access to Controlled Access Data",
+          url: `${ROUTES.GUIDES}/${PATH_SEGMENTS.REQUESTING_ACCESS_TO_CONTROLLED_ACCESS_DATA}`,
         },
         {
           label: "Exploring Biological Network and Atlas Data",
@@ -49,7 +50,7 @@ export const GUIDES: NavigationEntry = {
       ],
       slugs: [
         PATH_SEGMENTS.ACCESSING_ATLASES,
-        PATH_SEGMENTS.ACCESSING_HCA,
+        PATH_SEGMENTS.REQUESTING_ACCESS_TO_CONTROLLED_ACCESS_DATA,
         PATH_SEGMENTS.ACCESSING_METADATA_VIA_TDR,
         PATH_SEGMENTS.CONSUMER_VIGNETTES,
         PATH_SEGMENTS.GUIDES,
