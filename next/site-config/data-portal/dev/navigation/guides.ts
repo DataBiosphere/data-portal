@@ -1,5 +1,7 @@
 import { LAYOUT_STYLE_CONTRAST_LIGHTEST } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
+import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import { ROUTES } from "../../../../routes/constants";
+import { FLATTEN, VISIBLE } from "../../../common/constants";
 import { NavigationEntry, NavigationNode } from "./entities";
 
 const NODE_KEYS: Record<string, NavigationNode["key"]> = {
@@ -19,10 +21,16 @@ const PATH_SEGMENTS = {
 export const GUIDES: NavigationEntry = {
   nodes: [
     {
+      flatten: FLATTEN.MD_DOWN,
       key: NODE_KEYS.GUIDES,
+      label: "Guides",
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
-        { label: "Exploring Projects", url: ROUTES.GUIDES },
+        {
+          label: "Exploring Projects",
+          selectedMatch: SELECTED_MATCH.EQUALS,
+          url: ROUTES.GUIDES,
+        },
         {
           label: "Requesting Access to Controlled Access Data",
           url: `${ROUTES.GUIDES}/${PATH_SEGMENTS.REQUESTING_ACCESS_TO_CONTROLLED_ACCESS_DATA}`,
@@ -56,6 +64,8 @@ export const GUIDES: NavigationEntry = {
         PATH_SEGMENTS.GUIDES,
         PATH_SEGMENTS.QUICK_START_GUIDE,
       ],
+      url: ROUTES.GUIDES,
+      visible: VISIBLE.MD_DOWN,
     },
   ],
 };
