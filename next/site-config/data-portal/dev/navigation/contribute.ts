@@ -17,10 +17,6 @@ export const CONTRIBUTE: NavigationEntry = {
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
         {
-          label: "Contribute",
-          url: "",
-        },
-        {
           label: "Contributing Data to the Human Cell Atlas",
           selectedMatch: SELECTED_MATCH.EQUALS,
           url: ROUTES.CONTRIBUTE,
@@ -32,20 +28,20 @@ export const CONTRIBUTE: NavigationEntry = {
         },
         {
           label:
-            "Submitting Cell Annotation Metadata to the Cell Annotation Platform (CAP)",
-          url: `${ROUTES.CONTRIBUTE}/submitting-cell-annotation-metadata-to-cap`,
+            "Submitting FASTQs and Tier 2 metadata to the HCA Data Repository",
+          url: `${ROUTES.CONTRIBUTE}/submitting-fastqs-and-tier-2-metadata-to-the-hca-data-repository`,
         },
         {
           label:
-            "Submitting FASTQs and Tier 2 metadata to the HCA Data Repository",
-          url: `${ROUTES.CONTRIBUTE}/submitting-fastqs-and-tier-2-metadata-to-the-hca-data-repository`,
+            "Submitting Cell Annotation Metadata to the Cell Annotation Platform (CAP)",
+          url: `${ROUTES.CONTRIBUTE}/submitting-cell-annotation-metadata-to-cap`,
         },
       ],
       slugs: [
         "contribute",
-        "submitting-hca-data-to-cellxgene-discover",
         "submitting-cell-annotation-metadata-to-cap",
         "submitting-fastqs-and-tier-2-metadata-to-the-hca-data-repository",
+        "submitting-hca-data-to-cellxgene-discover",
       ],
       url: ROUTES.CONTRIBUTE,
       visible: VISIBLE.MD_DOWN,
