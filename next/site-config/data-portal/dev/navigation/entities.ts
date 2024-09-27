@@ -14,6 +14,7 @@ export enum NAVIGATION_KEY {
   ABOUT = "about",
   APIS = "apis",
   CONTACT = "contact",
+  CONTRIBUTE = "contribute",
   DCP_UPDATES = "dcp-updates",
   GUIDES = "guides",
   HELP = "help",

@@ -1,6 +1,7 @@
 import { ABOUT } from "./about";
 import { APIS } from "./apis";
 import { CONTACT } from "./contact";
+import { CONTRIBUTE } from "./contribute";
 import { DCP_UPDATES } from "./dcpUpdates";
 import { NavigationConfig } from "./entities";
 import { GUIDES } from "./guides";
@@ -13,6 +14,7 @@ export const navigation: NavigationConfig = {
   about: ABOUT,
   apis: APIS,
   contact: CONTACT,
+  contribute: CONTRIBUTE,
   "dcp-updates": DCP_UPDATES,
   guides: GUIDES,
   help: HELP,
