@@ -3,7 +3,10 @@ import * as C from "../../../components/index";
 import { ROUTES } from "../../../routes/constants";
 import { VISIBLE } from "../../common/constants";
 import { SiteConfig } from "../../common/entities";
+import { buildMenuItems } from "./common/utils";
 import { floating } from "./layout/floating";
+import { APIS } from "./navigation/apis";
+import { GUIDES } from "./navigation/guides";
 import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
 
@@ -51,19 +54,19 @@ export function makeConfig(
         navLinks: [
           {
             label: "About",
-            url: `${portalUrl}${ROUTES.ABOUT}`,
+            url: ROUTES.ABOUT,
           },
           {
             label: "Help",
-            url: `${portalUrl}${ROUTES.HELP}`,
+            url: ROUTES.HELP,
           },
           {
             label: "Privacy",
-            url: `${portalUrl}${ROUTES.PRIVACY}`,
+            url: ROUTES.PRIVACY,
           },
           {
             label: "Contact",
-            url: `${portalUrl}${ROUTES.CONTACT}`,
+            url: ROUTES.CONTACT,
           },
         ],
         socials: socialMedia.socials,
@@ -73,7 +76,7 @@ export function makeConfig(
         logo: C.Logo({
           alt: APP_TITLE,
           height: 32,
-          link: portalUrl,
+          link: "/",
           src: "/hca-bio-networks/logos/logoHca.png",
         }),
         navigation: [
@@ -89,19 +92,21 @@ export function makeConfig(
             },
             {
               label: "Guides",
-              url: `${portalUrl}${ROUTES.GUIDES}`,
+              menuItems: buildMenuItems(GUIDES),
+              url: ROUTES.GUIDES,
             },
             {
               label: "Metadata",
-              url: `${portalUrl}${ROUTES.METADATA}`,
+              url: ROUTES.METADATA,
             },
             {
               label: "APIs",
-              url: `${portalUrl}${ROUTES.APIS}`,
+              menuItems: buildMenuItems(APIS),
+              url: ROUTES.APIS,
             },
             {
               label: "Updates",
-              url: `${portalUrl}${ROUTES.DCP_UPDATES}`,
+              url: ROUTES.DCP_UPDATES,
             },
             {
               label: "Follow HCA",
@@ -131,7 +136,7 @@ export function makeConfig(
           undefined,
         ],
         searchEnabled: true,
-        searchURL: `${portalUrl}${ROUTES.SEARCH}`,
+        searchURL: ROUTES.SEARCH,
         socialMedia: socialMedia,
       },
     },

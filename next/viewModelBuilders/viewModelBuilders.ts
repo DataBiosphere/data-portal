@@ -1,7 +1,10 @@
 import { LABEL } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
 import { KeyValues } from "@databiosphere/findable-ui/lib/components/common/KeyValuePairs/keyValuePairs";
 import { MetadataValue } from "@databiosphere/findable-ui/lib/components/Index/components/NTagCell/nTagCell";
-import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import {
+  ANCHOR_TARGET,
+  REL_ATTRIBUTE,
+} from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { ColumnDef } from "@tanstack/react-table";
 import {
   Atlas,
@@ -55,7 +58,8 @@ export const buildCookieBanner = (): React.ComponentProps<
       onClick: () =>
         window.open(
           "https://data.humancellatlas.org/privacy",
-          ANCHOR_TARGET.BLANK
+          ANCHOR_TARGET.BLANK,
+          REL_ATTRIBUTE.NO_OPENER_NO_REFERRER
         ),
     }),
   };
