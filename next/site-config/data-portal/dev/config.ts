@@ -100,7 +100,7 @@ export function makeConfig(
               label: "Metadata",
               url: ROUTES.METADATA,
             },
-                      {
+            {
               label: "Contribute",
               menuItems: buildMenuItems(CONTRIBUTE),
               url: ROUTES.CONTRIBUTE,
