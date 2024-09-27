@@ -28,8 +28,12 @@ export const CONTRIBUTE: NavigationEntry = {
           label: "Submitting Count Matrices and Tier 1 Metadata to CELLxGENE Discover",
           url: `${ROUTES.CONTRIBUTE}/submitting-hca-data-to-cellxgene-discover`,
         },
+        {
+          label: "Submitting Cell Annotation Metadata to the Cell Annotation Platform (CAP)",
+          url: `${ROUTES.CONTRIBUTE}/submitting-cell-annotation-metadata-to-cap`,
+        },
       ],
-      slugs: ["contribute", "submitting-hca-data-to-cellxgene-discover"],
+      slugs: ["contribute", "submitting-hca-data-to-cellxgene-discover", "submitting-cell-annotation-metadata-to-cap"],
       url: ROUTES.CONTRIBUTE,
       visible: VISIBLE.MD_DOWN,
     },
