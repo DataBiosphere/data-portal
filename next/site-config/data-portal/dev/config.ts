@@ -6,6 +6,7 @@ import { SiteConfig } from "../../common/entities";
 import { buildMenuItems } from "./common/utils";
 import { floating } from "./layout/floating";
 import { APIS } from "./navigation/apis";
+import { CONTRIBUTE } from "./navigation/contribute";
 import { GUIDES } from "./navigation/guides";
 import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
@@ -98,6 +99,11 @@ export function makeConfig(
             {
               label: "Metadata",
               url: ROUTES.METADATA,
+            },
+                      {
+              label: "Contribute",
+              menuItems: buildMenuItems(CONTRIBUTE),
+              url: ROUTES.CONTRIBUTE,
             },
             {
               label: "APIs",
