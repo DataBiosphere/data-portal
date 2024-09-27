@@ -25,23 +25,11 @@ export const CONTRIBUTE: NavigationEntry = {
           url: ROUTES.CONTRIBUTE,
         },
         {
-          label: "Inclusion Criteria",
-          url: `${ROUTES.CONTRIBUTE}/inclusion-criteria`,
-        },
-        {
-          label: "Contributing Unpublished Data",
-          url: `${ROUTES.CONTRIBUTE}/unpublished-data`,
-        },
-        {
-          label: "Protecting Managed Access Data",
-          url: `${ROUTES.CONTRIBUTE}/protecting-data`,
-        },
-        {
-          label: "Submitting Metadata to Other Repositories",
-          url: `${ROUTES.CONTRIBUTE}/submitting-metadata`,
+          label: "Submitting Count Matrices and Tier 1 Metadata to CELLxGENE Discover",
+          url: `${ROUTES.CONTRIBUTE}/submitting-hca-data-to-cellxgene-discover`,
         },
       ],
-      slugs: ["contribute", "inclusion-criteria", "unpublished-data", "protecting-data", "submitting-metadata"],
+      slugs: ["contribute", "submitting-hca-data-to-cellxgene-discover"],
       url: ROUTES.CONTRIBUTE,
       visible: VISIBLE.MD_DOWN,
     },
