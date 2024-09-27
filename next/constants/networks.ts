@@ -23,8 +23,8 @@ import * as nervousSystemNetworkBrainAtlas from "../content/nervous-system/atlas
 import * as nervousSystemNetworkCortexAtlas from "../content/nervous-system/atlases/cortex";
 import * as oralContent from "../content/oral";
 import * as organoidContent from "../content/organoid";
-import * as organoidNetworkBrainNetwork from "../content/organoid/atlases/brain";
-import * as organoidNetworkEndodermNetwork from "../content/organoid/atlases/endoderm";
+import * as organoidNetworkOrganoidEndodermAtlas from "../content/organoid/atlases/organoid-endoderm";
+import * as organoidNetworkOrganoidNeuralAtlas from "../content/organoid/atlases/organoid-neural";
 import * as pancreasContent from "../content/pancreas";
 import * as reproductionContent from "../content/reproduction";
 import * as skinContent from "../content/skin";
@@ -33,8 +33,9 @@ import { DATASETS } from "./datasets";
 
 const BRAIN_V1_0 = "brain-v1-0";
 const CORTEX_V1_0 = "cortex-v1-0";
-const ENDODERM_V1_0 = "endoderm-v1-0";
 const LUNG_V1_0 = "lung-v1-0";
+const ORGANOID_ENDODERM_V1_0 = "organoid-endoderm-v1-0";
+const ORGANOID_NEURAL_V1_0 = "organoid-neural-v1-0";
 
 export const NETWORKS: Network[] = [
   {
@@ -481,11 +482,11 @@ export const NETWORKS: Network[] = [
           "645b20c9-5ed0-4500-86b5-7aef770d010a",
           "da77bd06-43ae-4012-a774-e4d62797df51",
         ],
-        externalDatasets: DATASETS["organoid-brain"],
+        externalDatasets: DATASETS["organoid-neural"],
         integratedAtlases: [],
-        key: BRAIN_V1_0,
+        key: ORGANOID_NEURAL_V1_0,
         name: "An integrated transcriptomic cell atlas of human neural organoids v1.0",
-        path: BRAIN_V1_0,
+        path: ORGANOID_NEURAL_V1_0,
         publications: [
           {
             doi: "https://doi.org/10.1101/2023.10.05.561097",
@@ -522,9 +523,9 @@ export const NETWORKS: Network[] = [
         ],
         externalDatasets: DATASETS["organoid-endoderm"],
         integratedAtlases: [],
-        key: ENDODERM_V1_0,
+        key: ORGANOID_ENDODERM_V1_0,
         name: "Integrated human endoderm-derived organoids cell atlas (HEOCA) v1.0",
-        path: ENDODERM_V1_0,
+        path: ORGANOID_ENDODERM_V1_0,
         publications: [
           {
             doi: "https://doi.org/10.1101/2023.11.20.567825",
@@ -532,7 +533,7 @@ export const NETWORKS: Network[] = [
           },
         ],
         subTitle: "", // TODO(cc) sub title.
-        summaryCellCount: 936563, // First CXG dataset cell count
+        summaryCellCount: 936563, // First CXG dataset cell count TODO(cc) summary cell count.
         updatedAt: "",
         version: "v1",
       },
@@ -667,7 +668,7 @@ export const NETWORK_ATLAS_CONTENT: Partial<
     [CORTEX_V1_0]: nervousSystemNetworkCortexAtlas,
   },
   organoid: {
-    [BRAIN_V1_0]: organoidNetworkBrainNetwork,
-    [ENDODERM_V1_0]: organoidNetworkEndodermNetwork,
+    [ORGANOID_ENDODERM_V1_0]: organoidNetworkOrganoidEndodermAtlas,
+    [ORGANOID_NEURAL_V1_0]: organoidNetworkOrganoidNeuralAtlas,
   },
 };

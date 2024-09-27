@@ -180,8 +180,9 @@ export type NetworkKey =
 export type AtlasKey =
   | "brain-v1-0"
   | "cortex-v1-0"
-  | "endoderm-v1-0"
-  | "lung-v1-0";
+  | "lung-v1-0"
+  | "organoid-endoderm-v1-0"
+  | "organoid-neural-v1-0";
 
 export interface BICCNPublication {
   authors: string[];

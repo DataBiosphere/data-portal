@@ -69,7 +69,7 @@ export const DATASETS = {
   musculoskeletal: [],
   "nervous-system": [],
   oral: [],
-  "organoid-brain": [
+  "organoid-neural": [
     buildDataset(
       ["--"],
       0,
