@@ -17,7 +17,8 @@ export const CONTRIBUTE: NavigationEntry = {
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
         {
-          label: "Contribute", url: ""
+          label: "Contribute",
+          url: "",
         },
         {
           label: "Contributing Data to the Human Cell Atlas",
@@ -25,19 +26,27 @@ export const CONTRIBUTE: NavigationEntry = {
           url: ROUTES.CONTRIBUTE,
         },
         {
-          label: "Submitting Count Matrices and Tier 1 Metadata to CELLxGENE Discover",
+          label:
+            "Submitting Count Matrices and Tier 1 Metadata to CELLxGENE Discover",
           url: `${ROUTES.CONTRIBUTE}/submitting-hca-data-to-cellxgene-discover`,
         },
         {
-          label: "Submitting Cell Annotation Metadata to the Cell Annotation Platform (CAP)",
+          label:
+            "Submitting Cell Annotation Metadata to the Cell Annotation Platform (CAP)",
           url: `${ROUTES.CONTRIBUTE}/submitting-cell-annotation-metadata-to-cap`,
         },
         {
-          label: "Submitting FASTQs and Tier 2 metadata to the HCA Data Repository",
+          label:
+            "Submitting FASTQs and Tier 2 metadata to the HCA Data Repository",
           url: `${ROUTES.CONTRIBUTE}/submitting-fastqs-and-tier-2-metadata-to-the-hca-data-repository`,
         },
       ],
-      slugs: ["contribute", "submitting-hca-data-to-cellxgene-discover", "submitting-cell-annotation-metadata-to-cap", "submitting-fastqs-and-tier-2-metadata-to-the-hca-data-repository"],
+      slugs: [
+        "contribute",
+        "submitting-hca-data-to-cellxgene-discover",
+        "submitting-cell-annotation-metadata-to-cap",
+        "submitting-fastqs-and-tier-2-metadata-to-the-hca-data-repository",
+      ],
       url: ROUTES.CONTRIBUTE,
       visible: VISIBLE.MD_DOWN,
     },
