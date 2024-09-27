@@ -3,8 +3,14 @@ import {
   textBody400,
   textBody500,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { TableContainer as MTableContainer } from "@mui/material";
+
+interface Props {
+  borderless?: boolean;
+  noWrap?: boolean;
+}
 
 export const TableContainer = styled(MTableContainer)`
   margin: 24px 0;
@@ -40,4 +46,31 @@ export const TableContainer = styled(MTableContainer)`
       }
     }
   }
+`;
+
+export const StyledTable = styled.div<Props>`
+  ${({ borderless }) =>
+    borderless &&
+    css`
+      && .MuiTable-root {
+        tr {
+          th,
+          td {
+            border: none;
+          }
+        }
+      }
+    `}
+  ${({ noWrap }) =>
+    noWrap &&
+    css`
+      && .MuiTable-root {
+        tr {
+          th,
+          td {
+            white-space: nowrap;
+          }
+        }
+      }
+    `}
 `;

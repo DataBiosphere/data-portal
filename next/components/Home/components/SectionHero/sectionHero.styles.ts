@@ -1,5 +1,9 @@
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { white } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
+import {
+  primaryDark,
+  smokeDark,
+  white,
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import { textBodyLarge400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import {
   alpha32,
@@ -56,11 +60,23 @@ export const CTAs = styled.div`
   gap: 16px;
   justify-self: center;
 
+  & .MuiButton-containedSecondary {
+    box-shadow: inset 0 0 0 1px ${smokeDark}, 0 1px 0 0 ${primaryDark};
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px ${smokeDark}, 0 1px 0 0 ${primaryDark};
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 1px ${smokeDark};
+    }
+  }
+
   & .MuiButton-outlinedSecondary {
     color: ${white};
     box-shadow: inset 0 0 0 1px ${white}${alpha32};
 
-    :hover {
+    &:hover {
       box-shadow: inset 0 0 0 1px ${white}${alpha64};
     }
   }
