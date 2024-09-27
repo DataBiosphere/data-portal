@@ -20,7 +20,7 @@ export const CONTRIBUTE: NavigationEntry = {
           label: "Contribute", url: ""
         },
         {
-          label: "Overview",
+          label: "Contributing Data to the Human Cell Atlas",
           selectedMatch: SELECTED_MATCH.EQUALS,
           url: ROUTES.CONTRIBUTE,
         },
