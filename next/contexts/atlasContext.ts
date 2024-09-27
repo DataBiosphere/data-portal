@@ -1,4 +1,4 @@
-import { ATLAS_CONTENT, NETWORKS } from "constants/networks";
+import { NETWORKS, NETWORK_ATLAS_CONTENT } from "constants/networks";
 import { createContext, useContext } from "react";
 import {
   AtlasContext as AtlasContextType,
@@ -21,10 +21,10 @@ export const useAtlas = (): AtlasContextType => {
   return useContext(AtlasContext);
 };
 
-export const useAtlasContent = (): AtlasModule => {
+export const useAtlasContent = (): AtlasModule | undefined => {
   const {
     atlas: { key },
+    network: { key: networkKey },
   } = useAtlas();
-
-  return ATLAS_CONTENT[key];
+  return NETWORK_ATLAS_CONTENT[networkKey]?.[key];
 };
