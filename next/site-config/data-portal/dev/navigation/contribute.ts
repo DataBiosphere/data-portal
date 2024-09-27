@@ -17,6 +17,9 @@ export const CONTRIBUTE: NavigationEntry = {
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
         {
+          label: "Contribute", url: ""
+        },
+        {
           label: "Overview",
           selectedMatch: SELECTED_MATCH.EQUALS,
           url: ROUTES.CONTRIBUTE,
