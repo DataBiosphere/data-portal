@@ -95,11 +95,12 @@ export const NETWORKS: Network[] = [
             url: "https://github.com/RCHENLAB/HRCA_reproducibility",
           },
         ],
-        componentAtlases: COMPONENT_ATLASES.eye,
+        componentAtlases: COMPONENT_ATLASES["eye-retina"],
         contact: { email: "eye@humancellatlas.org" },
         coordinators: [{ fullName: "Rui Chen" }],
         cxgId: "4c6eaf5c-6d57-4c76-b1e9-60df8c655f1e",
         datasets: [
+          "2079bb2e-676e-4bbf-8c68-f9c6459edcbb", // DeAngelis, ..., Chen.
           "aebc99a3-3151-482a-9709-da6802617763", // Thomas, ...,Cherry.
           "9c20a245-f2c0-43ae-82c9-2232ec6b594f", // Liang, ..., Chen.
           "1dddae6e-3753-48af-b20e-fa22abad125d", // Cowan, ..., Roska.
@@ -109,7 +110,7 @@ export const NETWORKS: Network[] = [
           "07d5987e-7f9e-4f34-b0fb-a185a35504f5", // Menon, ..., Hafler.
           "4bec484d-ca7a-47b4-8d48-8830e06ad6db", // Voigt, ..., Scheetz.
         ],
-        externalDatasets: DATASETS.eye,
+        externalDatasets: DATASETS["eye-retina"],
         integratedAtlases: [],
         key: RETINA_V1_0,
         name: "Single-cell atlas of the human retina v1.0",
@@ -120,7 +121,7 @@ export const NETWORKS: Network[] = [
             label: "Li et al. (2023) bioRxiv",
           },
         ],
-        summaryCellCount: 1800000,
+        summaryCellCount: 3548094,
         updatedAt: "",
         version: "v1",
       },

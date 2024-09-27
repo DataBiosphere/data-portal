@@ -1,15 +1,15 @@
-import { IntegratedAtlasRow, NetworkKey } from "../@types/network";
+import { IntegratedAtlasRow } from "../@types/network";
 import { buildAtlas } from "../utils/atlases";
 import { UCSC_CELL_BROWSER } from "./analysisPortals";
 
 const NORMAL = "normal";
 const TODO = "TODO";
 
-export const COMPONENT_ATLASES: Record<NetworkKey, IntegratedAtlasRow[]> = {
+export const COMPONENT_ATLASES: Record<string, IntegratedAtlasRow[]> = {
   adipose: [],
   breast: [],
   development: [],
-  eye: [
+  "eye-retina": [
     buildAtlas(
       [
         {
