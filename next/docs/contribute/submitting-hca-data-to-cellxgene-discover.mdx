@@ -7,7 +7,7 @@ title: "Submitting Count Matrices and Tier 1 Metadata to CELLxGENE Discover"
 
 ## File format
 
-Data contributors wishing to submit datasets to HCA for integration into atlases are required to submit an AnnData file. [AnnData files](https://anndata.readthedocs.io/en/latest/index.html) combine matrices and metadata into a single file, thus metadata should be captured on a per-cell basis. 
+Data contributors wishing to submit datasets to HCA for integration into atlases are required to submit an AnnData file. [AnnData files](https://anndata.readthedocs.io/en/latest/index.html) combine matrices and metadata into a single file, thus metadata should be captured on a per-cell basis.
 
 An AnnData file has several components, including:
 
@@ -37,7 +37,9 @@ An AnnData file has several components, including:
     - if there is no normalized matrix, raw counts should be in .X
 
 
-- **Cell metadata in obs:** Metadata fields are to be captured on a <ins> **per-cell** </ins> basis. 
+- **Cell metadata in obs:** Metadata fields are to be captured on a <ins> **per-cell** </ins> basis.
+
+<StyledTable borderless noWrap>
 
 |                               |                          |
 |:--------------------------------------|:-----------------------------------|
@@ -60,7 +62,9 @@ An AnnData file has several components, including:
 | <li>alignment_software</li>                    | <li>intron_inclusion</li>                   |
 | <li>author_cell_type</li>                      | <li>cell_type_ontology_term</li>            |
 
-In addition to the HCA obs fields above, there are an additional three fields that are required for submission into CELLxGENE. These fields are not part of the HCA Tier 1 metadata fields. 
+</StyledTable>
+
+In addition to the HCA obs fields above, there are an additional three fields that are required for submission into CELLxGENE. These fields are not part of the HCA Tier 1 metadata fields.
     - [disease_ontology_term_id](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/4.0.0/schema.md#disease_ontology_term_id)
     - [development_stage_ontology_term_id](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/4.0.0/schema.md#development_stage_ontology_term_id)
     - [self_reported_ethnicity_ontology_term_id](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/4.0.0/schema.md#self_reported_ethnicity_ontology_term_id)
@@ -76,7 +80,7 @@ Should you require support creating an AnnData file or converting your file from
 
 ## Tier 1 metadata fields
 
-Tier 1 metadata fields provide the foundational information used to build tissue and organ atlases. Specifically, the fields help to identify factors that can cause ‘batch effects’ that may arise when combining datasets into an atlas. 
+Tier 1 metadata fields provide the foundational information used to build tissue and organ atlases. Specifically, the fields help to identify factors that can cause ‘batch effects’ that may arise when combining datasets into an atlas.
 
 The full list of fields with detailed information on each field can be found [here](https://docs.google.com/spreadsheets/d/13oqRLh1awe7bClpX617_HQaoS8XPZV5JKPtPEff8-p4/edit?gid=1404414727#gid=1404414727). Some fields are are mandatory (labelled ‘must’) whereas others are ‘recommended’.
 
@@ -90,10 +94,10 @@ AnnData files will be stored and are accessible on CELLxGENE Discover. To submit
     - Contact: name and email
     - Publication/preprint DOI: The publication digital object identifier (DOI) for the protocol. If no pre-print nor publication exists, please write 'not applicable'.
     - URLs: any additional URLs for related data or resources, such as GEO or protocols.io - can be added later
-    - Consortia (i.e. HCA) 
+    - Consortia (i.e. HCA)
 
 2. The team confirms acceptance of your data.
-3. You prepare your AnnData file and send the file to [cellxgene@chanzuckerberg.com](mailto:cellxgene@chanzuckerberg.com). 
+3. You prepare your AnnData file and send the file to [cellxgene@chanzuckerberg.com](mailto:cellxgene@chanzuckerberg.com).
 4. The team will upload your dataset to a private collection where you can review.
 5. The team will make your dataset either: public or private. Private datasets need to be shared with the integration team for inclusion in the integrated object.
 
