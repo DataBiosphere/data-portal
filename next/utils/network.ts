@@ -76,6 +76,29 @@ export function buildDatasetURL(network: Network): string {
 }
 
 /**
+ * Fetches the CELLxGENE collections for the specified atlases and aggregates their datasets.
+ * @param atlases - Atlases to get datasets for.
+ * @returns CELLxGENE datasets.
+ */
+export async function fetchCXGDatasetsForAtlases(
+  atlases: Atlas[]
+): Promise<CXGDataset[]> {
+  const cxgDatasets = [];
+  for (const atlas of atlases) {
+    if (atlas.cxgId) {
+      const response = await fetch(
+        `https://api.cellxgene.cziscience.com/curation/v1/collections/${atlas.cxgId}`
+      );
+      const cxgCollection = await response.json();
+      cxgDatasets.push(
+        ...mapDatasets(cxgCollection.datasets, cxgCollection.collection_id)
+      );
+    }
+  }
+  return cxgDatasets;
+}
+
+/**
  * Returns true if the dataset's collection_id matches the given collection ID.
  * @param cxgDataset - CELLxGENE dataset.
  * @param collectionId - Collection ID.
@@ -176,4 +199,17 @@ function processArrayValue<T>(values: T[], key: keyof T): string[] {
  */
 function sort(values: string[]): string[] {
   return values.sort((a, b) => a.localeCompare(b));
+}
+
+/**
+ * Returns CELLxGENE datasets with the corresponding collection ID.
+ * @param cxgDatasets - CELLxGENE dataset responses.
+ * @param collection_id - Collection ID.
+ * @returns CELLxGENE datasets.
+ */
+function mapDatasets(
+  cxgDatasets: Omit<CXGDataset, "collection_id">[],
+  collection_id: string
+): CXGDataset[] {
+  return cxgDatasets.map((cxgDataset) => ({ ...cxgDataset, collection_id }));
 }
