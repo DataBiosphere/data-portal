@@ -4,7 +4,6 @@ import { Floating } from "@databiosphere/findable-ui/lib/components/Layout/compo
 import { Header } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
 import { Main as DXMain } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main";
 import { LayoutStateProvider } from "@databiosphere/findable-ui/lib/providers/layoutState";
-import { createAppTheme } from "@databiosphere/findable-ui/lib/theme/theme";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
 import { createBreakpoints } from "@mui/system";
@@ -39,12 +38,16 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const Footer = Component.Footer || AppFooter;
   const Main = Component.Main || DXMain;
   const appConfig = config() as SiteConfig;
-  const { analytics, appTitle, layout, themeOptions } = appConfig;
+  const {
+    analytics,
+    appTitle,
+    layout,
+    themeOptions: baseThemeOptions,
+  } = appConfig;
   const { floating, footer, header } = layout || {};
   const { gtmAuth, gtmId, gtmPreview } = analytics || {};
-  const { pageTitle } = pageProps;
-  const defaultTheme = createAppTheme(themeOptions);
-  const appTheme = mergeAppTheme(defaultTheme);
+  const { pageTitle, themeOptions } = pageProps;
+  const appTheme = mergeAppTheme(baseThemeOptions, themeOptions);
 
   // Initialize Google Tag Manager.
   useEffect(() => {

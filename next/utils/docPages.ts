@@ -1,6 +1,7 @@
 import { LayoutStyle } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/entities";
 import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { ThemeOptions } from "@mui/material";
 import { GetStaticPropsContext, GetStaticPropsResult } from "next";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
@@ -25,11 +26,13 @@ export interface PageProps {
   navigation: NavItem[] | null;
   outline: OutlineItem[];
   pageTitle: string | null;
+  themeOptions?: ThemeOptions;
 }
 
 export async function getDocsStaticProps(
   context: GetStaticPropsContext,
-  dir: string
+  dir: string,
+  themeOptions: ThemeOptions
 ): Promise<GetStaticPropsResult<PageProps>> {
   const { slug } = context.params as PageUrlParams;
   const { content, data } = parseMDXFrontmatter(dir, slug);
@@ -55,6 +58,7 @@ export async function getDocsStaticProps(
       navigation: navigationConfig?.navigation ?? null,
       outline: outline.filter(filterOutline),
       pageTitle: frontmatter.title ?? null,
+      themeOptions,
     },
   };
 }

@@ -8,6 +8,8 @@ import {
   Outline,
   OutlineItem,
 } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { textBodyLarge4002Lines } from "@databiosphere/findable-ui/src/theme/common/typography";
+import { ThemeOptions } from "@mui/material";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { GetStaticPathsResult } from "next/types";
@@ -18,6 +20,51 @@ import { getDocsStaticProps, PageProps } from "../utils/docPages";
 
 const CONFLICTING_STATIC_PATHS: string[] = ["hca-bio-networks"];
 const DOCS_DIR = "/docs";
+const THEME_OPTIONS: ThemeOptions = {
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          ...textBodyLarge4002Lines,
+        },
+        img: {
+          margin: "16px 0",
+          maxWidth: "100%",
+        },
+        li: {
+          margin: "8px 0",
+          p: {
+            marginBottom: 8,
+          },
+          // eslint-disable-next-line sort-keys -- disabling key order for readability
+          "&:last-child": {
+            marginBottom: 0,
+          },
+        },
+        ol: {
+          margin: 0,
+          paddingLeft: 24,
+        },
+        p: {
+          ...textBodyLarge4002Lines,
+          marginBottom: 16,
+          overflowWrap: "break-word",
+          // eslint-disable-next-line sort-keys -- disabling key order for readability
+          "&:lastChild": {
+            marginBottom: 0,
+          },
+        },
+        ul: {
+          margin: 0,
+          paddingLeft: 24,
+        },
+        "ul + p": {
+          marginTop: 16,
+        },
+      },
+    },
+  },
+};
 
 const Page = ({
   layoutStyle,
@@ -42,7 +89,7 @@ const Page = ({
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
 ) => {
-  return getDocsStaticProps(context, DOCS_DIR);
+  return getDocsStaticProps(context, DOCS_DIR, THEME_OPTIONS);
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
