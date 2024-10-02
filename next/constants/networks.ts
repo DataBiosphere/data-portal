@@ -9,6 +9,7 @@ import * as adiposeContent from "../content/adipose";
 import * as breastContent from "../content/breast";
 import * as developmentContent from "../content/development";
 import * as eyeContent from "../content/eye";
+import * as eyeNetworkRetinaAtlas from "../content/eye/atlases/retina";
 import * as geneticDiversityContent from "../content/genetic-diversity";
 import * as gutContent from "../content/gut";
 import * as heartContent from "../content/heart";
@@ -16,18 +17,28 @@ import * as immuneContent from "../content/immune";
 import * as kidneyContent from "../content/kidney";
 import * as liverContent from "../content/liver";
 import * as lungContent from "../content/lung";
-import * as atlasLung from "../content/lung/atlases/lung";
+import * as lungNetworkLungAtlas from "../content/lung/atlases/lung";
 import * as musculoskeletalContent from "../content/musculoskeletal";
 import * as nervousSystemContent from "../content/nervous-system";
-import * as altasBrain from "../content/nervous-system/atlases/brain";
-import * as atlasCortex from "../content/nervous-system/atlases/cortex";
+import * as nervousSystemNetworkBrainAtlas from "../content/nervous-system/atlases/brain";
+import * as nervousSystemNetworkCortexAtlas from "../content/nervous-system/atlases/cortex";
 import * as oralContent from "../content/oral";
 import * as organoidContent from "../content/organoid";
+import * as organoidNetworkOrganoidEndodermAtlas from "../content/organoid/atlases/organoid-endoderm";
+import * as organoidNetworkOrganoidNeuralAtlas from "../content/organoid/atlases/organoid-neural";
 import * as pancreasContent from "../content/pancreas";
 import * as reproductionContent from "../content/reproduction";
 import * as skinContent from "../content/skin";
 import BICCN_PUBLICATIONS from "./biccn-publications.json";
+import { COMPONENT_ATLASES } from "./componentAtlases";
 import { DATASETS } from "./datasets";
+
+const BRAIN_V1_0 = "brain-v1-0";
+const CORTEX_V1_0 = "cortex-v1-0";
+const LUNG_V1_0 = "lung-v1-0";
+const ORGANOID_ENDODERM_V1_0 = "organoid-endoderm-v1-0";
+const ORGANOID_NEURAL_V1_0 = "organoid-neural-v1-0";
+const RETINA_V1_0 = "retina-v1-0";
 
 export const NETWORKS: Network[] = [
   {
@@ -76,7 +87,45 @@ export const NETWORKS: Network[] = [
     path: "development",
   },
   {
-    atlases: [],
+    atlases: [
+      {
+        code: [
+          {
+            label: "https://github.com/RCHENLAB/HRCA_reproducibility",
+            url: "https://github.com/RCHENLAB/HRCA_reproducibility",
+          },
+        ],
+        componentAtlases: COMPONENT_ATLASES["eye-retina"],
+        contact: { email: "eye@humancellatlas.org" },
+        coordinators: [{ fullName: "Rui Chen" }],
+        cxgId: "4c6eaf5c-6d57-4c76-b1e9-60df8c655f1e",
+        datasets: [
+          "2079bb2e-676e-4bbf-8c68-f9c6459edcbb", // DeAngelis, ..., Chen.
+          "aebc99a3-3151-482a-9709-da6802617763", // Thomas, ...,Cherry.
+          "9c20a245-f2c0-43ae-82c9-2232ec6b594f", // Liang, ..., Chen.
+          "1dddae6e-3753-48af-b20e-fa22abad125d", // Cowan, ..., Roska.
+          "e090445c-6971-4212-bc5f-ae4ec3914102", // Orozco, ..., Hackney.
+          "30dc3964-1135-4b56-b393-ce2dcbc6e379", // Yan, ..., Sanes.
+          "8185730f-4113-40d3-9cc3-929271784c2b", // Lukowski, ..., Wong.
+          "07d5987e-7f9e-4f34-b0fb-a185a35504f5", // Menon, ..., Hafler.
+          "4bec484d-ca7a-47b4-8d48-8830e06ad6db", // Voigt, ..., Scheetz.
+        ],
+        externalDatasets: DATASETS["eye-retina"],
+        integratedAtlases: [],
+        key: RETINA_V1_0,
+        name: "Single-cell atlas of the human retina v1.0",
+        path: RETINA_V1_0,
+        publications: [
+          {
+            doi: "https://doi.org/10.1101/2023.11.07.566105",
+            label: "Li et al. (2023) bioRxiv",
+          },
+        ],
+        summaryCellCount: 3548094,
+        updatedAt: "",
+        version: "v1",
+      },
+    ],
     contact: { email: "eye@humancellatlas.org" },
     coordinators: [{ fullName: "Rui Chen" }, { fullName: "Ayellet Segrè" }],
     datasetQueryOrgans: ["eye", "left eye", "retina", "right eye"],
@@ -270,9 +319,9 @@ export const NETWORKS: Network[] = [
         ],
         externalDatasets: DATASETS.lung,
         integratedAtlases: [],
-        key: "lung-v1-0",
+        key: LUNG_V1_0,
         name: "The integrated Human Lung Cell Atlas (HLCA) v1.0",
-        path: "lung-v1-0",
+        path: LUNG_V1_0,
         publications: [
           {
             doi: "https://doi.org/10.1038/s41591-023-02327-2",
@@ -353,9 +402,9 @@ export const NETWORKS: Network[] = [
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],
-        key: "brain-v1-0",
+        key: BRAIN_V1_0,
         name: "Human Brain Cell Atlas v1.0",
-        path: "brain-v1-0",
+        path: BRAIN_V1_0,
         publications: [
           {
             doi: "https://doi.org/10.1126/science.add7046",
@@ -381,9 +430,9 @@ export const NETWORKS: Network[] = [
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],
-        key: "cortex-v1-0",
+        key: CORTEX_V1_0,
         name: "Human Cortical Cell Atlas v1.0",
-        path: "cortex-v1-0",
+        path: CORTEX_V1_0,
         publications: [
           {
             doi: "https://doi.org/10.1126/science.adf6812",
@@ -446,7 +495,90 @@ export const NETWORKS: Network[] = [
     path: "oral",
   },
   {
-    atlases: [],
+    atlases: [
+      {
+        code: [
+          {
+            label: "https://github.com/theislab/neural_organoid_atlas",
+            url: "https://github.com/theislab/neural_organoid_atlas",
+          },
+          {
+            label: "https://devsystemslab.github.io/HNOCA-tools",
+            url: "https://devsystemslab.github.io/HNOCA-tools",
+          },
+        ],
+        contact: { email: "barbara.treutlein@bsse.ethz.ch" },
+        coordinators: [
+          { fullName: "Barbara Treutlein" },
+          { fullName: "Gray Camp" },
+          { fullName: "Fabian Theis" },
+          { fullName: "Zhisong He" },
+          { fullName: "Leander Dony" },
+          { fullName: "Jonas Fleck" },
+        ],
+        cxgId: "de379e5f-52d0-498c-9801-0f850823c847",
+        datasets: [
+          "c4e11369-78d4-4d29-ba8e-b67907c4c65c",
+          "005d611a-14d5-4fbf-846e-571a1f874f70",
+          "645b20c9-5ed0-4500-86b5-7aef770d010a",
+          "da77bd06-43ae-4012-a774-e4d62797df51",
+        ],
+        externalDatasets: DATASETS["organoid-neural"],
+        integratedAtlases: [],
+        key: ORGANOID_NEURAL_V1_0,
+        name: "An integrated transcriptomic cell atlas of human neural organoids v1.0",
+        path: ORGANOID_NEURAL_V1_0,
+        publications: [
+          {
+            doi: "https://doi.org/10.1101/2023.10.05.561097",
+            label: "He et al. (2023) bioRxiv",
+          },
+        ],
+        subTitle: "", // TODO(cc) sub title.
+        summaryCellCount: 1767674, // First CXG dataset cell count TODO(cc) taken from dataset "The Human Neural Organoid Atlas".
+        updatedAt: "",
+        version: "v1",
+      },
+      {
+        code: [
+          {
+            label: "https://github.com/devsystemslab/HEOCA",
+            url: "https://github.com/devsystemslab/HEOCA",
+          },
+        ],
+        contact: { email: "gray.camp@roche.com" },
+        coordinators: [
+          { fullName: "Gray Camp" },
+          { fullName: "Quan Xu" },
+          { fullName: "Lennard Halle" },
+        ],
+        cxgId: "6282a908-f162-44a2-99a3-8a942e4271b2",
+        datasets: [
+          "8ab8726d-81b9-4bd2-acc2-4d50bee786b4",
+          "b32a9915-c81b-4cbc-af53-3a66b5da3c9a",
+          "2fe3c60b-ac1a-4c61-9b59-f6556c0fce63",
+          "94e4ee09-9b4b-410a-84dc-a751ad36d0df",
+          "5eafb94b-02d8-423e-81b8-3673da319ca0",
+          "e5fe8274-3769-4d7d-aa35-6d33c226ab43",
+          "75dbbce9-0cde-489c-88a7-93e8f92914a3",
+        ],
+        externalDatasets: DATASETS["organoid-endoderm"],
+        integratedAtlases: [],
+        key: ORGANOID_ENDODERM_V1_0,
+        name: "Integrated human endoderm-derived organoids cell atlas (HEOCA) v1.0",
+        path: ORGANOID_ENDODERM_V1_0,
+        publications: [
+          {
+            doi: "https://doi.org/10.1101/2023.11.20.567825",
+            label: "Xu et al. (2023) bioRxiv",
+          },
+        ],
+        subTitle: "", // TODO(cc) sub title.
+        summaryCellCount: 936563, // First CXG dataset cell count TODO(cc) summary cell count.
+        updatedAt: "",
+        version: "v1",
+      },
+    ],
     contact: { email: "organoids@humancellatlas.org" },
     coordinators: [
       { fullName: "Christoph Bock" },
@@ -566,8 +698,19 @@ export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
   skin: "/hca-bio-networks/icons/skin.png",
 };
 
-export const ATLAS_CONTENT: { [key in AtlasKey]: AtlasModule } = {
-  "brain-v1-0": altasBrain,
-  "cortex-v1-0": atlasCortex,
-  "lung-v1-0": atlasLung,
+export const NETWORK_ATLAS_CONTENT: Partial<
+  Record<NetworkKey, { [key in AtlasKey]?: AtlasModule }>
+> = {
+  eye: { [RETINA_V1_0]: eyeNetworkRetinaAtlas },
+  lung: {
+    [LUNG_V1_0]: lungNetworkLungAtlas,
+  },
+  "nervous-system": {
+    [BRAIN_V1_0]: nervousSystemNetworkBrainAtlas,
+    [CORTEX_V1_0]: nervousSystemNetworkCortexAtlas,
+  },
+  organoid: {
+    [ORGANOID_ENDODERM_V1_0]: organoidNetworkOrganoidEndodermAtlas,
+    [ORGANOID_NEURAL_V1_0]: organoidNetworkOrganoidNeuralAtlas,
+  },
 };

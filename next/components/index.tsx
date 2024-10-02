@@ -27,4 +27,5 @@ export { IconLink } from "./common/IconLink/iconLink";
 export { PinnedNTagCell } from "./common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
 export { BioNetworkCell } from "./common/Table/components/Cell/components/BioNetworkCell/bioNetworkCell";
 export { CXGDownloadCell } from "./common/Table/components/Cell/components/CXGDownloadCell/cxgDownloadCell";
+export { AnalysisPortalCell } from "./HCABioNetworks/Network/Atlas/components/Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
 export { Content } from "./Layout/components/Content/content";

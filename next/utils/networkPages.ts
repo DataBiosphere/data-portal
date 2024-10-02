@@ -8,7 +8,7 @@ import {
 import { Network, NetworkParam } from "../@types/network";
 import { config } from "../config/config";
 import { NETWORKS } from "../constants/networks";
-import { processNetwork } from "./network";
+import { fetchCXGDatasetsForAtlases, processNetwork } from "./network";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -44,16 +44,7 @@ export async function getContentStaticProps(
   }
 
   // Fetch CELLxGENE datasets for the network atlases.
-  const cxgDatasets = [];
-  // Skip the fetch if the network has no atlases.
-  if (network.atlases.length > 0) {
-    const cxgResponse = await fetch(
-      "https://api.cellxgene.cziscience.com/curation/v1/datasets"
-    );
-    const data = await cxgResponse.json();
-    cxgDatasets.push(...data);
-  }
-
+  const cxgDatasets = await fetchCXGDatasetsForAtlases(network.atlases);
   return {
     props: {
       network: processNetwork(network, cxgDatasets),

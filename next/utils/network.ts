@@ -1,4 +1,6 @@
+import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import {
+  AnalysisPortal,
   Atlas,
   CXGDataset,
   CXGDatasetAsset,
@@ -9,6 +11,35 @@ import {
 } from "../@types/network";
 import { processNullElements } from "../apis/azul/hca-dcp/common/utils";
 import { config } from "../config/config";
+import { CZ_CELLXGENE } from "../constants/analysisPortals";
+
+const CZ_CELLXGENE_DATA_PORTAL_URL = "https://cellxgene.cziscience.com";
+
+/**
+ * Builds the CELLxGENE analysis portal for the given CELLxGENE URL.
+ * @param cxgURL - CELLxGENE URL.
+ * @returns CELLxGENE analysis portal.
+ */
+function buildCXGAnalysisPortal(cxgURL: string): AnalysisPortal {
+  return { url: cxgURL, ...CZ_CELLXGENE };
+}
+
+/**
+ * Builds the CELLxGENE data portal link for the given CELLxGENE dataset ID.
+ * @param cxgId - CELLxGENE dataset ID.
+ * @returns CELLxGENE data portal link.
+ */
+function buildCXGDataPortalLink(
+  cxgId: string
+): Pick<LinkProps, "label" | "url">[] {
+  const cxgDataPortalURL = `${CZ_CELLXGENE_DATA_PORTAL_URL}/collections/${cxgId}`;
+  return [
+    {
+      label: cxgDataPortalURL,
+      url: cxgDataPortalURL,
+    },
+  ];
+}
 
 /**
  * Returns the H5AD and RDS dataset assets for the given CELLxGENE dataset assets.
@@ -45,6 +76,29 @@ export function buildDatasetURL(network: Network): string {
 }
 
 /**
+ * Fetches the CELLxGENE collections for the specified atlases and aggregates their datasets.
+ * @param atlases - Atlases to get datasets for.
+ * @returns CELLxGENE datasets.
+ */
+export async function fetchCXGDatasetsForAtlases(
+  atlases: Atlas[]
+): Promise<CXGDataset[]> {
+  const cxgDatasets = [];
+  for (const atlas of atlases) {
+    if (atlas.cxgId) {
+      const response = await fetch(
+        `https://api.cellxgene.cziscience.com/curation/v1/collections/${atlas.cxgId}`
+      );
+      const cxgCollection = await response.json();
+      cxgDatasets.push(
+        ...mapDatasets(cxgCollection.datasets, cxgCollection.collection_id)
+      );
+    }
+  }
+  return cxgDatasets;
+}
+
+/**
  * Returns true if the dataset's collection_id matches the given collection ID.
  * @param cxgDataset - CELLxGENE dataset.
  * @param collectionId - Collection ID.
@@ -77,7 +131,11 @@ function filterCXGDatasetAsset(cxgDatasetAsset: CXGDatasetAsset): boolean {
  */
 export function processAtlas(atlas: Atlas, cxgDatasets: CXGDataset[]): Atlas {
   const integratedAtlases = cxgDatasets.map(mapIntegratedAtlas);
-  return { ...atlas, integratedAtlases };
+  if (atlas.componentAtlases) {
+    integratedAtlases.push(...atlas.componentAtlases);
+  }
+  const cxgDataPortal = buildCXGDataPortalLink(atlas.cxgId);
+  return { ...atlas, cxgDataPortal, integratedAtlases };
 }
 
 /**
@@ -94,6 +152,9 @@ export function processNetwork(
     const integratedAtlases = cxgDatasets
       .filter((dataset) => filterCXGDataset(dataset, atlas.cxgId))
       .map(mapIntegratedAtlas);
+    if (atlas.componentAtlases) {
+      integratedAtlases.push(...atlas.componentAtlases);
+    }
     return { ...atlas, integratedAtlases };
   });
   const datasetURL = buildDatasetURL(network);
@@ -107,10 +168,9 @@ export function processNetwork(
  */
 export function mapIntegratedAtlas(cxgDataset: CXGDataset): IntegratedAtlas {
   return {
+    analysisPortals: [buildCXGAnalysisPortal(cxgDataset.explorer_url)],
     assay: processArrayValue(cxgDataset.assay, "label"),
     cellCount: cxgDataset.cell_count,
-    cxgId: cxgDataset.collection_id,
-    cxgURL: cxgDataset.explorer_url,
     datasetAssets: buildDatasetAssets(cxgDataset.assets),
     disease: processArrayValue(cxgDataset.disease, "label"),
     name: cxgDataset.title,
@@ -139,4 +199,17 @@ function processArrayValue<T>(values: T[], key: keyof T): string[] {
  */
 function sort(values: string[]): string[] {
   return values.sort((a, b) => a.localeCompare(b));
+}
+
+/**
+ * Returns CELLxGENE datasets with the corresponding collection ID.
+ * @param cxgDatasets - CELLxGENE dataset responses.
+ * @param collection_id - Collection ID.
+ * @returns CELLxGENE datasets.
+ */
+function mapDatasets(
+  cxgDatasets: Omit<CXGDataset, "collection_id">[],
+  collection_id: string
+): CXGDataset[] {
+  return cxgDatasets.map((cxgDataset) => ({ ...cxgDataset, collection_id }));
 }
