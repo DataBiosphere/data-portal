@@ -34,7 +34,9 @@ export const SectionHero = (): JSX.Element => {
         </Head>
         <Subhead>Community generated, multi-omic, open data</Subhead>
         <CTAs>
-          <ButtonSecondary onClick={onExplore} id={"button-explore-data"}>Explore Data</ButtonSecondary>
+          <ButtonSecondary onClick={onExplore} id={"button-explore-data"}>
+            Explore Data
+          </ButtonSecondary>
           <ButtonSecondaryOutline href={ROUTES.CONTRIBUTE}>
             Contribute Data
           </ButtonSecondaryOutline>
