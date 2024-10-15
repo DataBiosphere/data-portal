@@ -13,6 +13,7 @@ export const SideColumn = (): JSX.Element => {
     code,
     contact: atlasContact,
     coordinators: atlasCoordinators,
+    cxgDataPortal,
     publications,
   } = atlas;
   const { contact: networkContact, coordinators: networkCoordinators } =
@@ -26,6 +27,10 @@ export const SideColumn = (): JSX.Element => {
         <Publications publications={publications} />
         {/* Code */}
         {code && <References links={code} title="Code" />}
+        {/* CELLxGENE Collection */}
+        {cxgDataPortal && (
+          <References links={cxgDataPortal} title="CZ CELLxGENE Collection" />
+        )}
         {/* Atlas Coordinators */}
         <Coordinators
           coordinators={atlasCoordinators}
