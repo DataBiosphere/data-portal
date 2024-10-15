@@ -16,11 +16,11 @@ import * as immuneContent from "../content/immune";
 import * as kidneyContent from "../content/kidney";
 import * as liverContent from "../content/liver";
 import * as lungContent from "../content/lung";
-import * as atlasLung from "../content/lung/atlases/lung";
+import * as lungNetworkLungAtlas from "../content/lung/atlases/lung";
 import * as musculoskeletalContent from "../content/musculoskeletal";
 import * as nervousSystemContent from "../content/nervous-system";
-import * as altasBrain from "../content/nervous-system/atlases/brain";
-import * as atlasCortex from "../content/nervous-system/atlases/cortex";
+import * as nervousSystemNetworkBrainAtlas from "../content/nervous-system/atlases/brain";
+import * as nervousSystemNetworkCortexAtlas from "../content/nervous-system/atlases/cortex";
 import * as oralContent from "../content/oral";
 import * as organoidContent from "../content/organoid";
 import * as pancreasContent from "../content/pancreas";
@@ -28,6 +28,10 @@ import * as reproductionContent from "../content/reproduction";
 import * as skinContent from "../content/skin";
 import BICCN_PUBLICATIONS from "./biccn-publications.json";
 import { DATASETS } from "./datasets";
+
+const BRAIN_V1_0 = "brain-v1-0";
+const CORTEX_V1_0 = "cortex-v1-0";
+const LUNG_V1_0 = "lung-v1-0";
 
 export const NETWORKS: Network[] = [
   {
@@ -270,9 +274,9 @@ export const NETWORKS: Network[] = [
         ],
         externalDatasets: DATASETS.lung,
         integratedAtlases: [],
-        key: "lung-v1-0",
+        key: LUNG_V1_0,
         name: "The integrated Human Lung Cell Atlas (HLCA) v1.0",
-        path: "lung-v1-0",
+        path: LUNG_V1_0,
         publications: [
           {
             doi: "https://doi.org/10.1038/s41591-023-02327-2",
@@ -353,9 +357,9 @@ export const NETWORKS: Network[] = [
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],
-        key: "brain-v1-0",
+        key: BRAIN_V1_0,
         name: "Human Brain Cell Atlas v1.0",
-        path: "brain-v1-0",
+        path: BRAIN_V1_0,
         publications: [
           {
             doi: "https://doi.org/10.1126/science.add7046",
@@ -381,9 +385,9 @@ export const NETWORKS: Network[] = [
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],
-        key: "cortex-v1-0",
+        key: CORTEX_V1_0,
         name: "Human Cortical Cell Atlas v1.0",
-        path: "cortex-v1-0",
+        path: CORTEX_V1_0,
         publications: [
           {
             doi: "https://doi.org/10.1126/science.adf6812",
@@ -566,8 +570,14 @@ export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
   skin: "/hca-bio-networks/icons/skin.png",
 };
 
-export const ATLAS_CONTENT: { [key in AtlasKey]: AtlasModule } = {
-  "brain-v1-0": altasBrain,
-  "cortex-v1-0": atlasCortex,
-  "lung-v1-0": atlasLung,
+export const NETWORK_ATLAS_CONTENT: Partial<
+  Record<NetworkKey, { [key in AtlasKey]?: AtlasModule }>
+> = {
+  lung: {
+    [LUNG_V1_0]: lungNetworkLungAtlas,
+  },
+  "nervous-system": {
+    [BRAIN_V1_0]: nervousSystemNetworkBrainAtlas,
+    [CORTEX_V1_0]: nervousSystemNetworkCortexAtlas,
+  },
 };
