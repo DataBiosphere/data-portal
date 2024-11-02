@@ -12,7 +12,7 @@ import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
 
 const APP_TITLE = "HCA Data Portal";
-const CATALOG = "dcp42";
+const CATALOG = "dcp43";
 const DATA_URL = "https://service.azul.data.humancellatlas.org";
 const EXPLORER_URL = "https://explore.data.humancellatlas.dev.clevercanary.com";
 const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
