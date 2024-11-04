@@ -15,4 +15,4 @@ fi
 
 # Check for Conventional Commits format
 
-npx commitlint --config ./next/commitlint.config.js --edit $1
+npx commitlint --config ./commitlint.config.js --edit $1
