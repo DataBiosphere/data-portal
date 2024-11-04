@@ -21,13 +21,13 @@ Clone the `data-portal` repo:
 
 ##### Install Packages
 
-Run the following command from the `next` directory to install the required packages: 
+Run the following command from the root directory to install the required packages: 
 
 `npm install`
 
 ### Development Server
 
-Run the following command from the `next` directory:
+Run the following command:
 
 `npm run dev`
 
