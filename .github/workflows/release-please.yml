@@ -22,3 +22,4 @@ jobs:
           token: ${{ secrets.HCA_RELEASE_PLEASE_TOKEN }}
           # This is a built-in strategy in release-please, see "Action Inputs" for more options
           release-type: node
+          config-file: release-please-config.json
