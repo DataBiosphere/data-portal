@@ -7,7 +7,6 @@ import {
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { TEXT_BODY_400_2_LINES } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
-import React from "react";
 import { Network } from "../../../../../../../../../@types/network";
 import { NETWORKS_ROUTE } from "../../../../../../../../../constants/routes";
 import { getBioNetworkName } from "../../../../../../../../../viewModelBuilders/viewModelBuilders";

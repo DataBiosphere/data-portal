@@ -1,6 +1,5 @@
 import { CustomSVGIconProps } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/common/entities";
 import { SvgIcon } from "@mui/material";
-import React from "react";
 
 /**
  * Custom add icon.

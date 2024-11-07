@@ -1,6 +1,6 @@
 import { ButtonPrimary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonPrimary/buttonPrimary";
 import { ButtonSecondary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   CXG_DATASET_FILE_TYPE,
   DatasetAsset,

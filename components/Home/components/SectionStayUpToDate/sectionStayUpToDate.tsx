@@ -6,8 +6,8 @@ import {
 import { SectionHead } from "../Section/section.styles";
 import {
   CTAs,
-  SectionContent,
   SectionStayUpToDate as Section,
+  SectionContent,
 } from "./sectionStayUpToDate.styles";
 
 export const SectionStayUpToDate = (): JSX.Element => {

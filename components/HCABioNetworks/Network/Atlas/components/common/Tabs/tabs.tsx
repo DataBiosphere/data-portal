@@ -8,7 +8,6 @@ import {
 } from "constants/routes";
 import { useAtlas } from "contexts/atlasContext";
 import { useRouter } from "next/router";
-import React from "react";
 
 const TABS = [
   {

@@ -3,7 +3,6 @@ import {
   LinkProps,
 } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { Chip, Tooltip } from "@mui/material";
-import React from "react";
 import { Links } from "./publicationDetail.styles";
 
 export interface PublicationDetailProps {
@@ -29,7 +28,7 @@ export const PublicationDetail = ({
             title={
               <Links>
                 {links.map((link, i) => (
-                  <Link key={i} {...link} />
+                  <Link key={i} color="inherit" {...link} />
                 ))}
               </Links>
             }

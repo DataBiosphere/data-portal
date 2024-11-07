@@ -5,7 +5,6 @@ import {
   GetStaticPropsContext,
   InferGetStaticPropsType,
 } from "next";
-import React from "react";
 import { Hero } from "../../../../../components/HCABioNetworks/Network/Atlas/components/common/Hero/hero";
 import { Tabs } from "../../../../../components/HCABioNetworks/Network/Atlas/components/common/Tabs/tabs";
 import { MainColumn } from "../../../../../components/HCABioNetworks/Network/Atlas/components/Datasets/components/MainColumn/mainColumn";

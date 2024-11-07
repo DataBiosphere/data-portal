@@ -1,6 +1,6 @@
 import { useLayoutState } from "@databiosphere/findable-ui/lib/hooks/useLayoutState";
 import { useRouter } from "next/router";
-import React, { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { Tab, Tabs, TabTitle } from "./outline.styles";
 
 enum TAB_VALUE {

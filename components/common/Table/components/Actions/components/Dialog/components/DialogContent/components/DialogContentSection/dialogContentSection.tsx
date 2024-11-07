@@ -4,7 +4,7 @@ import {
   TEXT_BODY_LARGE_500,
 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 export interface DialogContentSectionProps {
   children: ReactNode;

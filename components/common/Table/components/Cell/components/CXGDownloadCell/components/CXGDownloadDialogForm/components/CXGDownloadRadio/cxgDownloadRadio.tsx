@@ -4,7 +4,6 @@ import {
   TEXT_BODY_LARGE_500,
 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
-import React from "react";
 import {
   CXG_DATASET_FILE_TYPE,
   DatasetAsset,

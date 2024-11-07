@@ -14,7 +14,6 @@ import {
 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import { useAtlas, useAtlasContent } from "contexts/atlasContext";
-import React from "react";
 import { getIntegratedAtlasesTableColumns } from "../../../../../../../../viewModelBuilders/viewModelBuilders";
 import { Table, Toolbar } from "../../../../../../../common/Table/table.styles";
 import { SectionText } from "../../../../../../components/Section/section.styles";

@@ -1,4 +1,4 @@
-import { AnalysisPortal, ANALYSIS_PORTAL } from "../@types/network";
+import { ANALYSIS_PORTAL, AnalysisPortal } from "../@types/network";
 
 /**
  * Cell By Gene analysis portal.

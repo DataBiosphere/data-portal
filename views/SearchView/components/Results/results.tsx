@@ -10,7 +10,6 @@ import { RoundedCard } from "@databiosphere/findable-ui/lib/components/common/Ca
 import { NoResults } from "@databiosphere/findable-ui/lib/components/NoResults/noResults";
 import { TEXT_BODY_SMALL_400 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography as MTypography } from "@mui/material";
-import React from "react";
 import { ResultsView } from "./results.styles";
 
 interface ResultsProps {

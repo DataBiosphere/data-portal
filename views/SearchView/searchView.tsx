@@ -1,7 +1,7 @@
 import { LoadingIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/LoadingIcon/loadingIcon";
 import { Tabs } from "@databiosphere/findable-ui/lib/components/common/Tabs/tabs";
 import { NoResults } from "@databiosphere/findable-ui/lib/components/NoResults/noResults";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { Heading } from "../../components/common/Typography/components/Heading/heading";
 import { TABS } from "./common/constants";
 import { Pagination } from "./components/Pagination/pagination";

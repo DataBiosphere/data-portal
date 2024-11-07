@@ -1,6 +1,6 @@
 import { TEXT_BODY_400 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 export interface KeyElTypeProps {
   children: ReactNode;
