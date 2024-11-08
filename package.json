@@ -23,7 +23,7 @@
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@mui/icons-material": "^6.1.5",
-    "@mui/material": "^6.1.5",
+    "@mui/material": "^6.1.6",
     "@next/mdx": "^14.1.0",
     "@tanstack/react-table": "^8.19.2",
     "gray-matter": "^4.0.3",
