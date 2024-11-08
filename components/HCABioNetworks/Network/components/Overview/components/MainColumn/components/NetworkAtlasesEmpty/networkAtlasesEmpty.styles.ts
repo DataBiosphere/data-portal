@@ -18,13 +18,4 @@ export const SectionContent = styled(DXSectionContent)`
   .MuiTypography-root {
     text-align: center;
   }
-
-  .MuiLink-root {
-    color: inherit;
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
 `;

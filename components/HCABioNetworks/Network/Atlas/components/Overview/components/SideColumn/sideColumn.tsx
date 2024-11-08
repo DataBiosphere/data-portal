@@ -1,6 +1,6 @@
 import { Sections } from "@databiosphere/findable-ui/lib/components/common/Sections/sections";
 import { useAtlas } from "contexts/atlasContext";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { Coordinators } from "../../../../../../../common/Section/components/Coordinators/coordinators";
 import { HCABiologicalNetwork } from "../../../../../../../common/Section/components/HCABiologicalNetwork/HCABiologicalNetwork";
 import { Publications } from "../../../../../../../common/Section/components/Publications/publications";

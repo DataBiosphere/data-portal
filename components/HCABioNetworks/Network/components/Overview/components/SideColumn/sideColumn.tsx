@@ -1,6 +1,5 @@
 import { KeyValuePairs } from "@databiosphere/findable-ui/lib/components/common/KeyValuePairs/keyValuePairs";
 import { Sections } from "@databiosphere/findable-ui/lib/components/common/Sections/sections";
-import React from "react";
 import { useNetwork } from "../../../../../../../contexts/networkContext";
 import { getNetworkSummaryKeyValuePairs } from "../../../../../../../viewModelBuilders/viewModelBuilders";
 import { Coordinators } from "../../../../../../common/Section/components/Coordinators/coordinators";

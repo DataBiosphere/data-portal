@@ -1,5 +1,5 @@
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { Caption } from "./cxgDownloadCaption.styles";
 
 interface CXGDownloadCaptionProps {

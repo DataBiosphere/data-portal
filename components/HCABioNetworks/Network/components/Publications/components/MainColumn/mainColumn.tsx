@@ -1,5 +1,5 @@
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { BICCNPublication } from "../../../../../../../@types/network";
 import {
   useNetwork,

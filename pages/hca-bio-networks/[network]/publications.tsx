@@ -1,6 +1,5 @@
 import { Detail } from "@databiosphere/findable-ui/lib/components/Detail/detail";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import React from "react";
 import { NetworkParam } from "../../../@types/network";
 import { Hero } from "../../../components/HCABioNetworks/Network/components/common/Hero/hero";
 import { Tabs } from "../../../components/HCABioNetworks/Network/components/common/Tabs/tabs";

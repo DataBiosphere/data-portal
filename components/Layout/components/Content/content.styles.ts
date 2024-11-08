@@ -61,17 +61,23 @@ const image = (props: ThemeProps) => css`
 const muiAlert = (props: ThemeProps) => css`
   .MuiAlert-root {
     margin: 24px 0;
-
-    &.MuiAlert-standardWarning {
-      margin: 16px 0;
-    }
+    padding: 24px;
 
     &:last-child {
       margin-bottom: 0;
     }
 
+    .MuiAlert-icon {
+      padding: 4px 0;
+    }
+
     .MuiAlert-message {
       ${textBodyLarge4002Lines(props)};
+      gap: 16px;
+
+      .MuiAlertTitle-root {
+        ${textHeadingSmall(props)};
+      }
 
       ol > li,
       ul > li {
@@ -84,14 +90,6 @@ const muiAlert = (props: ThemeProps) => css`
         &:last-of-type {
           margin-bottom: 0;
         }
-      }
-    }
-
-    .MuiAlert-message:first-of-type {
-      gap: 16px;
-
-      .MuiAlertTitle-root {
-        ${textHeadingSmall(props)};
       }
     }
   }

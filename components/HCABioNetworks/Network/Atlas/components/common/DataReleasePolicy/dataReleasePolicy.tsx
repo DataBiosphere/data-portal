@@ -1,6 +1,5 @@
 import { GridPaperSection } from "@databiosphere/findable-ui/lib/components/common/Section/section.styles";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-import React from "react";
 
 const DATA_RELEASE_POLICY_URL =
   "https://www.humancellatlas.org/data-release-policy";

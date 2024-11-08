@@ -1,7 +1,6 @@
 import { IconButton } from "@databiosphere/findable-ui/lib/components/common/IconButton/iconButton";
 import EastRoundedIcon from "@mui/icons-material/EastRounded";
 import WestRoundedIcon from "@mui/icons-material/WestRounded";
-import React from "react";
 import { OnSearchFn, SearchPagination } from "../../hooks/common/entities";
 import { PaginationActions, PaginationView } from "./pagination.styles";
 

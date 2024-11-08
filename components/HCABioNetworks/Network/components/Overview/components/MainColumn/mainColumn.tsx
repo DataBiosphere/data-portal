@@ -9,7 +9,6 @@ import {
 } from "@databiosphere/findable-ui/lib/components/common/Section/section.styles";
 import { TEXT_BODY_LARGE_500 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
-import React from "react";
 import {
   useNetwork,
   useNetworkContent,

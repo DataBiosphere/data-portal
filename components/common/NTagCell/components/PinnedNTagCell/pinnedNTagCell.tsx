@@ -2,7 +2,6 @@ import {
   MetadataValue,
   NTagCell,
 } from "@databiosphere/findable-ui/lib/components/Index/components/NTagCell/nTagCell";
-import React from "react";
 import { PinnedNTagCell as Cell } from "./pinnedNTagCell.styles";
 
 export type MetadataValueTuple = [MetadataValue[], MetadataValue[]];

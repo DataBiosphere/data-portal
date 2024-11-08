@@ -5,8 +5,8 @@ import matter from "gray-matter";
 import { GetStaticPathsResult } from "next/types";
 import pathTool, * as path from "path";
 import {
-  NavigationNode,
   NAVIGATION_KEY,
+  NavigationNode,
   SlugByFilePaths,
 } from "../../site-config/data-portal/dev/navigation/entities";
 import { navigation as navigationConfig } from "../../site-config/data-portal/dev/navigation/navigation";

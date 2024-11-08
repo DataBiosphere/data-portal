@@ -1,7 +1,6 @@
 import { SectionTitle } from "@databiosphere/findable-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
 import { GridPaperSection } from "@databiosphere/findable-ui/lib/components/common/Section/section.styles";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-import React from "react";
 import { Publication } from "../../../../../@types/network";
 import { SectionContent } from "../../section.styles";
 
