@@ -1,19 +1,13 @@
 ## HCA Portal Analytics Config
 
-The HCA Portal reports various events using Google Analytics 4 tags, which are documented here. All events, regardless of the GA version are called from functions in `dp-gtm.service.js` using `GTMService`.
+The HCA Portal reports various events using Google Analytics 4 tags. Most of these events are defined in [findable-ui](https://github.com/databiosphere/findable-ui), and are documented in its [analytics readme](https://github.com/DataBiosphere/findable-ui/blob/main/src/common/analytics/readme-analytics.md). Custom events and ids that are defined in this repo specifically are below.
 
-### GA4 Event Inventory
+#### Custom Events
 
-| GTM Tag                            | Function                         | Event Action | Parameters                 | Description                                                      |
-|------------------------------------|----------------------------------|--------------|----------------------------|------------------------------------------------------------------|
-| `tag - search_metadata_click`      | `trackMetadataSearchResultClick` | `Click`      | `entityType`, `searchTerm` | Runs when the user selects a result from the metadata search bar |
-| `tag - search_metadata_enter_text` | `trackMetadataSearchInput`       | `Enter Text` | `entityType`               | Runs whenever text is entered into the metadata search bar       |
-| `tag - support_request_create`     | `trackSupportRequestCreated`     | `Create`     | `source`                   | Runs whenever a user creates a support request                   |
+There are no custom events configured in this repository.
 
-### Functions Without Corresponding GA4 Events
+#### IDs used for tracking
 
-The following functions are defined in `dp-gtm.service.js`, but are currently unused and are not associated with GA4 tags:
-| Function             | Event Action   | Parameters   | Description                                                                                                                                          |
-|----------------------|----------------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `trackCatalogViewed` | `View Catalog` | `entityType` | Intended to run whenever the user loads the Catalog from the home page, but currently is never called. The value of `entityType` is always `Catalog` |
-| `trackSurveyLaunch`  | `Launch`       | (none)       | Intended to run whenever the user clicks the "Take the Survey" button for a survey from 2021                                                         |
+| Component                                     | Id name                            | "All Elements" or "Just Links"?   | Purpose                                       |
+| --------------------------------------------- | ---------------------------------- | --------------------------------- | --------------------------------------------- |
+| -`SectionHero`, in the "Explore Data" button- | -`button-explore-data`------------ | -"All Elements"------------------ | -To track submitted support requests--------- |
