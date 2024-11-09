@@ -11,6 +11,7 @@
     { "type": "feat", "section": "Features" },
     { "type": "fix", "section": "Bug Fixes" },
     { "type": "chore", "section": "Chores" },
+    { "type": "content", "section": "Content" },
     { "type": "docs", "section": "Documentation" },
     { "type": "style", "section": "Styles" },
     { "type": "refactor", "section": "Code Refactoring" },
