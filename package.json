@@ -3,9 +3,9 @@
   "version": "2.1.0",
   "private": true,
   "scripts": {
-    "dev": "./scripts/dev.sh data-portal && next dev",
-    "build-dev:data-portal": "scripts/common-build.sh data-portal dev && next build && npm run postbuild",
-    "build-prod:data-portal": "./scripts/common-build.sh data-portal prod && next build && npm run postbuild",
+    "dev": "./scripts/dev.sh data-portal && ./scripts/set-version.sh dev && next dev",
+    "build-dev:data-portal": "./scripts/common-build.sh data-portal dev && ./scripts/set-version.sh && next build && npm run postbuild",
+    "build-prod:data-portal": "./scripts/common-build.sh data-portal prod && ./scripts/set-version.sh && next build && npm run postbuild",
     "build": "next build",
     "start": "npx serve out",
     "lint": "next lint",
