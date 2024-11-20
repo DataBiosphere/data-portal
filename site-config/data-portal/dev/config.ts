@@ -13,14 +13,16 @@ import { themeOptions } from "./themeOptions";
 
 const APP_TITLE = "HCA Data Portal";
 const CATALOG = "dcp43";
-const DATA_URL = "https://service.azul.data.humancellatlas.org";
+export const DATA_URL = "https://service.azul.data.humancellatlas.org";
 const EXPLORER_URL = "https://explore.data.humancellatlas.dev.clevercanary.com";
+export const GIT_HUB_REPO_URL = "https://github.com/DataBiosphere/data-portal";
 const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
 
 export function makeConfig(
   browserUrl: string,
   portalUrl: string,
-  dataUrl = DATA_URL,
+  dataUrl: string,
+  gitHubUrl: string,
   catalog = CATALOG
 ): SiteConfig {
   return {
@@ -42,6 +44,7 @@ export function makeConfig(
     },
     entities: [],
     explorerTitle: "",
+    gitHubUrl,
     layout: {
       floating,
       footer: {
@@ -71,6 +74,7 @@ export function makeConfig(
           },
         ],
         socials: socialMedia.socials,
+        versionInfo: true,
       },
       header: {
         authenticationEnabled: false,
@@ -156,6 +160,7 @@ const config: SiteConfig = makeConfig(
   EXPLORER_URL,
   PORTAL_URL,
   DATA_URL,
+  GIT_HUB_REPO_URL,
   CATALOG
 );
 

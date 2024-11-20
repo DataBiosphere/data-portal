@@ -1,11 +1,11 @@
 import { SiteConfig } from "../../common/entities";
-import { makeConfig } from "../dev/config";
+import { DATA_URL, GIT_HUB_REPO_URL, makeConfig } from "../dev/config";
 
 const EXPLORER_URL = "https://explore.data.humancellatlas.org";
 const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
 
 const config: SiteConfig = {
-  ...makeConfig(EXPLORER_URL, PORTAL_URL),
+  ...makeConfig(EXPLORER_URL, PORTAL_URL, DATA_URL, GIT_HUB_REPO_URL),
 };
 
 // Update gtmAuth for the prod environment lookup.
