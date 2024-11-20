@@ -4,7 +4,7 @@ import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import { useConfig } from "../../../../hooks/useConfig";
+import { useSiteConfig } from "../../../../hooks/useSiteConfig";
 import { ROUTES } from "../../../../routes/constants";
 import { SummaryCounts } from "./components/SummaryCounts/summaryCounts";
 import {
@@ -16,9 +16,7 @@ import {
 } from "./sectionHero.styles";
 
 export const SectionHero = (): JSX.Element => {
-  const {
-    config: { browserURL },
-  } = useConfig();
+  const { browserURL } = useSiteConfig();
   const onExplore = (): void => {
     window.open(
       browserURL,

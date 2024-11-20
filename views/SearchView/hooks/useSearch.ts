@@ -2,7 +2,7 @@ import { CardProps } from "@databiosphere/findable-ui/lib/components/common/Card
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
-import { useConfig } from "../../../hooks/useConfig";
+import { useSiteConfig } from "../../../hooks/useSiteConfig";
 import {
   OnSearchFn,
   SearchPagination,
@@ -33,9 +33,7 @@ export interface UseSearch {
  * @returns search results.
  */
 export const useSearch = (): UseSearch => {
-  const {
-    config: { portalURL },
-  } = useConfig();
+  const { portalURL } = useSiteConfig();
   const { asPath } = useRouter();
   const [requestURL, setRequestURL] = useState<string>();
   const { isIdle, isLoading, isSuccess, response } =

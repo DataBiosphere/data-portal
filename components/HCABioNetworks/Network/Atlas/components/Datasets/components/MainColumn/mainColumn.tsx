@@ -2,15 +2,13 @@ import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Pap
 import { BackPageContentSingleColumn } from "@databiosphere/findable-ui/lib/components/Layout/components/BackPage/backPageView.styles";
 import { AtlasDatasetsDescription } from "../../../../../../../../content";
 import { useAtlas } from "../../../../../../../../contexts/atlasContext";
-import { useConfig } from "../../../../../../../../hooks/useConfig";
+import { useSiteConfig } from "../../../../../../../../hooks/useSiteConfig";
 import { getProjectsTableColumns } from "../../../../../../../../viewModelBuilders/viewModelBuilders";
 import { MDXSection } from "../../../../../../../common/Section/section.styles";
 import { DetailViewTable } from "../../../../../../../common/Table/table.styles";
 
 export const MainColumn = (): JSX.Element => {
-  const {
-    config: { browserURL },
-  } = useConfig();
+  const { browserURL } = useSiteConfig();
   const { network, projectsResponses } = useAtlas();
   return (
     <BackPageContentSingleColumn>
