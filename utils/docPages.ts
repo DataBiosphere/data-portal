@@ -56,7 +56,7 @@ export async function getDocsStaticProps(
       layoutStyle: navigationConfig?.layoutStyle ?? null,
       mdxSource,
       navigation: navigationConfig?.navigation ?? null,
-      outline: outline.filter(filterOutline),
+      outline: outline.filter((o) => filterOutline(o, frontmatter)),
       pageTitle: frontmatter.title ?? null,
       themeOptions,
     },

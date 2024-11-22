@@ -11,6 +11,7 @@ import {
 import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/theme";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { textHeadingXSmall } from "../../../../styles/mixins/fonts";
 
 interface Props {
   headerHeight: number;
@@ -129,7 +130,7 @@ export const Content = styled.div<Props>`
   }
 
   h3 {
-    ${textHeadingSmall};
+    ${textHeadingXSmall};
     margin: 32px 0 16px;
   }
 
