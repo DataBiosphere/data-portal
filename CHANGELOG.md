@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.2.0](https://github.com/DataBiosphere/data-portal/compare/v2.1.0...v2.2.0) (2024-11-22)
+
+
+### Features
+
+* add version info to environment ([#2548](https://github.com/DataBiosphere/data-portal/issues/2548)) ([#2549](https://github.com/DataBiosphere/data-portal/issues/2549)) ([c9c4fb4](https://github.com/DataBiosphere/data-portal/commit/c9c4fb48eec6be6d95f70797623b0b47e3b62683))
+* add version info to footer ([#2565](https://github.com/DataBiosphere/data-portal/issues/2565)) ([#2566](https://github.com/DataBiosphere/data-portal/issues/2566)) ([c637359](https://github.com/DataBiosphere/data-portal/commit/c637359483dae767e3b94a647e17b5117955859b))
+* remove PAT for release please ([#2551](https://github.com/DataBiosphere/data-portal/issues/2551)) ([#2552](https://github.com/DataBiosphere/data-portal/issues/2552)) ([9b04d25](https://github.com/DataBiosphere/data-portal/commit/9b04d25fa7f03765189afa64fdad31bbb4ec9e8c))
+* update updates page layout for new mocks ([#2495](https://github.com/DataBiosphere/data-portal/issues/2495)) ([#2573](https://github.com/DataBiosphere/data-portal/issues/2573)) ([e1b4c25](https://github.com/DataBiosphere/data-portal/commit/e1b4c2546633fce47aa65eabcef2b417014f4e36))
+
+
+### Bug Fixes
+
+* append newline before other content in `set-version.sh` ([#2564](https://github.com/DataBiosphere/data-portal/issues/2564)) ([#2570](https://github.com/DataBiosphere/data-portal/issues/2570)) ([b01e082](https://github.com/DataBiosphere/data-portal/commit/b01e082759a6e6b1b968097a31c6955148c3a9da))
+
+
+### Chores
+
+* added analytics readme ([#2436](https://github.com/DataBiosphere/data-portal/issues/2436)) ([#2442](https://github.com/DataBiosphere/data-portal/issues/2442)) ([2aba3ec](https://github.com/DataBiosphere/data-portal/commit/2aba3ec058d8d437ffbb97cd33a9d68b0cf1aa4d))
+* allow `content` commit type ([#2544](https://github.com/DataBiosphere/data-portal/issues/2544)) ([#2545](https://github.com/DataBiosphere/data-portal/issues/2545)) ([3e467c8](https://github.com/DataBiosphere/data-portal/commit/3e467c8c2dc36951656125a7988992e2f356de7b))
+* reinstall dependencies for latest security fixes ([#2555](https://github.com/DataBiosphere/data-portal/issues/2555)) ([#2556](https://github.com/DataBiosphere/data-portal/issues/2556)) ([75f90d8](https://github.com/DataBiosphere/data-portal/commit/75f90d84cde573716a0640fd39f0678041835d03))
+* upgrade findable-ui to 15.0.0 ([#2550](https://github.com/DataBiosphere/data-portal/issues/2550)) ([#2563](https://github.com/DataBiosphere/data-portal/issues/2563)) ([15bd82b](https://github.com/DataBiosphere/data-portal/commit/15bd82b9e6a98b74b85623702f01b101da36a847))
+
 ## [2.1.0](https://github.com/DataBiosphere/data-portal/compare/v2.0.0...v2.1.0) (2024-11-08)
 
 
