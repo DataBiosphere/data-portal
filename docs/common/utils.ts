@@ -10,14 +10,21 @@ import {
   SlugByFilePaths,
 } from "../../site-config/data-portal/dev/navigation/entities";
 import { navigation as navigationConfig } from "../../site-config/data-portal/dev/navigation/navigation";
+import { Frontmatter } from "./frontmatter";
 
 /**
  * Filters out headings (H1, and H3-H6) from the outline.
+ * Fontmatter outline max depth may be used to determine the depth of the outline; where the default is H1 - H3.
  * @param outline - Outline item.
+ * @param frontmatter - Frontmatter.
  * @returns true if the heading depth is 2 or 3.
  */
-export function filterOutline(outline: OutlineItem): boolean {
-  return outline.depth > 1 && outline.depth < 4;
+export function filterOutline(
+  outline: OutlineItem,
+  frontmatter: Frontmatter
+): boolean {
+  const { outlineMaxDepth = 4 } = frontmatter;
+  return outline.depth > 1 && outline.depth < outlineMaxDepth;
 }
 
 /**
