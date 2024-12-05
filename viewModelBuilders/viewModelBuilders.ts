@@ -54,12 +54,14 @@ export const buildCookieBanner = (): React.ComponentProps<
       "This website uses cookies for security and analytics purposes. By using this site, you agree to these uses.",
     secondaryAction: C.ButtonOutline({
       children: "Learn More",
+      /* eslint-disable sonarjs/link-with-target-blank -- rule doesn't recognize constant */
       onClick: () =>
         window.open(
           "https://data.humancellatlas.org/privacy",
           ANCHOR_TARGET.BLANK,
           REL_ATTRIBUTE.NO_OPENER_NO_REFERRER
         ),
+      /* eslint-enable sonarjs/link-with-target-blank -- keep checking future noopener cases */
     }),
   };
 };
