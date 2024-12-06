@@ -68,7 +68,7 @@
     "next-sitemap": "^4.2.3",
     "prettier": "^3.4.2",
     "prettier-plugin-organize-imports": "^4.1.0",
-    "remark-gfm": "^3.0.1",
+    "remark-gfm": "^4.0.0",
     "slugify": "^1.6.6",
     "typescript": "^5.7.2"
   },
