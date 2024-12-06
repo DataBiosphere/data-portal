@@ -12,7 +12,7 @@
     "check-format": "prettier --check .",
     "format": "prettier --write .",
     "postbuild": "next-sitemap --config next-sitemap.config.mjs",
-    "prepare": "husky install ./.husky",
+    "prepare": "husky",
     "complete-biccn-publications": "esrun ./scripts/complete-biccn-publications.ts",
     "get-cellxgene-projects": "esrun ./scripts/get-cellxgene-projects.ts"
   },
