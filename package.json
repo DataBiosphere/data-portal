@@ -63,7 +63,7 @@
     "eslint-plugin-sort-destructure-keys": "^1.6.0",
     "eslint-plugin-typescript-sort-keys": "^3.3.0",
     "got": "^14.4.5",
-    "husky": "^8.0.3",
+    "husky": "^9.1.7",
     "next-mdx-remote": "^4.4.1",
     "next-sitemap": "^4.2.3",
     "prettier": "^3.4.2",
