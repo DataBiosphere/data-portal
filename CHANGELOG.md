@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.1](https://github.com/DataBiosphere/data-portal/compare/v2.2.0...v2.2.1) (2024-12-07)
+
+
+### Chores
+
+* update dev dependencies to latest ([#2603](https://github.com/DataBiosphere/data-portal/issues/2603)) ([64d5912](https://github.com/DataBiosphere/data-portal/commit/64d5912667ad92815ca18df205eb31330cfc1d02))
+* updated catalog to dcp44 ([#2592](https://github.com/DataBiosphere/data-portal/issues/2592)) ([#2595](https://github.com/DataBiosphere/data-portal/issues/2595)) ([2dbcf3d](https://github.com/DataBiosphere/data-portal/commit/2dbcf3d1fa645362ddd121dfa95b69e8d764f0a4))
+
+
+### Content
+
+* updated dcp updates page ([#2591](https://github.com/DataBiosphere/data-portal/issues/2591)) ([#2594](https://github.com/DataBiosphere/data-portal/issues/2594)) ([3059608](https://github.com/DataBiosphere/data-portal/commit/30596087c59a779992896a95c233680a5f3daa52))
+
 ## [2.2.0](https://github.com/DataBiosphere/data-portal/compare/v2.1.0...v2.2.0) (2024-11-22)
 
 
