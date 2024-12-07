@@ -19,7 +19,7 @@
   "dependencies": {
     "@databiosphere/findable-ui": "15.0.2",
     "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0",
+    "@emotion/styled": "^11.13.5",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@mui/icons-material": "^6.1.5",
