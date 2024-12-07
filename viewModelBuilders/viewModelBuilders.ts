@@ -54,12 +54,14 @@ export const buildCookieBanner = (): React.ComponentProps<
       "This website uses cookies for security and analytics purposes. By using this site, you agree to these uses.",
     secondaryAction: C.ButtonOutline({
       children: "Learn More",
+      /* eslint-disable sonarjs/link-with-target-blank -- rule doesn't recognize constant */
       onClick: () =>
         window.open(
           "https://data.humancellatlas.org/privacy",
           ANCHOR_TARGET.BLANK,
           REL_ATTRIBUTE.NO_OPENER_NO_REFERRER
         ),
+      /* eslint-enable sonarjs/link-with-target-blank -- keep checking future noopener cases */
     }),
   };
 };
@@ -167,7 +169,7 @@ function getAtlasesDiseaseColumnDef<T extends AtlasRow>(): ColumnDef<T> {
  * @returns explore column def.
  */
 function getAtlasesExploreColumnDef<
-  T extends IntegratedAtlasRow
+  T extends IntegratedAtlasRow,
 >(): ColumnDef<T> {
   return {
     accessorKey: "explore",
@@ -622,10 +624,13 @@ export function rollUpAtlases(
  * @returns total cells from cellSuspensions.
  */
 function rollUpTotalCells(entityResponse: ProjectsResponse): number | null {
-  return entityResponse.cellSuspensions.reduce((acc, { totalCells }) => {
-    if (totalCells) {
-      acc = (acc ?? 0) + totalCells;
-    }
-    return acc;
-  }, null as null | number);
+  return entityResponse.cellSuspensions.reduce(
+    (acc, { totalCells }) => {
+      if (totalCells) {
+        acc = (acc ?? 0) + totalCells;
+      }
+      return acc;
+    },
+    null as null | number
+  );
 }

@@ -16,6 +16,7 @@ export const SectionStayUpToDate = (): JSX.Element => {
       <SectionContent>
         <SectionHead>Stay up-to-date with the Human Cell Atlas</SectionHead>
         <CTAs>
+          {/* eslint-disable sonarjs/link-with-target-blank -- rule doesn't recognize constant */}
           <ButtonSecondary
             onClick={(): void => {
               window.open(
@@ -27,6 +28,7 @@ export const SectionStayUpToDate = (): JSX.Element => {
           >
             Join The HCA
           </ButtonSecondary>
+          {/* eslint-enable sonarjs/link-with-target-blank -- keep checking future noopener cases */}
         </CTAs>
       </SectionContent>
     </Section>

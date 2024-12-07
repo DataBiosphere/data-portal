@@ -61,10 +61,14 @@ export const CTAs = styled.div`
   justify-self: center;
 
   & .MuiButton-containedSecondary {
-    box-shadow: inset 0 0 0 1px ${smokeDark}, 0 1px 0 0 ${primaryDark};
+    box-shadow:
+      inset 0 0 0 1px ${smokeDark},
+      0 1px 0 0 ${primaryDark};
 
     &:hover {
-      box-shadow: inset 0 0 0 1px ${smokeDark}, 0 1px 0 0 ${primaryDark};
+      box-shadow:
+        inset 0 0 0 1px ${smokeDark},
+        0 1px 0 0 ${primaryDark};
     }
 
     &:active {
