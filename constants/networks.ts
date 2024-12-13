@@ -516,10 +516,10 @@ export const NETWORKS: Network[] = [
         ],
         cxgId: "de379e5f-52d0-498c-9801-0f850823c847",
         datasets: [
-          "c4e11369-78d4-4d29-ba8e-b67907c4c65c",
-          "005d611a-14d5-4fbf-846e-571a1f874f70",
-          "645b20c9-5ed0-4500-86b5-7aef770d010a",
-          "da77bd06-43ae-4012-a774-e4d62797df51",
+          "c4e11369-78d4-4d29-ba8e-b67907c4c65c", // He, ..., Treutlein.
+          "005d611a-14d5-4fbf-846e-571a1f874f70", // Treutlein, ..., Fleck.
+          "645b20c9-5ed0-4500-86b5-7aef770d010a", // Khan, ..., Paşca.
+          "da77bd06-43ae-4012-a774-e4d62797df51", // Samarasinghe, ..., Novitch.
         ],
         externalDatasets: DATASETS["organoid-neural"],
         integratedAtlases: [],
@@ -528,8 +528,8 @@ export const NETWORKS: Network[] = [
         path: ORGANOID_NEURAL_V1_0,
         publications: [
           {
-            doi: "https://doi.org/10.1101/2023.10.05.561097",
-            label: "He et al. (2023) bioRxiv",
+            doi: "https://doi.org/10.1038/s41586-024-08172-8",
+            label: "He et al. (2024) Nature",
           },
         ],
         subTitle: "",
