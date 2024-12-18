@@ -3,7 +3,7 @@ import { buildAtlas } from "../utils/atlases";
 import { UCSC_CELL_BROWSER } from "./analysisPortals";
 
 const NORMAL = "normal";
-const TODO = "TODO";
+const TODO = "--";
 
 export const COMPONENT_ATLASES: Record<string, IntegratedAtlasRow[]> = {
   adipose: [],

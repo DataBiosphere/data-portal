@@ -284,7 +284,15 @@ export function getEstimatedCellCount(
 ): string {
   const estimatedCellCount = calculateEstimatedCellCount(projectsResponse);
   if (!estimatedCellCount) {
-    return LABEL.UNSPECIFIED;
+    const projectId = processEntityValue(
+      projectsResponse.projects,
+      "projectId"
+    );
+    if (projectId) {
+      // Project is sourced from HCA.
+      return LABEL.UNSPECIFIED;
+    }
+    return "--";
   }
   if (formatFn) {
     return formatFn(estimatedCellCount);
