@@ -330,7 +330,14 @@ export const DATASETS = {
       [TODO],
       [TODO],
       [TODO],
-      "Cerebellar_organoid_Quadrato"
+      "Human cerebellar organoids with functional Purkinje cells",
+      {
+        doi: "10.1016/j.stem.2023.11.013",
+        officialHcaPublication: null,
+        publicationTitle:
+          "Human cerebellar organoids with functional Purkinje cells",
+        publicationUrl: "https://doi.org/10.1016/j.stem.2023.11.013",
+      }
     ),
     buildDataset(
       [TODO],
