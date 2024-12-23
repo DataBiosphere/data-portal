@@ -24,6 +24,7 @@ import * as nervousSystemNetworkBrainAtlas from "../content/nervous-system/atlas
 import * as nervousSystemNetworkCortexAtlas from "../content/nervous-system/atlases/cortex";
 import * as oralContent from "../content/oral";
 import * as organoidContent from "../content/organoid";
+import * as organoidNetworkOrganoidNeuralAtlas from "../content/organoid/atlases/organoid-neural";
 import * as pancreasContent from "../content/pancreas";
 import * as reproductionContent from "../content/reproduction";
 import * as skinContent from "../content/skin";
@@ -34,6 +35,7 @@ import { DATASETS } from "./datasets";
 const BRAIN_V1_0 = "brain-v1-0";
 const CORTEX_V1_0 = "cortex-v1-0";
 const LUNG_V1_0 = "lung-v1-0";
+const ORGANOID_NEURAL_V1_0 = "organoid-neural-v1-0";
 const RETINA_V1_0 = "retina-v1-0";
 
 export const NETWORKS: Network[] = [
@@ -491,7 +493,51 @@ export const NETWORKS: Network[] = [
     path: "oral",
   },
   {
-    atlases: [],
+    atlases: [
+      {
+        code: [
+          {
+            label: "https://github.com/theislab/neural_organoid_atlas",
+            url: "https://github.com/theislab/neural_organoid_atlas",
+          },
+          {
+            label: "https://devsystemslab.github.io/HNOCA-tools",
+            url: "https://devsystemslab.github.io/HNOCA-tools",
+          },
+        ],
+        contact: { email: "barbara.treutlein@bsse.ethz.ch" },
+        coordinators: [
+          { fullName: "Barbara Treutlein" },
+          { fullName: "Gray Camp" },
+          { fullName: "Fabian Theis" },
+          { fullName: "Zhisong He" },
+          { fullName: "Leander Dony" },
+          { fullName: "Jonas Fleck" },
+        ],
+        cxgId: "de379e5f-52d0-498c-9801-0f850823c847",
+        datasets: [
+          "c4e11369-78d4-4d29-ba8e-b67907c4c65c", // He, ..., Treutlein.
+          "005d611a-14d5-4fbf-846e-571a1f874f70", // Treutlein, ..., Fleck.
+          "645b20c9-5ed0-4500-86b5-7aef770d010a", // Khan, ..., Paşca.
+          "da77bd06-43ae-4012-a774-e4d62797df51", // Samarasinghe, ..., Novitch.
+        ],
+        externalDatasets: DATASETS["organoid-neural"],
+        integratedAtlases: [],
+        key: ORGANOID_NEURAL_V1_0,
+        name: "An integrated transcriptomic cell atlas of human neural organoids v1.0",
+        path: ORGANOID_NEURAL_V1_0,
+        publications: [
+          {
+            doi: "https://doi.org/10.1038/s41586-024-08172-8",
+            label: "He et al. (2024) Nature",
+          },
+        ],
+        subTitle: "",
+        summaryCellCount: 1767674, // First CXG dataset cell count TODO(cc) taken from dataset "The Human Neural Organoid Atlas".
+        updatedAt: "",
+        version: "v1",
+      },
+    ],
     contact: { email: "organoids@humancellatlas.org" },
     coordinators: [
       { fullName: "Christoph Bock" },
@@ -621,5 +667,8 @@ export const NETWORK_ATLAS_CONTENT: Partial<
   "nervous-system": {
     [BRAIN_V1_0]: nervousSystemNetworkBrainAtlas,
     [CORTEX_V1_0]: nervousSystemNetworkCortexAtlas,
+  },
+  organoid: {
+    [ORGANOID_NEURAL_V1_0]: organoidNetworkOrganoidNeuralAtlas,
   },
 };
