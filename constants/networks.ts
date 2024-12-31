@@ -24,6 +24,7 @@ import * as nervousSystemNetworkBrainAtlas from "../content/nervous-system/atlas
 import * as nervousSystemNetworkCortexAtlas from "../content/nervous-system/atlases/cortex";
 import * as oralContent from "../content/oral";
 import * as organoidContent from "../content/organoid";
+import * as organoidNetworkOrganoidEndodermAtlas from "../content/organoid/atlases/organoid-endoderm";
 import * as organoidNetworkOrganoidNeuralAtlas from "../content/organoid/atlases/organoid-neural";
 import * as pancreasContent from "../content/pancreas";
 import * as reproductionContent from "../content/reproduction";
@@ -35,6 +36,7 @@ import { DATASETS } from "./datasets";
 const BRAIN_V1_0 = "brain-v1-0";
 const CORTEX_V1_0 = "cortex-v1-0";
 const LUNG_V1_0 = "lung-v1-0";
+const ORGANOID_ENDODERM_V1_0 = "organoid-endoderm-v1-0";
 const ORGANOID_NEURAL_V1_0 = "organoid-neural-v1-0";
 const RETINA_V1_0 = "retina-v1-0";
 
@@ -537,6 +539,45 @@ export const NETWORKS: Network[] = [
         updatedAt: "",
         version: "v1",
       },
+      {
+        code: [
+          {
+            label: "https://github.com/devsystemslab/HEOCA",
+            url: "https://github.com/devsystemslab/HEOCA",
+          },
+        ],
+        contact: { email: "gray.camp@roche.com" },
+        coordinators: [
+          { fullName: "Gray Camp" },
+          { fullName: "Quan Xu" },
+          { fullName: "Lennard Halle" },
+        ],
+        cxgId: "6282a908-f162-44a2-99a3-8a942e4271b2",
+        datasets: [
+          "8ab8726d-81b9-4bd2-acc2-4d50bee786b4",
+          "b32a9915-c81b-4cbc-af53-3a66b5da3c9a",
+          "2fe3c60b-ac1a-4c61-9b59-f6556c0fce63",
+          "94e4ee09-9b4b-410a-84dc-a751ad36d0df",
+          "5eafb94b-02d8-423e-81b8-3673da319ca0",
+          "e5fe8274-3769-4d7d-aa35-6d33c226ab43",
+          "75dbbce9-0cde-489c-88a7-93e8f92914a3",
+        ],
+        externalDatasets: DATASETS["organoid-endoderm"],
+        integratedAtlases: [],
+        key: ORGANOID_ENDODERM_V1_0,
+        name: "Integrated human endoderm-derived organoids cell atlas (HEOCA) v1.0",
+        path: ORGANOID_ENDODERM_V1_0,
+        publications: [
+          {
+            doi: "https://doi.org/10.1101/2023.11.20.567825",
+            label: "Xu et al. (2023) bioRxiv",
+          },
+        ],
+        subTitle: "",
+        summaryCellCount: 936563, // First CXG dataset cell count TODO(cc) summary cell count.
+        updatedAt: "",
+        version: "v1",
+      },
     ],
     contact: { email: "organoids@humancellatlas.org" },
     coordinators: [
@@ -669,6 +710,7 @@ export const NETWORK_ATLAS_CONTENT: Partial<
     [CORTEX_V1_0]: nervousSystemNetworkCortexAtlas,
   },
   organoid: {
+    [ORGANOID_ENDODERM_V1_0]: organoidNetworkOrganoidEndodermAtlas,
     [ORGANOID_NEURAL_V1_0]: organoidNetworkOrganoidNeuralAtlas,
   },
 };
