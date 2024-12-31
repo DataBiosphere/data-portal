@@ -554,13 +554,13 @@ export const NETWORKS: Network[] = [
         ],
         cxgId: "6282a908-f162-44a2-99a3-8a942e4271b2",
         datasets: [
-          "8ab8726d-81b9-4bd2-acc2-4d50bee786b4",
-          "b32a9915-c81b-4cbc-af53-3a66b5da3c9a",
-          "2fe3c60b-ac1a-4c61-9b59-f6556c0fce63",
-          "94e4ee09-9b4b-410a-84dc-a751ad36d0df",
-          "5eafb94b-02d8-423e-81b8-3673da319ca0",
-          "e5fe8274-3769-4d7d-aa35-6d33c226ab43",
-          "75dbbce9-0cde-489c-88a7-93e8f92914a3",
+          "8ab8726d-81b9-4bd2-acc2-4d50bee786b4", // Yu, ..., Camp.
+          "b32a9915-c81b-4cbc-af53-3a66b5da3c9a", // Miller, ..., Spence.
+          "2fe3c60b-ac1a-4c61-9b59-f6556c0fce63", // He, ..., Rawlins.
+          "94e4ee09-9b4b-410a-84dc-a751ad36d0df", // Aizarani, ..., Grün.
+          "5eafb94b-02d8-423e-81b8-3673da319ca0", // Holloway, ..., Spence.
+          "e5fe8274-3769-4d7d-aa35-6d33c226ab43", // Murthy, ...,Tata.
+          "75dbbce9-0cde-489c-88a7-93e8f92914a3", // Holloway, ..., Spence.
         ],
         externalDatasets: DATASETS["organoid-endoderm"],
         integratedAtlases: [],
