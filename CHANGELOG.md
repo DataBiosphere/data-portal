@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.1](https://github.com/DataBiosphere/data-portal/compare/v2.3.0...v2.3.1) (2025-01-21)
+
+
+### Chores
+
+* bump default catalog to dcp45 ([#2674](https://github.com/DataBiosphere/data-portal/issues/2674)) ([#2675](https://github.com/DataBiosphere/data-portal/issues/2675)) ([206ea73](https://github.com/DataBiosphere/data-portal/commit/206ea7322b967064cfc81c39e7f8cd46dc5c6cee))
+* updated updates page for dcp 44 ([#2593](https://github.com/DataBiosphere/data-portal/issues/2593)) ([#2677](https://github.com/DataBiosphere/data-portal/issues/2677)) ([d2bec05](https://github.com/DataBiosphere/data-portal/commit/d2bec051cce6ad28551a06b394f88999b121ddb4))
+
+
+### Content
+
+* dcp45 update page ([#2667](https://github.com/DataBiosphere/data-portal/issues/2667)) ([#2687](https://github.com/DataBiosphere/data-portal/issues/2687)) ([ce352cd](https://github.com/DataBiosphere/data-portal/commit/ce352cdcf7c3270f14c896d5878ce25a142b4eff))
+
 ## [2.3.0](https://github.com/DataBiosphere/data-portal/compare/v2.2.0...v2.3.0) (2024-12-23)
 
 
