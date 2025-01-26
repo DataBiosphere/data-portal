@@ -1,7 +1,7 @@
 # CHANGE THESE VALUES TO GENERATE NEW REPORTS
 # The start and end dates of the current month (yyyy-mm-dd)
 START_DATE_CURRENT = "2024-12-01"
-END_DATE_CURRENT = "2024-12-30"
+END_DATE_CURRENT = "2024-12-31"
 # The start and end dates of the prior months
 START_DATE_PRIOR = "2024-11-01"
 END_DATE_PRIOR = "2024-11-30"
@@ -12,7 +12,7 @@ PARENT_FOLDER_NAME = "December 2024 (demos)"
 SHEET_NAME = "HCA Portal"
 
 HCA_PORTAL_ID = "361323030"
-# Filter to exclud the Data Explorer
+# Filter to exclude the Data Explorer
 HCA_BROWSER_EXCLUDE_FILTER = {"filter": {"fieldName": "hostName", "stringFilter": {"matchType": "EXACT", "value": "data.humancellatlas.org"}}}
 SECRET_NAME = "HCA_ANALYTICS_REPORTING_CLIENT_SECRET_PATH"
 ANALYTICS_START = "2021-01-01"
