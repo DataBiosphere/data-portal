@@ -17,3 +17,6 @@ node_modules
 
 # MDX
 *.mdx
+
+# python
+analytics
