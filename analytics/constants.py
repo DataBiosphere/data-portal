@@ -15,6 +15,8 @@ HCA_PORTAL_ID = "361323030"
 # Filter to exclude the Data Explorer
 HCA_BROWSER_EXCLUDE_FILTER = {"filter": {"fieldName": "hostName", "stringFilter": {"matchType": "EXACT", "value": "data.humancellatlas.org"}}}
 SECRET_NAME = "HCA_ANALYTICS_REPORTING_CLIENT_SECRET_PATH"
-ANALYTICS_START = "2021-01-01"
+# The start date after which GA4 data is reliable
+ANALYTICS_START = "2023-07-01"
+HISTORIC_UA_DATA_PATH = "./users_over_time_history.json"
 
 OAUTH_PORT = 8082
