@@ -1,4 +1,4 @@
--e git+https://github.com/DataBiosphere/data-browser.git@8845dba2b27f664f1160d4ac63db399a3d79b279#egg=analytics&subdirectory=analytics/analytics_package
+-e git+https://github.com/DataBiosphere/data-browser.git@e2653f5605cc3220d28299bfc2cc48205c23067d#egg=analytics&subdirectory=analytics/analytics_package
 anyio==4.8.0
 appnope==0.1.4
 argon2-cffi==23.1.0

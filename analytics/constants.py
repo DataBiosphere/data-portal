@@ -13,7 +13,8 @@ SHEET_NAME = "HCA Portal"
 
 HCA_PORTAL_ID = "361323030"
 # Filter to exclude the Data Explorer
-HCA_BROWSER_EXCLUDE_FILTER = {"filter": {"fieldName": "hostName", "stringFilter": {"matchType": "EXACT", "value": "data.humancellatlas.org"}}}
+HCA_PORTAL_ONLY_FILTER = {"filter": {"fieldName": "hostName", "stringFilter": {"matchType": "EXACT", "value": "data.humancellatlas.org"}}}
+HCA_EXPLORER_ONLY_FILTER = {"filter": {"fieldName": "hostName", "stringFilter": {"matchType": "EXACT", "value": "explore.data.humancellatlas.org"}}}
 SECRET_NAME = "HCA_ANALYTICS_REPORTING_CLIENT_SECRET_PATH"
 # The start date after which GA4 data is reliable
 ANALYTICS_START = "2023-07-01"
