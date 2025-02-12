@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.4.0](https://github.com/DataBiosphere/data-portal/compare/v2.3.1...v2.4.0) (2025-02-12)
+
+
+### Features
+
+* add organoid endoderm atlas to the data portal ([#2646](https://github.com/DataBiosphere/data-portal/issues/2646)) ([#2650](https://github.com/DataBiosphere/data-portal/issues/2650)) ([31c7a32](https://github.com/DataBiosphere/data-portal/commit/31c7a326faf7aeecafb08324d546abb6b6cd15d5))
+* added analytics report generator ([#2641](https://github.com/DataBiosphere/data-portal/issues/2641)) ([#2694](https://github.com/DataBiosphere/data-portal/issues/2694)) ([8ab8440](https://github.com/DataBiosphere/data-portal/commit/8ab84403a4df6106d8fc5bf094f09fb8a3053638))
+* added monthly traffic summaries to analytics ([#2707](https://github.com/DataBiosphere/data-portal/issues/2707)) ([#2718](https://github.com/DataBiosphere/data-portal/issues/2718)) ([3d0a835](https://github.com/DataBiosphere/data-portal/commit/3d0a835c8bddfd24663fa9305bf80d47c0641ba7))
+* added pageviews to analytics report ([#2642](https://github.com/DataBiosphere/data-portal/issues/2642)) ([#2700](https://github.com/DataBiosphere/data-portal/issues/2700)) ([2f78823](https://github.com/DataBiosphere/data-portal/commit/2f788235496922a573119bbb8b7e71dd86e45344))
+
 ## [2.3.1](https://github.com/DataBiosphere/data-portal/compare/v2.3.0...v2.3.1) (2025-01-21)
 
 
