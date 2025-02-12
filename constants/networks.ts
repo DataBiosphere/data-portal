@@ -574,7 +574,7 @@ export const NETWORKS: Network[] = [
           },
         ],
         subTitle: "",
-        summaryCellCount: 936563, // First CXG dataset cell count TODO(cc) summary cell count.
+        summaryCellCount: 806646,
         updatedAt: "",
         version: "v1",
       },
