@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.4.1](https://github.com/DataBiosphere/data-portal/compare/v2.4.0...v2.4.1) (2025-02-28)
+
+
+### Chores
+
+* updated catalog to dcp46 [#2719](https://github.com/DataBiosphere/data-portal/issues/2719) ([#2721](https://github.com/DataBiosphere/data-portal/issues/2721)) ([37b826d](https://github.com/DataBiosphere/data-portal/commit/37b826df488be2d5773cdfa66157b69e52c30d1e))
+
+
+### Content
+
+* dcp45 update page [#2720](https://github.com/DataBiosphere/data-portal/issues/2720) ([#2722](https://github.com/DataBiosphere/data-portal/issues/2722)) ([242c107](https://github.com/DataBiosphere/data-portal/commit/242c107e1c0b5fa8a390af540c5a5799d3f9a2eb))
+
 ## [2.4.0](https://github.com/DataBiosphere/data-portal/compare/v2.3.1...v2.4.0) (2025-02-12)
 
 
