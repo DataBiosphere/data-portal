@@ -3,6 +3,7 @@ import { BackPageContentSingleColumn } from "@databiosphere/findable-ui/lib/comp
 import { useNetworkList } from "../../../../../../hooks/useNetworkList";
 import { getBioNetworksTableColumns } from "../../../../../../viewModelBuilders/viewModelBuilders";
 import { DetailViewTable } from "./mainColumn.styles";
+import { TABLE_OPTIONS } from "./constants";
 
 export const MainColumn = (): JSX.Element => {
   const networks = useNetworkList();
@@ -14,6 +15,7 @@ export const MainColumn = (): JSX.Element => {
         items={networks}
         noResultsTitle={"No Networks"}
         Paper={FluidPaper}
+        tableOptions={TABLE_OPTIONS}
         tools={null}
       />
     </BackPageContentSingleColumn>
