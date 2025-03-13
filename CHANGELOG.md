@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.2](https://github.com/DataBiosphere/data-portal/compare/v2.4.1...v2.4.2) (2025-03-13)
+
+
+### Chores
+
+* upgrade findable-ui package to latest ([#2727](https://github.com/DataBiosphere/data-portal/issues/2727)) ([#2728](https://github.com/DataBiosphere/data-portal/issues/2728)) ([e01f67c](https://github.com/DataBiosphere/data-portal/commit/e01f67c3437c74ea2d9a8d7725b577de1a80c736))
+
 ## [2.4.1](https://github.com/DataBiosphere/data-portal/compare/v2.4.0...v2.4.1) (2025-02-28)
 
 
