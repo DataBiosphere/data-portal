@@ -20,6 +20,7 @@ import {
 import { Table, Toolbar } from "../../../../../../common/Table/table.styles";
 import { SectionText } from "../../../../../components/Section/section.styles";
 import { NetworkAtlasesEmpty } from "./components/NetworkAtlasesEmpty/networkAtlasesEmpty";
+import { TABLE_OPTIONS } from "./constants";
 
 export const MainColumn = (): JSX.Element => {
   const { network } = useNetwork();
@@ -49,6 +50,7 @@ export const MainColumn = (): JSX.Element => {
               columns={getAtlasesTableColumns(networkPath)}
               gridTemplateColumns="minmax(256px, 1fr) repeat(3, minmax(124px, 1fr)) max-content"
               items={rollUpAtlases(atlases, true)}
+              tableOptions={TABLE_OPTIONS}
             />
           </GridPaper>
         </FluidPaper>

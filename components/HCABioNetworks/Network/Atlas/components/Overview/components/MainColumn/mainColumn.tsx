@@ -17,6 +17,7 @@ import { useAtlas, useAtlasContent } from "contexts/atlasContext";
 import { getIntegratedAtlasesTableColumns } from "../../../../../../../../viewModelBuilders/viewModelBuilders";
 import { Table, Toolbar } from "../../../../../../../common/Table/table.styles";
 import { SectionText } from "../../../../../../components/Section/section.styles";
+import { TABLE_OPTIONS } from "./constants";
 
 export const MainColumn = (): JSX.Element => {
   const { Description } = useAtlasContent() || {};
@@ -52,6 +53,7 @@ export const MainColumn = (): JSX.Element => {
               columns={getIntegratedAtlasesTableColumns()}
               gridTemplateColumns="minmax(208px, 1fr) minmax(112px, 0.6fr) minmax(112px, 0.6fr) max-content max-content auto"
               items={integratedAtlases}
+              tableOptions={TABLE_OPTIONS}
             />
           ) : (
             <GridPaperSection>

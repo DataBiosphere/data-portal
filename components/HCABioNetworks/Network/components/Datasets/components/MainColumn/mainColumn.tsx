@@ -6,6 +6,7 @@ import { useSiteConfig } from "../../../../../../../hooks/useSiteConfig";
 import { getProjectsTableColumns } from "../../../../../../../viewModelBuilders/viewModelBuilders";
 import { MDXSection } from "../../../../../../common/Section/section.styles";
 import { DetailViewTable } from "../../../../../../common/Table/table.styles";
+import { TABLE_OPTIONS } from "./constants";
 
 export const MainColumn = (): JSX.Element => {
   const { browserURL } = useSiteConfig();
@@ -25,6 +26,7 @@ export const MainColumn = (): JSX.Element => {
         items={projectsResponses}
         noResultsTitle={"No Datasets"}
         Paper={FluidPaper}
+        tableOptions={TABLE_OPTIONS}
         tools={null}
       />
     </BackPageContentSingleColumn>
