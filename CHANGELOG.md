@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.4.2](https://github.com/DataBiosphere/data-portal/compare/v2.4.1...v2.4.2) (2025-04-03)
+
+
+### Chores
+
+* update analytics report to adjust sheet order and activity over time start ([#2730](https://github.com/DataBiosphere/data-portal/issues/2730)) ([#2733](https://github.com/DataBiosphere/data-portal/issues/2733)) ([ad7cd25](https://github.com/DataBiosphere/data-portal/commit/ad7cd25f3d41c725dc6c7b662658b58c67b2077e))
+* update findable-ui to latest v22.0.0 ([#2731](https://github.com/DataBiosphere/data-portal/issues/2731)) ([#2732](https://github.com/DataBiosphere/data-portal/issues/2732)) ([798c9b6](https://github.com/DataBiosphere/data-portal/commit/798c9b69e7eb99964cb351922195e62b0cc074ca))
+* upgrade findable-ui package to latest ([#2727](https://github.com/DataBiosphere/data-portal/issues/2727)) ([#2728](https://github.com/DataBiosphere/data-portal/issues/2728)) ([e01f67c](https://github.com/DataBiosphere/data-portal/commit/e01f67c3437c74ea2d9a8d7725b577de1a80c736))
+
+
+### Content
+
+* removed stale API docs [#2736](https://github.com/DataBiosphere/data-portal/issues/2736) ([#2737](https://github.com/DataBiosphere/data-portal/issues/2737)) ([50fa9d9](https://github.com/DataBiosphere/data-portal/commit/50fa9d92705d8936004864370355186698575188))
+
 ## [2.4.1](https://github.com/DataBiosphere/data-portal/compare/v2.4.0...v2.4.1) (2025-02-28)
 
 
