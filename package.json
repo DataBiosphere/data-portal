@@ -43,7 +43,7 @@
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
     "@digitak/esrun": "^3.2.26",
-    "@mui/types": "^7.2.18",
+    "@mui/types": "^7.2.21",
     "@next/eslint-plugin-next": "^15.0.3",
     "@types/mdx": "^2.0.11",
     "@types/node": "^20.10.0",
