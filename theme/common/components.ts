@@ -1,42 +1,50 @@
-import { alpha08 } from "@databiosphere/findable-ui/lib/theme/common/palette";
 import {
   TEXT_BODY_400_2_LINES,
   TEXT_BODY_500,
   TEXT_BODY_LARGE_500,
 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Components, Theme } from "@mui/material";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { COLOR_MIXES } from "@databiosphere/findable-ui/lib/styles/common/constants/colorMixes";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
 
 /**
  * MuiButton Component
- * @param theme - Theme.
- * @returns MuiButton component theme styles.
  */
-export const MuiButton = (theme: Theme): Components["MuiButton"] => {
-  return {
-    styleOverrides: {
-      containedPrimary: {
-        backgroundColor: theme.palette.primary.main,
-        boxShadow: `0 1px 0 0 ${theme.palette.primary.dark}${alpha08}`,
-        color: theme.palette.common.white,
-        // eslint-disable-next-line sort-keys -- disabling key order for readability
-        "&:hover": {
-          backgroundColor: theme.palette.primary.dark,
-          boxShadow: `0 1px 0 0 ${theme.palette.primary.dark}${alpha08}`,
+export const MuiButton: Components["MuiButton"] = {
+  styleOverrides: {
+    root: {
+      variants: [
+        {
+          props: {
+            color: BUTTON_PROPS.COLOR.PRIMARY,
+            variant: BUTTON_PROPS.VARIANT.CONTAINED,
+          },
+          style: {
+            backgroundColor: PALETTE.PRIMARY_MAIN,
+            boxShadow: `0 1px 0 0 ${COLOR_MIXES.PRIMARY_DARK_08}`,
+            color: PALETTE.COMMON_WHITE,
+            // eslint-disable-next-line sort-keys -- disabling key order for readability
+            "&:hover": {
+              backgroundColor: PALETTE.PRIMARY_DARK,
+              boxShadow: `0 1px 0 0 ${COLOR_MIXES.PRIMARY_DARK_08}`,
+            },
+            // eslint-disable-next-line sort-keys -- disabling key order for readability
+            "&:active": {
+              backgroundColor: PALETTE.PRIMARY_DARK,
+              boxShadow: `0 1px 0 0 ${COLOR_MIXES.PRIMARY_DARK_08}`,
+            },
+            "&:disabled": {
+              backgroundColor: PALETTE.PRIMARY_DARK,
+              boxShadow: `0 1px 0 0 #003E76`,
+              color: PALETTE.COMMON_WHITE,
+              opacity: 0.5,
+            },
+          },
         },
-        // eslint-disable-next-line sort-keys -- disabling key order for readability
-        "&:active": {
-          backgroundColor: theme.palette.primary.dark,
-          boxShadow: `0 1px 0 0 ${theme.palette.primary.dark}${alpha08}`,
-        },
-        "&:disabled": {
-          backgroundColor: theme.palette.primary.dark,
-          boxShadow: `0 1px 0 0 #003E76`,
-          color: theme.palette.common.white,
-          opacity: 0.5,
-        },
-      },
+      ],
     },
-  };
+  },
 };
 
 /**
@@ -74,7 +82,7 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
         marginBottom: 8,
       },
       "p code": {
-        backgroundColor: theme.palette.smoke.light,
+        backgroundColor: PALETTE.SMOKE_LIGHT,
         fontSize: "inherit",
       },
       ul: {
@@ -87,35 +95,31 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
 
 /**
  * MuiIconButton Component
- * @param theme - Theme.
- * @returns MuiIconButton component theme styles.
  */
-export const MuiIconButton = (theme: Theme): Components["MuiIconButton"] => {
-  return {
-    styleOverrides: {
-      colorPrimary: {
-        backgroundColor: theme.palette.primary.main,
-        boxShadow: `0 1px 0 0 ${theme.palette.primary.dark}`,
-        color: theme.palette.common.white,
-        // eslint-disable-next-line sort-keys -- disabling key order for readability
-        "&:hover": {
-          backgroundColor: theme.palette.primary.dark,
-        },
-        // eslint-disable-next-line sort-keys -- disabling key order for readability
-        "&:active": {
-          backgroundColor: theme.palette.primary.dark,
-          boxShadow: "none",
-        },
-        // eslint-disable-next-line sort-keys -- disabling key order for readability
-        "&.Mui-disabled": {
-          backgroundColor: theme.palette.primary.main,
-          color: theme.palette.common.white,
-          opacity: 0.5,
-        },
+export const MuiIconButton: Components["MuiIconButton"] = {
+  styleOverrides: {
+    colorPrimary: {
+      backgroundColor: PALETTE.PRIMARY_MAIN,
+      boxShadow: `0 1px 0 0 ${PALETTE.PRIMARY_DARK}`,
+      color: PALETTE.COMMON_WHITE,
+      // eslint-disable-next-line sort-keys -- disabling key order for readability
+      "&:hover": {
+        backgroundColor: PALETTE.PRIMARY_DARK,
       },
-      sizeMedium: {
-        padding: "6px 8px",
+      // eslint-disable-next-line sort-keys -- disabling key order for readability
+      "&:active": {
+        backgroundColor: PALETTE.PRIMARY_DARK,
+        boxShadow: "none",
+      },
+      // eslint-disable-next-line sort-keys -- disabling key order for readability
+      "&.Mui-disabled": {
+        backgroundColor: PALETTE.PRIMARY_MAIN,
+        color: PALETTE.COMMON_WHITE,
+        opacity: 0.5,
       },
     },
-  };
+    sizeMedium: {
+      padding: "6px 8px",
+    },
+  },
 };

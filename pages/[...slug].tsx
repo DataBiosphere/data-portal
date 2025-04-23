@@ -4,10 +4,8 @@ import {
   NavItem,
 } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
 import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
-import {
-  Outline,
-  OutlineItem,
-} from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { Outline } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import { textBodyLarge4002Lines } from "@databiosphere/findable-ui/src/theme/common/typography";
 import { ThemeOptions } from "@mui/material";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";

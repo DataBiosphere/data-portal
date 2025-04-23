@@ -1,17 +1,13 @@
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import {
   mediaTabletDown,
   mediaTabletUp,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import {
-  inkLight,
-  smokeMain,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
-import {
   textBody400,
   textBody500,
   textUppercase500,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
-import { primaryMain } from "@databiosphere/findable-ui/lib/theme/common/palette";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Tab as MTab, Tabs as MTabs } from "@mui/material";
@@ -45,7 +41,7 @@ export const Tabs = styled(MTabs, {
   }
 
   ${mediaTabletUp} {
-    box-shadow: inset 1px 0 ${smokeMain};
+    box-shadow: inset 1px 0 ${PALETTE.SMOKE_MAIN};
     margin: 0;
     max-width: 242px;
     order: unset;
@@ -77,7 +73,7 @@ export const TabTitle = styled(MTab)`
   pointer-events: none;
 
   &.Mui-selected {
-    color: ${inkLight};
+    color: ${PALETTE.INK_LIGHT};
   }
 
   ${mediaTabletUp} {
@@ -93,7 +89,7 @@ export const Tab = styled(MTab)`
 
     ${mediaTabletDown} {
       ${textBody400};
-      color: ${primaryMain};
+      color: ${PALETTE.PRIMARY_MAIN};
 
       &:hover {
         text-decoration: underline;

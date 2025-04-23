@@ -1,6 +1,6 @@
 import { LABEL } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
 import { KeyValues } from "@databiosphere/findable-ui/lib/components/common/KeyValuePairs/keyValuePairs";
-import { MetadataValue } from "@databiosphere/findable-ui/lib/components/Index/components/NTagCell/nTagCell";
+import { MetadataValue } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
 import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,

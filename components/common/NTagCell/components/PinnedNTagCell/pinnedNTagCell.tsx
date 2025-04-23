@@ -1,7 +1,7 @@
 import {
   MetadataValue,
   NTagCell,
-} from "@databiosphere/findable-ui/lib/components/Index/components/NTagCell/nTagCell";
+} from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
 import { PinnedNTagCell as Cell } from "./pinnedNTagCell.styles";
 
 export type MetadataValueTuple = [MetadataValue[], MetadataValue[]];

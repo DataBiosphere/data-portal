@@ -4,7 +4,6 @@ import { Floating } from "@databiosphere/findable-ui/lib/components/Layout/compo
 import { Header } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
 import { Main as DXMain } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main";
 import { ConfigProvider } from "@databiosphere/findable-ui/lib/providers/config";
-import { LayoutStateProvider } from "@databiosphere/findable-ui/lib/providers/layoutState";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
 import { createBreakpoints } from "@mui/system";
@@ -19,6 +18,7 @@ import { config } from "../config/config";
 import { BREAKPOINTS } from "../site-config/common/constants";
 import { SiteConfig } from "../site-config/common/entities";
 import { mergeAppTheme } from "../theme/theme";
+import { LayoutDimensionsProvider } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/provider";
 
 interface PageProps {
   pageTitle?: string;
@@ -62,16 +62,18 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
         <ConfigProvider config={appConfig}>
           <Head appTitle={appTitle} pageTitle={pageTitle} />
           <CssBaseline />
-          <LayoutStateProvider>
+          <LayoutDimensionsProvider>
             <AppLayout>
               <ThemeProvider
-                theme={(theme: Theme): Theme =>
-                  createTheme(
-                    deepmerge(theme, {
+                theme={(theme: Theme): Theme => {
+                  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
+                  const { vars, ...themeWithoutVars } = theme;
+                  return createTheme(
+                    deepmerge(themeWithoutVars, {
                       breakpoints: createBreakpoints(BREAKPOINTS),
                     })
-                  )
-                }
+                  );
+                }}
               >
                 <Header {...header} />
               </ThemeProvider>
@@ -81,7 +83,7 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
               </Main>
               <Footer {...footer} />
             </AppLayout>
-          </LayoutStateProvider>
+          </LayoutDimensionsProvider>
         </ConfigProvider>
       </ThemeProvider>
     </EmotionThemeProvider>

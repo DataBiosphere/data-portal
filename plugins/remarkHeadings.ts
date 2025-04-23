@@ -1,4 +1,4 @@
-import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import { Heading, PhrasingContent } from "mdast";
 import { Plugin } from "unified";
 import { visit } from "unist-util-visit";

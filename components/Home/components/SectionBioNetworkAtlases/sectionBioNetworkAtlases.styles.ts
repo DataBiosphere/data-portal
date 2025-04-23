@@ -1,12 +1,5 @@
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import {
-  inkMain,
-  smokeDark,
-  smokeLight,
-  smokeMain,
-  white,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
-import { primaryMain } from "@databiosphere/findable-ui/lib/theme/common/palette";
 import styled from "@emotion/styled";
 
 export const SectionContent = styled.div`
@@ -33,7 +26,7 @@ export const BioNetworkAtlases = styled.div`
 
 export const BioNetworkAtlas = styled.span`
   align-items: center;
-  border: 1px solid ${smokeMain};
+  border: 1px solid ${PALETTE.SMOKE_MAIN};
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -43,8 +36,8 @@ export const BioNetworkAtlas = styled.span`
   padding: 8px;
 
   &:hover {
-    background-color: ${smokeLight};
-    border: 1px solid ${smokeDark};
+    background-color: ${PALETTE.SMOKE_LIGHT};
+    border: 1px solid ${PALETTE.SMOKE_DARK};
   }
 
   img {
@@ -55,7 +48,7 @@ export const BioNetworkAtlas = styled.span`
   }
 
   .MuiTypography-text-body-large-500 {
-    color: ${inkMain};
+    color: ${PALETTE.INK_MAIN};
     flex: 1;
     font-family: ${({ theme }) => theme.typography.fontFamily};
     font-size: 16px;
@@ -65,9 +58,9 @@ export const BioNetworkAtlas = styled.span`
 
 export const Badge = styled.div`
   align-items: center;
-  background-color: ${primaryMain};
+  background-color: ${PALETTE.PRIMARY_MAIN};
   border-radius: 10px;
-  color: ${white};
+  color: ${PALETTE.COMMON_WHITE};
   display: flex;
   flex: none;
   font-size: 11px;

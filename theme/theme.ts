@@ -20,9 +20,9 @@ export function mergeAppTheme(
   // Merge app components with base app theme.
   const appTheme = createTheme(baseAppTheme, {
     components: {
-      MuiButton: C.MuiButton(baseAppTheme),
+      MuiButton: C.MuiButton,
       MuiCssBaseline: C.MuiCssBaseline(baseAppTheme),
-      MuiIconButton: C.MuiIconButton(baseAppTheme),
+      MuiIconButton: C.MuiIconButton,
     },
   });
   if (themeOptions?.components) {
