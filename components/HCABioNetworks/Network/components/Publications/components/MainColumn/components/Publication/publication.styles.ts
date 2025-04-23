@@ -2,10 +2,10 @@ import { CardSection as Section } from "@databiosphere/findable-ui/lib/component
 import { CardSecondaryTitle as DXCardSecondaryTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardSecondaryTitle/cardSecondaryTitle";
 import { GridPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { white } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import { textBody400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const Card = styled(MCard)`
   && .MuiCardActionArea-root {
@@ -27,7 +27,7 @@ export const GridSection = styled(GridPaper)`
 `;
 
 export const CardSection = styled(Section)`
-  background-color: ${white};
+  background-color: ${PALETTE.COMMON_WHITE};
 `;
 
 export const CardSideArea = styled.div`

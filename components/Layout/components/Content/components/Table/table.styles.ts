@@ -1,4 +1,3 @@
-import { smokeMain } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import {
   textBody400,
   textBody500,
@@ -6,6 +5,7 @@ import {
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { TableContainer as MTableContainer } from "@mui/material";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 interface Props {
   borderless?: boolean;
@@ -21,7 +21,7 @@ export const TableContainer = styled(MTableContainer)`
     tr {
       td,
       th {
-        border-bottom: 1px solid ${smokeMain};
+        border-bottom: 1px solid ${PALETTE.SMOKE_MAIN};
         padding: 12px;
 
         &:first-of-type {
