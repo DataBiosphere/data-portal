@@ -1,8 +1,4 @@
 import {
-  smokeLight,
-  smokeMain,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
-import {
   textBodyLarge4002Lines,
   textHeading,
   textHeadingLarge,
@@ -12,23 +8,24 @@ import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/theme";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { textHeadingXSmall } from "../../../../styles/mixins/fonts";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 interface Props {
   headerHeight: number;
 }
 
-const code = (props: ThemeProps) => css`
+const code = css`
   li code,
   p code,
   td code {
-    background-color: ${smokeLight(props)};
+    background-color: ${PALETTE.SMOKE_LIGHT};
     font-size: inherit;
   }
 `;
 
-const codeBlock = (props: ThemeProps) => css`
+const codeBlock = css`
   pre {
-    background-color: ${smokeLight(props)};
+    background-color: ${PALETTE.SMOKE_LIGHT};
     padding: 4px;
     margin: 16px 0;
 
@@ -38,9 +35,9 @@ const codeBlock = (props: ThemeProps) => css`
   }
 `;
 
-const footnotes = (props: ThemeProps) => css`
+const footnotes = css`
   section[data-footnotes] {
-    border-top: 1px solid ${smokeMain(props)};
+    border-top: 1px solid ${PALETTE.SMOKE_MAIN};
     margin-top: 24px;
     padding-top: 16px;
 
@@ -50,9 +47,9 @@ const footnotes = (props: ThemeProps) => css`
   }
 `;
 
-const image = (props: ThemeProps) => css`
+const image = css`
   img {
-    border: 1px solid ${smokeMain(props)};
+    border: 1px solid ${PALETTE.SMOKE_MAIN};
     border-radius: 6px;
     margin: 16px 0;
     max-width: 100%;
@@ -175,7 +172,7 @@ export const Content = styled.div<Props>`
   }
 
   hr {
-    border: 0.5px solid ${smokeMain};
+    border: 0.5px solid ${PALETTE.SMOKE_MAIN};
     margin: 32px 0;
   }
 

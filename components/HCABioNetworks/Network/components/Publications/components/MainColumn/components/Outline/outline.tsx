@@ -1,7 +1,7 @@
-import { useLayoutState } from "@databiosphere/findable-ui/lib/hooks/useLayoutState";
 import { useRouter } from "next/router";
 import { SyntheticEvent, useState } from "react";
 import { Tab, Tabs, TabTitle } from "./outline.styles";
+import { useLayoutDimensions } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/hook";
 
 enum TAB_VALUE {
   DEFAULT = "DEFAULT",
@@ -14,9 +14,7 @@ export interface OutlineProps {
 export const Outline = ({
   categoryIdByCategory,
 }: OutlineProps): JSX.Element => {
-  const {
-    layoutState: { headerHeight },
-  } = useLayoutState();
+  const { dimensions } = useLayoutDimensions();
   const { asPath } = useRouter();
   const [activeCategory, setActiveCategory] = useState<string>(
     initActiveCategory(asPath)
@@ -32,7 +30,7 @@ export const Outline = ({
 
   return (
     <Tabs
-      headerHeight={headerHeight}
+      headerHeight={dimensions.header.height}
       indicatorColor={
         activeCategory === TAB_VALUE.DEFAULT ? "transparent" : "primary"
       }

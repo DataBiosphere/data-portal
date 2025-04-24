@@ -1,6 +1,6 @@
 import { LayoutStyle } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/entities";
 import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
-import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import { ThemeOptions } from "@mui/material";
 import { GetStaticPropsContext, GetStaticPropsResult } from "next";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";

@@ -11,13 +11,15 @@ import { NoResults } from "@databiosphere/findable-ui/lib/components/NoResults/n
 import { TEXT_BODY_SMALL_400 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography as MTypography } from "@mui/material";
 import { ResultsView } from "./results.styles";
+import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 
 interface ResultsProps {
   results?: CardProps[];
 }
 
 export const Results = ({ results }: ResultsProps): JSX.Element => {
-  if (!results) return <NoResults title="No results found." />;
+  if (!results)
+    return <NoResults Paper={RoundedPaper} title="No results found." />;
   return (
     <ResultsView>
       {results.map(({ cardUrl, secondaryTitle, text, title }, i) => (

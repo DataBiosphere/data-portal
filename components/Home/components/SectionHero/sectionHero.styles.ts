@@ -1,21 +1,14 @@
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import {
-  primaryDark,
-  smokeDark,
-  white,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import { textBodyLarge400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
-import {
-  alpha32,
-  alpha64,
-} from "@databiosphere/findable-ui/lib/theme/common/palette";
 import styled from "@emotion/styled";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { COLOR_MIXES } from "@databiosphere/findable-ui/lib/styles/common/constants/colorMixes";
 
 export const SectionHero = styled.section`
   background: url("/hca-bio-networks/home/cell.png") no-repeat;
   background-position-x: center;
   background-size: cover;
-  color: ${white};
+  color: ${PALETTE.COMMON_WHITE};
   width: 100%;
 `;
 
@@ -62,26 +55,26 @@ export const CTAs = styled.div`
 
   & .MuiButton-containedSecondary {
     box-shadow:
-      inset 0 0 0 1px ${smokeDark},
-      0 1px 0 0 ${primaryDark};
+      inset 0 0 0 1px ${PALETTE.SMOKE_DARK},
+      0 1px 0 0 ${PALETTE.PRIMARY_DARK};
 
     &:hover {
       box-shadow:
-        inset 0 0 0 1px ${smokeDark},
-        0 1px 0 0 ${primaryDark};
+        inset 0 0 0 1px ${PALETTE.SMOKE_DARK},
+        0 1px 0 0 ${PALETTE.PRIMARY_DARK};
     }
 
     &:active {
-      box-shadow: inset 0 0 0 1px ${smokeDark};
+      box-shadow: inset 0 0 0 1px ${PALETTE.SMOKE_DARK};
     }
   }
 
   & .MuiButton-outlinedSecondary {
-    color: ${white};
-    box-shadow: inset 0 0 0 1px ${white}${alpha32};
+    color: ${PALETTE.COMMON_WHITE};
+    box-shadow: inset 0 0 0 1px ${COLOR_MIXES.COMMON_WHITE_32};
 
     &:hover {
-      box-shadow: inset 0 0 0 1px ${white}${alpha64};
+      box-shadow: inset 0 0 0 1px ${COLOR_MIXES.COMMON_WHITE_64};
     }
   }
 `;

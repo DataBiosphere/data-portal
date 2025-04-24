@@ -1,63 +1,63 @@
 import { tabletUp } from "@databiosphere/findable-ui/lib/theme/common/breakpoints";
-import { CSSProperties } from "@mui/material/styles/createTypography";
+import { CSSProperties } from "@mui/material";
 import { TYPOGRAPHY_VARIANT } from "./types";
 
 const FONT_FAMILY_DIN = "'din-2014', sans-serif";
 
 const textBodyLarge500: CSSProperties = {
   fontFamily: FONT_FAMILY_DIN,
-  fontSize: 18,
+  fontSize: "18px",
   fontWeight: 400,
 };
 
 const textHeading: CSSProperties = {
   fontFamily: FONT_FAMILY_DIN,
-  fontSize: 22,
+  fontSize: "22px",
   fontWeight: 400,
   letterSpacing: "normal",
   [tabletUp]: {
-    fontSize: 24,
+    fontSize: "24px",
     letterSpacing: "normal",
   },
 };
 
 const textHeadingLarge: CSSProperties = {
   fontFamily: FONT_FAMILY_DIN,
-  fontSize: 26,
+  fontSize: "26px",
   fontWeight: 400, // TODO: Update to 600 when font is available, here and elsewhere.
   letterSpacing: "normal",
   lineHeight: "34px",
   [tabletUp]: {
-    fontSize: 32,
+    fontSize: "32px",
     letterSpacing: "normal",
   },
 };
 
 const textHeadingSmall: CSSProperties = {
   fontFamily: FONT_FAMILY_DIN,
-  fontSize: 20,
+  fontSize: "20px",
   fontWeight: 400,
   letterSpacing: "normal",
   [tabletUp]: {
-    fontSize: 22,
+    fontSize: "22px",
     letterSpacing: "normal",
   },
 };
 
 const textHeadingXLarge: CSSProperties = {
   fontFamily: FONT_FAMILY_DIN,
-  fontSize: 32,
+  fontSize: "32px",
   fontWeight: 400,
   letterSpacing: "normal",
   [tabletUp]: {
-    fontSize: 42,
+    fontSize: "42px",
     letterSpacing: "-0.4px",
   },
 };
 
 const textHeadingXSmall: CSSProperties = {
   fontFamily: FONT_FAMILY_DIN,
-  fontSize: 18,
+  fontSize: "18px",
   fontWeight: 400, // TODO: Update to 600 when font is available, here and elsewhere.
   letterSpacing: "normal",
   lineHeight: "26px",

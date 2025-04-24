@@ -1,14 +1,14 @@
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { white } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import {
   textBodyLarge400,
   textHeadingLarge,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const Metrics = styled.div`
   box-sizing: content-box;
-  color: ${white};
+  color: ${PALETTE.COMMON_WHITE};
   display: flex;
   flex-wrap: wrap;
   gap: 54px 64px;
