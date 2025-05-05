@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
-    "@commitlint/config-conventional": "^19.6.0",
+    "@commitlint/config-conventional": "^19.7.1",
     "@digitak/esrun": "^3.2.26",
     "@mui/types": "^7.4.0",
     "@next/eslint-plugin-next": "^14.2.28",
