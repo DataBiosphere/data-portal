@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.4.5](https://github.com/DataBiosphere/data-portal/compare/v2.4.4...v2.4.5) (2025-05-07)
+
+
+### Chores
+
+* ugpraded findable [#2747](https://github.com/DataBiosphere/data-portal/issues/2747) ([#2748](https://github.com/DataBiosphere/data-portal/issues/2748)) ([2a7856b](https://github.com/DataBiosphere/data-portal/commit/2a7856baa84fe6774cba82886074bcab99f83b34))
+* upgraded findable to 29.0.2 [#2750](https://github.com/DataBiosphere/data-portal/issues/2750) ([#2751](https://github.com/DataBiosphere/data-portal/issues/2751)) ([fcc0b49](https://github.com/DataBiosphere/data-portal/commit/fcc0b492781e911905b8351e1c941112ce049319))
+
 ## [2.4.4](https://github.com/DataBiosphere/data-portal/compare/v2.4.3...v2.4.4) (2025-04-24)
 
 
