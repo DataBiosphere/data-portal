@@ -1,0 +1,82 @@
+[
+  {
+    "attributeDisplayName": "Title",
+    "attributeSlotName": "title",
+    "width": {
+      "max": "1fr",
+      "min": "200px"
+    }
+  },
+  {
+    "attributeDisplayName": "Description",
+    "attributeSlotName": "description",
+    "width": {
+      "max": "2fr",
+      "min": "480px"
+    }
+  },
+  {
+    "attributeDisplayName": "Name",
+    "attributeSlotName": "name",
+    "width": {
+      "max": "1fr",
+      "min": "180px"
+    }
+  },
+  {
+    "attributeDisplayName": "Required",
+    "attributeSlotName": "required",
+    "width": {
+      "max": "1fr",
+      "min": "180px"
+    }
+  },
+  {
+    "attributeDisplayName": "Range",
+    "attributeSlotName": "range",
+    "width": {
+      "max": "1fr",
+      "min": "180px"
+    }
+  },
+  {
+    "attributeDisplayName": "Multivalued",
+    "attributeSlotName": "multivalued",
+    "width": {
+      "max": "1fr",
+      "min": "180px"
+    }
+  },
+  {
+    "attributeDisplayName": "Values",
+    "attributeSlotName": "values",
+    "width": {
+      "max": "2fr",
+      "min": "480px"
+    }
+  },
+  {
+    "attributeDisplayName": "Example",
+    "attributeSlotName": "example",
+    "width": {
+      "max": "1fr",
+      "min": "180px"
+    }
+  },
+  {
+    "attributeDisplayName": "Rationale",
+    "attributeSlotName": "rationale",
+    "width": {
+      "max": "2fr",
+      "min": "480px"
+    }
+  },
+  {
+    "attributeDisplayName": "Source",
+    "attributeSlotName": "source",
+    "width": {
+      "max": "1fr",
+      "min": "180px"
+    }
+  }
+]
