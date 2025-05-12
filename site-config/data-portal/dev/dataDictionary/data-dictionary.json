@@ -1,0 +1,540 @@
+{
+  "name": "tier_1",
+  "title": "HCA Tier 1 Metadata",
+  "classes": [
+    {
+      "title": "Dataset",
+      "description": "",
+      "name": "dataset",
+      "attributes": [
+        {
+          "description": "Principal Investigator(s) leading the study where the data is/was used.",
+          "example": "Sarah,A,Teichmann",
+          "multivalued": true,
+          "name": "study_pi",
+          "range": "string",
+          "required": true,
+          "title": "study_pi"
+        },
+        {
+          "annotations": {
+            "cxg": "batch_condition"
+          },
+          "description": "*Note: Name of the covariate that confers the dominant batch effect in the data as judged by the data contributor. The name provided here should be the label by which this covariate is stored in the AnnData object.*",
+          "example": "[\"patient\", \"seqBatch\"]",
+          "multivalued": true,
+          "name": "batch_condition",
+          "range": "string",
+          "required": false,
+          "title": "batch_condition",
+          "values": "Values must refer to cell metadata keys in obs. Together, these keys define the batches that a normalisation or integration algorithm should be aware of. For example if \"patient\" and \"seqBatch\" are keys of vectors of cell metadata, either [\"patient\"], [\"seqBatch\"], or [\"patient\", \"seqBatch\"] are valid values."
+        },
+        {
+          "annotations": {
+            "cxg": "default_embedding"
+          },
+          "description": "The value must match a key to an embedding in obsm for the embedding to display by default in CELLxGENE Explorer.",
+          "multivalued": false,
+          "name": "default_embedding",
+          "range": "string",
+          "required": false,
+          "title": "default_embedding"
+        },
+        {
+          "description": "Platform used for sequencing.",
+          "example": "EFO:0008563",
+          "multivalued": false,
+          "name": "sequencing_platform",
+          "range": "string",
+          "rationale": "This captures potential strand hopping which may cause data quality issues.",
+          "required": false,
+          "title": "sequencing_platform",
+          "values": "\"subClassOf\" : [\"EFO:0002699\"] - https://www.ebi.ac.uk/ols/ontologies/efo/terms?iri=http%3A%2F%2Fwww.ebi.ac.uk%2Fefo%2FEFO_0002699"
+        },
+        {
+          "annotations": {
+            "cxg": "assay_ontology_term_id"
+          },
+          "description": "Platform used for single cell library construction.",
+          "example": "EFO:0009922",
+          "multivalued": false,
+          "name": "assay_ontology_term_id",
+          "range": "string",
+          "rationale": "Major source of batch effect and dataset filtering criterion",
+          "required": true,
+          "title": "assay_ontology_term_id",
+          "values": "This must be an EFO term and either:\n\"EFO:0002772\" for assay by molecule or preferably its most accurate child\n\"EFO:0010183\" for single cell library construction or preferably its most accurate child\nAn assay based on 10X Genomics products should either be \"EFO:0008995\" for 10x technology or preferably its most accurate child. An assay based on SMART (Switching Mechanism at the 5' end of the RNA Template) or SMARTer technology SHOULD either be \"EFO:0010184\" for Smart-like or preferably its most accurate child.\n\nRecommended:\n10x 3' v2 \"EFO:0009899\"\n10x 3' v3 \"EFO:0009922\"\n10x 5' v1 \"EFO:0011025\"\n10x 5' v2 \"EFO:0009900\"\nSmart-seq2 \"EFO:0008931\"\nVisium Spatial Gene Expression \"EFO:0010961\""
+        },
+        {
+          "description": "Reference genome used for alignment.",
+          "example": "GRCm37; GRCh37",
+          "multivalued": false,
+          "name": "reference_genome",
+          "range": "string",
+          "rationale": "Possible source of batch effect and confounder for some biological analysis",
+          "required": true,
+          "title": "reference_genome",
+          "values": "GRCh38; GRCh37; GRCm39; GRCm38; GRCm37; not applicable"
+        },
+        {
+          "description": "Protocol used for alignment analysis, please specify which version was used e.g. cell ranger 2.0, 2.1.1 etc.",
+          "example": "cellranger_8.0.0",
+          "multivalued": false,
+          "name": "alignment_software",
+          "range": "string",
+          "rationale": "Affects which cells are filtered per dataset, and which reads (introns and exons or only exons) are counted as part of the reported transcriptome. This can convey batch effects.",
+          "required": true,
+          "title": "alignment_software"
+        },
+        {
+          "description": "Were introns included during read counting in the alignment process?",
+          "example": "yes",
+          "multivalued": false,
+          "name": "intron_inclusion",
+          "range": "string",
+          "rationale": "yes",
+          "required": false,
+          "title": "intron_inclusion",
+          "values": "yes or no"
+        },
+        {
+          "description": "Which part of the RNA transcript was targeted for sequencing.",
+          "example": "3 prime tag; full length",
+          "multivalued": false,
+          "name": "sequenced_fragment",
+          "range": "string",
+          "rationale": "May be a source of batch effect that has to be tested.",
+          "required": true,
+          "title": "sequenced_fragment",
+          "values": "3 prime tag; 5 prime tag; probe-based; full length"
+        },
+        {
+          "description": "Ensembl release version accession number. Some common codes include:\nGRCh38.p12 = GCF_000001405.38\nGRCh38.p13 = GCF_000001405.39\nGRCh38.p14 = GCF_000001405.40 \n",
+          "example": "GCF_000001405.40",
+          "multivalued": false,
+          "name": "gene_annotation_version",
+          "range": "string",
+          "rationale": "Possible source of batch effect and confounder for some biological analysis",
+          "required": true,
+          "title": "gene_annotation_version",
+          "values": "http://www.ensembl.org/info/website/archives/index.html) or NCBI/RefSeq"
+        },
+        {
+          "description": "Other technical or experimental covariates that could affect the quality or batch of the sample. Must not contain identifiers. This field is designed to capture potential challenges for data integration not captured elsewhere.",
+          "multivalued": false,
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "title": "comments"
+        },
+        {
+          "description": "The protocols.io URL (if none exists, please use the BioRxiv URL) for the full experimental protocol; or if multiple protocols exist please list them e.g. sample preparation protocol / sequencing protocol.",
+          "example": "https://www.biorxiv.org/conte nt/early/2017/09/24/193219",
+          "multivalued": false,
+          "name": "protocol_url",
+          "range": "string",
+          "rationale": "Useful to look up protocol data that can provide insight on batch effects. As protocols can sometimes apply to a subset of the study, we capture this at a sample level. This information may not always be available.",
+          "required": false,
+          "title": "protocol_url"
+        },
+        {
+          "annotations": {
+            "cxg": "title"
+          },
+          "description": "This text describes and differentiates the dataset from other datasets in the same collection. It is strongly recommended that each dataset title in a collection is unique and does not depend on other metadata such as a different assay to disambiguate it from other datasets in the collection.",
+          "example": "Cells of the adult human heart collection is \"All — Cells of the adult human heart\"",
+          "multivalued": false,
+          "name": "title",
+          "range": "string",
+          "rationale": "Useful to look up protocol data that can provide insight on batch effects. As protocols can sometimes apply to a subset of the study, we capture this at a sample level. This information may not always be available.",
+          "required": true,
+          "title": "title"
+        }
+      ]
+    },
+    {
+      "title": "Donor",
+      "description": "",
+      "name": "donor",
+      "attributes": [
+        {
+          "annotations": {
+            "cxg": "donor_id"
+          },
+          "description": "This must be free-text that identifies a unique individual that data were derived from.",
+          "example": "CR_donor_1; MM_donor_1; LR_donor_2",
+          "multivalued": false,
+          "name": "donor_id",
+          "range": "string",
+          "rationale": "Fundamental unit of biological variation of the data.",
+          "required": true,
+          "title": "donor_id",
+          "values": "It is strongly recommended that this identifier be designed so that it is unique to: a given individual within the collection of datasets that includes this dataset, and a given individual across all collections in CELLxGENE Discover. It is strongly recommended that \"pooled\" be used for observations from a sample of multiple individuals that were not confidently assigned to a single individual through demultiplexing. It is strongly recommended that \"unknown\" ONLY be used for observations in a dataset when it is not known which observations are from the same individual."
+        },
+        {
+          "annotations": {
+            "cxg": "organism_ontology_term_id"
+          },
+          "description": "The name given to the type of organism, collected in NCBITaxon:0000 format.",
+          "example": "NCBITaxon:9606",
+          "multivalued": false,
+          "name": "organism_ontology_term_id",
+          "range": "string",
+          "rationale": "Strong biological effect that needs to be considered for batch covariate selection.",
+          "required": true,
+          "title": "organism_ontology_term_id",
+          "values": "\"NCBITaxon:9606\" for Homo sapiens or \"NCBITaxon:10090\" for Mus musculus."
+        },
+        {
+          "description": "Manner of death classification based on the Hardy Scale or 'unknown' or 'not applicable':\n* Category 1 = Violent and fast death Deaths due to accident, blunt force trauma or suicide, terminal phase estimated at < 10 min.\n* Category 2 = Fast death of natural causes -Sudden unexpected deaths of people who had been reasonably healthy, after a terminal phase estimated at < 1 hr (with sudden death from a myocardial infarction as a model cause of death for this category)\n* Category 3 = Intermediate death - Death after a terminal phase of 1 to 24 hrs (not classifiable as 2 or 4); patients who were ill but death was unexpected\n* Category 4 = Slow death - Death after a long illness, with a terminal phase longer than 1 day (commonly cancer or chronic pulmonary disease); deaths that are not unexpected\n* Category 0 =Ventilator Case - All cases on a ventilator immediately before death\n* Unknown = The cause of death is unknown\n* Not applicable = Subject is alive\n[Please leave this field as blank for embryonic/fetal tissue]",
+          "example": "1",
+          "multivalued": false,
+          "name": "manner_of_death",
+          "range": "string",
+          "rationale": "Manner of death can affect cellular profiles.",
+          "required": true,
+          "title": "manner_of_death",
+          "values": "1; 2; 3; 4; 0; unknown; not applicable"
+        },
+        {
+          "annotations": {
+            "cxg": "sex_ontology_term_id"
+          },
+          "description": "Reported sex of the donor.",
+          "example": "PATO:0000383 for female, PATO:0000384 for male",
+          "multivalued": false,
+          "name": "sex_ontology_term_id",
+          "range": "string",
+          "rationale": "Likely biological effect. Need to know if we have a balanced dataset or if sex is collinear with the dataset.",
+          "required": true,
+          "title": "sex_ontology_term_id",
+          "values": "This must be a child of PATO:0001894 for phenotypic sex or \"unknown\" if unavailable."
+        },
+        {
+          "annotations": {
+            "cxg": "self_reported_ethnicity_ontology_term_id"
+          },
+          "description": "Self reported ethnicity of the subject.",
+          "example": "unknown; HANCESTRO:0008",
+          "multivalued": true,
+          "name": "self_reported_ethnicity_ontology_term_id",
+          "range": "string",
+          "rationale": "CELLxGENE core schema",
+          "required": true,
+          "title": "self_reported_ethnicity_ontology_term_id",
+          "values": "If organism_ontolology_term_id is \"NCBITaxon:9606\" for Homo sapiens, this must be a HANCESTRO term or \"unknown\". Otherwise, for all organisms, this must be \"na\". Requirements for data contributors adhering to GDPR or like standards: HCA will be collecting ethnicity data as part of HCA's Tier 2 metadata that is protected by managed access, therefore please put 'unknown' for this field."
+        }
+      ]
+    },
+    {
+      "title": "Sample",
+      "description": "",
+      "name": "sample",
+      "attributes": [
+        {
+          "description": "Identification number of the sample. This is the fundamental unit of sampling the tissue (the specimen taken from the subject), which can be the same as the 'subject_ID', but is often different if multiple samples are taken from the same subject. Note: this is NOT a unit of multiplexing of donor samples, which should be stored in \"library\".",
+          "example": "SC24; SC25; SC28",
+          "multivalued": false,
+          "name": "sample_id",
+          "range": "string",
+          "rationale": "Fundamental unit of sampling of the tissue.",
+          "required": true,
+          "title": "sample_id"
+        },
+        {
+          "annotations": {
+            "cxg": "tissue_ontology_term_id"
+          },
+          "description": "The detailed anatomical location of the sample, please provide a specific UBERON term.",
+          "example": "UBERON:0001828; UBERON:0000966",
+          "multivalued": false,
+          "name": "tissue_ontology_term_id",
+          "range": "string",
+          "rationale": "Major biological effect that needs to be assessed for sufficient coverage in the atlas datasets.",
+          "required": true,
+          "title": "tissue_ontology_term_id",
+          "values": "If tissue_type is \"tissue\" or \"organoid\", this must be the most accurate child of UBERON:0001062 for anatomical entity. If tissue_type is \"cell culture\" this must follow the requirements for cell_type_ontology_term_id."
+        },
+        {
+          "description": "The detailed anatomical location of the sample - this does not have to tie to an ontology term.",
+          "example": "terminal ileum",
+          "multivalued": false,
+          "name": "tissue_free_text",
+          "range": "string",
+          "rationale": "To help the integration team understand the anatomical location of the sample, specifically to solve the problem when the UBERON ontology terms are insufficiently precise.",
+          "required": false,
+          "title": "tissue_free_text"
+        },
+        {
+          "description": "The study subgroup that the participant belongs to. This indicates whether the participant was a surgical donor (this includes patients providing blood samples or biopsies), a postmortem donor, or an organ donor.",
+          "example": "surgical donor; postmortem donor",
+          "multivalued": false,
+          "name": "sample_source",
+          "range": "string",
+          "rationale": "The source of the sample (whether the sample comes from alive subject; an organ donor; or deceased subject) can result in different cellular profiles and hence batch effects.",
+          "required": true,
+          "title": "sample_source",
+          "values": "surgical donor, postmortem donor, living organ donor"
+        },
+        {
+          "description": "The method the sample was physically obtained from the donor.",
+          "example": "biopsy; brush; surgical resection",
+          "multivalued": false,
+          "name": "sample_collection_method",
+          "range": "string",
+          "rationale": "Main contributor to batch effects",
+          "required": true,
+          "title": "sample_collection_method",
+          "values": "brush; scraping; biopsy; surgical resection; blood draw; body fluid; other"
+        },
+        {
+          "annotations": {
+            "cxg": "tissue_type"
+          },
+          "description": "Whether the tissue is \"tissue\", \"organoid\", or \"cell culture\".",
+          "example": "tissue; organoid; cell culture",
+          "multivalued": false,
+          "name": "tissue_type",
+          "range": "string",
+          "rationale": "Source of batch effect & dataset exclusion criteria",
+          "required": true,
+          "title": "tissue_type",
+          "values": "tissue; organoid; cell culture"
+        },
+        {
+          "description": "Whether the site is considered healthy, diseased or adjacent to disease.",
+          "example": "healthy; diseased; adjacent",
+          "multivalued": false,
+          "name": "sampled_site_condition",
+          "range": "string",
+          "rationale": "Main contributor to batch effects",
+          "required": true,
+          "title": "sampled_site_condition",
+          "values": "healthy; diseased; adjacent"
+        },
+        {
+          "annotations": {
+            "cxg": "disease_ontology_term_id"
+          },
+          "description": "Disease, if expected to impact the sample.",
+          "example": "MONDO:0005385; PATO:0000461",
+          "multivalued": false,
+          "name": "disease_ontology_term_id",
+          "range": "string",
+          "rationale": "CELLxGENE core schema",
+          "required": true,
+          "title": "disease_ontology_term_id",
+          "values": "This must be a MONDO term or \"PATO:0000461\" for normal or healthy.\n\nRequirements for data contributors adhering to GDPR or like standards: In the case of disease, HCA requests that you submit a higher order ontology term - this is especially important in the case of rare disease."
+        },
+        {
+          "description": "Indicating if tissue was frozen, or not, at any point before library preparation.",
+          "example": "fresh; frozen at -70C",
+          "multivalued": false,
+          "name": "sample_preservation_method",
+          "range": "string",
+          "rationale": "Main contributor to batch effects",
+          "required": true,
+          "title": "sample_preservation_method",
+          "values": "ambient temperature; cut slide; fresh; frozen at -70C; frozen at -80C; frozen at -150C; frozen in liquid nitrogen; frozen in vapor phase; paraffin block; RNAlater at 4C; RNAlater at 25C; RNAlater at -20C; other"
+        },
+        {
+          "annotations": {
+            "cxg": "suspension_type"
+          },
+          "description": "Specifies whether the sample contains single cells or single nuclei data.",
+          "example": "cell; nucleus; na",
+          "multivalued": false,
+          "name": "suspension_type",
+          "range": "string",
+          "rationale": "Major source of batch effect & dataset exclusion criteria",
+          "required": true,
+          "title": "suspension_type",
+          "values": "This must be \"cell\", \"nucleus\", or \"na\".\nThis must be the correct type for the corresponding assay:\n* 10x transcription profiling [EFO:0030080] and its children = \"cell\" or \"nucleus\"\n* ATAC-seq [EFO:0007045] and its children = \"nucleus\"\n* BD Rhapsody Whole Transcriptome Analysis [EFO:0700003] = \"cell\"\n* BD Rhapsody Targeted mRNA [EFO:0700004] = \"cell\"\n* CEL-seq2 [EFO:0010010] = \"cell\" or \"nucleus\"\n* CITE-seq [EFO:0009294] and its children = \"cell\"\n* DroNc-seq [EFO:0008720] = \"nucleus\"\n* Drop-seq [EFO:0008722] = \"cell\" or \"nucleus\"\n* GEXSCOPE technology [EFO:0700011] = \"cell\" or \"nucleus\"\n* inDrop [EFO:0008780] = \"cell\" or \"nucleus\""
+        },
+        {
+          "annotations": {
+            "cxg": "is_primary_data"
+          },
+          "description": "This must be True if this is the canonical instance of this cellular observation and False if not. This is commonly False for meta-analyses reusing data or for secondary views of data.",
+          "example": "true; false",
+          "multivalued": false,
+          "name": "is_primary_data",
+          "range": "string",
+          "rationale": "This helps to ensure samples are not used twice.",
+          "required": true,
+          "title": "is_primary_data",
+          "values": "true; false"
+        },
+        {
+          "annotations": {
+            "cxg": "development_stage_ontology_term_id"
+          },
+          "description": "Age of the subject.",
+          "example": "HsapDv:0000237; unknown",
+          "multivalued": false,
+          "name": "development_stage_ontology_term_id",
+          "range": "string",
+          "rationale": "CELLxGENE core schema",
+          "required": true,
+          "title": "development_stage_ontology_term_id",
+          "values": "If organism_ontolology_term_id is \"NCBITaxon:9606\" for Homo sapiens, this should be an HsapDv term. If organism_ontolology_term_id is \"NCBITaxon:10090\" for Mus musculus, this should be an HsapDv term.\n\nRequirements for data contributors adhering to GDPR or like standards: HCA requests that you do not submit year-specific terms. For convenience, below are some broader age bracket ontology terms:\n* Embryonic stage = A term from the set of Carnegie stages 1-23 = (up to 8 weeks after conception; e.g. HsapDv:0000003)\n* Fetal development = A term from the set of 9 to 38 week post-fertilization human stages = (9 weeks after conception and before birth; e.g. HsapDv:0000046)\n* Post natal =\n  * Years 0-14 HsapDv:0000264\n  * Years 15-19 HsapDv:0000268\n  * Years 20-29 HsapDv:0000237\n  * Years 30-39 HsapDv:0000238\n  * Years 40-49 HsapDv:0000239\n  * Years 50-59 HsapDv:0000240\n  * Years 60-69 HsapDv:0000241\n  * Years 70-79 HsapDv:0000242\nYears 80-89 HsapDv:0000243"
+        },
+        {
+          "description": "Specifies the cell types targeted for enrichment or depletion beyond the selection of live cells.",
+          "example": "CL:0000057+; na",
+          "multivalued": false,
+          "name": "cell_enrichment",
+          "range": "string",
+          "rationale": "If cell lineages were filtered, this may be a dataset exclusion criterion",
+          "required": true,
+          "title": "cell_enrichment",
+          "values": "This must be a Cell Ontology (CL) term (http://www.ebi.ac.uk/ols4/ontologies/cl). For cells that are enriched, list the CL code followed by a \"+\". For cells that were depleted, list the CL code followed by a \"-\". If no enrichment or depletion occurred, please use 'na' (not applicable) "
+        },
+        {
+          "description": "Year of sample collection. Should not be detailed further(to exact month and day), to prevent identifiability.",
+          "example": "2018",
+          "multivalued": false,
+          "name": "sample_collection_year",
+          "range": "string",
+          "rationale": "May explain whether a dataset was separated into smaller batches.",
+          "required": false,
+          "title": "sample_collection_year"
+        },
+        {
+          "description": "The unique ID that is used to track libraries in the investigator's institution (should align with the publication).",
+          "example": "A24; NK_healthy_001",
+          "multivalued": false,
+          "name": "library_id",
+          "range": "string",
+          "rationale": "A way to track the unit of data generation. This should include sample pooling",
+          "required": true,
+          "title": "library_id"
+        },
+        {
+          "description": "The unique ID used to track libraries from one of the following public data repositories: EGAX*, GSM*, SRX*, ERX*, DRX, HRX, CRX",
+          "example": "GSM1684095",
+          "multivalued": false,
+          "name": "library_id_repository",
+          "range": "string",
+          "rationale": "Links a dataset back to the source from which it was ingested, optional only if this is the same as the library_id.",
+          "required": false,
+          "title": "library_id_repository"
+        },
+        {
+          "description": "Indicating which samples' libraries were prepared in the same chip/plate/etc., e.g. batch1, batch2.",
+          "example": "batch01; batch02",
+          "multivalued": false,
+          "name": "library_preparation_batch",
+          "range": "string",
+          "rationale": "Sample preparation is a major source of batch effects.",
+          "required": true,
+          "title": "library_preparation_batch"
+        },
+        {
+          "description": "The identifier (or accession number) that indicates which samples' libraries were sequenced in the same run.",
+          "example": "run1; NV0087",
+          "multivalued": false,
+          "name": "library_sequencing_run",
+          "range": "string",
+          "rationale": "Library sequencing is a major source of batch effects",
+          "required": true,
+          "title": "library_sequencing_run"
+        },
+        {
+          "description": "The pseudonymised name of the site where the sample was collected.",
+          "example": "AIDA_site_1; AIDA_site_2",
+          "multivalued": false,
+          "name": "sample_collection_site",
+          "range": "string",
+          "rationale": "To understand whether the collection site contributes to batch effects",
+          "required": false,
+          "title": "sample_collection_site",
+          "values": "It is strongly recommended that this identifier be designed so that it is unique to a given site within the collection of datasets that includes this site (for example, the labels 'site1', 'site2' may appear in other datasets thus rendering them indistinguishable)."
+        },
+        {
+          "description": "Time point when the sample was collected. This field is only needed if multiple samples from the same subject are available and collected at different time points. Sample collection dates (e.g. 23/09/22) cannot be used due to patient data protection, only relative time points should be used here (e.g. day3).",
+          "example": "sampleX_day1",
+          "multivalued": false,
+          "name": "sample_collection_relative_time_point",
+          "range": "string",
+          "rationale": "Explains variability in the data between samples from the same subject",
+          "required": false,
+          "title": "sample_collection_relative_time_point"
+        },
+        {
+          "description": "Estimated number of cells loaded for library construction.",
+          "example": "5000; 4000",
+          "multivalued": false,
+          "name": "cell_number_loaded",
+          "range": "integer",
+          "rationale": "Can explain the number of doublets found in samples",
+          "required": false,
+          "title": "cell_number_loaded"
+        },
+        {
+          "description": "If measured, per sample cell viability before library preparation (as a percentage).",
+          "example": "88; 95; 93.5",
+          "multivalued": false,
+          "name": "cell_viability_percentage",
+          "range": "decimal",
+          "rationale": "Is a measure of sample quality that could be used to explain outlier samples",
+          "required": false,
+          "title": "cell_viability_percentage"
+        },
+        {
+          "description": "Institution where the samples were processed.",
+          "example": "EMBL-EBI; Genome Institute of Singapore",
+          "multivalued": false,
+          "name": "institute",
+          "range": "string",
+          "rationale": "To be able to link to other studies from the same institution as sometimes samples from different labs in the same institute are processed via similar core facilities. Thus batch effects may be smaller for datasets from the same institute even if other factors differ.",
+          "required": true,
+          "title": "institute"
+        },
+        {
+          "description": "Encoding of author knowledge on any further information related to likely batch effects.",
+          "example": "Batch run by different personnel on different days",
+          "multivalued": false,
+          "name": "author_batch_notes",
+          "range": "string",
+          "rationale": "Space for author intuition of batch effects in their dataset",
+          "required": false,
+          "title": "author_batch_notes"
+        }
+      ]
+    },
+    {
+      "title": "Cell",
+      "description": "",
+      "name": "cell",
+      "attributes": [
+        {
+          "description": "Encoding of author intuition of cellular annotation in the dataset.",
+          "example": "Goblet cell; microglia",
+          "multivalued": false,
+          "name": "author_cell_type",
+          "range": "string",
+          "rationale": "Encoding of author intuition of cellular annotation in their dataset.",
+          "required": false,
+          "title": "author_cell_type"
+        },
+        {
+          "description": "Cell Ontology (CL) term.",
+          "example": "CL:0001204",
+          "multivalued": false,
+          "name": "cell_type_ontology_term_id",
+          "range": "string",
+          "rationale": "Encoding of cell type to help alignment with other datasets.",
+          "required": true,
+          "title": "cell_type_ontology_term_id"
+        }
+      ]
+    }
+  ],
+  "prefixes": {
+    "cxg": "https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/5.2.0/schema.md"
+  },
+  "annotations": {
+    "cxg": "CELLxGENE"
+  }
+}

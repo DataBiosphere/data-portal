@@ -10,6 +10,9 @@ import { CONTRIBUTE } from "./navigation/contribute";
 import { GUIDES } from "./navigation/guides";
 import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
+import dataDictionary from "./dataDictionary/data-dictionary.json";
+import columnDefs from "./dataDictionary/column-defs.json";
+import { buildColumnDefs } from "config/utils";
 
 const APP_TITLE = "HCA Data Portal";
 const CATALOG = "dcp47";
@@ -42,6 +45,12 @@ export function makeConfig(
       },
       url: `${dataUrl}/index`,
     },
+    dataDictionaries: [
+      {
+        columnDefs: buildColumnDefs(columnDefs),
+        dataDictionary,
+      },
+    ],
     entities: [],
     explorerTitle: "",
     gitHubUrl,
