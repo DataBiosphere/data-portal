@@ -33,7 +33,7 @@ export const COLUMN_DEFS: ColumnDef<Attribute, Attribute[keyof Attribute]>[] = [
   {
     accessorKey: "range",
     header: "Range",
-    id: "Range",
+    id: "range",
     meta: { width: { max: "1fr", min: "180px" } },
   },
   {
