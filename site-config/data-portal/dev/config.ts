@@ -11,8 +11,9 @@ import { GUIDES } from "./navigation/guides";
 import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
 import dataDictionary from "./dataDictionary/data-dictionary.json";
-import columnDefs from "./dataDictionary/column-defs.json";
-import { buildColumnDefs } from "config/utils";
+import { COLUMN_DEFS } from "../../../viewModelBuilders/dataDictionaryMapper/columnDefs";
+import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
+import { DataDictionaryConfig } from "@databiosphere/findable-ui/lib/common/entities";
 
 const APP_TITLE = "HCA Data Portal";
 const CATALOG = "dcp47";
@@ -47,10 +48,10 @@ export function makeConfig(
     },
     dataDictionaries: [
       {
-        columnDefs: buildColumnDefs(columnDefs),
-        dataDictionary,
+        columnDefs: COLUMN_DEFS,
+        dataDictionary: buildDataDictionary(dataDictionary),
       },
-    ],
+    ] as unknown as DataDictionaryConfig[],
     entities: [],
     explorerTitle: "",
     gitHubUrl,
