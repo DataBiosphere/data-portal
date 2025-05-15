@@ -1,5 +1,5 @@
-import { DataDictionary } from "./types";
-import { DataDictionary as BaseDataDictionary } from "@databiosphere/findable-ui/lib/common/entities";
+import { Attribute } from "./types";
+import { DataDictionary } from "@databiosphere/findable-ui/lib/common/entities";
 import {
   buildDataDictionaryRequiredAttribute as buildRequiredAttribute,
   buildDataDictionarySourceAttribute as buildSourceAttribute,
@@ -11,8 +11,8 @@ import {
  * @returns The built data dictionary.
  */
 export function buildDataDictionary(
-  dataDictionary: BaseDataDictionary
-): DataDictionary {
+  dataDictionary: DataDictionary
+): DataDictionary<Attribute> {
   return {
     ...dataDictionary,
     classes: dataDictionary.classes.map((classData) => {

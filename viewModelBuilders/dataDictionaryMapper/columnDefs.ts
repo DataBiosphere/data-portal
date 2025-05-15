@@ -1,7 +1,8 @@
-import { ColumnDef } from "@tanstack/react-table";
+import { CellContext, ColumnDef } from "@tanstack/react-table";
 import { ChipCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/ChipCell/chipCell";
 import { LinkCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/LinkCell/linkCell";
 import { Attribute } from "./types";
+import { ChipProps } from "@mui/material";
 
 export const COLUMN_DEFS: ColumnDef<Attribute, Attribute[keyof Attribute]>[] = [
   {
@@ -24,8 +25,7 @@ export const COLUMN_DEFS: ColumnDef<Attribute, Attribute[keyof Attribute]>[] = [
   },
   {
     accessorKey: "required",
-    // @ts-ignore -- TODO(cc) should resolve when DataDictionary is updated to support generic RowData.
-    cell: ChipCell,
+    cell: (props: CellContext<Attribute, ChipProps>) => ChipCell({ ...props }),
     header: "Required",
     id: "required",
     meta: { width: "auto" },
