@@ -1,7 +1,6 @@
-import { ChipProps, LinkProps } from "@mui/material";
 import { Attribute as BaseAttribute } from "@databiosphere/findable-ui/lib/common/entities";
+import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 
-export interface Attribute extends Omit<BaseAttribute, "required"> {
-  required: ChipProps;
+export interface Attribute extends BaseAttribute {
   source: LinkProps;
 }
