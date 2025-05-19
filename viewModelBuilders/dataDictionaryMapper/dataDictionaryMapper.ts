@@ -1,9 +1,6 @@
-import { DataDictionary } from "./types";
-import { DataDictionary as BaseDataDictionary } from "@databiosphere/findable-ui/lib/common/entities";
-import {
-  buildDataDictionaryRequiredAttribute as buildRequiredAttribute,
-  buildDataDictionarySourceAttribute as buildSourceAttribute,
-} from "./viewModelBuilders";
+import { Attribute } from "./types";
+import { DataDictionary } from "@databiosphere/findable-ui/lib/common/entities";
+import { buildSourceAttribute } from "./viewModelBuilders";
 
 /**
  * Returns a data dictionary built from the given data dictionary.
@@ -11,8 +8,8 @@ import {
  * @returns The built data dictionary.
  */
 export function buildDataDictionary(
-  dataDictionary: BaseDataDictionary
-): DataDictionary {
+  dataDictionary: DataDictionary
+): DataDictionary<Attribute> {
   return {
     ...dataDictionary,
     classes: dataDictionary.classes.map((classData) => {
@@ -21,7 +18,6 @@ export function buildDataDictionary(
         attributes: classData.attributes.map((attribute) => {
           return {
             ...attribute,
-            required: buildRequiredAttribute(attribute),
             source: buildSourceAttribute(dataDictionary, attribute),
           };
         }),
