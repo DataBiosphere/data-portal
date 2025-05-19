@@ -1,25 +1,6 @@
-import { ChipProps, LinkProps } from "@mui/material";
-import {
-  Attribute as BaseAttribute,
-  DataDictionary as BaseDataDictionary,
-  Class as BaseClass,
-} from "@databiosphere/findable-ui/lib/common/entities";
+import { Attribute as BaseAttribute } from "@databiosphere/findable-ui/lib/common/entities";
+import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 
-export interface Attribute extends Omit<BaseAttribute, "required"> {
-  required: ChipProps;
+export interface Attribute extends BaseAttribute {
   source: LinkProps;
-}
-
-/**
- * TODO(cc): Remove when DataDictionary is updated to support generic RowData.
- */
-export interface Class extends Omit<BaseClass, "attributes"> {
-  attributes: Attribute[];
-}
-
-/**
- * TODO(cc): Remove when DataDictionary is updated to support generic RowData.
- */
-export interface DataDictionary extends Omit<BaseDataDictionary, "classes"> {
-  classes: Class[];
 }
