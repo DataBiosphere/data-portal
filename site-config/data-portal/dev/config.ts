@@ -112,7 +112,17 @@ export function makeConfig(
             },
             {
               label: "Metadata",
-              url: ROUTES.METADATA,
+              menuItems: [
+                {
+                  label: "Metadata Overview",
+                  url: ROUTES.METADATA,
+                },
+                {
+                  label: "HCA Matrix Metadata",
+                  url: ROUTES.HCA_MATRIX_METADATA,
+                },
+              ],
+              url: "",
             },
             {
               label: "Contribute",
