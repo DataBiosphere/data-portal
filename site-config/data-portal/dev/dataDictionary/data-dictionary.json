@@ -1,6 +1,6 @@
 {
-  "name": "tier_1",
-  "title": "HCA Tier 1 Metadata",
+  "name": "hca_matrix_metadata_dictionary",
+  "title": "Matrix Metadata",
   "classes": [
     {
       "title": "Dataset",
@@ -8,6 +8,9 @@
       "name": "dataset",
       "attributes": [
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Principal Investigator(s) leading the study where the data is/was used.",
           "example": "Sarah,A,Teichmann",
           "multivalued": true,
@@ -18,7 +21,8 @@
         },
         {
           "annotations": {
-            "cxg": "batch_condition"
+            "cxg": "batch_condition",
+            "tier": "Tier 1"
           },
           "description": "*Note: Name of the covariate that confers the dominant batch effect in the data as judged by the data contributor. The name provided here should be the label by which this covariate is stored in the AnnData object.*",
           "example": "[\"patient\", \"seqBatch\"]",
@@ -31,7 +35,8 @@
         },
         {
           "annotations": {
-            "cxg": "default_embedding"
+            "cxg": "default_embedding",
+            "tier": "Tier 1"
           },
           "description": "The value must match a key to an embedding in obsm for the embedding to display by default in CELLxGENE Explorer.",
           "multivalued": false,
@@ -41,6 +46,9 @@
           "title": "default_embedding"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Platform used for sequencing.",
           "example": "EFO:0008563",
           "multivalued": false,
@@ -53,7 +61,8 @@
         },
         {
           "annotations": {
-            "cxg": "assay_ontology_term_id"
+            "cxg": "assay_ontology_term_id",
+            "tier": "Tier 1"
           },
           "description": "Platform used for single cell library construction.",
           "example": "EFO:0009922",
@@ -66,6 +75,9 @@
           "values": "This must be an EFO term and either:\n\"EFO:0002772\" for assay by molecule or preferably its most accurate child\n\"EFO:0010183\" for single cell library construction or preferably its most accurate child\nAn assay based on 10X Genomics products should either be \"EFO:0008995\" for 10x technology or preferably its most accurate child. An assay based on SMART (Switching Mechanism at the 5' end of the RNA Template) or SMARTer technology SHOULD either be \"EFO:0010184\" for Smart-like or preferably its most accurate child.\n\nRecommended:\n10x 3' v2 \"EFO:0009899\"\n10x 3' v3 \"EFO:0009922\"\n10x 5' v1 \"EFO:0011025\"\n10x 5' v2 \"EFO:0009900\"\nSmart-seq2 \"EFO:0008931\"\nVisium Spatial Gene Expression \"EFO:0010961\""
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Reference genome used for alignment.",
           "example": "GRCm37; GRCh37",
           "multivalued": false,
@@ -77,6 +89,9 @@
           "values": "GRCh38; GRCh37; GRCm39; GRCm38; GRCm37; not applicable"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Protocol used for alignment analysis, please specify which version was used e.g. cell ranger 2.0, 2.1.1 etc.",
           "example": "cellranger_8.0.0",
           "multivalued": false,
@@ -87,6 +102,9 @@
           "title": "alignment_software"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Were introns included during read counting in the alignment process?",
           "example": "yes",
           "multivalued": false,
@@ -98,6 +116,9 @@
           "values": "yes or no"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Which part of the RNA transcript was targeted for sequencing.",
           "example": "3 prime tag; full length",
           "multivalued": false,
@@ -109,6 +130,9 @@
           "values": "3 prime tag; 5 prime tag; probe-based; full length"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Ensembl release version accession number. Some common codes include:\nGRCh38.p12 = GCF_000001405.38\nGRCh38.p13 = GCF_000001405.39\nGRCh38.p14 = GCF_000001405.40 \n",
           "example": "GCF_000001405.40",
           "multivalued": false,
@@ -120,6 +144,9 @@
           "values": "http://www.ensembl.org/info/website/archives/index.html) or NCBI/RefSeq"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Other technical or experimental covariates that could affect the quality or batch of the sample. Must not contain identifiers. This field is designed to capture potential challenges for data integration not captured elsewhere.",
           "multivalued": false,
           "name": "comments",
@@ -128,6 +155,9 @@
           "title": "comments"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "The protocols.io URL (if none exists, please use the BioRxiv URL) for the full experimental protocol; or if multiple protocols exist please list them e.g. sample preparation protocol / sequencing protocol.",
           "example": "https://www.biorxiv.org/conte nt/early/2017/09/24/193219",
           "multivalued": false,
@@ -139,7 +169,8 @@
         },
         {
           "annotations": {
-            "cxg": "title"
+            "cxg": "title",
+            "tier": "Tier 1"
           },
           "description": "This text describes and differentiates the dataset from other datasets in the same collection. It is strongly recommended that each dataset title in a collection is unique and does not depend on other metadata such as a different assay to disambiguate it from other datasets in the collection.",
           "example": "Cells of the adult human heart collection is \"All — Cells of the adult human heart\"",
@@ -159,7 +190,8 @@
       "attributes": [
         {
           "annotations": {
-            "cxg": "donor_id"
+            "cxg": "donor_id",
+            "tier": "Tier 1"
           },
           "description": "This must be free-text that identifies a unique individual that data were derived from.",
           "example": "CR_donor_1; MM_donor_1; LR_donor_2",
@@ -173,7 +205,8 @@
         },
         {
           "annotations": {
-            "cxg": "organism_ontology_term_id"
+            "cxg": "organism_ontology_term_id",
+            "tier": "Tier 1"
           },
           "description": "The name given to the type of organism, collected in NCBITaxon:0000 format.",
           "example": "NCBITaxon:9606",
@@ -186,6 +219,9 @@
           "values": "\"NCBITaxon:9606\" for Homo sapiens or \"NCBITaxon:10090\" for Mus musculus."
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Manner of death classification based on the Hardy Scale or 'unknown' or 'not applicable':\n* Category 1 = Violent and fast death Deaths due to accident, blunt force trauma or suicide, terminal phase estimated at < 10 min.\n* Category 2 = Fast death of natural causes -Sudden unexpected deaths of people who had been reasonably healthy, after a terminal phase estimated at < 1 hr (with sudden death from a myocardial infarction as a model cause of death for this category)\n* Category 3 = Intermediate death - Death after a terminal phase of 1 to 24 hrs (not classifiable as 2 or 4); patients who were ill but death was unexpected\n* Category 4 = Slow death - Death after a long illness, with a terminal phase longer than 1 day (commonly cancer or chronic pulmonary disease); deaths that are not unexpected\n* Category 0 =Ventilator Case - All cases on a ventilator immediately before death\n* Unknown = The cause of death is unknown\n* Not applicable = Subject is alive\n[Please leave this field as blank for embryonic/fetal tissue]",
           "example": "1",
           "multivalued": false,
@@ -198,7 +234,8 @@
         },
         {
           "annotations": {
-            "cxg": "sex_ontology_term_id"
+            "cxg": "sex_ontology_term_id",
+            "tier": "Tier 1"
           },
           "description": "Reported sex of the donor.",
           "example": "PATO:0000383 for female, PATO:0000384 for male",
@@ -212,7 +249,8 @@
         },
         {
           "annotations": {
-            "cxg": "self_reported_ethnicity_ontology_term_id"
+            "cxg": "self_reported_ethnicity_ontology_term_id",
+            "tier": "Tier 1"
           },
           "description": "Self reported ethnicity of the subject.",
           "example": "unknown; HANCESTRO:0008",
@@ -232,6 +270,9 @@
       "name": "sample",
       "attributes": [
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Identification number of the sample. This is the fundamental unit of sampling the tissue (the specimen taken from the subject), which can be the same as the 'subject_ID', but is often different if multiple samples are taken from the same subject. Note: this is NOT a unit of multiplexing of donor samples, which should be stored in \"library\".",
           "example": "SC24; SC25; SC28",
           "multivalued": false,
@@ -243,7 +284,8 @@
         },
         {
           "annotations": {
-            "cxg": "tissue_ontology_term_id"
+            "cxg": "tissue_ontology_term_id",
+            "tier": "Tier 1"
           },
           "description": "The detailed anatomical location of the sample, please provide a specific UBERON term.",
           "example": "UBERON:0001828; UBERON:0000966",
@@ -256,6 +298,9 @@
           "values": "If tissue_type is \"tissue\" or \"organoid\", this must be the most accurate child of UBERON:0001062 for anatomical entity. If tissue_type is \"cell culture\" this must follow the requirements for cell_type_ontology_term_id."
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "The detailed anatomical location of the sample - this does not have to tie to an ontology term.",
           "example": "terminal ileum",
           "multivalued": false,
@@ -266,6 +311,9 @@
           "title": "tissue_free_text"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "The study subgroup that the participant belongs to. This indicates whether the participant was a surgical donor (this includes patients providing blood samples or biopsies), a postmortem donor, or an organ donor.",
           "example": "surgical donor; postmortem donor",
           "multivalued": false,
@@ -277,6 +325,9 @@
           "values": "surgical donor, postmortem donor, living organ donor"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "The method the sample was physically obtained from the donor.",
           "example": "biopsy; brush; surgical resection",
           "multivalued": false,
@@ -289,7 +340,8 @@
         },
         {
           "annotations": {
-            "cxg": "tissue_type"
+            "cxg": "tissue_type",
+            "tier": "Tier 1"
           },
           "description": "Whether the tissue is \"tissue\", \"organoid\", or \"cell culture\".",
           "example": "tissue; organoid; cell culture",
@@ -302,6 +354,9 @@
           "values": "tissue; organoid; cell culture"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Whether the site is considered healthy, diseased or adjacent to disease.",
           "example": "healthy; diseased; adjacent",
           "multivalued": false,
@@ -314,7 +369,8 @@
         },
         {
           "annotations": {
-            "cxg": "disease_ontology_term_id"
+            "cxg": "disease_ontology_term_id",
+            "tier": "Tier 1"
           },
           "description": "Disease, if expected to impact the sample.",
           "example": "MONDO:0005385; PATO:0000461",
@@ -327,6 +383,9 @@
           "values": "This must be a MONDO term or \"PATO:0000461\" for normal or healthy.\n\nRequirements for data contributors adhering to GDPR or like standards: In the case of disease, HCA requests that you submit a higher order ontology term - this is especially important in the case of rare disease."
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Indicating if tissue was frozen, or not, at any point before library preparation.",
           "example": "fresh; frozen at -70C",
           "multivalued": false,
@@ -339,7 +398,8 @@
         },
         {
           "annotations": {
-            "cxg": "suspension_type"
+            "cxg": "suspension_type",
+            "tier": "Tier 1"
           },
           "description": "Specifies whether the sample contains single cells or single nuclei data.",
           "example": "cell; nucleus; na",
@@ -353,7 +413,8 @@
         },
         {
           "annotations": {
-            "cxg": "is_primary_data"
+            "cxg": "is_primary_data",
+            "tier": "Tier 1"
           },
           "description": "This must be True if this is the canonical instance of this cellular observation and False if not. This is commonly False for meta-analyses reusing data or for secondary views of data.",
           "example": "true; false",
@@ -367,7 +428,8 @@
         },
         {
           "annotations": {
-            "cxg": "development_stage_ontology_term_id"
+            "cxg": "development_stage_ontology_term_id",
+            "tier": "Tier 1"
           },
           "description": "Age of the subject.",
           "example": "HsapDv:0000237; unknown",
@@ -380,6 +442,9 @@
           "values": "If organism_ontolology_term_id is \"NCBITaxon:9606\" for Homo sapiens, this should be an HsapDv term. If organism_ontolology_term_id is \"NCBITaxon:10090\" for Mus musculus, this should be an HsapDv term.\n\nRequirements for data contributors adhering to GDPR or like standards: HCA requests that you do not submit year-specific terms. For convenience, below are some broader age bracket ontology terms:\n* Embryonic stage = A term from the set of Carnegie stages 1-23 = (up to 8 weeks after conception; e.g. HsapDv:0000003)\n* Fetal development = A term from the set of 9 to 38 week post-fertilization human stages = (9 weeks after conception and before birth; e.g. HsapDv:0000046)\n* Post natal =\n  * Years 0-14 HsapDv:0000264\n  * Years 15-19 HsapDv:0000268\n  * Years 20-29 HsapDv:0000237\n  * Years 30-39 HsapDv:0000238\n  * Years 40-49 HsapDv:0000239\n  * Years 50-59 HsapDv:0000240\n  * Years 60-69 HsapDv:0000241\n  * Years 70-79 HsapDv:0000242\nYears 80-89 HsapDv:0000243"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Specifies the cell types targeted for enrichment or depletion beyond the selection of live cells.",
           "example": "CL:0000057+; na",
           "multivalued": false,
@@ -391,6 +456,9 @@
           "values": "This must be a Cell Ontology (CL) term (http://www.ebi.ac.uk/ols4/ontologies/cl). For cells that are enriched, list the CL code followed by a \"+\". For cells that were depleted, list the CL code followed by a \"-\". If no enrichment or depletion occurred, please use 'na' (not applicable) "
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Year of sample collection. Should not be detailed further(to exact month and day), to prevent identifiability.",
           "example": "2018",
           "multivalued": false,
@@ -401,6 +469,9 @@
           "title": "sample_collection_year"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "The unique ID that is used to track libraries in the investigator's institution (should align with the publication).",
           "example": "A24; NK_healthy_001",
           "multivalued": false,
@@ -411,6 +482,9 @@
           "title": "library_id"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "The unique ID used to track libraries from one of the following public data repositories: EGAX*, GSM*, SRX*, ERX*, DRX, HRX, CRX",
           "example": "GSM1684095",
           "multivalued": false,
@@ -421,6 +495,9 @@
           "title": "library_id_repository"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Indicating which samples' libraries were prepared in the same chip/plate/etc., e.g. batch1, batch2.",
           "example": "batch01; batch02",
           "multivalued": false,
@@ -431,6 +508,9 @@
           "title": "library_preparation_batch"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "The identifier (or accession number) that indicates which samples' libraries were sequenced in the same run.",
           "example": "run1; NV0087",
           "multivalued": false,
@@ -441,6 +521,9 @@
           "title": "library_sequencing_run"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "The pseudonymised name of the site where the sample was collected.",
           "example": "AIDA_site_1; AIDA_site_2",
           "multivalued": false,
@@ -452,6 +535,9 @@
           "values": "It is strongly recommended that this identifier be designed so that it is unique to a given site within the collection of datasets that includes this site (for example, the labels 'site1', 'site2' may appear in other datasets thus rendering them indistinguishable)."
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Time point when the sample was collected. This field is only needed if multiple samples from the same subject are available and collected at different time points. Sample collection dates (e.g. 23/09/22) cannot be used due to patient data protection, only relative time points should be used here (e.g. day3).",
           "example": "sampleX_day1",
           "multivalued": false,
@@ -462,6 +548,9 @@
           "title": "sample_collection_relative_time_point"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Estimated number of cells loaded for library construction.",
           "example": "5000; 4000",
           "multivalued": false,
@@ -472,6 +561,9 @@
           "title": "cell_number_loaded"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "If measured, per sample cell viability before library preparation (as a percentage).",
           "example": "88; 95; 93.5",
           "multivalued": false,
@@ -482,6 +574,9 @@
           "title": "cell_viability_percentage"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Institution where the samples were processed.",
           "example": "EMBL-EBI; Genome Institute of Singapore",
           "multivalued": false,
@@ -492,6 +587,9 @@
           "title": "institute"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Encoding of author knowledge on any further information related to likely batch effects.",
           "example": "Batch run by different personnel on different days",
           "multivalued": false,
@@ -509,6 +607,9 @@
       "name": "cell",
       "attributes": [
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Encoding of author intuition of cellular annotation in the dataset.",
           "example": "Goblet cell; microglia",
           "multivalued": false,
@@ -519,6 +620,9 @@
           "title": "author_cell_type"
         },
         {
+          "annotations": {
+            "tier": "Tier 1"
+          },
           "description": "Cell Ontology (CL) term.",
           "example": "CL:0001204",
           "multivalued": false,
