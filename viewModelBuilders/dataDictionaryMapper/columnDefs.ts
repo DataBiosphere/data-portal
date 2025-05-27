@@ -28,6 +28,14 @@ export const COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
     meta: { width: { max: "1fr", min: "862px" } },
   },
   {
+    accessorFn: (row) => row.annotations?.bioNetworks,
+    enableColumnFilter: true,
+    enableHiding: false,
+    filterFn: "arrIncludesSome",
+    header: "BioNetwork",
+    id: "bioNetwork",
+  },
+  {
     accessorFn: (row) => (row.required ? "Required" : "Not Required"),
     enableColumnFilter: true,
     enableHiding: false,

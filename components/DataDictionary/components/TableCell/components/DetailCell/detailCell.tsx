@@ -13,14 +13,6 @@ export const DetailCell = ({
 }: CellContext<Attribute, unknown>): JSX.Element => {
   return (
     <StyledGrid container>
-      {row.original.annotations?.tier && (
-        <Grid>
-          <Typography variant={TEXT_BODY_500}>Tier</Typography>
-          <Typography variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}>
-            <MarkdownRenderer value={row.original.annotations.tier as string} />
-          </Typography>
-        </Grid>
-      )}
       <Grid>
         <Typography variant={TEXT_BODY_500}>Description</Typography>
         <Typography variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}>
@@ -59,6 +51,26 @@ export const DetailCell = ({
         <Typography variant={TEXT_BODY_500}>Source</Typography>
         <Link {...row.original.source} />
       </Grid>
+      {row.original.annotations?.tier && (
+        <Grid>
+          <Typography variant={TEXT_BODY_500}>Tier</Typography>
+          <Typography variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}>
+            <MarkdownRenderer value={row.original.annotations.tier as string} />
+          </Typography>
+        </Grid>
+      )}
+      {row.original.annotations?.bioNetworks && (
+        <Grid>
+          <Typography variant={TEXT_BODY_500}>Bionetworks</Typography>
+          <Typography variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}>
+            <MarkdownRenderer
+              value={(row.original.annotations.bioNetworks as string[]).join(
+                ", "
+              )}
+            />
+          </Typography>
+        </Grid>
+      )}
     </StyledGrid>
   );
 };
