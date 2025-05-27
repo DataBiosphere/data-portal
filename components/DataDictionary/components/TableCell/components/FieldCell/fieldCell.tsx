@@ -7,7 +7,7 @@ import { buildRequired, buildRange } from "./utils";
 
 export const FieldCell = ({
   row,
-}: CellContext<Attribute, undefined>): JSX.Element => {
+}: CellContext<Attribute, unknown>): JSX.Element => {
   return (
     <StyledGrid>
       <Typography component="div" variant={TEXT_BODY_500}>
