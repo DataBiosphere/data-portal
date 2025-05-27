@@ -10,7 +10,7 @@ import { buildExample } from "./utils";
 
 export const DetailCell = ({
   row,
-}: CellContext<Attribute, undefined>): JSX.Element => {
+}: CellContext<Attribute, unknown>): JSX.Element => {
   return (
     <StyledGrid container>
       {row.original.annotations?.tier && (

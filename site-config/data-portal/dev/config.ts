@@ -14,6 +14,7 @@ import dataDictionary from "./dataDictionary/data-dictionary.json";
 import { COLUMN_DEFS } from "../../../viewModelBuilders/dataDictionaryMapper/columnDefs";
 import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
 import { DataDictionaryConfig } from "@databiosphere/findable-ui/lib/common/entities";
+import { TABLE_OPTIONS } from "../../../viewModelBuilders/dataDictionaryMapper/tableOptions";
 
 const APP_TITLE = "HCA Data Portal";
 const CATALOG = "dcp47";
@@ -50,6 +51,7 @@ export function makeConfig(
       {
         columnDefs: COLUMN_DEFS,
         dataDictionary: buildDataDictionary(dataDictionary),
+        tableOptions: TABLE_OPTIONS,
       },
     ] as unknown as DataDictionaryConfig[],
     entities: [],
