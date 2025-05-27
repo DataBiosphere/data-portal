@@ -1,4 +1,4 @@
-import { ColumnDef, CellContext } from "@tanstack/react-table";
+import { ColumnDef } from "@tanstack/react-table";
 import { Attribute } from "./types";
 import { FieldCell } from "../../components/DataDictionary/components/TableCell/components/FieldCell/fieldCell";
 import { DetailCell } from "../../components/DataDictionary/components/TableCell/components/DetailCell/detailCell";
