@@ -10,9 +10,17 @@ import { buildExample } from "./utils";
 
 export const DetailCell = ({
   row,
-}: CellContext<Attribute, undefined>): JSX.Element => {
+}: CellContext<Attribute, unknown>): JSX.Element => {
   return (
     <StyledGrid container>
+      {row.original.annotations?.tier && (
+        <Grid>
+          <Typography variant={TEXT_BODY_500}>Tier</Typography>
+          <Typography variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}>
+            <MarkdownRenderer value={row.original.annotations.tier as string} />
+          </Typography>
+        </Grid>
+      )}
       <Grid>
         <Typography variant={TEXT_BODY_500}>Description</Typography>
         <Typography variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}>

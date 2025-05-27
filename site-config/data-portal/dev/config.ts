@@ -14,6 +14,7 @@ import dataDictionary from "./dataDictionary/data-dictionary.json";
 import { COLUMN_DEFS } from "../../../viewModelBuilders/dataDictionaryMapper/columnDefs";
 import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
 import { DataDictionaryConfig } from "@databiosphere/findable-ui/lib/common/entities";
+import { TABLE_OPTIONS } from "../../../viewModelBuilders/dataDictionaryMapper/tableOptions";
 
 const APP_TITLE = "HCA Data Portal";
 const CATALOG = "dcp49";
@@ -50,6 +51,7 @@ export function makeConfig(
       {
         columnDefs: COLUMN_DEFS,
         dataDictionary: buildDataDictionary(dataDictionary),
+        tableOptions: TABLE_OPTIONS,
       },
     ] as unknown as DataDictionaryConfig[],
     entities: [],
@@ -112,7 +114,17 @@ export function makeConfig(
             },
             {
               label: "Metadata",
-              url: ROUTES.METADATA,
+              menuItems: [
+                {
+                  label: "Metadata Overview",
+                  url: ROUTES.METADATA,
+                },
+                {
+                  label: "HCA Matrix Metadata",
+                  url: ROUTES.HCA_MATRIX_METADATA,
+                },
+              ],
+              url: "",
             },
             {
               label: "Contribute",
