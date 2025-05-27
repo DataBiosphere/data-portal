@@ -6,7 +6,12 @@ export const TABLE_OPTIONS: Omit<
   "columns" | "data" | "getCoreRowModel"
 > = {
   initialState: {
-    columnVisibility: { classKey: true, required: false, bioNetwork: false },
+    columnVisibility: {
+      bioNetwork: false,
+      classKey: true,
+      required: false,
+      tier: false,
+    },
     expanded: true,
     grouping: ["classKey"],
   },
