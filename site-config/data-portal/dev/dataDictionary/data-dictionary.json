@@ -9,6 +9,27 @@
       "attributes": [
         {
           "annotations": {
+            "anndata": "uns",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Principal Investigator(s) leading the study where the data is/was used.",
@@ -21,6 +42,27 @@
         },
         {
           "annotations": {
+            "anndata": "uns",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "batch_condition",
             "tier": "Tier 1"
           },
@@ -35,6 +77,27 @@
         },
         {
           "annotations": {
+            "anndata": "uns",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "default_embedding",
             "tier": "Tier 1"
           },
@@ -47,6 +110,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Platform used for sequencing.",
@@ -61,6 +145,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "assay_ontology_term_id",
             "tier": "Tier 1"
           },
@@ -76,6 +181,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Reference genome used for alignment.",
@@ -90,6 +216,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Protocol used for alignment analysis, please specify which version was used e.g. cell ranger 2.0, 2.1.1 etc.",
@@ -103,6 +250,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Were introns included during read counting in the alignment process?",
@@ -117,6 +285,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Which part of the RNA transcript was targeted for sequencing.",
@@ -131,6 +320,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Ensembl release version accession number. Some common codes include:\nGRCh38.p12 = GCF_000001405.38\nGRCh38.p13 = GCF_000001405.39\nGRCh38.p14 = GCF_000001405.40 \n",
@@ -145,6 +355,27 @@
         },
         {
           "annotations": {
+            "anndata": "uns",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Other technical or experimental covariates that could affect the quality or batch of the sample. Must not contain identifiers. This field is designed to capture potential challenges for data integration not captured elsewhere.",
@@ -156,6 +387,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "The protocols.io URL (if none exists, please use the BioRxiv URL) for the full experimental protocol; or if multiple protocols exist please list them e.g. sample preparation protocol / sequencing protocol.",
@@ -169,6 +421,27 @@
         },
         {
           "annotations": {
+            "anndata": "uns",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "title",
             "tier": "Tier 1"
           },
@@ -180,6 +453,39 @@
           "rationale": "Useful to look up protocol data that can provide insight on batch effects. As protocols can sometimes apply to a subset of the study, we capture this at a sample level. This information may not always be available.",
           "required": true,
           "title": "title"
+        },
+        {
+          "annotations": {
+            "anndata": "obsm",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
+            "cxg": "obsm-embeddings",
+            "tier": "Tier 1"
+          },
+          "description": "The size of the ndarray stored for a key in obsm MUST NOT be zero.\n\nTo display a dataset in CELLxGENE Explorer, Curators MUST annotate one or more embeddings of at least two-dimensions (e.g. tSNE, UMAP, PCA, spatial coordinates) as numpy.ndarrays in obsm.",
+          "multivalued": true,
+          "name": "obsm",
+          "range": "numpy.ndarray",
+          "required": true,
+          "title": "embeddings"
         }
       ]
     },
@@ -190,6 +496,27 @@
       "attributes": [
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "donor_id",
             "tier": "Tier 1"
           },
@@ -205,6 +532,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "organism_ontology_term_id",
             "tier": "Tier 1"
           },
@@ -220,6 +568,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Manner of death classification based on the Hardy Scale or 'unknown' or 'not applicable':\n* Category 1 = Violent and fast death Deaths due to accident, blunt force trauma or suicide, terminal phase estimated at < 10 min.\n* Category 2 = Fast death of natural causes -Sudden unexpected deaths of people who had been reasonably healthy, after a terminal phase estimated at < 1 hr (with sudden death from a myocardial infarction as a model cause of death for this category)\n* Category 3 = Intermediate death - Death after a terminal phase of 1 to 24 hrs (not classifiable as 2 or 4); patients who were ill but death was unexpected\n* Category 4 = Slow death - Death after a long illness, with a terminal phase longer than 1 day (commonly cancer or chronic pulmonary disease); deaths that are not unexpected\n* Category 0 =Ventilator Case - All cases on a ventilator immediately before death\n* Unknown = The cause of death is unknown\n* Not applicable = Subject is alive\n[Please leave this field as blank for embryonic/fetal tissue]",
@@ -234,6 +603,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "sex_ontology_term_id",
             "tier": "Tier 1"
           },
@@ -249,6 +639,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "self_reported_ethnicity_ontology_term_id",
             "tier": "Tier 1"
           },
@@ -271,6 +682,27 @@
       "attributes": [
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Identification number of the sample. This is the fundamental unit of sampling the tissue (the specimen taken from the subject), which can be the same as the 'subject_ID', but is often different if multiple samples are taken from the same subject. Note: this is NOT a unit of multiplexing of donor samples, which should be stored in \"library\".",
@@ -284,6 +716,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "tissue_ontology_term_id",
             "tier": "Tier 1"
           },
@@ -299,6 +752,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "The detailed anatomical location of the sample - this does not have to tie to an ontology term.",
@@ -312,6 +786,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "The study subgroup that the participant belongs to. This indicates whether the participant was a surgical donor (this includes patients providing blood samples or biopsies), a postmortem donor, or an organ donor.",
@@ -326,6 +821,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "The method the sample was physically obtained from the donor.",
@@ -340,6 +856,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "tissue_type",
             "tier": "Tier 1"
           },
@@ -355,6 +892,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Whether the site is considered healthy, diseased or adjacent to disease.",
@@ -369,6 +927,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "disease_ontology_term_id",
             "tier": "Tier 1"
           },
@@ -384,6 +963,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Indicating if tissue was frozen, or not, at any point before library preparation.",
@@ -398,6 +998,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "suspension_type",
             "tier": "Tier 1"
           },
@@ -413,6 +1034,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "is_primary_data",
             "tier": "Tier 1"
           },
@@ -428,6 +1070,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "cxg": "development_stage_ontology_term_id",
             "tier": "Tier 1"
           },
@@ -443,6 +1106,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Specifies the cell types targeted for enrichment or depletion beyond the selection of live cells.",
@@ -457,6 +1141,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Year of sample collection. Should not be detailed further(to exact month and day), to prevent identifiability.",
@@ -470,6 +1175,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "The unique ID that is used to track libraries in the investigator's institution (should align with the publication).",
@@ -483,6 +1209,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "The unique ID used to track libraries from one of the following public data repositories: EGAX*, GSM*, SRX*, ERX*, DRX, HRX, CRX",
@@ -496,6 +1243,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Indicating which samples' libraries were prepared in the same chip/plate/etc., e.g. batch1, batch2.",
@@ -509,6 +1277,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "The identifier (or accession number) that indicates which samples' libraries were sequenced in the same run.",
@@ -522,6 +1311,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "The pseudonymised name of the site where the sample was collected.",
@@ -536,6 +1346,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Time point when the sample was collected. This field is only needed if multiple samples from the same subject are available and collected at different time points. Sample collection dates (e.g. 23/09/22) cannot be used due to patient data protection, only relative time points should be used here (e.g. day3).",
@@ -549,6 +1380,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Estimated number of cells loaded for library construction.",
@@ -562,6 +1414,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "If measured, per sample cell viability before library preparation (as a percentage).",
@@ -575,6 +1448,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Institution where the samples were processed.",
@@ -588,6 +1482,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Encoding of author knowledge on any further information related to likely batch effects.",
@@ -608,6 +1523,27 @@
       "attributes": [
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Encoding of author intuition of cellular annotation in the dataset.",
@@ -621,6 +1557,27 @@
         },
         {
           "annotations": {
+            "anndata": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
             "tier": "Tier 1"
           },
           "description": "Cell Ontology (CL) term.",
