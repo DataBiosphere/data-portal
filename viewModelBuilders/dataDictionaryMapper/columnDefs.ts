@@ -17,7 +17,7 @@ export const COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
     enableColumnFilter: false,
     header: "Field",
     id: "field",
-    meta: { columnPinned: true, width: { max: "264px", min: "264px" } },
+    meta: { width: { max: "264px", min: "264px" } },
   },
   {
     accessorKey: "details",
