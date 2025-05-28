@@ -120,8 +120,8 @@ export function makeConfig(
                   url: ROUTES.METADATA,
                 },
                 {
-                  label: "HCA Matrix Metadata",
-                  url: ROUTES.HCA_MATRIX_METADATA,
+                  label: "Metadata Dictionary",
+                  url: ROUTES.METADATA_DICTIONARY,
                 },
               ],
               url: "",
