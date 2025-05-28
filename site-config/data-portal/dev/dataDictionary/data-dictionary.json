@@ -696,7 +696,8 @@
           "name": "age_unit",
           "range": "string",
           "required": false,
-          "title": "age_unit"
+          "title": "age_unit",
+          "values": "day; week; month; year"
         },
         {
           "annotations": {
@@ -826,7 +827,8 @@
           "name": "occupation",
           "range": "string",
           "required": false,
-          "title": "occupation"
+          "title": "occupation",
+          "values": "[OCCO ontology](https://www.ebi.ac.uk/ols4/ontologies/occo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FOCCO_00000001?lang=en)"
         },
         {
           "annotations": {
@@ -839,7 +841,8 @@
           "name": "comorbidities",
           "range": "string",
           "required": false,
-          "title": "comorbidities"
+          "title": "comorbidities",
+          "values": "[MONDO ontology](https://www.ebi.ac.uk/ols4/ontologies/mondo)"
         },
         {
           "annotations": {
@@ -865,7 +868,8 @@
           "name": "medication",
           "range": "string",
           "required": false,
-          "title": "medication"
+          "title": "medication",
+          "values": "[NCIT ontology term](https://www.ebi.ac.uk/ols4/ontologies/ncit/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FNCIT_C1908?lang=en)"
         },
         {
           "annotations": {
@@ -878,7 +882,8 @@
           "name": "diet_meat_consumption",
           "range": "string",
           "required": false,
-          "title": "diet_meat_consumption"
+          "title": "diet_meat_consumption",
+          "values": "yes; no"
         },
         {
           "annotations": {
@@ -943,7 +948,8 @@
           "name": "previous_surgery_relative_time_unit",
           "range": "string",
           "required": false,
-          "title": "previous_surgery_relative_time_unit"
+          "title": "previous_surgery_relative_time_unit",
+          "values": "day; week; month; year"
         },
         {
           "annotations": {
@@ -982,7 +988,8 @@
           "name": "history_of_injury_type_relative_time_unit",
           "range": "string",
           "required": false,
-          "title": "history_of_injury_type_relative_time_unit"
+          "title": "history_of_injury_type_relative_time_unit",
+          "values": "day; week; month; year"
         },
         {
           "annotations": {
@@ -995,7 +1002,8 @@
           "name": "alcohol_status",
           "range": "string",
           "required": false,
-          "title": "alcohol_status"
+          "title": "alcohol_status",
+          "values": "active; former; never"
         },
         {
           "annotations": {
@@ -1008,7 +1016,8 @@
           "name": "alcohol_type",
           "range": "string",
           "required": false,
-          "title": "alcohol_type"
+          "title": "alcohol_type",
+          "values": "beer; liquor; wine"
         },
         {
           "annotations": {
@@ -1047,7 +1056,8 @@
           "name": "smoking_status",
           "range": "string",
           "required": false,
-          "title": "smoking_status"
+          "title": "smoking_status",
+          "values": "active; former; never"
         },
         {
           "annotations": {
@@ -1086,7 +1096,8 @@
           "name": "nutritional_state",
           "range": "string",
           "required": false,
-          "title": "nutritional_state"
+          "title": "nutritional_state",
+          "values": "normal; fasting; feeding tube removed"
         },
         {
           "annotations": {
@@ -1112,7 +1123,8 @@
           "name": "handedness",
           "range": "string",
           "required": false,
-          "title": "handedness"
+          "title": "handedness",
+          "values": "left; right; ambidextrous; unknown"
         },
         {
           "annotations": {
@@ -1164,7 +1176,8 @@
           "name": "geography_currentresidence_urbanrural",
           "range": "string",
           "required": false,
-          "title": "geography_currentresidence_urbanrural"
+          "title": "geography_currentresidence_urbanrural",
+          "values": "urban; suburban; rural"
         },
         {
           "annotations": {
@@ -1216,7 +1229,8 @@
           "name": "geography_placeofbirth_urbanrural",
           "range": "string",
           "required": false,
-          "title": "geography_placeofbirth_urbanrural"
+          "title": "geography_placeofbirth_urbanrural",
+          "values": "urban; suburban; rural"
         },
         {
           "annotations": {
@@ -1268,7 +1282,8 @@
           "name": "reproductive_menopause",
           "range": "string",
           "required": false,
-          "title": "reproductive_menopause"
+          "title": "reproductive_menopause",
+          "values": "pre-menopausal; peri-menopausal; post-menopausal; post-menopausal (induced); not applicable"
         },
         {
           "annotations": {
@@ -2186,7 +2201,8 @@
           "name": "side_of_tissue_collected",
           "range": "string",
           "required": false,
-          "title": "side_of_tissue_collected"
+          "title": "side_of_tissue_collected",
+          "values": "left; right; main-axis; unknown"
         },
         {
           "annotations": {
@@ -2199,7 +2215,8 @@
           "name": "sample_storage_method",
           "range": "string",
           "required": false,
-          "title": "sample_storage_method"
+          "title": "sample_storage_method",
+          "values": "ambient temperature; cut slide; fresh; frozen at -70C; frozen at -80C; frozen at -150C; frozen in liquid nitrogen; frozen in vapor phase; paraffin block; RNAlater at 4C; RNAlater at 25C; RNAlater at -20C"
         },
         {
           "annotations": {
@@ -2225,7 +2242,8 @@
           "name": "sample_storage_relative_time_unit",
           "range": "string",
           "required": false,
-          "title": "sample_storage_relative_time_unit"
+          "title": "sample_storage_relative_time_unit",
+          "values": "day; week; month; year"
         },
         {
           "annotations": {
@@ -2251,7 +2269,8 @@
           "name": "sample_dissociation_relative_time_unit",
           "range": "string",
           "required": false,
-          "title": "sample_dissociation_relative_time_unit"
+          "title": "sample_dissociation_relative_time_unit",
+          "values": "day; week; month; year"
         },
         {
           "annotations": {
@@ -2316,7 +2335,8 @@
           "name": "cell_suspension_storage_time_unit",
           "range": "string",
           "required": false,
-          "title": "cell_suspension_storage_time_unit"
+          "title": "cell_suspension_storage_time_unit",
+          "values": "day; week; month; year"
         },
         {
           "annotations": {
