@@ -674,7 +674,7 @@
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Age of donor at the time of sample collection. Specify the age unit (week, month, year) in age_unit.",
@@ -682,12 +682,13 @@
           "multivalued": false,
           "name": "age_value",
           "range": "integer",
+          "rationale": "Age can impact cellular and molecular phenotypes.",
           "required": false,
           "title": "age_value"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Age unit (week, month, year) for the age_value.",
@@ -695,13 +696,14 @@
           "multivalued": false,
           "name": "age_unit",
           "range": "string",
+          "rationale": "Age can impact cellular and molecular phenotypes.",
           "required": false,
           "title": "age_unit",
           "values": "day; week; month; year"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Body mass index of the donor at the time of collection.",
@@ -709,12 +711,13 @@
           "multivalued": false,
           "name": "bmi",
           "range": "integer",
+          "rationale": "May serve as a covariate for analysis of human diversity. If height or weight is not provided but BMI is, fill here.",
           "required": false,
           "title": "bmi"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Height of donor in cm at the time of collection.",
@@ -722,12 +725,13 @@
           "multivalued": false,
           "name": "height",
           "range": "integer",
+          "rationale": "Highly heritable (PMID: 36224396); together with weight can allow for computation of body-mass index, which may serve as a covariate for analyses of human diversity.",
           "required": false,
           "title": "height"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Weight of donor in kilograms at the time of collection.",
@@ -735,12 +739,13 @@
           "multivalued": false,
           "name": "weight",
           "range": "integer",
+          "rationale": "Together with height can allow for computation of body-mass index, which may serve as a covariate for analyses of human diversity.",
           "required": false,
           "title": "weight"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Donor self-reported gender identity.",
@@ -748,12 +753,13 @@
           "multivalued": false,
           "name": "genderidentity_selfreported",
           "range": "string",
+          "rationale": "Gender identity information may be important for studies involving hormonal treatments, etc.",
           "required": false,
           "title": "genderidentity_selfreported"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Donor self-reported ethnicity (or ethnicities) in free-text; can include tribe, dialect group, etc. If race information is submitted under this field, please ensure that the question(s) and response options posed to donors are included in the next metadata category (\"ethnicity_question_text\"). Separate multiple entries with a comma.",
@@ -761,12 +767,13 @@
           "multivalued": false,
           "name": "ethnicity_selfreported_freetext",
           "range": "string",
+          "rationale": "Self-reported ethnicity information can encompass language, religion, tribe, and cultural factors, beyond genetic ancestry.",
           "required": false,
           "title": "ethnicity_selfreported_freetext"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Question and response options posed to donors for collecting metadata on donor self-reported ethnicity and / or tribe and / or dialect group and / or race etc.",
@@ -774,12 +781,13 @@
           "multivalued": false,
           "name": "ethnicity_question_text",
           "range": "string",
+          "rationale": "Provides context on the method for collecting self-reported ethnicity, tribe, dialect group, or race information. Self-reported ethnicity information can encompass language, religion, tribe, and cultural factors, beyond genetic ancestry.",
           "required": false,
           "title": "ethnicity_question_text"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Primary language(s), spoken by donor. Can include dialects (for example, Hokkien).",
@@ -787,12 +795,13 @@
           "multivalued": false,
           "name": "language_donor_primary_language",
           "range": "string",
+          "rationale": "Primary language(s) may contain information relevant to ancestry, as well as a donor's environmental and cultural context.",
           "required": false,
           "title": "language_donor_primary_language"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Country and state of donor's current residence at time of sample collection.",
@@ -800,12 +809,13 @@
           "multivalued": false,
           "name": "geography_currentresidence_location_country_state",
           "range": "string",
+          "rationale": "Geographical diversity of donors, at a coarser level (country and state).",
           "required": false,
           "title": "geography_currentresidence_location_country_state"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Nearest city, town, or village to location of donor's current residence at time of sample collection.",
@@ -813,6 +823,7 @@
           "multivalued": false,
           "name": "geography_currentresidence_location_granular",
           "range": "string",
+          "rationale": "Geographical diversity of donors, at a more granular level (city / town / village).",
           "required": false,
           "title": "geography_currentresidence_location_granular"
         },
@@ -859,7 +870,7 @@
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "List of prescription medication consumed by the donor at time of sample collection. Should be an NCIT ontology term",
@@ -867,13 +878,14 @@
           "multivalued": false,
           "name": "medication",
           "range": "string",
+          "rationale": "Medication consumption may be a covariate / exclusion criterion in analyses of human diversity.",
           "required": false,
           "title": "medication",
           "values": "[NCIT ontology term](https://www.ebi.ac.uk/ols4/ontologies/ncit/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FNCIT_C1908?lang=en)"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Dietary patterns of donor – meat (chicken, seafood, fish, pork, lamb, beef, etc.) consumption versus meat-free diet – at time of sample collection. Fill yes if donor consumes meat or no if donor does not consumes meat.",
@@ -881,6 +893,7 @@
           "multivalued": false,
           "name": "diet_meat_consumption",
           "range": "string",
+          "rationale": "Diet can impact cellular and molecular phenotypes.",
           "required": false,
           "title": "diet_meat_consumption",
           "values": "yes; no"
@@ -1047,7 +1060,7 @@
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "If the donor smokes/smoked or not.",
@@ -1055,6 +1068,7 @@
           "multivalued": false,
           "name": "smoking_status",
           "range": "string",
+          "rationale": "Smoking may impact cellular and molecular phenotypes, and can serve as a covariate for human diversity analyses.",
           "required": false,
           "title": "smoking_status",
           "values": "active; former; never"
@@ -1141,7 +1155,7 @@
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Latitude and longitude GPS coordinates of collection site in decimal degrees.",
@@ -1149,12 +1163,13 @@
           "multivalued": false,
           "name": "geography_collectionsite_latitude_longitude",
           "range": "string",
+          "rationale": "Contains information relevant for geographical diversity of donors; possible proxy for environmental exposures.",
           "required": false,
           "title": "geography_collectionsite_latitude_longitude"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Duration of residence, in years, rounded up to the nearest whole number, at time of sample collection.",
@@ -1162,12 +1177,13 @@
           "multivalued": false,
           "name": "geography_currentresidence_duration",
           "range": "integer",
+          "rationale": "Indication of duration of environmental exposure relating to current residence.",
           "required": false,
           "title": "geography_currentresidence_duration"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Urban, suburban, or rural descriptor of current residence.",
@@ -1175,13 +1191,14 @@
           "multivalued": false,
           "name": "geography_currentresidence_urbanrural",
           "range": "string",
+          "rationale": "Contains information on environmental exposure relating to current residence",
           "required": false,
           "title": "geography_currentresidence_urbanrural",
           "values": "urban; suburban; rural"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Country and state of place of birth.",
@@ -1189,12 +1206,13 @@
           "multivalued": false,
           "name": "geography_placeofbirth_location_country_state",
           "range": "string",
+          "rationale": "Geographical diversity of donors, at a coarser level (country and state).",
           "required": false,
           "title": "geography_placeofbirth_location_country_state"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Nearest city, town, or village to location of place of birth.",
@@ -1202,12 +1220,13 @@
           "multivalued": false,
           "name": "geography_placeofbirth_location_granular",
           "range": "string",
+          "rationale": "Geographical diversity of donors, at a more granular level (city / town / village).",
           "required": false,
           "title": "geography_placeofbirth_location_granular"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Duration of residence, in years, rounded up to the nearest whole number.",
@@ -1215,12 +1234,13 @@
           "multivalued": false,
           "name": "geography_placeofbirth_duration",
           "range": "integer",
+          "rationale": "Indication of duration of environmental exposure relating to place of birth.",
           "required": false,
           "title": "geography_placeofbirth_duration"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Urban, suburban, or rural descriptor of place of birth.",
@@ -1228,13 +1248,14 @@
           "multivalued": false,
           "name": "geography_placeofbirth_urbanrural",
           "range": "string",
+          "rationale": "Contains information on environmental exposure relating to place of birth",
           "required": false,
           "title": "geography_placeofbirth_urbanrural",
           "values": "urban; suburban; rural"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Donor's parents' self-reported ethnicity (or ethnicities) in free-text; can include tribe, dialect group, etc. Separate multiple entries with a comma.",
@@ -1242,12 +1263,13 @@
           "multivalued": false,
           "name": "ethnicity_parents_selfreported_freetext",
           "range": "string",
+          "rationale": "Self-reported ethnicity information can encompass language, religion, tribe, and cultural factors, beyond genetic ancestry.",
           "required": false,
           "title": "ethnicity_parents_selfreported_freetext"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Ancestral language(s), spoken by parents (\"mother tongue\" and / or \"father tongue\") and / or grandparents. Can include dialects (for example, Hokkien).",
@@ -1255,12 +1277,13 @@
           "multivalued": false,
           "name": "language_mother_father_tongue",
           "range": "string",
+          "rationale": "Mother and father tongues may contain information relevant to ancestry.",
           "required": false,
           "title": "language_mother_father_tongue"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Age at menarche, rounded to nearest whole number.",
@@ -1268,12 +1291,13 @@
           "multivalued": false,
           "name": "menarche_age",
           "range": "integer",
+          "rationale": "Age at menarche may be a covariate in analyses of human diversity.",
           "required": false,
           "title": "menarche_age"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Menopausal status of donor at time of sample collection.",
@@ -1281,13 +1305,14 @@
           "multivalued": false,
           "name": "reproductive_menopause",
           "range": "string",
+          "rationale": "Menopausal status may be a covariate in analyses of human diversity.",
           "required": false,
           "title": "reproductive_menopause",
           "values": "pre-menopausal; peri-menopausal; post-menopausal; post-menopausal (induced); not applicable"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Number of children (full-term pregnancies) the donor has given birth to at time of sample collection.",
@@ -1295,18 +1320,20 @@
           "multivalued": false,
           "name": "reproductive_number_children",
           "range": "integer",
+          "rationale": "Number of children (full-term pregnancies) may be a covariate in analyses of human diversity.",
           "required": false,
           "title": "reproductive_number_children"
         },
         {
           "annotations": {
-            "bioNetworks": ["musculoskeletal"],
+            "bioNetworks": ["genetic-diversity", "musculoskeletal"],
             "tier": "Tier 2"
           },
           "description": "Number of pregnancies the donor has had at time of sample collection.",
           "example": "2; 3; 5",
           "multivalued": false,
           "name": "reproductive_number_pregnancies",
+          "rationale": "Number of pregnancies may be a covariate in analyses of human diversity.",
           "range": "integer",
           "required": false,
           "title": "reproductive_number_pregnancies"
