@@ -569,8 +569,9 @@ export const NETWORKS: Network[] = [
         path: ORGANOID_ENDODERM_V1_0,
         publications: [
           {
-            doi: "https://doi.org/10.1101/2023.11.20.567825",
-            label: "Xu et al. (2023) bioRxiv",
+            doi: "https://doi.org/10.1038/s41588-025-02182-6",
+            label:
+              "Xu, Q., Halle, L., Hediyeh-zadeh, S. et al. (2025) Nat Genet",
           },
         ],
         subTitle: "",

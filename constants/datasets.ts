@@ -587,11 +587,11 @@ export const DATASETS = {
       [TODO],
       "An integrated transcriptomic cell atlas of human endoderm-derived organoids",
       {
-        doi: "10.1101/2023.11.20.567825",
+        doi: "10.1038/s41588-025-02182-6",
         officialHcaPublication: null,
         publicationTitle:
           "An integrated transcriptomic cell atlas of human endoderm-derived organoids",
-        publicationUrl: "https://doi.org/10.1101/2023.11.20.567825",
+        publicationUrl: "https://doi.org/10.1038/s41588-025-02182-6",
       }
     ),
     buildDataset(
