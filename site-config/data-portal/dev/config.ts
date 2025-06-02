@@ -12,7 +12,7 @@ import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
 
 const APP_TITLE = "HCA Data Portal";
-const CATALOG = "dcp48";
+const CATALOG = "dcp49";
 export const DATA_URL = "https://service.azul.data.humancellatlas.org";
 const EXPLORER_URL = "https://explore.data.humancellatlas.dev.clevercanary.com";
 export const GIT_HUB_REPO_URL = "https://github.com/DataBiosphere/data-portal";
