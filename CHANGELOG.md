@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.4.6](https://github.com/DataBiosphere/data-portal/compare/v2.4.5...v2.4.6) (2025-06-02)
+
+
+### Chores
+
+* updated catalog and updates for dcp49 [#2763](https://github.com/DataBiosphere/data-portal/issues/2763) ([#2764](https://github.com/DataBiosphere/data-portal/issues/2764)) ([effffc5](https://github.com/DataBiosphere/data-portal/commit/effffc5e3c14e0720a65c318bc6e524bfab3a45e))
+
+
+### Content
+
+* add endodern organoid atlas publication link ([#2758](https://github.com/DataBiosphere/data-portal/issues/2758)) ([#2759](https://github.com/DataBiosphere/data-portal/issues/2759)) ([b0604e1](https://github.com/DataBiosphere/data-portal/commit/b0604e1bd7e09bb7fd6b626f3abad13b43d0a126))
+
 ## [2.4.5](https://github.com/DataBiosphere/data-portal/compare/v2.4.4...v2.4.5) (2025-05-16)
 
 
