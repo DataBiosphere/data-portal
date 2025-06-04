@@ -61,7 +61,7 @@ export const DetailCell = ({
       )}
       {row.original.annotations?.bioNetworks && (
         <Grid>
-          <Typography variant={TEXT_BODY_500}>Bionetworks</Typography>
+          <Typography variant={TEXT_BODY_500}>BioNetworks</Typography>
           <Typography variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}>
             <MarkdownRenderer
               value={(row.original.annotations.bioNetworks as string[]).join(
@@ -71,6 +71,16 @@ export const DetailCell = ({
           </Typography>
         </Grid>
       )}
+      <Grid>
+        <Typography variant={TEXT_BODY_500}>AnnData Location</Typography>
+        <Typography variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}>
+          <MarkdownRenderer
+            value={
+              (row.original.annotations?.annDataLocation as string) || "None"
+            }
+          />
+        </Typography>
+      </Grid>
     </StyledGrid>
   );
 };

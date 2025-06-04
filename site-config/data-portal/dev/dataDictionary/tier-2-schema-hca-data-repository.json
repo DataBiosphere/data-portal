@@ -1,0 +1,236 @@
+{
+  "name": "tier_2_schema_hca_data_repository",
+  "title": "Tier 2 Schema (HCA Data Repository)",
+  "classes": [
+    {
+      "title": "Donor",
+      "description": "",
+      "name": "donor",
+      "attributes": [
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Age of the donor in years.",
+          "multivalued": false,
+          "name": "donor_age",
+          "range": "integer",
+          "required": false,
+          "title": "Donor Age"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Body mass index of the donor.",
+          "multivalued": false,
+          "name": "donor_bmi",
+          "range": "number",
+          "required": false,
+          "title": "Donor BMI"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Height of the donor in centimeters.",
+          "multivalued": false,
+          "name": "donor_height",
+          "range": "number",
+          "required": false,
+          "title": "Donor Height"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Weight of the donor in kilograms.",
+          "multivalued": false,
+          "name": "donor_weight",
+          "range": "number",
+          "required": false,
+          "title": "Donor Weight"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Geographic location where the donor currently resides.",
+          "multivalued": false,
+          "name": "donor_residence_location",
+          "range": "string",
+          "required": false,
+          "title": "Donor Residence Location"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Geographic location where the donor was born.",
+          "multivalued": false,
+          "name": "donor_birth_location",
+          "range": "string",
+          "required": false,
+          "title": "Donor Birth Location"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Any comorbidities or additional medical conditions of the donor.",
+          "multivalued": true,
+          "name": "donor_comorbidities",
+          "range": "string",
+          "required": false,
+          "title": "Donor Comorbidities"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Medications the donor was taking at the time of sample collection.",
+          "multivalued": true,
+          "name": "donor_medications",
+          "range": "string",
+          "required": false,
+          "title": "Donor Medications"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Alcohol consumption status of the donor.",
+          "multivalued": false,
+          "name": "donor_alcohol_status",
+          "range": "string",
+          "required": false,
+          "title": "Donor Alcohol Status"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Smoking status of the donor.",
+          "multivalued": false,
+          "name": "donor_smoking_status",
+          "range": "string",
+          "required": false,
+          "title": "Donor Smoking Status"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Dietary information and habits of the donor.",
+          "multivalued": false,
+          "name": "donor_diet",
+          "range": "string",
+          "required": false,
+          "title": "Donor Diet"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Number of pregnancies the donor has had.",
+          "multivalued": false,
+          "name": "reproductive_number_pregnancies",
+          "range": "integer",
+          "required": false,
+          "title": "Reproductive Number Pregnancies"
+        }
+      ]
+    },
+    {
+      "title": "Sample",
+      "description": "",
+      "name": "sample",
+      "attributes": [
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Detailed protocol used for sample collection.",
+          "multivalued": false,
+          "name": "sample_collection_protocol",
+          "range": "string",
+          "required": false,
+          "title": "Sample Collection Protocol"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Detailed protocol used for sample processing.",
+          "multivalued": false,
+          "name": "sample_processing_protocol",
+          "range": "string",
+          "required": false,
+          "title": "Sample Processing Protocol"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Storage conditions for the sample.",
+          "multivalued": false,
+          "name": "sample_storage_conditions",
+          "range": "string",
+          "required": false,
+          "title": "Sample Storage Conditions"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Transportation details for the sample.",
+          "multivalued": false,
+          "name": "sample_transportation_details",
+          "range": "string",
+          "required": false,
+          "title": "Sample Transportation Details"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Information about the dissociation process for the sample.",
+          "multivalued": false,
+          "name": "sample_dissociation_info",
+          "range": "string",
+          "required": false,
+          "title": "Sample Dissociation Info"
+        },
+        {
+          "annotations": {
+            "bioNetworks": ["musculoskeletal"],
+            "tier": "Tier 2"
+          },
+          "description": "Timeline information for library preparation.",
+          "multivalued": false,
+          "name": "library_preparation_timeline",
+          "range": "string",
+          "required": false,
+          "title": "Library Preparation Timeline"
+        }
+      ]
+    }
+  ]
+}

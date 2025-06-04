@@ -16,13 +16,38 @@ export function buildSourceAttribute(
   attribute: BaseAttribute
 ): Attribute["source"] {
   const { annotations, prefixes } = dataDictionary;
+  const attributeAnnotations = attribute.annotations;
 
-  if (!annotations?.cxg || !prefixes?.cxg || !attribute.annotations?.cxg) {
+  // Guard clause: if dataDictionary's annotations or prefixes are missing or empty, return none.
+  if (
+    !annotations ||
+    !prefixes ||
+    Object.keys(annotations).length === 0 ||
+    Object.keys(prefixes).length === 0
+  ) {
     return { label: LABEL.NONE, url: "" };
   }
 
-  return {
-    label: annotations.cxg,
-    url: `${prefixes.cxg}/#${attribute.annotations.cxg}`,
-  };
+  // Determine the key to use, either cxg or cap.
+  const sourceKey = Object.keys(annotations).find(
+    (key) => key === "cxg" || key === "cap"
+  );
+  if (!sourceKey) {
+    return { label: LABEL.NONE, url: "" };
+  }
+
+  // Check for source
+  if (
+    annotations[sourceKey] &&
+    prefixes[sourceKey] &&
+    attributeAnnotations?.[sourceKey]
+  ) {
+    return {
+      label: annotations[sourceKey],
+      url: `${prefixes[sourceKey]}/#${attributeAnnotations[sourceKey]}`,
+    };
+  }
+
+  // Default if neither CXG nor CAP is found, or if attribute has no relevant annotations
+  return { label: LABEL.NONE, url: "" };
 }
