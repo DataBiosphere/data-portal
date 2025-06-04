@@ -69,7 +69,6 @@ export const NETWORKS: Network[] = [
     coordinators: [
       { fullName: "Alain Chedotal" },
       { fullName: "Muzz Haniffa" },
-      { fullName: "Sten Linnarsson" },
       { fullName: "Deanne Taylor" },
     ],
     datasetQueryOrgans: [
