@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.7](https://github.com/DataBiosphere/data-portal/compare/v2.4.6...v2.4.7) (2025-06-04)
+
+
+### Content
+
+* added tier 2 metadata folder link [#2766](https://github.com/DataBiosphere/data-portal/issues/2766) ([#2769](https://github.com/DataBiosphere/data-portal/issues/2769)) ([addf2cc](https://github.com/DataBiosphere/data-portal/commit/addf2cc5e58d641b88cd1d6bec253eff78a47172))
+
 ## [2.4.6](https://github.com/DataBiosphere/data-portal/compare/v2.4.5...v2.4.6) (2025-06-02)
 
 
