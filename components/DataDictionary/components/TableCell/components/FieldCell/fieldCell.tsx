@@ -13,6 +13,9 @@ export const FieldCell = ({
       <Typography component="div" variant={TEXT_BODY_500}>
         {row.original.title}
       </Typography>
+      <Typography component="div" variant={TEXT_BODY_500}>
+        {row.original.name}
+      </Typography>
       {row.original.required && <Chip {...buildRequired(row.original)} />}
       <div>{buildRange(row.original)}</div>
     </StyledGrid>
