@@ -54,19 +54,19 @@ export function makeConfig(
       {
         columnDefs: COLUMN_DEFS,
         dataDictionary: buildDataDictionary(tier1SchemaAnnData),
-        path: ROUTES.METADATA_TIER_1_SCHEMA_ANN_DATA,
+        path: "tier-1-schema-ann-data",
         tableOptions: TABLE_OPTIONS,
       },
       {
         columnDefs: COLUMN_DEFS,
         dataDictionary: buildDataDictionary(tier2SchemaHcaDataRepository),
-        path: ROUTES.METADATA_TIER_2_SCHEMA_HCA_DATA_REPOSITORY,
+        path: "tier-2-schema-hca-data-repository",
         tableOptions: TABLE_OPTIONS,
       },
       {
         columnDefs: COLUMN_DEFS,
         dataDictionary: buildDataDictionary(cellAnnotationSchemaAnnData),
-        path: ROUTES.METADATA_CELL_ANNOTATION_SCHEMA_ANN_DATA,
+        path: "cell-annotation-schema-ann-data",
         tableOptions: TABLE_OPTIONS,
       },
     ] as unknown as DataDictionaryConfig[],
