@@ -45,7 +45,7 @@ export const COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   },
   {
     accessorFn: (row) => row.annotations?.tier,
-    enableColumnFilter: true,
+    enableColumnFilter: false,
     enableHiding: false,
     filterFn: "arrIncludesSome",
     header: "Tier",
