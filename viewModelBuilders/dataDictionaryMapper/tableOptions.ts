@@ -1,10 +1,12 @@
 import { TableOptions } from "@tanstack/react-table";
 import { Attribute } from "./types";
+import { COLUMN_DEFS } from "./columnDefs";
 
 export const TABLE_OPTIONS: Omit<
   TableOptions<Attribute>,
-  "columns" | "data" | "getCoreRowModel"
+  "data" | "getCoreRowModel"
 > = {
+  columns: COLUMN_DEFS,
   initialState: {
     columnVisibility: {
       bioNetwork: false,

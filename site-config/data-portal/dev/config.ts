@@ -52,19 +52,16 @@ export function makeConfig(
     },
     dataDictionaries: [
       {
-        columnDefs: COLUMN_DEFS,
         dataDictionary: buildDataDictionary(tier1SchemaAnnData),
         path: "tier-1-schema-ann-data",
         tableOptions: TABLE_OPTIONS,
       },
       {
-        columnDefs: COLUMN_DEFS,
         dataDictionary: buildDataDictionary(tier2SchemaHcaDataRepository),
         path: "tier-2-schema-hca-data-repository",
         tableOptions: TABLE_OPTIONS,
       },
       {
-        columnDefs: COLUMN_DEFS,
         dataDictionary: buildDataDictionary(cellAnnotationSchemaAnnData),
         path: "cell-annotation-schema-ann-data",
         tableOptions: TABLE_OPTIONS,
