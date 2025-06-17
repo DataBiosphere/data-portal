@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.8](https://github.com/DataBiosphere/data-portal/compare/v2.4.7...v2.4.8) (2025-06-17)
+
+
+### Chores
+
+* updated catalog and updates for dcp50 [#2771](https://github.com/DataBiosphere/data-portal/issues/2771) ([#2772](https://github.com/DataBiosphere/data-portal/issues/2772)) ([f7d94c4](https://github.com/DataBiosphere/data-portal/commit/f7d94c4efdc6a67d99de2f02c22fd34d3041b010))
+
 ## [2.4.7](https://github.com/DataBiosphere/data-portal/compare/v2.4.6...v2.4.7) (2025-06-04)
 
 
