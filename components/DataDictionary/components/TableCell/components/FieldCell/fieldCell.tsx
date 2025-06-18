@@ -6,19 +6,37 @@ import { StyledGrid } from "./fieldCell.styles";
 import { buildRequired, buildRange } from "./utils";
 import { CodeCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/CodeCell/codeCell";
 import { getPartialCellContext } from "../../utils";
+import { renderRankedCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/RankedCell/utils";
+import { MarkdownCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/MarkdownCell/markdownCell";
 
 export const FieldCell = ({
   row,
+  table,
 }: CellContext<Attribute, unknown>): JSX.Element => {
   return (
     <StyledGrid>
+      {/* TITLE */}
       <Typography component="div" variant={TEXT_BODY_500}>
-        {row.original.title}
+        <MarkdownCell
+          {...getPartialCellContext({
+            values: renderRankedCell(table, row, "title", row.original.title),
+          })}
+        />
       </Typography>
-      <Typography component="div" variant={TEXT_BODY_500}>
-        <CodeCell {...getPartialCellContext(row.original.name)} />
-      </Typography>
+      {/* NAME */}
+      {/* @ts-expect-error -- TODO see https://github.com/DataBiosphere/findable-ui/issues/540 */}
+      <CodeCell
+        {...getPartialCellContext(
+          <MarkdownCell
+            {...getPartialCellContext({
+              values: renderRankedCell(table, row, "name", row.original.name),
+            })}
+          />
+        )}
+      />
+      {/* REQUIRED */}
       {row.original.required && <Chip {...buildRequired(row.original)} />}
+      {/* RANGE */}
       <div>{buildRange(row.original)}</div>
     </StyledGrid>
   );
