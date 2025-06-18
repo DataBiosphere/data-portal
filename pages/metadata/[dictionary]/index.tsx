@@ -18,7 +18,7 @@ interface Props {
 
 export const getStaticProps = async (
   context: GetStaticPropsContext<PageUrlParams>
-): Promise<GetStaticPropsResult<PageUrlParams>> => {
+): Promise<GetStaticPropsResult<Props>> => {
   const { dictionary } = context.params as PageUrlParams;
   return { props: { dictionary } };
 };
