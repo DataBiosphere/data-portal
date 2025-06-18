@@ -25,7 +25,7 @@ export const COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
     enableColumnFilter: false,
     header: "Details",
     id: "details",
-    meta: { width: { max: "1fr", min: "862px" } },
+    meta: { width: "1fr" },
   },
   {
     accessorFn: (row) => (row.required ? "Required" : "Not Required"),
