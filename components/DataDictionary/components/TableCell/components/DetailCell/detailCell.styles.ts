@@ -1,18 +1,24 @@
 import styled from "@emotion/styled";
-import { Grid, Paper, Stack } from "@mui/material";
+import { Button, Paper, Stack, Collapse } from "@mui/material";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { textBody400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 
-export const StyledGrid = styled(Grid)`
+export const StyledCell = styled("div")`
   align-self: flex-start;
-  display: grid;
-  gap: 24px 0;
   justify-items: flex-start;
   padding: 8px 0;
 
   .MuiGrid-root {
     display: grid;
     gap: 4px;
+  }
+`;
+
+export const StyledCollapse = styled(Collapse)`
+  .MuiCollapse-wrapperInner {
+    display: grid;
+    gap: 16px;
+    padding-top: 16px;
   }
 `;
 
@@ -27,4 +33,14 @@ export const StyledPaper = styled(Paper)`
   border: 1px solid ${PALETTE.SMOKE_MAIN};
   font-family: "Roboto Mono", monospace;
   padding: 8px 12px;
+`;
+
+export const StyledButton = styled(Button)`
+  ${textBody400};
+  padding-top: 16px;
+
+  &:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
 `;
