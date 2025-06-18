@@ -27,12 +27,14 @@ export const DetailCell = ({
       <Grid>
         <Typography variant={TEXT_BODY_500}>Description</Typography>
         <MarkdownCell
-          {...getPartialCellContext({ values: renderRankedCell(
+          {...getPartialCellContext({
+            values: renderRankedCell(
               table,
               row,
               "description",
               row.original.description
-            )})}
+            ),
+          })}
         />
       </Grid>
       <StyledCollapse in={isIn}>
@@ -40,55 +42,61 @@ export const DetailCell = ({
           <Grid>
             <Typography variant={TEXT_BODY_500}>Allowed Values</Typography>
             <MarkdownCell
-              {...getPartialCellContext({ values: renderRankedCell(
-                table,
-                row,
-                "values",
-                row.original.values
-              ) })}
+              {...getPartialCellContext({
+                values: renderRankedCell(
+                  table,
+                  row,
+                  "values",
+                  row.original.values
+                ),
+              })}
             />
           </Grid>
         )}
-      {row.original.example && (
+        {row.original.example && (
+          <Grid>
+            <Typography variant={TEXT_BODY_500}>Example</Typography>
+            <StyledStack direction="row">
+              {buildExample(row.original).map((example, i) => (
+                <StyledPaper key={i} elevation={0}>
+                  {example}
+                </StyledPaper>
+              ))}
+            </StyledStack>
+          </Grid>
+        )}
+        {row.original.rationale && (
+          <Grid>
+            <Typography variant={TEXT_BODY_500}>Rationale</Typography>
+            <MarkdownCell
+              {...getPartialCellContext({
+                values: renderRankedCell(
+                  table,
+                  row,
+                  "rationale",
+                  row.original.rationale
+                ),
+              })}
+            />
+          </Grid>
+        )}
         <Grid>
-          <Typography variant={TEXT_BODY_500}>Example</Typography>
-          <StyledStack direction="row">
-            {buildExample(row.original).map((example, i) => (
-              <StyledPaper key={i} elevation={0}>
-                {example}
-              </StyledPaper>
-            ))}
-          </StyledStack>
+          <Typography variant={TEXT_BODY_500}>Source</Typography>
+          <Link {...row.original.source} />
         </Grid>
-      )}
-      {row.original.rationale && (
-        <Grid>
-          <Typography variant={TEXT_BODY_500}>Rationale</Typography>
-          <MarkdownCell
-            {...getPartialCellContext({ values: renderRankedCell(
-                table,
-                row,
-                "rationale",
-                row.original.rationale
-              ) })}
-          />
-        </Grid>
-      )}
-      <Grid>
-        <Typography variant={TEXT_BODY_500}>Source</Typography>
-        <Link {...row.original.source} />
-      </Grid>
-      {row.original.annotations?.tier && (
-        <Grid>
-          <Typography variant={TEXT_BODY_500}>Tier</Typography>
-          <MarkdownCell
-            {...getPartialCellContext({ values: row.original.annotations.tier })}
-          />
-        </Grid>
-      )}
-      {row.original.annotations?.bioNetworks && (
-        <Grid>
-          <Typography variant={TEXT_BODY_500}>BioNetworks</Typography>
+        {row.original.annotations?.tier && (
+          <Grid>
+            <Typography variant={TEXT_BODY_500}>Tier</Typography>
+            <MarkdownCell
+              {...getPartialCellContext({
+                values: row.original.annotations.tier,
+              })}
+            />
+          </Grid>
+        )}
+        {row.original.annotations?.bioNetworks && (
+          <Grid>
+            <Typography variant={TEXT_BODY_500}>BioNetworks</Typography>
             <MarkdownCell
               {...getPartialCellContext({
                 values: (row.original.annotations.bioNetworks as string[]).join(
@@ -107,7 +115,7 @@ export const DetailCell = ({
                 row,
                 "annDataLocation",
                 (row.original.annotations?.annDataLocation as string) || "None"
-              )
+              ),
             })}
           />
         </Grid>

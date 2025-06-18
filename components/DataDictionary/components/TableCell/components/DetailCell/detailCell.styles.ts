@@ -30,7 +30,7 @@ export const StyledStack = styled(Stack)`
 export const StyledPaper = styled(Paper)`
   ${textBody400};
   background-color: ${PALETTE.SMOKE_LIGHT};
-  border: 1px solid ${PALETTE.SMOKE_MAIN};
+  box-shadow: 0 0 0 1px ${PALETTE.SMOKE_MAIN};
   font-family: "Roboto Mono", monospace;
   padding: 8px 12px;
 `;
