@@ -77,10 +77,6 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
         margin: 0,
         paddingLeft: 24,
       },
-      p: {
-        ...theme.typography[TEXT_BODY_400_2_LINES],
-        marginBottom: 8,
-      },
       "p code": {
         backgroundColor: PALETTE.SMOKE_LIGHT,
         fontSize: "inherit",
