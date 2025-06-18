@@ -15,9 +15,11 @@ import { useState } from "react";
 import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
 import { MarkdownCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/MarkdownCell/markdownCell";
 import { getPartialCellContext } from "../../utils";
+import { renderRankedCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/RankedCell/utils";
 
 export const DetailCell = ({
   row,
+  table,
 }: CellContext<Attribute, unknown>): JSX.Element => {
   const [isIn, setIsIn] = useState(false);
   return (
@@ -25,7 +27,12 @@ export const DetailCell = ({
       <Grid>
         <Typography variant={TEXT_BODY_500}>Description</Typography>
         <MarkdownCell
-          {...getPartialCellContext({ values: row.original.description })}
+          {...getPartialCellContext({ values: renderRankedCell(
+              table,
+              row,
+              "description",
+              row.original.description
+            )})}
         />
       </Grid>
       <StyledCollapse in={isIn}>
@@ -33,47 +40,55 @@ export const DetailCell = ({
           <Grid>
             <Typography variant={TEXT_BODY_500}>Allowed Values</Typography>
             <MarkdownCell
-              {...getPartialCellContext({ values: row.original.values })}
+              {...getPartialCellContext({ values: renderRankedCell(
+                table,
+                row,
+                "values",
+                row.original.values
+              ) })}
             />
           </Grid>
         )}
-        {row.original.example && (
-          <Grid>
-            <Typography variant={TEXT_BODY_500}>Example</Typography>
-            <StyledStack direction="row">
-              {buildExample(row.original).map((example, i) => (
-                <StyledPaper key={i} elevation={0}>
-                  {example}
-                </StyledPaper>
-              ))}
-            </StyledStack>
-          </Grid>
-        )}
-        {row.original.rationale && (
-          <Grid>
-            <Typography variant={TEXT_BODY_500}>Rationale</Typography>
-            <MarkdownCell
-              {...getPartialCellContext({ values: row.original.rationale })}
-            />
-          </Grid>
-        )}
+      {row.original.example && (
         <Grid>
-          <Typography variant={TEXT_BODY_500}>Source</Typography>
-          <Link {...row.original.source} />
+          <Typography variant={TEXT_BODY_500}>Example</Typography>
+          <StyledStack direction="row">
+            {buildExample(row.original).map((example, i) => (
+              <StyledPaper key={i} elevation={0}>
+                {example}
+              </StyledPaper>
+            ))}
+          </StyledStack>
         </Grid>
-        {row.original.annotations?.tier && (
-          <Grid>
-            <Typography variant={TEXT_BODY_500}>Tier</Typography>
-            <MarkdownCell
-              {...getPartialCellContext({
-                values: row.original.annotations.tier,
-              })}
-            />
-          </Grid>
-        )}
-        {row.original.annotations?.bioNetworks && (
-          <Grid>
-            <Typography variant={TEXT_BODY_500}>BioNetworks</Typography>
+      )}
+      {row.original.rationale && (
+        <Grid>
+          <Typography variant={TEXT_BODY_500}>Rationale</Typography>
+          <MarkdownCell
+            {...getPartialCellContext({ values: renderRankedCell(
+                table,
+                row,
+                "rationale",
+                row.original.rationale
+              ) })}
+          />
+        </Grid>
+      )}
+      <Grid>
+        <Typography variant={TEXT_BODY_500}>Source</Typography>
+        <Link {...row.original.source} />
+      </Grid>
+      {row.original.annotations?.tier && (
+        <Grid>
+          <Typography variant={TEXT_BODY_500}>Tier</Typography>
+          <MarkdownCell
+            {...getPartialCellContext({ values: row.original.annotations.tier })}
+          />
+        </Grid>
+      )}
+      {row.original.annotations?.bioNetworks && (
+        <Grid>
+          <Typography variant={TEXT_BODY_500}>BioNetworks</Typography>
             <MarkdownCell
               {...getPartialCellContext({
                 values: (row.original.annotations.bioNetworks as string[]).join(
@@ -87,7 +102,12 @@ export const DetailCell = ({
           <Typography variant={TEXT_BODY_500}>AnnData Location</Typography>
           <MarkdownCell
             {...getPartialCellContext({
-              values: row.original.annotations?.annDataLocation || "None",
+              values: renderRankedCell(
+                table,
+                row,
+                "annDataLocation",
+                (row.original.annotations?.annDataLocation as string) || "None"
+              )
             })}
           />
         </Grid>

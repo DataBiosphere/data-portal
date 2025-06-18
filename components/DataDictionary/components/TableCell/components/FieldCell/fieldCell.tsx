@@ -6,17 +6,23 @@ import { StyledGrid } from "./fieldCell.styles";
 import { buildRequired, buildRange } from "./utils";
 import { CodeCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/CodeCell/codeCell";
 import { getPartialCellContext } from "../../utils";
+import { RankedCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/RankedCell/rankedCell";
+import { buildRankedCellContext } from "../utils";
+import { renderRankedCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/RankedCell/utils";
 
 export const FieldCell = ({
   row,
+  table,
 }: CellContext<Attribute, unknown>): JSX.Element => {
   return (
     <StyledGrid>
       <Typography component="div" variant={TEXT_BODY_500}>
-        {row.original.title}
+        <RankedCell
+          {...buildRankedCellContext(table, row, "title", row.original.title)}
+        />
       </Typography>
       <Typography component="div" variant={TEXT_BODY_500}>
-        <CodeCell {...getPartialCellContext(row.original.name)} />
+        <CodeCell {...getPartialCellContext(renderRankedCell(table, row, "name", row.original.name))} />
       </Typography>
       {row.original.required && <Chip {...buildRequired(row.original)} />}
       <div>{buildRange(row.original)}</div>
