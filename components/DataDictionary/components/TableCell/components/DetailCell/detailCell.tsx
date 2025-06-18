@@ -10,11 +10,11 @@ import {
   StyledButton,
 } from "./detailCell.styles";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
-import { MarkdownRenderer } from "@databiosphere/findable-ui/lib/components/MarkdownRenderer/markdownRenderer";
 import { buildExample } from "./utils";
 import { useState } from "react";
 import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
+import { MarkdownCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/MarkdownCell/markdownCell";
+import { getPartialCellContext } from "../../utils";
 
 export const DetailCell = ({
   row,
@@ -24,19 +24,17 @@ export const DetailCell = ({
     <StyledCell>
       <Grid>
         <Typography variant={TEXT_BODY_500}>Description</Typography>
-        <Typography variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}>
-          <MarkdownRenderer value={row.original.description} />
-        </Typography>
+        <MarkdownCell
+          {...getPartialCellContext({ values: row.original.description })}
+        />
       </Grid>
       <StyledCollapse in={isIn}>
         {row.original.values && (
           <Grid>
             <Typography variant={TEXT_BODY_500}>Allowed Values</Typography>
-            <Typography
-              variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}
-            >
-              <MarkdownRenderer value={row.original.values} />
-            </Typography>
+            <MarkdownCell
+              {...getPartialCellContext({ values: row.original.values })}
+            />
           </Grid>
         )}
         {row.original.example && (
@@ -54,11 +52,9 @@ export const DetailCell = ({
         {row.original.rationale && (
           <Grid>
             <Typography variant={TEXT_BODY_500}>Rationale</Typography>
-            <Typography
-              variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}
-            >
-              {row.original.rationale}
-            </Typography>
+            <MarkdownCell
+              {...getPartialCellContext({ values: row.original.rationale })}
+            />
           </Grid>
         )}
         <Grid>
@@ -68,38 +64,32 @@ export const DetailCell = ({
         {row.original.annotations?.tier && (
           <Grid>
             <Typography variant={TEXT_BODY_500}>Tier</Typography>
-            <Typography
-              variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}
-            >
-              <MarkdownRenderer
-                value={row.original.annotations.tier as string}
-              />
-            </Typography>
+            <MarkdownCell
+              {...getPartialCellContext({
+                values: row.original.annotations.tier,
+              })}
+            />
           </Grid>
         )}
         {row.original.annotations?.bioNetworks && (
           <Grid>
             <Typography variant={TEXT_BODY_500}>BioNetworks</Typography>
-            <Typography
-              variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}
-            >
-              <MarkdownRenderer
-                value={(row.original.annotations.bioNetworks as string[]).join(
+            <MarkdownCell
+              {...getPartialCellContext({
+                values: (row.original.annotations.bioNetworks as string[]).join(
                   ", "
-                )}
-              />
-            </Typography>
+                ),
+              })}
+            />
           </Grid>
         )}
         <Grid>
           <Typography variant={TEXT_BODY_500}>AnnData Location</Typography>
-          <Typography variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_400_2_LINES}>
-            <MarkdownRenderer
-              value={
-                (row.original.annotations?.annDataLocation as string) || "None"
-              }
-            />
-          </Typography>
+          <MarkdownCell
+            {...getPartialCellContext({
+              values: row.original.annotations?.annDataLocation || "None",
+            })}
+          />
         </Grid>
       </StyledCollapse>
       <StyledButton
