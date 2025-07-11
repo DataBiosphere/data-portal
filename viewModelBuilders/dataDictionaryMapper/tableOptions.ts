@@ -1,6 +1,6 @@
 import { TableOptions } from "@tanstack/react-table";
 import { Attribute } from "./types";
-import { COLUMN_DEFS } from "./columnDefs";
+import { COLUMN_DEFS, TIER_1_SCHEMA_COLUMN_DEFS } from "./columnDefs";
 
 export const TABLE_OPTIONS: Omit<
   TableOptions<Attribute>,
@@ -10,6 +10,28 @@ export const TABLE_OPTIONS: Omit<
   initialState: {
     columnVisibility: {
       annDataLocation: false,
+      bioNetwork: false,
+      classKey: true,
+      description: false,
+      name: false,
+      rationale: false,
+      required: false,
+      tier: false,
+      title: false,
+      values: false,
+    },
+    expanded: true,
+    grouping: ["classKey"],
+  },
+};
+
+export const TIER_2_SCHEMA_TABLE_OPTIONS: Omit<
+  TableOptions<Attribute>,
+  "data" | "getCoreRowModel"
+> = {
+  columns: TIER_1_SCHEMA_COLUMN_DEFS,
+  initialState: {
+    columnVisibility: {
       bioNetwork: false,
       classKey: true,
       description: false,

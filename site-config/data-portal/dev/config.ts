@@ -16,7 +16,10 @@ import tier2SchemaHcaDataRepository from "./dataDictionary/tier-2-schema-hca-dat
 import { COLUMN_DEFS } from "../../../viewModelBuilders/dataDictionaryMapper/columnDefs";
 import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
 import { DataDictionaryConfig } from "@databiosphere/findable-ui/lib/common/entities";
-import { TABLE_OPTIONS } from "../../../viewModelBuilders/dataDictionaryMapper/tableOptions";
+import {
+  TABLE_OPTIONS,
+  TIER_2_SCHEMA_TABLE_OPTIONS,
+} from "../../../viewModelBuilders/dataDictionaryMapper/tableOptions";
 import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 
 const APP_TITLE = "HCA Data Portal";
@@ -59,7 +62,7 @@ export function makeConfig(
       {
         dataDictionary: buildDataDictionary(tier2SchemaHcaDataRepository),
         path: "tier-2-schema-hca-data-repository",
-        tableOptions: TABLE_OPTIONS,
+        tableOptions: TIER_2_SCHEMA_TABLE_OPTIONS,
       },
       {
         dataDictionary: buildDataDictionary(cellAnnotationSchemaAnnData),
