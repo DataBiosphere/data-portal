@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.5.0](https://github.com/DataBiosphere/data-portal/compare/v2.4.7...v2.5.0) (2025-07-11)
+
+
+### Features
+
+* updated development network coordinators [#2765](https://github.com/DataBiosphere/data-portal/issues/2765) ([#2768](https://github.com/DataBiosphere/data-portal/issues/2768)) ([8e4bcfd](https://github.com/DataBiosphere/data-portal/commit/8e4bcfd91341cee33b60d2ba0f31e1f76ad64a7e))
+
+
+### Chores
+
+* updated catalog and updates for dcp50 [#2771](https://github.com/DataBiosphere/data-portal/issues/2771) ([#2772](https://github.com/DataBiosphere/data-portal/issues/2772)) ([f7d94c4](https://github.com/DataBiosphere/data-portal/commit/f7d94c4efdc6a67d99de2f02c22fd34d3041b010))
+
 ## [2.4.7](https://github.com/DataBiosphere/data-portal/compare/v2.4.6...v2.4.7) (2025-06-04)
 
 
