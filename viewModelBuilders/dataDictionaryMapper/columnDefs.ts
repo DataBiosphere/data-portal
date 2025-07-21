@@ -7,7 +7,7 @@ const ANN_DATA_LOCATION: ColumnDef<Attribute, unknown> = {
   accessorFn: (row) => row.annotations?.annDataLocation,
   enableColumnFilter: true,
   enableGlobalFilter: false,
-  header: "AnnData Location",
+  header: "AnnData",
   id: "annDataLocation",
 };
 
@@ -84,6 +84,16 @@ const REQUIRED: ColumnDef<Attribute, unknown> = {
   id: "required",
 };
 
+const SOURCE: ColumnDef<Attribute, unknown> = {
+  accessorFn: (row) => row.source?.label || "None",
+  enableColumnFilter: true,
+  enableGlobalFilter: false,
+  enableHiding: false,
+  filterFn: "arrIncludesSome",
+  header: "Source",
+  id: "source",
+};
+
 const TIER: ColumnDef<Attribute, unknown> = {
   accessorFn: (row) => row.annotations?.tier,
   enableColumnFilter: false,
@@ -117,8 +127,9 @@ export const COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   REQUIRED,
   BIO_NETWORK,
   TIER,
-  /* GLOBAL FILTERS */
   ANN_DATA_LOCATION,
+  SOURCE,
+  /* GLOBAL FILTERS */
   NAME,
   DESCRIPTION,
   TITLE,
@@ -133,6 +144,7 @@ export const TIER_1_SCHEMA_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   REQUIRED,
   BIO_NETWORK,
   TIER,
+  SOURCE,
   /* GLOBAL FILTERS */
   NAME,
   DESCRIPTION,
