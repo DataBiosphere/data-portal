@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { Button, Paper, Stack, Collapse } from "@mui/material";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { textBody400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
+import { MarkdownCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/MarkdownCell/markdownCell";
 
 export const StyledCell = styled("div")`
   align-self: flex-start;
@@ -12,6 +13,10 @@ export const StyledCell = styled("div")`
     display: grid;
     gap: 4px;
   }
+`;
+
+export const StyledMarkdownCell = styled(MarkdownCell)`
+  min-width: 0;
 `;
 
 export const StyledCollapse = styled(Collapse)`

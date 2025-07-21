@@ -13,9 +13,9 @@ import { Link } from "@databiosphere/findable-ui/lib/components/Links/components
 import { buildExample } from "./utils";
 import { useState } from "react";
 import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
-import { MarkdownCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/MarkdownCell/markdownCell";
 import { getPartialCellContext } from "../../utils";
 import { renderRankedCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/RankedCell/utils";
+import { StyledMarkdownCell } from "./detailCell.styles";
 
 export const DetailCell = ({
   row,
@@ -26,7 +26,7 @@ export const DetailCell = ({
     <StyledCell>
       <Grid>
         <Typography variant={TEXT_BODY_500}>Description</Typography>
-        <MarkdownCell
+        <StyledMarkdownCell
           {...getPartialCellContext({
             values: renderRankedCell(
               table,
@@ -41,7 +41,7 @@ export const DetailCell = ({
         {row.original.values && (
           <Grid>
             <Typography variant={TEXT_BODY_500}>Allowed Values</Typography>
-            <MarkdownCell
+            <StyledMarkdownCell
               {...getPartialCellContext({
                 values: renderRankedCell(
                   table,
@@ -68,7 +68,7 @@ export const DetailCell = ({
         {row.original.rationale && (
           <Grid>
             <Typography variant={TEXT_BODY_500}>Rationale</Typography>
-            <MarkdownCell
+            <StyledMarkdownCell
               {...getPartialCellContext({
                 values: renderRankedCell(
                   table,
@@ -87,7 +87,7 @@ export const DetailCell = ({
         {row.original.annotations?.tier && (
           <Grid>
             <Typography variant={TEXT_BODY_500}>Tier</Typography>
-            <MarkdownCell
+            <StyledMarkdownCell
               {...getPartialCellContext({
                 values: row.original.annotations.tier,
               })}
@@ -97,7 +97,7 @@ export const DetailCell = ({
         {row.original.annotations?.bioNetworks && (
           <Grid>
             <Typography variant={TEXT_BODY_500}>BioNetworks</Typography>
-            <MarkdownCell
+            <StyledMarkdownCell
               {...getPartialCellContext({
                 values: (row.original.annotations.bioNetworks as string[]).join(
                   ", "
@@ -108,7 +108,7 @@ export const DetailCell = ({
         )}
         <Grid>
           <Typography variant={TEXT_BODY_500}>AnnData Location</Typography>
-          <MarkdownCell
+          <StyledMarkdownCell
             {...getPartialCellContext({
               values: renderRankedCell(
                 table,
