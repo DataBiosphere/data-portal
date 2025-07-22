@@ -1,18 +1,15 @@
 import { CellContext } from "@tanstack/react-table";
 import { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
-import { Grid, Typography } from "@mui/material";
-import { TEXT_BODY_500 } from "@databiosphere/findable-ui/lib/theme/common/typography";
+import { Collapse, Typography } from "@mui/material";
+import { TYPOGRAPHY_PROPS } from "./constants";
 import {
   StyledPaper,
   StyledCell,
   StyledStack,
   StyledCollapse,
-  StyledButton,
 } from "./detailCell.styles";
-import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { LinkCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/LinkCell/linkCell";
 import { buildExample } from "./utils";
-import { useState } from "react";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
 import { getPartialCellContext } from "../../utils";
 import { renderRankedCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/RankedCell/utils";
 import { StyledMarkdownCell } from "./detailCell.styles";
@@ -21,26 +18,27 @@ export const DetailCell = ({
   row,
   table,
 }: CellContext<Attribute, unknown>): JSX.Element => {
-  const [isIn, setIsIn] = useState(false);
+  const { getIsExpanded } = row;
+  const isExpanded = getIsExpanded();
   return (
     <StyledCell>
-      <Grid>
-        <Typography variant={TEXT_BODY_500}>Description</Typography>
-        <StyledMarkdownCell
-          {...getPartialCellContext({
-            values: renderRankedCell(
-              table,
-              row,
-              "description",
-              row.original.description
-            ),
-          })}
-        />
-      </Grid>
-      <StyledCollapse in={isIn}>
+      <Collapse in={isExpanded}>
+        <Typography {...TYPOGRAPHY_PROPS}>Description</Typography>
+      </Collapse>
+      <StyledMarkdownCell
+        {...getPartialCellContext({
+          values: renderRankedCell(
+            table,
+            row,
+            "description",
+            row.original.description
+          ),
+        })}
+      />
+      <StyledCollapse in={isExpanded}>
         {row.original.values && (
-          <Grid>
-            <Typography variant={TEXT_BODY_500}>Allowed Values</Typography>
+          <div>
+            <Typography {...TYPOGRAPHY_PROPS}>Allowed Values</Typography>
             <StyledMarkdownCell
               {...getPartialCellContext({
                 values: renderRankedCell(
@@ -51,11 +49,11 @@ export const DetailCell = ({
                 ),
               })}
             />
-          </Grid>
+          </div>
         )}
         {row.original.example && (
-          <Grid>
-            <Typography variant={TEXT_BODY_500}>Example</Typography>
+          <div>
+            <Typography {...TYPOGRAPHY_PROPS}>Example</Typography>
             <StyledStack direction="row">
               {buildExample(row.original).map((example, i) => (
                 <StyledPaper key={i} elevation={0}>
@@ -63,11 +61,11 @@ export const DetailCell = ({
                 </StyledPaper>
               ))}
             </StyledStack>
-          </Grid>
+          </div>
         )}
         {row.original.rationale && (
-          <Grid>
-            <Typography variant={TEXT_BODY_500}>Rationale</Typography>
+          <div>
+            <Typography {...TYPOGRAPHY_PROPS}>Rationale</Typography>
             <StyledMarkdownCell
               {...getPartialCellContext({
                 values: renderRankedCell(
@@ -78,25 +76,25 @@ export const DetailCell = ({
                 ),
               })}
             />
-          </Grid>
+          </div>
         )}
-        <Grid>
-          <Typography variant={TEXT_BODY_500}>Source</Typography>
-          <Link {...row.original.source} />
-        </Grid>
+        <div>
+          <Typography {...TYPOGRAPHY_PROPS}>Source</Typography>
+          <LinkCell {...getPartialCellContext(row.original.source)} />
+        </div>
         {row.original.annotations?.tier && (
-          <Grid>
-            <Typography variant={TEXT_BODY_500}>Tier</Typography>
+          <div>
+            <Typography {...TYPOGRAPHY_PROPS}>Tier</Typography>
             <StyledMarkdownCell
               {...getPartialCellContext({
                 values: row.original.annotations.tier,
               })}
             />
-          </Grid>
+          </div>
         )}
         {row.original.annotations?.bioNetworks && (
-          <Grid>
-            <Typography variant={TEXT_BODY_500}>BioNetworks</Typography>
+          <div>
+            <Typography {...TYPOGRAPHY_PROPS}>BioNetworks</Typography>
             <StyledMarkdownCell
               {...getPartialCellContext({
                 values: (row.original.annotations.bioNetworks as string[]).join(
@@ -104,10 +102,10 @@ export const DetailCell = ({
                 ),
               })}
             />
-          </Grid>
+          </div>
         )}
-        <Grid>
-          <Typography variant={TEXT_BODY_500}>AnnData Location</Typography>
+        <div>
+          <Typography {...TYPOGRAPHY_PROPS}>AnnData Location</Typography>
           <StyledMarkdownCell
             {...getPartialCellContext({
               values: renderRankedCell(
@@ -118,14 +116,8 @@ export const DetailCell = ({
               ),
             })}
           />
-        </Grid>
+        </div>
       </StyledCollapse>
-      <StyledButton
-        onClick={() => setIsIn((i) => !i)}
-        variant={BUTTON_PROPS.VARIANT.TEXT}
-      >
-        {isIn ? "Show less" : "Show more"}
-      </StyledButton>
     </StyledCell>
   );
 };

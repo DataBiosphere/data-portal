@@ -21,7 +21,6 @@ export const TABLE_OPTIONS: Omit<
       title: false,
       values: false,
     },
-    expanded: true,
     grouping: ["classKey"],
   },
 };
@@ -44,7 +43,6 @@ export const TIER_2_SCHEMA_TABLE_OPTIONS: Omit<
       title: false,
       values: false,
     },
-    expanded: true,
     grouping: ["classKey"],
   },
 };
