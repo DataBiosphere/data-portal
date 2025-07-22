@@ -57,10 +57,8 @@ const FIELD: ColumnDef<Attribute, unknown> = {
   header: "Field",
   id: "field",
   meta: {
-    width: {
-      min: "min(32%, 352px)", // TODO: update GridTrackSize to handle css functions min(), max().
-      max: "min(31%, 496px)",
-    } as unknown as GridTrackSize,
+    width:
+      "round(up, clamp(min(31.26%, 352px), 31.26%, 496px), 1px)" as GridTrackSize,
   },
 };
 
