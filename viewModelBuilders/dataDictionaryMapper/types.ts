@@ -1,5 +1,5 @@
 import { Attribute as BaseAttribute } from "@databiosphere/findable-ui/lib/common/entities";
-import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { LinkProps } from "@mui/material";
 
 export interface Attribute extends BaseAttribute {
   source: LinkProps;

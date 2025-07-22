@@ -25,7 +25,7 @@ export function buildSourceAttribute(
     Object.keys(annotations).length === 0 ||
     Object.keys(prefixes).length === 0
   ) {
-    return { label: LABEL.NONE, url: "" };
+    return { children: LABEL.NONE, href: "" };
   }
 
   // Determine the key to use, either cxg or cap.
@@ -33,7 +33,7 @@ export function buildSourceAttribute(
     (key) => key === "cxg" || key === "cap"
   );
   if (!sourceKey) {
-    return { label: LABEL.NONE, url: "" };
+    return { children: LABEL.NONE, href: "" };
   }
 
   // Check for source
@@ -43,11 +43,11 @@ export function buildSourceAttribute(
     attributeAnnotations?.[sourceKey]
   ) {
     return {
-      label: annotations[sourceKey],
-      url: `${prefixes[sourceKey]}/#${attributeAnnotations[sourceKey]}`,
+      children: annotations[sourceKey],
+      href: `${prefixes[sourceKey]}/#${attributeAnnotations[sourceKey]}`,
     };
   }
 
   // Default if neither CXG nor CAP is found, or if attribute has no relevant annotations
-  return { label: LABEL.NONE, url: "" };
+  return { children: LABEL.NONE, href: "" };
 }
