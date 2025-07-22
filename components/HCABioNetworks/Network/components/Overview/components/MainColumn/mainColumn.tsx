@@ -17,7 +17,10 @@ import {
   getAtlasesTableColumns,
   rollUpAtlases,
 } from "../../../../../../../viewModelBuilders/viewModelBuilders";
-import { Table, Toolbar } from "../../../../../../common/Table/table.styles";
+import {
+  Table,
+  StyledToolbar,
+} from "../../../../../../common/Table/table.styles";
 import { SectionText } from "../../../../../components/Section/section.styles";
 import { NetworkAtlasesEmpty } from "./components/NetworkAtlasesEmpty/networkAtlasesEmpty";
 import { TABLE_OPTIONS } from "./constants";
@@ -43,9 +46,9 @@ export const MainColumn = (): JSX.Element => {
       {atlases.length > 0 ? (
         <FluidPaper>
           <GridPaper>
-            <Toolbar variant="table">
+            <StyledToolbar>
               <Typography variant={TEXT_BODY_LARGE_500}>Atlases</Typography>
-            </Toolbar>
+            </StyledToolbar>
             <Table
               columns={getAtlasesTableColumns(networkPath)}
               gridTemplateColumns="minmax(256px, 1fr) repeat(3, minmax(124px, 1fr)) max-content"

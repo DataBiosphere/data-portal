@@ -71,7 +71,6 @@ export function makeConfig(
       },
     ] as unknown as DataDictionaryConfig[],
     entities: [],
-    explorerTitle: "",
     gitHubUrl,
     layout: {
       floating,
