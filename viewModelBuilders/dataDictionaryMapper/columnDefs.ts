@@ -2,6 +2,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Attribute } from "./types";
 import { FieldCell } from "../../components/DataDictionary/components/TableCell/components/FieldCell/fieldCell";
 import { DetailCell } from "../../components/DataDictionary/components/TableCell/components/DetailCell/detailCell";
+import { GridTrackSize } from "@databiosphere/findable-ui/lib/config/entities";
 
 const ANN_DATA_LOCATION: ColumnDef<Attribute, unknown> = {
   accessorFn: (row) => row.annotations?.annDataLocation,
@@ -45,7 +46,7 @@ const DETAILS: ColumnDef<Attribute, unknown> = {
   enableGlobalFilter: false,
   header: "Description",
   id: "details",
-  meta: { width: "1fr" },
+  meta: { width: { min: "396px", max: "1fr" } },
 };
 
 const FIELD: ColumnDef<Attribute, unknown> = {
@@ -55,7 +56,10 @@ const FIELD: ColumnDef<Attribute, unknown> = {
   enableGlobalFilter: false,
   header: "Field",
   id: "field",
-  meta: { width: { max: "264px", min: "264px" } },
+  meta: {
+    width:
+      "round(up, clamp(min(31.26%, 352px), 31.26%, 496px), 1px)" as GridTrackSize,
+  },
 };
 
 const NAME: ColumnDef<Attribute, unknown> = {
