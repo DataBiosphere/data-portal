@@ -43,7 +43,7 @@ const DETAILS: ColumnDef<Attribute, unknown> = {
   cell: DetailCell,
   enableColumnFilter: false,
   enableGlobalFilter: false,
-  header: "Details",
+  header: "Description",
   id: "details",
   meta: { width: "1fr" },
 };
@@ -85,7 +85,7 @@ const REQUIRED: ColumnDef<Attribute, unknown> = {
 };
 
 const SOURCE: ColumnDef<Attribute, unknown> = {
-  accessorFn: (row) => row.source?.label || "None",
+  accessorFn: (row) => row.source?.children || "None",
   enableColumnFilter: true,
   enableGlobalFilter: false,
   enableHiding: false,
