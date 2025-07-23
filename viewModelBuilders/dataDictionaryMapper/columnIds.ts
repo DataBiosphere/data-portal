@@ -1,0 +1,15 @@
+export const COLUMN_IDENTIFIERS = {
+  ANN_DATA_LOCATION: "annDataLocation",
+  BIO_NETWORK: "bioNetwork",
+  CLASS_KEY: "classKey",
+  DESCRIPTION: "description",
+  DETAILS: "details",
+  FIELD: "field",
+  NAME: "name",
+  RATIONALE: "rationale",
+  REQUIRED: "required",
+  SOURCE: "source",
+  TIER: "tier",
+  TITLE: "title",
+  VALUES: "values",
+};
