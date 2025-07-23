@@ -4,11 +4,11 @@ import { Chip, Grid, Typography } from "@mui/material";
 import { StyledGrid } from "./fieldCell.styles";
 import { buildRequired, buildRange } from "./utils";
 import { CodeCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/CodeCell/codeCell";
-import { getPartialCellContext } from "../../utils";
-import { renderRankedCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/RankedCell/utils";
 import { MarkdownCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/MarkdownCell/markdownCell";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { GRID_PROPS } from "./constants";
+import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
+import { getPartialCellContext } from "../../utils";
 
 export const FieldCell = ({
   row,
@@ -22,9 +22,10 @@ export const FieldCell = ({
         variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_500}
       >
         <MarkdownCell
-          {...getPartialCellContext({
-            values: renderRankedCell(table, row, "title", row.original.title),
-          })}
+          column={{ id: COLUMN_IDENTIFIERS.TITLE }}
+          getValue={() => row.original.title}
+          row={row}
+          table={table}
         />
       </Typography>
       <Grid {...GRID_PROPS}>
@@ -32,9 +33,10 @@ export const FieldCell = ({
         <CodeCell
           {...getPartialCellContext(
             <MarkdownCell
-              {...getPartialCellContext({
-                values: renderRankedCell(table, row, "name", row.original.name),
-              })}
+              column={{ id: COLUMN_IDENTIFIERS.NAME }}
+              getValue={() => row.original.name}
+              row={row}
+              table={table}
             />
           )}
         />
