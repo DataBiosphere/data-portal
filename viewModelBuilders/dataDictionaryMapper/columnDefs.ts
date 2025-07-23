@@ -3,13 +3,14 @@ import { Attribute } from "./types";
 import { FieldCell } from "../../components/DataDictionary/components/TableCell/components/FieldCell/fieldCell";
 import { DetailCell } from "../../components/DataDictionary/components/TableCell/components/DetailCell/detailCell";
 import { GridTrackSize } from "@databiosphere/findable-ui/lib/config/entities";
+import { COLUMN_IDENTIFIERS } from "./columnIds";
 
 const ANN_DATA_LOCATION: ColumnDef<Attribute, unknown> = {
   accessorFn: (row) => row.annotations?.annDataLocation,
   enableColumnFilter: true,
   enableGlobalFilter: false,
   header: "AnnData",
-  id: "annDataLocation",
+  id: COLUMN_IDENTIFIERS.ANN_DATA_LOCATION,
 };
 
 const BIO_NETWORK: ColumnDef<Attribute, unknown> = {
@@ -19,7 +20,7 @@ const BIO_NETWORK: ColumnDef<Attribute, unknown> = {
   enableHiding: false,
   filterFn: "arrIncludesSome",
   header: "BioNetwork",
-  id: "bioNetwork",
+  id: COLUMN_IDENTIFIERS.BIO_NETWORK,
 };
 
 const CLASS_KEY: ColumnDef<Attribute, unknown> = {
@@ -28,7 +29,7 @@ const CLASS_KEY: ColumnDef<Attribute, unknown> = {
   enableColumnFilter: false,
   enableGlobalFilter: false,
   enableGrouping: true,
-  id: "classKey",
+  id: COLUMN_IDENTIFIERS.CLASS_KEY,
 };
 
 const DESCRIPTION: ColumnDef<Attribute, unknown> = {
@@ -36,7 +37,7 @@ const DESCRIPTION: ColumnDef<Attribute, unknown> = {
   enableColumnFilter: false,
   enableGlobalFilter: true,
   header: "Description",
-  id: "description",
+  id: COLUMN_IDENTIFIERS.DESCRIPTION,
 };
 
 const DETAILS: ColumnDef<Attribute, unknown> = {
@@ -45,7 +46,7 @@ const DETAILS: ColumnDef<Attribute, unknown> = {
   enableColumnFilter: false,
   enableGlobalFilter: false,
   header: "Description",
-  id: "details",
+  id: COLUMN_IDENTIFIERS.DETAILS,
   meta: { width: { min: "396px", max: "1fr" } },
 };
 
@@ -55,7 +56,7 @@ const FIELD: ColumnDef<Attribute, unknown> = {
   enableColumnFilter: false,
   enableGlobalFilter: false,
   header: "Field",
-  id: "field",
+  id: COLUMN_IDENTIFIERS.FIELD,
   meta: {
     width:
       "round(up, clamp(min(31.26%, 352px), 31.26%, 496px), 1px)" as GridTrackSize,
@@ -67,7 +68,7 @@ const NAME: ColumnDef<Attribute, unknown> = {
   enableColumnFilter: false,
   enableGlobalFilter: true,
   header: "Name",
-  id: "name",
+  id: COLUMN_IDENTIFIERS.NAME,
 };
 
 const RATIONALE: ColumnDef<Attribute, unknown> = {
@@ -75,7 +76,7 @@ const RATIONALE: ColumnDef<Attribute, unknown> = {
   enableColumnFilter: false,
   enableGlobalFilter: true,
   header: "Rationale",
-  id: "rationale",
+  id: COLUMN_IDENTIFIERS.RATIONALE,
 };
 
 const REQUIRED: ColumnDef<Attribute, unknown> = {
@@ -85,7 +86,7 @@ const REQUIRED: ColumnDef<Attribute, unknown> = {
   enableHiding: false,
   filterFn: "arrIncludesSome",
   header: "Required",
-  id: "required",
+  id: COLUMN_IDENTIFIERS.REQUIRED,
 };
 
 const SOURCE: ColumnDef<Attribute, unknown> = {
@@ -95,7 +96,7 @@ const SOURCE: ColumnDef<Attribute, unknown> = {
   enableHiding: false,
   filterFn: "arrIncludesSome",
   header: "Source",
-  id: "source",
+  id: COLUMN_IDENTIFIERS.SOURCE,
 };
 
 const TIER: ColumnDef<Attribute, unknown> = {
@@ -105,7 +106,7 @@ const TIER: ColumnDef<Attribute, unknown> = {
   enableHiding: false,
   filterFn: "arrIncludesSome",
   header: "Tier",
-  id: "tier",
+  id: COLUMN_IDENTIFIERS.TIER,
 };
 
 const TITLE: ColumnDef<Attribute, unknown> = {
@@ -113,7 +114,7 @@ const TITLE: ColumnDef<Attribute, unknown> = {
   enableColumnFilter: false,
   enableGlobalFilter: true,
   header: "Title",
-  id: "title",
+  id: COLUMN_IDENTIFIERS.TITLE,
 };
 
 const VALUES: ColumnDef<Attribute, unknown> = {
@@ -121,7 +122,7 @@ const VALUES: ColumnDef<Attribute, unknown> = {
   header: "Allowed Values",
   enableColumnFilter: false,
   enableGlobalFilter: true,
-  id: "values",
+  id: COLUMN_IDENTIFIERS.VALUES,
 };
 
 export const COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [

@@ -11,8 +11,8 @@ import {
 import { LinkCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/LinkCell/linkCell";
 import { buildExample } from "./utils";
 import { getPartialCellContext } from "../../utils";
-import { renderRankedCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/RankedCell/utils";
 import { StyledMarkdownCell } from "./detailCell.styles";
+import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
 
 export const DetailCell = ({
   row,
@@ -26,28 +26,20 @@ export const DetailCell = ({
         <Typography {...TYPOGRAPHY_PROPS}>Description</Typography>
       </Collapse>
       <StyledMarkdownCell
-        {...getPartialCellContext({
-          values: renderRankedCell(
-            table,
-            row,
-            "description",
-            row.original.description
-          ),
-        })}
+        column={{ id: COLUMN_IDENTIFIERS.DESCRIPTION }}
+        getValue={() => row.original.description}
+        row={row}
+        table={table}
       />
       <StyledCollapse in={isExpanded}>
         {row.original.values && (
           <div>
             <Typography {...TYPOGRAPHY_PROPS}>Allowed Values</Typography>
             <StyledMarkdownCell
-              {...getPartialCellContext({
-                values: renderRankedCell(
-                  table,
-                  row,
-                  "values",
-                  row.original.values
-                ),
-              })}
+              column={{ id: COLUMN_IDENTIFIERS.VALUES }}
+              getValue={() => row.original.values}
+              row={row}
+              table={table}
             />
           </div>
         )}
@@ -67,14 +59,10 @@ export const DetailCell = ({
           <div>
             <Typography {...TYPOGRAPHY_PROPS}>Rationale</Typography>
             <StyledMarkdownCell
-              {...getPartialCellContext({
-                values: renderRankedCell(
-                  table,
-                  row,
-                  "rationale",
-                  row.original.rationale
-                ),
-              })}
+              column={{ id: COLUMN_IDENTIFIERS.RATIONALE }}
+              getValue={() => row.original.rationale}
+              row={row}
+              table={table}
             />
           </div>
         )}
@@ -86,9 +74,10 @@ export const DetailCell = ({
           <div>
             <Typography {...TYPOGRAPHY_PROPS}>Tier</Typography>
             <StyledMarkdownCell
-              {...getPartialCellContext({
-                values: row.original.annotations.tier,
-              })}
+              column={{ id: COLUMN_IDENTIFIERS.TIER }}
+              getValue={() => row.original.annotations?.tier}
+              row={row}
+              table={table}
             />
           </div>
         )}
@@ -96,25 +85,24 @@ export const DetailCell = ({
           <div>
             <Typography {...TYPOGRAPHY_PROPS}>BioNetworks</Typography>
             <StyledMarkdownCell
-              {...getPartialCellContext({
-                values: (row.original.annotations.bioNetworks as string[]).join(
-                  ", "
-                ),
-              })}
+              column={{ id: COLUMN_IDENTIFIERS.BIO_NETWORK }}
+              getValue={() =>
+                (row.original.annotations?.bioNetworks as string[]).join(", ")
+              }
+              row={row}
+              table={table}
             />
           </div>
         )}
         <div>
           <Typography {...TYPOGRAPHY_PROPS}>AnnData Location</Typography>
           <StyledMarkdownCell
-            {...getPartialCellContext({
-              values: renderRankedCell(
-                table,
-                row,
-                "annDataLocation",
-                (row.original.annotations?.annDataLocation as string) || "None"
-              ),
-            })}
+            column={{ id: COLUMN_IDENTIFIERS.ANN_DATA_LOCATION }}
+            getValue={() =>
+              (row.original.annotations?.annDataLocation as string) || "None"
+            }
+            row={row}
+            table={table}
           />
         </div>
       </StyledCollapse>
