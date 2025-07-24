@@ -44,8 +44,8 @@ export const FieldCell = ({
           {...getPartialCellContext(
             <MarkdownCell
               {...getPartialCellContext(
-                row.original.name,
-                COLUMN_IDENTIFIERS.NAME
+                row.original.locationName,
+                COLUMN_IDENTIFIERS.LOCATION_NAME
               )}
               row={row}
               table={table}

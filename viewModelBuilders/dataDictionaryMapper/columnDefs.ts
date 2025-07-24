@@ -63,6 +63,14 @@ const FIELD: ColumnDef<Attribute, unknown> = {
   },
 };
 
+const LOCATION_NAME: ColumnDef<Attribute, unknown> = {
+  accessorKey: "locationName",
+  enableColumnFilter: false,
+  enableGlobalFilter: true,
+  header: "Location Name",
+  id: COLUMN_IDENTIFIERS.LOCATION_NAME,
+};
+
 const NAME: ColumnDef<Attribute, unknown> = {
   accessorKey: "name",
   enableColumnFilter: false,
@@ -125,7 +133,10 @@ const VALUES: ColumnDef<Attribute, unknown> = {
   id: COLUMN_IDENTIFIERS.VALUES,
 };
 
-export const COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
+export const CELL_ANNOTATION_SCHEMA_COLUMN_DEFS: ColumnDef<
+  Attribute,
+  unknown
+>[] = [
   CLASS_KEY,
   FIELD,
   DETAILS,
@@ -135,7 +146,7 @@ export const COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   ANN_DATA_LOCATION,
   SOURCE,
   /* GLOBAL FILTERS */
-  NAME,
+  LOCATION_NAME,
   DESCRIPTION,
   TITLE,
   RATIONALE,
@@ -143,6 +154,23 @@ export const COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
 ];
 
 export const TIER_1_SCHEMA_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
+  CLASS_KEY,
+  FIELD,
+  DETAILS,
+  REQUIRED,
+  BIO_NETWORK,
+  TIER,
+  ANN_DATA_LOCATION,
+  SOURCE,
+  /* GLOBAL FILTERS */
+  LOCATION_NAME,
+  DESCRIPTION,
+  TITLE,
+  RATIONALE,
+  VALUES,
+];
+
+export const TIER_2_SCHEMA_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   CLASS_KEY,
   FIELD,
   DETAILS,

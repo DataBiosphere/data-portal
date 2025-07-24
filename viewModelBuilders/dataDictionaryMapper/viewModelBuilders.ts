@@ -6,6 +6,29 @@ import {
 import { LABEL } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
 
 /**
+ * Returns the displayable name `location.name` for a given attribute.
+ * @param attribute - The attribute.
+ * @returns The displayable name.
+ */
+export function buildLocationName(attribute: BaseAttribute): string {
+  const { annotations } = attribute;
+  const { annDataLocation } = annotations || {};
+
+  // Return attribute name if no annDataLocation is found.
+  if (!annDataLocation) return attribute.name;
+
+  // Special case for X and raw.X or X if no normalized_expression_matrix.
+  if (
+    annDataLocation === "X" ||
+    annDataLocation === "raw.X or X if no normalized_expression_matrix"
+  ) {
+    return attribute.name;
+  }
+
+  return `${annDataLocation ? `${annDataLocation}.` : ""}${attribute.name}`;
+}
+
+/**
  * Returns the source attribute for a given attribute.
  * @param dataDictionary - The data dictionary.
  * @param attribute - The attribute.
