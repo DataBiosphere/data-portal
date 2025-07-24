@@ -13,11 +13,11 @@ import { themeOptions } from "./themeOptions";
 import cellAnnotationSchemaAnnData from "./dataDictionary/cell-annotation-schema-ann-data.json";
 import tier1SchemaAnnData from "./dataDictionary/tier-1-schema-ann-data.json";
 import tier2SchemaHcaDataRepository from "./dataDictionary/tier-2-schema-hca-data-repository.json";
-import { COLUMN_DEFS } from "../../../viewModelBuilders/dataDictionaryMapper/columnDefs";
 import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
 import { DataDictionaryConfig } from "@databiosphere/findable-ui/lib/common/entities";
 import {
-  TABLE_OPTIONS,
+  CELL_ANNOTATION_SCHEMA_TABLE_OPTIONS,
+  TIER_1_SCHEMA_TABLE_OPTIONS,
   TIER_2_SCHEMA_TABLE_OPTIONS,
 } from "../../../viewModelBuilders/dataDictionaryMapper/tableOptions";
 import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
@@ -57,7 +57,7 @@ export function makeConfig(
       {
         dataDictionary: buildDataDictionary(tier1SchemaAnnData),
         path: "tier-1-schema-ann-data",
-        tableOptions: TABLE_OPTIONS,
+        tableOptions: TIER_1_SCHEMA_TABLE_OPTIONS,
       },
       {
         dataDictionary: buildDataDictionary(tier2SchemaHcaDataRepository),
@@ -67,7 +67,7 @@ export function makeConfig(
       {
         dataDictionary: buildDataDictionary(cellAnnotationSchemaAnnData),
         path: "cell-annotation-schema-ann-data",
-        tableOptions: TABLE_OPTIONS,
+        tableOptions: CELL_ANNOTATION_SCHEMA_TABLE_OPTIONS,
       },
     ] as unknown as DataDictionaryConfig[],
     entities: [],

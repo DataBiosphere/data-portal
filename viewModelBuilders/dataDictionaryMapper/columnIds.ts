@@ -5,6 +5,7 @@ export const COLUMN_IDENTIFIERS = {
   DESCRIPTION: "description",
   DETAILS: "details",
   FIELD: "field",
+  LOCATION_NAME: "locationName",
   NAME: "name",
   RATIONALE: "rationale",
   REQUIRED: "required",

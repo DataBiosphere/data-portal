@@ -6,10 +6,11 @@ import { GridTrackSize } from "@databiosphere/findable-ui/lib/config/entities";
 import { COLUMN_IDENTIFIERS } from "./columnIds";
 
 const ANN_DATA_LOCATION: ColumnDef<Attribute, unknown> = {
-  accessorFn: (row) => row.annotations?.annDataLocation,
+  accessorKey: "annotations.annDataLocation",
   enableColumnFilter: true,
   enableGlobalFilter: false,
   header: "AnnData",
+  filterFn: "arrIncludesSome",
   id: COLUMN_IDENTIFIERS.ANN_DATA_LOCATION,
 };
 
@@ -61,6 +62,14 @@ const FIELD: ColumnDef<Attribute, unknown> = {
     width:
       "round(up, clamp(min(31.26%, 352px), 31.26%, 496px), 1px)" as GridTrackSize,
   },
+};
+
+const LOCATION_NAME: ColumnDef<Attribute, unknown> = {
+  accessorKey: "locationName",
+  enableColumnFilter: false,
+  enableGlobalFilter: true,
+  header: "Location Name",
+  id: COLUMN_IDENTIFIERS.LOCATION_NAME,
 };
 
 const NAME: ColumnDef<Attribute, unknown> = {
@@ -125,7 +134,10 @@ const VALUES: ColumnDef<Attribute, unknown> = {
   id: COLUMN_IDENTIFIERS.VALUES,
 };
 
-export const COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
+export const CELL_ANNOTATION_SCHEMA_COLUMN_DEFS: ColumnDef<
+  Attribute,
+  unknown
+>[] = [
   CLASS_KEY,
   FIELD,
   DETAILS,
@@ -135,7 +147,7 @@ export const COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   ANN_DATA_LOCATION,
   SOURCE,
   /* GLOBAL FILTERS */
-  NAME,
+  LOCATION_NAME,
   DESCRIPTION,
   TITLE,
   RATIONALE,
@@ -143,6 +155,23 @@ export const COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
 ];
 
 export const TIER_1_SCHEMA_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
+  CLASS_KEY,
+  FIELD,
+  DETAILS,
+  REQUIRED,
+  BIO_NETWORK,
+  TIER,
+  ANN_DATA_LOCATION,
+  SOURCE,
+  /* GLOBAL FILTERS */
+  LOCATION_NAME,
+  DESCRIPTION,
+  TITLE,
+  RATIONALE,
+  VALUES,
+];
+
+export const TIER_2_SCHEMA_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   CLASS_KEY,
   FIELD,
   DETAILS,

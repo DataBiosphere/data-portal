@@ -1,6 +1,6 @@
 import { Attribute } from "./types";
 import { DataDictionary } from "@databiosphere/findable-ui/lib/common/entities";
-import { buildSourceAttribute } from "./viewModelBuilders";
+import { buildLocationName, buildSourceAttribute } from "./viewModelBuilders";
 
 /**
  * Returns a data dictionary built from the given data dictionary.
@@ -18,6 +18,7 @@ export function buildDataDictionary(
         attributes: classData.attributes.map((attribute) => {
           return {
             ...attribute,
+            locationName: buildLocationName(attribute),
             source: buildSourceAttribute(dataDictionary, attribute),
           };
         }),
