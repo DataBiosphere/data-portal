@@ -26,8 +26,10 @@ export const DetailCell = ({
         <Typography {...TYPOGRAPHY_PROPS}>Description</Typography>
       </Collapse>
       <StyledMarkdownCell
-        column={{ id: COLUMN_IDENTIFIERS.DESCRIPTION }}
-        getValue={() => row.original.description}
+        {...getPartialCellContext(
+          row.original.description,
+          COLUMN_IDENTIFIERS.DESCRIPTION
+        )}
         row={row}
         table={table}
       />
@@ -36,8 +38,10 @@ export const DetailCell = ({
           <div>
             <Typography {...TYPOGRAPHY_PROPS}>Allowed Values</Typography>
             <StyledMarkdownCell
-              column={{ id: COLUMN_IDENTIFIERS.VALUES }}
-              getValue={() => row.original.values}
+              {...getPartialCellContext(
+                row.original.values,
+                COLUMN_IDENTIFIERS.VALUES
+              )}
               row={row}
               table={table}
             />
@@ -59,8 +63,10 @@ export const DetailCell = ({
           <div>
             <Typography {...TYPOGRAPHY_PROPS}>Rationale</Typography>
             <StyledMarkdownCell
-              column={{ id: COLUMN_IDENTIFIERS.RATIONALE }}
-              getValue={() => row.original.rationale}
+              {...getPartialCellContext(
+                row.original.rationale,
+                COLUMN_IDENTIFIERS.RATIONALE
+              )}
               row={row}
               table={table}
             />
@@ -74,8 +80,10 @@ export const DetailCell = ({
           <div>
             <Typography {...TYPOGRAPHY_PROPS}>Tier</Typography>
             <StyledMarkdownCell
-              column={{ id: COLUMN_IDENTIFIERS.TIER }}
-              getValue={() => row.original.annotations?.tier}
+              {...getPartialCellContext(
+                String(row.original.annotations?.tier),
+                COLUMN_IDENTIFIERS.TIER
+              )}
               row={row}
               table={table}
             />
@@ -85,10 +93,10 @@ export const DetailCell = ({
           <div>
             <Typography {...TYPOGRAPHY_PROPS}>BioNetworks</Typography>
             <StyledMarkdownCell
-              column={{ id: COLUMN_IDENTIFIERS.BIO_NETWORK }}
-              getValue={() =>
-                (row.original.annotations?.bioNetworks as string[]).join(", ")
-              }
+              {...getPartialCellContext(
+                (row.original.annotations?.bioNetworks as string[]).join(", "),
+                COLUMN_IDENTIFIERS.BIO_NETWORK
+              )}
               row={row}
               table={table}
             />
@@ -97,10 +105,10 @@ export const DetailCell = ({
         <div>
           <Typography {...TYPOGRAPHY_PROPS}>AnnData Location</Typography>
           <StyledMarkdownCell
-            column={{ id: COLUMN_IDENTIFIERS.ANN_DATA_LOCATION }}
-            getValue={() =>
-              (row.original.annotations?.annDataLocation as string) || "None"
-            }
+            {...getPartialCellContext(
+              (row.original.annotations?.annDataLocation as string) || "None",
+              COLUMN_IDENTIFIERS.ANN_DATA_LOCATION
+            )}
             row={row}
             table={table}
           />
