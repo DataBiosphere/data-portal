@@ -6,10 +6,11 @@ import { GridTrackSize } from "@databiosphere/findable-ui/lib/config/entities";
 import { COLUMN_IDENTIFIERS } from "./columnIds";
 
 const ANN_DATA_LOCATION: ColumnDef<Attribute, unknown> = {
-  accessorFn: (row) => row.annotations?.annDataLocation,
+  accessorKey: "annotations.annDataLocation",
   enableColumnFilter: true,
   enableGlobalFilter: false,
   header: "AnnData",
+  filterFn: "arrIncludesSome",
   id: COLUMN_IDENTIFIERS.ANN_DATA_LOCATION,
 };
 
