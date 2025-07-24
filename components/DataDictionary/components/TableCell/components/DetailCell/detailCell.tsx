@@ -81,7 +81,7 @@ export const DetailCell = ({
             <Typography {...TYPOGRAPHY_PROPS}>Tier</Typography>
             <StyledMarkdownCell
               {...getPartialCellContext(
-                String(row.original.annotations?.tier),
+                row.original.annotations?.tier as string,
                 COLUMN_IDENTIFIERS.TIER
               )}
               row={row}
