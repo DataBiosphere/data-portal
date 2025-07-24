@@ -7,6 +7,7 @@ export const TABLE_OPTIONS: Omit<
   "data" | "getCoreRowModel"
 > = {
   columns: COLUMN_DEFS,
+  getRowId: (row) => row.name,
   initialState: {
     columnVisibility: {
       annDataLocation: false,
@@ -30,6 +31,7 @@ export const TIER_2_SCHEMA_TABLE_OPTIONS: Omit<
   "data" | "getCoreRowModel"
 > = {
   columns: TIER_1_SCHEMA_COLUMN_DEFS,
+  getRowId: (row) => row.name,
   initialState: {
     columnVisibility: {
       bioNetwork: false,
