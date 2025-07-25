@@ -15,7 +15,10 @@ import {
 import { Typography } from "@mui/material";
 import { useAtlas, useAtlasContent } from "contexts/atlasContext";
 import { getIntegratedAtlasesTableColumns } from "../../../../../../../../viewModelBuilders/viewModelBuilders";
-import { Table, Toolbar } from "../../../../../../../common/Table/table.styles";
+import {
+  Table,
+  StyledToolbar,
+} from "../../../../../../../common/Table/table.styles";
 import { SectionText } from "../../../../../../components/Section/section.styles";
 import { TABLE_OPTIONS } from "./constants";
 
@@ -43,11 +46,11 @@ export const MainColumn = (): JSX.Element => {
       {/* Atlases Table */}
       <FluidPaper>
         <GridPaper>
-          <Toolbar variant="table">
+          <StyledToolbar>
             <Typography variant={TEXT_BODY_LARGE_500}>
               Component Atlases
             </Typography>
-          </Toolbar>
+          </StyledToolbar>
           {integratedAtlases.length > 0 ? (
             <Table
               columns={getIntegratedAtlasesTableColumns()}

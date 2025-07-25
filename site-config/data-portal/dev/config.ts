@@ -10,6 +10,17 @@ import { CONTRIBUTE } from "./navigation/contribute";
 import { GUIDES } from "./navigation/guides";
 import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
+import cellAnnotationSchemaAnnData from "./dataDictionary/cell-annotation-schema-ann-data.json";
+import tier1SchemaAnnData from "./dataDictionary/tier-1-schema-ann-data.json";
+import tier2SchemaHcaDataRepository from "./dataDictionary/tier-2-schema-hca-data-repository.json";
+import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
+import { DataDictionaryConfig } from "@databiosphere/findable-ui/lib/common/entities";
+import {
+  CELL_ANNOTATION_SCHEMA_TABLE_OPTIONS,
+  TIER_1_SCHEMA_TABLE_OPTIONS,
+  TIER_2_SCHEMA_TABLE_OPTIONS,
+} from "../../../viewModelBuilders/dataDictionaryMapper/tableOptions";
+import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 
 const APP_TITLE = "HCA Data Portal";
 const CATALOG = "dcp50";
@@ -42,8 +53,24 @@ export function makeConfig(
       },
       url: `${dataUrl}/index`,
     },
+    dataDictionaries: [
+      {
+        dataDictionary: buildDataDictionary(tier1SchemaAnnData),
+        path: "tier-1-schema-ann-data",
+        tableOptions: TIER_1_SCHEMA_TABLE_OPTIONS,
+      },
+      {
+        dataDictionary: buildDataDictionary(tier2SchemaHcaDataRepository),
+        path: "tier-2-schema-hca-data-repository",
+        tableOptions: TIER_2_SCHEMA_TABLE_OPTIONS,
+      },
+      {
+        dataDictionary: buildDataDictionary(cellAnnotationSchemaAnnData),
+        path: "cell-annotation-schema-ann-data",
+        tableOptions: CELL_ANNOTATION_SCHEMA_TABLE_OPTIONS,
+      },
+    ] as unknown as DataDictionaryConfig[],
     entities: [],
-    explorerTitle: "",
     gitHubUrl,
     layout: {
       floating,
@@ -102,7 +129,29 @@ export function makeConfig(
             },
             {
               label: "Metadata",
-              url: ROUTES.METADATA,
+              menuItems: [
+                {
+                  label: "Metadata Overview",
+                  selectedMatch: SELECTED_MATCH.EQUALS,
+                  url: ROUTES.METADATA,
+                },
+                {
+                  label: "Tier 1 Schema (AnnData)",
+                  selectedMatch: SELECTED_MATCH.EQUALS,
+                  url: ROUTES.METADATA_TIER_1_SCHEMA_ANN_DATA,
+                },
+                {
+                  label: "Tier 2 Schema (HCA Data Repository)",
+                  selectedMatch: SELECTED_MATCH.EQUALS,
+                  url: ROUTES.METADATA_TIER_2_SCHEMA_HCA_DATA_REPOSITORY,
+                },
+                {
+                  label: "Cell Annotation Schema (AnnData)",
+                  selectedMatch: SELECTED_MATCH.EQUALS,
+                  url: ROUTES.METADATA_CELL_ANNOTATION_SCHEMA_ANN_DATA,
+                },
+              ],
+              url: "",
             },
             {
               label: "Contribute",
