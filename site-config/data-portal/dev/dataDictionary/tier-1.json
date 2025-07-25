@@ -1690,7 +1690,7 @@
     }
   ],
   "prefixes": {
-    "cxg": "https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/5.2.0/schema.md"
+    "cxg": "https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/6.0.0/schema.md"
   },
   "annotations": {
     "cxg": "CELLxGENE Schema"
