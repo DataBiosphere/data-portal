@@ -4,6 +4,35 @@ import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDict
 import { LinkProps } from "@mui/material";
 
 /**
+ * Build bioNetwork string from the given row.
+ * @param table - The table.
+ * @param row - The row.
+ * @returns The bioNetwork string.
+ */
+export function buildBioNetworks(
+  table: Table<Attribute>,
+  row: Row<Attribute>
+): string {
+  // Grab the bioNetwork value from the row.
+  const value = row.getValue(COLUMN_IDENTIFIERS.BIO_NETWORK);
+
+  // Grab the bioNetwork column from the table and get the number of unique values.
+  const column = table.getColumn(COLUMN_IDENTIFIERS.BIO_NETWORK);
+  const facetedCount = column?.getFacetedUniqueValues().size;
+
+  // If the value is an array, and the number of unique values is equal to the length of the array, return "All".
+  if (Array.isArray(value)) {
+    if (facetedCount === value.length) return "All";
+
+    // Otherwise, return the value joined by ", ".
+    return value.join(", ");
+  }
+
+  // Throw an error if the value is not an array.
+  throw new Error("Invalid bioNetwork value");
+}
+
+/**
  * Build example string array from the given attribute.
  * @param attribute - The attribute.
  * @returns The example string array.

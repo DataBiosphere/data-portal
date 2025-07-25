@@ -9,7 +9,12 @@ import {
   StyledCollapse,
 } from "./detailCell.styles";
 import { LinkCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/LinkCell/linkCell";
-import { buildExample, buildSource, shouldShowTierColumn } from "./utils";
+import {
+  buildBioNetworks,
+  buildExample,
+  buildSource,
+  shouldShowTierColumn,
+} from "./utils";
 import { getPartialCellContext } from "../../utils";
 import { StyledMarkdownCell } from "./detailCell.styles";
 import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
@@ -94,7 +99,7 @@ export const DetailCell = ({
             <Typography {...TYPOGRAPHY_PROPS}>BioNetworks</Typography>
             <StyledMarkdownCell
               {...getPartialCellContext(
-                (row.original.annotations?.bioNetworks as string[]).join(", "),
+                buildBioNetworks(table, row),
                 COLUMN_IDENTIFIERS.BIO_NETWORK
               )}
               row={row}
