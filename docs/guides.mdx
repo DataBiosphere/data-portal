@@ -7,16 +7,16 @@ title: "Exploring Projects"
 # Exploring Projects
 
 Projects are a basic unit of data organization in the HCA Data Portal. Project contributors contribute
-raw sequencing and associated [files](/metadata/dictionary/file/sequence_file) along with rich metadata describing:
+raw sequencing and associated files along with rich metadata describing:
 
-1. the [origin and type of the cells](/metadata/dictionary/biomaterial/cell_line) used in the project
-1. the [processes](/metadata/dictionary/process/analysis_process)
-   and [protocols](/metadata/dictionary/protocol/aggregate_generation_protocol) used to collect and process the cells
+1. the origin and type of the cells used in the project
+1. the processes
+   and protocols used to collect and process the cells
    prior to sequencing
-1. the [sequencing](/metadata/dictionary/protocol/sequencing_protocol) methods used
-1. details about the [project](/metadata/dictionary/project/project) contributors and their institutions
+1. the sequencing methods used
+1. details about the project contributors and their institutions
 
-This [Metadata](/metadata/dictionary/process/analysis_process) is included in the project's Metadata Manifest (TSV
+This Metadata is included in the project's Metadata Manifest (TSV
 file). When the HCA Data Portal processes the contributor's raw data with uniform pipelines, this processing information
 is also
 added to the Metadata Manifest.
@@ -50,7 +50,7 @@ The project information page contains:
 For each project, the HCA Data Portal maintains a project-specific TSV file containing the full project metadata. The
 TSV contains a
 row for each file in the project and columns for each metadata property. Meanings of the metadata properties are listed
-in the [Metadata Dictionary](/metadata).
+in the [metadata schema](https://github.com/HumanCellAtlas/metadata-schema).
 
 The metadata TSV file gives a representation of the project's metadata graph that can be sorted and filtered using a
 standard spreadsheet or data manipulation tools.
