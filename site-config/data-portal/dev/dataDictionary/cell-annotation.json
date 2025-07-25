@@ -1,6 +1,6 @@
 {
-  "name": "cell_annotation_schema_ann_data",
-  "title": "Cell Annotation Schema (AnnData)",
+  "name": "cell_annotation",
+  "title": "Cell Annotation",
   "classes": [
     {
       "title": "Dataset",

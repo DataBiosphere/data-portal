@@ -1,6 +1,6 @@
 {
-  "name": "tier_2_schema_hca_data_repository",
-  "title": "Tier 2 Schema (HCA Data Repository)",
+  "name": "tier_2",
+  "title": "Tier 2 Metadata",
   "classes": [
     {
       "title": "Donor",

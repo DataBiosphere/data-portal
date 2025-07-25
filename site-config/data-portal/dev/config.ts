@@ -10,15 +10,15 @@ import { CONTRIBUTE } from "./navigation/contribute";
 import { GUIDES } from "./navigation/guides";
 import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
-import cellAnnotationSchemaAnnData from "./dataDictionary/cell-annotation-schema-ann-data.json";
-import tier1SchemaAnnData from "./dataDictionary/tier-1-schema-ann-data.json";
-import tier2SchemaHcaDataRepository from "./dataDictionary/tier-2-schema-hca-data-repository.json";
+import cellAnnotation from "./dataDictionary/cell-annotation.json";
+import metadataTier1 from "./dataDictionary/tier-1.json";
+import metadataTier2 from "./dataDictionary/tier-2.json";
 import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
 import { DataDictionaryConfig } from "@databiosphere/findable-ui/lib/common/entities";
 import {
-  CELL_ANNOTATION_SCHEMA_TABLE_OPTIONS,
-  TIER_1_SCHEMA_TABLE_OPTIONS,
-  TIER_2_SCHEMA_TABLE_OPTIONS,
+  CELL_ANNOTATION_TABLE_OPTIONS,
+  TIER_1_TABLE_OPTIONS,
+  TIER_2_TABLE_OPTIONS,
 } from "../../../viewModelBuilders/dataDictionaryMapper/tableOptions";
 import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 
@@ -55,19 +55,19 @@ export function makeConfig(
     },
     dataDictionaries: [
       {
-        dataDictionary: buildDataDictionary(tier1SchemaAnnData),
-        path: "tier-1-schema-ann-data",
-        tableOptions: TIER_1_SCHEMA_TABLE_OPTIONS,
+        dataDictionary: buildDataDictionary(metadataTier1),
+        path: "tier-1",
+        tableOptions: TIER_1_TABLE_OPTIONS,
       },
       {
-        dataDictionary: buildDataDictionary(tier2SchemaHcaDataRepository),
-        path: "tier-2-schema-hca-data-repository",
-        tableOptions: TIER_2_SCHEMA_TABLE_OPTIONS,
+        dataDictionary: buildDataDictionary(metadataTier2),
+        path: "tier-2",
+        tableOptions: TIER_2_TABLE_OPTIONS,
       },
       {
-        dataDictionary: buildDataDictionary(cellAnnotationSchemaAnnData),
-        path: "cell-annotation-schema-ann-data",
-        tableOptions: CELL_ANNOTATION_SCHEMA_TABLE_OPTIONS,
+        dataDictionary: buildDataDictionary(cellAnnotation),
+        path: "cell-annotation",
+        tableOptions: CELL_ANNOTATION_TABLE_OPTIONS,
       },
     ] as unknown as DataDictionaryConfig[],
     entities: [],
@@ -136,19 +136,19 @@ export function makeConfig(
                   url: ROUTES.METADATA,
                 },
                 {
-                  label: "Tier 1 Schema (AnnData)",
+                  label: "Tier 1 Metadata",
                   selectedMatch: SELECTED_MATCH.EQUALS,
-                  url: ROUTES.METADATA_TIER_1_SCHEMA_ANN_DATA,
+                  url: ROUTES.METADATA_TIER_1,
                 },
                 {
-                  label: "Tier 2 Schema (HCA Data Repository)",
+                  label: "Tier 2 Metadata",
                   selectedMatch: SELECTED_MATCH.EQUALS,
-                  url: ROUTES.METADATA_TIER_2_SCHEMA_HCA_DATA_REPOSITORY,
+                  url: ROUTES.METADATA_TIER_2,
                 },
                 {
-                  label: "Cell Annotation Schema (AnnData)",
+                  label: "Cell Annotation",
                   selectedMatch: SELECTED_MATCH.EQUALS,
-                  url: ROUTES.METADATA_CELL_ANNOTATION_SCHEMA_ANN_DATA,
+                  url: ROUTES.METADATA_CELL_ANNOTATION,
                 },
               ],
               url: "",

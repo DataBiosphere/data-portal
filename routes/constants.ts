@@ -8,11 +8,9 @@ export const ROUTES = {
   HCA_BIONETWORKS: "/hca-bio-networks",
   HELP: "/help",
   METADATA: "/metadata",
-  METADATA_CELL_ANNOTATION_SCHEMA_ANN_DATA:
-    "/metadata/cell-annotation-schema-ann-data",
-  METADATA_TIER_1_SCHEMA_ANN_DATA: "/metadata/tier-1-schema-ann-data",
-  METADATA_TIER_2_SCHEMA_HCA_DATA_REPOSITORY:
-    "/metadata/tier-2-schema-hca-data-repository",
+  METADATA_CELL_ANNOTATION: "/metadata/cell-annotation",
+  METADATA_TIER_1: "/metadata/tier-1",
+  METADATA_TIER_2: "/metadata/tier-2",
   PRIVACY: "/privacy",
   SEARCH: "/search",
 };
