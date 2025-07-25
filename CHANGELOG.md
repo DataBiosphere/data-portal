@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.1](https://github.com/DataBiosphere/data-portal/compare/v2.5.0...v2.5.1) (2025-07-25)
+
+
+### Content
+
+* check for and remove internal links to the following urls ([#2774](https://github.com/DataBiosphere/data-portal/issues/2774)) ([#2806](https://github.com/DataBiosphere/data-portal/issues/2806)) ([f4e6559](https://github.com/DataBiosphere/data-portal/commit/f4e6559c6a969b9964691e076369dcc7a1ca1b5c))
+
 ## [2.5.0](https://github.com/DataBiosphere/data-portal/compare/v2.4.7...v2.5.0) (2025-07-11)
 
 
