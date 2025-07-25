@@ -89,7 +89,7 @@ const RATIONALE: ColumnDef<Attribute, unknown> = {
 };
 
 const REQUIRED: ColumnDef<Attribute, unknown> = {
-  accessorFn: (row) => (row.required ? "Required" : "Not Required"),
+  accessorFn: (row) => (row.required ? "Required" : "Recommended"),
   enableColumnFilter: true,
   enableGlobalFilter: false,
   enableHiding: false,
