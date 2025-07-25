@@ -9,7 +9,7 @@ import {
   StyledCollapse,
 } from "./detailCell.styles";
 import { LinkCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/LinkCell/linkCell";
-import { buildExample } from "./utils";
+import { buildExample, buildSource } from "./utils";
 import { getPartialCellContext } from "../../utils";
 import { StyledMarkdownCell } from "./detailCell.styles";
 import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
@@ -74,7 +74,7 @@ export const DetailCell = ({
         )}
         <div>
           <Typography {...TYPOGRAPHY_PROPS}>Source</Typography>
-          <LinkCell {...getPartialCellContext(row.original.source)} />
+          <LinkCell {...getPartialCellContext(buildSource(row))} />
         </div>
         {row.original.annotations?.tier && (
           <div>
