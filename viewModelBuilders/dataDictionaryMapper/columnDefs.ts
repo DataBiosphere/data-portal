@@ -158,7 +158,6 @@ export const TIER_1_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   DETAILS,
   REQUIRED,
   BIO_NETWORK,
-  TIER,
   ANN_DATA_LOCATION,
   {
     ...SOURCE,

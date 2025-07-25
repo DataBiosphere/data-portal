@@ -1,4 +1,4 @@
-import { Row } from "@tanstack/react-table";
+import { Row, Table } from "@tanstack/react-table";
 import { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
 import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
 import { LinkProps } from "@mui/material";
@@ -23,4 +23,24 @@ export function buildSource(row: Row<Attribute>): LinkProps {
   const value = row.getValue(COLUMN_IDENTIFIERS.SOURCE);
   if (value === "HCA") return { children: "HCA", href: "" };
   return row.original.source;
+}
+
+/**
+ * Checks if the tier column is configured in the table, and tier is present in the annotations.
+ * @param table - The table.
+ * @param row - The row.
+ * @returns True if the tier column is configured and tier is present in the annotations, false otherwise.
+ */
+export function shouldShowTierColumn(
+  table: Table<Attribute>,
+  row: Row<Attribute>
+): boolean {
+  // Tier column is configured.
+  const isConfigured = table
+    .getAllColumns()
+    .some((col) => col.id === COLUMN_IDENTIFIERS.TIER);
+
+  if (!isConfigured) return false;
+
+  return Boolean(row.original.annotations?.tier);
 }
