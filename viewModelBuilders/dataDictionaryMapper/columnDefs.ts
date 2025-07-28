@@ -7,7 +7,7 @@ import { COLUMN_IDENTIFIERS } from "./columnIds";
 import { buildTier1Source } from "./accessorFn";
 
 const ANN_DATA_LOCATION: ColumnDef<Attribute, unknown> = {
-  accessorKey: "annotations.annDataLocation",
+  accessorFn: (row) => row.annotations?.annDataLocation,
   enableColumnFilter: true,
   enableGlobalFilter: false,
   header: "AnnData",
