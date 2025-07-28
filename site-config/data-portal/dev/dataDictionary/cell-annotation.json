@@ -1,6 +1,6 @@
 {
   "name": "cell_annotation",
-  "title": "Cell Annotation",
+  "title": "Cell Annotation Metadata",
   "classes": [
     {
       "title": "Dataset",

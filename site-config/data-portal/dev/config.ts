@@ -146,7 +146,7 @@ export function makeConfig(
                   url: ROUTES.METADATA_TIER_2,
                 },
                 {
-                  label: "Cell Annotation",
+                  label: "Cell Annotation Metadata",
                   selectedMatch: SELECTED_MATCH.EQUALS,
                   url: ROUTES.METADATA_CELL_ANNOTATION,
                 },

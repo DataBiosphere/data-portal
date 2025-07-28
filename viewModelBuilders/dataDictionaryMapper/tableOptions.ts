@@ -18,6 +18,7 @@ export const CELL_ANNOTATION_TABLE_OPTIONS: Omit<
       bioNetwork: false,
       classKey: true,
       description: false,
+      locationName: false,
       name: false,
       rationale: false,
       required: false,
