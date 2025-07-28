@@ -1,5 +1,6 @@
 {
   "name": "tier_2",
+  "description": "## Introduction\n\nThe Tier 2 metadata provides richer donor- and sample-level context, such as age, clinical phenotype, treatment, and similar fields, used in downstream analysis. Because some fields may be identifying, Tier 2 metadata are collected and distributed under managed access. The Biological Networks group is finalizing the field list; drafts are in the [HCA Tier 2 Metadata Definitions](https://drive.google.com/drive/folders/1ngcIgKBV9OUM1pPO-CDRH6ZIpyiSpamu?usp=sharing) folder.",
   "title": "Tier 2 Metadata",
   "classes": [
     {

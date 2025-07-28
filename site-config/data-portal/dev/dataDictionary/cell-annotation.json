@@ -1,5 +1,6 @@
 {
   "name": "cell_annotation",
+  "description": "## Introduction\n\nCell‑annotation metadata standardizes cell‑type labels. Stored on the [Cell Annotation Platform](https://celltype.info) (CAP), the schema records each cell’s ontology term, synonyms, and parent category. See the [CAP AnnData schema](https://github.com/cellannotation/cell-annotation-schema/blob/main/docs/cap_anndata_schema.md) for additional details.",
   "title": "Cell Annotation Metadata",
   "classes": [
     {

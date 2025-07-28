@@ -1,6 +1,6 @@
 {
   "name": "tier_1",
-  "description": "## Introduction\n\nThe HCA Tier 1 Metadata schema is an AnnData schema that extends the CZ CELLxGENE schema with additional fields required for the integration and batch correction of multiple datasets into an atlas.",
+  "description": "## Introduction\n\nTier 1 metadata extends the [CELLxGENE AnnData schema](https://chanzuckerberg.github.io/single-cell-curation/latest-schema.html) with the batch, sample, and sequencing details needed for atlas‑level batch correction, QC, and cross‑dataset integration.",
   "title": "Tier 1 Metadata",
   "classes": [
     {
