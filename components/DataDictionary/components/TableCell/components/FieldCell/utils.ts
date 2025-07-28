@@ -22,7 +22,7 @@ export function buildRequired(attribute: Attribute): ChipProps {
   const isRequired = Boolean(attribute.required);
   return {
     color: isRequired ? CHIP_PROPS.COLOR.ERROR : CHIP_PROPS.COLOR.DEFAULT,
-    label: isRequired ? "Required" : "Not Required",
+    label: isRequired ? "Required" : "Recommended",
     variant: "status",
   };
 }

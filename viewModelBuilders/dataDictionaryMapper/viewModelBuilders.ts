@@ -6,6 +6,21 @@ import {
 import { LABEL } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
 
 /**
+ * Returns the annotations for a given attribute.
+ * Formats bioNetworks to be human-readable.
+ * @param attribute - The attribute.
+ * @returns The annotations.
+ */
+export function buildAnnotations(
+  attribute: BaseAttribute
+): Attribute["annotations"] {
+  return {
+    ...attribute.annotations,
+    bioNetworks: formatBioNetworks(attribute.annotations?.bioNetworks),
+  };
+}
+
+/**
  * Returns the displayable name `location.name` for a given attribute.
  * @param attribute - The attribute.
  * @returns The displayable name.
@@ -73,4 +88,29 @@ export function buildSourceAttribute(
 
   // Default if neither CXG nor CAP is found, or if attribute has no relevant annotations
   return { children: LABEL.NONE, href: "" };
+}
+
+/**
+ * Deslugifies a string and capitalizes the first letter of each word.
+ * @param str - The string to deslugify.
+ * @returns The deslugified string.
+ */
+function deslugify(str: string): string {
+  return str.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toLocaleUpperCase());
+}
+
+/**
+ * Formats bioNetworks to be human-readable.
+ * @param bioNetworks - The bioNetworks to format.
+ * @returns The formatted bioNetworks.
+ */
+function formatBioNetworks(
+  bioNetworks: string | string[] | undefined
+): string | string[] | undefined {
+  if (!bioNetworks) return;
+
+  // Handle array of bioNetworks.
+  if (Array.isArray(bioNetworks)) return bioNetworks.map(deslugify);
+
+  return deslugify(bioNetworks);
 }

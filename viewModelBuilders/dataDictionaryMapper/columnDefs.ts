@@ -4,9 +4,10 @@ import { FieldCell } from "../../components/DataDictionary/components/TableCell/
 import { DetailCell } from "../../components/DataDictionary/components/TableCell/components/DetailCell/detailCell";
 import { GridTrackSize } from "@databiosphere/findable-ui/lib/config/entities";
 import { COLUMN_IDENTIFIERS } from "./columnIds";
+import { buildTier1Source } from "./accessorFn";
 
 const ANN_DATA_LOCATION: ColumnDef<Attribute, unknown> = {
-  accessorKey: "annotations.annDataLocation",
+  accessorFn: (row) => row.annotations?.annDataLocation,
   enableColumnFilter: true,
   enableGlobalFilter: false,
   header: "AnnData",
@@ -89,7 +90,7 @@ const RATIONALE: ColumnDef<Attribute, unknown> = {
 };
 
 const REQUIRED: ColumnDef<Attribute, unknown> = {
-  accessorFn: (row) => (row.required ? "Required" : "Not Required"),
+  accessorFn: (row) => (row.required ? "Required" : "Recommended"),
   enableColumnFilter: true,
   enableGlobalFilter: false,
   enableHiding: false,
@@ -134,10 +135,7 @@ const VALUES: ColumnDef<Attribute, unknown> = {
   id: COLUMN_IDENTIFIERS.VALUES,
 };
 
-export const CELL_ANNOTATION_SCHEMA_COLUMN_DEFS: ColumnDef<
-  Attribute,
-  unknown
->[] = [
+export const CELL_ANNOTATION_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   CLASS_KEY,
   FIELD,
   DETAILS,
@@ -154,15 +152,17 @@ export const CELL_ANNOTATION_SCHEMA_COLUMN_DEFS: ColumnDef<
   VALUES,
 ];
 
-export const TIER_1_SCHEMA_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
+export const TIER_1_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   CLASS_KEY,
   FIELD,
   DETAILS,
   REQUIRED,
   BIO_NETWORK,
-  TIER,
   ANN_DATA_LOCATION,
-  SOURCE,
+  {
+    ...SOURCE,
+    accessorFn: buildTier1Source,
+  },
   /* GLOBAL FILTERS */
   LOCATION_NAME,
   DESCRIPTION,
@@ -171,7 +171,7 @@ export const TIER_1_SCHEMA_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   VALUES,
 ];
 
-export const TIER_2_SCHEMA_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
+export const TIER_2_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   CLASS_KEY,
   FIELD,
   DETAILS,

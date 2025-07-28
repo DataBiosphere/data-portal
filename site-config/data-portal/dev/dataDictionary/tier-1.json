@@ -1,7 +1,7 @@
 {
-  "name": "tier_1_schema_ann_data",
+  "name": "tier_1",
   "description": "## Introduction\n\nThe HCA Tier 1 Metadata schema is an AnnData schema that extends the CZ CELLxGENE schema with additional fields required for the integration and batch correction of multiple datasets into an atlas.",
-  "title": "Tier 1 Schema (AnnData)",
+  "title": "Tier 1 Metadata",
   "classes": [
     {
       "title": "Dataset",
@@ -1690,7 +1690,7 @@
     }
   ],
   "prefixes": {
-    "cxg": "https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/5.2.0/schema.md"
+    "cxg": "https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/6.0.0/schema.md"
   },
   "annotations": {
     "cxg": "CELLxGENE Schema"
