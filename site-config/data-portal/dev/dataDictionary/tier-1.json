@@ -1295,142 +1295,6 @@
             ],
             "tier": "Tier 1"
           },
-          "description": "The unique ID that is used to track libraries in the investigator's institution (should align with the publication).",
-          "example": "A24; NK_healthy_001",
-          "multivalued": false,
-          "name": "library_id",
-          "range": "string",
-          "rationale": "A way to track the unit of data generation. This should include sample pooling",
-          "required": true,
-          "title": "Library ID"
-        },
-        {
-          "annotations": {
-            "annDataLocation": "obs",
-            "bioNetworks": [
-              "adipose",
-              "breast",
-              "development",
-              "eye",
-              "genetic-diversity",
-              "gut",
-              "heart",
-              "immune",
-              "kidney",
-              "liver",
-              "lung",
-              "musculoskeletal",
-              "nervous-system",
-              "oral",
-              "organoid",
-              "pancreas",
-              "reproduction",
-              "skin"
-            ],
-            "tier": "Tier 1"
-          },
-          "description": "The unique ID used to track libraries from one of the following public data repositories: EGAX*, GSM*, SRX*, ERX*, DRX, HRX, CRX",
-          "example": "GSM1684095",
-          "multivalued": false,
-          "name": "library_id_repository",
-          "range": "string",
-          "rationale": "Links a dataset back to the source from which it was ingested, optional only if this is the same as the library_id.",
-          "required": false,
-          "title": "Library ID Repository"
-        },
-        {
-          "annotations": {
-            "annDataLocation": "obs",
-            "bioNetworks": [
-              "adipose",
-              "breast",
-              "development",
-              "eye",
-              "genetic-diversity",
-              "gut",
-              "heart",
-              "immune",
-              "kidney",
-              "liver",
-              "lung",
-              "musculoskeletal",
-              "nervous-system",
-              "oral",
-              "organoid",
-              "pancreas",
-              "reproduction",
-              "skin"
-            ],
-            "tier": "Tier 1"
-          },
-          "description": "Indicating which samples' libraries were prepared in the same chip/plate/etc., e.g. batch1, batch2.",
-          "example": "batch01; batch02",
-          "multivalued": false,
-          "name": "library_preparation_batch",
-          "range": "string",
-          "rationale": "Sample preparation is a major source of batch effects.",
-          "required": true,
-          "title": "Library Preparation Batch"
-        },
-        {
-          "annotations": {
-            "annDataLocation": "obs",
-            "bioNetworks": [
-              "adipose",
-              "breast",
-              "development",
-              "eye",
-              "genetic-diversity",
-              "gut",
-              "heart",
-              "immune",
-              "kidney",
-              "liver",
-              "lung",
-              "musculoskeletal",
-              "nervous-system",
-              "oral",
-              "organoid",
-              "pancreas",
-              "reproduction",
-              "skin"
-            ],
-            "tier": "Tier 1"
-          },
-          "description": "The identifier (or accession number) that indicates which samples' libraries were sequenced in the same run.",
-          "example": "run1; NV0087",
-          "multivalued": false,
-          "name": "library_sequencing_run",
-          "range": "string",
-          "rationale": "Library sequencing is a major source of batch effects",
-          "required": true,
-          "title": "Library Sequencing Run"
-        },
-        {
-          "annotations": {
-            "annDataLocation": "obs",
-            "bioNetworks": [
-              "adipose",
-              "breast",
-              "development",
-              "eye",
-              "genetic-diversity",
-              "gut",
-              "heart",
-              "immune",
-              "kidney",
-              "liver",
-              "lung",
-              "musculoskeletal",
-              "nervous-system",
-              "oral",
-              "organoid",
-              "pancreas",
-              "reproduction",
-              "skin"
-            ],
-            "tier": "Tier 1"
-          },
           "description": "The pseudonymised name of the site where the sample was collected.",
           "example": "AIDA_site_1; AIDA_site_2",
           "multivalued": false,
@@ -1610,6 +1474,149 @@
           "rationale": "Space for author intuition of batch effects in their dataset",
           "required": false,
           "title": "Author Batch Notes"
+        }
+      ]
+    },
+    {
+      "title": "Library",
+      "description": "",
+      "name": "library",
+      "attributes": [
+        {
+          "annotations": {
+            "annDataLocation": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
+            "tier": "Tier 1"
+          },
+          "description": "The unique ID that is used to track libraries in the investigator's institution (should align with the publication).",
+          "example": "A24; NK_healthy_001",
+          "multivalued": false,
+          "name": "library_id",
+          "range": "string",
+          "rationale": "A way to track the unit of data generation. This should include sample pooling",
+          "required": true,
+          "title": "Library ID"
+        },
+        {
+          "annotations": {
+            "annDataLocation": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
+            "tier": "Tier 1"
+          },
+          "description": "The unique ID used to track libraries from one of the following public data repositories: EGAX*, GSM*, SRX*, ERX*, DRX, HRX, CRX",
+          "example": "GSM1684095",
+          "multivalued": false,
+          "name": "library_id_repository",
+          "range": "string",
+          "rationale": "Links a dataset back to the source from which it was ingested, optional only if this is the same as the library_id.",
+          "required": false,
+          "title": "Library ID Repository"
+        },
+        {
+          "annotations": {
+            "annDataLocation": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
+            "tier": "Tier 1"
+          },
+          "description": "Indicating which samples' libraries were prepared in the same chip/plate/etc., e.g. batch1, batch2.",
+          "example": "batch01; batch02",
+          "multivalued": false,
+          "name": "library_preparation_batch",
+          "range": "string",
+          "rationale": "Sample preparation is a major source of batch effects.",
+          "required": true,
+          "title": "Library Preparation Batch"
+        },
+        {
+          "annotations": {
+            "annDataLocation": "obs",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
+            "tier": "Tier 1"
+          },
+          "description": "The identifier (or accession number) that indicates which samples' libraries were sequenced in the same run.",
+          "example": "run1; NV0087",
+          "multivalued": false,
+          "name": "library_sequencing_run",
+          "range": "string",
+          "rationale": "Library sequencing is a major source of batch effects",
+          "required": true,
+          "title": "Library Sequencing Run"
         }
       ]
     },
