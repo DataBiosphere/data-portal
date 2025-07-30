@@ -16,6 +16,14 @@ export const StyledCell = styled("div")`
 
 export const StyledMarkdownCell = styled(MarkdownCell)`
   min-width: 0;
+
+  ul {
+    margin-bottom: 8px;
+
+    ul {
+      margin-bottom: 0;
+    }
+  }
 ` as typeof MarkdownCell;
 
 export const StyledCollapse = styled(Collapse)`
