@@ -60,6 +60,7 @@ const FIELD: ColumnDef<Attribute, unknown> = {
   header: "Field",
   id: COLUMN_IDENTIFIERS.FIELD,
   meta: {
+    columnPinned: true,
     width:
       "round(up, clamp(min(31.26%, 352px), 31.26%, 496px), 1px)" as GridTrackSize,
   },
