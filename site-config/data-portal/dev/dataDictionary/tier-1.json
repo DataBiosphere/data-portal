@@ -584,7 +584,7 @@
           "range": "numpy.ndarray",
           "required": true,
           "title": "Embedding",
-          "values": "X_{suffix} with the following requirements:\n\n- {suffix} MUST be at least one character in length.\n\n- The first character of {suffix} MUST be a letter of the alphabet and the remaining characters MUST be alphanumeric characters, `'_'`, `'-'`, or `'.'` (This is equivalent to the regular expression pattern `\"^[a-zA-Z][a-zA-Z0-9_.-]*$\"`.)\n\n- {suffix} MUST NOT be `\"spatial\"`.\n\n<br>{suffix} is presented as text to users in the **Embedding Choice** selector in CELLxGENE Explorer so it is STRONGLY RECOMMENDED that it be descriptive.\n\nSee also `default_embedding` in `uns`."
+          "values": "X_{suffix} with the following requirements:\n\n- {suffix} MUST be at least one character in length.\n\n- The first character of {suffix} MUST be a letter of the alphabet and the remaining characters MUST be alphanumeric characters, `'_'`, `'-'`, or `'.'` (This is equivalent to the regular expression pattern `\"^[a-zA-Z][a-zA-Z0-9_.-]*$\"`.)\n\n- {suffix} MUST NOT be `\"spatial\"`.\n\n {suffix} is presented as text to users in the **Embedding Choice** selector in CELLxGENE Explorer so it is STRONGLY RECOMMENDED that it be descriptive.\n\nSee also `default_embedding` in `uns`."
         }
       ]
     },
