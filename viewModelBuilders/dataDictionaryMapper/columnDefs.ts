@@ -4,7 +4,7 @@ import { FieldCell } from "../../components/DataDictionary/components/TableCell/
 import { DetailCell } from "../../components/DataDictionary/components/TableCell/components/DetailCell/detailCell";
 import { GridTrackSize } from "@databiosphere/findable-ui/lib/config/entities";
 import { COLUMN_IDENTIFIERS } from "./columnIds";
-import { buildTier1Source } from "./accessorFn";
+import { buildTierNSource } from "./accessorFn";
 
 const ANN_DATA_LOCATION: ColumnDef<Attribute, unknown> = {
   accessorFn: (row) => row.annotations?.annDataLocation,
@@ -162,7 +162,7 @@ export const TIER_1_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   ANN_DATA_LOCATION,
   {
     ...SOURCE,
-    accessorFn: buildTier1Source,
+    accessorFn: buildTierNSource,
   },
   /* GLOBAL FILTERS */
   LOCATION_NAME,
@@ -176,10 +176,13 @@ export const TIER_2_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   CLASS_KEY,
   FIELD,
   DETAILS,
-  REQUIRED,
+  { ...REQUIRED, enableColumnFilter: false },
   BIO_NETWORK,
-  TIER,
-  SOURCE,
+  {
+    ...SOURCE,
+    accessorFn: buildTierNSource,
+    enableColumnFilter: false,
+  },
   /* GLOBAL FILTERS */
   NAME,
   DESCRIPTION,
