@@ -39,8 +39,7 @@
           "name": "study_pi",
           "range": "string",
           "required": true,
-          "title": "Study PI",
-          "values": "| test | test | test |\n| -- | -- | -- |\n| A test | B test | C test |"
+          "title": "Study PI"
         },
         {
           "annotations": {
