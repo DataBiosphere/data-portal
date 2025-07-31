@@ -176,11 +176,12 @@ export const TIER_2_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   CLASS_KEY,
   FIELD,
   DETAILS,
-  REQUIRED,
+  { ...REQUIRED, enableColumnFilter: false },
   BIO_NETWORK,
   {
     ...SOURCE,
     accessorFn: buildTierNSource,
+    enableColumnFilter: false,
   },
   /* GLOBAL FILTERS */
   NAME,
