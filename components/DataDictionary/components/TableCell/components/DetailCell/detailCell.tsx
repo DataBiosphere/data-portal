@@ -13,6 +13,7 @@ import {
   buildBioNetworks,
   buildExample,
   buildSource,
+  shouldShowAnnDataLocationColumn,
   shouldShowTierColumn,
 } from "./utils";
 import { getPartialCellContext } from "../../utils";
@@ -107,17 +108,19 @@ export const DetailCell = ({
             />
           </div>
         )}
-        <div>
-          <Typography {...TYPOGRAPHY_PROPS}>AnnData Location</Typography>
-          <StyledMarkdownCell
-            {...getPartialCellContext(
-              (row.original.annotations?.annDataLocation as string) || "None",
-              COLUMN_IDENTIFIERS.ANN_DATA_LOCATION
-            )}
-            row={row}
-            table={table}
-          />
-        </div>
+        {shouldShowAnnDataLocationColumn(table) && (
+          <div>
+            <Typography {...TYPOGRAPHY_PROPS}>AnnData Location</Typography>
+            <StyledMarkdownCell
+              {...getPartialCellContext(
+                (row.original.annotations?.annDataLocation as string) || "None",
+                COLUMN_IDENTIFIERS.ANN_DATA_LOCATION
+              )}
+              row={row}
+              table={table}
+            />
+          </div>
+        )}
       </StyledCollapse>
     </StyledCell>
   );

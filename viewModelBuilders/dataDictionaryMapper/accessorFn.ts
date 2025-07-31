@@ -5,7 +5,7 @@ import { Attribute } from "./types";
  * @param row - Original row data.
  * @returns Source row value.
  */
-export function buildTier1Source(row: Attribute) {
+export function buildTierNSource(row: Attribute) {
   const { source } = row;
   const { children } = source;
 
