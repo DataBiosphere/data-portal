@@ -12,6 +12,7 @@ import { getPartialCellContext } from "../../utils";
 import { AnchorLink } from "@databiosphere/findable-ui/lib/components/common/AnchorLink/anchorLink";
 import { StyledTypography } from "./fieldCell.styles";
 import { RankedCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/RankedCell/rankedCell";
+import slugify from "slugify";
 
 export const FieldCell = ({
   row,
@@ -33,7 +34,7 @@ export const FieldCell = ({
           table={table}
         >
           <AnchorLink
-            anchorLink={row.original.name}
+            anchorLink={slugify(row.original.name)}
             onClick={(e) => e.stopPropagation()}
           />
         </RankedCell>

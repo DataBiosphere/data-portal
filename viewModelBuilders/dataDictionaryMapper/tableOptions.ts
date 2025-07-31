@@ -5,13 +5,14 @@ import {
   TIER_1_COLUMN_DEFS,
   CELL_ANNOTATION_COLUMN_DEFS,
 } from "./columnDefs";
+import slugify from "slugify";
 
 export const CELL_ANNOTATION_TABLE_OPTIONS: Omit<
   TableOptions<Attribute>,
   "data" | "getCoreRowModel"
 > = {
   columns: CELL_ANNOTATION_COLUMN_DEFS,
-  getRowId: (row) => row.name,
+  getRowId: (row) => slugify(row.name),
   initialState: {
     columnVisibility: {
       annDataLocation: false,
@@ -35,7 +36,7 @@ export const TIER_1_TABLE_OPTIONS: Omit<
   "data" | "getCoreRowModel"
 > = {
   columns: TIER_1_COLUMN_DEFS,
-  getRowId: (row) => row.name,
+  getRowId: (row) => slugify(row.name),
   initialState: {
     columnVisibility: {
       annDataLocation: false,
@@ -59,7 +60,7 @@ export const TIER_2_TABLE_OPTIONS: Omit<
   "data" | "getCoreRowModel"
 > = {
   columns: TIER_2_COLUMN_DEFS,
-  getRowId: (row) => row.name,
+  getRowId: (row) => slugify(row.name),
   initialState: {
     columnVisibility: {
       bioNetwork: false,
