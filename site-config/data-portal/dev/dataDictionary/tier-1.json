@@ -1206,6 +1206,21 @@
         {
           "annotations": {
             "annDataLocation": "obs",
+            "bioNetworks": ["gut"],
+            "tier": "Tier 1"
+          },
+          "description": "The layer of the gut that was sequenced. This depends on the chemical digestion used. The chemical digestion methods should be collected in the \"protocol\" and \"process\" fields.",
+          "example": "EPI; LP; MUSC; SUB; MLN; PP",
+          "multivalued": false,
+          "name": "radial_tissue_term",
+          "range": "string",
+          "required": true,
+          "title": "Radial Tissue Term",
+          "values": "* EPI \n\n * LP \n\n * MUSC \n\n * EPI_LP \n\n * LP_MUSC \n\n * EPI_LP_MUSC \n\n * MLN \n\n * SUB \n\n * Peyers patch \n\n * Mucosal ILF \n\n * Submucosal ILF \n\n * WM"
+        },
+        {
+          "annotations": {
+            "annDataLocation": "obs",
             "bioNetworks": [
               "adipose",
               "breast",
