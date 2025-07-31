@@ -6,7 +6,7 @@ import { BIO_NETWORK_COUNT } from "./constants";
 
 /**
  * Build bioNetwork string from the given row.
- * @param row - The row.
+ * @param row - Row.
  * @returns The bioNetwork string.
  */
 export function buildBioNetworks(row: Row<Attribute>): string {
@@ -27,7 +27,7 @@ export function buildBioNetworks(row: Row<Attribute>): string {
 
 /**
  * Build example string array from the given attribute.
- * @param attribute - The attribute.
+ * @param attribute - Attribute.
  * @returns The example string array.
  */
 export function buildExample(attribute: Attribute): string[] {
@@ -38,7 +38,7 @@ export function buildExample(attribute: Attribute): string[] {
 /**
  * Build source LinkProps from the given row.
  * Replaces LinkProps with HCA LinkProps for source value "HCA".
- * @param row - The row.
+ * @param row - Row.
  * @returns LinkProps.
  */
 export function buildSource(row: Row<Attribute>): LinkProps {
@@ -48,9 +48,25 @@ export function buildSource(row: Row<Attribute>): LinkProps {
 }
 
 /**
+ * Checks if the annDataLocation column is configured in the table.
+ * @param table - Table.
+ * @returns True if the annDataLocation column is configured, false otherwise.
+ */
+export function shouldShowAnnDataLocationColumn(
+  table: Table<Attribute>
+): boolean {
+  // AnnDataLocation column is configured.
+  const isConfigured = table
+    .getAllColumns()
+    .some((col) => col.id === COLUMN_IDENTIFIERS.ANN_DATA_LOCATION);
+
+  return isConfigured;
+}
+
+/**
  * Checks if the tier column is configured in the table, and tier is present in the annotations.
- * @param table - The table.
- * @param row - The row.
+ * @param table - Table.
+ * @param row - Row.
  * @returns True if the tier column is configured and tier is present in the annotations, false otherwise.
  */
 export function shouldShowTierColumn(
