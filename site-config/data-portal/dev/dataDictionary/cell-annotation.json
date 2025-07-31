@@ -601,7 +601,7 @@
           "range": "string",
           "required": true,
           "title": "Description",
-          "values": "This is free-text for collaborators and third-parties to understand the context/background for the creation of this cell annotation set."
+          "values": "This is free-text for collaborators and third-parties to understand the context/background for the creation of this cell annotation set.\n\nWe STRONGLY recommend this field be descriptive for other scientists unfamiliar with this project to understand why this set of cell annotations exist."
         },
         {
           "annotations": {
@@ -629,7 +629,7 @@
             "cap": "annotation_method",
             "tier": "Cell Annotation"
           },
-          "description": "",
+          "description": "Method used for cell annotation.",
           "example": "algorithmic;manual;both",
           "multivalued": true,
           "name": "{cellannotation_setname}.annotation_method",
