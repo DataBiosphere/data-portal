@@ -527,10 +527,11 @@
         },
         {
           "annotations": {
+            "annDataLocation": "uns",
             "bioNetworks": ["gut"],
             "tier": "Tier 1"
           },
-          "description": "Was ambient count correction software used during cellxgene processing?  if so, which software?",
+          "description": "Was ambient count correction software used during cellxgene processing? If so, which software?",
           "example": "none; soupx; cellbender",
           "multivalued": false,
           "name": "ambient_count_correction",
@@ -540,10 +541,11 @@
         },
         {
           "annotations": {
+            "annDataLocation": "uns",
             "bioNetworks": ["gut"],
             "tier": "Tier 1"
           },
-          "description": "Was doublet detection software used during cellxgene processing?  if so, which software?",
+          "description": "Was doublet detection software used during cellxgene processing? If so, which software?",
           "example": "none; doublet_finder; manual",
           "multivalued": false,
           "name": "doublet_detection",
