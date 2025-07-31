@@ -178,7 +178,6 @@ export const TIER_2_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   DETAILS,
   REQUIRED,
   BIO_NETWORK,
-  TIER,
   SOURCE,
   /* GLOBAL FILTERS */
   NAME,

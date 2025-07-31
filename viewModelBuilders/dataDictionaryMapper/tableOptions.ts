@@ -70,7 +70,6 @@ export const TIER_2_TABLE_OPTIONS: Omit<
       rationale: false,
       required: false,
       source: false,
-      tier: false,
       title: false,
       values: false,
     },
