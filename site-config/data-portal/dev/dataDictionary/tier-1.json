@@ -493,7 +493,7 @@
         },
         {
           "annotations": {
-            "annDataLocation": "raw.X or X if no normalized_expression_matrix",
+            "annDataLocation": "raw.X",
             "bioNetworks": [
               "adipose",
               "breast",
