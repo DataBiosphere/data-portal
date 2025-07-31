@@ -2,27 +2,20 @@ import { Row, Table } from "@tanstack/react-table";
 import { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
 import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
 import { LinkProps } from "@mui/material";
+import { BIO_NETWORK_COUNT } from "./constants";
 
 /**
  * Build bioNetwork string from the given row.
- * @param table - The table.
  * @param row - The row.
  * @returns The bioNetwork string.
  */
-export function buildBioNetworks(
-  table: Table<Attribute>,
-  row: Row<Attribute>
-): string {
+export function buildBioNetworks(row: Row<Attribute>): string {
   // Grab the bioNetwork value from the row.
   const value = row.getValue(COLUMN_IDENTIFIERS.BIO_NETWORK);
 
-  // Grab the bioNetwork column from the table and get the number of unique values.
-  const column = table.getColumn(COLUMN_IDENTIFIERS.BIO_NETWORK);
-  const facetedCount = column?.getFacetedUniqueValues().size;
-
   // If the value is an array, and the number of unique values is equal to the length of the array, return "All".
   if (Array.isArray(value)) {
-    if (facetedCount === value.length) return "All";
+    if (value.length === BIO_NETWORK_COUNT) return "All";
 
     // Otherwise, return the value joined by ", ".
     return value.join(", ");
