@@ -99,7 +99,7 @@ export const DetailCell = ({
             <Typography {...TYPOGRAPHY_PROPS}>BioNetworks</Typography>
             <StyledMarkdownCell
               {...getPartialCellContext(
-                buildBioNetworks(table, row),
+                buildBioNetworks(row),
                 COLUMN_IDENTIFIERS.BIO_NETWORK
               )}
               row={row}
