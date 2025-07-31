@@ -16,6 +16,22 @@ export const StyledCell = styled("div")`
 
 export const StyledMarkdownCell = styled(MarkdownCell)`
   min-width: 0;
+
+  table {
+    tbody {
+      tr {
+        border-bottom: 1px solid ${PALETTE.SMOKE_MAIN};
+      }
+    }
+  }
+
+  ul {
+    margin-bottom: 8px;
+
+    ul {
+      margin-bottom: 0;
+    }
+  }
 ` as typeof MarkdownCell;
 
 export const StyledCollapse = styled(Collapse)`

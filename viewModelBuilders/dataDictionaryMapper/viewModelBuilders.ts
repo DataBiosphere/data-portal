@@ -32,11 +32,8 @@ export function buildLocationName(attribute: BaseAttribute): string {
   // Return attribute name if no annDataLocation is found.
   if (!annDataLocation) return attribute.name;
 
-  // Special case for X and raw.X or X if no normalized_expression_matrix.
-  if (
-    annDataLocation === "X" ||
-    annDataLocation === "raw.X or X if no normalized_expression_matrix"
-  ) {
+  // Special case for X and raw.X.
+  if (annDataLocation === "X" || annDataLocation === "raw.X") {
     return attribute.name;
   }
 
