@@ -1754,7 +1754,7 @@
           "description": "The data stored in the X data matrix is the data that is viewable in CELLxGENE Explorer.",
           "example": "",
           "multivalued": false,
-          "name": "X",
+          "name": "X; raw.X",
           "range": "oneOf(numpy.ndarray, scipy.sparse.csr_matrix)",
           "required": true,
           "title": "Matrix Layer",
