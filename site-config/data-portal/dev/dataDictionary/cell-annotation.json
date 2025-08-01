@@ -41,7 +41,7 @@
           "range": "integer",
           "required": false,
           "title": "Clustering",
-          "values": "_Column Name_\n\nThe column name is `cluster`, `leiden`, `louvain` or `cluster + _ + [ALGORITHM_TYPE] + _ + [SUFFIX]` whereby [ALGORITHM_TYPE] and [SUFFIX] are OPTIONAL.\n\n* `cluster`, `leiden` or `louvain`: MUST be used to denote clustering in AnnData.obs\n\n* [ALGORITHM]: Denotes the algorithm used, e.g. be either `leiden` or `louvain`. OPTIONAL.\n\n* [SUFFIX]: Denotes a descriptive tag informative enough for third-party users; used to distinguish between multiple clusterings. OPTIONAL\n\n<br>Example field names: `cluster_leiden`, `cluster_leiden_broad`, `louvain`, `leiden_fine`.\n\n_Cluster_\n\nInteger of cluster label. "
+          "values": "_Column Name_\n\nThe column name is `cluster`, `leiden`, `louvain` or `cluster + _ + [ALGORITHM_TYPE] + _ + [SUFFIX]` whereby [ALGORITHM_TYPE] and [SUFFIX] are OPTIONAL.\n\n* `cluster`, `leiden` or `louvain`: MUST be used to denote clustering in AnnData.obs\n\n* [ALGORITHM]: Denotes the algorithm used, e.g. be either `leiden` or `louvain`. OPTIONAL.\n\n* [SUFFIX]: Denotes a descriptive tag informative enough for third-party users; used to distinguish between multiple clusterings. OPTIONAL.\n\nExample field names: `cluster_leiden`, `cluster_leiden_broad`, `louvain`, `leiden_fine`.\n\n_Cluster_\n\nInteger of cluster label."
         },
         {
           "annotations": {
@@ -76,7 +76,7 @@
           "range": "string",
           "required": true,
           "title": "Cell Annotation Set Name",
-          "values": "_Column Name_\n\nThe column name is the string`[cellannotation_setname]` and the values are the strings of `cell_label`. Refer to the fields `cellannotation_setname` and `cell_label` in the JSON Schema.\n\n_Set Name_\n\nAny free-text term which the author uses to annotate cells, the preferred cell label name used by the author."
+          "values": "_Column Name_\n\nThe column name is the string `[cellannotation_setname]` and the values are the strings of `cell_label`. Refer to the fields `cellannotation_setname` and `cell_label` in the JSON Schema.\n\n_Set Name_\n\nAny free-text term which the author uses to annotate cells, the preferred cell label name used by the author."
         },
         {
           "annotations": {
@@ -104,7 +104,7 @@
             "cap": "cellannotation_setname--cell_fullname",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'cell_fullname'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'cell_fullname'`\n\nFor example, if the user specified the cell annotation as `broad_cells1`, then the name of the column in the pandas DataFrame will be `broad_cells1--cell_fullname`.",
+          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'cell_fullname'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'cell_fullname'`.\n\nFor example, if the user specified the cell annotation as `broad_cells1`, then the name of the column in the pandas DataFrame will be `broad_cells1--cell_fullname`.",
           "example": "rod bipolar",
           "multivalued": true,
           "name": "{cellannotation_setname}--cell_fullname",
@@ -139,7 +139,7 @@
             "cap": "cellannotation_setname--cell_ontology_exists",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `cell_ontology_exists`, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_exists'`",
+          "description": "The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `cell_ontology_exists`, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_exists'`.",
           "example": "True",
           "multivalued": true,
           "name": "{cellannotation_setname}--cell_ontology_exists",
@@ -174,7 +174,7 @@
             "cap": "cellannotation_setname--cell_ontology_term_id",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'cell_ontology_term_id'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_term_id'`",
+          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'cell_ontology_term_id'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_term_id'`.",
           "example": "CL:0000751",
           "multivalued": true,
           "name": "{cellannotation_setname}--cell_ontology_term_id",
@@ -209,7 +209,7 @@
             "cap": "cellannotation_setname--cell_ontology_term",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'cell_ontology_term'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_term'`",
+          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'cell_ontology_term'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_term'`.",
           "example": "rod bipolar cell",
           "multivalued": true,
           "name": "{cellannotation_setname}--cell_ontology_term",
@@ -244,14 +244,14 @@
             "cap": "cellannotation_setname--rationale",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'rationale'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'rationale'`",
+          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'rationale'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'rationale'`.",
           "example": "This cell was annotated with [blank] given the canonical markers in the field [X], [Y], [Z]. We noticed [X] and [Y] running differential expression.",
           "multivalued": true,
           "name": "{cellannotation_setname}--rationale",
           "range": "string",
           "required": true,
           "title": "Rationale",
-          "values": ""
+          "values": "The free-text rationale which users provide as justification/evidence for their cell annotations."
         },
         {
           "annotations": {
@@ -279,7 +279,7 @@
             "cap": "cellannotation_setname--rationale_dois",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'rationale_dois'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'rationale_dois'`",
+          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'rationale_dois'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'rationale_dois'`.",
           "example": "10.1038/s41587-022-01468-y, 10.1038/s41556-021-00787-7, 10.1038/s41586-021-03465-8",
           "multivalued": true,
           "name": "{cellannotation_setname}--rationale_dois",
@@ -314,7 +314,7 @@
             "cap": "cellannotation_setname--marker_gene_evidence",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'marker_gene_evidence'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'marker_gene_evidence'`\n\nFor example, if the user specified the cell annotation as `broad_cells1`, then the name of the column in the pandas DataFrame will be `broad_cells1--marker_gene_evidence`.",
+          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'marker_gene_evidence'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'marker_gene_evidence'`.",
           "example": "TP53, KRAS, BRCA1",
           "multivalued": true,
           "name": "{cellannotation_setname}--marker_gene_evidence",
@@ -349,7 +349,7 @@
             "cap": "cellannotation_setname--canonical_marker_genes",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'canonical_marker_genes'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'canonical_marker_genes'`\n\nFor example, if the user specified the cell annotation as `broad_cells1`, then the name of the column in the pandas DataFrame will be `broad_cells1--canonical_marker_genes`.",
+          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'canonical_marker_genes'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'canonical_marker_genes'`.",
           "example": "GATA3, CD3D, CD3E",
           "multivalued": true,
           "name": "{cellannotation_setname}--canonical_marker_genes",
@@ -384,7 +384,7 @@
             "cap": "cellannotation_setname--synonyms",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'synonyms'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'synonyms'`\n\nFor example, if the user specified the cell annotation as `broad_cells1`, then the name of the column in the pandas DataFrame will be `broad_cells1--synonyms`.",
+          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'synonyms'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'synonyms'`.",
           "example": "neuroglial cell, glial cell, neuroglia; amacrine cell; FMB cell",
           "multivalued": true,
           "name": "{cellannotation_setname}--synonyms",
@@ -454,7 +454,7 @@
             "cap": "cellannotation_setname--category_cell_ontology_exists",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `category_cell_ontology_exists`, i.e. `[cellannotation_setname] + '--' + 'category_cell_ontology_exists'`",
+          "description": "The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `category_cell_ontology_exists`, i.e. `[cellannotation_setname] + '--' + 'category_cell_ontology_exists'`.",
           "example": "True",
           "multivalued": true,
           "name": "{cellannotation_setname}--category_cell_ontology_exists",
@@ -489,7 +489,7 @@
             "cap": "cellannotation_setname--category_cell_ontology_term_id",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'category_cell_ontology_term_id'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'category_cell_ontology_term_id'`",
+          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'category_cell_ontology_term_id'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'category_cell_ontology_term_id'`.",
           "example": "CL:0000749",
           "multivalued": true,
           "name": "{cellannotation_setname}--category_cell_ontology_term_id",
@@ -524,7 +524,7 @@
             "cap": "cellannotation_setname--category_cell_ontology_term",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `category_cell_ontology_term`, i.e. `[cellannotation_setname] + '--' + 'category_cell_ontology_term'`",
+          "description": "The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `category_cell_ontology_term`, i.e. `[cellannotation_setname] + '--' + 'category_cell_ontology_term'`.",
           "example": "ON-bipolar cell",
           "multivalued": true,
           "name": "{cellannotation_setname}--category_cell_ontology_term",
@@ -601,7 +601,7 @@
           "range": "string",
           "required": true,
           "title": "Description",
-          "values": "This is free-text for collaborators and third-parties to understand the context/background for the creation of this cell annotation set."
+          "values": "This is free-text for collaborators and third-parties to understand the context/background for the creation of this cell annotation set.\n\nWe STRONGLY recommend this field be descriptive for other scientists unfamiliar with this project to understand why this set of cell annotations exist."
         },
         {
           "annotations": {
@@ -629,7 +629,7 @@
             "cap": "annotation_method",
             "tier": "Cell Annotation"
           },
-          "description": "",
+          "description": "Method used for cell annotation.",
           "example": "algorithmic;manual;both",
           "multivalued": true,
           "name": "{cellannotation_setname}.annotation_method",
