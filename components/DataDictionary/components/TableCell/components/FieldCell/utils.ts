@@ -1,6 +1,16 @@
 import { ChipProps } from "@mui/material";
 import { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
 import { CHIP_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/chip";
+import { Row } from "@tanstack/react-table";
+
+/**
+ * Builds string array from the given attribute, for locationName.
+ * @param row - Row.
+ * @returns The location name string array.
+ */
+export function buildLocationName(row: Row<Attribute>): string[] {
+  return row.original.locationName.split(";").map((value) => value.trim());
+}
 
 /**
  * Builds string from the given attribute, for range and multivalued.
