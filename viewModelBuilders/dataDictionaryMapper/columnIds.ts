@@ -10,7 +10,6 @@ export const COLUMN_IDENTIFIERS = {
   RATIONALE: "rationale",
   REQUIRED: "required",
   SOURCE: "source",
-  TIER: "tier",
   TITLE: "title",
   VALUES: "values",
 };
