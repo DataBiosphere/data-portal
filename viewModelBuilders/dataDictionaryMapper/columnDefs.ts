@@ -110,16 +110,6 @@ const SOURCE: ColumnDef<Attribute, unknown> = {
   id: COLUMN_IDENTIFIERS.SOURCE,
 };
 
-const TIER: ColumnDef<Attribute, unknown> = {
-  accessorFn: (row) => row.annotations?.tier,
-  enableColumnFilter: false,
-  enableGlobalFilter: false,
-  enableHiding: false,
-  filterFn: "arrIncludesSome",
-  header: "Tier",
-  id: COLUMN_IDENTIFIERS.TIER,
-};
-
 const TITLE: ColumnDef<Attribute, unknown> = {
   accessorKey: "title",
   enableColumnFilter: false,
@@ -141,10 +131,9 @@ export const CELL_ANNOTATION_COLUMN_DEFS: ColumnDef<Attribute, unknown>[] = [
   FIELD,
   DETAILS,
   REQUIRED,
-  BIO_NETWORK,
-  TIER,
+  { ...BIO_NETWORK, enableColumnFilter: false },
   ANN_DATA_LOCATION,
-  SOURCE,
+  { ...SOURCE, enableColumnFilter: false },
   /* GLOBAL FILTERS */
   LOCATION_NAME,
   DESCRIPTION,

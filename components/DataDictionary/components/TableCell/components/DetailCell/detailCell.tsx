@@ -14,7 +14,6 @@ import {
   buildExample,
   buildSource,
   shouldShowAnnDataLocationColumn,
-  shouldShowTierColumn,
 } from "./utils";
 import { getPartialCellContext } from "../../utils";
 import { StyledMarkdownCell } from "./detailCell.styles";
@@ -82,19 +81,6 @@ export const DetailCell = ({
           <Typography {...TYPOGRAPHY_PROPS}>Source</Typography>
           <LinkCell {...getPartialCellContext(buildSource(row))} />
         </div>
-        {shouldShowTierColumn(table, row) && (
-          <div>
-            <Typography {...TYPOGRAPHY_PROPS}>Tier</Typography>
-            <StyledMarkdownCell
-              {...getPartialCellContext(
-                row.original.annotations?.tier as string,
-                COLUMN_IDENTIFIERS.TIER
-              )}
-              row={row}
-              table={table}
-            />
-          </div>
-        )}
         {row.original.annotations?.bioNetworks && (
           <div>
             <Typography {...TYPOGRAPHY_PROPS}>BioNetworks</Typography>

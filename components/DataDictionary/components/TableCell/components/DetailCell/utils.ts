@@ -62,23 +62,3 @@ export function shouldShowAnnDataLocationColumn(
 
   return isConfigured;
 }
-
-/**
- * Checks if the tier column is configured in the table, and tier is present in the annotations.
- * @param table - Table.
- * @param row - Row.
- * @returns True if the tier column is configured and tier is present in the annotations, false otherwise.
- */
-export function shouldShowTierColumn(
-  table: Table<Attribute>,
-  row: Row<Attribute>
-): boolean {
-  // Tier column is configured.
-  const isConfigured = table
-    .getAllColumns()
-    .some((col) => col.id === COLUMN_IDENTIFIERS.TIER);
-
-  if (!isConfigured) return false;
-
-  return Boolean(row.original.annotations?.tier);
-}
