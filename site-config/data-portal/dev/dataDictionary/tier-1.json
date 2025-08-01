@@ -457,76 +457,6 @@
         },
         {
           "annotations": {
-            "annDataLocation": "X",
-            "bioNetworks": [
-              "adipose",
-              "breast",
-              "development",
-              "eye",
-              "genetic-diversity",
-              "gut",
-              "heart",
-              "immune",
-              "kidney",
-              "liver",
-              "lung",
-              "musculoskeletal",
-              "nervous-system",
-              "oral",
-              "organoid",
-              "pancreas",
-              "reproduction",
-              "skin"
-            ],
-            "cxg": "x-matrix-layers",
-            "tier": "Tier 1"
-          },
-          "description": "The data stored in the X data matrix is the data that is viewable in CELLxGENE Explorer.",
-          "example": "",
-          "multivalued": false,
-          "name": "X",
-          "range": "oneOf(numpy.ndarray, scipy.sparse.csr_matrix)",
-          "required": true,
-          "title": "Normalized Expression Matrix",
-          "values": "In any layer, if a matrix has 50% or more values that are zeros, it is STRONGLY RECOMMENDED that the matrix be encoded as a [`scipy.sparse.csr_matrix`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html).\n\nCELLxGENE's matrix layer requirements are tailored to optimize data reuse. Because each assay has different characteristics, the requirements differ by assay type. In general, CELLxGENE requires submission of \"raw\" data suitable for computational reuse when a standard raw matrix format exists for an assay. It is STRONGLY RECOMMENDED to also include a \"normalized\" matrix with processed values ready for data analysis and suitable for visualization in CELLxGENE Explorer. So that CELLxGENE's data can be provided in download formats suitable for both R and Python, the schema imposes the following requirements:\n\n* All matrix layers MUST have the same shape, and have the same cell labels and gene labels.\n* Because it is impractical to retain all barcodes in raw and normalized matrices, any cell filtering MUST be applied to both. By contrast, those wishing to reuse datasets require access to raw gene expression values, so genes SHOULD NOT be filtered from either dataset. Summarizing, any cell barcodes that are removed from the data MUST be filtered from both raw and normalized matrices and genes SHOULD NOT be filtered from the raw matrix.\n* Any genes that publishers wish to filter from the normalized matrix MAY have their values replaced by zeros and MUST be flagged in the column [feature_is_filtered](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/4.0.0/schema.md#feature_is_filtered) of [var](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/4.0.0/schema.md#var-and-rawvar-gene-metadata), which will mask them from exploration.\n* Additional layers provided at author discretion MAY be stored using author-selected keys, but MUST have the same cells and genes as other layers. It is STRONGLY RECOMMENDED that these layers have names that accurately summarize what the numbers in the layer represent (e.g. \"counts_per_million\", \"SCTransform_normalized\", or \"RNA_velocity_unspliced\").\n\nThe following table describes the matrix data and layers requirements that are **assay-specific**. If an entry in the table is empty, the schema does not have any other requirements on data in those layers beyond the ones listed above.\n\n| Assay | \"raw\" required? | \"raw\" location | \"normalized\" required? | \"normalized\" location |\n|-|-|-|-|-|\n| scRNA-seq (UMI, e.g. 10x v3) | REQUIRED. Values MUST be de-duplicated molecule counts. Each cell MUST contain at least one non-zero value. All non-zero values MUST be positive integers stored as `numpy.float32`.| `AnnData.raw.X` unless no \"normalized\" is provided, then `AnnData.X` | STRONGLY RECOMMENDED | `AnnData.X` |\n| scRNA-seq (non-UMI, e.g. SS2) | REQUIRED. Values MUST be one of read counts (e.g. FeatureCounts) or  estimated fragments (e.g. output of RSEM). Each cell MUST contain at least one non-zero value. All non-zero values MUST be positive integers stored as `numpy.float32`. | `AnnData.raw.X` unless no \"normalized\" is provided, then `AnnData.X` | STRONGLY RECOMMENDED | `AnnData.X` |\n| Accessibility (e.g. ATAC-seq, mC-seq) | NOT REQUIRED | | REQUIRED | `AnnData.X` | STRONGLY RECOMMENDED |"
-        },
-        {
-          "annotations": {
-            "annDataLocation": "raw.X",
-            "bioNetworks": [
-              "adipose",
-              "breast",
-              "development",
-              "eye",
-              "genetic-diversity",
-              "gut",
-              "heart",
-              "immune",
-              "kidney",
-              "liver",
-              "lung",
-              "musculoskeletal",
-              "nervous-system",
-              "oral",
-              "organoid",
-              "pancreas",
-              "reproduction",
-              "skin"
-            ],
-            "cxg": "x-matrix-layers",
-            "tier": "Tier 1"
-          },
-          "description": "The data stored in the X data matrix is the data that is viewable in CELLxGENE Explorer.",
-          "example": "",
-          "multivalued": false,
-          "name": "raw.X",
-          "range": "oneOf(numpy.ndarray, scipy.sparse.csr_matrix)",
-          "required": true,
-          "title": "Raw Expression Matrix",
-          "values": "In any layer, if a matrix has 50% or more values that are zeros, it is STRONGLY RECOMMENDED that the matrix be encoded as a [`scipy.sparse.csr_matrix`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html).\n\nCELLxGENE's matrix layer requirements are tailored to optimize data reuse. Because each assay has different characteristics, the requirements differ by assay type. In general, CELLxGENE requires submission of \"raw\" data suitable for computational reuse when a standard raw matrix format exists for an assay. It is STRONGLY RECOMMENDED to also include a \"normalized\" matrix with processed values ready for data analysis and suitable for visualization in CELLxGENE Explorer. So that CELLxGENE's data can be provided in download formats suitable for both R and Python, the schema imposes the following requirements:\n\n* All matrix layers MUST have the same shape, and have the same cell labels and gene labels.\n* Because it is impractical to retain all barcodes in raw and normalized matrices, any cell filtering MUST be applied to both. By contrast, those wishing to reuse datasets require access to raw gene expression values, so genes SHOULD NOT be filtered from either dataset. Summarizing, any cell barcodes that are removed from the data MUST be filtered from both raw and normalized matrices and genes SHOULD NOT be filtered from the raw matrix.\n* Any genes that publishers wish to filter from the normalized matrix MAY have their values replaced by zeros and MUST be flagged in the column [feature_is_filtered](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/4.0.0/schema.md#feature_is_filtered) of [var](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/4.0.0/schema.md#var-and-rawvar-gene-metadata), which will mask them from exploration.\n* Additional layers provided at author discretion MAY be stored using author-selected keys, but MUST have the same cells and genes as other layers. It is STRONGLY RECOMMENDED that these layers have names that accurately summarize what the numbers in the layer represent (e.g. \"counts_per_million\", \"SCTransform_normalized\", or \"RNA_velocity_unspliced\").\n\nThe following table describes the matrix data and layers requirements that are assay-specific. If an entry in the table is empty, the schema does not have any other requirements on data in those layers beyond the ones listed above.\n\n| Assay | \"raw\" required? | \"raw\" location | \"normalized\" required? | \"normalized\" location |\n|-|-|-|-|-|\n| scRNA-seq (UMI, e.g. 10x v3) | REQUIRED. Values MUST be de-duplicated molecule counts. Each cell MUST contain at least one non-zero value. All non-zero values MUST be positive integers stored as `numpy.float32`.| `AnnData.raw.X` unless no \"normalized\" is provided, then `AnnData.X` | STRONGLY RECOMMENDED | `AnnData.X` |\n| scRNA-seq (non-UMI, e.g. SS2) | REQUIRED. Values MUST be one of read counts (e.g. FeatureCounts) or  estimated fragments (e.g. output of RSEM). Each cell MUST contain at least one non-zero value. All non-zero values MUST be positive integers stored as `numpy.float32`. | `AnnData.raw.X` unless no \"normalized\" is provided, then `AnnData.X` | STRONGLY RECOMMENDED | `AnnData.X` |\n| Accessibility (e.g. ATAC-seq, mC-seq) | NOT REQUIRED | | REQUIRED | `AnnData.X` | STRONGLY RECOMMENDED |"
-        },
-        {
-          "annotations": {
             "annDataLocation": "uns",
             "bioNetworks": ["gut"],
             "tier": "Tier 1"
@@ -1710,6 +1640,125 @@
           "required": true,
           "title": "Cell Type Ontology Term ID",
           "values": "This must be a Cell Ontology (CL) term (http://www.ebi.ac.uk/ols4/ontologies/cl).\n\n If no appropriate high-level term can be found or the cell type is unknown, then it is strongly recommended to use 'unknown'.\n\n The following terms must not be used: \"CL:0000255\" for eukaryotic cell; \"CL:0000257\" for Eumycetozoan cell; \"CL:0000548\" for animal cell."
+        }
+      ]
+    },
+    {
+      "title": "Feature",
+      "description": "",
+      "name": "feature",
+      "attributes": [
+        {
+          "annotations": {
+            "annDataLocation": "var; raw.var",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
+            "cxg": "index-of-pandasdataframe-1",
+            "tier": "Tier 1"
+          },
+          "description": "If the feature is a gene then this MUST be an ENSEMBL term. If the feature is a RNA Spike-In Control Mix then this MUST be an ERCC Spike-In identifier (e.g. `\"ERCC-0003\"`).\n\nThe index of the `pandas.DataFrame` MUST contain unique identifiers for features. If present, the index of raw.var MUST be identical to the index of var.",
+          "example": "",
+          "multivalued": false,
+          "name": "index of pandas.DataFrame",
+          "range": "string",
+          "rationale": "",
+          "required": true,
+          "title": "Feature ID"
+        },
+        {
+          "annotations": {
+            "annDataLocation": "var; raw.var",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
+            "cxg": "feature_is_filtered",
+            "tier": "Tier 1"
+          },
+          "description": "This MUST be `True` if the feature was filtered out in the normalized matrix (`X`) but is present in the raw matrix (`raw.X`). The value for all cells of the given feature in the normalized matrix MUST be `0`.\n\nOtherwise, this MUST be `False`.",
+          "example": "",
+          "multivalued": false,
+          "name": "feature_is_filtered",
+          "range": "boolean",
+          "rationale": "",
+          "required": true,
+          "title": "Feature is Filtered"
+        }
+      ]
+    },
+    {
+      "title": "Matrix Layers",
+      "description": "",
+      "name": "matrixLayers",
+      "attributes": [
+        {
+          "annotations": {
+            "annDataLocation": "X; raw.X",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
+            "cxg": "x-matrix-layers",
+            "tier": "Tier 1"
+          },
+          "description": "The data stored in the X data matrix is the data that is viewable in CELLxGENE Explorer.",
+          "example": "",
+          "multivalued": false,
+          "name": "X; raw.X",
+          "range": "oneOf(numpy.ndarray, scipy.sparse.csr_matrix)",
+          "required": true,
+          "title": "Matrix Layer",
+          "values": "In any layer, if a matrix has 50% or more values that are zeros, it is STRONGLY RECOMMENDED that the matrix be encoded as a [`scipy.sparse.csr_matrix`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html).\n\nCELLxGENE's matrix layer requirements are tailored to optimize data reuse. Because each assay has different characteristics, the requirements differ by assay type. In general, CELLxGENE requires submission of \"raw\" data suitable for computational reuse when a standard raw matrix format exists for an assay. It is STRONGLY RECOMMENDED to also include a \"normalized\" matrix with processed values ready for data analysis and suitable for visualization in CELLxGENE Explorer. So that CELLxGENE's data can be provided in download formats suitable for both R and Python, the schema imposes the following requirements:\n\n* All matrix layers MUST have the same shape, and have the same cell labels and gene labels.\n* Because it is impractical to retain all barcodes in raw and normalized matrices, any cell filtering MUST be applied to both. By contrast, those wishing to reuse datasets require access to raw gene expression values, so genes SHOULD NOT be filtered from either dataset. Summarizing, any cell barcodes that are removed from the data MUST be filtered from both raw and normalized matrices and genes SHOULD NOT be filtered from the raw matrix.\n* Any genes that publishers wish to filter from the normalized matrix MAY have their values replaced by zeros and MUST be flagged in the column [feature_is_filtered](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/4.0.0/schema.md#feature_is_filtered) of [var](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/4.0.0/schema.md#var-and-rawvar-gene-metadata), which will mask them from exploration.\n* Additional layers provided at author discretion MAY be stored using author-selected keys, but MUST have the same cells and genes as other layers. It is STRONGLY RECOMMENDED that these layers have names that accurately summarize what the numbers in the layer represent (e.g. \"counts_per_million\", \"SCTransform_normalized\", or \"RNA_velocity_unspliced\").\n\nThe following table describes the matrix data and layers requirements that are assay-specific. If an entry in the table is empty, the schema does not have any other requirements on data in those layers beyond the ones listed above.\n\n| Assay | \"raw\" required? | \"raw\" location | \"normalized\" required? | \"normalized\" location |\n|-|-|-|-|-|\n| scRNA-seq (UMI, e.g. 10x v3) | REQUIRED. Values MUST be de-duplicated molecule counts. Each cell MUST contain at least one non-zero value. All non-zero values MUST be positive integers stored as `numpy.float32`.| `AnnData.raw.X` unless no \"normalized\" is provided, then `AnnData.X` | STRONGLY RECOMMENDED | `AnnData.X` |\n| scRNA-seq (non-UMI, e.g. SS2) | REQUIRED. Values MUST be one of read counts (e.g. FeatureCounts) or  estimated fragments (e.g. output of RSEM). Each cell MUST contain at least one non-zero value. All non-zero values MUST be positive integers stored as `numpy.float32`. | `AnnData.raw.X` unless no \"normalized\" is provided, then `AnnData.X` | STRONGLY RECOMMENDED | `AnnData.X` |\n| Accessibility (e.g. ATAC-seq, mC-seq) | NOT REQUIRED | | REQUIRED | `AnnData.X` | STRONGLY RECOMMENDED |"
         }
       ]
     }

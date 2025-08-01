@@ -5,6 +5,22 @@ import { LinkProps } from "@mui/material";
 import { BIO_NETWORK_COUNT } from "./constants";
 
 /**
+ * Build annDataLocation string from the given row.
+ * @param row - The row.
+ * @returns The annDataLocation string.
+ */
+export function buildAnnDataLocation(row: Row<Attribute>): string {
+  const value = row.getValue(COLUMN_IDENTIFIERS.ANN_DATA_LOCATION);
+
+  if (Array.isArray(value)) {
+    if (value.length === 0) return "None";
+    return value.join(" or ");
+  }
+
+  throw new Error("Invalid annDataLocation value");
+}
+
+/**
  * Build bioNetwork string from the given row.
  * @param row - Row.
  * @returns The bioNetwork string.

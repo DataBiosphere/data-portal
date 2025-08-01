@@ -10,6 +10,7 @@ import {
 } from "./detailCell.styles";
 import { LinkCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/LinkCell/linkCell";
 import {
+  buildAnnDataLocation,
   buildBioNetworks,
   buildExample,
   buildSource,
@@ -99,7 +100,7 @@ export const DetailCell = ({
             <Typography {...TYPOGRAPHY_PROPS}>AnnData Location</Typography>
             <StyledMarkdownCell
               {...getPartialCellContext(
-                (row.original.annotations?.annDataLocation as string) || "None",
+                buildAnnDataLocation(row),
                 COLUMN_IDENTIFIERS.ANN_DATA_LOCATION
               )}
               row={row}

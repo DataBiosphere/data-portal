@@ -4,10 +4,10 @@ import { FieldCell } from "../../components/DataDictionary/components/TableCell/
 import { DetailCell } from "../../components/DataDictionary/components/TableCell/components/DetailCell/detailCell";
 import { GridTrackSize } from "@databiosphere/findable-ui/lib/config/entities";
 import { COLUMN_IDENTIFIERS } from "./columnIds";
-import { buildTierNSource } from "./accessorFn";
+import { buildTierNSource, buildAnnDataLocation } from "./accessorFn";
 
 const ANN_DATA_LOCATION: ColumnDef<Attribute, unknown> = {
-  accessorFn: (row) => row.annotations?.annDataLocation,
+  accessorFn: buildAnnDataLocation,
   enableColumnFilter: true,
   enableGlobalFilter: false,
   header: "AnnData",
