@@ -34,7 +34,7 @@
             "cap": "cellannotation_setname--cell_fullname",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'cell_fullname'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'cell_fullname'`.\n\nFor example, if the user specified the cell annotation as `broad_cells1`, then the name of the column in the pandas DataFrame will be `broad_cells1--cell_fullname`.",
+          "description": "__Format__: The column name is the value `[cellannotation_setname]` concatenated with the string `'cell_fullname'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'cell_fullname'`.\n\nFor example, if the user specified the cell annotation as `broad_cells1`, then the name of the column in the pandas DataFrame will be `broad_cells1--cell_fullname`.",
           "example": "rod bipolar",
           "multivalued": false,
           "name": "{cellannotation_setname}--cell_fullname",
@@ -69,7 +69,7 @@
             "cap": "cellannotation_setname--cell_ontology_exists",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `cell_ontology_exists`, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_exists'`.",
+          "description": "__Format__: The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `cell_ontology_exists`, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_exists'`.",
           "example": "True",
           "multivalued": false,
           "name": "{cellannotation_setname}--cell_ontology_exists",
@@ -104,7 +104,7 @@
             "cap": "cellannotation_setname--cell_ontology_term_id",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'cell_ontology_term_id'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_term_id'`.",
+          "description": "__Format__: The column name is the value `[cellannotation_setname]` concatenated with the string `'cell_ontology_term_id'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_term_id'`.",
           "example": "CL:0000751",
           "multivalued": false,
           "name": "{cellannotation_setname}--cell_ontology_term_id",
@@ -139,7 +139,7 @@
             "cap": "cellannotation_setname--cell_ontology_term",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'cell_ontology_term'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_term'`.",
+          "description": "__Format__: The column name is the value `[cellannotation_setname]` concatenated with the string `'cell_ontology_term'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_term'`.",
           "example": "rod bipolar cell",
           "multivalued": false,
           "name": "{cellannotation_setname}--cell_ontology_term",
@@ -174,7 +174,7 @@
             "cap": "cellannotation_setname--rationale",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'rationale'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'rationale'`.",
+          "description": "__Format__: The column name is the value `[cellannotation_setname]` concatenated with the string `'rationale'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'rationale'`.",
           "example": "This cell was annotated with [blank] given the canonical markers in the field [X], [Y], [Z]. We noticed [X] and [Y] running differential expression.",
           "multivalued": false,
           "name": "{cellannotation_setname}--rationale",
@@ -209,7 +209,7 @@
             "cap": "cellannotation_setname--rationale_dois",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'rationale_dois'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'rationale_dois'`.",
+          "description": "__Format__: The column name is the value `[cellannotation_setname]` concatenated with the string `'rationale_dois'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'rationale_dois'`.",
           "example": "10.1038/s41587-022-01468-y, 10.1038/s41556-021-00787-7, 10.1038/s41586-021-03465-8",
           "multivalued": true,
           "name": "{cellannotation_setname}--rationale_dois",
@@ -244,7 +244,7 @@
             "cap": "cellannotation_setname--marker_gene_evidence",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'marker_gene_evidence'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'marker_gene_evidence'`.",
+          "description": "__Format__: The column name is the value `[cellannotation_setname]` concatenated with the string `'marker_gene_evidence'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'marker_gene_evidence'`.",
           "example": "TP53, KRAS, BRCA1",
           "multivalued": true,
           "name": "{cellannotation_setname}--marker_gene_evidence",
@@ -279,7 +279,7 @@
             "cap": "cellannotation_setname--canonical_marker_genes",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'canonical_marker_genes'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'canonical_marker_genes'`.",
+          "description": "__Format__: The column name is the value `[cellannotation_setname]` concatenated with the string `'canonical_marker_genes'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'canonical_marker_genes'`.",
           "example": "GATA3, CD3D, CD3E",
           "multivalued": true,
           "name": "{cellannotation_setname}--canonical_marker_genes",
@@ -314,7 +314,7 @@
             "cap": "cellannotation_setname--synonyms",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'synonyms'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'synonyms'`.",
+          "description": "__Format__: The column name is the value `[cellannotation_setname]` concatenated with the string `'synonyms'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'synonyms'`.",
           "example": "neuroglial cell, glial cell, neuroglia; amacrine cell; FMB cell",
           "multivalued": true,
           "name": "{cellannotation_setname}--synonyms",
@@ -349,7 +349,7 @@
             "cap": "cellannotation_setname--category_fullname",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `category_fullname`, i.e. `[cellannotation_setname] + '--' + 'category_fullname'`. This MUST be the full-length name for the biological entity, not an abbreviation.",
+          "description": "__Format__: The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `category_fullname`, i.e. `[cellannotation_setname] + '--' + 'category_fullname'`. This MUST be the full-length name for the biological entity, not an abbreviation.",
           "example": "ON-bipolar cell",
           "multivalued": false,
           "name": "{cellannotation_setname}--category_fullname",
@@ -384,7 +384,7 @@
             "cap": "cellannotation_setname--category_cell_ontology_exists",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `category_cell_ontology_exists`, i.e. `[cellannotation_setname] + '--' + 'category_cell_ontology_exists'`.",
+          "description": "__Format__: The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `category_cell_ontology_exists`, i.e. `[cellannotation_setname] + '--' + 'category_cell_ontology_exists'`.",
           "example": "True",
           "multivalued": false,
           "name": "{cellannotation_setname}--category_cell_ontology_exists",
@@ -419,7 +419,7 @@
             "cap": "cellannotation_setname--category_cell_ontology_term_id",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the value `[cellannotation_setname]` concatenated with the string `'category_cell_ontology_term_id'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'category_cell_ontology_term_id'`.",
+          "description": "__Format__: The column name is the value `[cellannotation_setname]` concatenated with the string `'category_cell_ontology_term_id'` and two hyphens, i.e. `[cellannotation_setname] + '--' + 'category_cell_ontology_term_id'`.",
           "example": "CL:0000749",
           "multivalued": false,
           "name": "{cellannotation_setname}--category_cell_ontology_term_id",
@@ -454,7 +454,7 @@
             "cap": "cellannotation_setname--category_cell_ontology_term",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `category_cell_ontology_term`, i.e. `[cellannotation_setname] + '--' + 'category_cell_ontology_term'`.",
+          "description": "__Format__: The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `category_cell_ontology_term`, i.e. `[cellannotation_setname] + '--' + 'category_cell_ontology_term'`.",
           "example": "ON-bipolar cell",
           "multivalued": false,
           "name": "{cellannotation_setname}--category_cell_ontology_term",
@@ -489,7 +489,7 @@
             "cap": "cellannotation_setname--cell_ontology_assessment",
             "tier": "Cell Annotation"
           },
-          "description": "The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `cell_ontology_assessment`, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_assessment'`",
+          "description": "__Format__: The column name is the string prefix `[cellannotation_setname]--` concatenated with the string value `cell_ontology_assessment`, i.e. `[cellannotation_setname] + '--' + 'cell_ontology_assessment'`",
           "example": "Amacrine cell should have four child terms: glycinergic, GABAergic, GABAergic Glycinergic amacrine cells and non-GABAergic non-glycinergic amacrine cells, which then contain their corresponding child terms",
           "multivalued": false,
           "name": "{cellannotation_setname}--cell_ontology_assessment",
@@ -825,7 +825,7 @@
           "range": "string",
           "required": false,
           "title": "Clustering",
-          "values": "_Column Name_\n\nThe column name is `cluster`, `leiden`, `louvain` or `cluster + _ + [ALGORITHM_TYPE] + _ + [SUFFIX]` whereby [ALGORITHM_TYPE] and [SUFFIX] are OPTIONAL.\n\n* `cluster`, `leiden` or `louvain`: MUST be used to denote clustering in AnnData.obs\n\n* [ALGORITHM]: Denotes the algorithm used, e.g. be either `leiden` or `louvain`. OPTIONAL.\n\n* [SUFFIX]: Denotes a descriptive tag informative enough for third-party users; used to distinguish between multiple clusterings. OPTIONAL.\n\nExample field names: `cluster_leiden`, `cluster_leiden_broad`, `louvain`, `leiden_fine`.\n\n_Cluster_\n\nString of cluster label."
+          "values": "_Column Name_\n\nThe column name is `cluster`, `leiden`, `louvain` or `cluster + _ + [ALGORITHM_TYPE] + _ + [SUFFIX]` whereby [ALGORITHM_TYPE] and [SUFFIX] are OPTIONAL.\n\n* `cluster`, `leiden` or `louvain`: MUST be used to denote clustering in AnnData.obs\n\n* [ALGORITHM]: Denotes the algorithm used, e.g. be either `leiden` or `louvain`. OPTIONAL.\n\n* [SUFFIX]: Denotes a descriptive tag informative enough for third-party users; used to distinguish between multiple clusterings. OPTIONAL.\n\nExample field names: `cluster_leiden`, `cluster_leiden_broad`, `louvain`, `leiden_fine`.\n\n_Cluster_\n\nInteger of cluster label."
         }
       ]
     }
