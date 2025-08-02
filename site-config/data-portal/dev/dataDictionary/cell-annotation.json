@@ -819,13 +819,13 @@
             "tier": "Cell Annotation"
           },
           "description": "Users may OPTIONALLY include a single field for clustering within AnnData files, or multiple fields denoting clustering, e.g. different clustering algorithms, multiple resolutions of clustering, etc.\n\nWe therefore REQUIRE that clustering is clearly denoted within the AnnData file if it contains clustering fields.\n\nScanPy has set an AnnData community standard of defining the `*.obs` value by the type of algorithm. e.g. the function `scanpy.tl.louvain` (documented [here](https://scanpy.readthedocs.io/en/stable/generated/scanpy.tl.louvain.html)) by default saves the clustering as `anndata.obs['louvain']`. Similarly, `leiden` (documented [here](https://scanpy.readthedocs.io/en/stable/generated/scanpy.tl.leiden.html)) is often encoded as `anndata.obs['leiden']`.",
-          "example": "0;1;2",
+          "example": "cluster_leiden;cluster_leiden_broad;louvain;leiden",
           "multivalued": true,
           "name": "{cluster}",
-          "range": "integer",
+          "range": "string",
           "required": false,
           "title": "Clustering",
-          "values": "_Column Name_\n\nThe column name is `cluster`, `leiden`, `louvain` or `cluster + _ + [ALGORITHM_TYPE] + _ + [SUFFIX]` whereby [ALGORITHM_TYPE] and [SUFFIX] are OPTIONAL.\n\n* `cluster`, `leiden` or `louvain`: MUST be used to denote clustering in AnnData.obs\n\n* [ALGORITHM]: Denotes the algorithm used, e.g. be either `leiden` or `louvain`. OPTIONAL.\n\n* [SUFFIX]: Denotes a descriptive tag informative enough for third-party users; used to distinguish between multiple clusterings. OPTIONAL.\n\nExample field names: `cluster_leiden`, `cluster_leiden_broad`, `louvain`, `leiden_fine`.\n\n_Cluster_\n\nInteger of cluster label."
+          "values": "_Column Name_\n\nThe column name is `cluster`, `leiden`, `louvain` or `cluster + _ + [ALGORITHM_TYPE] + _ + [SUFFIX]` whereby [ALGORITHM_TYPE] and [SUFFIX] are OPTIONAL.\n\n* `cluster`, `leiden` or `louvain`: MUST be used to denote clustering in AnnData.obs\n\n* [ALGORITHM]: Denotes the algorithm used, e.g. be either `leiden` or `louvain`. OPTIONAL.\n\n* [SUFFIX]: Denotes a descriptive tag informative enough for third-party users; used to distinguish between multiple clusterings. OPTIONAL.\n\nExample field names: `cluster_leiden`, `cluster_leiden_broad`, `louvain`, `leiden_fine`.\n\n_Cluster_\n\nString of cluster label."
         }
       ]
     }
