@@ -1,6 +1,6 @@
 {
   "name": "next",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "private": true,
   "scripts": {
     "dev": "./scripts/dev.sh data-portal && ./scripts/set-version.sh dev && next dev",
