@@ -507,6 +507,41 @@
       "attributes": [
         {
           "annotations": {
+            "annDataLocation": "uns",
+            "bioNetworks": [
+              "adipose",
+              "breast",
+              "development",
+              "eye",
+              "genetic-diversity",
+              "gut",
+              "heart",
+              "immune",
+              "kidney",
+              "liver",
+              "lung",
+              "musculoskeletal",
+              "nervous-system",
+              "oral",
+              "organoid",
+              "pancreas",
+              "reproduction",
+              "skin"
+            ],
+            "cap": "cellannotation_metadata",
+            "tier": "Cell Annotation"
+          },
+          "description": "Python dictionary within the uns dictionary, with the key the string [cellannotation_setname].\n\nThe rest of the dictionary as defined below.",
+          "example": "'{[cellannotation_set]--metadata:{'annotation_method':'algorithmic'...}}'",
+          "multivalued": false,
+          "name": "{cellannotation_set}--metadata",
+          "range": "python dictionary",
+          "required": true,
+          "title": "Cell Annotation Metadata",
+          "values": ""
+        },
+        {
+          "annotations": {
             "annDataLocation": "obs",
             "bioNetworks": [
               "adipose",
