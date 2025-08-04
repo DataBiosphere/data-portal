@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.6.0](https://github.com/DataBiosphere/data-portal/compare/v2.5.0...v2.6.0) (2025-08-04)
+
+
+### Features
+
+* data dictionary - add library entity ([#2805](https://github.com/DataBiosphere/data-portal/issues/2805)) ([36275cf](https://github.com/DataBiosphere/data-portal/commit/36275cfe04e66ca51c403234a34352c38545743d))
+* data dictionary mvp ([#2743](https://github.com/DataBiosphere/data-portal/issues/2743)) ([#2800](https://github.com/DataBiosphere/data-portal/issues/2800)) ([36275cf](https://github.com/DataBiosphere/data-portal/commit/36275cfe04e66ca51c403234a34352c38545743d))
+
+
+### Chores
+
+* update findable-ui to latest version v41.0.0 ([#2801](https://github.com/DataBiosphere/data-portal/issues/2801)) ([36275cf](https://github.com/DataBiosphere/data-portal/commit/36275cfe04e66ca51c403234a34352c38545743d))
+
+
+### Content
+
+* check for and remove internal links to the following urls ([#2774](https://github.com/DataBiosphere/data-portal/issues/2774)) ([#2806](https://github.com/DataBiosphere/data-portal/issues/2806)) ([f4e6559](https://github.com/DataBiosphere/data-portal/commit/f4e6559c6a969b9964691e076369dcc7a1ca1b5c))
+
 ## [2.5.0](https://github.com/DataBiosphere/data-portal/compare/v2.4.7...v2.5.0) (2025-07-11)
 
 
