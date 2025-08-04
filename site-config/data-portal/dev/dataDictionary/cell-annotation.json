@@ -532,7 +532,7 @@
             "tier": "Cell Annotation"
           },
           "description": "Python dictionary within the uns dictionary, with the key the string [cellannotation_setname].\n\nThe rest of the dictionary as defined below.",
-          "example": "'{[cellannotation_set]--metadata:{'annotation_method':'algorithmic'...}}'",
+          "example": "'{{cellannotation_set}--metadata:{'annotation_method':'algorithmic'...}}'",
           "multivalued": false,
           "name": "{cellannotation_set}--metadata",
           "range": "python dictionary",
