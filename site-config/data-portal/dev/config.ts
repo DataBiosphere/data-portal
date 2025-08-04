@@ -10,6 +10,17 @@ import { CONTRIBUTE } from "./navigation/contribute";
 import { GUIDES } from "./navigation/guides";
 import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
+import cellAnnotation from "./dataDictionary/cell-annotation.json";
+import metadataTier1 from "./dataDictionary/tier-1.json";
+import metadataTier2 from "./dataDictionary/tier-2.json";
+import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
+import { DataDictionaryConfig } from "@databiosphere/findable-ui/lib/common/entities";
+import {
+  CELL_ANNOTATION_TABLE_OPTIONS,
+  TIER_1_TABLE_OPTIONS,
+  TIER_2_TABLE_OPTIONS,
+} from "../../../viewModelBuilders/dataDictionaryMapper/tableOptions";
+import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 
 const APP_TITLE = "HCA Data Portal";
 const CATALOG = "dcp50";
@@ -42,8 +53,24 @@ export function makeConfig(
       },
       url: `${dataUrl}/index`,
     },
+    dataDictionaries: [
+      {
+        dataDictionary: buildDataDictionary(metadataTier1),
+        path: "tier-1",
+        tableOptions: TIER_1_TABLE_OPTIONS,
+      },
+      {
+        dataDictionary: buildDataDictionary(metadataTier2),
+        path: "tier-2",
+        tableOptions: TIER_2_TABLE_OPTIONS,
+      },
+      {
+        dataDictionary: buildDataDictionary(cellAnnotation),
+        path: "cell-annotation",
+        tableOptions: CELL_ANNOTATION_TABLE_OPTIONS,
+      },
+    ] as unknown as DataDictionaryConfig[],
     entities: [],
-    explorerTitle: "",
     gitHubUrl,
     layout: {
       floating,
@@ -102,7 +129,29 @@ export function makeConfig(
             },
             {
               label: "Metadata",
-              url: ROUTES.METADATA,
+              menuItems: [
+                {
+                  label: "Metadata Overview",
+                  selectedMatch: SELECTED_MATCH.EQUALS,
+                  url: ROUTES.METADATA,
+                },
+                {
+                  label: "Tier 1 Metadata",
+                  selectedMatch: SELECTED_MATCH.EQUALS,
+                  url: ROUTES.METADATA_TIER_1,
+                },
+                {
+                  label: "Tier 2 Metadata",
+                  selectedMatch: SELECTED_MATCH.EQUALS,
+                  url: ROUTES.METADATA_TIER_2,
+                },
+                {
+                  label: "Cell Annotation Metadata",
+                  selectedMatch: SELECTED_MATCH.EQUALS,
+                  url: ROUTES.METADATA_CELL_ANNOTATION,
+                },
+              ],
+              url: "",
             },
             {
               label: "Contribute",

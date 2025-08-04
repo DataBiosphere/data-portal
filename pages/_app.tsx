@@ -19,6 +19,8 @@ import { BREAKPOINTS } from "../site-config/common/constants";
 import { SiteConfig } from "../site-config/common/entities";
 import { mergeAppTheme } from "../theme/theme";
 import { LayoutDimensionsProvider } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/provider";
+import { DataDictionaryStateProvider } from "@databiosphere/findable-ui/lib/providers/dataDictionaryState/provider";
+import { ServicesProvider } from "@databiosphere/findable-ui/lib/providers/services/provider";
 
 interface PageProps {
   pageTitle?: string;
@@ -62,28 +64,32 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
         <ConfigProvider config={appConfig}>
           <Head appTitle={appTitle} pageTitle={pageTitle} />
           <CssBaseline />
-          <LayoutDimensionsProvider>
-            <AppLayout>
-              <ThemeProvider
-                theme={(theme: Theme): Theme => {
-                  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
-                  const { vars, ...themeWithoutVars } = theme;
-                  return createTheme(
-                    deepmerge(themeWithoutVars, {
-                      breakpoints: createBreakpoints(BREAKPOINTS),
-                    })
-                  );
-                }}
-              >
-                <Header {...header} />
-              </ThemeProvider>
-              <Main>
-                <Component {...pageProps} />
-                <Floating {...floating} />
-              </Main>
-              <Footer {...footer} />
-            </AppLayout>
-          </LayoutDimensionsProvider>
+          <ServicesProvider>
+            <DataDictionaryStateProvider>
+              <LayoutDimensionsProvider>
+                <AppLayout>
+                  <ThemeProvider
+                    theme={(theme: Theme): Theme => {
+                      // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
+                      const { vars, ...themeWithoutVars } = theme;
+                      return createTheme(
+                        deepmerge(themeWithoutVars, {
+                          breakpoints: createBreakpoints(BREAKPOINTS),
+                        })
+                      );
+                    }}
+                  >
+                    <Header {...header} />
+                  </ThemeProvider>
+                  <Main>
+                    <Component {...pageProps} />
+                    <Floating {...floating} />
+                  </Main>
+                  <Footer {...footer} />
+                </AppLayout>
+              </LayoutDimensionsProvider>
+            </DataDictionaryStateProvider>
+          </ServicesProvider>
         </ConfigProvider>
       </ThemeProvider>
     </EmotionThemeProvider>
