@@ -537,7 +537,7 @@
           "name": "{cellannotation_set}--metadata",
           "range": "python dictionary",
           "required": true,
-          "title": "Cell Annotation Metadata",
+          "title": "Annotation Set Metadata",
           "values": ""
         },
         {
