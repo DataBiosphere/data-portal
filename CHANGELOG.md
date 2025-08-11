@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.1](https://github.com/DataBiosphere/data-portal/compare/v2.6.0...v2.6.1) (2025-08-11)
+
+
+### Chores
+
+* updated catalog and updates for dcp51 [#2831](https://github.com/DataBiosphere/data-portal/issues/2831) ([#2832](https://github.com/DataBiosphere/data-portal/issues/2832)) ([2fa2894](https://github.com/DataBiosphere/data-portal/commit/2fa2894693a530061ae59186e419fc3b9261ccf9))
+
 ## [2.6.0](https://github.com/DataBiosphere/data-portal/compare/v2.5.0...v2.6.0) (2025-08-04)
 
 
