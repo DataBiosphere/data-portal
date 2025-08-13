@@ -1,6 +1,6 @@
-import { TEXT_BODY_400 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import { ReactNode } from "react";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export interface KeyElTypeProps {
   children: ReactNode;
@@ -8,7 +8,10 @@ export interface KeyElTypeProps {
 
 export const KeyElType = ({ children }: KeyElTypeProps): JSX.Element => {
   return (
-    <Typography color="ink.light" variant={TEXT_BODY_400}>
+    <Typography
+      color={TYPOGRAPHY_PROPS.COLOR.INK_LIGHT}
+      variant={TYPOGRAPHY_PROPS.VARIANT.BODY_400}
+    >
       {children}
     </Typography>
   );

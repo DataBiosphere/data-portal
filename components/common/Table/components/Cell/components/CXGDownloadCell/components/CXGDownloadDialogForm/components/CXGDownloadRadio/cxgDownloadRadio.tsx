@@ -1,14 +1,11 @@
 import { Grid } from "@databiosphere/findable-ui/lib/components/common/Grid/grid";
-import {
-  TEXT_BODY_400,
-  TEXT_BODY_LARGE_500,
-} from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import {
   CXG_DATASET_FILE_TYPE,
   DatasetAsset,
 } from "../../../../../../../../../../../@types/network";
 import { RadioGroup } from "./cxgDownloadRadio.styles";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 const H5AD_FILE_FORMAT = ".h5ad";
 const RDS_FILE_FORMAT = ".rds";
@@ -30,7 +27,9 @@ export const CXGDownloadRadio = ({
   const isRDS = isDatasetAsset(datasetAssets, CXG_DATASET_FILE_TYPE.RDS);
   return (
     <Grid gridSx={{ gap: isRDS ? 4 : 1 }}>
-      <Typography variant={TEXT_BODY_LARGE_500}>{title}</Typography>
+      <Typography variant={TYPOGRAPHY_PROPS.VARIANT.BODY_LARGE_500}>
+        {title}
+      </Typography>
       {isRDS ? (
         <RadioGroup
           onRadioChange={onRadioChange}
@@ -52,7 +51,7 @@ export const CXGDownloadRadio = ({
         <Typography
           component="div"
           gutterBottom={false}
-          variant={TEXT_BODY_400}
+          variant={TYPOGRAPHY_PROPS.VARIANT.BODY_400}
         >
           {H5AD_FILE_FORMAT}
         </Typography>

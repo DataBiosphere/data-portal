@@ -1,14 +1,9 @@
-import {
-  textBodyLarge4002Lines,
-  textHeading,
-  textHeadingLarge,
-  textHeadingSmall,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
-import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/theme";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { textHeadingXSmall } from "../../../../styles/mixins/fonts";
+import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/types";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import { typographyToCSS } from "@databiosphere/findable-ui/lib/styles/common/mixins/typography";
 
 interface Props {
   headerHeight: number;
@@ -56,7 +51,7 @@ const image = css`
   }
 `;
 
-const muiAlert = (props: ThemeProps) => css`
+const muiAlert = ({ theme }: ThemeProps) => css`
   .MuiAlert-root {
     margin: 24px 0;
     padding: 24px;
@@ -70,11 +65,11 @@ const muiAlert = (props: ThemeProps) => css`
     }
 
     .MuiAlert-message {
-      ${textBodyLarge4002Lines(props)};
+      font: ${FONT.BODY_LARGE_400_2_LINES};
       gap: 16px;
 
       .MuiAlertTitle-root {
-        ${textHeadingSmall(props)};
+        ${css(theme.typography["heading-small"])};
       }
 
       ol > li,
@@ -116,18 +111,18 @@ export const Content = styled.div<Props>`
   }
 
   h1 {
-    ${textHeadingLarge};
+    ${typographyToCSS("heading-large")};
     margin: 0 0 8px;
     scroll-margin-top: ${({ headerHeight }) => headerHeight + 24}px;
   }
 
   h2 {
-    ${textHeading};
+    ${typographyToCSS("heading")};
     margin: 32px 0 16px;
   }
 
   h3 {
-    ${textHeadingXSmall};
+    ${typographyToCSS("heading-xsmall")};
     margin: 32px 0 16px;
   }
 

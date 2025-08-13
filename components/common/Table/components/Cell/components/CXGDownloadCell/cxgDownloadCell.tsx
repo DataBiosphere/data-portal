@@ -1,8 +1,9 @@
 import { DownloadIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/DownloadIcon/downloadIcon";
-import { IconButton } from "@databiosphere/findable-ui/lib/components/common/IconButton/iconButton";
 import { useState } from "react";
 import { DatasetAsset } from "../../../../../../../@types/network";
 import { CXGDownloadDialog } from "./components/CXGDownloadDialog/cxgDownloadDialog";
+import { StyledIconButton } from "./cxgDownloadCell.styles";
+import { ICON_BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/iconButton";
 
 export interface CXGDownloadCellProps {
   datasetAssets: DatasetAsset[];
@@ -17,13 +18,14 @@ export const CXGDownloadCell = ({
   return (
     <>
       {datasetAssets.length > 0 && (
-        <IconButton
-          color="primary"
+        <StyledIconButton
+          color={ICON_BUTTON_PROPS.COLOR.PRIMARY}
           disabled={datasetAssets.length === 0}
-          Icon={DownloadIcon}
           onClick={(): void => setOpen(true)}
-          size="medium"
-        />
+          size={ICON_BUTTON_PROPS.SIZE.MEDIUM}
+        >
+          <DownloadIcon />
+        </StyledIconButton>
       )}
       <CXGDownloadDialog
         datasetAssets={datasetAssets}

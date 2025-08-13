@@ -1,5 +1,3 @@
-import { ButtonPrimary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonPrimary/buttonPrimary";
-import { ButtonSecondary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
 import { useState } from "react";
 import {
   CXG_DATASET_FILE_TYPE,
@@ -14,6 +12,8 @@ import { CXGDownloadCaption } from "./components/CXGDownloadCaption/cxgDownloadC
 import { CXGDownloadFileSize } from "./components/CXGDownloadFileSize/cxgDownloadFileSize";
 import { CXGDownloadRadio } from "./components/CXGDownloadRadio/cxgDownloadRadio";
 import { Code } from "./cxgDownloadDialogForm.styles";
+import { Button } from "@mui/material";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 
 type onCloseFn = () => void;
 
@@ -58,10 +58,16 @@ export const CxgDownloadDialogForm = ({
         {downloadURL && <Code code={downloadURL} />}
       </DialogContent>
       <DialogActions>
-        <ButtonPrimary disabled={!downloadURL} href={downloadURL}>
+        <Button
+          {...BUTTON_PROPS.PRIMARY_CONTAINED}
+          disabled={!downloadURL}
+          href={downloadURL}
+        >
           Download
-        </ButtonPrimary>
-        <ButtonSecondary onClick={onClose}>Cancel</ButtonSecondary>
+        </Button>
+        <Button {...BUTTON_PROPS.SECONDARY_CONTAINED} onClick={onClose}>
+          Cancel
+        </Button>
       </DialogActions>
     </>
   );

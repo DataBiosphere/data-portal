@@ -1,7 +1,7 @@
 import { AnchorLink } from "@databiosphere/findable-ui/lib/components/common/AnchorLink/anchorLink";
-import { TEXT_HEADING_LARGE } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import { slugifyHeading } from "../../../../../plugins/common/utils";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export interface HeadingProps {
   enableAnchor?: boolean;
@@ -15,7 +15,7 @@ export const Heading = ({
   return (
     <Typography
       component="h1"
-      variant={TEXT_HEADING_LARGE}
+      variant={TYPOGRAPHY_PROPS.VARIANT.HEADING_LARGE}
       sx={{ mb: 2, position: "relative" }}
     >
       {headingValue}

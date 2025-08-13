@@ -1,10 +1,7 @@
 import { Grid } from "@databiosphere/findable-ui/lib/components/common/Grid/grid";
-import {
-  TEXT_BODY_400_2_LINES,
-  TEXT_BODY_LARGE_500,
-} from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import { ReactNode } from "react";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export interface DialogContentSectionProps {
   children: ReactNode;
@@ -17,11 +14,13 @@ export const DialogContentSection = ({
 }: DialogContentSectionProps): JSX.Element => {
   return (
     <Grid gridSx={{ gap: 1 }}>
-      <Typography variant={TEXT_BODY_LARGE_500}>{title}</Typography>
+      <Typography variant={TYPOGRAPHY_PROPS.VARIANT.BODY_LARGE_500}>
+        {title}
+      </Typography>
       <Typography
         component="div"
         gutterBottom={false}
-        variant={TEXT_BODY_400_2_LINES}
+        variant={TYPOGRAPHY_PROPS.VARIANT.BODY_400_2_LINES}
       >
         {children}
       </Typography>

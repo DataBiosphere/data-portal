@@ -10,7 +10,7 @@ export const ResultsView = styled.div`
       color: ${PALETTE.PRIMARY_MAIN};
     }
 
-    .MuiTypography-text-body-small-400 {
+    .MuiTypography-body-small-400 {
       word-break: break-word;
     }
   }

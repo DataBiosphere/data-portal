@@ -1,6 +1,7 @@
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
+import { APP } from "@databiosphere/findable-ui/lib/styles/common/constants/app";
 
 export const SectionContent = styled.div`
   box-sizing: content-box;
@@ -16,7 +17,7 @@ export const BioNetworkAtlases = styled.div`
   grid-template-columns: 1fr;
   margin-top: 40px;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     gap: 16px;
     grid-auto-flow: column;
     grid-template-columns: repeat(4, 1fr);
@@ -47,10 +48,10 @@ export const BioNetworkAtlas = styled.span`
     padding: 6px;
   }
 
-  .MuiTypography-text-body-large-500 {
+  .MuiTypography-body-large-500 {
     color: ${PALETTE.INK_MAIN};
     flex: 1;
-    font-family: ${({ theme }) => theme.typography.fontFamily};
+    font-family: ${APP.FONT_FAMILY};
     font-size: 16px;
     font-weight: 500;
   }

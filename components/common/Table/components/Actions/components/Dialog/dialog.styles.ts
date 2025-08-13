@@ -27,7 +27,7 @@ export const DialogActions = styled(MDialogActions)`
   justify-content: flex-start;
   padding: 16px 20px;
 
-  button:not(:first-of-type) {
+  .MuiButton-root {
     margin: 0;
   }
 `;

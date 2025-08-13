@@ -1,6 +1,6 @@
-import { TEXT_HEADING_SMALL } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import { ReactNode } from "react";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export interface ValueElTypeProps {
   children: ReactNode;
@@ -8,7 +8,10 @@ export interface ValueElTypeProps {
 
 export const ValueElType = ({ children }: ValueElTypeProps): JSX.Element => {
   return (
-    <Typography sx={{ order: -1 }} variant={TEXT_HEADING_SMALL}>
+    <Typography
+      sx={{ order: -1 }}
+      variant={TYPOGRAPHY_PROPS.VARIANT.HEADING_SMALL}
+    >
       {children}
     </Typography>
   );

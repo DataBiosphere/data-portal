@@ -7,6 +7,7 @@ import {
   StyledCell,
   StyledStack,
   StyledCollapse,
+  StyledMarkdownCell,
 } from "./detailCell.styles";
 import { LinkCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/LinkCell/linkCell";
 import {
@@ -17,7 +18,6 @@ import {
   shouldShowAnnDataLocationColumn,
 } from "./utils";
 import { getPartialCellContext } from "../../utils";
-import { StyledMarkdownCell } from "./detailCell.styles";
 import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
 
 export const DetailCell = ({

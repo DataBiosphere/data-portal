@@ -1,11 +1,8 @@
-import {
-  textBody400,
-  textBody500,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { TableContainer as MTableContainer } from "@mui/material";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 interface Props {
   borderless?: boolean;
@@ -34,7 +31,7 @@ export const TableContainer = styled(MTableContainer)`
       }
 
       th {
-        ${textBody500};
+        font: ${FONT.BODY_500};
 
         &:empty {
           padding: 0;
@@ -42,7 +39,7 @@ export const TableContainer = styled(MTableContainer)`
       }
 
       td {
-        ${textBody400};
+        font: ${FONT.BODY_400};
       }
     }
   }

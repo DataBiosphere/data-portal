@@ -1,10 +1,10 @@
 import { SectionTitle } from "@databiosphere/findable-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-import { TEXT_BODY_500 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import { Coordinator } from "../../../../../@types/network";
 import { SectionContent } from "../../section.styles";
 import { Section } from "./coordinators.styles";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export interface CoordinatorsProps {
   coordinators: Coordinator[];
@@ -22,7 +22,10 @@ export const Coordinators = ({
       <SectionContent>
         <SectionTitle title={title} />
         {coordinators.map(({ fullName }) => (
-          <Typography key={fullName} variant={TEXT_BODY_500}>
+          <Typography
+            key={fullName}
+            variant={TYPOGRAPHY_PROPS.VARIANT.BODY_500}
+          >
             {fullName}
           </Typography>
         ))}

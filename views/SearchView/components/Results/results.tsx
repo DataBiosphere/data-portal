@@ -8,10 +8,10 @@ import { CardText } from "@databiosphere/findable-ui/lib/components/common/Card/
 import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { RoundedCard } from "@databiosphere/findable-ui/lib/components/common/Card/components/RoundedCard/roundedCard";
 import { NoResults } from "@databiosphere/findable-ui/lib/components/NoResults/noResults";
-import { TEXT_BODY_SMALL_400 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography as MTypography } from "@mui/material";
 import { ResultsView } from "./results.styles";
 import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 interface ResultsProps {
   results?: CardProps[];
@@ -27,7 +27,10 @@ export const Results = ({ results }: ResultsProps): JSX.Element => {
           <CardActionArea cardUrl={cardUrl}>
             <CardSection>
               <CardContent>
-                <MTypography color="ink.light" variant={TEXT_BODY_SMALL_400}>
+                <MTypography
+                  color={TYPOGRAPHY_PROPS.COLOR.INK_LIGHT}
+                  variant={TYPOGRAPHY_PROPS.VARIANT.BODY_SMALL_400}
+                >
                   {secondaryTitle}
                 </MTypography>
                 <CardTitle>{title}</CardTitle>

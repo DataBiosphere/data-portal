@@ -7,7 +7,6 @@ import {
   Section,
   SectionContent,
 } from "@databiosphere/findable-ui/lib/components/common/Section/section.styles";
-import { TEXT_BODY_LARGE_500 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import {
   useNetwork,
@@ -24,6 +23,7 @@ import {
 import { SectionText } from "../../../../../components/Section/section.styles";
 import { NetworkAtlasesEmpty } from "./components/NetworkAtlasesEmpty/networkAtlasesEmpty";
 import { TABLE_OPTIONS } from "./constants";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export const MainColumn = (): JSX.Element => {
   const { network } = useNetwork();
@@ -47,7 +47,9 @@ export const MainColumn = (): JSX.Element => {
         <FluidPaper>
           <GridPaper>
             <StyledToolbar>
-              <Typography variant={TEXT_BODY_LARGE_500}>Atlases</Typography>
+              <Typography variant={TYPOGRAPHY_PROPS.VARIANT.BODY_LARGE_500}>
+                Atlases
+              </Typography>
             </StyledToolbar>
             <Table
               columns={getAtlasesTableColumns(networkPath)}

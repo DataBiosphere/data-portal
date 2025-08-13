@@ -5,13 +5,13 @@ import {
   StatusIcon,
 } from "@databiosphere/findable-ui/lib/components/common/StatusIcon/statusIcon";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-import { TEXT_BODY_400_2_LINES } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import { Network } from "../../../../../../../../../@types/network";
 import { NETWORKS_ROUTE } from "../../../../../../../../../constants/routes";
 import { getBioNetworkName } from "../../../../../../../../../viewModelBuilders/viewModelBuilders";
 import { BiotechIcon } from "../../../../../../../../common/CustomIcon/components/BiotechIcon/biotechIcon";
 import { Section, SectionContent } from "./networkAtlasesEmpty.styles";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export interface NetworkAtlasesEmptyProps {
   network: Network;
@@ -30,7 +30,7 @@ export const NetworkAtlasesEmpty = ({
           <SectionTitle
             title={`${bioNetworkName} Network atlases are still under development.`}
           />
-          <Typography variant={TEXT_BODY_400_2_LINES}>
+          <Typography variant={TYPOGRAPHY_PROPS.VARIANT.BODY_400_2_LINES}>
             Meanwhile, individual{" "}
             <Link
               label={`HCA ${bioNetworkName} Datasets`}
