@@ -1,8 +1,8 @@
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { textBodyLarge400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { COLOR_MIXES } from "@databiosphere/findable-ui/lib/styles/common/constants/colorMixes";
+import { Typography } from "@mui/material";
 
 export const SectionHero = styled.section`
   background: url("/hca-bio-networks/home/cell.png") no-repeat;
@@ -18,7 +18,7 @@ export const Headline = styled.div`
   margin: 56px 0 44px;
   padding: 0 16px;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     margin: 84px 0 104px;
   }
 `;
@@ -36,17 +36,16 @@ export const Head = styled.h1`
     display: block;
   }
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     font-size: 48px;
     line-height: 56px;
   }
 `;
 
-export const Subhead = styled.h2`
-  ${textBodyLarge400};
+export const Subhead = styled(Typography)`
   margin: 8px 0 24px;
   text-align: center;
-`;
+` as typeof Typography;
 
 export const CTAs = styled.div`
   display: flex;

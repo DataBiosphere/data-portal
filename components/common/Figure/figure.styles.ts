@@ -1,6 +1,6 @@
-import { textBody400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 interface Props {
   hasBorder?: boolean;
@@ -14,7 +14,7 @@ export const Figure = styled.figure<Props>`
   }
 
   figcaption {
-    ${textBody400};
+    font: ${FONT.BODY_400};
     margin-top: 8px;
     text-align: center;
   }

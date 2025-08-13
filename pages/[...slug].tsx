@@ -6,7 +6,6 @@ import {
 import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
 import { Outline } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
-import { textBodyLarge4002Lines } from "@databiosphere/findable-ui/src/theme/common/typography";
 import { ThemeOptions } from "@mui/material";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote } from "next-mdx-remote";
@@ -15,6 +14,7 @@ import { Content, ContentView } from "../components";
 import { MDX_COMPONENTS } from "../docs/common/constants";
 import { generatePaths } from "../docs/common/utils";
 import { getDocsStaticProps, PageProps } from "../utils/docPages";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 const CONFLICTING_STATIC_PATHS: string[] = ["hca-bio-networks"];
 const DOCS_DIR = "/docs";
@@ -23,7 +23,7 @@ const THEME_OPTIONS: ThemeOptions = {
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          ...textBodyLarge4002Lines,
+          font: FONT.BODY_LARGE_400_2_LINES,
         },
         img: {
           margin: "16px 0",
@@ -44,7 +44,7 @@ const THEME_OPTIONS: ThemeOptions = {
           paddingLeft: 24,
         },
         p: {
-          ...textBodyLarge4002Lines,
+          font: FONT.BODY_LARGE_400_2_LINES,
           marginBottom: 16,
           overflowWrap: "break-word",
           // eslint-disable-next-line sort-keys -- disabling key order for readability

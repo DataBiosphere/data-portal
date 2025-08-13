@@ -8,10 +8,6 @@ import {
   Section,
   SectionContent,
 } from "@databiosphere/findable-ui/lib/components/common/Section/section.styles";
-import {
-  TEXT_BODY_400,
-  TEXT_BODY_LARGE_500,
-} from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import { useAtlas, useAtlasContent } from "contexts/atlasContext";
 import { getIntegratedAtlasesTableColumns } from "../../../../../../../../viewModelBuilders/viewModelBuilders";
@@ -21,6 +17,7 @@ import {
 } from "../../../../../../../common/Table/table.styles";
 import { SectionText } from "../../../../../../components/Section/section.styles";
 import { TABLE_OPTIONS } from "./constants";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export const MainColumn = (): JSX.Element => {
   const { Description } = useAtlasContent() || {};
@@ -47,7 +44,7 @@ export const MainColumn = (): JSX.Element => {
       <FluidPaper>
         <GridPaper>
           <StyledToolbar>
-            <Typography variant={TEXT_BODY_LARGE_500}>
+            <Typography variant={TYPOGRAPHY_PROPS.VARIANT.BODY_LARGE_500}>
               Component Atlases
             </Typography>
           </StyledToolbar>
@@ -60,7 +57,9 @@ export const MainColumn = (): JSX.Element => {
             />
           ) : (
             <GridPaperSection>
-              <Typography variant={TEXT_BODY_400}>None</Typography>
+              <Typography variant={TYPOGRAPHY_PROPS.VARIANT.BODY_400}>
+                None
+              </Typography>
             </GridPaperSection>
           )}
         </GridPaper>

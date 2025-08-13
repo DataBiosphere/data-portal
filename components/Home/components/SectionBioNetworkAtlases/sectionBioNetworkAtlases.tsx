@@ -1,18 +1,18 @@
 import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
-import { TEXT_BODY_LARGE_500 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Tooltip, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import { NETWORK_ICONS } from "../../../../constants/networks";
 import { NETWORKS_ROUTE } from "../../../../constants/routes";
 import { useNetworkList } from "../../../../hooks/useNetworkList";
 import { getBioNetworkName } from "../../../../viewModelBuilders/viewModelBuilders";
-import { Section, SectionHead } from "../Section/section.styles";
+import { Section, StyledTypography } from "../Section/section.styles";
 import {
   Badge,
   BioNetworkAtlas,
   BioNetworkAtlases,
   SectionContent,
 } from "./sectionBioNetworkAtlases.styles";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export const SectionBioNetworkAtlases = (): JSX.Element => {
   const router = useRouter();
@@ -20,7 +20,12 @@ export const SectionBioNetworkAtlases = (): JSX.Element => {
   return (
     <Section>
       <SectionContent>
-        <SectionHead>HCA Biological Network Atlases</SectionHead>
+        <StyledTypography
+          component="h3"
+          variant={TYPOGRAPHY_PROPS.VARIANT.HEADING_LARGE}
+        >
+          HCA Biological Network Atlases
+        </StyledTypography>
         <BioNetworkAtlases>
           {networks.map(({ atlases, key, name, path }) => (
             <BioNetworkAtlas
@@ -30,7 +35,7 @@ export const SectionBioNetworkAtlases = (): JSX.Element => {
               }
             >
               <StaticImage alt={name} height={36} src={NETWORK_ICONS[key]} />
-              <Typography variant={TEXT_BODY_LARGE_500}>
+              <Typography variant={TYPOGRAPHY_PROPS.VARIANT.BODY_LARGE_500}>
                 {getBioNetworkName(name)}
               </Typography>
               {atlases.length > 0 && (

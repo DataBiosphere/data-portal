@@ -12,8 +12,4 @@ export const PaginationActions = styled.div`
   display: grid;
   gap: 8px;
   grid-auto-flow: column;
-
-  .MuiIconButton-root {
-    padding: 8px;
-  }
 `;

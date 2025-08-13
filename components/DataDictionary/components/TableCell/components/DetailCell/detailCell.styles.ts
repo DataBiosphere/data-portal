@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { Paper, Stack, Collapse } from "@mui/material";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
-import { textBody400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import { MarkdownCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/MarkdownCell/markdownCell";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 export const StyledCell = styled("div")`
   align-self: flex-start;
@@ -48,9 +48,9 @@ export const StyledStack = styled(Stack)`
 `;
 
 export const StyledPaper = styled(Paper)`
-  ${textBody400};
   background-color: ${PALETTE.SMOKE_LIGHT};
   box-shadow: 0 0 0 1px ${PALETTE.SMOKE_MAIN};
+  font: ${FONT.BODY_400};
   font-family: "Roboto Mono", monospace;
   padding: 8px 12px;
 `;

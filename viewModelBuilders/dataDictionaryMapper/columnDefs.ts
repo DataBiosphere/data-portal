@@ -27,10 +27,10 @@ const BIO_NETWORK: ColumnDef<Attribute, unknown> = {
 
 const CLASS_KEY: ColumnDef<Attribute, unknown> = {
   accessorKey: "classKey",
-  header: "Class Key",
   enableColumnFilter: false,
   enableGlobalFilter: false,
   enableGrouping: true,
+  header: "Class Key",
   id: COLUMN_IDENTIFIERS.CLASS_KEY,
 };
 
@@ -49,7 +49,7 @@ const DETAILS: ColumnDef<Attribute, unknown> = {
   enableGlobalFilter: false,
   header: "Description",
   id: COLUMN_IDENTIFIERS.DETAILS,
-  meta: { width: { min: "396px", max: "1fr" } },
+  meta: { width: { max: "1fr", min: "396px" } },
 };
 
 const FIELD: ColumnDef<Attribute, unknown> = {

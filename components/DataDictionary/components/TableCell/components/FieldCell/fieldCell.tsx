@@ -23,7 +23,7 @@ export const FieldCell = ({
       {/* TITLE */}
       <StyledTypography
         component="div"
-        variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_500}
+        variant={TYPOGRAPHY_PROPS.VARIANT.BODY_500}
       >
         <RankedCell
           {...getPartialCellContext(

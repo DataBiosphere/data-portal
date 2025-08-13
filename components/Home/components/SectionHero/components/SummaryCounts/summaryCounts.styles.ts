@@ -1,10 +1,7 @@
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import {
-  textBodyLarge400,
-  textHeadingLarge,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { Typography } from "@mui/material";
 
 export const Metrics = styled.div`
   box-sizing: content-box;
@@ -17,7 +14,7 @@ export const Metrics = styled.div`
   max-width: 1024px;
   padding: 0 16px;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     gap: unset;
     margin: 40px auto;
   }
@@ -34,19 +31,17 @@ export const Metric = styled.div`
     opacity: 0.5;
   }
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     flex-basis: unset;
   }
 `;
 
-export const Count = styled.div`
-  ${textHeadingLarge};
+export const Count = styled(Typography)`
   font-size: 32px;
   grid-column: 2;
   line-height: 40px;
 `;
 
-export const Label = styled.div`
-  ${textBodyLarge400};
+export const Label = styled(Typography)`
   grid-column: 2;
 `;

@@ -1,6 +1,7 @@
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { Fragment } from "react";
-import { Caption } from "./cxgDownloadCaption.styles";
+import { Typography } from "@mui/material";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 interface CXGDownloadCaptionProps {
   isRDS: boolean;
@@ -16,7 +17,11 @@ export const CXGDownloadCaption = ({
   isRDS,
 }: CXGDownloadCaptionProps): JSX.Element => {
   return (
-    <Caption>
+    <Typography
+      color={TYPOGRAPHY_PROPS.COLOR.INK_LIGHT}
+      component="div"
+      variant={TYPOGRAPHY_PROPS.VARIANT.BODY_400_2_LINES}
+    >
       <p>
         This download link permanently references this version of the dataset.
         If this dataset is updated, a new download link will be created that
@@ -35,6 +40,6 @@ export const CXGDownloadCaption = ({
           </Fragment>
         )}
       </p>
-    </Caption>
+    </Typography>
   );
 };

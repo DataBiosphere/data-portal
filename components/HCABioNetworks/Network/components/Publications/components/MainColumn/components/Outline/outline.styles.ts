@@ -1,14 +1,10 @@
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import {
-  mediaTabletDown,
-  mediaTabletUp,
+  bpDownSm,
+  bpUpSm,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import {
-  textBody400,
-  textBody500,
-  textUppercase500,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import { css } from "@emotion/react";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 import styled from "@emotion/styled";
 import { Tab as MTab, Tabs as MTabs } from "@mui/material";
 
@@ -40,7 +36,7 @@ export const Tabs = styled(MTabs, {
     width: 3px;
   }
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     box-shadow: inset 1px 0 ${PALETTE.SMOKE_MAIN};
     margin: 0;
     max-width: 242px;
@@ -67,36 +63,37 @@ const tab = css`
 `;
 
 export const TabTitle = styled(MTab)`
-  ${textUppercase500};
   ${tab};
+  font: ${FONT.UPPERCASE_500};
   padding: 8px 0;
   pointer-events: none;
+  text-transform: uppercase;
 
   &.Mui-selected {
     color: ${PALETTE.INK_LIGHT};
   }
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     padding: 8px 24px;
   }
 `;
 
 export const Tab = styled(MTab)`
   && {
-    ${textBody500};
     ${tab};
+    font: ${FONT.BODY_500};
     padding: 6px 0;
 
-    ${mediaTabletDown} {
-      ${textBody400};
+    ${bpDownSm} {
       color: ${PALETTE.PRIMARY_MAIN};
+      font: ${FONT.BODY_400};
 
       &:hover {
         text-decoration: underline;
       }
     }
 
-    ${mediaTabletUp} {
+    ${bpUpSm} {
       padding: 6px 24px;
     }
   }

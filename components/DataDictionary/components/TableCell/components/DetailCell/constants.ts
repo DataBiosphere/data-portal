@@ -6,5 +6,5 @@ export const BIO_NETWORK_COUNT = 18;
 export const TYPOGRAPHY_PROPS: TypographyProps = {
   component: "div",
   gutterBottom: true,
-  variant: MUI_TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_500,
+  variant: MUI_TYPOGRAPHY_PROPS.VARIANT.BODY_500,
 };

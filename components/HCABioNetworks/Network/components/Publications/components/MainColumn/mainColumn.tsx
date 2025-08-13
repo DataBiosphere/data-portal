@@ -10,9 +10,10 @@ import { Outline } from "./components/Outline/outline";
 import { Publication } from "./components/Publication/publication";
 import {
   BackPageContentSingleColumn,
-  Category,
+  StyledTypography,
   Publications,
 } from "./mainColumn.styles";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export const MainColumn = (): JSX.Element => {
   const { network } = useNetwork();
@@ -34,9 +35,13 @@ export const MainColumn = (): JSX.Element => {
           [...publicationsByCategory].map(([category, publications]) => {
             return (
               <Fragment key={category}>
-                <Category id={categoryIdByCategory.get(category)}>
+                <StyledTypography
+                  id={categoryIdByCategory.get(category)}
+                  component="h3"
+                  variant={TYPOGRAPHY_PROPS.VARIANT.HEADING_SMALL}
+                >
                   {category}
-                </Category>
+                </StyledTypography>
                 {publications.map((publication) => (
                   <Publication
                     key={publication.doi}

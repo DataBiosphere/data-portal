@@ -11,7 +11,6 @@ export { SlackIcon } from "@databiosphere/findable-ui/lib/components/common/Cust
 export { XIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/XIcon/xIcon";
 export { YouTubeIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/YouTubeIcon/youTubeIcon";
 export { Grid } from "@databiosphere/findable-ui/lib/components/common/Grid/grid";
-export { IconButton } from "@databiosphere/findable-ui/lib/components/common/IconButton/iconButton";
 export { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 export { Logo } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Logo/logo";
 export { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
@@ -21,7 +20,6 @@ export { NTagCell } from "@databiosphere/findable-ui/lib/components/Table/compon
 export { ContentView } from "@databiosphere/findable-ui/lib/views/ContentView/contentView";
 export { Attributions } from "./About/components/Attributions/attributions";
 export { ButtonOutline } from "./common/Button/components/ButtonOutline/buttonOutline";
-export { ButtonPrimary } from "./common/Button/components/ButtonPrimary/buttonPrimary";
 export { Figure } from "./common/Figure/figure";
 export { IconLink } from "./common/IconLink/iconLink";
 export { PinnedNTagCell } from "./common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
