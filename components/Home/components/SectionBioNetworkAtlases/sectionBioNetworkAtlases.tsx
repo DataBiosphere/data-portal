@@ -5,7 +5,7 @@ import { NETWORK_ICONS } from "../../../../constants/networks";
 import { NETWORKS_ROUTE } from "../../../../constants/routes";
 import { useNetworkList } from "../../../../hooks/useNetworkList";
 import { getBioNetworkName } from "../../../../viewModelBuilders/viewModelBuilders";
-import { Section, StyledTypgraphy } from "../Section/section.styles";
+import { Section, StyledTypography } from "../Section/section.styles";
 import {
   Badge,
   BioNetworkAtlas,
@@ -20,12 +20,12 @@ export const SectionBioNetworkAtlases = (): JSX.Element => {
   return (
     <Section>
       <SectionContent>
-        <StyledTypgraphy
+        <StyledTypography
           component="h3"
           variant={TYPOGRAPHY_PROPS.VARIANT.HEADING_LARGE}
         >
           HCA Biological Network Atlases
-        </StyledTypgraphy>
+        </StyledTypography>
         <BioNetworkAtlases>
           {networks.map(({ atlases, key, name, path }) => (
             <BioNetworkAtlas

@@ -2,7 +2,7 @@ import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import { StyledTypgraphy } from "../Section/section.styles";
+import { StyledTypography } from "../Section/section.styles";
 import {
   CTAs,
   SectionStayUpToDate as Section,
@@ -16,12 +16,12 @@ export const SectionStayUpToDate = (): JSX.Element => {
   return (
     <Section>
       <SectionContent>
-        <StyledTypgraphy
+        <StyledTypography
           component="h3"
           variant={TYPOGRAPHY_PROPS.VARIANT.HEADING_LARGE}
         >
           Stay up-to-date with the Human Cell Atlas
-        </StyledTypgraphy>
+        </StyledTypography>
         <CTAs>
           <Button
             {...BUTTON_PROPS.SECONDARY_CONTAINED}

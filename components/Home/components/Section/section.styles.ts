@@ -6,7 +6,7 @@ export const Section = styled.section`
   width: 100%;
 `;
 
-export const StyledTypgraphy = styled(Typography)`
+export const StyledTypography = styled(Typography)`
   font-size: 32px;
   line-height: 40px;
   margin: 0 auto;
