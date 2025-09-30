@@ -5,7 +5,7 @@ import { COLOR_MIXES } from "@databiosphere/findable-ui/lib/styles/common/consta
 import { Typography } from "@mui/material";
 
 export const SectionHero = styled.section`
-  background: url("/hca-bio-networks/home/cell.png") no-repeat;
+  background: url("/hca-bio-networks/home/cell.webp") no-repeat;
   background-position-x: center;
   background-size: cover;
   color: ${PALETTE.COMMON_WHITE};
