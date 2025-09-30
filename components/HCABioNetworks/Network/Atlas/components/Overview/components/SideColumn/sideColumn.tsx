@@ -7,13 +7,16 @@ import { Publications } from "../../../../../../../common/Section/components/Pub
 import { References } from "../../../../../../../common/Section/components/References/references";
 import { DataReleasePolicy } from "../../../common/DataReleasePolicy/dataReleasePolicy";
 
+const BIOTURING_URL =
+  "https://talk2data.bioturing.com/?tab=studies&version_id=hca&params=N4IgbgpgTgzglgewHYgFwgBYGMCGIC%2BQA";
+
 export const SideColumn = (): JSX.Element => {
   const { atlas, network } = useAtlas();
   const {
     code,
     contact: atlasContact,
     coordinators: atlasCoordinators,
-    cxgDataPortal,
+    cxgDataPortal = [],
     publications,
   } = atlas;
   const { contact: networkContact, coordinators: networkCoordinators } =
@@ -27,10 +30,14 @@ export const SideColumn = (): JSX.Element => {
         <Publications publications={publications} />
         {/* Code */}
         {code && <References links={code} title="Code" />}
-        {/* CELLxGENE Collection */}
-        {cxgDataPortal && (
-          <References links={cxgDataPortal} title="CZ CELLxGENE Collection" />
-        )}
+        {/* Data Exploration Tools */}
+        <References
+          links={[
+            ...cxgDataPortal,
+            { label: "BIOTOURING Collection", url: BIOTURING_URL },
+          ]}
+          title="Data Exploration Tools"
+        />
         {/* Atlas Coordinators */}
         <Coordinators
           coordinators={atlasCoordinators}
