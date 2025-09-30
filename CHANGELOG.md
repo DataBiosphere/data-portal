@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.7.0](https://github.com/DataBiosphere/data-portal/compare/v2.6.1...v2.7.0) (2025-09-30)
+
+
+### Features
+
+* add bioturing link to atlas res under cellxgene collection ([#2842](https://github.com/DataBiosphere/data-portal/issues/2842)) ([#2843](https://github.com/DataBiosphere/data-portal/issues/2843)) ([a2f44d8](https://github.com/DataBiosphere/data-portal/commit/a2f44d8e997be9c932195b06e66b8af5dcda3c9c))
+
+
+### Chores
+
+* update findable-ui to latest v42.1.0 ([#2834](https://github.com/DataBiosphere/data-portal/issues/2834)) ([#2836](https://github.com/DataBiosphere/data-portal/issues/2836)) ([2a43523](https://github.com/DataBiosphere/data-portal/commit/2a43523fd0b4bd4e0acd5130ab9db4b3f44656e5))
+* updated catalog and updates for dcp52 [#2839](https://github.com/DataBiosphere/data-portal/issues/2839) ([#2840](https://github.com/DataBiosphere/data-portal/issues/2840)) ([4e4e043](https://github.com/DataBiosphere/data-portal/commit/4e4e0430363ff8df6b2c891a509f7fedcf619f29))
+
 ## [2.6.1](https://github.com/DataBiosphere/data-portal/compare/v2.6.0...v2.6.1) (2025-08-11)
 
 
