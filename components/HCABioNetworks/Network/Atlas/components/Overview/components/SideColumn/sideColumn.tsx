@@ -34,7 +34,7 @@ export const SideColumn = (): JSX.Element => {
         <References
           links={[
             ...cxgDataPortal,
-            { label: "BIOTOURING Collection", url: BIOTURING_URL },
+            { label: "BioTuring Collection", url: BIOTURING_URL },
           ]}
           title="Data Exploration Tools"
         />
