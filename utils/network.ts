@@ -35,7 +35,7 @@ function buildCXGDataPortalLink(
   const cxgDataPortalURL = `${CZ_CELLXGENE_DATA_PORTAL_URL}/collections/${cxgId}`;
   return [
     {
-      label: cxgDataPortalURL,
+      label: "CZ CELLxGENE Collection",
       url: cxgDataPortalURL,
     },
   ];
