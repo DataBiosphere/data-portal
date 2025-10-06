@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.7.0](https://github.com/DataBiosphere/data-portal/compare/v2.6.2...v2.7.0) (2025-10-06)
+
+
+### Features
+
+* optimize home page images ([#2845](https://github.com/DataBiosphere/data-portal/issues/2845)) ([#2846](https://github.com/DataBiosphere/data-portal/issues/2846)) ([e8a788d](https://github.com/DataBiosphere/data-portal/commit/e8a788d68b22fe87e23313fc7d1285644e02b749))
+
+
+### Bug Fixes
+
+* reverted release please version to 2.6.2 [#2850](https://github.com/DataBiosphere/data-portal/issues/2850) ([#2851](https://github.com/DataBiosphere/data-portal/issues/2851)) ([cf8795c](https://github.com/DataBiosphere/data-portal/commit/cf8795c067e3569837a5c6913c71f03d86bac805))
+
+
+### Chores
+
+* updated catalog and updates for dcp53 [#2848](https://github.com/DataBiosphere/data-portal/issues/2848) ([#2849](https://github.com/DataBiosphere/data-portal/issues/2849)) ([a73ab48](https://github.com/DataBiosphere/data-portal/commit/a73ab48f09467909ab6cfe4ccf7d1ea2e7136e81))
+
 ## [2.7.0](https://github.com/DataBiosphere/data-portal/compare/v2.6.1...v2.7.0) (2025-09-30)
 
 
