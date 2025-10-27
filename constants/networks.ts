@@ -79,7 +79,6 @@ export const NETWORKS: Network[] = [
       "tail",
       "umbilical cord",
       "whole embryos",
-      "whole embryos",
     ],
     key: "development",
     name: "Development Network",
