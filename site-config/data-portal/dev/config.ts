@@ -46,7 +46,7 @@ export function makeConfig(
     browserURL: browserUrl,
     dataSource: {
       defaultListParams: {
-        size: "100",
+        size: "75",
       },
       defaultParams: {
         catalog,
