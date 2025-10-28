@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.7.1](https://github.com/DataBiosphere/data-portal/compare/v2.7.0...v2.7.1) (2025-10-28)
+
+
+### Bug Fixes
+
+* build failing due to large page size requests ([#2855](https://github.com/DataBiosphere/data-portal/issues/2855)) ([#2856](https://github.com/DataBiosphere/data-portal/issues/2856)) ([43fcaea](https://github.com/DataBiosphere/data-portal/commit/43fcaea825d61dee4638d2697b91fc56530417a9))
+
+
+### Chores
+
+* updated catalog and updates for dcp54 [#2853](https://github.com/DataBiosphere/data-portal/issues/2853) ([#2854](https://github.com/DataBiosphere/data-portal/issues/2854)) ([474eb42](https://github.com/DataBiosphere/data-portal/commit/474eb42e107e02dbc9af343cfbce35af4beec2bb))
+
 ## [2.7.0](https://github.com/DataBiosphere/data-portal/compare/v2.6.2...v2.7.0) (2025-10-06)
 
 
