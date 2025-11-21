@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.2](https://github.com/DataBiosphere/data-portal/compare/v2.7.1...v2.7.2) (2025-11-21)
+
+
+### Chores
+
+* trigger release for dcp55 catalog update ([#2860](https://github.com/DataBiosphere/data-portal/issues/2860)) ([#2861](https://github.com/DataBiosphere/data-portal/issues/2861)) ([2b83618](https://github.com/DataBiosphere/data-portal/commit/2b8361836697c8e77ee6c5f6269c2350f340daf9))
+
 ## [2.7.1](https://github.com/DataBiosphere/data-portal/compare/v2.7.0...v2.7.1) (2025-10-28)
 
 
