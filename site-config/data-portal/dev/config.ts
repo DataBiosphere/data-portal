@@ -23,7 +23,7 @@ import {
 import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 
 const APP_TITLE = "HCA Data Portal";
-const CATALOG = "dcp54";
+const CATALOG = "dcp55";
 export const DATA_URL = "https://service.azul.data.humancellatlas.org";
 const EXPLORER_URL = "https://explore.data.humancellatlas.dev.clevercanary.com";
 export const GIT_HUB_REPO_URL = "https://github.com/DataBiosphere/data-portal";
