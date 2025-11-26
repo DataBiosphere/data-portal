@@ -173,7 +173,7 @@ export type NetworkKey =
   | "lung"
   | "musculoskeletal"
   | "nervous-system"
-  | "oral"
+  | "oral-and-craniofacial"
   | "organoid"
   | "pancreas"
   | "reproduction"

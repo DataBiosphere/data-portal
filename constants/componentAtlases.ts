@@ -34,7 +34,7 @@ export const COMPONENT_ATLASES: Record<string, IntegratedAtlasRow[]> = {
   lung: [],
   musculoskeletal: [],
   "nervous-system": [],
-  oral: [],
+  "oral-and-craniofacial": [],
   organoid: [],
   pancreas: [],
   reproduction: [],
