@@ -22,7 +22,7 @@ import * as musculoskeletalContent from "../content/musculoskeletal";
 import * as nervousSystemContent from "../content/nervous-system";
 import * as nervousSystemNetworkBrainAtlas from "../content/nervous-system/atlases/brain";
 import * as nervousSystemNetworkCortexAtlas from "../content/nervous-system/atlases/cortex";
-import * as oralContent from "../content/oral";
+import * as oralAndCraniofacialContent from "../content/oral-and-craniofacial";
 import * as organoidContent from "../content/organoid";
 import * as organoidNetworkOrganoidEndodermAtlas from "../content/organoid/atlases/organoid-endoderm";
 import * as organoidNetworkOrganoidNeuralAtlas from "../content/organoid/atlases/organoid-neural";
@@ -488,9 +488,9 @@ export const NETWORKS: Network[] = [
       "tongue",
       "tonsil",
     ],
-    key: "oral",
-    name: "Oral and Craniofacial Networks",
-    path: "oral",
+    key: "oral-and-craniofacial",
+    name: "Oral and Craniofacial Network",
+    path: "oral-and-craniofacial",
   },
   {
     atlases: [
@@ -669,7 +669,7 @@ export const NETWORK_CONTENT: {
   lung: lungContent,
   musculoskeletal: musculoskeletalContent,
   "nervous-system": nervousSystemContent,
-  oral: oralContent,
+  "oral-and-craniofacial": oralAndCraniofacialContent,
   organoid: organoidContent,
   pancreas: pancreasContent,
   reproduction: reproductionContent,
@@ -690,7 +690,7 @@ export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
   lung: "/hca-bio-networks/icons/lung.png",
   musculoskeletal: "/hca-bio-networks/icons/musculoskeletal.png",
   "nervous-system": "/hca-bio-networks/icons/nervous-system.png",
-  oral: "/hca-bio-networks/icons/oral-and-craniofacial.png",
+  "oral-and-craniofacial": "/hca-bio-networks/icons/oral-and-craniofacial.png",
   organoid: "/hca-bio-networks/icons/organoid.png",
   pancreas: "/hca-bio-networks/icons/pancreas.png",
   reproduction: "/hca-bio-networks/icons/reproduction.png",
