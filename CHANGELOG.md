@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.8.0](https://github.com/DataBiosphere/data-portal/compare/v2.7.2...v2.8.0) (2025-12-20)
+
+
+### Features
+
+* updates for oral and craniofacial bionetwork name and slug ([#2863](https://github.com/DataBiosphere/data-portal/issues/2863)) ([#2864](https://github.com/DataBiosphere/data-portal/issues/2864)) ([8cc9a73](https://github.com/DataBiosphere/data-portal/commit/8cc9a73606d416bf8550113362addafa9ce3a924))
+
+
+### Chores
+
+* add December 19, 2025 release notes and update catalog to dcp56 ([#2871](https://github.com/DataBiosphere/data-portal/issues/2871)) ([a69cfd1](https://github.com/DataBiosphere/data-portal/commit/a69cfd1edc2206e20c1bdb07a01ea62efcdcfee5))
+* update findable-ui to latest v46.1.3 ([#2866](https://github.com/DataBiosphere/data-portal/issues/2866)) ([#2867](https://github.com/DataBiosphere/data-portal/issues/2867)) ([23c98dc](https://github.com/DataBiosphere/data-portal/commit/23c98dc7e81accf0514b595cd8eed5d19e52d45d))
+
 ## [2.7.2](https://github.com/DataBiosphere/data-portal/compare/v2.7.1...v2.7.2) (2025-11-21)
 
 
