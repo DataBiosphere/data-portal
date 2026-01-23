@@ -10,16 +10,13 @@ import { TABLE_OPTIONS } from "./constants";
 
 export const MainColumn = (): JSX.Element => {
   const { browserURL } = useSiteConfig();
-  const { network, projectsResponses } = useAtlas();
+  const { projectsResponses } = useAtlas();
   return (
     <BackPageContentSingleColumn>
       {/* Atlas Datasets Description */}
       <FluidPaper>
         <MDXSection>
-          <AtlasDatasetsDescription
-            networkName={network.name.toLowerCase()}
-            datasetURL={network.datasetURL}
-          />
+          <AtlasDatasetsDescription />
         </MDXSection>
       </FluidPaper>
       {/* Atlas Datasets */}

@@ -8,11 +8,9 @@ import { useRouter } from "next/router";
 import { Network } from "../../../../../../@types/network";
 import {
   NETWORKS_PATTERN,
-  NETWORK_DATASETS_PATTERN,
   NETWORK_PUBLICATIONS_PATTERN,
 } from "../../../../../../constants/routes";
 import { useNetwork } from "../../../../../../contexts/networkContext";
-import { getBioNetworkName } from "../../../../../../viewModelBuilders/viewModelBuilders";
 
 export const Tabs = (): JSX.Element => {
   const router = useRouter();
@@ -42,18 +40,12 @@ export const Tabs = (): JSX.Element => {
  * @returns network tabs.
  */
 function buildTabs(network: Network): Tab[] {
-  const { atlases, BICCNPublications, name } = network;
+  const { BICCNPublications } = network;
   const tabs = [];
   tabs.push({
     label: "Network Overview",
     value: NETWORKS_PATTERN,
   });
-  if (atlases.length === 0) {
-    tabs.push({
-      label: `HCA ${getBioNetworkName(name)} Datasets`,
-      value: NETWORK_DATASETS_PATTERN,
-    });
-  }
   if (BICCNPublications && BICCNPublications.length > 0) {
     tabs.push({
       icon: (
