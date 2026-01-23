@@ -4,14 +4,10 @@ import {
   PRIORITY,
   StatusIcon,
 } from "@databiosphere/findable-ui/lib/components/common/StatusIcon/statusIcon";
-import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-import { Typography } from "@mui/material";
 import { Network } from "../../../../../../../../../@types/network";
-import { NETWORKS_ROUTE } from "../../../../../../../../../constants/routes";
 import { getBioNetworkName } from "../../../../../../../../../viewModelBuilders/viewModelBuilders";
 import { BiotechIcon } from "../../../../../../../../common/CustomIcon/components/BiotechIcon/biotechIcon";
 import { Section, SectionContent } from "./networkAtlasesEmpty.styles";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export interface NetworkAtlasesEmptyProps {
   network: Network;
@@ -20,7 +16,7 @@ export interface NetworkAtlasesEmptyProps {
 export const NetworkAtlasesEmpty = ({
   network,
 }: NetworkAtlasesEmptyProps): JSX.Element => {
-  const { name, path: networkPath } = network;
+  const { name } = network;
   const bioNetworkName = getBioNetworkName(name);
   return (
     <FluidPaper>
@@ -30,14 +26,6 @@ export const NetworkAtlasesEmpty = ({
           <SectionTitle
             title={`${bioNetworkName} Network atlases are still under development.`}
           />
-          <Typography variant={TYPOGRAPHY_PROPS.VARIANT.BODY_400_2_LINES}>
-            Meanwhile, individual{" "}
-            <Link
-              label={`HCA ${bioNetworkName} Datasets`}
-              url={`${NETWORKS_ROUTE}/${networkPath}/datasets`}
-            />{" "}
-            are available as potential source datasets for integrated atlases.
-          </Typography>
         </SectionContent>
       </Section>
     </FluidPaper>
