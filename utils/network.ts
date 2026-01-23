@@ -61,21 +61,6 @@ function buildDatasetAssets(
 }
 
 /**
- * Builds the URL for the dataset with filter values for the specimen organ category.
- * @param network - Network.
- * @returns dataset URL.
- */
-export function buildDatasetURL(network: Network): string {
-  const { browserURL } = config();
-  const datasetURL = new URL(`${browserURL}/projects`);
-  const filters = [
-    { categoryKey: "specimenOrgan", value: network.datasetQueryOrgans },
-  ];
-  datasetURL.searchParams.set("filter", JSON.stringify(filters));
-  return datasetURL.href;
-}
-
-/**
  * Fetches the CELLxGENE collections for the specified atlases and aggregates their datasets.
  * @param atlases - Atlases to get datasets for.
  * @returns CELLxGENE datasets.
@@ -157,8 +142,7 @@ export function processNetwork(
     }
     return { ...atlas, integratedAtlases };
   });
-  const datasetURL = buildDatasetURL(network);
-  return { ...network, atlases, datasetURL };
+  return { ...network, atlases };
 }
 
 /**

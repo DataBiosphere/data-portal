@@ -26,10 +26,9 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (
 
 export const Page = ({
   network,
-  projectsResponses,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <NetworkProvider value={{ network, projectsResponses }}>
+    <NetworkProvider value={{ network }}>
       <Detail
         mainColumn={<MainColumn />}
         sideColumn={<SideColumn />}

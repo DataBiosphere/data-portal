@@ -110,8 +110,6 @@ export interface DatasetAsset {
   fileType: CXG_DATASET_FILE_TYPE;
 }
 
-export type DatasetQueryOrgan = string;
-
 export interface IntegratedAtlas {
   analysisPortals: AnalysisPortal[];
   assay: string[];
@@ -128,8 +126,6 @@ export interface Network {
   BICCNPublications?: BICCNPublication[];
   contact: Contact;
   coordinators: Coordinator[];
-  datasetQueryOrgans: DatasetQueryOrgan[];
-  datasetURL?: string;
   key: NetworkKey;
   name: string;
   path: string;
@@ -137,16 +133,15 @@ export interface Network {
 
 export type NetworkParam = {
   network: Network;
-  projectsResponses: ProjectsResponse[];
 };
 
 export interface AtlasContext extends NetworkContext {
   atlas: Atlas;
+  projectsResponses: ProjectsResponse[];
 }
 
 export interface NetworkContext {
   network: Network;
-  projectsResponses: ProjectsResponse[];
 }
 
 export interface AtlasModule {

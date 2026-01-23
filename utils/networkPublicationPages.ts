@@ -19,7 +19,6 @@ export const getStaticProps: GetStaticProps<NetworkParam> = async (
     props: {
       network: network,
       pageTitle: `${network.name} - BICCN Publications`,
-      projectsResponses: [],
     },
   };
 };
