@@ -46,6 +46,7 @@ export async function getDocsStaticProps(
   const outline: OutlineItem[] = [];
   const mdxSource = await serialize(content, {
     mdxOptions: {
+      development: process.env.NODE_ENV === "development",
       rehypePlugins: [rehypeSlug],
       remarkPlugins: [[remarkHeadings, { outline }], remarkGfm],
     },
