@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.9.0](https://github.com/DataBiosphere/data-portal/compare/v2.8.0...v2.9.0) (2026-01-26)
+
+
+### Features
+
+* remove datasets tab for all non published atlases ([#2873](https://github.com/DataBiosphere/data-portal/issues/2873)) ([#2876](https://github.com/DataBiosphere/data-portal/issues/2876)) ([cab1bd7](https://github.com/DataBiosphere/data-portal/commit/cab1bd7cf7f93c0c14748ce526cebc23e03f5e51))
+
+
+### Chores
+
+* update findable-ui to v48 and node to 22.12.0 ([#2877](https://github.com/DataBiosphere/data-portal/issues/2877)) ([#2878](https://github.com/DataBiosphere/data-portal/issues/2878)) ([9b5ee13](https://github.com/DataBiosphere/data-portal/commit/9b5ee130b1976b026424f6366e2aa86e2e8ba027))
+
+
+### Content
+
+* rename 'component atlases' to 'integrated objects' on the atlas detail page ([#2872](https://github.com/DataBiosphere/data-portal/issues/2872)) ([#2874](https://github.com/DataBiosphere/data-portal/issues/2874)) ([9f2a004](https://github.com/DataBiosphere/data-portal/commit/9f2a004c43566968716dcc0644f5a842d04b7796))
+
 ## [2.8.0](https://github.com/DataBiosphere/data-portal/compare/v2.7.2...v2.8.0) (2025-12-20)
 
 
