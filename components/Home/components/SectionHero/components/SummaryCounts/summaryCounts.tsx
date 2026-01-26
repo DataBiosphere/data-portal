@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { formatCountSize } from "@databiosphere/findable-ui/lib/utils/formatCountSize";
 import { Divider } from "@mui/material";
 import { useSummary } from "../../../../../../contexts/summaryContext";

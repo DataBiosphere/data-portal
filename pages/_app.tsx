@@ -10,7 +10,7 @@ import { createBreakpoints } from "@mui/system";
 import { deepmerge } from "@mui/utils";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
-import { useEffect } from "react";
+import { JSX, useEffect } from "react";
 import TagManager from "react-gtm-module";
 import { Head } from "../components/common/Head/head";
 import { AppFooter } from "../components/Layout/components/Footer/footer.styles";

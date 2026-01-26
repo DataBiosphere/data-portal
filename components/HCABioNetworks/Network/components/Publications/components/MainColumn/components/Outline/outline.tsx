@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { SyntheticEvent, useState } from "react";
+import { JSX, SyntheticEvent, useState } from "react";
 import { Tab, Tabs, TabTitle } from "./outline.styles";
 import { useLayoutDimensions } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/hook";
 

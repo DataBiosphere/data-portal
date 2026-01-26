@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { Network } from "../../../../../../../@types/network";

@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { Figure } from "../../../common/Figure/figure";
 import { Grid } from "./attributions.styles";
 

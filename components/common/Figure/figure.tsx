@@ -2,7 +2,7 @@ import {
   StaticImage,
   StaticImageProps,
 } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
-import { ReactNode } from "react";
+import { JSX, ReactNode } from "react";
 import { Figure as FigureWithCaption } from "./figure.styles";
 
 export interface ImageProps extends StaticImageProps {

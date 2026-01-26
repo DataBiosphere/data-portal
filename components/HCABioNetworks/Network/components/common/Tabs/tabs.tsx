@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import {
   Tabs as DXTabs,

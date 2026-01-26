@@ -4,7 +4,7 @@
 
 ### Requirements
 
-* `Node.js` ([https://nodejs.org/en/](https://nodejs.org/en/)), version 20.10.0. 
+* `Node.js` ([https://nodejs.org/en/](https://nodejs.org/en/)), version 22.12.0. 
 
 * We recommend using `n` ([https://github.com/tj/n](https://github.com/tj/n)) as the Node.js package manger. 
 

@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { CardProps } from "@databiosphere/findable-ui/lib/components/common/Card/card";
 import {
   CardContent,

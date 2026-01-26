@@ -1,6 +1,7 @@
+import { JSX } from "react";
 import { AnchorLink } from "@databiosphere/findable-ui/lib/components/common/AnchorLink/anchorLink";
 import { Typography } from "@mui/material";
-import { slugifyHeading } from "../../../../../plugins/common/utils";
+import { slugifyHeading } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/utils";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export interface HeadingProps {

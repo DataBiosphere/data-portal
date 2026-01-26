@@ -1,5 +1,5 @@
 import { Grid } from "@databiosphere/findable-ui/lib/components/common/Grid/grid";
-import { ReactNode } from "react";
+import { JSX, ReactNode } from "react";
 
 export interface KeyValuesElTypeProps {
   children: ReactNode;
