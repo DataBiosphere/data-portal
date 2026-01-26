@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { SectionTitle } from "@databiosphere/findable-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { Typography } from "@mui/material";

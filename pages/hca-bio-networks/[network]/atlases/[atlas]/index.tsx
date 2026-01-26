@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { Detail } from "@databiosphere/findable-ui/lib/components/Detail/detail";
 import {
   GetStaticPaths,

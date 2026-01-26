@@ -13,8 +13,8 @@ import {
   getNavigationConfig,
   parseMDXFrontmatter,
 } from "../docs/common/utils";
-import { rehypeSlug } from "../plugins/rehypeSlug";
-import { remarkHeadings } from "../plugins/remarkHeadings";
+import { rehypeSlug } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/rehypeSlug";
+import { remarkHeadings } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/remarkHeadings";
 
 interface PageUrlParams extends ParsedUrlQuery {
   slug: string[];
@@ -47,7 +47,7 @@ export async function getDocsStaticProps(
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [rehypeSlug],
-      remarkPlugins: [[remarkHeadings, outline], remarkGfm],
+      remarkPlugins: [[remarkHeadings, { outline }], remarkGfm],
     },
     scope: {},
   });

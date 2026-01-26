@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { CardContent } from "@databiosphere/findable-ui/lib/components/common/Card/card.styles";
 import { CardActionArea } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardActionArea/cardActionArea";
 import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";

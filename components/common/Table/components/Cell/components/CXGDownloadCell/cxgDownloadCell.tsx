@@ -1,5 +1,5 @@
 import { DownloadIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/DownloadIcon/downloadIcon";
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { DatasetAsset } from "../../../../../../../@types/network";
 import { CXGDownloadDialog } from "./components/CXGDownloadDialog/cxgDownloadDialog";
 import { StyledIconButton } from "./cxgDownloadCell.styles";

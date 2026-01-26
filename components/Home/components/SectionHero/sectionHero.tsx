@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,

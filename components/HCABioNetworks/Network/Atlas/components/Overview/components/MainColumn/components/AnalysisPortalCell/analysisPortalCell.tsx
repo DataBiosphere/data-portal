@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { JSX, Fragment } from "react";
 import { AnalysisPortal } from "../../../../../../../../../../@types/network";
 import { IconLink } from "../../../../../../../../../common/IconLink/iconLink";
 

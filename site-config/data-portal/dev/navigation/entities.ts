@@ -22,8 +22,7 @@ export enum NAVIGATION_KEY {
   PRIVACY = "privacy",
 }
 
-export interface NavigationNode
-  extends Pick<NavLinkItem, "flatten" | "selectedMatch" | "visible"> {
+export interface NavigationNode extends Pick<NavLinkItem, NavLinkItemKeys> {
   key?: string;
   label?: string;
   layoutStyle?: LayoutStyle;
@@ -31,5 +30,7 @@ export interface NavigationNode
   slugs: string[]; // A list of slugs that are valid for the node.
   url?: string;
 }
+
+type NavLinkItemKeys = "flatten" | "selectedMatch" | "visible";
 
 export type SlugByFilePaths = Map<string, string[]>;

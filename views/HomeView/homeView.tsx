@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { SectionDivider } from "../../components/Home/components/Section/section.styles";
 import { SectionBioNetworkAtlases } from "../../components/Home/components/SectionBioNetworkAtlases/sectionBioNetworkAtlases";
 import { SectionHero } from "../../components/Home/components/SectionHero/sectionHero";

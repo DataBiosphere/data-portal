@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { Main } from "../components/Home/components/Layout/components/Main/main.styles";
 import { Footer } from "../components/Layout/components/Footer/footer.styles";

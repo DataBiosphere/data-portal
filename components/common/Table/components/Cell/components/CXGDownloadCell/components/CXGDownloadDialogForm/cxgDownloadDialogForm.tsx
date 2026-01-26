@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { JSX, useState } from "react";
 import {
   CXG_DATASET_FILE_TYPE,
   DatasetAsset,

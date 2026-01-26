@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { CellContext } from "@tanstack/react-table";
 import { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
 import { Chip, Grid } from "@mui/material";

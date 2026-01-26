@@ -45,3 +45,6 @@ next-env.d.ts
 __pycache__
 .ipynb_checkpoints
 venv
+
+# claude
+.claude/rules*
