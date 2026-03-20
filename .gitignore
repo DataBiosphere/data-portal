@@ -48,3 +48,4 @@ venv
 
 # claude
 .claude/rules*
+.claude/skills/
