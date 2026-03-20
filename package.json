@@ -61,7 +61,7 @@
     "@next/eslint-plugin-next": "^15.5.9",
     "@types/mdx": "^2.0.11",
     "@types/node": "^22.12.0",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@types/react-gtm-module": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^8.50.0",
