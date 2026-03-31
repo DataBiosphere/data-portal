@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.9.2](https://github.com/DataBiosphere/data-portal/compare/v2.9.1...v2.9.2) (2026-03-31)
+
+
+### Chores
+
+* update catalog to dcp58 and add release notes ([#2933](https://github.com/DataBiosphere/data-portal/issues/2933)) ([67be845](https://github.com/DataBiosphere/data-portal/commit/67be8455721bcf659dcbce1021931ee18b704f14))
+* update catalog to dcp58 and add release notes [#2932](https://github.com/DataBiosphere/data-portal/issues/2932) ([67be845](https://github.com/DataBiosphere/data-portal/commit/67be8455721bcf659dcbce1021931ee18b704f14))
+
 ## [2.9.1](https://github.com/DataBiosphere/data-portal/compare/v2.9.0...v2.9.1) (2026-03-20)
 
 
