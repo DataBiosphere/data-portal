@@ -5,10 +5,19 @@ import type {
 } from "../../@types/network";
 import type { PublishedAtlas } from "./types";
 
-const TRACKER_URL = process.env.NEXT_PUBLIC_ATLAS_TRACKER_URL || "";
-
 // Module-level cache for published atlases during build.
 let publishedAtlasesCache: PublishedAtlas[] | null = null;
+
+/**
+ * Returns the tracker base URL, read at call time to ensure env vars are loaded.
+ */
+function getTrackerUrl(): string {
+  const url = process.env.NEXT_PUBLIC_ATLAS_TRACKER_URL;
+  if (!url) {
+    throw new Error("NEXT_PUBLIC_ATLAS_TRACKER_URL is not configured");
+  }
+  return url;
+}
 
 /**
  * Fetches JSON from a tracker API endpoint.
@@ -17,10 +26,7 @@ let publishedAtlasesCache: PublishedAtlas[] | null = null;
  * @returns parsed JSON response.
  */
 async function fetchTrackerApi<T>(path: string, label: string): Promise<T> {
-  if (!TRACKER_URL) {
-    throw new Error("NEXT_PUBLIC_ATLAS_TRACKER_URL is not configured");
-  }
-  const response = await fetch(`${TRACKER_URL}${path}`);
+  const response = await fetch(`${getTrackerUrl()}${path}`);
   if (!response.ok) {
     throw new Error(
       `Failed to fetch ${label}: ${response.status} ${response.statusText}`
