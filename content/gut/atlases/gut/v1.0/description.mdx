@@ -1,0 +1,15 @@
+The HGCA integrates 27 datasets encompassing 959,289 cells from 266 healthy donors across multiple countries, continents, laboratories, sequencing platforms, and segments of the gut. Through rigorous metadata harmonisation and adoption of shared clinical and experimental standards, we demonstrate that deeply heterogeneous datasets can be synthesised into a coherent, biologically consistent atlas of major translational value. Using state-of-the-art computational integration frameworks, we resolve 105 cell types and states - including rare epithelial, stromal, and immune populations - and uncover fine-grained regional specialization along longitudinal and radial axes.
+
+A cornerstone of this effort is community-driven cell annotation: input from clinicians, stem cell biologists, immunologists, and computational experts across the Gut Bionetwork created the most comprehensive and consensus-driven annotation of human gut cell identities to date. The HGCA establishes enduring data standards and core requirements for future submissions, enabling rapid expansion and ensuring that forthcoming studies, technologies, and population cohorts can be seamlessly integrated.
+
+### Integrated Objects
+
+**HGCA All Cells** — The HGCA All Cells object contains an scVI integration with sample as batch for all cells in the HGCA. The HGCA all cells can be used as a reference to find cross-lineage gene programs and patterns as well as covariate effects. The HGCA is further split into lineages where lineage-specific scVI integration was performed for context-specific clustering and further sub-clustering.
+
+**HGCA Lymphoid** — The HGCA Lymphoid lineage contains an scVI embedding of all lymphoid cells in the atlas for lineage-specific label transfer and examination of lymphoid gene programs in context.
+
+**HGCA Myeloid** — The HGCA Myeloid lineage contains an scVI embedding of all myeloid cells in the atlas for lineage-specific label transfer and examination of lymphoid gene programs in context.
+
+**HGCA Epithelial** — The HGCA Epithelial lineage contains an scVI embedding of all epithelial cells in the atlas for lineage-specific label transfer and examination of lymphoid gene programs in context.
+
+**HGCA Stromal** — The HGCA Stromal lineage contains an scVI embedding of all stromal cells in the atlas for lineage-specific label transfer and examination of lymphoid gene programs in context.
