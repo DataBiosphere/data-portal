@@ -28,8 +28,8 @@ const Page = ({
   atlas,
   network,
   projectsResponses,
-  trackerSourceDatasets,
-  trackerSourceStudies,
+  trackerSourceDatasets = [],
+  trackerSourceStudies = [],
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <AtlasProvider
