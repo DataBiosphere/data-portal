@@ -1,6 +1,6 @@
 import { DownloadIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/DownloadIcon/downloadIcon";
+import { useDialog } from "@databiosphere/findable-ui/lib/components/common/Dialog/hooks/useDialog";
 import { ICON_BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/iconButton";
-import { useDialog } from "@databiosphere/findable-ui/src/components/common/Dialog/hooks/useDialog";
 import { Fragment, JSX } from "react";
 import { StyledIconButton } from "../CXGDownloadCell/cxgDownloadCell.styles";
 import { Dialog } from "./components/Dialog/dialog";
