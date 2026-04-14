@@ -2,8 +2,9 @@ import type { TrackerSourceStudy } from "../../../../../../../../../../@types/ne
 
 /**
  * Builds a formatted citation string for a source study.
- * Published studies display as "Author (Year) Journal".
- * Unpublished studies display as "Author - Unpublished".
+ * - No DOI: "Author - Unpublished"
+ * - DOI but missing date/journal: "Author"
+ * - DOI with date and journal: "Author (Year) Journal"
  * @param row - Tracker source study.
  * @returns formatted citation string.
  */
