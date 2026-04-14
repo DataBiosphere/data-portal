@@ -1,3 +1,5 @@
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
+import { Button } from "@mui/material";
 import { JSX, useState } from "react";
 import {
   CXG_DATASET_FILE_TYPE,
@@ -11,9 +13,7 @@ import {
 import { CXGDownloadCaption } from "./components/CXGDownloadCaption/cxgDownloadCaption";
 import { CXGDownloadFileSize } from "./components/CXGDownloadFileSize/cxgDownloadFileSize";
 import { CXGDownloadRadio } from "./components/CXGDownloadRadio/cxgDownloadRadio";
-import { Code } from "./cxgDownloadDialogForm.styles";
-import { Button } from "@mui/material";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
+import { StyledCode } from "./cxgDownloadDialogForm.styles";
 
 type onCloseFn = () => void;
 
@@ -55,7 +55,7 @@ export const CxgDownloadDialogForm = ({
             isRDS={fileFormat === CXG_DATASET_FILE_TYPE.RDS}
           />
         </DialogContentSection>
-        {downloadURL && <Code code={downloadURL} />}
+        {downloadURL && <StyledCode code={downloadURL} />}
       </DialogContent>
       <DialogActions>
         <Button

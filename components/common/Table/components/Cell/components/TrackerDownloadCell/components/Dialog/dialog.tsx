@@ -1,7 +1,5 @@
 import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
-import { Code as DXCode } from "@databiosphere/findable-ui/lib/components/common/Code/code";
 import { formatFileSize } from "@databiosphere/findable-ui/lib/utils/formatFileSize";
-import styled from "@emotion/styled";
 import { Button } from "@mui/material";
 import { JSX } from "react";
 import { DialogContentSection } from "../../../../../Actions/components/Dialog/components/DialogContent/components/DialogContentSection/dialogContentSection";
@@ -11,16 +9,8 @@ import {
   DialogTitle,
   StyledDialog,
 } from "../../../../../Actions/components/Dialog/dialog.styles";
+import { StyledCode } from "../../../CXGDownloadCell/components/CXGDownloadDialogForm/cxgDownloadDialogForm.styles";
 import type { Props } from "./types";
-
-const DownloadUrlCode = styled(DXCode)`
-  flex: none;
-  margin: -4px 0 0 0;
-  max-height: 200px;
-  overflow: auto;
-  padding: 8px 16px;
-  word-break: break-all;
-`;
 
 /**
  * Download dialog for tracker files. Displays the S3 download URL.
@@ -50,7 +40,7 @@ export const Dialog = ({
           <div>Data Format: {format}</div>
           <div>FileSize: {formatFileSize(fileSize)}</div>
         </DialogContentSection>
-        {downloadUrl && <DownloadUrlCode code={downloadUrl} />}
+        {downloadUrl && <StyledCode code={downloadUrl} />}
       </DialogContent>
       <DialogActions>
         <Button
