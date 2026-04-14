@@ -34,28 +34,30 @@ export async function getContentStaticProps(
   // Fetch CELLxGENE datasets for the network atlases.
   const cxgDatasets = await fetchCXGDatasetsForAtlases(network.atlases);
 
-  // Populate integrated atlases for tracker-sourced atlases.
-  for (const atlas of network.atlases) {
-    if (atlas.tracker) {
-      const atlasId = await resolveTrackerAtlasId(
-        atlas.tracker.shortNameSlug,
-        atlas.tracker.version
-      );
+  // Populate integrated atlases for tracker-sourced atlases immutably.
+  const atlases = await Promise.all(
+    network.atlases.map(async (atlas) => {
+      if (!atlas.tracker) return atlas;
+      const { shortNameSlug, version } = atlas.tracker;
+      const atlasId = await resolveTrackerAtlasId(shortNameSlug, version);
       const componentAtlases = await fetchTrackerComponentAtlases(atlasId);
-      atlas.integratedAtlases = componentAtlases.map((component) =>
-        mapTrackerComponentAtlasToIntegratedAtlas(
-          component,
-          network.key,
-          atlas.tracker!.shortNameSlug,
-          atlas.tracker!.version
-        )
-      );
-    }
-  }
+      return {
+        ...atlas,
+        integratedAtlases: componentAtlases.map((component) =>
+          mapTrackerComponentAtlasToIntegratedAtlas(
+            component,
+            network.key,
+            shortNameSlug,
+            version
+          )
+        ),
+      };
+    })
+  );
 
   return {
     props: {
-      network: processNetwork(network, cxgDatasets),
+      network: processNetwork({ ...network, atlases }, cxgDatasets),
       pageTitle: `${network.name} - ${tabName}`,
     },
   };
