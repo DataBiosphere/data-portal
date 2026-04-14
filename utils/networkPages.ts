@@ -1,11 +1,16 @@
-import {
+import type {
   GetStaticPaths,
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from "next";
-import { Network, NetworkParam } from "../@types/network";
+import type { Network, NetworkParam } from "../@types/network";
+import {
+  fetchTrackerComponentAtlases,
+  resolveTrackerAtlasId,
+} from "../apis/tracker/api";
 import { NETWORKS } from "../constants/networks";
 import { fetchCXGDatasetsForAtlases, processNetwork } from "./network";
+import { mapTrackerComponentAtlasToIntegratedAtlas } from "./trackerNetwork";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -28,6 +33,26 @@ export async function getContentStaticProps(
 
   // Fetch CELLxGENE datasets for the network atlases.
   const cxgDatasets = await fetchCXGDatasetsForAtlases(network.atlases);
+
+  // Populate integrated atlases for tracker-sourced atlases.
+  for (const atlas of network.atlases) {
+    if (atlas.tracker) {
+      const atlasId = await resolveTrackerAtlasId(
+        atlas.tracker.shortNameSlug,
+        atlas.tracker.version
+      );
+      const componentAtlases = await fetchTrackerComponentAtlases(atlasId);
+      atlas.integratedAtlases = componentAtlases.map((component) =>
+        mapTrackerComponentAtlasToIntegratedAtlas(
+          component,
+          network.key,
+          atlas.tracker!.shortNameSlug,
+          atlas.tracker!.version
+        )
+      );
+    }
+  }
+
   return {
     props: {
       network: processNetwork(network, cxgDatasets),
