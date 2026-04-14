@@ -7,7 +7,7 @@ import type { TrackerSourceDataset } from "../../../../../../../../../../@types/
  * @returns cell count as a formatted string.
  */
 export function renderCellCount(
-  ctx: CellContext<TrackerSourceDataset, string>
+  ctx: CellContext<TrackerSourceDataset, number>
 ): string {
   const { row } = ctx;
   const { original } = row;

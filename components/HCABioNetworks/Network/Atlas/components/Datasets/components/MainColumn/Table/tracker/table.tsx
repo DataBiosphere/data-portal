@@ -17,7 +17,7 @@ export const Table = ({ data }: Props): JSX.Element => {
     <FluidPaper elevation={0}>
       <GridPaper>
         {table.getRowCount() === 0 ? (
-          <div>No datasets</div>
+          <div>No Source Datasets</div>
         ) : (
           <CommonTable table={table} />
         )}
