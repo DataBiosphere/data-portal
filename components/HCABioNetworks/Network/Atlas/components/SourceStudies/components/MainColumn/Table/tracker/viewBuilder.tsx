@@ -12,7 +12,7 @@ const DOI_BASE_URL = "https://doi.org/";
 /**
  * Renders an HCA Data Repository link for the source study's HCA project.
  * @param ctx - Cell context.
- * @returns Link component if hcaProjectId exists, otherwise empty string.
+ * @returns Link component if hcaProjectId exists, otherwise null.
  */
 export function renderHCADataRepository(
   ctx: CellContext<TrackerSourceStudy, unknown>
@@ -41,7 +41,7 @@ export function renderHCADataRepository(
  */
 export function renderSourceStudy(
   ctx: CellContext<TrackerSourceStudy, string>
-): JSX.Element | null {
+): JSX.Element {
   const label = ctx.getValue();
   const { doi } = ctx.row.original;
   return C.Link({
