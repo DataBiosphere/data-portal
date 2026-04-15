@@ -39,7 +39,7 @@ export interface Atlas {
   contact: Contact;
   coordinators: Coordinator[];
   cxgDataPortal?: Pick<LinkProps, "label" | "url">[];
-  cxgId: string;
+  cxgId?: string;
   datasets: Dataset[];
   externalDatasets: ProjectsResponse[];
   integratedAtlases: IntegratedAtlas[];
@@ -49,6 +49,8 @@ export interface Atlas {
   publications: Publication[];
   subTitle?: string;
   summaryCellCount?: number;
+  tracker?: TrackerConfig;
+  trackerAtlasId?: string;
   updatedAt: string;
   version: string;
 }
@@ -138,6 +140,8 @@ export type NetworkParam = {
 export interface AtlasContext extends NetworkContext {
   atlas: Atlas;
   projectsResponses: ProjectsResponse[];
+  trackerSourceDatasets?: TrackerSourceDataset[];
+  trackerSourceStudies?: TrackerSourceStudy[];
 }
 
 export interface NetworkContext {
@@ -177,10 +181,59 @@ export type NetworkKey =
 export type AtlasKey =
   | "brain-v1-0"
   | "cortex-v1-0"
+  | "gut-v1-0"
   | "lung-v1-0"
   | "organoid-endoderm-v1-0"
   | "organoid-neural-v1-0"
   | "retina-v1-0";
+
+export interface TrackerComponentAtlas {
+  assay: string[];
+  baseFileName: string;
+  cellCount: number;
+  disease: string[];
+  fileId: string;
+  fileName: string;
+  geneCount: number;
+  id: string;
+  publishedAt: string;
+  revision: number;
+  sizeBytes: number;
+  suspensionType: string[];
+  tissue: string[];
+  title: string;
+}
+
+export interface TrackerConfig {
+  shortNameSlug: string;
+  version: string;
+}
+
+export interface TrackerSourceDataset {
+  assay: string[];
+  baseFileName: string;
+  cellCount: number;
+  disease: string[];
+  doi: string | null;
+  fileId: string;
+  fileName: string;
+  geneCount: number;
+  id: string;
+  revision: number;
+  sizeBytes: number;
+  tissue: string[];
+  title: string;
+}
+
+export interface TrackerSourceStudy {
+  cellxgeneCollectionId: string | null;
+  doi: string;
+  journal: string;
+  publicationDate: string;
+  referenceAuthor: string;
+  sourceDatasetCount: number;
+  title: string;
+}
 
 export interface BICCNPublication {
   authors: string[];
