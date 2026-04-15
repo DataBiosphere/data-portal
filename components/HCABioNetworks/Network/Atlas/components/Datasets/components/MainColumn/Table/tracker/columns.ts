@@ -1,7 +1,7 @@
 import { sortingFn } from "@databiosphere/findable-ui/lib/components/Table/common/utils";
 import type { ColumnDef } from "@tanstack/react-table";
-import * as C from "../../../../../../../../..";
 import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
+import { DISEASE as DISEASE_ENUM } from "../../../../../../../../../../viewModelBuilders/entities";
 import {
   buildNTagProps,
   renderNTagCell,
@@ -10,8 +10,7 @@ import {
   buildPinnedNTagProps,
   renderPinnedNTagCell,
 } from "../../../../../../../../../common/Table/components/Cell/components/PinnedNTagCell/utils";
-import { DISEASE as DISEASE_ENUM } from "../../../../../../../../../../viewModelBuilders/entities";
-import { renderCellCount } from "./viewBuilder";
+import { renderCellCount, renderDownload } from "./viewBuilder";
 
 const CELL_COUNT = {
   accessorKey: "cellCount",
@@ -33,7 +32,7 @@ const DISEASE = {
 
 const DOWNLOAD = {
   accessorKey: "download",
-  cell: C.TrackerDownloadCell,
+  cell: renderDownload,
   enableSorting: false,
   header: "Download",
   meta: { width: "auto" },

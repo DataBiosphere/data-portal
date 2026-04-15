@@ -130,6 +130,25 @@ function buildTrackerDatasetAsset(
 }
 
 /**
+ * Splits a filename into stem and extension.
+ * @param fileName - File name (e.g., "myeloid_cap_250923.h5ad").
+ * @returns stem and extension (e.g., { stem: "myeloid_cap_250923", ext: ".h5ad" }).
+ */
+export function splitFileName(fileName: string): {
+  ext: string;
+  stem: string;
+} {
+  const lastDot = fileName.lastIndexOf(".");
+  if (lastDot === -1) {
+    return { ext: "", stem: fileName };
+  }
+  return {
+    ext: fileName.slice(lastDot),
+    stem: fileName.slice(0, lastDot),
+  };
+}
+
+/**
  * Inserts `-r{revision}` before the file extension.
  * E.g., "myeloid_cap_250923.h5ad" with revision 1 → "myeloid_cap_250923-r1.h5ad".
  */
@@ -137,11 +156,8 @@ function buildVersionedFileName(
   baseFileName: string,
   revision: number
 ): string {
-  const lastDot = baseFileName.lastIndexOf(".");
-  if (lastDot === -1) {
-    return `${baseFileName}-r${revision}`;
-  }
-  return `${baseFileName.slice(0, lastDot)}-r${revision}${baseFileName.slice(lastDot)}`;
+  const { ext, stem } = splitFileName(baseFileName);
+  return `${stem}-r${revision}${ext}`;
 }
 
 /**

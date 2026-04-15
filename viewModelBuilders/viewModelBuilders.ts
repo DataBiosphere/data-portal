@@ -24,6 +24,7 @@ import * as C from "../components";
 import { MetadataValueTuple } from "../components/common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
 import { NETWORKS_ROUTE } from "../constants/routes";
 import { formatCountSize } from "../utils/formatCountSize";
+import { splitFileName } from "../utils/trackerNetwork";
 import { DISEASE } from "./entities";
 
 /**
@@ -89,14 +90,30 @@ function calculateEstimatedCellCount(
  * Returns atlases actions column def.
  * @returns actions column def.
  */
-function getAtlasesActionsColumnDef(): ColumnDef<IntegratedAtlasRow> {
+function getAtlasesActionsColumnDef(
+  isTracker = false
+): ColumnDef<IntegratedAtlasRow> {
   return {
     accessorKey: "actions",
-    cell: ({ row }) =>
-      C.CXGDownloadCell({
-        datasetAssets: row.original.datasetAssets,
-        title: row.original.name,
-      }),
+    cell: isTracker
+      ? ({ row }) => {
+          const asset = row.original.datasetAssets[0];
+          if (!asset) return null;
+          const { ext: format, stem: fileName } = splitFileName(
+            asset.downloadURL.split("/").pop() || ""
+          );
+          return C.TrackerDownloadCell({
+            downloadUrl: asset.downloadURL,
+            fileName,
+            fileSize: asset.fileSize,
+            format,
+          });
+        }
+      : ({ row }) =>
+          C.CXGDownloadCell({
+            datasetAssets: row.original.datasetAssets,
+            title: row.original.name,
+          }),
     header: "Download",
   };
 }
@@ -350,7 +367,8 @@ function getIntegratedAtlasesAtlasNameColumnDef(): ColumnDef<IntegratedAtlasRow>
  * @returns integrated atlases table column definition.
  */
 export function getIntegratedAtlasesTableColumns(
-  showExplore = true
+  showExplore = true,
+  isTracker = false
 ): ColumnDef<IntegratedAtlasRow>[] {
   const columns: ColumnDef<IntegratedAtlasRow>[] = [
     getIntegratedAtlasesAtlasNameColumnDef(),
@@ -361,7 +379,7 @@ export function getIntegratedAtlasesTableColumns(
   if (showExplore) {
     columns.push(getAtlasesExploreColumnDef());
   }
-  columns.push(getAtlasesActionsColumnDef());
+  columns.push(getAtlasesActionsColumnDef(isTracker));
   return columns;
 }
 
