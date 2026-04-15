@@ -24,7 +24,8 @@ export const MainColumn = (): JSX.Element => {
   const { Description } = useAtlasContent() || {};
   const { atlas } = useAtlas();
   const { integratedAtlases, tracker } = atlas;
-  const showExplore = !tracker;
+  const isTracker = Boolean(tracker);
+  const showExplore = !isTracker;
   return (
     <>
       {/* Atlas Description */}
@@ -52,7 +53,7 @@ export const MainColumn = (): JSX.Element => {
           </StyledToolbar>
           {integratedAtlases.length > 0 ? (
             <Table
-              columns={getIntegratedAtlasesTableColumns(showExplore)}
+              columns={getIntegratedAtlasesTableColumns(showExplore, isTracker)}
               gridTemplateColumns={
                 showExplore
                   ? "minmax(208px, 1fr) minmax(112px, 0.6fr) minmax(112px, 0.6fr) max-content max-content auto"
