@@ -227,9 +227,13 @@ export interface TrackerSourceDataset {
 
 export interface TrackerSourceStudy {
   cellxgeneCollectionId: string | null;
-  doi: string;
-  journal: string;
-  publicationDate: string;
+  contactEmail: string | null;
+  doi: string | null;
+  doiStatus: string;
+  hcaProjectId: string | null;
+  id: string;
+  journal: string | null;
+  publicationDate: string | null;
   referenceAuthor: string;
   sourceDatasetCount: number;
   title: string;
