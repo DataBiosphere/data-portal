@@ -47,5 +47,6 @@ __pycache__
 venv
 
 # claude
+.claude/plans/
 .claude/rules*
 .claude/skills/
