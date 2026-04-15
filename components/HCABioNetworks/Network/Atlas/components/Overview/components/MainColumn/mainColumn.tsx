@@ -23,7 +23,8 @@ import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/m
 export const MainColumn = (): JSX.Element => {
   const { Description } = useAtlasContent() || {};
   const { atlas } = useAtlas();
-  const { integratedAtlases } = atlas;
+  const { integratedAtlases, tracker } = atlas;
+  const showExplore = !tracker;
   return (
     <>
       {/* Atlas Description */}
@@ -51,8 +52,12 @@ export const MainColumn = (): JSX.Element => {
           </StyledToolbar>
           {integratedAtlases.length > 0 ? (
             <Table
-              columns={getIntegratedAtlasesTableColumns()}
-              gridTemplateColumns="minmax(208px, 1fr) minmax(112px, 0.6fr) minmax(112px, 0.6fr) max-content max-content auto"
+              columns={getIntegratedAtlasesTableColumns(showExplore)}
+              gridTemplateColumns={
+                showExplore
+                  ? "minmax(208px, 1fr) minmax(112px, 0.6fr) minmax(112px, 0.6fr) max-content max-content auto"
+                  : "minmax(208px, 1fr) minmax(112px, 0.6fr) minmax(112px, 0.6fr) max-content auto"
+              }
               items={integratedAtlases}
               tableOptions={TABLE_OPTIONS}
             />

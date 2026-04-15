@@ -346,17 +346,23 @@ function getIntegratedAtlasesAtlasNameColumnDef(): ColumnDef<IntegratedAtlasRow>
 
 /**
  * Returns the table column definition model for the integrated atlases table.
+ * @param showExplore - Whether to include the Explore column (omitted for tracker atlases).
  * @returns integrated atlases table column definition.
  */
-export function getIntegratedAtlasesTableColumns(): ColumnDef<IntegratedAtlasRow>[] {
-  return [
+export function getIntegratedAtlasesTableColumns(
+  showExplore = true
+): ColumnDef<IntegratedAtlasRow>[] {
+  const columns: ColumnDef<IntegratedAtlasRow>[] = [
     getIntegratedAtlasesAtlasNameColumnDef(),
     getAtlasesTissueColumnDef(),
     getAtlasesDiseaseColumnDef(),
     getAtlasesCellCountColumnDef(),
-    getAtlasesExploreColumnDef(),
-    getAtlasesActionsColumnDef(),
   ];
+  if (showExplore) {
+    columns.push(getAtlasesExploreColumnDef());
+  }
+  columns.push(getAtlasesActionsColumnDef());
+  return columns;
 }
 
 /**
