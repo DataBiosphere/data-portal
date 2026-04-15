@@ -6,7 +6,7 @@ import {
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { MetadataValue } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
 import { ColumnDef } from "@tanstack/react-table";
-import {
+import type {
   Atlas,
   AtlasesRow,
   AtlasRow,
@@ -536,7 +536,7 @@ function initAtlasRow(): AtlasesRow {
  * @param pinned - Values to pin.
  * @returns metadata tuple containing pinned values and non-pinned values.
  */
-function partitionMetadataValues(
+export function partitionMetadataValues(
   values: MetadataValue[],
   pinned: MetadataValue[]
 ): MetadataValueTuple {
