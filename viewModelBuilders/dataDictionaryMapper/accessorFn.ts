@@ -1,4 +1,9 @@
-import { Attribute } from "./types";
+import type { RequirementLevel } from "./types";
+import { Attribute, REQUIREMENT_LEVEL } from "./types";
+
+const REQUIRED_INPUT = {
+  STRONGLY_RECOMMENDED: "strongly recommended",
+} as const;
 
 /**
  * Accessor function for annDataLocation.
@@ -12,6 +17,19 @@ export function buildAnnDataLocation(row: Attribute): string[] {
   if (typeof originalValue === "string")
     return originalValue.split(";").map((s) => s.trim());
   throw new Error("AnnDataLocation must be a string");
+}
+
+/**
+ * Maps a required input value to its display-level requirement label.
+ * @param required - The required value.
+ * @returns The requirement level label.
+ */
+export function buildRequired(row: Attribute): RequirementLevel {
+  const { required } = row;
+  if (required === REQUIRED_INPUT.STRONGLY_RECOMMENDED)
+    return REQUIREMENT_LEVEL.STRONGLY_RECOMMENDED;
+  if (required) return REQUIREMENT_LEVEL.REQUIRED;
+  return REQUIREMENT_LEVEL.RECOMMENDED;
 }
 
 /**

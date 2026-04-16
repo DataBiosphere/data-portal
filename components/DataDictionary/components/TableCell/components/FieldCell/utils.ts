@@ -1,7 +1,10 @@
-import { ChipProps } from "@mui/material";
-import { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
 import { CHIP_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/chip";
-import { Row } from "@tanstack/react-table";
+import type { ChipProps } from "@mui/material";
+import type { Row } from "@tanstack/react-table";
+import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
+import type { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
+import type { RequirementLevel } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
+import { REQUIREMENT_LEVEL_COLOR } from "./constants";
 
 /**
  * Builds string array from the given attribute, for locationName.
@@ -25,14 +28,15 @@ export function buildRange(attribute: Attribute): string {
 
 /**
  * Builds ChipCell props from the given attribute, for required.
- * @param attribute - The attribute.
+ * Only called when required is truthy (true or "strongly recommended").
+ * @param row - Row.
  * @returns Model to be used as props for the Chip component.
  */
-export function buildRequired(attribute: Attribute): ChipProps {
-  const isRequired = Boolean(attribute.required);
+export function buildRequired(row: Row<Attribute>): ChipProps {
+  const level = row.getValue<RequirementLevel>(COLUMN_IDENTIFIERS.REQUIRED);
   return {
-    color: isRequired ? CHIP_PROPS.COLOR.ERROR : CHIP_PROPS.COLOR.DEFAULT,
-    label: isRequired ? "Required" : "Recommended",
+    color: REQUIREMENT_LEVEL_COLOR[level],
+    label: level,
     variant: CHIP_PROPS.VARIANT.STATUS,
   };
 }

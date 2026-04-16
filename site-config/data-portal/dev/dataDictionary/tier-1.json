@@ -1528,7 +1528,7 @@
           "name": "library_preparation_batch",
           "range": "string",
           "rationale": "Sample preparation is a major source of batch effects.",
-          "required": true,
+          "required": "strongly recommended",
           "title": "Library Preparation Batch"
         },
         {
@@ -1562,7 +1562,7 @@
           "name": "library_sequencing_run",
           "range": "string",
           "rationale": "Library sequencing is a major source of batch effects",
-          "required": true,
+          "required": "strongly recommended",
           "title": "Library Sequencing Run"
         }
       ]
