@@ -36,7 +36,7 @@
     "next": "^15",
     "next-auth": "^4",
     "next-compose-plugins": "^2.2.1",
-    "next-mdx-remote": "^5",
+    "next-mdx-remote": "^6",
     "react": "^19",
     "react-dom": "^19",
     "react-dropzone": "^14",
