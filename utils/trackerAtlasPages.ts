@@ -7,7 +7,10 @@ import {
   resolveTrackerAtlasId,
 } from "../apis/tracker/api";
 import type { StaticProps } from "./atlasPages";
-import { mapTrackerComponentAtlasToIntegratedAtlas } from "./trackerNetwork";
+import {
+  buildTrackerSourceDatasetAsset,
+  mapTrackerComponentAtlasToIntegratedAtlas,
+} from "./trackerNetwork";
 
 /**
  * Fetches and builds static props for a tracker-sourced atlas.
@@ -49,6 +52,16 @@ export async function getTrackerContentStaticProps(
     )
   );
 
+  const trackerSourceDatasets = sourceDatasets.map((sd) => ({
+    ...sd,
+    datasetAsset: buildTrackerSourceDatasetAsset(
+      sd,
+      networkKey,
+      shortNameSlug,
+      version
+    ),
+  }));
+
   const processedAtlas: Atlas = {
     ...atlas,
     integratedAtlases,
@@ -68,7 +81,7 @@ export async function getTrackerContentStaticProps(
       network: processedNetwork,
       pageTitle: `${atlas.name} - ${tabName}`,
       projectsResponses: [],
-      trackerSourceDatasets: sourceDatasets,
+      trackerSourceDatasets,
       trackerSourceStudies: sourceStudies,
     },
   };

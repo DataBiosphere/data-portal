@@ -2,44 +2,7 @@ import type { CellContext } from "@tanstack/react-table";
 import type { JSX } from "react";
 import * as C from "../../../../../../../../..";
 import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
-import {
-  buildTrackerSourceDatasetAsset,
-  splitFileName,
-} from "../../../../../../../../../../utils/trackerNetwork";
-
-/**
- * Returns the download info for a tracker source dataset.
- * @param sourceDataset - Tracker source dataset.
- * @param networkKey - Network key (e.g., "gut").
- * @param shortNameSlug - Atlas short name slug.
- * @param version - Atlas version.
- * @returns file name (without extension), file size, format, and download URL.
- */
-function getDownloadInfo(
-  sourceDataset: TrackerSourceDataset,
-  networkKey: string,
-  shortNameSlug: string,
-  version: string
-): {
-  downloadUrl: string;
-  fileName: string;
-  fileSize: number;
-  format: string;
-} {
-  const asset = buildTrackerSourceDatasetAsset(
-    sourceDataset,
-    networkKey,
-    shortNameSlug,
-    version
-  );
-  const { ext, stem } = splitFileName(sourceDataset.baseFileName);
-  return {
-    downloadUrl: asset.downloadURL,
-    fileName: `${stem}-r${sourceDataset.revision}`,
-    fileSize: sourceDataset.sizeBytes,
-    format: ext,
-  };
-}
+import { splitFileName } from "../../../../../../../../../../utils/trackerNetwork";
 
 /**
  * Renders the cell count as a locale-formatted string.
@@ -54,29 +17,20 @@ export function renderCellCount(
 
 /**
  * Renders a tracker download cell for a source dataset.
- * Reads tracker config from table meta to build the S3 download URL.
+ * Uses the pre-built datasetAsset from static props.
  * @param ctx - Cell context.
- * @returns TrackerDownloadCell component, or null if tracker config unavailable.
+ * @returns TrackerDownloadCell component, or null if asset unavailable.
  */
 export function renderDownload(
   ctx: CellContext<TrackerSourceDataset, unknown>
 ): JSX.Element | null {
-  const meta = ctx.table.options.meta as {
-    networkKey?: string;
-    shortNameSlug?: string;
-    version?: string;
-  };
-  if (!meta.networkKey || !meta.shortNameSlug || !meta.version) return null;
-  const { downloadUrl, fileName, fileSize, format } = getDownloadInfo(
-    ctx.row.original,
-    meta.networkKey,
-    meta.shortNameSlug,
-    meta.version
-  );
+  const { baseFileName, datasetAsset, revision } = ctx.row.original;
+  if (!datasetAsset) return null;
+  const { ext: format, stem } = splitFileName(baseFileName);
   return C.TrackerDownloadCell({
-    downloadUrl,
-    fileName,
-    fileSize,
+    downloadUrl: datasetAsset.downloadURL,
+    fileName: `${stem}-r${revision}`,
+    fileSize: datasetAsset.fileSize,
     format,
   });
 }
