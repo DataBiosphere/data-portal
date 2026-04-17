@@ -1,5 +1,5 @@
-import type { Attribute, DataDictionaryInput } from "./types";
-import type { DataDictionary } from "@databiosphere/findable-ui/lib/common/entities";
+import { Attribute } from "./types";
+import { DataDictionary } from "@databiosphere/findable-ui/lib/common/entities";
 import {
   buildAnnotations,
   buildLocationName,
@@ -12,7 +12,7 @@ import {
  * @returns The built data dictionary.
  */
 export function buildDataDictionary(
-  dataDictionary: DataDictionaryInput
+  dataDictionary: DataDictionary
 ): DataDictionary<Attribute> {
   return {
     ...dataDictionary,

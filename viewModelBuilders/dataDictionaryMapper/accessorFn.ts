@@ -1,9 +1,6 @@
-import type { RequirementLevel } from "./types";
-import { Attribute, REQUIREMENT_LEVEL } from "./types";
-
-const REQUIRED_INPUT = {
-  STRONGLY_RECOMMENDED: "strongly recommended",
-} as const;
+import { REQUIREMENT_LEVEL } from "@databiosphere/findable-ui/lib/common/entities";
+import type { RequirementLabel } from "./types";
+import { Attribute, REQUIREMENT_LABEL } from "./types";
 
 /**
  * Accessor function for annDataLocation.
@@ -21,15 +18,15 @@ export function buildAnnDataLocation(row: Attribute): string[] {
 
 /**
  * Maps a required input value to its display-level requirement label.
- * @param required - The required value.
- * @returns The requirement level label.
+ * @param row - Row data.
+ * @returns The requirement label.
  */
-export function buildRequired(row: Attribute): RequirementLevel {
+export function buildRequired(row: Attribute): RequirementLabel {
   const { required } = row;
-  if (required === REQUIRED_INPUT.STRONGLY_RECOMMENDED)
-    return REQUIREMENT_LEVEL.STRONGLY_RECOMMENDED;
-  if (required) return REQUIREMENT_LEVEL.REQUIRED;
-  return REQUIREMENT_LEVEL.RECOMMENDED;
+  if (required === REQUIREMENT_LEVEL.STRONGLY_RECOMMENDED)
+    return REQUIREMENT_LABEL.STRONGLY_RECOMMENDED;
+  if (required) return REQUIREMENT_LABEL.REQUIRED;
+  return REQUIREMENT_LABEL.RECOMMENDED;
 }
 
 /**

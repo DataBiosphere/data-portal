@@ -1,4 +1,8 @@
-import type { Attribute, AttributeInput, DataDictionaryInput } from "./types";
+import { Attribute } from "./types";
+import {
+  DataDictionary,
+  Attribute as BaseAttribute,
+} from "@databiosphere/findable-ui/lib/common/entities";
 import { LABEL } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
 
 /**
@@ -8,7 +12,7 @@ import { LABEL } from "@databiosphere/findable-ui/lib/apis/azul/common/entities"
  * @returns The annotations.
  */
 export function buildAnnotations(
-  attribute: AttributeInput
+  attribute: BaseAttribute
 ): Attribute["annotations"] {
   return {
     ...attribute.annotations,
@@ -21,7 +25,7 @@ export function buildAnnotations(
  * @param attribute - The attribute.
  * @returns The displayable name.
  */
-export function buildLocationName(attribute: AttributeInput): string {
+export function buildLocationName(attribute: BaseAttribute): string {
   const { annotations } = attribute;
   const { annDataLocation } = annotations || {};
 
@@ -43,8 +47,8 @@ export function buildLocationName(attribute: AttributeInput): string {
  * @returns The source attribute.
  */
 export function buildSourceAttribute(
-  dataDictionary: DataDictionaryInput,
-  attribute: AttributeInput
+  dataDictionary: DataDictionary,
+  attribute: BaseAttribute
 ): Attribute["source"] {
   const { annotations, prefixes } = dataDictionary;
   const attributeAnnotations = attribute.annotations;

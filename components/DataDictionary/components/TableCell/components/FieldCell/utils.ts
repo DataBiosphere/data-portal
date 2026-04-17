@@ -2,9 +2,11 @@ import { CHIP_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/chi
 import type { ChipProps } from "@mui/material";
 import type { Row } from "@tanstack/react-table";
 import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
-import type { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
-import type { RequirementLevel } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
-import { REQUIREMENT_LEVEL_COLOR } from "./constants";
+import type {
+  Attribute,
+  RequirementLabel,
+} from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
+import { REQUIREMENT_LABEL_COLOR } from "./constants";
 
 /**
  * Builds string array from the given attribute, for locationName.
@@ -33,9 +35,9 @@ export function buildRange(attribute: Attribute): string {
  * @returns Model to be used as props for the Chip component.
  */
 export function buildRequired(row: Row<Attribute>): ChipProps {
-  const level = row.getValue<RequirementLevel>(COLUMN_IDENTIFIERS.REQUIRED);
+  const level = row.getValue<RequirementLabel>(COLUMN_IDENTIFIERS.REQUIRED);
   return {
-    color: REQUIREMENT_LEVEL_COLOR[level],
+    color: REQUIREMENT_LABEL_COLOR[level],
     label: level,
     variant: CHIP_PROPS.VARIANT.STATUS,
   };

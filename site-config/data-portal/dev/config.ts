@@ -14,8 +14,10 @@ import cellAnnotation from "./dataDictionary/cell-annotation.json";
 import metadataTier1 from "./dataDictionary/tier-1.json";
 import metadataTier2 from "./dataDictionary/tier-2.json";
 import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
-import type { DataDictionaryConfig } from "@databiosphere/findable-ui/lib/common/entities";
-import type { DataDictionaryInput } from "../../../viewModelBuilders/dataDictionaryMapper/types";
+import {
+  DataDictionary,
+  DataDictionaryConfig,
+} from "@databiosphere/findable-ui/lib/common/entities";
 import {
   CELL_ANNOTATION_TABLE_OPTIONS,
   TIER_1_TABLE_OPTIONS,
@@ -57,21 +59,21 @@ export function makeConfig(
     dataDictionaries: [
       {
         dataDictionary: buildDataDictionary(
-          metadataTier1 as unknown as DataDictionaryInput
+          metadataTier1 as unknown as DataDictionary
         ),
         path: "tier-1",
         tableOptions: TIER_1_TABLE_OPTIONS,
       },
       {
         dataDictionary: buildDataDictionary(
-          metadataTier2 as unknown as DataDictionaryInput
+          metadataTier2 as unknown as DataDictionary
         ),
         path: "tier-2",
         tableOptions: TIER_2_TABLE_OPTIONS,
       },
       {
         dataDictionary: buildDataDictionary(
-          cellAnnotation as unknown as DataDictionaryInput
+          cellAnnotation as unknown as DataDictionary
         ),
         path: "cell-annotation",
         tableOptions: CELL_ANNOTATION_TABLE_OPTIONS,

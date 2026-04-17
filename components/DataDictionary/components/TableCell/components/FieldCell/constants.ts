@@ -1,8 +1,8 @@
 import { CHIP_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/chip";
 import type { ChipProps, GridProps } from "@mui/material";
 import {
-  REQUIREMENT_LEVEL,
-  type RequirementLevel,
+  REQUIREMENT_LABEL,
+  type RequirementLabel,
 } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
 
 export const GRID_PROPS: GridProps = {
@@ -12,11 +12,11 @@ export const GRID_PROPS: GridProps = {
   wrap: "wrap",
 };
 
-export const REQUIREMENT_LEVEL_COLOR: Record<
-  RequirementLevel,
+export const REQUIREMENT_LABEL_COLOR: Record<
+  RequirementLabel,
   ChipProps["color"]
 > = {
-  [REQUIREMENT_LEVEL.RECOMMENDED]: CHIP_PROPS.COLOR.DEFAULT,
-  [REQUIREMENT_LEVEL.REQUIRED]: CHIP_PROPS.COLOR.ERROR,
-  [REQUIREMENT_LEVEL.STRONGLY_RECOMMENDED]: CHIP_PROPS.COLOR.WARNING,
+  [REQUIREMENT_LABEL.RECOMMENDED]: CHIP_PROPS.COLOR.DEFAULT,
+  [REQUIREMENT_LABEL.REQUIRED]: CHIP_PROPS.COLOR.ERROR,
+  [REQUIREMENT_LABEL.STRONGLY_RECOMMENDED]: CHIP_PROPS.COLOR.WARNING,
 };
