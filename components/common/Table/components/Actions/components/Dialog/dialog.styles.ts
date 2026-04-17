@@ -6,7 +6,7 @@ import {
   DialogContent as MDialogContent,
 } from "@mui/material";
 
-export const Dialog = styled(MDialog)`
+export const StyledDialog = styled(MDialog)`
   .MuiDialog-paper {
     max-width: 544px;
   }

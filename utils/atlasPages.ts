@@ -17,6 +17,7 @@ import {
   processAtlas,
   processNetwork,
 } from "./network";
+import { getTrackerContentStaticProps } from "./trackerAtlasPages";
 
 interface StaticPaths extends ParsedUrlQuery {
   atlas: string;
@@ -46,15 +47,21 @@ export async function getContentStaticProps(
   context: GetStaticPropsContext,
   tabName: string
 ): Promise<GetStaticPropsResult<StaticProps>> {
-  const {
-    dataSource: { url },
-  } = config();
   const { atlas: atlasParam, network: networkParam } = context.params ?? {};
 
   const network = NETWORKS.find(({ path }) => path === networkParam) as Network;
   const atlas = network.atlases.find(
     ({ path }) => path === atlasParam
   ) as Atlas;
+
+  // Delegate to tracker path if atlas has tracker config.
+  if (atlas.tracker) {
+    return getTrackerContentStaticProps(atlas, network, tabName);
+  }
+
+  const {
+    dataSource: { url },
+  } = config();
 
   const projectsResponses = [];
   if (atlas.datasets.length > 0) {

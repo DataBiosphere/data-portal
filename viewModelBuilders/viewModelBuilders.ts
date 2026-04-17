@@ -6,7 +6,7 @@ import {
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { ColumnDef } from "@tanstack/react-table";
-import {
+import type {
   Atlas,
   AtlasesRow,
   AtlasRow,
@@ -24,6 +24,7 @@ import * as C from "../components";
 import { MetadataValueTuple } from "../components/common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
 import { NETWORKS_ROUTE } from "../constants/routes";
 import { formatCountSize } from "../utils/formatCountSize";
+import { splitFileName } from "../utils/trackerNetwork";
 import { DISEASE } from "./entities";
 
 /**
@@ -89,14 +90,30 @@ function calculateEstimatedCellCount(
  * Returns atlases actions column def.
  * @returns actions column def.
  */
-function getAtlasesActionsColumnDef(): ColumnDef<IntegratedAtlasRow> {
+function getAtlasesActionsColumnDef(
+  isTracker = false
+): ColumnDef<IntegratedAtlasRow> {
   return {
     accessorKey: "actions",
-    cell: ({ row }) =>
-      C.CXGDownloadCell({
-        datasetAssets: row.original.datasetAssets,
-        title: row.original.name,
-      }),
+    cell: isTracker
+      ? ({ row }) => {
+          const asset = row.original.datasetAssets[0];
+          if (!asset) return null;
+          const { ext: format, stem: fileName } = splitFileName(
+            asset.downloadURL.split("/").pop() || ""
+          );
+          return C.TrackerDownloadCell({
+            downloadUrl: asset.downloadURL,
+            fileName,
+            fileSize: asset.fileSize,
+            format,
+          });
+        }
+      : ({ row }) =>
+          C.CXGDownloadCell({
+            datasetAssets: row.original.datasetAssets,
+            title: row.original.name,
+          }),
     header: "Download",
   };
 }
@@ -346,17 +363,24 @@ function getIntegratedAtlasesAtlasNameColumnDef(): ColumnDef<IntegratedAtlasRow>
 
 /**
  * Returns the table column definition model for the integrated atlases table.
+ * @param showExplore - Whether to include the Explore column (omitted for tracker atlases).
  * @returns integrated atlases table column definition.
  */
-export function getIntegratedAtlasesTableColumns(): ColumnDef<IntegratedAtlasRow>[] {
-  return [
+export function getIntegratedAtlasesTableColumns(
+  showExplore = true,
+  isTracker = false
+): ColumnDef<IntegratedAtlasRow>[] {
+  const columns: ColumnDef<IntegratedAtlasRow>[] = [
     getIntegratedAtlasesAtlasNameColumnDef(),
     getAtlasesTissueColumnDef(),
     getAtlasesDiseaseColumnDef(),
     getAtlasesCellCountColumnDef(),
-    getAtlasesExploreColumnDef(),
-    getAtlasesActionsColumnDef(),
   ];
+  if (showExplore) {
+    columns.push(getAtlasesExploreColumnDef());
+  }
+  columns.push(getAtlasesActionsColumnDef(isTracker));
+  return columns;
 }
 
 /**
@@ -530,7 +554,7 @@ function initAtlasRow(): AtlasesRow {
  * @param pinned - Values to pin.
  * @returns metadata tuple containing pinned values and non-pinned values.
  */
-function partitionMetadataValues(
+export function partitionMetadataValues(
   values: MetadataValue[],
   pinned: MetadataValue[]
 ): MetadataValueTuple {

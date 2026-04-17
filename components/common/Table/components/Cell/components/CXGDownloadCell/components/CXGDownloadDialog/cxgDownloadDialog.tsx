@@ -1,8 +1,8 @@
 import { JSX } from "react";
 import { DatasetAsset } from "../../../../../../../../../@types/network";
 import {
-  Dialog,
   DialogTitle,
+  StyledDialog,
 } from "../../../../../Actions/components/Dialog/dialog.styles";
 import { CxgDownloadDialogForm as DialogForm } from "../CXGDownloadDialogForm/cxgDownloadDialogForm";
 
@@ -22,13 +22,13 @@ export const CXGDownloadDialog = ({
   title,
 }: CXGDownloadDialogProps): JSX.Element => {
   return (
-    <Dialog fullWidth maxWidth={false} onClose={onClose} open={open}>
+    <StyledDialog fullWidth maxWidth={false} onClose={onClose} open={open}>
       <DialogTitle title="Download from CZ CELLxGENE" onClose={onClose} />
       <DialogForm
         datasetAssets={datasetAssets}
         onClose={onClose}
         title={title}
       />
-    </Dialog>
+    </StyledDialog>
   );
 };

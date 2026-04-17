@@ -49,4 +49,5 @@ venv
 # claude
 .claude/plans/
 .claude/rules*
+.claude/plans*
 .claude/skills/

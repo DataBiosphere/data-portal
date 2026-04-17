@@ -10,7 +10,6 @@ import {
   Network,
 } from "../@types/network";
 import { processNullElements } from "../apis/azul/hca-dcp/common/utils";
-import { config } from "../config/config";
 import { CZ_CELLXGENE } from "../constants/analysisPortals";
 
 const CZ_CELLXGENE_DATA_PORTAL_URL = "https://cellxgene.cziscience.com";
@@ -119,7 +118,9 @@ export function processAtlas(atlas: Atlas, cxgDatasets: CXGDataset[]): Atlas {
   if (atlas.componentAtlases) {
     integratedAtlases.push(...atlas.componentAtlases);
   }
-  const cxgDataPortal = buildCXGDataPortalLink(atlas.cxgId);
+  const cxgDataPortal = atlas.cxgId
+    ? buildCXGDataPortalLink(atlas.cxgId)
+    : undefined;
   return { ...atlas, cxgDataPortal, integratedAtlases };
 }
 
@@ -134,8 +135,15 @@ export function processNetwork(
   cxgDatasets: CXGDataset[]
 ): Network {
   const atlases = [...network.atlases].map((atlas) => {
+    // Tracker-sourced atlases handle their own integrated atlases.
+    if (atlas.tracker) return atlas;
+
+    const { cxgId } = atlas;
+
+    if (!cxgId) return atlas;
+
     const integratedAtlases = cxgDatasets
-      .filter((dataset) => filterCXGDataset(dataset, atlas.cxgId))
+      .filter((dataset) => filterCXGDataset(dataset, cxgId))
       .map(mapIntegratedAtlas);
     if (atlas.componentAtlases) {
       integratedAtlases.push(...atlas.componentAtlases);
