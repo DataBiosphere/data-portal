@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.10.0](https://github.com/DataBiosphere/data-portal/compare/v2.9.2...v2.10.0) (2026-04-17)
+
+
+### Features
+
+* add "strongly recommended" requirement level to metadata dictionary ([#2976](https://github.com/DataBiosphere/data-portal/issues/2976)) ([#2978](https://github.com/DataBiosphere/data-portal/issues/2978)) ([89963f1](https://github.com/DataBiosphere/data-portal/commit/89963f1dd540c1e49fa44f571862305c1baa1c3a))
+
+
+### Chores
+
+* update findable-ui to latest version ([#2951](https://github.com/DataBiosphere/data-portal/issues/2951)) ([#2952](https://github.com/DataBiosphere/data-portal/issues/2952)) ([e0fac07](https://github.com/DataBiosphere/data-portal/commit/e0fac07be9a63a9e497fdcdee83b2f64dadddb69))
+* update findable-ui to v50 and run audit fix ([#2951](https://github.com/DataBiosphere/data-portal/issues/2951)) ([e0fac07](https://github.com/DataBiosphere/data-portal/commit/e0fac07be9a63a9e497fdcdee83b2f64dadddb69))
+
 ## [2.9.2](https://github.com/DataBiosphere/data-portal/compare/v2.9.1...v2.9.2) (2026-03-31)
 
 
