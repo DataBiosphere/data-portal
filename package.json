@@ -80,7 +80,7 @@
     "next-sitemap": "^4.2.3",
     "prettier": "^3.7.4",
     "prettier-plugin-organize-imports": "^4.3.0",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "overrides": {
     "glob": "^11.0.4"
