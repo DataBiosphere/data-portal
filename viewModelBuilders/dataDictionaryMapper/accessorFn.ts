@@ -25,7 +25,7 @@ export function buildRequired(row: Attribute): RequirementLabel {
   const { required } = row;
   if (required === REQUIREMENT_LEVEL.STRONGLY_RECOMMENDED)
     return REQUIREMENT_LABEL.STRONGLY_RECOMMENDED;
-  if (required) return REQUIREMENT_LABEL.REQUIRED;
+  if (required === true) return REQUIREMENT_LABEL.REQUIRED;
   return REQUIREMENT_LABEL.RECOMMENDED;
 }
 
