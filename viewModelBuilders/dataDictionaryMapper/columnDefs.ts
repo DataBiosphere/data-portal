@@ -1,10 +1,14 @@
-import { ColumnDef } from "@tanstack/react-table";
-import { Attribute } from "./types";
-import { FieldCell } from "../../components/DataDictionary/components/TableCell/components/FieldCell/fieldCell";
+import type { GridTrackSize } from "@databiosphere/findable-ui/lib/config/entities";
+import type { ColumnDef } from "@tanstack/react-table";
 import { DetailCell } from "../../components/DataDictionary/components/TableCell/components/DetailCell/detailCell";
-import { GridTrackSize } from "@databiosphere/findable-ui/lib/config/entities";
+import { FieldCell } from "../../components/DataDictionary/components/TableCell/components/FieldCell/fieldCell";
+import {
+  buildAnnDataLocation,
+  buildRequired,
+  buildTierNSource,
+} from "./accessorFn";
 import { COLUMN_IDENTIFIERS } from "./columnIds";
-import { buildTierNSource, buildAnnDataLocation } from "./accessorFn";
+import type { Attribute } from "./types";
 
 const ANN_DATA_LOCATION: ColumnDef<Attribute, unknown> = {
   accessorFn: buildAnnDataLocation,
@@ -91,7 +95,7 @@ const RATIONALE: ColumnDef<Attribute, unknown> = {
 };
 
 const REQUIRED: ColumnDef<Attribute, unknown> = {
-  accessorFn: (row) => (row.required ? "Required" : "Recommended"),
+  accessorFn: buildRequired,
   enableColumnFilter: true,
   enableGlobalFilter: false,
   enableHiding: false,
