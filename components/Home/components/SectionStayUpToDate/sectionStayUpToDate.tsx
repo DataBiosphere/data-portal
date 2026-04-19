@@ -1,17 +1,17 @@
-import { JSX } from "react";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { Button } from "@mui/material";
+import { JSX } from "react";
 import { StyledTypography } from "../Section/section.styles";
 import {
   CTAs,
   SectionStayUpToDate as Section,
   SectionContent,
 } from "./sectionStayUpToDate.styles";
-import { Button } from "@mui/material";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 
 export const SectionStayUpToDate = (): JSX.Element => {
   return (

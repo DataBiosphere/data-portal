@@ -1,8 +1,12 @@
-import { JSX } from "react";
+import { BUTTON_PROPS as COMPONENT_BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { Button } from "@mui/material";
+import { JSX } from "react";
 import { useSiteConfig } from "../../../../hooks/useSiteConfig";
 import { ROUTES } from "../../../../routes/constants";
 import { SummaryCounts } from "./components/SummaryCounts/summaryCounts";
@@ -13,10 +17,6 @@ import {
   SectionHero as Hero,
   Subhead,
 } from "./sectionHero.styles";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
-import { Button } from "@mui/material";
-import { BUTTON_PROPS as COMPONENT_BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
 
 export const SectionHero = (): JSX.Element => {
   const { browserURL } = useSiteConfig();

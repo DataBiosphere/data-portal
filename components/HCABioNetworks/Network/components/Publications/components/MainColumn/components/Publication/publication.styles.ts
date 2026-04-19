@@ -1,11 +1,11 @@
 import { CardSection as Section } from "@databiosphere/findable-ui/lib/components/common/Card/card.styles";
 import { CardSecondaryTitle as DXCardSecondaryTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardSecondaryTitle/cardSecondaryTitle";
 import { GridPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
-import styled from "@emotion/styled";
-import { Card as MCard } from "@mui/material";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import styled from "@emotion/styled";
+import { Card as MCard } from "@mui/material";
 
 export const Card = styled(MCard)`
   && .MuiCardActionArea-root {

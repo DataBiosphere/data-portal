@@ -1,8 +1,8 @@
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { TableContainer as MTableContainer } from "@mui/material";
-import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
-import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 interface Props {
   borderless?: boolean;

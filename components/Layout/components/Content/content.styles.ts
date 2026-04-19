@@ -1,9 +1,9 @@
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { typographyToCSS } from "@databiosphere/findable-ui/lib/styles/common/mixins/typography";
+import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/types";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/types";
-import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
-import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
-import { typographyToCSS } from "@databiosphere/findable-ui/lib/styles/common/mixins/typography";
 
 interface Props {
   headerHeight: number;

@@ -1,7 +1,7 @@
-import { JSX } from "react";
 import { LAYOUT_STYLE_NO_CONTRAST_LIGHTEST } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
 import { Main } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
 import { GetStaticProps } from "next";
+import { JSX } from "react";
 import { ContentView } from "../../components";
 import { SearchView } from "../../views/SearchView/searchView";
 

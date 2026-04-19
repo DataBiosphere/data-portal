@@ -1,6 +1,8 @@
 import { LayoutStyle } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/entities";
 import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
+import { rehypeSlug } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/rehypeSlug";
+import { remarkHeadings } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/remarkHeadings";
 import { ThemeOptions } from "@mui/material";
 import { GetStaticPropsContext, GetStaticPropsResult } from "next";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -13,8 +15,6 @@ import {
   getNavigationConfig,
   parseMDXFrontmatter,
 } from "../docs/common/utils";
-import { rehypeSlug } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/rehypeSlug";
-import { remarkHeadings } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/remarkHeadings";
 
 interface PageUrlParams extends ParsedUrlQuery {
   slug: string[];

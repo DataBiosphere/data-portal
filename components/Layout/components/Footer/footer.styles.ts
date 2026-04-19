@@ -1,6 +1,6 @@
 import { Footer as DXFooter } from "@databiosphere/findable-ui/lib/components/Layout/components/Footer/footer";
-import styled from "@emotion/styled";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import styled from "@emotion/styled";
 
 export const AppFooter = styled(DXFooter)`
   padding: 24px 0;

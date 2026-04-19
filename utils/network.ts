@@ -10,7 +10,6 @@ import {
   Network,
 } from "../@types/network";
 import { processNullElements } from "../apis/azul/hca-dcp/common/utils";
-import { config } from "../config/config";
 import { CZ_CELLXGENE } from "../constants/analysisPortals";
 
 const CZ_CELLXGENE_DATA_PORTAL_URL = "https://cellxgene.cziscience.com";

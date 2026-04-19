@@ -1,6 +1,6 @@
-import { JSX } from "react";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { BackPageContentSingleColumn } from "@databiosphere/findable-ui/lib/components/Layout/components/BackPage/backPageView.styles";
+import { JSX } from "react";
 import { AtlasDatasetsDescription } from "../../../../../../../../content";
 import { useAtlas } from "../../../../../../../../contexts/atlasContext";
 import { useSiteConfig } from "../../../../../../../../hooks/useSiteConfig";

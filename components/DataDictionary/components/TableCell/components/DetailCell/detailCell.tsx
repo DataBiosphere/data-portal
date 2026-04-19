@@ -1,16 +1,18 @@
-import { JSX } from "react";
-import { CellContext } from "@tanstack/react-table";
-import { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
+import { LinkCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/LinkCell/linkCell";
 import { Collapse, Typography } from "@mui/material";
+import { CellContext } from "@tanstack/react-table";
+import { JSX } from "react";
+import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
+import { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
+import { getPartialCellContext } from "../../utils";
 import { TYPOGRAPHY_PROPS } from "./constants";
 import {
-  StyledPaper,
   StyledCell,
-  StyledStack,
   StyledCollapse,
   StyledMarkdownCell,
+  StyledPaper,
+  StyledStack,
 } from "./detailCell.styles";
-import { LinkCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/LinkCell/linkCell";
 import {
   buildAnnDataLocation,
   buildBioNetworks,
@@ -18,8 +20,6 @@ import {
   buildSource,
   shouldShowAnnDataLocationColumn,
 } from "./utils";
-import { getPartialCellContext } from "../../utils";
-import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
 
 export const DetailCell = ({
   row,

@@ -1,9 +1,9 @@
-import { JSX } from "react";
 import {
   Link,
   LinkProps,
 } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { Chip, Tooltip } from "@mui/material";
+import { JSX } from "react";
 import { Links } from "./publicationDetail.styles";
 
 export interface PublicationDetailProps {

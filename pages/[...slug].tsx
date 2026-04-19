@@ -1,4 +1,3 @@
-import { JSX } from "react";
 import { Main } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
 import {
   Nav,
@@ -7,15 +6,16 @@ import {
 import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
 import { Outline } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 import { ThemeOptions } from "@mui/material";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { GetStaticPathsResult } from "next/types";
+import { JSX } from "react";
 import { Content, ContentView } from "../components";
 import { MDX_COMPONENTS } from "../docs/common/constants";
 import { generatePaths } from "../docs/common/utils";
 import { getDocsStaticProps, PageProps } from "../utils/docPages";
-import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 const CONFLICTING_STATIC_PATHS: string[] = ["hca-bio-networks"];
 const DOCS_DIR = "/docs";

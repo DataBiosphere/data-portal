@@ -1,11 +1,11 @@
-import { JSX } from "react";
 import { SectionTitle } from "@databiosphere/findable-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Typography } from "@mui/material";
+import { JSX } from "react";
 import { Coordinator } from "../../../../../@types/network";
 import { SectionContent } from "../../section.styles";
 import { Section } from "./coordinators.styles";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export interface CoordinatorsProps {
   coordinators: Coordinator[];

@@ -1,5 +1,6 @@
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
-import { JSX, Fragment } from "react";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { Fragment, JSX } from "react";
 import { BICCNPublication } from "../../../../../../../@types/network";
 import {
   useNetwork,
@@ -10,10 +11,9 @@ import { Outline } from "./components/Outline/outline";
 import { Publication } from "./components/Publication/publication";
 import {
   BackPageContentSingleColumn,
-  StyledTypography,
   Publications,
+  StyledTypography,
 } from "./mainColumn.styles";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export const MainColumn = (): JSX.Element => {
   const { network } = useNetwork();

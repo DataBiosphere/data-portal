@@ -1,7 +1,7 @@
 import { Grid } from "@databiosphere/findable-ui/lib/components/common/Grid/grid";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Typography } from "@mui/material";
 import { JSX, ReactNode } from "react";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export interface DialogContentSectionProps {
   children: ReactNode;

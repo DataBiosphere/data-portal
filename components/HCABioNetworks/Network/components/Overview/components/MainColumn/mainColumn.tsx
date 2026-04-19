@@ -1,4 +1,3 @@
-import { JSX } from "react";
 import {
   FluidPaper,
   GridPaper,
@@ -8,7 +7,9 @@ import {
   Section,
   SectionContent,
 } from "@databiosphere/findable-ui/lib/components/common/Section/section.styles";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Typography } from "@mui/material";
+import { JSX } from "react";
 import {
   useNetwork,
   useNetworkContent,
@@ -18,13 +19,12 @@ import {
   rollUpAtlases,
 } from "../../../../../../../viewModelBuilders/viewModelBuilders";
 import {
-  Table,
   StyledToolbar,
+  Table,
 } from "../../../../../../common/Table/table.styles";
 import { SectionText } from "../../../../../components/Section/section.styles";
 import { NetworkAtlasesEmpty } from "./components/NetworkAtlasesEmpty/networkAtlasesEmpty";
 import { TABLE_OPTIONS } from "./constants";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export const MainColumn = (): JSX.Element => {
   const { network } = useNetwork();

@@ -1,6 +1,6 @@
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 interface Props {
   hasBorder?: boolean;

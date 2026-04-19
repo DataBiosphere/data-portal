@@ -1,6 +1,5 @@
 import nextMDX from "@next/mdx";
 import withPlugins from "next-compose-plugins";
-import path from "path";
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,

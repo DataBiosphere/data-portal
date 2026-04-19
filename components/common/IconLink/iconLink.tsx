@@ -1,9 +1,9 @@
-import { JSX } from "react";
 import {
   StaticImage,
   StaticImageProps,
 } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { JSX } from "react";
 import { Stack } from "./iconLink.styles";
 
 export interface IconLinkProps {

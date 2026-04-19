@@ -1,7 +1,7 @@
-import { Row, Table } from "@tanstack/react-table";
-import { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
-import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
 import { LinkProps } from "@mui/material";
+import { Row, Table } from "@tanstack/react-table";
+import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
+import { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
 import { BIO_NETWORK_COUNT } from "./constants";
 
 /**

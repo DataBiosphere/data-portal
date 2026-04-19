@@ -1,6 +1,6 @@
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import styled from "@emotion/styled";
 import { Section } from "../Section/section.styles";
-import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const SectionStayUpToDate = styled(Section)`
   background: url("/hca-bio-networks/home/stay-up-to-date.webp") no-repeat;
