@@ -1637,7 +1637,7 @@
           "name": "cell_type_ontology_term_id",
           "range": "string",
           "rationale": "Encoding of cell type to help alignment with other datasets.",
-          "required": true,
+          "required": false,
           "title": "Cell Type Ontology Term ID",
           "values": "This must be a Cell Ontology (CL) term (http://www.ebi.ac.uk/ols4/ontologies/cl).\n\n If no appropriate high-level term can be found or the cell type is unknown, then it is strongly recommended to use 'unknown'.\n\n The following terms must not be used: \"CL:0000255\" for eukaryotic cell; \"CL:0000257\" for Eumycetozoan cell; \"CL:0000548\" for animal cell."
         }
