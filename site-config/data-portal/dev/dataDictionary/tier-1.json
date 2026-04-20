@@ -457,7 +457,7 @@
         },
         {
           "annotations": {
-            "annDataLocation": "uns",
+            "annDataLocation": "obs",
             "bioNetworks": ["gut"],
             "tier": "Tier 1"
           },
@@ -471,7 +471,7 @@
         },
         {
           "annotations": {
-            "annDataLocation": "uns",
+            "annDataLocation": "obs",
             "bioNetworks": ["gut"],
             "tier": "Tier 1"
           },
