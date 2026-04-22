@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import styled from "@emotion/styled";
 
 export const ViewLayout = styled.div`
   display: flex;

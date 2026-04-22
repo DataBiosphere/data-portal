@@ -1,4 +1,3 @@
-import { JSX } from "react";
 import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import {
   Tabs as DXTabs,
@@ -6,6 +5,7 @@ import {
   TabValue,
 } from "@databiosphere/findable-ui/lib/components/common/Tabs/tabs";
 import { useRouter } from "next/router";
+import { JSX } from "react";
 import { Network } from "../../../../../../@types/network";
 import {
   NETWORKS_PATTERN,

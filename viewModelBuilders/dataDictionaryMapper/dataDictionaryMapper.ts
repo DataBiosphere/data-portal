@@ -1,5 +1,5 @@
-import { Attribute } from "./types";
 import { DataDictionary } from "@databiosphere/findable-ui/lib/common/entities";
+import { Attribute } from "./types";
 import {
   buildAnnotations,
   buildLocationName,

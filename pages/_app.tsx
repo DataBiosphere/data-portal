@@ -4,6 +4,9 @@ import { Floating } from "@databiosphere/findable-ui/lib/components/Layout/compo
 import { Header } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
 import { Main as DXMain } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main";
 import { ConfigProvider } from "@databiosphere/findable-ui/lib/providers/config";
+import { DataDictionaryStateProvider } from "@databiosphere/findable-ui/lib/providers/dataDictionaryState/provider";
+import { LayoutDimensionsProvider } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/provider";
+import { ServicesProvider } from "@databiosphere/findable-ui/lib/providers/services/provider";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
 import { createBreakpoints } from "@mui/system";
@@ -18,9 +21,6 @@ import { config } from "../config/config";
 import { BREAKPOINTS } from "../site-config/common/constants";
 import { SiteConfig } from "../site-config/common/entities";
 import { mergeAppTheme } from "../theme/theme";
-import { LayoutDimensionsProvider } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/provider";
-import { DataDictionaryStateProvider } from "@databiosphere/findable-ui/lib/providers/dataDictionaryState/provider";
-import { ServicesProvider } from "@databiosphere/findable-ui/lib/providers/services/provider";
 
 interface PageProps {
   pageTitle?: string;

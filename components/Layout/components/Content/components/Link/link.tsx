@@ -1,7 +1,7 @@
-import { JSX } from "react";
 import { TypographyWordBreak } from "@databiosphere/findable-ui/lib/components/common/Typography/TypographyWordBreak/TypographyWordBreak";
 import { Link as DXLink } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { replaceParameters } from "@databiosphere/findable-ui/lib/utils/replaceParameters";
+import { JSX } from "react";
 import { PARAMETERS } from "../../../../../../common/constants";
 import { useSiteConfig } from "../../../../../../hooks/useSiteConfig";
 

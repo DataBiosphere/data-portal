@@ -1,7 +1,7 @@
+import { APP } from "@databiosphere/findable-ui/lib/styles/common/constants/app";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
-import { APP } from "@databiosphere/findable-ui/lib/styles/common/constants/app";
 
 export const SectionContent = styled.div`
   box-sizing: content-box;

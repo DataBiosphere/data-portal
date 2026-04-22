@@ -1,7 +1,8 @@
-import { JSX } from "react";
 import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Tooltip, Typography } from "@mui/material";
 import { useRouter } from "next/router";
+import { JSX } from "react";
 import { NETWORK_ICONS } from "../../../../constants/networks";
 import { NETWORKS_ROUTE } from "../../../../constants/routes";
 import { useNetworkList } from "../../../../hooks/useNetworkList";
@@ -13,7 +14,6 @@ import {
   BioNetworkAtlases,
   SectionContent,
 } from "./sectionBioNetworkAtlases.styles";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export const SectionBioNetworkAtlases = (): JSX.Element => {
   const router = useRouter();

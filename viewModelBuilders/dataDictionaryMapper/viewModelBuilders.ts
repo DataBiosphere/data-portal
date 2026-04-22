@@ -1,9 +1,9 @@
-import { Attribute } from "./types";
-import {
-  DataDictionary,
-  Attribute as BaseAttribute,
-} from "@databiosphere/findable-ui/lib/common/entities";
 import { LABEL } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
+import {
+  Attribute as BaseAttribute,
+  DataDictionary,
+} from "@databiosphere/findable-ui/lib/common/entities";
+import { Attribute } from "./types";
 
 /**
  * Returns the annotations for a given attribute.

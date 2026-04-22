@@ -1,7 +1,7 @@
+import { COLOR_MIXES } from "@databiosphere/findable-ui/lib/styles/common/constants/colorMixes";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
-import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
-import { COLOR_MIXES } from "@databiosphere/findable-ui/lib/styles/common/constants/colorMixes";
 import { Typography } from "@mui/material";
 
 export const SectionHero = styled.section`

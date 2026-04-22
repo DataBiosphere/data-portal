@@ -1,8 +1,8 @@
-import styled from "@emotion/styled";
-import { Paper, Stack, Collapse } from "@mui/material";
-import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { MarkdownCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/MarkdownCell/markdownCell";
 import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import styled from "@emotion/styled";
+import { Collapse, Paper, Stack } from "@mui/material";
 
 export const StyledCell = styled("div")`
   align-self: flex-start;

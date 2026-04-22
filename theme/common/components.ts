@@ -1,6 +1,6 @@
-import { Components, ThemeOptions } from "@mui/material";
-import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { Components, ThemeOptions } from "@mui/material";
 
 const MuiCssBaseline: Components["MuiCssBaseline"] = {
   styleOverrides: {

@@ -1,12 +1,12 @@
-import { JSX } from "react";
 import { Grid } from "@databiosphere/findable-ui/lib/components/common/Grid/grid";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Typography } from "@mui/material";
+import { JSX } from "react";
 import {
   CXG_DATASET_FILE_TYPE,
   DatasetAsset,
 } from "../../../../../../../../../../../@types/network";
 import { RadioGroup } from "./cxgDownloadRadio.styles";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 const H5AD_FILE_FORMAT = ".h5ad";
 const RDS_FILE_FORMAT = ".rds";

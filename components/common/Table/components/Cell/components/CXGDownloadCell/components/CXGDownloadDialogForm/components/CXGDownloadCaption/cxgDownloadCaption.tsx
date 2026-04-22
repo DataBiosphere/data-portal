@@ -1,7 +1,7 @@
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-import { JSX, Fragment } from "react";
-import { Typography } from "@mui/material";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { Typography } from "@mui/material";
+import { Fragment, JSX } from "react";
 
 interface CXGDownloadCaptionProps {
   isRDS: boolean;

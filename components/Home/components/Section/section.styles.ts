@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
-import { Divider } from "@mui/material";
-import { Typography } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
 
 export const Section = styled.section`
   width: 100%;

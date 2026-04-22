@@ -1,6 +1,6 @@
 import { DetailViewTable as DXDetailViewTable } from "@databiosphere/findable-ui/lib/components/Detail/components/DetailViewTable/detailViewTable";
-import styled from "@emotion/styled";
 import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import styled from "@emotion/styled";
 
 export const DetailViewTable = styled(DXDetailViewTable)`
   th {

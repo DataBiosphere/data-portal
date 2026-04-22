@@ -1,11 +1,11 @@
 import { TableOptions } from "@tanstack/react-table";
-import { Attribute } from "./types";
-import {
-  TIER_2_COLUMN_DEFS,
-  TIER_1_COLUMN_DEFS,
-  CELL_ANNOTATION_COLUMN_DEFS,
-} from "./columnDefs";
 import slugify from "slugify";
+import {
+  CELL_ANNOTATION_COLUMN_DEFS,
+  TIER_1_COLUMN_DEFS,
+  TIER_2_COLUMN_DEFS,
+} from "./columnDefs";
+import { Attribute } from "./types";
 
 export const CELL_ANNOTATION_TABLE_OPTIONS: Omit<
   TableOptions<Attribute>,

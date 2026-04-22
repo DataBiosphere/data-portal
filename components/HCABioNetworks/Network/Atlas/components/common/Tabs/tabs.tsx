@@ -1,4 +1,3 @@
-import { JSX } from "react";
 import {
   Tabs as DXTabs,
   TabValue,
@@ -9,6 +8,7 @@ import {
 } from "constants/routes";
 import { useAtlas } from "contexts/atlasContext";
 import { useRouter } from "next/router";
+import { JSX } from "react";
 
 const TABS = [
   {

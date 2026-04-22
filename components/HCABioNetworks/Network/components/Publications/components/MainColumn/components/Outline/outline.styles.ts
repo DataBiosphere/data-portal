@@ -1,10 +1,10 @@
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import {
   bpDownSm,
   bpUpSm,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import { css } from "@emotion/react";
-import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 import styled from "@emotion/styled";
 import { Tab as MTab, Tabs as MTabs } from "@mui/material";
 

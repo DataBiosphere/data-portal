@@ -1,5 +1,5 @@
 import { formatFileSize } from "@databiosphere/findable-ui/lib/utils/formatFileSize";
-import { JSX, Fragment } from "react";
+import { Fragment, JSX } from "react";
 import { DatasetAsset } from "../../../../../../../../../../../@types/network";
 import { FileSize } from "./cxgDownloadFileSize.styles";
 

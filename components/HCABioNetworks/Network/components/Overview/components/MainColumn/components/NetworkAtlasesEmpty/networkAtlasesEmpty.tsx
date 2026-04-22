@@ -1,10 +1,10 @@
-import { JSX } from "react";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { SectionTitle } from "@databiosphere/findable-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
 import {
   PRIORITY,
   StatusIcon,
 } from "@databiosphere/findable-ui/lib/components/common/StatusIcon/statusIcon";
+import { JSX } from "react";
 import { Network } from "../../../../../../../../../@types/network";
 import { getBioNetworkName } from "../../../../../../../../../viewModelBuilders/viewModelBuilders";
 import { BiotechIcon } from "../../../../../../../../common/CustomIcon/components/BiotechIcon/biotechIcon";

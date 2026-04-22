@@ -1,6 +1,6 @@
+import { bpDownSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { Grid, Typography } from "@mui/material";
-import { bpDownSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 
 export const StyledGrid = styled(Grid)`
   align-self: flex-start;

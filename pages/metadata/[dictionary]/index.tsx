@@ -1,13 +1,13 @@
-import { JSX } from "react";
-import { DataDictionaryView } from "../../../views/DataDictionaryView/dataDictionaryView";
 import { Main } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
 import {
   GetStaticPaths,
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from "next";
-import { config } from "../../../config/config";
 import { ParsedUrlQuery } from "querystring";
+import { JSX } from "react";
+import { config } from "../../../config/config";
+import { DataDictionaryView } from "../../../views/DataDictionaryView/dataDictionaryView";
 
 interface PageUrlParams extends ParsedUrlQuery {
   dictionary: string;

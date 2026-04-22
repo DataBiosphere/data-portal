@@ -1,3 +1,5 @@
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
+import { Button } from "@mui/material";
 import { JSX, useState } from "react";
 import {
   CXG_DATASET_FILE_TYPE,
@@ -12,8 +14,6 @@ import { CXGDownloadCaption } from "./components/CXGDownloadCaption/cxgDownloadC
 import { CXGDownloadFileSize } from "./components/CXGDownloadFileSize/cxgDownloadFileSize";
 import { CXGDownloadRadio } from "./components/CXGDownloadRadio/cxgDownloadRadio";
 import { Code } from "./cxgDownloadDialogForm.styles";
-import { Button } from "@mui/material";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 
 type onCloseFn = () => void;
 

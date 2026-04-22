@@ -1,29 +1,29 @@
+import {
+  DataDictionary,
+  DataDictionaryConfig,
+} from "@databiosphere/findable-ui/lib/common/entities";
+import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import * as C from "../../../components/index";
 import { ROUTES } from "../../../routes/constants";
+import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
+import {
+  CELL_ANNOTATION_TABLE_OPTIONS,
+  TIER_1_TABLE_OPTIONS,
+  TIER_2_TABLE_OPTIONS,
+} from "../../../viewModelBuilders/dataDictionaryMapper/tableOptions";
 import { VISIBLE } from "../../common/constants";
 import { SiteConfig } from "../../common/entities";
 import { buildMenuItems } from "./common/utils";
+import cellAnnotation from "./dataDictionary/cell-annotation.json";
+import metadataTier1 from "./dataDictionary/tier-1.json";
+import metadataTier2 from "./dataDictionary/tier-2.json";
 import { floating } from "./layout/floating";
 import { APIS } from "./navigation/apis";
 import { CONTRIBUTE } from "./navigation/contribute";
 import { GUIDES } from "./navigation/guides";
 import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
-import cellAnnotation from "./dataDictionary/cell-annotation.json";
-import metadataTier1 from "./dataDictionary/tier-1.json";
-import metadataTier2 from "./dataDictionary/tier-2.json";
-import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
-import {
-  DataDictionary,
-  DataDictionaryConfig,
-} from "@databiosphere/findable-ui/lib/common/entities";
-import {
-  CELL_ANNOTATION_TABLE_OPTIONS,
-  TIER_1_TABLE_OPTIONS,
-  TIER_2_TABLE_OPTIONS,
-} from "../../../viewModelBuilders/dataDictionaryMapper/tableOptions";
-import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 
 const APP_TITLE = "HCA Data Portal";
 const CATALOG = "dcp58";

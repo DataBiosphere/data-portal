@@ -1,8 +1,8 @@
-import { JSX } from "react";
 import {
   MetadataValue,
   NTagCell,
 } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
+import { JSX } from "react";
 import { PinnedNTagCell as Cell } from "./pinnedNTagCell.styles";
 
 export type MetadataValueTuple = [MetadataValue[], MetadataValue[]];

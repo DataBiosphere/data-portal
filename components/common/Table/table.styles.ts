@@ -1,9 +1,9 @@
 import { DetailViewTable as DXDetailViewTable } from "@databiosphere/findable-ui/lib/components/Detail/components/DetailViewTable/detailViewTable";
 import { Table as DXTable } from "@databiosphere/findable-ui/lib/components/Detail/components/Table/table";
 import { StyledToolbar as DXStyledToolbar } from "@databiosphere/findable-ui/lib/components/Table/components/TableToolbar/tableToolbar.styles";
-import styled from "@emotion/styled";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import styled from "@emotion/styled";
 
 export const StyledToolbar = styled(DXStyledToolbar)`
   &.MuiToolbar-root {
