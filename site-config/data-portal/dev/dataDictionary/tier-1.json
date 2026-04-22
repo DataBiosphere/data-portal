@@ -1709,7 +1709,7 @@
             "cxg": "feature_is_filtered",
             "tier": "Tier 1"
           },
-          "description": "This MUST be `True` if the feature was filtered out in the normalized matrix (`X`) but is present in the raw matrix (`raw.X`). The value for all cells of the given feature in the normalized matrix MUST be `0`.\n\nOtherwise, this MUST be `False`.",
+          "description": "When both a raw and normalized matrix are present, this MUST be `True` if the feature was filtered out in the normalized matrix (`X`) but is present in the raw matrix (`raw.X`). The value for all cells of the given feature in the normalized matrix MUST be `0`. If a feature contains all zeroes in the normalized matrix, then either the corresponding feature in the raw matrix MUST be all zeroes or the value MUST be `True`.",
           "example": "",
           "multivalued": false,
           "name": "feature_is_filtered",
