@@ -31,7 +31,7 @@
     "@tanstack/react-virtual": "^3",
     "copy-to-clipboard": "^3",
     "gray-matter": "^4",
-    "isomorphic-dompurify": "^2",
+    "isomorphic-dompurify": "^3",
     "ky": "^1",
     "next": "^15",
     "next-compose-plugins": "^2.2.1",
