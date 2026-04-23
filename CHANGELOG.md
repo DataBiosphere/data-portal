@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.10.1](https://github.com/DataBiosphere/data-portal/compare/v2.10.0...v2.10.1) (2026-04-23)
+
+
+### Bug Fixes
+
+* update feature_is_filtered description to current cellxgene schema text ([#2989](https://github.com/DataBiosphere/data-portal/issues/2989)) ([#3004](https://github.com/DataBiosphere/data-portal/issues/3004)) ([0eb9fad](https://github.com/DataBiosphere/data-portal/commit/0eb9fad4bf70ed196f672eaf0d08da088385772f))
+
+
+### Chores
+
+* enable `prettier-plugin-organize-imports` ([#2987](https://github.com/DataBiosphere/data-portal/issues/2987)) ([#2990](https://github.com/DataBiosphere/data-portal/issues/2990)) ([4a1f02e](https://github.com/DataBiosphere/data-portal/commit/4a1f02edad135192dd946d5b7b7893427f068f63))
+* update catalog to dcp59 ([#3010](https://github.com/DataBiosphere/data-portal/issues/3010)) ([19433bb](https://github.com/DataBiosphere/data-portal/commit/19433bbb6621f4692269d1217a390cd3dafef20c))
+* update catalog to dcp59 [#3009](https://github.com/DataBiosphere/data-portal/issues/3009) ([19433bb](https://github.com/DataBiosphere/data-portal/commit/19433bbb6621f4692269d1217a390cd3dafef20c))
+
 ## [2.10.0](https://github.com/DataBiosphere/data-portal/compare/v2.9.2...v2.10.0) (2026-04-22)
 
 
