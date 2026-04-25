@@ -1085,7 +1085,6 @@
               "reproduction",
               "skin"
             ],
-            "cxg": "development_stage_ontology_term_id",
             "tier": "Tier 1"
           },
           "description": "Age of the subject.",
@@ -1093,7 +1092,7 @@
           "multivalued": false,
           "name": "development_stage_ontology_term_id",
           "range": "string",
-          "rationale": "CELLxGENE core schema",
+          "rationale": "Developmental stage is a key biological covariate for interpreting cell state and comparing samples across donors.",
           "required": true,
           "title": "Development Stage Ontology Term ID",
           "values": "If organism_ontolology_term_id is \"NCBITaxon:9606\" for *Homo sapiens*, this should be an HsapDv term. If organism_ontolology_term_id is \"NCBITaxon:10090\" for *Mus musculus*, this should be an HsapDv term.\n\n**Requirements for data contributors adhering to GDPR or like standards**: HCA requests that you do not submit year-specific terms. For convenience, below are some broader age bracket ontology terms:\n* Embryonic stage = A term from the set of Carnegie stages 1-23 = (up to 8 weeks after conception; e.g. HsapDv:0000003)\n* Fetal development = A term from the set of 9 to 38 week post-fertilization human stages = (9 weeks after conception and before birth; e.g. HsapDv:0000046)\n* Post natal =\n  * Years 0-14 HsapDv:0000264\n  * Years 15-19 HsapDv:0000268\n  * Years 20-29 HsapDv:0000237\n  * Years 30-39 HsapDv:0000238\n  * Years 40-49 HsapDv:0000239\n  * Years 50-59 HsapDv:0000240\n  * Years 60-69 HsapDv:0000241\n  * Years 70-79 HsapDv:0000242\n  * Years 80-89 HsapDv:0000243"
