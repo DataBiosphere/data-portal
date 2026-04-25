@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.2](https://github.com/DataBiosphere/data-portal/compare/v2.10.1...v2.10.2) (2026-04-25)
+
+
+### Bug Fixes
+
+* remove self_reported_ethnicity_ontology_term_id from tier 1 dictionary ([#3006](https://github.com/DataBiosphere/data-portal/issues/3006)) ([#3012](https://github.com/DataBiosphere/data-portal/issues/3012)) ([bae24fe](https://github.com/DataBiosphere/data-portal/commit/bae24fe53885162dad2e0e0bfe59925b6ffca6f0))
+
 ## [2.10.1](https://github.com/DataBiosphere/data-portal/compare/v2.10.0...v2.10.1) (2026-04-23)
 
 
