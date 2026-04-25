@@ -667,41 +667,6 @@
           "required": true,
           "title": "Sex Ontology Term ID",
           "values": "This must be a child of PATO:0001894 for phenotypic sex or \"unknown\" if unavailable."
-        },
-        {
-          "annotations": {
-            "annDataLocation": "obs",
-            "bioNetworks": [
-              "adipose",
-              "breast",
-              "development",
-              "eye",
-              "genetic-diversity",
-              "gut",
-              "heart",
-              "immune",
-              "kidney",
-              "liver",
-              "lung",
-              "musculoskeletal",
-              "nervous-system",
-              "oral-and-craniofacial",
-              "organoid",
-              "pancreas",
-              "reproduction",
-              "skin"
-            ],
-            "tier": "Tier 1"
-          },
-          "description": "Self reported ethnicity of the subject.",
-          "example": "unknown; HANCESTRO:0008",
-          "multivalued": true,
-          "name": "self_reported_ethnicity_ontology_term_id",
-          "range": "string",
-          "rationale": "CELLxGENE core schema",
-          "required": true,
-          "title": "Self Reported Ethnicity Ontology Term ID",
-          "values": "If organism_ontolology_term_id is \"NCBITaxon:9606\" for *Homo sapiens*, this must be a HANCESTRO term or \"unknown\". Otherwise, for all organisms, this must be \"na\".\n\n**Requirements for data contributors adhering to GDPR or like standards**: HCA will be collecting ethnicity data as part of HCA's Tier 2 metadata that is protected by managed access, therefore please put 'unknown' for this field."
         }
       ]
     },
