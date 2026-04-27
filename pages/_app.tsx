@@ -1,4 +1,6 @@
 import "@databiosphere/findable-ui";
+import { Error as ErrorComponent } from "@databiosphere/findable-ui/lib/components/Error/error";
+import { ErrorBoundary } from "@databiosphere/findable-ui/lib/components/ErrorBoundary";
 import { AppLayout } from "@databiosphere/findable-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
 import { Floating } from "@databiosphere/findable-ui/lib/components/Layout/components/Floating/floating";
 import { Header } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
@@ -7,6 +9,7 @@ import { ConfigProvider } from "@databiosphere/findable-ui/lib/providers/config"
 import { DataDictionaryStateProvider } from "@databiosphere/findable-ui/lib/providers/dataDictionaryState/provider";
 import { LayoutDimensionsProvider } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/provider";
 import { ServicesProvider } from "@databiosphere/findable-ui/lib/providers/services/provider";
+import { DataExplorerError } from "@databiosphere/findable-ui/lib/types/error";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
 import { createBreakpoints } from "@mui/system";
@@ -65,30 +68,46 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
           <Head appTitle={appTitle} pageTitle={pageTitle} />
           <CssBaseline />
           <ServicesProvider>
-            <DataDictionaryStateProvider>
-              <LayoutDimensionsProvider>
-                <AppLayout>
-                  <ThemeProvider
-                    theme={(theme: Theme): Theme => {
-                      // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
-                      const { vars, ...themeWithoutVars } = theme;
-                      return createTheme(
-                        deepmerge(themeWithoutVars, {
-                          breakpoints: createBreakpoints(BREAKPOINTS),
-                        })
-                      );
-                    }}
+            <LayoutDimensionsProvider>
+              <AppLayout>
+                <ThemeProvider
+                  theme={(theme: Theme): Theme => {
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
+                    const { vars, ...themeWithoutVars } = theme;
+                    return createTheme(
+                      deepmerge(themeWithoutVars, {
+                        breakpoints: createBreakpoints(BREAKPOINTS),
+                      })
+                    );
+                  }}
+                >
+                  <Header {...header} />
+                </ThemeProvider>
+                <Main>
+                  <ErrorBoundary
+                    fallbackRender={({
+                      error,
+                      reset,
+                    }: {
+                      error: DataExplorerError;
+                      reset: () => void;
+                    }): JSX.Element => (
+                      <ErrorComponent
+                        errorMessage={error.message}
+                        requestUrlMessage={error.requestUrlMessage}
+                        onReset={reset}
+                      />
+                    )}
                   >
-                    <Header {...header} />
-                  </ThemeProvider>
-                  <Main>
-                    <Component {...pageProps} />
-                    <Floating {...floating} />
-                  </Main>
-                  <Footer {...footer} />
-                </AppLayout>
-              </LayoutDimensionsProvider>
-            </DataDictionaryStateProvider>
+                    <DataDictionaryStateProvider>
+                      <Component {...pageProps} />
+                      <Floating {...floating} />
+                    </DataDictionaryStateProvider>
+                  </ErrorBoundary>
+                </Main>
+                <Footer {...footer} />
+              </AppLayout>
+            </LayoutDimensionsProvider>
           </ServicesProvider>
         </ConfigProvider>
       </ThemeProvider>
