@@ -1,4 +1,6 @@
 import "@databiosphere/findable-ui";
+import { Error } from "@databiosphere/findable-ui/lib/components/Error/error";
+import { ErrorBoundary } from "@databiosphere/findable-ui/lib/components/ErrorBoundary";
 import { AppLayout } from "@databiosphere/findable-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
 import { Floating } from "@databiosphere/findable-ui/lib/components/Layout/components/Floating/floating";
 import { Header } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
@@ -7,6 +9,7 @@ import { ConfigProvider } from "@databiosphere/findable-ui/lib/providers/config"
 import { DataDictionaryStateProvider } from "@databiosphere/findable-ui/lib/providers/dataDictionaryState/provider";
 import { LayoutDimensionsProvider } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/provider";
 import { ServicesProvider } from "@databiosphere/findable-ui/lib/providers/services/provider";
+import { DataExplorerError } from "@databiosphere/findable-ui/lib/types/error";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
 import { createBreakpoints } from "@mui/system";
@@ -44,6 +47,7 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
     analytics,
     appTitle,
     layout,
+    redirectRootToPath,
     themeOptions: baseThemeOptions,
   } = appConfig;
   const { floating, footer, header } = layout || {};
@@ -82,8 +86,25 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
                     <Header {...header} />
                   </ThemeProvider>
                   <Main>
-                    <Component {...pageProps} />
-                    <Floating {...floating} />
+                    <ErrorBoundary
+                      fallbackRender={({
+                        error,
+                        reset,
+                      }: {
+                        error: DataExplorerError;
+                        reset: () => void;
+                      }): JSX.Element => (
+                        <Error
+                          errorMessage={error.message}
+                          requestUrlMessage={error.requestUrlMessage}
+                          rootPath={redirectRootToPath}
+                          onReset={reset}
+                        />
+                      )}
+                    >
+                      <Component {...pageProps} />
+                      <Floating {...floating} />
+                    </ErrorBoundary>
                   </Main>
                   <Footer {...footer} />
                 </AppLayout>
