@@ -939,7 +939,7 @@
         }
 
         function safeHref(url) {
-            return safeHref(url).replace(/'/g, '%27').replace(/"/g, '%22');
+            return encodeURI(url).replace(/'/g, '%27').replace(/"/g, '%22');
         }
 
         loadData();
