@@ -1,4 +1,4 @@
--e "git+https://github.com/DataBiosphere/data-browser.git@analytics-4.3.0#egg=analytics&subdirectory=analytics/analytics_package"
+-e "git+https://github.com/DataBiosphere/data-browser.git@mim/4779-analytics-static-site#egg=analytics&subdirectory=analytics/analytics_package"
 anyio==4.8.0
 appnope==0.1.4
 argon2-cffi==23.1.0

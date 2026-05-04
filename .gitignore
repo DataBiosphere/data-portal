@@ -46,6 +46,9 @@ __pycache__
 .ipynb_checkpoints
 venv
 
+# credentials
+.credentials/
+
 # claude
 .claude/plans/
 .claude/rules*

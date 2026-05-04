@@ -1,0 +1,787 @@
+[
+  {
+    "page": "/",
+    "views": 6248,
+    "change": -0.000732600732600841
+  },
+  {
+    "page": "/hca-bio-networks/lung/atlases/lung-v1-0",
+    "views": 1165,
+    "change": 0.09538974825599045
+  },
+  {
+    "page": "/hca-bio-networks/nervous-system/atlases/brain-v1-0",
+    "views": 897,
+    "change": 0.14150246305418723
+  },
+  {
+    "page": "/hca-bio-networks/lung",
+    "views": 727,
+    "change": 0.06557919621749408
+  },
+  {
+    "page": "/hca-bio-networks/nervous-system",
+    "views": 581,
+    "change": 0.02802511415525122
+  },
+  {
+    "page": "/hca-bio-networks/eye",
+    "views": 552,
+    "change": 0.27321428571428563
+  },
+  {
+    "page": "/hca-bio-networks/eye/atlases/retina-v1-0",
+    "views": 521,
+    "change": 0.08981106612685563
+  },
+  {
+    "page": "/hca-bio-networks",
+    "views": 481,
+    "change": 0.15054012345679002
+  },
+  {
+    "page": "/hca-bio-networks/immune",
+    "views": 373,
+    "change": 0.06473296500920811
+  },
+  {
+    "page": "/guides",
+    "views": 307,
+    "change": 0.007089947089947257
+  },
+  {
+    "page": "/hca-bio-networks/organoid",
+    "views": 291,
+    "change": 0.09345454545454546
+  },
+  {
+    "page": "/hca-bio-networks/adipose",
+    "views": 284,
+    "change": 0.13746770025839794
+  },
+  {
+    "page": "/hca-bio-networks/gut",
+    "views": 270,
+    "change": -0.10289389067524113
+  },
+  {
+    "page": "/search",
+    "views": 251,
+    "change": -0.13544444444444437
+  },
+  {
+    "page": "/hca-bio-networks/heart",
+    "views": 250,
+    "change": -0.12131519274376412
+  },
+  {
+    "page": "/metadata/tier-1",
+    "views": 239,
+    "change": 1.5460481099656356
+  },
+  {
+    "page": "/hca-bio-networks/liver",
+    "views": 214,
+    "change": 0.005151515151515129
+  },
+  {
+    "page": "/hca-bio-networks/skin",
+    "views": 169,
+    "change": -0.07109929078014188
+  },
+  {
+    "page": "/hca-bio-networks/breast",
+    "views": 168,
+    "change": 0.22253521126760578
+  },
+  {
+    "page": "/hca-bio-networks/lung/atlases/lung-v1-0/datasets",
+    "views": 163,
+    "change": -0.0745421245421245
+  },
+  {
+    "page": "/metadata",
+    "views": 159,
+    "change": -0.0922651933701657
+  },
+  {
+    "page": "/hca-bio-networks/kidney",
+    "views": 153,
+    "change": -0.07000000000000006
+  },
+  {
+    "page": "/contribute",
+    "views": 142,
+    "change": -0.008558558558558471
+  },
+  {
+    "page": "/dcp-updates",
+    "views": 137,
+    "change": 0.36121794871794877
+  },
+  {
+    "page": "/hca-bio-networks/pancreas",
+    "views": 133,
+    "change": 0.4023809523809523
+  },
+  {
+    "page": "/hca-bio-networks/development",
+    "views": 117,
+    "change": 0.11944444444444446
+  },
+  {
+    "page": "/hca-bio-networks/reproduction",
+    "views": 111,
+    "change": 0.17040816326530606
+  },
+  {
+    "page": "/hca-bio-networks/nervous-system/atlases/cortex-v1-0",
+    "views": 111,
+    "change": 0.17040816326530606
+  },
+  {
+    "page": "/apis",
+    "views": 107,
+    "change": 0.17624113475177294
+  },
+  {
+    "page": "/guides/consumer-vignettes/matrices",
+    "views": 106,
+    "change": 0.07385620915032676
+  },
+  {
+    "page": "/hca-bio-networks/musculoskeletal",
+    "views": 102,
+    "change": -0.01495327102803734
+  },
+  {
+    "page": "/metadata/cell-annotation",
+    "views": 102,
+    "change": 0.03333333333333344
+  },
+  {
+    "page": "/privacy",
+    "views": 79,
+    "change": 0.1031531531531531
+  },
+  {
+    "page": "/hca-bio-networks/organoid/atlases/organoid-neural-v1-0",
+    "views": 76,
+    "change": -0.1274074074074074
+  },
+  {
+    "page": "/hca-bio-networks/nervous-system/atlases/brain-v1-0/datasets",
+    "views": 71,
+    "change": -0.04718614718614722
+  },
+  {
+    "page": "/apis/api-documentation/data-browser-api",
+    "views": 59,
+    "change": 0.32536231884057965
+  },
+  {
+    "page": "/hca-bio-networks/eye/atlases/retina-v1-0/datasets",
+    "views": 56,
+    "change": 0.23120567375886525
+  },
+  {
+    "page": "/hca-bio-networks/oral-and-craniofacial",
+    "views": 50,
+    "change": -0.26190476190476186
+  },
+  {
+    "page": "/hca-bio-networks/genetic-diversity",
+    "views": 50,
+    "change": -0.043209876543209846
+  },
+  {
+    "page": "/hca-bio-networks/nervous-system/publications",
+    "views": 50,
+    "change": 0.7816091954022988
+  },
+  {
+    "page": "/guides/quick-start-guide",
+    "views": 48,
+    "change": 0.12727272727272743
+  },
+  {
+    "page": "/hca-bio-networks/organoid/atlases/organoid-endoderm-v1-0",
+    "views": 44,
+    "change": -0.38558558558558553
+  },
+  {
+    "page": "/about",
+    "views": 38,
+    "change": 0.5706666666666667
+  },
+  {
+    "page": "/guides/accessing-atlases",
+    "views": 35,
+    "change": 0.24712643678160906
+  },
+  {
+    "page": "/help",
+    "views": 31,
+    "change": -0.0847619047619047
+  },
+  {
+    "page": "/guides/requesting-access-to-controlled-access-data",
+    "views": 27,
+    "change": 0.21304347826086967
+  },
+  {
+    "page": "/analyze/visualization/anatomogram",
+    "views": 23,
+    "change": 0.9805555555555554
+  },
+  {
+    "page": "/about/data-use-agreement",
+    "views": 20,
+    "change": -0.3737373737373737
+  },
+  {
+    "page": "/metadata/tier-2",
+    "views": 20,
+    "change": 0.08771929824561409
+  },
+  {
+    "page": "/guides/consumer-vignettes/export-to-terra",
+    "views": 18,
+    "change": 1.0666666666666669
+  },
+  {
+    "page": "/guides/accessing-metadata-via-tdr",
+    "views": 15,
+    "change": 0.9375
+  },
+  {
+    "page": "/about/hca",
+    "views": 14,
+    "change": 0.2055555555555555
+  },
+  {
+    "page": "/hca-bio-networks/genetic-diversity/datasets",
+    "views": 11,
+    "change": -0.5790123456790124
+  },
+  {
+    "page": "/contribute/submitting-hca-data-to-cellxgene-discover",
+    "views": 10,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/hca-bio-networks/oral",
+    "views": 10,
+    "change": 0.47619047619047605
+  },
+  {
+    "page": "/hca-bio-networks/organoid/atlases/organoid-neural-v1-0/datasets",
+    "views": 9,
+    "change": 0.55
+  },
+  {
+    "page": "/contribute/submitting-fastqs-and-tier-2-metadata-to-the-hca-data-repository",
+    "views": 8,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/hca-bio-networks/skin/datasets",
+    "views": 7,
+    "change": 0.2055555555555555
+  },
+  {
+    "page": "/hca-bio-networks/lung/atlases/lung-v1.0",
+    "views": 7,
+    "change": null
+  },
+  {
+    "page": "/hca-bio-networks/adipose/datasets",
+    "views": 7,
+    "change": 0.44666666666666655
+  },
+  {
+    "page": "/contribute/submitting-cell-annotation-metadata-to-cap",
+    "views": 6,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/hca-bio-networks/eye/datasets.",
+    "views": 6,
+    "change": null
+  },
+  {
+    "page": "/robots.txt",
+    "views": 6,
+    "change": 0.24
+  },
+  {
+    "page": "/hca-bio-networks/heart/datasets",
+    "views": 6,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/hca-bio-networks/nervous-system/atlases/cortex-v1-0/datasets",
+    "views": 6,
+    "change": -0.3111111111111111
+  },
+  {
+    "page": "/about/attributions",
+    "views": 5,
+    "change": 4.166666666666666
+  },
+  {
+    "page": "/hca-bio-networks/gut/datasets",
+    "views": 5,
+    "change": -0.7280701754385965
+  },
+  {
+    "page": "/hca-bio-networks/liver/datasets",
+    "views": 4,
+    "change": -0.5407407407407407
+  },
+  {
+    "page": "/contact",
+    "views": 4,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/contact/join-the-discussion",
+    "views": 4,
+    "change": null
+  },
+  {
+    "page": "/analyze/portals/asap",
+    "views": 3,
+    "change": 0.55
+  },
+  {
+    "page": "/analyze/portals/single-cell-portal",
+    "views": 3,
+    "change": -0.6555555555555556
+  },
+  {
+    "page": "/hca-bio-networks/eye/datasets",
+    "views": 3,
+    "change": 0.55
+  },
+  {
+    "page": "/projects",
+    "views": 3,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/hca-bio-networks/reproduction/datasets",
+    "views": 3,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/)",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/datasets",
+    "views": 2,
+    "change": 1.0666666666666664
+  },
+  {
+    "page": "/hca-bio-networks/eye/atlases/retina-v1-0/data-files",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/hca-bio-networks/kidney/datasets",
+    "views": 2,
+    "change": -0.9373737373737374
+  },
+  {
+    "page": "/hca-bio-networks/lung/atlases",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/hca-bio-networks/nervous-system/atlases/brain-v1-0/dissections/primary-motor-cortex",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/hca-bio-networks/organoid/atlases/organoid-endoderm-v1-0/datasets",
+    "views": 2,
+    "change": 1.0666666666666664
+  },
+  {
+    "page": "/lung",
+    "views": 2,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/metadata/",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/metadata/dictionary/ontology/process_type_ontology",
+    "views": 2,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/metadata/dictionary/protocol/imaging_protocol",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/metadata/dictionary/protocol/imaging_protocol/",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/.../brain-v1-0",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/guides/",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/hca-bionetworks/lung",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/ [data.human...latlas.org]",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/](https://data.humancellatlas.org",
+    "views": 1,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/about/",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/analyze/portals/ucsc-cell-browser",
+    "views": 1,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/api/hca-bio-networks/eye/atlases/retina-v1-0",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/apis/api-documentation/data-browser-api/",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/collections/liver/",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/contact/",
+    "views": 1,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/contribute/analysis-tools-registry/registry-standards",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/datasets/barbry-leroy-2023",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/datasets/schiller-2021",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/hca-bio-networks/development/datasets",
+    "views": 1,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/hca-bio-networks/eye/atlases/retina-v1-0/source-datasets",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/hca-bio-networks/immune/datasets",
+    "views": 1,
+    "change": -0.7933333333333333
+  },
+  {
+    "page": "/hca-bio-networks/nervous-system/atlases/brain-v1-0/dissections",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/hca-bio-networks/nervous-system/atlases/brain-v1-0/dissections/m1c",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/hca-bio-networks/nervous-system/atlases/cortex-v1-0/dissections/primary-motor-cortex-m1",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/hca-bio-networks/oral-and-craniofacial/datasets",
+    "views": 1,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/hca-bio-networks/oral/datasets",
+    "views": 1,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/hca-bio-networks/pancreas/datasets",
+    "views": 1,
+    "change": -0.8523809523809524
+  },
+  {
+    "page": "/index.html",
+    "views": 1,
+    "change": -0.6555555555555556
+  },
+  {
+    "page": "/metadata/dictionary/biomaterial/biomaterial_core",
+    "views": 1,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/metadata/dictionary/ontology/contributor_role_ontology",
+    "views": 1,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/metadata/dictionary/project/funder",
+    "views": 1,
+    "change": -0.7933333333333333
+  },
+  {
+    "page": "/metadata/dictionary/protocol/library_preparation_protocol",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/metadata/structure",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/pipelines/optimus-workflow",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/projects/6936da41-3692-46bb-bca1-cd0f507991e9",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/projects/export",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/terms",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/](https://data.humancellatlas.org/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/analyze/portals/cellxgene",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/analyze/portals/single-cell-expression-atlas",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/analyze/portals/ucsc-xena",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/collections/7a9f4f6a1-6b8e-4f3a-8c9d-1e2f3c4d5e6f",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/contribute/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/contribute/contributing-vignettes/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/data-use-agreement",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/feedback/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/guides/consumer-vignettes/matrices/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/guides/installing-the-hca-cli/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/hca-bio-",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/hca-bio- networks/eye/atlases/retina",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/hca-bio- networks/eye/atlases/retina-v1-0",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/hca-bio- networks/eye/atlases/retina-v1-0)",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/hca-bio-networks/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/hca-bio-networks/breast/datasets",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/hca-bio-networks/eye/atlases/retina-v1-0)",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/hca-bio-networks/lung/datasets",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/hca-bio-networks/musculoskeletal/datasets",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/hca-bio-networks/nervous-system/datasets",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/userguides/data-matrices",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/metadata/design-principles/structure",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/metadata/dictionary/biomaterial/cell_suspension/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/metadata/dictionary/protocol/treatment_protocol",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/openapi.json",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/pipelines",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/pipelines/hca-pipelines/data-processing-pipelines/community-pipeline-3-prime-scrna-seq",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/pipelines/hca-pipelines/data-processing-pipelines/file-formats",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/pipelines/hca-pipelines/data-processing-pipelines/file-formats/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/pipelines/hca-pipelines/data-processing-pipelines/optimus-workflow",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/pipelines/hca-pipelines/data-processing-pipelines/pipeline-portability",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/pipelines/qc-metrics/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/project-assets/project-matrices/cc95ff89-2e68-4a08-a234-480eca21ce79.homo_sapiens.mtx.zip",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/projects/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/projects/c7a342eb-777e-4479-95ce-468f5bbcd893",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/\u3001",
+    "views": 0,
+    "change": -1.0
+  }
+]
