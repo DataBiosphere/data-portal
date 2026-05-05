@@ -1,0 +1,593 @@
+{
+  "total": 250,
+  "queries": [
+    {
+      "query": "Diabetes",
+      "count": 8
+    },
+    {
+      "query": "Pancreas",
+      "count": 5
+    },
+    {
+      "query": "heart",
+      "count": 5
+    },
+    {
+      "query": "heart failure preserved ejection fraction",
+      "count": 5
+    },
+    {
+      "query": "Endometrium",
+      "count": 5
+    },
+    {
+      "query": "blood",
+      "count": 5
+    },
+    {
+      "query": "diabetes tipo 2",
+      "count": 5
+    },
+    {
+      "query": "epididymis",
+      "count": 5
+    },
+    {
+      "query": "moxd1 ",
+      "count": 5
+    },
+    {
+      "query": "liver",
+      "count": 4
+    },
+    {
+      "query": "melanoma",
+      "count": 4
+    },
+    {
+      "query": "Articular Cartilage",
+      "count": 4
+    },
+    {
+      "query": "MSTN",
+      "count": 4
+    },
+    {
+      "query": "MYH6 ",
+      "count": 4
+    },
+    {
+      "query": "dnmt3B",
+      "count": 4
+    },
+    {
+      "query": "human aging immune",
+      "count": 4
+    },
+    {
+      "query": "keratinocyte",
+      "count": 4
+    },
+    {
+      "query": "liver transplant",
+      "count": 4
+    },
+    {
+      "query": "bone marrow",
+      "count": 3
+    },
+    {
+      "query": "ttll11",
+      "count": 3
+    },
+    {
+      "query": "CD47",
+      "count": 3
+    },
+    {
+      "query": "gene expression",
+      "count": 3
+    },
+    {
+      "query": "gpr144",
+      "count": 3
+    },
+    {
+      "query": "human lung tissues",
+      "count": 3
+    },
+    {
+      "query": "pbmc",
+      "count": 3
+    },
+    {
+      "query": "Celula do sangue periferico ",
+      "count": 3
+    },
+    {
+      "query": "DCLK1",
+      "count": 3
+    },
+    {
+      "query": "EVI2B",
+      "count": 3
+    },
+    {
+      "query": "SLC7A1",
+      "count": 3
+    },
+    {
+      "query": "eIF2A",
+      "count": 3
+    },
+    {
+      "query": "lif",
+      "count": 3
+    },
+    {
+      "query": "\"cell cycle\" AND \"human\"",
+      "count": 2
+    },
+    {
+      "query": "Single-nucleus profiling of human dilated and hypertrophic cardiomyopathy",
+      "count": 2
+    },
+    {
+      "query": "Tnbc",
+      "count": 2
+    },
+    {
+      "query": "agbl4",
+      "count": 2
+    },
+    {
+      "query": "diabetic nephropathy",
+      "count": 2
+    },
+    {
+      "query": "gastric cancer",
+      "count": 2
+    },
+    {
+      "query": "FIG4",
+      "count": 2
+    },
+    {
+      "query": "TNNT2",
+      "count": 2
+    },
+    {
+      "query": "golph3",
+      "count": 2
+    },
+    {
+      "query": "nfatc5",
+      "count": 2
+    },
+    {
+      "query": "prkaca",
+      "count": 2
+    },
+    {
+      "query": "\"cell cycle\"",
+      "count": 1
+    },
+    {
+      "query": "\"cell cycle\" AND \"human\" AND \"G0\"",
+      "count": 1
+    },
+    {
+      "query": "\"cell cycle\" AND \"human\" AND \"quiscent\"",
+      "count": 1
+    },
+    {
+      "query": "\u201cintestine\u201d \u201cepithelium\u201d",
+      "count": 1
+    },
+    {
+      "query": "\u80ba\u764c",
+      "count": 1
+    },
+    {
+      "query": " Human ESC differentiation time-course",
+      "count": 1
+    },
+    {
+      "query": " S-SUBS12",
+      "count": 1
+    },
+    {
+      "query": " career",
+      "count": 1
+    },
+    {
+      "query": "4cb45d80-499a-48ae-a056-c71ac3552c94",
+      "count": 1
+    },
+    {
+      "query": "4d6f6c96-2a83-43d8-8fe1-0f53bffd4674",
+      "count": 1
+    },
+    {
+      "query": "53c53cd4-8127-4e12-bc7f-8fe1610a715c",
+      "count": 1
+    },
+    {
+      "query": "ALF1",
+      "count": 1
+    },
+    {
+      "query": "ALS",
+      "count": 1
+    },
+    {
+      "query": "ARHGEF15",
+      "count": 1
+    },
+    {
+      "query": "Adrb1",
+      "count": 1
+    },
+    {
+      "query": "Altered human oligodendrocyte heterogeneity in multiple sclerosis",
+      "count": 1
+    },
+    {
+      "query": "BASP1 gene",
+      "count": 1
+    },
+    {
+      "query": "Baron Human",
+      "count": 1
+    },
+    {
+      "query": "CD45",
+      "count": 1
+    },
+    {
+      "query": "CELL ATLAS OF THE HUMAN FOVEA AND PERIPHERAL RETINA",
+      "count": 1
+    },
+    {
+      "query": "CSF1R",
+      "count": 1
+    },
+    {
+      "query": "Cartilage",
+      "count": 1
+    },
+    {
+      "query": "Cerebellar deep nuclei",
+      "count": 1
+    },
+    {
+      "query": "Deconstruction of rheumatoid arthritis synovium defines inflammatory subtypes",
+      "count": 1
+    },
+    {
+      "query": "Device",
+      "count": 1
+    },
+    {
+      "query": "Dissecting the protein and transcriptional responses of human immune cells to T cell and monocyte specific activation",
+      "count": 1
+    },
+    {
+      "query": "Fdft1",
+      "count": 1
+    },
+    {
+      "query": "GDF15",
+      "count": 1
+    },
+    {
+      "query": "GPNMB",
+      "count": 1
+    },
+    {
+      "query": "GSE121893",
+      "count": 1
+    },
+    {
+      "query": "GSE84133",
+      "count": 1
+    },
+    {
+      "query": "Granzyme K",
+      "count": 1
+    },
+    {
+      "query": "HECTD4",
+      "count": 1
+    },
+    {
+      "query": "HELA",
+      "count": 1
+    },
+    {
+      "query": "HFpEF",
+      "count": 1
+    },
+    {
+      "query": "HXX",
+      "count": 1
+    },
+    {
+      "query": "LCE3B",
+      "count": 1
+    },
+    {
+      "query": "LCN2",
+      "count": 1
+    },
+    {
+      "query": "Lung\u3001Cancer/Healthy",
+      "count": 1
+    },
+    {
+      "query": "MAN1C1",
+      "count": 1
+    },
+    {
+      "query": "MCF-7",
+      "count": 1
+    },
+    {
+      "query": "NPRC",
+      "count": 1
+    },
+    {
+      "query": "OA",
+      "count": 1
+    },
+    {
+      "query": "OBACN",
+      "count": 1
+    },
+    {
+      "query": "OBSCN",
+      "count": 1
+    },
+    {
+      "query": "PCSK9",
+      "count": 1
+    },
+    {
+      "query": "PDCD1LG2",
+      "count": 1
+    },
+    {
+      "query": "PGF",
+      "count": 1
+    },
+    {
+      "query": "PHIP",
+      "count": 1
+    },
+    {
+      "query": "PRJNA1096305",
+      "count": 1
+    },
+    {
+      "query": "Perez",
+      "count": 1
+    },
+    {
+      "query": "RFC5",
+      "count": 1
+    },
+    {
+      "query": "SERPINA1",
+      "count": 1
+    },
+    {
+      "query": "Software",
+      "count": 1
+    },
+    {
+      "query": "Stapedius myocytes",
+      "count": 1
+    },
+    {
+      "query": "Stuart B. Hay",
+      "count": 1
+    },
+    {
+      "query": "T cell",
+      "count": 1
+    },
+    {
+      "query": "T cell immune PBMC",
+      "count": 1
+    },
+    {
+      "query": "TEX2",
+      "count": 1
+    },
+    {
+      "query": "TL1A",
+      "count": 1
+    },
+    {
+      "query": "Tabula Sapiens",
+      "count": 1
+    },
+    {
+      "query": "The systom if the heart grow bigger ",
+      "count": 1
+    },
+    {
+      "query": "UBA1",
+      "count": 1
+    },
+    {
+      "query": "actin",
+      "count": 1
+    },
+    {
+      "query": "adgrd2",
+      "count": 1
+    },
+    {
+      "query": "agbl3",
+      "count": 1
+    },
+    {
+      "query": "cancer",
+      "count": 1
+    },
+    {
+      "query": "cancer multiome RNA ATAC single cell",
+      "count": 1
+    },
+    {
+      "query": "cardiomtctyes",
+      "count": 1
+    },
+    {
+      "query": "cardiotoxctity",
+      "count": 1
+    },
+    {
+      "query": "cd57",
+      "count": 1
+    },
+    {
+      "query": "cell",
+      "count": 1
+    },
+    {
+      "query": "colorectal cancer",
+      "count": 1
+    },
+    {
+      "query": "cortex",
+      "count": 1
+    },
+    {
+      "query": "d5c91e92-2e7f-473d- 8cf3-ab03bbae21c2",
+      "count": 1
+    },
+    {
+      "query": "d5c91e92-2e7f-473d-8cf3-ab03bbae21c2",
+      "count": 1
+    },
+    {
+      "query": "depression",
+      "count": 1
+    },
+    {
+      "query": "fibroblast",
+      "count": 1
+    },
+    {
+      "query": "gene ",
+      "count": 1
+    },
+    {
+      "query": "gfap",
+      "count": 1
+    },
+    {
+      "query": "glucocorticoid",
+      "count": 1
+    },
+    {
+      "query": "gtex",
+      "count": 1
+    },
+    {
+      "query": "heart and doxorubicin",
+      "count": 1
+    },
+    {
+      "query": "hep-2",
+      "count": 1
+    },
+    {
+      "query": "homo_sapiens.mtx",
+      "count": 1
+    },
+    {
+      "query": "homo_sapiens.mtx.zip",
+      "count": 1
+    },
+    {
+      "query": "human",
+      "count": 1
+    },
+    {
+      "query": "hvcn1",
+      "count": 1
+    },
+    {
+      "query": "job",
+      "count": 1
+    },
+    {
+      "query": "keratinocytes",
+      "count": 1
+    },
+    {
+      "query": "leap2",
+      "count": 1
+    },
+    {
+      "query": "lu99",
+      "count": 1
+    },
+    {
+      "query": "lupus",
+      "count": 1
+    },
+    {
+      "query": "major depressive disorder",
+      "count": 1
+    },
+    {
+      "query": "melanocite",
+      "count": 1
+    },
+    {
+      "query": "nmur1",
+      "count": 1
+    },
+    {
+      "query": "plasma cell",
+      "count": 1
+    },
+    {
+      "query": "platelet",
+      "count": 1
+    },
+    {
+      "query": "prostate",
+      "count": 1
+    },
+    {
+      "query": "protein disulfide isomerase family A member 6",
+      "count": 1
+    },
+    {
+      "query": "retina",
+      "count": 1
+    },
+    {
+      "query": "trex1",
+      "count": 1
+    },
+    {
+      "query": "u87",
+      "count": 1
+    },
+    {
+      "query": "urine",
+      "count": 1
+    },
+    {
+      "query": "vinculin",
+      "count": 1
+    }
+  ]
+}
