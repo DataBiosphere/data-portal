@@ -104,8 +104,8 @@ export const NETWORKS: Network[] = [
         path: RETINA_V1_0,
         publications: [
           {
-            doi: "https://doi.org/10.1101/2023.11.07.566105",
-            label: "Li et al. (2023) bioRxiv",
+            doi: "https://doi.org/10.1038/s41588-025-02454-1",
+            label: "Li et al. (2026) Nat Genet",
           },
         ],
         summaryCellCount: 3548094,
