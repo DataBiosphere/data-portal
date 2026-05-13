@@ -29,7 +29,7 @@
     "@tanstack/match-sorter-utils": "^8",
     "@tanstack/react-table": "^8",
     "@tanstack/react-virtual": "^3",
-    "copy-to-clipboard": "^3",
+    "copy-to-clipboard": "^4",
     "gray-matter": "^4",
     "isomorphic-dompurify": "^2",
     "ky": "^1",
