@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.11.0](https://github.com/DataBiosphere/data-portal/compare/v2.10.1...v2.11.0) (2026-05-13)
+
+
+### Features
+
+* add static analytics site generator for HCA Data Portal ([#3034](https://github.com/DataBiosphere/data-portal/issues/3034)) ([95af303](https://github.com/DataBiosphere/data-portal/commit/95af303d24a18fbb199f6d4144c23662acd41a96))
+
+
+### Bug Fixes
+
+* add errorboundary to _app ([#3023](https://github.com/DataBiosphere/data-portal/issues/3023)) ([#3024](https://github.com/DataBiosphere/data-portal/issues/3024)) ([0563d29](https://github.com/DataBiosphere/data-portal/commit/0563d29c350870331618b72647642a31bca17665))
+* change source of development_stage_ontology_term_id from cellxgene to hca ([#3007](https://github.com/DataBiosphere/data-portal/issues/3007)) ([#3013](https://github.com/DataBiosphere/data-portal/issues/3013)) ([ea08ec6](https://github.com/DataBiosphere/data-portal/commit/ea08ec60d5e4df4d731ccd5183e5de3ddf36cca9))
+* remove self_reported_ethnicity_ontology_term_id from tier 1 dictionary ([#3006](https://github.com/DataBiosphere/data-portal/issues/3006)) ([#3012](https://github.com/DataBiosphere/data-portal/issues/3012)) ([bae24fe](https://github.com/DataBiosphere/data-portal/commit/bae24fe53885162dad2e0e0bfe59925b6ffca6f0))
+* update retina cell atlas link to published nature genetics paper ([#3039](https://github.com/DataBiosphere/data-portal/issues/3039)) ([#3043](https://github.com/DataBiosphere/data-portal/issues/3043)) ([0dae6c2](https://github.com/DataBiosphere/data-portal/commit/0dae6c22e7c57586f3bd1847fb9f19704dcc7f24))
+
+
+### Chores
+
+* **deps:** bump next from 15.5.15 to 15.5.18 ([#3059](https://github.com/DataBiosphere/data-portal/issues/3059)) ([952513e](https://github.com/DataBiosphere/data-portal/commit/952513e0188f3423da7805637398251387e24526))
+* upgrade findable-ui to v51.1.0 ([#3020](https://github.com/DataBiosphere/data-portal/issues/3020)) ([2aa36b3](https://github.com/DataBiosphere/data-portal/commit/2aa36b343814996cb59369ebf56a3cf3bf4b6f2b))
+
 ## [2.10.1](https://github.com/DataBiosphere/data-portal/compare/v2.10.0...v2.10.1) (2026-04-23)
 
 
