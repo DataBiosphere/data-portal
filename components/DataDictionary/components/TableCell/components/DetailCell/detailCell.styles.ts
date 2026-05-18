@@ -2,7 +2,7 @@ import { MarkdownCell } from "@databiosphere/findable-ui/lib/components/Table/co
 import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import styled from "@emotion/styled";
-import { Collapse, Paper, Stack } from "@mui/material";
+import { Collapse, Paper, Stack, Typography } from "@mui/material";
 
 export const StyledCell = styled("div")`
   align-self: flex-start;
@@ -54,3 +54,11 @@ export const StyledPaper = styled(Paper)`
   font-family: "Roboto Mono", monospace;
   padding: 8px 12px;
 `;
+
+export const StyledTypography = styled(Typography)`
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  padding-top: 4px;
+` as typeof Typography;

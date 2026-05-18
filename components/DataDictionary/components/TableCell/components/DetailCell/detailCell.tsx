@@ -1,4 +1,5 @@
 import { LinkCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/LinkCell/linkCell";
+import { TYPOGRAPHY_PROPS as MUI_TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Collapse, Typography } from "@mui/material";
 import { CellContext } from "@tanstack/react-table";
 import { JSX } from "react";
@@ -12,6 +13,7 @@ import {
   StyledMarkdownCell,
   StyledPaper,
   StyledStack,
+  StyledTypography,
 } from "./detailCell.styles";
 import {
   buildAnnDataLocation,
@@ -110,6 +112,12 @@ export const DetailCell = ({
           </div>
         )}
       </StyledCollapse>
+      <StyledTypography
+        color={MUI_TYPOGRAPHY_PROPS.COLOR.INHERIT}
+        variant={MUI_TYPOGRAPHY_PROPS.VARIANT.BODY_400_2_LINES}
+      >
+        {isExpanded ? "Show less" : "Show more"}
+      </StyledTypography>
     </StyledCell>
   );
 };
