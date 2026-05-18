@@ -1,7 +1,8 @@
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { bpDownSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
-import { IconButton, Stack, Typography } from "@mui/material";
+import { KeyboardArrowRightRounded } from "@mui/icons-material";
+import { Stack, Typography } from "@mui/material";
 
 export const StyledGrid = styled("div")`
   align-items: flex-start;
@@ -21,13 +22,15 @@ export const StyledStack = styled(Stack)`
   min-width: 0;
 `;
 
-export const StyledIconButton = styled(IconButton, {
-  shouldForwardProp: (prop) => prop !== "isExpanded",
-})<{ isExpanded: boolean }>`
+export const StyledKeyboardArrowRightRounded = styled(
+  KeyboardArrowRightRounded,
+  {
+    shouldForwardProp: (prop) => prop !== "isExpanded",
+  }
+)<{ isExpanded: boolean }>`
   color: ${PALETTE.INK_LIGHT};
   grid-column: 1;
   grid-row: 2;
-  padding: 0;
   transform: rotate(${({ isExpanded }) => (isExpanded ? "90deg" : "0deg")});
   transition: transform 150ms ease;
 

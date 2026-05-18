@@ -4,7 +4,6 @@ import { MarkdownCell } from "@databiosphere/findable-ui/lib/components/Table/co
 import { RankedCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/RankedCell/rankedCell";
 import { SVG_ICON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/svgIcon";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
-import { KeyboardArrowRightRounded } from "@mui/icons-material";
 import { Chip } from "@mui/material";
 import { CellContext } from "@tanstack/react-table";
 import { JSX } from "react";
@@ -15,7 +14,7 @@ import { getPartialCellContext } from "../../utils";
 import { STACK_PROPS } from "./constants";
 import {
   StyledGrid,
-  StyledIconButton,
+  StyledKeyboardArrowRightRounded,
   StyledStack,
   StyledTypography,
 } from "./fieldCell.styles";
@@ -28,9 +27,11 @@ export const FieldCell = ({
   const isExpanded = row.getIsExpanded();
   return (
     <StyledGrid>
-      <StyledIconButton aria-hidden isExpanded={isExpanded}>
-        <KeyboardArrowRightRounded fontSize={SVG_ICON_PROPS.FONT_SIZE.SMALL} />
-      </StyledIconButton>
+      <StyledKeyboardArrowRightRounded
+        aria-hidden
+        fontSize={SVG_ICON_PROPS.FONT_SIZE.SMALL}
+        isExpanded={isExpanded}
+      />
       {/* TITLE */}
       <StyledTypography
         component="div"
