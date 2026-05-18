@@ -1,15 +1,16 @@
 import { CHIP_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/chip";
-import type { ChipProps, GridProps } from "@mui/material";
+import type { ChipProps, StackProps } from "@mui/material";
 import {
   REQUIREMENT_LABEL,
   type RequirementLabel,
 } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
 
-export const GRID_PROPS: GridProps = {
-  container: true,
+export const STACK_PROPS: StackProps = {
+  alignItems: "flex-start",
   direction: "row",
+  flexWrap: "wrap",
   spacing: 2,
-  wrap: "wrap",
+  useFlexGap: true,
 };
 
 export const REQUIREMENT_LABEL_COLOR: Record<

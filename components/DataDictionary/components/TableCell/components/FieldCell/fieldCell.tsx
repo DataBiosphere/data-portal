@@ -2,24 +2,36 @@ import { AnchorLink } from "@databiosphere/findable-ui/lib/components/common/Anc
 import { CodeCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/CodeCell/codeCell";
 import { MarkdownCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/MarkdownCell/markdownCell";
 import { RankedCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/RankedCell/rankedCell";
+import { SVG_ICON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/svgIcon";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
-import { Chip, Grid } from "@mui/material";
+import { Chip } from "@mui/material";
 import { CellContext } from "@tanstack/react-table";
 import { JSX } from "react";
 import slugify from "slugify";
 import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
 import { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
 import { getPartialCellContext } from "../../utils";
-import { GRID_PROPS } from "./constants";
-import { StyledGrid, StyledTypography } from "./fieldCell.styles";
+import { STACK_PROPS } from "./constants";
+import {
+  StyledGrid,
+  StyledKeyboardArrowRightRounded,
+  StyledStack,
+  StyledTypography,
+} from "./fieldCell.styles";
 import { buildLocationName, buildRange, buildRequired } from "./utils";
 
 export const FieldCell = ({
   row,
   table,
 }: CellContext<Attribute, unknown>): JSX.Element => {
+  const isExpanded = row.getIsExpanded();
   return (
     <StyledGrid>
+      <StyledKeyboardArrowRightRounded
+        aria-hidden
+        fontSize={SVG_ICON_PROPS.FONT_SIZE.SMALL}
+        isExpanded={isExpanded}
+      />
       {/* TITLE */}
       <StyledTypography
         component="div"
@@ -39,7 +51,7 @@ export const FieldCell = ({
           />
         </RankedCell>
       </StyledTypography>
-      <Grid {...GRID_PROPS}>
+      <StyledStack {...STACK_PROPS}>
         {/* NAME */}
         {buildLocationName(row).map((name) => (
           <CodeCell
@@ -58,9 +70,9 @@ export const FieldCell = ({
         ))}
         {/* REQUIRED */}
         {row.original.required && <Chip {...buildRequired(row)} />}
-      </Grid>
+      </StyledStack>
       {/* RANGE */}
-      <div>{buildRange(row.original)}</div>
+      <StyledTypography>{buildRange(row.original)}</StyledTypography>
     </StyledGrid>
   );
 };
