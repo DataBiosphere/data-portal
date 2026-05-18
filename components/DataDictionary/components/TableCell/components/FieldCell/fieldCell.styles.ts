@@ -12,6 +12,7 @@ export const StyledGrid = styled("div")`
   padding: 8px 0;
 
   ${bpDownSm} {
+    grid-template-columns: auto;
     padding: 0;
   }
 `;
@@ -29,6 +30,10 @@ export const StyledIconButton = styled(IconButton, {
   padding: 0;
   transform: rotate(${({ isExpanded }) => (isExpanded ? "90deg" : "0deg")});
   transition: transform 150ms ease;
+
+  ${bpDownSm} {
+    display: none;
+  }
 `;
 
 export const StyledTypography = styled(Typography)`
@@ -42,5 +47,9 @@ export const StyledTypography = styled(Typography)`
     a {
       opacity: 1;
     }
+  }
+
+  ${bpDownSm} {
+    grid-column: 1;
   }
 ` as typeof Typography;
