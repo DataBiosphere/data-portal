@@ -30,7 +30,6 @@ export function buildRange(attribute: Attribute): string {
 
 /**
  * Builds ChipCell props from the given attribute, for required.
- * Only called when required is truthy (true or "strongly recommended").
  * @param row - Row.
  * @returns Model to be used as props for the Chip component.
  */
