@@ -69,7 +69,7 @@ export const FieldCell = ({
           />
         ))}
         {/* REQUIRED */}
-        {row.original.required && <Chip {...buildRequired(row)} />}
+        <Chip {...buildRequired(row)} />
       </StyledStack>
       {/* RANGE */}
       <StyledTypography>{buildRange(row.original)}</StyledTypography>
