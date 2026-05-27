@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.12.0](https://github.com/DataBiosphere/data-portal/compare/v2.11.0...v2.12.0) (2026-05-19)
+
+
+### Features
+
+* add "recommended" tag to metadata dictionary fields ([#3062](https://github.com/DataBiosphere/data-portal/issues/3062)) ([#3065](https://github.com/DataBiosphere/data-portal/issues/3065)) ([d79869b](https://github.com/DataBiosphere/data-portal/commit/d79869b5aaa67a1e0c95470903763120bfe31e14))
+
 ## [2.11.0](https://github.com/DataBiosphere/data-portal/compare/v2.10.1...v2.11.0) (2026-05-18)
 
 
