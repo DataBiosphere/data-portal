@@ -23,7 +23,7 @@
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@mui/icons-material": "^7",
-    "@mui/material": "^7",
+    "@mui/material": "^9",
     "@next/mdx": "^15",
     "@observablehq/plot": "^0.6.17",
     "@tanstack/match-sorter-utils": "^8",
