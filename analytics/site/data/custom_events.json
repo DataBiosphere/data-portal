@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "event_name": "atlas_page_views",
+    "label": "Atlas Page Views",
+    "current": 2821,
+    "prior": 2670,
+    "change": 0.05655430711610487
+  },
+  {
+    "event_name": "atlas_downloads",
+    "label": "Integrated Object Downloads",
+    "current": 442,
+    "prior": 184,
+    "change": 1.4021739130434783
+  }
+]

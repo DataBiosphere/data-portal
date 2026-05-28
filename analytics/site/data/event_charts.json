@@ -1,0 +1,243 @@
+{
+  "chart_start": "2024-02-01",
+  "charts": [
+    {
+      "title": "Atlas Page Views Over Time",
+      "series": [
+        {
+          "label": "Page Views",
+          "event_key": "atlas_page_views",
+          "data": [
+            {
+              "month": "2024-02",
+              "count": 1389
+            },
+            {
+              "month": "2024-03",
+              "count": 1544
+            },
+            {
+              "month": "2024-04",
+              "count": 1339
+            },
+            {
+              "month": "2024-05",
+              "count": 1522
+            },
+            {
+              "month": "2024-06",
+              "count": 1309
+            },
+            {
+              "month": "2024-07",
+              "count": 1180
+            },
+            {
+              "month": "2024-08",
+              "count": 1368
+            },
+            {
+              "month": "2024-09",
+              "count": 1236
+            },
+            {
+              "month": "2024-10",
+              "count": 1690
+            },
+            {
+              "month": "2024-11",
+              "count": 3420
+            },
+            {
+              "month": "2024-12",
+              "count": 2196
+            },
+            {
+              "month": "2025-01",
+              "count": 1951
+            },
+            {
+              "month": "2025-02",
+              "count": 1868
+            },
+            {
+              "month": "2025-03",
+              "count": 2246
+            },
+            {
+              "month": "2025-04",
+              "count": 2565
+            },
+            {
+              "month": "2025-05",
+              "count": 2171
+            },
+            {
+              "month": "2025-06",
+              "count": 1984
+            },
+            {
+              "month": "2025-07",
+              "count": 2303
+            },
+            {
+              "month": "2025-08",
+              "count": 2138
+            },
+            {
+              "month": "2025-09",
+              "count": 2424
+            },
+            {
+              "month": "2025-10",
+              "count": 2513
+            },
+            {
+              "month": "2025-11",
+              "count": 2346
+            },
+            {
+              "month": "2025-12",
+              "count": 2105
+            },
+            {
+              "month": "2026-01",
+              "count": 2547
+            },
+            {
+              "month": "2026-02",
+              "count": 2316
+            },
+            {
+              "month": "2026-03",
+              "count": 2670
+            },
+            {
+              "month": "2026-04",
+              "count": 2821
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Integrated Object Downloads Over Time",
+      "series": [
+        {
+          "label": "Downloads",
+          "event_key": "atlas_downloads",
+          "data": [
+            {
+              "month": "2024-02",
+              "count": 0
+            },
+            {
+              "month": "2024-03",
+              "count": 0
+            },
+            {
+              "month": "2024-04",
+              "count": 0
+            },
+            {
+              "month": "2024-05",
+              "count": 0
+            },
+            {
+              "month": "2024-06",
+              "count": 0
+            },
+            {
+              "month": "2024-07",
+              "count": 0
+            },
+            {
+              "month": "2024-08",
+              "count": 0
+            },
+            {
+              "month": "2024-09",
+              "count": 0
+            },
+            {
+              "month": "2024-10",
+              "count": 0
+            },
+            {
+              "month": "2024-11",
+              "count": 23
+            },
+            {
+              "month": "2024-12",
+              "count": 149
+            },
+            {
+              "month": "2025-01",
+              "count": 93
+            },
+            {
+              "month": "2025-02",
+              "count": 234
+            },
+            {
+              "month": "2025-03",
+              "count": 109
+            },
+            {
+              "month": "2025-04",
+              "count": 127
+            },
+            {
+              "month": "2025-05",
+              "count": 117
+            },
+            {
+              "month": "2025-06",
+              "count": 116
+            },
+            {
+              "month": "2025-07",
+              "count": 114
+            },
+            {
+              "month": "2025-08",
+              "count": 164
+            },
+            {
+              "month": "2025-09",
+              "count": 147
+            },
+            {
+              "month": "2025-10",
+              "count": 123
+            },
+            {
+              "month": "2025-11",
+              "count": 141
+            },
+            {
+              "month": "2025-12",
+              "count": 133
+            },
+            {
+              "month": "2026-01",
+              "count": 146
+            },
+            {
+              "month": "2026-02",
+              "count": 147
+            },
+            {
+              "month": "2026-03",
+              "count": 184
+            },
+            {
+              "month": "2026-04",
+              "count": 442
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
