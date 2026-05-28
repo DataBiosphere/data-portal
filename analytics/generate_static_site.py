@@ -68,7 +68,7 @@ def fetch_h5ad_title_map():
     url_to_title = {}
     for slug, atlas in ATLASES.items():
         try:
-            resp = requests.get(f"{CXG_API_BASE}/{atlas['cxg_id']}")
+            resp = requests.get(f"{CXG_API_BASE}/{atlas['cxg_id']}", timeout=30)
             resp.raise_for_status()
             collection = resp.json()
             for dataset in collection.get("datasets", []):
