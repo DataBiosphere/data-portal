@@ -120,7 +120,6 @@ def main():
             "logo_link": "https://data.humancellatlas.org",
             "primary_color": "#1C7CC7",
             "primary_color_dark": "#005EA9",
-            "entity_label": "Atlas",
             "event_counts": [
                 {"label": "Atlas Page Views", "event_key": EVENT_KEY_PAGE_VIEWS},
                 {"label": "Atlas Downloads", "event_key": EVENT_KEY_DOWNLOADS},
