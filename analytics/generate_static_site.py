@@ -120,9 +120,10 @@ def main():
             "logo_link": "https://data.humancellatlas.org",
             "primary_color": "#1C7CC7",
             "primary_color_dark": "#005EA9",
+            "entity_label": "Atlas",
             "event_counts": [
                 {"label": "Atlas Page Views", "event_key": EVENT_KEY_PAGE_VIEWS},
-                {"label": "Atlas Downloads", "event_key": EVENT_KEY_DOWNLOADS},
+                {"label": "Integrated Object Downloads", "event_key": EVENT_KEY_DOWNLOADS},
             ],
         },
         property_id=HCA_PORTAL_ID,
@@ -143,7 +144,7 @@ def main():
             {
                 "event_name": EVENT_OUTBOUND_CLICK,
                 "key": EVENT_KEY_DOWNLOADS,
-                "label": "Atlas Downloads",
+                "label": "Integrated Object Downloads",
                 "page_path_regex": ATLAS_PAGE_PATH_REGEX,
                 "click_url_regex": H5AD_URL_REGEX,
                 "detail_table": True,
@@ -162,7 +163,7 @@ def main():
                     }],
                 },
                 {
-                    "title": "Atlas Downloads Over Time",
+                    "title": "Integrated Object Downloads Over Time",
                     "series": [{
                         "label": "Downloads",
                         "event_key": EVENT_KEY_DOWNLOADS,

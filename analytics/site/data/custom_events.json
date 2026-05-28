@@ -8,7 +8,7 @@
   },
   {
     "event_name": "atlas_downloads",
-    "label": "Atlas Downloads",
+    "label": "Integrated Object Downloads",
     "current": 442,
     "prior": 184,
     "change": 1.4021739130434783
