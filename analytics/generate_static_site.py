@@ -92,7 +92,7 @@ def resolve_atlas_titles(data):
             for record in value:
                 match = ATLAS_SLUG_PATTERN.search(record.get("page_path", ""))
                 if match:
-                    slug = match.group(1)
+                    slug = match.group(1).replace(".", "-")
                     atlas = ATLASES.get(slug)
                     record["dataset_title"] = atlas["name"] if atlas else slug
                     count += 1
