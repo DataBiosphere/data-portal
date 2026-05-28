@@ -4,5 +4,16 @@
   "favicon_url": "https://data.humancellatlas.org/hca-bio-networks/favicons/favicon.ico",
   "logo_link": "https://data.humancellatlas.org",
   "primary_color": "#1C7CC7",
-  "primary_color_dark": "#005EA9"
+  "primary_color_dark": "#005EA9",
+  "entity_label": "Atlas",
+  "event_counts": [
+    {
+      "label": "Atlas Page Views",
+      "event_key": "atlas_page_views"
+    },
+    {
+      "label": "Atlas Downloads",
+      "event_key": "atlas_downloads"
+    }
+  ]
 }
