@@ -310,11 +310,6 @@
     "change": null
   },
   {
-    "page": "/robots.txt",
-    "views": 6,
-    "change": 0.24
-  },
-  {
     "page": "/hca-bio-networks/heart/datasets",
     "views": 6,
     "change": 0.033333333333333215
@@ -373,11 +368,6 @@
     "page": "/hca-bio-networks/reproduction/datasets",
     "views": 3,
     "change": 0.033333333333333215
-  },
-  {
-    "page": "/)",
-    "views": 2,
-    "change": null
   },
   {
     "page": "/datasets",
@@ -448,16 +438,6 @@
     "page": "/hca-bionetworks/lung",
     "views": 2,
     "change": null
-  },
-  {
-    "page": "/ [data.human...latlas.org]",
-    "views": 1,
-    "change": null
-  },
-  {
-    "page": "/](https://data.humancellatlas.org",
-    "views": 1,
-    "change": -0.4833333333333334
   },
   {
     "page": "/about/",
@@ -550,11 +530,6 @@
     "change": -0.8523809523809524
   },
   {
-    "page": "/index.html",
-    "views": 1,
-    "change": -0.6555555555555556
-  },
-  {
     "page": "/metadata/dictionary/biomaterial/biomaterial_core",
     "views": 1,
     "change": 0.033333333333333215
@@ -598,11 +573,6 @@
     "page": "/terms",
     "views": 1,
     "change": null
-  },
-  {
-    "page": "/](https://data.humancellatlas.org/",
-    "views": 0,
-    "change": -1.0
   },
   {
     "page": "/analyze/portals/cellxgene",
@@ -721,11 +691,6 @@
   },
   {
     "page": "/metadata/dictionary/protocol/treatment_protocol",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/openapi.json",
     "views": 0,
     "change": -1.0
   },
