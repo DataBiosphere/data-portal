@@ -1,10 +1,10 @@
-import { CXG_DATASET_FILE_TYPE } from "../@types/network";
 import type {
   DatasetAsset,
   IntegratedAtlas,
   TrackerComponentAtlas,
   TrackerSourceDataset,
 } from "../@types/network";
+import { CXG_DATASET_FILE_TYPE } from "../@types/network";
 import { processNullElements } from "../apis/azul/hca-dcp/common/utils";
 
 const S3_BASE_URL = "https://humancellatlas.s3.amazonaws.com/temp/atlases";

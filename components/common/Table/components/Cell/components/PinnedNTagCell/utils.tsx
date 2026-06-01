@@ -1,10 +1,10 @@
 import { CellContext, RowData } from "@tanstack/react-table";
 import { ComponentProps, JSX } from "react";
+import { partitionMetadataValues } from "../../../../../../../viewModelBuilders/viewModelBuilders";
 import {
   PinnedNTagCell,
   PinnedNTagCellProps,
 } from "../../../../../../common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
-import { partitionMetadataValues } from "../../../../../../../viewModelBuilders/viewModelBuilders";
 
 /**
  * Builds props for PinnedNTagCell component.
