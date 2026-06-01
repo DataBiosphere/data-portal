@@ -33,7 +33,7 @@ export const Dialog = ({
 }: Props): JSX.Element => {
   return (
     <StyledDialog fullWidth maxWidth={false} onClose={onClose} open={open}>
-      <DialogTitle title="Download from HCA Atlas Tracker" onClose={onClose} />
+      <DialogTitle title="Download from HCA" onClose={onClose} />
       <DialogContent dividers>
         <DialogContentSection title="Download Details">
           <div>FileName: {fileName}</div>
