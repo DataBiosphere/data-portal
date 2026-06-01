@@ -15,6 +15,7 @@ import type {
 } from "../../../../../@types/network";
 import {
   fetchTrackerSourceStudies,
+  isTrackerAtlasPublished,
   resolveTrackerAtlasId,
 } from "../../../../../apis/tracker/api";
 import { Hero } from "../../../../../components/HCABioNetworks/Network/Atlas/components/common/Hero/hero";
@@ -41,13 +42,14 @@ interface Props {
  */
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const paths: Array<{ params: Params }> = [];
-  NETWORKS.forEach((network) => {
-    network.atlases.forEach((atlas) => {
-      if (atlas.tracker) {
-        paths.push({ params: { atlas: atlas.path, network: network.path } });
-      }
-    });
-  });
+  for (const network of NETWORKS) {
+    for (const atlas of network.atlases) {
+      if (!atlas.tracker) continue;
+      const { shortNameSlug, version } = atlas.tracker;
+      if (!(await isTrackerAtlasPublished(shortNameSlug, version))) continue;
+      paths.push({ params: { atlas: atlas.path, network: network.path } });
+    }
+  }
   return { fallback: false, paths };
 };
 

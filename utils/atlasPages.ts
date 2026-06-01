@@ -10,6 +10,7 @@ import { Atlas, AtlasContext, CXGDataset, Network } from "../@types/network";
 import { filterProjectId } from "../apis/azul/hca-dcp/common/filters";
 import { ProjectsResponse } from "../apis/azul/hca-dcp/common/responses";
 import { processEntityValue } from "../apis/azul/hca-dcp/common/utils";
+import { isTrackerAtlasPublished } from "../apis/tracker/api";
 import { config } from "../config/config";
 import { NETWORKS } from "../constants/networks";
 import {
@@ -31,11 +32,15 @@ export interface StaticProps extends AtlasContext {
 export const getStaticPaths: GetStaticPaths<StaticPaths> = async () => {
   const paths: Array<{ params: StaticPaths }> = [];
 
-  NETWORKS.forEach((network) => {
-    network.atlases.forEach((atlas) => {
+  for (const network of NETWORKS) {
+    for (const atlas of network.atlases) {
+      if (atlas.tracker) {
+        const { shortNameSlug, version } = atlas.tracker;
+        if (!(await isTrackerAtlasPublished(shortNameSlug, version))) continue;
+      }
       paths.push({ params: { atlas: atlas.path, network: network.path } });
-    });
-  });
+    }
+  }
 
   return {
     fallback: false,

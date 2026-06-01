@@ -78,6 +78,35 @@ export function fetchTrackerSourceStudies(
 }
 
 /**
+ * Returns the cached list of published atlases, fetching on first call.
+ */
+async function getPublishedAtlases(): Promise<PublishedAtlas[]> {
+  if (!publishedAtlasesCache) {
+    publishedAtlasesCache = await fetchTrackerApi<PublishedAtlas[]>(
+      "/api/published-atlases",
+      "published atlases"
+    );
+  }
+  return publishedAtlasesCache;
+}
+
+/**
+ * Checks whether a tracker atlas is currently published.
+ * @param shortNameSlug - Atlas short name slug (e.g., "gut").
+ * @param version - Atlas version (e.g., "v1.0").
+ * @returns true if the atlas is published.
+ */
+export async function isTrackerAtlasPublished(
+  shortNameSlug: string,
+  version: string
+): Promise<boolean> {
+  const atlases = await getPublishedAtlases();
+  return atlases.some(
+    (a) => a.shortNameSlug === shortNameSlug && a.version === version
+  );
+}
+
+/**
  * Resolves the tracker atlas ID from the slug and version.
  * @param shortNameSlug - Atlas short name slug (e.g., "gut").
  * @param version - Atlas version (e.g., "v1.0").
@@ -87,13 +116,8 @@ export async function resolveTrackerAtlasId(
   shortNameSlug: string,
   version: string
 ): Promise<string> {
-  if (!publishedAtlasesCache) {
-    publishedAtlasesCache = await fetchTrackerApi<PublishedAtlas[]>(
-      "/api/published-atlases",
-      "published atlases"
-    );
-  }
-  const match = publishedAtlasesCache.find(
+  const atlases = await getPublishedAtlases();
+  const match = atlases.find(
     (a) => a.shortNameSlug === shortNameSlug && a.version === version
   );
   if (!match) {
