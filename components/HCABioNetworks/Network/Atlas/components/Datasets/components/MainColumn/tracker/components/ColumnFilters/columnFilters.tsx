@@ -1,4 +1,4 @@
-import { BUTTON_GROUP_PROPS } from "@databiosphere/findable-ui/lib/components/common/buttonGroup/constants";
+import { BUTTON_GROUP_PROPS } from "@databiosphere/findable-ui/lib/components/common/ButtonGroup/constants";
 import { ColumnFiltersAdapter } from "@databiosphere/findable-ui/lib/components/Filter/components/adapters/tanstack/ColumnFiltersAdapter/columnFiltersAdapter";
 import { Button } from "@databiosphere/findable-ui/lib/components/Filter/components/surfaces/drawer/components/Button/button";
 import { Drawer } from "@databiosphere/findable-ui/lib/components/Filter/components/surfaces/drawer/Drawer/drawer";
