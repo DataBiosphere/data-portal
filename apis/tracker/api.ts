@@ -5,8 +5,9 @@ import type {
 } from "../../@types/network";
 import type { PublishedAtlas } from "./types";
 
-// Module-level cache for published atlases during build.
-let publishedAtlasesCache: PublishedAtlas[] | null = null;
+// Module-level cache for published atlases during build. Stores the in-flight
+// Promise so concurrent callers share a single fetch.
+let publishedAtlasesPromise: Promise<PublishedAtlas[]> | null = null;
 
 /**
  * Returns the tracker base URL, read at call time to ensure env vars are loaded.
@@ -79,15 +80,33 @@ export function fetchTrackerSourceStudies(
 
 /**
  * Returns the cached list of published atlases, fetching on first call.
+ * On failure (network error, non-2xx, malformed body), logs a warning and
+ * resolves to an empty list so callers can fall back to "no atlases
+ * published" — protecting non-tracker pages from tracker outages.
  */
-async function getPublishedAtlases(): Promise<PublishedAtlas[]> {
-  if (!publishedAtlasesCache) {
-    publishedAtlasesCache = await fetchTrackerApi<PublishedAtlas[]>(
+function getPublishedAtlases(): Promise<PublishedAtlas[]> {
+  if (!publishedAtlasesPromise) {
+    publishedAtlasesPromise = fetchTrackerApi<unknown>(
       "/api/published-atlases",
       "published atlases"
-    );
+    )
+      .then((data) => {
+        if (!Array.isArray(data)) {
+          console.warn(
+            `Tracker /api/published-atlases returned a non-array body; treating as empty.`
+          );
+          return [];
+        }
+        return data as PublishedAtlas[];
+      })
+      .catch((err) => {
+        console.warn(
+          `Failed to fetch published atlases from tracker; treating as empty. ${err}`
+        );
+        return [];
+      });
   }
-  return publishedAtlasesCache;
+  return publishedAtlasesPromise;
 }
 
 /**

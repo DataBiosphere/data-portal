@@ -2,19 +2,25 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { JSX } from "react";
 import { Main } from "../components/Home/components/Layout/components/Main/main.styles";
 import { Footer } from "../components/Layout/components/Footer/footer.styles";
-import { Summary, SummaryProvider } from "../contexts/summaryContext";
+import { SummaryProvider } from "../contexts/summaryContext";
+import { NetworkListProvider } from "../hooks/useNetworkList";
 import * as homePage from "../utils/homePage";
+import { HomeStaticProps } from "../utils/homePage";
 import { HomeView } from "../views/HomeView/homeView";
 
-export const getStaticProps: GetStaticProps<Summary> = homePage.getStaticProps;
+export const getStaticProps: GetStaticProps<HomeStaticProps> =
+  homePage.getStaticProps;
 
 export const Home = ({
+  networks,
   ...summary
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <SummaryProvider value={{ ...summary }}>
-      <HomeView />
-    </SummaryProvider>
+    <NetworkListProvider value={networks}>
+      <SummaryProvider value={{ ...summary }}>
+        <HomeView />
+      </SummaryProvider>
+    </NetworkListProvider>
   );
 };
 

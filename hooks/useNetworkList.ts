@@ -1,4 +1,9 @@
+import { createContext, useContext } from "react";
 import { Network } from "../@types/network";
 import { NETWORKS } from "../constants/networks";
 
-export const useNetworkList = (): Network[] => NETWORKS;
+const NetworkListContext = createContext<Network[]>(NETWORKS);
+
+export const NetworkListProvider = NetworkListContext.Provider;
+
+export const useNetworkList = (): Network[] => useContext(NetworkListContext);
