@@ -1,7 +1,9 @@
 import { SORT_DIRECTION } from "@databiosphere/findable-ui/lib/config/entities";
-import { Table, useReactTable } from "@tanstack/react-table";
+import { FacetedOptions, Table, useReactTable } from "@tanstack/react-table";
 import type { TrackerSourceDataset } from "../../../../../../../../../../../@types/network";
+import { COLUMN_FILTERS_OPTIONS } from "../../../../../../../../../../common/Table/options/columnFilters/constants";
 import { CORE_OPTIONS } from "../../../../../../../../../../common/Table/options/core/constants";
+import { FACETED_OPTIONS } from "../../../../../../../../../../common/Table/options/faceted/constants";
 import { SORTING_OPTIONS } from "../../../../../../../../../../common/Table/options/sorting/constants";
 import { COLUMNS } from "./columns";
 
@@ -16,7 +18,9 @@ export const useTable = (
   return useReactTable<TrackerSourceDataset>({
     columns: COLUMNS,
     data,
+    ...COLUMN_FILTERS_OPTIONS,
     ...CORE_OPTIONS,
+    ...(FACETED_OPTIONS as FacetedOptions<TrackerSourceDataset>),
     ...SORTING_OPTIONS,
     enableRowPosition: false,
     enableRowPreview: false,

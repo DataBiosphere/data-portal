@@ -8,7 +8,7 @@ import { getProjectsTableColumns } from "../../../../../../../../viewModelBuilde
 import { MDXSection } from "../../../../../../../common/Section/section.styles";
 import { DetailViewTable } from "../../../../../../../common/Table/table.styles";
 import { TABLE_OPTIONS } from "./projects/components/Table/options";
-import { Table as TrackerSourceDatasetsTable } from "./tracker/components/Table/table";
+import { SourceDatasets } from "./tracker/sourceDatasets";
 
 export const MainColumn = (): JSX.Element => {
   const { browserURL } = useSiteConfig();
@@ -24,7 +24,7 @@ export const MainColumn = (): JSX.Element => {
       </FluidPaper>
       {/* Atlas Datasets */}
       {isTracker ? (
-        <TrackerSourceDatasetsTable data={trackerSourceDatasets} />
+        <SourceDatasets data={trackerSourceDatasets} />
       ) : (
         <DetailViewTable
           columns={getProjectsTableColumns(browserURL)}

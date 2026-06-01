@@ -15,7 +15,9 @@ import { renderCellCount, renderDownload } from "./viewBuilder";
 const CELL_COUNT = {
   accessorKey: "cellCount",
   cell: renderCellCount,
+  enableColumnFilter: false,
   header: "Cell Count",
+  id: "cellCount",
   meta: { width: { max: "1fr", min: "100px" } },
   sortingFn: "alphanumeric",
 } as ColumnDef<TrackerSourceDataset>;
@@ -25,7 +27,10 @@ const DISEASE = {
   cell: renderPinnedNTagCell(
     buildPinnedNTagProps("diseases", "disease", [DISEASE_ENUM.NORMAL])
   ),
+  enableColumnFilter: true,
+  filterFn: "arrIncludesSome",
   header: "Disease",
+  id: "disease",
   meta: { width: { max: "1fr", min: "100px" } },
   sortingFn,
 } as ColumnDef<TrackerSourceDataset>;
@@ -33,22 +38,29 @@ const DISEASE = {
 const DOWNLOAD = {
   accessorKey: "download",
   cell: renderDownload,
+  enableColumnFilter: false,
   enableSorting: false,
   header: "Download",
+  id: "download",
   meta: { width: "auto" },
 } as ColumnDef<TrackerSourceDataset>;
 
 const TISSUE = {
   accessorKey: "tissue",
   cell: renderNTagCell(buildNTagProps("tissues", "tissue")),
+  enableColumnFilter: true,
+  // filterFn: "arrIncludesSome",
   header: "Tissue",
+  id: "tissue",
   meta: { width: { max: "1fr", min: "100px" } },
   sortingFn,
 } as ColumnDef<TrackerSourceDataset>;
 
 const TITLE = {
   accessorKey: "title",
+  enableColumnFilter: false,
   header: "Dataset",
+  id: "title",
   meta: { columnPinned: true, width: { max: "2fr", min: "200px" } },
   sortingFn,
 } as ColumnDef<TrackerSourceDataset>;
