@@ -7,8 +7,8 @@ import { useSiteConfig } from "../../../../../../../../hooks/useSiteConfig";
 import { getProjectsTableColumns } from "../../../../../../../../viewModelBuilders/viewModelBuilders";
 import { MDXSection } from "../../../../../../../common/Section/section.styles";
 import { DetailViewTable } from "../../../../../../../common/Table/table.styles";
-import { TABLE_OPTIONS } from "./Table/project/options";
-import { Table as TrackerSourceDatasetsTable } from "./Table/tracker/table";
+import { TABLE_OPTIONS } from "./projects/components/Table/options";
+import { Table as TrackerSourceDatasetsTable } from "./tracker/components/Table/table";
 
 export const MainColumn = (): JSX.Element => {
   const { browserURL } = useSiteConfig();

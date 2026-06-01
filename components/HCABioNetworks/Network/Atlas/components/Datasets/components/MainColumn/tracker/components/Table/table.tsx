@@ -1,7 +1,7 @@
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/components/FluidPaper/fluidPaper";
 import { GridPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { JSX } from "react";
-import { Table as CommonTable } from "../../../../../../../../../common/Table/table";
+import { Table as CommonTable } from "../../../../../../../../../../common/Table/table";
 import { useTable } from "./hook";
 import { Props } from "./types";
 

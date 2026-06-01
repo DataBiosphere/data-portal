@@ -1,8 +1,8 @@
 import type { CellContext } from "@tanstack/react-table";
 import type { JSX } from "react";
-import * as C from "../../../../../../../../..";
-import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
-import { splitFileName } from "../../../../../../../../../../utils/trackerNetwork";
+import * as C from "../../../../../../../../../..";
+import type { TrackerSourceDataset } from "../../../../../../../../../../../@types/network";
+import { splitFileName } from "../../../../../../../../../../../utils/trackerNetwork";
 
 /**
  * Renders the cell count as a locale-formatted string.
