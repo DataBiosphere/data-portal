@@ -103,6 +103,7 @@ function getPublishedAtlases(): Promise<PublishedAtlas[]> {
         console.warn(
           `Failed to fetch published atlases from tracker; treating as empty. ${err}`
         );
+        publishedAtlasesPromise = null;
         return [];
       });
   }

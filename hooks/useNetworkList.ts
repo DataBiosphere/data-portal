@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { Network } from "../@types/network";
+import type { Network } from "../@types/network";
 import { NETWORKS } from "../constants/networks";
 
 const NetworkListContext = createContext<Network[]>(NETWORKS);
