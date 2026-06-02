@@ -1,4 +1,4 @@
-import type { TrackerSourceStudy } from "../../../../../../../../../../@types/network";
+import type { TrackerSourceStudy } from "../../../../../../../../../../../@types/network";
 
 /**
  * Builds a formatted citation string for a source study.

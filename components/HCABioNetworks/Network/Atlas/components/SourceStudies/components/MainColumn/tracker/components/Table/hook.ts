@@ -1,9 +1,9 @@
 import { SORT_DIRECTION } from "@databiosphere/findable-ui/lib/config/entities";
 import { useConfig } from "@databiosphere/findable-ui/lib/hooks/useConfig";
 import { Table, useReactTable } from "@tanstack/react-table";
-import type { TrackerSourceStudy } from "../../../../../../../../../../@types/network";
-import { CORE_OPTIONS } from "../../../../../../../../../common/Table/options/core/constants";
-import { SORTING_OPTIONS } from "../../../../../../../../../common/Table/options/sorting/constants";
+import type { TrackerSourceStudy } from "../../../../../../../../../../../@types/network";
+import { CORE_OPTIONS } from "../../../../../../../../../../common/Table/options/core/constants";
+import { SORTING_OPTIONS } from "../../../../../../../../../../common/Table/options/sorting/constants";
 import { COLUMNS } from "./columns";
 
 /**

@@ -1,7 +1,7 @@
 import { BackPageContentSingleColumn } from "@databiosphere/findable-ui/lib/components/Layout/components/BackPage/backPageView.styles";
 import { JSX } from "react";
 import { useAtlas } from "../../../../../../../../contexts/atlasContext";
-import { Table as TrackerSourceStudiesTable } from "./Table/tracker/table";
+import { SourceStudies } from "./tracker/sourceStudies";
 
 /**
  * Main column for the Source Studies tab.
@@ -11,7 +11,7 @@ export const MainColumn = (): JSX.Element => {
   const { trackerSourceStudies = [] } = useAtlas();
   return (
     <BackPageContentSingleColumn>
-      <TrackerSourceStudiesTable data={trackerSourceStudies} />
+      <SourceStudies data={trackerSourceStudies} />
     </BackPageContentSingleColumn>
   );
 };

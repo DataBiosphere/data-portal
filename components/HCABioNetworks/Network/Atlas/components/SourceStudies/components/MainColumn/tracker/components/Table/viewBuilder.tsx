@@ -4,8 +4,8 @@ import {
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import type { CellContext } from "@tanstack/react-table";
 import type { JSX } from "react";
-import * as C from "../../../../../../../../..";
-import type { TrackerSourceStudy } from "../../../../../../../../../../@types/network";
+import * as C from "../../../../../../../../../..";
+import type { TrackerSourceStudy } from "../../../../../../../../../../../@types/network";
 
 const DOI_BASE_URL = "https://doi.org/";
 

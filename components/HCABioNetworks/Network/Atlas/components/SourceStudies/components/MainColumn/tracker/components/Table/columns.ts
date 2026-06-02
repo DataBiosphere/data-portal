@@ -1,6 +1,6 @@
 import { sortingFn } from "@databiosphere/findable-ui/lib/components/Table/common/utils";
 import type { ColumnDef } from "@tanstack/react-table";
-import type { TrackerSourceStudy } from "../../../../../../../../../../@types/network";
+import type { TrackerSourceStudy } from "../../../../../../../../../../../@types/network";
 import { buildSourceStudy } from "./accessor";
 import { renderHCADataRepository, renderSourceStudy } from "./viewBuilder";
 
