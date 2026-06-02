@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28 11:59:01",
+  "generated_at": "2026-05-29 09:33:15",
   "current_month": "2026-04",
   "current_month_start": "2026-04-01",
   "current_month_end": "2026-04-30",
@@ -9,6 +9,10 @@
   "sessions": {
     "current": 7293,
     "prior": 7196
+  },
+  "engaged_sessions": {
+    "current": 4340,
+    "prior": 4438
   },
   "engagement_rate": {
     "current": 0.5950911833264775,
