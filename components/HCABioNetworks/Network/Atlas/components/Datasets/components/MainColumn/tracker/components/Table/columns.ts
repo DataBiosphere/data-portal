@@ -19,7 +19,7 @@ const CELL_COUNT = {
   header: "Cell Count",
   id: "cellCount",
   meta: { width: { max: "1fr", min: "100px" } },
-  sortingFn: "alphanumeric",
+  sortingFn: "basic",
 } as ColumnDef<TrackerSourceDataset>;
 
 const DISEASE = {
@@ -49,7 +49,7 @@ const TISSUE = {
   accessorKey: "tissue",
   cell: renderNTagCell(buildNTagProps("tissues", "tissue")),
   enableColumnFilter: true,
-  // filterFn: "arrIncludesSome",
+  filterFn: "arrIncludesSome",
   header: "Tissue",
   id: "tissue",
   meta: { width: { max: "1fr", min: "100px" } },

@@ -16,7 +16,7 @@ const SOURCE_DATASET_COUNT = {
   accessorKey: "sourceDatasetCount",
   header: "Datasets",
   meta: { width: { max: "0.5fr", min: "140px" } },
-  sortingFn: "alphanumeric",
+  sortingFn: "basic",
 } as ColumnDef<TrackerSourceStudy>;
 
 const SOURCE_STUDY = {

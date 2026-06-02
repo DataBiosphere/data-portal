@@ -33,11 +33,10 @@ const TRACKER_TABS = [
 export const Tabs = (): JSX.Element => {
   const router = useRouter();
   const {
-    atlas: { path: atlasPath },
+    atlas: { path: atlasPath, tracker },
     network: { path: networkPath },
-    trackerSourceStudies = [],
   } = useAtlas();
-  const tabs = trackerSourceStudies.length > 0 ? TRACKER_TABS : BASE_TABS;
+  const tabs = tracker ? TRACKER_TABS : BASE_TABS;
 
   const handleTabChanged = (value: TabValue): void => {
     router.push({

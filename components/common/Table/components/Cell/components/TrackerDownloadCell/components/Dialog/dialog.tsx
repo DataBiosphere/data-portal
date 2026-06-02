@@ -36,9 +36,9 @@ export const Dialog = ({
       <DialogTitle title="Download from HCA" onClose={onClose} />
       <DialogContent dividers>
         <DialogContentSection title="Download Details">
-          <div>FileName: {fileName}</div>
+          <div>File Name: {fileName}</div>
           <div>Data Format: {format}</div>
-          <div>FileSize: {formatFileSize(fileSize)}</div>
+          <div>File Size: {formatFileSize(fileSize)}</div>
         </DialogContentSection>
         {downloadUrl && <StyledCode code={downloadUrl} />}
       </DialogContent>
