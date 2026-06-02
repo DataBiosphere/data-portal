@@ -1,10 +1,10 @@
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/components/FluidPaper/fluidPaper";
 import { GridPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { JSX } from "react";
+import { ColumnFilters } from "../../../../../../../../common/Filters/components/ColumnFilters/columnFilters";
+import { ColumnFilterTags } from "../../../../../../../../common/Filters/components/ColumnFilterTags/columnFilterTags";
 import { Table } from "../../../../../../../../common/Table/table";
-import { ColumnFilters } from "./components/ColumnFilters/columnFilters";
-import { ColumnFilterTags } from "./components/ColumnFilterTags/columnFilterTags";
-import { useTable } from "./components/Table/hook";
+import { useTable } from "./components/table/hook";
 import { StyledBox } from "./sourceDatasets.styles";
 import { Props } from "./types";
 
