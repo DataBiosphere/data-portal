@@ -54,13 +54,8 @@ export async function getContentStaticProps(
       const componentAtlases = await fetchTrackerComponentAtlases(atlasId);
       return {
         ...atlas,
-        integratedAtlases: componentAtlases.map((component) =>
-          mapTrackerComponentAtlasToIntegratedAtlas(
-            component,
-            network.key,
-            shortNameSlug,
-            version
-          )
+        integratedAtlases: componentAtlases.map(
+          mapTrackerComponentAtlasToIntegratedAtlas
         ),
       };
     })

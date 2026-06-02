@@ -41,25 +41,13 @@ export async function getTrackerContentStaticProps(
     fetchTrackerSourceStudies(atlasId),
   ]);
 
-  const { key: networkKey } = network;
-  const { shortNameSlug, version } = tracker;
-  const integratedAtlases = componentAtlases.map((component) =>
-    mapTrackerComponentAtlasToIntegratedAtlas(
-      component,
-      networkKey,
-      shortNameSlug,
-      version
-    )
+  const integratedAtlases = componentAtlases.map(
+    mapTrackerComponentAtlasToIntegratedAtlas
   );
 
   const trackerSourceDatasets = sourceDatasets.map((sd) => ({
     ...sd,
-    datasetAsset: buildTrackerSourceDatasetAsset(
-      sd,
-      networkKey,
-      shortNameSlug,
-      version
-    ),
+    datasetAsset: buildTrackerSourceDatasetAsset(sd),
   }));
 
   const processedAtlas: Atlas = {

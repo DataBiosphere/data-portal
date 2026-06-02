@@ -20,21 +20,12 @@ type TrackerFolderType =
 /**
  * Builds a DatasetAsset for a tracker source dataset.
  * @param sourceDataset - Tracker source dataset.
- * @param network - Network key.
- * @param shortNameSlug - Atlas short name slug.
- * @param version - Atlas version.
  * @returns dataset asset.
  */
 export function buildTrackerSourceDatasetAsset(
-  sourceDataset: TrackerSourceDataset,
-  network: string,
-  shortNameSlug: string,
-  version: string
+  sourceDataset: TrackerSourceDataset
 ): DatasetAsset {
   return buildTrackerDatasetAsset(
-    network,
-    shortNameSlug,
-    version,
     TRACKER_FOLDER_TYPE.SOURCE_DATASETS,
     sourceDataset.baseFileName,
     sourceDataset.revision,
@@ -44,41 +35,27 @@ export function buildTrackerSourceDatasetAsset(
 
 /**
  * Builds the S3 download URL for a tracker file.
- * @param network - Network key (e.g., "gut").
- * @param shortNameSlug - Atlas short name slug (e.g., "gut").
- * @param version - Atlas version (e.g., "v1.0").
  * @param folderType - Folder type.
  * @param baseFileName - Base file name.
  * @param revision - File revision number.
  * @returns full S3 download URL.
  */
 function buildTrackerDownloadUrl(
-  network: string,
-  shortNameSlug: string,
-  version: string,
   folderType: TrackerFolderType,
   baseFileName: string,
   revision: number
 ): string {
-  // S3 bucket paths use only the major version number (e.g., v1.0 → 1).
-  const generation = version.replace(/^v(\d+).*/, "$1");
   const fileName = buildVersionedFileName(baseFileName, revision);
-  return `${S3_BASE_URL}/${network}/${shortNameSlug}-v${generation}/${folderType}/${fileName}`;
+  return `${S3_BASE_URL}/${folderType}/${fileName}`;
 }
 
 /**
  * Maps a tracker component atlas to the IntegratedAtlas type.
  * @param component - Tracker component atlas.
- * @param network - Network key.
- * @param shortNameSlug - Atlas short name slug.
- * @param version - Atlas version.
  * @returns integrated atlas.
  */
 export function mapTrackerComponentAtlasToIntegratedAtlas(
-  component: TrackerComponentAtlas,
-  network: string,
-  shortNameSlug: string,
-  version: string
+  component: TrackerComponentAtlas
 ): IntegratedAtlas {
   return {
     analysisPortals: [],
@@ -86,9 +63,6 @@ export function mapTrackerComponentAtlasToIntegratedAtlas(
     cellCount: component.cellCount,
     datasetAssets: [
       buildTrackerDatasetAsset(
-        network,
-        shortNameSlug,
-        version,
         TRACKER_FOLDER_TYPE.INTEGRATED_OBJECTS,
         component.baseFileName,
         component.revision,
@@ -107,23 +81,13 @@ export function mapTrackerComponentAtlasToIntegratedAtlas(
  * Builds a DatasetAsset from tracker file metadata.
  */
 function buildTrackerDatasetAsset(
-  network: string,
-  shortNameSlug: string,
-  version: string,
   folderType: TrackerFolderType,
   baseFileName: string,
   revision: number,
   sizeBytes: number
 ): DatasetAsset {
   return {
-    downloadURL: buildTrackerDownloadUrl(
-      network,
-      shortNameSlug,
-      version,
-      folderType,
-      baseFileName,
-      revision
-    ),
+    downloadURL: buildTrackerDownloadUrl(folderType, baseFileName, revision),
     fileSize: sizeBytes,
     fileType: CXG_DATASET_FILE_TYPE.H5AD,
   };
