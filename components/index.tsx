@@ -7,6 +7,7 @@ export { DownloadIcon } from "@databiosphere/findable-ui/lib/components/common/C
 export { FacebookIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/FacebookIcon/facebookIcon";
 export { GitHubIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/GitHubIcon/gitHubIcon";
 export { LinkedInIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/LinkedInIcon/linkedInIcon";
+export { OpenInNewIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/OpenInNewIcon/openInNewIcon";
 export { SlackIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/SlackIcon/slackIcon";
 export { XIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/XIcon/xIcon";
 export { YouTubeIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/YouTubeIcon/youTubeIcon";
@@ -25,5 +26,6 @@ export { IconLink } from "./common/IconLink/iconLink";
 export { PinnedNTagCell } from "./common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
 export { BioNetworkCell } from "./common/Table/components/Cell/components/BioNetworkCell/bioNetworkCell";
 export { CXGDownloadCell } from "./common/Table/components/Cell/components/CXGDownloadCell/cxgDownloadCell";
+export { TrackerDownloadCell } from "./common/Table/components/Cell/components/TrackerDownloadCell/trackerDownloadCell";
 export { AnalysisPortalCell } from "./HCABioNetworks/Network/Atlas/components/Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
 export { Content } from "./Layout/components/Content/content";

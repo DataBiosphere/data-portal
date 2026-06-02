@@ -13,7 +13,7 @@ import {
 import { CXGDownloadCaption } from "./components/CXGDownloadCaption/cxgDownloadCaption";
 import { CXGDownloadFileSize } from "./components/CXGDownloadFileSize/cxgDownloadFileSize";
 import { CXGDownloadRadio } from "./components/CXGDownloadRadio/cxgDownloadRadio";
-import { Code } from "./cxgDownloadDialogForm.styles";
+import { StyledCode } from "./cxgDownloadDialogForm.styles";
 
 type onCloseFn = () => void;
 
@@ -55,7 +55,7 @@ export const CxgDownloadDialogForm = ({
             isRDS={fileFormat === CXG_DATASET_FILE_TYPE.RDS}
           />
         </DialogContentSection>
-        {downloadURL && <Code code={downloadURL} />}
+        {downloadURL && <StyledCode code={downloadURL} />}
       </DialogContent>
       <DialogActions>
         <Button

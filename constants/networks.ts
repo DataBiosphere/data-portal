@@ -12,6 +12,7 @@ import * as eyeContent from "../content/eye";
 import * as eyeNetworkRetinaAtlas from "../content/eye/atlases/retina";
 import * as geneticDiversityContent from "../content/genetic-diversity";
 import * as gutContent from "../content/gut";
+import * as gutNetworkGutAtlas from "../content/gut/atlases/gut";
 import * as heartContent from "../content/heart";
 import * as immuneContent from "../content/immune";
 import * as kidneyContent from "../content/kidney";
@@ -35,6 +36,7 @@ import { DATASETS } from "./datasets";
 
 const BRAIN_V1_0 = "brain-v1-0";
 const CORTEX_V1_0 = "cortex-v1-0";
+const GUT_V1_0 = "gut-v1-0";
 const LUNG_V1_0 = "lung-v1-0";
 const ORGANOID_ENDODERM_V1_0 = "organoid-endoderm-v1-0";
 const ORGANOID_NEURAL_V1_0 = "organoid-neural-v1-0";
@@ -132,7 +134,28 @@ export const NETWORKS: Network[] = [
     path: "genetic-diversity",
   },
   {
-    atlases: [],
+    atlases: [
+      {
+        contact: { email: "kkimler@broadinstitute.org" },
+        coordinators: [
+          { fullName: "Kyle Kimler" },
+          { fullName: "Christopher Lance" },
+        ],
+        datasets: [],
+        externalDatasets: [],
+        integratedAtlases: [],
+        key: GUT_V1_0,
+        name: "Human Gut Cell Atlas (HGCA) v1.0",
+        path: GUT_V1_0,
+        publications: [],
+        tracker: {
+          shortNameSlug: "gut",
+          version: "v1.0",
+        },
+        updatedAt: "",
+        version: "v1",
+      },
+    ],
     contact: { email: "gut@humancellatlas.org" },
     coordinators: [
       { fullName: "Mike Snyder" },
@@ -540,6 +563,9 @@ export const NETWORK_ATLAS_CONTENT: Partial<
   Record<NetworkKey, { [key in AtlasKey]?: AtlasModule }>
 > = {
   eye: { [RETINA_V1_0]: eyeNetworkRetinaAtlas },
+  gut: {
+    [GUT_V1_0]: gutNetworkGutAtlas,
+  },
   lung: {
     [LUNG_V1_0]: lungNetworkLungAtlas,
   },
