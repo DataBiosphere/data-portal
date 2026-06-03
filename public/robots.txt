@@ -1,4 +1,4 @@
-# Search engines
+# All other crawlers
 User-agent: *
 Allow: /
 
