@@ -220,8 +220,11 @@ export interface TrackerSourceDataset {
   fileName: string;
   geneCount: number;
   id: string;
+  publicationString: string | null;
   revision: number;
   sizeBytes: number;
+  sourceStudyId: string;
+  sourceStudyTitle: string;
   tissue: string[];
   title: string;
 }
