@@ -1,7 +1,7 @@
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { BackPageContentSingleColumn } from "@databiosphere/findable-ui/lib/components/Layout/components/BackPage/backPageView.styles";
 import { JSX } from "react";
-import { AtlasDatasetsDescription } from "../../../../../../../../content";
+import { SourceStudiesDescription } from "../../../../../../../../content";
 import { useAtlas } from "../../../../../../../../contexts/atlasContext";
 import { useSiteConfig } from "../../../../../../../../hooks/useSiteConfig";
 import { getProjectsTableColumns } from "../../../../../../../../viewModelBuilders/viewModelBuilders";
@@ -16,25 +16,25 @@ export const MainColumn = (): JSX.Element => {
   const isTracker = Boolean(atlas.tracker);
   return (
     <BackPageContentSingleColumn>
-      {/* Atlas Datasets Description */}
-      <FluidPaper>
-        <MDXSection>
-          <AtlasDatasetsDescription />
-        </MDXSection>
-      </FluidPaper>
-      {/* Atlas Datasets */}
       {isTracker ? (
         <SourceDatasets data={trackerSourceDatasets} />
       ) : (
-        <DetailViewTable
-          columns={getProjectsTableColumns(browserURL)}
-          gridTemplateColumns="minmax(484px, 1fr) repeat(4, minmax(152px, 1fr)) max-content"
-          items={projectsResponses}
-          noResultsTitle={"No Source Datasets"}
-          Paper={FluidPaper}
-          tableOptions={TABLE_OPTIONS}
-          tools={null}
-        />
+        <>
+          <FluidPaper>
+            <MDXSection>
+              <SourceStudiesDescription />
+            </MDXSection>
+          </FluidPaper>
+          <DetailViewTable
+            columns={getProjectsTableColumns(browserURL)}
+            gridTemplateColumns="minmax(484px, 1fr) repeat(4, minmax(152px, 1fr)) max-content"
+            items={projectsResponses}
+            noResultsTitle={"No Source Studies"}
+            Paper={FluidPaper}
+            tableOptions={TABLE_OPTIONS}
+            tools={null}
+          />
+        </>
       )}
     </BackPageContentSingleColumn>
   );

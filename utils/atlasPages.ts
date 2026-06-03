@@ -64,6 +64,10 @@ export async function getContentStaticProps(
     return getTrackerContentStaticProps(atlas, network, tabName);
   }
 
+  // Non-tracker atlases list source studies (Azul projects) on the datasets route.
+  const nonTrackerTabName =
+    tabName === "Source Datasets" ? "Source Studies" : tabName;
+
   const {
     dataSource: { url },
   } = config();
@@ -91,7 +95,7 @@ export async function getContentStaticProps(
     props: {
       atlas: processAtlas(atlas, cxgDatasets),
       network: processNetwork(network, cxgDatasets),
-      pageTitle: `${atlas.name} - ${tabName}`,
+      pageTitle: `${atlas.name} - ${nonTrackerTabName}`,
       projectsResponses,
     },
   };
