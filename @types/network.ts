@@ -4,6 +4,7 @@ import { ElementType } from "react";
 import { ProjectsResponse } from "../apis/azul/hca-dcp/common/responses";
 
 export interface Coordinator {
+  email?: string;
   fullName: string;
 }
 
@@ -36,7 +37,7 @@ export interface Publication {
 export interface Atlas {
   code?: Pick<LinkProps, "label" | "url">[];
   componentAtlases?: IntegratedAtlas[]; // "external" integrated atlases.
-  contact: Contact;
+  contact?: Contact;
   coordinators: Coordinator[];
   cxgDataPortal?: Pick<LinkProps, "label" | "url">[];
   cxgId?: string;

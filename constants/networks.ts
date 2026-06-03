@@ -136,10 +136,12 @@ export const NETWORKS: Network[] = [
   {
     atlases: [
       {
-        contact: { email: "kkimler@broadinstitute.org" },
         coordinators: [
-          { fullName: "Kyle Kimler" },
-          { fullName: "Christopher Lance" },
+          { email: "kkimler@broadinstitute.org", fullName: "Kyle Kimler" },
+          {
+            email: "christopher.lance@helmholtz-munich.de",
+            fullName: "Christopher Lance",
+          },
         ],
         datasets: [],
         externalDatasets: [],
