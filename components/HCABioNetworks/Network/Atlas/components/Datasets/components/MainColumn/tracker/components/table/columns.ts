@@ -10,7 +10,22 @@ import {
   buildPinnedNTagProps,
   renderPinnedNTagCell,
 } from "../../../../../../../../../../common/Table/components/Cell/components/PinnedNTagCell/utils";
-import { renderCellCount, renderDownload } from "./viewBuilder";
+import {
+  renderCellCount,
+  renderDownload,
+  renderSourceStudy,
+} from "./viewBuilder";
+
+const ASSAY = {
+  accessorKey: "assay",
+  cell: renderNTagCell(buildNTagProps("assays", "assay")),
+  enableColumnFilter: true,
+  filterFn: "arrIncludesSome",
+  header: "Assay",
+  id: "assay",
+  meta: { width: { max: "1fr", min: "100px" } },
+  sortingFn,
+} as ColumnDef<TrackerSourceDataset>;
 
 const CELL_COUNT = {
   accessorKey: "cellCount",
@@ -45,6 +60,17 @@ const DOWNLOAD = {
   meta: { width: "auto" },
 } as ColumnDef<TrackerSourceDataset>;
 
+const SOURCE_STUDY = {
+  accessorKey: "publicationString",
+  cell: renderSourceStudy,
+  enableColumnFilter: true,
+  filterFn: "arrIncludesSome",
+  header: "Source Study",
+  id: "sourceStudy",
+  meta: { width: { max: "1.2fr", min: "200px" } },
+  sortingFn,
+} as ColumnDef<TrackerSourceDataset>;
+
 const TISSUE = {
   accessorKey: "tissue",
   cell: renderNTagCell(buildNTagProps("tissues", "tissue")),
@@ -67,6 +93,8 @@ const TITLE = {
 
 export const COLUMNS: ColumnDef<TrackerSourceDataset>[] = [
   TITLE,
+  SOURCE_STUDY,
+  ASSAY,
   TISSUE,
   DISEASE,
   CELL_COUNT,

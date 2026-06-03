@@ -30,15 +30,6 @@ const REFERENCE_AUTHOR = {
   id: "referenceAuthor",
 } as ColumnDef<TrackerSourceStudy>;
 
-const SOURCE_DATASET_COUNT = {
-  accessorKey: "sourceDatasetCount",
-  enableColumnFilter: false,
-  header: "Datasets",
-  id: "sourceDatasetCount",
-  meta: { width: { max: "0.5fr", min: "140px" } },
-  sortingFn: "basic",
-} as ColumnDef<TrackerSourceStudy>;
-
 const SOURCE_STUDY = {
   accessorFn: buildSourceStudy,
   cell: renderSourceStudy,
@@ -61,7 +52,6 @@ const TITLE = {
 export const COLUMNS: ColumnDef<TrackerSourceStudy>[] = [
   SOURCE_STUDY,
   TITLE,
-  SOURCE_DATASET_COUNT,
   HCA_DATA_REPOSITORY,
   JOURNAL,
   REFERENCE_AUTHOR,
