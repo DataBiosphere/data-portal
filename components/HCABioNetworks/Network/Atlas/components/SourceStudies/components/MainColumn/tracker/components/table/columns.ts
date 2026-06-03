@@ -9,7 +9,7 @@ const HCA_DATA_REPOSITORY = {
   cell: renderHCADataRepository,
   enableColumnFilter: false,
   enableSorting: false,
-  header: "HCA Data Repository",
+  header: "HCA Data Explorer",
   id: "hcaProjectId",
   meta: { width: "auto" },
 } as ColumnDef<TrackerSourceStudy>;
