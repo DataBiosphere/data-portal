@@ -41,7 +41,7 @@ export const SideColumn = (): JSX.Element => {
         {/* Atlas Coordinators */}
         <Coordinators
           coordinators={atlasCoordinators}
-          email={atlasContact.email}
+          email={atlasContact?.email}
           title={"Integration Lead"}
         />
         {/* Network Coordinators */}
