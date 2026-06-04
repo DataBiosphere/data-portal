@@ -2,15 +2,16 @@
   {
     "event_name": "atlas_page_views",
     "label": "Atlas Page Views",
-    "current": 2821,
-    "prior": 2670,
-    "change": 0.05655430711610487
+    "current": 2668,
+    "prior": 2821,
+    "change": -0.05423608649415101
   },
   {
     "event_name": "atlas_downloads",
     "label": "Integrated Object Downloads",
-    "current": 442,
-    "prior": 184,
-    "change": 1.4021739130434783
+    "current": 160,
+    "prior": 442,
+    "change": -0.6380090497737556,
+    "detail_file_column": "Integrated Object"
   }
 ]

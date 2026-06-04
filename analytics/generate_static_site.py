@@ -122,7 +122,7 @@ def main():
             "primary_color_dark": "#005EA9",
             "entity_label": "Atlas",
             "event_counts": [
-                {"label": "Atlas Page Views", "event_key": EVENT_KEY_PAGE_VIEWS},
+                {"label": "Atlas Pageviews", "event_key": EVENT_KEY_PAGE_VIEWS},
                 {"label": "Integrated Object Downloads", "event_key": EVENT_KEY_DOWNLOADS},
             ],
         },
@@ -137,7 +137,7 @@ def main():
             {
                 "event_name": EVENT_PAGE_VIEW,
                 "key": EVENT_KEY_PAGE_VIEWS,
-                "label": "Atlas Page Views",
+                "label": "Atlas Pageviews",
                 "page_path_regex": ATLAS_PAGE_PATH_REGEX,
                 "detail_table": True,
             },
@@ -148,15 +148,16 @@ def main():
                 "page_path_regex": ATLAS_PAGE_PATH_REGEX,
                 "click_url_regex": H5AD_URL_REGEX,
                 "detail_table": True,
+                "detail_file_column": "Integrated Object",
             },
         ],
         event_charts={
             "chart_start": GA4_START_SEPARATE,
             "charts": [
                 {
-                    "title": "Atlas Page Views Over Time",
+                    "title": "Atlas Pageviews Over Time",
                     "series": [{
-                        "label": "Page Views",
+                        "label": "Pageviews",
                         "event_key": EVENT_KEY_PAGE_VIEWS,
                         "event_name": EVENT_PAGE_VIEW,
                         "page_path_regex": ATLAS_PAGE_PATH_REGEX,

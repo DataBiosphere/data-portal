@@ -252,7 +252,7 @@
             </div>
             <hr class="fui-divider" />
             <div class="fui-card-content" style="overflow-x: auto;">
-                <table id="pages-table" class="collapsible-table">
+                <table id="pages-table">
                     <thead>
                         <tr>
                             <th>Page</th>
@@ -264,7 +264,6 @@
                         <tr><td colspan="3" class="fui-color-ink-light">Loading...</td></tr>
                     </tbody>
                 </table>
-                <button class="toggle-rows" id="pages-toggle" style="display: none;" onclick="toggleTable(this)">Show all</button>
             </div>
         </div>
 
@@ -274,7 +273,7 @@
             </div>
             <hr class="fui-divider" />
             <div class="fui-card-content" style="overflow-x: auto;">
-                <table id="outbound-table" class="collapsible-table">
+                <table id="outbound-table">
                     <thead>
                         <tr>
                             <th>Link</th>
@@ -286,7 +285,6 @@
                         <tr><td colspan="3" class="fui-color-ink-light">Loading...</td></tr>
                     </tbody>
                 </table>
-                <button class="toggle-rows" id="outbound-toggle" style="display: none;" onclick="toggleTable(this)">Show all</button>
             </div>
         </div>
 
@@ -298,7 +296,7 @@
                 </div>
                 <hr class="fui-divider" />
                 <div class="fui-card-content" style="overflow-x: auto;">
-                    <table id="search-table" class="collapsible-table">
+                    <table id="search-table">
                         <thead>
                             <tr>
                                 <th>Query</th>
@@ -309,7 +307,6 @@
                             <tr><td colspan="2" class="fui-color-ink-light">Loading...</td></tr>
                         </tbody>
                     </table>
-                    <button class="toggle-rows" id="search-toggle" style="display: none;" onclick="toggleTable(this)">Show all</button>
                 </div>
             </div>
         </div>
@@ -336,7 +333,7 @@
             </div>
             <hr class="fui-divider" />
             <div class="fui-card-content" style="overflow-x: auto;">
-                <table id="filters-table" class="collapsible-table">
+                <table id="filters-table">
                     <thead>
                         <tr>
                             <th>Filter Name</th>
@@ -349,7 +346,6 @@
                         <tr><td colspan="4" class="fui-color-ink-light">Loading...</td></tr>
                     </tbody>
                 </table>
-                <button class="toggle-rows" id="filters-toggle" style="display: none;" onclick="toggleTable(this)">Show all</button>
             </div>
         </div>
 
@@ -493,12 +489,10 @@
             const previous = traffic[1] || {};
 
             const sessions = meta.sessions || {};
-            const engagedSessions = meta.engaged_sessions || {};
             const engagement = meta.engagement_rate || {};
 
             const usersChange = pctChange(latest.users, previous.users);
-            const sessionsSource = engagedSessions.current != null ? engagedSessions : sessions;
-            const engagedSessionsChange = pctChange(sessionsSource.current, sessionsSource.prior);
+            const sessionsChange = pctChange(sessions.current, sessions.prior);
             const pageviewsChange = pctChange(latest.pageviews, previous.pageviews);
             const engagementChange = pctChange(engagement.current, engagement.prior);
 
@@ -516,9 +510,9 @@
                     `Total number of unique individuals who visited your site during ${monthName}.`
                 ) +
                 statCard(
-                    formatNumber(engagedSessions.current != null ? engagedSessions.current : (sessions.current || 0)), 'Engaged Sessions',
-                    engagedSessionsChange,
-                    `Sessions where users actively engaged with your site during ${monthName} (stayed 10+ seconds, viewed 2+ pages, or triggered a conversion). <a href="https://support.google.com/analytics/answer/11109416" target="_blank" rel="noopener noreferrer">Learn more</a>.`
+                    formatNumber(sessions.current || 0), 'User Sessions',
+                    sessionsChange,
+                    `Total number of visits to your site during ${monthName}. A single user can have multiple sessions.`
                 ) +
                 statCard(
                     formatNumber(latest.pageviews), 'Pageviews',
@@ -556,10 +550,7 @@
             for (let i = 0; i < countCards.length; i += 2) {
                 const pair = countCards.slice(i, i + 2);
                 const rowLabel = pair[0].label.split('\n')[0];
-                const sharedLabel = pair.every(c => c.label.split('\n')[0] === rowLabel);
-                if (sharedLabel) {
-                    html += `<h3 class="fui-heading-xsmall fui-grid-item-12">${escapeHtml(rowLabel)}</h3>`;
-                }
+                html += `<h3 class="fui-heading-xsmall fui-grid-item-12">${escapeHtml(rowLabel)}</h3>`;
 
                 // Stat cards row
                 for (const card of pair) {
@@ -685,7 +676,8 @@
                         const fileTd = hasClickUrl ? `<td class="truncate">${escapeHtml(r.file_label || fileNameFromUrl(r.click_url))}</td>` : '';
                         return `<tr><td>${cell}</td>${fileTd}<td class="col-number">${formatNumber(r.count)}</td></tr>`;
                     }).join('');
-                    const fileHeader = hasClickUrl ? '<th>Integrated Object</th>' : '';
+                    const fileColLabel = event.detail_file_column || 'File';
+                    const fileHeader = hasClickUrl ? `<th>${escapeHtml(fileColLabel)}</th>` : '';
                     tableContent = `<table class="detail-table collapsible-table"><thead><tr><th>${escapeHtml(entityLabel)}</th>${fileHeader}<th class="col-number">Count</th></tr></thead><tbody>${rows}</tbody></table>`;
                 } else {
                     const rows = detail.map(r => {
@@ -795,7 +787,7 @@
                 tbody.innerHTML = '<tr><td colspan="3">No data available</td></tr>';
                 return;
             }
-            tbody.innerHTML = pageviews.map(row => `
+            tbody.innerHTML = pageviews.slice(0, 20).map(row => `
                 <tr>
                     <td>${escapeHtml(row.page || '-')}</td>
                     <td class="col-number">${formatNumber(row.views || 0)}</td>
@@ -804,7 +796,6 @@
                     </td>
                 </tr>
             `).join('');
-            showToggleIfNeeded('pages-toggle', pageviews.length);
         }
 
         function renderOutboundTable(outbound) {
@@ -813,7 +804,7 @@
                 tbody.innerHTML = '<tr><td colspan="3">No data available</td></tr>';
                 return;
             }
-            tbody.innerHTML = outbound.map(row => `
+            tbody.innerHTML = outbound.slice(0, 20).map(row => `
                 <tr>
                     <td class="truncate">
                         ${escapeHtml(row.link || '-')}
@@ -824,7 +815,6 @@
                     </td>
                 </tr>
             `).join('');
-            showToggleIfNeeded('outbound-toggle', outbound.length);
         }
 
         function renderFiltersTable(filters) {
@@ -834,7 +824,7 @@
                 return;
             }
             card.style.display = '';
-            tbody.innerHTML = filters.map(row => `
+            tbody.innerHTML = filters.slice(0, 30).map(row => `
                 <tr>
                     <td>${escapeHtml(row.filterName || '-')}</td>
                     <td>${escapeHtml(row.filterValue || '-')}</td>
@@ -844,11 +834,10 @@
                     </td>
                 </tr>
             `).join('');
-            showToggleIfNeeded('filters-toggle', filters.length);
         }
 
         function renderFileDownloadEvents(data) {
-            if (!data || !data.total) return;
+            if (!data || data.total == null) return;
             const section = document.getElementById('resources-section');
             section.style.display = '';
             document.getElementById('file-download-events-count').textContent = formatNumber(data.total);
@@ -866,12 +855,11 @@
                     <td class="col-number">${formatNumber(row.count)}</td>
                 </tr>
             `).join('');
-            showToggleIfNeeded('search-toggle', data.queries.length);
         }
 
         function renderFileDownloadsTable(downloads) {
             const card = document.getElementById('file-downloads-card');
-            if (!downloads || !downloads.total) {
+            if (!downloads || downloads.total == null) {
                 return;
             }
             card.style.display = '';
@@ -948,16 +936,6 @@
                     </tr>
                 `;
             }).join('');
-        }
-
-        function showToggleIfNeeded(toggleId, rowCount) {
-            if (rowCount > 5) {
-                const toggle = document.getElementById(toggleId);
-                if (toggle) {
-                    toggle.style.display = '';
-                    toggle.textContent = `Show all ${rowCount} rows`;
-                }
-            }
         }
 
         function toggleTable(btn) {
