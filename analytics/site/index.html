@@ -550,7 +550,10 @@
             for (let i = 0; i < countCards.length; i += 2) {
                 const pair = countCards.slice(i, i + 2);
                 const rowLabel = pair[0].label.split('\n')[0];
-                html += `<h3 class="fui-heading-xsmall fui-grid-item-12">${escapeHtml(rowLabel)}</h3>`;
+                const pairSharesLabel = pair.length > 1 && pair[1].label.split('\n')[0] === rowLabel;
+                if (pairSharesLabel) {
+                    html += `<h3 class="fui-heading-xsmall fui-grid-item-12">${escapeHtml(rowLabel)}</h3>`;
+                }
 
                 // Stat cards row
                 for (const card of pair) {
@@ -951,8 +954,14 @@
 
         function fileNameFromUrl(url) {
             if (!url) return '-';
-            const parts = url.split('/');
-            return parts[parts.length - 1] || url;
+            try {
+                const pathname = new URL(url).pathname.replace(/\/+$/, '');
+                const segments = pathname.split('/');
+                return decodeURIComponent(segments[segments.length - 1] || url);
+            } catch (e) {
+                const parts = url.split('/');
+                return parts[parts.length - 1] || url;
+            }
         }
 
         function formatChange(change) {

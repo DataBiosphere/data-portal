@@ -8,7 +8,7 @@
   "entity_label": "Atlas",
   "event_counts": [
     {
-      "label": "Atlas Page Views",
+      "label": "Atlas Pageviews",
       "event_key": "atlas_page_views"
     },
     {

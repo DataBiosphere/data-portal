@@ -2,10 +2,10 @@
   "chart_start": "2024-02-01",
   "charts": [
     {
-      "title": "Atlas Page Views Over Time",
+      "title": "Atlas Pageviews Over Time",
       "series": [
         {
-          "label": "Page Views",
+          "label": "Pageviews",
           "event_key": "atlas_page_views",
           "data": [
             {
