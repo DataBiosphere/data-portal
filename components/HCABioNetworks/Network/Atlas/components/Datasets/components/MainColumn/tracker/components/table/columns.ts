@@ -60,6 +60,15 @@ const DOWNLOAD = {
   meta: { width: "auto" },
 } as ColumnDef<TrackerSourceDataset>;
 
+const INTEGRATED_OBJECTS = {
+  accessorFn: (row: TrackerSourceDataset) =>
+    row.integratedObjects?.map(({ name }) => name) ?? [],
+  enableColumnFilter: true,
+  filterFn: "arrIncludesSome",
+  header: "Integrated Object",
+  id: "integratedObject",
+} as ColumnDef<TrackerSourceDataset>;
+
 const SOURCE_STUDY = {
   accessorKey: "publicationString",
   cell: renderSourceStudy,
@@ -99,4 +108,5 @@ export const COLUMNS: ColumnDef<TrackerSourceDataset>[] = [
   DISEASE,
   CELL_COUNT,
   DOWNLOAD,
+  INTEGRATED_OBJECTS,
 ];

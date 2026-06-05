@@ -29,7 +29,7 @@ export const useTable = (
       sorting: [{ desc: SORT_DIRECTION.ASCENDING, id: "title" }],
     },
     state: {
-      columnVisibility: {},
+      columnVisibility: { integratedObject: false },
     },
   });
 };
