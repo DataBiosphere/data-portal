@@ -233,12 +233,12 @@ export interface TrackerSourceDataset {
 
 export interface TrackerSourceStudy {
   cellxgeneCollectionId: string | null;
+  componentAtlases?: { id: string; name: string }[];
   contactEmail: string | null;
   doi: string | null;
   doiStatus: string;
   hcaProjectId: string | null;
   id: string;
-  integratedObjects?: { id: string; name: string }[];
   journal: string | null;
   publicationDate: string | null;
   referenceAuthor: string;
