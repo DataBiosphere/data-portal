@@ -9,17 +9,17 @@ import { RowData } from "@tanstack/react-table";
 import { ComponentProps, JSX } from "react";
 import { StyledButton, StyledButtonGroup } from "./columnFilters.styles";
 import { Props } from "./types";
+import { buildColumnFilters } from "./utils";
 
 export const ColumnFilters = <T extends RowData>({
   table,
 }: Props<T>): JSX.Element | null => {
-  const columns = table.getAllColumns();
-  const columnFilters = columns.filter((column) => column.getCanFilter());
-  const enableColumnFilters = table.options.enableColumnFilters;
   const isDrawer = useMediaQuery(
     (theme: Theme) => theme.breakpoints.down(820),
     { noSsr: true }
   );
+
+  const enableColumnFilters = table.options.enableColumnFilters;
 
   if (!enableColumnFilters) return null;
 
@@ -30,6 +30,8 @@ export const ColumnFilters = <T extends RowData>({
         renderSurface={(props) => <Drawer Button={renderButton} {...props} />}
       />
     );
+
+  const columnFilters = buildColumnFilters(table);
 
   return (
     <StyledButtonGroup {...BUTTON_GROUP_PROPS.SECONDARY_OUTLINED}>
