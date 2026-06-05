@@ -33,7 +33,11 @@ export const useTable = (
     },
     meta: { browserUrl: config.browserURL },
     state: {
-      columnVisibility: { journal: false, referenceAuthor: false },
+      columnVisibility: {
+        integratedObject: false,
+        journal: false,
+        referenceAuthor: false,
+      },
     },
   });
 };

@@ -242,6 +242,7 @@ export interface TrackerSourceStudy {
   doiStatus: string;
   hcaProjectId: string | null;
   id: string;
+  integratedObjects: { id: string; name: string }[];
   journal: string | null;
   publicationDate: string | null;
   referenceAuthor: string;
