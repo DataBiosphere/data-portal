@@ -221,7 +221,7 @@ export interface TrackerSourceDataset {
   fileName: string;
   geneCount: number;
   id: string;
-  integratedObjects: { id: string; name: string }[];
+  integratedObjects?: { id: string; name: string }[];
   publicationString: string | null;
   revision: number;
   sizeBytes: number;
