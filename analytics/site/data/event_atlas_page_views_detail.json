@@ -2,43 +2,43 @@
   {
     "page_path": "/hca-bio-networks/lung/atlases/lung-v1-0",
     "entity_name": "(not set)",
-    "count": 1165,
+    "count": 1040,
     "dataset_title": "The integrated Human Lung Cell Atlas (HLCA) v1.0"
   },
   {
     "page_path": "/hca-bio-networks/nervous-system/atlases/brain-v1-0",
     "entity_name": "(not set)",
-    "count": 897,
+    "count": 849,
     "dataset_title": "Human Brain Cell Atlas v1.0"
   },
   {
     "page_path": "/hca-bio-networks/eye/atlases/retina-v1-0",
     "entity_name": "(not set)",
-    "count": 521,
+    "count": 557,
     "dataset_title": "Single-cell atlas of the human retina v1.0"
   },
   {
     "page_path": "/hca-bio-networks/nervous-system/atlases/cortex-v1-0",
     "entity_name": "(not set)",
-    "count": 111,
+    "count": 88,
     "dataset_title": "Human Cortical Cell Atlas v1.0"
   },
   {
     "page_path": "/hca-bio-networks/organoid/atlases/organoid-neural-v1-0",
     "entity_name": "(not set)",
-    "count": 76,
+    "count": 78,
     "dataset_title": "An integrated transcriptomic cell atlas of human neural organoids v1.0"
   },
   {
     "page_path": "/hca-bio-networks/organoid/atlases/organoid-endoderm-v1-0",
     "entity_name": "(not set)",
-    "count": 44,
+    "count": 54,
     "dataset_title": "Integrated human endoderm-derived organoids cell atlas (HEOCA) v1.0"
   },
   {
-    "page_path": "/hca-bio-networks/lung/atlases/lung-v1.0",
+    "page_path": "/hca-bio-networks/organoid/atlases/organoid-neural-v1-0[reference:0",
     "entity_name": "(not set)",
-    "count": 7,
-    "dataset_title": "The integrated Human Lung Cell Atlas (HLCA) v1.0"
+    "count": 2,
+    "dataset_title": "organoid-neural-v1-0[reference:0"
   }
 ]
