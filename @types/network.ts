@@ -214,6 +214,7 @@ export interface TrackerSourceDataset {
   assay: string[];
   baseFileName: string;
   cellCount: number;
+  componentAtlases?: { id: string; name: string }[];
   datasetAsset?: DatasetAsset;
   disease: string[];
   doi: string | null;
@@ -221,7 +222,6 @@ export interface TrackerSourceDataset {
   fileName: string;
   geneCount: number;
   id: string;
-  integratedObjects?: { id: string; name: string }[];
   publicationString: string | null;
   revision: number;
   sizeBytes: number;
