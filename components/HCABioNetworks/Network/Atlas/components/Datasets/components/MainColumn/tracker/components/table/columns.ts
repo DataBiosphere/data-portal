@@ -10,6 +10,7 @@ import {
   buildPinnedNTagProps,
   renderPinnedNTagCell,
 } from "../../../../../../../../../../common/Table/components/Cell/components/PinnedNTagCell/utils";
+import { buildIntegratedObjects } from "./accessor";
 import {
   renderCellCount,
   renderDownload,
@@ -60,6 +61,14 @@ const DOWNLOAD = {
   meta: { width: "auto" },
 } as ColumnDef<TrackerSourceDataset>;
 
+const INTEGRATED_OBJECTS = {
+  accessorFn: buildIntegratedObjects,
+  enableColumnFilter: true,
+  filterFn: "arrIncludesSome",
+  header: "Integrated Object",
+  id: "integratedObject",
+} as ColumnDef<TrackerSourceDataset>;
+
 const SOURCE_STUDY = {
   accessorKey: "publicationString",
   cell: renderSourceStudy,
@@ -99,4 +108,5 @@ export const COLUMNS: ColumnDef<TrackerSourceDataset>[] = [
   DISEASE,
   CELL_COUNT,
   DOWNLOAD,
+  INTEGRATED_OBJECTS,
 ];
