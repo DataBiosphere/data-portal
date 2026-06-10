@@ -233,6 +233,7 @@ export interface TrackerSourceDataset {
 
 export interface TrackerSourceStudy {
   cellxgeneCollectionId: string | null;
+  componentAtlases?: { id: string; name: string }[];
   contactEmail: string | null;
   doi: string | null;
   doiStatus: string;
