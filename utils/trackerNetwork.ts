@@ -136,7 +136,7 @@ function buildVersionedFileName(
  * Deduplicates, sorts (locale-aware), and handles empty arrays
  * consistently with the CXG path's processArrayValue.
  * @param values - Input string values.
- * @returns deduped, sorted, null-stripped values.
+ * @returns deduped and sorted values; returns ["Unspecified"] for empty lists.
  */
 function processStringArray(values: string[]): string[] {
   const unique = [...new Set(values)].sort((a, b) => a.localeCompare(b));
