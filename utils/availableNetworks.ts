@@ -7,6 +7,7 @@ import { NETWORKS } from "../constants/networks";
  * build time by pages that surface atlas-level data (home page badges,
  * bio-networks index table) so they stay consistent with the atlas pages
  * — which are themselves filtered by getStaticPaths.
+ * @returns networks with unpublished tracker atlases filtered out.
  */
 export async function getAvailableNetworks(): Promise<Network[]> {
   return Promise.all(

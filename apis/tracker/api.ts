@@ -11,6 +11,7 @@ let publishedAtlasesPromise: Promise<PublishedAtlas[]> | null = null;
 
 /**
  * Returns the tracker base URL, read at call time to ensure env vars are loaded.
+ * @returns tracker base URL.
  */
 function getTrackerUrl(): string {
   const url = process.env.NEXT_PUBLIC_ATLAS_TRACKER_URL;
@@ -83,6 +84,7 @@ export function fetchTrackerSourceStudies(
  * On failure (network error, non-2xx, malformed body), logs a warning and
  * resolves to an empty list so callers can fall back to "no atlases
  * published" — protecting non-tracker pages from tracker outages.
+ * @returns list of published atlases.
  */
 function getPublishedAtlases(): Promise<PublishedAtlas[]> {
   if (!publishedAtlasesPromise) {

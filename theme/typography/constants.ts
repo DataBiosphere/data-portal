@@ -13,6 +13,7 @@ const textHeading: TypographyStyle = {
   fontSize: "22px",
   fontWeight: 400,
   letterSpacing: "normal",
+  // eslint-disable-next-line sort-keys -- disabling key order for readability
   "@media (min-width: 768px)": {
     fontSize: "24px",
     letterSpacing: "normal",
@@ -22,9 +23,10 @@ const textHeading: TypographyStyle = {
 const textHeadingLarge: TypographyStyle = {
   fontFamily: FONT_FAMILY_DIN,
   fontSize: "26px",
-  fontWeight: 400, // TODO: Update to 600 when font is available, here and elsewhere.
+  fontWeight: 400,
   letterSpacing: "normal",
   lineHeight: "34px",
+  // eslint-disable-next-line sort-keys -- disabling key order for readability
   "@media (min-width: 768px)": {
     fontSize: "32px",
     letterSpacing: "normal",
@@ -36,6 +38,7 @@ const textHeadingSmall: TypographyStyle = {
   fontSize: "20px",
   fontWeight: 400,
   letterSpacing: "normal",
+  // eslint-disable-next-line sort-keys -- disabling key order for readability
   "@media (min-width: 768px)": {
     fontSize: "22px",
     letterSpacing: "normal",
@@ -47,6 +50,7 @@ const textHeadingXLarge: TypographyStyle = {
   fontSize: "32px",
   fontWeight: 400,
   letterSpacing: "normal",
+  // eslint-disable-next-line sort-keys -- disabling key order for readability
   "@media (min-width: 768px)": {
     fontSize: "42px",
     letterSpacing: "-0.4px",
@@ -56,7 +60,7 @@ const textHeadingXLarge: TypographyStyle = {
 const textHeadingXSmall: TypographyStyle = {
   fontFamily: FONT_FAMILY_DIN,
   fontSize: "18px",
-  fontWeight: 400, // TODO: Update to 600 when font is available, here and elsewhere.
+  fontWeight: 400,
   letterSpacing: "normal",
   lineHeight: "26px",
 };
@@ -67,5 +71,6 @@ export const TYPOGRAPHY: Record<string, TypographyStyle> = {
   "heading-large": textHeadingLarge,
   "heading-small": textHeadingSmall,
   "heading-xsmall": textHeadingXSmall,
+  // eslint-disable-next-line sort-keys -- disabling key order for readability
   "heading-xlarge": textHeadingXLarge,
 };

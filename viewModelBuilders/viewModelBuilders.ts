@@ -6,6 +6,7 @@ import {
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { MetadataValue } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
 import { ColumnDef } from "@tanstack/react-table";
+import type { JSX } from "react";
 import type {
   Atlas,
   AtlasesRow,
@@ -88,6 +89,7 @@ function calculateEstimatedCellCount(
 
 /**
  * Returns atlases actions column def.
+ * @param isTracker - True when rendering tracker-sourced atlases (uses tracker download cell).
  * @returns actions column def.
  */
 function getAtlasesActionsColumnDef(
@@ -96,7 +98,7 @@ function getAtlasesActionsColumnDef(
   return {
     accessorKey: "actions",
     cell: isTracker
-      ? ({ row }) => {
+      ? ({ row }): JSX.Element | null => {
           const asset = row.original.datasetAssets[0];
           if (!asset) return null;
           const { ext: format, stem: fileName } = splitFileName(
@@ -109,7 +111,7 @@ function getAtlasesActionsColumnDef(
             format,
           });
         }
-      : ({ row }) =>
+      : ({ row }): JSX.Element =>
           C.CXGDownloadCell({
             datasetAssets: row.original.datasetAssets,
             title: row.original.name,
@@ -364,6 +366,7 @@ function getIntegratedAtlasesAtlasNameColumnDef(): ColumnDef<IntegratedAtlasRow>
 /**
  * Returns the table column definition model for the integrated atlases table.
  * @param showExplore - Whether to include the Explore column (omitted for tracker atlases).
+ * @param isTracker - True when building columns for tracker-sourced atlases.
  * @returns integrated atlases table column definition.
  */
 export function getIntegratedAtlasesTableColumns(

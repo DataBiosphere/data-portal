@@ -48,6 +48,7 @@ export const useSearch = (): UseSearch => {
   );
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing local requestURL state with URL params; deeper fix is to move searchIndex into the URL — track via #3088
     onSearch({ searchParams: requestParams });
   }, [onSearch, requestParams]);
 

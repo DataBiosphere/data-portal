@@ -45,6 +45,9 @@ export async function getDocsStaticProps(
   const navigationConfig = getNavigationConfig(slug);
   const outline: OutlineItem[] = [];
   const mdxSource = await serialize(content, {
+    // next-mdx-remote v6's default blockJS: true silently strips JSX
+    // expression attributes; opt out to preserve them.
+    blockJS: false,
     mdxOptions: {
       development: process.env.NODE_ENV === "development",
       rehypePlugins: [rehypeSlug],

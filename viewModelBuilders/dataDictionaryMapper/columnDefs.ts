@@ -14,8 +14,8 @@ const ANN_DATA_LOCATION: ColumnDef<Attribute, unknown> = {
   accessorFn: buildAnnDataLocation,
   enableColumnFilter: true,
   enableGlobalFilter: false,
-  header: "AnnData",
   filterFn: "arrIncludesSome",
+  header: "AnnData",
   id: COLUMN_IDENTIFIERS.ANN_DATA_LOCATION,
 };
 
@@ -124,9 +124,9 @@ const TITLE: ColumnDef<Attribute, unknown> = {
 
 const VALUES: ColumnDef<Attribute, unknown> = {
   accessorKey: "values",
-  header: "Allowed Values",
   enableColumnFilter: false,
   enableGlobalFilter: true,
+  header: "Allowed Values",
   id: COLUMN_IDENTIFIERS.VALUES,
 };
 
