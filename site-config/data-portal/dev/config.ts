@@ -47,15 +47,6 @@ export function makeConfig(
     },
     appTitle: APP_TITLE,
     browserURL: browserUrl,
-    dataSource: {
-      defaultListParams: {
-        size: "75",
-      },
-      defaultParams: {
-        catalog,
-      },
-      url: `${dataUrl}/index`,
-    },
     dataDictionaries: [
       {
         dataDictionary: buildDataDictionary(
@@ -79,6 +70,15 @@ export function makeConfig(
         tableOptions: CELL_ANNOTATION_TABLE_OPTIONS,
       },
     ] as unknown as DataDictionaryConfig[],
+    dataSource: {
+      defaultListParams: {
+        size: "75",
+      },
+      defaultParams: {
+        catalog,
+      },
+      url: `${dataUrl}/index`,
+    },
     entities: [],
     gitHubUrl,
     layout: {

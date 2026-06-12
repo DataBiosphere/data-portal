@@ -1,7 +1,6 @@
 import { CardContent } from "@databiosphere/findable-ui/lib/components/common/Card/card.styles";
 import { CardActionArea } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardActionArea/cardActionArea";
 import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
-import { Markdown } from "@databiosphere/findable-ui/lib/components/common/Markdown/markdown";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { JSX } from "react";
 import { BICCNPublication } from "../../../../../../../../../@types/network";
@@ -26,11 +25,9 @@ export const Publication = ({ publication }: PublicationProps): JSX.Element => {
         <CardActionArea cardUrl={`https://doi.org/${publication.doi}`}>
           <CardSection>
             <CardContent>
-              <CardTitle>
-                <Markdown content={publication.title} />
-              </CardTitle>
+              <CardTitle>{publication.title}</CardTitle>
               <CardSecondaryTitle>
-                <Markdown content={buildCitation(publication)} />
+                {buildCitation(publication)}
               </CardSecondaryTitle>
             </CardContent>
           </CardSection>

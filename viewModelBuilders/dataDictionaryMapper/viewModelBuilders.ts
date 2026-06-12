@@ -37,7 +37,8 @@ export function buildLocationName(attribute: BaseAttribute): string {
     return attribute.name;
   }
 
-  return `${annDataLocation ? `${annDataLocation}.` : ""}${attribute.name}`;
+  const prefix = annDataLocation ? `${annDataLocation}.` : "";
+  return `${prefix}${attribute.name}`;
 }
 
 /**
