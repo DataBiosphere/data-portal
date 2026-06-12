@@ -1,6 +1,6 @@
 import "@databiosphere/findable-ui";
 import { Error } from "@databiosphere/findable-ui/lib/components/Error/error";
-import { ErrorBoundary } from "@databiosphere/findable-ui/lib/components/ErrorBoundary";
+import { ErrorBoundary } from "@databiosphere/findable-ui/lib/components/ErrorBoundary/errorBoundary";
 import { AppLayout } from "@databiosphere/findable-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
 import { Floating } from "@databiosphere/findable-ui/lib/components/Layout/components/Floating/floating";
 import { Header } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
@@ -12,6 +12,7 @@ import { ServicesProvider } from "@databiosphere/findable-ui/lib/providers/servi
 import { DataExplorerError } from "@databiosphere/findable-ui/lib/types/error";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
+import { AppCacheProvider } from "@mui/material-nextjs/v16-pagesRouter";
 import { createBreakpoints } from "@mui/system";
 import { deepmerge } from "@mui/utils";
 import { NextPage } from "next";
@@ -39,7 +40,8 @@ export type AppPropsWithComponent = AppProps & {
   pageProps: PageProps;
 };
 
-function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
+function MyApp(props: AppPropsWithComponent): JSX.Element {
+  const { Component, pageProps } = props;
   const Footer = Component.Footer || AppFooter;
   const Main = Component.Main || DXMain;
   const appConfig = config() as SiteConfig;
@@ -63,57 +65,59 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   }, [gtmAuth, gtmId, gtmPreview]);
 
   return (
-    <EmotionThemeProvider theme={appTheme}>
-      <ThemeProvider theme={appTheme}>
-        <ConfigProvider config={appConfig}>
-          <Head appTitle={appTitle} pageTitle={pageTitle} />
-          <CssBaseline />
-          <ServicesProvider>
-            <DataDictionaryStateProvider>
-              <LayoutDimensionsProvider>
-                <AppLayout>
-                  <ThemeProvider
-                    theme={(theme: Theme): Theme => {
-                      // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
-                      const { vars, ...themeWithoutVars } = theme;
-                      return createTheme(
-                        deepmerge(themeWithoutVars, {
-                          breakpoints: createBreakpoints(BREAKPOINTS),
-                        })
-                      );
-                    }}
-                  >
-                    <Header {...header} />
-                  </ThemeProvider>
-                  <Main>
-                    <ErrorBoundary
-                      fallbackRender={({
-                        error,
-                        reset,
-                      }: {
-                        error: DataExplorerError;
-                        reset: () => void;
-                      }): JSX.Element => (
-                        <Error
-                          errorMessage={error.message}
-                          requestUrlMessage={error.requestUrlMessage}
-                          rootPath={redirectRootToPath}
-                          onReset={reset}
-                        />
-                      )}
+    <AppCacheProvider {...props}>
+      <EmotionThemeProvider theme={appTheme}>
+        <ThemeProvider theme={appTheme}>
+          <ConfigProvider config={appConfig}>
+            <Head appTitle={appTitle} pageTitle={pageTitle} />
+            <CssBaseline />
+            <ServicesProvider>
+              <DataDictionaryStateProvider>
+                <LayoutDimensionsProvider>
+                  <AppLayout>
+                    <ThemeProvider
+                      theme={(theme: Theme): Theme => {
+                        // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
+                        const { vars, ...themeWithoutVars } = theme;
+                        return createTheme(
+                          deepmerge(themeWithoutVars, {
+                            breakpoints: createBreakpoints(BREAKPOINTS),
+                          })
+                        );
+                      }}
                     >
-                      <Component {...pageProps} />
-                      <Floating {...floating} />
-                    </ErrorBoundary>
-                  </Main>
-                  <Footer {...footer} />
-                </AppLayout>
-              </LayoutDimensionsProvider>
-            </DataDictionaryStateProvider>
-          </ServicesProvider>
-        </ConfigProvider>
-      </ThemeProvider>
-    </EmotionThemeProvider>
+                      <Header {...header} />
+                    </ThemeProvider>
+                    <Main>
+                      <ErrorBoundary
+                        fallbackRender={({
+                          error,
+                          reset,
+                        }: {
+                          error: DataExplorerError;
+                          reset: () => void;
+                        }): JSX.Element => (
+                          <Error
+                            errorMessage={error.message}
+                            requestUrlMessage={error.requestUrlMessage}
+                            rootPath={redirectRootToPath}
+                            onReset={reset}
+                          />
+                        )}
+                      >
+                        <Component {...pageProps} />
+                        <Floating {...floating} />
+                      </ErrorBoundary>
+                    </Main>
+                    <Footer {...footer} />
+                  </AppLayout>
+                </LayoutDimensionsProvider>
+              </DataDictionaryStateProvider>
+            </ServicesProvider>
+          </ConfigProvider>
+        </ThemeProvider>
+      </EmotionThemeProvider>
+    </AppCacheProvider>
   );
 }
 

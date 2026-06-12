@@ -1,4 +1,5 @@
 import { REQUIREMENT_LEVEL } from "@databiosphere/findable-ui/lib/common/entities";
+import type { ReactNode } from "react";
 import type { RequirementLabel } from "./types";
 import { Attribute, REQUIREMENT_LABEL } from "./types";
 
@@ -34,7 +35,7 @@ export function buildRequired(row: Attribute): RequirementLabel {
  * @param row - Original row data.
  * @returns Source row value.
  */
-export function buildTierNSource(row: Attribute) {
+export function buildTierNSource(row: Attribute): ReactNode {
   const { source } = row;
   const { children } = source;
 
