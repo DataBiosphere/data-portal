@@ -38,7 +38,7 @@
     "next-mdx-remote": "^5",
     "react": "^19",
     "react-dom": "^19",
-    "react-dropzone": "^14",
+    "react-dropzone": "^15",
     "react-gtm-module": "^2",
     "react-idle-timer": "^5",
     "react-window": "^1",
