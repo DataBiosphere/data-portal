@@ -134,30 +134,31 @@ export const NETWORKS: Network[] = [
     path: "genetic-diversity",
   },
   {
-    atlases: [
-      {
-        coordinators: [
-          { email: "kkimler@broadinstitute.org", fullName: "Kyle Kimler" },
-          {
-            email: "christopher.lance@helmholtz-munich.de",
-            fullName: "Christopher Lance",
-          },
-        ],
-        datasets: [],
-        externalDatasets: [],
-        integratedAtlases: [],
-        key: GUT_V1_0,
-        name: "Human Gut Cell Atlas (HGCA) v1.0",
-        path: GUT_V1_0,
-        publications: [],
-        tracker: {
-          shortNameSlug: "gut",
-          version: "v1.0",
-        },
-        updatedAt: "",
-        version: "v1",
-      },
-    ],
+    atlases: [],
+    // atlases: [
+    //   {
+    //     coordinators: [
+    //       { email: "kkimler@broadinstitute.org", fullName: "Kyle Kimler" },
+    //       {
+    //         email: "christopher.lance@helmholtz-munich.de",
+    //         fullName: "Christopher Lance",
+    //       },
+    //     ],
+    //     datasets: [],
+    //     externalDatasets: [],
+    //     integratedAtlases: [],
+    //     key: GUT_V1_0,
+    //     name: "Human Gut Cell Atlas (HGCA) v1.0",
+    //     path: GUT_V1_0,
+    //     publications: [],
+    //     tracker: {
+    //       shortNameSlug: "gut",
+    //       version: "v1.0",
+    //     },
+    //     updatedAt: "",
+    //     version: "v1",
+    //   },
+    // ],
     contact: { email: "gut@humancellatlas.org" },
     coordinators: [
       { fullName: "Mike Snyder" },
