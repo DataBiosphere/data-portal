@@ -25,6 +25,10 @@ export const Publication = ({ publication }: PublicationProps): JSX.Element => {
         <CardActionArea cardUrl={`https://doi.org/${publication.doi}`}>
           <CardSection>
             <CardContent>
+              {/* Title and citation render as plain text (no Markdown). Crossref
+              titles may contain markup (e.g. <sup>, <i>); such formatting must
+              be encoded as Unicode in biccn-publications.json — see the NOTE in
+              scripts/complete-biccn-publications.ts. */}
               <CardTitle>{publication.title}</CardTitle>
               <CardSecondaryTitle>
                 {buildCitation(publication)}
