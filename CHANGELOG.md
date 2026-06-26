@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.13.0](https://github.com/DataBiosphere/data-portal/compare/v2.12.0...v2.13.0) (2026-06-26)
+
+
+### Features
+
+* add atlas pageview and download metrics to analytics page ([#3071](https://github.com/DataBiosphere/data-portal/issues/3071)) ([e13d81f](https://github.com/DataBiosphere/data-portal/commit/e13d81f32df7a898ab88de1dc74d771e9e70d1bf))
+* add bot traffic filtering and engaged sessions metric ([#3073](https://github.com/DataBiosphere/data-portal/issues/3073)) ([35c7ccf](https://github.com/DataBiosphere/data-portal/commit/35c7ccf13c36ad0dead5f2ec9b94eb48eebeec52))
+* add gut atlas v1.0 to hca data portal ([#2936](https://github.com/DataBiosphere/data-portal/issues/2936)) ([#2956](https://github.com/DataBiosphere/data-portal/issues/2956)) ([56cf597](https://github.com/DataBiosphere/data-portal/commit/56cf5971fbcb74737363c91ff17460a6c9a63a3c))
+* atlas datasets page: filter by integrated object (filter-only, no column) ([#3083](https://github.com/DataBiosphere/data-portal/issues/3083)) ([#3085](https://github.com/DataBiosphere/data-portal/issues/3085)) ([e4fe4dd](https://github.com/DataBiosphere/data-portal/commit/e4fe4ddf283377c789164f386a2aac241ab456ba))
+* gut v1.0 atlas cleanup: source studies / source datasets table columns + filters ([#3074](https://github.com/DataBiosphere/data-portal/issues/3074)) ([#3077](https://github.com/DataBiosphere/data-portal/issues/3077)) ([e0dddc7](https://github.com/DataBiosphere/data-portal/commit/e0dddc7ff557928adbf0f76d789569529bc57ee6))
+* gut v1.0 atlas overview: text cleanup + hyperlink integration lead emails ([#3075](https://github.com/DataBiosphere/data-portal/issues/3075)) ([#3078](https://github.com/DataBiosphere/data-portal/issues/3078)) ([1ea0b78](https://github.com/DataBiosphere/data-portal/commit/1ea0b78b5cef809bc7e642dee556d55045e57276))
+* rename non-tracker tab to source studies + tab definitions ([#3076](https://github.com/DataBiosphere/data-portal/issues/3076)) ([#3079](https://github.com/DataBiosphere/data-portal/issues/3079)) ([8e63e61](https://github.com/DataBiosphere/data-portal/commit/8e63e6157bd2df79c7febfbb93ec7bee069984a3))
+
+
+### Chores
+
+* add robots.txt for bot crawl protection ([#3064](https://github.com/DataBiosphere/data-portal/issues/3064)) ([54e467b](https://github.com/DataBiosphere/data-portal/commit/54e467bc6f5ada0e474dce3e4c83e40889c0559f))
+* comment out gut atlas to hide unpublished tracker content ([#3101](https://github.com/DataBiosphere/data-portal/issues/3101)) ([#3102](https://github.com/DataBiosphere/data-portal/issues/3102)) ([6f79fa0](https://github.com/DataBiosphere/data-portal/commit/6f79fa023c53eb2259478eed13ca885fe126bc29))
+* update analytics package dependency to main ([#3080](https://github.com/DataBiosphere/data-portal/issues/3080)) ([f997c30](https://github.com/DataBiosphere/data-portal/commit/f997c302ed85d978d00fb7faa4729987351c8f22))
+* update analytics package dependency to main [#3063](https://github.com/DataBiosphere/data-portal/issues/3063) ([f997c30](https://github.com/DataBiosphere/data-portal/commit/f997c302ed85d978d00fb7faa4729987351c8f22))
+* update analytics to May 2026 ([#3082](https://github.com/DataBiosphere/data-portal/issues/3082)) ([fedbda6](https://github.com/DataBiosphere/data-portal/commit/fedbda682c5ee4a3cfab2640b8c715e946983a9e))
+* update catalog to dcp60 ([#3100](https://github.com/DataBiosphere/data-portal/issues/3100)) ([aadadea](https://github.com/DataBiosphere/data-portal/commit/aadadea7a394e90f56ba6c12bc3e578ff6d649ea))
+* update catalog to dcp60 [#3099](https://github.com/DataBiosphere/data-portal/issues/3099) ([aadadea](https://github.com/DataBiosphere/data-portal/commit/aadadea7a394e90f56ba6c12bc3e578ff6d649ea))
+* update findable-ui to v50 and run audit fix ([#2951](https://github.com/DataBiosphere/data-portal/issues/2951)) ([56cf597](https://github.com/DataBiosphere/data-portal/commit/56cf5971fbcb74737363c91ff17460a6c9a63a3c))
+
 ## [2.12.0](https://github.com/DataBiosphere/data-portal/compare/v2.11.0...v2.12.0) (2026-05-19)
 
 
