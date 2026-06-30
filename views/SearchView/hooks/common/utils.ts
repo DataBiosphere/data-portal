@@ -3,6 +3,7 @@ import { SEARCH_PARAMETERS } from "@databiosphere/findable-ui/lib/components/Lay
 import { ReadonlyURLSearchParams } from "next/navigation";
 import { SEARCH_CATEGORY } from "../../common/constants";
 import {
+  SEARCH_ENGINE_MAX_START_INDEX,
   SEARCH_ENGINE_PARAMETERS,
   SEARCH_ENGINE_PARAMETER_ID,
   SEARCH_ENGINE_PARAMETER_SAFE,
@@ -13,6 +14,19 @@ import {
   SearchResponse,
   SearchResponseError,
 } from "./entities";
+
+/**
+ * Returns the search category encoded in the URL; null when absent or invalid.
+ * @param searchParams - Search query and category parameters.
+ * @returns search category.
+ */
+export function getCategory(
+  searchParams: ReadonlyURLSearchParams | null
+): SEARCH_CATEGORY | null {
+  const value = getSearchParamValue(searchParams, SEARCH_PARAMETERS.CATEGORY);
+  if (isCategory(value)) return value;
+  return null;
+}
 
 /**
  * Returns request parameters for configured search engine.
@@ -78,6 +92,21 @@ export function getRequestURL(
 }
 
 /**
+ * Returns the search index (start index) encoded in the URL pagination param,
+ * clamped to the range the search engine supports.
+ * @param searchParams - Search query and category parameters.
+ * @returns search index; 0 when the param is absent or invalid, capped at
+ * SEARCH_ENGINE_MAX_START_INDEX.
+ */
+export function getSearchIndex(
+  searchParams: ReadonlyURLSearchParams | null
+): number {
+  const value = Number(searchParams?.get(SEARCH_PARAMETERS.START));
+  if (!Number.isInteger(value) || value <= 0) return 0;
+  return Math.min(value, SEARCH_ENGINE_MAX_START_INDEX);
+}
+
+/**
  * Returns search params from the given path.
  * @param asPath - Current path.
  * @returns search params.
@@ -113,22 +142,6 @@ export function hasSearchParamValue(
   parameter: string
 ): boolean {
   return Boolean(getSearchParamValue(searchParams, parameter));
-}
-
-/**
- * Returns category from the current path.
- * @param asPath - Current path.
- * @returns category.
- */
-export function initCategory(asPath: string): SEARCH_CATEGORY | null {
-  const categoryValue = getSearchParamValue(
-    getSearchParams(asPath),
-    SEARCH_PARAMETERS.CATEGORY
-  );
-  if (isCategory(categoryValue)) {
-    return categoryValue;
-  }
-  return null;
 }
 
 /**

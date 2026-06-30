@@ -1,3 +1,4 @@
+import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/components/RoundedPaper/roundedPaper";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import styled from "@emotion/styled";
 
@@ -19,4 +20,8 @@ export const ViewLayout = styled.div`
       word-break: break-word;
     }
   }
+`;
+
+export const StyledRoundedPaper = styled(RoundedPaper)`
+  overflow: hidden;
 `;

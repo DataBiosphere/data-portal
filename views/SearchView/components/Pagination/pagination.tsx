@@ -2,18 +2,18 @@ import { IconButton } from "@databiosphere/findable-ui/lib/components/common/Ico
 import EastRoundedIcon from "@mui/icons-material/EastRounded";
 import WestRoundedIcon from "@mui/icons-material/WestRounded";
 import { JSX } from "react";
-import { OnSearchFn, SearchPagination } from "../../hooks/common/entities";
+import { SearchPagination } from "../../hooks/common/entities";
+import { usePagination } from "./hooks/UsePagination/hook";
 import { PaginationActions, PaginationView } from "./pagination.styles";
 
 interface PaginationProps {
-  onSearch: OnSearchFn;
   pagination?: SearchPagination;
 }
 
 export const Pagination = ({
-  onSearch,
   pagination,
 }: PaginationProps): JSX.Element | null => {
+  const { onPaginate } = usePagination();
   if (!pagination) return null;
   return (
     <PaginationView>
@@ -22,16 +22,14 @@ export const Pagination = ({
           color="secondary"
           disabled={pagination.previousPage === 0}
           Icon={WestRoundedIcon}
-          onClick={(): void =>
-            onSearch({ searchIndex: pagination.previousPage })
-          }
+          onClick={(): void => onPaginate(pagination.previousPage)}
           size="medium"
         />
         <IconButton
           color="secondary"
           disabled={pagination.nextPage === 0}
           Icon={EastRoundedIcon}
-          onClick={(): void => onSearch({ searchIndex: pagination.nextPage })}
+          onClick={(): void => onPaginate(pagination.nextPage)}
           size="medium"
         />
       </PaginationActions>

@@ -1,16 +1,15 @@
 import { CardProps } from "@databiosphere/findable-ui/lib/components/common/Card/card";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
-import { useCallback, useEffect, useState } from "react";
 import { useSiteConfig } from "../../../hooks/useSiteConfig";
 import {
-  OnSearchFn,
   SearchPagination,
   SearchResponse,
   SearchResponseError,
 } from "./common/entities";
 import {
   getRequestURL,
+  getSearchIndex,
   isRequestValid,
   mapSearchPagination,
   mapSearchResults,
@@ -23,40 +22,33 @@ export interface UseSearch {
   isLoading: boolean;
   isSuccess: boolean;
   isValid: boolean;
-  onSearch: OnSearchFn;
   pagination?: SearchPagination;
   results?: CardProps[];
 }
 
 /**
  * Hook facilitating search functionality and results.
+ * Both the search term and the pagination index are derived from the URL, so
+ * refresh, deep-link sharing, and browser back/forward all restore the exact
+ * results page without any local state.
  * @returns search results.
  */
 export const useSearch = (): UseSearch => {
   const { portalURL } = useSiteConfig();
   const { asPath } = useRouter();
-  const [requestURL, setRequestURL] = useState<string>();
+  const searchParams = useSearchParams();
+  const requestURL = getRequestURL(
+    portalURL,
+    searchParams,
+    getSearchIndex(searchParams)
+  );
   const { isIdle, isLoading, isSuccess, response } =
     useFetchSearch<Response>(requestURL);
-  const requestParams = useSearchParams();
-
-  const onSearch = useCallback(
-    ({ searchIndex = 0, searchParams = requestParams }): void => {
-      setRequestURL(getRequestURL(portalURL, searchParams, searchIndex));
-    },
-    [portalURL, requestParams]
-  );
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing local requestURL state with URL params; deeper fix is to move searchIndex into the URL — track via #3088
-    onSearch({ searchParams: requestParams });
-  }, [onSearch, requestParams]);
 
   return {
     isLoading: isIdle || isLoading,
     isSuccess: isSuccess,
     isValid: isRequestValid(asPath),
-    onSearch,
     pagination: mapSearchPagination(response),
     results: mapSearchResults(response),
   };
