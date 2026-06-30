@@ -79,6 +79,11 @@ export function mapTrackerComponentAtlasToIntegratedAtlas(
 
 /**
  * Builds a DatasetAsset from tracker file metadata.
+ * @param folderType - Tracker folder type (integrated objects or source datasets).
+ * @param baseFileName - Base file name (without revision suffix).
+ * @param revision - File revision number.
+ * @param sizeBytes - File size in bytes.
+ * @returns dataset asset.
  */
 function buildTrackerDatasetAsset(
   folderType: TrackerFolderType,
@@ -115,6 +120,9 @@ export function splitFileName(fileName: string): {
 /**
  * Inserts `-r{revision}` before the file extension.
  * E.g., "myeloid_cap_250923.h5ad" with revision 1 → "myeloid_cap_250923-r1.h5ad".
+ * @param baseFileName - Base file name (with extension).
+ * @param revision - File revision number.
+ * @returns versioned file name.
  */
 function buildVersionedFileName(
   baseFileName: string,
@@ -127,6 +135,8 @@ function buildVersionedFileName(
 /**
  * Deduplicates, sorts (locale-aware), and handles empty arrays
  * consistently with the CXG path's processArrayValue.
+ * @param values - Input string values.
+ * @returns deduped, locale-sorted values; `[LABEL.UNSPECIFIED]` when the input is empty or contains only null values.
  */
 function processStringArray(values: string[]): string[] {
   const unique = [...new Set(values)].sort((a, b) => a.localeCompare(b));

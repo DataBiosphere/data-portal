@@ -58,6 +58,13 @@ async function getPublication(doi: string): Promise<PublicationInfo | null> {
       ["short-container-title"]: shortContainerTitle,
       title: [title],
     } = JSON.parse(response.body).message as CrossrefWork;
+    // NOTE: Crossref titles can contain markup (e.g. <sup>, <i>) and are stored
+    // verbatim here. The Publications UI renders titles as plain text (no
+    // Markdown/HTML), so any such markup currently renders literally. This
+    // script may need upgrading to normalise titles — superscripts/subscripts
+    // map cleanly to Unicode (e.g. Na<sup>+</sup> -> Na⁺), but italics (<i>,
+    // <em>) have no accessible Unicode equivalent and would need a different
+    // approach (e.g. re-introducing a server-rendered Markdown title).
     const journal =
       containerTitle[0] || shortContainerTitle[0] || institution?.[0].name;
     if (!journal) throw new Error("No journal name found");
