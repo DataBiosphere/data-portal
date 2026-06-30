@@ -78,6 +78,7 @@
     "eslint-plugin-sonarjs": "^4.0.2",
     "eslint-plugin-sort-destructure-keys": "^3",
     "got": "^14.4.5",
+    "html-entities": "^2.6.0",
     "husky": "^9.1.7",
     "next-sitemap": "^4.2.3",
     "prettier": "^3.7.4",
