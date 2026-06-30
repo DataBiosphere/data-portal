@@ -63,8 +63,7 @@ getPublications();
  * markup), then superscript/subscript tags are mapped to Unicode where possible
  * (e.g. Ca<sup>2+</sup> -> Ca²⁺), remaining HTML tags are stripped (italic
  * species names lose styling but stay readable), and whitespace is collapsed.
- * The function is idempotent over decoded text, so re-running over an
- * already-clean title leaves it unchanged.
+ * Applied once to each title when it is first fetched from Crossref.
  * @param raw - Raw Crossref title.
  * @returns sanitized title.
  */
@@ -136,14 +135,11 @@ async function getPublications(): Promise<void> {
   for (const publications of Object.values(biccnPublications)) {
     for (const publication of publications) {
       if (publication.title === undefined) {
-        // If title is missing, add info from Crossref (already sanitized).
+        // If title is missing, add info from Crossref (title sanitized there).
         const info = await getPublication(publication.doi);
         if (info === null)
           throw new Error(`Publication unavailable for ${publication.doi}`);
         Object.assign(publication, info);
-      } else {
-        // Re-sanitize existing titles so the file self-heals on every run.
-        publication.title = cleanTitle(publication.title);
       }
     }
   }
