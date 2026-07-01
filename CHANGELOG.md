@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.14.1](https://github.com/DataBiosphere/data-portal/compare/v2.14.0...v2.14.1) (2026-07-01)
+
+
+### Bug Fixes
+
+* update help email to data-wrangler-team@humancellatlas.org ([#3128](https://github.com/DataBiosphere/data-portal/issues/3128)) ([0931496](https://github.com/DataBiosphere/data-portal/commit/09314966d866cc54e68b5c7ac94b7972e320e003))
+* update help email to data-wrangler-team@humancellatlas.org [#3127](https://github.com/DataBiosphere/data-portal/issues/3127) ([0931496](https://github.com/DataBiosphere/data-portal/commit/09314966d866cc54e68b5c7ac94b7972e320e003))
+
 ## [2.14.0](https://github.com/DataBiosphere/data-portal/compare/v2.13.0...v2.14.0) (2026-07-01)
 
 
