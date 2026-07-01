@@ -8,6 +8,7 @@ rm -rf ./out
 echo \"Deleting ./build/\"
 rm -rf ./build
 
+# Switch to the Node version pinned in .nvmrc (kept in sync with package.json engines)
 n "$(cat .nvmrc)"
 npm ci
 
