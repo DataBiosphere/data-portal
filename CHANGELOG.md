@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.14.0](https://github.com/DataBiosphere/data-portal/compare/v2.13.0...v2.14.0) (2026-07-01)
+
+
+### Features
+
+* sanitize crossref-fetched publication titles in complete-biccn-publications script ([#3089](https://github.com/DataBiosphere/data-portal/issues/3089)) ([#3107](https://github.com/DataBiosphere/data-portal/issues/3107)) ([a6e7acb](https://github.com/DataBiosphere/data-portal/commit/a6e7acbb8d484453a320409064d7b6d24d5b7451))
+
+
+### Bug Fixes
+
+* source Node version from .nvmrc in cc-data and cgl-data build scripts ([#3109](https://github.com/DataBiosphere/data-portal/issues/3109)) ([95b5224](https://github.com/DataBiosphere/data-portal/commit/95b5224caadc23d72ecc849c2df88b4eff63d097))
+* update contact emails, rename constant, and replace Zendesk FAB with help page link ([#3105](https://github.com/DataBiosphere/data-portal/issues/3105)) ([f9bcc95](https://github.com/DataBiosphere/data-portal/commit/f9bcc95b0c617ee638c96cc9ab5c4cc69a01a1c3))
+
+
+### Chores
+
+* upgrade to next.js 16 + new findable-ui major (phase 2 from findable-ui[#952](https://github.com/DataBiosphere/data-portal/issues/952)) ([#3087](https://github.com/DataBiosphere/data-portal/issues/3087)) ([#3090](https://github.com/DataBiosphere/data-portal/issues/3090)) ([0c42a71](https://github.com/DataBiosphere/data-portal/commit/0c42a718fcdd90dfec9ca34d1f24c0cf5dc5e099))
+
 ## [2.13.0](https://github.com/DataBiosphere/data-portal/compare/v2.12.0...v2.13.0) (2026-06-26)
 
 
