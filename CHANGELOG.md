@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.15.0](https://github.com/DataBiosphere/data-portal/compare/v2.14.1...v2.15.0) (2026-07-02)
+
+
+### Features
+
+* searchview: encode pagination index in url query string ([#3088](https://github.com/DataBiosphere/data-portal/issues/3088)) ([#3110](https://github.com/DataBiosphere/data-portal/issues/3110)) ([f2689cd](https://github.com/DataBiosphere/data-portal/commit/f2689cdd355a5375fee5bab86832aec9dfd1436c))
+
 ## [2.14.1](https://github.com/DataBiosphere/data-portal/compare/v2.14.0...v2.14.1) (2026-07-01)
 
 
