@@ -1,9 +1,9 @@
 import { SEARCH_PARAMETERS } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Actions/components/Search/components/SearchBar/common/constants";
 import { useSearchParams } from "next/navigation";
 import Router, { useRouter } from "next/router";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { SEARCH_CATEGORY } from "../common/constants";
-import { initCategory } from "./common/utils";
+import { getCategory } from "./common/utils";
 
 export interface UseSearchCategory {
   category: SEARCH_CATEGORY | null;
@@ -12,16 +12,16 @@ export interface UseSearchCategory {
 
 /**
  * Hook facilitating search functionality; returning search category and category change functionality.
+ * The active category is derived from the URL so it stays in sync on refresh,
+ * deep-link sharing, and browser back/forward.
  * @returns search category and category related functionality.
  */
 export const useSearchCategory = (): UseSearchCategory => {
-  const { asPath, pathname } = useRouter();
+  const { pathname } = useRouter();
   const searchParams = useSearchParams();
-  const [category, setCategory] = useState<SEARCH_CATEGORY | null>(
-    initCategory(asPath)
-  );
+  const category = getCategory(searchParams);
 
-  const onRedirect = useCallback(
+  const onChangeCategory = useCallback(
     (category: SEARCH_CATEGORY | null) => {
       Router.push({
         pathname,
@@ -29,14 +29,6 @@ export const useSearchCategory = (): UseSearchCategory => {
       });
     },
     [pathname, searchParams]
-  );
-
-  const onChangeCategory = useCallback(
-    (category: SEARCH_CATEGORY | null) => {
-      setCategory(category);
-      onRedirect(category);
-    },
-    [onRedirect]
   );
 
   return { category, onChangeCategory };
@@ -58,5 +50,7 @@ function getSearchParams(
   } else {
     params.delete(SEARCH_PARAMETERS.CATEGORY);
   }
+  // Changing category yields a different result set, so reset pagination.
+  params.delete(SEARCH_PARAMETERS.START);
   return params;
 }

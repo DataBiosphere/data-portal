@@ -1,18 +1,8 @@
-import { ReadonlyURLSearchParams } from "next/navigation";
-
 export interface Error {
   code: number;
   message: string;
   status: string;
 }
-
-export type OnSearchFn = ({
-  searchIndex,
-  searchParams,
-}: {
-  searchIndex?: number;
-  searchParams?: ReadonlyURLSearchParams;
-}) => void;
 
 export interface SearchPagination {
   nextPage: number;
