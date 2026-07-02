@@ -75,7 +75,7 @@
     "eslint-plugin-perfectionist": "^4",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react-hooks": "^7",
-    "eslint-plugin-sonarjs": "^4.0.2",
+    "eslint-plugin-sonarjs": "^4.1.0",
     "eslint-plugin-sort-destructure-keys": "^3",
     "got": "^14.4.5",
     "html-entities": "^2.6.0",
