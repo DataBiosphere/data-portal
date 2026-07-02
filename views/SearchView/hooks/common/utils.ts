@@ -4,6 +4,7 @@ import { ReadonlyURLSearchParams } from "next/navigation";
 import { SEARCH_CATEGORY } from "../../common/constants";
 import {
   SEARCH_ENGINE_MAX_START_INDEX,
+  SEARCH_ENGINE_MIN_START_INDEX,
   SEARCH_ENGINE_PARAMETERS,
   SEARCH_ENGINE_PARAMETER_ID,
   SEARCH_ENGINE_PARAMETER_SAFE,
@@ -95,14 +96,16 @@ export function getRequestURL(
  * Returns the search index (start index) encoded in the URL pagination param,
  * clamped to the range the search engine supports.
  * @param searchParams - Search query and category parameters.
- * @returns search index; 0 when the param is absent or invalid, capped at
- * SEARCH_ENGINE_MAX_START_INDEX.
+ * @returns search index; SEARCH_ENGINE_MIN_START_INDEX when the param is absent
+ * or invalid, capped at SEARCH_ENGINE_MAX_START_INDEX.
  */
 export function getSearchIndex(
   searchParams: ReadonlyURLSearchParams | null
 ): number {
   const value = Number(searchParams?.get(SEARCH_PARAMETERS.START));
-  if (!Number.isInteger(value) || value <= 0) return 0;
+  if (!Number.isInteger(value) || value < SEARCH_ENGINE_MIN_START_INDEX) {
+    return SEARCH_ENGINE_MIN_START_INDEX;
+  }
   return Math.min(value, SEARCH_ENGINE_MAX_START_INDEX);
 }
 
