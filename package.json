@@ -23,7 +23,7 @@
     "@emotion/styled": "^11",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
-    "@mui/icons-material": "^7",
+    "@mui/icons-material": "^9",
     "@mui/material": "^7",
     "@mui/material-nextjs": "^9",
     "@next/mdx": "^16",
