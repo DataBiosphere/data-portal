@@ -4,9 +4,29 @@ updates:
   - package-ecosystem: "npm"
     # Look for `package.json` and `lock` files in the `root` directory
     directory: "/"
-    # Check the npm registry for updates every day (weekdays)
+    # Check the npm registry for updates monthly, grouping minor and patch
+    # bumps into a single PR; major bumps still open individual PRs
     schedule:
-      interval: "daily"
+      interval: "monthly"
     assignees:
-      - "noopdog"
-    open-pull-requests-limit: 50
+      - "NoopDog"
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+  # Enable version updates for the analytics Python scripts, grouping all
+  # bumps into a single PR per run
+  - package-ecosystem: "pip"
+    directory: "/analytics"
+    schedule:
+      interval: "monthly"
+    assignees:
+      - "NoopDog"
+    groups:
+      all-updates:
+        patterns:
+          - "*"
