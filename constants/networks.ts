@@ -58,22 +58,27 @@ export const NETWORKS: Network[] = [
       {
         code: [
           {
-            label: "https://github.com/NoahWex/iHBCAv1_upload",
-            url: "https://github.com/NoahWex/iHBCAv1_upload",
+            label: "https://github.com/NoahWex/iHBCA_v1",
+            url: "https://github.com/NoahWex/iHBCA_v1",
           },
         ],
         coordinators: [
           { email: "nwechter@uci.edu", fullName: "Noah Wechter" },
-          { email: "prabhakg@uci.edu", fullName: "Gautham Prabhakar" },
           { email: "adr44@cam.ac.uk", fullName: "Austin Reed" },
+          { email: "prabhakg@uci.edu", fullName: "Gautham Prabhakar" },
         ],
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],
         key: BREAST_V1,
-        name: "Integrated Human Breast Cell Atlas (iHBCA) v1",
+        name: "integrated Human Breast Cell Atlas (iHBCA) v1",
         path: BREAST_V1,
-        publications: [],
+        publications: [
+          {
+            doi: "https://doi.org/10.1038/s41588-024-01688-9",
+            label: "Reed et al. (2024) Nat Genet",
+          },
+        ],
         summaryCellCount: 2128505,
         tracker: {
           shortNameSlug: "breast",
