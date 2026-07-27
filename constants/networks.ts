@@ -82,7 +82,7 @@ export const NETWORKS: Network[] = [
         summaryCellCount: 2128505,
         tracker: {
           shortNameSlug: "breast",
-          version: "v1",
+          version: "v1.0",
         },
         updatedAt: "",
         version: "v1",
