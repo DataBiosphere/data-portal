@@ -113,6 +113,7 @@ export const NETWORKS: Network[] = [
   {
     atlases: [
       {
+        bioTuring: true,
         code: [
           {
             label: "https://github.com/RCHENLAB/HRCA_reproducibility",
@@ -252,6 +253,7 @@ export const NETWORKS: Network[] = [
   {
     atlases: [
       {
+        bioTuring: true,
         code: [
           {
             label: "https://github.com/LungCellAtlas/HLCA",
@@ -345,6 +347,7 @@ export const NETWORKS: Network[] = [
     BICCNPublications: BICCN_PUBLICATIONS.NERVOUS_SYSTEM,
     atlases: [
       {
+        bioTuring: true,
         code: [
           {
             label: "https://github.com/linnarsson-lab/adult-human-brain",
@@ -373,6 +376,7 @@ export const NETWORKS: Network[] = [
         version: "v1",
       },
       {
+        bioTuring: true,
         code: [
           {
             label: "https://github.com/AllenInstitute/human_cross_areal",
@@ -422,6 +426,7 @@ export const NETWORKS: Network[] = [
   {
     atlases: [
       {
+        bioTuring: true,
         code: [
           {
             label: "https://github.com/theislab/neural_organoid_atlas",
@@ -465,6 +470,7 @@ export const NETWORKS: Network[] = [
         version: "v1",
       },
       {
+        bioTuring: true,
         code: [
           {
             label: "https://github.com/devsystemslab/HEOCA",

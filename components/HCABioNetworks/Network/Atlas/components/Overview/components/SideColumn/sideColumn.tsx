@@ -6,9 +6,7 @@ import { HCABiologicalNetwork } from "../../../../../../../common/Section/compon
 import { Publications } from "../../../../../../../common/Section/components/Publications/publications";
 import { References } from "../../../../../../../common/Section/components/References/references";
 import { DataReleasePolicy } from "../../../common/DataReleasePolicy/dataReleasePolicy";
-
-const BIOTURING_URL =
-  "https://talk2data.bioturing.com/?tab=studies&version_id=hca&params=N4IgbgpgTgzglgewHYgFwgBYGMCGIC%2BQA";
+import { getDataExplorationTools } from "./utils";
 
 export const SideColumn = (): JSX.Element => {
   const { atlas, network } = useAtlas();
@@ -16,11 +14,11 @@ export const SideColumn = (): JSX.Element => {
     code,
     contact: atlasContact,
     coordinators: atlasCoordinators,
-    cxgDataPortal = [],
     publications,
   } = atlas;
   const { contact: networkContact, coordinators: networkCoordinators } =
     network;
+  const references = getDataExplorationTools(atlas);
   return (
     <Fragment>
       <Sections>
@@ -31,13 +29,9 @@ export const SideColumn = (): JSX.Element => {
         {/* Code */}
         {code && <References links={code} title="Code" />}
         {/* Data Exploration Tools */}
-        <References
-          links={[
-            ...cxgDataPortal,
-            { label: "BioTuring Collection", url: BIOTURING_URL },
-          ]}
-          title="Data Exploration Tools"
-        />
+        {references.length > 0 && (
+          <References links={references} title="Data Exploration Tools" />
+        )}
         {/* Atlas Coordinators */}
         <Coordinators
           coordinators={atlasCoordinators}
