@@ -8,8 +8,6 @@ updates:
     # bumps into a single PR; major bumps still open individual PRs
     schedule:
       interval: "monthly"
-    assignees:
-      - "NoopDog"
     open-pull-requests-limit: 5
     groups:
       minor-and-patch:
@@ -24,8 +22,6 @@ updates:
     directory: "/analytics"
     schedule:
       interval: "monthly"
-    assignees:
-      - "NoopDog"
     groups:
       all-updates:
         patterns:
