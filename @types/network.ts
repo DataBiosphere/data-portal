@@ -35,6 +35,7 @@ export interface Publication {
 }
 
 export interface Atlas {
+  bioTuring?: boolean; // Displays the BioTuring collection link under "Data Exploration Tools".
   code?: Pick<LinkProps, "label" | "url">[];
   componentAtlases?: IntegratedAtlas[]; // "external" integrated atlases.
   contact?: Contact;
@@ -181,6 +182,7 @@ export type NetworkKey =
 
 export type AtlasKey =
   | "brain-v1-0"
+  | "breast-v1"
   | "cortex-v1-0"
   | "gut-v1-0"
   | "lung-v1-0"

@@ -7,6 +7,7 @@ import {
 } from "../@types/network";
 import * as adiposeContent from "../content/adipose";
 import * as breastContent from "../content/breast";
+import * as breastNetworkBreastAtlas from "../content/breast/atlases/breast";
 import * as developmentContent from "../content/development";
 import * as eyeContent from "../content/eye";
 import * as eyeNetworkRetinaAtlas from "../content/eye/atlases/retina";
@@ -35,6 +36,7 @@ import { COMPONENT_ATLASES } from "./componentAtlases";
 import { DATASETS } from "./datasets";
 
 const BRAIN_V1_0 = "brain-v1-0";
+const BREAST_V1 = "breast-v1";
 const CORTEX_V1_0 = "cortex-v1-0";
 const GUT_V1_0 = "gut-v1-0";
 const LUNG_V1_0 = "lung-v1-0";
@@ -52,7 +54,40 @@ export const NETWORKS: Network[] = [
     path: "adipose",
   },
   {
-    atlases: [],
+    atlases: [
+      {
+        code: [
+          {
+            label: "https://github.com/NoahWex/iHBCA_v1",
+            url: "https://github.com/NoahWex/iHBCA_v1",
+          },
+        ],
+        coordinators: [
+          { email: "nwechter@uci.edu", fullName: "Noah Wechter" },
+          { email: "adr44@cam.ac.uk", fullName: "Austin Reed" },
+          { email: "prabhakg@uci.edu", fullName: "Gautham Prabhakar" },
+        ],
+        datasets: [],
+        externalDatasets: [],
+        integratedAtlases: [],
+        key: BREAST_V1,
+        name: "integrated Human Breast Cell Atlas (iHBCA) v1",
+        path: BREAST_V1,
+        publications: [
+          {
+            doi: "https://doi.org/10.1038/s41588-024-01688-9",
+            label: "Reed et al. (2024) Nat Genet",
+          },
+        ],
+        summaryCellCount: 2128505,
+        tracker: {
+          shortNameSlug: "breast",
+          version: "v1.0",
+        },
+        updatedAt: "",
+        version: "v1",
+      },
+    ],
     contact: { email: "breast@humancellatlas.org" },
     coordinators: [
       { fullName: "Kai Kessenbrock" },
@@ -78,6 +113,7 @@ export const NETWORKS: Network[] = [
   {
     atlases: [
       {
+        bioTuring: true,
         code: [
           {
             label: "https://github.com/RCHENLAB/HRCA_reproducibility",
@@ -217,6 +253,7 @@ export const NETWORKS: Network[] = [
   {
     atlases: [
       {
+        bioTuring: true,
         code: [
           {
             label: "https://github.com/LungCellAtlas/HLCA",
@@ -310,6 +347,7 @@ export const NETWORKS: Network[] = [
     BICCNPublications: BICCN_PUBLICATIONS.NERVOUS_SYSTEM,
     atlases: [
       {
+        bioTuring: true,
         code: [
           {
             label: "https://github.com/linnarsson-lab/adult-human-brain",
@@ -338,6 +376,7 @@ export const NETWORKS: Network[] = [
         version: "v1",
       },
       {
+        bioTuring: true,
         code: [
           {
             label: "https://github.com/AllenInstitute/human_cross_areal",
@@ -387,6 +426,7 @@ export const NETWORKS: Network[] = [
   {
     atlases: [
       {
+        bioTuring: true,
         code: [
           {
             label: "https://github.com/theislab/neural_organoid_atlas",
@@ -430,6 +470,7 @@ export const NETWORKS: Network[] = [
         version: "v1",
       },
       {
+        bioTuring: true,
         code: [
           {
             label: "https://github.com/devsystemslab/HEOCA",
@@ -565,6 +606,9 @@ export const NETWORK_ICONS: { [key in NetworkKey]: string } = {
 export const NETWORK_ATLAS_CONTENT: Partial<
   Record<NetworkKey, { [key in AtlasKey]?: AtlasModule }>
 > = {
+  breast: {
+    [BREAST_V1]: breastNetworkBreastAtlas,
+  },
   eye: { [RETINA_V1_0]: eyeNetworkRetinaAtlas },
   gut: {
     [GUT_V1_0]: gutNetworkGutAtlas,
