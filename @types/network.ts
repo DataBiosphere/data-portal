@@ -185,6 +185,7 @@ export type AtlasKey =
   | "breast-v1"
   | "cortex-v1-0"
   | "gut-v1-0"
+  | "liver-v1-0"
   | "lung-v1-0"
   | "organoid-endoderm-v1-0"
   | "organoid-neural-v1-0"
