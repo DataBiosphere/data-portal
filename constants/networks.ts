@@ -253,6 +253,12 @@ export const NETWORKS: Network[] = [
   {
     atlases: [
       {
+        cellBrowser: [
+          {
+            label: "UCSC Cell Browser",
+            url: "https://human-liver-cell-atlas.cells.ucsc.edu",
+          },
+        ],
         code: [
           {
             label: "https://github.com/quon-titative-biology/HLiCA",
@@ -264,6 +270,7 @@ export const NETWORKS: Network[] = [
           { email: "gquon@ucdavis.edu", fullName: "Gerald Quon" },
           { email: "gary.bader@utoronto.ca", fullName: "Gary Bader" },
         ],
+        cxgId: "059202e1-1f1b-483f-9151-f3a25a380c39",
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],

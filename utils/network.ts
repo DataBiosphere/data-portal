@@ -28,7 +28,7 @@ function buildCXGAnalysisPortal(cxgURL: string): AnalysisPortal {
  * @param cxgId - CELLxGENE dataset ID.
  * @returns CELLxGENE data portal link.
  */
-function buildCXGDataPortalLink(
+export function buildCXGDataPortalLink(
   cxgId: string
 ): Pick<LinkProps, "label" | "url">[] {
   const cxgDataPortalURL = `${CZ_CELLXGENE_DATA_PORTAL_URL}/collections/${cxgId}`;

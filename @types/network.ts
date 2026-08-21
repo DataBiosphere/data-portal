@@ -36,6 +36,7 @@ export interface Publication {
 
 export interface Atlas {
   bioTuring?: boolean; // Displays the BioTuring collection link under "Data Exploration Tools".
+  cellBrowser?: Pick<LinkProps, "label" | "url">[]; // Additional "Data Exploration Tools" links, e.g. UCSC Cell Browser.
   code?: Pick<LinkProps, "label" | "url">[];
   componentAtlases?: IntegratedAtlas[]; // "external" integrated atlases.
   contact?: Contact;
