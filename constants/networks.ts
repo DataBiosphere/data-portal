@@ -195,6 +195,7 @@ export const NETWORKS: Network[] = [
         name: "Human Gut Cell Atlas (HGCA) v1.0",
         path: GUT_V1_0,
         publications: [],
+        summaryCellCount: 944502, // "All Cells" component atlas cell count; the lineage objects are subsets of it.
         tracker: {
           shortNameSlug: "gut",
           version: "v1.0",
