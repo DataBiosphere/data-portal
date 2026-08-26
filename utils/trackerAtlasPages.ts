@@ -7,6 +7,7 @@ import {
   resolveTrackerAtlasId,
 } from "../apis/tracker/api";
 import type { StaticProps } from "./atlasPages";
+import { buildCXGDataPortalLink } from "./network";
 import {
   buildTrackerSourceDatasetAsset,
   mapTrackerComponentAtlasToIntegratedAtlas,
@@ -52,6 +53,11 @@ export async function getTrackerContentStaticProps(
 
   const processedAtlas: Atlas = {
     ...atlas,
+    // Only set when the atlas has a CELLxGENE collection; an explicit
+    // `undefined` is not JSON-serializable by `getStaticProps`.
+    ...(atlas.cxgId && {
+      cxgDataPortal: buildCXGDataPortalLink(atlas.cxgId),
+    }),
     integratedAtlases,
     trackerAtlasId: atlasId,
   };

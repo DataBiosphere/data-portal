@@ -18,6 +18,7 @@ import * as heartContent from "../content/heart";
 import * as immuneContent from "../content/immune";
 import * as kidneyContent from "../content/kidney";
 import * as liverContent from "../content/liver";
+import * as liverNetworkLiverAtlas from "../content/liver/atlases/liver";
 import * as lungContent from "../content/lung";
 import * as lungNetworkLungAtlas from "../content/lung/atlases/lung";
 import * as musculoskeletalContent from "../content/musculoskeletal";
@@ -39,6 +40,7 @@ const BRAIN_V1_0 = "brain-v1-0";
 const BREAST_V1 = "breast-v1";
 const CORTEX_V1_0 = "cortex-v1-0";
 const GUT_V1_0 = "gut-v1-0";
+const LIVER_V1_0 = "liver-v1-0";
 const LUNG_V1_0 = "lung-v1-0";
 const ORGANOID_ENDODERM_V1_0 = "organoid-endoderm-v1-0";
 const ORGANOID_NEURAL_V1_0 = "organoid-neural-v1-0";
@@ -193,6 +195,7 @@ export const NETWORKS: Network[] = [
         name: "Human Gut Cell Atlas (HGCA) v1.0",
         path: GUT_V1_0,
         publications: [],
+        summaryCellCount: 944502, // "All Cells" component atlas cell count; the lineage objects are subsets of it.
         tracker: {
           shortNameSlug: "gut",
           version: "v1.0",
@@ -249,7 +252,47 @@ export const NETWORKS: Network[] = [
     path: "kidney",
   },
   {
-    atlases: [],
+    atlases: [
+      {
+        cellBrowser: [
+          {
+            label: "UCSC Cell Browser",
+            url: "https://human-liver-cell-atlas.cells.ucsc.edu",
+          },
+        ],
+        code: [
+          {
+            label: "https://github.com/quon-titative-biology/HLiCA",
+            url: "https://github.com/quon-titative-biology/HLiCA",
+          },
+        ],
+        coordinators: [
+          { email: "r.edgar@utoronto.ca", fullName: "Rachel Edgar" },
+          { email: "gquon@ucdavis.edu", fullName: "Gerald Quon" },
+          { email: "gary.bader@utoronto.ca", fullName: "Gary Bader" },
+        ],
+        cxgId: "059202e1-1f1b-483f-9151-f3a25a380c39",
+        datasets: [],
+        externalDatasets: [],
+        integratedAtlases: [],
+        key: LIVER_V1_0,
+        name: "Human Liver Cell Atlas (HLiCA) v1.0",
+        path: LIVER_V1_0,
+        publications: [
+          {
+            doi: "https://doi.org/10.64898/2026.06.30.735539",
+            label: "Edgar et al. (2026) bioRxiv",
+          },
+        ],
+        summaryCellCount: 524699, // "All cells" CXG dataset cell count; the lineage objects are subsets of it.
+        tracker: {
+          shortNameSlug: "liver",
+          version: "v1.0",
+        },
+        updatedAt: "",
+        version: "v1",
+      },
+    ],
     contact: { email: "liver@humancellatlas.org" },
     coordinators: [{ fullName: "Gary Bader" }, { fullName: "Alan Mullen" }],
     key: "liver",
@@ -618,6 +661,9 @@ export const NETWORK_ATLAS_CONTENT: Partial<
   eye: { [RETINA_V1_0]: eyeNetworkRetinaAtlas },
   gut: {
     [GUT_V1_0]: gutNetworkGutAtlas,
+  },
+  liver: {
+    [LIVER_V1_0]: liverNetworkLiverAtlas,
   },
   lung: {
     [LUNG_V1_0]: lungNetworkLungAtlas,

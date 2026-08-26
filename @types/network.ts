@@ -36,6 +36,7 @@ export interface Publication {
 
 export interface Atlas {
   bioTuring?: boolean; // Displays the BioTuring collection link under "Data Exploration Tools".
+  cellBrowser?: Pick<LinkProps, "label" | "url">[]; // Additional "Data Exploration Tools" links, e.g. UCSC Cell Browser.
   code?: Pick<LinkProps, "label" | "url">[];
   componentAtlases?: IntegratedAtlas[]; // "external" integrated atlases.
   contact?: Contact;
@@ -185,6 +186,7 @@ export type AtlasKey =
   | "breast-v1"
   | "cortex-v1-0"
   | "gut-v1-0"
+  | "liver-v1-0"
   | "lung-v1-0"
   | "organoid-endoderm-v1-0"
   | "organoid-neural-v1-0"
