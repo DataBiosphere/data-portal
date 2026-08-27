@@ -195,7 +195,7 @@ export const NETWORKS: Network[] = [
         name: "Human Gut Cell Atlas (HGCA) v1.0",
         path: GUT_V1_0,
         publications: [],
-        summaryCellCount: 944502, // "All Cells" component atlas cell count; the lineage objects are subsets of it.
+        summaryCellCount: 944390, // Headline cell count from the atlas onboarding questionnaire; the lineage objects are subsets of "All Cells".
         tracker: {
           shortNameSlug: "gut",
           version: "v1.0",
@@ -206,8 +206,6 @@ export const NETWORKS: Network[] = [
     ],
     contact: { email: "gut@humancellatlas.org" },
     coordinators: [
-      { fullName: "Mike Snyder" },
-      { fullName: "Ramnik Xavier" },
       { fullName: "Matthias Zilbauer" },
       { fullName: "Jose Ordovas-Montanes" },
     ],
