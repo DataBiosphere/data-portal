@@ -7,6 +7,7 @@ import { FACETED_OPTIONS } from "../../../../../../../../../../common/Table/opti
 import { SORTING_OPTIONS } from "../../../../../../../../../../common/Table/options/sorting/constants";
 import { COLUMNS } from "./columns";
 import { META } from "./meta";
+import { getColumnVisibility } from "./utils";
 
 /**
  * Returns a configured TanStack table instance for tracker source datasets.
@@ -31,7 +32,7 @@ export const useTable = (
     },
     meta: META,
     state: {
-      columnVisibility: { integratedObject: false },
+      columnVisibility: getColumnVisibility(data),
     },
   });
 };

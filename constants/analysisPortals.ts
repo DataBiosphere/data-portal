@@ -1,6 +1,15 @@
 import { ANALYSIS_PORTAL, AnalysisPortal } from "../@types/network";
 
 /**
+ * Cell Annotation Platform (CAP) analysis portal.
+ */
+export const CAP: Omit<AnalysisPortal, "url"> = {
+  icon: "/hca-bio-networks/network/atlas/icons/cap.svg",
+  label: "CAP",
+  name: ANALYSIS_PORTAL.CAP,
+};
+
+/**
  * Cell By Gene analysis portal.
  */
 export const CZ_CELLXGENE: Omit<AnalysisPortal, "url"> = {

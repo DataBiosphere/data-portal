@@ -6,7 +6,10 @@ import type { CellContext } from "@tanstack/react-table";
 import type { JSX } from "react";
 import * as C from "../../../../../../../../../..";
 import type { TrackerSourceDataset } from "../../../../../../../../../../../@types/network";
-import { splitFileName } from "../../../../../../../../../../../utils/trackerNetwork";
+import {
+  buildTrackerAnalysisPortals,
+  splitFileName,
+} from "../../../../../../../../../../../utils/trackerNetwork";
 
 const DOI_BASE_URL = "https://doi.org/";
 
@@ -39,6 +42,19 @@ export function renderDownload(
     fileSize: datasetAsset.fileSize,
     format,
   });
+}
+
+/**
+ * Renders the analysis portal links for a source dataset.
+ * @param ctx - Cell context.
+ * @returns AnalysisPortalCell component, or null when the dataset has no CAP link.
+ */
+export function renderExplore(
+  ctx: CellContext<TrackerSourceDataset, unknown>
+): JSX.Element | null {
+  const analysisPortals = buildTrackerAnalysisPortals(ctx.row.original.capUrl);
+  if (analysisPortals.length === 0) return null;
+  return C.AnalysisPortalCell({ analysisPortals });
 }
 
 /**

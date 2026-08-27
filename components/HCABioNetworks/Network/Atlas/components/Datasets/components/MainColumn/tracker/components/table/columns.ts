@@ -14,6 +14,7 @@ import { buildIntegratedObjects } from "./accessor";
 import {
   renderCellCount,
   renderDownload,
+  renderExplore,
   renderSourceStudy,
 } from "./viewBuilder";
 
@@ -58,6 +59,16 @@ const DOWNLOAD = {
   enableSorting: false,
   header: "Download",
   id: "download",
+  meta: { width: "auto" },
+} as ColumnDef<TrackerSourceDataset>;
+
+const EXPLORE = {
+  accessorKey: "explore",
+  cell: renderExplore,
+  enableColumnFilter: false,
+  enableSorting: false,
+  header: "Explore",
+  id: "explore",
   meta: { width: "auto" },
 } as ColumnDef<TrackerSourceDataset>;
 
@@ -107,6 +118,7 @@ export const COLUMNS: ColumnDef<TrackerSourceDataset>[] = [
   TISSUE,
   DISEASE,
   CELL_COUNT,
+  EXPLORE,
   DOWNLOAD,
   INTEGRATED_OBJECTS,
 ];
