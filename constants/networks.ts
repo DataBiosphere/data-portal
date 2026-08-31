@@ -47,6 +47,7 @@ const ORGANOID_NEURAL_V1_0 = "organoid-neural-v1-0";
 const RETINA_V1_0 = "retina-v1-0";
 
 export const NETWORKS: Network[] = [
+  /* ADIPOSE */
   {
     atlases: [],
     contact: { email: "adipose@humancellatlas.org" },
@@ -55,6 +56,7 @@ export const NETWORKS: Network[] = [
     name: "Adipose Network",
     path: "adipose",
   },
+  /* BREAST */
   {
     atlases: [
       {
@@ -100,6 +102,7 @@ export const NETWORKS: Network[] = [
     name: "Breast Network",
     path: "breast",
   },
+  /* DEVELOPMENT */
   {
     atlases: [],
     contact: { email: "development@humancellatlas.org" },
@@ -112,6 +115,7 @@ export const NETWORKS: Network[] = [
     name: "Development Network",
     path: "development",
   },
+  /* EYE */
   {
     atlases: [
       {
@@ -159,6 +163,7 @@ export const NETWORKS: Network[] = [
     name: "Eye Network",
     path: "eye",
   },
+  /* GENETIC DIVERSITY */
   {
     atlases: [],
     contact: { email: "genediversity@humancellatlas.org" },
@@ -171,6 +176,7 @@ export const NETWORKS: Network[] = [
     name: "Genetic Diversity Network",
     path: "genetic-diversity",
   },
+  /* GUT */
   {
     atlases: [
       {
@@ -195,7 +201,7 @@ export const NETWORKS: Network[] = [
         name: "Human Gut Cell Atlas (HGCA) v1.0",
         path: GUT_V1_0,
         publications: [],
-        summaryCellCount: 944502, // "All Cells" component atlas cell count; the lineage objects are subsets of it.
+        summaryCellCount: 944390, // Headline cell count from the atlas onboarding questionnaire; the lineage objects are subsets of "All Cells".
         tracker: {
           shortNameSlug: "gut",
           version: "v1.0",
@@ -206,8 +212,6 @@ export const NETWORKS: Network[] = [
     ],
     contact: { email: "gut@humancellatlas.org" },
     coordinators: [
-      { fullName: "Mike Snyder" },
-      { fullName: "Ramnik Xavier" },
       { fullName: "Matthias Zilbauer" },
       { fullName: "Jose Ordovas-Montanes" },
     ],
@@ -215,6 +219,7 @@ export const NETWORKS: Network[] = [
     name: "Gut Network",
     path: "gut",
   },
+  /* HEART */
   {
     atlases: [],
     contact: { email: "heart@humancellatlas.org" },
@@ -227,6 +232,7 @@ export const NETWORKS: Network[] = [
     name: "Heart Network",
     path: "heart",
   },
+  /* IMMUNE */
   {
     atlases: [],
     contact: { email: "immune@humancellatlas.org" },
@@ -239,6 +245,7 @@ export const NETWORKS: Network[] = [
     name: "Immune Network",
     path: "immune",
   },
+  /* KIDNEY */
   {
     atlases: [],
     contact: { email: "kidney@humancellatlas.org" },
@@ -251,6 +258,7 @@ export const NETWORKS: Network[] = [
     name: "Kidney Network",
     path: "kidney",
   },
+  /* LIVER */
   {
     atlases: [
       {
@@ -299,6 +307,7 @@ export const NETWORKS: Network[] = [
     name: "Liver Network",
     path: "liver",
   },
+  /* LUNG */
   {
     atlases: [
       {
@@ -380,6 +389,7 @@ export const NETWORKS: Network[] = [
     name: "Lung Network",
     path: "lung",
   },
+  /* MUSCULOSKELETAL */
   {
     atlases: [],
     contact: { email: "musculoskeletal@humancellatlas.org" },
@@ -392,6 +402,7 @@ export const NETWORKS: Network[] = [
     name: "Musculoskeletal Network",
     path: "musculoskeletal",
   },
+  /* NERVOUS SYSTEM */
   {
     BICCNPublications: BICCN_PUBLICATIONS.NERVOUS_SYSTEM,
     atlases: [
@@ -464,6 +475,7 @@ export const NETWORKS: Network[] = [
     name: "Nervous System Network",
     path: "nervous-system",
   },
+  /* ORAL AND CRANIOFACIAL */
   {
     atlases: [],
     contact: { email: "oral@humancellatlas.org" },
@@ -472,6 +484,7 @@ export const NETWORKS: Network[] = [
     name: "Oral and Craniofacial Network",
     path: "oral-and-craniofacial",
   },
+  /* ORGANOID */
   {
     atlases: [
       {
@@ -569,6 +582,7 @@ export const NETWORKS: Network[] = [
     name: "Organoid Network",
     path: "organoid",
   },
+  /* PANCREAS */
   {
     atlases: [],
     contact: { email: "pancreas@humancellatlas.org" },
@@ -581,6 +595,7 @@ export const NETWORKS: Network[] = [
     name: "Pancreas Network",
     path: "pancreas",
   },
+  /* REPRODUCTION */
   {
     atlases: [],
     contact: { email: "reproduction@humancellatlas.org" },
@@ -594,6 +609,7 @@ export const NETWORKS: Network[] = [
     name: "Reproduction Network",
     path: "reproduction",
   },
+  /* SKIN */
   {
     atlases: [],
     contact: { email: "skin@humancellatlas.org" },
