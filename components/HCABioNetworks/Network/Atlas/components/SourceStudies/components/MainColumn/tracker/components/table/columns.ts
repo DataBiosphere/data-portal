@@ -1,7 +1,7 @@
 import { sortingFn } from "@databiosphere/findable-ui/lib/components/Table/common/utils";
 import type { ColumnDef } from "@tanstack/react-table";
 import type { TrackerSourceStudy } from "../../../../../../../../../../../@types/network";
-import { buildSourceStudy } from "./accessor";
+import { buildIntegratedObjects, buildSourceStudy } from "./accessor";
 import { renderHCADataRepository, renderSourceStudy } from "./viewBuilder";
 
 const HCA_DATA_REPOSITORY = {
@@ -12,6 +12,14 @@ const HCA_DATA_REPOSITORY = {
   header: "HCA Data Explorer",
   id: "hcaProjectId",
   meta: { width: "auto" },
+} as ColumnDef<TrackerSourceStudy>;
+
+const INTEGRATED_OBJECTS = {
+  accessorFn: buildIntegratedObjects,
+  enableColumnFilter: true,
+  filterFn: "arrIncludesSome",
+  header: "Integrated Object",
+  id: "integratedObject",
 } as ColumnDef<TrackerSourceStudy>;
 
 const JOURNAL = {
@@ -55,4 +63,5 @@ export const COLUMNS: ColumnDef<TrackerSourceStudy>[] = [
   HCA_DATA_REPOSITORY,
   JOURNAL,
   REFERENCE_AUTHOR,
+  INTEGRATED_OBJECTS,
 ];
