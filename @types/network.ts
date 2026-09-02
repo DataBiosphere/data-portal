@@ -16,6 +16,7 @@ export interface Contact {
  * Set of analysis portals.
  */
 export enum ANALYSIS_PORTAL {
+  CAP = "CAP",
   CZ_CELLXGENE = "CZ_CELLXGENE",
   UCSC_CELL_BROWSER = "CELL_BROWSER",
 }
@@ -36,6 +37,7 @@ export interface Publication {
 
 export interface Atlas {
   bioTuring?: boolean; // Displays the BioTuring collection link under "Data Exploration Tools".
+  cap?: Pick<LinkProps, "label" | "url">[]; // Cell Annotation Platform (CAP) project link, sourced from the tracker.
   cellBrowser?: Pick<LinkProps, "label" | "url">[]; // Additional "Data Exploration Tools" links, e.g. UCSC Cell Browser.
   code?: Pick<LinkProps, "label" | "url">[];
   componentAtlases?: IntegratedAtlas[]; // "external" integrated atlases.
@@ -195,6 +197,7 @@ export type AtlasKey =
 export interface TrackerComponentAtlas {
   assay: string[];
   baseFileName: string;
+  capUrl: string | null; // Full CAP dataset URL, e.g. "https://celltype.info/project/1030/dataset/3400".
   cellCount: number;
   disease: string[];
   fileId: string;
@@ -217,6 +220,7 @@ export interface TrackerConfig {
 export interface TrackerSourceDataset {
   assay: string[];
   baseFileName: string;
+  capUrl: string | null; // Full CAP dataset URL, e.g. "https://celltype.info/project/1030/dataset/3400".
   cellCount: number;
   componentAtlases?: { id: string; name: string }[];
   datasetAsset?: DatasetAsset;

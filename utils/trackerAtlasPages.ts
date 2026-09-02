@@ -4,11 +4,12 @@ import {
   fetchTrackerComponentAtlases,
   fetchTrackerSourceDatasets,
   fetchTrackerSourceStudies,
-  resolveTrackerAtlasId,
+  resolveTrackerAtlas,
 } from "../apis/tracker/api";
 import type { StaticProps } from "./atlasPages";
-import { buildCXGDataPortalLink } from "./network";
+import { buildCAPProjectLink } from "./network";
 import {
+  buildTrackerCXGDataPortalLink,
   buildTrackerSourceDatasetAsset,
   mapTrackerComponentAtlasToIntegratedAtlas,
 } from "./trackerNetwork";
@@ -30,11 +31,12 @@ export async function getTrackerContentStaticProps(
     throw new Error("Atlas does not have tracker configuration");
   }
 
-  // Resolve atlas ID from slug + version (not hardcoded).
-  const atlasId = await resolveTrackerAtlasId(
+  // Resolve the published atlas from slug + version (not hardcoded).
+  const trackerAtlas = await resolveTrackerAtlas(
     tracker.shortNameSlug,
     tracker.version
   );
+  const { capId, id: atlasId } = trackerAtlas;
 
   const [componentAtlases, sourceDatasets, sourceStudies] = await Promise.all([
     fetchTrackerComponentAtlases(atlasId),
@@ -51,13 +53,18 @@ export async function getTrackerContentStaticProps(
     datasetAsset: buildTrackerSourceDatasetAsset(sd),
   }));
 
+  const cxgDataPortal = buildTrackerCXGDataPortalLink(
+    trackerAtlas,
+    atlas.cxgId
+  );
+
   const processedAtlas: Atlas = {
     ...atlas,
-    // Only set when the atlas has a CELLxGENE collection; an explicit
-    // `undefined` is not JSON-serializable by `getStaticProps`.
-    ...(atlas.cxgId && {
-      cxgDataPortal: buildCXGDataPortalLink(atlas.cxgId),
-    }),
+    // Only set when the atlas has a CAP project, and when it has a CELLxGENE
+    // collection (from the tracker, or the configured `cxgId` fallback); an
+    // explicit `undefined` is not JSON-serializable by `getStaticProps`.
+    ...(capId && { cap: buildCAPProjectLink(capId) }),
+    ...(cxgDataPortal && { cxgDataPortal }),
     integratedAtlases,
     trackerAtlasId: atlasId,
   };

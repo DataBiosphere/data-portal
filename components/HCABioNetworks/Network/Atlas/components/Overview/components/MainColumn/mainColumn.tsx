@@ -19,13 +19,14 @@ import {
 } from "../../../../../../../common/Table/table.styles";
 import { SectionText } from "../../../../../../components/Section/section.styles";
 import { TABLE_OPTIONS } from "./constants";
+import { shouldShowExplore } from "./utils";
 
 export const MainColumn = (): JSX.Element => {
   const { Description } = useAtlasContent() || {};
   const { atlas } = useAtlas();
   const { integratedAtlases, tracker } = atlas;
   const isTracker = Boolean(tracker);
-  const showExplore = !isTracker;
+  const showExplore = shouldShowExplore(integratedAtlases, isTracker);
   return (
     <>
       {/* Atlas Description */}

@@ -365,7 +365,7 @@ function getIntegratedAtlasesAtlasNameColumnDef(): ColumnDef<IntegratedAtlasRow>
 
 /**
  * Returns the table column definition model for the integrated atlases table.
- * @param showExplore - Whether to include the Explore column (omitted for tracker atlases).
+ * @param showExplore - Whether to include the Explore column (omitted when no atlas has an analysis portal to link to).
  * @param isTracker - True when building columns for tracker-sourced atlases.
  * @returns integrated atlases table column definition.
  */

@@ -1,4 +1,6 @@
+import type { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import type {
+  AnalysisPortal,
   DatasetAsset,
   IntegratedAtlas,
   TrackerComponentAtlas,
@@ -6,6 +8,8 @@ import type {
 } from "../@types/network";
 import { CXG_DATASET_FILE_TYPE } from "../@types/network";
 import { processNullElements } from "../apis/azul/hca-dcp/common/utils";
+import type { PublishedAtlas } from "../apis/tracker/types";
+import { buildCAPAnalysisPortal, buildCXGDataPortalLink } from "./network";
 
 const S3_BASE_URL = "https://humancellatlas.s3.amazonaws.com/temp/atlases";
 
@@ -16,6 +20,38 @@ const TRACKER_FOLDER_TYPE = {
 
 type TrackerFolderType =
   (typeof TRACKER_FOLDER_TYPE)[keyof typeof TRACKER_FOLDER_TYPE];
+
+/**
+ * Builds the analysis portals for a tracker entity. Tracker entities have no
+ * CELLxGENE explorer URL, so the only portal available is CAP — and only when
+ * the entity has a CAP dataset URL.
+ * @param capUrl - CAP dataset URL, or null when the entity has none.
+ * @returns analysis portals.
+ */
+export function buildTrackerAnalysisPortals(
+  capUrl: string | null
+): AnalysisPortal[] {
+  if (!capUrl) return [];
+  return [buildCAPAnalysisPortal(capUrl)];
+}
+
+/**
+ * Builds the CELLxGENE data portal link for a tracker atlas, preferring the
+ * tracker's collection over the `cxgId` configured in `constants/networks.ts`.
+ * @param publishedAtlas - Published atlas from the tracker.
+ * @param cxgId - Configured CELLxGENE collection ID, used as a fallback.
+ * @returns CELLxGENE data portal link, or undefined when neither source has a collection.
+ */
+export function buildTrackerCXGDataPortalLink(
+  publishedAtlas: PublishedAtlas,
+  cxgId?: string
+): Pick<LinkProps, "label" | "url">[] | undefined {
+  const { cellxgeneAtlasCollection } = publishedAtlas;
+  if (cellxgeneAtlasCollection)
+    return buildCXGDataPortalLink(cellxgeneAtlasCollection);
+  if (cxgId) return buildCXGDataPortalLink(cxgId);
+  return undefined;
+}
 
 /**
  * Builds a DatasetAsset for a tracker source dataset.
@@ -58,7 +94,7 @@ export function mapTrackerComponentAtlasToIntegratedAtlas(
   component: TrackerComponentAtlas
 ): IntegratedAtlas {
   return {
-    analysisPortals: [],
+    analysisPortals: buildTrackerAnalysisPortals(component.capUrl),
     assay: processStringArray(component.assay),
     cellCount: component.cellCount,
     datasetAssets: [

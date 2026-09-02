@@ -10,9 +10,31 @@ import {
   Network,
 } from "../@types/network";
 import { processNullElements } from "../apis/azul/hca-dcp/common/utils";
-import { CZ_CELLXGENE } from "../constants/analysisPortals";
+import { CAP, CZ_CELLXGENE } from "../constants/analysisPortals";
 
+const CAP_PROJECT_LABEL = "Cell Annotation Platform";
+const CZ_CELLXGENE_COLLECTION_LABEL = "CZ CELLxGENE Collection";
 const CZ_CELLXGENE_DATA_PORTAL_URL = "https://cellxgene.cziscience.com";
+
+/**
+ * Builds the CAP analysis portal for the given CAP dataset URL.
+ * @param capURL - CAP dataset URL, e.g. "https://celltype.info/project/1030/dataset/3400".
+ * @returns CAP analysis portal.
+ */
+export function buildCAPAnalysisPortal(capURL: string): AnalysisPortal {
+  return { url: capURL, ...CAP };
+}
+
+/**
+ * Builds the CAP project link for the given CAP project URL.
+ * @param capURL - CAP project URL, e.g. "https://celltype.info/project/1030".
+ * @returns CAP project link.
+ */
+export function buildCAPProjectLink(
+  capURL: string
+): Pick<LinkProps, "label" | "url">[] {
+  return [{ label: CAP_PROJECT_LABEL, url: capURL }];
+}
 
 /**
  * Builds the CELLxGENE analysis portal for the given CELLxGENE URL.
@@ -34,7 +56,7 @@ export function buildCXGDataPortalLink(
   const cxgDataPortalURL = `${CZ_CELLXGENE_DATA_PORTAL_URL}/collections/${cxgId}`;
   return [
     {
-      label: "CZ CELLxGENE Collection",
+      label: CZ_CELLXGENE_COLLECTION_LABEL,
       url: cxgDataPortalURL,
     },
   ];

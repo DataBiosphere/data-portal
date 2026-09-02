@@ -129,15 +129,15 @@ export async function isTrackerAtlasPublished(
 }
 
 /**
- * Resolves the tracker atlas ID from the slug and version.
+ * Resolves the published atlas record from the slug and version.
  * @param shortNameSlug - Atlas short name slug (e.g., "gut").
  * @param version - Atlas version (e.g., "v1.0").
- * @returns atlas ID (UUID).
+ * @returns published atlas.
  */
-export async function resolveTrackerAtlasId(
+export async function resolveTrackerAtlas(
   shortNameSlug: string,
   version: string
-): Promise<string> {
+): Promise<PublishedAtlas> {
   const atlases = await getPublishedAtlases();
   const match = atlases.find(
     (a) => a.shortNameSlug === shortNameSlug && a.version === version
@@ -147,5 +147,19 @@ export async function resolveTrackerAtlasId(
       `No published atlas found for slug="${shortNameSlug}" version="${version}"`
     );
   }
-  return match.id;
+  return match;
+}
+
+/**
+ * Resolves the tracker atlas ID from the slug and version.
+ * @param shortNameSlug - Atlas short name slug (e.g., "gut").
+ * @param version - Atlas version (e.g., "v1.0").
+ * @returns atlas ID (UUID).
+ */
+export async function resolveTrackerAtlasId(
+  shortNameSlug: string,
+  version: string
+): Promise<string> {
+  const { id } = await resolveTrackerAtlas(shortNameSlug, version);
+  return id;
 }

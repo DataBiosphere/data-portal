@@ -6,17 +6,18 @@ const BIOTURING_URL =
 
 /**
  * Returns the "Data Exploration Tools" links for an atlas: the CELLxGENE data
- * portal links, followed by any cell browser links, followed by the BioTuring
- * collection for atlases opted in with the `bioTuring` flag.
+ * portal links, followed by the Cell Annotation Platform (CAP) project link,
+ * followed by any cell browser links, followed by the BioTuring collection for
+ * atlases opted in with the `bioTuring` flag.
  * @param atlas - Atlas.
  * @returns data exploration tool links.
  */
 export function getDataExplorationTools(
   atlas: Atlas
 ): Pick<LinkProps, "label" | "url">[] {
-  const { bioTuring, cellBrowser = [], cxgDataPortal = [] } = atlas;
+  const { bioTuring, cap = [], cellBrowser = [], cxgDataPortal = [] } = atlas;
 
-  const links = [...cxgDataPortal, ...cellBrowser];
+  const links = [...cxgDataPortal, ...cap, ...cellBrowser];
 
   if (!bioTuring) return links;
 
