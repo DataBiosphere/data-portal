@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.15.0](https://github.com/DataBiosphere/data-portal/compare/v2.14.1...v2.15.0) (2026-09-02)
+
+
+### Features
+
+* add breast atlas v1 (ihbca v1) to hca data portal ([#3149](https://github.com/DataBiosphere/data-portal/issues/3149)) ([#3150](https://github.com/DataBiosphere/data-portal/issues/3150)) ([bb08117](https://github.com/DataBiosphere/data-portal/commit/bb08117e8161aa427d3d9ec71df7a94af0ad3dbf))
+* add liver atlas v1.0 to hca data portal ([#3175](https://github.com/DataBiosphere/data-portal/issues/3175)) ([#3178](https://github.com/DataBiosphere/data-portal/issues/3178)) ([d8b59ae](https://github.com/DataBiosphere/data-portal/commit/d8b59ae5cb83efdbbf8dc7f8209ba0dc8de3a487))
+* atlas pages: add cap (cell annotation platform) link at the atlas level, sourced from the atlas tracker api ([#3179](https://github.com/DataBiosphere/data-portal/issues/3179)) ([#3182](https://github.com/DataBiosphere/data-portal/issues/3182)) ([16e6ab6](https://github.com/DataBiosphere/data-portal/commit/16e6ab6a80203e2d47a0d276df29d98d37339ad1))
+* re-enable gut atlas v1.0 in hca data portal (undo [#3101](https://github.com/DataBiosphere/data-portal/issues/3101) hiding) ([#3176](https://github.com/DataBiosphere/data-portal/issues/3176)) ([#3177](https://github.com/DataBiosphere/data-portal/issues/3177)) ([b089957](https://github.com/DataBiosphere/data-portal/commit/b089957465f2452febb29a88b03c5e4ff9a376ae))
+* searchview: encode pagination index in url query string ([#3088](https://github.com/DataBiosphere/data-portal/issues/3088)) ([#3110](https://github.com/DataBiosphere/data-portal/issues/3110)) ([f2689cd](https://github.com/DataBiosphere/data-portal/commit/f2689cdd355a5375fee5bab86832aec9dfd1436c))
+
+
+### Content
+
+* update gut v1.0 atlas content from the revised atlas onboarding questionnaire ([#3180](https://github.com/DataBiosphere/data-portal/issues/3180)) ([#3181](https://github.com/DataBiosphere/data-portal/issues/3181)) ([c7b0f8b](https://github.com/DataBiosphere/data-portal/commit/c7b0f8bac91e758a5a4fa841871f9a703c1f5008))
+
+
+### Continuous Integration
+
+* group dependabot updates into monthly PRs [#3143](https://github.com/DataBiosphere/data-portal/issues/3143) ([#3144](https://github.com/DataBiosphere/data-portal/issues/3144)) ([51e4ba1](https://github.com/DataBiosphere/data-portal/commit/51e4ba11ed9a081bbccef60b29b0bf7ddcc69a28))
+* pin github actions by commit sha at current versions ([#3153](https://github.com/DataBiosphere/data-portal/issues/3153)) ([fb9cc38](https://github.com/DataBiosphere/data-portal/commit/fb9cc387664332950dd6f2a892d14406516ca6a1))
+* pin github actions by commit sha at current versions ([#3154](https://github.com/DataBiosphere/data-portal/issues/3154)) ([fb9cc38](https://github.com/DataBiosphere/data-portal/commit/fb9cc387664332950dd6f2a892d14406516ca6a1))
+* stop assigning Dependabot PRs to NoopDog ([#3170](https://github.com/DataBiosphere/data-portal/issues/3170)) ([e72d35e](https://github.com/DataBiosphere/data-portal/commit/e72d35e88957adfbc1a236cd0455fb2b7d566f97)), closes [#3169](https://github.com/DataBiosphere/data-portal/issues/3169)
+* upgrade release-please-action from v4 to v5 ([#3151](https://github.com/DataBiosphere/data-portal/issues/3151)) ([5e1ac42](https://github.com/DataBiosphere/data-portal/commit/5e1ac428e9af19bd087e2ccc78c1abe3e5f4cef2))
+* upgrade release-please-action from v4 to v5 ([#3152](https://github.com/DataBiosphere/data-portal/issues/3152)) ([5e1ac42](https://github.com/DataBiosphere/data-portal/commit/5e1ac428e9af19bd087e2ccc78c1abe3e5f4cef2))
+
 ## [2.14.1](https://github.com/DataBiosphere/data-portal/compare/v2.14.0...v2.14.1) (2026-07-01)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "next",
-  "version": "2.14.1",
+  "version": "2.15.0",
   "private": true,
   "scripts": {
     "dev": "./scripts/dev.sh data-portal && ./scripts/set-version.sh dev && next dev --webpack",
