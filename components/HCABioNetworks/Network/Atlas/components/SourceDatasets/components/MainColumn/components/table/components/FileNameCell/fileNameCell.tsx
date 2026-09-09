@@ -3,6 +3,7 @@ import {
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { SVG_ICON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/svgIcon";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Stack, Typography } from "@mui/material";
 import type { JSX } from "react";
@@ -45,7 +46,7 @@ export const FileNameCell = ({ row }: Props): JSX.Element => {
                   <StyledNoWrap>
                     {splitTrailingWord(publicationString).tail}
                     <StyledOpenInNewIcon
-                      fontSize="xxsmall"
+                      fontSize={SVG_ICON_PROPS.FONT_SIZE.XXSMALL}
                       titleAccess={EXTERNAL_LINK_TITLE}
                     />
                   </StyledNoWrap>
