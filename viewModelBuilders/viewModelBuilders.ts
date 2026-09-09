@@ -100,10 +100,8 @@ function getAtlasesActionsColumnDef(
     cell: isTracker
       ? ({ row }): JSX.Element | null => {
           const asset = row.original.datasetAssets[0];
-          if (!asset) return null;
-          const { ext: format, stem: fileName } = splitFileName(
-            asset.downloadURL.split("/").pop() || ""
-          );
+          if (!asset?.fileName) return null;
+          const { ext: format, stem: fileName } = splitFileName(asset.fileName);
           return C.TrackerDownloadCell({
             downloadUrl: asset.downloadURL,
             fileName,

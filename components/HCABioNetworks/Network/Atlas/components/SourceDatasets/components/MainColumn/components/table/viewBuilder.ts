@@ -33,12 +33,12 @@ export function renderCellCount(
 export function renderDownload(
   ctx: CellContext<TrackerSourceDataset, unknown>
 ): JSX.Element | null {
-  const { baseFileName, datasetAsset, revision } = ctx.row.original;
-  if (!datasetAsset) return null;
-  const { ext: format, stem } = splitFileName(baseFileName);
+  const { datasetAsset } = ctx.row.original;
+  if (!datasetAsset?.fileName) return null;
+  const { ext: format, stem } = splitFileName(datasetAsset.fileName);
   return C.TrackerDownloadCell({
     downloadUrl: datasetAsset.downloadURL,
-    fileName: `${stem}-r${revision}`,
+    fileName: stem,
     fileSize: datasetAsset.fileSize,
     format,
   });

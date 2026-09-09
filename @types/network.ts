@@ -113,6 +113,7 @@ export type IntegratedAtlasRow = AtlasRow &
 
 export interface DatasetAsset {
   downloadURL: string;
+  fileName?: string; // Versioned file name with extension, e.g. "ihbca-v1-gray-2022-r1.h5ad". Set for tracker-built assets only; CXG assets are rendered by CXGDownloadCell, which does not use it.
   fileSize: number;
   fileType: CXG_DATASET_FILE_TYPE;
 }

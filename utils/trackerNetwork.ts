@@ -72,16 +72,13 @@ export function buildTrackerSourceDatasetAsset(
 /**
  * Builds the S3 download URL for a tracker file.
  * @param folderType - Folder type.
- * @param baseFileName - Base file name.
- * @param revision - File revision number.
+ * @param fileName - Versioned file name, from `buildVersionedFileName`.
  * @returns full S3 download URL.
  */
 function buildTrackerDownloadUrl(
   folderType: TrackerFolderType,
-  baseFileName: string,
-  revision: number
+  fileName: string
 ): string {
-  const fileName = buildVersionedFileName(baseFileName, revision);
   return `${S3_BASE_URL}/${folderType}/${fileName}`;
 }
 
@@ -127,8 +124,10 @@ function buildTrackerDatasetAsset(
   revision: number,
   sizeBytes: number
 ): DatasetAsset {
+  const fileName = buildVersionedFileName(baseFileName, revision);
   return {
-    downloadURL: buildTrackerDownloadUrl(folderType, baseFileName, revision),
+    downloadURL: buildTrackerDownloadUrl(folderType, fileName),
+    fileName,
     fileSize: sizeBytes,
     fileType: CXG_DATASET_FILE_TYPE.H5AD,
   };
@@ -160,7 +159,7 @@ export function splitFileName(fileName: string): {
  * @param revision - File revision number.
  * @returns versioned file name.
  */
-function buildVersionedFileName(
+export function buildVersionedFileName(
   baseFileName: string,
   revision: number
 ): string {
