@@ -9,6 +9,7 @@ import {
 import { TrackerDownloadCell } from "../../../../../../../../../common/Table/components/Cell/components/TrackerDownloadCell/trackerDownloadCell";
 import { AnalysisPortalCell } from "../../../../../Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
 import { FileNameCell } from "./components/FileNameCell/fileNameCell";
+import type { SourceDatasetsTableMeta } from "./meta";
 
 /**
  * Renders the cell count as a locale-formatted string.
@@ -71,10 +72,11 @@ export function renderPrimaryData(
 ): JSX.Element | null {
   const { hcaProjectId } = ctx.row.original;
   if (!hcaProjectId) return null;
-  const { browserUrl } = ctx.table.options.meta as { browserUrl?: string };
-  if (!browserUrl) return null;
+  const meta = ctx.table.options.meta as SourceDatasetsTableMeta | undefined;
+  if (!meta?.browserUrl) return null;
   const analysisPortal = buildHCADataExplorerAnalysisPortal(
-    `${browserUrl}/projects/${hcaProjectId}`
+    meta.browserUrl,
+    hcaProjectId
   );
   return <AnalysisPortalCell analysisPortals={[analysisPortal]} />;
 }

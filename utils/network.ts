@@ -41,17 +41,6 @@ export function buildCAPProjectLink(
 }
 
 /**
- * Builds the HCA Data Explorer analysis portal for the given project URL.
- * @param projectURL - HCA Data Explorer project URL.
- * @returns HCA Data Explorer analysis portal.
- */
-export function buildHCADataExplorerAnalysisPortal(
-  projectURL: string
-): AnalysisPortal {
-  return { url: projectURL, ...HCA_DATA_EXPLORER };
-}
-
-/**
  * Builds the CELLxGENE analysis portal for the given CELLxGENE URL.
  * @param cxgURL - CELLxGENE URL.
  * @returns CELLxGENE analysis portal.
@@ -94,6 +83,20 @@ function buildDatasetAssets(
         fileType: cxgDatasetAsset.filetype,
       };
     });
+}
+
+/**
+ * Builds the HCA Data Explorer analysis portal for a project. Owns the
+ * `/projects/{id}` path so the URL shape lives beside the portal constant.
+ * @param browserURL - Environment's HCA Data Explorer browser URL.
+ * @param projectId - HCA project ID.
+ * @returns HCA Data Explorer analysis portal.
+ */
+export function buildHCADataExplorerAnalysisPortal(
+  browserURL: string,
+  projectId: string
+): AnalysisPortal {
+  return { url: `${browserURL}/projects/${projectId}`, ...HCA_DATA_EXPLORER };
 }
 
 /**

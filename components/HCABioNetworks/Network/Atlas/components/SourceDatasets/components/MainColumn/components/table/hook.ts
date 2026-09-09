@@ -7,7 +7,7 @@ import { CORE_OPTIONS } from "../../../../../../../../../common/Table/options/co
 import { FACETED_OPTIONS } from "../../../../../../../../../common/Table/options/faceted/constants";
 import { SORTING_OPTIONS } from "../../../../../../../../../common/Table/options/sorting/constants";
 import { COLUMNS } from "./columns";
-import { META } from "./meta";
+import { META, SourceDatasetsTableMeta } from "./meta";
 import { getColumnVisibility } from "./utils";
 
 /**
@@ -33,9 +33,12 @@ export const useTable = (
     initialState: {
       sorting: [{ desc: SORT_DIRECTION.ASCENDING, id: "fileName" }],
     },
-    meta: { ...META, browserUrl: config.browserURL },
+    meta: {
+      ...META,
+      browserUrl: config.browserURL,
+    } satisfies SourceDatasetsTableMeta,
     state: {
-      columnVisibility: getColumnVisibility(data),
+      columnVisibility: getColumnVisibility(data, config.browserURL),
     },
   });
 };

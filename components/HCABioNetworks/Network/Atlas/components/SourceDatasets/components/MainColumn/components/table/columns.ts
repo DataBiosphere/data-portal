@@ -82,7 +82,7 @@ const FILE_NAME = {
   accessorFn: buildVersionedFileNameValue,
   cell: renderFileName,
   enableColumnFilter: false,
-  header: "File Name",
+  header: "File Name / Study",
   id: "fileName",
   meta: { columnPinned: true, width: { max: "2.4fr", min: "260px" } },
   sortingFn,
