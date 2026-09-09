@@ -4,7 +4,7 @@ import type {
   DatasetAsset,
   IntegratedAtlas,
   TrackerComponentAtlas,
-  TrackerSourceDataset,
+  TrackerSourceDatasetResponse,
 } from "../@types/network";
 import { CXG_DATASET_FILE_TYPE } from "../@types/network";
 import { processNullElements } from "../apis/azul/hca-dcp/common/utils";
@@ -59,7 +59,7 @@ export function buildTrackerCXGDataPortalLink(
  * @returns dataset asset.
  */
 export function buildTrackerSourceDatasetAsset(
-  sourceDataset: TrackerSourceDataset
+  sourceDataset: TrackerSourceDatasetResponse
 ): DatasetAsset {
   return buildTrackerDatasetAsset(
     TRACKER_FOLDER_TYPE.SOURCE_DATASETS,

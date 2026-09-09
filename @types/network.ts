@@ -241,6 +241,17 @@ export interface TrackerSourceDataset {
   title: string;
 }
 
+/**
+ * A source dataset as the tracker API actually returns it, before
+ * `getTrackerContentStaticProps` adds `datasetAsset` and joins the
+ * source-study fields on. Keeps the fetch signature honest so the joined
+ * fields cannot be read off an unenriched dataset.
+ */
+export type TrackerSourceDatasetResponse = Omit<
+  TrackerSourceDataset,
+  "datasetAsset" | "hcaProjectId" | "journal" | "referenceAuthor"
+>;
+
 export interface TrackerSourceStudy {
   cellxgeneCollectionId: string | null;
   contactEmail: string | null;
