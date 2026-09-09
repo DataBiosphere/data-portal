@@ -14,7 +14,6 @@ export const AtlasContext = createContext<AtlasContextType>({
   network: DEFAULT_NETWORK,
   projectsResponses: [],
   trackerSourceDatasets: [],
-  trackerSourceStudies: [],
 });
 
 export const AtlasProvider = AtlasContext.Provider;
