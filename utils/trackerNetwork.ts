@@ -9,6 +9,7 @@ import type {
 import { CXG_DATASET_FILE_TYPE } from "../@types/network";
 import { processNullElements } from "../apis/azul/hca-dcp/common/utils";
 import type { PublishedAtlas } from "../apis/tracker/types";
+import type { TrackerDownloadCellProps } from "../components/common/Table/components/Cell/components/TrackerDownloadCell/types";
 import { buildCAPAnalysisPortal, buildCXGDataPortalLink } from "./network";
 
 const S3_BASE_URL = "https://humancellatlas.s3.amazonaws.com/temp/atlases";
@@ -141,12 +142,7 @@ function buildTrackerDatasetAsset(
  */
 export function buildTrackerDownloadCellProps(
   asset: DatasetAsset | undefined
-): {
-  downloadUrl: string;
-  fileName: string;
-  fileSize: number;
-  format: string;
-} | null {
+): TrackerDownloadCellProps | null {
   if (!asset?.versionedFileName) return null;
   const { ext, stem } = splitFileName(asset.versionedFileName);
   return {

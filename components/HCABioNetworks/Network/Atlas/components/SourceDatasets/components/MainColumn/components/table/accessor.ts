@@ -36,3 +36,14 @@ export function buildJournal(row: TrackerSourceDataset): string {
 export function buildReferenceAuthor(row: TrackerSourceDataset): string {
   return row.referenceAuthor || LABEL.UNSPECIFIED;
 }
+
+/**
+ * Returns the file name shown in the pinned column, so the column sorts on the
+ * value it displays rather than on the unrevisioned base name. Mirrors the
+ * fallback in `FileNameCell` so no row ever sorts on an empty value.
+ * @param row - Tracker source dataset.
+ * @returns versioned file name, falling back to the base file name.
+ */
+export function buildVersionedFileNameValue(row: TrackerSourceDataset): string {
+  return row.datasetAsset?.versionedFileName || row.baseFileName;
+}

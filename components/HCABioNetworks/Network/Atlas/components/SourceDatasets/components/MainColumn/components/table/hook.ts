@@ -28,7 +28,7 @@ export const useTable = (
     enableRowPreview: false,
     getRowId: (row) => row.id,
     initialState: {
-      sorting: [{ desc: SORT_DIRECTION.ASCENDING, id: "title" }],
+      sorting: [{ desc: SORT_DIRECTION.ASCENDING, id: "fileName" }],
     },
     meta: META,
     state: {
