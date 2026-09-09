@@ -72,17 +72,14 @@ export function buildTrackerSourceDatasetAsset(
 /**
  * Builds the S3 download URL for a tracker file.
  * @param folderType - Folder type.
- * @param baseFileName - Base file name.
- * @param revision - File revision number.
+ * @param fileName - Versioned file name, from `buildVersionedFileName`.
  * @returns full S3 download URL.
  */
 function buildTrackerDownloadUrl(
   folderType: TrackerFolderType,
-  baseFileName: string,
-  revision: number
+  fileName: string
 ): string {
-  const fileName = buildVersionedFileName(baseFileName, revision);
-  return `${S3_BASE_URL}/${folderType}/${fileName}`;
+  return `${S3_BASE_URL}/${folderType}/${encodeURIComponent(fileName)}`;
 }
 
 /**
@@ -127,10 +124,36 @@ function buildTrackerDatasetAsset(
   revision: number,
   sizeBytes: number
 ): DatasetAsset {
+  const versionedFileName = buildVersionedFileName(baseFileName, revision);
   return {
-    downloadURL: buildTrackerDownloadUrl(folderType, baseFileName, revision),
+    downloadURL: buildTrackerDownloadUrl(folderType, versionedFileName),
     fileSize: sizeBytes,
     fileType: CXG_DATASET_FILE_TYPE.H5AD,
+    versionedFileName,
+  };
+}
+
+/**
+ * Builds the props a `TrackerDownloadCell` needs from a tracker-built asset,
+ * so the stem/extension display convention lives in one place.
+ * @param asset - Dataset asset carrying a `versionedFileName`.
+ * @returns cell props, or null when the asset has no published file name.
+ */
+export function buildTrackerDownloadCellProps(
+  asset: DatasetAsset | undefined
+): {
+  downloadUrl: string;
+  fileName: string;
+  fileSize: number;
+  format: string;
+} | null {
+  if (!asset?.versionedFileName) return null;
+  const { ext, stem } = splitFileName(asset.versionedFileName);
+  return {
+    downloadUrl: asset.downloadURL,
+    fileName: stem,
+    fileSize: asset.fileSize,
+    format: ext,
   };
 }
 
@@ -160,7 +183,7 @@ export function splitFileName(fileName: string): {
  * @param revision - File revision number.
  * @returns versioned file name.
  */
-function buildVersionedFileName(
+export function buildVersionedFileName(
   baseFileName: string,
   revision: number
 ): string {

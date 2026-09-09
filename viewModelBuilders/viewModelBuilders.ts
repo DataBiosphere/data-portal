@@ -25,7 +25,7 @@ import * as C from "../components";
 import { MetadataValueTuple } from "../components/common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
 import { NETWORKS_ROUTE } from "../constants/routes";
 import { formatCountSize } from "../utils/formatCountSize";
-import { splitFileName } from "../utils/trackerNetwork";
+import { buildTrackerDownloadCellProps } from "../utils/trackerNetwork";
 import { DISEASE } from "./entities";
 
 /**
@@ -99,17 +99,11 @@ function getAtlasesActionsColumnDef(
     accessorKey: "actions",
     cell: isTracker
       ? ({ row }): JSX.Element | null => {
-          const asset = row.original.datasetAssets[0];
-          if (!asset) return null;
-          const { ext: format, stem: fileName } = splitFileName(
-            asset.downloadURL.split("/").pop() || ""
+          const props = buildTrackerDownloadCellProps(
+            row.original.datasetAssets[0]
           );
-          return C.TrackerDownloadCell({
-            downloadUrl: asset.downloadURL,
-            fileName,
-            fileSize: asset.fileSize,
-            format,
-          });
+          if (!props) return null;
+          return C.TrackerDownloadCell(props);
         }
       : ({ row }): JSX.Element =>
           C.CXGDownloadCell({
