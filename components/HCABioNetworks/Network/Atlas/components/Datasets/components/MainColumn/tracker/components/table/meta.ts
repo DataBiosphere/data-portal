@@ -10,6 +10,8 @@ export const META: ColumnFiltersTableMeta<TrackerSourceDataset> = {
         { key: "disease", label: "Disease" },
         { key: "sourceStudy", label: "Source Study" },
         { key: "integratedObject", label: "Integrated Object" },
+        { key: "journal", label: "Journal" },
+        { key: "referenceAuthor", label: "Reference Author" },
       ],
       label: "",
     },

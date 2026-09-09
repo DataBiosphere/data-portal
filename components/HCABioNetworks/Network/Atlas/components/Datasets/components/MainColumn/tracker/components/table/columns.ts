@@ -10,7 +10,11 @@ import {
   buildPinnedNTagProps,
   renderPinnedNTagCell,
 } from "../../../../../../../../../../common/Table/components/Cell/components/PinnedNTagCell/utils";
-import { buildIntegratedObjects } from "./accessor";
+import {
+  buildIntegratedObjects,
+  buildJournal,
+  buildReferenceAuthor,
+} from "./accessor";
 import {
   renderCellCount,
   renderDownload,
@@ -80,6 +84,22 @@ const INTEGRATED_OBJECTS = {
   id: "integratedObject",
 } as ColumnDef<TrackerSourceDataset>;
 
+const JOURNAL = {
+  accessorFn: buildJournal,
+  enableColumnFilter: true,
+  filterFn: "arrIncludesSome",
+  header: "Journal",
+  id: "journal",
+} as ColumnDef<TrackerSourceDataset>;
+
+const REFERENCE_AUTHOR = {
+  accessorFn: buildReferenceAuthor,
+  enableColumnFilter: true,
+  filterFn: "arrIncludesSome",
+  header: "Reference Author",
+  id: "referenceAuthor",
+} as ColumnDef<TrackerSourceDataset>;
+
 const SOURCE_STUDY = {
   accessorKey: "publicationString",
   cell: renderSourceStudy,
@@ -121,4 +141,6 @@ export const COLUMNS: ColumnDef<TrackerSourceDataset>[] = [
   EXPLORE,
   DOWNLOAD,
   INTEGRATED_OBJECTS,
+  JOURNAL,
+  REFERENCE_AUTHOR,
 ];

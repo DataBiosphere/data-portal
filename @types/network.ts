@@ -146,7 +146,6 @@ export interface AtlasContext extends NetworkContext {
   atlas: Atlas;
   projectsResponses: ProjectsResponse[];
   trackerSourceDatasets?: TrackerSourceDataset[];
-  trackerSourceStudies?: TrackerSourceStudy[];
 }
 
 export interface NetworkContext {
@@ -229,8 +228,11 @@ export interface TrackerSourceDataset {
   fileId: string;
   fileName: string;
   geneCount: number;
+  hcaProjectId: string | null; // Joined from the source study; null when the study has no HCA project or the join misses.
   id: string;
+  journal: string | null; // Joined from the source study; null when unpublished or the join misses.
   publicationString: string | null;
+  referenceAuthor: string | null; // Joined from the source study; null only when the join misses.
   revision: number;
   sizeBytes: number;
   sourceStudyId: string;
