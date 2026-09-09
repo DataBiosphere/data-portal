@@ -7,6 +7,7 @@ import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/m
 import { Stack, Typography } from "@mui/material";
 import type { JSX } from "react";
 import { DOI_BASE_URL } from "./constants";
+import { StyledOpenInNewIcon } from "./fileNameCell.styles";
 import type { Props } from "./types";
 
 /**
@@ -35,12 +36,23 @@ export const FileNameCell = ({ row }: Props): JSX.Element => {
           component="div"
           variant={TYPOGRAPHY_PROPS.VARIANT.BODY_SMALL_400}
         >
-          <Link
-            label={publicationString}
-            rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
-            target={ANCHOR_TARGET.BLANK}
-            url={doi ? `${DOI_BASE_URL}${doi}` : ""}
-          />
+          {doi ? (
+            // Text and icon are one label, so they are a single link target.
+            <Link
+              label={
+                <>
+                  {publicationString}
+                  <StyledOpenInNewIcon />
+                </>
+              }
+              rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
+              target={ANCHOR_TARGET.BLANK}
+              url={`${DOI_BASE_URL}${doi}`}
+            />
+          ) : (
+            // No DOI, so no link and no external-link affordance.
+            publicationString
+          )}
         </Typography>
       )}
     </Stack>
