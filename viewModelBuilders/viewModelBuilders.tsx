@@ -1,10 +1,16 @@
 import { LABEL } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
+import { CookieBanner } from "@databiosphere/findable-ui/lib/components/common/Banner/components/CookieBanner/cookieBanner";
 import { KeyValues } from "@databiosphere/findable-ui/lib/components/common/KeyValuePairs/keyValuePairs";
 import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import { MetadataValue } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { BasicCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/BasicCell/basicCell";
+import {
+  MetadataValue,
+  NTagCell,
+} from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
 import { ColumnDef } from "@tanstack/react-table";
 import type { JSX } from "react";
 import type {
@@ -21,8 +27,15 @@ import {
   processAggregatedOrArrayValue,
   processEntityValue,
 } from "../apis/azul/hca-dcp/common/utils";
-import * as C from "../components";
-import { MetadataValueTuple } from "../components/common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
+import { ButtonOutline } from "../components/common/Button/components/ButtonOutline/buttonOutline";
+import {
+  MetadataValueTuple,
+  PinnedNTagCell,
+} from "../components/common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
+import { BioNetworkCell } from "../components/common/Table/components/Cell/components/BioNetworkCell/bioNetworkCell";
+import { CXGDownloadCell } from "../components/common/Table/components/Cell/components/CXGDownloadCell/cxgDownloadCell";
+import { TrackerDownloadCell } from "../components/common/Table/components/Cell/components/TrackerDownloadCell/trackerDownloadCell";
+import { AnalysisPortalCell } from "../components/HCABioNetworks/Network/Atlas/components/Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
 import { NETWORKS_ROUTE } from "../constants/routes";
 import { formatCountSize } from "../utils/formatCountSize";
 import { buildTrackerDownloadCellProps } from "../utils/trackerNetwork";
@@ -48,23 +61,27 @@ export function accumulateValues(
  * @returns model to be used as props for the CookieBanner component.
  */
 export const buildCookieBanner = (): React.ComponentProps<
-  typeof C.CookieBanner
+  typeof CookieBanner
 > => {
   return {
     localStorageKey: "privacy-accepted",
     message:
       "This website uses cookies for security and analytics purposes. By using this site, you agree to these uses.",
-    secondaryAction: C.ButtonOutline({
-      children: "Learn More",
-      /* eslint-disable sonarjs/link-with-target-blank -- rule doesn't recognize constant */
-      onClick: () =>
-        window.open(
-          "https://data.humancellatlas.org/privacy",
-          ANCHOR_TARGET.BLANK,
-          REL_ATTRIBUTE.NO_OPENER_NO_REFERRER
-        ),
-      /* eslint-enable sonarjs/link-with-target-blank -- keep checking future noopener cases */
-    }),
+    secondaryAction: (
+      <ButtonOutline
+        /* eslint-disable sonarjs/link-with-target-blank -- rule doesn't recognize constant */
+        onClick={() =>
+          window.open(
+            "https://data.humancellatlas.org/privacy",
+            ANCHOR_TARGET.BLANK,
+            REL_ATTRIBUTE.NO_OPENER_NO_REFERRER
+          )
+        }
+        /* eslint-enable sonarjs/link-with-target-blank -- keep checking future noopener cases */
+      >
+        Learn More
+      </ButtonOutline>
+    ),
   };
 };
 
@@ -103,13 +120,14 @@ function getAtlasesActionsColumnDef(
             row.original.datasetAssets[0]
           );
           if (!props) return null;
-          return C.TrackerDownloadCell(props);
+          return <TrackerDownloadCell {...props} />;
         }
-      : ({ row }): JSX.Element =>
-          C.CXGDownloadCell({
-            datasetAssets: row.original.datasetAssets,
-            title: row.original.name,
-          }),
+      : ({ row }): JSX.Element => (
+          <CXGDownloadCell
+            datasetAssets={row.original.datasetAssets}
+            title={row.original.name}
+          />
+        ),
     header: "Download",
   };
 }
@@ -121,8 +139,7 @@ function getAtlasesActionsColumnDef(
 function getAtlasesAssayColumnDef<T extends AtlasRow>(): ColumnDef<T> {
   return {
     accessorKey: "assay",
-    cell: ({ row }) =>
-      C.NTagCell({ label: "assays", values: row.original.assay }),
+    cell: ({ row }) => <NTagCell label="assays" values={row.original.assay} />,
     header: "Assay",
   };
 }
@@ -137,11 +154,12 @@ function getAtlasesAtlasNameColumnDef(
 ): ColumnDef<AtlasesRow> {
   return {
     accessorKey: "atlasName",
-    cell: ({ row }) =>
-      C.Link({
-        label: row.original.atlasName,
-        url: `${NETWORKS_ROUTE}/${networkPath}/atlases/${row.original.path}`,
-      }),
+    cell: ({ row }) => (
+      <Link
+        label={row.original.atlasName}
+        url={`${NETWORKS_ROUTE}/${networkPath}/atlases/${row.original.path}`}
+      />
+    ),
     header: "Atlas Name",
   };
 }
@@ -165,14 +183,15 @@ function getAtlasesCellCountColumnDef<T extends AtlasRow>(): ColumnDef<T> {
 function getAtlasesDiseaseColumnDef<T extends AtlasRow>(): ColumnDef<T> {
   return {
     accessorKey: "disease",
-    cell: ({ row }) =>
-      C.PinnedNTagCell({
-        label: "diseases",
-        values: partitionMetadataValues(
+    cell: ({ row }) => (
+      <PinnedNTagCell
+        label="diseases"
+        values={partitionMetadataValues(
           [...row.original.disease],
           [DISEASE.NORMAL]
-        ),
-      }),
+        )}
+      />
+    ),
     header: "Disease",
   };
 }
@@ -186,8 +205,9 @@ function getAtlasesExploreColumnDef<
 >(): ColumnDef<T> {
   return {
     accessorKey: "explore",
-    cell: ({ row }) =>
-      C.AnalysisPortalCell({ analysisPortals: row.original.analysisPortals }),
+    cell: ({ row }) => (
+      <AnalysisPortalCell analysisPortals={row.original.analysisPortals} />
+    ),
     header: "Explore",
   };
 }
@@ -216,8 +236,9 @@ export function getAtlasesTableColumns(
 function getAtlasesTissueColumnDef<T extends AtlasRow>(): ColumnDef<T> {
   return {
     accessorKey: "tissue",
-    cell: ({ row }) =>
-      C.NTagCell({ label: "tissues", values: row.original.tissue }),
+    cell: ({ row }) => (
+      <NTagCell label="tissues" values={row.original.tissue} />
+    ),
     header: "Tissue",
   };
 }
@@ -238,7 +259,7 @@ export function getBioNetworkName(name: string): string {
 function getBioNetworksAtlasesColumnDef(): ColumnDef<Network> {
   return {
     accessorKey: "atlases",
-    cell: ({ row }) => C.BasicCell({ value: row.original.atlases.length }),
+    cell: ({ row }) => <BasicCell value={row.original.atlases.length} />,
     header: "Atlases",
   };
 }
@@ -250,7 +271,7 @@ function getBioNetworksAtlasesColumnDef(): ColumnDef<Network> {
 function getBioNetworksNetworkNameColumnDef(): ColumnDef<Network> {
   return {
     accessorKey: "networkName",
-    cell: ({ row }) => C.BioNetworkCell({ network: row.original }),
+    cell: ({ row }) => <BioNetworkCell network={row.original} />,
     header: "HCA Biological Network Atlas",
   };
 }
@@ -273,14 +294,15 @@ export function getBioNetworksTableColumns(): ColumnDef<Network>[] {
 function getDonorDiseaseColumnDef(): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "disease",
-    cell: ({ row }) =>
-      C.PinnedNTagCell({
-        label: "diseases",
-        values: partitionMetadataValues(
+    cell: ({ row }) => (
+      <PinnedNTagCell
+        label="diseases"
+        values={partitionMetadataValues(
           processAggregatedOrArrayValue(row.original.donorOrganisms, "disease"),
           [DISEASE.NORMAL]
-        ),
-      }),
+        )}
+      />
+    ),
     header: "Disease (Donor)",
   };
 }
@@ -320,8 +342,9 @@ export function getEstimatedCellCount(
 function getEstimateCellCountColumnDef(): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "estimatedCellCount",
-    cell: ({ row }) =>
-      C.BasicCell({ value: getEstimatedCellCount(row.original) }),
+    cell: ({ row }) => (
+      <BasicCell value={getEstimatedCellCount(row.original)} />
+    ),
     header: "Cell Count Est.",
   };
 }
@@ -333,14 +356,15 @@ function getEstimateCellCountColumnDef(): ColumnDef<ProjectsResponse> {
 function getGenusSpeciesColumnDef(): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "genusSpecies",
-    cell: ({ row }) =>
-      C.NTagCell({
-        label: "species",
-        values: processAggregatedOrArrayValue(
+    cell: ({ row }) => (
+      <NTagCell
+        label="species"
+        values={processAggregatedOrArrayValue(
           row.original.donorOrganisms,
           "genusSpecies"
-        ),
-      }),
+        )}
+      />
+    ),
     header: "Species",
   };
 }
@@ -352,7 +376,7 @@ function getGenusSpeciesColumnDef(): ColumnDef<ProjectsResponse> {
 function getIntegratedAtlasesAtlasNameColumnDef(): ColumnDef<IntegratedAtlasRow> {
   return {
     accessorKey: "name",
-    cell: ({ row }) => C.BasicCell({ value: row.original.name }),
+    cell: ({ row }) => <BasicCell value={row.original.name} />,
     header: "Atlas Name",
   };
 }
@@ -387,14 +411,15 @@ export function getIntegratedAtlasesTableColumns(
 function getLibraryConstructionMethodColumnDef(): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "libraryConstructionApproach",
-    cell: ({ row }) =>
-      C.NTagCell({
-        label: "library construction methods",
-        values: processAggregatedOrArrayValue(
+    cell: ({ row }) => (
+      <NTagCell
+        label="library construction methods"
+        values={processAggregatedOrArrayValue(
           row.original.protocols,
           "libraryConstructionApproach"
-        ),
-      }),
+        )}
+      />
+    ),
     header: "Method",
   };
 }
@@ -478,12 +503,13 @@ function getProjectTitleColumnDef(
 ): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "projectTitle",
-    cell: ({ row }) =>
-      C.Link({
-        label: processEntityValue(row.original.projects, "projectTitle"),
-        target: ANCHOR_TARGET.BLANK,
-        url: getProjectTitleUrl(row.original, browserURL),
-      }),
+    cell: ({ row }) => (
+      <Link
+        label={processEntityValue(row.original.projects, "projectTitle")}
+        target={ANCHOR_TARGET.BLANK}
+        url={getProjectTitleUrl(row.original, browserURL)}
+      />
+    ),
     header: "Project Title",
   };
 }
@@ -518,11 +544,12 @@ function getProjectTitleUrl(
 function getSpecimenOrganColumnDef(): ColumnDef<ProjectsResponse> {
   return {
     accessorKey: "organ",
-    cell: ({ row }) =>
-      C.NTagCell({
-        label: "anatomical entities",
-        values: processAggregatedOrArrayValue(row.original.specimens, "organ"),
-      }),
+    cell: ({ row }) => (
+      <NTagCell
+        label="anatomical entities"
+        values={processAggregatedOrArrayValue(row.original.specimens, "organ")}
+      />
+    ),
     header: "Anatomical Entity",
   };
 }
