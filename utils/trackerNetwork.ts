@@ -79,7 +79,7 @@ function buildTrackerDownloadUrl(
   folderType: TrackerFolderType,
   fileName: string
 ): string {
-  return `${S3_BASE_URL}/${folderType}/${fileName}`;
+  return `${S3_BASE_URL}/${folderType}/${encodeURIComponent(fileName)}`;
 }
 
 /**
@@ -124,12 +124,36 @@ function buildTrackerDatasetAsset(
   revision: number,
   sizeBytes: number
 ): DatasetAsset {
-  const fileName = buildVersionedFileName(baseFileName, revision);
+  const versionedFileName = buildVersionedFileName(baseFileName, revision);
   return {
-    downloadURL: buildTrackerDownloadUrl(folderType, fileName),
-    fileName,
+    downloadURL: buildTrackerDownloadUrl(folderType, versionedFileName),
     fileSize: sizeBytes,
     fileType: CXG_DATASET_FILE_TYPE.H5AD,
+    versionedFileName,
+  };
+}
+
+/**
+ * Builds the props a `TrackerDownloadCell` needs from a tracker-built asset,
+ * so the stem/extension display convention lives in one place.
+ * @param asset - Dataset asset carrying a `versionedFileName`.
+ * @returns cell props, or null when the asset has no published file name.
+ */
+export function buildTrackerDownloadCellProps(
+  asset: DatasetAsset | undefined
+): {
+  downloadUrl: string;
+  fileName: string;
+  fileSize: number;
+  format: string;
+} | null {
+  if (!asset?.versionedFileName) return null;
+  const { ext, stem } = splitFileName(asset.versionedFileName);
+  return {
+    downloadUrl: asset.downloadURL,
+    fileName: stem,
+    fileSize: asset.fileSize,
+    format: ext,
   };
 }
 

@@ -113,9 +113,13 @@ export type IntegratedAtlasRow = AtlasRow &
 
 export interface DatasetAsset {
   downloadURL: string;
-  fileName?: string; // Versioned file name with extension, e.g. "ihbca-v1-gray-2022-r1.h5ad". Set for tracker-built assets only; CXG assets are rendered by CXGDownloadCell, which does not use it.
   fileSize: number;
   fileType: CXG_DATASET_FILE_TYPE;
+  // Published file name with extension, e.g. "ihbca-v1-gray-2022-r1.h5ad",
+  // derived by `buildVersionedFileName`. NOT the tracker's own `fileName`,
+  // which is an internal working name. Set for tracker-built assets only; CXG
+  // assets are rendered by CXGDownloadCell, which does not use it.
+  versionedFileName?: string;
 }
 
 export interface IntegratedAtlas {
@@ -201,6 +205,10 @@ export interface TrackerComponentAtlas {
   cellCount: number;
   disease: string[];
   fileId: string;
+  // The tracker's internal working file name, e.g.
+  // "gray2022-r1-wip-2-edit-2026-08-25-03-50-06.h5ad". This is NOT the
+  // published object name - use `datasetAsset.versionedFileName` for anything
+  // user-facing or for building a download URL.
   fileName: string;
   geneCount: number;
   id: string;
@@ -227,6 +235,10 @@ export interface TrackerSourceDataset {
   disease: string[];
   doi: string | null;
   fileId: string;
+  // The tracker's internal working file name, e.g.
+  // "gray2022-r1-wip-2-edit-2026-08-25-03-50-06.h5ad". This is NOT the
+  // published object name - use `datasetAsset.versionedFileName` for anything
+  // user-facing or for building a download URL.
   fileName: string;
   geneCount: number;
   hcaProjectId: string | null; // Joined from the source study; null when the study has no HCA project or the join misses.

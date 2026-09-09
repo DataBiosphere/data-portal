@@ -8,7 +8,7 @@ import * as C from "../../../../../../../../..";
 import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
 import {
   buildTrackerAnalysisPortals,
-  splitFileName,
+  buildTrackerDownloadCellProps,
 } from "../../../../../../../../../../utils/trackerNetwork";
 
 const DOI_BASE_URL = "https://doi.org/";
@@ -33,15 +33,9 @@ export function renderCellCount(
 export function renderDownload(
   ctx: CellContext<TrackerSourceDataset, unknown>
 ): JSX.Element | null {
-  const { datasetAsset } = ctx.row.original;
-  if (!datasetAsset?.fileName) return null;
-  const { ext: format, stem } = splitFileName(datasetAsset.fileName);
-  return C.TrackerDownloadCell({
-    downloadUrl: datasetAsset.downloadURL,
-    fileName: stem,
-    fileSize: datasetAsset.fileSize,
-    format,
-  });
+  const props = buildTrackerDownloadCellProps(ctx.row.original.datasetAsset);
+  if (!props) return null;
+  return C.TrackerDownloadCell(props);
 }
 
 /**
