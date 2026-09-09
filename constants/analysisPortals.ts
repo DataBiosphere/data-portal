@@ -23,7 +23,7 @@ export const CZ_CELLXGENE: Omit<AnalysisPortal, "url"> = {
  * ("Explorer"), since the column header already names what is linked.
  */
 export const HCA_DATA_EXPLORER: Omit<AnalysisPortal, "url"> = {
-  icon: "/hca-bio-networks/network/atlas/icons/hca.svg",
+  icon: "/hca-bio-networks/network/atlas/icons/hca.webp",
   label: "Explorer",
   name: ANALYSIS_PORTAL.HCA_DATA_EXPLORER,
 };
