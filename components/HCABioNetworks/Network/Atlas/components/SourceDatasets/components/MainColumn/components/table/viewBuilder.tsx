@@ -1,11 +1,12 @@
 import type { CellContext } from "@tanstack/react-table";
 import type { JSX } from "react";
-import * as C from "../../../../../../../../..";
 import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
 import {
   buildTrackerAnalysisPortals,
   buildTrackerDownloadCellProps,
 } from "../../../../../../../../../../utils/trackerNetwork";
+import { TrackerDownloadCell } from "../../../../../../../../../common/Table/components/Cell/components/TrackerDownloadCell/trackerDownloadCell";
+import { AnalysisPortalCell } from "../../../../../Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
 import { FileNameCell } from "./components/FileNameCell/fileNameCell";
 
 /**
@@ -30,7 +31,7 @@ export function renderDownload(
 ): JSX.Element | null {
   const props = buildTrackerDownloadCellProps(ctx.row.original.datasetAsset);
   if (!props) return null;
-  return C.TrackerDownloadCell(props);
+  return <TrackerDownloadCell {...props} />;
 }
 
 /**
@@ -43,7 +44,7 @@ export function renderExplore(
 ): JSX.Element | null {
   const analysisPortals = buildTrackerAnalysisPortals(ctx.row.original.capUrl);
   if (analysisPortals.length === 0) return null;
-  return C.AnalysisPortalCell({ analysisPortals });
+  return <AnalysisPortalCell analysisPortals={analysisPortals} />;
 }
 
 /**
@@ -55,5 +56,5 @@ export function renderExplore(
 export function renderFileName(
   ctx: CellContext<TrackerSourceDataset, unknown>
 ): JSX.Element {
-  return FileNameCell({ row: ctx.row.original });
+  return <FileNameCell row={ctx.row.original} />;
 }
