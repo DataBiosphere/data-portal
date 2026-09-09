@@ -6,9 +6,11 @@ import { Link } from "@databiosphere/findable-ui/lib/components/Links/components
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Stack, Typography } from "@mui/material";
 import type { JSX } from "react";
-import { DOI_BASE_URL } from "./constants";
-import { StyledOpenInNewIcon } from "./fileNameCell.styles";
+import { buildVersionedFileNameValue } from "../../accessor";
+import { DOI_BASE_URL, EXTERNAL_LINK_TITLE } from "./constants";
+import { StyledNoWrap, StyledOpenInNewIcon } from "./fileNameCell.styles";
 import type { Props } from "./types";
+import { splitTrailingWord } from "./utils";
 
 /**
  * Pinned cell stacking the published file name over the source study citation.
@@ -19,12 +21,10 @@ import type { Props } from "./types";
  * @returns stacked file name and source study cell.
  */
 export const FileNameCell = ({ row }: Props): JSX.Element => {
-  const { baseFileName, datasetAsset, doi, publicationString } = row;
-  // `versionedFileName` is set for every tracker source dataset, but it is
-  // optional on the shared asset type - fall back to the unversioned base name
-  // so the pinned column, which identifies the row in the collapsed layout,
-  // can never render empty.
-  const fileName = datasetAsset?.versionedFileName || baseFileName;
+  const { doi, publicationString } = row;
+  // Shared with the column's `accessorFn`, so the pinned column always sorts on
+  // the value it displays.
+  const fileName = buildVersionedFileNameValue(row);
   return (
     <Stack spacing={2} useFlexGap>
       <Typography variant={TYPOGRAPHY_PROPS.VARIANT.BODY_400}>
@@ -41,12 +41,24 @@ export const FileNameCell = ({ row }: Props): JSX.Element => {
             <Link
               label={
                 <>
-                  {publicationString}
-                  <StyledOpenInNewIcon />
+                  {splitTrailingWord(publicationString).head}
+                  <StyledNoWrap>
+                    {splitTrailingWord(publicationString).tail}
+                    <StyledOpenInNewIcon
+                      fontSize="xxsmall"
+                      titleAccess={EXTERNAL_LINK_TITLE}
+                    />
+                  </StyledNoWrap>
                 </>
               }
               rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
               target={ANCHOR_TARGET.BLANK}
+              // MUI `Link` defaults to `color="primary"` and findable-ui's
+              // theme does not override it, so the wrapper's `ink.light` is
+              // ignored unless the colour is set on the link itself.
+              TypographyProps={{
+                color: TYPOGRAPHY_PROPS.COLOR.INK_LIGHT,
+              }}
               url={`${DOI_BASE_URL}${doi}`}
             />
           ) : (
