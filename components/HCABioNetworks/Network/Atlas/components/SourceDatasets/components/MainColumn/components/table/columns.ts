@@ -14,12 +14,13 @@ import {
   buildIntegratedObjects,
   buildJournal,
   buildReferenceAuthor,
+  buildVersionedFileNameValue,
 } from "./accessor";
 import {
   renderCellCount,
   renderDownload,
   renderExplore,
-  renderSourceStudy,
+  renderFileName,
 } from "./viewBuilder";
 
 const ASSAY = {
@@ -76,6 +77,16 @@ const EXPLORE = {
   meta: { width: "auto" },
 } as ColumnDef<TrackerSourceDataset>;
 
+const FILE_NAME = {
+  accessorFn: buildVersionedFileNameValue,
+  cell: renderFileName,
+  enableColumnFilter: false,
+  header: "File Name",
+  id: "fileName",
+  meta: { columnPinned: true, width: { max: "2.4fr", min: "260px" } },
+  sortingFn,
+} as ColumnDef<TrackerSourceDataset>;
+
 const INTEGRATED_OBJECTS = {
   accessorFn: buildIntegratedObjects,
   enableColumnFilter: true,
@@ -102,13 +113,10 @@ const REFERENCE_AUTHOR = {
 
 const SOURCE_STUDY = {
   accessorKey: "publicationString",
-  cell: renderSourceStudy,
   enableColumnFilter: true,
   filterFn: "arrIncludesSome",
   header: "Source Study",
   id: "sourceStudy",
-  meta: { width: { max: "1.2fr", min: "200px" } },
-  sortingFn,
 } as ColumnDef<TrackerSourceDataset>;
 
 const TISSUE = {
@@ -122,18 +130,8 @@ const TISSUE = {
   sortingFn,
 } as ColumnDef<TrackerSourceDataset>;
 
-const TITLE = {
-  accessorKey: "title",
-  enableColumnFilter: false,
-  header: "Dataset",
-  id: "title",
-  meta: { columnPinned: true, width: { max: "2fr", min: "200px" } },
-  sortingFn,
-} as ColumnDef<TrackerSourceDataset>;
-
 export const COLUMNS: ColumnDef<TrackerSourceDataset>[] = [
-  TITLE,
-  SOURCE_STUDY,
+  FILE_NAME,
   ASSAY,
   TISSUE,
   DISEASE,
@@ -143,4 +141,5 @@ export const COLUMNS: ColumnDef<TrackerSourceDataset>[] = [
   INTEGRATED_OBJECTS,
   JOURNAL,
   REFERENCE_AUTHOR,
+  SOURCE_STUDY,
 ];

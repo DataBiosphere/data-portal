@@ -1,7 +1,3 @@
-import {
-  ANCHOR_TARGET,
-  REL_ATTRIBUTE,
-} from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import type { CellContext } from "@tanstack/react-table";
 import type { JSX } from "react";
 import * as C from "../../../../../../../../..";
@@ -10,8 +6,7 @@ import {
   buildTrackerAnalysisPortals,
   buildTrackerDownloadCellProps,
 } from "../../../../../../../../../../utils/trackerNetwork";
-
-const DOI_BASE_URL = "https://doi.org/";
+import { FileNameCell } from "./components/FileNameCell/fileNameCell";
 
 /**
  * Renders the cell count as a locale-formatted string.
@@ -52,20 +47,13 @@ export function renderExplore(
 }
 
 /**
- * Renders the source study shorthand citation as a link to the DOI.
- * @param ctx - Cell context with publicationString from accessorKey.
- * @returns Link component, or null if no citation.
+ * Renders the pinned cell stacking the published file name over the source
+ * study citation.
+ * @param ctx - Cell context.
+ * @returns FileNameCell component.
  */
-export function renderSourceStudy(
-  ctx: CellContext<TrackerSourceDataset, string | null>
-): JSX.Element | null {
-  const label = ctx.getValue();
-  if (!label) return null;
-  const { doi } = ctx.row.original;
-  return C.Link({
-    label,
-    rel: REL_ATTRIBUTE.NO_OPENER_NO_REFERRER,
-    target: ANCHOR_TARGET.BLANK,
-    url: doi ? `${DOI_BASE_URL}${doi}` : "",
-  });
+export function renderFileName(
+  ctx: CellContext<TrackerSourceDataset, unknown>
+): JSX.Element {
+  return FileNameCell({ row: ctx.row.original });
 }
