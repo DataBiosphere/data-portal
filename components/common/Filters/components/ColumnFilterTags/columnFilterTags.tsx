@@ -3,6 +3,7 @@ import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/b
 import { Button, Theme, useMediaQuery } from "@mui/material";
 import { RowData } from "@tanstack/react-table";
 import { JSX } from "react";
+import { FILTER_DRAWER_BREAKPOINT } from "../../constants";
 import { StyledGrid } from "./columnFilterTags.styles";
 import { GRID_PROPS } from "./constants";
 import { Props } from "./types";
@@ -13,7 +14,7 @@ export const ColumnFilterTags = <T extends RowData>({
   const { getAllColumns, resetColumnFilters } = table;
   const columns = getAllColumns().filter((column) => column.getIsFiltered());
   const isDrawer = useMediaQuery(
-    (theme: Theme) => theme.breakpoints.down(820),
+    (theme: Theme) => theme.breakpoints.down(FILTER_DRAWER_BREAKPOINT),
     { noSsr: true }
   );
 

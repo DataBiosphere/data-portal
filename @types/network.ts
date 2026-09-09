@@ -146,7 +146,6 @@ export interface AtlasContext extends NetworkContext {
   atlas: Atlas;
   projectsResponses: ProjectsResponse[];
   trackerSourceDatasets?: TrackerSourceDataset[];
-  trackerSourceStudies?: TrackerSourceStudy[];
 }
 
 export interface NetworkContext {
@@ -229,8 +228,11 @@ export interface TrackerSourceDataset {
   fileId: string;
   fileName: string;
   geneCount: number;
+  hcaProjectId: string | null; // Joined from the source study; null when the study has no HCA project or the join misses.
   id: string;
+  journal: string | null; // Joined from the source study; null when unpublished or the join misses.
   publicationString: string | null;
+  referenceAuthor: string | null; // Joined from the source study; null only when the join misses.
   revision: number;
   sizeBytes: number;
   sourceStudyId: string;
@@ -238,6 +240,17 @@ export interface TrackerSourceDataset {
   tissue: string[];
   title: string;
 }
+
+/**
+ * A source dataset as the tracker API actually returns it, before
+ * `getTrackerContentStaticProps` adds `datasetAsset` and joins the
+ * source-study fields on. Keeps the fetch signature honest so the joined
+ * fields cannot be read off an unenriched dataset.
+ */
+export type TrackerSourceDatasetResponse = Omit<
+  TrackerSourceDataset,
+  "datasetAsset" | "hcaProjectId" | "journal" | "referenceAuthor"
+>;
 
 export interface TrackerSourceStudy {
   cellxgeneCollectionId: string | null;

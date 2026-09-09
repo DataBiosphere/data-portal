@@ -1,6 +1,6 @@
 import type {
   TrackerComponentAtlas,
-  TrackerSourceDataset,
+  TrackerSourceDatasetResponse,
   TrackerSourceStudy,
 } from "../../@types/network";
 import type { PublishedAtlas } from "./types";
@@ -58,7 +58,7 @@ export function fetchTrackerComponentAtlases(
  */
 export function fetchTrackerSourceDatasets(
   atlasId: string
-): Promise<TrackerSourceDataset[]> {
+): Promise<TrackerSourceDatasetResponse[]> {
   return fetchTrackerApi(
     `/api/atlases/${atlasId}/source-datasets`,
     "source datasets"

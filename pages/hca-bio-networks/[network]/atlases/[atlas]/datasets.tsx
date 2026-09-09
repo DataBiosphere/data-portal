@@ -29,7 +29,6 @@ const Page = ({
   network,
   projectsResponses,
   trackerSourceDatasets = [],
-  trackerSourceStudies = [],
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <AtlasProvider
@@ -38,7 +37,6 @@ const Page = ({
         network,
         projectsResponses,
         trackerSourceDatasets,
-        trackerSourceStudies,
       }}
     >
       <Detail mainColumn={<MainColumn />} Tabs={<Tabs />} top={<Hero />} />

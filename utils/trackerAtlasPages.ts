@@ -48,10 +48,22 @@ export async function getTrackerContentStaticProps(
     mapTrackerComponentAtlasToIntegratedAtlas
   );
 
-  const trackerSourceDatasets = sourceDatasets.map((sd) => ({
-    ...sd,
-    datasetAsset: buildTrackerSourceDatasetAsset(sd),
-  }));
+  // Journal, reference author and HCA project ID live only on the source study,
+  // so join them onto each source dataset by `sourceStudyId`. A dataset whose
+  // study is missing from the response keeps `null` for all three rather than
+  // being dropped, so a join miss can never hide a dataset from the table.
+  const sourceStudyById = new Map(sourceStudies.map((s) => [s.id, s]));
+
+  const trackerSourceDatasets = sourceDatasets.map((sd) => {
+    const sourceStudy = sourceStudyById.get(sd.sourceStudyId);
+    return {
+      ...sd,
+      datasetAsset: buildTrackerSourceDatasetAsset(sd),
+      hcaProjectId: sourceStudy?.hcaProjectId ?? null,
+      journal: sourceStudy?.journal ?? null,
+      referenceAuthor: sourceStudy?.referenceAuthor ?? null,
+    };
+  });
 
   const cxgDataPortal = buildTrackerCXGDataPortalLink(
     trackerAtlas,
@@ -83,7 +95,6 @@ export async function getTrackerContentStaticProps(
       pageTitle: `${atlas.name} - ${tabName}`,
       projectsResponses: [],
       trackerSourceDatasets,
-      trackerSourceStudies: sourceStudies,
     },
   };
 }
