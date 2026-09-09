@@ -1,5 +1,5 @@
 import type { VisibilityState } from "@tanstack/react-table";
-import type { TrackerSourceDataset } from "../../../../../../../../../../../@types/network";
+import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
 
 /**
  * Returns the column visibility state for the tracker source datasets table.

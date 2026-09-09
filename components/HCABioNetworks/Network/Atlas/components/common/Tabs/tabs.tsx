@@ -5,6 +5,7 @@ import {
 import {
   NETWORKS_ATLAS_PATTERN,
   NETWORK_ATLAS_DATASETS_PATTERN,
+  NETWORK_ATLAS_SOURCE_DATASETS_PATTERN,
 } from "constants/routes";
 import { useAtlas } from "contexts/atlasContext";
 import { useRouter } from "next/router";
@@ -27,7 +28,7 @@ const TRACKER_TABS = [
   ATLAS_OVERVIEW_TAB,
   {
     label: "Source Datasets",
-    value: NETWORK_ATLAS_DATASETS_PATTERN,
+    value: NETWORK_ATLAS_SOURCE_DATASETS_PATTERN,
   },
 ];
 

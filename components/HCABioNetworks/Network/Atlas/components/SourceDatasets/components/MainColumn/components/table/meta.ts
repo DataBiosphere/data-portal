@@ -1,5 +1,5 @@
 import { ColumnFiltersTableMeta } from "@databiosphere/findable-ui/lib/components/Filter/components/adapters/tanstack/ColumnFiltersAdapter/types";
-import type { TrackerSourceDataset } from "../../../../../../../../../../../@types/network";
+import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
 
 export const META: ColumnFiltersTableMeta<TrackerSourceDataset> = {
   categoryGroups: [

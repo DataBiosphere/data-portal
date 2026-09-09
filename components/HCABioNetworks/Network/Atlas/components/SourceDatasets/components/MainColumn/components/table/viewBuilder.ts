@@ -4,12 +4,12 @@ import {
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import type { CellContext } from "@tanstack/react-table";
 import type { JSX } from "react";
-import * as C from "../../../../../../../../../..";
-import type { TrackerSourceDataset } from "../../../../../../../../../../../@types/network";
+import * as C from "../../../../../../../../..";
+import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
 import {
   buildTrackerAnalysisPortals,
   splitFileName,
-} from "../../../../../../../../../../../utils/trackerNetwork";
+} from "../../../../../../../../../../utils/trackerNetwork";
 
 const DOI_BASE_URL = "https://doi.org/";
 
