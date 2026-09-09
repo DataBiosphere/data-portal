@@ -8,34 +8,26 @@ import { getProjectsTableColumns } from "../../../../../../../../viewModelBuilde
 import { MDXSection } from "../../../../../../../common/Section/section.styles";
 import { DetailViewTable } from "../../../../../../../common/Table/table.styles";
 import { TABLE_OPTIONS } from "./projects/components/Table/options";
-import { SourceDatasets } from "./tracker/sourceDatasets";
 
 export const MainColumn = (): JSX.Element => {
   const { browserURL } = useSiteConfig();
-  const { atlas, projectsResponses, trackerSourceDatasets = [] } = useAtlas();
-  const isTracker = Boolean(atlas.tracker);
+  const { projectsResponses } = useAtlas();
   return (
     <BackPageContentSingleColumn>
-      {isTracker ? (
-        <SourceDatasets data={trackerSourceDatasets} />
-      ) : (
-        <>
-          <FluidPaper>
-            <MDXSection>
-              <SourceStudiesDescription />
-            </MDXSection>
-          </FluidPaper>
-          <DetailViewTable
-            columns={getProjectsTableColumns(browserURL)}
-            gridTemplateColumns="minmax(484px, 1fr) repeat(4, minmax(152px, 1fr)) max-content"
-            items={projectsResponses}
-            noResultsTitle={"No Source Studies"}
-            Paper={FluidPaper}
-            tableOptions={TABLE_OPTIONS}
-            tools={null}
-          />
-        </>
-      )}
+      <FluidPaper>
+        <MDXSection>
+          <SourceStudiesDescription />
+        </MDXSection>
+      </FluidPaper>
+      <DetailViewTable
+        columns={getProjectsTableColumns(browserURL)}
+        gridTemplateColumns="minmax(484px, 1fr) repeat(4, minmax(152px, 1fr)) max-content"
+        items={projectsResponses}
+        noResultsTitle={"No Source Studies"}
+        Paper={FluidPaper}
+        tableOptions={TABLE_OPTIONS}
+        tools={null}
+      />
     </BackPageContentSingleColumn>
   );
 };

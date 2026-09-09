@@ -2,6 +2,7 @@ import { COLLATOR_CASE_INSENSITIVE } from "@databiosphere/findable-ui/lib/common
 import { fetchEntitiesFromQuery } from "@databiosphere/findable-ui/lib/entity/api/service";
 import {
   GetStaticPaths,
+  GetStaticPathsResult,
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from "next";
@@ -29,42 +30,26 @@ export interface StaticProps extends AtlasContext {
   pageTitle: string;
 }
 
-export const getStaticPaths: GetStaticPaths<StaticPaths> = async () => {
-  const paths: Array<{ params: StaticPaths }> = [];
+export const getStaticPaths: GetStaticPaths<StaticPaths> = () =>
+  buildStaticPaths((atlas) =>
+    atlas.tracker ? isPublishedTrackerAtlas(atlas) : true
+  );
 
-  for (const network of NETWORKS) {
-    for (const atlas of network.atlases) {
-      if (atlas.tracker && !(await isPublishedTrackerAtlas(atlas))) continue;
-      paths.push({ params: { atlas: atlas.path, network: network.path } });
-    }
-  }
-
-  return {
-    fallback: false,
-    paths,
-  };
-};
+/**
+ * Static paths for non-tracker atlases only. Tracker-sourced atlases are
+ * excluded entirely - they are served by the `/source-datasets` route.
+ * @returns static paths for non-tracker atlases.
+ */
+export const getNonTrackerStaticPaths: GetStaticPaths<StaticPaths> = () =>
+  buildStaticPaths((atlas) => !atlas.tracker);
 
 /**
  * Static paths for tracker-sourced atlases only, gated on the atlas being
  * published in the tracker. Non-tracker atlases are excluded entirely.
  * @returns static paths for published tracker atlases.
  */
-export const getTrackerStaticPaths: GetStaticPaths<StaticPaths> = async () => {
-  const paths: Array<{ params: StaticPaths }> = [];
-
-  for (const network of NETWORKS) {
-    for (const atlas of network.atlases) {
-      if (!(await isPublishedTrackerAtlas(atlas))) continue;
-      paths.push({ params: { atlas: atlas.path, network: network.path } });
-    }
-  }
-
-  return {
-    fallback: false,
-    paths,
-  };
-};
+export const getTrackerStaticPaths: GetStaticPaths<StaticPaths> = () =>
+  buildStaticPaths(isPublishedTrackerAtlas);
 
 export async function getContentStaticProps(
   context: GetStaticPropsContext,
@@ -81,10 +66,6 @@ export async function getContentStaticProps(
   if (atlas.tracker) {
     return getTrackerContentStaticProps(atlas, network, tabName);
   }
-
-  // Non-tracker atlases list source studies (Azul projects) on the datasets route.
-  const nonTrackerTabName =
-    tabName === "Source Datasets" ? "Source Studies" : tabName;
 
   const {
     dataSource: { url },
@@ -113,9 +94,33 @@ export async function getContentStaticProps(
     props: {
       atlas: processAtlas(atlas, cxgDatasets),
       network: processNetwork(network, cxgDatasets),
-      pageTitle: `${atlas.name} - ${nonTrackerTabName}`,
+      pageTitle: `${atlas.name} - ${tabName}`,
       projectsResponses,
     },
+  };
+}
+
+/**
+ * Builds the static paths for every atlas the predicate accepts, preserving
+ * network and atlas declaration order.
+ * @param predicate - Returns true when the atlas should emit a path.
+ * @returns static paths result.
+ */
+async function buildStaticPaths(
+  predicate: (atlas: Atlas) => boolean | Promise<boolean>
+): Promise<GetStaticPathsResult<StaticPaths>> {
+  const paths: Array<{ params: StaticPaths }> = [];
+
+  for (const network of NETWORKS) {
+    for (const atlas of network.atlases) {
+      if (!(await predicate(atlas))) continue;
+      paths.push({ params: { atlas: atlas.path, network: network.path } });
+    }
+  }
+
+  return {
+    fallback: false,
+    paths,
   };
 }
 
