@@ -7,6 +7,7 @@ import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/b
 import { Theme, useMediaQuery } from "@mui/material";
 import { RowData } from "@tanstack/react-table";
 import { ComponentProps, JSX } from "react";
+import { FILTER_DRAWER_BREAKPOINT } from "../../constants";
 import { StyledButton, StyledButtonGroup } from "./columnFilters.styles";
 import { Props } from "./types";
 import { buildColumnFilters } from "./utils";
@@ -15,7 +16,7 @@ export const ColumnFilters = <T extends RowData>({
   table,
 }: Props<T>): JSX.Element | null => {
   const isDrawer = useMediaQuery(
-    (theme: Theme) => theme.breakpoints.down(820),
+    (theme: Theme) => theme.breakpoints.down(FILTER_DRAWER_BREAKPOINT),
     { noSsr: true }
   );
 
