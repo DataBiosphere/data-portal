@@ -34,10 +34,28 @@ export const getStaticPaths: GetStaticPaths<StaticPaths> = async () => {
 
   for (const network of NETWORKS) {
     for (const atlas of network.atlases) {
-      if (atlas.tracker) {
-        const { shortNameSlug, version } = atlas.tracker;
-        if (!(await isTrackerAtlasPublished(shortNameSlug, version))) continue;
-      }
+      if (atlas.tracker && !(await isPublishedTrackerAtlas(atlas))) continue;
+      paths.push({ params: { atlas: atlas.path, network: network.path } });
+    }
+  }
+
+  return {
+    fallback: false,
+    paths,
+  };
+};
+
+/**
+ * Static paths for tracker-sourced atlases only, gated on the atlas being
+ * published in the tracker. Non-tracker atlases are excluded entirely.
+ * @returns static paths for published tracker atlases.
+ */
+export const getTrackerStaticPaths: GetStaticPaths<StaticPaths> = async () => {
+  const paths: Array<{ params: StaticPaths }> = [];
+
+  for (const network of NETWORKS) {
+    for (const atlas of network.atlases) {
+      if (!(await isPublishedTrackerAtlas(atlas))) continue;
       paths.push({ params: { atlas: atlas.path, network: network.path } });
     }
   }
@@ -99,6 +117,17 @@ export async function getContentStaticProps(
       projectsResponses,
     },
   };
+}
+
+/**
+ * Returns true when the atlas is tracker-sourced and published in the tracker.
+ * @param atlas - Atlas to check.
+ * @returns true if the atlas is a published tracker atlas.
+ */
+async function isPublishedTrackerAtlas(atlas: Atlas): Promise<boolean> {
+  if (!atlas.tracker) return false;
+  const { shortNameSlug, version } = atlas.tracker;
+  return isTrackerAtlasPublished(shortNameSlug, version);
 }
 
 /**
