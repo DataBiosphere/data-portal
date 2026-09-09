@@ -11,7 +11,7 @@ import { StyledBox } from "./sourceDatasets.styles";
 import { Props } from "./types";
 
 /**
- * Tracker source datasets view for the Datasets tab.
+ * Tracker source datasets view for the Source Datasets tab.
  * @param props - Component props.
  * @param props.data - Tracker source datasets.
  * @returns tracker source datasets view.

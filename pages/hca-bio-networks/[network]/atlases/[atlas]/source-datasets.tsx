@@ -10,13 +10,13 @@ import { Hero } from "../../../../../components/HCABioNetworks/Network/Atlas/com
 import { Tabs } from "../../../../../components/HCABioNetworks/Network/Atlas/components/common/Tabs/tabs";
 import { MainColumn } from "../../../../../components/HCABioNetworks/Network/Atlas/components/SourceDatasets/components/MainColumn/mainColumn";
 import { AtlasProvider } from "../../../../../contexts/atlasContext";
-import * as atlasPages from "../../../../../utils/atlasPages";
 import {
   getContentStaticProps,
+  getTrackerStaticPaths,
   StaticProps,
 } from "../../../../../utils/atlasPages";
 
-export const getStaticPaths: GetStaticPaths = atlasPages.getTrackerStaticPaths;
+export const getStaticPaths: GetStaticPaths = getTrackerStaticPaths;
 
 export const getStaticProps: GetStaticProps<StaticProps> = async (
   context: GetStaticPropsContext
