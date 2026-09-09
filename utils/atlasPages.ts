@@ -48,6 +48,29 @@ export const getStaticPaths: GetStaticPaths<StaticPaths> = async () => {
   };
 };
 
+/**
+ * Static paths for tracker-sourced atlases only, gated on the atlas being
+ * published in the tracker. Non-tracker atlases are excluded entirely.
+ * @returns static paths for published tracker atlases.
+ */
+export const getTrackerStaticPaths: GetStaticPaths<StaticPaths> = async () => {
+  const paths: Array<{ params: StaticPaths }> = [];
+
+  for (const network of NETWORKS) {
+    for (const atlas of network.atlases) {
+      if (!atlas.tracker) continue;
+      const { shortNameSlug, version } = atlas.tracker;
+      if (!(await isTrackerAtlasPublished(shortNameSlug, version))) continue;
+      paths.push({ params: { atlas: atlas.path, network: network.path } });
+    }
+  }
+
+  return {
+    fallback: false,
+    paths,
+  };
+};
+
 export async function getContentStaticProps(
   context: GetStaticPropsContext,
   tabName: string
