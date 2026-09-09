@@ -21,6 +21,7 @@ import {
   renderDownload,
   renderExplore,
   renderFileName,
+  renderPrimaryData,
 } from "./viewBuilder";
 
 const ASSAY = {
@@ -103,6 +104,16 @@ const JOURNAL = {
   id: "journal",
 } as ColumnDef<TrackerSourceDataset>;
 
+const PRIMARY_DATA = {
+  accessorKey: "hcaProjectId",
+  cell: renderPrimaryData,
+  enableColumnFilter: false,
+  enableSorting: false,
+  header: "Primary Data (fastqs)",
+  id: "primaryData",
+  meta: { width: "auto" },
+} as ColumnDef<TrackerSourceDataset>;
+
 const REFERENCE_AUTHOR = {
   accessorFn: buildReferenceAuthor,
   enableColumnFilter: true,
@@ -136,6 +147,7 @@ export const COLUMNS: ColumnDef<TrackerSourceDataset>[] = [
   TISSUE,
   DISEASE,
   CELL_COUNT,
+  PRIMARY_DATA,
   EXPLORE,
   DOWNLOAD,
   INTEGRATED_OBJECTS,

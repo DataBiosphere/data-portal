@@ -10,7 +10,11 @@ import {
   Network,
 } from "../@types/network";
 import { processNullElements } from "../apis/azul/hca-dcp/common/utils";
-import { CAP, CZ_CELLXGENE } from "../constants/analysisPortals";
+import {
+  CAP,
+  CZ_CELLXGENE,
+  HCA_DATA_EXPLORER,
+} from "../constants/analysisPortals";
 
 const CAP_PROJECT_LABEL = "Cell Annotation Platform";
 const CZ_CELLXGENE_COLLECTION_LABEL = "CZ CELLxGENE Collection";
@@ -34,6 +38,17 @@ export function buildCAPProjectLink(
   capURL: string
 ): Pick<LinkProps, "label" | "url">[] {
   return [{ label: CAP_PROJECT_LABEL, url: capURL }];
+}
+
+/**
+ * Builds the HCA Data Explorer analysis portal for the given project URL.
+ * @param projectURL - HCA Data Explorer project URL.
+ * @returns HCA Data Explorer analysis portal.
+ */
+export function buildHCADataExplorerAnalysisPortal(
+  projectURL: string
+): AnalysisPortal {
+  return { url: projectURL, ...HCA_DATA_EXPLORER };
 }
 
 /**

@@ -18,6 +18,7 @@ export interface Contact {
 export enum ANALYSIS_PORTAL {
   CAP = "CAP",
   CZ_CELLXGENE = "CZ_CELLXGENE",
+  HCA_DATA_EXPLORER = "HCA_DATA_EXPLORER",
   UCSC_CELL_BROWSER = "CELL_BROWSER",
 }
 

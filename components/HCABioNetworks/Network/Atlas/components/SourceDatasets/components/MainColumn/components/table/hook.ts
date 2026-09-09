@@ -1,4 +1,5 @@
 import { SORT_DIRECTION } from "@databiosphere/findable-ui/lib/config/entities";
+import { useConfig } from "@databiosphere/findable-ui/lib/hooks/useConfig";
 import { FacetedOptions, Table, useReactTable } from "@tanstack/react-table";
 import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
 import { COLUMN_FILTERS_OPTIONS } from "../../../../../../../../../common/Table/options/columnFilters/constants";
@@ -17,6 +18,8 @@ import { getColumnVisibility } from "./utils";
 export const useTable = (
   data: TrackerSourceDataset[]
 ): Table<TrackerSourceDataset> => {
+  const { config } = useConfig();
+
   return useReactTable<TrackerSourceDataset>({
     columns: COLUMNS,
     data,
@@ -30,7 +33,7 @@ export const useTable = (
     initialState: {
       sorting: [{ desc: SORT_DIRECTION.ASCENDING, id: "fileName" }],
     },
-    meta: META,
+    meta: { ...META, browserUrl: config.browserURL },
     state: {
       columnVisibility: getColumnVisibility(data),
     },

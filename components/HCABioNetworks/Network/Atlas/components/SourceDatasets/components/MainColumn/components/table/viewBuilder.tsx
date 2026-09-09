@@ -1,6 +1,7 @@
 import type { CellContext } from "@tanstack/react-table";
 import type { JSX } from "react";
 import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
+import { buildHCADataExplorerAnalysisPortal } from "../../../../../../../../../../utils/network";
 import {
   buildTrackerAnalysisPortals,
   buildTrackerDownloadCellProps,
@@ -57,4 +58,23 @@ export function renderFileName(
   ctx: CellContext<TrackerSourceDataset, unknown>
 ): JSX.Element {
   return <FileNameCell row={ctx.row.original} />;
+}
+
+/**
+ * Renders a link to the source study's primary data in the HCA Data Explorer.
+ * @param ctx - Cell context.
+ * @returns AnalysisPortalCell, or null when the source study has no HCA
+ * project or the environment has no configured browser URL.
+ */
+export function renderPrimaryData(
+  ctx: CellContext<TrackerSourceDataset, unknown>
+): JSX.Element | null {
+  const { hcaProjectId } = ctx.row.original;
+  if (!hcaProjectId) return null;
+  const { browserUrl } = ctx.table.options.meta as { browserUrl?: string };
+  if (!browserUrl) return null;
+  const analysisPortal = buildHCADataExplorerAnalysisPortal(
+    `${browserUrl}/projects/${hcaProjectId}`
+  );
+  return <AnalysisPortalCell analysisPortals={[analysisPortal]} />;
 }
