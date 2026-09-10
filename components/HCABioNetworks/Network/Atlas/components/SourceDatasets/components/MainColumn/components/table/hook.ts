@@ -1,13 +1,13 @@
 import { SORT_DIRECTION } from "@databiosphere/findable-ui/lib/config/entities";
-import { useConfig } from "@databiosphere/findable-ui/lib/hooks/useConfig";
 import { FacetedOptions, Table, useReactTable } from "@tanstack/react-table";
 import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
+import { useSiteConfig } from "../../../../../../../../../../hooks/useSiteConfig";
 import { COLUMN_FILTERS_OPTIONS } from "../../../../../../../../../common/Table/options/columnFilters/constants";
 import { CORE_OPTIONS } from "../../../../../../../../../common/Table/options/core/constants";
 import { FACETED_OPTIONS } from "../../../../../../../../../common/Table/options/faceted/constants";
 import { SORTING_OPTIONS } from "../../../../../../../../../common/Table/options/sorting/constants";
-import { COLUMNS } from "./columns";
-import { META, SourceDatasetsTableMeta } from "./meta";
+import { getColumns } from "./columns";
+import { META } from "./meta";
 import { getColumnVisibility } from "./utils";
 
 /**
@@ -18,10 +18,10 @@ import { getColumnVisibility } from "./utils";
 export const useTable = (
   data: TrackerSourceDataset[]
 ): Table<TrackerSourceDataset> => {
-  const { config } = useConfig();
+  const { browserURL } = useSiteConfig();
 
   return useReactTable<TrackerSourceDataset>({
-    columns: COLUMNS,
+    columns: getColumns(browserURL),
     data,
     ...COLUMN_FILTERS_OPTIONS,
     ...CORE_OPTIONS,
@@ -33,12 +33,9 @@ export const useTable = (
     initialState: {
       sorting: [{ desc: SORT_DIRECTION.ASCENDING, id: "fileName" }],
     },
-    meta: {
-      ...META,
-      browserUrl: config.browserURL,
-    } satisfies SourceDatasetsTableMeta,
+    meta: META,
     state: {
-      columnVisibility: getColumnVisibility(data, config.browserURL),
+      columnVisibility: getColumnVisibility(data, browserURL),
     },
   });
 };
