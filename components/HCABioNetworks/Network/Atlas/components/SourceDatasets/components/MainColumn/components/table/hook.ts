@@ -1,5 +1,6 @@
 import { SORT_DIRECTION } from "@databiosphere/findable-ui/lib/config/entities";
 import { FacetedOptions, Table, useReactTable } from "@tanstack/react-table";
+import { useMemo } from "react";
 import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
 import { useSiteConfig } from "../../../../../../../../../../hooks/useSiteConfig";
 import { COLUMN_FILTERS_OPTIONS } from "../../../../../../../../../common/Table/options/columnFilters/constants";
@@ -19,9 +20,17 @@ export const useTable = (
   data: TrackerSourceDataset[]
 ): Table<TrackerSourceDataset> => {
   const { browserURL } = useSiteConfig();
+  // Both are memoised so the column instances stay reference-stable: TanStack
+  // keys its `getAllColumns` memo on `options.columns` by identity, so a fresh
+  // array each render would discard every column's faceting cache.
+  const columns = useMemo(() => getColumns(browserURL), [browserURL]);
+  const columnVisibility = useMemo(
+    () => getColumnVisibility(data, browserURL),
+    [data, browserURL]
+  );
 
   return useReactTable<TrackerSourceDataset>({
-    columns: getColumns(browserURL),
+    columns,
     data,
     ...COLUMN_FILTERS_OPTIONS,
     ...CORE_OPTIONS,
@@ -35,7 +44,7 @@ export const useTable = (
     },
     meta: META,
     state: {
-      columnVisibility: getColumnVisibility(data, browserURL),
+      columnVisibility,
     },
   });
 };
