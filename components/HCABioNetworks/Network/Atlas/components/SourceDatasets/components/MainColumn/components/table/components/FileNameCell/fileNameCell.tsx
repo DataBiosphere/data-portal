@@ -26,12 +26,16 @@ export const FileNameCell = ({ row }: Props): JSX.Element => {
   // Shared with the column's `accessorFn`, so the pinned column always sorts on
   // the value it displays.
   const fileName = buildVersionedFileNameValue(row);
+  // Split once - the final word is held on one line with the icon that follows.
+  const citation = publicationString
+    ? splitTrailingWord(publicationString)
+    : null;
   return (
     <Stack spacing={2} useFlexGap>
       <Typography variant={TYPOGRAPHY_PROPS.VARIANT.BODY_400}>
         {fileName}
       </Typography>
-      {publicationString && (
+      {citation && (
         <Typography
           color={TYPOGRAPHY_PROPS.COLOR.INK_LIGHT}
           component="div"
@@ -42,9 +46,9 @@ export const FileNameCell = ({ row }: Props): JSX.Element => {
             <Link
               label={
                 <>
-                  {splitTrailingWord(publicationString).head}
+                  {citation.head}
                   <StyledNoWrap>
-                    {splitTrailingWord(publicationString).tail}
+                    {citation.tail}
                     <StyledOpenInNewIcon
                       fontSize={SVG_ICON_PROPS.FONT_SIZE.XXSMALL}
                       titleAccess={EXTERNAL_LINK_TITLE}
