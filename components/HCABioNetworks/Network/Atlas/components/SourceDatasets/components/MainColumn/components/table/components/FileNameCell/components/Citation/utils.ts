@@ -10,7 +10,11 @@ export function splitTrailingWord(text: string): {
   head: string;
   tail: string;
 } {
-  const index = text.trimEnd().lastIndexOf(" ");
-  if (index === -1) return { head: "", tail: text };
-  return { head: text.slice(0, index + 1), tail: text.slice(index + 1) };
+  // Slice the trimmed value, not the original: computing the index from
+  // `trimEnd()` and then slicing `text` leaves any trailing whitespace on the
+  // tail, which renders as a gap between the final word and the icon after it.
+  const trimmed = text.trimEnd();
+  const index = trimmed.lastIndexOf(" ");
+  if (index === -1) return { head: "", tail: trimmed };
+  return { head: trimmed.slice(0, index + 1), tail: trimmed.slice(index + 1) };
 }
