@@ -82,6 +82,19 @@ function buildDatasetAssets(
 }
 
 /**
+ * Builds the HCA Data Explorer project URL for the given project.
+ * @param browserURL - Environment's HCA Data Explorer browser URL.
+ * @param projectId - HCA project ID.
+ * @returns HCA Data Explorer project URL.
+ */
+export function buildHCADataExplorerProjectUrl(
+  browserURL: string,
+  projectId: string
+): string {
+  return `${browserURL}/projects/${projectId}`;
+}
+
+/**
  * Fetches the CELLxGENE collections for the specified atlases and aggregates their datasets.
  * @param atlases - Atlases to get datasets for.
  * @returns CELLxGENE datasets.

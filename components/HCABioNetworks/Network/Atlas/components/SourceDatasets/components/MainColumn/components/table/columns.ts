@@ -17,6 +17,7 @@ import {
   buildVersionedFileNameValue,
 } from "./accessor";
 import {
+  buildRenderPrimaryData,
   renderCellCount,
   renderDownload,
   renderExplore,
@@ -81,7 +82,7 @@ const FILE_NAME = {
   accessorFn: buildVersionedFileNameValue,
   cell: renderFileName,
   enableColumnFilter: false,
-  header: "File Name",
+  header: "File Name / Study",
   id: "fileName",
   meta: { columnPinned: true, width: { max: "2.4fr", min: "260px" } },
   sortingFn,
@@ -130,16 +131,38 @@ const TISSUE = {
   sortingFn,
 } as ColumnDef<TrackerSourceDataset>;
 
-export const COLUMNS: ColumnDef<TrackerSourceDataset>[] = [
-  FILE_NAME,
-  ASSAY,
-  TISSUE,
-  DISEASE,
-  CELL_COUNT,
-  EXPLORE,
-  DOWNLOAD,
-  INTEGRATED_OBJECTS,
-  JOURNAL,
-  REFERENCE_AUTHOR,
-  SOURCE_STUDY,
-];
+/**
+ * Returns the source datasets table columns. Takes the browser URL so the
+ * primary data cell can close over it, following the same column-def factory
+ * pattern as `getProjectsTableColumns`.
+ * @param browserUrl - Environment's HCA Data Explorer browser URL.
+ * @returns source datasets table columns.
+ */
+export function getColumns(
+  browserUrl: string
+): ColumnDef<TrackerSourceDataset>[] {
+  return [
+    FILE_NAME,
+    ASSAY,
+    TISSUE,
+    DISEASE,
+    CELL_COUNT,
+    {
+      accessorKey: "hcaProjectId",
+      cell: buildRenderPrimaryData(browserUrl),
+      enableColumnFilter: false,
+      enableSorting: false,
+      header: "Primary Data (fastqs)",
+      id: "primaryData",
+      // The header is much longer than "HCA Explorer", so it would otherwise
+      // drive the column width; a min/max lets it wrap instead.
+      meta: { width: { max: "1fr", min: "120px" } },
+    } as ColumnDef<TrackerSourceDataset>,
+    EXPLORE,
+    DOWNLOAD,
+    INTEGRATED_OBJECTS,
+    JOURNAL,
+    REFERENCE_AUTHOR,
+    SOURCE_STUDY,
+  ];
+}

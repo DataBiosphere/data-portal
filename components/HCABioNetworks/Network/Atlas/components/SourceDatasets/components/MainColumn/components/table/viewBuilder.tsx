@@ -1,6 +1,8 @@
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import type { CellContext } from "@tanstack/react-table";
 import type { JSX } from "react";
 import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
+import { buildHCADataExplorerProjectUrl } from "../../../../../../../../../../utils/network";
 import {
   buildTrackerAnalysisPortals,
   buildTrackerDownloadCellProps,
@@ -8,6 +10,7 @@ import {
 import { TrackerDownloadCell } from "../../../../../../../../../common/Table/components/Cell/components/TrackerDownloadCell/trackerDownloadCell";
 import { AnalysisPortalCell } from "../../../../../Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
 import { FileNameCell } from "./components/FileNameCell/fileNameCell";
+import { HCA_EXPLORER_LABEL } from "./constants";
 
 /**
  * Renders the cell count as a locale-formatted string.
@@ -57,4 +60,28 @@ export function renderFileName(
   ctx: CellContext<TrackerSourceDataset, unknown>
 ): JSX.Element {
   return <FileNameCell row={ctx.row.original} />;
+}
+
+/**
+ * Returns a renderer for the source study's primary data link, closing over
+ * the environment's browser URL so it is carried in a typed closure rather
+ * than through untyped table meta. Text only - `Link` sends external URLs to a
+ * new tab with noopener/noreferrer.
+ * @param browserUrl - Environment's HCA Data Explorer browser URL.
+ * @returns cell renderer producing a Link, or null when the source study has
+ * no HCA project.
+ */
+export function buildRenderPrimaryData(
+  browserUrl: string
+): (ctx: CellContext<TrackerSourceDataset, unknown>) => JSX.Element | null {
+  return function renderPrimaryData(ctx) {
+    const { hcaProjectId } = ctx.row.original;
+    if (!hcaProjectId) return null;
+    return (
+      <Link
+        label={HCA_EXPLORER_LABEL}
+        url={buildHCADataExplorerProjectUrl(browserUrl, hcaProjectId)}
+      />
+    );
+  };
 }
