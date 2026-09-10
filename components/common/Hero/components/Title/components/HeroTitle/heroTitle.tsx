@@ -17,7 +17,8 @@ export const HeroTitle = ({
 }: HeroTitleProps): JSX.Element => {
   return (
     <Title>
-      <StaticImage alt={title} height={36} src={NETWORK_ICONS[networkKey]} />
+      {/* Decorative: the heading beside it carries the same text. */}
+      <StaticImage alt="" height={36} src={NETWORK_ICONS[networkKey]} />
       <Typography
         color={TYPOGRAPHY_PROPS.COLOR.INK_MAIN}
         component="h1"
