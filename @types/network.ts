@@ -189,7 +189,7 @@ export type NetworkKey =
 
 export type AtlasKey =
   | "brain-v1-0"
-  | "breast-v1"
+  | "breast-v1-0"
   | "cortex-v1-0"
   | "gut-v1-0"
   | "liver-v1-0"
