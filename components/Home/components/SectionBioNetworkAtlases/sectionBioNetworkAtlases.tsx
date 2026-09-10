@@ -35,7 +35,8 @@ export const SectionBioNetworkAtlases = (): JSX.Element => {
                 router.push(`${NETWORKS_ROUTE}/${path}`)
               }
             >
-              <StaticImage alt={name} height={36} src={NETWORK_ICONS[key]} />
+              {/* Decorative: the adjacent label already names the network. */}
+              <StaticImage alt="" height={36} src={NETWORK_ICONS[key]} />
               <Typography variant={TYPOGRAPHY_PROPS.VARIANT.BODY_LARGE_500}>
                 {getBioNetworkName(name)}
               </Typography>

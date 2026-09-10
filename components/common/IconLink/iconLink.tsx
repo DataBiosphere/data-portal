@@ -4,6 +4,7 @@ import {
 } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { JSX } from "react";
+import { NewTabCue } from "../NewTabCue/newTabCue";
 import { Stack } from "./iconLink.styles";
 
 export interface IconLinkProps {
@@ -23,8 +24,17 @@ export const IconLink = ({
 }: IconLinkProps): JSX.Element => {
   return (
     <Stack className={className}>
-      <StaticImage alt={label} height={height} src={icon} />
-      <Link label={label} url={url} />
+      {/* Decorative: the adjacent link text already names the destination. */}
+      <StaticImage alt="" height={height} src={icon} />
+      <Link
+        label={
+          <>
+            {label}
+            <NewTabCue url={url} />
+          </>
+        }
+        url={url}
+      />
     </Stack>
   );
 };
