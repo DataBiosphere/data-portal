@@ -62,8 +62,8 @@ export const NETWORKS: Network[] = [
       {
         code: [
           {
-            label: "https://github.com/NoahWex/iHBCA_v1",
-            url: "https://github.com/NoahWex/iHBCA_v1",
+            label: "https://github.com/NoahWex/iHBCAv1_cap",
+            url: "https://github.com/NoahWex/iHBCAv1_cap",
           },
         ],
         coordinators: [
