@@ -1,7 +1,8 @@
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import type { CellContext } from "@tanstack/react-table";
 import type { JSX } from "react";
 import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
-import { buildHCADataExplorerAnalysisPortal } from "../../../../../../../../../../utils/network";
+import { buildHCADataExplorerProjectUrl } from "../../../../../../../../../../utils/network";
 import {
   buildTrackerAnalysisPortals,
   buildTrackerDownloadCellProps,
@@ -9,6 +10,7 @@ import {
 import { TrackerDownloadCell } from "../../../../../../../../../common/Table/components/Cell/components/TrackerDownloadCell/trackerDownloadCell";
 import { AnalysisPortalCell } from "../../../../../Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
 import { FileNameCell } from "./components/FileNameCell/fileNameCell";
+import { HCA_EXPLORER_LABEL } from "./constants";
 import type { SourceDatasetsTableMeta } from "./meta";
 
 /**
@@ -63,9 +65,10 @@ export function renderFileName(
 
 /**
  * Renders a link to the source study's primary data in the HCA Data Explorer.
+ * Text only - `Link` sends external URLs to a new tab with noopener/noreferrer.
  * @param ctx - Cell context.
- * @returns AnalysisPortalCell, or null when the source study has no HCA
- * project or the environment has no configured browser URL.
+ * @returns Link, or null when the source study has no HCA project or the
+ * environment has no configured browser URL.
  */
 export function renderPrimaryData(
   ctx: CellContext<TrackerSourceDataset, unknown>
@@ -74,9 +77,10 @@ export function renderPrimaryData(
   if (!hcaProjectId) return null;
   const meta = ctx.table.options.meta as SourceDatasetsTableMeta | undefined;
   if (!meta?.browserUrl) return null;
-  const analysisPortal = buildHCADataExplorerAnalysisPortal(
-    meta.browserUrl,
-    hcaProjectId
+  return (
+    <Link
+      label={HCA_EXPLORER_LABEL}
+      url={buildHCADataExplorerProjectUrl(meta.browserUrl, hcaProjectId)}
+    />
   );
-  return <AnalysisPortalCell analysisPortals={[analysisPortal]} />;
 }

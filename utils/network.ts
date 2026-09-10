@@ -10,11 +10,7 @@ import {
   Network,
 } from "../@types/network";
 import { processNullElements } from "../apis/azul/hca-dcp/common/utils";
-import {
-  CAP,
-  CZ_CELLXGENE,
-  HCA_DATA_EXPLORER,
-} from "../constants/analysisPortals";
+import { CAP, CZ_CELLXGENE } from "../constants/analysisPortals";
 
 const CAP_PROJECT_LABEL = "Cell Annotation Platform";
 const CZ_CELLXGENE_COLLECTION_LABEL = "CZ CELLxGENE Collection";
@@ -86,17 +82,16 @@ function buildDatasetAssets(
 }
 
 /**
- * Builds the HCA Data Explorer analysis portal for a project. Owns the
- * `/projects/{id}` path so the URL shape lives beside the portal constant.
+ * Builds the HCA Data Explorer project URL for the given project.
  * @param browserURL - Environment's HCA Data Explorer browser URL.
  * @param projectId - HCA project ID.
- * @returns HCA Data Explorer analysis portal.
+ * @returns HCA Data Explorer project URL.
  */
-export function buildHCADataExplorerAnalysisPortal(
+export function buildHCADataExplorerProjectUrl(
   browserURL: string,
   projectId: string
-): AnalysisPortal {
-  return { url: `${browserURL}/projects/${projectId}`, ...HCA_DATA_EXPLORER };
+): string {
+  return `${browserURL}/projects/${projectId}`;
 }
 
 /**

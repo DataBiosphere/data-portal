@@ -19,16 +19,6 @@ export const CZ_CELLXGENE: Omit<AnalysisPortal, "url"> = {
 };
 
 /**
- * HCA Data Explorer analysis portal. The label names where the link goes
- * ("Explorer"), since the column header already names what is linked.
- */
-export const HCA_DATA_EXPLORER: Omit<AnalysisPortal, "url"> = {
-  icon: "/hca-bio-networks/network/atlas/icons/hca.webp",
-  label: "Explorer",
-  name: ANALYSIS_PORTAL.HCA_DATA_EXPLORER,
-};
-
-/**
  * UCSC Cell Browser analysis portal.
  */
 export const UCSC_CELL_BROWSER: Omit<AnalysisPortal, "url"> = {
