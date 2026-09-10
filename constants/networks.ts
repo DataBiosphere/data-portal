@@ -37,7 +37,7 @@ import { COMPONENT_ATLASES } from "./componentAtlases";
 import { DATASETS } from "./datasets";
 
 const BRAIN_V1_0 = "brain-v1-0";
-const BREAST_V1 = "breast-v1";
+const BREAST_V1_0 = "breast-v1-0";
 const CORTEX_V1_0 = "cortex-v1-0";
 const GUT_V1_0 = "gut-v1-0";
 const LIVER_V1_0 = "liver-v1-0";
@@ -74,9 +74,9 @@ export const NETWORKS: Network[] = [
         datasets: [],
         externalDatasets: [],
         integratedAtlases: [],
-        key: BREAST_V1,
+        key: BREAST_V1_0,
         name: "integrated Human Breast Cell Atlas (iHBCA) v1",
-        path: BREAST_V1,
+        path: BREAST_V1_0,
         publications: [
           {
             doi: "https://doi.org/10.1038/s41588-024-01688-9",
@@ -672,7 +672,7 @@ export const NETWORK_ATLAS_CONTENT: Partial<
   Record<NetworkKey, { [key in AtlasKey]?: AtlasModule }>
 > = {
   breast: {
-    [BREAST_V1]: breastNetworkBreastAtlas,
+    [BREAST_V1_0]: breastNetworkBreastAtlas,
   },
   eye: { [RETINA_V1_0]: eyeNetworkRetinaAtlas },
   gut: {
