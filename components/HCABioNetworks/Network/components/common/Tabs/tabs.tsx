@@ -51,7 +51,7 @@ function buildTabs(network: Network): Tab[] {
     tabs.push({
       icon: (
         <StaticImage
-          alt="BICCN"
+          alt=""
           height={20}
           src="/hca-bio-networks/network/biccn.png"
         />

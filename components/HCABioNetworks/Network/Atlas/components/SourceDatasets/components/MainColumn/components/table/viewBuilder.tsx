@@ -66,8 +66,9 @@ export function renderFileName(
 /**
  * Returns a renderer for the source study's primary data link, closing over
  * the environment's browser URL so it is carried in a typed closure rather
- * than through untyped table meta. Text only - `Link` sends external URLs to a
- * new tab with noopener/noreferrer.
+ * than through untyped table meta. The label carries a visually-hidden new-tab
+ * cue alongside the text, because `Link` sends external URLs to a new tab with
+ * noopener/noreferrer.
  * @param browserUrl - Environment's HCA Data Explorer browser URL.
  * @returns cell renderer producing a Link, or null when the source study has
  * no HCA project.
