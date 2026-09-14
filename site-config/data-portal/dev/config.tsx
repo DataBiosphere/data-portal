@@ -39,9 +39,9 @@ import { themeOptions } from "./themeOptions";
 // `makeConfig` runs at module evaluation, so `Logo({ … })` would execute the
 // component body outside React's rendering cycle, with no component instance;
 // any hook or context read added to `Logo` later would then fail, and point at
-// this file rather than at the component. `<Logo … />` compiles to
-// `createElement`, which only builds a descriptor — the body runs when React
-// renders it. See #3217.
+// this file rather than at the component. `<Logo … />` only builds an element
+// descriptor — the component body does not run until React renders it. See
+// #3217.
 
 const APP_TITLE = "HCA Data Portal";
 const CATALOG = "dcp60";
