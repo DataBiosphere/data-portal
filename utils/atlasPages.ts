@@ -30,6 +30,10 @@ export interface StaticProps extends AtlasContext {
   pageTitle: string;
 }
 
+export interface TrackerDataOptions {
+  withSourceDatasets?: boolean;
+}
+
 export const getStaticPaths: GetStaticPaths<StaticPaths> = () =>
   buildStaticPaths((atlas) =>
     atlas.tracker ? isPublishedTrackerAtlas(atlas) : true
@@ -51,9 +55,18 @@ export const getNonTrackerStaticPaths: GetStaticPaths<StaticPaths> = () =>
 export const getTrackerStaticPaths: GetStaticPaths<StaticPaths> = () =>
   buildStaticPaths(isPublishedTrackerAtlas);
 
+/**
+ * Builds static props for an atlas page, delegating to the tracker builder when
+ * the atlas is tracker-sourced.
+ * @param context - Static props context carrying the network and atlas params.
+ * @param tabName - Tab name for the page title.
+ * @param options - Tracker collections the route requires; tracker atlases only.
+ * @returns static props for the atlas page.
+ */
 export async function getContentStaticProps(
   context: GetStaticPropsContext,
-  tabName: string
+  tabName: string,
+  options?: TrackerDataOptions
 ): Promise<GetStaticPropsResult<StaticProps>> {
   const { atlas: atlasParam, network: networkParam } = context.params ?? {};
 
@@ -64,7 +77,7 @@ export async function getContentStaticProps(
 
   // Delegate to tracker path if atlas has tracker config.
   if (atlas.tracker) {
-    return getTrackerContentStaticProps(atlas, network, tabName);
+    return getTrackerContentStaticProps(atlas, network, tabName, options);
   }
 
   const {
