@@ -25,6 +25,20 @@ import { GUIDES } from "./navigation/guides";
 import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
 
+// This module is `.tsx` so branding and icon elements can be written as JSX.
+// `Header.logo`, `Footer.Branding` and `MenuItem.icon` are all typed `ReactNode`
+// in findable-ui, so they take an element rather than a component reference —
+// unlike `Social.Icon` and `ComponentConfig.component`, which take the
+// reference itself (see socialMedia.ts and layout/floating.ts).
+//
+// Build those elements with JSX, never by calling the component as a function.
+// `makeConfig` runs at module evaluation, so `Logo({ … })` would execute the
+// component body outside React's rendering cycle, with no component instance;
+// any hook or context read added to `Logo` later would then fail, and point at
+// this file rather than at the component. `<Logo … />` compiles to
+// `createElement`, which only builds a descriptor — the body runs when React
+// renders it. See #3217.
+
 const APP_TITLE = "HCA Data Portal";
 const CATALOG = "dcp60";
 export const DATA_URL = "https://service.azul.data.humancellatlas.org";
@@ -84,13 +98,15 @@ export function makeConfig(
     layout: {
       floating,
       footer: {
-        Branding: C.Logo({
-          alt: APP_TITLE,
-          height: 38,
-          link: "https://www.humancellatlas.org",
-          src: "/hca-bio-networks/logos/logoHumanCellAtlas.png",
-          target: ANCHOR_TARGET.BLANK,
-        }),
+        Branding: (
+          <C.Logo
+            alt={APP_TITLE}
+            height={38}
+            link="https://www.humancellatlas.org"
+            src="/hca-bio-networks/logos/logoHumanCellAtlas.png"
+            target={ANCHOR_TARGET.BLANK}
+          />
+        ),
         navLinks: [
           {
             label: "About",
@@ -114,12 +130,14 @@ export function makeConfig(
       },
       header: {
         authenticationEnabled: false,
-        logo: C.Logo({
-          alt: APP_TITLE,
-          height: 32,
-          link: "/",
-          src: "/hca-bio-networks/logos/logoHca.png",
-        }),
+        logo: (
+          <C.Logo
+            alt={APP_TITLE}
+            height={32}
+            link="/"
+            src="/hca-bio-networks/logos/logoHca.png"
+          />
+        ),
         navigation: [
           [
             {
@@ -181,19 +199,19 @@ export function makeConfig(
               menuItems: [
                 {
                   ...SOCIALS.GITHUB,
-                  icon: C.GitHubIcon({ fontSize: "small" }),
+                  icon: <C.GitHubIcon fontSize="small" />,
                 },
                 {
                   ...SOCIALS.FACEBOOK,
-                  icon: C.FacebookIcon({ fontSize: "small" }),
+                  icon: <C.FacebookIcon fontSize="small" />,
                 },
                 {
                   ...SOCIALS.X,
-                  icon: C.XIcon({ fontSize: "small" }),
+                  icon: <C.XIcon fontSize="small" />,
                 },
                 {
                   ...SOCIALS.LINKEDIN,
-                  icon: C.LinkedInIcon({ fontSize: "small" }),
+                  icon: <C.LinkedInIcon fontSize="small" />,
                 },
               ],
               url: "",
