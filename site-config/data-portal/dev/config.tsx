@@ -2,9 +2,13 @@ import {
   DataDictionary,
   DataDictionaryConfig,
 } from "@databiosphere/findable-ui/lib/common/entities";
+import { FacebookIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/FacebookIcon/facebookIcon";
+import { GitHubIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/GitHubIcon/gitHubIcon";
+import { LinkedInIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/LinkedInIcon/linkedInIcon";
+import { XIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/XIcon/xIcon";
 import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
+import { Logo } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Logo/logo";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import * as C from "../../../components/index";
 import { ROUTES } from "../../../routes/constants";
 import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
 import {
@@ -99,7 +103,7 @@ export function makeConfig(
       floating,
       footer: {
         Branding: (
-          <C.Logo
+          <Logo
             alt={APP_TITLE}
             height={38}
             link="https://www.humancellatlas.org"
@@ -131,7 +135,7 @@ export function makeConfig(
       header: {
         authenticationEnabled: false,
         logo: (
-          <C.Logo
+          <Logo
             alt={APP_TITLE}
             height={32}
             link="/"
@@ -199,19 +203,19 @@ export function makeConfig(
               menuItems: [
                 {
                   ...SOCIALS.GITHUB,
-                  icon: <C.GitHubIcon fontSize="small" />,
+                  icon: <GitHubIcon fontSize="small" />,
                 },
                 {
                   ...SOCIALS.FACEBOOK,
-                  icon: <C.FacebookIcon fontSize="small" />,
+                  icon: <FacebookIcon fontSize="small" />,
                 },
                 {
                   ...SOCIALS.X,
-                  icon: <C.XIcon fontSize="small" />,
+                  icon: <XIcon fontSize="small" />,
                 },
                 {
                   ...SOCIALS.LINKEDIN,
-                  icon: <C.LinkedInIcon fontSize="small" />,
+                  icon: <LinkedInIcon fontSize="small" />,
                 },
               ],
               url: "",
