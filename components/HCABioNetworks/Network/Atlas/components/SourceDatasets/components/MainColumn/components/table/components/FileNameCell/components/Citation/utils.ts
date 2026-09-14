@@ -1,3 +1,7 @@
+// The final run of whitespace before the last word: any whitespace character
+// followed only by non-whitespace to the end of the string.
+const LAST_SEPARATOR = /\s(?=\S*$)/;
+
 /**
  * Splits text into its leading portion and its final word, so the final word
  * can be held on one line with the external-link icon that follows it. A
@@ -14,7 +18,10 @@ export function splitTrailingWord(text: string): {
   // `trimEnd()` and then slicing `text` leaves any trailing whitespace on the
   // tail, which renders as a gap between the final word and the icon after it.
   const trimmed = text.trimEnd();
-  const index = trimmed.lastIndexOf(" ");
+  // Any whitespace, not just U+0020: a citation separated by non-breaking
+  // spaces or tabs would otherwise find none, putting the whole citation in
+  // the nowrap span and clipping the pinned column instead of wrapping it.
+  const index = trimmed.search(LAST_SEPARATOR);
   if (index === -1) return { head: "", tail: trimmed };
   return { head: trimmed.slice(0, index + 1), tail: trimmed.slice(index + 1) };
 }
