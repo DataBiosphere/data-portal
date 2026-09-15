@@ -21,7 +21,9 @@ export const getStaticPaths: GetStaticPaths = getTrackerStaticPaths;
 export const getStaticProps: GetStaticProps<StaticProps> = async (
   context: GetStaticPropsContext
 ) => {
-  return getContentStaticProps(context, "Source Datasets");
+  return getContentStaticProps(context, "Source Datasets", {
+    withSourceDatasets: true,
+  });
 };
 
 const Page = ({
