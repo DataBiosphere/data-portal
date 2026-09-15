@@ -7,6 +7,7 @@ import {
   buildTrackerAnalysisPortals,
   buildTrackerDownloadCellProps,
 } from "../../../../../../../../../../utils/trackerNetwork";
+import { NewTabCue } from "../../../../../../../../../common/NewTabCue/newTabCue";
 import { TrackerDownloadCell } from "../../../../../../../../../common/Table/components/Cell/components/TrackerDownloadCell/trackerDownloadCell";
 import { AnalysisPortalCell } from "../../../../../Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
 import { FileNameCell } from "./components/FileNameCell/fileNameCell";
@@ -65,8 +66,9 @@ export function renderFileName(
 /**
  * Returns a renderer for the source study's primary data link, closing over
  * the environment's browser URL so it is carried in a typed closure rather
- * than through untyped table meta. Text only - `Link` sends external URLs to a
- * new tab with noopener/noreferrer.
+ * than through untyped table meta. The label carries a visually-hidden new-tab
+ * cue alongside the text, because `Link` sends external URLs to a new tab with
+ * noopener/noreferrer.
  * @param browserUrl - Environment's HCA Data Explorer browser URL.
  * @returns cell renderer producing a Link, or null when the source study has
  * no HCA project.
@@ -77,10 +79,16 @@ export function buildRenderPrimaryData(
   return function renderPrimaryData(ctx) {
     const { hcaProjectId } = ctx.row.original;
     if (!hcaProjectId) return null;
+    const url = buildHCADataExplorerProjectUrl(browserUrl, hcaProjectId);
     return (
       <Link
-        label={HCA_EXPLORER_LABEL}
-        url={buildHCADataExplorerProjectUrl(browserUrl, hcaProjectId)}
+        label={
+          <>
+            {HCA_EXPLORER_LABEL}
+            <NewTabCue url={url} />
+          </>
+        }
+        url={url}
       />
     );
   };
