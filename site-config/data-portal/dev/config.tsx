@@ -2,9 +2,13 @@ import {
   DataDictionary,
   DataDictionaryConfig,
 } from "@databiosphere/findable-ui/lib/common/entities";
+import { FacebookIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/FacebookIcon/facebookIcon";
+import { GitHubIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/GitHubIcon/gitHubIcon";
+import { LinkedInIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/LinkedInIcon/linkedInIcon";
+import { XIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/XIcon/xIcon";
 import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
+import { Logo } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Logo/logo";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import * as C from "../../../components/index";
 import { ROUTES } from "../../../routes/constants";
 import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
 import {
@@ -24,6 +28,20 @@ import { CONTRIBUTE } from "./navigation/contribute";
 import { GUIDES } from "./navigation/guides";
 import { socialMedia, SOCIALS } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
+
+// This module is `.tsx` so branding and icon elements can be written as JSX.
+// `Header.logo`, `Footer.Branding` and `MenuItem.icon` are all typed `ReactNode`
+// in findable-ui, so they take an element rather than a component reference —
+// unlike `Social.Icon` and `ComponentConfig.component`, which take the
+// reference itself (see socialMedia.ts and layout/floating.ts).
+//
+// Build those elements with JSX, never by calling the component as a function.
+// `makeConfig` runs at module evaluation, so `Logo({ … })` would execute the
+// component body outside React's rendering cycle, with no component instance;
+// any hook or context read added to `Logo` later would then fail, and point at
+// this file rather than at the component. `<Logo … />` only builds an element
+// descriptor — the component body does not run until React renders it. See
+// #3217.
 
 const APP_TITLE = "HCA Data Portal";
 const CATALOG = "dcp60";
@@ -84,13 +102,15 @@ export function makeConfig(
     layout: {
       floating,
       footer: {
-        Branding: C.Logo({
-          alt: APP_TITLE,
-          height: 38,
-          link: "https://www.humancellatlas.org",
-          src: "/hca-bio-networks/logos/logoHumanCellAtlas.png",
-          target: ANCHOR_TARGET.BLANK,
-        }),
+        Branding: (
+          <Logo
+            alt={APP_TITLE}
+            height={38}
+            link="https://www.humancellatlas.org"
+            src="/hca-bio-networks/logos/logoHumanCellAtlas.png"
+            target={ANCHOR_TARGET.BLANK}
+          />
+        ),
         navLinks: [
           {
             label: "About",
@@ -114,12 +134,14 @@ export function makeConfig(
       },
       header: {
         authenticationEnabled: false,
-        logo: C.Logo({
-          alt: APP_TITLE,
-          height: 32,
-          link: "/",
-          src: "/hca-bio-networks/logos/logoHca.png",
-        }),
+        logo: (
+          <Logo
+            alt={APP_TITLE}
+            height={32}
+            link="/"
+            src="/hca-bio-networks/logos/logoHca.png"
+          />
+        ),
         navigation: [
           [
             {
@@ -181,19 +203,19 @@ export function makeConfig(
               menuItems: [
                 {
                   ...SOCIALS.GITHUB,
-                  icon: C.GitHubIcon({ fontSize: "small" }),
+                  icon: <GitHubIcon fontSize="small" />,
                 },
                 {
                   ...SOCIALS.FACEBOOK,
-                  icon: C.FacebookIcon({ fontSize: "small" }),
+                  icon: <FacebookIcon fontSize="small" />,
                 },
                 {
                   ...SOCIALS.X,
-                  icon: C.XIcon({ fontSize: "small" }),
+                  icon: <XIcon fontSize="small" />,
                 },
                 {
                   ...SOCIALS.LINKEDIN,
-                  icon: C.LinkedInIcon({ fontSize: "small" }),
+                  icon: <LinkedInIcon fontSize="small" />,
                 },
               ],
               url: "",
