@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.15.1](https://github.com/DataBiosphere/data-portal/compare/v2.15.0...v2.15.1) (2026-09-17)
+
+
+### Bug Fixes
+
+* cap the azul projects page size at 50 and paginate atlas project fetches ([#3234](https://github.com/DataBiosphere/data-portal/issues/3234)) ([#3235](https://github.com/DataBiosphere/data-portal/issues/3235)) ([165c3be](https://github.com/DataBiosphere/data-portal/commit/165c3be372b8da720d04b1c1da5ad3f0df0883d6))
+* make icon marks decorative and announce links that open a new tab ([#3212](https://github.com/DataBiosphere/data-portal/issues/3212)) ([#3225](https://github.com/DataBiosphere/data-portal/issues/3225)) ([a781a51](https://github.com/DataBiosphere/data-portal/commit/a781a5105536eb3439eb19e4e907b3e86a923708))
+
+
+### Code Refactoring
+
+* build site config branding and icons as jsx, not eager calls ([#3217](https://github.com/DataBiosphere/data-portal/issues/3217)) ([#3231](https://github.com/DataBiosphere/data-portal/issues/3231)) ([10af2f2](https://github.com/DataBiosphere/data-portal/commit/10af2f20cad539bedf3966bd314d0a05a8668a12))
+* extract the source study citation into its own component ([#3218](https://github.com/DataBiosphere/data-portal/issues/3218)) ([#3224](https://github.com/DataBiosphere/data-portal/issues/3224)) ([31003d8](https://github.com/DataBiosphere/data-portal/commit/31003d8ed4b893c7cf39cb61c843104d1ac24a27))
+* require versionedfilename on tracker-built dataset assets ([#3207](https://github.com/DataBiosphere/data-portal/issues/3207)) ([#3233](https://github.com/DataBiosphere/data-portal/issues/3233)) ([8ec7636](https://github.com/DataBiosphere/data-portal/commit/8ec76360df00f70851d85f07b728243dd941f36c))
+* the atlas overview page fetches source datasets and studies it never renders ([#3205](https://github.com/DataBiosphere/data-portal/issues/3205)) ([#3232](https://github.com/DataBiosphere/data-portal/issues/3232)) ([2dd32f6](https://github.com/DataBiosphere/data-portal/commit/2dd32f6a2a2871e75a5dd6dd7f3c551747e83859))
+
 ## [2.15.0](https://github.com/DataBiosphere/data-portal/compare/v2.14.1...v2.15.0) (2026-09-10)
 
 
