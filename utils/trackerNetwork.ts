@@ -156,17 +156,16 @@ export function buildTrackerDownloadCellProps(
 /**
  * Narrows a shared `DatasetAsset` to a `TrackerDatasetAsset`. Needed only where
  * tracker and CXG assets share a type, such as the integrated atlases table row.
+ * Tests for the property's presence rather than its value: telling tracker
+ * assets from CXG assets is its only job, and an invalid value should surface
+ * in the rendered cell rather than hide the download button.
  * @param asset - Dataset asset, or undefined when the row has none.
- * @returns true when the asset carries a published file name.
+ * @returns true when the asset is a tracker-built asset.
  */
 export function isTrackerDatasetAsset(
   asset: DatasetAsset | undefined
 ): asset is TrackerDatasetAsset {
-  return (
-    asset !== undefined &&
-    "versionedFileName" in asset &&
-    Boolean(asset.versionedFileName)
-  );
+  return asset !== undefined && "versionedFileName" in asset;
 }
 
 /**
