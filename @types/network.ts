@@ -202,8 +202,9 @@ export interface TrackerComponentAtlas {
   fileId: string;
   // The tracker's internal working file name, e.g.
   // "gray2022-r1-wip-2-edit-2026-08-25-03-50-06.h5ad". This is NOT the
-  // published object name - use `datasetAsset.versionedFileName` for anything
-  // user-facing or for building a download URL.
+  // published object name - use the `versionedFileName` of the
+  // `TrackerDatasetAsset` built by `mapTrackerComponentAtlasToIntegratedAtlas`
+  // for anything user-facing or for building a download URL.
   fileName: string;
   geneCount: number;
   id: string;
