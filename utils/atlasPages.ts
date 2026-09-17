@@ -1,5 +1,5 @@
 import { COLLATOR_CASE_INSENSITIVE } from "@databiosphere/findable-ui/lib/common/constants";
-import { fetchEntitiesFromQuery } from "@databiosphere/findable-ui/lib/entity/api/service";
+import { fetchAllEntities } from "@databiosphere/findable-ui/lib/entity/api/service";
 import {
   GetStaticPaths,
   GetStaticPathsResult,
@@ -86,11 +86,13 @@ export async function getContentStaticProps(
 
   const projectsResponses = [];
   if (atlas.datasets.length > 0) {
-    const result = await fetchEntitiesFromQuery(
+    // Paginate so an atlas with more datasets than Azul's page size cap still
+    // gets every project.
+    const result = await fetchAllEntities(
       `${url}/projects`,
-      filterProjectId(atlas.datasets),
       undefined,
-      undefined
+      undefined,
+      filterProjectId(atlas.datasets)
     );
     projectsResponses.push(...result.hits);
     const datasets = atlas.externalDatasets;
