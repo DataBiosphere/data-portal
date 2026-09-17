@@ -90,7 +90,9 @@ export function makeConfig(
     ] as unknown as DataDictionaryConfig[],
     dataSource: {
       defaultListParams: {
-        size: "75",
+        // Azul rejects `size` above 50; callers that may need more than one
+        // page of results paginate with `fetchAllEntities`.
+        size: "50",
       },
       defaultParams: {
         catalog,
