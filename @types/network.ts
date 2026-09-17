@@ -115,11 +115,6 @@ export interface DatasetAsset {
   downloadURL: string;
   fileSize: number;
   fileType: CXG_DATASET_FILE_TYPE;
-  // Published file name with extension, e.g. "ihbca-v1-gray-2022-r1.h5ad",
-  // derived by `buildVersionedFileName`. NOT the tracker's own `fileName`,
-  // which is an internal working name. Set for tracker-built assets only; CXG
-  // assets are rendered by CXGDownloadCell, which does not use it.
-  versionedFileName?: string;
 }
 
 export interface IntegratedAtlas {
@@ -207,8 +202,9 @@ export interface TrackerComponentAtlas {
   fileId: string;
   // The tracker's internal working file name, e.g.
   // "gray2022-r1-wip-2-edit-2026-08-25-03-50-06.h5ad". This is NOT the
-  // published object name - use `datasetAsset.versionedFileName` for anything
-  // user-facing or for building a download URL.
+  // published object name - use the `versionedFileName` of the
+  // `TrackerDatasetAsset` built by `mapTrackerComponentAtlasToIntegratedAtlas`
+  // for anything user-facing or for building a download URL.
   fileName: string;
   geneCount: number;
   id: string;
@@ -225,13 +221,25 @@ export interface TrackerConfig {
   version: string;
 }
 
+/**
+ * Dataset asset built from tracker file metadata. `TrackerDownloadCell` renders
+ * the published file name, so requiring it here makes a tracker asset without
+ * one a compile error rather than a silently missing download button.
+ */
+export interface TrackerDatasetAsset extends DatasetAsset {
+  // Published file name with extension, e.g. "ihbca-v1-gray-2022-r1.h5ad",
+  // derived by `buildVersionedFileName`. NOT the tracker's own `fileName`,
+  // which is an internal working name.
+  versionedFileName: string;
+}
+
 export interface TrackerSourceDataset {
   assay: string[];
   baseFileName: string;
   capUrl: string | null; // Full CAP dataset URL, e.g. "https://celltype.info/project/1030/dataset/3400".
   cellCount: number;
   componentAtlases?: { id: string; name: string }[];
-  datasetAsset?: DatasetAsset;
+  datasetAsset: TrackerDatasetAsset;
   disease: string[];
   doi: string | null;
   fileId: string;

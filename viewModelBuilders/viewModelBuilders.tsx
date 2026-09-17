@@ -38,7 +38,10 @@ import { TrackerDownloadCell } from "../components/common/Table/components/Cell/
 import { AnalysisPortalCell } from "../components/HCABioNetworks/Network/Atlas/components/Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
 import { NETWORKS_ROUTE } from "../constants/routes";
 import { formatCountSize } from "../utils/formatCountSize";
-import { buildTrackerDownloadCellProps } from "../utils/trackerNetwork";
+import {
+  buildTrackerDownloadCellProps,
+  isTrackerDatasetAsset,
+} from "../utils/trackerNetwork";
 import { DISEASE } from "./entities";
 
 /**
@@ -116,11 +119,13 @@ function getAtlasesActionsColumnDef(
     accessorKey: "actions",
     cell: isTracker
       ? ({ row }): JSX.Element | null => {
-          const props = buildTrackerDownloadCellProps(
-            row.original.datasetAssets[0]
+          // The row type is shared with CXG atlases, so narrow at the render
+          // boundary; a tracker-built row always passes.
+          const [asset] = row.original.datasetAssets;
+          if (!isTrackerDatasetAsset(asset)) return null;
+          return (
+            <TrackerDownloadCell {...buildTrackerDownloadCellProps(asset)} />
           );
-          if (!props) return null;
-          return <TrackerDownloadCell {...props} />;
         }
       : ({ row }): JSX.Element => (
           <CXGDownloadCell

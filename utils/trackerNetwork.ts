@@ -4,6 +4,7 @@ import type {
   DatasetAsset,
   IntegratedAtlas,
   TrackerComponentAtlas,
+  TrackerDatasetAsset,
   TrackerSourceDatasetResponse,
 } from "../@types/network";
 import { CXG_DATASET_FILE_TYPE } from "../@types/network";
@@ -55,13 +56,13 @@ export function buildTrackerCXGDataPortalLink(
 }
 
 /**
- * Builds a DatasetAsset for a tracker source dataset.
+ * Builds a TrackerDatasetAsset for a tracker source dataset.
  * @param sourceDataset - Tracker source dataset.
- * @returns dataset asset.
+ * @returns tracker dataset asset.
  */
 export function buildTrackerSourceDatasetAsset(
   sourceDataset: TrackerSourceDatasetResponse
-): DatasetAsset {
+): TrackerDatasetAsset {
   return buildTrackerDatasetAsset(
     TRACKER_FOLDER_TYPE.SOURCE_DATASETS,
     sourceDataset.baseFileName,
@@ -112,19 +113,19 @@ export function mapTrackerComponentAtlasToIntegratedAtlas(
 }
 
 /**
- * Builds a DatasetAsset from tracker file metadata.
+ * Builds a TrackerDatasetAsset from tracker file metadata.
  * @param folderType - Tracker folder type (integrated objects or source datasets).
  * @param baseFileName - Base file name (without revision suffix).
  * @param revision - File revision number.
  * @param sizeBytes - File size in bytes.
- * @returns dataset asset.
+ * @returns tracker dataset asset.
  */
 function buildTrackerDatasetAsset(
   folderType: TrackerFolderType,
   baseFileName: string,
   revision: number,
   sizeBytes: number
-): DatasetAsset {
+): TrackerDatasetAsset {
   const versionedFileName = buildVersionedFileName(baseFileName, revision);
   return {
     downloadURL: buildTrackerDownloadUrl(folderType, versionedFileName),
@@ -137,13 +138,12 @@ function buildTrackerDatasetAsset(
 /**
  * Builds the props a `TrackerDownloadCell` needs from a tracker-built asset,
  * so the stem/extension display convention lives in one place.
- * @param asset - Dataset asset carrying a `versionedFileName`.
- * @returns cell props, or null when the asset has no published file name.
+ * @param asset - Tracker dataset asset.
+ * @returns cell props.
  */
 export function buildTrackerDownloadCellProps(
-  asset: DatasetAsset | undefined
-): TrackerDownloadCellProps | null {
-  if (!asset?.versionedFileName) return null;
+  asset: TrackerDatasetAsset
+): TrackerDownloadCellProps {
   const { ext, stem } = splitFileName(asset.versionedFileName);
   return {
     downloadUrl: asset.downloadURL,
@@ -151,6 +151,21 @@ export function buildTrackerDownloadCellProps(
     fileSize: asset.fileSize,
     format: ext,
   };
+}
+
+/**
+ * Narrows a shared `DatasetAsset` to a `TrackerDatasetAsset`. Needed only where
+ * tracker and CXG assets share a type, such as the integrated atlases table row.
+ * Tests for the property's presence rather than its value: telling tracker
+ * assets from CXG assets is its only job, and an invalid value should surface
+ * in the rendered cell rather than hide the download button.
+ * @param asset - Dataset asset, or undefined when the row has none.
+ * @returns true when the asset is a tracker-built asset.
+ */
+export function isTrackerDatasetAsset(
+  asset: DatasetAsset | undefined
+): asset is TrackerDatasetAsset {
+  return asset !== undefined && "versionedFileName" in asset;
 }
 
 /**
