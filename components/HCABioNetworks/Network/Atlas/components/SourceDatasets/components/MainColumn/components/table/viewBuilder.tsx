@@ -28,13 +28,12 @@ export function renderCellCount(
  * Renders a tracker download cell for a source dataset.
  * Uses the pre-built datasetAsset from static props.
  * @param ctx - Cell context.
- * @returns TrackerDownloadCell component, or null if asset unavailable.
+ * @returns TrackerDownloadCell component.
  */
 export function renderDownload(
   ctx: CellContext<TrackerSourceDataset, unknown>
-): JSX.Element | null {
+): JSX.Element {
   const props = buildTrackerDownloadCellProps(ctx.row.original.datasetAsset);
-  if (!props) return null;
   return <TrackerDownloadCell {...props} />;
 }
 

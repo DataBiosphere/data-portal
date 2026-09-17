@@ -40,12 +40,10 @@ export function buildReferenceAuthor(row: TrackerSourceDataset): string {
 /**
  * Returns the file name shown in the pinned column, so the column sorts on the
  * value it displays rather than on the unrevisioned base name. `FileNameCell`
- * renders this same value, so the two cannot drift. `versionedFileName` is set
- * for every tracker source dataset but is optional on the shared asset type,
- * hence the fallback to the required base name.
+ * renders this same value, so the two cannot drift.
  * @param row - Tracker source dataset.
- * @returns versioned file name, falling back to the base file name.
+ * @returns versioned file name.
  */
 export function buildVersionedFileNameValue(row: TrackerSourceDataset): string {
-  return row.datasetAsset?.versionedFileName || row.baseFileName;
+  return row.datasetAsset.versionedFileName;
 }
