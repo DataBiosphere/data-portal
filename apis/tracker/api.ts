@@ -81,9 +81,14 @@ export function fetchTrackerSourceStudies(
 
 /**
  * Returns the cached list of published atlases, fetching on first call.
- * On failure (network error, non-2xx, malformed body), logs a warning and
- * resolves to an empty list so callers can fall back to "no atlases
- * published" — protecting non-tracker pages from tracker outages.
+ * Failures (network error, non-2xx, malformed body, missing tracker URL)
+ * are rethrown so the build fails deterministically rather than silently
+ * omitting tracker atlases. Next.js runs getStaticPaths and getStaticProps
+ * across several worker processes, each with its own module-level cache, so
+ * degrading to an empty list could not be made consistent across callers —
+ * one page could treat an atlas as published while another omitted it,
+ * shipping tabs that 404 (see #3203). The rejected promise is cleared so a
+ * long-lived `next dev` server can retry on the next request.
  * @returns list of published atlases.
  */
 function getPublishedAtlases(): Promise<PublishedAtlas[]> {
@@ -94,19 +99,17 @@ function getPublishedAtlases(): Promise<PublishedAtlas[]> {
     )
       .then((data) => {
         if (!Array.isArray(data)) {
-          console.warn(
-            `Tracker /api/published-atlases returned a non-array body; treating as empty.`
+          throw new Error(
+            "Tracker /api/published-atlases returned a non-array body"
           );
-          return [];
         }
         return data as PublishedAtlas[];
       })
       .catch((err) => {
-        console.warn(
-          `Failed to fetch published atlases from tracker; treating as empty. ${err}`
-        );
         publishedAtlasesPromise = null;
-        return [];
+        throw new Error(
+          `[tracker] Failed to fetch published atlases; aborting build. ${err}`
+        );
       });
   }
   return publishedAtlasesPromise;
