@@ -16,6 +16,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./*"],
       "images/*": ["images/*"],
       "got": ["./node_modules/got/dist/source"]
     }
