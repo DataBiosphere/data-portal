@@ -1,13 +1,16 @@
+import {
+  Section,
+  StyledTypography,
+} from "@/components/Home/components/Section/section.styles";
+import { NETWORK_ICONS } from "@/constants/networks";
+import { NETWORKS_ROUTE } from "@/constants/routes";
+import { useNetworkList } from "@/hooks/useNetworkList";
+import { getBioNetworkName } from "@/viewModelBuilders/viewModelBuilders";
 import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Tooltip, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import { JSX } from "react";
-import { NETWORK_ICONS } from "../../../../constants/networks";
-import { NETWORKS_ROUTE } from "../../../../constants/routes";
-import { useNetworkList } from "../../../../hooks/useNetworkList";
-import { getBioNetworkName } from "../../../../viewModelBuilders/viewModelBuilders";
-import { Section, StyledTypography } from "../Section/section.styles";
 import {
   Badge,
   BioNetworkAtlas,

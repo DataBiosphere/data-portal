@@ -1,11 +1,11 @@
+import { Coordinators } from "@/components/common/Section/components/Coordinators/coordinators";
+import { HCABiologicalNetwork } from "@/components/common/Section/components/HCABiologicalNetwork/HCABiologicalNetwork";
+import { Publications } from "@/components/common/Section/components/Publications/publications";
+import { References } from "@/components/common/Section/components/References/references";
+import { DataReleasePolicy } from "@/components/HCABioNetworks/Network/Atlas/components/common/DataReleasePolicy/dataReleasePolicy";
+import { useAtlas } from "@/contexts/atlasContext";
 import { Sections } from "@databiosphere/findable-ui/lib/components/common/Sections/sections";
-import { useAtlas } from "contexts/atlasContext";
 import { Fragment, JSX } from "react";
-import { Coordinators } from "../../../../../../../common/Section/components/Coordinators/coordinators";
-import { HCABiologicalNetwork } from "../../../../../../../common/Section/components/HCABiologicalNetwork/HCABiologicalNetwork";
-import { Publications } from "../../../../../../../common/Section/components/Publications/publications";
-import { References } from "../../../../../../../common/Section/components/References/references";
-import { DataReleasePolicy } from "../../../common/DataReleasePolicy/dataReleasePolicy";
 import { getDataExplorationTools } from "./utils";
 
 export const SideColumn = (): JSX.Element => {

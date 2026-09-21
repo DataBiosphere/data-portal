@@ -1,3 +1,10 @@
+import { StyledToolbar, Table } from "@/components/common/Table/table.styles";
+import { SectionText } from "@/components/HCABioNetworks/components/Section/section.styles";
+import { useNetwork, useNetworkContent } from "@/contexts/networkContext";
+import {
+  getAtlasesTableColumns,
+  rollUpAtlases,
+} from "@/viewModelBuilders/viewModelBuilders";
 import {
   FluidPaper,
   GridPaper,
@@ -10,19 +17,6 @@ import {
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Typography } from "@mui/material";
 import { JSX } from "react";
-import {
-  useNetwork,
-  useNetworkContent,
-} from "../../../../../../../contexts/networkContext";
-import {
-  getAtlasesTableColumns,
-  rollUpAtlases,
-} from "../../../../../../../viewModelBuilders/viewModelBuilders";
-import {
-  StyledToolbar,
-  Table,
-} from "../../../../../../common/Table/table.styles";
-import { SectionText } from "../../../../../components/Section/section.styles";
 import { NetworkAtlasesEmpty } from "./components/NetworkAtlasesEmpty/networkAtlasesEmpty";
 import { TABLE_OPTIONS } from "./constants";
 

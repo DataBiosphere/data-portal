@@ -1,7 +1,7 @@
+import { buildVersionedFileNameValue } from "@/components/HCABioNetworks/Network/Atlas/components/SourceDatasets/components/MainColumn/components/table/accessor";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Stack, Typography } from "@mui/material";
 import type { JSX } from "react";
-import { buildVersionedFileNameValue } from "../../accessor";
 import { Citation } from "./components/Citation/citation";
 import type { Props } from "./types";
 

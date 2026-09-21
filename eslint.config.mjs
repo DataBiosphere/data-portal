@@ -89,6 +89,54 @@ const config = [
       "@typescript-eslint/explicit-function-return-type": "error",
     },
   },
+  {
+    // Imports that reach outside a file's own subtree must use the `@/` root
+    // alias so file moves don't rewrite unrelated import lines (#3210).
+    // `./` stays allowed for same-directory and descendant imports. The bare
+    // list mirrors the top-level directories `baseUrl: "."` would otherwise
+    // let through unaliased.
+    files: ["**/*.{ts,tsx}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["../*", "../**"],
+              message:
+                "Use the @/ root alias for imports outside this file's subtree; relative imports are only for ./ descendants.",
+            },
+            {
+              group: [
+                "apis/*",
+                "common/*",
+                "components/*",
+                "config/*",
+                "constants/*",
+                "content/*",
+                "contexts/*",
+                "docs/*",
+                "hooks/*",
+                "pages/*",
+                "public/*",
+                "routes/*",
+                "scripts/*",
+                "site-config/*",
+                "src/*",
+                "theme/*",
+                "types/*",
+                "utils/*",
+                "viewModelBuilders/*",
+                "views/*",
+              ],
+              message:
+                "Use the @/ root alias instead of a bare baseUrl-relative path.",
+            },
+          ],
+        },
+      ],
+    },
+  },
 ];
 
 export default config;

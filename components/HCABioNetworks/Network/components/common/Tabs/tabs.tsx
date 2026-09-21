@@ -1,3 +1,9 @@
+import {
+  NETWORKS_PATTERN,
+  NETWORK_PUBLICATIONS_PATTERN,
+} from "@/constants/routes";
+import { useNetwork } from "@/contexts/networkContext";
+import { Network } from "@/types/network";
 import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import {
   Tabs as DXTabs,
@@ -6,12 +12,6 @@ import {
 } from "@databiosphere/findable-ui/lib/components/common/Tabs/tabs";
 import { useRouter } from "next/router";
 import { JSX } from "react";
-import { Network } from "../../../../../../@types/network";
-import {
-  NETWORKS_PATTERN,
-  NETWORK_PUBLICATIONS_PATTERN,
-} from "../../../../../../constants/routes";
-import { useNetwork } from "../../../../../../contexts/networkContext";
 
 export const Tabs = (): JSX.Element => {
   const router = useRouter();

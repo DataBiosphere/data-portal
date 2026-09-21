@@ -1,10 +1,10 @@
+import { Coordinators } from "@/components/common/Section/components/Coordinators/coordinators";
+import { Section } from "@/components/common/Section/components/Coordinators/coordinators.styles";
+import { useNetwork } from "@/contexts/networkContext";
+import { getNetworkSummaryKeyValuePairs } from "@/viewModelBuilders/viewModelBuilders";
 import { KeyValuePairs } from "@databiosphere/findable-ui/lib/components/common/KeyValuePairs/keyValuePairs";
 import { Sections } from "@databiosphere/findable-ui/lib/components/common/Sections/sections";
 import { JSX } from "react";
-import { useNetwork } from "../../../../../../../contexts/networkContext";
-import { getNetworkSummaryKeyValuePairs } from "../../../../../../../viewModelBuilders/viewModelBuilders";
-import { Coordinators } from "../../../../../../common/Section/components/Coordinators/coordinators";
-import { Section } from "../../../../../../common/Section/components/Coordinators/coordinators.styles";
 import { KeyElType } from "./components/Summary/components/KeyElType/keyElType";
 import { KeyValuesElType } from "./components/Summary/components/KeyValuesElType/keyValuesElType";
 import { ValueElType } from "./components/Summary/components/ValueElType/valueElType";

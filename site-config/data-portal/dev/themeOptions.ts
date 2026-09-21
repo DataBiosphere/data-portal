@@ -1,5 +1,5 @@
+import { TYPOGRAPHY } from "@/theme/typography/constants";
 import { ThemeOptions } from "@mui/material";
-import { TYPOGRAPHY } from "../../../theme/typography/constants";
 
 export const themeOptions: ThemeOptions = {
   palette: {

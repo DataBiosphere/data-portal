@@ -1,5 +1,5 @@
+import type { TrackerSourceDataset } from "@/types/network";
 import { LABEL } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
-import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
 
 // Facet value for a source study with no journal, matching the label used by
 // the tracker Source Studies table that #3194 removed. (The non-tracker

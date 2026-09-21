@@ -1,6 +1,6 @@
+import * as C from "@/components/index";
 import { SocialMedia } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import * as C from "../../../components/index";
 
 export const SOCIALS = {
   FACEBOOK: {

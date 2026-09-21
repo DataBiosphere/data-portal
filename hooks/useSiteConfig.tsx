@@ -1,5 +1,5 @@
+import { SiteConfig } from "@/site-config/common/entities";
 import { useConfig } from "@databiosphere/findable-ui/lib/hooks/useConfig";
-import { SiteConfig } from "../site-config/common/entities";
 
 export const useSiteConfig = (): SiteConfig => {
   const { config } = useConfig();

@@ -1,4 +1,4 @@
-import { ANALYSIS_PORTAL, AnalysisPortal } from "../@types/network";
+import { ANALYSIS_PORTAL, AnalysisPortal } from "@/types/network";
 
 /**
  * Cell Annotation Platform (CAP) analysis portal.

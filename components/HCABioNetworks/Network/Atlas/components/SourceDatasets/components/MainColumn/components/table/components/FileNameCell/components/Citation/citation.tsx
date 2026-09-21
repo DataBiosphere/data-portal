@@ -1,3 +1,4 @@
+import { NEW_TAB_TEXT } from "@/components/common/NewTabCue/constants";
 import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
@@ -6,7 +7,6 @@ import { Link } from "@databiosphere/findable-ui/lib/components/Links/components
 import { SVG_ICON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/svgIcon";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import type { JSX } from "react";
-import { NEW_TAB_TEXT } from "../../../../../../../../../../../../../common/NewTabCue/constants";
 import { StyledNoWrap, StyledOpenInNewIcon } from "./citation.styles";
 import { DOI_BASE_URL } from "./constants";
 import type { Props } from "./types";

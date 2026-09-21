@@ -1,8 +1,8 @@
+import { SEARCH_CATEGORY } from "@/views/SearchView/common/constants";
 import { SEARCH_PARAMETERS } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Actions/components/Search/components/SearchBar/common/constants";
 import { useSearchParams } from "next/navigation";
 import Router, { useRouter } from "next/router";
 import { useCallback } from "react";
-import { SEARCH_CATEGORY } from "../common/constants";
 import { getCategory } from "./common/utils";
 
 export interface UseSearchCategory {

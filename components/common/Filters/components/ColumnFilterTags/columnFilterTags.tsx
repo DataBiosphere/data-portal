@@ -1,9 +1,9 @@
+import { FILTER_DRAWER_BREAKPOINT } from "@/components/common/Filters/constants";
 import { ColumnFilterTag } from "@databiosphere/findable-ui/lib/components/Table/components/TableFeatures/ColumnFilter/components/ColumnFilterTag/columnFilterTag";
 import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
 import { Button, Theme, useMediaQuery } from "@mui/material";
 import { RowData } from "@tanstack/react-table";
 import { JSX } from "react";
-import { FILTER_DRAWER_BREAKPOINT } from "../../constants";
 import { StyledGrid } from "./columnFilterTags.styles";
 import { GRID_PROPS } from "./constants";
 import { Props } from "./types";

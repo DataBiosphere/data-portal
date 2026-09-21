@@ -1,6 +1,6 @@
+import { NETWORKS } from "@/constants/networks";
+import type { Network } from "@/types/network";
 import { createContext, useContext } from "react";
-import type { Network } from "../@types/network";
-import { NETWORKS } from "../constants/networks";
 
 const NetworkListContext = createContext<Network[]>(NETWORKS);
 

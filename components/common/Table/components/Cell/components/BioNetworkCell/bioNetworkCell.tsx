@@ -1,10 +1,10 @@
+import { NETWORK_ICONS } from "@/constants/networks";
+import { NETWORKS_ROUTE } from "@/constants/routes";
+import { Network } from "@/types/network";
+import { getBioNetworkName } from "@/viewModelBuilders/viewModelBuilders";
 import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { JSX } from "react";
-import { Network } from "../../../../../../../@types/network";
-import { NETWORK_ICONS } from "../../../../../../../constants/networks";
-import { NETWORKS_ROUTE } from "../../../../../../../constants/routes";
-import { getBioNetworkName } from "../../../../../../../viewModelBuilders/viewModelBuilders";
 import { Cell } from "./bioNetworkCell.styles";
 
 export interface BioNetworkCellProps {

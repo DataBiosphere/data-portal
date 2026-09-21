@@ -1,10 +1,10 @@
+import { PublicationDetail } from "@/components/HCABioNetworks/Network/components/Publications/components/MainColumn/components/PublicationDetail/publicationDetail";
+import { BICCNPublication } from "@/types/network";
 import { CardContent } from "@databiosphere/findable-ui/lib/components/common/Card/card.styles";
 import { CardActionArea } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardActionArea/cardActionArea";
 import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { JSX } from "react";
-import { BICCNPublication } from "../../../../../../../../../@types/network";
-import { PublicationDetail } from "../PublicationDetail/publicationDetail";
 import {
   Card,
   CardSecondaryTitle,

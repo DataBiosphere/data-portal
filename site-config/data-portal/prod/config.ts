@@ -1,5 +1,9 @@
-import { SiteConfig } from "../../common/entities";
-import { DATA_URL, GIT_HUB_REPO_URL, makeConfig } from "../dev/config";
+import { SiteConfig } from "@/site-config/common/entities";
+import {
+  DATA_URL,
+  GIT_HUB_REPO_URL,
+  makeConfig,
+} from "@/site-config/data-portal/dev/config";
 
 const EXPLORER_URL = "https://explore.data.humancellatlas.org";
 const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";

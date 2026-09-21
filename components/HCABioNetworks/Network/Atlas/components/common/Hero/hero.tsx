@@ -1,6 +1,6 @@
+import { NETWORKS_ROUTE } from "@/constants/routes";
+import { useAtlas } from "@/contexts/atlasContext";
 import { BackPageHero } from "@databiosphere/findable-ui/lib/components/Layout/components/BackPage/components/BackPageHero/backPageHero";
-import { NETWORKS_ROUTE } from "constants/routes";
-import { useAtlas } from "contexts/atlasContext";
 import { JSX, useMemo } from "react";
 
 export const Hero = (): JSX.Element => {

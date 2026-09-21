@@ -1,7 +1,7 @@
+import { BICCNPublication, CrossrefWork } from "@/types/network";
 import { promises as fsp } from "fs";
 import got, { HTTPError } from "got";
 import { decode } from "html-entities";
-import { BICCNPublication, CrossrefWork } from "../@types/network";
 
 interface PublicationInfo {
   authors: string[];

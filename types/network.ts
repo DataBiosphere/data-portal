@@ -1,7 +1,7 @@
+import { ProjectsResponse } from "@/apis/azul/hca-dcp/common/responses";
 import { StaticImageProps } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { ElementType } from "react";
-import { ProjectsResponse } from "../apis/azul/hca-dcp/common/responses";
 
 export interface Coordinator {
   email?: string;

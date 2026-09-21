@@ -1,9 +1,9 @@
+import { NETWORK_ICONS } from "@/constants/networks";
+import { NetworkKey } from "@/types/network";
 import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Typography } from "@mui/material";
 import { JSX } from "react";
-import { NetworkKey } from "../../../../../../../@types/network";
-import { NETWORK_ICONS } from "../../../../../../../constants/networks";
 import { Title } from "./heroTitle.styles";
 
 export interface HeroTitleProps {

@@ -1,9 +1,9 @@
+import { NETWORK_ICONS } from "@/constants/networks";
+import { NETWORKS_ROUTE } from "@/constants/routes";
+import { Network } from "@/types/network";
 import { SectionTitle } from "@databiosphere/findable-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
 import { GridPaperSection } from "@databiosphere/findable-ui/lib/components/common/Section/section.styles";
 import { JSX } from "react";
-import { Network } from "../../../../../@types/network";
-import { NETWORK_ICONS } from "../../../../../constants/networks";
-import { NETWORKS_ROUTE } from "../../../../../constants/routes";
 import { StyledIconLink } from "./HCABiologicalNetwork.styles";
 
 export interface HCABiologicalNetworkProps {

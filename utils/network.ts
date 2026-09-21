@@ -1,4 +1,5 @@
-import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { processNullElements } from "@/apis/azul/hca-dcp/common/utils";
+import { CAP, CZ_CELLXGENE } from "@/constants/analysisPortals";
 import {
   AnalysisPortal,
   Atlas,
@@ -8,9 +9,8 @@ import {
   DatasetAsset,
   IntegratedAtlas,
   Network,
-} from "../@types/network";
-import { processNullElements } from "../apis/azul/hca-dcp/common/utils";
-import { CAP, CZ_CELLXGENE } from "../constants/analysisPortals";
+} from "@/types/network";
+import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 
 const CAP_PROJECT_LABEL = "Cell Annotation Platform";
 const CZ_CELLXGENE_COLLECTION_LABEL = "CZ CELLxGENE Collection";

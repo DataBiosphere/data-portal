@@ -1,5 +1,5 @@
+import { Figure } from "@/components/common/Figure/figure";
 import { JSX } from "react";
-import { Figure } from "../../../common/Figure/figure";
 import { Grid } from "./attributions.styles";
 
 export const Attributions = (): JSX.Element => {

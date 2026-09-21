@@ -1,15 +1,12 @@
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
-import { Button } from "@mui/material";
-import { JSX, useState } from "react";
-import {
-  CXG_DATASET_FILE_TYPE,
-  DatasetAsset,
-} from "../../../../../../../../../@types/network";
-import { DialogContentSection } from "../../../../../Actions/components/Dialog/components/DialogContent/components/DialogContentSection/dialogContentSection";
+import { DialogContentSection } from "@/components/common/Table/components/Actions/components/Dialog/components/DialogContent/components/DialogContentSection/dialogContentSection";
 import {
   DialogActions,
   DialogContent,
-} from "../../../../../Actions/components/Dialog/dialog.styles";
+} from "@/components/common/Table/components/Actions/components/Dialog/dialog.styles";
+import { CXG_DATASET_FILE_TYPE, DatasetAsset } from "@/types/network";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
+import { Button } from "@mui/material";
+import { JSX, useState } from "react";
 import { CXGDownloadCaption } from "./components/CXGDownloadCaption/cxgDownloadCaption";
 import { CXGDownloadFileSize } from "./components/CXGDownloadFileSize/cxgDownloadFileSize";
 import { CXGDownloadRadio } from "./components/CXGDownloadRadio/cxgDownloadRadio";

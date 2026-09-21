@@ -1,3 +1,10 @@
+import { Hero } from "@/components/HCABioNetworks/Network/Atlas/components/common/Hero/hero";
+import { Tabs } from "@/components/HCABioNetworks/Network/Atlas/components/common/Tabs/tabs";
+import { MainColumn } from "@/components/HCABioNetworks/Network/Atlas/components/Overview/components/MainColumn/mainColumn";
+import { SideColumn } from "@/components/HCABioNetworks/Network/Atlas/components/Overview/components/SideColumn/sideColumn";
+import { AtlasProvider } from "@/contexts/atlasContext";
+import * as atlasPages from "@/utils/atlasPages";
+import { getContentStaticProps, StaticProps } from "@/utils/atlasPages";
 import { Detail } from "@databiosphere/findable-ui/lib/components/Detail/detail";
 import {
   GetStaticPaths,
@@ -6,16 +13,6 @@ import {
   InferGetStaticPropsType,
 } from "next";
 import { JSX } from "react";
-import { Hero } from "../../../../../components/HCABioNetworks/Network/Atlas/components/common/Hero/hero";
-import { Tabs } from "../../../../../components/HCABioNetworks/Network/Atlas/components/common/Tabs/tabs";
-import { MainColumn } from "../../../../../components/HCABioNetworks/Network/Atlas/components/Overview/components/MainColumn/mainColumn";
-import { SideColumn } from "../../../../../components/HCABioNetworks/Network/Atlas/components/Overview/components/SideColumn/sideColumn";
-import { AtlasProvider } from "../../../../../contexts/atlasContext";
-import * as atlasPages from "../../../../../utils/atlasPages";
-import {
-  getContentStaticProps,
-  StaticProps,
-} from "../../../../../utils/atlasPages";
 
 export const getStaticPaths: GetStaticPaths = atlasPages.getStaticPaths;
 

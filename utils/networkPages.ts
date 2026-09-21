@@ -1,15 +1,15 @@
+import {
+  fetchTrackerComponentAtlases,
+  isTrackerAtlasPublished,
+  resolveTrackerAtlasId,
+} from "@/apis/tracker/api";
+import { NETWORKS } from "@/constants/networks";
+import type { Network, NetworkParam } from "@/types/network";
 import type {
   GetStaticPaths,
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from "next";
-import type { Network, NetworkParam } from "../@types/network";
-import {
-  fetchTrackerComponentAtlases,
-  isTrackerAtlasPublished,
-  resolveTrackerAtlasId,
-} from "../apis/tracker/api";
-import { NETWORKS } from "../constants/networks";
 import { fetchCXGDatasetsForAtlases, processNetwork } from "./network";
 import { mapTrackerComponentAtlasToIntegratedAtlas } from "./trackerNetwork";
 
