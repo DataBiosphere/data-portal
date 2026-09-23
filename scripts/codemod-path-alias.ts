@@ -43,7 +43,8 @@ const TOP_LEVEL_DIRS = new Set(
 );
 
 // Matches the module specifier of static imports/re-exports and dynamic
-// imports. Group 1 is the opening delimiter, group 2 the specifier.
+// imports. Group 1 is the opening delimiter, group 2 the quote, group 3 the
+// specifier.
 const SPECIFIER_RE =
   /(\bfrom\s*|\bimport\s*\(\s*|\bimport\s+)(["'])([^"']+)\2/g;
 
