@@ -110,7 +110,14 @@ const config = [
                 "Use the @/ root alias for imports outside this file's subtree; relative imports are only for ./ descendants.",
             },
             {
+              // Exact names are listed only for directories with an index
+              // file, which `baseUrl` resolves as a bare specifier. The
+              // leading slash anchors them (gitignore semantics) so they do
+              // not match `components` as a segment of some deeper path.
               group: [
+                "/components",
+                "/content",
+                "/pages",
                 "apis/*",
                 "common/*",
                 "components/*",

@@ -6,7 +6,13 @@
 //
 // Usage (from the repo root): npm run codemod:path-alias [-- --dry-run]
 
-import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  readdirSync,
+  readFileSync,
+  statSync,
+  writeFileSync,
+} from "node:fs";
 import path from "node:path";
 
 // Run from the repo root (as the npm script does); esrun bundles the script,
@@ -58,6 +64,18 @@ function collect(dir: string, out: string[] = []): string[] {
 }
 
 /**
+ * Returns true when a top-level directory can be imported bare, i.e. it has
+ * an index file that `baseUrl: "."` resolves.
+ * @param dir - Top-level directory name.
+ * @returns true if the directory has an index file.
+ */
+function hasIndexFile(dir: string): boolean {
+  return ["index.ts", "index.tsx"].some((f) =>
+    existsSync(path.join(ROOT, dir, f))
+  );
+}
+
+/**
  * Returns the aliased specifier for one that reaches outside the file's
  * subtree, or null when it should be left unchanged.
  * @param file - Absolute path of the importing file.
@@ -80,7 +98,8 @@ function rewrite(file: string, spec: string): string | null {
   // are never rewritten: `@types/node` is an npm package, not our directory.
   if (spec.startsWith("@")) return null;
   const [head, ...rest] = spec.split("/");
-  if (TOP_LEVEL_DIRS.has(head) && rest.length > 0) return "@/" + spec;
+  if (!TOP_LEVEL_DIRS.has(head)) return null;
+  if (rest.length > 0 || hasIndexFile(head)) return "@/" + spec;
   return null;
 }
 
