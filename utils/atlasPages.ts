@@ -84,23 +84,23 @@ export async function getContentStaticProps(
     dataSource: { url },
   } = config();
 
-  const projectsResponses = [];
-  if (atlas.datasets.length > 0) {
-    // Paginate so an atlas with more datasets than Azul's page size cap still
-    // gets every project.
-    const result = await fetchAllEntities(
-      `${url}/projects`,
-      undefined,
-      undefined,
-      filterProjectId(atlas.datasets)
-    );
-    projectsResponses.push(...result.hits);
-    const datasets = atlas.externalDatasets;
-    if (datasets) {
-      projectsResponses.push(...datasets);
-      projectsResponses.sort(sortDatasets);
-    }
-  }
+  // Paginate so an atlas with more datasets than Azul's page size cap still
+  // gets every project. Skipped when the atlas has no HCA datasets.
+  const { hits } =
+    atlas.datasets.length > 0
+      ? await fetchAllEntities(
+          `${url}/projects`,
+          undefined,
+          undefined,
+          filterProjectId(atlas.datasets)
+        )
+      : { hits: [] };
+  // Azul already returns projects in title order; sorting the merged list
+  // keeps that order once external datasets are added.
+  const projectsResponses: ProjectsResponse[] = [
+    ...hits,
+    ...atlas.externalDatasets,
+  ].sort(sortDatasets);
 
   const cxgDatasets = await fetchCXGDatasetsForAtlases([atlas]);
   cxgDatasets.sort(sortCXGDatasets);
