@@ -23,6 +23,8 @@ const SKIP_DIRS = new Set([
 ]);
 
 // Directories renamed in the same change; the alias points at the new name.
+// Applied to resolved relative paths only, never to bare specifiers, so a
+// scoped npm package such as `@types/node` is left alone.
 const RENAMED_DIRS = new Map([["@types", "types"]]);
 
 // Top-level directories that the pre-alias `baseUrl: "."` allowed as bare
@@ -63,18 +65,22 @@ function collect(dir: string, out: string[] = []): string[] {
  * @returns rewritten specifier or null.
  */
 function rewrite(file: string, spec: string): string | null {
-  if (spec.startsWith("../")) {
-    const abs = path.resolve(path.dirname(file), spec);
+  if (spec.startsWith("@/")) return null;
+  if (spec.startsWith("./") || spec.startsWith("../")) {
+    // Normalise so `./../x` is treated the same as `../x`.
+    const fromDir = path.dirname(file);
+    const abs = path.resolve(fromDir, spec);
+    const rel = path.relative(fromDir, abs);
+    if (!rel.startsWith("..")) return null; // same dir or descendant
     const segments = path.relative(ROOT, abs).split(path.sep);
     segments[0] = RENAMED_DIRS.get(segments[0]) ?? segments[0];
     return "@/" + segments.join("/");
   }
-  if (spec.startsWith("./") || spec.startsWith("@/")) return null;
+  // Bare baseUrl form, e.g. `constants/routes`. Scoped packages (`@scope/x`)
+  // are never rewritten: `@types/node` is an npm package, not our directory.
+  if (spec.startsWith("@")) return null;
   const [head, ...rest] = spec.split("/");
-  const dir = RENAMED_DIRS.get(head) ?? head;
-  if (TOP_LEVEL_DIRS.has(dir) && rest.length > 0) {
-    return "@/" + [dir, ...rest].join("/");
-  }
+  if (TOP_LEVEL_DIRS.has(head) && rest.length > 0) return "@/" + spec;
   return null;
 }
 

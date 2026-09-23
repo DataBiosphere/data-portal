@@ -94,15 +94,16 @@ const config = [
     // alias so file moves don't rewrite unrelated import lines (#3210).
     // `./` stays allowed for same-directory and descendant imports. The bare
     // list mirrors the top-level directories `baseUrl: "."` would otherwise
-    // let through unaliased.
+    // let through unaliased. Uses the typescript-eslint variant so it also
+    // catches `import type` specifiers.
     files: ["**/*.{ts,tsx}"],
     rules: {
-      "no-restricted-imports": [
+      "@typescript-eslint/no-restricted-imports": [
         "error",
         {
           patterns: [
             {
-              group: ["../*", "../**"],
+              group: ["..", "../*", "../**", "./..", "./../*", "./../**"],
               message:
                 "Use the @/ root alias for imports outside this file's subtree; relative imports are only for ./ descendants.",
             },
