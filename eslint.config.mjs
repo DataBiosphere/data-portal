@@ -103,7 +103,9 @@ const config = [
         {
           patterns: [
             {
-              group: ["..", "../*", "../**", "./..", "./../*", "./../**"],
+              // Any `..` segment anywhere in the specifier escapes the
+              // importing file's subtree, however it is spelled.
+              group: ["**/..", "**/../**"],
               message:
                 "Use the @/ root alias for imports outside this file's subtree; relative imports are only for ./ descendants.",
             },
