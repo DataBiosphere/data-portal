@@ -9,6 +9,37 @@ import type { PublishedAtlas } from "./types";
 // Promise so concurrent callers share a single fetch.
 let publishedAtlasesPromise: Promise<PublishedAtlas[]> | null = null;
 
+// Fields the publication gate matches on or resolves; each must be a string.
+const PUBLISHED_ATLAS_REQUIRED_KEYS = [
+  "id",
+  "shortNameSlug",
+  "version",
+] as const satisfies readonly (keyof PublishedAtlas)[];
+
+/**
+ * Validates the published-atlases response. Checks that the body is an array
+ * and that every item carries the fields the publication gate matches on, so
+ * a renamed or missing field fails the build instead of every atlas silently
+ * reading as unpublished.
+ * @param data - Parsed response body.
+ * @returns the body typed as published atlases.
+ */
+function assertPublishedAtlases(data: unknown): PublishedAtlas[] {
+  if (!Array.isArray(data)) {
+    throw new Error("Tracker /api/published-atlases returned a non-array body");
+  }
+  data.forEach((item, i) => {
+    for (const key of PUBLISHED_ATLAS_REQUIRED_KEYS) {
+      if (typeof item?.[key] !== "string") {
+        throw new Error(
+          `Tracker /api/published-atlases item ${i} has no string "${key}"`
+        );
+      }
+    }
+  });
+  return data as PublishedAtlas[];
+}
+
 /**
  * Returns the tracker base URL, read at call time to ensure env vars are loaded.
  * @returns tracker base URL.
@@ -81,9 +112,14 @@ export function fetchTrackerSourceStudies(
 
 /**
  * Returns the cached list of published atlases, fetching on first call.
- * On failure (network error, non-2xx, malformed body), logs a warning and
- * resolves to an empty list so callers can fall back to "no atlases
- * published" — protecting non-tracker pages from tracker outages.
+ * Failures (network error, non-2xx, malformed body or items, missing tracker
+ * URL) are rethrown so the build fails deterministically rather than silently
+ * omitting tracker atlases. Next.js runs getStaticPaths and getStaticProps
+ * across several worker processes, each with its own module-level cache, so
+ * degrading to an empty list could not be made consistent across callers —
+ * one page could treat an atlas as published while another omitted it,
+ * shipping tabs that 404 (see #3203). The rejected promise is cleared so a
+ * long-lived `next dev` server can retry on the next request.
  * @returns list of published atlases.
  */
 function getPublishedAtlases(): Promise<PublishedAtlas[]> {
@@ -92,21 +128,14 @@ function getPublishedAtlases(): Promise<PublishedAtlas[]> {
       "/api/published-atlases",
       "published atlases"
     )
-      .then((data) => {
-        if (!Array.isArray(data)) {
-          console.warn(
-            `Tracker /api/published-atlases returned a non-array body; treating as empty.`
-          );
-          return [];
-        }
-        return data as PublishedAtlas[];
-      })
+      .then(assertPublishedAtlases)
       .catch((err) => {
-        console.warn(
-          `Failed to fetch published atlases from tracker; treating as empty. ${err}`
-        );
         publishedAtlasesPromise = null;
-        return [];
+        // Keep the original error as `cause` so the underlying reason (e.g.
+        // ECONNREFUSED behind undici's "fetch failed") reaches the log.
+        throw new Error("[tracker] Published atlases are unavailable", {
+          cause: err,
+        });
       });
   }
   return publishedAtlasesPromise;
