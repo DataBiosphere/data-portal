@@ -1,7 +1,7 @@
+import { DetailCell } from "@/components/DataDictionary/components/TableCell/components/DetailCell/detailCell";
+import { FieldCell } from "@/components/DataDictionary/components/TableCell/components/FieldCell/fieldCell";
 import type { GridTrackSize } from "@databiosphere/findable-ui/lib/config/entities";
 import type { ColumnDef } from "@tanstack/react-table";
-import { DetailCell } from "../../components/DataDictionary/components/TableCell/components/DetailCell/detailCell";
-import { FieldCell } from "../../components/DataDictionary/components/TableCell/components/FieldCell/fieldCell";
 import {
   buildAnnDataLocation,
   buildRequired,

@@ -1,15 +1,15 @@
-import { sortingFn } from "@databiosphere/findable-ui/lib/components/Table/common/utils";
-import type { ColumnDef } from "@tanstack/react-table";
-import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
-import { DISEASE as DISEASE_ENUM } from "../../../../../../../../../../viewModelBuilders/entities";
 import {
   buildNTagProps,
   renderNTagCell,
-} from "../../../../../../../../../common/Table/components/Cell/components/NTagCell/utils";
+} from "@/components/common/Table/components/Cell/components/NTagCell/utils";
 import {
   buildPinnedNTagProps,
   renderPinnedNTagCell,
-} from "../../../../../../../../../common/Table/components/Cell/components/PinnedNTagCell/utils";
+} from "@/components/common/Table/components/Cell/components/PinnedNTagCell/utils";
+import type { TrackerSourceDataset } from "@/types/network";
+import { DISEASE as DISEASE_ENUM } from "@/viewModelBuilders/entities";
+import { sortingFn } from "@databiosphere/findable-ui/lib/components/Table/common/utils";
+import type { ColumnDef } from "@tanstack/react-table";
 import {
   buildIntegratedObjects,
   buildJournal,

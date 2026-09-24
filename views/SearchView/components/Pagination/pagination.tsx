@@ -1,8 +1,8 @@
+import { SearchPagination } from "@/views/SearchView/hooks/common/entities";
 import { IconButton } from "@databiosphere/findable-ui/lib/components/common/IconButton/iconButton";
 import EastRoundedIcon from "@mui/icons-material/EastRounded";
 import WestRoundedIcon from "@mui/icons-material/WestRounded";
 import { JSX } from "react";
-import { SearchPagination } from "../../hooks/common/entities";
 import { usePagination } from "./hooks/UsePagination/hook";
 import { PaginationActions, PaginationView } from "./pagination.styles";
 

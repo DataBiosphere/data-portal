@@ -1,3 +1,7 @@
+import { Content, ContentView } from "@/components";
+import { MDX_COMPONENTS } from "@/docs/common/constants";
+import { generatePaths } from "@/docs/common/utils";
+import { getDocsStaticProps, PageProps } from "@/utils/docPages";
 import { Main } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
 import {
   Nav,
@@ -12,10 +16,6 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { GetStaticPathsResult } from "next/types";
 import { JSX } from "react";
-import { Content, ContentView } from "../components";
-import { MDX_COMPONENTS } from "../docs/common/constants";
-import { generatePaths } from "../docs/common/utils";
-import { getDocsStaticProps, PageProps } from "../utils/docPages";
 
 const CONFLICTING_STATIC_PATHS: string[] = ["hca-bio-networks"];
 const DOCS_DIR = "/docs";

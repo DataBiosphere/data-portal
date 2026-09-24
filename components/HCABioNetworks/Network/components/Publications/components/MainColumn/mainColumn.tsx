@@ -1,12 +1,9 @@
+import { MDXSection } from "@/components/common/Section/section.styles";
+import { useNetwork, useNetworkContent } from "@/contexts/networkContext";
+import { BICCNPublication } from "@/types/network";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Fragment, JSX } from "react";
-import { BICCNPublication } from "../../../../../../../@types/network";
-import {
-  useNetwork,
-  useNetworkContent,
-} from "../../../../../../../contexts/networkContext";
-import { MDXSection } from "../../../../../../common/Section/section.styles";
 import { Outline } from "./components/Outline/outline";
 import { Publication } from "./components/Publication/publication";
 import {

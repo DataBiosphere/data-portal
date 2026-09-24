@@ -1,5 +1,5 @@
+import { Attribute } from "@/viewModelBuilders/dataDictionaryMapper/types";
 import { CellContext } from "@tanstack/react-table";
-import { Attribute } from "../../../../viewModelBuilders/dataDictionaryMapper/types";
 
 /**
  * Returns a partial CellContext for the given value.

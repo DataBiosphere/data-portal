@@ -1,5 +1,5 @@
-import { IntegratedAtlasRow } from "../@types/network";
-import { buildAtlas } from "../utils/atlases";
+import { IntegratedAtlasRow } from "@/types/network";
+import { buildAtlas } from "@/utils/atlases";
 import { UCSC_CELL_BROWSER } from "./analysisPortals";
 
 const NORMAL = "normal";

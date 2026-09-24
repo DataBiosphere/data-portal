@@ -1,7 +1,7 @@
+import { useSiteConfig } from "@/hooks/useSiteConfig";
 import { CardProps } from "@databiosphere/findable-ui/lib/components/common/Card/card";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
-import { useSiteConfig } from "../../../hooks/useSiteConfig";
 import {
   SearchPagination,
   SearchResponse,

@@ -1,3 +1,10 @@
+import { Hero } from "@/components/HCABioNetworks/Network/components/common/Hero/hero";
+import { Tabs } from "@/components/HCABioNetworks/Network/components/common/Tabs/tabs";
+import { MainColumn } from "@/components/HCABioNetworks/Network/components/Overview/components/MainColumn/mainColumn";
+import { SideColumn } from "@/components/HCABioNetworks/Network/components/Overview/components/SideColumn/sideColumn";
+import { NetworkProvider } from "@/contexts/networkContext";
+import * as networkPages from "@/utils/networkPages";
+import { getContentStaticProps, StaticProps } from "@/utils/networkPages";
 import { Detail } from "@databiosphere/findable-ui/lib/components/Detail/detail";
 import {
   GetStaticPaths,
@@ -6,16 +13,6 @@ import {
   InferGetStaticPropsType,
 } from "next";
 import { JSX } from "react";
-import { Hero } from "../../../components/HCABioNetworks/Network/components/common/Hero/hero";
-import { Tabs } from "../../../components/HCABioNetworks/Network/components/common/Tabs/tabs";
-import { MainColumn } from "../../../components/HCABioNetworks/Network/components/Overview/components/MainColumn/mainColumn";
-import { SideColumn } from "../../../components/HCABioNetworks/Network/components/Overview/components/SideColumn/sideColumn";
-import { NetworkProvider } from "../../../contexts/networkContext";
-import * as networkPages from "../../../utils/networkPages";
-import {
-  getContentStaticProps,
-  StaticProps,
-} from "../../../utils/networkPages";
 
 export const getStaticPaths: GetStaticPaths = networkPages.getStaticPaths;
 

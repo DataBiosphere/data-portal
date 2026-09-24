@@ -1,12 +1,12 @@
+import { MDXSection } from "@/components/common/Section/section.styles";
+import { DetailViewTable } from "@/components/common/Table/table.styles";
+import { SourceStudiesDescription } from "@/content";
+import { useAtlas } from "@/contexts/atlasContext";
+import { useSiteConfig } from "@/hooks/useSiteConfig";
+import { getProjectsTableColumns } from "@/viewModelBuilders/viewModelBuilders";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { BackPageContentSingleColumn } from "@databiosphere/findable-ui/lib/components/Layout/components/BackPage/backPageView.styles";
 import { JSX } from "react";
-import { SourceStudiesDescription } from "../../../../../../../../content";
-import { useAtlas } from "../../../../../../../../contexts/atlasContext";
-import { useSiteConfig } from "../../../../../../../../hooks/useSiteConfig";
-import { getProjectsTableColumns } from "../../../../../../../../viewModelBuilders/viewModelBuilders";
-import { MDXSection } from "../../../../../../../common/Section/section.styles";
-import { DetailViewTable } from "../../../../../../../common/Table/table.styles";
 import { TABLE_OPTIONS } from "./projects/components/Table/options";
 
 export const MainColumn = (): JSX.Element => {

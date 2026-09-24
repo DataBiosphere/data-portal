@@ -8,6 +8,9 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const RELATIVE_IMPORT_MESSAGE =
+  "Use the @/ root alias for imports outside this file's subtree; relative imports are only for ./ descendants.";
+
 const compat = new FlatCompat({
   baseDirectory: __dirname,
   recommendedConfig: js.configs.recommended,
@@ -87,6 +90,44 @@ const config = [
     ignores: ["**/*.styles.ts", "**/*.styles.tsx"],
     rules: {
       "@typescript-eslint/explicit-function-return-type": "error",
+    },
+  },
+  {
+    // Imports that reach outside a file's own subtree must use the `@/` root
+    // alias so file moves don't rewrite unrelated import lines (#3210).
+    // `./` stays allowed for same-directory and descendant imports. Bare
+    // root paths like `constants/routes` need no rule: without `baseUrl` in
+    // tsconfig they fail to compile.
+    files: ["**/*.{ts,tsx,js,jsx,mjs,cjs}"],
+    rules: {
+      // The typescript-eslint variant also catches `import type`.
+      "@typescript-eslint/no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              // Any `..` segment anywhere in the specifier escapes the
+              // importing file's subtree, however it is spelled.
+              group: ["**/..", "**/../**"],
+              message: RELATIVE_IMPORT_MESSAGE,
+            },
+          ],
+        },
+      ],
+      // no-restricted-imports only sees static declarations, so dynamic
+      // `import()` and `require()` are checked by syntax instead.
+      "no-restricted-syntax": [
+        "error",
+        {
+          message: RELATIVE_IMPORT_MESSAGE,
+          selector: "ImportExpression[source.value=/(^|\\/)\\.\\.(\\/|$)/]",
+        },
+        {
+          message: RELATIVE_IMPORT_MESSAGE,
+          selector:
+            "CallExpression[callee.name='require'] > Literal.arguments:first-child[value=/(^|\\/)\\.\\.(\\/|$)/]",
+        },
+      ],
     },
   },
 ];

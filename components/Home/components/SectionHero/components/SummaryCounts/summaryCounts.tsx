@@ -1,8 +1,8 @@
+import { useSummary } from "@/contexts/summaryContext";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { formatCountSize } from "@databiosphere/findable-ui/lib/utils/formatCountSize";
 import { Divider } from "@mui/material";
 import { JSX } from "react";
-import { useSummary } from "../../../../../../contexts/summaryContext";
 import { Count, Label, Metric, Metrics } from "./summaryCounts.styles";
 
 export const SummaryCounts = (): JSX.Element => {

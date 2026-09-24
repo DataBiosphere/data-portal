@@ -1,8 +1,8 @@
+import { HeroTitle } from "@/components/common/Hero/components/Title/components/HeroTitle/heroTitle";
+import { NETWORKS_ROUTE } from "@/constants/routes";
+import { useNetwork } from "@/contexts/networkContext";
 import { BackPageHero } from "@databiosphere/findable-ui/lib/components/Layout/components/BackPage/components/BackPageHero/backPageHero";
 import { JSX, useMemo } from "react";
-import { NETWORKS_ROUTE } from "../../../../../../constants/routes";
-import { useNetwork } from "../../../../../../contexts/networkContext";
-import { HeroTitle } from "../../../../../common/Hero/components/Title/components/HeroTitle/heroTitle";
 
 export const Hero = (): JSX.Element => {
   const { network } = useNetwork();

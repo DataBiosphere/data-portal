@@ -1,4 +1,4 @@
-import type { IntegratedAtlas } from "../../../../../../../../@types/network";
+import type { IntegratedAtlas } from "@/types/network";
 
 /**
  * Returns true when the "Explore" column should be displayed. Non-tracker

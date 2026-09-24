@@ -1,6 +1,6 @@
+import { VISIBLE } from "@/site-config/common/constants";
+import { NavigationEntry } from "@/site-config/data-portal/dev/navigation/entities";
 import { NavLinkItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Navigation/navigation";
-import { VISIBLE } from "../../../common/constants";
-import { NavigationEntry } from "../navigation/entities";
 
 /**
  * Retuns menu items for the navigation entry.

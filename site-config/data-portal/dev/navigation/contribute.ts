@@ -1,7 +1,7 @@
+import { ROUTES } from "@/routes/constants";
+import { FLATTEN, VISIBLE } from "@/site-config/common/constants";
 import { LAYOUT_STYLE_CONTRAST_LIGHTEST } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
 import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
-import { ROUTES } from "../../../../routes/constants";
-import { FLATTEN, VISIBLE } from "../../../common/constants";
 import { NavigationEntry, NavigationNode } from "./entities";
 
 const NODE_KEYS: Record<string, NavigationNode["key"]> = {

@@ -1,7 +1,7 @@
+import dataPortalDev from "@/site-config/data-portal/dev/config";
+import dataPortalProd from "@/site-config/data-portal/prod/config";
 import { setConfig } from "@databiosphere/findable-ui/lib/config/config";
 import { SiteConfig } from "@databiosphere/findable-ui/lib/config/entities";
-import dataPortalDev from "../site-config/data-portal/dev/config";
-import dataPortalProd from "../site-config/data-portal/prod/config";
 
 const CONFIGS: { [k: string]: SiteConfig } = {
   "data-portal-dev": dataPortalDev,
