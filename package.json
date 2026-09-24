@@ -13,7 +13,6 @@
     "format": "prettier --write .",
     "postbuild": "next-sitemap --config next-sitemap.config.mjs",
     "prepare": "husky",
-    "codemod:path-alias": "esrun ./scripts/codemod-path-alias.ts",
     "complete-biccn-publications": "esrun ./scripts/complete-biccn-publications.ts",
     "get-cellxgene-projects": "esrun ./scripts/get-cellxgene-projects.ts"
   },
