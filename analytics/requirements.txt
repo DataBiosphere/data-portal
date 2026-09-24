@@ -9,7 +9,7 @@ async-lru==2.0.4
 attrs==24.3.0
 babel==2.16.0
 beautifulsoup4==4.12.3
-bleach==6.2.0
+bleach==6.4.0
 cachetools==5.5.1
 certifi==2024.12.14
 cffi==1.17.1
