@@ -8,6 +8,10 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Matches a `..` segment anywhere in an import specifier: it escapes the
+// importing file's subtree, however it is spelled.
+const PARENT_SEGMENT_PATTERN = String.raw`(^|\/)\.\.(\/|$)`;
+
 const RELATIVE_IMPORT_MESSAGE =
   "Use the @/ root alias for imports outside this file's subtree; relative imports are only for ./ descendants.";
 
@@ -97,36 +101,35 @@ const config = [
     // alias so file moves don't rewrite unrelated import lines (#3210).
     // `./` stays allowed for same-directory and descendant imports. Bare
     // root paths like `constants/routes` need no rule: without `baseUrl` in
-    // tsconfig they fail to compile.
-    files: ["**/*.{ts,tsx,js,jsx,mjs,cjs}"],
+    // tsconfig they fail to compile, unless an installed npm package shares
+    // the top-level folder's name, in which case the package wins. No
+    // installed package does today, so that case is left unguarded rather
+    // than maintaining a list of top-level folders.
     rules: {
       // The typescript-eslint variant also catches `import type`.
       "@typescript-eslint/no-restricted-imports": [
         "error",
         {
           patterns: [
-            {
-              // Any `..` segment anywhere in the specifier escapes the
-              // importing file's subtree, however it is spelled.
-              group: ["**/..", "**/../**"],
-              message: RELATIVE_IMPORT_MESSAGE,
-            },
+            { message: RELATIVE_IMPORT_MESSAGE, regex: PARENT_SEGMENT_PATTERN },
           ],
         },
       ],
       // no-restricted-imports only sees static declarations, so dynamic
-      // `import()` and `require()` are checked by syntax instead.
+      // `import()`, `require()` (including `require.resolve` and
+      // `require.context`) and `typeof import()` types are checked by syntax
+      // instead. Any string or template-literal chunk inside them is
+      // checked, which also covers concatenated specifiers.
       "no-restricted-syntax": [
         "error",
-        {
+        ...[
+          "ImportExpression",
+          "CallExpression:matches([callee.name='require'], [callee.object.name='require'])",
+          "TSImportType",
+        ].map((node) => ({
           message: RELATIVE_IMPORT_MESSAGE,
-          selector: "ImportExpression[source.value=/(^|\\/)\\.\\.(\\/|$)/]",
-        },
-        {
-          message: RELATIVE_IMPORT_MESSAGE,
-          selector:
-            "CallExpression[callee.name='require'] > Literal.arguments:first-child[value=/(^|\\/)\\.\\.(\\/|$)/]",
-        },
+          selector: `${node} :matches(Literal[value=/${PARENT_SEGMENT_PATTERN}/], TemplateElement[value.cooked=/${PARENT_SEGMENT_PATTERN}/])`,
+        })),
       ],
     },
   },
