@@ -9,7 +9,7 @@ import type {
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from "next";
-import { filterPublishedAtlases } from "./availableNetworks";
+import { getAvailableNetwork } from "./availableNetworks";
 import { fetchCXGDatasetsForAtlases, processNetwork } from "./network";
 import { mapTrackerComponentAtlasToIntegratedAtlas } from "./trackerNetwork";
 
@@ -30,16 +30,16 @@ export async function getContentStaticProps(
 ): Promise<GetStaticPropsResult<StaticProps>> {
   const { network: networkParam } = context.params ?? {};
 
-  const network = NETWORKS.find(({ path }) => path === networkParam) as Network;
-
-  const availableAtlases = await filterPublishedAtlases(network.atlases);
+  const network = await getAvailableNetwork(
+    NETWORKS.find(({ path }) => path === networkParam) as Network
+  );
 
   // Fetch CELLxGENE datasets for the network atlases.
-  const cxgDatasets = await fetchCXGDatasetsForAtlases(availableAtlases);
+  const cxgDatasets = await fetchCXGDatasetsForAtlases(network.atlases);
 
   // Populate integrated atlases for tracker-sourced atlases immutably.
   const atlases = await Promise.all(
-    availableAtlases.map(async (atlas) => {
+    network.atlases.map(async (atlas) => {
       if (!atlas.tracker) return atlas;
       const { shortNameSlug, version } = atlas.tracker;
       const atlasId = await resolveTrackerAtlasId(shortNameSlug, version);

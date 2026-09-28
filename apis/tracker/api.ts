@@ -5,13 +5,15 @@ import type {
 } from "@/types/network";
 import type { PublishedAtlas } from "./types";
 
-// Module-level cache for published atlases during build. Stores the in-flight
-// Promise so concurrent callers share a single fetch.
-let publishedAtlasesPromise: Promise<PublishedAtlas[]> | null = null;
+// Module-level cache for published atlases during build, keyed by
+// `publishedAtlasKey`. Stores the in-flight Promise so concurrent callers share
+// a single fetch.
+let publishedAtlasesPromise: Promise<Map<string, PublishedAtlas>> | null = null;
 
-// Fields the publication gate matches on or resolves; each must be a string.
-const PUBLISHED_ATLAS_REQUIRED_KEYS = [
-  "id",
+// Fields every item must carry as strings: the publication gate matches on
+// them, so a renamed or missing field has to fail the build rather than make
+// every atlas silently read as unpublished.
+const PUBLISHED_ATLAS_MATCH_KEYS = [
   "shortNameSlug",
   "version",
 ] as const satisfies readonly (keyof PublishedAtlas)[];
@@ -19,8 +21,10 @@ const PUBLISHED_ATLAS_REQUIRED_KEYS = [
 /**
  * Validates the published-atlases response. Checks that the body is an array
  * and that every item carries the fields the publication gate matches on, so
- * a renamed or missing field fails the build instead of every atlas silently
- * reading as unpublished.
+ * any item missing a string `shortNameSlug` or `version` fails the build.
+ * Fields used only once an atlas is resolved (e.g. `id`) are checked by
+ * `resolveTrackerAtlas`, so a record for an atlas this portal does not
+ * configure cannot fail the build over those.
  * @param data - Parsed response body.
  * @returns the body typed as published atlases.
  */
@@ -29,7 +33,7 @@ function assertPublishedAtlases(data: unknown): PublishedAtlas[] {
     throw new Error("Tracker /api/published-atlases returned a non-array body");
   }
   data.forEach((item, i) => {
-    for (const key of PUBLISHED_ATLAS_REQUIRED_KEYS) {
+    for (const key of PUBLISHED_ATLAS_MATCH_KEYS) {
       if (typeof item?.[key] !== "string") {
         throw new Error(
           `Tracker /api/published-atlases item ${i} has no string "${key}"`
@@ -38,6 +42,17 @@ function assertPublishedAtlases(data: unknown): PublishedAtlas[] {
     }
   });
   return data as PublishedAtlas[];
+}
+
+/**
+ * Describes an error for a log message, appending its `cause` when it has one
+ * (e.g. the ECONNREFUSED behind undici's "fetch failed").
+ * @param err - Error to describe.
+ * @returns the error and its cause as text.
+ */
+function describeError(err: unknown): string {
+  if (err instanceof Error && err.cause) return `${err} (cause: ${err.cause})`;
+  return String(err);
 }
 
 /**
@@ -111,31 +126,33 @@ export function fetchTrackerSourceStudies(
 }
 
 /**
- * Returns the cached list of published atlases, fetching on first call.
- * Failures (network error, non-2xx, malformed body or items, missing tracker
- * URL) are rethrown so the build fails deterministically rather than silently
- * omitting tracker atlases. Next.js runs getStaticPaths and getStaticProps
- * across several worker processes, each with its own module-level cache, so
- * degrading to an empty list could not be made consistent across callers —
- * one page could treat an atlas as published while another omitted it,
- * shipping tabs that 404 (see #3203). The rejected promise is cleared so a
- * long-lived `next dev` server can retry on the next request.
- * @returns list of published atlases.
+ * Returns the cached published atlases keyed by `publishedAtlasKey`, fetching
+ * on first call. Failures (network error, non-2xx, malformed body or items,
+ * missing tracker URL) are rethrown so the build fails deterministically rather
+ * than silently omitting tracker atlases. Next.js runs getStaticPaths and
+ * getStaticProps across several worker processes, each with its own
+ * module-level cache, so degrading to an empty list could not be made
+ * consistent across callers — one page could treat an atlas as published while
+ * another omitted it, shipping tabs that 404 (see #3203). The rejected promise
+ * is cleared so a long-lived `next dev` server can retry on the next request.
+ * @returns published atlases keyed by slug and version.
  */
-function getPublishedAtlases(): Promise<PublishedAtlas[]> {
+function getPublishedAtlases(): Promise<Map<string, PublishedAtlas>> {
   if (!publishedAtlasesPromise) {
     publishedAtlasesPromise = fetchTrackerApi<unknown>(
       "/api/published-atlases",
       "published atlases"
     )
       .then(assertPublishedAtlases)
+      .then(mapPublishedAtlases)
       .catch((err) => {
         publishedAtlasesPromise = null;
-        // Keep the original error as `cause` so the underlying reason (e.g.
-        // ECONNREFUSED behind undici's "fetch failed") reaches the log.
-        throw new Error("[tracker] Published atlases are unavailable", {
-          cause: err,
-        });
+        // The reason goes in the message, not `cause`: Next's build workers
+        // send only an error's name, message and stack back to the main
+        // process, so a `cause` would never reach the build log.
+        throw new Error(
+          `[tracker] Published atlases are unavailable: ${describeError(err)}`
+        );
       });
   }
   return publishedAtlasesPromise;
@@ -152,9 +169,34 @@ export async function isTrackerAtlasPublished(
   version: string
 ): Promise<boolean> {
   const atlases = await getPublishedAtlases();
-  return atlases.some(
-    (a) => a.shortNameSlug === shortNameSlug && a.version === version
-  );
+  return atlases.has(publishedAtlasKey(shortNameSlug, version));
+}
+
+/**
+ * Keys published atlases by `publishedAtlasKey`. When two records share a
+ * slug and version the first is kept, as the previous list lookup did.
+ * @param atlases - Validated published atlases.
+ * @returns published atlases keyed by slug and version.
+ */
+function mapPublishedAtlases(
+  atlases: PublishedAtlas[]
+): Map<string, PublishedAtlas> {
+  const byKey = new Map<string, PublishedAtlas>();
+  for (const atlas of atlases) {
+    const key = publishedAtlasKey(atlas.shortNameSlug, atlas.version);
+    if (!byKey.has(key)) byKey.set(key, atlas);
+  }
+  return byKey;
+}
+
+/**
+ * Returns the key a published atlas is cached under.
+ * @param shortNameSlug - Atlas short name slug (e.g., "gut").
+ * @param version - Atlas version (e.g., "v1.0").
+ * @returns key combining slug and version.
+ */
+function publishedAtlasKey(shortNameSlug: string, version: string): string {
+  return `${shortNameSlug}@${version}`;
 }
 
 /**
@@ -168,12 +210,15 @@ export async function resolveTrackerAtlas(
   version: string
 ): Promise<PublishedAtlas> {
   const atlases = await getPublishedAtlases();
-  const match = atlases.find(
-    (a) => a.shortNameSlug === shortNameSlug && a.version === version
-  );
+  const match = atlases.get(publishedAtlasKey(shortNameSlug, version));
   if (!match) {
     throw new Error(
       `No published atlas found for slug="${shortNameSlug}" version="${version}"`
+    );
+  }
+  if (typeof match.id !== "string") {
+    throw new Error(
+      `Published atlas slug="${shortNameSlug}" version="${version}" has no string "id"`
     );
   }
   return match;
