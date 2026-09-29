@@ -1,3 +1,5 @@
+import { useSiteConfig } from "@/hooks/useSiteConfig";
+import { ROUTES } from "@/routes/constants";
 import { BUTTON_PROPS as COMPONENT_BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import {
   ANCHOR_TARGET,
@@ -7,8 +9,6 @@ import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/b
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Button } from "@mui/material";
 import { JSX } from "react";
-import { useSiteConfig } from "../../../../hooks/useSiteConfig";
-import { ROUTES } from "../../../../routes/constants";
 import { SummaryCounts } from "./components/SummaryCounts/summaryCounts";
 import {
   CTAs,

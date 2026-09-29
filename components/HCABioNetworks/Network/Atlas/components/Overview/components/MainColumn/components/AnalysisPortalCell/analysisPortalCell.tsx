@@ -1,6 +1,6 @@
+import { IconLink } from "@/components/common/IconLink/iconLink";
+import { AnalysisPortal } from "@/types/network";
 import { Fragment, JSX } from "react";
-import { AnalysisPortal } from "../../../../../../../../../../@types/network";
-import { IconLink } from "../../../../../../../../../common/IconLink/iconLink";
 
 interface AnalysisPortalCellProps {
   analysisPortals: AnalysisPortal[];

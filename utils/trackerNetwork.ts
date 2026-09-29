@@ -1,4 +1,6 @@
-import type { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { processNullElements } from "@/apis/azul/hca-dcp/common/utils";
+import type { PublishedAtlas } from "@/apis/tracker/types";
+import type { TrackerDownloadCellProps } from "@/components/common/Table/components/Cell/components/TrackerDownloadCell/types";
 import type {
   AnalysisPortal,
   DatasetAsset,
@@ -6,11 +8,9 @@ import type {
   TrackerComponentAtlas,
   TrackerDatasetAsset,
   TrackerSourceDatasetResponse,
-} from "../@types/network";
-import { CXG_DATASET_FILE_TYPE } from "../@types/network";
-import { processNullElements } from "../apis/azul/hca-dcp/common/utils";
-import type { PublishedAtlas } from "../apis/tracker/types";
-import type { TrackerDownloadCellProps } from "../components/common/Table/components/Cell/components/TrackerDownloadCell/types";
+} from "@/types/network";
+import { CXG_DATASET_FILE_TYPE } from "@/types/network";
+import type { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { buildCAPAnalysisPortal, buildCXGDataPortalLink } from "./network";
 
 const S3_BASE_URL = "https://humancellatlas.s3.amazonaws.com/temp/atlases";

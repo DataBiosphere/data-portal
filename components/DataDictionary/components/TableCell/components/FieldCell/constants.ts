@@ -1,9 +1,9 @@
-import { CHIP_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/chip";
-import type { ChipProps, StackProps } from "@mui/material";
 import {
   REQUIREMENT_LABEL,
   type RequirementLabel,
-} from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
+} from "@/viewModelBuilders/dataDictionaryMapper/types";
+import { CHIP_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/chip";
+import type { ChipProps, StackProps } from "@mui/material";
 
 export const STACK_PROPS: StackProps = {
   alignItems: "flex-start",

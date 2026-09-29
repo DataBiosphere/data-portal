@@ -1,13 +1,13 @@
 import {
-  Tabs as DXTabs,
-  TabValue,
-} from "@databiosphere/findable-ui/lib/components/common/Tabs/tabs";
-import {
   NETWORKS_ATLAS_PATTERN,
   NETWORK_ATLAS_DATASETS_PATTERN,
   NETWORK_ATLAS_SOURCE_DATASETS_PATTERN,
-} from "constants/routes";
-import { useAtlas } from "contexts/atlasContext";
+} from "@/constants/routes";
+import { useAtlas } from "@/contexts/atlasContext";
+import {
+  Tabs as DXTabs,
+  TabValue,
+} from "@databiosphere/findable-ui/lib/components/common/Tabs/tabs";
 import { useRouter } from "next/router";
 import { JSX } from "react";
 

@@ -2,7 +2,7 @@ import type {
   TrackerComponentAtlas,
   TrackerSourceDatasetResponse,
   TrackerSourceStudy,
-} from "../../@types/network";
+} from "@/types/network";
 import type { PublishedAtlas } from "./types";
 
 // Module-level cache for published atlases during build. Stores the in-flight

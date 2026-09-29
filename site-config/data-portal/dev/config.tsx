@@ -1,3 +1,12 @@
+import { ROUTES } from "@/routes/constants";
+import { VISIBLE } from "@/site-config/common/constants";
+import { SiteConfig } from "@/site-config/common/entities";
+import { buildDataDictionary } from "@/viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
+import {
+  CELL_ANNOTATION_TABLE_OPTIONS,
+  TIER_1_TABLE_OPTIONS,
+  TIER_2_TABLE_OPTIONS,
+} from "@/viewModelBuilders/dataDictionaryMapper/tableOptions";
 import {
   DataDictionary,
   DataDictionaryConfig,
@@ -9,15 +18,6 @@ import { XIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIc
 import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import { Logo } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Logo/logo";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import { ROUTES } from "../../../routes/constants";
-import { buildDataDictionary } from "../../../viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
-import {
-  CELL_ANNOTATION_TABLE_OPTIONS,
-  TIER_1_TABLE_OPTIONS,
-  TIER_2_TABLE_OPTIONS,
-} from "../../../viewModelBuilders/dataDictionaryMapper/tableOptions";
-import { VISIBLE } from "../../common/constants";
-import { SiteConfig } from "../../common/entities";
 import { buildMenuItems } from "./common/utils";
 import cellAnnotation from "./dataDictionary/cell-annotation.json";
 import metadataTier1 from "./dataDictionary/tier-1.json";

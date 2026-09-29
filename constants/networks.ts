@@ -1,37 +1,37 @@
+import * as adiposeContent from "@/content/adipose";
+import * as breastContent from "@/content/breast";
+import * as breastNetworkBreastAtlas from "@/content/breast/atlases/breast";
+import * as developmentContent from "@/content/development";
+import * as eyeContent from "@/content/eye";
+import * as eyeNetworkRetinaAtlas from "@/content/eye/atlases/retina";
+import * as geneticDiversityContent from "@/content/genetic-diversity";
+import * as gutContent from "@/content/gut";
+import * as gutNetworkGutAtlas from "@/content/gut/atlases/gut";
+import * as heartContent from "@/content/heart";
+import * as immuneContent from "@/content/immune";
+import * as kidneyContent from "@/content/kidney";
+import * as liverContent from "@/content/liver";
+import * as liverNetworkLiverAtlas from "@/content/liver/atlases/liver";
+import * as lungContent from "@/content/lung";
+import * as lungNetworkLungAtlas from "@/content/lung/atlases/lung";
+import * as musculoskeletalContent from "@/content/musculoskeletal";
+import * as nervousSystemContent from "@/content/nervous-system";
+import * as nervousSystemNetworkBrainAtlas from "@/content/nervous-system/atlases/brain";
+import * as nervousSystemNetworkCortexAtlas from "@/content/nervous-system/atlases/cortex";
+import * as oralAndCraniofacialContent from "@/content/oral-and-craniofacial";
+import * as organoidContent from "@/content/organoid";
+import * as organoidNetworkOrganoidEndodermAtlas from "@/content/organoid/atlases/organoid-endoderm";
+import * as organoidNetworkOrganoidNeuralAtlas from "@/content/organoid/atlases/organoid-neural";
+import * as pancreasContent from "@/content/pancreas";
+import * as reproductionContent from "@/content/reproduction";
+import * as skinContent from "@/content/skin";
 import {
   AtlasKey,
   AtlasModule,
   Network,
   NetworkKey,
   NetworkModule,
-} from "../@types/network";
-import * as adiposeContent from "../content/adipose";
-import * as breastContent from "../content/breast";
-import * as breastNetworkBreastAtlas from "../content/breast/atlases/breast";
-import * as developmentContent from "../content/development";
-import * as eyeContent from "../content/eye";
-import * as eyeNetworkRetinaAtlas from "../content/eye/atlases/retina";
-import * as geneticDiversityContent from "../content/genetic-diversity";
-import * as gutContent from "../content/gut";
-import * as gutNetworkGutAtlas from "../content/gut/atlases/gut";
-import * as heartContent from "../content/heart";
-import * as immuneContent from "../content/immune";
-import * as kidneyContent from "../content/kidney";
-import * as liverContent from "../content/liver";
-import * as liverNetworkLiverAtlas from "../content/liver/atlases/liver";
-import * as lungContent from "../content/lung";
-import * as lungNetworkLungAtlas from "../content/lung/atlases/lung";
-import * as musculoskeletalContent from "../content/musculoskeletal";
-import * as nervousSystemContent from "../content/nervous-system";
-import * as nervousSystemNetworkBrainAtlas from "../content/nervous-system/atlases/brain";
-import * as nervousSystemNetworkCortexAtlas from "../content/nervous-system/atlases/cortex";
-import * as oralAndCraniofacialContent from "../content/oral-and-craniofacial";
-import * as organoidContent from "../content/organoid";
-import * as organoidNetworkOrganoidEndodermAtlas from "../content/organoid/atlases/organoid-endoderm";
-import * as organoidNetworkOrganoidNeuralAtlas from "../content/organoid/atlases/organoid-neural";
-import * as pancreasContent from "../content/pancreas";
-import * as reproductionContent from "../content/reproduction";
-import * as skinContent from "../content/skin";
+} from "@/types/network";
 import BICCN_PUBLICATIONS from "./biccn-publications.json";
 import { COMPONENT_ATLASES } from "./componentAtlases";
 import { DATASETS } from "./datasets";

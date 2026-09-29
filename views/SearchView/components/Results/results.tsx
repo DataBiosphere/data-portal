@@ -1,3 +1,4 @@
+import { StyledRoundedPaper } from "@/views/SearchView/searchView.styles";
 import { CardProps } from "@databiosphere/findable-ui/lib/components/common/Card/card";
 import {
   CardContent,
@@ -11,7 +12,6 @@ import { NoResults } from "@databiosphere/findable-ui/lib/components/NoResults/n
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Typography as MTypography } from "@mui/material";
 import { JSX } from "react";
-import { StyledRoundedPaper } from "../../searchView.styles";
 import { ResultsView } from "./results.styles";
 
 interface ResultsProps {

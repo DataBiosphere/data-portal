@@ -1,15 +1,15 @@
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
-import { formatFileSize } from "@databiosphere/findable-ui/lib/utils/formatFileSize";
-import { Button } from "@mui/material";
-import { JSX } from "react";
-import { DialogContentSection } from "../../../../../Actions/components/Dialog/components/DialogContent/components/DialogContentSection/dialogContentSection";
+import { DialogContentSection } from "@/components/common/Table/components/Actions/components/Dialog/components/DialogContent/components/DialogContentSection/dialogContentSection";
 import {
   DialogActions,
   DialogContent,
   DialogTitle,
   StyledDialog,
-} from "../../../../../Actions/components/Dialog/dialog.styles";
-import { StyledCode } from "../../../CXGDownloadCell/components/CXGDownloadDialogForm/cxgDownloadDialogForm.styles";
+} from "@/components/common/Table/components/Actions/components/Dialog/dialog.styles";
+import { StyledCode } from "@/components/common/Table/components/Cell/components/CXGDownloadCell/components/CXGDownloadDialogForm/cxgDownloadDialogForm.styles";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
+import { formatFileSize } from "@databiosphere/findable-ui/lib/utils/formatFileSize";
+import { Button } from "@mui/material";
+import { JSX } from "react";
 import type { Props } from "./types";
 
 /**

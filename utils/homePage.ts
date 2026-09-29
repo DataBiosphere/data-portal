@@ -1,9 +1,9 @@
+import { config } from "@/config/config";
+import { Summary } from "@/contexts/summaryContext";
+import type { Network } from "@/types/network";
 import { APIEndpoints } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
 import { fetchSummaryFromURL } from "@databiosphere/findable-ui/lib/entity/api/service";
 import { GetStaticProps } from "next";
-import type { Network } from "../@types/network";
-import { config } from "../config/config";
-import { Summary } from "../contexts/summaryContext";
 import { getAvailableNetworks } from "./availableNetworks";
 import { bindSummaryResponse } from "./summary";
 

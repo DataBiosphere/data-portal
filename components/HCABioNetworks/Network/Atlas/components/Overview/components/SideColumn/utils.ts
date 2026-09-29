@@ -1,5 +1,5 @@
+import type { Atlas } from "@/types/network";
 import type { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-import type { Atlas } from "../../../../../../../../@types/network";
 
 const BIOTURING_URL =
   "https://talk2data.bioturing.com/?tab=studies&version_id=hca&params=N4IgbgpgTgzglgewHYgFwgBYGMCGIC%2BQA";

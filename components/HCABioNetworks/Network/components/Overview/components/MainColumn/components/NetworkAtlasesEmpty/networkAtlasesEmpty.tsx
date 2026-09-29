@@ -1,3 +1,6 @@
+import { BiotechIcon } from "@/components/common/CustomIcon/components/BiotechIcon/biotechIcon";
+import { Network } from "@/types/network";
+import { getBioNetworkName } from "@/viewModelBuilders/viewModelBuilders";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { SectionTitle } from "@databiosphere/findable-ui/lib/components/common/Section/components/SectionTitle/sectionTitle";
 import {
@@ -5,9 +8,6 @@ import {
   StatusIcon,
 } from "@databiosphere/findable-ui/lib/components/common/StatusIcon/statusIcon";
 import { JSX } from "react";
-import { Network } from "../../../../../../../../../@types/network";
-import { getBioNetworkName } from "../../../../../../../../../viewModelBuilders/viewModelBuilders";
-import { BiotechIcon } from "../../../../../../../../common/CustomIcon/components/BiotechIcon/biotechIcon";
 import { Section, SectionContent } from "./networkAtlasesEmpty.styles";
 
 export interface NetworkAtlasesEmptyProps {

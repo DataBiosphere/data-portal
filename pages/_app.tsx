@@ -1,3 +1,9 @@
+import { Head } from "@/components/common/Head/head";
+import { AppFooter } from "@/components/Layout/components/Footer/footer.styles";
+import { config } from "@/config/config";
+import { BREAKPOINTS } from "@/site-config/common/constants";
+import { SiteConfig } from "@/site-config/common/entities";
+import { mergeAppTheme } from "@/theme/theme";
 import "@databiosphere/findable-ui";
 import { Error } from "@databiosphere/findable-ui/lib/components/Error/error";
 import { ErrorBoundary } from "@databiosphere/findable-ui/lib/components/ErrorBoundary/errorBoundary";
@@ -19,12 +25,6 @@ import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { JSX, useEffect } from "react";
 import TagManager from "react-gtm-module";
-import { Head } from "../components/common/Head/head";
-import { AppFooter } from "../components/Layout/components/Footer/footer.styles";
-import { config } from "../config/config";
-import { BREAKPOINTS } from "../site-config/common/constants";
-import { SiteConfig } from "../site-config/common/entities";
-import { mergeAppTheme } from "../theme/theme";
 
 interface PageProps {
   pageTitle?: string;

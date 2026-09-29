@@ -1,10 +1,10 @@
-import { JSX } from "react";
-import { DatasetAsset } from "../../../../../../../../../@types/network";
 import {
   DialogTitle,
   StyledDialog,
-} from "../../../../../Actions/components/Dialog/dialog.styles";
-import { CxgDownloadDialogForm as DialogForm } from "../CXGDownloadDialogForm/cxgDownloadDialogForm";
+} from "@/components/common/Table/components/Actions/components/Dialog/dialog.styles";
+import { CxgDownloadDialogForm as DialogForm } from "@/components/common/Table/components/Cell/components/CXGDownloadCell/components/CXGDownloadDialogForm/cxgDownloadDialogForm";
+import { DatasetAsset } from "@/types/network";
+import { JSX } from "react";
 
 type onCloseFn = () => void;
 

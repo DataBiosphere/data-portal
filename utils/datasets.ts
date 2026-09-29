@@ -4,12 +4,12 @@ import {
   AggregatedFileTypeSummaryResponse,
   AggregatedSampleResponse,
   AggregatedSpecimenResponse,
-} from "../apis/azul/hca-dcp/common/aggregatedEntities";
+} from "@/apis/azul/hca-dcp/common/aggregatedEntities";
 import {
   ProjectResponse,
   PublicationResponse,
-} from "../apis/azul/hca-dcp/common/entities";
-import { ProjectsResponse } from "../apis/azul/hca-dcp/common/responses";
+} from "@/apis/azul/hca-dcp/common/entities";
+import { ProjectsResponse } from "@/apis/azul/hca-dcp/common/responses";
 
 const initCellSuspension: AggregatedCellSuspensionResponse = {
   selectedCellType: [],

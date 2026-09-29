@@ -1,7 +1,7 @@
+import { DatasetAsset } from "@/types/network";
 import { DownloadIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/DownloadIcon/downloadIcon";
 import { ICON_BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/iconButton";
 import { JSX, useState } from "react";
-import { DatasetAsset } from "../../../../../../../@types/network";
 import { CXGDownloadDialog } from "./components/CXGDownloadDialog/cxgDownloadDialog";
 import { StyledIconButton } from "./cxgDownloadCell.styles";
 

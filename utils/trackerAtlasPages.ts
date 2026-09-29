@@ -1,11 +1,11 @@
-import type { GetStaticPropsResult } from "next";
-import type { Atlas, Network, TrackerSourceDataset } from "../@types/network";
 import {
   fetchTrackerComponentAtlases,
   fetchTrackerSourceDatasets,
   fetchTrackerSourceStudies,
   resolveTrackerAtlas,
-} from "../apis/tracker/api";
+} from "@/apis/tracker/api";
+import type { Atlas, Network, TrackerSourceDataset } from "@/types/network";
+import type { GetStaticPropsResult } from "next";
 import type { StaticProps, TrackerDataOptions } from "./atlasPages";
 import { buildCAPProjectLink } from "./network";
 import {

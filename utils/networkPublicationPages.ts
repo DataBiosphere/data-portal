@@ -1,7 +1,7 @@
+import { NETWORKS } from "@/constants/networks";
+import { Network, NetworkParam } from "@/types/network";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { GetStaticPathsResult } from "next/types";
-import { Network, NetworkParam } from "../@types/network";
-import { NETWORKS } from "../constants/networks";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {

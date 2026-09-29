@@ -1,9 +1,9 @@
+import { Heading } from "@/components/common/Typography/components/Heading/heading";
 import { LoadingIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/LoadingIcon/loadingIcon";
 import { Tabs } from "@databiosphere/findable-ui/lib/components/common/Tabs/tabs";
 import { NoResults } from "@databiosphere/findable-ui/lib/components/NoResults/noResults";
 import { useRouter } from "next/router";
 import { Fragment, JSX } from "react";
-import { Heading } from "../../components/common/Typography/components/Heading/heading";
 import { TABS } from "./common/constants";
 import { Pagination } from "./components/Pagination/pagination";
 import { Results } from "./components/Results/results";

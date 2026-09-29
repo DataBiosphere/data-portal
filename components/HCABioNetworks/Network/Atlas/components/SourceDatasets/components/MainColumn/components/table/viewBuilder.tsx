@@ -1,15 +1,15 @@
-import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-import type { CellContext } from "@tanstack/react-table";
-import type { JSX } from "react";
-import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
-import { buildHCADataExplorerProjectUrl } from "../../../../../../../../../../utils/network";
+import { NewTabCue } from "@/components/common/NewTabCue/newTabCue";
+import { TrackerDownloadCell } from "@/components/common/Table/components/Cell/components/TrackerDownloadCell/trackerDownloadCell";
+import { AnalysisPortalCell } from "@/components/HCABioNetworks/Network/Atlas/components/Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
+import type { TrackerSourceDataset } from "@/types/network";
+import { buildHCADataExplorerProjectUrl } from "@/utils/network";
 import {
   buildTrackerAnalysisPortals,
   buildTrackerDownloadCellProps,
-} from "../../../../../../../../../../utils/trackerNetwork";
-import { NewTabCue } from "../../../../../../../../../common/NewTabCue/newTabCue";
-import { TrackerDownloadCell } from "../../../../../../../../../common/Table/components/Cell/components/TrackerDownloadCell/trackerDownloadCell";
-import { AnalysisPortalCell } from "../../../../../Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
+} from "@/utils/trackerNetwork";
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import type { CellContext } from "@tanstack/react-table";
+import type { JSX } from "react";
 import { FileNameCell } from "./components/FileNameCell/fileNameCell";
 import { HCA_EXPLORER_LABEL } from "./constants";
 

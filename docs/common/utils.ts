@@ -1,15 +1,15 @@
+import {
+  NAVIGATION_KEY,
+  NavigationNode,
+  SlugByFilePaths,
+} from "@/site-config/data-portal/dev/navigation/entities";
+import { navigation as navigationConfig } from "@/site-config/data-portal/dev/navigation/navigation";
 import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticPathsResult } from "next/types";
 import pathTool, * as path from "path";
-import {
-  NAVIGATION_KEY,
-  NavigationNode,
-  SlugByFilePaths,
-} from "../../site-config/data-portal/dev/navigation/entities";
-import { navigation as navigationConfig } from "../../site-config/data-portal/dev/navigation/navigation";
 import { Frontmatter } from "./frontmatter";
 
 /**

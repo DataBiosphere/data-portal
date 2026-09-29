@@ -1,12 +1,12 @@
+import { COLUMN_FILTERS_OPTIONS } from "@/components/common/Table/options/columnFilters/constants";
+import { CORE_OPTIONS } from "@/components/common/Table/options/core/constants";
+import { FACETED_OPTIONS } from "@/components/common/Table/options/faceted/constants";
+import { SORTING_OPTIONS } from "@/components/common/Table/options/sorting/constants";
+import { useSiteConfig } from "@/hooks/useSiteConfig";
+import type { TrackerSourceDataset } from "@/types/network";
 import { SORT_DIRECTION } from "@databiosphere/findable-ui/lib/config/entities";
 import { FacetedOptions, Table, useReactTable } from "@tanstack/react-table";
 import { useMemo } from "react";
-import type { TrackerSourceDataset } from "../../../../../../../../../../@types/network";
-import { useSiteConfig } from "../../../../../../../../../../hooks/useSiteConfig";
-import { COLUMN_FILTERS_OPTIONS } from "../../../../../../../../../common/Table/options/columnFilters/constants";
-import { CORE_OPTIONS } from "../../../../../../../../../common/Table/options/core/constants";
-import { FACETED_OPTIONS } from "../../../../../../../../../common/Table/options/faceted/constants";
-import { SORTING_OPTIONS } from "../../../../../../../../../common/Table/options/sorting/constants";
 import { getColumns } from "./columns";
 import { META } from "./meta";
 import { getColumnVisibility } from "./utils";

@@ -1,3 +1,6 @@
+import { getPartialCellContext } from "@/components/DataDictionary/components/TableCell/utils";
+import { COLUMN_IDENTIFIERS } from "@/viewModelBuilders/dataDictionaryMapper/columnIds";
+import { Attribute } from "@/viewModelBuilders/dataDictionaryMapper/types";
 import { AnchorLink } from "@databiosphere/findable-ui/lib/components/common/AnchorLink/anchorLink";
 import { CodeCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/CodeCell/codeCell";
 import { MarkdownCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/MarkdownCell/markdownCell";
@@ -8,9 +11,6 @@ import { Chip } from "@mui/material";
 import { CellContext } from "@tanstack/react-table";
 import { JSX } from "react";
 import slugify from "slugify";
-import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
-import { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
-import { getPartialCellContext } from "../../utils";
 import { STACK_PROPS } from "./constants";
 import {
   StyledGrid,

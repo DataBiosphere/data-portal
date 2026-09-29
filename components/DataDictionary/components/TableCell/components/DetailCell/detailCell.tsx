@@ -1,11 +1,11 @@
+import { getPartialCellContext } from "@/components/DataDictionary/components/TableCell/utils";
+import { COLUMN_IDENTIFIERS } from "@/viewModelBuilders/dataDictionaryMapper/columnIds";
+import { Attribute } from "@/viewModelBuilders/dataDictionaryMapper/types";
 import { LinkCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/LinkCell/linkCell";
 import { TYPOGRAPHY_PROPS as MUI_TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Collapse, Typography } from "@mui/material";
 import { CellContext } from "@tanstack/react-table";
 import { JSX } from "react";
-import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
-import { Attribute } from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
-import { getPartialCellContext } from "../../utils";
 import { TYPOGRAPHY_PROPS } from "./constants";
 import {
   StyledCell,

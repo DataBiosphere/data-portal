@@ -1,5 +1,5 @@
-import { SummaryResponse } from "../apis/azul/hca-dcp/common/responses";
-import { Summary } from "../contexts/summaryContext";
+import { SummaryResponse } from "@/apis/azul/hca-dcp/common/responses";
+import { Summary } from "@/contexts/summaryContext";
 
 /**
  * Binds the summary response to the summary model.

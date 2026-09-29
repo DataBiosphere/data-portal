@@ -1,11 +1,11 @@
-import { CHIP_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/chip";
-import type { ChipProps } from "@mui/material";
-import type { Row } from "@tanstack/react-table";
-import { COLUMN_IDENTIFIERS } from "../../../../../../viewModelBuilders/dataDictionaryMapper/columnIds";
+import { COLUMN_IDENTIFIERS } from "@/viewModelBuilders/dataDictionaryMapper/columnIds";
 import type {
   Attribute,
   RequirementLabel,
-} from "../../../../../../viewModelBuilders/dataDictionaryMapper/types";
+} from "@/viewModelBuilders/dataDictionaryMapper/types";
+import { CHIP_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/chip";
+import type { ChipProps } from "@mui/material";
+import type { Row } from "@tanstack/react-table";
 import { REQUIREMENT_LABEL_COLOR } from "./constants";
 
 /**

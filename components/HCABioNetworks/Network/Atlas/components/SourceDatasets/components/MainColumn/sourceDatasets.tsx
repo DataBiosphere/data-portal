@@ -1,11 +1,11 @@
+import { ColumnFilters } from "@/components/common/Filters/components/ColumnFilters/columnFilters";
+import { ColumnFilterTags } from "@/components/common/Filters/components/ColumnFilterTags/columnFilterTags";
+import { MDXSection } from "@/components/common/Section/section.styles";
+import { Table } from "@/components/common/Table/table";
+import { SourceDatasetsDescription } from "@/content";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/components/FluidPaper/fluidPaper";
 import { GridPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { JSX } from "react";
-import { SourceDatasetsDescription } from "../../../../../../../../content";
-import { ColumnFilters } from "../../../../../../../common/Filters/components/ColumnFilters/columnFilters";
-import { ColumnFilterTags } from "../../../../../../../common/Filters/components/ColumnFilterTags/columnFilterTags";
-import { MDXSection } from "../../../../../../../common/Section/section.styles";
-import { Table } from "../../../../../../../common/Table/table";
 import { useTable } from "./components/table/hook";
 import { StyledBox } from "./sourceDatasets.styles";
 import { Props } from "./types";

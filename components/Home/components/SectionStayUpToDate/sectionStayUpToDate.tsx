@@ -1,3 +1,4 @@
+import { StyledTypography } from "@/components/Home/components/Section/section.styles";
 import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import {
   ANCHOR_TARGET,
@@ -6,7 +7,6 @@ import {
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Button } from "@mui/material";
 import { JSX } from "react";
-import { StyledTypography } from "../Section/section.styles";
 import {
   CTAs,
   SectionStayUpToDate as Section,

@@ -1,9 +1,9 @@
-import { NETWORKS, NETWORK_CONTENT } from "constants/networks";
-import { createContext, useContext } from "react";
+import { NETWORKS, NETWORK_CONTENT } from "@/constants/networks";
 import {
   NetworkContext as NetworkContextType,
   NetworkModule,
-} from "../@types/network";
+} from "@/types/network";
+import { createContext, useContext } from "react";
 
 export const NetworkContext = createContext<NetworkContextType>({
   network: NETWORKS[0],

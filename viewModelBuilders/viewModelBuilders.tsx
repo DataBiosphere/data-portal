@@ -1,3 +1,32 @@
+import { ProjectResponse } from "@/apis/azul/hca-dcp/common/entities";
+import { ProjectsResponse } from "@/apis/azul/hca-dcp/common/responses";
+import {
+  processAggregatedNumberEntityValue,
+  processAggregatedOrArrayValue,
+  processEntityValue,
+} from "@/apis/azul/hca-dcp/common/utils";
+import { ButtonOutline } from "@/components/common/Button/components/ButtonOutline/buttonOutline";
+import {
+  MetadataValueTuple,
+  PinnedNTagCell,
+} from "@/components/common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
+import { BioNetworkCell } from "@/components/common/Table/components/Cell/components/BioNetworkCell/bioNetworkCell";
+import { CXGDownloadCell } from "@/components/common/Table/components/Cell/components/CXGDownloadCell/cxgDownloadCell";
+import { TrackerDownloadCell } from "@/components/common/Table/components/Cell/components/TrackerDownloadCell/trackerDownloadCell";
+import { AnalysisPortalCell } from "@/components/HCABioNetworks/Network/Atlas/components/Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
+import { NETWORKS_ROUTE } from "@/constants/routes";
+import type {
+  Atlas,
+  AtlasesRow,
+  AtlasRow,
+  IntegratedAtlasRow,
+  Network,
+} from "@/types/network";
+import { formatCountSize } from "@/utils/formatCountSize";
+import {
+  buildTrackerDownloadCellProps,
+  isTrackerDatasetAsset,
+} from "@/utils/trackerNetwork";
 import { LABEL } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
 import { CookieBanner } from "@databiosphere/findable-ui/lib/components/common/Banner/components/CookieBanner/cookieBanner";
 import { KeyValues } from "@databiosphere/findable-ui/lib/components/common/KeyValuePairs/keyValuePairs";
@@ -13,35 +42,6 @@ import {
 } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
 import { ColumnDef } from "@tanstack/react-table";
 import type { JSX } from "react";
-import type {
-  Atlas,
-  AtlasesRow,
-  AtlasRow,
-  IntegratedAtlasRow,
-  Network,
-} from "../@types/network";
-import { ProjectResponse } from "../apis/azul/hca-dcp/common/entities";
-import { ProjectsResponse } from "../apis/azul/hca-dcp/common/responses";
-import {
-  processAggregatedNumberEntityValue,
-  processAggregatedOrArrayValue,
-  processEntityValue,
-} from "../apis/azul/hca-dcp/common/utils";
-import { ButtonOutline } from "../components/common/Button/components/ButtonOutline/buttonOutline";
-import {
-  MetadataValueTuple,
-  PinnedNTagCell,
-} from "../components/common/NTagCell/components/PinnedNTagCell/pinnedNTagCell";
-import { BioNetworkCell } from "../components/common/Table/components/Cell/components/BioNetworkCell/bioNetworkCell";
-import { CXGDownloadCell } from "../components/common/Table/components/Cell/components/CXGDownloadCell/cxgDownloadCell";
-import { TrackerDownloadCell } from "../components/common/Table/components/Cell/components/TrackerDownloadCell/trackerDownloadCell";
-import { AnalysisPortalCell } from "../components/HCABioNetworks/Network/Atlas/components/Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
-import { NETWORKS_ROUTE } from "../constants/routes";
-import { formatCountSize } from "../utils/formatCountSize";
-import {
-  buildTrackerDownloadCellProps,
-  isTrackerDatasetAsset,
-} from "../utils/trackerNetwork";
 import { DISEASE } from "./entities";
 
 /**

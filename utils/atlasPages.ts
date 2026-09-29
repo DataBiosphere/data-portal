@@ -1,3 +1,10 @@
+import { filterProjectId } from "@/apis/azul/hca-dcp/common/filters";
+import { ProjectsResponse } from "@/apis/azul/hca-dcp/common/responses";
+import { processEntityValue } from "@/apis/azul/hca-dcp/common/utils";
+import { isTrackerAtlasPublished } from "@/apis/tracker/api";
+import { config } from "@/config/config";
+import { NETWORKS } from "@/constants/networks";
+import { Atlas, AtlasContext, CXGDataset, Network } from "@/types/network";
 import { COLLATOR_CASE_INSENSITIVE } from "@databiosphere/findable-ui/lib/common/constants";
 import { fetchAllEntities } from "@databiosphere/findable-ui/lib/entity/api/service";
 import {
@@ -7,13 +14,6 @@ import {
   GetStaticPropsResult,
 } from "next";
 import { ParsedUrlQuery } from "querystring";
-import { Atlas, AtlasContext, CXGDataset, Network } from "../@types/network";
-import { filterProjectId } from "../apis/azul/hca-dcp/common/filters";
-import { ProjectsResponse } from "../apis/azul/hca-dcp/common/responses";
-import { processEntityValue } from "../apis/azul/hca-dcp/common/utils";
-import { isTrackerAtlasPublished } from "../apis/tracker/api";
-import { config } from "../config/config";
-import { NETWORKS } from "../constants/networks";
 import {
   fetchCXGDatasetsForAtlases,
   processAtlas,

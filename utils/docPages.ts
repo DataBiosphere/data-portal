@@ -1,3 +1,9 @@
+import { Frontmatter } from "@/docs/common/frontmatter";
+import {
+  filterOutline,
+  getNavigationConfig,
+  parseMDXFrontmatter,
+} from "@/docs/common/utils";
 import { LayoutStyle } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/entities";
 import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
@@ -9,12 +15,6 @@ import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { ParsedUrlQuery } from "querystring";
 import remarkGfm from "remark-gfm";
-import { Frontmatter } from "../docs/common/frontmatter";
-import {
-  filterOutline,
-  getNavigationConfig,
-  parseMDXFrontmatter,
-} from "../docs/common/utils";
 
 interface PageUrlParams extends ParsedUrlQuery {
   slug: string[];

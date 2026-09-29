@@ -1,4 +1,4 @@
-import { buildDataset } from "../utils/datasets";
+import { buildDataset } from "@/utils/datasets";
 
 const NORMAL = "normal";
 const TODO = "--";

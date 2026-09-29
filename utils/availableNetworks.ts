@@ -1,6 +1,6 @@
-import type { Network } from "../@types/network";
-import { isTrackerAtlasPublished } from "../apis/tracker/api";
-import { NETWORKS } from "../constants/networks";
+import { isTrackerAtlasPublished } from "@/apis/tracker/api";
+import { NETWORKS } from "@/constants/networks";
+import type { Network } from "@/types/network";
 
 /**
  * Returns NETWORKS with unpublished tracker atlases filtered out. Used at

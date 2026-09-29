@@ -1,7 +1,7 @@
+import { SEARCH_CATEGORY } from "@/views/SearchView/common/constants";
 import { CardProps } from "@databiosphere/findable-ui/lib/components/common/Card/card";
 import { SEARCH_PARAMETERS } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Actions/components/Search/components/SearchBar/common/constants";
 import { ReadonlyURLSearchParams } from "next/navigation";
-import { SEARCH_CATEGORY } from "../../common/constants";
 import {
   SEARCH_ENGINE_MAX_START_INDEX,
   SEARCH_ENGINE_MIN_START_INDEX,

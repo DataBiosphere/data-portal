@@ -1,3 +1,4 @@
+import { FILTER_DRAWER_BREAKPOINT } from "@/components/common/Filters/constants";
 import { BUTTON_GROUP_PROPS } from "@databiosphere/findable-ui/lib/components/common/ButtonGroup/constants";
 import { ColumnFiltersAdapter } from "@databiosphere/findable-ui/lib/components/Filter/components/adapters/tanstack/ColumnFiltersAdapter/columnFiltersAdapter";
 import { Button } from "@databiosphere/findable-ui/lib/components/Filter/components/surfaces/drawer/components/Button/button";
@@ -7,7 +8,6 @@ import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/b
 import { Theme, useMediaQuery } from "@mui/material";
 import { RowData } from "@tanstack/react-table";
 import { ComponentProps, JSX } from "react";
-import { FILTER_DRAWER_BREAKPOINT } from "../../constants";
 import { StyledButton, StyledButtonGroup } from "./columnFilters.styles";
 import { Props } from "./types";
 import { buildColumnFilters } from "./utils";

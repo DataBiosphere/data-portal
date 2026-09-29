@@ -1,4 +1,4 @@
-import { AnalysisPortal, IntegratedAtlas } from "../@types/network";
+import { AnalysisPortal, IntegratedAtlas } from "@/types/network";
 
 const initAtlas: IntegratedAtlas = {
   analysisPortals: [],

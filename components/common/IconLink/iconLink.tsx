@@ -1,10 +1,10 @@
+import { NewTabCue } from "@/components/common/NewTabCue/newTabCue";
 import {
   StaticImage,
   StaticImageProps,
 } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { JSX } from "react";
-import { NewTabCue } from "../NewTabCue/newTabCue";
 import { Stack } from "./iconLink.styles";
 
 export interface IconLinkProps {
