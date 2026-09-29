@@ -4,17 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "./scripts/dev.sh data-portal && ./scripts/set-version.sh dev && next dev --webpack",
-    "build-dev:data-portal": "./scripts/common-build.sh data-portal dev && ./scripts/set-version.sh && next build --webpack && npm run postbuild",
-    "build-prod:data-portal": "./scripts/common-build.sh data-portal prod && ./scripts/set-version.sh && next build --webpack && npm run postbuild",
+    "build-dev:data-portal": "./scripts/common-build.sh data-portal dev && ./scripts/set-version.sh && npm run build",
+    "build-prod:data-portal": "./scripts/common-build.sh data-portal prod && ./scripts/set-version.sh && npm run build",
+    "prebuild": "npm run snapshot-published-atlases",
     "build": "next build --webpack",
     "start": "npx serve out",
     "lint": "eslint .",
     "check-format": "prettier --check .",
     "format": "prettier --write .",
-    "postbuild": "next-sitemap --config next-sitemap.config.mjs",
+    "postbuild": "next-sitemap --config next-sitemap.config.mjs && rm -rf .tracker",
     "prepare": "husky",
     "complete-biccn-publications": "esrun ./scripts/complete-biccn-publications.ts",
-    "get-cellxgene-projects": "esrun ./scripts/get-cellxgene-projects.ts"
+    "get-cellxgene-projects": "esrun ./scripts/get-cellxgene-projects.ts",
+    "snapshot-published-atlases": "esrun ./scripts/snapshot-published-atlases.ts"
   },
   "dependencies": {
     "@databiosphere/findable-ui": "^55.0.0",
@@ -61,6 +63,7 @@
     "@eslint-community/eslint-plugin-eslint-comments": "^4.7.1",
     "@eslint/eslintrc": "^3",
     "@eslint/js": "^9",
+    "@next/env": "^16",
     "@next/eslint-plugin-next": "^16",
     "@types/mdx": "^2.0.11",
     "@types/node": "22.13.0",

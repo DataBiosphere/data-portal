@@ -3,8 +3,10 @@ import { NETWORKS } from "@/constants/networks";
 import type { Atlas, Network } from "@/types/network";
 
 // The publication gate: every build-time decision about whether an atlas is
-// shown or gets pages goes through this module, so callers cannot disagree on
-// which atlases are published (see #3203).
+// shown or gets pages should go through this module, so callers cannot
+// disagree on which atlases are published (see #3203). Pages that list atlases
+// pass these results to `NetworkListProvider`, whose default is empty so a page
+// that skips the gate lists nothing rather than unpublished atlases.
 
 /**
  * Drops tracker atlases that are not currently published in the tracker;
