@@ -1,7 +1,11 @@
 import { NETWORKS } from "@/constants/networks";
-import { Network, NetworkParam } from "@/types/network";
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import { GetStaticPathsResult } from "next/types";
+import type { Network, NetworkParam } from "@/types/network";
+import type {
+  GetStaticPaths,
+  GetStaticProps,
+  GetStaticPropsContext,
+} from "next";
+import type { GetStaticPathsResult } from "next/types";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -17,7 +21,10 @@ export const getStaticProps: GetStaticProps<NetworkParam> = async (
   const network = NETWORKS.find(({ path }) => path === networkParam) as Network;
   return {
     props: {
-      network: network,
+      // The page renders only network-level fields, never atlases, so the
+      // atlas list is dropped rather than publication-gated: that keeps the
+      // page off the tracker and out of its serialized props.
+      network: { ...network, atlases: [] },
       pageTitle: `${network.name} - BICCN Publications`,
     },
   };

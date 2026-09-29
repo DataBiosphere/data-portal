@@ -1,6 +1,5 @@
 import {
   fetchTrackerComponentAtlases,
-  isTrackerAtlasPublished,
   resolveTrackerAtlasId,
 } from "@/apis/tracker/api";
 import { NETWORKS } from "@/constants/networks";
@@ -10,6 +9,7 @@ import type {
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from "next";
+import { getAvailableNetwork } from "./availableNetworks";
 import { fetchCXGDatasetsForAtlases, processNetwork } from "./network";
 import { mapTrackerComponentAtlasToIntegratedAtlas } from "./trackerNetwork";
 
@@ -30,24 +30,16 @@ export async function getContentStaticProps(
 ): Promise<GetStaticPropsResult<StaticProps>> {
   const { network: networkParam } = context.params ?? {};
 
-  const network = NETWORKS.find(({ path }) => path === networkParam) as Network;
-
-  // Drop tracker atlases not currently published in the tracker.
-  const publishedFlags = await Promise.all(
-    network.atlases.map((a) =>
-      a.tracker
-        ? isTrackerAtlasPublished(a.tracker.shortNameSlug, a.tracker.version)
-        : Promise.resolve(true)
-    )
+  const network = await getAvailableNetwork(
+    NETWORKS.find(({ path }) => path === networkParam) as Network
   );
-  const availableAtlases = network.atlases.filter((_, i) => publishedFlags[i]);
 
   // Fetch CELLxGENE datasets for the network atlases.
-  const cxgDatasets = await fetchCXGDatasetsForAtlases(availableAtlases);
+  const cxgDatasets = await fetchCXGDatasetsForAtlases(network.atlases);
 
   // Populate integrated atlases for tracker-sourced atlases immutably.
   const atlases = await Promise.all(
-    availableAtlases.map(async (atlas) => {
+    network.atlases.map(async (atlas) => {
       if (!atlas.tracker) return atlas;
       const { shortNameSlug, version } = atlas.tracker;
       const atlasId = await resolveTrackerAtlasId(shortNameSlug, version);

@@ -1,7 +1,6 @@
 import { filterProjectId } from "@/apis/azul/hca-dcp/common/filters";
 import { ProjectsResponse } from "@/apis/azul/hca-dcp/common/responses";
 import { processEntityValue } from "@/apis/azul/hca-dcp/common/utils";
-import { isTrackerAtlasPublished } from "@/apis/tracker/api";
 import { config } from "@/config/config";
 import { NETWORKS } from "@/constants/networks";
 import { Atlas, AtlasContext, CXGDataset, Network } from "@/types/network";
@@ -14,6 +13,11 @@ import {
   GetStaticPropsResult,
 } from "next";
 import { ParsedUrlQuery } from "querystring";
+import {
+  getAvailableNetwork,
+  isAtlasPublished,
+  isPublishedTrackerAtlas,
+} from "./availableNetworks";
 import {
   fetchCXGDatasetsForAtlases,
   processAtlas,
@@ -35,9 +39,7 @@ export interface TrackerDataOptions {
 }
 
 export const getStaticPaths: GetStaticPaths<StaticPaths> = () =>
-  buildStaticPaths((atlas) =>
-    atlas.tracker ? isPublishedTrackerAtlas(atlas) : true
-  );
+  buildStaticPaths(isAtlasPublished);
 
 /**
  * Static paths for non-tracker atlases only. Tracker-sourced atlases are
@@ -70,10 +72,18 @@ export async function getContentStaticProps(
 ): Promise<GetStaticPropsResult<StaticProps>> {
   const { atlas: atlasParam, network: networkParam } = context.params ?? {};
 
-  const network = NETWORKS.find(({ path }) => path === networkParam) as Network;
-  const atlas = network.atlases.find(
+  const configuredNetwork = NETWORKS.find(
+    ({ path }) => path === networkParam
+  ) as Network;
+  // Found in the configured network, not the filtered one, so an atlas that
+  // reads as unpublished here still reaches `resolveTrackerAtlas` and its
+  // clear error rather than crashing on an undefined atlas.
+  const atlas = configuredNetwork.atlases.find(
     ({ path }) => path === atlasParam
   ) as Atlas;
+  // Drop unpublished sibling atlases so the page's network agrees with the
+  // network and home pages.
+  const network = await getAvailableNetwork(configuredNetwork);
 
   // Delegate to tracker path if atlas has tracker config.
   if (atlas.tracker) {
@@ -137,17 +147,6 @@ async function buildStaticPaths(
     fallback: false,
     paths,
   };
-}
-
-/**
- * Returns true when the atlas is tracker-sourced and published in the tracker.
- * @param atlas - Atlas to check.
- * @returns true if the atlas is a published tracker atlas.
- */
-async function isPublishedTrackerAtlas(atlas: Atlas): Promise<boolean> {
-  if (!atlas.tracker) return false;
-  const { shortNameSlug, version } = atlas.tracker;
-  return isTrackerAtlasPublished(shortNameSlug, version);
 }
 
 /**
