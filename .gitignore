@@ -15,9 +15,6 @@
 # production
 /build
 
-# tracker snapshot written before next build
-/.tracker/
-
 # misc
 .DS_Store
 *.pem

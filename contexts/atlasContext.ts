@@ -1,10 +1,12 @@
 import { NETWORKS, NETWORK_ATLAS_CONTENT } from "@/constants/networks";
-import { AtlasContext as AtlasContextType, AtlasModule } from "@/types/network";
+import type {
+  AtlasContext as AtlasContextType,
+  AtlasModule,
+} from "@/types/network";
 import { createContext, useContext } from "react";
+import { DEFAULT_NETWORK } from "./networkContext";
 
-const DEFAULT_NETWORK = NETWORKS[0];
-
-const DEFAULT_ATLAS = DEFAULT_NETWORK.atlases[0];
+const DEFAULT_ATLAS = NETWORKS[0].atlases[0];
 
 export const AtlasContext = createContext<AtlasContextType>({
   atlas: DEFAULT_ATLAS,

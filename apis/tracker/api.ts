@@ -4,26 +4,23 @@ import type {
   TrackerSourceStudy,
 } from "@/types/network";
 import { readFile } from "fs/promises";
-import { PUBLISHED_ATLASES_SNAPSHOT_PATH } from "./constants";
+import { PHASE_PRODUCTION_BUILD } from "next/constants";
+import { inspect } from "util";
+import { PUBLISHED_ATLASES_SNAPSHOT_ENV } from "./constants";
 import type { PublishedAtlas } from "./types";
 
 // Module-level cache for published atlases during build. Stores the in-flight
 // Promise so concurrent callers share a single load.
 let publishedAtlasesPromise: Promise<PublishedAtlas[]> | null = null;
 
-// Node socket-error fields worth logging, e.g. the host and port a fetch could
-// not reach.
-const ERROR_DETAIL_KEYS = [
-  "code",
-  "syscall",
-  "hostname",
-  "address",
-  "port",
-] as const;
+// Advice appended when `next build` runs without a snapshot path.
+const BUILD_HINT =
+  "(run `npm run build`, which snapshots the published atlases before `next build`)";
 
-// How deep `describeError` follows `cause` and AggregateError `errors`, so a
-// cyclic cause cannot recurse forever.
-const MAX_ERROR_DEPTH = 5;
+// Advice appended when the build's snapshot file is gone, e.g. removed by a tmp
+// cleaner mid-build.
+const SNAPSHOT_MISSING_HINT =
+  "(the snapshot `scripts/build.sh` wrote for this build was removed; run the build again)";
 
 // Fields an item must carry as strings for the publication gate to match on
 // it. Items missing one are skipped, and a body where every item is missing one
@@ -33,48 +30,6 @@ const PUBLISHED_ATLAS_MATCH_KEYS = [
   "shortNameSlug",
   "version",
 ] as const satisfies readonly (keyof PublishedAtlas)[];
-
-/**
- * Describes an error for a log message: its name and message, any Node
- * socket-error details (code, host, port), the errors inside an AggregateError
- * (e.g. undici's "fetch failed" to a dual-stack host, one per address tried),
- * and its `cause` chain.
- * @param err - Error to describe.
- * @param depth - Current nesting depth; callers omit it.
- * @returns the error, its details and its causes as text.
- */
-function describeError(err: unknown, depth = 0): string {
-  if (!(err instanceof Error)) return describeValue(err);
-  const fields = err as unknown as Record<string, unknown>;
-  const details = ERROR_DETAIL_KEYS.filter(
-    (key) => fields[key] !== undefined
-  ).map((key) => `${key}=${fields[key]}`);
-  let text = details.length ? `${err} [${details.join(" ")}]` : String(err);
-  if (depth >= MAX_ERROR_DEPTH) return text;
-  if (err instanceof AggregateError && err.errors.length > 0) {
-    const errors = err.errors.map((e) => describeError(e, depth + 1));
-    text += ` (errors: ${errors.join("; ")})`;
-  }
-  if (err.cause !== undefined) {
-    text += ` (cause: ${describeError(err.cause, depth + 1)})`;
-  }
-  return text;
-}
-
-/**
- * Describes a non-Error thrown value or cause, printing plain objects as JSON
- * rather than "[object Object]".
- * @param value - Value to describe.
- * @returns the value as text.
- */
-function describeValue(value: unknown): string {
-  if (typeof value !== "object" || value === null) return String(value);
-  try {
-    return JSON.stringify(value) ?? String(value);
-  } catch {
-    return String(value);
-  }
-}
 
 /**
  * Fetches and validates the tracker's published atlases. Used directly by
@@ -172,24 +127,15 @@ async function findPublishedAtlas(
 }
 
 /**
- * Returns the cached published atlases, loading them on first call. `next
- * build` reads the snapshot written before the build: Next runs getStaticPaths
- * and getStaticProps across several worker processes, each with its own
- * module-level cache, so fetching per worker could let pages disagree on which
- * atlases are published if the tracker changed mid-build, shipping tabs that
- * 404 (see #3203). `next dev` fetches live. Failures are rethrown so the build
- * fails deterministically rather than silently omitting tracker atlases; the
- * rejected promise is cleared so a long-lived `next dev` server can retry on
- * the next request.
+ * Returns the cached published atlases, loading them on first call. Failures
+ * are rethrown so the build fails deterministically rather than silently
+ * omitting tracker atlases; the rejected promise is cleared so a long-lived
+ * `next dev` server can retry on the next request.
  * @returns published atlases.
  */
 function getPublishedAtlases(): Promise<PublishedAtlas[]> {
   if (!publishedAtlasesPromise) {
-    const load =
-      process.env.NODE_ENV === "production"
-        ? readPublishedAtlasesSnapshot
-        : fetchPublishedAtlases;
-    publishedAtlasesPromise = load().catch((err) => {
+    publishedAtlasesPromise = loadPublishedAtlases().catch((err) => {
       publishedAtlasesPromise = null;
       throw err;
     });
@@ -220,6 +166,33 @@ export async function isTrackerAtlasPublished(
   version: string
 ): Promise<boolean> {
   return (await findPublishedAtlas(shortNameSlug, version)) !== undefined;
+}
+
+/**
+ * Loads the published atlases. `next build` reads the snapshot that
+ * `scripts/build.sh` writes before the build: Next runs getStaticPaths and
+ * getStaticProps across several worker processes, each with its own
+ * module-level cache, so fetching per worker could let pages disagree on which
+ * atlases are published if the tracker changed mid-build, shipping tabs that
+ * 404 (see #3203). A `next build` without the snapshot (e.g. a bare `npx next
+ * build`) therefore fails. Anything else, such as `next dev`, fetches live,
+ * even if the snapshot variable leaked into its environment.
+ * @returns published atlases.
+ */
+function loadPublishedAtlases(): Promise<PublishedAtlas[]> {
+  if (process.env.NEXT_PHASE !== PHASE_PRODUCTION_BUILD) {
+    return fetchPublishedAtlases();
+  }
+  const snapshotPath = process.env[PUBLISHED_ATLASES_SNAPSHOT_ENV];
+  if (!snapshotPath) {
+    return Promise.reject(
+      publishedAtlasesError(
+        `${PUBLISHED_ATLASES_SNAPSHOT_ENV} is not set`,
+        BUILD_HINT
+      )
+    );
+  }
+  return readPublishedAtlasesSnapshot(snapshotPath);
 }
 
 /**
@@ -258,34 +231,39 @@ function parsePublishedAtlases(data: unknown): PublishedAtlas[] {
  * Builds the error thrown when the published atlases cannot be loaded. The
  * reason goes in the message, not `cause`: Next's build workers send only an
  * error's name, message and stack back to the main process, so a `cause` would
- * never reach the build log. This error's own stack points at the handler, so
- * the failing step's first stack frame in app code is appended too.
- * @param err - The underlying failure.
+ * never reach the build log. A string reason is used as is; anything else is
+ * printed with `util.inspect`, which includes the underlying error's stack,
+ * Node error details (code, address, port), `cause` chain and AggregateError
+ * `errors`.
+ * @param reason - The underlying failure, or a description of it.
  * @param hint - Optional advice on how to fix it.
  * @returns error describing the failure.
  */
-function publishedAtlasesError(err: unknown, hint?: string): Error {
-  const frame = topAppStackFrame(err);
-  const parts = [
-    `[tracker] Published atlases are unavailable: ${describeError(err)}`,
-    frame,
-    hint,
-  ];
-  return new Error(parts.filter(Boolean).join(" "));
+function publishedAtlasesError(reason: unknown, hint?: string): Error {
+  const text =
+    typeof reason === "string"
+      ? reason
+      : inspect(reason, { breakLength: Infinity, depth: 5 });
+  const parts = [`[tracker] Published atlases are unavailable: ${text}`, hint];
+  return new Error(parts.filter(Boolean).join("\n"));
 }
 
 /**
- * Reads the published-atlases snapshot written before `next build`.
+ * Reads this build's published-atlases snapshot.
+ * @param snapshotPath - Path of the snapshot written by `scripts/build.sh`.
  * @returns published atlases.
  */
-async function readPublishedAtlasesSnapshot(): Promise<PublishedAtlas[]> {
+async function readPublishedAtlasesSnapshot(
+  snapshotPath: string
+): Promise<PublishedAtlas[]> {
   try {
-    const text = await readFile(PUBLISHED_ATLASES_SNAPSHOT_PATH, "utf8");
+    const text = await readFile(snapshotPath, "utf8");
     return parsePublishedAtlases(JSON.parse(text));
   } catch (err) {
+    const missing = (err as NodeJS.ErrnoException).code === "ENOENT";
     throw publishedAtlasesError(
       err,
-      `(write the snapshot with \`npm run snapshot-published-atlases\` before \`next build\`)`
+      missing ? SNAPSHOT_MISSING_HINT : undefined
     );
   }
 }
@@ -326,24 +304,4 @@ export async function resolveTrackerAtlasId(
 ): Promise<string> {
   const { id } = await resolveTrackerAtlas(shortNameSlug, version);
   return id;
-}
-
-/**
- * Returns the first stack frame of an error that is in app code, skipping Node
- * internals, dependencies and native frames (e.g. undici or `JSON.parse`).
- * @param err - Error to inspect.
- * @returns the frame (e.g. "at async fetchTrackerApi (...)"), or undefined.
- */
-function topAppStackFrame(err: unknown): string | undefined {
-  if (!(err instanceof Error) || !err.stack) return undefined;
-  return err.stack
-    .split("\n")
-    .map((line) => line.trim())
-    .find(
-      (line) =>
-        line.startsWith("at ") &&
-        !line.includes("node:") &&
-        !line.includes("node_modules") &&
-        !line.includes("<anonymous>")
-    );
 }

@@ -13,11 +13,7 @@ import type {
   GetStaticPropsResult,
 } from "next";
 import type { ParsedUrlQuery } from "querystring";
-import {
-  getAvailableNetwork,
-  isAtlasPublished,
-  isPublishedTrackerAtlas,
-} from "./availableNetworks";
+import { getAvailableNetwork, isAtlasPublished } from "./availableNetworks";
 import {
   fetchCXGDatasetsForAtlases,
   processAtlas,
@@ -55,7 +51,9 @@ export const getNonTrackerStaticPaths: GetStaticPaths<StaticPaths> = () =>
  * @returns static paths for published tracker atlases.
  */
 export const getTrackerStaticPaths: GetStaticPaths<StaticPaths> = () =>
-  buildStaticPaths(isPublishedTrackerAtlas);
+  buildStaticPaths(
+    async (atlas) => Boolean(atlas.tracker) && isAtlasPublished(atlas)
+  );
 
 /**
  * Builds static props for an atlas page, delegating to the tracker builder when

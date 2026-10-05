@@ -55,13 +55,3 @@ export async function isAtlasPublished(atlas: Atlas): Promise<boolean> {
   const { shortNameSlug, version } = atlas.tracker;
   return isTrackerAtlasPublished(shortNameSlug, version);
 }
-
-/**
- * Returns true when the atlas is tracker-sourced and published in the tracker.
- * @param atlas - Atlas to check.
- * @returns true if the atlas is a published tracker atlas.
- */
-export async function isPublishedTrackerAtlas(atlas: Atlas): Promise<boolean> {
-  if (!atlas.tracker) return false;
-  return isAtlasPublished(atlas);
-}
