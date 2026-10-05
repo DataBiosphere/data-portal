@@ -1,19 +1,19 @@
 import { filterProjectId } from "@/apis/azul/hca-dcp/common/filters";
-import { ProjectsResponse } from "@/apis/azul/hca-dcp/common/responses";
+import type { ProjectsResponse } from "@/apis/azul/hca-dcp/common/responses";
 import { processEntityValue } from "@/apis/azul/hca-dcp/common/utils";
 import { isTrackerAtlasPublished } from "@/apis/tracker/api";
 import { config } from "@/config/config";
 import { NETWORKS } from "@/constants/networks";
-import { Atlas, AtlasContext, CXGDataset, Network } from "@/types/network";
+import type { Atlas, AtlasContext, CXGDataset, Network } from "@/types/network";
 import { COLLATOR_CASE_INSENSITIVE } from "@databiosphere/findable-ui/lib/common/constants";
 import { fetchAllEntities } from "@databiosphere/findable-ui/lib/entity/api/service";
-import {
+import type {
   GetStaticPaths,
   GetStaticPathsResult,
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from "next";
-import { ParsedUrlQuery } from "querystring";
+import type { ParsedUrlQuery } from "querystring";
 import {
   fetchCXGDatasetsForAtlases,
   processAtlas,
@@ -80,29 +80,16 @@ export async function getContentStaticProps(
     return getTrackerContentStaticProps(atlas, network, tabName, options);
   }
 
-  const {
-    dataSource: { url },
-  } = config();
+  const [hcaProjects, cxgDatasets] = await Promise.all([
+    fetchAtlasProjects(atlas),
+    fetchCXGDatasetsForAtlases([atlas]),
+  ]);
 
-  const projectsResponses = [];
-  if (atlas.datasets.length > 0) {
-    // Paginate so an atlas with more datasets than Azul's page size cap still
-    // gets every project.
-    const result = await fetchAllEntities(
-      `${url}/projects`,
-      undefined,
-      undefined,
-      filterProjectId(atlas.datasets)
-    );
-    projectsResponses.push(...result.hits);
-    const datasets = atlas.externalDatasets;
-    if (datasets) {
-      projectsResponses.push(...datasets);
-      projectsResponses.sort(sortDatasets);
-    }
-  }
-
-  const cxgDatasets = await fetchCXGDatasetsForAtlases([atlas]);
+  // Sort the merged list so external datasets interleave with HCA projects by
+  // title.
+  const projectsResponses = [...hcaProjects, ...atlas.externalDatasets].sort(
+    sortDatasets
+  );
   cxgDatasets.sort(sortCXGDatasets);
 
   return {
@@ -137,6 +124,31 @@ async function buildStaticPaths(
     fallback: false,
     paths,
   };
+}
+
+/**
+ * Fetches the Azul projects for the atlas's HCA datasets, paginating so an
+ * atlas with more datasets than Azul's page size cap still gets every project.
+ * @param atlas - Atlas whose HCA datasets to fetch.
+ * @returns Azul projects for the atlas, or an empty list if it has no HCA datasets.
+ */
+async function fetchAtlasProjects(atlas: Atlas): Promise<ProjectsResponse[]> {
+  // Required for correctness, not just to save a request: with no datasets,
+  // `filterProjectId([])` would send an empty `projectId` filter, and Azul
+  // does not define what that returns.
+  if (atlas.datasets.length === 0) return [];
+
+  const {
+    dataSource: { url },
+  } = config();
+
+  const { hits } = await fetchAllEntities(
+    `${url}/projects`,
+    undefined,
+    undefined,
+    filterProjectId(atlas.datasets)
+  );
+  return hits;
 }
 
 /**
