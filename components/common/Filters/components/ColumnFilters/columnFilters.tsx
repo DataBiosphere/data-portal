@@ -1,13 +1,13 @@
-import { FILTER_DRAWER_BREAKPOINT } from "@/components/common/Filters/constants";
 import { BUTTON_GROUP_PROPS } from "@databiosphere/findable-ui/lib/components/common/ButtonGroup/constants";
 import { ColumnFiltersAdapter } from "@databiosphere/findable-ui/lib/components/Filter/components/adapters/tanstack/ColumnFiltersAdapter/columnFiltersAdapter";
 import { Button } from "@databiosphere/findable-ui/lib/components/Filter/components/surfaces/drawer/components/Button/button";
 import { Drawer } from "@databiosphere/findable-ui/lib/components/Filter/components/surfaces/drawer/Drawer/drawer";
 import { ColumnFilter } from "@databiosphere/findable-ui/lib/components/Table/components/TableFeatures/ColumnFilter/columnFilter";
+import { bpDown1024 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
 import { Theme, useMediaQuery } from "@mui/material";
 import { RowData } from "@tanstack/react-table";
-import { ComponentProps, JSX } from "react";
+import { ComponentProps, Fragment, JSX } from "react";
 import { StyledButton, StyledButtonGroup } from "./columnFilters.styles";
 import { Props } from "./types";
 import { buildColumnFilters } from "./utils";
@@ -15,36 +15,36 @@ import { buildColumnFilters } from "./utils";
 export const ColumnFilters = <T extends RowData>({
   table,
 }: Props<T>): JSX.Element | null => {
-  const isDrawer = useMediaQuery(
-    (theme: Theme) => theme.breakpoints.down(FILTER_DRAWER_BREAKPOINT),
-    { noSsr: true }
-  );
+  // Not `noSsr`: the first client render must match the static HTML. Used only
+  // as a key, so crossing the breakpoint remounts both surfaces and closes any
+  // menu or drawer left open on the surface CSS has just hidden.
+  const isDrawer = useMediaQuery((theme: Theme) => bpDown1024({ theme }));
 
   const enableColumnFilters = table.options.enableColumnFilters;
 
   if (!enableColumnFilters) return null;
 
-  if (isDrawer)
-    return (
+  const columnFilters = buildColumnFilters(table);
+
+  // Both surfaces are rendered and CSS shows one per viewport (see
+  // columnFilters.styles.ts), so the static HTML matches the first client render.
+  return (
+    <Fragment key={String(isDrawer)}>
       <ColumnFiltersAdapter
         table={table}
         renderSurface={(props) => <Drawer Button={renderButton} {...props} />}
       />
-    );
-
-  const columnFilters = buildColumnFilters(table);
-
-  return (
-    <StyledButtonGroup {...BUTTON_GROUP_PROPS.SECONDARY_OUTLINED}>
-      {columnFilters.map((column) => (
-        <ColumnFilter
-          key={column.id}
-          column={column}
-          anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
-          transformOrigin={{ horizontal: "left", vertical: "top" }}
-        />
-      ))}
-    </StyledButtonGroup>
+      <StyledButtonGroup {...BUTTON_GROUP_PROPS.SECONDARY_OUTLINED}>
+        {columnFilters.map((column) => (
+          <ColumnFilter
+            key={column.id}
+            column={column}
+            anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+            transformOrigin={{ horizontal: "left", vertical: "top" }}
+          />
+        ))}
+      </StyledButtonGroup>
+    </Fragment>
   );
 };
 
