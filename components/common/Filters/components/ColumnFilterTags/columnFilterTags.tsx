@@ -1,7 +1,6 @@
-import { FILTER_DRAWER_BREAKPOINT } from "@/components/common/Filters/constants";
 import { ColumnFilterTag } from "@databiosphere/findable-ui/lib/components/Table/components/TableFeatures/ColumnFilter/components/ColumnFilterTag/columnFilterTag";
 import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
-import { Button, Theme, useMediaQuery } from "@mui/material";
+import { Button } from "@mui/material";
 import { RowData } from "@tanstack/react-table";
 import { JSX } from "react";
 import { StyledGrid } from "./columnFilterTags.styles";
@@ -13,14 +12,8 @@ export const ColumnFilterTags = <T extends RowData>({
 }: Props<T>): JSX.Element | null => {
   const { getAllColumns, resetColumnFilters } = table;
   const columns = getAllColumns().filter((column) => column.getIsFiltered());
-  const isDrawer = useMediaQuery(
-    (theme: Theme) => theme.breakpoints.down(FILTER_DRAWER_BREAKPOINT),
-    { noSsr: true }
-  );
 
   if (columns.length === 0) return null;
-
-  if (isDrawer) return null;
 
   return (
     <StyledGrid {...GRID_PROPS}>
