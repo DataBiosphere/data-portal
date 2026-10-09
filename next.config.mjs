@@ -1,5 +1,4 @@
 import nextMDX from "@next/mdx";
-import withPlugins from "next-compose-plugins";
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
@@ -9,21 +8,14 @@ const withMDX = nextMDX({
   },
 });
 
-export default withPlugins(
-  [
-    [
-      withMDX,
-      {
-        pageExtensions: ["md", "mdx", "ts", "tsx"],
-      },
-    ],
-  ],
-  {
-    images: {
-      unoptimized: true,
-    },
-    output: "export",
-    reactStrictMode: true,
-    transpilePackages: ["@databiosphere/findable-ui"],
-  }
-);
+export default withMDX({
+  // Stops `next dev` (16.4+) writing an AGENTS.md to the repo root when it detects an AI agent.
+  agentRules: false,
+  images: {
+    unoptimized: true,
+  },
+  output: "export",
+  pageExtensions: ["md", "mdx", "ts", "tsx"],
+  reactStrictMode: true,
+  transpilePackages: ["@databiosphere/findable-ui"],
+});
