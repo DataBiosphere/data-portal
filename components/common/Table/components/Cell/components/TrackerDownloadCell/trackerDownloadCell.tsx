@@ -11,9 +11,10 @@ import type { TrackerDownloadCellProps } from "./types";
  * that opens a dialog displaying the S3 download URL.
  * @param props - Download cell props.
  * @param props.downloadUrl - Static S3 download URL.
- * @param props.fileName - Versioned file name to display.
+ * @param props.fileName - Versioned file name to display; names the button when there is no label.
  * @param props.fileSize - File size in bytes.
  * @param props.format - File format (e.g., ".h5ad").
+ * @param props.label - Row label the button is named after, when it differs from the file name.
  * @returns download icon button with dialog.
  */
 export const TrackerDownloadCell = ({
@@ -21,11 +22,13 @@ export const TrackerDownloadCell = ({
   fileName,
   fileSize,
   format,
+  label,
 }: TrackerDownloadCellProps): JSX.Element => {
   const { onClose, onOpen, open } = useDialog();
   return (
     <Fragment>
       <StyledIconButton
+        aria-label={`Download ${label ?? fileName}`}
         color={ICON_BUTTON_PROPS.COLOR.PRIMARY}
         disabled={!downloadUrl}
         onClick={onOpen}

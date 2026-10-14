@@ -124,7 +124,10 @@ function getAtlasesActionsColumnDef(
           const [asset] = row.original.datasetAssets;
           if (!isTrackerDatasetAsset(asset)) return null;
           return (
-            <TrackerDownloadCell {...buildTrackerDownloadCellProps(asset)} />
+            <TrackerDownloadCell
+              {...buildTrackerDownloadCellProps(asset)}
+              label={row.original.name}
+            />
           );
         }
       : ({ row }): JSX.Element => (
