@@ -3,6 +3,7 @@ import { IconButton } from "@databiosphere/findable-ui/lib/components/common/Ico
 import EastRoundedIcon from "@mui/icons-material/EastRounded";
 import WestRoundedIcon from "@mui/icons-material/WestRounded";
 import { JSX } from "react";
+import { ARIA_LABEL } from "./constants";
 import { usePagination } from "./hooks/UsePagination/hook";
 import { PaginationActions, PaginationView } from "./pagination.styles";
 
@@ -19,6 +20,7 @@ export const Pagination = ({
     <PaginationView>
       <PaginationActions>
         <IconButton
+          aria-label={ARIA_LABEL.PREVIOUS_PAGE}
           color="secondary"
           disabled={pagination.previousPage === 0}
           Icon={WestRoundedIcon}
@@ -26,6 +28,7 @@ export const Pagination = ({
           size="medium"
         />
         <IconButton
+          aria-label={ARIA_LABEL.NEXT_PAGE}
           color="secondary"
           disabled={pagination.nextPage === 0}
           Icon={EastRoundedIcon}

@@ -19,8 +19,8 @@ export const CXGDownloadCell = ({
     <>
       {datasetAssets.length > 0 && (
         <StyledIconButton
+          aria-label={`Download ${title}`}
           color={ICON_BUTTON_PROPS.COLOR.PRIMARY}
-          disabled={datasetAssets.length === 0}
           onClick={(): void => setOpen(true)}
           size={ICON_BUTTON_PROPS.SIZE.MEDIUM}
         >

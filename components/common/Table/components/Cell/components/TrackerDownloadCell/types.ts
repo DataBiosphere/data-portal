@@ -3,4 +3,5 @@ export interface TrackerDownloadCellProps {
   fileName: string;
   fileSize: number;
   format: string;
+  label: string;
 }

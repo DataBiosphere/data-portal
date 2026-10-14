@@ -10,6 +10,7 @@ import {
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import type { CellContext } from "@tanstack/react-table";
 import type { JSX } from "react";
+import { buildVersionedFileNameValue } from "./accessor";
 import { FileNameCell } from "./components/FileNameCell/fileNameCell";
 import { HCA_EXPLORER_LABEL } from "./constants";
 
@@ -34,7 +35,12 @@ export function renderDownload(
   ctx: CellContext<TrackerSourceDataset, unknown>
 ): JSX.Element {
   const props = buildTrackerDownloadCellProps(ctx.row.original.datasetAsset);
-  return <TrackerDownloadCell {...props} />;
+  return (
+    <TrackerDownloadCell
+      {...props}
+      label={buildVersionedFileNameValue(ctx.row.original)}
+    />
+  );
 }
 
 /**
