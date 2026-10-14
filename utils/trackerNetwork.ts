@@ -139,11 +139,11 @@ function buildTrackerDatasetAsset(
  * Builds the props a `TrackerDownloadCell` needs from a tracker-built asset,
  * so the stem/extension display convention lives in one place.
  * @param asset - Tracker dataset asset.
- * @returns cell props.
+ * @returns cell props, except the row label, which the caller supplies.
  */
 export function buildTrackerDownloadCellProps(
   asset: TrackerDatasetAsset
-): TrackerDownloadCellProps {
+): Omit<TrackerDownloadCellProps, "label"> {
   const { ext, stem } = splitFileName(asset.versionedFileName);
   return {
     downloadUrl: asset.downloadURL,
