@@ -11,9 +11,9 @@ HCA has divided its metadata schema into three parts; each part serves a differe
 
 Tier 1 metadata fields are used to computationally integrate datasets, and hence, the fields are used to understand how successful the integration has been.
 
-Tier 2 metadata files provide important information for scientists using HCA atlases in any sort of downstream analysis. These fields can contain identifiable information and, therefore, are stored under HCA’s managed access service. Finally, cell annotation metadata fields help to name cell types across all atlases.
+Tier 2 metadata files provide important information for scientists using HCA atlases in any sort of downstream analysis. These fields can contain identifiable information and, therefore, are stored on a secure access platform. Finally, cell annotation metadata fields help to name cell types across all atlases.
 
-<Figure alt="Metadata schema" hasBorder={false} src="/hca-bio-networks/metadata/metadata-schema.png" />
+<Figure alt="Table comparing the three types of HCA metadata by purpose, platform and file format. Tier 1 metadata: technical information required for integration that helps to understand batch effects and is uniform across all atlases, stored in the HCA Atlas Tracker as a matrix in AnnData (h5ad) format. Tier 2 metadata: biological information required for downstream analysis that is stored on a secure access platform and is specific to each Biological Network, stored in any secure access data repository alongside FASTQ files. Cell annotation metadata: metadata related to cell nomenclature, captured mostly on a ‘per cell’ basis, stored in the Cell Annotation Platform (CAP) as a matrix in AnnData (h5ad) format." hasBorder={false} src="/hca-bio-networks/metadata/metadata-schema.webp" />
 
 ## Tier 1 metadata
 
@@ -33,9 +33,9 @@ List of fields: [here](https://docs.google.com/document/d/1CqL_t2CMcZF257rvjObDR
 
 There are two groups of fields that are captured under the umbrella of Tier 2 metadata:
 - Fields that capture information that is not strictly required for the integration of datasets but is highly valuable for downstream biological analysis (these fields may differ per Biological Network)
-- Fields requiring managed access protection (i.e., fields that contain potential identifiers)
+- Fields requiring secure access protection (i.e., fields that contain potential identifiers)
 
-These fields are separated from the Tier 1 fields for two reasons. First, these fields may take longer to wrangle, and we do not want to delay the teams building the integrated objects. Second, many of these fields require managed access protection for some data contributors and are therefore stored in a separate platform with this functionality.
+These fields are separated from the Tier 1 fields for two reasons. First, these fields may take longer to wrangle, and we do not want to delay the teams building the integrated objects. Second, many of these fields contain potential identifiers and are therefore stored on a secure access platform.
 
 The lists of fields are currently being defined by members of the Biological Networks. Completed fields lists will appear below once finalized. The current list can be found in the [HCA Tier 2 Metadata Definitions](https://drive.google.com/drive/folders/1ngcIgKBV9OUM1pPO-CDRH6ZIpyiSpamu?usp=sharing) Google Drive folder.
 
