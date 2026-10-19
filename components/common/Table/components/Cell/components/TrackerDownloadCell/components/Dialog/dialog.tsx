@@ -10,6 +10,7 @@ import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/B
 import { formatFileSize } from "@databiosphere/findable-ui/lib/utils/formatFileSize";
 import { Button } from "@mui/material";
 import { JSX } from "react";
+import { ARIA_LABEL } from "./constants";
 import type { Props } from "./types";
 
 /**
@@ -33,7 +34,11 @@ export const Dialog = ({
 }: Props): JSX.Element => {
   return (
     <StyledDialog fullWidth maxWidth={false} onClose={onClose} open={open}>
-      <DialogTitle title="Download from HCA" onClose={onClose} />
+      <DialogTitle
+        closeLabel={ARIA_LABEL.CLOSE}
+        onClose={onClose}
+        title="Download from HCA"
+      />
       <DialogContent dividers>
         <DialogContentSection title="Download Details">
           <div>File Name: {fileName}</div>
