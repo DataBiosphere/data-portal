@@ -21,7 +21,9 @@ export const getStaticPaths: GetStaticPaths = getNonTrackerStaticPaths;
 export const getStaticProps: GetStaticProps<StaticProps> = async (
   context: GetStaticPropsContext
 ) => {
-  return getContentStaticProps(context, "Source Studies");
+  return getContentStaticProps(context, "Source Studies", {
+    withProjects: true,
+  });
 };
 
 const Page = ({

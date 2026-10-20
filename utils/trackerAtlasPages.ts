@@ -6,7 +6,7 @@ import {
 } from "@/apis/tracker/api";
 import type { Atlas, Network, TrackerSourceDataset } from "@/types/network";
 import type { GetStaticPropsResult } from "next";
-import type { StaticProps, TrackerDataOptions } from "./atlasPages";
+import type { AtlasDataOptions, StaticProps } from "./atlasPages";
 import { buildCAPProjectLink } from "./network";
 import {
   buildTrackerCXGDataPortalLink,
@@ -19,14 +19,15 @@ import {
  * @param atlas - Atlas with tracker configuration.
  * @param network - Network containing the atlas.
  * @param tabName - Tab name for the page title.
- * @param options - Tracker collections the route being built requires.
+ * @param options - Data the route being built requires; only
+ * `withSourceDatasets` applies to tracker atlases.
  * @returns static props for the atlas page.
  */
 export async function getTrackerContentStaticProps(
   atlas: Atlas,
   network: Network,
   tabName: string,
-  options: TrackerDataOptions = {}
+  options: AtlasDataOptions = {}
 ): Promise<GetStaticPropsResult<StaticProps>> {
   const { tracker } = atlas;
   if (!tracker) {
@@ -84,7 +85,6 @@ export async function getTrackerContentStaticProps(
       atlas: processedAtlas,
       network: processedNetwork,
       pageTitle: `${atlas.name} - ${tabName}`,
-      projectsResponses: [],
       // Omitted rather than set to `undefined`, which `getStaticProps` cannot
       // serialize; consumers default the absent field to an empty list. This
       // keeps the records out of the page payload on routes that skip them.

@@ -144,7 +144,7 @@ export type NetworkParam = {
 
 export interface AtlasContext extends NetworkContext {
   atlas: Atlas;
-  projectsResponses: ProjectsResponse[];
+  projectsResponses?: ProjectsResponse[];
   trackerSourceDatasets?: TrackerSourceDataset[];
 }
 

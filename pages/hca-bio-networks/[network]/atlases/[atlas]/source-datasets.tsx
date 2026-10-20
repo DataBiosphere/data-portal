@@ -29,7 +29,6 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (
 const Page = ({
   atlas,
   network,
-  projectsResponses,
   trackerSourceDatasets = [],
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
@@ -37,7 +36,6 @@ const Page = ({
       value={{
         atlas,
         network,
-        projectsResponses,
         trackerSourceDatasets,
       }}
     >
