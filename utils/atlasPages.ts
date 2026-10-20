@@ -112,9 +112,8 @@ export async function getContentStaticProps(
       atlas: processAtlas(atlas, cxgDatasets),
       network: processNetwork(network, cxgDatasets),
       pageTitle: `${atlas.name} - ${tabName}`,
-      // Omitted rather than set to `undefined`, which `getStaticProps` cannot
-      // serialize; consumers default the absent field to an empty list. This
-      // keeps the records out of the page payload on routes that skip them.
+      // Omitted when not fetched, as `getTrackerContentStaticProps` does for
+      // `trackerSourceDatasets`.
       ...(projectsResponses && { projectsResponses }),
     },
   };
