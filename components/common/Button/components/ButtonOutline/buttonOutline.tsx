@@ -1,7 +1,12 @@
-import { ButtonProps as DXButtonProps } from "@databiosphere/findable-ui/lib/components/common/Button/button";
 import { ButtonOutline as DXButtonOutline } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonOutline/buttonOutline";
-import { JSX } from "react";
+import type { ButtonProps } from "@mui/material";
+import type { JSX } from "react";
 
-export const ButtonOutline = ({ ...props }: DXButtonProps): JSX.Element => {
+/**
+ * Outline button for dark backgrounds, rendering findable's ButtonOutline.
+ * @param props - MUI button props.
+ * @returns The outline button.
+ */
+export const ButtonOutline = (props: ButtonProps): JSX.Element => {
   return <DXButtonOutline {...props} />;
 };
