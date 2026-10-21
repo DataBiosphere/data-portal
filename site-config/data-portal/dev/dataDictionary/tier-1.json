@@ -458,7 +458,7 @@
         {
           "annotations": {
             "annDataLocation": "obs",
-            "bioNetworks": ["gut"],
+            "bioNetworks": ["adipose", "gut", "musculoskeletal"],
             "tier": "Tier 1"
           },
           "description": "Was ambient count correction software used during cellxgene processing? If so, which software?",
@@ -472,7 +472,7 @@
         {
           "annotations": {
             "annDataLocation": "obs",
-            "bioNetworks": ["gut"],
+            "bioNetworks": ["adipose", "gut", "musculoskeletal"],
             "tier": "Tier 1"
           },
           "description": "Was doublet detection software used during cellxgene processing? If so, which software?",
@@ -1111,6 +1111,20 @@
           "required": true,
           "title": "Radial Tissue Term",
           "values": "* EPI \n\n * LP \n\n * MUSC \n\n * EPI_LP \n\n * LP_MUSC \n\n * EPI_LP_MUSC \n\n * MLN \n\n * SUB \n\n * Peyers patch \n\n * Mucosal ILF \n\n * Submucosal ILF \n\n * WM"
+        },
+        {
+          "annotations": {
+            "annDataLocation": "obs",
+            "bioNetworks": ["adipose", "gut"],
+            "tier": "Tier 1"
+          },
+          "description": "Dissociation chemicals used during sample preparation.",
+          "example": "trypsin; trypLE; collagenase",
+          "multivalued": false,
+          "name": "dissociation_protocol",
+          "range": "string",
+          "required": true,
+          "title": "Dissociation Protocol"
         },
         {
           "annotations": {
