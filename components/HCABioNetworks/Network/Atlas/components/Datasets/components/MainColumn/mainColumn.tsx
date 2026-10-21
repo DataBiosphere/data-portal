@@ -11,7 +11,7 @@ import { TABLE_OPTIONS } from "./projects/components/Table/options";
 
 export const MainColumn = (): JSX.Element => {
   const { browserURL } = useSiteConfig();
-  const { projectsResponses } = useAtlas();
+  const { projectsResponses = [] } = useAtlas();
   return (
     <BackPageContentSingleColumn>
       <FluidPaper>

@@ -21,6 +21,11 @@ import {
 } from "./network";
 import { getTrackerContentStaticProps } from "./trackerAtlasPages";
 
+export interface AtlasDataOptions {
+  withProjects?: boolean; // Non-tracker atlases only: fetch Azul projects.
+  withSourceDatasets?: boolean; // Tracker atlases only: fetch source datasets.
+}
+
 interface StaticPaths extends ParsedUrlQuery {
   atlas: string;
   network: string;
@@ -28,10 +33,6 @@ interface StaticPaths extends ParsedUrlQuery {
 
 export interface StaticProps extends AtlasContext {
   pageTitle: string;
-}
-
-export interface TrackerDataOptions {
-  withSourceDatasets?: boolean;
 }
 
 export const getStaticPaths: GetStaticPaths<StaticPaths> = () =>
@@ -60,13 +61,14 @@ export const getTrackerStaticPaths: GetStaticPaths<StaticPaths> = () =>
  * the atlas is tracker-sourced.
  * @param context - Static props context carrying the network and atlas params.
  * @param tabName - Tab name for the page title.
- * @param options - Tracker collections the route requires; tracker atlases only.
+ * @param options - Data the route requires: `withProjects` for non-tracker
+ * atlases, `withSourceDatasets` for tracker atlases.
  * @returns static props for the atlas page.
  */
 export async function getContentStaticProps(
   context: GetStaticPropsContext,
   tabName: string,
-  options?: TrackerDataOptions
+  options: AtlasDataOptions = {}
 ): Promise<GetStaticPropsResult<StaticProps>> {
   const { atlas: atlasParam, network: networkParam } = context.params ?? {};
 
@@ -88,16 +90,21 @@ export async function getContentStaticProps(
     return getTrackerContentStaticProps(atlas, network, tabName, options);
   }
 
+  // Azul projects are fetched only for the route that renders them, so no
+  // other route pays for requests whose data it never displays. This trims the
+  // request count and the page payload, not the build's exposure to an Azul
+  // outage: `output: "export"` builds every route in one pass, so a 5xx still
+  // fails the whole build via the datasets route.
   const [hcaProjects, cxgDatasets] = await Promise.all([
-    fetchAtlasProjects(atlas),
+    options.withProjects ? fetchAtlasProjects(atlas) : undefined,
     fetchCXGDatasetsForAtlases([atlas]),
   ]);
 
   // Sort the merged list so external datasets interleave with HCA projects by
   // title.
-  const projectsResponses = [...hcaProjects, ...atlas.externalDatasets].sort(
-    sortDatasets
-  );
+  const projectsResponses =
+    hcaProjects &&
+    [...hcaProjects, ...atlas.externalDatasets].sort(sortDatasets);
   cxgDatasets.sort(sortCXGDatasets);
 
   return {
@@ -105,7 +112,9 @@ export async function getContentStaticProps(
       atlas: processAtlas(atlas, cxgDatasets),
       network: processNetwork(network, cxgDatasets),
       pageTitle: `${atlas.name} - ${tabName}`,
-      projectsResponses,
+      // Omitted when not fetched, as `getTrackerContentStaticProps` does for
+      // `trackerSourceDatasets`.
+      ...(projectsResponses && { projectsResponses }),
     },
   };
 }

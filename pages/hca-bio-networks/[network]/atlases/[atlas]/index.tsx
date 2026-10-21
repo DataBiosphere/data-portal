@@ -25,14 +25,12 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (
 const Page = ({
   atlas,
   network,
-  projectsResponses,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <AtlasProvider
       value={{
         atlas,
         network,
-        projectsResponses,
       }}
     >
       <Detail
