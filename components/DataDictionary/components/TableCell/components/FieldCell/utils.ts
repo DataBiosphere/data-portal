@@ -1,8 +1,10 @@
+import { BIO_NETWORK_COUNT } from "@/components/DataDictionary/components/TableCell/components/DetailCell/constants";
 import { COLUMN_IDENTIFIERS } from "@/viewModelBuilders/dataDictionaryMapper/columnIds";
 import type {
   Attribute,
   RequirementLabel,
 } from "@/viewModelBuilders/dataDictionaryMapper/types";
+import { REQUIREMENT_LABEL } from "@/viewModelBuilders/dataDictionaryMapper/types";
 import { CHIP_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/chip";
 import type { ChipProps } from "@mui/material";
 import type { Row } from "@tanstack/react-table";
@@ -37,7 +39,24 @@ export function buildRequired(row: Row<Attribute>): ChipProps {
   const level = row.getValue<RequirementLabel>(COLUMN_IDENTIFIERS.REQUIRED);
   return {
     color: REQUIREMENT_LABEL_COLOR[level],
-    label: level,
+    label: buildRequiredLabel(row.original, level),
     variant: CHIP_PROPS.VARIANT.STATUS,
   };
+}
+
+/**
+ * Builds the requirement label, scoped to bioNetworks for required fields that apply to only some bioNetworks.
+ * @param attribute - Attribute.
+ * @param level - Requirement label.
+ * @returns The requirement label, e.g. "Required (Adipose, Gut)".
+ */
+function buildRequiredLabel(
+  attribute: Attribute,
+  level: RequirementLabel
+): string {
+  if (level !== REQUIREMENT_LABEL.REQUIRED) return level;
+  const bioNetworks = attribute.annotations?.bioNetworks;
+  if (!Array.isArray(bioNetworks) || bioNetworks.length === BIO_NETWORK_COUNT)
+    return level;
+  return `${level} (${bioNetworks.join(", ")})`;
 }
