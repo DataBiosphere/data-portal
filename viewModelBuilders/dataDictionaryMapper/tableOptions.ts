@@ -5,6 +5,7 @@ import {
   TIER_1_COLUMN_DEFS,
   TIER_2_COLUMN_DEFS,
 } from "./columnDefs";
+import { onTier1TableDownload } from "./tableDownload";
 import { Attribute } from "./types";
 
 export const CELL_ANNOTATION_TABLE_OPTIONS: Omit<
@@ -36,6 +37,7 @@ export const TIER_1_TABLE_OPTIONS: Omit<
   "data" | "getCoreRowModel"
 > = {
   columns: TIER_1_COLUMN_DEFS,
+  enableTableDownload: true,
   getRowId: (row) => slugify(row.name),
   initialState: {
     columnVisibility: {
@@ -53,6 +55,7 @@ export const TIER_1_TABLE_OPTIONS: Omit<
     },
     grouping: ["classKey"],
   },
+  onTableDownload: onTier1TableDownload,
 };
 
 export const TIER_2_TABLE_OPTIONS: Omit<
