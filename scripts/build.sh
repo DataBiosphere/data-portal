@@ -10,4 +10,5 @@ export PUBLISHED_ATLASES_SNAPSHOT
 trap 'rm -f "$PUBLISHED_ATLASES_SNAPSHOT"' EXIT
 
 npx --no-install esrun ./scripts/snapshot-published-atlases.ts
+./scripts/build-tier-1-metadata-xlsx.sh
 npx --no-install next build --webpack "$@"
