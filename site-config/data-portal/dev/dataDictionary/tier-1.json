@@ -1575,7 +1575,7 @@
             ],
             "tier": "Tier 1"
           },
-          "description": "Encoding of author intuition of cellular annotation in the dataset.",
+          "description": "Encoding of author intuition of cellular annotation in the dataset.\n\nUse `author_cell_type` for original source datasets where [`cell_type_ontology_term_id`](#cell_type_ontology_term_id) is not available.",
           "example": "Goblet cell; microglia",
           "multivalued": false,
           "name": "author_cell_type",
@@ -1609,7 +1609,7 @@
             ],
             "tier": "Tier 1"
           },
-          "description": "Cell Ontology (CL) term.",
+          "description": "Cell Ontology (CL) term.\n\nUse `cell_type_ontology_term_id` for integrated objects. `cell_type_ontology_term_id` will be required for submission to CELLxGENE.",
           "example": "CL:0001204",
           "multivalued": false,
           "name": "cell_type_ontology_term_id",
