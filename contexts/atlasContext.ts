@@ -11,7 +11,7 @@ const DEFAULT_ATLAS = NETWORKS[0].atlases[0];
 export const AtlasContext = createContext<AtlasContextType>({
   atlas: DEFAULT_ATLAS,
   network: DEFAULT_NETWORK,
-  projectsResponses: [],
+  sourceStudies: [],
   trackerSourceDatasets: [],
 });
 

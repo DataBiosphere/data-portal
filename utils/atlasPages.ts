@@ -1,9 +1,15 @@
 import { filterProjectId } from "@/apis/azul/hca-dcp/common/filters";
 import type { ProjectsResponse } from "@/apis/azul/hca-dcp/common/responses";
-import { processEntityValue } from "@/apis/azul/hca-dcp/common/utils";
 import { config } from "@/config/config";
+import { EXTERNAL_DATASETS } from "@/constants/datasets";
 import { NETWORKS } from "@/constants/networks";
-import type { Atlas, AtlasContext, CXGDataset, Network } from "@/types/network";
+import type {
+  Atlas,
+  AtlasContext,
+  CXGDataset,
+  Network,
+  SourceStudyRow,
+} from "@/types/network";
 import { COLLATOR_CASE_INSENSITIVE } from "@databiosphere/findable-ui/lib/common/constants";
 import { fetchAllEntities } from "@databiosphere/findable-ui/lib/entity/api/service";
 import type {
@@ -19,6 +25,7 @@ import {
   processAtlas,
   processNetwork,
 } from "./network";
+import { buildSourceStudyRow } from "./sourceStudies";
 import { getTrackerContentStaticProps } from "./trackerAtlasPages";
 
 export interface AtlasDataOptions {
@@ -100,11 +107,17 @@ export async function getContentStaticProps(
     fetchCXGDatasetsForAtlases([atlas]),
   ]);
 
-  // Sort the merged list so external datasets interleave with HCA projects by
-  // title.
-  const projectsResponses =
+  // Keep only the fields the Source Studies table renders, then sort the merged
+  // rows so external datasets interleave with HCA projects by title.
+  const { browserURL } = config();
+  const sourceStudies =
     hcaProjects &&
-    [...hcaProjects, ...atlas.externalDatasets].sort(sortDatasets);
+    [
+      ...hcaProjects.map((projectsResponse) =>
+        buildSourceStudyRow(projectsResponse, browserURL)
+      ),
+      ...(EXTERNAL_DATASETS[atlas.key] ?? []),
+    ].sort(sortSourceStudies);
   cxgDatasets.sort(sortCXGDatasets);
 
   return {
@@ -114,7 +127,7 @@ export async function getContentStaticProps(
       pageTitle: `${atlas.name} - ${tabName}`,
       // Omitted when not fetched, as `getTrackerContentStaticProps` does for
       // `trackerSourceDatasets`.
-      ...(projectsResponses && { projectsResponses }),
+      ...(sourceStudies && { sourceStudies }),
     },
   };
 }
@@ -179,14 +192,11 @@ function sortCXGDatasets(d0: CXGDataset, d1: CXGDataset): number {
 }
 
 /**
- * Sort datasets by project title, ascending.
- * @param d0 - First dataset to compare.
- * @param d1 - Second dataset to compare.
- * @returns Number indicating sort precedence of d0 vs d1.
+ * Sort source study rows by title, ascending.
+ * @param s0 - First source study to compare.
+ * @param s1 - Second source study to compare.
+ * @returns Number indicating sort precedence of s0 vs s1.
  */
-function sortDatasets(d0: ProjectsResponse, d1: ProjectsResponse): number {
-  return COLLATOR_CASE_INSENSITIVE.compare(
-    processEntityValue(d0.projects, "projectTitle"),
-    processEntityValue(d1.projects, "projectTitle")
-  );
+function sortSourceStudies(s0: SourceStudyRow, s1: SourceStudyRow): number {
+  return COLLATOR_CASE_INSENSITIVE.compare(s0.title, s1.title);
 }

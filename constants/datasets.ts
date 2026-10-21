@@ -1,53 +1,17 @@
+import type { AtlasKey, SourceStudyRow } from "@/types/network";
 import { buildDataset } from "@/utils/datasets";
 
 const NORMAL = "normal";
 const TODO = "--";
 
-export const DATASETS = {
-  adipose: [],
-  breast: [],
-  development: [],
-  "eye-retina": [
-    // Chen (2023) Research Square.
-    buildDataset(
-      [TODO],
-      2999939,
-      [TODO],
-      ["10x Genomics Single Cell 3' v3"],
-      [TODO],
-      "Integrated multi-omics single cell atlas of the human retina",
-      {
-        doi: "10.21203/rs.3.rs-3471275/v1",
-        officialHcaPublication: null,
-        publicationTitle:
-          "Integrated multi-omics single cell atlas of the human retina",
-        publicationUrl: "https://www.researchsquare.com/article/rs-3471275/v1",
-      }
-    ),
-    // Hahn (2023) Nature.
-    buildDataset(
-      [TODO],
-      0,
-      [TODO],
-      [TODO],
-      [TODO],
-      "Evolution of neuronal cell classes and types in the vertebrate retina",
-      {
-        doi: "10.1038/s41586-023-06638-9",
-        officialHcaPublication: null,
-        publicationTitle:
-          "Evolution of neuronal cell classes and types in the vertebrate retina",
-        publicationUrl: "https://www.nature.com/articles/s41586-023-06638-9",
-      }
-    ),
-  ],
-  "genetic-diversity": [],
-  gut: [],
-  heart: [],
-  immune: [],
-  kidney: [],
-  liver: [],
-  lung: [
+/**
+ * External (non-HCA) datasets listed in each atlas's Source Studies table, by
+ * atlas key. Imported only by the atlas static props builder, so the client
+ * bundle and the atlas and network props don't carry them; they reach the
+ * browser only as the Datasets route's Source Studies rows.
+ */
+export const EXTERNAL_DATASETS: Partial<Record<AtlasKey, SourceStudyRow[]>> = {
+  "lung-v1-0": [
     // Study name: Jain_Misharin_2021.
     buildDataset(
       [NORMAL],
@@ -102,10 +66,7 @@ export const DATASETS = {
       "Schultze_unpubl"
     ),
   ],
-  musculoskeletal: [],
-  "nervous-system": [],
-  "oral-and-craniofacial": [],
-  "organoid-endoderm": [
+  "organoid-endoderm-v1-0": [
     buildDataset(
       [TODO],
       0,
@@ -768,7 +729,7 @@ export const DATASETS = {
       }
     ),
   ],
-  "organoid-neural": [
+  "organoid-neural-v1-0": [
     buildDataset(
       [TODO],
       0,
@@ -1107,7 +1068,38 @@ export const DATASETS = {
       }
     ),
   ],
-  pancreas: [],
-  reproduction: [],
-  skin: [],
+  "retina-v1-0": [
+    // Chen (2023) Research Square.
+    buildDataset(
+      [TODO],
+      2999939,
+      [TODO],
+      ["10x Genomics Single Cell 3' v3"],
+      [TODO],
+      "Integrated multi-omics single cell atlas of the human retina",
+      {
+        doi: "10.21203/rs.3.rs-3471275/v1",
+        officialHcaPublication: null,
+        publicationTitle:
+          "Integrated multi-omics single cell atlas of the human retina",
+        publicationUrl: "https://www.researchsquare.com/article/rs-3471275/v1",
+      }
+    ),
+    // Hahn (2023) Nature.
+    buildDataset(
+      [TODO],
+      0,
+      [TODO],
+      [TODO],
+      [TODO],
+      "Evolution of neuronal cell classes and types in the vertebrate retina",
+      {
+        doi: "10.1038/s41586-023-06638-9",
+        officialHcaPublication: null,
+        publicationTitle:
+          "Evolution of neuronal cell classes and types in the vertebrate retina",
+        publicationUrl: "https://www.nature.com/articles/s41586-023-06638-9",
+      }
+    ),
+  ],
 };

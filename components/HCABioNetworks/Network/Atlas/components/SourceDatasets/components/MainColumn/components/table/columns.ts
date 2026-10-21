@@ -133,8 +133,7 @@ const TISSUE = {
 
 /**
  * Returns the source datasets table columns. Takes the browser URL so the
- * primary data cell can close over it, following the same column-def factory
- * pattern as `getProjectsTableColumns`.
+ * primary data cell can close over it.
  * @param browserUrl - Environment's HCA Data Explorer browser URL.
  * @returns source datasets table columns.
  */

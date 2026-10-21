@@ -1,9 +1,6 @@
-import { ProjectResponse } from "@/apis/azul/hca-dcp/common/entities";
-import { ProjectsResponse } from "@/apis/azul/hca-dcp/common/responses";
 import {
   processAggregatedNumberEntityValue,
   processAggregatedOrArrayValue,
-  processEntityValue,
 } from "@/apis/azul/hca-dcp/common/utils";
 import { ButtonOutline } from "@/components/common/Button/components/ButtonOutline/buttonOutline";
 import {
@@ -21,6 +18,7 @@ import type {
   AtlasRow,
   IntegratedAtlasRow,
   Network,
+  SourceStudyRow,
 } from "@/types/network";
 import { formatCountSize } from "@/utils/formatCountSize";
 import {
@@ -87,25 +85,6 @@ export const buildCookieBanner = (): React.ComponentProps<
     ),
   };
 };
-
-/**
- * Calculate the estimated cell count from the given projects response.
- * Returns the estimated cell count, if any, otherwise the totalCell value from cellSuspensions.
- * @param projectsResponse - Response model return from projects API.
- * @returns estimated cell count.
- */
-function calculateEstimatedCellCount(
-  projectsResponse: ProjectsResponse
-): number | null {
-  const estimatedCellCount =
-    getProjectResponse(projectsResponse).estimatedCellCount;
-  // If there's an estimated cell count for the project, return it as the cell count.
-  if (estimatedCellCount) {
-    return estimatedCellCount;
-  }
-  // Otherwise, return the cell suspension total count.
-  return rollUpTotalCells(projectsResponse);
-}
 
 /**
  * Returns atlases actions column def.
@@ -299,16 +278,15 @@ export function getBioNetworksTableColumns(): ColumnDef<Network>[] {
  * Returns donor disease column def.
  * @returns donor disease column def.
  */
-function getDonorDiseaseColumnDef(): ColumnDef<ProjectsResponse> {
+function getDonorDiseaseColumnDef(): ColumnDef<SourceStudyRow> {
   return {
-    accessorKey: "disease",
+    accessorKey: "diseases",
     cell: ({ row }) => (
       <PinnedNTagCell
         label="diseases"
-        values={partitionMetadataValues(
-          processAggregatedOrArrayValue(row.original.donorOrganisms, "disease"),
-          [DISEASE.NORMAL]
-        )}
+        values={partitionMetadataValues(row.original.diseases, [
+          DISEASE.NORMAL,
+        ])}
       />
     ),
     header: "Disease (Donor)",
@@ -316,43 +294,13 @@ function getDonorDiseaseColumnDef(): ColumnDef<ProjectsResponse> {
 }
 
 /**
- * Returns formatted estimated cell count from the given projects response.
- * @param projectsResponse - Response model return from projects API.
- * @param formatFn - Function to format count (optional, e.g. formatCountSize, default is locale string).
- * @returns formatted estimated cell count.
- */
-export function getEstimatedCellCount(
-  projectsResponse: ProjectsResponse,
-  formatFn?: (value: number) => string
-): string {
-  const estimatedCellCount = calculateEstimatedCellCount(projectsResponse);
-  if (!estimatedCellCount) {
-    const projectId = processEntityValue(
-      projectsResponse.projects,
-      "projectId"
-    );
-    if (projectId) {
-      // Project is sourced from HCA.
-      return LABEL.UNSPECIFIED;
-    }
-    return "--";
-  }
-  if (formatFn) {
-    return formatFn(estimatedCellCount);
-  }
-  return estimatedCellCount.toLocaleString();
-}
-
-/**
  * Returns estimate cell count column def.
  * @returns estimate cell count column def.
  */
-function getEstimateCellCountColumnDef(): ColumnDef<ProjectsResponse> {
+function getEstimateCellCountColumnDef(): ColumnDef<SourceStudyRow> {
   return {
-    accessorKey: "estimatedCellCount",
-    cell: ({ row }) => (
-      <BasicCell value={getEstimatedCellCount(row.original)} />
-    ),
+    accessorKey: "cellCount",
+    cell: ({ row }) => <BasicCell value={row.original.cellCount} />,
     header: "Cell Count Est.",
   };
 }
@@ -361,17 +309,11 @@ function getEstimateCellCountColumnDef(): ColumnDef<ProjectsResponse> {
  * Returns genus species column def.
  * @returns genus species column def.
  */
-function getGenusSpeciesColumnDef(): ColumnDef<ProjectsResponse> {
+function getGenusSpeciesColumnDef(): ColumnDef<SourceStudyRow> {
   return {
-    accessorKey: "genusSpecies",
+    accessorKey: "species",
     cell: ({ row }) => (
-      <NTagCell
-        label="species"
-        values={processAggregatedOrArrayValue(
-          row.original.donorOrganisms,
-          "genusSpecies"
-        )}
-      />
+      <NTagCell label="species" values={row.original.species} />
     ),
     header: "Species",
   };
@@ -416,16 +358,13 @@ export function getIntegratedAtlasesTableColumns(
  * Returns library construction method column def.
  * @returns library construction method column def.
  */
-function getLibraryConstructionMethodColumnDef(): ColumnDef<ProjectsResponse> {
+function getLibraryConstructionMethodColumnDef(): ColumnDef<SourceStudyRow> {
   return {
-    accessorKey: "libraryConstructionApproach",
+    accessorKey: "libraryConstructionMethods",
     cell: ({ row }) => (
       <NTagCell
         label="library construction methods"
-        values={processAggregatedOrArrayValue(
-          row.original.protocols,
-          "libraryConstructionApproach"
-        )}
+        values={row.original.libraryConstructionMethods}
       />
     ),
     header: "Method",
@@ -473,26 +412,30 @@ export function getNetworkSummaryKeyValuePairs(network: Network): KeyValues {
 }
 
 /**
- * Returns the project value from the projects API response.
- * @param projectsResponse - Response returned from projects API response.
- * @returns The core project value from the API response.
+ * Returns project title column def.
+ * @returns project title column def.
  */
-export function getProjectResponse(
-  projectsResponse: ProjectsResponse
-): ProjectResponse {
-  return projectsResponse.projects[0];
+function getProjectTitleColumnDef(): ColumnDef<SourceStudyRow> {
+  return {
+    accessorKey: "title",
+    cell: ({ row }) => (
+      <Link
+        label={row.original.title}
+        target={ANCHOR_TARGET.BLANK}
+        url={row.original.url}
+      />
+    ),
+    header: "Project Title",
+  };
 }
 
 /**
- * Returns the table column definition model for the projects table.
- * @param browserURL - Browser URL.
- * @returns projects table column definition.
+ * Returns the table column definition model for the atlas Source Studies table.
+ * @returns source studies table column definition.
  */
-export function getProjectsTableColumns(
-  browserURL: string
-): ColumnDef<ProjectsResponse>[] {
+export function getSourceStudiesTableColumns(): ColumnDef<SourceStudyRow>[] {
   return [
-    getProjectTitleColumnDef(browserURL),
+    getProjectTitleColumnDef(),
     getGenusSpeciesColumnDef(),
     getLibraryConstructionMethodColumnDef(),
     getSpecimenOrganColumnDef(),
@@ -502,61 +445,14 @@ export function getProjectsTableColumns(
 }
 
 /**
- * Returns project title column def.
- * @param browserURL - Browser URL.
- * @returns project title column def.
- */
-function getProjectTitleColumnDef(
-  browserURL: string
-): ColumnDef<ProjectsResponse> {
-  return {
-    accessorKey: "projectTitle",
-    cell: ({ row }) => (
-      <Link
-        label={processEntityValue(row.original.projects, "projectTitle")}
-        target={ANCHOR_TARGET.BLANK}
-        url={getProjectTitleUrl(row.original, browserURL)}
-      />
-    ),
-    header: "Project Title",
-  };
-}
-
-/**
- * Returns the project detailed page url, or publication DOI URL if project is sourced externally.
- * @param projectsResponse - Response model return from entity API.
- * @param browserURL - Browser URL.
- * @returns project url.
- */
-function getProjectTitleUrl(
-  projectsResponse: ProjectsResponse,
-  browserURL: string
-): string {
-  const projectId = processEntityValue(projectsResponse.projects, "projectId");
-  // Project is sourced from HCA.
-  if (projectId) {
-    return `${browserURL}/projects/${processEntityValue(
-      projectsResponse.projects,
-      "projectId"
-    )}`;
-  }
-  // Project is sourced externally.
-  const project = getProjectResponse(projectsResponse);
-  return project.publications[0]?.publicationUrl || "";
-}
-
-/**
  * Returns specimen organ "Anatomical Entity" column def.
  * @returns anatomical entity column def.
  */
-function getSpecimenOrganColumnDef(): ColumnDef<ProjectsResponse> {
+function getSpecimenOrganColumnDef(): ColumnDef<SourceStudyRow> {
   return {
-    accessorKey: "organ",
+    accessorKey: "organs",
     cell: ({ row }) => (
-      <NTagCell
-        label="anatomical entities"
-        values={processAggregatedOrArrayValue(row.original.specimens, "organ")}
-      />
+      <NTagCell label="anatomical entities" values={row.original.organs} />
     ),
     header: "Anatomical Entity",
   };
@@ -680,21 +576,4 @@ export function rollUpAtlases(
     }
   }
   return [...rolledUpAtlasMap].map(([, atlasRow]) => atlasRow);
-}
-
-/**
- * Returns the aggregated total cells from cellSuspensions for the given entity response.
- * @param entityResponse - Response model return from entity API.
- * @returns total cells from cellSuspensions.
- */
-function rollUpTotalCells(entityResponse: ProjectsResponse): number | null {
-  return entityResponse.cellSuspensions.reduce(
-    (acc, { totalCells }) => {
-      if (totalCells) {
-        acc = (acc ?? 0) + totalCells;
-      }
-      return acc;
-    },
-    null as null | number
-  );
 }
