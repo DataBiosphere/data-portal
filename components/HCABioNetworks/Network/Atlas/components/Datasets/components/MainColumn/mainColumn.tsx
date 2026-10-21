@@ -2,16 +2,14 @@ import { MDXSection } from "@/components/common/Section/section.styles";
 import { DetailViewTable } from "@/components/common/Table/table.styles";
 import { SourceStudiesDescription } from "@/content";
 import { useAtlas } from "@/contexts/atlasContext";
-import { useSiteConfig } from "@/hooks/useSiteConfig";
-import { getProjectsTableColumns } from "@/viewModelBuilders/viewModelBuilders";
+import { getSourceStudiesTableColumns } from "@/viewModelBuilders/viewModelBuilders";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { BackPageContentSingleColumn } from "@databiosphere/findable-ui/lib/components/Layout/components/BackPage/backPageView.styles";
 import { JSX } from "react";
 import { TABLE_OPTIONS } from "./projects/components/Table/options";
 
 export const MainColumn = (): JSX.Element => {
-  const { browserURL } = useSiteConfig();
-  const { projectsResponses = [] } = useAtlas();
+  const { sourceStudies = [] } = useAtlas();
   return (
     <BackPageContentSingleColumn>
       <FluidPaper>
@@ -20,9 +18,9 @@ export const MainColumn = (): JSX.Element => {
         </MDXSection>
       </FluidPaper>
       <DetailViewTable
-        columns={getProjectsTableColumns(browserURL)}
+        columns={getSourceStudiesTableColumns()}
         gridTemplateColumns="minmax(484px, 1fr) repeat(4, minmax(152px, 1fr)) max-content"
-        items={projectsResponses}
+        items={sourceStudies}
         noResultsTitle={"No Source Studies"}
         Paper={FluidPaper}
         tableOptions={TABLE_OPTIONS}

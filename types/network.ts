@@ -1,4 +1,3 @@
-import { ProjectsResponse } from "@/apis/azul/hca-dcp/common/responses";
 import { StaticImageProps } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { ElementType } from "react";
@@ -46,7 +45,6 @@ export interface Atlas {
   cxgDataPortal?: Pick<LinkProps, "label" | "url">[];
   cxgId?: string;
   datasets: Dataset[];
-  externalDatasets: ProjectsResponse[];
   integratedAtlases: IntegratedAtlas[];
   key: AtlasKey;
   name: string;
@@ -144,7 +142,7 @@ export type NetworkParam = {
 
 export interface AtlasContext extends NetworkContext {
   atlas: Atlas;
-  projectsResponses?: ProjectsResponse[];
+  sourceStudies?: SourceStudyRow[];
   trackerSourceDatasets?: TrackerSourceDataset[];
 }
 
@@ -192,6 +190,22 @@ export type AtlasKey =
   | "organoid-endoderm-v1-0"
   | "organoid-neural-v1-0"
   | "retina-v1-0";
+
+/**
+ * A source study (an HCA project or an external dataset) as the atlas Source
+ * Studies table renders it. Built at build time, from the Azul project response
+ * (`buildSourceStudyRow`) or the external dataset config (`buildDataset`), so
+ * the page ships only the fields the table displays.
+ */
+export interface SourceStudyRow {
+  cellCount: string;
+  diseases: string[];
+  libraryConstructionMethods: string[];
+  organs: string[];
+  species: string[];
+  title: string;
+  url: string;
+}
 
 export interface TrackerComponentAtlas {
   assay: string[];

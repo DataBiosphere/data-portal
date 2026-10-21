@@ -34,7 +34,6 @@ import {
 } from "@/types/network";
 import BICCN_PUBLICATIONS from "./biccn-publications.json";
 import { COMPONENT_ATLASES } from "./componentAtlases";
-import { DATASETS } from "./datasets";
 
 const BRAIN_V1_0 = "brain-v1-0";
 const BREAST_V1_0 = "breast-v1-0";
@@ -72,7 +71,6 @@ export const NETWORKS: Network[] = [
           { email: "prabhakg@uci.edu", fullName: "Gautham Prabhakar" },
         ],
         datasets: [],
-        externalDatasets: [],
         integratedAtlases: [],
         key: BREAST_V1_0,
         name: "integrated Human Breast Cell Atlas (iHBCA) v1",
@@ -141,7 +139,6 @@ export const NETWORKS: Network[] = [
           "07d5987e-7f9e-4f34-b0fb-a185a35504f5", // Menon, ..., Hafler.
           "4bec484d-ca7a-47b4-8d48-8830e06ad6db", // Voigt, ..., Scheetz.
         ],
-        externalDatasets: DATASETS["eye-retina"],
         integratedAtlases: [],
         key: RETINA_V1_0,
         name: "Single-cell atlas of the human retina v1.0",
@@ -195,7 +192,6 @@ export const NETWORKS: Network[] = [
           },
         ],
         datasets: [],
-        externalDatasets: [],
         integratedAtlases: [],
         key: GUT_V1_0,
         name: "Human Gut Cell Atlas (HGCA) v1.0",
@@ -281,7 +277,6 @@ export const NETWORKS: Network[] = [
         ],
         cxgId: "059202e1-1f1b-483f-9151-f3a25a380c39",
         datasets: [],
-        externalDatasets: [],
         integratedAtlases: [],
         key: LIVER_V1_0,
         name: "Human Liver Cell Atlas (HLiCA) v1.0",
@@ -362,7 +357,6 @@ export const NETWORKS: Network[] = [
           // "fae72d89-4ac4-4aab-9b93-574775e168d4", // not currently listed as lung atlas dataset.
           "6735ff73-1a04-422e-b500-730202e46f8a",
         ],
-        externalDatasets: DATASETS.lung,
         integratedAtlases: [],
         key: LUNG_V1_0,
         name: "The integrated Human Lung Cell Atlas (HLCA) v1.0",
@@ -418,7 +412,6 @@ export const NETWORKS: Network[] = [
         coordinators: [{ fullName: "Kimberly Siletti" }],
         cxgId: "283d65eb-dd53-496d-adb7-7570c7caa443",
         datasets: [],
-        externalDatasets: [],
         integratedAtlases: [],
         key: BRAIN_V1_0,
         name: "Human Brain Cell Atlas v1.0",
@@ -447,7 +440,6 @@ export const NETWORKS: Network[] = [
         coordinators: [{ fullName: "Trygve Bakken" }],
         cxgId: "d17249d2-0e6e-4500-abb8-e6c93fa1ac6f",
         datasets: [],
-        externalDatasets: [],
         integratedAtlases: [],
         key: CORTEX_V1_0,
         name: "Human Cortical Cell Atlas v1.0",
@@ -515,7 +507,6 @@ export const NETWORKS: Network[] = [
           "645b20c9-5ed0-4500-86b5-7aef770d010a", // Khan, ..., Paşca.
           "da77bd06-43ae-4012-a774-e4d62797df51", // Samarasinghe, ..., Novitch.
         ],
-        externalDatasets: DATASETS["organoid-neural"],
         integratedAtlases: [],
         key: ORGANOID_NEURAL_V1_0,
         name: "An integrated transcriptomic cell atlas of human neural organoids v1.0",
@@ -555,7 +546,6 @@ export const NETWORKS: Network[] = [
           "e5fe8274-3769-4d7d-aa35-6d33c226ab43", // Murthy, ...,Tata.
           "75dbbce9-0cde-489c-88a7-93e8f92914a3", // Holloway, ..., Spence.
         ],
-        externalDatasets: DATASETS["organoid-endoderm"],
         integratedAtlases: [],
         key: ORGANOID_ENDODERM_V1_0,
         name: "Integrated human endoderm-derived organoids cell atlas (HEOCA) v1.0",
