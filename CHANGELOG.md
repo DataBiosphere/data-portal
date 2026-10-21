@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.16.0](https://github.com/DataBiosphere/data-portal/compare/v2.15.1...v2.16.0) (2026-10-21)
+
+
+### Features
+
+* add cell type guidance to the tier 1 metadata dictionary [#3260](https://github.com/DataBiosphere/data-portal/issues/3260) ([#3278](https://github.com/DataBiosphere/data-portal/issues/3278)) ([aed9013](https://github.com/DataBiosphere/data-portal/commit/aed90130b046880e85b9dd214dadcb8f96599e7b))
+
+
+### Bug Fixes
+
+* show bionetwork scope on tier 1 required chips and update scoped fields [#3259](https://github.com/DataBiosphere/data-portal/issues/3259) ([#3277](https://github.com/DataBiosphere/data-portal/issues/3277)) ([43bebf5](https://github.com/DataBiosphere/data-portal/commit/43bebf56cfd8e6e681ef5673ca0cfc7f21674308))
+
+
+### Code Refactoring
+
+* the non-tracker atlas overview page fetches azul projects it never renders ([#3249](https://github.com/DataBiosphere/data-portal/issues/3249)) ([#3271](https://github.com/DataBiosphere/data-portal/issues/3271)) ([9b02100](https://github.com/DataBiosphere/data-portal/commit/9b02100994512db15b5d872fbd3d5777af379ec1))
+* the source studies page ships the full azul project response for every row ([#3274](https://github.com/DataBiosphere/data-portal/issues/3274)) ([#3276](https://github.com/DataBiosphere/data-portal/issues/3276)) ([25e0ff3](https://github.com/DataBiosphere/data-portal/commit/25e0ff3643baf02996692bebc04833c31585ad27))
+
 ## [2.15.1](https://github.com/DataBiosphere/data-portal/compare/v2.15.0...v2.15.1) (2026-10-20)
 
 
