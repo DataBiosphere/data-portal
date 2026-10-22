@@ -50,7 +50,7 @@ export function buildRequired(row: Row<Attribute>): ChipProps {
  * @param level - Requirement label.
  * @returns The requirement label, e.g. "Required (Adipose, Gut)".
  */
-function buildRequiredLabel(
+export function buildRequiredLabel(
   attribute: Attribute,
   level: RequirementLabel
 ): string {
