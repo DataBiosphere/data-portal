@@ -18,6 +18,7 @@ import {
   StyledKeyboardArrowRightRounded,
   StyledStack,
   StyledTypography,
+  StyledVisuallyHidden,
 } from "./fieldCell.styles";
 import { buildLocationName, buildRange, buildRequired } from "./utils";
 
@@ -88,7 +89,18 @@ export const FieldCell = ({
               </>
             }
           >
-            <Chip {...required.chip} />
+            <Chip
+              {...required.chip}
+              label={
+                <>
+                  {required.chip.label}
+                  {/* Screen readers announce the scope even when the tooltip is not open. */}
+                  <StyledVisuallyHidden>
+                    {`: ${required.tooltip.title}: ${required.tooltip.description}`}
+                  </StyledVisuallyHidden>
+                </>
+              }
+            />
           </Tooltip>
         ) : (
           <Chip {...required.chip} />

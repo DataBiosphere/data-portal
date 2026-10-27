@@ -1,8 +1,10 @@
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { bpDownSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import type { CSSObject } from "@emotion/react";
 import styled from "@emotion/styled";
 import { KeyboardArrowRightRounded } from "@mui/icons-material";
 import { Stack, Typography } from "@mui/material";
+import { visuallyHidden } from "@mui/utils";
 
 export const StyledGrid = styled("div")`
   align-items: flex-start;
@@ -56,3 +58,10 @@ export const StyledTypography = styled(Typography)`
     grid-column: 1;
   }
 ` as typeof Typography;
+
+/**
+ * Carries text into the accessible name without showing it. Spreads MUI's `visuallyHidden`
+ * so the text stays in the accessibility tree. Cast because `visuallyHidden` is typed
+ * `CSSProperties`, which emotion will not take as an interpolation directly.
+ */
+export const StyledVisuallyHidden = styled.span(visuallyHidden as CSSObject);

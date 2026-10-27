@@ -56,8 +56,6 @@ export function buildRequired(row: Row<Attribute>): {
   return {
     chip: {
       ...chip,
-      // Screen readers announce the scope even when the tooltip is not open.
-      "aria-label": `${title}: ${description}`,
       label: `${level} (${bioNetworks.length})`,
       tabIndex: 0,
     },
