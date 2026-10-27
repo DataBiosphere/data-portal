@@ -5,6 +5,7 @@ import type {
   RequirementLabel,
 } from "@/viewModelBuilders/dataDictionaryMapper/types";
 import { REQUIREMENT_LABEL } from "@/viewModelBuilders/dataDictionaryMapper/types";
+import type { TitleProps } from "@databiosphere/findable-ui/lib/components/DataDictionary/components/Tooltip/components/Title/types";
 import { CHIP_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/chip";
 import type { ChipProps } from "@mui/material";
 import type { Row } from "@tanstack/react-table";
@@ -31,32 +32,33 @@ export function buildRange(attribute: Attribute): string {
 }
 
 /**
- * Builds ChipCell props from the given attribute, for required.
+ * Builds the requirement chip props and, for required fields that apply to only some bioNetworks, its tooltip.
+ * Required chips are labelled "Required (All)" or "Required (N)", the number of bioNetworks.
  * @param row - Row.
- * @returns Model to be used as props for the Chip component.
+ * @returns The chip props, and the tooltip title and description when the chip has a tooltip.
  */
-export function buildRequired(row: Row<Attribute>): ChipProps {
+export function buildRequired(row: Row<Attribute>): {
+  chip: ChipProps;
+  tooltip?: TitleProps;
+} {
   const level = row.getValue<RequirementLabel>(COLUMN_IDENTIFIERS.REQUIRED);
-  return {
+  const chip: ChipProps = {
     color: REQUIREMENT_LABEL_COLOR[level],
-    label: buildRequiredLabel(row.original, level),
+    label: level,
     variant: CHIP_PROPS.VARIANT.STATUS,
   };
-}
-
-/**
- * Builds the requirement label, scoped to bioNetworks for required fields that apply to only some bioNetworks.
- * @param attribute - Attribute.
- * @param level - Requirement label.
- * @returns The requirement label, e.g. "Required (Adipose, Gut)".
- */
-function buildRequiredLabel(
-  attribute: Attribute,
-  level: RequirementLabel
-): string {
-  if (level !== REQUIREMENT_LABEL.REQUIRED) return level;
-  const bioNetworks = attribute.annotations?.bioNetworks;
+  if (level !== REQUIREMENT_LABEL.REQUIRED) return { chip };
+  const bioNetworks = row.original.annotations?.bioNetworks;
   if (!Array.isArray(bioNetworks) || bioNetworks.length === BIO_NETWORK_COUNT)
-    return level;
-  return `${level} (${bioNetworks.join(", ")})`;
+    return { chip: { ...chip, label: `${level} (All)` } };
+  const title = `Required for ${bioNetworks.length} of ${BIO_NETWORK_COUNT} BioNetworks`;
+  const description = bioNetworks.join(", ");
+  return {
+    chip: {
+      ...chip,
+      label: `${level} (${bioNetworks.length})`,
+      tabIndex: 0,
+    },
+    tooltip: { description, title },
+  };
 }
