@@ -105,11 +105,15 @@ export function markHashHandled(
 /**
  * Scrolls the element into view now, and again each time it resizes in the next SCROLL_SETTLE_MS, so it ends up in
  * view once it has stopped growing, e.g. while findable-ui's row below the "sm" breakpoint is still animating open.
+ * Stops once the URL hash no longer matches the element's id, so it never overrides a later navigation.
  * @param element - Element.
  */
 function scrollIntoViewUntilSettled(element: HTMLElement): void {
   element.scrollIntoView();
-  const observer = new ResizeObserver(() => element.scrollIntoView());
+  const observer = new ResizeObserver(() => {
+    if (getHash() !== element.id) return observer.disconnect();
+    element.scrollIntoView();
+  });
   observer.observe(element);
   setTimeout(() => observer.disconnect(), SCROLL_SETTLE_MS);
 }
