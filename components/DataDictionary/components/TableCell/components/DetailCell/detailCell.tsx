@@ -15,6 +15,7 @@ import {
   StyledStack,
   StyledTypography,
 } from "./detailCell.styles";
+import { useExpandOnHash } from "./hooks/UseExpandOnHash/hook";
 import {
   buildAnnDataLocation,
   buildBioNetworks,
@@ -27,6 +28,7 @@ export const DetailCell = ({
   row,
   table,
 }: CellContext<Attribute, unknown>): JSX.Element => {
+  const { onExpanded } = useExpandOnHash(row);
   const { getIsExpanded } = row;
   const isExpanded = getIsExpanded();
   return (
@@ -42,7 +44,7 @@ export const DetailCell = ({
         row={row}
         table={table}
       />
-      <StyledCollapse in={isExpanded}>
+      <StyledCollapse in={isExpanded} onEntered={onExpanded}>
         {row.original.values && (
           <div>
             <Typography {...TYPOGRAPHY_PROPS}>Allowed Values</Typography>
