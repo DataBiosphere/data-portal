@@ -28,7 +28,7 @@ export const DetailCell = ({
   row,
   table,
 }: CellContext<Attribute, unknown>): JSX.Element => {
-  const { onCollapsed, onExpanded } = useExpandOnHash(row, table);
+  const { onExpanded } = useExpandOnHash(row);
   const { getIsExpanded } = row;
   const isExpanded = getIsExpanded();
   return (
@@ -44,11 +44,7 @@ export const DetailCell = ({
         row={row}
         table={table}
       />
-      <StyledCollapse
-        in={isExpanded}
-        onEntered={onExpanded}
-        onExited={onCollapsed}
-      >
+      <StyledCollapse in={isExpanded} onEntered={onExpanded}>
         {row.original.values && (
           <div>
             <Typography {...TYPOGRAPHY_PROPS}>Allowed Values</Typography>
