@@ -1,20 +1,16 @@
+import { HEADER_HEIGHT_VAR } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/constants";
 import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import {
   bpDownSm,
   bpUpSm,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { pinnedAboveFooter } from "@databiosphere/findable-ui/lib/styles/common/mixins/pinnedAboveFooter";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Tab as MTab, Tabs as MTabs } from "@mui/material";
 
-interface Props {
-  headerHeight: number;
-}
-
-export const Tabs = styled(MTabs, {
-  shouldForwardProp: (prop) => prop !== "headerHeight",
-})<Props>`
+export const Tabs = styled(MTabs)`
   align-self: flex-start;
   box-shadow: none;
   margin: 0 16px;
@@ -42,8 +38,7 @@ export const Tabs = styled(MTabs, {
     max-width: 242px;
     order: unset;
     padding: 0;
-    position: sticky;
-    top: ${({ headerHeight }) => `calc(${headerHeight}px + 32px)`};
+    ${pinnedAboveFooter(`calc(${HEADER_HEIGHT_VAR} + 32px)`)};
 
     .MuiTabs-indicator {
       display: block;

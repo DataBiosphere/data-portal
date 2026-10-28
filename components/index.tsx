@@ -28,4 +28,4 @@ export { BioNetworkCell } from "./common/Table/components/Cell/components/BioNet
 export { CXGDownloadCell } from "./common/Table/components/Cell/components/CXGDownloadCell/cxgDownloadCell";
 export { TrackerDownloadCell } from "./common/Table/components/Cell/components/TrackerDownloadCell/trackerDownloadCell";
 export { AnalysisPortalCell } from "./HCABioNetworks/Network/Atlas/components/Overview/components/MainColumn/components/AnalysisPortalCell/analysisPortalCell";
-export { Content } from "./Layout/components/Content/content";
+export { Content } from "./Layout/components/Content/content.styles";

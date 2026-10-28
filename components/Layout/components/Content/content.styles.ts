@@ -5,10 +5,6 @@ import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/types";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-interface Props {
-  headerHeight: number;
-}
-
 const code = css`
   li code,
   p code,
@@ -96,7 +92,8 @@ const muiButtonContainedPrimary = css`
   }
 `;
 
-export const Content = styled.div<Props>`
+// Scroll margins are the space below the header: findable-ui's header sets the HTML scroll-padding-top to its height.
+export const Content = styled.div`
   h1,
   h2,
   h3,
@@ -113,7 +110,7 @@ export const Content = styled.div<Props>`
   h1 {
     ${typographyToCSS("heading-large")};
     margin: 0 0 8px;
-    scroll-margin-top: ${({ headerHeight }) => headerHeight + 24}px;
+    scroll-margin-top: 24px;
   }
 
   h2 {
@@ -132,15 +129,15 @@ export const Content = styled.div<Props>`
 
   h2,
   h3 {
-    scroll-margin-top: ${({ headerHeight }) => headerHeight + 32}px;
+    scroll-margin-top: 32px;
   }
 
   h4 {
-    scroll-margin-top: ${({ headerHeight }) => headerHeight + 16}px;
+    scroll-margin-top: 16px;
   }
 
   sup a {
-    scroll-margin-top: ${({ headerHeight }) => headerHeight + 48}px;
+    scroll-margin-top: 48px;
   }
 
   h1 + ol,
