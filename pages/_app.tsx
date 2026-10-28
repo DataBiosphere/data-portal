@@ -13,7 +13,6 @@ import { Header } from "@databiosphere/findable-ui/lib/components/Layout/compone
 import { Main as DXMain } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main";
 import { ConfigProvider } from "@databiosphere/findable-ui/lib/providers/config";
 import { DataDictionaryStateProvider } from "@databiosphere/findable-ui/lib/providers/dataDictionaryState/provider";
-import { LayoutDimensionsProvider } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/provider";
 import { ServicesProvider } from "@databiosphere/findable-ui/lib/providers/services/provider";
 import { DataExplorerError } from "@databiosphere/findable-ui/lib/types/error";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
@@ -73,45 +72,43 @@ function MyApp(props: AppPropsWithComponent): JSX.Element {
             <CssBaseline />
             <ServicesProvider>
               <DataDictionaryStateProvider>
-                <LayoutDimensionsProvider>
-                  <AppLayout>
-                    <ThemeProvider
-                      theme={(theme: Theme): Theme => {
-                        // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
-                        const { vars, ...themeWithoutVars } = theme;
-                        return createTheme(
-                          deepmerge(themeWithoutVars, {
-                            breakpoints: createBreakpoints(BREAKPOINTS),
-                          })
-                        );
-                      }}
+                <AppLayout>
+                  <ThemeProvider
+                    theme={(theme: Theme): Theme => {
+                      // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
+                      const { vars, ...themeWithoutVars } = theme;
+                      return createTheme(
+                        deepmerge(themeWithoutVars, {
+                          breakpoints: createBreakpoints(BREAKPOINTS),
+                        })
+                      );
+                    }}
+                  >
+                    <Header {...header} />
+                  </ThemeProvider>
+                  <Main>
+                    <ErrorBoundary
+                      fallbackRender={({
+                        error,
+                        reset,
+                      }: {
+                        error: DataExplorerError;
+                        reset: () => void;
+                      }): JSX.Element => (
+                        <Error
+                          errorMessage={error.message}
+                          requestUrlMessage={error.requestUrlMessage}
+                          rootPath={redirectRootToPath}
+                          onReset={reset}
+                        />
+                      )}
                     >
-                      <Header {...header} />
-                    </ThemeProvider>
-                    <Main>
-                      <ErrorBoundary
-                        fallbackRender={({
-                          error,
-                          reset,
-                        }: {
-                          error: DataExplorerError;
-                          reset: () => void;
-                        }): JSX.Element => (
-                          <Error
-                            errorMessage={error.message}
-                            requestUrlMessage={error.requestUrlMessage}
-                            rootPath={redirectRootToPath}
-                            onReset={reset}
-                          />
-                        )}
-                      >
-                        <Component {...pageProps} />
-                        <Floating {...floating} />
-                      </ErrorBoundary>
-                    </Main>
-                    <Footer {...footer} />
-                  </AppLayout>
-                </LayoutDimensionsProvider>
+                      <Component {...pageProps} />
+                      <Floating {...floating} />
+                    </ErrorBoundary>
+                  </Main>
+                  <Footer {...footer} />
+                </AppLayout>
               </DataDictionaryStateProvider>
             </ServicesProvider>
           </ConfigProvider>
