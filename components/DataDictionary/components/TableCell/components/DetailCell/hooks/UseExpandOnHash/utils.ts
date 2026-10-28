@@ -11,21 +11,31 @@ import { SCROLL_SETTLE_MS } from "./constants";
 const HANDLED_HASHES = new WeakMap<Table<Attribute>, string>();
 
 /**
- * The row each table is expanding for the URL hash, on mount or on a hash change, until the row has expanded or
- * collapsed. A later event for the same hash can find the row already expanded by this hook, e.g. back/forward fires
+ * The rows each table is expanding for the URL hash, on mount or on a hash change, each until it has expanded or
+ * collapsed. A later event for the same hash can find a row already expanded by this hook, e.g. back/forward fires
  * both Next.js's `hashChangeStart` and the window's `hashchange`; it must not mark the hash as handled before the row
- * has been scrolled into view.
+ * has been scrolled into view. Rows are tracked separately, so navigating A, B, A while both are expanding keeps A's.
  */
-const EXPANDING_ROW_IDS = new WeakMap<Table<Attribute>, string>();
+const EXPANDING_ROW_IDS = new WeakMap<Table<Attribute>, Set<string>>();
 
 /**
- * Clears the table's expanding row when it is the given row, once the row has expanded or collapsed.
+ * Adds the row to the table's expanding rows.
+ * @param row - Row.
+ * @param table - Table.
+ */
+function addExpandingRow(row: Row<Attribute>, table: Table<Attribute>): void {
+  const rowIds = EXPANDING_ROW_IDS.get(table) ?? new Set<string>();
+  rowIds.add(row.id);
+  EXPANDING_ROW_IDS.set(table, rowIds);
+}
+
+/**
+ * Removes the row from the table's expanding rows, once the row has expanded or collapsed.
  * @param row - Row.
  * @param table - Table.
  */
 function clearExpandingRow(row: Row<Attribute>, table: Table<Attribute>): void {
-  if (EXPANDING_ROW_IDS.get(table) !== row.id) return;
-  EXPANDING_ROW_IDS.delete(table);
+  EXPANDING_ROW_IDS.get(table)?.delete(row.id);
 }
 
 /**
@@ -65,11 +75,11 @@ function handleHashChange(
   if (getHash(url) !== row.id) return;
   if (!row.getIsExpanded()) {
     HANDLED_HASHES.delete(table);
-    EXPANDING_ROW_IDS.set(table, row.id);
+    addExpandingRow(row, table);
     row.toggleExpanded(true);
     return;
   }
-  if (EXPANDING_ROW_IDS.get(table) === row.id) return;
+  if (EXPANDING_ROW_IDS.get(table)?.has(row.id)) return;
   HANDLED_HASHES.set(table, row.id);
 }
 
@@ -157,7 +167,7 @@ export function subscribeToHashExpansion(
   table: Table<Attribute>
 ): () => void {
   if (isHashUnhandled(row, table)) {
-    EXPANDING_ROW_IDS.set(table, row.id);
+    addExpandingRow(row, table);
     // A row already expanded on mount, e.g. after the switch to CollapsableRows, does not animate open, so its Collapse
     // never calls onEntered: scroll to it after the next paint instead.
     if (row.getIsExpanded())
