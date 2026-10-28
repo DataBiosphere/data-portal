@@ -1,6 +1,7 @@
 import type { Attribute } from "@/viewModelBuilders/dataDictionaryMapper/types";
 import type { Row, Table } from "@tanstack/react-table";
 import Router from "next/router";
+import { SCROLL_SETTLE_MS } from "./constants";
 
 /**
  * The hash each table has finished handling: its row has expanded and scrolled into view, or the user collapsed it
@@ -10,13 +11,30 @@ import Router from "next/router";
 const HANDLED_HASHES = new WeakMap<Table<Attribute>, string>();
 
 /**
- * Expands the row when the given URL's hash matches its id.
+ * The row each table is expanding for the URL hash, on mount or on a hash change, until the row has expanded or
+ * collapsed. A later event for the same hash can find the row already expanded by this hook, e.g. back/forward fires
+ * both Next.js's `hashChangeStart` and the window's `hashchange`; it must not mark the hash as handled before the row
+ * has been scrolled into view.
+ */
+const EXPANDING_ROW_IDS = new WeakMap<Table<Attribute>, string>();
+
+/**
+ * Clears the table's expanding row when it is the given row, once the row has expanded or collapsed.
+ * @param row - Row.
+ * @param table - Table.
+ */
+function clearExpandingRow(row: Row<Attribute>, table: Table<Attribute>): void {
+  if (EXPANDING_ROW_IDS.get(table) !== row.id) return;
+  EXPANDING_ROW_IDS.delete(table);
+}
+
+/**
+ * Expands the row when the URL hash matches its id.
  * Never collapses the row, so "Show less" still collapses it.
  * @param row - Row.
- * @param url - URL, absolute or relative to the current URL; defaults to the current URL.
  */
-function expandRowIfHashMatches(row: Row<Attribute>, url?: string): void {
-  if (getHash(url) !== row.id) return;
+function expandRowIfHashMatches(row: Row<Attribute>): void {
+  if (getHash() !== row.id) return;
   row.toggleExpanded(true);
 }
 
@@ -28,6 +46,31 @@ function expandRowIfHashMatches(row: Row<Attribute>, url?: string): void {
  */
 function getHash(url = window.location.href): string {
   return new URL(url, window.location.href).hash.slice(1);
+}
+
+/**
+ * Handles a hash change for the row, when the new URL's hash matches its id: a collapsed row clears the table's
+ * handled hash and expands, so a link to a row the user collapsed expands it again, and the row is scrolled into view
+ * and marked handled once it has expanded; a row the user already expanded marks the hash as handled, since it does
+ * not animate open and so never calls onEntered. Rows the hash does not match leave the table's handled hash as it is.
+ * @param row - Row.
+ * @param table - Table.
+ * @param url - New URL, absolute or relative to the current URL.
+ */
+function handleHashChange(
+  row: Row<Attribute>,
+  table: Table<Attribute>,
+  url: string
+): void {
+  if (getHash(url) !== row.id) return;
+  if (!row.getIsExpanded()) {
+    HANDLED_HASHES.delete(table);
+    EXPANDING_ROW_IDS.set(table, row.id);
+    row.toggleExpanded(true);
+    return;
+  }
+  if (EXPANDING_ROW_IDS.get(table) === row.id) return;
+  HANDLED_HASHES.set(table, row.id);
 }
 
 /**
@@ -54,8 +97,21 @@ export function markHashHandled(
   row: Row<Attribute>,
   table: Table<Attribute>
 ): void {
+  clearExpandingRow(row, table);
   if (!isHashUnhandled(row, table)) return;
   HANDLED_HASHES.set(table, row.id);
+}
+
+/**
+ * Scrolls the element into view now, and again each time it resizes in the next SCROLL_SETTLE_MS, so it ends up in
+ * view once it has stopped growing, e.g. while findable-ui's row below the "sm" breakpoint is still animating open.
+ * @param element - Element.
+ */
+function scrollIntoViewUntilSettled(element: HTMLElement): void {
+  element.scrollIntoView();
+  const observer = new ResizeObserver(() => element.scrollIntoView());
+  observer.observe(element);
+  setTimeout(() => observer.disconnect(), SCROLL_SETTLE_MS);
 }
 
 /**
@@ -71,9 +127,11 @@ export function scrollToRowIfHashUnhandled(
   row: Row<Attribute>,
   table: Table<Attribute>
 ): void {
+  clearExpandingRow(row, table);
   if (!isHashUnhandled(row, table)) return;
   HANDLED_HASHES.set(table, row.id);
-  document.getElementById(row.id)?.scrollIntoView();
+  const element = document.getElementById(row.id);
+  if (element) scrollIntoViewUntilSettled(element);
 }
 
 /**
@@ -85,8 +143,7 @@ export function scrollToRowIfHashUnhandled(
  * Next.js link navigation changes the hash with `pushState`, which fires no `hashchange` event, so both Next.js's
  * `hashChangeStart` router event and the window's `hashchange` event are listened to. `hashChangeStart` also fires for
  * a link to the current hash, which `hashChangeComplete` does not, but before the URL changes, so the hash is read
- * from the URL each event gives. A hash change clears the table's handled hash, so a link to a row the user collapsed
- * expands it again.
+ * from the URL each event gives.
  * @param row - Row.
  * @param table - Table.
  * @returns Function that removes the listeners.
@@ -96,16 +153,14 @@ export function subscribeToHashExpansion(
   table: Table<Attribute>
 ): () => void {
   if (isHashUnhandled(row, table)) {
+    EXPANDING_ROW_IDS.set(table, row.id);
     // A row already expanded on mount, e.g. after the switch to CollapsableRows, does not animate open, so its Collapse
     // never calls onEntered: scroll to it after the next paint instead.
     if (row.getIsExpanded())
       requestAnimationFrame(() => scrollToRowIfHashUnhandled(row, table));
     queueMicrotask(() => expandRowIfHashMatches(row));
   }
-  const onHashChange = (url: string): void => {
-    HANDLED_HASHES.delete(table);
-    expandRowIfHashMatches(row, url);
-  };
+  const onHashChange = (url: string): void => handleHashChange(row, table, url);
   const onWindowHashChange = (event: HashChangeEvent): void =>
     onHashChange(event.newURL);
   Router.events.on("hashChangeStart", onHashChange);
