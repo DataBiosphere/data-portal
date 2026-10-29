@@ -116,6 +116,8 @@ def main():
         config={
             "site_title": "HCA Data Portal",
             "logo_url": "https://data.humancellatlas.org/hca-bio-networks/logos/logoHca.png",
+            "logo_width": 138.85,
+            "logo_height": 32,
             "favicon_url": "https://data.humancellatlas.org/hca-bio-networks/favicons/favicon.ico",
             "logo_link": "https://data.humancellatlas.org",
             "primary_color": "#1C7CC7",
