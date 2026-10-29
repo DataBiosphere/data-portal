@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.17.0](https://github.com/DataBiosphere/data-portal/compare/v2.16.0...v2.17.0) (2026-10-29)
+
+
+### Features
+
+* expand a data dictionary row when the page opens at its anchor ([#3280](https://github.com/DataBiosphere/data-portal/issues/3280)) ([#3289](https://github.com/DataBiosphere/data-portal/issues/3289)) ([07371c3](https://github.com/DataBiosphere/data-portal/commit/07371c3040d8aa3ef1b98e64f9ce93532212620c))
+* show the bionetwork count on requirement chips, with the networks in a tooltip [#3286](https://github.com/DataBiosphere/data-portal/issues/3286) ([#3287](https://github.com/DataBiosphere/data-portal/issues/3287)) ([f6f4bb4](https://github.com/DataBiosphere/data-portal/commit/f6f4bb4f125068eb889f604a31210ba6daa6c855))
+
+
+### Bug Fixes
+
+* analytics page: render the header logo in html and load the released stylesheet ([#3285](https://github.com/DataBiosphere/data-portal/issues/3285)) ([#3294](https://github.com/DataBiosphere/data-portal/issues/3294)) ([43350f0](https://github.com/DataBiosphere/data-portal/commit/43350f072c99e033d6d935c490ea3ecdc2972522))
+
+
+### Chores
+
+* upgrade findable-ui to latest (v58.0.0) ([#3290](https://github.com/DataBiosphere/data-portal/issues/3290)) ([#3291](https://github.com/DataBiosphere/data-portal/issues/3291)) ([9de4864](https://github.com/DataBiosphere/data-portal/commit/9de4864ebee9c7796138b8bcb9854684a4d25445))
+
 ## [2.16.0](https://github.com/DataBiosphere/data-portal/compare/v2.15.1...v2.16.0) (2026-10-21)
 
 
