@@ -1,6 +1,7 @@
 import { ROUTES } from "@/routes/constants";
 import { VISIBLE } from "@/site-config/common/constants";
 import { SiteConfig } from "@/site-config/common/entities";
+import { TIER_1_DOWNLOAD } from "@/viewModelBuilders/dataDictionaryMapper/constants";
 import { buildDataDictionary } from "@/viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
 import {
   CELL_ANNOTATION_TABLE_OPTIONS,
@@ -70,6 +71,7 @@ export function makeConfig(
         dataDictionary: buildDataDictionary(
           metadataTier1 as unknown as DataDictionary
         ),
+        download: TIER_1_DOWNLOAD,
         path: "tier-1",
         tableOptions: TIER_1_TABLE_OPTIONS,
       },
