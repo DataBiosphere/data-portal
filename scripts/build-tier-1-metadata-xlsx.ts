@@ -7,13 +7,13 @@ import { buildDataDictionary } from "@/viewModelBuilders/dataDictionaryMapper/da
 import type { Attribute } from "@/viewModelBuilders/dataDictionaryMapper/types";
 import { REQUIREMENT_LABEL } from "@/viewModelBuilders/dataDictionaryMapper/types";
 import type { DataDictionary } from "@databiosphere/findable-ui/lib/common/entities";
-import ExcelJS from "exceljs";
 import { mkdirSync } from "fs";
 import { dirname } from "path";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import slugify from "slugify";
 import { unified } from "unified";
+import writeXlsxFile, { type Column } from "write-excel-file/node";
 
 // The file is served from public/ at the dictionary's download link.
 const OUTPUT_PATH = `public${TIER_1_DOWNLOAD.href}`;
@@ -21,19 +21,34 @@ const OUTPUT_PATH = `public${TIER_1_DOWNLOAD.href}`;
 // The live Tier 1 dictionary, for links back to a field's row.
 const DICTIONARY_URL = `https://data.humancellatlas.org${ROUTES.METADATA_TIER_1}`;
 
-const COLUMNS: Partial<ExcelJS.Column>[] = [
-  { header: "#", key: "index", width: 5 },
-  { header: "Field name", key: "title", width: 30 },
-  { header: "Field programmatic name", key: "name", width: 34 },
-  { header: "Description", key: "description", width: 60 },
-  { header: "Data type", key: "range", width: 12 },
-  { header: "Categorical values", key: "values", width: 40 },
-  { header: "Examples", key: "example", width: 30 },
-  { header: "Required", key: "required", width: 26 },
-  { header: "Encoded by", key: "class", width: 16 },
-  { header: "BioNetworks", key: "bioNetworks", width: 30 },
-  { header: "AnnData Location", key: "annDataLocation", width: 18 },
-  { header: "Multivalued", key: "multivalued", width: 12 },
+interface FieldRow {
+  attribute: Attribute;
+  className: string;
+}
+
+const COLUMNS: Column<FieldRow>[] = [
+  column("#", 5, (_, i) => i + 1),
+  column("Field name", 30, ({ attribute }) => attribute.title),
+  column("Field programmatic name", 34, ({ attribute }) => attribute.name),
+  column("Description", 60, ({ attribute }) =>
+    toPlainText(attribute.name, attribute.description)
+  ),
+  column("Data type", 12, ({ attribute }) => attribute.range),
+  column("Categorical values", 40, ({ attribute }) =>
+    toPlainText(attribute.name, attribute.values)
+  ),
+  column("Examples", 30, ({ attribute }) => attribute.example),
+  column("Required", 26, ({ attribute }) => formatRequired(attribute)),
+  column("Encoded by", 16, ({ className }) => className),
+  column("BioNetworks", 30, ({ attribute }) =>
+    formatBioNetworks(attribute.annotations?.bioNetworks)
+  ),
+  column(
+    "AnnData Location",
+    18,
+    ({ attribute }) => attribute.annotations?.annDataLocation
+  ),
+  column("Multivalued", 12, ({ attribute }) => attribute.multivalued),
 ];
 
 const markdownParser = unified().use(remarkParse).use(remarkGfm);
@@ -58,37 +73,43 @@ interface MarkdownNode {
  */
 async function buildTier1MetadataXlsx(): Promise<void> {
   const { classes } = buildDataDictionary(tier1 as unknown as DataDictionary);
-  const workbook = new ExcelJS.Workbook();
-  const sheet = workbook.addWorksheet("Tier 1 metadata", {
-    views: [{ state: "frozen", ySplit: 1 }],
-  });
-  sheet.columns = COLUMNS;
-
-  sheet.getRow(1).font = { bold: true };
-
   const rows = classes.flatMap((cls) =>
-    cls.attributes.map((attribute) => ({ attribute, cls }))
+    cls.attributes.map((attribute) => ({ attribute, className: cls.title }))
   );
-  rows.forEach(({ attribute, cls }, i) => {
-    sheet.addRow({
-      annDataLocation: attribute.annotations?.annDataLocation,
-      bioNetworks: formatBioNetworks(attribute.annotations?.bioNetworks),
-      class: cls.title,
-      description: toPlainText(attribute.name, attribute.description),
-      example: attribute.example,
-      index: i + 1,
-      multivalued: attribute.multivalued,
-      name: attribute.name,
-      range: attribute.range,
-      required: formatRequired(attribute),
-      title: attribute.title,
-      values: toPlainText(attribute.name, attribute.values),
-    });
-  });
 
   mkdirSync(dirname(OUTPUT_PATH), { recursive: true });
-  await workbook.xlsx.writeFile(OUTPUT_PATH);
+  await writeXlsxFile(
+    rows,
+    { columns: COLUMNS, sheet: "Tier 1 metadata", stickyRowsCount: 1 },
+    // Declares the font explicitly, as the sheet has no theme to take it from.
+    { fontFamily: "Calibri", fontSize: 11 }
+  ).toFile(OUTPUT_PATH);
   console.log(`Wrote ${OUTPUT_PATH} (${rows.length} fields)`);
+}
+
+/**
+ * Builds a column with a bold header cell and a fixed width. List values are joined with ", ".
+ * @param header - Header text.
+ * @param width - Column width, in characters.
+ * @param value - Returns the cell value for a row and its zero-based index.
+ * @returns The column.
+ */
+function column(
+  header: string,
+  width: number,
+  value: (
+    row: FieldRow,
+    index: number
+  ) => boolean | number | string | string[] | undefined
+): Column<FieldRow> {
+  return {
+    cell: (row, index): boolean | number | string | undefined => {
+      const cellValue = value(row, index);
+      return Array.isArray(cellValue) ? cellValue.join(", ") : cellValue;
+    },
+    header: { fontWeight: "bold", value: header },
+    width,
+  };
 }
 
 /**
@@ -98,10 +119,9 @@ async function buildTier1MetadataXlsx(): Promise<void> {
  */
 function formatBioNetworks(
   bioNetworks?: string | string[]
-): string | undefined {
-  if (!Array.isArray(bioNetworks)) return bioNetworks;
-  if (isAllBioNetworks(bioNetworks)) return "ALL";
-  return bioNetworks.join(", ");
+): string | string[] | undefined {
+  if (Array.isArray(bioNetworks) && isAllBioNetworks(bioNetworks)) return "ALL";
+  return bioNetworks;
 }
 
 /**
