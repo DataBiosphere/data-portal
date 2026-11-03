@@ -1,6 +1,6 @@
-import * as C from "@/components";
 import { ROUTES } from "@/routes/constants";
 import * as V from "@/viewModelBuilders/viewModelBuilders";
+import { CookieBanner } from "@databiosphere/findable-ui/lib/components/common/Banner/components/CookieBanner/cookieBanner";
 import { ViewSupport } from "@databiosphere/findable-ui/lib/components/Support/components/ViewSupport/viewSupport";
 import {
   ComponentConfig,
@@ -10,9 +10,9 @@ import {
 export const floating: FloatingConfig = {
   components: [
     {
-      component: C.CookieBanner,
+      component: CookieBanner,
       viewBuilder: V.buildCookieBanner,
-    } as ComponentConfig<typeof C.CookieBanner>,
+    } as ComponentConfig<typeof CookieBanner>,
     {
       component: ViewSupport,
       props: {
