@@ -1,5 +1,5 @@
 import { ROUTES } from "@/routes/constants";
-import { VISIBLE } from "@/site-config/common/constants";
+import { FLATTEN, VISIBLE } from "@/site-config/common/constants";
 import { SiteConfig } from "@/site-config/common/entities";
 import { TIER_1_DOWNLOAD } from "@/viewModelBuilders/dataDictionaryMapper/constants";
 import { buildDataDictionary } from "@/viewModelBuilders/dataDictionaryMapper/dataDictionaryMapper";
@@ -12,10 +12,6 @@ import {
   DataDictionary,
   DataDictionaryConfig,
 } from "@databiosphere/findable-ui/lib/common/entities";
-import { FacebookIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/FacebookIcon/facebookIcon";
-import { GitHubIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/GitHubIcon/gitHubIcon";
-import { LinkedInIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/LinkedInIcon/linkedInIcon";
-import { XIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/XIcon/xIcon";
 import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import { Logo } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Logo/logo";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
@@ -24,17 +20,24 @@ import cellAnnotation from "./dataDictionary/cell-annotation.json";
 import metadataTier1 from "./dataDictionary/tier-1.json";
 import metadataTier2 from "./dataDictionary/tier-2.json";
 import { floating } from "./layout/floating";
+import {
+  FOLLOW_HCA,
+  HELP_AND_DOCUMENTATION,
+  MORE_HELP_AND_DOCUMENTATION,
+  UPDATES,
+} from "./layout/header";
 import { APIS } from "./navigation/apis";
 import { CONTRIBUTE } from "./navigation/contribute";
 import { GUIDES } from "./navigation/guides";
-import { socialMedia, SOCIALS } from "./socialMedia";
+import { socialMedia } from "./socialMedia";
 import { themeOptions } from "./themeOptions";
 
 // This module is `.tsx` so branding and icon elements can be written as JSX.
 // `Header.logo`, `Footer.Branding` and `MenuItem.icon` are all typed `ReactNode`
 // in findable-ui, so they take an element rather than a component reference —
 // unlike `Social.Icon` and `ComponentConfig.component`, which take the
-// reference itself (see socialMedia.ts and layout/floating.ts).
+// reference itself (see socialMedia.ts and layout/floating.ts). The header's
+// menu icons follow the same rule in layout/header.tsx.
 //
 // Build those elements with JSX, never by calling the component as a function.
 // `makeConfig` runs at module evaluation, so `Logo({ … })` would execute the
@@ -199,35 +202,28 @@ export function makeConfig(
               url: ROUTES.APIS,
             },
             {
-              label: "Updates",
-              url: ROUTES.DCP_UPDATES,
+              ...UPDATES,
+              visible: VISIBLE.EXCEPT_SM_AND_MD,
             },
             {
-              label: "Follow HCA",
+              label: "More",
               menuItems: [
-                {
-                  ...SOCIALS.GITHUB,
-                  icon: <GitHubIcon fontSize="small" />,
-                },
-                {
-                  ...SOCIALS.FACEBOOK,
-                  icon: <FacebookIcon fontSize="small" />,
-                },
-                {
-                  ...SOCIALS.X,
-                  icon: <XIcon fontSize="small" />,
-                },
-                {
-                  ...SOCIALS.LINKEDIN,
-                  icon: <LinkedInIcon fontSize="small" />,
-                },
+                UPDATES,
+                FOLLOW_HCA,
+                { ...MORE_HELP_AND_DOCUMENTATION, visible: VISIBLE.SM_ONLY },
               ],
               url: "",
               visible: VISIBLE.BETWEEN_SM_AND_LG,
             },
           ],
           undefined,
-          undefined,
+          [
+            {
+              ...HELP_AND_DOCUMENTATION,
+              flatten: FLATTEN.XS_ONLY,
+              visible: VISIBLE.EXCEPT_SM,
+            },
+          ],
         ],
         searchEnabled: true,
         searchURL: ROUTES.SEARCH,
