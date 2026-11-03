@@ -15,7 +15,6 @@ export { Grid } from "@databiosphere/findable-ui/lib/components/common/Grid/grid
 export { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 export { Logo } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Logo/logo";
 export { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-export { SupportRequest } from "@databiosphere/findable-ui/lib/components/Support/components/SupportRequest/supportRequest";
 export { BasicCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/BasicCell/basicCell";
 export { NTagCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
 export { ContentView } from "@databiosphere/findable-ui/lib/views/ContentView/contentView";
