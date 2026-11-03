@@ -1,4 +1,4 @@
-import { Content, ContentView } from "@/components";
+import { Content } from "@/components/Layout/components/Content/content.styles";
 import { MDX_COMPONENTS } from "@/docs/common/constants";
 import { generatePaths } from "@/docs/common/utils";
 import { getDocsStaticProps, PageProps } from "@/utils/docPages";
@@ -11,6 +11,7 @@ import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/co
 import { Outline } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import { ContentView } from "@databiosphere/findable-ui/lib/views/ContentView/contentView";
 import { ThemeOptions } from "@mui/material";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote } from "next-mdx-remote";

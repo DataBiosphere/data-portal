@@ -1,4 +1,7 @@
-import * as C from "@/components/index";
+import { FacebookIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/FacebookIcon/facebookIcon";
+import { GitHubIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/GitHubIcon/gitHubIcon";
+import { LinkedInIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/LinkedInIcon/linkedInIcon";
+import { XIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/XIcon/xIcon";
 import { SocialMedia } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 
@@ -29,19 +32,19 @@ export const socialMedia: SocialMedia = {
   socials: [
     {
       ...SOCIALS.GITHUB,
-      Icon: C.GitHubIcon,
+      Icon: GitHubIcon,
     },
     {
       ...SOCIALS.FACEBOOK,
-      Icon: C.FacebookIcon,
+      Icon: FacebookIcon,
     },
     {
       ...SOCIALS.X,
-      Icon: C.XIcon,
+      Icon: XIcon,
     },
     {
       ...SOCIALS.LINKEDIN,
-      Icon: C.LinkedInIcon,
+      Icon: LinkedInIcon,
     },
   ],
 };
