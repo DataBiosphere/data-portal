@@ -23,6 +23,9 @@ export const VISIBLE: Record<
   Partial<Record<BreakpointKey, boolean>>
 > = {
   BETWEEN_SM_AND_LG: { lg: false, xs: false },
+  EXCEPT_SM: { sm: false },
+  EXCEPT_SM_AND_MD: { md: false, sm: false },
   MD_DOWN: { lg: false, md: false },
   NEVER: { lg: false, md: false, sm: false, xs: false },
+  SM_ONLY: { lg: false, md: false, xs: false },
 };
