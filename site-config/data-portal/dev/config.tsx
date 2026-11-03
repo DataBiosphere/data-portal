@@ -20,12 +20,7 @@ import cellAnnotation from "./dataDictionary/cell-annotation.json";
 import metadataTier1 from "./dataDictionary/tier-1.json";
 import metadataTier2 from "./dataDictionary/tier-2.json";
 import { floating } from "./layout/floating";
-import {
-  FOLLOW_HCA,
-  HELP_AND_DOCUMENTATION,
-  MORE_HELP_AND_DOCUMENTATION,
-  UPDATES,
-} from "./layout/header";
+import { FOLLOW_HCA, HELP, MORE_HELP, UPDATES } from "./layout/header";
 import { APIS } from "./navigation/apis";
 import { CONTRIBUTE } from "./navigation/contribute";
 import { GUIDES } from "./navigation/guides";
@@ -210,7 +205,7 @@ export function makeConfig(
               menuItems: [
                 UPDATES,
                 FOLLOW_HCA,
-                { ...MORE_HELP_AND_DOCUMENTATION, visible: VISIBLE.SM_ONLY },
+                { ...MORE_HELP, visible: VISIBLE.SM_ONLY },
               ],
               url: "",
               visible: VISIBLE.BETWEEN_SM_AND_LG,
@@ -219,7 +214,7 @@ export function makeConfig(
           undefined,
           [
             {
-              ...HELP_AND_DOCUMENTATION,
+              ...HELP,
               flatten: FLATTEN.XS_ONLY,
               visible: VISIBLE.EXCEPT_SM,
             },

@@ -10,7 +10,7 @@ import type { NavLinkItem } from "@databiosphere/findable-ui/lib/components/Layo
 
 /**
  * Header navigation items that also appear in the header's "More" menu: Updates and Follow HCA at the sm and md
- * breakpoints, and Help & Documentation's links at sm only.
+ * breakpoints, and Help's links at sm only.
  * Each item's visibility is set where it is used, in the site config.
  */
 
@@ -49,19 +49,19 @@ export const GET_HELP: NavLinkItem = {
   url: ROUTES.HELP,
 };
 
-export const HELP_AND_DOCUMENTATION: NavLinkItem = {
-  label: "Help & Documentation",
+export const HELP: NavLinkItem = {
+  label: "Help",
   menuItems: [GET_HELP, CONTACT_US],
   url: "",
 };
 
 /**
- * Help & Documentation as it appears in the "More" menu, where its links are listed directly in "More".
+ * Help as it appears in the "More" menu, where its links are listed directly in "More".
  * findable-ui highlights "More" from its links' selected matches even when they are hidden, so the links match
- * nothing at md, where Help & Documentation is on the right of the header instead.
+ * nothing at md, where Help is on the right of the header instead.
  */
-export const MORE_HELP_AND_DOCUMENTATION: NavLinkItem = {
-  ...HELP_AND_DOCUMENTATION,
+export const MORE_HELP: NavLinkItem = {
+  ...HELP,
   flatten: FLATTEN.MD_DOWN,
   menuItems: [
     { ...GET_HELP, selectedMatch: { md: false, sm: SELECTED_MATCH.EQUALS } },
