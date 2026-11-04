@@ -3,6 +3,7 @@ import { ColumnFiltersAdapter } from "@databiosphere/findable-ui/lib/components/
 import { Button } from "@databiosphere/findable-ui/lib/components/Filter/components/surfaces/drawer/components/Button/button";
 import { Drawer } from "@databiosphere/findable-ui/lib/components/Filter/components/surfaces/drawer/Drawer/drawer";
 import { ColumnFilter } from "@databiosphere/findable-ui/lib/components/Table/components/TableFeatures/ColumnFilter/columnFilter";
+import { COLUMN_FILTER_PLACEMENT } from "@databiosphere/findable-ui/lib/components/Table/components/TableFeatures/ColumnFilter/constants";
 import { bpDown1024 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
 import { Theme, useMediaQuery } from "@mui/material";
@@ -17,7 +18,7 @@ export const ColumnFilters = <T extends RowData>({
 }: Props<T>): JSX.Element | null => {
   // Not `noSsr`: the first client render must match the static HTML. Used only
   // as a key, so crossing the breakpoint remounts both surfaces and closes any
-  // menu or drawer left open on the surface CSS has just hidden.
+  // filter panel or drawer left open on the surface CSS has just hidden.
   const isDrawer = useMediaQuery((theme: Theme) => bpDown1024({ theme }));
 
   const enableColumnFilters = table.options.enableColumnFilters;
@@ -39,8 +40,7 @@ export const ColumnFilters = <T extends RowData>({
           <ColumnFilter
             key={column.id}
             column={column}
-            anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
-            transformOrigin={{ horizontal: "left", vertical: "top" }}
+            placement={COLUMN_FILTER_PLACEMENT.BOTTOM_START}
           />
         ))}
       </StyledButtonGroup>
