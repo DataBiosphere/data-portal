@@ -71,7 +71,7 @@ nest-asyncio==1.6.0
 notebook==7.3.2
 notebook_shim==0.2.4
 numpy==2.2.2
-oauthlib==3.2.2
+oauthlib==4.0.0
 overrides==7.7.0
 packaging==24.2
 pandas==2.2.3
