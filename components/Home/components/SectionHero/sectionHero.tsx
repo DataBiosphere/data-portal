@@ -1,17 +1,17 @@
+import { ButtonOutline } from "@/components/common/Button/components/ButtonOutline/buttonOutline";
 import { useSiteConfig } from "@/hooks/useSiteConfig";
 import { ROUTES } from "@/routes/constants";
-import { BUTTON_PROPS as COMPONENT_BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
+import { BUTTON_PRESETS } from "@databiosphere/findable-ui/lib/contracts/mui/Button/presets";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
-import { Button } from "@mui/material";
-import { JSX } from "react";
+import type { JSX } from "react";
 import { SummaryCounts } from "./components/SummaryCounts/summaryCounts";
 import {
   CTAs,
+  ExploreDataButton,
   Head,
   Headline,
   SectionHero as Hero,
@@ -33,23 +33,18 @@ export const SectionHero = (): JSX.Element => {
           Community generated, multi-omic, open data
         </Subhead>
         <CTAs>
-          <Button
-            {...COMPONENT_BUTTON_PROPS.SECONDARY_CONTAINED}
+          <ExploreDataButton
+            {...BUTTON_PRESETS.SECONDARY_OUTLINED}
             href={browserURL}
             id={"button-explore-data"}
             rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
             target={ANCHOR_TARGET.BLANK}
           >
             Explore Data
-          </Button>
-          <Button
-            color={BUTTON_PROPS.COLOR.SECONDARY}
-            href={ROUTES.CONTRIBUTE}
-            rel={REL_ATTRIBUTE.NO_OPENER}
-            variant={BUTTON_PROPS.VARIANT.OUTLINED}
-          >
+          </ExploreDataButton>
+          <ButtonOutline href={ROUTES.CONTRIBUTE} rel={REL_ATTRIBUTE.NO_OPENER}>
             Contribute Data
-          </Button>
+          </ButtonOutline>
         </CTAs>
       </Headline>
       <SummaryCounts />

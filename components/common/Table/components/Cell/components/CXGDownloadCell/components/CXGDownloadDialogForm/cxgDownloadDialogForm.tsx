@@ -4,9 +4,9 @@ import {
   DialogContent,
 } from "@/components/common/Table/components/Actions/components/Dialog/dialog.styles";
 import { CXG_DATASET_FILE_TYPE, DatasetAsset } from "@/types/network";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
+import { BUTTON_PRESETS } from "@databiosphere/findable-ui/lib/contracts/mui/Button/presets";
 import { Button } from "@mui/material";
-import { JSX, useState } from "react";
+import { type JSX, useState } from "react";
 import { CXGDownloadCaption } from "./components/CXGDownloadCaption/cxgDownloadCaption";
 import { CXGDownloadFileSize } from "./components/CXGDownloadFileSize/cxgDownloadFileSize";
 import { CXGDownloadRadio } from "./components/CXGDownloadRadio/cxgDownloadRadio";
@@ -56,13 +56,13 @@ export const CxgDownloadDialogForm = ({
       </DialogContent>
       <DialogActions>
         <Button
-          {...BUTTON_PROPS.PRIMARY_CONTAINED}
+          {...BUTTON_PRESETS.PRIMARY_CONTAINED}
           disabled={!downloadURL}
           href={downloadURL}
         >
           Download
         </Button>
-        <Button {...BUTTON_PROPS.SECONDARY_CONTAINED} onClick={onClose}>
+        <Button {...BUTTON_PRESETS.SECONDARY_OUTLINED} onClick={onClose}>
           Cancel
         </Button>
       </DialogActions>

@@ -17,7 +17,7 @@
     "get-cellxgene-projects": "esrun ./scripts/get-cellxgene-projects.ts"
   },
   "dependencies": {
-    "@databiosphere/findable-ui": "^60.0.0",
+    "@databiosphere/findable-ui": "^63.0.0",
     "@emotion/react": "^11",
     "@emotion/server": "^11",
     "@emotion/styled": "^11",
@@ -33,7 +33,7 @@
     "@tanstack/react-virtual": "^3",
     "copy-to-clipboard": "^3",
     "gray-matter": "^4",
-    "ky": "^1",
+    "ky": "^1.10.0",
     "next": "^16.4.5",
     "next-mdx-remote": "^6",
     "react": "^19.2.3",
