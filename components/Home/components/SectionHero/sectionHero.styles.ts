@@ -1,8 +1,7 @@
-import { COLOR_MIXES } from "@databiosphere/findable-ui/lib/styles/common/constants/colorMixes";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 
 export const SectionHero = styled.section`
   background: url("/hca-bio-networks/home/cell.webp") no-repeat;
@@ -51,29 +50,18 @@ export const CTAs = styled.div`
   display: flex;
   gap: 16px;
   justify-self: center;
+`;
 
-  & .MuiButton-containedSecondary {
+export const ExploreDataButton = styled(Button)`
+  &,
+  &:hover,
+  &.Mui-focusVisible {
     box-shadow:
       inset 0 0 0 1px ${PALETTE.SMOKE_DARK},
       0 1px 0 0 ${PALETTE.PRIMARY_DARK};
-
-    &:hover {
-      box-shadow:
-        inset 0 0 0 1px ${PALETTE.SMOKE_DARK},
-        0 1px 0 0 ${PALETTE.PRIMARY_DARK};
-    }
-
-    &:active {
-      box-shadow: inset 0 0 0 1px ${PALETTE.SMOKE_DARK};
-    }
   }
 
-  & .MuiButton-outlinedSecondary {
-    color: ${PALETTE.COMMON_WHITE};
-    box-shadow: inset 0 0 0 1px ${COLOR_MIXES.COMMON_WHITE_32};
-
-    &:hover {
-      box-shadow: inset 0 0 0 1px ${COLOR_MIXES.COMMON_WHITE_64};
-    }
+  &:active {
+    box-shadow: inset 0 0 0 1px ${PALETTE.SMOKE_DARK};
   }
-`;
+` as typeof Button;

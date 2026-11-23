@@ -1,8 +1,8 @@
 import { ColumnFilterTag } from "@databiosphere/findable-ui/lib/components/Table/components/TableFeatures/ColumnFilter/components/ColumnFilterTag/columnFilterTag";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/contracts/mui/Button/constants";
 import { Button } from "@mui/material";
 import { RowData } from "@tanstack/react-table";
-import { JSX } from "react";
+import type { JSX } from "react";
 import { StyledGrid } from "./columnFilterTags.styles";
 import { GRID_PROPS } from "./constants";
 import { Props } from "./types";

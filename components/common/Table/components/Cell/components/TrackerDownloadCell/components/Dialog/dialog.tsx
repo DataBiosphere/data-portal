@@ -6,10 +6,10 @@ import {
   StyledDialog,
 } from "@/components/common/Table/components/Actions/components/Dialog/dialog.styles";
 import { StyledCode } from "@/components/common/Table/components/Cell/components/CXGDownloadCell/components/CXGDownloadDialogForm/cxgDownloadDialogForm.styles";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
+import { BUTTON_PRESETS } from "@databiosphere/findable-ui/lib/contracts/mui/Button/presets";
 import { formatFileSize } from "@databiosphere/findable-ui/lib/utils/formatFileSize";
 import { Button } from "@mui/material";
-import { JSX } from "react";
+import type { JSX } from "react";
 import { ARIA_LABEL } from "./constants";
 import type { Props } from "./types";
 
@@ -49,13 +49,13 @@ export const Dialog = ({
       </DialogContent>
       <DialogActions>
         <Button
-          {...BUTTON_PROPS.PRIMARY_CONTAINED}
+          {...BUTTON_PRESETS.PRIMARY_CONTAINED}
           disabled={!downloadUrl}
           href={downloadUrl}
         >
           Download
         </Button>
-        <Button {...BUTTON_PROPS.SECONDARY_CONTAINED} onClick={onClose}>
+        <Button {...BUTTON_PRESETS.SECONDARY_OUTLINED} onClick={onClose}>
           Cancel
         </Button>
       </DialogActions>

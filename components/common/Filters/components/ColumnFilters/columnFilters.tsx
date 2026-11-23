@@ -4,9 +4,9 @@ import { Button } from "@databiosphere/findable-ui/lib/components/Filter/compone
 import { Drawer } from "@databiosphere/findable-ui/lib/components/Filter/components/surfaces/drawer/Drawer/drawer";
 import { ColumnFilter } from "@databiosphere/findable-ui/lib/components/Table/components/TableFeatures/ColumnFilter/columnFilter";
 import { COLUMN_FILTER_PLACEMENT } from "@databiosphere/findable-ui/lib/components/Table/components/TableFeatures/ColumnFilter/constants";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/contracts/mui/Button/constants";
 import { bpDown1024 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
-import { Theme, useMediaQuery } from "@mui/material";
+import { type Theme, useMediaQuery } from "@mui/material";
 import { RowData } from "@tanstack/react-table";
 import { ComponentProps, Fragment, JSX } from "react";
 import { StyledButton, StyledButtonGroup } from "./columnFilters.styles";
