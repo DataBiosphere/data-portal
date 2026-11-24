@@ -156,6 +156,7 @@ const config = [
       "**/.next/**",
       "**/build/**",
       "**/analytics/**",
+      "**/coverage/**",
       "next-env.d.ts",
       "next.config.mjs",
     ],

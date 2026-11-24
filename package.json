@@ -14,7 +14,8 @@
     "postbuild": "next-sitemap --config next-sitemap.config.mjs",
     "prepare": "husky",
     "complete-biccn-publications": "esrun ./scripts/complete-biccn-publications.ts",
-    "get-cellxgene-projects": "esrun ./scripts/get-cellxgene-projects.ts"
+    "get-cellxgene-projects": "esrun ./scripts/get-cellxgene-projects.ts",
+    "test": "jest"
   },
   "dependencies": {
     "@databiosphere/findable-ui": "^63.0.0",
@@ -60,6 +61,10 @@
     "@eslint/eslintrc": "^3",
     "@eslint/js": "^9",
     "@next/eslint-plugin-next": "^16.4.5",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^8.0.0",
+    "@testing-library/react": "^16.3.3",
+    "@types/jest": "^30.0.0",
     "@types/mdx": "^2.0.11",
     "@types/node": "22.13.0",
     "@types/react": "^19.2.7",
@@ -79,6 +84,8 @@
     "got": "^14.4.5",
     "html-entities": "^2.6.0",
     "husky": "^9.1.7",
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2",
     "next-sitemap": "^4.2.3",
     "prettier": "^3.7.4",
     "prettier-plugin-organize-imports": "^4.3.0",
