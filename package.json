@@ -15,7 +15,9 @@
     "prepare": "husky",
     "complete-biccn-publications": "esrun ./scripts/complete-biccn-publications.ts",
     "get-cellxgene-projects": "esrun ./scripts/get-cellxgene-projects.ts",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "npm test -- --coverage",
+    "test:diff-coverage": "uv run --locked --isolated diff-cover coverage/cobertura-coverage.xml --compare-branch origin/${BASE:-main} --fail-under 80"
   },
   "dependencies": {
     "@databiosphere/findable-ui": "^63.0.0",

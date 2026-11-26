@@ -1,0 +1,13 @@
+# Dev tooling only, not a Python package: pins diff-cover, and through uv.lock
+# its dependencies, for `npm run test:diff-coverage`.
+[project]
+name = "data-portal-dev-tools"
+version = "0.0.0"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = ["diff-cover==11.0.1"]
+
+[tool.uv]
+package = false
