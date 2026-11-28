@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.17.1](https://github.com/DataBiosphere/data-portal/compare/v2.17.0...v2.17.1) (2026-11-28)
+
+
+### Chores
+
+* upgrade findable-ui to v63 and move buttons to its new `outlined` `secondary` Button ([#3314](https://github.com/DataBiosphere/data-portal/issues/3314)) ([#3317](https://github.com/DataBiosphere/data-portal/issues/3317)) ([9d2caec](https://github.com/DataBiosphere/data-portal/commit/9d2caecaab9e63539650762ee076b6c2f8cad81d))
+
+
+### Performance Improvements
+
+* regenerate the analytics site to pick up non-blocking chart.js and font loading ([#3307](https://github.com/DataBiosphere/data-portal/issues/3307)) ([b696f3b](https://github.com/DataBiosphere/data-portal/commit/b696f3b1440b308efa6f504099f34b5593317783))
+* regenerate the analytics site to pick up non-blocking Chart.js and font loading ([#3307](https://github.com/DataBiosphere/data-portal/issues/3307)) ([#3310](https://github.com/DataBiosphere/data-portal/issues/3310)) ([b696f3b](https://github.com/DataBiosphere/data-portal/commit/b696f3b1440b308efa6f504099f34b5593317783))
+
+
+### Tests
+
+* add Jest unit test capability, modelled on hca-atlas-tracker ([#3190](https://github.com/DataBiosphere/data-portal/issues/3190)) ([#3320](https://github.com/DataBiosphere/data-portal/issues/3320)) ([677e9f2](https://github.com/DataBiosphere/data-portal/commit/677e9f27f1dec502dd1359d8297c30b228565ce3))
+
+
+### Continuous Integration
+
+* measure Jest coverage with floors and gate changed lines with diff-cover ([#3327](https://github.com/DataBiosphere/data-portal/issues/3327)) ([#3328](https://github.com/DataBiosphere/data-portal/issues/3328)) ([4baec64](https://github.com/DataBiosphere/data-portal/commit/4baec64798b31e2e6df1963f9bb7b71833f026ac))
+* run Jest on every PR and align `run-checks.yml` with the tracker ([#3191](https://github.com/DataBiosphere/data-portal/issues/3191)) ([#3326](https://github.com/DataBiosphere/data-portal/issues/3326)) ([8e091fe](https://github.com/DataBiosphere/data-portal/commit/8e091febddba31ae47bf536d2b9e01936a9e0858)), closes [#3173](https://github.com/DataBiosphere/data-portal/issues/3173)
+
 ## [2.17.0](https://github.com/DataBiosphere/data-portal/compare/v2.16.0...v2.17.0) (2026-11-04)
 
 
