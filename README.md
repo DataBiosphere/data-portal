@@ -35,6 +35,20 @@ The development server can be viewed at:
 
 `localhost:3000`
 
+### Testing
+
+Run the unit tests:
+
+`npm test`
+
+Run them with coverage, which fails when line or branch coverage drops below the floors in `jest.config.js`:
+
+`npm run test:coverage`
+
+Check that at least 80% of the lines your branch changes are covered. This needs [uv](https://docs.astral.sh/uv/), reads the report `npm run test:coverage` writes, and compares against `origin/main`, so run `git fetch origin main` first:
+
+`npm run test:diff-coverage`
+
 ### Building 
 
 Run the following command to build the dev version of the application:

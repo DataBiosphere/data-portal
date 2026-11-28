@@ -48,6 +48,7 @@ next-env.d.ts
 __pycache__
 .ipynb_checkpoints
 venv
+.venv/
 
 # credentials
 .credentials/
